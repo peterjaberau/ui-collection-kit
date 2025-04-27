@@ -14,7 +14,7 @@
     "nextjs-demo": "pnpm --filter \"./demos/nextjs-demo\"",
     "start-nextjs-demo": "pnpm nextjsdemo dev",
     "unstyled-react": "pnpm --filter \"./packages/unstyled/react\"",
-    "start-unstyled-react": "pnpm ui storybook",
+    "start-unstyled-react": "pnpm unstyled-react storybook",
     "generate-machine": "plop machine && pnpm sync-pkgs",
     "generate-util": "plop utility && pnpm sync-pkgs",
     "typecheck": "pnpm packages -- typecheck",
