@@ -1,0 +1,49 @@
+{
+  "name": "@ui-collection-kit/hover-card",
+  "version": "1.11.0",
+  "description": "Core logic for the hover-card widget implemented as a state machine",
+  "keywords": [
+    "js",
+    "machine",
+    "xstate",
+    "statechart",
+    "component",
+    "chakra-ui",
+    "hover-card"
+  ],
+  "author": "Abraham Aremu <anubra266@gmail.com>",
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/hover-card",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "dependencies": {
+    "@ui-collection-kit/anatomy": "workspace:*",
+    "@ui-collection-kit/core": "workspace:*",
+    "@ui-collection-kit/dom-query": "workspace:*",
+    "@ui-collection-kit/utils": "workspace:*",
+    "@ui-collection-kit/dismissable": "workspace:*",
+    "@ui-collection-kit/popper": "workspace:*",
+    "@ui-collection-kit/types": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "main": "src/index.ts"
+}

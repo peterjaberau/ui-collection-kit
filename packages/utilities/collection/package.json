@@ -1,0 +1,39 @@
+{
+  "name": "@ui-collection-kit/collection",
+  "version": "1.11.0",
+  "description": "Utilities to manage a collection of items.",
+  "keywords": [
+    "js",
+    "utils",
+    "collection"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "repository": "#/packages/utilities/collection",
+  "sideEffects": false,
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "dependencies": {
+    "@ui-collection-kit/utils": "workspace:*"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  }
+}

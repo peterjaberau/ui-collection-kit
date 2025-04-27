@@ -1,0 +1,102 @@
+import type { Machine, Service } from "@ui-collection-kit/core"
+import type { CommonProperties, PropTypes, RequiredBy } from "@ui-collection-kit/types"
+
+/* -----------------------------------------------------------------------------
+ * Callback details
+ * -----------------------------------------------------------------------------*/
+
+export interface CopyStatusDetails {
+  copied: boolean
+}
+
+export interface ValueChangeDetails {
+  value: string
+}
+
+/* -----------------------------------------------------------------------------
+ * Machine context
+ * -----------------------------------------------------------------------------*/
+
+export type ElementIds = Partial<{
+  root: string
+  input: string
+  label: string
+}>
+
+export interface ClipboardProps extends CommonProperties {
+  /**
+   * The ids of the elements in the clipboard. Useful for composition.
+   */
+  ids?: ElementIds | undefined
+  /**
+   * The controlled value of the clipboard
+   */
+  value?: string | undefined
+  /**
+   * The initial value to be copied to the clipboard when rendered.
+   * Use when you don't need to control the value of the clipboard.
+   */
+  defaultValue?: string | undefined
+  /**
+   * The function to be called when the value changes
+   */
+  onValueChange?: ((details: ValueChangeDetails) => void) | undefined
+  /**
+   * The function to be called when the value is copied to the clipboard
+   */
+  onStatusChange?: ((details: CopyStatusDetails) => void) | undefined
+  /**
+   * The timeout for the copy operation
+   * @default 3000
+   */
+  timeout?: number | undefined
+}
+
+export interface ClipboardSchema {
+  state: "idle" | "copied"
+  props: RequiredBy<ClipboardProps, "timeout">
+  context: {
+    value: string
+  }
+  effect: string
+  action: string
+  guard: string
+}
+
+export type ClipboardService = Service<ClipboardSchema>
+
+export type ClipboardMachine = Machine<ClipboardSchema>
+
+/* -----------------------------------------------------------------------------
+ * Component API
+ * -----------------------------------------------------------------------------*/
+
+export interface IndicatorProps {
+  copied: boolean
+}
+
+export interface ClipboardApi<T extends PropTypes = PropTypes> {
+  /**
+   * Whether the value has been copied to the clipboard
+   */
+  copied: boolean
+  /**
+   * The value to be copied to the clipboard
+   */
+  value: string
+  /**
+   * Set the value to be copied to the clipboard
+   */
+  setValue(value: string): void
+  /**
+   * Copy the value to the clipboard
+   */
+  copy(): void
+
+  getRootProps(): T["element"]
+  getLabelProps(): T["label"]
+  getControlProps(): T["element"]
+  getTriggerProps(): T["button"]
+  getInputProps(): T["input"]
+  getIndicatorProps(props: IndicatorProps): T["element"]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@ui-collection-kit/anatomy",
+  "version": "1.11.0",
+  "keywords": [
+    "ui-machines",
+    "state-machines",
+    "ui-collection-kit",
+    "fsm",
+    "xstate",
+    "finite state machine"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../clean-package.config.json",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  }
+}

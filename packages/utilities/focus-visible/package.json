@@ -1,0 +1,42 @@
+{
+  "name": "@ui-collection-kit/focus-visible",
+  "version": "1.11.0",
+  "description": "Focus visible polyfill utility based on WICG",
+  "keywords": [
+    "js",
+    "utils",
+    "focus-visible",
+    "wicg"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/utilities/focus-visible",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+
+    "lint": "eslint src",
+
+
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@ui-collection-kit/dom-query": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  }
+}

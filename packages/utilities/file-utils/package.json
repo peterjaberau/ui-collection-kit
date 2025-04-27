@@ -1,0 +1,39 @@
+{
+  "name": "@ui-collection-kit/file-utils",
+  "version": "1.11.0",
+  "description": "JS File API utilities",
+  "keywords": [
+    "js",
+    "utils",
+    "file-utils"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "repository": "#/packages/utilities/file-utils",
+  "sideEffects": false,
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "dependencies": {
+    "@ui-collection-kit/i18n-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  }
+}

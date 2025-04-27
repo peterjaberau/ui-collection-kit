@@ -1,0 +1,45 @@
+{
+  "name": "@ui-collection-kit/presence",
+  "version": "1.11.0",
+  "description": "Core logic for the presence widget implemented as a state machine",
+  "keywords": [
+    "js",
+    "machine",
+    "xstate",
+    "statechart",
+    "component",
+    "chakra-ui",
+    "presence"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "repository": "#/packages/presence",
+  "sideEffects": false,
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "dependencies": {
+    "@ui-collection-kit/dom-query": "workspace:*",
+    "@ui-collection-kit/core": "workspace:*",
+    "@ui-collection-kit/types": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

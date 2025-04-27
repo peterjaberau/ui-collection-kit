@@ -1,0 +1,47 @@
+{
+  "name": "@ui-collection-kit/dismissable",
+  "version": "1.11.0",
+  "description": "Dismissable layer utilities for the DOM",
+  "keywords": [
+    "js",
+    "utils",
+    "dimissable",
+    "layer",
+    "close",
+    "signal",
+    "outside-click"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/utilities/interact-outside",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+
+    "lint": "eslint src",
+
+
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@ui-collection-kit/interact-outside": "workspace:*",
+    "@ui-collection-kit/dom-query": "workspace:*",
+    "@ui-collection-kit/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "main": "src/index.ts"
+}

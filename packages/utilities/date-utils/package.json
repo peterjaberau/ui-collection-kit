@@ -1,0 +1,40 @@
+{
+  "name": "@ui-collection-kit/date-utils",
+  "version": "1.11.0",
+  "description": "Date utilities for ui-collection-kit",
+  "keywords": [
+    "js",
+    "utils",
+    "date-utils"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "repository": "#/packages/utilities/date-utils",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "peerDependencies": {
+    "@internationalized/date": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@internationalized/date": "3.8.0",
+    "clean-package": "2.2.0"
+  }
+}

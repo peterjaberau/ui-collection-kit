@@ -1,0 +1,42 @@
+{
+  "name": "@ui-collection-kit/store",
+  "version": "1.11.0",
+  "description": "The reactive store package for ui-collection-kit machines",
+  "keywords": [
+    "js",
+    "utils",
+    "store",
+    "reactivity"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/utilities/store",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+
+    "lint": "eslint src",
+
+
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "dependencies": {
+    "proxy-compare": "3.0.1"
+  },
+  "clean-package": "../../clean-package.config.json",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  }
+}

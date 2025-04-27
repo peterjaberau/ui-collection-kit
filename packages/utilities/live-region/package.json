@@ -1,0 +1,38 @@
+{
+  "name": "@ui-collection-kit/live-region",
+  "version": "1.11.0",
+  "description": "Implementing live region for screen readers",
+  "keywords": [
+    "js",
+    "utils",
+    "live-region"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/utilities/live-region",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+
+    "lint": "eslint src",
+
+
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "main": "src/index.ts"
+}

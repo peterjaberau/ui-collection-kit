@@ -1,0 +1,41 @@
+{
+  "name": "@ui-collection-kit/auto-resize",
+  "version": "1.11.0",
+  "description": "Autoresize utilities for the web",
+  "keywords": [
+    "js",
+    "utils",
+    "auto-resize"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/utilities/auto-resize",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+
+    "lint": "eslint src",
+
+
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "dependencies": {
+    "@ui-collection-kit/dom-query": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "main": "src/index.ts"
+}

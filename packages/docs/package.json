@@ -1,0 +1,38 @@
+{
+  "name": "@ui-collection-kit/docs",
+  "version": "1.11.0",
+  "description": "Docs for ui-collection-kit machines",
+  "keywords": [
+    "ui-collection-kit",
+    "docs"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/api-docs",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "data",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup",
+
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "clean-package": "../../clean-package.config.json",
+  "main": "src/index.ts"
+}

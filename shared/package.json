@@ -1,0 +1,9 @@
+{
+  "name": "@ui-collection-kit/shared",
+  "version": "0.0.4",
+  "main": "src/index.ts",
+  "private": true,
+  "dependencies": {
+    "@ui-collection-kit/tour": "workspace:*"
+  }
+}

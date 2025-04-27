@@ -1,0 +1,40 @@
+{
+  "name": "@ui-collection-kit/dom-query",
+  "version": "1.11.0",
+  "description": "The dom helper library for ui-collection-kit machines",
+  "keywords": [
+    "js",
+    "utils",
+    "dom",
+    "query"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/utilities/dom-helpers",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "dependencies": {
+    "@ui-collection-kit/types": "workspace:*"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@ui-collection-kit/aria-hidden",
+  "version": "1.11.0",
+  "description": "Hide targets from screen readers",
+  "keywords": [
+    "js",
+    "utils",
+    "aria-hidden"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/utilities/aria-hidden",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+
+    "lint": "eslint src",
+
+
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  }
+}

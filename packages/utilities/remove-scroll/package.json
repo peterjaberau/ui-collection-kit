@@ -1,0 +1,38 @@
+{
+  "name": "@ui-collection-kit/remove-scroll",
+  "version": "1.11.0",
+  "description": "JavaScript utility to remove scroll on body",
+  "keywords": [
+    "js",
+    "utils",
+    "remove-scroll"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/utilities/remove-scroll",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@ui-collection-kit/dom-query": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "main": "src/index.ts"
+}

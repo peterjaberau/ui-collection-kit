@@ -1,0 +1,39 @@
+{
+  "name": "@ui-collection-kit/types",
+  "version": "1.11.0",
+  "keywords": [
+    "js",
+    "utils",
+    "utils"
+  ],
+
+  "homepage": "#",
+  "license": "MIT",
+  "repository": "#/packages/utilities/types",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "dependencies": {
+    "csstype": "3.1.3"
+  },
+  "scripts": {
+    "build": "tsup",
+
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "clean-package": "../../clean-package.config.json",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  }
+}
