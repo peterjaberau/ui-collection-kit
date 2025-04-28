@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Accordion',
+  title: 'Unstyled / Components / Accordion',
 }
 
 export default meta

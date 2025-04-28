@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Focus Trap',
+  title: 'Unstyled / Components / Focus Trap',
 }
 
 export default meta

@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Timer',
+  title: 'Unstyled / Components / Timer',
 }
 
 export default meta

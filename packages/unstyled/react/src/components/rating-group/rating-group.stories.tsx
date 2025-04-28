@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Rating Group',
+  title: 'Unstyled / Components / Rating Group',
 }
 
 export default meta

@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / File Upload',
+  title: 'Unstyled / Components / File Upload',
 }
 
 export default meta

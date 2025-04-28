@@ -1,5 +1,5 @@
 {
-  "name": "@ui-collection-kit/unstyled-react",
+  "name": "@ui-collection-kit/styled-react",
   "version": "5.6.0",
   "type": "module",
   "keywords": [
@@ -49,7 +49,7 @@
   "repository": {
     "type": "git",
     "url": "#",
-    "directory": "packages/unstyled/react"
+    "directory": "packages/styled/react"
   },
   "sideEffects": false,
   "files": [
@@ -57,8 +57,7 @@
   ],
   "scripts": {
     "build": "vite build",
-    "typecheck": "tsc",
-    "storybook": "storybook dev -p 6006"
+    "typecheck": "tsc"
   },
   "publishConfig": {
     "access": "public"
@@ -156,11 +155,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@storybook/addon-a11y": "8.6.12",
-    "@storybook/addon-essentials": "8.6.12",
     "@storybook/react": "8.6.12",
-    "@storybook/react-vite": "8.6.12",
-
     "@types/jsdom": "21.1.7",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
@@ -175,7 +170,6 @@
     "react-frame-component": "5.2.7",
     "react-hook-form": "7.56.0",
     "resize-observer-polyfill": "1.5.1",
-    "storybook": "8.6.12",
     "typescript": "5.8.3",
     "vite": "6.3.2",
     "vite-plugin-dts": "4.5.3"

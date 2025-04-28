@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Floating Panel',
+  title: 'Unstyled / Components / Floating Panel',
 }
 
 export default meta

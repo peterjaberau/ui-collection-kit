@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Splitter',
+  title: 'Unstyled / Components / Splitter',
 }
 
 export default meta

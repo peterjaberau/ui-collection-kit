@@ -1,0 +1,30 @@
+const config = {
+  arrowParens: 'always',
+  singleQuote: true,
+  jsxSingleQuote: true,
+  tabWidth: 2,
+  semi: true,
+  printWidth: 80,
+  plugins: ['@ianvs/prettier-plugin-sort-imports'],
+  importOrder: [
+    '^(react/(.*)$)|^(react$)',
+    '^(next/(.*)$)|^(next$)',
+    '<THIRD_PARTY_MODULES>',
+    '',
+    '^types$',
+    '^@/types/(.*)$',
+    '^@/config/(.*)$',
+    '^@/lib/(.*)$',
+    '^@/utils/(.*)$',
+    '^@/hooks/(.*)$',
+    '^@/components/ui/(.*)$',
+    '^@/components/(.*)$',
+    '^@/styles/(.*)$',
+    '^@/app/(.*)$',
+    '',
+    '^[./]',
+    '^~/icons/(.*)$',
+  ],
+};
+
+export default config;

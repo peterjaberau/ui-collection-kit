@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Number Input',
+  title: 'Unstyled / Components / Number Input',
 }
 
 export default meta

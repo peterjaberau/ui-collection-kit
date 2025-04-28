@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / PinInput',
+  title: 'Unstyled / Components / PinInput',
 }
 
 export default meta

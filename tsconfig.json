@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+//    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.js",  "**/*.js", "**/*.jsx", ".next/types/**/*.js"],
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "downlevelIteration": true,
@@ -10,7 +11,8 @@
     "jsx": "preserve",
     "noEmit": true,
     "lib": ["dom", "dom.iterable", "esnext"],
-    "target": "esnext",
+    "target": "ES2020",
+//    "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitReturns": false,
@@ -22,6 +24,18 @@
     "stripInternal": true,
     "ignoreDeprecations": "5.0",
     "types": ["vitest/globals"],
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "@/*": ["./*"],
+      "templates/*": ["../templates/*"],
+      "packages/*": ["../packages/*"],
+      "demos/*": ["../demos/*"],
+      "apps/*": ["../apps/*"],
+
+      "templates": ["../templates"],
+      "packages": ["../packages"],
+      "demos": ["../demos"],
+      "apps": ["../apps"]
+    }
   }
 }

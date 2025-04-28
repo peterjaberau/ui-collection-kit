@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Dialog',
+  title: 'Unstyled / Components / Dialog',
 }
 
 export default meta

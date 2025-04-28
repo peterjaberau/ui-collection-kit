@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["tailwindcss"],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/enforces-shorthand": "off",
+    "tailwindcss/enforces-negative-arbitrary-values": "off",
+    "tailwindcss/migration-from-tailwind-2": "off"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn", "cnExt", "tv"],
+      "config": "tailwind.config.ts"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Date Picker',
+  title: 'Unstyled / Components / Date Picker',
 }
 
 export default meta

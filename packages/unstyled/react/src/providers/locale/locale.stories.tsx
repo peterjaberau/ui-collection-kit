@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Providers / Locale',
+  title: 'Unstyled / Providers / Locale',
 }
 
 export default meta

@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Switch',
+  title: 'Unstyled / Components / Switch',
 }
 
 export default meta

@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Toggle Group',
+  title: 'Unstyled / Components / Toggle Group',
 }
 
 export default meta

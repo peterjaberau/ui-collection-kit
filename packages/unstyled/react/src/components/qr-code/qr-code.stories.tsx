@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / QR Code',
+  title: 'Unstyled / Components / QR Code',
 }
 
 export default meta

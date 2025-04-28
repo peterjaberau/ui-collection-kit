@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Radio Group',
+  title: 'Unstyled / Components / Radio Group',
 }
 
 export default meta

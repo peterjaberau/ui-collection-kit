@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Slider',
+  title: 'Unstyled / Components / Slider',
 }
 
 export default meta

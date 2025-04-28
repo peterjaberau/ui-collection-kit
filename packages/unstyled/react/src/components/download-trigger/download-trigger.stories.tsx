@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / DownloadTrigger',
+  title: 'Unstyled / Components / DownloadTrigger',
 }
 
 export default meta

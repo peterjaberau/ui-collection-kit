@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Progress / Linear',
+  title: 'Unstyled / Components / Progress / Linear',
 }
 
 export default meta

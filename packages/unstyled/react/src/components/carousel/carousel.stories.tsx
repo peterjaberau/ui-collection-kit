@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Carousel',
+  title: 'Unstyled / Components / Carousel',
 }
 
 export default meta
