@@ -265,6 +265,7 @@ const config = {
     './utils/**/*.{js,ts,jsx,tsx,mdx}',
 
   ],
+
   theme: {
     colors: {
       gray: {
@@ -605,19 +606,23 @@ const config = {
       keyframes: {
         'accordion-down': {
           from: { height: '0', opacity: '0' },
-          to: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
+          to: { height: '46px', opacity: '1' },
         },
         'accordion-up': {
           from: {
-            height: 'var(--radix-accordion-content-height)',
+            height: '46px',
             opacity: '1',
           },
           to: { height: '0', opacity: '0' },
         },
       },
+
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [
+      tailwindcssAnimate,
+
+  ],
 } satisfies Config;
 
 export default config;

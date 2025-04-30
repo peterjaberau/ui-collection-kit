@@ -291,16 +291,16 @@ const ButtonRoot = React.forwardRef<HTMLButtonElement, ButtonRootProps>(
 );
 ButtonRoot.displayName = BUTTON_ROOT_NAME;
 
-function ButtonIcon<T extends React.ElementType>({
+function ButtonIcon<T extends React.ElementType >({
   variant,
   mode,
   size,
   as,
   className,
   ...rest
-}: PolymorphicComponentProps<T, ButtonSharedProps>) {
+}: PolymorphicComponentProps<any, ButtonSharedProps>) {
   const Component = as || 'div';
-  const { icon } = buttonVariants({ mode, variant, size });
+  const { icon }: any = buttonVariants({ mode, variant, size });
 
   return <Component className={icon({ class: className })} {...rest} />;
 }

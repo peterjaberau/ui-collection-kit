@@ -1,5 +1,5 @@
 {
-  "name": "@ui-collection-kit/styled-react",
+  "name": "@ui-collection-kit/unstyled-react",
   "version": "5.6.0",
   "type": "module",
   "keywords": [
@@ -49,7 +49,7 @@
   "repository": {
     "type": "git",
     "url": "#",
-    "directory": "packages/styled/react"
+    "directory": "packages/unstyled/react"
   },
   "sideEffects": false,
   "files": [
@@ -127,7 +127,6 @@
     "@ui-collection-kit/remove-scroll": "workspace:*",
     "@ui-collection-kit/scroll-snap": "workspace:*",
     "@ui-collection-kit/select": "workspace:*",
-    "@ui-collection-kit/shared": "workspace:*",
     "@ui-collection-kit/signature-pad": "workspace:*",
     "@ui-collection-kit/slider": "workspace:*",
     "@ui-collection-kit/splitter": "workspace:*",

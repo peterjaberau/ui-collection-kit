@@ -27,15 +27,15 @@
     "verbatimModuleSyntax": true,
     "paths": {
       "@/*": ["./*"],
-      "templates/*": ["../templates/*"],
-      "packages/*": ["../packages/*"],
-      "demos/*": ["../demos/*"],
-      "apps/*": ["../apps/*"],
+      "@/templates/*": ["../templates/*"],
+      "@/packages/*": ["../packages/*"],
+      "@/demos/*": ["../demos/*"],
+      "@/apps/*": ["../apps/*"],
 
-      "templates": ["../templates"],
-      "packages": ["../packages"],
-      "demos": ["../demos"],
-      "apps": ["../apps"]
+      "@/templates": ["../templates"],
+      "@/packages": ["../packages"],
+      "@/demos": ["../demos"],
+      "@/apps": ["../apps"]
     }
   }
 }

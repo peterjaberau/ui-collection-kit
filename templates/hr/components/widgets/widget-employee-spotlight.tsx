@@ -24,7 +24,7 @@ function StickerFrame({
   children,
   className,
   ...rest
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: React.HTMLAttributes<HTMLDivElement> | any): any {
   return (
     <div
       className={cnExt('relative mx-auto h-[156px] w-full max-w-80', className)}
@@ -50,7 +50,7 @@ function CommentItem({
   };
   message: string;
   defaultLiked?: boolean;
-}) {
+}): any {
   const [liked, setLiked] = React.useState(defaultLiked);
 
   return (
@@ -84,7 +84,7 @@ function CommentItem({
 
 export default function WidgetEmployeeSpotlight({
   ...rest
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: React.HTMLAttributes<HTMLDivElement> | any) {
   return (
     <WidgetBox.Root {...rest}>
       <WidgetBox.Header>

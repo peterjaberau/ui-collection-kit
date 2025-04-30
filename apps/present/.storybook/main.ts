@@ -10,8 +10,9 @@ function getAbsolutePath(value: string): any {
 const config: StorybookConfig = {
   stories: [
       '../../../packages/unstyled/react/src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    '../../../packages/styled/react/src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     '../../../templates/starter/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../../../demos/react-lite/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+
   ],
   addons: [
       '@storybook/addon-a11y',

@@ -1,0 +1,56 @@
+import type { Meta } from '@storybook/react'
+// import "../styles/machines/index.css"
+// import "../styles/globals.css"
+
+const meta: Meta = {
+    title: 'React Lite / Machines',
+}
+
+
+export default meta
+
+export { Accordion } from '../components/ui-machines/accordion'
+export { AngleSlider } from '../components/ui-machines/angle-slider'
+export { Avatar } from '../components/ui-machines/avatar'
+export { Carousel } from '../components/ui-machines/carousel'
+export { Checkbox } from '../components/ui-machines/checkbox'
+export { Clipboard } from '../components/ui-machines/clipboard'
+export { Collapsible } from '../components/ui-machines/collapsible'
+export { ColorPicker } from '../components/ui-machines/color-picker'
+export { Combobox } from '../components/ui-machines/combobox'
+export { ContextMenu } from '../components/ui-machines/context-menu'
+export { DatePicker } from '../components/ui-machines/date-picker'
+export { Dialog } from '../components/ui-machines/dialog'
+export { Editable } from '../components/ui-machines/editable'
+export { FileUpload } from '../components/ui-machines/file-upload'
+export { FloatingPanel } from '../components/ui-machines/floating-panel'
+export { HoverCard } from '../components/ui-machines/hover-card'
+export { Listbox } from '../components/ui-machines/listbox'
+export { Menu } from '../components/ui-machines/menu'
+export { NestedMenu } from '../components/ui-machines/nested-menu'
+export { NumberInput } from '../components/ui-machines/number-input'
+export { Pagination } from '../components/ui-machines/pagination'
+export { PinInput } from '../components/ui-machines/pin-input'
+export { Popover } from '../components/ui-machines/popover'
+export { Presence } from '../components/ui-machines/presence'
+export { ProgressCircular } from '../components/ui-machines/progress-circular'
+export { ProgressLinear } from '../components/ui-machines/progress-linear'
+export { QrCode } from '../components/ui-machines/qr-code'
+export { Radio } from '../components/ui-machines/radio'
+export { RangeSlider } from '../components/ui-machines/range-slider'
+export { Rating } from '../components/ui-machines/rating'
+export { SegmentedControl } from '../components/ui-machines/segmented-control'
+export { Select } from '../components/ui-machines/select'
+export { SignaturePad } from '../components/ui-machines/signature-pad'
+export { Slider } from '../components/ui-machines/slider'
+export { Splitter } from '../components/ui-machines/splitter'
+export { Steps } from '../components/ui-machines/steps'
+export { Switch } from '../components/ui-machines/switch'
+export { Tabs } from '../components/ui-machines/tabs'
+export { TagsInput } from '../components/ui-machines/tags-input'
+export { TimePicker } from '../components/ui-machines/time-picker'
+export { ToastGroup } from '../components/ui-machines/toast'
+export { ToggleGroup } from '../components/ui-machines/toggle-group'
+export { Tooltip } from '../components/ui-machines/tooltip'
+export { Tour } from '../components/ui-machines/tour'
+export { TreeView } from '../components/ui-machines/tree-view'

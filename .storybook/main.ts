@@ -7,8 +7,8 @@ import path from 'path';
 const config: StorybookConfig = {
   stories: [
     "../templates/starter/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../packages/styled/react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../packages/unstyled/react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../demos/react-lite/**/*.stories.@(js|jsx|mjs|ts|tsx)",
 
   ],
   addons: [
@@ -38,6 +38,9 @@ const config: StorybookConfig = {
             require('autoprefixer'),
           ],
         },
+      },
+      esbuild: {
+        jsx: 'automatic',
       },
     });
   },

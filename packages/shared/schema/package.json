@@ -1,0 +1,7 @@
+{
+  "name": "@ui-collection-kit/schema",
+  "version": "0.0.4",
+  "main": "src/index.ts",
+  "private": true
+
+}

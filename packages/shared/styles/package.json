@@ -1,0 +1,15 @@
+{
+  "name": "@ui-collection-kit/styles",
+  "version": "0.0.4",
+  "main": "src/index.ts",
+  "private": true,
+  "dependencies": {
+    "merge-refs": "^1.3.0",
+    "tailwind-merge": "^2.5.4",
+    "tailwind-variants": "^0.2.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}

@@ -6,6 +6,15 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "template-starter": "pnpm --filter \"./templates/starter\"",
+    "start-template-starter": "pnpm template-starter dev",
+    "template-hr": "pnpm --filter \"./templates/hr\"",
+    "start-template-hr": "pnpm template-hr dev",
+
+    "demos-react-lite": "pnpm --filter \"./demos/react-lite\"",
+    "start-demos-react-lite": "pnpm demos-react-lite dev",
+
+
     "present-storybook": "pnpm --filter \"./apps/present\"",
     "start-present-storybook": "pnpm present-storybook storybook",
     "packages": "pnpm --filter=./packages/** -r",
