@@ -1,0 +1,215 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FlowProps",
+  "type": "object",
+  "properties": {
+    "initialValues": {
+      "type": "object",
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {}
+        },
+        "edges": {}
+      }
+    },
+    "layout": {
+      "type": "string",
+      "enum": ["LR", "TB"]
+    },
+    "widgets": {},
+    "settings": {
+      "type": "array",
+      "items": {
+        "anyOf": [{ "$ref": "#/definitions/TNodeGroup" }, { "$ref": "#/definitions/TNodeItem" }]
+      }
+    },
+    "nodeSelector": { "$ref": "#/definitions/TNodeSelector" },
+    "iconFontUrl": { "type": "string" },
+    "globalConfig": {
+      "type": "object",
+      "properties": {
+        "nodePanel": { "$ref": "#/definitions/TNodePanel" },
+        "nodeView": { "$ref": "#/definitions/TNodeView" },
+        "edge": { "$ref": "#/definitions/TEdge" },
+        "controls": { "$ref": "#/definitions/TControl" },
+        "handle": { "$ref": "#/definitions/THandle" },
+        "deleteKeyCode": {
+          "anyOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }, { "type": "null" }]
+        }
+      }
+    },
+    "logPanel": { "$ref": "#/definitions/TLogPanel" },
+    "readOnly": { "type": "boolean" }
+  },
+  "required": ["settings"],
+  "definitions": {
+    "TNodeItem": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "hidden": { "type": "boolean" },
+        "icon": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string" },
+            "bgColor": { "type": "string" }
+          },
+          "required": ["type", "bgColor"]
+        },
+        "settingSchema": {},
+        "settingWidget": { "type": "string" },
+        "settingWidgetProps": { "type": "object" },
+        "hideDesc": { "type": "boolean" },
+        "nodePanel": {
+          "type": "object",
+          "properties": {
+            "width": { "anyOf": [{ "type": "string" }, { "type": "number" }] },
+            "hideDesc": { "type": "boolean" }
+          }
+        },
+        "switchExtra": {
+          "type": "object",
+          "properties": {
+            "hideElse": { "type": "boolean" },
+            "valueKey": { "type": "string" },
+            "titleKey": { "type": "string" }
+          },
+          "required": ["hideElse", "valueKey", "titleKey"]
+        },
+        "parallelExtra": {
+          "type": "object",
+          "properties": {
+            "valueKey": { "type": "string" },
+            "titleKey": { "type": "string" }
+          },
+          "required": ["valueKey", "titleKey"]
+        },
+        "disabledCopy": { "type": "boolean" },
+        "disabledDelete": { "type": "boolean" }
+      },
+      "required": ["title", "type", "icon", "switchExtra", "parallelExtra"]
+    },
+    "TNodeGroup": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "type": { "const": "_group" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/TNodeItem" }
+        }
+      },
+      "required": ["title", "type", "items"]
+    },
+    "TNodePanel": {
+      "type": "object",
+      "properties": {
+        "width": { "anyOf": [{ "type": "string" }, { "type": "number" }] },
+        "hideDesc": { "type": "boolean" }
+      }
+    },
+    "TNodeSelector": {
+      "type": "object",
+      "properties": {
+        "showSearch": { "type": "boolean" },
+        "items": {
+          "type": "array",
+          "items": {
+            "anyOf": [{ "$ref": "#/definitions/TNodeGroup" }, { "$ref": "#/definitions/TNodeItem" }]
+          }
+        }
+      },
+      "required": ["showSearch"]
+    },
+    "TLogPanel": {
+      "type": "object",
+      "properties": {
+        "logList": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/TLogListItem" }
+        },
+        "loading": { "type": "boolean" },
+        "logWidget": { "type": "string" },
+        "width": { "type": "number" }
+      },
+      "required": ["logList"]
+    },
+    "TLogListItem": {
+      "type": "object",
+      "properties": {
+        "statusPanel": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": { "type": "string" },
+                  "value": { "type": "string" },
+                  "isBadge": { "type": "boolean" }
+                },
+                "required": ["label"]
+              }
+            },
+            "extra": {}
+          }
+        },
+        "codePanel": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "code": { "type": "string" }
+            },
+            "required": ["title", "code"]
+          }
+        },
+        "nodeId": { "type": "string" }
+      },
+      "required": ["nodeId"]
+    },
+    "TNodeView": {
+      "type": "object",
+      "properties": {
+        "hideTitleTips": { "type": "boolean" },
+        "status": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "color": { "type": "string" }
+            },
+            "required": ["name", "color"]
+          }
+        }
+      }
+    },
+    "TEdge": {
+      "type": "object",
+      "properties": {
+        "hideEdgeAddBtn": { "type": "boolean" },
+        "hideEdgeDelBtn": { "type": "boolean" },
+        "deletable": { "type": "boolean" }
+      }
+    },
+    "TControl": {
+      "type": "object",
+      "properties": {
+        "hideAddNode": { "type": "boolean" },
+        "hideAnnotate": { "type": "boolean" }
+      }
+    },
+    "THandle": {
+      "type": "object",
+      "properties": {
+        "isValidConnection": {}
+      }
+    }
+  }
+}

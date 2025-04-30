@@ -7,4 +7,6 @@ const meta: Meta = {
 
 export default meta
 
-export { Accordion } from '../components/ui-ark/stories/demo.accordion'
+export { AccordionStory } from '../components/ui-ark/stories/demo.accordion'
+export { AlertStory } from '../components/ui-ark/stories/demo.alert'
+export { AvatarStory } from '../components/ui-ark/stories/demo.avatar'

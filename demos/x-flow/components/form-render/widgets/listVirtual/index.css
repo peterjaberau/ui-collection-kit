@@ -1,0 +1,42 @@
+.fr-virtual-list {
+  margin-bottom: 12px;
+
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+
+  .ant-form-item-label {
+    display: none;
+  }
+
+  .ant-form-item-explain-error {
+    display: none;
+  }
+
+  .fr-list-item-operate {
+    gap: 0 !important;
+  }
+}
+
+.fr-popover-error {
+  .ant-popover-inner-content {
+    color: #ff4d4f !important;
+  }
+}
+
+.fr-virtual-list-no-popover {
+  .ant-table-tbody {
+    .ant-table-cell {
+      padding: 24px 8px 0px 8px !important;
+    }
+  }
+
+  .ant-form-item {
+    margin-bottom: 24px;
+  }
+
+  .ant-form-item-explain-error {
+    display: block;
+    font-size: 10px;
+  }
+}

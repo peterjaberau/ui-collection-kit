@@ -1,0 +1,36 @@
+.fr-search {
+  width: 100%;
+  background: #fff;
+  padding: 24px 24px 0 16px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  position: relative;
+
+  .search-action-col {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    height: 56px;
+  }
+
+  .search-action-fixed {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding-right: 24px !important;
+  }
+
+  .search-action-column {
+    height: auto;
+  }
+
+  .fr-form > .ant-row {
+    align-items: center;
+  }
+}
+
+.fr-column-search {
+  padding-left: 24px;
+}

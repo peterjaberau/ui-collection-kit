@@ -1,0 +1,24 @@
+.fai-reactflow-control {
+  display: flex;
+  align-items: center;
+  padding: 2px 1px;
+  border-radius: 8px;
+  border: 0.5px solid #f3f4f6;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: #667085;
+  margin-left: 10px;
+
+  .ant-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.separator {
+  margin: 0 4px;
+  width: 1px;
+  height: 18px;
+  background-color: #e5e7eb;
+}

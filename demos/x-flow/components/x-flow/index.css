@@ -1,0 +1,10 @@
+#xflow-container {
+  height: 100%;
+  width: 100%;
+  background: #f0f2f7;
+  position: relative;
+
+  .react-flow__attribution {
+    display: none;
+  }
+}

@@ -1,0 +1,90 @@
+.custom-node-start {
+  width: 240px;
+  padding: 0 12px;
+  background: #fff;
+  border-radius: 12px;
+
+  .title {
+    display: flex;
+    height: 50px;
+    align-items: center;
+
+    span {
+      font-weight: bold;
+      margin-left: 8px;
+    }
+  }
+}
+
+.custom-node-switch-setting {
+  .fr-list-simple,
+  .ant-form-item,
+  .fr-panel,
+  .fr-inline-container {
+    width: 100%;
+  }
+}
+
+.node-parallel-widget {
+  width: 100%;
+
+  .item-header {
+    position: relative;
+
+    .item-title {
+      text-align: right;
+      font-weight: 600;
+      min-height: 28px;
+
+      .ant-typography {
+        margin-bottom: 0;
+      }
+    }
+
+    .item-handle {
+      right: -11px;
+      top: 9px;
+
+      .xflow-node-add-box {
+        right: 4px;
+      }
+    }
+  }
+
+  .item-content {
+    margin: 5px 0;
+
+    .item-content-in {
+      background-color: #f2f4f7;
+      border-radius: 6px;
+      padding: 6px;
+      word-wrap: break-word;
+      text-align: justify;
+    }
+  }
+}
+
+.node-parallel-widget-bottom {
+  width: 100%;
+  align-items: end;
+
+  .node-parallel-bottom-item {
+    width: 100px;
+
+    .item-header {
+      .item-title {
+        text-align: center;
+        font-weight: 600;
+        min-width: 50px;
+
+        .ant-typography {
+          margin-bottom: 0;
+        }
+      }
+
+      .item-handle {
+        top: 0px;
+      }
+    }
+  }
+}

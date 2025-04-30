@@ -1,0 +1,32 @@
+.fr-hide-label > .ant-form-item-row > .ant-form-item-label {
+  visibility: hidden;
+}
+
+.fr-field {
+  .ant-form-item-row {
+    flex-wrap: nowrap;
+  }
+  .ant-form-item-control-input-content {
+    display: flex;
+  }
+}
+
+.fr-field-visibility {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+}
+
+.fr-form {
+  .ant-form-item-control {
+    width: 0;
+  }
+
+  .fr-inline-field {
+    .ant-form-item-control {
+      width: auto;
+    }
+  }
+}

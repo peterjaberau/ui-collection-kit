@@ -11,6 +11,9 @@
     "template-hr": "pnpm --filter \"./templates/hr\"",
     "start-template-hr": "pnpm template-hr dev",
 
+    "demos-x-flow": "pnpm --filter \"./demos/x-flow\"",
+    "start-demos-x-flow": "pnpm demos-x-flow dev",
+
     "demos-react-lite": "pnpm --filter \"./demos/react-lite\"",
     "start-demos-react-lite": "pnpm demos-react-lite dev",
 

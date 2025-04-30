@@ -3,7 +3,7 @@
 'use client';
 
 import * as React from 'react';
-import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { Accordion as A, ark } from "@ui-collection-kit/unstyled-react";
 import { cn } from '../../utils/cn';
 import type { PolymorphicComponentProps } from '../../utils/polymorphic';
 import { RiAddLine, RiSubtractLine } from '@remixicon/react';
@@ -14,15 +14,15 @@ const ACCORDION_ARROW_NAME = 'AccordionArrow';
 const ACCORDION_TRIGGER_NAME = 'AccordionTrigger';
 const ACCORDION_CONTENT_NAME = 'AccordionContent';
 
-const AccordionRoot = AccordionPrimitive.Root;
-const AccordionHeader = AccordionPrimitive.Header;
+const AccordionRoot = A.Root;
+const AccordionHeader = A.ItemTrigger;
 
 const AccordionItem = React.forwardRef<
-  React.ComponentRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
+  React.ComponentRef<typeof A.Item>,
+  React.ComponentPropsWithoutRef<typeof A.Item>
 >(({ className, ...rest }, forwardedRef) => {
   return (
-    <AccordionPrimitive.Item
+    <A.Item
       ref={forwardedRef}
       className={cn(
         // base
@@ -44,11 +44,11 @@ const AccordionItem = React.forwardRef<
 AccordionItem.displayName = ACCORDION_ITEM_NAME;
 
 const AccordionTrigger = React.forwardRef<
-  React.ComponentRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+  React.ComponentRef<typeof A.ItemTrigger>,
+  React.ComponentPropsWithoutRef<typeof A.ItemTrigger>
 >(({ children, className, ...rest }, forwardedRef) => {
   return (
-    <AccordionPrimitive.Trigger
+    <A.ItemTrigger
       ref={forwardedRef}
       className={cn(
         // base
@@ -62,7 +62,7 @@ const AccordionTrigger = React.forwardRef<
       {...rest}
     >
       {children}
-    </AccordionPrimitive.Trigger>
+    </A.ItemTrigger>
   );
 });
 AccordionTrigger.displayName = ACCORDION_TRIGGER_NAME;
@@ -124,11 +124,11 @@ function AccordionArrow({
 AccordionArrow.displayName = ACCORDION_ARROW_NAME;
 
 const AccordionContent = React.forwardRef<
-  React.ComponentRef<typeof AccordionPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
+  React.ComponentRef<typeof A.ItemContent>,
+  React.ComponentPropsWithoutRef<typeof A.ItemContent>
 >(({ children, className, ...rest }, forwardedRef) => {
   return (
-    <AccordionPrimitive.Content
+    <A.ItemContent
       ref={forwardedRef}
       className='overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down'
       {...rest}
@@ -138,7 +138,7 @@ const AccordionContent = React.forwardRef<
       >
         {children}
       </div>
-    </AccordionPrimitive.Content>
+    </A.ItemContent>
   );
 });
 AccordionContent.displayName = ACCORDION_CONTENT_NAME;
