@@ -6,6 +6,15 @@ import { StoryBlock } from './templates/story.block';
 import {
   RiSquareLine,
 } from '@remixicon/react';
+import { Slottable } from '@radix-ui/react-slot';
+import * as ButtonPrimitives from '../ui/button';
+import {
+  RiArrowLeftSLine,
+  RiArrowRightSLine,
+  RiFileCopyLine,
+  type RemixiconComponentType,
+} from '@remixicon/react';
+
 
 export const ButtonStory = () => {
   return (
@@ -78,9 +87,97 @@ export const ButtonStory = () => {
 
       </StoryBlock>
 
-      <StoryBlock title='Size' icon={RiSquareLine}>
+
+
+      <StoryBlock title='Error' icon={RiSquareLine}>
+        <div className='flex flex-col items-center gap-4'>
+          <Button.Root variant='error' mode='filled'>
+            Try Again
+          </Button.Root>
+          <Button.Root variant='error' mode='stroke'>
+            Try Again
+          </Button.Root>
+          <Button.Root variant='error' mode='lighter'>
+            Try Again
+          </Button.Root>
+          <Button.Root variant='error' mode='ghost'>
+            Try Again
+          </Button.Root>
+        </div>
+      </StoryBlock>
+
+
+      <StoryBlock title='Button Disabled' icon={RiSquareLine}>
+
+          <div className='flex flex-col items-center gap-4'>
+            <Button.Root disabled>Disabled</Button.Root>
+            <Button.Root mode='stroke' disabled>
+              Disabled
+            </Button.Root>
+            <Button.Root mode='lighter' disabled>
+              Disabled
+            </Button.Root>
+            <Button.Root mode='ghost' disabled>
+              Disabled
+            </Button.Root>
+          </div>
+      </StoryBlock>
+
+
+
+      <StoryBlock title='Button With Icon' icon={RiSquareLine}>
+
+        <div className='flex flex-col items-center gap-4'>
+          <Button.Root>
+            Button
+            <Button.Icon as={RiArrowRightSLine} />
+          </Button.Root>
+
+          <Button.Root>
+            <Button.Icon as={RiFileCopyLine} />
+          </Button.Root>
+        </div>
+      </StoryBlock>
+
+
+      <StoryBlock title='Button Full Width' icon={RiSquareLine}>
+        <div className='mx-auto w-full max-w-96'>
+          <Button.Root variant='neutral' className='w-full'>
+            Learn More
+          </Button.Root>
+        </div>
+
 
       </StoryBlock>
+
+      <StoryBlock title='Button As Child' icon={RiSquareLine}>
+        <div className='flex flex-col items-center gap-4'>
+          <Button.Root asChild>
+            <a href='#'>As link</a>
+          </Button.Root>
+        </div>
+      </StoryBlock>
+
+
+
+      <StoryBlock title='Button Primitives' icon={RiSquareLine}>
+        <div className='flex flex-col items-center gap-4'>
+
+          leadingIcon?: RemixiconComponentType;
+          trailingIcon?: RemixiconComponentType;
+
+          Error
+
+
+        </div>
+      </StoryBlock>
+
+
+
+
+
+
+
 
     </StoryPage>
   );
