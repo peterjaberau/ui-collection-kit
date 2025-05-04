@@ -7,7 +7,7 @@ import { defaultSystem, SuiProvider } from "../packages/saas/src/react"
 
 import React from "react"
 // import "./styles/tailwind.css"
-import "./styles/tailwind.css"
+// import "./styles/tailwind.css"
 // import "./styles/styles.css"
 
 const preview: Preview = {
