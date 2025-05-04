@@ -8,7 +8,7 @@ import { yupResolver } from '../yup'
 import { onSubmit } from './helpers'
 
 export default {
-  title: 'Forms/DisplayIf',
+  title: 'SaasUI/Forms/DisplayIf',
   decorators: [
     (Story: any) => (
       <Container mt="40px">

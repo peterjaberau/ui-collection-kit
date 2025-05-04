@@ -3,7 +3,7 @@ import React from 'react'
 import { Spinner } from './spinner'
 
 export default {
-  title: 'Components/Spinner',
+  title: 'SaasUI/Components/Spinner',
   component: Spinner,
 }
 

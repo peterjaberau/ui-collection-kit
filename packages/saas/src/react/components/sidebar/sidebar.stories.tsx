@@ -131,7 +131,7 @@ function SidebarLayout(props: { children: React.ReactElement }) {
 }
 
 export default {
-  title: 'Components/Sidebar',
+  title: 'SaasUI/Components/Sidebar',
   parameters: { layout: 'fullscreen' },
   component: Sidebar.Root,
   decorators: [
@@ -254,6 +254,7 @@ export const Default: Story = {
                       <Icon
                         ms="1"
                         transition="transform"
+                        //@ts-ignore
                         _groupOpen={{ transform: 'rotate(90deg)' }}
                       >
                         <RiArrowRightSFill />
@@ -282,6 +283,7 @@ export const Default: Story = {
                         <Spacer />
                         <Sidebar.NavButtonEndElement
                           opacity="0"
+                          //@ts-ignore
                           _parentHover={{
                             opacity: 0.6,
                             _hover: { opacity: 1 },
@@ -305,6 +307,7 @@ export const Default: Story = {
                         <Spacer />
                         <Sidebar.NavButtonEndElement
                           opacity="0"
+                          //@ts-ignore
                           _parentHover={{
                             opacity: 0.6,
                             _hover: { opacity: 1 },

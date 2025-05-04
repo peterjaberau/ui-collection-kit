@@ -24,7 +24,7 @@ import sourceDemoText from "./text?raw";
             
 
 const meta = {
-  title: 'Base/Switch',
+  title: 'Antd/Base/Switch',
   component: Switch,
 } satisfies Meta<typeof Switch>;
 

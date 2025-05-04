@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 import type { HTMLChakraProps } from '@chakra-ui/react'
-import { MaybeRenderProp, runIfFn } from '../../core/utils'
-import { Dialog as BaseDialog } from '../../react/components/dialog'
+import { MaybeRenderProp, runIfFn } from '../core/utils'
+import { Dialog as BaseDialog } from '../react/components/dialog'
 
 export interface ModalProps extends Omit<BaseDialog.RootProps, 'children'> {
   /**

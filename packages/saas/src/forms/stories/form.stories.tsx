@@ -26,7 +26,7 @@ import { GetBaseField } from '../components/types'
 import { onSubmit } from './helpers'
 
 export default {
-  title: 'Forms/useForm',
+  title: 'SaasUI/Forms/useForm',
   decorators: [
     (Story: any) => (
       <FieldsProvider

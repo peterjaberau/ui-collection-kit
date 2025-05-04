@@ -6,7 +6,7 @@ import { FiMinus, FiPhone } from 'react-icons/fi'
 import { Persona } from './persona'
 
 export default {
-  title: 'Components/Persona',
+  title: 'SaasUI/Components/Persona',
   decorators: [
     (Story: any) => (
       <Container mt="40px">

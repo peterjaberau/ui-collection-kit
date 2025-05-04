@@ -24,7 +24,7 @@ import sourceDemoBasic from "./basic?raw";
             
 
 const meta = {
-  title: 'Base/Flex',
+  title: 'Antd/Base/Flex',
   component: Flex,
 } satisfies Meta<typeof Flex>;
 

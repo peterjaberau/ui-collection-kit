@@ -36,7 +36,7 @@ import sourceDemoResponsive from "./responsive?raw";
             
 
 const meta = {
-  title: 'Base/List',
+  title: 'Antd/Base/List',
   component: List,
 } satisfies Meta<typeof List>;
 

@@ -2,10 +2,10 @@ import * as React from 'react'
 
 import { Container, Heading } from '@chakra-ui/react'
 
-import { DisplayIf, Field, Form, FormLayout, SubmitButton } from '..'
+import { DisplayIf, Field, Form, FormLayout, SubmitButton } from '../components'
 
 export default {
-  title: 'Forms/FormLayout',
+  title: 'SaasUI/Forms/FormLayout',
   decorators: [
     (Story: any) => (
       <Container mt="40px">

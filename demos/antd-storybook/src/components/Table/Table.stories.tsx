@@ -156,7 +156,7 @@ import sourceDemoResponsive from "./responsive?raw";
             
 
 const meta = {
-  title: 'Base/Table',
+  title: 'Antd/Base/Table',
   component: Table,
 } satisfies Meta<typeof Table>;
 

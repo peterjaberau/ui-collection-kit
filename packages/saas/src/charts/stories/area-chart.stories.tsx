@@ -13,7 +13,7 @@ import { AreaChart } from '..'
 import { createData } from './utils'
 
 export default {
-  title: 'Visualization/AreaChart',
+  title: 'SaasUI/Visualization/AreaChart',
   component: AreaChart,
   decorators: [
     (Story: React.ComponentType) => (

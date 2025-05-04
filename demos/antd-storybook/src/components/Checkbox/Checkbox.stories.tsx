@@ -32,7 +32,7 @@ import sourceDemoBasic from "./basic?raw";
             
 
 const meta = {
-  title: 'Base/Checkbox',
+  title: 'Antd/Base/Checkbox',
   component: Checkbox,
 } satisfies Meta<typeof Checkbox>;
 

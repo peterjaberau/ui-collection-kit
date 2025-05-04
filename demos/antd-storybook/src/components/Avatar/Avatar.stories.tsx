@@ -32,7 +32,7 @@ import sourceDemoResponsive from "./responsive?raw";
             
 
 const meta = {
-  title: 'Base/Avatar',
+  title: 'Antd/Base/Avatar',
   component: Avatar,
 } satisfies Meta<typeof Avatar>;
 

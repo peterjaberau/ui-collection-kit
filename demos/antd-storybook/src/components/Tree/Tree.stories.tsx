@@ -52,7 +52,7 @@ import sourceDemoVirtualScroll from "./virtual-scroll?raw";
             
 
 const meta = {
-  title: 'Base/Tree',
+  title: 'Antd/Base/Tree',
   component: Tree,
 } satisfies Meta<typeof Tree>;
 

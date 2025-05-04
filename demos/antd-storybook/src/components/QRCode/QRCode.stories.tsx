@@ -44,7 +44,7 @@ import sourceDemoCustomSize from "./customSize?raw";
             
 
 const meta = {
-  title: 'Base/QRCode',
+  title: 'Antd/Base/QRCode',
   component: QRCode,
 } satisfies Meta<typeof QRCode>;
 

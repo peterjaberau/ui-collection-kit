@@ -13,7 +13,7 @@ import { Tag } from '../tag/index'
 import { GridList } from './index'
 
 export default {
-  title: 'Components/GridList',
+  title: 'SaasUI/Components/GridList',
   component: GridList.Root,
   decorators: [
     (Story: any) => (

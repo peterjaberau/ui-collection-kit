@@ -12,7 +12,7 @@ import DemoOnChangeComp from './on-change';
 import sourceDemoOnChange from './on-change?raw';
 
 const meta = {
-  title: 'Base/Affix',
+  title: 'Antd/Base/Affix',
   component: Affix,
 } satisfies Meta<typeof Affix>;
 

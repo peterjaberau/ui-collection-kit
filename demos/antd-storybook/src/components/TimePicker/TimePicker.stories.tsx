@@ -68,7 +68,7 @@ import sourceDemoRangePicker from "./range-picker?raw";
             
 
 const meta = {
-  title: 'Base/TimePicker',
+  title: 'Antd/Base/TimePicker',
   component: TimePicker,
 } satisfies Meta<typeof TimePicker>;
 

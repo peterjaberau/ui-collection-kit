@@ -44,7 +44,7 @@ import sourceDemoSmoothClosed from "./smooth-closed?raw";
             
 
 const meta = {
-  title: 'Base/Alert',
+  title: 'Antd/Base/Alert',
   component: Alert,
 } satisfies Meta<typeof Alert>;
 

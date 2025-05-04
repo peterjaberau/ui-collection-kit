@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Link } from './'
 
 export default {
-  title: 'Components/Link',
+  title: 'SaasUI/Components/Link',
   component: Link,
 } as Meta
 

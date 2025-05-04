@@ -3,7 +3,7 @@ import React from 'react'
 import { Breadcrumb } from './index'
 
 export default {
-  title: 'Components/Breadcrumbs',
+  title: 'SaasUI/Components/Breadcrumbs',
   component: Breadcrumb.Root,
 }
 

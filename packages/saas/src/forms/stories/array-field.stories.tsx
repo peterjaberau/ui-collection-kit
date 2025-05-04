@@ -28,7 +28,7 @@ import { Form as YupForm } from '../yup'
 import { onSubmit } from './helpers'
 
 export default {
-  title: 'Forms/ArrayField',
+  title: 'SaasUI/Forms/ArrayField',
   decorators: [
     (Story: any) => (
       <Container mt="40px">

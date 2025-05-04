@@ -7,7 +7,7 @@ import { Meta, type StoryObj } from '@storybook/react'
 import { Checkbox } from './checkbox'
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'SaasUI/Components/Checkbox',
   component: Checkbox,
 }
 

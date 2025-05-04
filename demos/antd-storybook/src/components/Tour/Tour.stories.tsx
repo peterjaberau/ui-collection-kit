@@ -32,7 +32,7 @@ import sourceDemoNonModal from "./non-modal?raw";
             
 
 const meta = {
-  title: 'Base/Tour',
+  title: 'Antd/Base/Tour',
   component: Tour,
 } satisfies Meta<typeof Tour>;
 

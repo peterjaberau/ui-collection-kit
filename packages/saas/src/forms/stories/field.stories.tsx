@@ -29,7 +29,7 @@ import {
 import { onSubmit } from './helpers'
 
 export default {
-  title: 'Forms/Field',
+  title: 'SaasUI/Forms/Field',
   decorators: [
     (Story: any) => (
       <Container mt="40px" maxWidth="lg">

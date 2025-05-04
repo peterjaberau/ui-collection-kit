@@ -6,7 +6,7 @@ import {
   chakra,
   useSlotRecipe,
 } from '@chakra-ui/react'
-import { cx, dataAttr } from '../../core/utils'
+import { cx, dataAttr } from '../core/utils'
 import { useNProgress } from '@tanem/react-nprogress'
 
 import { nprogressSlotRecipe } from './nprogress.recipe'

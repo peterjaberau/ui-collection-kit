@@ -10,7 +10,7 @@ import { createZodForm, zodMeta } from '../zod'
 import { onSubmit } from './helpers'
 
 export default {
-  title: 'Forms/AutoForm',
+  title: 'SaasUI/Forms/AutoForm',
   decorators: [
     (Story: any) => (
       <Container mt="40px">

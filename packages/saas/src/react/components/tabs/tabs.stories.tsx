@@ -6,7 +6,7 @@ import { LuFolder, LuSlidersHorizontal, LuUser } from 'react-icons/lu'
 import { Tabs } from './index'
 
 export default {
-  title: 'Components/Tabs',
+  title: 'SaasUI/Components/Tabs',
 }
 
 export const Basic = () => {

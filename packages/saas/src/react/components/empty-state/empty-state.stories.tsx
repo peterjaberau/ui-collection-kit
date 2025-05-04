@@ -6,7 +6,7 @@ import { LuBadgeX, LuFolder } from 'react-icons/lu'
 import { EmptyState } from './index'
 
 export default {
-  title: 'Components/Empty State',
+  title: 'SaasUI/Components/Empty State',
   component: EmptyState,
 }
 

@@ -3,7 +3,7 @@ import { Stack, createListCollection } from '@chakra-ui/react'
 import { Select } from './index'
 
 export default {
-  title: 'Components/Select',
+  title: 'SaasUI/Components/Select',
   component: Select,
 }
 

@@ -44,7 +44,7 @@ import sourceDemoCollapsible from "./collapsible?raw";
             
 
 const meta = {
-  title: 'Base/Collapse',
+  title: 'Antd/Base/Collapse',
   component: Collapse,
 } satisfies Meta<typeof Collapse>;
 

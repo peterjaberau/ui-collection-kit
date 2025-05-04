@@ -20,7 +20,7 @@ import sourceDemoBasic from "./basic?raw";
             
 
 const meta = {
-  title: 'Base/Statistic',
+  title: 'Antd/Base/Statistic',
   component: Statistic,
 } satisfies Meta<typeof Statistic>;
 

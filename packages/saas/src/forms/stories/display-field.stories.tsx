@@ -2,11 +2,11 @@ import * as React from 'react'
 
 import { Container } from '@chakra-ui/react'
 
-import { DisplayField, Form } from '..'
+import { DisplayField, Form } from '../components'
 import { onSubmit } from './helpers'
 
 export default {
-  title: 'Forms/DisplayField',
+  title: 'SaasUI/Forms/DisplayField',
   decorators: [
     (Story: any) => (
       <Container mt="40px">

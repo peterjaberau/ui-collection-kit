@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 import { Button, ButtonProps, type HTMLChakraProps } from '@chakra-ui/react'
-import { callAll } from '../../core/utils'
-import { Dialog } from '../../react/components/dialog'
+import { callAll } from '../core/utils'
+import { Dialog } from '../react/components/dialog'
 
 export interface AlertDialogProps
   extends Omit<

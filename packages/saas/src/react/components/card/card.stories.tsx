@@ -27,17 +27,17 @@ import { Persona } from '../persona/index'
 import { Card } from './index'
 
 export default {
-  title: 'Components/Card',
+  title: 'SaasUI/Components/Card',
   component: Card.Root,
   tags: ['autodocs'],
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Container maxW="3xl">
         <Story />
       </Container>
     ),
   ],
-} satisfies Meta
+} satisfies Meta | any
 
 type Story = StoryObj<typeof Card>
 
@@ -48,7 +48,9 @@ export const Outline = () => {
     <Stack gap="8">
       {variants.map((variant) => (
         <SimpleGrid columns={[1, null, 3]} gap="2">
-          <Card.Root variant={variant}>
+          <Card.Root
+            // @ts-ignore
+            variant={variant}>
             <Card.Header>
               <HStack>
                 <IconBadge boxSize="10" fontSize="2xl" bg="bg">
@@ -66,7 +68,9 @@ export const Outline = () => {
               </Card.Description>
             </Card.Header>
           </Card.Root>
-          <Card.Root variant={variant}>
+          <Card.Root
+            //@ts-ignore
+            variant={variant}>
             <Card.Header>
               <HStack>
                 <IconBadge boxSize="10" fontSize="2xl" bg="bg">
@@ -84,7 +88,9 @@ export const Outline = () => {
               </Card.Description>
             </Card.Header>
           </Card.Root>
-          <Card.Root variant={variant}>
+          <Card.Root
+            //@ts-ignore
+            variant={variant}>
             <Card.Header>
               <HStack>
                 <IconBadge boxSize="10" fontSize="2xl" bg="bg">

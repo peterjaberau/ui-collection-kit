@@ -22,7 +22,7 @@ import { SearchInput } from '../search-input'
 import { Navbar } from './index'
 
 export default {
-  title: 'Components/Navbar',
+  title: 'SaasUI/Components/Navbar',
   parameters: {
     layout: 'fullscreen',
   },
@@ -127,7 +127,9 @@ const Template: Story['render'] = (args) => {
 
   return (
     <App ref={parentRef}>
-      <Navbar.Root {...args} parentRef={parentRef}>
+      <Navbar.Root {...args}
+        //@ts-ignore
+         parentRef={parentRef}>
         <Navbar.Content>
           <Navbar.Brand>
             <AppLogo />

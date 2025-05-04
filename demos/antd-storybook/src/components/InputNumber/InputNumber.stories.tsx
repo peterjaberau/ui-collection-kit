@@ -60,7 +60,7 @@ import sourceDemoOutOfRange from "./out-of-range?raw";
             
 
 const meta = {
-  title: 'Base/InputNumber',
+  title: 'Antd/Base/InputNumber',
   component: InputNumber,
 } satisfies Meta<typeof InputNumber>;
 

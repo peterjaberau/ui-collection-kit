@@ -5,7 +5,7 @@ import { Button, HStack } from '@chakra-ui/react'
 import { Toaster, toast } from './index'
 
 export default {
-  title: 'Components/Toaster',
+  title: 'SaasUI/Components/Toaster',
   decorators: [
     (Story) => (
       <>

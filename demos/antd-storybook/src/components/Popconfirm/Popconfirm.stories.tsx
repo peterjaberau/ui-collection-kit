@@ -44,7 +44,7 @@ import sourceDemoLocale from "./locale?raw";
             
 
 const meta = {
-  title: 'Base/Popconfirm',
+  title: 'Antd/Base/Popconfirm',
   component: Popconfirm,
 } satisfies Meta<typeof Popconfirm>;
 

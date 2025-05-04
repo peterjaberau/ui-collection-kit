@@ -52,7 +52,7 @@ import sourceDemoBackTop from "./back-top?raw";
             
 
 const meta = {
-  title: 'Base/FloatButton',
+  title: 'Antd/Base/FloatButton',
   component: FloatButton,
 } satisfies Meta<typeof FloatButton>;
 

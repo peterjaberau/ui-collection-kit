@@ -5,7 +5,7 @@ import { Meta } from '@storybook/react'
 import { ErrorBoundary, ErrorProvider } from './'
 
 export default {
-  title: 'Utilities/ErrorBoundary',
+  title: 'SaasUI/Utilities/ErrorBoundary',
   component: ErrorBoundary,
   decorators: [
     (Story) => {

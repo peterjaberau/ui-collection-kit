@@ -48,7 +48,7 @@ import sourceDemoMark from "./mark?raw";
             
 
 const meta = {
-  title: 'Base/Slider',
+  title: 'Antd/Base/Slider',
   component: Slider,
 } satisfies Meta<typeof Slider>;
 

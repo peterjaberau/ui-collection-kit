@@ -3,7 +3,7 @@ import { Group, Stack } from '@chakra-ui/react'
 import { Input, InputAddon } from './index'
 
 export default {
-  title: 'Components/Input',
+  title: 'SaasUI/Components/Input',
   component: Input,
 }
 

@@ -6,7 +6,7 @@ import { Button } from '../button/index'
 import { Drawer } from './index'
 
 export default {
-  title: 'Components / Drawer',
+  title: 'SaasUI/Components / Drawer',
   decorators: [(Story) => <Story />],
 } satisfies Meta
 

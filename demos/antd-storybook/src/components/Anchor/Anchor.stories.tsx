@@ -40,7 +40,7 @@ import sourceDemoTargetOffset from "./targetOffset?raw";
             
 
 const meta = {
-  title: 'Base/Anchor',
+  title: 'Antd/Base/Anchor',
   component: Anchor,
 } satisfies Meta<typeof Anchor>;
 

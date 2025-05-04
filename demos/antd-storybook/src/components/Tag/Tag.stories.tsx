@@ -44,7 +44,7 @@ import sourceDemoBasic from "./basic?raw";
             
 
 const meta = {
-  title: 'Base/Tag',
+  title: 'Antd/Base/Tag',
   component: Tag,
 } satisfies Meta<typeof Tag>;
 

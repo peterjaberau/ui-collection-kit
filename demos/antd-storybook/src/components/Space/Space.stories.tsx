@@ -48,7 +48,7 @@ import sourceDemoSplit from "./split?raw";
             
 
 const meta = {
-  title: 'Base/Space',
+  title: 'Antd/Base/Space',
   component: Space,
 } satisfies Meta<typeof Space>;
 

@@ -4,7 +4,7 @@ import { LuUser } from 'react-icons/lu'
 import { IconBadge } from './index'
 
 export default {
-  title: 'Components/IconBadge',
+  title: 'SaasUI/Components/IconBadge',
   component: IconBadge,
 } as Meta
 

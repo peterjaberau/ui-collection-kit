@@ -3,7 +3,7 @@ import { Stack } from '@chakra-ui/react'
 import { PasswordInput } from './index'
 
 export default {
-  title: 'Components/PasswordInput',
+  title: 'SaasUI/Components/PasswordInput',
   component: PasswordInput,
 }
 

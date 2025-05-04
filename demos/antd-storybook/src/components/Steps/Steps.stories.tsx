@@ -72,7 +72,7 @@ import sourceDemoLabelPlacement from "./label-placement?raw";
             
 
 const meta = {
-  title: 'Base/Steps',
+  title: 'Antd/Base/Steps',
   component: Steps,
 } satisfies Meta<typeof Steps>;
 

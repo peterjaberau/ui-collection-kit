@@ -8,7 +8,7 @@ import { Form as YupForm } from '../yup'
 import { onSubmit } from './helpers'
 
 export default {
-  title: 'Forms/ObjectField',
+  title: 'SaasUI/Forms/ObjectField',
   decorators: [
     (Story: any) => (
       <Container mt="40px">

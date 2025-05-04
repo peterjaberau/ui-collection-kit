@@ -44,7 +44,7 @@ import sourceDemoGridCard from "./grid-card?raw";
             
 
 const meta = {
-  title: 'Base/Card',
+  title: 'Antd/Base/Card',
   component: Card,
 } satisfies Meta<typeof Card>;
 

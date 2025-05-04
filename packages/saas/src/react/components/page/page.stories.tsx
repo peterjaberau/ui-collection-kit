@@ -17,7 +17,7 @@ import { ButtonGroup } from '../button-group/index'
 import { Page } from './index'
 
 export default {
-  title: 'Components/Page',
+  title: 'SaasUI/Components/Page',
   component: Page.Root,
   parameters: {
     layout: 'fullscreen',

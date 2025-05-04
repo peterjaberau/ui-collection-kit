@@ -108,7 +108,7 @@ import sourceDemoPresetRanges from "./preset-ranges?raw";
             
 
 const meta = {
-  title: 'Base/DatePicker',
+  title: 'Antd/Base/DatePicker',
   component: DatePicker,
 } satisfies Meta<typeof DatePicker>;
 

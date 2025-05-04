@@ -28,7 +28,7 @@ import sourceDemoOverlay from "./overlay?raw";
             
 
 const meta = {
-  title: 'Base/Breadcrumb',
+  title: 'Antd/Base/Breadcrumb',
   component: Breadcrumb,
 } satisfies Meta<typeof Breadcrumb>;
 

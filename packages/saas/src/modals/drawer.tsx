@@ -1,10 +1,10 @@
-import * as React from 'react'
+import * as React from "react"
 
-import { type HTMLChakraProps } from '@chakra-ui/react'
-import { MaybeRenderProp, runIfFn } from '../../core/utils'
-import { Drawer as BaseDrawer } from '../../react/components/drawer'
+import { type HTMLChakraProps } from "@chakra-ui/react"
+import { MaybeRenderProp, runIfFn } from "../core/utils"
+import { Drawer as BaseDrawer } from "../react/components/drawer"
 
-export interface DrawerProps extends Omit<BaseDrawer.RootProps, 'children'> {
+export interface DrawerProps extends Omit<BaseDrawer.RootProps, "children"> {
   /**
    * The drawer title
    */
@@ -39,7 +39,7 @@ export interface DrawerProps extends Omit<BaseDrawer.RootProps, 'children'> {
   /**
    * Props for the modal header
    */
-  headerProps?: HTMLChakraProps<'div'>
+  headerProps?: HTMLChakraProps<"div">
   /**
    * Props for the modal content
    */
@@ -47,11 +47,11 @@ export interface DrawerProps extends Omit<BaseDrawer.RootProps, 'children'> {
   /**
    * Props for the modal footer
    */
-  footerProps?: HTMLChakraProps<'div'>
+  footerProps?: HTMLChakraProps<"div">
   /**
    * Props for the modal body
    */
-  bodyProps?: HTMLChakraProps<'div'>
+  bodyProps?: HTMLChakraProps<"div">
 }
 
 export const Drawer: React.FC<DrawerProps> = (props) => {
@@ -73,18 +73,12 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
     <BaseDrawer.Root open={open} onOpenChange={onOpenChange} {...rest}>
       {!hideBackdrop && <BaseDrawer.Backdrop />}
       <BaseDrawer.Content {...contentProps}>
-        {title && (
-          <BaseDrawer.Header {...headerProps}>{title}</BaseDrawer.Header>
-        )}
+        {title && <BaseDrawer.Header {...headerProps}>{title}</BaseDrawer.Header>}
         {!hideCloseButton && <BaseDrawer.CloseButton />}
         <BaseDrawer.Body {...bodyProps}>
-          <BaseDrawer.Context>
-            {({ open, setOpen }) => runIfFn(children, { open, setOpen })}
-          </BaseDrawer.Context>
+          <BaseDrawer.Context>{({ open, setOpen }) => runIfFn(children, { open, setOpen })}</BaseDrawer.Context>
         </BaseDrawer.Body>
-        {footer && (
-          <BaseDrawer.Footer {...footerProps}>{footer}</BaseDrawer.Footer>
-        )}
+        {footer && <BaseDrawer.Footer {...footerProps}>{footer}</BaseDrawer.Footer>}
       </BaseDrawer.Content>
     </BaseDrawer.Root>
   )

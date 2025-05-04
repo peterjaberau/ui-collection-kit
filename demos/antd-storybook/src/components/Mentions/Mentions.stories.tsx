@@ -48,7 +48,7 @@ import sourceDemoForm from "./form?raw";
             
 
 const meta = {
-  title: 'Base/Mentions',
+  title: 'Antd/Base/Mentions',
   component: Mentions,
 } satisfies Meta<typeof Mentions>;
 

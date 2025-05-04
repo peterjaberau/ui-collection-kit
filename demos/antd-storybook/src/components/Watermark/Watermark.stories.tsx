@@ -24,7 +24,7 @@ import sourceDemoImage from "./image?raw";
             
 
 const meta = {
-  title: 'Base/Watermark',
+  title: 'Antd/Base/Watermark',
   component: Watermark,
 } satisfies Meta<typeof Watermark>;
 

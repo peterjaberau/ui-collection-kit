@@ -44,7 +44,7 @@ import sourceDemoAdvanced from "./advanced?raw";
             
 
 const meta = {
-  title: 'Base/Transfer',
+  title: 'Antd/Base/Transfer',
   component: Transfer,
 } satisfies Meta<typeof Transfer>;
 

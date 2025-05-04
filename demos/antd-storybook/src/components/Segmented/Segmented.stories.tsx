@@ -64,7 +64,7 @@ import sourceDemoSizeConsistent from "./size-consistent?raw";
             
 
 const meta = {
-  title: 'Base/Segmented',
+  title: 'Antd/Base/Segmented',
   component: Segmented,
 } satisfies Meta<typeof Segmented>;
 

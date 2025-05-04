@@ -64,7 +64,7 @@ import sourceDemoCustomAddTrigger from "./custom-add-trigger?raw";
             
 
 const meta = {
-  title: 'Base/Tabs',
+  title: 'Antd/Base/Tabs',
   component: Tabs,
 } satisfies Meta<typeof Tabs>;
 

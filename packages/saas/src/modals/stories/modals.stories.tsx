@@ -1,20 +1,20 @@
-import * as React from 'react'
+import * as React from "react"
 
-import { Button, Container, Stack } from '@chakra-ui/react'
-import { createModals } from '../../modals-provider'
+import { Button, Container, Stack } from "@chakra-ui/react"
+import { createModals } from "../../modals-provider"
 
-import { ModalsProvider, useModals } from '../index'
-import { Modal, ModalProps } from '../modal'
+import { ModalsProvider, useModals } from "../index"
+import { Modal, ModalProps } from "../modal"
 
-interface CustomModalProps extends Omit<ModalProps, 'children'> {
-  customProp: 'test'
+interface CustomModalProps extends Omit<ModalProps, "children"> {
+  customProp: "test"
   children?: React.ReactNode
 }
 
 const CustomModal: React.FC<CustomModalProps> = ({
-  title = 'Custom modal',
-  footer = 'Custom footer',
-  children = 'Modal body',
+  title = "Custom modal",
+  footer = "Custom footer",
+  children = "Modal body",
   ...props
 }) => (
   <Modal title={title} footer={footer} {...props}>
@@ -29,9 +29,9 @@ const custom = createModals({
 })
 
 export default {
-  title: 'Modals/Modals Manager',
+  title: "SaasUI/Modals/Modals Manager",
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
   decorators: [
     (Story: any) => (
@@ -52,7 +52,7 @@ export const Basic = () => {
       <Button
         onClick={() => {
           const id = modals.open({
-            title: 'My Modal',
+            title: "My Modal",
             children: <>My modal</>,
             footer: <Button onClick={() => modals.closeAll()}>Close</Button>,
           })
@@ -63,9 +63,9 @@ export const Basic = () => {
       <Button
         onClick={() => {
           const id = modals.open({
-            title: 'My Modal',
+            title: "My Modal",
             children: <>My modal</>,
-            size: 'xl',
+            size: "xl",
             footer: <Button onClick={() => modals.close(id)}>Close</Button>,
           })
         }}
@@ -75,8 +75,8 @@ export const Basic = () => {
       <Button
         onClick={() =>
           modals.alert({
-            title: 'Import finished',
-            children: 'Your import has finish and can now be used.',
+            title: "Import finished",
+            children: "Your import has finish and can now be used.",
           })
         }
       >
@@ -85,12 +85,12 @@ export const Basic = () => {
       <Button
         onClick={() =>
           modals.confirm({
-            title: 'Delete user?',
-            children: 'Are you sure you want to delete this user?',
+            title: "Delete user?",
+            children: "Are you sure you want to delete this user?",
             slotProps: {
               confirm: {
-                colorPalette: 'red',
-                children: 'Delete',
+                colorPalette: "red",
+                children: "Delete",
               },
             },
           })
@@ -101,19 +101,21 @@ export const Basic = () => {
       <Button
         onClick={() =>
           modals.open({
-            type: 'drawer',
-            title: 'My drawer',
+            // @ts-ignore
+            type: "drawer",
+            title: "My drawer",
             body: (
               <Stack>
                 <Button
+                  // @ts-ignore
                   onClick={() =>
                     modals.confirm({
-                      title: 'Delete user?',
-                      body: 'Are you sure you want to delete this user?',
+                      title: "Delete user?",
+                      body: "Are you sure you want to delete this user?",
                       slotProps: {
                         confirm: {
-                          colorPalette: 'red',
-                          children: 'Delete',
+                          colorPalette: "red",
+                          children: "Delete",
                         },
                       },
                     })
@@ -124,23 +126,21 @@ export const Basic = () => {
                 <Button
                   onClick={() =>
                     modals.open({
-                      type: 'drawer',
-                      title: 'Subdrawer',
+                      type: "drawer",
+                      title: "Subdrawer",
                       body: (
                         <>
-                          <Button onClick={() => modals.closeAll()}>
-                            Close all
-                          </Button>
+                          <Button onClick={() => modals.closeAll()}>Close all</Button>
                         </>
                       ),
-                    })
+                    } as any)
                   }
                 >
                   Open drawer
                 </Button>
               </Stack>
             ),
-          })
+          } as any)
         }
       >
         Open drawer
@@ -148,11 +148,11 @@ export const Basic = () => {
       <Button
         onClick={() =>
           modals.open({
-            type: 'drawer',
-            title: 'My drawer',
-            body: 'My drawer',
-            placement: 'start',
-          })
+            type: "drawer",
+            title: "My drawer",
+            body: "My drawer",
+            placement: "start",
+          } as any)
         }
       >
         Open left drawer
@@ -168,11 +168,11 @@ export const OnClose = () => {
     <Button
       onClick={() =>
         modals.open({
-          title: 'My Modal',
+          title: "My Modal",
           body: <>My modal</>,
           onClose: () => {
             modals.confirm({
-              title: 'You closed the modal',
+              title: "You closed the modal",
             })
           },
         })
@@ -188,8 +188,8 @@ export const Multiple = () => {
 
   const next = () => {
     const id = modals.open({
-      title: 'Modal step 2',
-      body: 'Step 2',
+      title: "Modal step 2",
+      body: "Step 2",
       footer: (
         <>
           <Button onClick={() => modals.close(id)} mr="3">
@@ -205,8 +205,8 @@ export const Multiple = () => {
     <Button
       onClick={() =>
         modals.open({
-          title: 'Modal step 1',
-          body: 'Step 1',
+          title: "Modal step 1",
+          body: "Step 1",
           footer: (
             <>
               <Button onClick={next}>Next</Button>
@@ -227,14 +227,14 @@ export const AsyncConfirmDialog = () => {
     <Button
       onClick={() =>
         modals.confirm({
-          title: 'Delete user',
-          body: 'Are you sure you want to delete this user?',
+          title: "Delete user",
+          body: "Are you sure you want to delete this user?",
           translations: {
-            confirm: 'Delete',
+            confirm: "Delete",
           },
           slotProps: {
             confirm: {
-              colorPalette: 'red',
+              colorPalette: "red",
             },
           },
           onConfirm: () =>

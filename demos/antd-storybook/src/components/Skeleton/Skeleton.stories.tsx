@@ -32,7 +32,7 @@ import sourceDemoActive from "./active?raw";
             
 
 const meta = {
-  title: 'Base/Skeleton',
+  title: 'Antd/Base/Skeleton',
   component: Skeleton,
 } satisfies Meta<typeof Skeleton>;
 

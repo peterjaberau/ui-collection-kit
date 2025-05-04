@@ -36,7 +36,7 @@ import sourceDemoRight from "./right?raw";
             
 
 const meta = {
-  title: 'Base/Timeline',
+  title: 'Antd/Base/Timeline',
   component: Timeline,
 } satisfies Meta<typeof Timeline>;
 

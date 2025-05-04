@@ -56,7 +56,7 @@ import sourceDemoTreeLine from "./treeLine?raw";
             
 
 const meta = {
-  title: 'Base/TreeSelect',
+  title: 'Antd/Base/TreeSelect',
   component: TreeSelect,
 } satisfies Meta<typeof TreeSelect>;
 

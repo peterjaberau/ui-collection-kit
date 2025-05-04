@@ -112,7 +112,7 @@ import sourceDemoResponsive from "./responsive?raw";
             
 
 const meta = {
-  title: 'Base/Select',
+  title: 'Antd/Base/Select',
   component: Select,
 } satisfies Meta<typeof Select>;
 

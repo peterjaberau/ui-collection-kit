@@ -64,7 +64,7 @@ import sourceDemoLegacyGroup from "./legacy-group?raw";
 
 
 const meta = {
-  title: 'Base/Button',
+  title: 'Antd/Base/Button',
   component: Button,
 } satisfies Meta<typeof Button>;
 

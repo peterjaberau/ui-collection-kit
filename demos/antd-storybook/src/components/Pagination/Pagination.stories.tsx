@@ -52,7 +52,7 @@ import sourceDemoMore from "./more?raw";
             
 
 const meta = {
-  title: 'Base/Pagination',
+  title: 'Antd/Base/Pagination',
   component: Pagination,
 } satisfies Meta<typeof Pagination>;
 

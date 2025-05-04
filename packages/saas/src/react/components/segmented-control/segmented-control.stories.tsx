@@ -6,7 +6,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { SegmentedControl } from './index'
 
 export default {
-  title: 'Components/Segmented Control',
+  title: 'SaasUI/Components/Segmented Control',
   component: SegmentedControl,
 } satisfies Meta
 

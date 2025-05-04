@@ -84,7 +84,7 @@ import sourceDemoCustomMousePosition from "./custom-mouse-position?raw";
             
 
 const meta = {
-  title: 'Base/Modal',
+  title: 'Antd/Base/Modal',
   component: Modal,
 } satisfies Meta<typeof Modal>;
 

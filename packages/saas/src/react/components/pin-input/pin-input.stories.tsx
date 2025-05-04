@@ -1,7 +1,7 @@
 import { PinInput } from './index'
 
 export default {
-  title: 'Components/PinInput',
+  title: 'SaasUI/Components/PinInput',
   component: PinInput,
 }
 

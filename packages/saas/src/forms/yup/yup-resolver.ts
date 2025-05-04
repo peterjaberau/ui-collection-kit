@@ -1,7 +1,7 @@
 import { reach } from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 
-import { FieldProps, GetFieldResolver } from ".."
+import { FieldProps, GetFieldResolver } from "../components"
 import { AnyObjectSchema } from "./types"
 
 export { yupResolver }

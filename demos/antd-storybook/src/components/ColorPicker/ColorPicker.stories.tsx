@@ -60,7 +60,7 @@ import sourceDemoFormat from "./format?raw";
             
 
 const meta = {
-  title: 'Base/ColorPicker',
+  title: 'Antd/Base/ColorPicker',
   component: ColorPicker,
 } satisfies Meta<typeof ColorPicker>;
 

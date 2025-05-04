@@ -5,7 +5,7 @@ import { Box, HStack, Stack } from '@chakra-ui/react'
 import { Button } from './index'
 
 export default {
-  title: 'Components/Button',
+  title: 'SaasUI/Components/Button',
   component: Button,
 }
 
@@ -19,14 +19,19 @@ export const Variants = {
   render: () => (
     <Stack gap="4">
       <HStack>
-        <Button variant="glass" colorPalette="indigo">
+
+        <Button
+          // @ts-ignore
+          variant="glass" colorPalette="indigo">
           Primary
         </Button>
         <Button variant="surface">Secondary</Button>
       </HStack>
       <HStack>
         <Button variant="solid">Solid</Button>
-        <Button variant="glass">Glass</Button>
+        <Button
+          // @ts-ignore
+          variant="glass">Glass</Button>
         <Button variant="surface">Surface</Button>
         <Button variant="outline">Outline</Button>
         <Button variant="subtle">Subtle</Button>
@@ -36,7 +41,9 @@ export const Variants = {
         <Button variant="solid" colorPalette="neutral">
           Solid
         </Button>
-        <Button variant="glass" colorPalette="neutral">
+        <Button
+          // @ts-ignore
+          variant="glass" colorPalette="neutral">
           Glass
         </Button>
         <Button variant="surface" colorPalette="neutral">
@@ -56,7 +63,9 @@ export const Variants = {
         <Button variant="solid" colorPalette="blue">
           Solid
         </Button>
-        <Button variant="glass" colorPalette="blue">
+        <Button
+          // @ts-ignore
+          variant="glass" colorPalette="blue">
           Glass
         </Button>
         <Button variant="surface" colorPalette="blue">

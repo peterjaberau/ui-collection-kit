@@ -6,7 +6,7 @@ import { LuPlus } from 'react-icons/lu'
 import { IconButton } from './index'
 
 export default {
-  title: 'Components/IconButton',
+  title: 'SaasUI/Components/IconButton',
   component: IconButton,
 }
 

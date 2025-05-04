@@ -3,7 +3,7 @@ import React from 'react'
 import { Menu } from './index'
 
 export default {
-  title: 'Components/Menu',
+  title: 'SaasUI/Components/Menu',
   component: Menu,
 }
 

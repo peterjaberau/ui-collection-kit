@@ -28,7 +28,7 @@ import sourceDemoAutoplay from "./autoplay?raw";
             
 
 const meta = {
-  title: 'Base/Carousel',
+  title: 'Antd/Base/Carousel',
   component: Carousel,
 } satisfies Meta<typeof Carousel>;
 

@@ -48,7 +48,7 @@ import sourceDemoUncertainCategory from "./uncertain-category?raw";
             
 
 const meta = {
-  title: 'Base/AutoComplete',
+  title: 'Antd/Base/AutoComplete',
   component: AutoComplete,
 } satisfies Meta<typeof AutoComplete>;
 

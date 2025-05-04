@@ -56,7 +56,7 @@ import sourceDemoLoading from "./loading?raw";
             
 
 const meta = {
-  title: 'Base/Drawer',
+  title: 'Antd/Base/Drawer',
   component: Drawer,
 } satisfies Meta<typeof Drawer>;
 

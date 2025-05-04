@@ -48,7 +48,7 @@ import sourceDemoResponsive from "./responsive?raw";
             
 
 const meta = {
-  title: 'Base/Descriptions',
+  title: 'Antd/Base/Descriptions',
   component: Descriptions,
 } satisfies Meta<typeof Descriptions>;
 

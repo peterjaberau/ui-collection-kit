@@ -8,7 +8,7 @@ import { Button } from '../button/index'
 import { Dialog } from './index'
 
 export default {
-  title: 'Components / Dialog',
+  title: 'SaasUI/Components / Dialog',
   decorators: [(Story) => <Story />],
 } satisfies Meta
 

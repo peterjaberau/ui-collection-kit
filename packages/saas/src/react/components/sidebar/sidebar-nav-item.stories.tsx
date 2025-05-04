@@ -5,7 +5,7 @@ import { Menu } from '../menu'
 import { Sidebar } from './index'
 
 export default {
-  title: 'Components/SidebarNavItem',
+  title: 'SaasUI/Components/SidebarNavItem',
   component: Sidebar.NavItem,
   decorators: [
     (Story: React.ComponentType) => (

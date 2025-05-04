@@ -56,7 +56,7 @@ import sourceDemoNoWrapper from "./no-wrapper?raw";
             
 
 const meta = {
-  title: 'Base/Badge',
+  title: 'Antd/Base/Badge',
   component: Badge,
 } satisfies Meta<typeof Badge>;
 

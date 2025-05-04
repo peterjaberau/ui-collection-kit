@@ -56,7 +56,7 @@ import sourceDemoPreviewGroup from "./preview-group?raw";
             
 
 const meta = {
-  title: 'Base/Image',
+  title: 'Antd/Base/Image',
   component: Image,
 } satisfies Meta<typeof Image>;
 

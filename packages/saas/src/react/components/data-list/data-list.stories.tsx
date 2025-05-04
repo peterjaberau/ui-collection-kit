@@ -5,7 +5,7 @@ import { Status } from '../status/status'
 import { DataList } from './index'
 
 export default {
-  title: 'Components/DataList',
+  title: 'SaasUI/Components/DataList',
 }
 
 export const Default = () => {

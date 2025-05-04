@@ -7,7 +7,7 @@ import { useAppShellStyles } from './app-shell'
 import { AppShell } from './index'
 
 export default {
-  title: 'Components/AppShell',
+  title: 'SaasUI/Components/AppShell',
   parameters: {
     layout: 'fullscreen',
   },

@@ -28,7 +28,7 @@ import sourceDemoWithText from "./with-text?raw";
             
 
 const meta = {
-  title: 'Base/Divider',
+  title: 'Antd/Base/Divider',
   component: Divider,
 } satisfies Meta<typeof Divider>;
 

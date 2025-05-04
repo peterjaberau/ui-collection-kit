@@ -36,7 +36,7 @@ import sourceDemoLocale from "./locale?raw";
 
 
 const meta = {
-  title: 'Base/ConfigProvider',
+  title: 'Antd/Base/ConfigProvider',
   component: ConfigProvider,
 } satisfies Meta<typeof ConfigProvider>;
 

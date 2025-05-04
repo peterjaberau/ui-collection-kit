@@ -32,7 +32,7 @@ import sourceDemoText from "./text?raw";
             
 
 const meta = {
-  title: 'Base/Rate',
+  title: 'Antd/Base/Rate',
   component: Rate,
 } satisfies Meta<typeof Rate>;
 

@@ -7,7 +7,7 @@ import { LineChart } from '..'
 import { createData } from './utils'
 
 export default {
-  title: 'Visualization/LineChart',
+  title: 'SaasUI/Visualization/LineChart',
   component: LineChart,
   decorators: [
     (Story: React.ComponentType) => (

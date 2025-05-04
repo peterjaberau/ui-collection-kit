@@ -85,7 +85,7 @@ import sourceDemoTextarea from "./textarea?raw";
 
 
 const meta = {
-  title: 'Base/Input',
+  title: 'Antd/Base/Input',
   component: Input,
 } satisfies Meta<typeof Input>;
 

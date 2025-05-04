@@ -7,7 +7,7 @@ import { Sparkline } from '..'
 import { createData } from './utils'
 
 export default {
-  title: 'Visualization/Sparkline',
+  title: 'SaasUI/Visualization/Sparkline',
   component: Sparkline,
   decorators: [
     (Story: React.ComponentType) => (
@@ -37,7 +37,7 @@ export const Basic: Story = {
     }),
     categories: ['value'],
   },
-  render: (args) => {
+  render: (args: any) => {
     return (
       <Card.Root maxW="300px">
         <Card.Body>
@@ -66,7 +66,7 @@ export const SolidVariant: Story = {
     }),
     variant: 'solid',
   },
-  render: (args) => {
+  render: (args: any) => {
     return (
       <Card.Root maxW="300px" overflow="clip">
         <Card.Body pb="0">
@@ -104,7 +104,7 @@ export const Multiple: Story = {
     colors: ['gray', 'purple'],
     curveType: 'monotone',
   },
-  render: (args) => {
+  render: (args: any) => {
     const value = Number(args.data[args.data.length - 1].value ?? 0)
     const compareValue = Number(
       args.data[args.data.length - 1].compareValue ?? 0,
@@ -147,7 +147,7 @@ export const Stacked: Story = {
     curveType: 'monotone',
     stack: true,
   },
-  render: (args) => {
+  render: (args: any) => {
     const value = Number(args.data[args.data.length - 1].value ?? 0)
     const compareValue = Number(
       args.data[args.data.length - 1].compareValue ?? 0,
@@ -177,14 +177,14 @@ export const Stacked: Story = {
 }
 
 export const Metrics = () => {
-  const revenueData = createData({
+  const revenueData: any = createData({
     startDate: '2023-01-01',
     endDate: '2023-06-30',
     growthRate: 1.005,
     interval: 7,
   })
 
-  const customerData = createData({
+  const customerData: any = createData({
     startDate: '2023-01-01',
     endDate: '2023-06-30',
     growthRate: 1.005,
@@ -192,7 +192,7 @@ export const Metrics = () => {
     startValues: [100],
   })
 
-  const churnData = createData({
+  const churnData: any = createData({
     startDate: '2023-01-01',
     endDate: '2023-06-30',
     growthRate: 1.001,
@@ -200,7 +200,7 @@ export const Metrics = () => {
     startValues: [5],
   })
 
-  const valueData = createData({
+  const valueData: any = createData({
     startDate: '2023-01-01',
     endDate: '2023-06-30',
     growthRate: 1.002,

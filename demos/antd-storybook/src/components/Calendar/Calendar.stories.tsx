@@ -28,7 +28,7 @@ import sourceDemoSelect from "./select?raw";
             
 
 const meta = {
-  title: 'Base/Calendar',
+  title: 'Antd/Base/Calendar',
   component: Calendar,
 } satisfies Meta<typeof Calendar>;
 

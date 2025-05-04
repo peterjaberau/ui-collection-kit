@@ -24,7 +24,7 @@ import sourceDemoBasic from "./basic?raw";
             
 
 const meta = {
-  title: 'Base/Empty',
+  title: 'Antd/Base/Empty',
   component: Empty,
 } satisfies Meta<typeof Empty>;
 

@@ -5,7 +5,7 @@ import { Button, Center, Tooltip, VStack } from '@chakra-ui/react'
 import { Command } from './command'
 
 export default {
-  title: 'Components/Command',
+  title: 'SaasUI/Components/Command',
   decorators: [
     (Story: any) => (
       <Center height="100%">

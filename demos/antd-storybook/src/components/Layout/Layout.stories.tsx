@@ -40,7 +40,7 @@ import sourceDemoResponsive from "./responsive?raw";
             
 
 const meta = {
-  title: 'Base/Layout',
+  title: 'Antd/Base/Layout',
   component: Layout,
 } satisfies Meta<typeof Layout>;
 

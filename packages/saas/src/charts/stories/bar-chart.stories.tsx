@@ -13,7 +13,7 @@ import { BarChart } from '..'
 import { createData } from './utils'
 
 export default {
-  title: 'Visualization/BarChart',
+  title: 'SaasUI/Visualization/BarChart',
   component: BarChart,
   decorators: [
     (Story: React.ComponentType) => (

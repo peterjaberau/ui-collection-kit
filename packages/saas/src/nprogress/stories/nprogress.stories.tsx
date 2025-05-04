@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { NProgress } from '..'
 
 export default {
-  title: 'NProgress/NProgress',
+  title: 'SaasUI/NProgress/NProgress',
   component: NProgress,
 } as Meta
 

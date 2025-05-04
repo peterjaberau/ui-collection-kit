@@ -56,7 +56,7 @@ import sourceDemoResponsive from "./responsive?raw";
             
 
 const meta = {
-  title: 'Base/Grid',
+  title: 'Antd/Base/Grid',
   component: Grid,
 } satisfies Meta<typeof Grid>;
 

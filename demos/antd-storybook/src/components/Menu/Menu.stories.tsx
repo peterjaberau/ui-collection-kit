@@ -48,7 +48,7 @@ import sourceDemoSwitchMode from "./switch-mode?raw";
             
 
 const meta = {
-  title: 'Base/Menu',
+  title: 'Antd/Base/Menu',
   component: Menu,
 } satisfies Meta<typeof Menu>;
 

@@ -36,7 +36,7 @@ import sourceDemoCollapsible from "./collapsible?raw";
             
 
 const meta = {
-  title: 'Base/Splitter',
+  title: 'Antd/Base/Splitter',
   component: Splitter,
 } satisfies Meta<typeof Splitter>;
 

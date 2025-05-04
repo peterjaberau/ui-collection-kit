@@ -76,7 +76,7 @@ import sourceDemoMaxCount from "./max-count?raw";
             
 
 const meta = {
-  title: 'Base/Upload',
+  title: 'Antd/Base/Upload',
   component: Upload,
 } satisfies Meta<typeof Upload>;
 

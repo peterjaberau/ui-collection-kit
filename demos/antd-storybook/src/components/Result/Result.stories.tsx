@@ -36,7 +36,7 @@ import sourceDemoCustomIcon from "./customIcon?raw";
             
 
 const meta = {
-  title: 'Base/Result',
+  title: 'Antd/Base/Result',
   component: Result,
 } satisfies Meta<typeof Result>;
 

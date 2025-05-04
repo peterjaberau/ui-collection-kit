@@ -9,7 +9,7 @@ import { useStepForm } from '../components/use-step-form'
 import { onSubmit } from './helpers'
 
 export default {
-  title: 'Forms/useStepForm',
+  title: 'SaasUI/Forms/useStepForm',
   decorators: [
     (Story: any) => (
       <Container mt="40px" maxW="lg">

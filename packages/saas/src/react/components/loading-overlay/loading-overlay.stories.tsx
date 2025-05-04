@@ -5,7 +5,7 @@ import { Button, Card, Container, Text } from '@chakra-ui/react'
 import { LoadingOverlay } from './index'
 
 export default {
-  title: 'Components/LoadingOverlay',
+  title: 'SaasUI/Components/LoadingOverlay',
   decorators: [
     (Story: any) => (
       <Container mt="40px">

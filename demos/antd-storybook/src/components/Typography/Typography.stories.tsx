@@ -40,7 +40,7 @@ import sourceDemoEllipsisControlled from "./ellipsis-controlled?raw";
             
 
 const meta = {
-  title: 'Base/Typography',
+  title: 'Antd/Base/Typography',
   component: Typography,
 } satisfies Meta<typeof Typography>;
 

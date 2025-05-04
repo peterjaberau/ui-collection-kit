@@ -36,7 +36,7 @@ import sourceDemoTip from "./tip?raw";
             
 
 const meta = {
-  title: 'Base/Spin',
+  title: 'Antd/Base/Spin',
   component: Spin,
 } satisfies Meta<typeof Spin>;
 

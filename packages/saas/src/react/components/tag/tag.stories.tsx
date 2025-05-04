@@ -8,7 +8,7 @@ import { Status } from '../status/index'
 import { Tag } from './tag'
 
 export default {
-  title: 'Components/Tag',
+  title: 'SaasUI/Components/Tag',
   component: Tag,
 }
 

@@ -7,7 +7,7 @@ import { Button } from '../button/index'
 import { FileUpload } from './index'
 
 export default {
-  title: 'Components/File Upload',
+  title: 'SaasUI/Components/File Upload',
   component: FileUpload.Root,
 }
 

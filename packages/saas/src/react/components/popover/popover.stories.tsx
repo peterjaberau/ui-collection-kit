@@ -6,7 +6,7 @@ import { DataList } from '../data-list'
 import { Popover } from './index'
 
 export default {
-  title: 'Components/Popover',
+  title: 'SaasUI/Components/Popover',
   component: Popover.Root,
 }
 

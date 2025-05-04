@@ -12,7 +12,7 @@ import sourceDemoBasic from "./basic?raw";
             
 
 const meta = {
-  title: 'Base/BackTop',
+  title: 'Antd/Base/BackTop',
   component: BackTop,
 } satisfies Meta<typeof BackTop>;
 

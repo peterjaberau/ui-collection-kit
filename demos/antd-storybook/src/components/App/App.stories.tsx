@@ -12,7 +12,7 @@ import sourceDemoBasic from "./basic?raw";
             
 
 const meta = {
-  title: 'Base/App',
+  title: 'Antd/Base/App',
   component: App,
 } satisfies Meta<typeof App>;
 

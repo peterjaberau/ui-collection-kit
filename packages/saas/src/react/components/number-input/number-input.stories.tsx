@@ -3,7 +3,7 @@ import { Group, InputAddon, Stack } from '@chakra-ui/react'
 import { NumberInput } from './index'
 
 export default {
-  title: 'Components/NumberInput',
+  title: 'SaasUI/Components/NumberInput',
   component: NumberInput,
 }
 

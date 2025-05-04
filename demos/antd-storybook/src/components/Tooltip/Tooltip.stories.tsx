@@ -52,7 +52,7 @@ import sourceDemoAutoAdjustOverflow from "./auto-adjust-overflow?raw";
             
 
 const meta = {
-  title: 'Base/Tooltip',
+  title: 'Antd/Base/Tooltip',
   component: Tooltip,
 } satisfies Meta<typeof Tooltip>;
 

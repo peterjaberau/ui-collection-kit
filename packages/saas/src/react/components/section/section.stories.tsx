@@ -6,7 +6,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Section } from './index'
 
 export default {
-  title: 'Components/Section',
+  title: 'SaasUI/Components/Section',
   component: Section.Root,
 } as Meta
 

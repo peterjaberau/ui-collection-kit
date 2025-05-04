@@ -3,7 +3,7 @@ import React from 'react'
 import { CloseButton } from './close-button'
 
 export default {
-  title: 'Components/CloseButton',
+  title: 'SaasUI/Components/CloseButton',
   component: CloseButton,
 }
 
