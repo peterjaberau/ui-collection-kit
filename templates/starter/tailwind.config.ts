@@ -475,6 +475,7 @@ const config = {
         'alpha-16': 'var(--black-alpha-16)',
         'alpha-10': 'var(--black-alpha-10)',
       },
+
       primary: {
         dark: 'var(--primary-dark)',
         darker: 'var(--primary-darker)',
@@ -482,10 +483,6 @@ const config = {
         'alpha-24': 'var(--primary-alpha-24)',
         'alpha-16': 'var(--primary-alpha-16)',
         'alpha-10': 'var(--primary-alpha-10)',
-      },
-      static: {
-        black: 'var(--static-black)',
-        white: 'var(--static-white)',
       },
       bg: {
         'strong-950': 'var(--bg-strong-950)',
@@ -495,12 +492,37 @@ const config = {
         'weak-50': 'var(--bg-weak-50)',
         'white-0': 'var(--bg-white-0)',
       },
+      success: {
+        dark: 'var(--success-dark)',
+        base: 'var(--success-base)',
+        light: 'var(--success-light)',
+        lighter: 'var(--success-lighter)',
+      },
+      warning: {
+        dark: 'var(--warning-dark)',
+        base: 'var(--warning-base)',
+        light: 'var(--warning-light)',
+        lighter: 'var(--warning-lighter)',
+      },
+      error: {
+        dark: 'var(--error-dark)',
+        base: 'var(--error-base)',
+        light: 'var(--error-light)',
+        lighter: 'var(--error-lighter)',
+      },
       text: {
         'strong-950': 'var(--text-strong-950)',
         'sub-600': 'var(--text-sub-600)',
         'soft-400': 'var(--text-soft-400)',
         'disabled-300': 'var(--text-disabled-300)',
         'white-0': 'var(--text-white-0)',
+      },
+
+
+
+      static: {
+        black: 'var(--static-black)',
+        white: 'var(--static-white)',
       },
       stroke: {
         'strong-950': 'var(--stroke-strong-950)',
@@ -519,24 +541,6 @@ const config = {
         base: 'var(--information-base)',
         light: 'var(--information-light)',
         lighter: 'var(--information-lighter)',
-      },
-      warning: {
-        dark: 'var(--warning-dark)',
-        base: 'var(--warning-base)',
-        light: 'var(--warning-light)',
-        lighter: 'var(--warning-lighter)',
-      },
-      error: {
-        dark: 'var(--error-dark)',
-        base: 'var(--error-base)',
-        light: 'var(--error-light)',
-        lighter: 'var(--error-lighter)',
-      },
-      success: {
-        dark: 'var(--success-dark)',
-        base: 'var(--success-base)',
-        light: 'var(--success-light)',
-        lighter: 'var(--success-lighter)',
       },
       away: {
         dark: 'var(--away-dark)',

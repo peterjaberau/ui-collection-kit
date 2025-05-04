@@ -3,4 +3,5 @@ import theme from "./storybook-theme"
 
 addons.setConfig({
   theme,
+  options: { showPanel: false },
 })

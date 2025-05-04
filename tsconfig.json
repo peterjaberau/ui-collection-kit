@@ -25,6 +25,12 @@
     "ignoreDeprecations": "5.0",
     "types": ["vitest/globals"],
     "verbatimModuleSyntax": true,
+
+
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+
+
     "paths": {
       "@/*": ["./*"],
       "@/templates/*": ["../templates/*"],
@@ -35,7 +41,9 @@
       "@/templates": ["../templates"],
       "@/packages": ["../packages"],
       "@/demos": ["../demos"],
-      "@/apps": ["../apps"]
+      "@/apps": ["../apps"],
+
+
     }
   }
 }

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["./src/**/*"],
+  "ts-node": {
+    "compilerOptions": {
+      "tsBuildInfoFile": "node_modules/.cache/.tsbuildinfo",
+      "module": "commonjs",
+      "types": ["node"],
+      "verbatimModuleSyntax": false
+    }
+  }
+}

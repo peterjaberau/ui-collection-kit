@@ -30,6 +30,7 @@ const BoxCollapse: FC<IProps> = (props) => {
   }
 
   const [activeKey, setActiveKey] = useState<string>(collapsed ? 'single' : '');
+
   const collapseHeader = (
     <>
       {title && <div className="collapse-title">{title}</div>}
@@ -47,18 +48,26 @@ const BoxCollapse: FC<IProps> = (props) => {
 
   return (
     <Collapse
-      className="fr-obj-collapse"
-      style={style}
+      className='fr-obj-collapse'
+      style={{ ...style }}
       bordered={bordered}
       ghost={ghost}
       activeKey={[activeKey]}
       expandIcon={renderExpandIcon}
       onChange={() => setActiveKey(activeKey ? '' : 'single')}
-    >
-      <Panel key="single" header={collapseHeader} forceRender={true}>
-        {children}
-      </Panel>
-    </Collapse>
+      items={[
+        {
+          key: 'single',
+          label: collapseHeader,
+          children: (
+            <Panel key='single' header={collapseHeader} forceRender={true}>
+              {children}
+            </Panel>
+          ),
+          forceRender: true,
+        },
+      ]}
+    />
   );
 };
 

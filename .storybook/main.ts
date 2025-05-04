@@ -1,27 +1,49 @@
-import { dirname, join } from "path";
-import type { StorybookConfig } from '@storybook/react-vite'
-import { mergeConfig } from 'vite';
-import tailwindConfig from './tailwind.config';
-import path from 'path';
+import { dirname, join } from "path"
+import type { StorybookConfig } from "@storybook/react-vite"
+import { mergeConfig } from "vite"
+import tailwindConfig from "./tailwind.config"
+import remarkGfm from "remark-gfm"
+
+import path from "path"
 
 const config: StorybookConfig = {
   stories: [
+    "../demos/antd-storybook/src/components/**/*.mdx",
     "../templates/starter/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../packages/unstyled/react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../packages/saas/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../demos/react-lite/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-
+    "../demos/antd-storybook/src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
-      '@storybook/addon-a11y',
-      '@storybook/addon-essentials',
-      '@storybook/addon-themes',
-      '@storybook/addon-interactions',
+    "@storybook/addon-a11y",
+    "@storybook/addon-essentials",
+    "@storybook/addon-themes",
+    "@storybook/addon-interactions",
+
+    "@storybook/addon-toolbars",
+    "@storybook/addon-storysource",
+    "@storybook/addon-viewport",
+
+    "@storybook/addon-controls",
+    "@storybook/addon-links",
+
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
   ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
   },
-  staticDirs: ['../public'],
+  staticDirs: ["../public"],
   core: {
     disableTelemetry: true,
   },
@@ -33,16 +55,13 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       css: {
         postcss: {
-          plugins: [
-            require('tailwindcss')(tailwindConfig),
-            require('autoprefixer'),
-          ],
+          plugins: [require("tailwindcss")(tailwindConfig), require("autoprefixer")],
         },
       },
       esbuild: {
-        jsx: 'automatic',
+        jsx: "automatic",
       },
-    });
+    })
   },
 }
 

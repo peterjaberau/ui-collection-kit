@@ -1,0 +1,29 @@
+import { Meta } from "@storybook/blocks";
+import IconPage from "./icon_page";
+
+
+<Meta title="Icons" />
+
+<div>
+  <div className='sb-section-title'>
+    # List of icons
+    We introduced SVG icons in version 3.9.0, replacing font icons. This has the following benefits:
+
+    - Complete offline usage of icons, without dependency on a CDN-hosted font icon file (No more empty square during downloading and no need to deploy icon font files locally either!)
+    - Much more display accuracy on lower-resolution screens
+    - The ability to choose icon color
+    - No need to change built-in icons with overriding styles by providing more props in component
+
+    ``` jsx
+    import { MessageOutlined } from '@ant-design/icons';
+
+    <MessageOutlined style={{ fontSize: '16px', color: '#08c' }} />;
+    ```
+    All the icons will render to \<svg>. You can still set style and className for size and color of icons.
+    ```jsx
+    <Icon type="message" style={{ fontSize: '16px', color: '#08c' }} theme="outlined" />
+    ```
+  </div>
+</div>
+
+<IconPage />

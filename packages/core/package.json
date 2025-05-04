@@ -20,7 +20,6 @@
   ],
   "scripts": {
     "build": "tsup",
-
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
     "prepack": "clean-package",

@@ -8,6 +8,8 @@ export default [
       parser: tsParser,
       globals: {
         node: true,
+        ecmaVersion: 2020,
+        globals: globals.browser,
       },
     },
     plugins: {
@@ -52,6 +54,12 @@ export default [
       "arrow-body-style": "off",
       "import/namespace": "off",
       "jsx-a11y/label-has-associated-control": "off",
+      '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/consistent-type-imports': 'off',
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
       "@typescript-eslint/no-unused-vars": [
         "error",
         {

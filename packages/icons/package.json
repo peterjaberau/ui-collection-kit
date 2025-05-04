@@ -1,0 +1,26 @@
+{
+  "name": "ui-collection-kit/icons",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "pnpm cleanup && pnpm optimize-icons && pnpm generate-components && pnpm generate-index && pnpm generate-stories",
+    "cleanup": "npx ts-node ./src/utils/cleanup.ts",
+    "optimize-icons": "npx ts-node ./src/utils/optimizeIcons.ts",
+    "generate-components": "npx ts-node ./src/utils/generateComponents.ts",
+    "generate-index": "npx ts-node ./src/utils/generateIndex.ts",
+    "generate-stories": "npx ts-node ./src/utils/generateStories.ts",
+    "lint": "eslint src"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "svgo": "^3.2.0"
+  }
+}

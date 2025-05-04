@@ -1,5 +1,10 @@
 import { withThemeByClassName } from "@storybook/addon-themes"
 import type { Preview, ReactRenderer } from "@storybook/react"
+import { ChakraProvider } from "@chakra-ui/react"
+// import '@fontsource-variable/inter'
+import { defaultSystem, SuiProvider } from "../packages/saas/src/react"
+// import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+
 import React from "react"
 // import "./styles/tailwind.css"
 import "./styles/tailwind.css"
@@ -26,9 +31,11 @@ const preview: Preview = {
     }),
     (Story) => (
       <>
-        <div className="font-mono antialiased">
-          <Story />
-        </div>
+        <ChakraProvider value={defaultSystem as any}>
+          <div className="font-mono antialiased">
+            <Story />
+          </div>
+        </ChakraProvider>
       </>
     ),
   ],
