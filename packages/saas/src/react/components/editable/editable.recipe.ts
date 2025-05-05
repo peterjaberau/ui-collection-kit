@@ -1,5 +1,5 @@
 import { editableAnatomy } from '@chakra-ui/react/anatomy'
-import { defineSlotRecipe, defineStyle } from '@chakra-ui/react/styled-system'
+import { defineSlotRecipe, defineStyle } from '@chakra-ui/react'
 
 const sharedStyles = defineStyle({
   fontSize: 'inherit',

@@ -7,7 +7,7 @@ import {
   FileUpload as ChakraFileUpload,
   useFileUploadContext,
 } from '@chakra-ui/react/file-upload'
-import { type RecipeProps, useRecipe } from '@chakra-ui/react/styled-system'
+import { type RecipeProps, useRecipe } from '@chakra-ui/react'
 
 import { Button, type ButtonProps } from '../button/index'
 import { CloseButton } from '../close-button/index'

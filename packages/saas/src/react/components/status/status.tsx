@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 
 import { Status as ChakraStatus } from '@chakra-ui/react/status'
-import type { Token } from '@chakra-ui/react/styled-system'
+import type { Token } from '@chakra-ui/react'
 
 export type StatusTokens = Extract<Token, `colors.status.${string}`>
 

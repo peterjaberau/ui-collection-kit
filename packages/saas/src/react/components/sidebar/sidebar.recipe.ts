@@ -1,4 +1,4 @@
-import { defineSlotRecipe } from '@chakra-ui/react/styled-system'
+import { defineSlotRecipe } from '@chakra-ui/react'
 
 export const sidebarSlotRecipe = defineSlotRecipe({
   className: 'sui-sidebar',

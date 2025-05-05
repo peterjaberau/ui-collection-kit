@@ -6,7 +6,7 @@ import {
   type HTMLChakraProps,
   type SlotRecipeProps,
   createSlotRecipeContext,
-} from '@chakra-ui/react/styled-system'
+} from '@chakra-ui/react'
 
 ////////////////////////////////////////////////////////////////////////////////////
 

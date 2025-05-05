@@ -1,5 +1,5 @@
 import { menuAnatomy } from '@chakra-ui/react/anatomy'
-import { defineSlotRecipe } from '@chakra-ui/react/styled-system'
+import { defineSlotRecipe } from '@chakra-ui/react'
 
 export const menuSlotRecipe = defineSlotRecipe({
   className: 'chakra-menu',

@@ -8,7 +8,7 @@ import {
   RecipeProps,
   chakra,
   useRecipe,
-} from '@chakra-ui/react/styled-system'
+} from '@chakra-ui/react'
 import { cx } from '../../../core/utils'
 
 ////////////////////////////////////////////////////////////////////////////////////

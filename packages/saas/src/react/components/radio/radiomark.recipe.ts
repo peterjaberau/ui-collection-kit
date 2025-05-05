@@ -1,4 +1,4 @@
-import { defineRecipe } from '@chakra-ui/react/styled-system'
+import { defineRecipe } from '@chakra-ui/react'
 
 export const radiomarkRecipe = defineRecipe({
   className: 'chakra-radiomark',

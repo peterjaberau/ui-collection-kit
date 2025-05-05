@@ -4,7 +4,7 @@ import {
   type HTMLChakraProps,
   UnstyledProp,
   createRecipeContext,
-} from '@chakra-ui/react/styled-system'
+} from '@chakra-ui/react'
 
 import type { RecipeProps } from '../../types'
 import { Kbd, type KbdProps } from '../kbd/index'

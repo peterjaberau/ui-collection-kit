@@ -21,7 +21,7 @@ export {
   useSlotRecipe,
   useChakraContext,
   useToken,
-} from '@chakra-ui/react/styled-system'
+} from '@chakra-ui/react'
 
 export type {
   RecipeProps,
@@ -29,7 +29,7 @@ export type {
   RecipeDefinition,
   SlotRecipeDefinition,
   HTMLChakraProps,
-} from '@chakra-ui/react/styled-system'
+} from '@chakra-ui/react'
 
 export {
   useMediaQuery,

@@ -1,4 +1,4 @@
-import { defineRecipe } from '@chakra-ui/react/styled-system'
+import { defineRecipe } from '@chakra-ui/react'
 
 export const textareaRecipe = defineRecipe({
   className: 'chakra-textarea',

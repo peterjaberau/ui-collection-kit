@@ -1,7 +1,7 @@
 import {
   type RecipeVariantProps,
   defineRecipe,
-} from '@chakra-ui/react/styled-system'
+} from '@chakra-ui/react'
 
 export const commandRecipe = defineRecipe({
   className: 'sui-command',

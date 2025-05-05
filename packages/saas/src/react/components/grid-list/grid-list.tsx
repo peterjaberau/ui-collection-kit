@@ -1,4 +1,4 @@
-import type { HTMLChakraProps } from '@chakra-ui/react/styled-system'
+import type { HTMLChakraProps } from '@chakra-ui/react'
 import { GridList } from '../../../core/components/grid-list'
 
 import type { SlotRecipeProps } from '../../types'

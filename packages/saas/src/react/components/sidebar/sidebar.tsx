@@ -3,7 +3,7 @@ import React from 'react'
 import type {
   HTMLChakraProps,
   SlotRecipeProps,
-} from '@chakra-ui/react/styled-system'
+} from '@chakra-ui/react'
 import { Sidebar, useSidebar } from '../../../core/components/sidebar'
 
 import {

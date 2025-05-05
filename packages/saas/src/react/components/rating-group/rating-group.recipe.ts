@@ -1,5 +1,5 @@
 import { ratingGroupAnatomy } from '@chakra-ui/react/anatomy'
-import { defineSlotRecipe } from '@chakra-ui/react/styled-system'
+import { defineSlotRecipe } from '@chakra-ui/react'
 
 export const ratingGroupSlotRecipe = defineSlotRecipe({
   className: 'chakra-rating-group',

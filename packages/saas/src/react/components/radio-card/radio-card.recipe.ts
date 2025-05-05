@@ -1,5 +1,5 @@
 import { radioCardAnatomy } from '@chakra-ui/react/anatomy'
-import { defineSlotRecipe } from '@chakra-ui/react/styled-system'
+import { defineSlotRecipe } from '@chakra-ui/react'
 
 import { radiomarkRecipe } from '../radio/radiomark.recipe'
 

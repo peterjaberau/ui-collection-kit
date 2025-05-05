@@ -1,5 +1,5 @@
 import { dataListAnatomy } from '@chakra-ui/react/anatomy'
-import { defineSlotRecipe } from '@chakra-ui/react/styled-system'
+import { defineSlotRecipe } from '@chakra-ui/react'
 
 export const dataListSlotRecipe = defineSlotRecipe({
   slots: dataListAnatomy.keys(),

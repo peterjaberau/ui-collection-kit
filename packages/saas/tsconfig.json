@@ -17,6 +17,18 @@
     "strict": true,
     "target": "ES2022",
     "paths": {
+      "#assets/*": ["./src/assets/*"],
+      "#auth/*": ["./src/auth/*"],
+      "#charts/*": ["./src/charts/*"],
+      "#core/*": ["./src/core/*"],
+      "#date-picker/*": ["./src/date-picker/*"],
+      "#forms/*": ["./src/forms/*"],
+      "#hooks/*": ["./src/hooks/*"],
+      "#modals/*": ["./src/modals/*"],
+      "#modals-provider/*": ["./src/modals-provider/*"],
+      "#nprogress/*": ["./src/nprogress/*"],
+      "#react/*": ["./src/react/*"],
+      "#use-hotkeys/*": ["./src/use-hotkeys/*"],
       "@/*": ["./src/*"],
       "@/": ["./src"]
     },

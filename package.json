@@ -6,6 +6,10 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+
+    "demos-ui-blocks": "pnpm --filter \"./demos/ui-blocks\"",
+    "start-demos-ui-blocks": "pnpm demos-ui-blocks dev",
+
     "template-starter": "pnpm --filter \"./templates/starter\"",
     "start-template-starter": "pnpm template-starter dev",
     "template-hr": "pnpm --filter \"./templates/hr\"",

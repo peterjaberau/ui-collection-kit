@@ -1,5 +1,5 @@
 import { tableAnatomy } from '@chakra-ui/react/anatomy'
-import { defineSlotRecipe } from '@chakra-ui/react/styled-system'
+import { defineSlotRecipe } from '@chakra-ui/react'
 
 export const tableSlotRecipe = defineSlotRecipe({
   className: 'chakra-table',

@@ -1,5 +1,5 @@
 import { statusAnatomy } from '@chakra-ui/react/anatomy'
-import { defineSlotRecipe } from '@chakra-ui/react/styled-system'
+import { defineSlotRecipe } from '@chakra-ui/react'
 
 export const statusSlotRecipe = defineSlotRecipe({
   className: 'chakra-status',
