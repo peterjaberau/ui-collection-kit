@@ -1,0 +1,42 @@
+{
+  "name": "@ui-collection-kit/twenty-shared",
+  "version": "0.0.1",
+  "type": "module",
+  "homepage": "#",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "#",
+    "directory": "packages/twenty-shared"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "clean-package": "../../clean-package.config.json",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@sniptt/guards": "^0.2.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "glob": "^11.0.1",
+    "tsx": "^4.19.3",
+    "clean-package": "2.2.0"
+
+
+  }
+}

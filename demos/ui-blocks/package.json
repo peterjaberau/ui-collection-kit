@@ -8,15 +8,27 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ui-collection-kit/saas": "workspace:*",
     "next": "15.3.1",
     "next-themes": "0.4.6",
     "dayjs": "^1.11.13",
     "lodash": "^4.17.21",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-icons": "5.5.0"
+    "react-icons": "5.5.0",
+    "@statelyai/agent": "1.1.6",
+    "@statelyai/inspect": "^0.4.0",
+    "@xstate/graph": "^3.0.2",
+    "@xstate/react": "^5.0.3",
+    "@xstate/store": "^3.4.1",
+    "xstate": "^5.19.2",
+    "mutative": "1.1.0",
+    "set-value": "4.1.0",
+    "ts-results": "^3.3.0",
+    "react18-json-view": "^0.2.9"
   },
   "devDependencies": {
+    "@types/set-value": "4.0.3",
     "@storybook/react": "^8.6.12",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",

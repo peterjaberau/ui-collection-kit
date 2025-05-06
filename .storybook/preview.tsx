@@ -1,14 +1,76 @@
-import { withThemeByClassName } from "@storybook/addon-themes"
-import type { Preview, ReactRenderer } from "@storybook/react"
-import { ChakraProvider } from "@chakra-ui/react"
-// import '@fontsource-variable/inter'
-import { defaultSystem, SuiProvider } from "../packages/saas/src/react"
-// import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-
 import React from "react"
-// import "./styles/tailwind.css"
-// import "./styles/tailwind.css"
-// import "./styles/styles.css"
+import type { Preview, ReactRenderer } from "@storybook/react"
+import { withThemeByClassName } from "@storybook/addon-themes"
+
+// twenty imports
+import { ThemeProvider } from "@emotion/react"
+import { THEME_DARK, THEME_LIGHT, ThemeContextProvider } from "../packages/twenty-ui/src/theme"
+
+// chakra imports
+import { ChakraProvider } from "@chakra-ui/react"
+import { defaultSystem, SuiProvider } from "../packages/saas/src/react"
+
+const chakraLightSystem = {
+  config: {
+    initialColorMode: "light",
+    useSystemColorMode: false,
+  },
+}
+
+const chakraDarkSystem = {
+  config: {
+    initialColorMode: "dark",
+    useSystemColorMode: false,
+  },
+}
+
+const emotionLightTheme = { mode: "light" }
+const emotionDarkTheme = { mode: "dark" }
+
+const CustomDecoratorRenderer: any = (Story: any, context: any) => {
+  const storyPath = context?.title
+  const shouldApplyTwentyTheme = storyPath.includes("Twenty UI")
+  const currentTheme = context?.globals?.theme
+  const isTwentyStory = storyPath.includes("Twenty UI")
+
+  const ChakraThemeDecorator: any[] = [
+    withThemeByClassName({
+      themes: {
+        light: "light",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
+    (Story: any) => (
+      <ChakraProvider value={defaultSystem}>
+        <div className="font-mono antialiased">
+          <Story />
+        </div>
+      </ChakraProvider>
+    ),
+  ]
+
+  const twentyTheme = currentTheme === "dark" ? THEME_DARK : THEME_LIGHT
+
+  const TwentyThemeDecorator = [
+    withThemeByClassName({
+      themes: {
+        light: "light",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
+    (Story: any) => (
+      <ThemeProvider theme={twentyTheme}>
+        <ThemeContextProvider theme={twentyTheme}>
+          <Story />
+        </ThemeContextProvider>
+      </ThemeProvider>
+    ),
+  ]
+
+  return isTwentyStory ? TwentyThemeDecorator : ChakraThemeDecorator
+}
 
 const preview: Preview = {
   parameters: {
@@ -21,24 +83,7 @@ const preview: Preview = {
     },
     layout: "padded",
   },
-  decorators: [
-    withThemeByClassName({
-      themes: {
-        light: "light",
-        dark: "dark",
-      },
-      defaultTheme: "light",
-    }),
-    (Story) => (
-      <>
-        <ChakraProvider value={defaultSystem as any}>
-          <div className="font-mono antialiased">
-            <Story />
-          </div>
-        </ChakraProvider>
-      </>
-    ),
-  ],
+  decorators: CustomDecoratorRenderer,
 }
 
 export default preview
