@@ -1,4 +1,3 @@
-import { action } from "@storybook/addon-actions"
 import { Meta, StoryObj } from "@storybook/react"
 
 import { IconBell, IconMinus } from "../../../../display"
@@ -7,7 +6,7 @@ import { MenuItemAccent } from "../../types/MenuItemAccent"
 import { MenuItemDraggable } from "../MenuItemDraggable"
 
 const meta: Meta<typeof MenuItemDraggable> = {
-  title: "Twenty UI/Navigation/MenuItem/MenuItemDraggable",
+  title: "Refactor UI/Navigation/MenuItem/MenuItemDraggable",
   component: MenuItemDraggable,
 }
 
@@ -19,8 +18,8 @@ export const Default: Story = {
   args: {
     LeftIcon: IconBell,
     accent: "default",
-    iconButtons: [{ Icon: IconMinus, onClick: action("Clicked") }],
-    onClick: action("Clicked"),
+    iconButtons: [{ Icon: IconMinus, onClick: () => console.log("Clicked") }],
+    onClick: () => console.log("Clicked"),
     text: "Menu item draggable",
     isDragDisabled: false,
   },
@@ -79,7 +78,7 @@ export const Catalog: Story = {
                   iconButtons: [
                     {
                       Icon: IconMinus,
-                      onClick: action("Clicked on minus icon button"),
+                      onClick: () => console.log("Clicked on minus icon button"),
                     },
                   ],
                 }

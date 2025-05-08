@@ -5,7 +5,7 @@ import { MainButton } from '../MainButton';
 
 
 const meta: Meta<typeof MainButton> = {
-  title: 'Twenty UI/Input/Button/MainButton',
+  title: 'Refactor UI/Input/Button/MainButton',
   component: MainButton,
   decorators: [ComponentDecorator],
   args: { title: 'A primary Button' },

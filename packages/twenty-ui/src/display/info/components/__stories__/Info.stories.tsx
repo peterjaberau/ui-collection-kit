@@ -8,7 +8,7 @@ import {
 import { Info, InfoAccent } from '../Info';
 
 const meta: Meta<typeof Info> = {
-  title: 'Twenty UI/Display/Info',
+  title: 'Refactor UI/Display/Info',
   component: Info,
 };
 

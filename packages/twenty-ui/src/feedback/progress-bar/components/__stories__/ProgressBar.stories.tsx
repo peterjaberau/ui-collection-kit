@@ -4,7 +4,7 @@ import { ComponentDecorator } from '../../../../testing/decorators/ComponentDeco
 import { useProgressAnimation } from '../../../../feedback/progress-bar/hooks/useProgressAnimation';
 
 const meta: Meta<typeof ProgressBar> = {
-  title: 'Twenty UI/Feedback/ProgressBar/ProgressBar',
+  title: 'Refactor UI/Feedback/ProgressBar/ProgressBar',
   component: ProgressBar,
   decorators: [ComponentDecorator],
   argTypes: {

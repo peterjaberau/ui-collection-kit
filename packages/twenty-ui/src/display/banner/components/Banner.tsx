@@ -1,24 +1,39 @@
 import styled from '@emotion/styled';
+import { chakra } from '@chakra-ui/react';
+import { useTheme } from '@emotion/react';
 
-const StyledBanner = styled.div<{ variant?: BannerVariant }>`
-  align-items: center;
-  backdrop-filter: blur(5px);
-  background: ${({ theme, variant }) =>
-    variant === 'danger' ? theme.color.red : theme.color.blue};
-  display: flex;
-  gap: ${({ theme }) => theme.spacing(3)};
-  height: 40px;
-  justify-content: center;
-  padding: ${({ theme }) => theme.spacing(2) + ' ' + theme.spacing(3)};
-  width: 100%;
-  color: ${({ theme }) => theme.font.color.inverted};
-  font-family: Inter;
-  font-size: ${({ theme }) => theme.font.size.md};
-  font-style: normal;
-  font-weight: ${({ theme }) => theme.font.weight.medium};
-  line-height: 150%;
-  box-sizing: border-box;
-`;
+export type StyledBannerProps = {
+  variant?: BannerVariant;
+  children: React.ReactNode;
+  [key: string]: any;
+}
+
+const StyledBanner = ({ children, ...props }: StyledBannerProps) => {
+  const theme = useTheme();
+
+  return (
+    <chakra.div
+      alignItems="center"
+      backdropFilter="blur(5px)"
+      background={props.variant === 'danger' ? theme.color.red : theme.color.blue}
+      display="flex"
+      gap={theme.spacing(3)}
+      height="40px"
+      justifyContent="center"
+      padding={`${theme.spacing(2)} ${theme.spacing(3)}`}
+      width="100%"
+      color={theme.font.color.inverted}
+      fontFamily="Inter"
+      fontSize={theme.font.size.md}
+      fontStyle="normal"
+      fontWeight={theme.font.weight.medium}
+      lineHeight="150%"
+      boxSizing="border-box"
+    >
+      {children}
+    </chakra.div>
+  )
+}
 
 export type BannerVariant = 'danger' | 'default';
 

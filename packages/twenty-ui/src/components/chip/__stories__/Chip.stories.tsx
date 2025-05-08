@@ -1,4 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
+import {
+  CatalogDecorator,
+  CatalogStory,
+  ComponentDecorator,
+} from '../../../testing';
 
 import { Chip, ChipAccent, ChipSize, ChipVariant } from '../Chip';
 
@@ -20,9 +25,11 @@ export const Default: Story = {
     clickable: true,
     maxWidth: 200,
   },
+  decorators: [ComponentDecorator],
+
 };
 
-export const Catalog = {
+export const Catalog: CatalogStory<Story, typeof Chip> = {
   args: { clickable: true, label: 'Hello' },
   argTypes: {
     size: { control: false },
@@ -60,4 +67,5 @@ export const Catalog = {
       ],
     },
   },
+  decorators: [CatalogDecorator],
 };

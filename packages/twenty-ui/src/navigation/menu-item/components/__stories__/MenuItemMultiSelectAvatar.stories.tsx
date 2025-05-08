@@ -13,7 +13,7 @@ import {
 import { MenuItemMultiSelectAvatar } from '../MenuItemMultiSelectAvatar';
 
 const meta: Meta<typeof MenuItemMultiSelectAvatar> = {
-  title: 'Twenty UI/Navigation/MenuItem/MenuItemMultiSelectAvatar',
+  title: 'Refactor UI/Navigation/MenuItem/MenuItemMultiSelectAvatar',
   component: MenuItemMultiSelectAvatar,
 };
 

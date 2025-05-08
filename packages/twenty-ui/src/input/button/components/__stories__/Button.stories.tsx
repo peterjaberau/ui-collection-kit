@@ -14,7 +14,7 @@ import {
 } from '../Button/Button';
 
 const meta: Meta<typeof Button> = {
-  title: 'Twenty UI/Input/Button/Button',
+  title: 'Refactor UI/Input/Button/Button',
   component: Button,
 };
 

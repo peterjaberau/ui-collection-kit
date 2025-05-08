@@ -4,7 +4,7 @@ import { Pill } from '../Pill';
 import { ComponentDecorator } from '../../../testing/decorators/ComponentDecorator';
 
 const meta: Meta<typeof Pill> = {
-  title: 'Twenty UI/Display/Pill',
+  title: 'Refactor UI/Display/Pill',
   component: Pill,
   decorators: [ComponentDecorator],
   args: {

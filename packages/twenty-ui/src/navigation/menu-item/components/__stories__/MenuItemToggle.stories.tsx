@@ -11,7 +11,7 @@ import {
 import { MenuItemToggle } from '../MenuItemToggle';
 
 const meta: Meta<typeof MenuItemToggle> = {
-  title: 'Twenty UI/Navigation/MenuItem/MenuItemToggle',
+  title: 'Refactor UI/Navigation/MenuItem/MenuItemToggle',
   component: MenuItemToggle,
 };
 

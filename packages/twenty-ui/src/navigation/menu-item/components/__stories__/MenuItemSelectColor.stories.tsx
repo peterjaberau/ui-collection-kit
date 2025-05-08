@@ -12,7 +12,7 @@ import { MAIN_COLOR_NAMES, ThemeColor } from '../../../../theme';
 import { MenuItemSelectColor } from '../MenuItemSelectColor';
 
 const meta: Meta<typeof MenuItemSelectColor> = {
-  title: 'Twenty UI/Navigation/MenuItem/MenuItemSelectColor',
+  title: 'Refactor UI/Navigation/MenuItem/MenuItemSelectColor',
   component: MenuItemSelectColor,
 };
 

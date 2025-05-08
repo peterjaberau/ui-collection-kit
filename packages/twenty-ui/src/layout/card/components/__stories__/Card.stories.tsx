@@ -7,7 +7,7 @@ import { CardFooter } from '../CardFooter';
 import { CardHeader } from '../CardHeader';
 
 const meta: Meta<typeof Card> = {
-  title: 'Twenty UI/Layout/Card/Card',
+  title: 'Refactor UI/Layout/Card/Card',
   component: Card,
   decorators: [ComponentDecorator],
   render: (args) => (

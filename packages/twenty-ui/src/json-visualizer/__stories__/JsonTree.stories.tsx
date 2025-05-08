@@ -3,7 +3,7 @@ import { JsonTree } from '../../json-visualizer/components/JsonTree';
 import { isTwoFirstDepths } from '../../json-visualizer/utils/isTwoFirstDepths';
 
 const meta: Meta<typeof JsonTree> = {
-  title: 'Twenty UI/JsonVisualizer/JsonTree',
+  title: 'Refactor UI/JsonVisualizer/JsonTree',
   component: JsonTree,
   args: {
     shouldExpandNodeInitially: () => true,

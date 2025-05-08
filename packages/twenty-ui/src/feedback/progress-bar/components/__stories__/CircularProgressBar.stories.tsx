@@ -5,7 +5,7 @@ import { CircularProgressBar } from '../CircularProgressBar';
 import { ComponentDecorator } from '../../../../testing/decorators/ComponentDecorator';
 
 const meta: Meta<typeof CircularProgressBar> = {
-  title: 'Twenty UI/Feedback/CircularProgressBar/CircularProgressBar',
+  title: 'Refactor UI/Feedback/CircularProgressBar/CircularProgressBar',
   component: CircularProgressBar,
   args: {
     size: 50,

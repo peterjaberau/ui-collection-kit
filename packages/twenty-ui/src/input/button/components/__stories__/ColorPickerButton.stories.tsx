@@ -3,7 +3,7 @@ import { ComponentDecorator } from '../../../../testing';
 import { ColorPickerButton } from '../ColorPickerButton';
 
 const meta: Meta<typeof ColorPickerButton> = {
-  title: 'Twenty UI/Input/Button/ColorPickerButton',
+  title: 'Refactor UI/Input/Button/ColorPickerButton',
   component: ColorPickerButton,
   decorators: [ComponentDecorator],
   args: { colorName: 'green' },

@@ -1,8 +1,9 @@
 import React from "react"
 import type { Preview, ReactRenderer } from "@storybook/react"
 import { withThemeByClassName } from "@storybook/addon-themes"
-import 'react18-json-view/src/style.css'
+import "react18-json-view/src/style.css"
 import JsonView from "react18-json-view"
+import { Box, Flex } from "@chakra-ui/react"
 
 // twenty imports
 import { ThemeProvider } from "@emotion/react"
@@ -43,7 +44,12 @@ const CustomDecoratorRenderer: any = (Story: any, context: any) => {
     (Story: any) => (
       <ChakraProvider value={defaultSystem}>
         <div className="font-mono antialiased">
-          <Story />
+          <Flex justify="space-between">
+            <Box>
+              <Story />
+            </Box>
+            <Box gap="4" width="400" marginEnd="auto"></Box>
+          </Flex>
         </div>
       </ChakraProvider>
     ),
@@ -99,12 +105,14 @@ const preview: Preview = {
       const currentTheme = context?.globals?.theme
       const twentyTheme = currentTheme === "dark" ? THEME_DARK : THEME_LIGHT
 
-      const JsonViewWrapper = () => <JsonView
-        src={{ storyPath, shouldApplyTwentyTheme, shouldApplyTwentyRefactoredTheme, shouldApplyChakraTheme}}
-        collapsed={1}
-        style={{ fontSize: "13px" }}
-        theme={'github'}
-      />
+      const JsonViewWrapper = () => (
+        <JsonView
+          src={{ storyPath, shouldApplyTwentyTheme, shouldApplyTwentyRefactoredTheme, shouldApplyChakraTheme }}
+          collapsed={1}
+          style={{ fontSize: "13px" }}
+          theme={"github"}
+        />
+      )
 
       return (
         <>
@@ -122,8 +130,14 @@ const preview: Preview = {
             <>
               <ChakraProvider value={defaultSystem as any}>
                 <div className="font-mono antialiased">
-                  <JsonViewWrapper />
-                  <Story />
+                  <Flex justify="space-between" grow="1" minWidth="full" width="8xl">
+                    <Box>
+                      <Story />
+                    </Box>
+                    <Box gap="4" width="400" marginEnd="auto">
+                      <JsonViewWrapper />
+                    </Box>
+                  </Flex>
                 </div>
               </ChakraProvider>
             </>
@@ -132,14 +146,20 @@ const preview: Preview = {
           {shouldApplyTwentyRefactoredTheme && (
             <>
               <ChakraProvider value={defaultSystem as any}>
-                <ThemeProvider theme={twentyTheme}>
-                  <ThemeContextProvider theme={twentyTheme}>
-                    <div className="font-mono antialiased">
+                <div className="font-mono antialiased" style={{ fontSize: "13px" }}>
+                  <Flex justify="space-between" grow="1" minWidth="full" width="8xl">
+                    <Flex grow="1" width="full">
+                      <ThemeProvider theme={twentyTheme}>
+                        <ThemeContextProvider theme={twentyTheme}>
+                          <Story />
+                        </ThemeContextProvider>
+                      </ThemeProvider>
+                    </Flex>
+                    <Box gap="4" width="400" marginEnd="auto">
                       <JsonViewWrapper />
-                      <Story />
-                    </div>
-                  </ThemeContextProvider>
-                </ThemeProvider>
+                    </Box>
+                  </Flex>
+                </div>
               </ChakraProvider>
             </>
           )}

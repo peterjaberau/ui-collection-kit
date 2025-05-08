@@ -4,7 +4,7 @@ import { ComponentDecorator } from '../../../../testing';
 import { SeparatorLineText } from '../SeparatorLineText';
 
 const meta: Meta<typeof SeparatorLineText> = {
-  title: 'Twenty UI/Display/Text/SeparatorLineText',
+  title: 'Refactor UI/Display/Text/SeparatorLineText',
   component: SeparatorLineText,
   args: { children: 'Or' },
   decorators: [ComponentDecorator],

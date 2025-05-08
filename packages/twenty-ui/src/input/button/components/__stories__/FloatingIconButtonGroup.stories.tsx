@@ -9,7 +9,7 @@ import { FloatingIconButtonSize } from '../FloatingIconButton';
 import { FloatingIconButtonGroup } from '../FloatingIconButtonGroup';
 
 const meta: Meta<typeof FloatingIconButtonGroup> = {
-  title: 'Twenty UI/Input/Button/FloatingIconButtonGroup',
+  title: 'Refactor UI/Input/Button/FloatingIconButtonGroup',
   component: FloatingIconButtonGroup,
   args: {
     iconButtons: [

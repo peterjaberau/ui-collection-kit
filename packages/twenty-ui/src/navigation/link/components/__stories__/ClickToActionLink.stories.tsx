@@ -3,7 +3,7 @@ import { ClickToActionLink } from '../../../../navigation/link/components/ClickT
 import { ComponentDecorator } from '../../../../testing';
 
 const meta: Meta<typeof ClickToActionLink> = {
-  title: 'Twenty UI/navigation/link/ClickToActionLink',
+  title: 'Refactor UI/navigation/link/ClickToActionLink',
   component: ClickToActionLink,
 };
 

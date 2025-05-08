@@ -1,4 +1,4 @@
-import { styled } from '@linaria/react';
+import styled from '@emotion/styled';
 import { isNonEmptyString } from '@sniptt/guards';
 import { FONT_COMMON, THEME_COMMON, ThemeContext } from '../../../theme';
 import { MouseEvent, useContext } from 'react';

@@ -13,7 +13,7 @@ const StyledContainer = styled.div`
 `;
 
 const meta: Meta<typeof ColorSchemeCard> = {
-  title: 'Twenty UI/Input/ColorScheme/ColorSchemeCard',
+  title: 'Refactor UI/Input/ColorScheme/ColorSchemeCard',
   component: ColorSchemeCard,
   decorators: [
     (Story) => (

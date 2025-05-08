@@ -8,7 +8,7 @@ import {
 import { LightButton, LightButtonAccent } from '../LightButton';
 
 const meta: Meta<typeof LightButton> = {
-  title: 'Twenty UI/Input/Button/LightButton',
+  title: 'Refactor UI/Input/Button/LightButton',
   component: LightButton,
 };
 

@@ -96,7 +96,7 @@ const AnimatedExpandableContainerWithButton = ({
 };
 
 const meta: Meta<typeof AnimatedExpandableContainerWithButton> = {
-  title: 'Twenty UI/Layout/AnimatedExpandableContainer',
+  title: 'Refactor UI/Layout/AnimatedExpandableContainer',
   component: AnimatedExpandableContainerWithButton,
   decorators: [ComponentDecorator],
   argTypes: {

@@ -12,7 +12,7 @@ import {
 } from '../../../../testing';
 
 const meta: Meta<typeof MenuItemNavigate> = {
-  title: 'Twenty UI/Navigation/MenuItem/MenuItemNavigate',
+  title: 'Refactor UI/Navigation/MenuItem/MenuItemNavigate',
   component: MenuItemNavigate,
 };
 

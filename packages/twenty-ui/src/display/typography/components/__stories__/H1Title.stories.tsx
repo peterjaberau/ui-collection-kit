@@ -7,7 +7,7 @@ import { CatalogStory } from '../../../../testing/types/CatalogStory';
 import { H1Title, H1TitleFontColor } from '../H1Title';
 
 const meta: Meta<typeof H1Title> = {
-  title: 'Twenty UI/Display/Typography/Title/H1Title',
+  title: 'Refactor UI/Display/Typography/Title/H1Title',
   component: H1Title,
   decorators: [ComponentDecorator],
 };

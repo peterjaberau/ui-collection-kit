@@ -12,7 +12,7 @@ import {
 import { AnimatedLightIconButton } from '../AnimatedLightIconButton';
 
 const meta: Meta<typeof AnimatedLightIconButton> = {
-  title: 'Twenty UI/Input/Button/AnimatedLightIconButton',
+  title: 'Refactor UI/Input/Button/AnimatedLightIconButton',
   component: AnimatedLightIconButton,
 };
 

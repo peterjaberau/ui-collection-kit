@@ -11,7 +11,7 @@ import {
 import { MenuItemMultiSelect } from '../MenuItemMultiSelect';
 
 const meta: Meta<typeof MenuItemMultiSelect> = {
-  title: 'Twenty UI/Navigation/MenuItem/MenuItemMultiSelect',
+  title: 'Refactor UI/Navigation/MenuItem/MenuItemMultiSelect',
   component: MenuItemMultiSelect,
 };
 

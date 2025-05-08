@@ -7,7 +7,7 @@ import { CatalogStory } from '../../../../testing/types/CatalogStory';
 import { Label, LabelVariant } from '../Label';
 
 const meta: Meta<typeof Label> = {
-  title: 'Twenty UI/Display/Typography/Label',
+  title: 'Refactor UI/Display/Typography/Label',
   component: Label,
   decorators: [ComponentDecorator],
 };

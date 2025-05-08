@@ -3,7 +3,7 @@ import { UndecoratedLink } from '../../../../navigation/link/components/Undecora
 import { ComponentWithRouterDecorator } from '../../../../testing';
 
 const meta: Meta<typeof UndecoratedLink> = {
-  title: 'Twenty UI/navigation/link/UndecoratedLink',
+  title: 'Refactor UI/navigation/link/UndecoratedLink',
   component: UndecoratedLink,
   decorators: [ComponentWithRouterDecorator],
 };

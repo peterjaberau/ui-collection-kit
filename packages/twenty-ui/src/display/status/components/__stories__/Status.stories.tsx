@@ -9,7 +9,7 @@ import { ThemeColor, MAIN_COLOR_NAMES } from '../../../../theme';
 import { Status } from '../Status';
 
 const meta: Meta<typeof Status> = {
-  title: 'Twenty UI/Display/Status/Status',
+  title: 'Refactor UI/Display/Status/Status',
   component: Status,
   args: {
     text: 'Urgent',

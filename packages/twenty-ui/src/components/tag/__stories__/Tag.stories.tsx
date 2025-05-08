@@ -11,7 +11,7 @@ import { MAIN_COLOR_NAMES, ThemeColor } from '../../../theme';
 import { Tag } from '../Tag';
 
 const meta: Meta<typeof Tag> = {
-  title: 'Twenty UI/Display/Tag/Tag',
+  title: 'Refactor UI/Display/Tag/Tag',
   component: Tag,
   args: {
     text: 'Urgent',

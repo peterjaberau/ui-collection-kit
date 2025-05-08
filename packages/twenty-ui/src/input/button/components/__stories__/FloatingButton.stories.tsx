@@ -8,7 +8,7 @@ import {
 import { FloatingButton, FloatingButtonSize } from '../FloatingButton';
 
 const meta: Meta<typeof FloatingButton> = {
-  title: 'Twenty UI/Input/Button/FloatingButton',
+  title: 'Refactor UI/Input/Button/FloatingButton',
   component: FloatingButton,
 };
 

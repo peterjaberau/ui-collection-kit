@@ -4,11 +4,10 @@ import { ComponentDecorator } from '../../../../testing';
 import { Banner } from '../Banner';
 
 const meta: Meta<typeof Banner> = {
-  title: 'Twenty UI/Layout/Banner/Banner',
+  title: 'Refactor UI/Layout/Banner/Banner',
   component: Banner,
   decorators: [ComponentDecorator],
   render: (args) => (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <Banner {...args}>
       Sync lost with mailbox hello@twenty.com. Please reconnect for updates:
     </Banner>

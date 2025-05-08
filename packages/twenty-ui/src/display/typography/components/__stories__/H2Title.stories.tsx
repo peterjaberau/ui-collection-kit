@@ -10,7 +10,7 @@ const args = {
 };
 
 const meta: Meta<typeof H2Title> = {
-  title: 'Twenty UI/Display/Typography/Title/H2Title',
+  title: 'Refactor UI/Display/Typography/Title/H2Title',
   component: H2Title,
   decorators: [ComponentDecorator],
   args: {

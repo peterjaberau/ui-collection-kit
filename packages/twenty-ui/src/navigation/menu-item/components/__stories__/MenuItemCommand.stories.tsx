@@ -9,7 +9,7 @@ import {
 import { MenuItemCommand } from '../MenuItemCommand';
 
 const meta: Meta<typeof MenuItemCommand> = {
-  title: 'Twenty UI/Navigation/MenuItem/MenuItemCommand',
+  title: 'Refactor UI/Navigation/MenuItem/MenuItemCommand',
   component: MenuItemCommand,
 };
 

@@ -4,7 +4,7 @@ import { ComponentWithRouterDecorator } from '../../../../testing';
 import { LinkType, SocialLink } from '../SocialLink';
 
 const meta: Meta<typeof SocialLink> = {
-  title: 'Twenty UI/Navigation/Link/SocialLink',
+  title: 'Refactor UI/Navigation/Link/SocialLink',
   component: SocialLink,
   decorators: [ComponentWithRouterDecorator],
   args: {

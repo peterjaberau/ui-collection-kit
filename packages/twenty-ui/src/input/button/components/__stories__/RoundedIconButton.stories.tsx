@@ -4,7 +4,7 @@ import { ComponentDecorator } from '../../../../testing';
 import { RoundedIconButton } from '../RoundedIconButton';
 
 const meta: Meta<typeof RoundedIconButton> = {
-  title: 'Twenty UI/Input/Button/RoundedIconButton',
+  title: 'Refactor UI/Input/Button/RoundedIconButton',
   component: RoundedIconButton,
 };
 

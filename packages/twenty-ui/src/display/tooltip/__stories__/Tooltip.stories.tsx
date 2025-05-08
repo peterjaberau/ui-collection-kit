@@ -13,7 +13,7 @@ import {
 } from '../AppTooltip';
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Twenty UI/Display/Tooltip',
+  title: 'Refactor UI/Display/Tooltip',
   component: Tooltip,
 };
 

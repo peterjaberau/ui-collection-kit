@@ -4,7 +4,7 @@ import { ComponentWithRouterDecorator } from '../../../../testing';
 import { GithubVersionLink } from '../GithubVersionLink';
 
 const meta: Meta<typeof GithubVersionLink> = {
-  title: 'Twenty UI/Navigation/Link/GithubVersionLink',
+  title: 'Refactor UI/Navigation/Link/GithubVersionLink',
   component: GithubVersionLink,
   decorators: [ComponentWithRouterDecorator],
 };

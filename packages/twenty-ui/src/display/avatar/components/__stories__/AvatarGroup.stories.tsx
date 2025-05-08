@@ -6,6 +6,9 @@ import { AvatarSize } from '../../../../display/avatar/types/AvatarSize';
 import { AvatarType } from '../../../../display/avatar/types/AvatarType';
 import {
   AVATAR_URL_MOCK,
+  CatalogDecorator,
+  ComponentDecorator,
+  RecoilRootDecorator,
 } from '../../../../testing';
 
 import { AvatarGroup, AvatarGroupProps } from '../AvatarGroup';
@@ -37,6 +40,8 @@ export default meta;
 type Story = StoryObj<typeof AvatarGroup>;
 
 export const Default: Story = {
+  decorators: [ComponentDecorator, RecoilRootDecorator],
+
 };
 
 export const Catalog: Story = {
@@ -61,4 +66,5 @@ export const Catalog: Story = {
       ],
     },
   },
+  decorators: [CatalogDecorator, RecoilRootDecorator],
 };

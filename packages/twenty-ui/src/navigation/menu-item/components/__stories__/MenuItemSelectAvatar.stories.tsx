@@ -13,7 +13,7 @@ import {
 import { MenuItemSelectAvatar } from '../MenuItemSelectAvatar';
 
 const meta: Meta<typeof MenuItemSelectAvatar> = {
-  title: 'Twenty UI/Navigation/MenuItem/MenuItemSelectAvatar',
+  title: 'Refactor UI/Navigation/MenuItem/MenuItemSelectAvatar',
   component: MenuItemSelectAvatar,
 };
 

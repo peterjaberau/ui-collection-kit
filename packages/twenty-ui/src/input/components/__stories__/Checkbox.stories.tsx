@@ -14,7 +14,7 @@ import {
 } from '../Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Twenty UI/Input/Checkbox/Checkbox',
+  title: 'Refactor UI/Input/Checkbox/Checkbox',
   component: Checkbox,
 };
 

@@ -8,7 +8,7 @@ import {
 import { LabelPosition, Radio, RadioSize } from '../Radio';
 
 const meta: Meta<typeof Radio> = {
-  title: 'Twenty UI/Input/Radio/Radio',
+  title: 'Refactor UI/Input/Radio/Radio',
   component: Radio,
 };
 

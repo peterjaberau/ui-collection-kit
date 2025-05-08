@@ -1,115 +1,126 @@
-import { styled } from '@linaria/react';
-import { useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { chakra } from "@chakra-ui/react"
+import { useRef, useState } from "react"
+import { createPortal } from "react-dom"
 
-import { THEME_COMMON } from '../../theme';
-import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
-import { AppTooltip, TooltipDelay } from './AppTooltip';
+import { THEME_COMMON } from "../../theme"
+import { isDefined } from "@ui-collection-kit/twenty-shared/src/utils"
+import { AppTooltip, TooltipDelay } from "./AppTooltip"
 
-const spacing4 = THEME_COMMON.spacing(4);
+const spacing4 = THEME_COMMON.spacing(4)
 
-const StyledOverflowingMultilineText = styled.div<{
-  cursorPointer: boolean;
-  size: 'large' | 'small';
-  displayedMaxRows: number;
-}>`
-  cursor: ${({ cursorPointer }) => (cursorPointer ? 'pointer' : 'inherit')};
-  font-family: inherit;
-  font-size: inherit;
+export type StyledOverflowingMultilineTextProps = {
+  cursorPointer: boolean
+  size: "large" | "small"
+  displayedMaxRows: number
+  [key: string]: any
+  children: React.ReactNode
+}
 
-  font-weight: inherit;
-  max-width: 100%;
-  overflow: hidden;
-  text-decoration: inherit;
+const StyledOverflowingMultilineText = ({ children, ...props }: StyledOverflowingMultilineTextProps) => {
+  return (
+    <chakra.div
+      fontFamily="inherit"
+      fontSize="inherit"
+      fontWeight="inherit"
+      maxWidth="100%"
+      overflow="hidden"
+      textDecoration="inherit"
+      textOverflow="ellipsis"
+      height={props.size === "large" ? spacing4 : "auto"}
+      whiteSpace="pre-wrap"
+      css={{
+        "-webkit-line-clamp": props.displayedMaxRows ? props.displayedMaxRows.toString() : "1",
+        "-webkit-box-orient": "vertical",
+      }}
+      display="-webkit-box"
+      _hover={{
+        textOverflow: props.cursorPointer ? "clip" : "ellipsis",
+        whiteSpace: props.cursorPointer ? "normal" : "nowrap",
+      }}
+      {...props}
+    >
+      {children}
+    </chakra.div>
+  )
+}
 
-  text-overflow: ellipsis;
-  height: ${({ size }) => (size === 'large' ? spacing4 : 'auto')};
+export type StyledOverflowingTextProps = {
+  cursorPointer: boolean
+  size: "large" | "small"
+  [key: string]: any
+  children: React.ReactNode
+}
 
-  -webkit-line-clamp: ${({ displayedMaxRows }) =>
-    displayedMaxRows ? displayedMaxRows.toString() : '1'};
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  white-space: pre-wrap;
+const StyledOverflowingText = ({ children, ...props }: StyledOverflowingTextProps) => {
+  return (
+    <chakra.div
+      cursor={props.cursorPointer ? "pointer" : "inherit"}
+      fontFamily="inherit"
+      fontSize="inherit"
+      fontWeight="inherit"
+      maxWidth="100%"
+      textDecoration="inherit"
+      textOverflow="ellipsis"
+      overflow="hidden"
+      height={props.size === "large" ? spacing4 : "auto"}
+      whiteSpace="nowrap"
+      _hover={{
+        textOverflow: props.cursorPointer ? "clip" : "ellipsis",
+        whiteSpace: props.cursorPointer ? "normal" : "nowrap",
+      }}
+    >
+      {children}
+    </chakra.div>
+  )
+}
 
-  & :hover {
-    text-overflow: ${({ cursorPointer }) =>
-      cursorPointer ? 'clip' : 'ellipsis'};
-    white-space: ${({ cursorPointer }) =>
-      cursorPointer ? 'normal' : 'nowrap'};
-  }
-`;
-
-const StyledOverflowingText = styled.div<{
-  cursorPointer: boolean;
-  size: 'large' | 'small';
-}>`
-  cursor: ${({ cursorPointer }) => (cursorPointer ? 'pointer' : 'inherit')};
-  font-family: inherit;
-  font-size: inherit;
-
-  font-weight: inherit;
-  max-width: 100%;
-  text-decoration: inherit;
-
-  text-overflow: ellipsis;
-  overflow: hidden;
-  height: ${({ size }) => (size === 'large' ? spacing4 : 'auto')};
-
-  white-space: nowrap;
-
-  & :hover {
-    text-overflow: ${({ cursorPointer }) =>
-      cursorPointer ? 'clip' : 'ellipsis'};
-    white-space: ${({ cursorPointer }) =>
-      cursorPointer ? 'normal' : 'nowrap'};
-  }
-`;
-
-const Styledpre = styled.pre`
-  font-family: inherit;
-  white-space: pre-wrap;
-`;
+const Styledpre = chakra("pre", {
+  base: {
+    fontFamily: "inherit",
+    whiteSpace: "pre-wrap",
+  },
+})
 
 export const OverflowingTextWithTooltip = ({
-  size = 'small',
+  size = "small",
   text,
   isTooltipMultiline,
   displayedMaxRows,
   hideTooltip,
 }: {
-  size?: 'large' | 'small';
-  text: string | null | undefined;
-  isTooltipMultiline?: boolean;
-  displayedMaxRows?: number;
-  hideTooltip?: boolean;
+  size?: "large" | "small"
+  text: string | null | undefined
+  isTooltipMultiline?: boolean
+  displayedMaxRows?: number
+  hideTooltip?: boolean
 }) => {
-  const textElementId = `title-id-${+new Date()}`;
+  const textElementId = `title-id-${+new Date()}`
 
-  const textRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null)
 
-  const [isTitleOverflowing, setIsTitleOverflowing] = useState(false);
-  const [shouldRenderTooltip, setShouldRenderTooltip] = useState(false);
+  const [isTitleOverflowing, setIsTitleOverflowing] = useState(false)
+  const [shouldRenderTooltip, setShouldRenderTooltip] = useState(false)
 
   const handleMouseEnter = () => {
     const isOverflowing =
       (text?.length ?? 0) > 0 && textRef.current
         ? textRef.current?.scrollHeight > textRef.current?.clientHeight ||
           textRef.current.scrollWidth > textRef.current.clientWidth
-        : false;
+        : false
 
-    setIsTitleOverflowing(isOverflowing);
-    setShouldRenderTooltip(true);
-  };
+    setIsTitleOverflowing(isOverflowing)
+    setShouldRenderTooltip(true)
+  }
 
   const handleMouseLeave = () => {
-    setIsTitleOverflowing(false);
-    setShouldRenderTooltip(false);
-  };
+    setIsTitleOverflowing(false)
+    setShouldRenderTooltip(false)
+  }
 
   const handleTooltipClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.stopPropagation();
-    event.preventDefault();
-  };
+    event.stopPropagation()
+    event.preventDefault()
+  }
   return (
     <>
       {isDefined(displayedMaxRows) ? (
@@ -152,15 +163,11 @@ export const OverflowingTextWithTooltip = ({
               delay={TooltipDelay.mediumDelay}
               isOpen={true}
             >
-              {isTooltipMultiline ? (
-                <Styledpre>{text}</Styledpre>
-              ) : (
-                `${text || ''}`
-              )}
+              {isTooltipMultiline ? <Styledpre>{text}</Styledpre> : `${text || ""}`}
             </AppTooltip>
           </div>,
           document.body,
         )}
     </>
-  );
-};
+  )
+}

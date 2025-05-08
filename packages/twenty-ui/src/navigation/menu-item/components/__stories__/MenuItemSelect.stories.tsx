@@ -11,7 +11,7 @@ import { MenuItemSelect } from '../MenuItemSelect';
 
 import { IconBell } from '../../../../display';
 const meta: Meta<typeof MenuItemSelect> = {
-  title: 'Twenty UI/Navigation/MenuItem/MenuItemSelect',
+  title: 'Refactor UI/Navigation/MenuItem/MenuItemSelect',
   component: MenuItemSelect,
 };
 

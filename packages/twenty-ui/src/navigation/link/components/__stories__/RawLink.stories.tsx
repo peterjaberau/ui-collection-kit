@@ -4,7 +4,7 @@ import { ComponentWithRouterDecorator } from "../../../../testing"
 import { RawLink } from "../RawLink"
 
 const meta: Meta<typeof RawLink> = {
-  title: "UI/Navigation/Link/RawLink",
+  title: "Refactor UI/Navigation/Link/RawLink",
   component: RawLink,
   decorators: [ComponentWithRouterDecorator],
   args: {

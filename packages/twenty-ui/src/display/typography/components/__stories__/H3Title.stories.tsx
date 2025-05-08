@@ -5,7 +5,7 @@ import { ComponentDecorator } from '../../../../testing/decorators/ComponentDeco
 import { H3Title } from '../H3Title';
 
 const meta: Meta<typeof H3Title> = {
-  title: 'Twenty UI/Display/Typography/Title/H3Title',
+  title: 'Refactor UI/Display/Typography/Title/H3Title',
   component: H3Title,
   decorators: [ComponentDecorator],
   args: {

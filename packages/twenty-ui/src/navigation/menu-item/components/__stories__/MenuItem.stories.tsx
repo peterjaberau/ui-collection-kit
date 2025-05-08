@@ -1,4 +1,3 @@
-import { action } from "@storybook/addon-actions"
 import { Meta, StoryObj } from '@storybook/react';
 
 import { IconBell } from '../../../../display';
@@ -11,7 +10,7 @@ import { MenuItemAccent } from '../../types/MenuItemAccent';
 import { MenuItem } from '../MenuItem';
 
 const meta: Meta<typeof MenuItem> = {
-  title: 'Twenty UI/Navigation/MenuItem/MenuItem',
+  title: 'Refactor UI/Navigation/MenuItem/MenuItem',
   component: MenuItem,
 };
 
@@ -25,8 +24,8 @@ export const Default: Story = {
     LeftIcon: IconBell,
     accent: 'default',
     iconButtons: [
-      { Icon: IconBell, onClick: action('Clicked') },
-      { Icon: IconBell, onClick: action('Clicked') },
+      { Icon: IconBell, onClick: () => console.log('Clicked') },
+      { Icon: IconBell, onClick: () => console.log('Clicked') },
     ],
   },
   decorators: [ComponentDecorator],
@@ -86,11 +85,11 @@ export const Catalog: CatalogStory<Story, typeof MenuItem> = {
                   iconButtons: [
                     {
                       Icon: IconBell,
-                      onClick: action('Clicked on first icon button'),
+                      onClick: () => console.log('Clicked on first icon button'),
                     },
                     {
                       Icon: IconBell,
-                      onClick: action('Clicked on second icon button'),
+                      onClick: () => console.log('Clicked on second icon button'),
                     },
                   ],
                 };

@@ -14,7 +14,7 @@ import {
 import { ButtonGroup } from '../ButtonGroup';
 
 const meta: Meta<typeof ButtonGroup> = {
-  title: 'Twenty UI/Input/Button/ButtonGroup',
+  title: 'Refactor UI/Input/Button/ButtonGroup',
   component: ButtonGroup,
 };
 
