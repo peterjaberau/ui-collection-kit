@@ -87,6 +87,7 @@
     "./accessibility": "./src/accessibility/index.ts",
     "./components": "./src/components/index.ts",
     "./display": "./src/display/index.ts",
+    "./modules": "./src/modules/index.ts",
     "./feedback": "./src/feedback/index.ts",
     "./input": "./src/input/index.ts",
     "./json-visualizer": "./src/json-visualizer/index.ts",

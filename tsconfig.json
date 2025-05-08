@@ -37,6 +37,8 @@
       "@/packages/*": ["../packages/*"],
       "@/demos/*": ["../demos/*"],
       "@/apps/*": ["../apps/*"],
+      "@twenty-ui/*": ["./packages/twenty-ui/src/*"],
+      "@twenty-modules/*": ["./packages/twenty-ui/src/modules/*"],
 
       "@/templates": ["../templates"],
       "@/packages": ["../packages"],

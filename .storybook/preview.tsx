@@ -27,55 +27,6 @@ const chakraDarkSystem = {
   },
 }
 
-const CustomDecoratorRenderer: any = (Story: any, context: any) => {
-  const storyPath = context?.title
-  const shouldApplyTwentyTheme = storyPath.includes("Twenty UI")
-  const currentTheme = context?.globals?.theme
-  const isTwentyStory = storyPath.includes("Twenty UI")
-
-  const ChakraThemeDecorator: any[] = [
-    withThemeByClassName({
-      themes: {
-        light: "light",
-        dark: "dark",
-      },
-      defaultTheme: "light",
-    }),
-    (Story: any) => (
-      <ChakraProvider value={defaultSystem}>
-        <div className="font-mono antialiased">
-          <Flex justify="space-between">
-            <Box>
-              <Story />
-            </Box>
-            <Box gap="4" width="400" marginEnd="auto"></Box>
-          </Flex>
-        </div>
-      </ChakraProvider>
-    ),
-  ]
-
-  const twentyTheme = currentTheme === "dark" ? THEME_DARK : THEME_LIGHT
-
-  const TwentyThemeDecorator = [
-    withThemeByClassName({
-      themes: {
-        light: "light",
-        dark: "dark",
-      },
-      defaultTheme: "light",
-    }),
-    (Story: any) => (
-      <ThemeProvider theme={twentyTheme}>
-        <ThemeContextProvider theme={twentyTheme}>
-          <Story />
-        </ThemeContextProvider>
-      </ThemeProvider>
-    ),
-  ]
-
-  return isTwentyStory ? TwentyThemeDecorator : ChakraThemeDecorator
-}
 
 const preview: Preview = {
   parameters: {
@@ -146,13 +97,11 @@ const preview: Preview = {
           {shouldApplyTwentyRefactoredTheme && (
             <>
               <ChakraProvider value={defaultSystem as any}>
-                <div style={{ fontSize: "13px" }}>
                   <ThemeProvider theme={twentyTheme}>
                     <ThemeContextProvider theme={twentyTheme}>
                       <Story />
                     </ThemeContextProvider>
                   </ThemeProvider>
-                </div>
               </ChakraProvider>
             </>
           )}

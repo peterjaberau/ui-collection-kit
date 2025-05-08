@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
-import { ReactElement } from "react"
 
 const StyledLayout = styled.div<{
   width?: number;
@@ -31,7 +30,7 @@ type ComponentStorybookLayoutProps = {
   width?: number;
   backgroundColor?: string | undefined;
   height?: number;
-  children: ReactElement | any;
+  children: any;
 };
 
 export const ComponentStorybookLayout = ({

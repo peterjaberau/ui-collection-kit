@@ -28,7 +28,7 @@ const StyledLabelContainer = styled.span<{
   border-radius: ${({ theme }) => theme.border.radius.sm};
   border-style: solid;
   border-width: 1px;
-  height: 24px;
+  //height: 24px;
   box-sizing: border-box;
   column-gap: ${({ theme }) => theme.spacing(2)};
   display: grid;

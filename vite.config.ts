@@ -9,6 +9,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@assets': path.join(__dirname, 'packages/twenty-ui/src/assets'),
+      '@twenty-ui': path.join(__dirname, 'packages/twenty-ui/src'),
+      '@twenty-modules': path.join(__dirname, 'packages/twenty-ui/src/modules'),
     },
   }
 })

@@ -55,6 +55,15 @@ const config: StorybookConfig = {
 
   viteFinal: async (config, { configType }) => {
     return mergeConfig(config, {
+      optimizeDeps: {
+        include: [
+          "@emotion/react",
+          "@emotion/styled",
+          "react/jsx-runtime",
+          "react/jsx-dev-runtime",
+        ],
+        exclude: ["@storybook/*"],
+      },
       css: {
         postcss: {
           plugins: [require("tailwindcss")(tailwindConfig), require("autoprefixer")],

@@ -24,7 +24,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@ui/*": ["./src/*"],
-      "@assets/*": ["./src/assets/*"]
+      "@twenty-ui/*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@twenty-modules/*": ["./src/modules/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
