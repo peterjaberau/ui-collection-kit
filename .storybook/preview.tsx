@@ -146,19 +146,12 @@ const preview: Preview = {
           {shouldApplyTwentyRefactoredTheme && (
             <>
               <ChakraProvider value={defaultSystem as any}>
-                <div className="font-mono antialiased" style={{ fontSize: "13px" }}>
-                  <Flex justify="space-between" grow="1" minWidth="full" width="8xl">
-                    <Flex grow="1" width="full">
-                      <ThemeProvider theme={twentyTheme}>
-                        <ThemeContextProvider theme={twentyTheme}>
-                          <Story />
-                        </ThemeContextProvider>
-                      </ThemeProvider>
-                    </Flex>
-                    <Box gap="4" width="400" marginEnd="auto">
-                      <JsonViewWrapper />
-                    </Box>
-                  </Flex>
+                <div style={{ fontSize: "13px" }}>
+                  <ThemeProvider theme={twentyTheme}>
+                    <ThemeContextProvider theme={twentyTheme}>
+                      <Story />
+                    </ThemeContextProvider>
+                  </ThemeProvider>
                 </div>
               </ChakraProvider>
             </>
