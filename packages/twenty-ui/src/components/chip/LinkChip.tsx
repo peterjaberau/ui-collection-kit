@@ -1,25 +1,18 @@
-import { styled } from '@linaria/react';
-import {
-  Chip,
-  ChipAccent,
-  ChipProps,
-  ChipSize,
-  ChipVariant,
-} from '../chip/Chip';
-import { MouseEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { chakra } from "@chakra-ui/react"
+import { Chip, ChipAccent, ChipProps, ChipSize, ChipVariant } from "../chip/Chip"
+import { MouseEvent } from "react"
+import { Link } from "react-router-dom"
 
-export type LinkChipProps = Omit<
-  ChipProps,
-  'onClick' | 'disabled' | 'clickable'
-> & {
-  to: string;
-  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
-};
+export type LinkChipProps = Omit<ChipProps, "onClick" | "disabled" | "clickable"> & {
+  to: string
+  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void
+}
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-`;
+const StyledLink = chakra(Link, {
+  base: {
+    textDecoration: "none",
+  },
+})
 
 export const LinkChip = ({
   to,
@@ -49,5 +42,5 @@ export const LinkChip = ({
         maxWidth={maxWidth}
       />
     </StyledLink>
-  );
-};
+  )
+}

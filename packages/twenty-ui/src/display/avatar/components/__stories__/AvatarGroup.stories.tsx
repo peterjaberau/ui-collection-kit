@@ -1,3 +1,4 @@
+
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar, AvatarProps } from '../../../../display/avatar/components/Avatar';
@@ -5,9 +6,6 @@ import { AvatarSize } from '../../../../display/avatar/types/AvatarSize';
 import { AvatarType } from '../../../../display/avatar/types/AvatarType';
 import {
   AVATAR_URL_MOCK,
-  CatalogDecorator,
-  ComponentDecorator,
-  RecoilRootDecorator,
 } from '../../../../testing';
 
 import { AvatarGroup, AvatarGroupProps } from '../AvatarGroup';
@@ -28,7 +26,7 @@ const getAvatars = (commonProps: Partial<AvatarProps> = {}) => [
 const meta: Meta<
   AvatarGroupProps & AvatarProps & { numberOfAvatars?: number }
 > = {
-  title: 'Modules/Users/AvatarGroup',
+  title: 'Refactor Modules/Users/AvatarGroup',
   component: AvatarGroup,
   render: ({ numberOfAvatars = 5, ...args }) => (
     <AvatarGroup avatars={getAvatars(args).slice(0, numberOfAvatars)} />
@@ -39,7 +37,6 @@ export default meta;
 type Story = StoryObj<typeof AvatarGroup>;
 
 export const Default: Story = {
-  decorators: [ComponentDecorator, RecoilRootDecorator],
 };
 
 export const Catalog: Story = {
@@ -64,5 +61,4 @@ export const Catalog: Story = {
       ],
     },
   },
-  decorators: [CatalogDecorator, RecoilRootDecorator],
 };

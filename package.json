@@ -7,6 +7,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
 
+
     "demos-ui-blocks": "pnpm --filter \"./demos/ui-blocks\"",
     "start-demos-ui-blocks": "pnpm demos-ui-blocks dev",
 
@@ -44,6 +45,10 @@
     "**/*.{ts,tsx,js,jsx}": "prettier --write"
   },
   "dependencies": {
+    "react18-json-view": "^0.2.9",
+    "@lingui/core": "^5.1.2",
+    "@lingui/detect-locale": "^5.2.0",
+    "@lingui/react": "^5.1.2",
     "@chakra-ui/react": "^3.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -80,10 +85,25 @@
     "react-syntax-highlighter": "^15.6.1"
   },
   "devDependencies": {
+    "@lingui/swc-plugin": "^5.1.0",
+    "@lingui/vite-plugin": "^5.1.2",
+    "@wyw-in-js/babel-preset": "^0.6.0",
+    "@wyw-in-js/vite": "^0.5.3",
+    "@swc/plugin-emotion": "4.0.2",
+    "babel-plugin-inline-import": "^3.0.0",
+    "babel-plugin-inline-react-svg": "^2.0.2",
+    "babel-plugin-module-resolver": "^5.0.2",
     "@storybook/addon-docs": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
     "@storybook/addon-storysource": "^8.6.12",
+    "vite-plugin-dts": "4.5.3",
+    "@vitejs/plugin-react": "4.4.1",
+    "@vitejs/plugin-react-swc": "^3.5.0",
 
+    "@babel/core": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "vite-tsconfig-paths": "^4.2.1",
+    "@babel/preset-typescript": "^7.24.6",
     "storybook": "8.6.12",
     "@storybook/addon-a11y": "8.6.12",
     "@storybook/addon-essentials": "8.6.12",
@@ -97,7 +117,6 @@
     "@storybook/react-vite": "8.6.12",
     "@storybook/manager-api": "8.6.12",
     "@storybook/theming": "8.6.12",
-
 
 
     "@storybook/cli": "^8.6.12",

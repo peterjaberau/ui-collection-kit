@@ -1,15 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import {
-  CatalogDecorator,
-  CatalogStory,
-  ComponentDecorator,
-} from '../../../testing';
-
 import { Chip, ChipAccent, ChipSize, ChipVariant } from '../Chip';
 
 const meta: Meta<typeof Chip> = {
-  title: 'Twenty UI/Display/Chip/Chip',
+  title: 'Refactor UI/Display/Chip/Chip',
   component: Chip,
 };
 
@@ -26,10 +20,9 @@ export const Default: Story = {
     clickable: true,
     maxWidth: 200,
   },
-  decorators: [ComponentDecorator],
 };
 
-export const Catalog: CatalogStory<Story, typeof Chip> = {
+export const Catalog = {
   args: { clickable: true, label: 'Hello' },
   argTypes: {
     size: { control: false },
@@ -67,5 +60,4 @@ export const Catalog: CatalogStory<Story, typeof Chip> = {
       ],
     },
   },
-  decorators: [CatalogDecorator],
 };

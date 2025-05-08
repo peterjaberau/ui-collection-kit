@@ -1,5 +1,5 @@
 import { useTheme } from '@emotion/react';
-import { IllustrationIconWrapper } from '../../../display/icon/components/IllustrationIconWrapper';
+import { IllustrationIconWrapper } from "../../../display";
 
 import IllustrationIconUserRaw from '@assets/icons/illustration-user.svg?react';
 import { IconComponentProps } from '../../../display/icon/types/IconComponent';

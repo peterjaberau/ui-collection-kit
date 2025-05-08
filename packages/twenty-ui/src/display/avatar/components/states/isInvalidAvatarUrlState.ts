@@ -1,6 +1,4 @@
-import { atom } from 'recoil';
-
-export const invalidAvatarUrlsState = atom<string[]>({
-  key: 'invalidAvatarUrlsState',
+export const invalidAvatarUrlsState: any = {
+  key: "invalidAvatarUrlsState",
   default: [],
-});
+}

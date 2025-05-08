@@ -16,10 +16,16 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2022",
+
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "types": ["node"],
+    "outDir": "../../.cache/tsc",
     "paths": {
+      "@/*": ["./src/*"],
       "@ui/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"]
-    },
+    }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],

@@ -1,41 +1,53 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
+import { chakra } from "@chakra-ui/react"
+import { useTheme, css } from "@emotion/react"
 
-import { ThemeColor } from '../../../theme';
+import { ThemeColor } from "../../../theme"
 
-export type ColorSampleVariant = 'default' | 'pipeline';
+export type ColorSampleVariant = "default" | "pipeline"
 
 export type ColorSampleProps = {
-  colorName: ThemeColor;
-  variant?: ColorSampleVariant;
-};
+  colorName: ThemeColor
+  variant?: ColorSampleVariant
+}
 
-const StyledColorSample = styled.div<ColorSampleProps>`
-  background-color: ${({ theme, colorName }) =>
-    theme.tag.background[colorName]};
-  border: 1px solid ${({ theme, colorName }) => theme.tag.text[colorName]};
-  border-radius: 60px;
-  height: ${({ theme }) => theme.spacing(4)};
-  width: ${({ theme }) => theme.spacing(3)};
+export type StyledColorSampleProps = {
+  colorName: ThemeColor
+  variant?: ColorSampleVariant
+  [key: string]: any
+  children?: React.ReactNode
+}
 
-  ${({ colorName, theme, variant }) => {
-    if (variant === 'pipeline')
-      return css`
+const StyledColorSample = ({ children, ...props }: StyledColorSampleProps) => {
+  const theme = useTheme()
+  return (
+    <chakra.div
+      backgroundColor={theme.tag.background[props.colorName]}
+      border={`1px solid ${theme.tag.text[props.colorName]}`}
+      borderRadius="60px"
+      height={theme.spacing(4)}
+      width={theme.spacing(3)}
+      css={`
+      ${props.variant === "pipeline" &&
+      `
         align-items: center;
         border: 0;
         display: flex;
         justify-content: center;
 
         &:after {
-          background-color: ${theme.tag.text[colorName]};
+          background-color: ${theme.tag.text[props.colorName]};
           border-radius: ${theme.border.radius.rounded};
-          content: '';
+          content: "";
           display: block;
           height: ${theme.spacing(1)};
           width: ${theme.spacing(1)};
         }
-      `;
-  }}
-`;
+      `}
+    `}
+    >
+      {children}
+    </chakra.div>
+  )
+}
 
-export { StyledColorSample as ColorSample };
+export { StyledColorSample as ColorSample }

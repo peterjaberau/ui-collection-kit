@@ -152,6 +152,7 @@
     "@internationalized/date": "3.8.0"
 
   },
+
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@storybook/react": "8.6.12",
@@ -159,7 +160,7 @@
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "@vitejs/plugin-react": "4.4.1",
-    "@ui-collection-kit/stringify-state": "1.11.0",
+    "@ui-collection-kit/stringify-state": "workspace:*",
     "clean-package": "2.2.0",
     "globby": "14.1.0",
     "happy-dom": "17.4.4",

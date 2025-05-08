@@ -1,6 +1,8 @@
 import React from "react"
 import type { Preview, ReactRenderer } from "@storybook/react"
 import { withThemeByClassName } from "@storybook/addon-themes"
+import 'react18-json-view/src/style.css'
+import JsonView from "react18-json-view"
 
 // twenty imports
 import { ThemeProvider } from "@emotion/react"
@@ -23,9 +25,6 @@ const chakraDarkSystem = {
     useSystemColorMode: false,
   },
 }
-
-const emotionLightTheme = { mode: "light" }
-const emotionDarkTheme = { mode: "dark" }
 
 const CustomDecoratorRenderer: any = (Story: any, context: any) => {
   const storyPath = context?.title
@@ -83,7 +82,71 @@ const preview: Preview = {
     },
     layout: "padded",
   },
-  decorators: CustomDecoratorRenderer,
+  decorators: [
+    withThemeByClassName({
+      themes: {
+        light: "light",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
+    (Story: any, context: any): any => {
+      const storyPath = context?.title
+      const shouldApplyTwentyTheme = storyPath.includes("Twenty") && !storyPath.includes("Refactor")
+      const shouldApplyTwentyRefactoredTheme = storyPath.includes("Refactor")
+      const shouldApplyChakraTheme = !shouldApplyTwentyTheme && !shouldApplyTwentyRefactoredTheme
+
+      const currentTheme = context?.globals?.theme
+      const twentyTheme = currentTheme === "dark" ? THEME_DARK : THEME_LIGHT
+
+      const JsonViewWrapper = () => <JsonView
+        src={{ storyPath, shouldApplyTwentyTheme, shouldApplyTwentyRefactoredTheme, shouldApplyChakraTheme}}
+        collapsed={1}
+        style={{ fontSize: "13px" }}
+        theme={'github'}
+      />
+
+      return (
+        <>
+          {shouldApplyTwentyTheme && (
+            <div style={{ fontSize: "13px" }}>
+              <ThemeProvider theme={twentyTheme}>
+                <ThemeContextProvider theme={twentyTheme}>
+                  <JsonViewWrapper />
+                  <Story />
+                </ThemeContextProvider>
+              </ThemeProvider>
+            </div>
+          )}
+          {shouldApplyChakraTheme && (
+            <>
+              <ChakraProvider value={defaultSystem as any}>
+                <div className="font-mono antialiased">
+                  <JsonViewWrapper />
+                  <Story />
+                </div>
+              </ChakraProvider>
+            </>
+          )}
+
+          {shouldApplyTwentyRefactoredTheme && (
+            <>
+              <ChakraProvider value={defaultSystem as any}>
+                <ThemeProvider theme={twentyTheme}>
+                  <ThemeContextProvider theme={twentyTheme}>
+                    <div className="font-mono antialiased">
+                      <JsonViewWrapper />
+                      <Story />
+                    </div>
+                  </ThemeContextProvider>
+                </ThemeProvider>
+              </ChakraProvider>
+            </>
+          )}
+        </>
+      )
+    },
+  ],
 }
 
 export default preview

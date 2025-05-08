@@ -1,13 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ComponentDecorator } from '../../../../testing';
-
 import { ColorSample } from '../ColorSample';
 
 const meta: Meta<typeof ColorSample> = {
-  title: 'Twenty UI/Display/Color/ColorSample',
+  title: 'Refactor UI/Display/Color/ColorSample',
   component: ColorSample,
-  decorators: [ComponentDecorator],
   args: { colorName: 'green' },
   argTypes: {
     as: { control: false },
