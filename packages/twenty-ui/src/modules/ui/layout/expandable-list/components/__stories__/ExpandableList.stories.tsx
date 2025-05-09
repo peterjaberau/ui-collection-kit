@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
 `;
 
 const meta: Meta<typeof ExpandableList> = {
-  title: 'UI/Layout/ExpandableList/ExpandableList',
+  title: 'Refactor UI/Layout/ExpandableList/ExpandableList',
   component: ExpandableList,
   decorators: [
     (Story) => (

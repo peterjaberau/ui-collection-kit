@@ -12,7 +12,7 @@ import { SnackBarDecorator } from '@twenty-ui/front/testing/decorators/SnackBarD
 import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 
 const meta: Meta = {
-  title: 'Modules/ObjectRecord/RecordTable/RecordTableEmptyStateSoftDelete',
+  title: 'Refactor Modules/ObjectRecord/RecordTable/RecordTableEmptyStateSoftDelete',
   component: RecordTableEmptyStateSoftDelete,
   decorators: [
     (Story) => (

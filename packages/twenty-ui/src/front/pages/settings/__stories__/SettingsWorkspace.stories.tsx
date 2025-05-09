@@ -9,7 +9,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { SettingsWorkspace } from '../SettingsWorkspace';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/SettingsWorkspace',
+  title: 'Refactor Pages/Settings/SettingsWorkspace',
   component: SettingsWorkspace,
   decorators: [PageDecorator],
   args: { routePath: '/settings/workspace' },

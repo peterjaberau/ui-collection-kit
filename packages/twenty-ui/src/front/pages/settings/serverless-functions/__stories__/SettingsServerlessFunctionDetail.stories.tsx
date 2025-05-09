@@ -14,7 +14,7 @@ const SOURCE_CODE_FULL_PATH =
   'serverless-function/20202020-1c25-4d02-bf25-6aeccf7ea419/adb4bd21-7670-4c81-9f74-1fc196fe87ea/source.ts';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/ServerlessFunctions/SettingsServerlessFunctionDetail',
+  title: 'Refactor Pages/Settings/ServerlessFunctions/SettingsServerlessFunctionDetail',
   component: SettingsServerlessFunctionDetail,
   decorators: [PageDecorator],
   args: {

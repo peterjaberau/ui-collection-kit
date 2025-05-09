@@ -56,7 +56,7 @@ const RelationFieldValueSetterEffect = () => {
 };
 
 const meta: Meta = {
-  title: 'UI/Data/Field/Display/RelationFromManyFieldDisplay',
+  title: 'Refactor UI/Data/Field/Display/RelationFromManyFieldDisplay',
   decorators: [
     MemoryRouterDecorator,
     ChipGeneratorsDecorator,

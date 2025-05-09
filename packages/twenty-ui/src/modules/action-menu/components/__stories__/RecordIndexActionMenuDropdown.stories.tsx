@@ -20,7 +20,7 @@ import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFron
 
 
 const meta: Meta<typeof RecordIndexActionMenuDropdown> = {
-  title: 'Modules/ActionMenu/RecordIndexActionMenuDropdown',
+  title: 'Refactor Modules/ActionMenu/RecordIndexActionMenuDropdown',
   component: RecordIndexActionMenuDropdown,
   decorators: [
     I18nFrontDecorator,

@@ -66,7 +66,7 @@ const ContextStoreDecorator: Decorator = (Story) => {
 };
 
 const meta: Meta<typeof CommandMenu> = {
-  title: 'Modules/CommandMenu/CommandMenu',
+  title: 'Refactor Modules/CommandMenu/CommandMenu',
   component: CommandMenuRouter,
   decorators: [
     I18nFrontDecorator,

@@ -6,7 +6,7 @@ import { WorkflowDiagramEmptyTrigger } from '../WorkflowDiagramEmptyTrigger';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof WorkflowDiagramEmptyTrigger> = {
-  title: 'Modules/Workflow/WorkflowDiagramEmptyTrigger',
+  title: 'Refactor Modules/Workflow/WorkflowDiagramEmptyTrigger',
   component: WorkflowDiagramEmptyTrigger,
   args: {
     data: {

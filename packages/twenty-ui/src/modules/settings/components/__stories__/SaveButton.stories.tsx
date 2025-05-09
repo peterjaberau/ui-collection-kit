@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { SaveButton } from '../SaveAndCancelButtons/SaveButton';
 
 const meta: Meta<typeof SaveButton> = {
-  title: 'Modules/Settings/SaveButton',
+  title: 'Refactor Modules/Settings/SaveButton',
   component: SaveButton,
 };
 

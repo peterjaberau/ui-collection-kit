@@ -15,7 +15,7 @@ const StyledContainer = styled.div`
 `;
 
 const meta: Meta<typeof NavigationDrawerItem> = {
-  title: 'UI/Navigation/NavigationDrawer/NavigationDrawerItem',
+  title: 'Refactor UI/Navigation/NavigationDrawer/NavigationDrawerItem',
   component: NavigationDrawerItem,
   args: {
     label: 'Search',

@@ -6,7 +6,7 @@ import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFron
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof SettingsAccountsBlocklistSection> = {
-  title: 'Modules/Settings/Accounts/Blocklist/SettingsAccountsBlocklistSection',
+  title: 'Refactor Modules/Settings/Accounts/Blocklist/SettingsAccountsBlocklistSection',
   component: SettingsAccountsBlocklistInput,
   decorators: [ComponentDecorator, I18nFrontDecorator],
 };

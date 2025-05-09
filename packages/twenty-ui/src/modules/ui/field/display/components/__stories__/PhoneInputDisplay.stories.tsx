@@ -5,7 +5,7 @@ import { ComponentWithRouterDecorator } from '@twenty-ui/front/testing/decorator
 import { PhoneDisplay } from '../PhoneDisplay'; // Adjust the import path as needed
 
 const meta: Meta = {
-  title: 'UI/Input/PhoneInputDisplay/PhoneInputDisplay',
+  title: 'Refactor UI/Input/PhoneInputDisplay/PhoneInputDisplay',
   component: PhoneDisplay,
   decorators: [ComponentWithRouterDecorator],
   args: {

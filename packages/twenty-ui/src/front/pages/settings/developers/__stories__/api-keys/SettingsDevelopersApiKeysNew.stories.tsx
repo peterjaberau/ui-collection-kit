@@ -10,7 +10,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { getSettingsPath } from '@twenty-ui/front/utils/navigation/getSettingsPath';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/ApiKeys/SettingsDevelopersApiKeysNew',
+  title: 'Refactor Pages/Settings/ApiKeys/SettingsDevelopersApiKeysNew',
   component: SettingsDevelopersApiKeysNew,
   decorators: [PageDecorator],
   args: { routePath: getSettingsPath(SettingsPath.DevelopersNewApiKey) },

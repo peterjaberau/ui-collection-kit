@@ -7,7 +7,7 @@ import { MOCKED_STEP_ID } from '@twenty-ui/front/testing/mock-data/workflow';
 import { FormUuidFieldInput } from '../FormUuidFieldInput';
 
 const meta: Meta<typeof FormUuidFieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormUuidFieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormUuidFieldInput',
   component: FormUuidFieldInput,
   args: {},
   argTypes: {},

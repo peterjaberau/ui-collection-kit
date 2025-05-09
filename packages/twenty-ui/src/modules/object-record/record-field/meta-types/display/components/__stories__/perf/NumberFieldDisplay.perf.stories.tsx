@@ -7,7 +7,7 @@ import { getProfilingStory } from '@twenty-ui/front/testing/profiling/utils/getP
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta = {
-  title: 'UI/Data/Field/Display/NumberFieldDisplay',
+  title: 'Refactor UI/Data/Field/Display/NumberFieldDisplay',
   decorators: [
     MemoryRouterDecorator,
     getFieldDecorator('company', 'employees'),

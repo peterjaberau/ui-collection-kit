@@ -10,7 +10,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { sleep } from '@twenty-ui/front/utils/sleep';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/ApiKeys/SettingsDevelopersApiKeyDetail',
+  title: 'Refactor Pages/Settings/ApiKeys/SettingsDevelopersApiKeyDetail',
   component: SettingsDevelopersApiKeyDetail,
   decorators: [PageDecorator],
   args: {

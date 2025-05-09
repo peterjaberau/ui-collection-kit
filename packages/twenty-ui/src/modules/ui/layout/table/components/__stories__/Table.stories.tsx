@@ -8,7 +8,7 @@ import { TableSection } from '../TableSection';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof Table> = {
-  title: 'UI/Layout/Table/Table',
+  title: 'Refactor UI/Layout/Table/Table',
   component: Table,
   decorators: [ComponentDecorator],
   argTypes: {

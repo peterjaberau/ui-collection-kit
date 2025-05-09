@@ -8,7 +8,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { sleep } from '@twenty-ui/front/utils/sleep';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/ServerlessFunctions/SettingsServerlessFunctions',
+  title: 'Refactor Pages/Settings/ServerlessFunctions/SettingsServerlessFunctions',
   component: SettingsServerlessFunctions,
   decorators: [PageDecorator],
   args: { routePath: '/settings/functions' },

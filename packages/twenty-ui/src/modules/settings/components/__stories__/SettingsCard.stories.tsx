@@ -5,7 +5,7 @@ import { ComponentDecorator } from '@twenty-ui/testing';
 import { IconMailCog } from '@twenty-ui/display';
 
 const meta: Meta<typeof SettingsCard> = {
-  title: 'Modules/Settings/SettingsCard',
+  title: 'Refactor Modules/Settings/SettingsCard',
   component: SettingsCard,
   decorators: [ComponentDecorator],
 };

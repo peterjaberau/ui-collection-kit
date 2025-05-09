@@ -25,7 +25,7 @@ const records = allMockPersonRecords.map<SingleRecordPickerRecord>(
 );
 
 const meta: Meta<typeof SingleRecordPicker> = {
-  title: 'UI/RecordPicker/SingleRecordPicker',
+  title: 'Refactor UI/RecordPicker/SingleRecordPicker',
   component: SingleRecordPicker,
   decorators: [
     ComponentDecorator,

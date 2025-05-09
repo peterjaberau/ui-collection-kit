@@ -18,7 +18,7 @@ const Render = (args: RenderProps) => {
 };
 
 const meta: Meta<typeof TextArea> = {
-  title: 'UI/Input/TextArea',
+  title: 'Refactor UI/Input/TextArea',
   component: TextArea,
   decorators: [ComponentDecorator],
   args: { minRows: 4, placeholder: 'Lorem Ipsum' },

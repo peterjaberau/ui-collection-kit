@@ -71,7 +71,7 @@ const RichTextFieldInputWithContext = ({
 };
 
 const meta: Meta = {
-  title: 'UI/Data/Field/Input/RichTextFieldInput',
+  title: 'Refactor UI/Data/Field/Input/RichTextFieldInput',
   component: RichTextFieldInputWithContext,
   args: {
     targetableObjectId: 'test-id',

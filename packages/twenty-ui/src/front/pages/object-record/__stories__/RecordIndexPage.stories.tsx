@@ -9,7 +9,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { RecordIndexPage } from '../RecordIndexPage';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/ObjectRecord/RecordIndexPage',
+  title: 'Refactor Pages/ObjectRecord/RecordIndexPage',
   component: RecordIndexPage,
   decorators: [PageDecorator],
   args: {

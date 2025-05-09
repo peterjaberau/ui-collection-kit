@@ -14,7 +14,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { mockedOnboardingUserData } from '@twenty-ui/front/testing/mock-data/users';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Onboarding/CreateWorkspace',
+  title: 'Refactor Pages/Onboarding/CreateWorkspace',
   component: CreateWorkspace,
   decorators: [PageDecorator],
   args: { routePath: AppPath.CreateWorkspace },

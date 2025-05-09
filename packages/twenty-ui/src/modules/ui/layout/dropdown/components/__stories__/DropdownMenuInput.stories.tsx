@@ -4,7 +4,7 @@ import { DropdownMenuInput } from '../DropdownMenuInput';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof DropdownMenuInput> = {
-  title: 'UI/Layout/Dropdown/DropdownMenuInput',
+  title: 'Refactor UI/Layout/Dropdown/DropdownMenuInput',
   component: DropdownMenuInput,
   decorators: [ComponentDecorator],
   args: { value: 'Lorem ipsum' },

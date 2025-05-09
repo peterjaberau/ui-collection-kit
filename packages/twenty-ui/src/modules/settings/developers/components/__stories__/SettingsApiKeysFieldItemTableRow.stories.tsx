@@ -4,7 +4,7 @@ import { SettingsApiKeysFieldItemTableRow } from '@twenty-modules/settings/devel
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof SettingsApiKeysFieldItemTableRow> = {
-  title: 'Modules/Settings/Developers/ApiKeys/SettingsApiKeysFieldItemTableRow',
+  title: 'Refactor Modules/Settings/Developers/ApiKeys/SettingsApiKeysFieldItemTableRow',
   component: SettingsApiKeysFieldItemTableRow,
   decorators: [ComponentDecorator],
   args: {

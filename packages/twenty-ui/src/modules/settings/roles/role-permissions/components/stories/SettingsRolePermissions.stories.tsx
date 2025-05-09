@@ -31,7 +31,7 @@ const SettingsRolePermissionsWrapper = (
 };
 
 const meta: Meta<typeof SettingsRolePermissionsWrapper> = {
-  title: 'Modules/Settings/Roles/RolePermissions/SettingsRolePermissions',
+  title: 'Refactor Modules/Settings/Roles/RolePermissions/SettingsRolePermissions',
   component: SettingsRolePermissionsWrapper,
   decorators: [RouterDecorator, ComponentDecorator, I18nFrontDecorator],
 };

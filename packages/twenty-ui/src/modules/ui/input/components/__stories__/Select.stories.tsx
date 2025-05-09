@@ -19,7 +19,7 @@ const Render = (args: RenderProps) => {
 };
 
 const meta: Meta<typeof Select> = {
-  title: 'UI/Input/Select',
+  title: 'Refactor UI/Input/Select',
   component: Select,
   decorators: [ComponentDecorator],
   args: {

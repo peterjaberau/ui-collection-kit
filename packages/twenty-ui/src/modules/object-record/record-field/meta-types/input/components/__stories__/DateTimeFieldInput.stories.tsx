@@ -114,7 +114,7 @@ const enterJestFn =  () => console.log('fn');
 const clickOutsideJestFn =  () => console.log('fn');
 
 const meta: Meta = {
-  title: 'UI/Data/Field/Input/DateTimeFieldInput',
+  title: 'Refactor UI/Data/Field/Input/DateTimeFieldInput',
   component: DateFieldInputWithContext,
   args: {
     value: formattedDate,

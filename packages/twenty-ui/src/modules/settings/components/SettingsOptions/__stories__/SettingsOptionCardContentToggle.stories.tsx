@@ -31,7 +31,7 @@ const SettingsOptionCardContentToggleWrapper = (
 };
 
 const meta: Meta<typeof SettingsOptionCardContentToggleWrapper> = {
-  title: 'Modules/Settings/SettingsOptionCardContentToggle',
+  title: 'Refactor Modules/Settings/SettingsOptionCardContentToggle',
   component: SettingsOptionCardContentToggleWrapper,
   decorators: [ComponentDecorator],
   parameters: {

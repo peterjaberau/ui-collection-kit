@@ -20,7 +20,7 @@ const mockedOnboardingUsersData = mockedOnboardingUserData(
 );
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Auth/PasswordReset',
+  title: 'Refactor Pages/Auth/PasswordReset',
   component: PasswordReset,
   decorators: [PageDecorator],
   args: {

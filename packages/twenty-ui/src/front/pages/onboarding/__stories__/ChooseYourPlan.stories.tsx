@@ -19,7 +19,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { mockedOnboardingUserData } from '@twenty-ui/front/testing/mock-data/users';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Onboarding/ChooseYourPlan',
+  title: 'Refactor Pages/Onboarding/ChooseYourPlan',
   component: ChooseYourPlan,
   decorators: [PageDecorator],
   args: { routePath: AppPath.PlanRequired },

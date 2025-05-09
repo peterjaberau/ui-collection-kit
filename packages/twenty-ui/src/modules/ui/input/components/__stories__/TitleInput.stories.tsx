@@ -4,7 +4,7 @@ import { TitleInput } from '@twenty-modules/ui/input/components/TitleInput';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof TitleInput> = {
-  title: 'UI/Input/TitleInput',
+  title: 'Refactor UI/Input/TitleInput',
   component: TitleInput,
   decorators: [ComponentDecorator],
   args: {

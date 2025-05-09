@@ -20,7 +20,7 @@ if (!addToFavoritesAction) {
 }
 
 const meta: Meta<typeof ActionComponent> = {
-  title: 'Modules/ActionMenu/Actions/Display/ActionComponent',
+  title: 'Refactor Modules/ActionMenu/Actions/Display/ActionComponent',
   component: ActionComponent,
   decorators: [
     ComponentDecorator,

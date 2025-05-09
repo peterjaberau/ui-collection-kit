@@ -10,7 +10,7 @@ import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFron
 import { SpreadsheetImportStepperContainer } from '../SpreadsheetImportStepperContainer';
 
 const meta: Meta<typeof SpreadsheetImportStepperContainer> = {
-  title: 'Modules/SpreadsheetImport/Steps',
+  title: 'Refactor Modules/SpreadsheetImport/Steps',
   component: SpreadsheetImportStepperContainer,
   decorators: [
     ComponentWithRecoilScopeDecorator,

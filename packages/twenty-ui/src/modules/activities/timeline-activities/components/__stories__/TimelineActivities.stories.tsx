@@ -9,7 +9,7 @@ import { mockedTimelineActivities } from '@twenty-ui/front/testing/mock-data/tim
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof TimelineActivities> = {
-  title: 'Modules/TimelineActivities/TimelineActivities',
+  title: 'Refactor Modules/TimelineActivities/TimelineActivities',
   component: TimelineActivities,
   decorators: [
     ComponentDecorator,

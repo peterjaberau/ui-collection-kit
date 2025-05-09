@@ -25,7 +25,7 @@ const SettingsRoleAssignmentWrapper = (
 };
 
 const meta: Meta<typeof SettingsRoleAssignmentWrapper> = {
-  title: 'Modules/Settings/Roles/RoleAssignment/SettingsRoleAssignment',
+  title: 'Refactor Modules/Settings/Roles/RoleAssignment/SettingsRoleAssignment',
   component: SettingsRoleAssignmentWrapper,
   decorators: [RouterDecorator, ComponentDecorator, I18nFrontDecorator],
 };

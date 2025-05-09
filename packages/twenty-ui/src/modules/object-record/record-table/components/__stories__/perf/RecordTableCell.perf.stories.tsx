@@ -57,7 +57,7 @@ const RelationFieldValueSetterEffect = () => {
 };
 
 const meta: Meta = {
-  title: 'RecordIndex/Table/RecordTableCell',
+  title: 'Refactor RecordIndex/Table/RecordTableCell',
   decorators: [
     MemoryRouterDecorator,
     ChipGeneratorsDecorator,

@@ -20,7 +20,7 @@ const FieldFocusEffect = () => {
 };
 
 const meta: Meta = {
-  title: 'UI/Data/Field/Display/LinksFieldDisplay',
+  title: 'Refactor UI/Data/Field/Display/LinksFieldDisplay',
   decorators: [
     MemoryRouterDecorator,
     getFieldDecorator('company', 'domainName', {

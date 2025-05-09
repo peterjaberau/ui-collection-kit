@@ -11,7 +11,7 @@ import { mockedTasks } from '@twenty-ui/front/testing/mock-data/tasks';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof TaskList> = {
-  title: 'Modules/Activity/TaskList',
+  title: 'Refactor Modules/Activity/TaskList',
   component: TaskList,
   decorators: [
     ComponentDecorator,

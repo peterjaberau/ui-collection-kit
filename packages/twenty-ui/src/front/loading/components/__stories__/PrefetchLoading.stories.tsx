@@ -9,7 +9,7 @@ import { PrefetchLoadingDecorator } from '@twenty-ui/front/testing/decorators/Pr
 import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'App/Loading/PrefetchLoading',
+  title: 'Refactor App/Loading/PrefetchLoading',
   component: RecordIndexPage,
   args: {
     routePath: '/objects/:objectNamePlural',

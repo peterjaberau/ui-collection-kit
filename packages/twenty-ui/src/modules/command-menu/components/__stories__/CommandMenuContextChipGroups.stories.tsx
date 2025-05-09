@@ -17,7 +17,7 @@ const StyledContainer = styled.div`
 `;
 
 const meta: Meta<typeof CommandMenuContextChipGroups> = {
-  title: 'Modules/CommandMenu/CommandMenuContextChipGroups',
+  title: 'Refactor Modules/CommandMenu/CommandMenuContextChipGroups',
   component: CommandMenuContextChipGroups,
   decorators: [
     (Story) => <StyledContainer>{Story()}</StyledContainer>,

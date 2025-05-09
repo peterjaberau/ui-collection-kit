@@ -20,7 +20,7 @@ const FieldFocusEffect = () => {
 };
 
 const meta: Meta = {
-  title: 'UI/Data/Field/Display/MultiSelectFieldDisplay',
+  title: 'Refactor UI/Data/Field/Display/MultiSelectFieldDisplay',
   decorators: [
     MemoryRouterDecorator,
     getFieldDecorator('company', 'workPolicy', [

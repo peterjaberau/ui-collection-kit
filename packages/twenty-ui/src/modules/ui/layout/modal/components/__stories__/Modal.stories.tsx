@@ -4,7 +4,7 @@ import { Modal } from '../Modal';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof Modal> = {
-  title: 'UI/Layout/Modal/Modal',
+  title: 'Refactor UI/Layout/Modal/Modal',
   component: Modal,
 };
 

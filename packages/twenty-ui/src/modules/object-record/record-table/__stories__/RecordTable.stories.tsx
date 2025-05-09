@@ -15,7 +15,7 @@ import { mockedViewsData } from '@twenty-ui/front/testing/mock-data/views';
 import { sleep } from '@twenty-ui/front/utils/sleep';
 
 const meta: Meta = {
-  title: 'Modules/ObjectRecord/RecordTable/RecordTable',
+  title: 'Refactor Modules/ObjectRecord/RecordTable/RecordTable',
   component: RecordTableWithWrappers,
   decorators: [
     ComponentDecorator,

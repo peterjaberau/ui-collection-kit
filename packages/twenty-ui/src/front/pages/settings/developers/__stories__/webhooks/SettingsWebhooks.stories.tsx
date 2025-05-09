@@ -8,7 +8,7 @@ import {
 import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/Webhooks',
+  title: 'Refactor Pages/Settings/Webhooks',
   component: SettingsWebhooks,
   decorators: [PageDecorator],
   args: { routePath: '/settings/webhooks' },

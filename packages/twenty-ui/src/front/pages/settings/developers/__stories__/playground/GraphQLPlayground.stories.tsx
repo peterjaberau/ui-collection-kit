@@ -9,7 +9,7 @@ import {
 } from '@twenty-ui//testing';
 
 const meta: Meta<any> = {
-  title: 'Pages/Settings/Playground/GraphQLPlayground',
+  title: 'Refactor Pages/Settings/Playground/GraphQLPlayground',
   component: SettingsGraphQLPlayground,
   decorators: [
     ComponentDecorator,

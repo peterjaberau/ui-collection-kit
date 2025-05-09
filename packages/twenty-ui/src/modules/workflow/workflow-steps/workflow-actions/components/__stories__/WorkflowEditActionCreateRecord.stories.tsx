@@ -12,7 +12,7 @@ import { WorkflowEditActionCreateRecord } from '../WorkflowEditActionCreateRecor
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof WorkflowEditActionCreateRecord> = {
-  title: 'Modules/Workflow/WorkflowEditActionCreateRecord',
+  title: 'Refactor Modules/Workflow/WorkflowEditActionCreateRecord',
   component: WorkflowEditActionCreateRecord,
   parameters: {
     msw: graphqlMocks,

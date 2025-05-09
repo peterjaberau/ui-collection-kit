@@ -8,7 +8,7 @@ import {
 import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/Integrations/SettingsIntegrationNewDatabaseConnection',
+  title: 'Refactor Pages/Settings/Integrations/SettingsIntegrationNewDatabaseConnection',
   component: SettingsIntegrationNewDatabaseConnection,
   decorators: [PageDecorator],
   args: {

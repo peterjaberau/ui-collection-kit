@@ -4,7 +4,7 @@ import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFron
 import { CancelButton } from '../SaveAndCancelButtons/CancelButton';
 
 const meta: Meta<typeof CancelButton> = {
-  title: 'Modules/Settings/CancelButton',
+  title: 'Refactor Modules/Settings/CancelButton',
   component: CancelButton,
   decorators: [I18nFrontDecorator],
 };

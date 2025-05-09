@@ -11,7 +11,7 @@ import {
 } from '@twenty-ui/testing';
 
 const meta: Meta<typeof SnackBar> = {
-  title: 'UI/Feedback/SnackBarManager/SnackBar',
+  title: 'Refactor UI/Feedback/SnackBarManager/SnackBar',
   component: SnackBar,
   decorators: [SnackBarDecorator],
   argTypes: {

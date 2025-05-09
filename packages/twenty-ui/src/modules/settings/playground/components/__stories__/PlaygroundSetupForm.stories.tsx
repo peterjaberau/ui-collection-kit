@@ -5,7 +5,7 @@ import { PlaygroundSetupForm } from '../PlaygroundSetupForm';
 import { ComponentDecorator, RouterDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof PlaygroundSetupForm> = {
-  title: 'Modules/Settings/Playground/PlaygroundSetupForm',
+  title: 'Refactor Modules/Settings/Playground/PlaygroundSetupForm',
   component: PlaygroundSetupForm,
   decorators: [
     ComponentDecorator,

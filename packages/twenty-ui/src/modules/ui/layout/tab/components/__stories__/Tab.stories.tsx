@@ -9,7 +9,7 @@ import {
 import { IconCheckbox } from '@twenty-ui/display';
 
 const meta: Meta<typeof Tab> = {
-  title: 'UI/Layout/Tab/Tab',
+  title: 'Refactor UI/Layout/Tab/Tab',
   component: Tab,
 };
 

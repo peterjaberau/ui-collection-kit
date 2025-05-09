@@ -5,7 +5,7 @@ import { WorkflowStepDecorator } from '@twenty-ui/front/testing/decorators/Workf
 import { MOCKED_STEP_ID } from '@twenty-ui/front/testing/mock-data/workflow';
 
 const meta: Meta<typeof VariableChip> = {
-  title: 'UI/Data/Field/Form/Input/VariableChip',
+  title: 'Refactor UI/Data/Field/Form/Input/VariableChip',
   component: VariableChip,
   decorators: [WorkflowStepDecorator, I18nFrontDecorator],
 };

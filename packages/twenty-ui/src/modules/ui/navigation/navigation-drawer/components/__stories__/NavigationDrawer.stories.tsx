@@ -44,7 +44,7 @@ import { NavigationDrawerSection } from '../NavigationDrawerSection';
 import { NavigationDrawerSectionTitle } from '../NavigationDrawerSectionTitle';
 
 const meta: Meta<typeof NavigationDrawer> = {
-  title: 'UI/Navigation/NavigationDrawer/NavigationDrawer',
+  title: 'Refactor UI/Navigation/NavigationDrawer/NavigationDrawer',
   component: NavigationDrawer,
   decorators: [
     ComponentWithRouterDecorator,

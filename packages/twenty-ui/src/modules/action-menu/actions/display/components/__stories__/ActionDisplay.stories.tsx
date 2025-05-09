@@ -26,7 +26,7 @@ if (!addToFavoritesAction) {
 }
 
 const meta: Meta<typeof ActionDisplay> = {
-  title: 'Modules/ActionMenu/Actions/Display/ActionDisplay',
+  title: 'Refactor Modules/ActionMenu/Actions/Display/ActionDisplay',
   component: ActionDisplay,
   decorators: [
     (Story) => (

@@ -16,7 +16,7 @@ import { RecordShowPage } from '../RecordShowPage';
 
 const personRecord = allMockPersonRecords[0];
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/ObjectRecord/RecordShowPage',
+  title: 'Refactor Pages/ObjectRecord/RecordShowPage',
   component: RecordShowPage,
   args: {
     routePath: '/object/:objectNameSingular/:objectRecordId',

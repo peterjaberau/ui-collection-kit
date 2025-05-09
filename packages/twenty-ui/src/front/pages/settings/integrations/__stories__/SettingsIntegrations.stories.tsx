@@ -11,7 +11,7 @@ import { getSettingsPath } from '@twenty-ui/front/utils/navigation/getSettingsPa
 import { sleep } from '@twenty-ui/front/utils/sleep';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/Integrations/SettingsIntegrations',
+  title: 'Refactor Pages/Settings/Integrations/SettingsIntegrations',
   component: SettingsIntegrations,
   decorators: [PageDecorator],
   args: { routePath: getSettingsPath(SettingsPath.Integrations) },

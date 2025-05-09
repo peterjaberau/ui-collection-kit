@@ -9,7 +9,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { SettingsExperience } from '../profile/appearance/components/SettingsExperience';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/SettingsExperience',
+  title: 'Refactor Pages/Settings/SettingsExperience',
   component: SettingsExperience,
   decorators: [PageDecorator],
   args: { routePath: '/settings/experience' },

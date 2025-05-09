@@ -62,7 +62,7 @@ const userMetadataLoaderMocks = {
 };
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'App/Loading/UserOrMetadataLoader',
+  title: 'Refactor App/Loading/UserOrMetadataLoader',
   component: RecordIndexPage,
   args: {
     routePath: '/objects/:objectNamePlural',

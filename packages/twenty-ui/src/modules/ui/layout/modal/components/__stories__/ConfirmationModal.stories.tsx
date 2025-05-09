@@ -5,7 +5,7 @@ import { ConfirmationModal } from '../ConfirmationModal';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof ConfirmationModal> = {
-  title: 'UI/Layout/Modal/ConfirmationModal',
+  title: 'Refactor UI/Layout/Modal/ConfirmationModal',
   component: ConfirmationModal,
   decorators: [ComponentDecorator, I18nFrontDecorator],
 };

@@ -35,7 +35,7 @@ const DEFAULT_ACTION = {
 } satisfies WorkflowDeleteRecordAction;
 
 const meta: Meta<typeof WorkflowEditActionDeleteRecord> = {
-  title: 'Modules/Workflow/WorkflowEditActionDeleteRecord',
+  title: 'Refactor Modules/Workflow/WorkflowEditActionDeleteRecord',
   component: WorkflowEditActionDeleteRecord,
   parameters: {
     msw: graphqlMocks,

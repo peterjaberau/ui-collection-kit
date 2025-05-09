@@ -11,7 +11,7 @@ import { mockedTimelineCalendarEvents } from '@twenty-ui/front/testing/mock-data
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof Calendar> = {
-  title: 'Modules/Activities/Calendar/Calendar',
+  title: 'Refactor Modules/Activities/Calendar/Calendar',
   component: Calendar,
   decorators: [
     ComponentDecorator,

@@ -8,7 +8,7 @@ import { WorkflowStepActionDrawerDecorator } from '@twenty-ui/front/testing/deco
 import { WorkflowEditActionFormFieldSettings } from '../WorkflowEditActionFormFieldSettings';
 
 const meta: Meta<typeof WorkflowEditActionFormFieldSettings> = {
-  title: 'Modules/Workflow/Actions/Form/WorkflowEditActionFormFieldSettings',
+  title: 'Refactor Modules/Workflow/Actions/Form/WorkflowEditActionFormFieldSettings',
   component: WorkflowEditActionFormFieldSettings,
   decorators: [
     WorkflowStepActionDrawerDecorator,

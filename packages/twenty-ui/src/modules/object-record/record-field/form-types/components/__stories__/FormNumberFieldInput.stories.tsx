@@ -4,7 +4,7 @@ import { within } from '@storybook/test';
 import { FormNumberFieldInput } from '../FormNumberFieldInput';
 
 const meta: Meta<typeof FormNumberFieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormNumberFieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormNumberFieldInput',
   component: FormNumberFieldInput,
   args: {},
   argTypes: {},

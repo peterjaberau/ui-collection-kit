@@ -8,7 +8,7 @@ import { generatedMockObjectMetadataItems } from '@twenty-ui/front/testing/mock-
 import { ComponentDecorator, RouterDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof EventRowMainObjectUpdated> = {
-  title: 'Modules/TimelineActivities/Rows/MainObject/EventRowMainObjectUpdated',
+  title: 'Refactor Modules/TimelineActivities/Rows/MainObject/EventRowMainObjectUpdated',
   component: EventRowMainObjectUpdated,
   args: {
     authorFullName: 'John Doe',

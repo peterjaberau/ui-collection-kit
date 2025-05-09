@@ -21,7 +21,7 @@ const Render = (args: RenderProps) => {
 };
 
 const meta: Meta<typeof TextInputV2> = {
-  title: 'UI/Input/TextInputV2',
+  title: 'Refactor UI/Input/TextInputV2',
   component: TextInputV2,
   decorators: [ComponentDecorator],
   args: { placeholder: 'Tim' },

@@ -10,7 +10,7 @@ import { ComponentDecorator, RouterDecorator } from '@twenty-ui/testing';
 import { ActionDropdownItem } from '../ActionDropdownItem';
 
 const meta: Meta<typeof ActionDropdownItem> = {
-  title: 'Modules/ActionMenu/Actions/Display/ActionDropdownItem',
+  title: 'Refactor Modules/ActionMenu/Actions/Display/ActionDropdownItem',
   component: ActionDropdownItem,
   decorators: [
     (Story) => (

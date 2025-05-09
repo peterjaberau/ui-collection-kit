@@ -23,7 +23,7 @@ import { DropdownMenuSeparator } from '../DropdownMenuSeparator';
 import { StyledDropdownMenuSubheader } from '../StyledDropdownMenuSubheader';
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'UI/Layout/Dropdown/Dropdown',
+  title: 'Refactor UI/Layout/Dropdown/Dropdown',
   component: Dropdown,
   decorators: [ComponentDecorator, (Story) => <Story />],
   args: {

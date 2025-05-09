@@ -11,7 +11,7 @@ const ClearMocksDecorator: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof SettingsObjectInactiveMenuDropDown> = {
-  title: 'Modules/Settings/DataModel/SettingsObjectInactiveMenuDropDown',
+  title: 'Refactor Modules/Settings/DataModel/SettingsObjectInactiveMenuDropDown',
   component: SettingsObjectInactiveMenuDropDown,
   args: {
     scopeKey: 'settings-object-inactive-menu-dropdown',

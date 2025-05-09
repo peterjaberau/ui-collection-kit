@@ -86,7 +86,7 @@ const clearMocksDecorator: Decorator = (Story, context) => {
 };
 
 const meta: Meta = {
-  title: 'UI/Data/Field/Input/RatingFieldInput',
+  title: 'Refactor UI/Data/Field/Input/RatingFieldInput',
   component: RatingFieldInputWithContext,
   args: {
     value: '3',

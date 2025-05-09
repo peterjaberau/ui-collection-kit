@@ -7,7 +7,7 @@ import { SnackBarDecorator } from '@twenty-ui/front/testing/decorators/SnackBarD
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof EventCardCalendarEvent> = {
-  title: 'Modules/TimelineActivities/Rows/CalendarEvent/EventCardCalendarEvent',
+  title: 'Refactor Modules/TimelineActivities/Rows/CalendarEvent/EventCardCalendarEvent',
   component: EventCardCalendarEvent,
   decorators: [
     ComponentDecorator,

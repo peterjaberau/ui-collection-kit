@@ -9,7 +9,7 @@ import { ComponentDecorator, RouterDecorator } from '@twenty-ui/testing';
 import { ActionButton } from '../ActionButton';
 
 const meta: Meta<typeof ActionButton> = {
-  title: 'Modules/ActionMenu/Actions/Display/ActionButton',
+  title: 'Refactor Modules/ActionMenu/Actions/Display/ActionButton',
   component: ActionButton,
   decorators: [ComponentDecorator, RouterDecorator],
 };

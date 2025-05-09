@@ -4,7 +4,7 @@ import { ComponentDecorator } from '@twenty-ui/testing';
 import { IconBuildingSkyscraper, IconUser } from '@twenty-ui/display';
 
 const meta: Meta<typeof CommandMenuContextChip> = {
-  title: 'Modules/CommandMenu/CommandMenuContextChip',
+  title: 'Refactor Modules/CommandMenu/CommandMenuContextChip',
   component: CommandMenuContextChip,
   decorators: [ComponentDecorator],
 };

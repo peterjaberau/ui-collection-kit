@@ -8,7 +8,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 
 import { NotFound } from '../NotFound';
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/NotFound/Default',
+  title: 'Refactor Pages/NotFound/Default',
   component: NotFound,
   decorators: [PageDecorator],
   args: {

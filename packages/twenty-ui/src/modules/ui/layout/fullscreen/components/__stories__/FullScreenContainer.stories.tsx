@@ -8,7 +8,7 @@ import {
 } from '@twenty-ui/testing';
 
 const meta: Meta<typeof FullScreenContainer> = {
-  title: 'UI/Layout/FullScreenContainer',
+  title: 'Refactor UI/Layout/FullScreenContainer',
   component: FullScreenContainer,
   decorators: [
     ComponentDecorator,

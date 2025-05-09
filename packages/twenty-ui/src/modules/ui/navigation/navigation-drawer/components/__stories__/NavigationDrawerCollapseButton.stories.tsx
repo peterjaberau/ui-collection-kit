@@ -4,7 +4,7 @@ import { NavigationDrawerCollapseButton } from '../NavigationDrawerCollapseButto
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof NavigationDrawerCollapseButton> = {
-  title: 'UI/Navigation/NavigationDrawer/NavigationDrawerCollapseButton',
+  title: 'Refactor UI/Navigation/NavigationDrawer/NavigationDrawerCollapseButton',
   decorators: [ComponentDecorator],
   component: NavigationDrawerCollapseButton,
 };

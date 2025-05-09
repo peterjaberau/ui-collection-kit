@@ -107,7 +107,7 @@ const RelationManyFieldInputWithContext = () => {
   );
 };
 const meta: Meta = {
-  title: 'UI/Data/Field/Input/RelationManyFieldInput',
+  title: 'Refactor UI/Data/Field/Input/RelationManyFieldInput',
   component: RelationManyFieldInputWithContext,
   args: {},
   decorators: [ObjectMetadataItemsDecorator, SnackBarDecorator],

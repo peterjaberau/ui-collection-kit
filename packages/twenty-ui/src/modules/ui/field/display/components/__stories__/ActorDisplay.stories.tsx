@@ -6,7 +6,7 @@ import { ActorDisplay } from '@twenty-modules/ui/field/display/components/ActorD
 import { CatalogDecorator } from '@twenty-ui/testing';
 
 const meta: Meta = {
-  title: 'UI/Display/ActorDisplay',
+  title: 'Refactor UI/Display/ActorDisplay',
   component: ActorDisplay,
   args: {
     name: 'John Doe',

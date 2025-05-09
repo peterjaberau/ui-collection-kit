@@ -23,7 +23,7 @@ const goToPeopleAction = mockActions.find(
 );
 
 const meta: Meta<typeof ActionListItem> = {
-  title: 'Modules/ActionMenu/Actions/Display/ActionListItem',
+  title: 'Refactor Modules/ActionMenu/Actions/Display/ActionListItem',
   component: ActionListItem,
   decorators: [
     (Story) => (

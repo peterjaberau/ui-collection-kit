@@ -7,7 +7,7 @@ import { MOCKED_STEP_ID } from '@twenty-ui/front/testing/mock-data/workflow';
 import { FormMultiSelectFieldInput } from '../FormMultiSelectFieldInput';
 
 const meta: Meta<typeof FormMultiSelectFieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormMultiSelectFieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormMultiSelectFieldInput',
   component: FormMultiSelectFieldInput,
   args: {},
   argTypes: {},

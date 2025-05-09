@@ -10,7 +10,7 @@ import { sleep } from '@twenty-ui/front/utils/sleep';
 import { SettingsObjectDetailPage } from '../SettingsObjectDetailPage';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/DataModel/SettingsObjectDetail',
+  title: 'Refactor Pages/Settings/DataModel/SettingsObjectDetail',
   component: SettingsObjectDetailPage,
   decorators: [PageDecorator],
   args: {

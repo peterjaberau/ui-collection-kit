@@ -7,7 +7,7 @@ import { ImageInput } from '../ImageInput';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof ImageInput> = {
-  title: 'UI/Input/ImageInput/ImageInput',
+  title: 'Refactor UI/Input/ImageInput/ImageInput',
   component: ImageInput,
   decorators: [ComponentDecorator, I18nFrontDecorator],
 };

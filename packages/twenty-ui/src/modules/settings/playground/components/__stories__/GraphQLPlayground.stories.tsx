@@ -23,7 +23,7 @@ const PlaygroundApiKeySetterEffect = () => {
 };
 
 const meta: Meta<typeof GraphQLPlayground> = {
-  title: 'Modules/Settings/Playground/GraphQLPlayground',
+  title: 'Refactor Modules/Settings/Playground/GraphQLPlayground',
   component: GraphQLPlayground,
   decorators: [
     ComponentDecorator,

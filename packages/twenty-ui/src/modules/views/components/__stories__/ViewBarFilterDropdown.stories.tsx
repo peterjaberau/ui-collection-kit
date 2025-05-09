@@ -36,7 +36,7 @@ import { SnackBarDecorator } from '@twenty-ui/front/testing/decorators/SnackBarD
 import { generatedMockObjectMetadataItems } from '@twenty-ui/front/testing/mock-data/generatedMockObjectMetadataItems';
 
 const meta: Meta<typeof ViewBarFilterDropdown> = {
-  title: 'Modules/Views/ViewBarFilterDropdown',
+  title: 'Refactor Modules/Views/ViewBarFilterDropdown',
   component: ViewBarFilterDropdown,
   decorators: [
     (Story) => {

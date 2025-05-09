@@ -79,7 +79,7 @@ const BooleanFieldInputWithContext = ({
 };
 
 const meta: Meta = {
-  title: 'UI/Data/Field/Input/BooleanFieldInput',
+  title: 'Refactor UI/Data/Field/Input/BooleanFieldInput',
   component: BooleanFieldInputWithContext,
   args: {
     value: true,

@@ -5,7 +5,7 @@ import { getProfilingStory } from '@twenty-ui/front/testing/profiling/utils/getP
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta = {
-  title: 'UI/Input/EllipsisDisplay/EllipsisDisplay',
+  title: 'Refactor UI/Input/EllipsisDisplay/EllipsisDisplay',
   component: EllipsisDisplay,
   decorators: [ComponentDecorator],
   args: {

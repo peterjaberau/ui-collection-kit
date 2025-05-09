@@ -9,7 +9,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { SettingsObjectFieldEdit } from '../SettingsObjectFieldEdit';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/DataModel/SettingsObjectFieldEdit',
+  title: 'Refactor Pages/Settings/DataModel/SettingsObjectFieldEdit',
   component: SettingsObjectFieldEdit,
   decorators: [PageDecorator],
   args: {

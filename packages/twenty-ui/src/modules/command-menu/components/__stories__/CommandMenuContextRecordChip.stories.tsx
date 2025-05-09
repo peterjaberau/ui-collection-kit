@@ -208,7 +208,7 @@ const ContextStoreDecorator: Decorator = (Story) => {
 };
 
 const meta: Meta<typeof CommandMenuContextRecordsChip> = {
-  title: 'Modules/CommandMenu/CommandMenuContextRecordChip',
+  title: 'Refactor Modules/CommandMenu/CommandMenuContextRecordChip',
   component: CommandMenuContextRecordsChip,
   decorators: [
     ContextStoreDecorator,

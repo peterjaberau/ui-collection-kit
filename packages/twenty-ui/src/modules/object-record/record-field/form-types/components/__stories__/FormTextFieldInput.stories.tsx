@@ -14,7 +14,7 @@ import { FormTextFieldInput } from '../FormTextFieldInput';
 import { getUserDevice } from '@twenty-ui/utilities';
 
 const meta: Meta<typeof FormTextFieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormTextFieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormTextFieldInput',
   component: FormTextFieldInput,
   args: {},
   argTypes: {},

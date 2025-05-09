@@ -14,7 +14,7 @@ import { MOCKED_STEP_ID } from '@twenty-ui/front/testing/mock-data/workflow';
 import { FormRichTextV2FieldInput } from '../FormRichTextV2FieldInput';
 
 const meta: Meta<typeof FormRichTextV2FieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormRichTextV2FieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormRichTextV2FieldInput',
   component: FormRichTextV2FieldInput,
   args: {},
   argTypes: {},

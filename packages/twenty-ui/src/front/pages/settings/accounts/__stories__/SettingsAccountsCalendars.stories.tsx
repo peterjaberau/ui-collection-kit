@@ -9,7 +9,7 @@ import {
 import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/Accounts/SettingsAccountsCalendars',
+  title: 'Refactor Pages/Settings/Accounts/SettingsAccountsCalendars',
   component: SettingsAccountsCalendars,
   decorators: [PageDecorator],
   args: {

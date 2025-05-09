@@ -12,7 +12,7 @@ import { graphql, HttpResponse } from 'msw';
 import { SettingsRoles } from '../SettingsRoles';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/Roles/SettingsRoles',
+  title: 'Refactor Pages/Settings/Roles/SettingsRoles',
   component: SettingsRoles,
   decorators: [PageDecorator],
   args: {

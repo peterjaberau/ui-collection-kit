@@ -53,7 +53,7 @@ const SettingsOptionCardContentSelectWrapper = <Value extends SelectValue>(
 };
 
 const meta: Meta<typeof SettingsOptionCardContentSelectWrapper> = {
-  title: 'Modules/Settings/SettingsOptionCardContentSelect',
+  title: 'Refactor Modules/Settings/SettingsOptionCardContentSelect',
   component: SettingsOptionCardContentSelectWrapper,
   decorators: [ComponentDecorator],
   parameters: {

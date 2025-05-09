@@ -14,7 +14,7 @@ import { AppPath } from '@twenty-modules/types/AppPath';
 import { SignInUp } from '../SignInUp';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Auth/Invite',
+  title: 'Refactor Pages/Auth/Invite',
   component: SignInUp,
   decorators: [PageDecorator],
   args: {

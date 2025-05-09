@@ -13,7 +13,7 @@ import { generatedMockObjectMetadataItems } from '@twenty-ui/front/testing/mock-
 import { getProfilingStory } from '@twenty-ui/front/testing/profiling/utils/getProfilingStory';
 
 const meta: Meta = {
-  title: 'UI/Data/Field/Display/ChipFieldDisplay',
+  title: 'Refactor UI/Data/Field/Display/ChipFieldDisplay',
   decorators: [
     (Story) => {
       const instanceId = 'child-field-display-scope';

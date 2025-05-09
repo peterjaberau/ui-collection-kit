@@ -13,7 +13,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { mockedTasks } from '@twenty-ui/front/testing/mock-data/tasks';
 
 const meta: Meta<typeof TaskGroups> = {
-  title: 'Modules/Activity/TaskGroups',
+  title: 'Refactor Modules/Activity/TaskGroups',
   component: TaskGroups,
   decorators: [
     (Story) => (

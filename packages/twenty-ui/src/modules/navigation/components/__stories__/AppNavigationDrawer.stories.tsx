@@ -51,7 +51,7 @@ type StoryArgs = AppNavigationDrawerProps & {
 };
 
 const meta: Meta<StoryArgs> = {
-  title: 'Modules/Navigation/AppNavigationDrawer',
+  title: 'Refactor Modules/Navigation/AppNavigationDrawer',
   decorators: [
     IconsProviderDecorator,
     ObjectMetadataItemsDecorator,

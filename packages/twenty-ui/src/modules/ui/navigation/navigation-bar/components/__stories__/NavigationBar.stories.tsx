@@ -11,7 +11,7 @@ import {
 import { NavigationBar } from '@twenty-ui/navigation';
 
 const meta: Meta<typeof NavigationBar> = {
-  title: 'UI/Navigation/NavigationBar/NavigationBar',
+  title: 'Refactor UI/Navigation/NavigationBar/NavigationBar',
   component: NavigationBar,
   args: {
     activeItemName: 'main',

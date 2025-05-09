@@ -5,7 +5,7 @@ import { ComponentWithRouterDecorator } from '@twenty-ui/front/testing/decorator
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof Breadcrumb> = {
-  title: 'UI/Navigation/Breadcrumb/Breadcrumb',
+  title: 'Refactor UI/Navigation/Breadcrumb/Breadcrumb',
   component: Breadcrumb,
   decorators: [ComponentDecorator, ComponentWithRouterDecorator],
   args: {

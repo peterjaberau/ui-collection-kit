@@ -5,7 +5,7 @@ import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof DateTimePicker> = {
-  title: 'UI/Input/Internal/InternalDatePicker',
+  title: 'Refactor UI/Input/Internal/InternalDatePicker',
   component: DateTimePicker,
   decorators: [ComponentDecorator],
   argTypes: {

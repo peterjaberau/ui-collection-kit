@@ -27,7 +27,7 @@ const SettingsRoleSettingsWrapper = (
 };
 
 const meta: Meta<typeof SettingsRoleSettingsWrapper> = {
-  title: 'Modules/Settings/Roles/RoleSettings/SettingsRoleSettings',
+  title: 'Refactor Modules/Settings/Roles/RoleSettings/SettingsRoleSettings',
   component: SettingsRoleSettingsWrapper,
   decorators: [RouterDecorator, ComponentDecorator, I18nFrontDecorator],
 };

@@ -7,7 +7,7 @@ import { SettingsDataModelFieldDescriptionForm } from '../SettingsDataModelField
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof SettingsDataModelFieldDescriptionForm> = {
-  title: 'Modules/Settings/DataModel/SettingsDataModelFieldDescriptionForm',
+  title: 'Refactor Modules/Settings/DataModel/SettingsDataModelFieldDescriptionForm',
   component: SettingsDataModelFieldDescriptionForm,
   decorators: [
     (Story) => (

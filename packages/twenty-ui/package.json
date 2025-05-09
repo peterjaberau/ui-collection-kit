@@ -40,6 +40,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
+    "react-helmet-async": "^1.3.0",
     "qs": "^6.11.2",
     "@apollo/client": "^3.7.17",
     "@apollo/server": "^4.7.3",

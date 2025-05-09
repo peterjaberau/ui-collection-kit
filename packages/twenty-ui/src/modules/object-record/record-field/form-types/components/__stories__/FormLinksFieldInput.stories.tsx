@@ -6,7 +6,7 @@ import { WorkflowStepDecorator } from '@twenty-ui/front/testing/decorators/Workf
 import { FormLinksFieldInput } from '../FormLinksFieldInput';
 
 const meta: Meta<typeof FormLinksFieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormLinksFieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormLinksFieldInput',
   component: FormLinksFieldInput,
   args: {},
   argTypes: {},

@@ -10,7 +10,7 @@ import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFron
 import { SnackBarDecorator } from '@twenty-ui/front/testing/decorators/SnackBarDecorator';
 
 const meta: Meta<typeof MatchColumnsStep> = {
-  title: 'Modules/SpreadsheetImport/MatchColumnsStep',
+  title: 'Refactor Modules/SpreadsheetImport/MatchColumnsStep',
   component: MatchColumnsStep,
   parameters: {
     layout: 'fullscreen',

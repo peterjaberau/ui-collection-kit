@@ -31,7 +31,7 @@ const SettingsOptionCardContentCounterWrapper = (
 };
 
 const meta: Meta<typeof SettingsOptionCardContentCounterWrapper> = {
-  title: 'Modules/Settings/SettingsOptionCardContentCounter',
+  title: 'Refactor Modules/Settings/SettingsOptionCardContentCounter',
   component: SettingsOptionCardContentCounterWrapper,
   decorators: [ComponentDecorator],
   parameters: {

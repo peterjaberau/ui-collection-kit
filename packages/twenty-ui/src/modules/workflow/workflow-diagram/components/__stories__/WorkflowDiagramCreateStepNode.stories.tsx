@@ -6,7 +6,7 @@ import { WorkflowDiagramCreateStepNode } from '../WorkflowDiagramCreateStepNode'
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof WorkflowDiagramCreateStepNode> = {
-  title: 'Modules/Workflow/WorkflowDiagramCreateStepNode',
+  title: 'Refactor Modules/Workflow/WorkflowDiagramCreateStepNode',
   component: WorkflowDiagramCreateStepNode,
   decorators: [
     ComponentDecorator,

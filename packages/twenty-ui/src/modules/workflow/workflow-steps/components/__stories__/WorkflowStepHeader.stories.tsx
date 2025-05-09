@@ -5,7 +5,7 @@ import { THEME_LIGHT } from '@twenty-ui/theme';
 import { WorkflowStepHeader } from '../WorkflowStepHeader';
 
 const meta: Meta<typeof WorkflowStepHeader> = {
-  title: 'Modules/Workflow/WorkflowStepHeader',
+  title: 'Refactor Modules/Workflow/WorkflowStepHeader',
   component: WorkflowStepHeader,
   args: {
 

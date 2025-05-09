@@ -6,7 +6,7 @@ import { SnackBarDecorator } from '@twenty-ui/front/testing/decorators/SnackBarD
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof ApiKeyInput> = {
-  title: 'Modules/Settings/Developers/ApiKeys/ApiKeyInput',
+  title: 'Refactor Modules/Settings/Developers/ApiKeys/ApiKeyInput',
   component: ApiKeyInput,
   decorators: [ComponentDecorator, SnackBarDecorator, I18nFrontDecorator],
   args: {

@@ -12,7 +12,7 @@ import { DialogManagerScope } from '@twenty-modules/ui/feedback/dialog-manager/s
 import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFrontDecorator';
 
 const meta: Meta<typeof SelectHeaderStep> = {
-  title: 'Modules/SpreadsheetImport/SelectHeaderStep',
+  title: 'Refactor Modules/SpreadsheetImport/SelectHeaderStep',
   component: SelectHeaderStep,
   parameters: {
     layout: 'fullscreen',

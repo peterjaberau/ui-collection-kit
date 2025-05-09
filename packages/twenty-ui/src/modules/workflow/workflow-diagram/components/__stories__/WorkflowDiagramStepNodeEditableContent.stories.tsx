@@ -21,7 +21,7 @@ const Wrapper = (_props: WrapperProps) => {
 };
 
 const meta: Meta<WrapperProps> = {
-  title: 'Modules/Workflow/WorkflowDiagramStepNodeEditableContent',
+  title: 'Refactor Modules/Workflow/WorkflowDiagramStepNodeEditableContent',
   component: WorkflowDiagramStepNodeEditableContent,
   parameters: {
     msw: graphqlMocks,

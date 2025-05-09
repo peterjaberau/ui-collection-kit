@@ -86,7 +86,7 @@ const openApiSpec = {
 };
 
 const meta: Meta<typeof RestPlayground> = {
-  title: 'Modules/Settings/Playground/RestPlayground',
+  title: 'Refactor Modules/Settings/Playground/RestPlayground',
   component: RestPlayground,
   decorators: [
     ComponentDecorator,

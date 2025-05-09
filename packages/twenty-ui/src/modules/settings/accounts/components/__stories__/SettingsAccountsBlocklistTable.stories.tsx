@@ -13,7 +13,7 @@ const ClearMocksDecorator: Decorator = (Story, context) => {
 };
 
 const meta: Meta<typeof SettingsAccountsBlocklistTable> = {
-  title: 'Modules/Settings/Accounts/Blocklist/SettingsAccountsBlocklistTable',
+  title: 'Refactor Modules/Settings/Accounts/Blocklist/SettingsAccountsBlocklistTable',
   component: SettingsAccountsBlocklistTable,
   decorators: [ComponentDecorator, ClearMocksDecorator],
   args: {

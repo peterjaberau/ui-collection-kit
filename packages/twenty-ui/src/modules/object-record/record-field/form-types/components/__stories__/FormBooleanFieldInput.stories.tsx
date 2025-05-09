@@ -3,7 +3,7 @@ import { expect, userEvent, within } from '@storybook/test';
 import { FormBooleanFieldInput } from '../FormBooleanFieldInput';
 
 const meta: Meta<typeof FormBooleanFieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormBooleanFieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormBooleanFieldInput',
   component: FormBooleanFieldInput,
   args: {},
   argTypes: {},

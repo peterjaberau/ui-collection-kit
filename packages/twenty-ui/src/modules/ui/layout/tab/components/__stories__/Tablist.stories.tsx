@@ -34,7 +34,7 @@ const tabs = [
 ];
 
 const meta: Meta<typeof TabList> = {
-  title: 'UI/Layout/Tab/TabList',
+  title: 'Refactor UI/Layout/Tab/TabList',
   component: TabList,
   args: {
     tabs: tabs,

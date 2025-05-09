@@ -24,7 +24,7 @@ const StyledContainer = styled.div`
 `;
 
 const meta: Meta = {
-  title: 'Modules/Workflow/WorkflowDiagram/WorkflowDiagramCustomMarkers',
+  title: 'Refactor Modules/Workflow/WorkflowDiagram/WorkflowDiagramCustomMarkers',
   component: WorkflowDiagramCanvasBase,
   parameters: {
     msw: graphqlMocks,

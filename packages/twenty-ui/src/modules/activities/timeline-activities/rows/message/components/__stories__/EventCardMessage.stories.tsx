@@ -9,7 +9,7 @@ import { ObjectMetadataItemsDecorator } from '@twenty-ui/front/testing/decorator
 import { SnackBarDecorator } from '@twenty-ui/front/testing/decorators/SnackBarDecorator';
 
 const meta: Meta<typeof EventCardMessage> = {
-  title: 'Modules/TimelineActivities/Rows/Message/EventCardMessage',
+  title: 'Refactor Modules/TimelineActivities/Rows/Message/EventCardMessage',
   component: EventCardMessage,
   decorators: [
     ComponentDecorator,

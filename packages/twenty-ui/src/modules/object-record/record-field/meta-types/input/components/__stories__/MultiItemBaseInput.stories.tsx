@@ -4,7 +4,7 @@ import { MultiItemBaseInput } from '../MultiItemBaseInput';
 import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof MultiItemBaseInput> = {
-  title: 'UI/Data/Field/Input/BaseFieldInput',
+  title: 'Refactor UI/Data/Field/Input/BaseFieldInput',
   component: MultiItemBaseInput,
   decorators: [ComponentDecorator],
   args: { value: 'Lorem ipsum' },

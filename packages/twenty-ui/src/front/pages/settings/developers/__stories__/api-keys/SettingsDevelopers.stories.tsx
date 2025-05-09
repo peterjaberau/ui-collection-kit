@@ -8,7 +8,7 @@ import {
 import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/ApiKeys',
+  title: 'Refactor Pages/Settings/ApiKeys',
   component: SettingsApiKeys,
   decorators: [PageDecorator],
   args: { routePath: '/settings/apis' },

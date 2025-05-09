@@ -17,7 +17,7 @@ import { WorkflowStepDecorator } from '@twenty-ui/front/testing/decorators/Workf
 import { MOCKED_STEP_ID } from '@twenty-ui/front/testing/mock-data/workflow';
 
 const meta: Meta<typeof FormDateTimeFieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormDateTimeFieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormDateTimeFieldInput',
   component: FormDateTimeFieldInput,
   args: {},
   argTypes: {},

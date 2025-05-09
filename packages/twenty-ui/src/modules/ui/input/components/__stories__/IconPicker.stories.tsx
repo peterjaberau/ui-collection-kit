@@ -24,7 +24,7 @@ const Render = (args: RenderProps) => {
 };
 
 const meta: Meta<typeof IconPicker> = {
-  title: 'UI/Input/IconPicker/IconPicker',
+  title: 'Refactor UI/Input/IconPicker/IconPicker',
   component: IconPicker,
   decorators: [IconsProviderDecorator, ComponentDecorator],
   render: Render,

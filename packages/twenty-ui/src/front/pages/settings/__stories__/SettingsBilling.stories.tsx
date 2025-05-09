@@ -12,7 +12,7 @@ import { getSettingsPath } from '@twenty-ui/front/utils/navigation/getSettingsPa
 import { SettingsBilling } from '../SettingsBilling';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/SettingsBilling',
+  title: 'Refactor Pages/Settings/SettingsBilling',
   component: SettingsBilling,
   decorators: [PageDecorator],
   args: { routePath: getSettingsPath(SettingsPath.Billing) },

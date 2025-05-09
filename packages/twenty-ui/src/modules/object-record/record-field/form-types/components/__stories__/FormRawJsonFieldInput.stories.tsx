@@ -8,7 +8,7 @@ import { FormRawJsonFieldInput } from '../FormRawJsonFieldInput';
 import { getUserDevice } from '@twenty-ui/utilities';
 
 const meta: Meta<typeof FormRawJsonFieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormRawJsonFieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormRawJsonFieldInput',
   component: FormRawJsonFieldInput,
   args: {},
   argTypes: {},

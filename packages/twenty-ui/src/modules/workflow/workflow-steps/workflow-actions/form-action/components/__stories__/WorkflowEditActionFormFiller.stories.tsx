@@ -11,7 +11,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { WorkflowEditActionFormFiller } from '../WorkflowEditActionFormFiller';
 
 const meta: Meta<typeof WorkflowEditActionFormFiller> = {
-  title: 'Modules/Workflow/Actions/Form/WorkflowEditActionFormFiller',
+  title: 'Refactor Modules/Workflow/Actions/Form/WorkflowEditActionFormFiller',
   component: WorkflowEditActionFormFiller,
   parameters: {
     msw: graphqlMocks,

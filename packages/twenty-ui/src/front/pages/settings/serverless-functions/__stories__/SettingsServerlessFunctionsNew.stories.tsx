@@ -8,7 +8,7 @@ import {
 import { sleep } from '@twenty-ui/front/utils/sleep';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/ServerlessFunctions/SettingsServerlessFunctionsNew',
+  title: 'Refactor Pages/Settings/ServerlessFunctions/SettingsServerlessFunctionsNew',
   component: SettingsServerlessFunctionsNew,
   decorators: [PageDecorator],
   args: { routePath: '/settings/functions/new' },

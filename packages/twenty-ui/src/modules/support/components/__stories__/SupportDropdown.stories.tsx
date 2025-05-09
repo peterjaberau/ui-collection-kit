@@ -16,7 +16,7 @@ import { SupportDropdown } from '@twenty-modules/support/components/SupportDropd
 import { PrefetchLoadedDecorator } from '@twenty-ui/front/testing/decorators/PrefetchLoadedDecorator';
 
 const meta: Meta<typeof SupportDropdown> = {
-  title: 'Modules/Support/SupportDropdown',
+  title: 'Refactor Modules/Support/SupportDropdown',
   component: SupportDropdown,
   decorators: [
     (Story) => {

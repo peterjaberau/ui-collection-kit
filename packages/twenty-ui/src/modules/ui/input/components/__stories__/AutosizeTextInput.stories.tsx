@@ -11,7 +11,7 @@ import {
 } from '@twenty-ui/testing';
 
 const meta: Meta<typeof AutosizeTextInput> = {
-  title: 'UI/Input/AutosizeTextInput/AutosizeTextInput',
+  title: 'Refactor UI/Input/AutosizeTextInput/AutosizeTextInput',
   component: AutosizeTextInput,
   decorators: [ComponentDecorator],
 };

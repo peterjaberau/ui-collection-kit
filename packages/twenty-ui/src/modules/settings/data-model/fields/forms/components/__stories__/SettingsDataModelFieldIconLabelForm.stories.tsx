@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
 `;
 
 const meta: Meta<typeof SettingsDataModelFieldIconLabelForm> = {
-  title: 'Modules/Settings/DataModel/SettingsDataModelFieldIconLabelForm',
+  title: 'Refactor Modules/Settings/DataModel/SettingsDataModelFieldIconLabelForm',
   component: SettingsDataModelFieldIconLabelForm,
   decorators: [
     (Story) => (

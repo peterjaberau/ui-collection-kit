@@ -8,7 +8,7 @@ import { MOCKED_STEP_ID } from '@twenty-ui/front/testing/mock-data/workflow';
 import { FormCurrencyFieldInput } from '../FormCurrencyFieldInput';
 
 const meta: Meta<typeof FormCurrencyFieldInput> = {
-  title: 'UI/Data/Field/Form/Input/FormCurrencyFieldInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormCurrencyFieldInput',
   component: FormCurrencyFieldInput,
   args: {},
   argTypes: {},

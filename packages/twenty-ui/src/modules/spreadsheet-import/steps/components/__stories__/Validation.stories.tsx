@@ -11,7 +11,7 @@ import { ValidationStep } from '@twenty-modules/spreadsheet-import/steps/compone
 import { DialogManagerScope } from '@twenty-modules/ui/feedback/dialog-manager/scopes/DialogManagerScope';
 import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFrontDecorator';
 const meta: Meta<typeof ValidationStep> = {
-  title: 'Modules/SpreadsheetImport/ValidationStep',
+  title: 'Refactor Modules/SpreadsheetImport/ValidationStep',
   component: ValidationStep,
   parameters: {
     layout: 'fullscreen',

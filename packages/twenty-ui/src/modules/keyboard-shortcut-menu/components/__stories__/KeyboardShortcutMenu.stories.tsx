@@ -9,7 +9,7 @@ import { ComponentWithRouterDecorator } from '@twenty-ui/front/testing/decorator
 import { KeyboardShortcutMenu } from '../KeyboardShortcutMenu';
 
 const meta: Meta<typeof KeyboardShortcutMenu> = {
-  title: 'Modules/KeyboardShortcutMenu/KeyboardShortcutMenu',
+  title: 'Refactor Modules/KeyboardShortcutMenu/KeyboardShortcutMenu',
   component: KeyboardShortcutMenu,
   decorators: [
     (Story) => {

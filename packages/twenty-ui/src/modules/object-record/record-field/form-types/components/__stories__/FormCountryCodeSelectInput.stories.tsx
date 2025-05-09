@@ -4,7 +4,7 @@ import { within } from '@storybook/test';
 import { FormCountryCodeSelectInput } from '../FormCountryCodeSelectInput';
 
 const meta: Meta<typeof FormCountryCodeSelectInput> = {
-  title: 'UI/Data/Field/Form/Input/FormCountryCodeSelectInput',
+  title: 'Refactor UI/Data/Field/Form/Input/FormCountryCodeSelectInput',
   component: FormCountryCodeSelectInput,
   args: {},
   argTypes: {},

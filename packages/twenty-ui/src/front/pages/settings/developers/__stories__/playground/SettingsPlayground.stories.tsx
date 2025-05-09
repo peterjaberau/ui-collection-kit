@@ -9,7 +9,7 @@ import {
 } from '@twenty-ui//testing';
 
 const meta: Meta<typeof SettingsRestPlayground> = {
-  title: 'Pages/Settings/Playground/RestPlayground',
+  title: 'Refactor Pages/Settings/Playground/RestPlayground',
   component: SettingsRestPlayground,
   decorators: [
     ComponentDecorator,

@@ -15,7 +15,7 @@ import {
 import { MenuItem } from '@twenty-ui/navigation';
 
 const meta: Meta<typeof DropdownMenuHeader> = {
-  title: 'UI/Layout/Dropdown/DropdownMenuHeader',
+  title: 'Refactor UI/Layout/Dropdown/DropdownMenuHeader',
   component: DropdownMenuHeader,
   decorators: [ComponentDecorator],
   args: {},

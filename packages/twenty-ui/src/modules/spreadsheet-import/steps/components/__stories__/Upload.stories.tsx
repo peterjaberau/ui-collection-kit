@@ -10,7 +10,7 @@ import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFron
 import { SnackBarDecorator } from '@twenty-ui/front/testing/decorators/SnackBarDecorator';
 
 const meta: Meta<typeof UploadStep> = {
-  title: 'Modules/SpreadsheetImport/UploadStep',
+  title: 'Refactor Modules/SpreadsheetImport/UploadStep',
   component: UploadStep,
   parameters: {
     layout: 'fullscreen',

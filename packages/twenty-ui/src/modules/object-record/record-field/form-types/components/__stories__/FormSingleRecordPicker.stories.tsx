@@ -11,7 +11,7 @@ import { MOCKED_STEP_ID } from '@twenty-ui/front/testing/mock-data/workflow';
 import { FormSingleRecordPicker } from '../FormSingleRecordPicker';
 
 const meta: Meta<typeof FormSingleRecordPicker> = {
-  title: 'UI/Data/Field/Form/Input/FormSingleRecordPicker',
+  title: 'Refactor UI/Data/Field/Form/Input/FormSingleRecordPicker',
   component: FormSingleRecordPicker,
   parameters: {
     msw: graphqlMocks,

@@ -9,7 +9,7 @@ import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
 import { SettingsRoleEdit } from '../SettingsRoleEdit';
 
 const meta: Meta<PageDecoratorArgs> = {
-  title: 'Pages/Settings/Roles/SettingsRoleEdit',
+  title: 'Refactor Pages/Settings/Roles/SettingsRoleEdit',
   component: SettingsRoleEdit,
   decorators: [PageDecorator],
   args: {

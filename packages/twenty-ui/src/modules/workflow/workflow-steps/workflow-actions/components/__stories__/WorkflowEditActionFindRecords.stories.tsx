@@ -34,7 +34,7 @@ const DEFAULT_ACTION = {
 } satisfies WorkflowFindRecordsAction;
 
 const meta: Meta<typeof WorkflowEditActionFindRecords> = {
-  title: 'Modules/Workflow/WorkflowEditActionFindRecords',
+  title: 'Refactor Modules/Workflow/WorkflowEditActionFindRecords',
   component: WorkflowEditActionFindRecords,
   parameters: {
     msw: graphqlMocks,
