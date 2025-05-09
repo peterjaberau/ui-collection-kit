@@ -1,0 +1,22 @@
+import { useContext } from 'react';
+
+import { useRecordFieldValue } from '@twenty-modules/object-record/record-store/contexts/RecordFieldValueSelectorContext';
+
+import { FieldEmailsValue } from '@twenty-modules/object-record/record-field/types/FieldMetadata';
+import { FieldContext } from '../../contexts/FieldContext';
+
+export const useEmailsFieldDisplay = () => {
+  const { recordId, fieldDefinition } = useContext(FieldContext);
+
+  const fieldName = fieldDefinition.metadata.fieldName;
+
+  const fieldValue = useRecordFieldValue<FieldEmailsValue | undefined>(
+    recordId,
+    fieldName,
+  );
+
+  return {
+    fieldDefinition,
+    fieldValue,
+  };
+};

@@ -1,0 +1,10 @@
+import { AGGREGATE_OPERATIONS } from '@twenty-modules/object-record/record-table/constants/AggregateOperations';
+
+export const COUNT_AGGREGATE_OPERATION_OPTIONS = [
+  AGGREGATE_OPERATIONS.count,
+  AGGREGATE_OPERATIONS.countEmpty,
+  AGGREGATE_OPERATIONS.countNotEmpty,
+  AGGREGATE_OPERATIONS.countUniqueValues,
+  AGGREGATE_OPERATIONS.countTrue,
+  AGGREGATE_OPERATIONS.countFalse,
+];

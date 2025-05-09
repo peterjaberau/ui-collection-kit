@@ -1,11 +1,11 @@
-import { Dropdown } from '@/ui/layout/dropdown/components/Dropdown';
-import { MultiWorkspaceDropdownClickableComponent } from '@/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownClickableComponent';
-import { MultiWorkspaceDropdownDefaultComponents } from '@/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents';
-import { MultiWorkspaceDropdownThemesComponents } from '@/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownThemesComponents';
-import { MultiWorkspaceDropdownWorkspacesListComponents } from '@/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownWorkspacesListComponents';
-import { MULTI_WORKSPACE_DROPDOWN_ID } from '@/ui/navigation/navigation-drawer/constants/MultiWorkspaceDropdownId';
-import { multiWorkspaceDropdownState } from '@/ui/navigation/navigation-drawer/states/multiWorkspaceDropdownState';
-import { NavigationDrawerHotKeyScope } from '@/ui/navigation/navigation-drawer/types/NavigationDrawerHotKeyScope';
+import { Dropdown } from '@twenty-modules/ui/layout/dropdown/components/Dropdown';
+import { MultiWorkspaceDropdownClickableComponent } from '@twenty-modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownClickableComponent';
+import { MultiWorkspaceDropdownDefaultComponents } from '@twenty-modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents';
+import { MultiWorkspaceDropdownThemesComponents } from '@twenty-modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownThemesComponents';
+import { MultiWorkspaceDropdownWorkspacesListComponents } from '@twenty-modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownWorkspacesListComponents';
+import { MULTI_WORKSPACE_DROPDOWN_ID } from '@twenty-modules/ui/navigation/navigation-drawer/constants/MultiWorkspaceDropdownId';
+import { multiWorkspaceDropdownState } from '@twenty-modules/ui/navigation/navigation-drawer/states/multiWorkspaceDropdownState';
+import { NavigationDrawerHotKeyScope } from '@twenty-modules/ui/navigation/navigation-drawer/types/NavigationDrawerHotKeyScope';
 import { useMemo } from 'react';
 import { useRecoilState } from 'recoil';
 

@@ -1,4 +1,4 @@
-import { BLOCK_SCHEMA } from '@/activities/blocks/constants/Schema';
+import { BLOCK_SCHEMA } from '@twenty-modules/activities/blocks/constants/Schema';
 
 import { useComponentsContext } from '@blocknote/react';
 

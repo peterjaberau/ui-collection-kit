@@ -1,7 +1,7 @@
 import { useRecoilCallback } from 'recoil';
 
-import { isNavigationSectionOpenComponentState } from '@/ui/navigation/navigation-drawer/states/isNavigationSectionOpenComponentState';
-import { extractComponentState } from '@/ui/utilities/state/component-state/utils/extractComponentState';
+import { isNavigationSectionOpenComponentState } from '@twenty-modules/ui/navigation/navigation-drawer/states/isNavigationSectionOpenComponentState';
+import { extractComponentState } from '@twenty-modules/ui/utilities/state/component-state/utils/extractComponentState';
 
 export const useNavigationSection = (scopeId: string) => {
   const closeNavigationSection = useRecoilCallback(

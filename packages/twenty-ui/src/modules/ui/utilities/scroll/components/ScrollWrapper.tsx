@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
-import { ScrollWrapperInitEffect } from '@/ui/utilities/scroll/components/internal/ScrollWrapperInitEffect';
-import { ScrollWrapperComponentInstanceContext } from '@/ui/utilities/scroll/states/contexts/ScrollWrapperComponentInstanceContext';
-import { scrollWrapperScrollBottomComponentState } from '@/ui/utilities/scroll/states/scrollWrapperScrollBottomComponentState';
-import { scrollWrapperScrollLeftComponentState } from '@/ui/utilities/scroll/states/scrollWrapperScrollLeftComponentState';
-import { scrollWrapperScrollTopComponentState } from '@/ui/utilities/scroll/states/scrollWrapperScrollTopComponentState';
-import { useSetRecoilComponentStateV2 } from '@/ui/utilities/state/component-state/hooks/useSetRecoilComponentStateV2';
+import { ScrollWrapperInitEffect } from '@twenty-modules/ui/utilities/scroll/components/internal/ScrollWrapperInitEffect';
+import { ScrollWrapperComponentInstanceContext } from '@twenty-modules/ui/utilities/scroll/states/contexts/ScrollWrapperComponentInstanceContext';
+import { scrollWrapperScrollBottomComponentState } from '@twenty-modules/ui/utilities/scroll/states/scrollWrapperScrollBottomComponentState';
+import { scrollWrapperScrollLeftComponentState } from '@twenty-modules/ui/utilities/scroll/states/scrollWrapperScrollLeftComponentState';
+import { scrollWrapperScrollTopComponentState } from '@twenty-modules/ui/utilities/scroll/states/scrollWrapperScrollTopComponentState';
+import { useSetRecoilComponentStateV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useSetRecoilComponentStateV2';
 
 const StyledScrollWrapper = styled.div`
   &.scroll-wrapper-x-enabled {

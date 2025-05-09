@@ -1,7 +1,7 @@
 import {
   NavigationDrawerItem,
   NavigationDrawerItemProps,
-} from '@/ui/navigation/navigation-drawer/components/NavigationDrawerItem';
+} from '@twenty-modules/ui/navigation/navigation-drawer/components/NavigationDrawerItem';
 
 type NavigationDrawerSubItemProps = NavigationDrawerItemProps;
 

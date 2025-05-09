@@ -1,5 +1,5 @@
-import { CoreObjectNameSingular } from '@/object-metadata/types/CoreObjectNameSingular';
-import { FeatureFlagKey } from '~/generated/graphql';
+import { CoreObjectNameSingular } from '@twenty-modules/object-metadata/types/CoreObjectNameSingular';
+import { FeatureFlagKey } from '@twenty-ui/front/generated/graphql';
 
 export type TabVisibilityConfig = {
   ifMobile: boolean;

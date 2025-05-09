@@ -1,8 +1,8 @@
-import { FieldActorValue } from '@/object-record/record-field/types/FieldMetadata';
+import { FieldActorValue } from '@twenty-modules/object-record/record-field/types/FieldMetadata';
 
 import { useMemo } from 'react';
-import { ConnectedAccountProvider } from 'twenty-shared/types';
-import { AvatarChip } from 'twenty-ui/components';
+import { ConnectedAccountProvider } from '@ui-collection-kit/twenty-shared/src/types';
+import { AvatarChip } from '@twenty-ui/components';
 import {
   IconApi,
   IconCalendar,
@@ -15,7 +15,7 @@ import {
   IconRobot,
   IconSettingsAutomation,
   IconWebhook,
-} from 'twenty-ui/display';
+} from '@twenty-ui/display';
 
 type ActorDisplayProps = Partial<FieldActorValue> & {
   avatarUrl?: string | null;

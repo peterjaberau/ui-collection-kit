@@ -1,5 +1,5 @@
-import { TableSortValue } from '@/ui/layout/table/types/TableSortValue';
-import { createFamilyState } from '@/ui/utilities/state/utils/createFamilyState';
+import { TableSortValue } from '@twenty-modules/ui/layout/table/types/TableSortValue';
+import { createFamilyState } from '@twenty-modules/ui/utilities/state/utils/createFamilyState';
 
 export type SortedFieldByTableFamilyStateKey = {
   tableId: string;

@@ -8,7 +8,7 @@ import {
   CatalogDecorator,
   CatalogStory,
   ComponentDecorator,
-} from 'twenty-ui/testing';
+} from '@twenty-ui/testing';
 
 const meta: Meta<typeof AutosizeTextInput> = {
   title: 'UI/Input/AutosizeTextInput/AutosizeTextInput',

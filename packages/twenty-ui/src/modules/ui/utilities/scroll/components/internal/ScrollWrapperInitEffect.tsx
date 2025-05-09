@@ -1,4 +1,4 @@
-import { useToggleScrollWrapper } from '@/ui/utilities/scroll/hooks/useToggleScrollWrapper';
+import { useToggleScrollWrapper } from '@twenty-modules/ui/utilities/scroll/hooks/useToggleScrollWrapper';
 import { useEffect } from 'react';
 
 export type ScrollWrapperInitEffectProps = {

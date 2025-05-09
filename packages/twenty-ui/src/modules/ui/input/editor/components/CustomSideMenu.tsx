@@ -1,6 +1,6 @@
-import { BLOCK_SCHEMA } from '@/activities/blocks/constants/Schema';
-import { CustomAddBlockItem } from '@/ui/input/editor/components/CustomAddBlockItem';
-import { CustomSideMenuOptions } from '@/ui/input/editor/components/CustomSideMenuOptions';
+import { BLOCK_SCHEMA } from '@twenty-modules/activities/blocks/constants/Schema';
+import { CustomAddBlockItem } from '@twenty-modules/ui/input/editor/components/CustomAddBlockItem';
+import { CustomSideMenuOptions } from '@twenty-modules/ui/input/editor/components/CustomSideMenuOptions';
 import {
   BlockColorsItem,
   DragHandleButton,
@@ -10,7 +10,7 @@ import {
   SideMenuController,
 } from '@blocknote/react';
 import styled from '@emotion/styled';
-import { IconColorSwatch, IconPlus, IconTrash } from 'twenty-ui/display';
+import { IconColorSwatch, IconPlus, IconTrash } from '@twenty-ui/display';
 
 type CustomSideMenuProps = {
   editor: typeof BLOCK_SCHEMA.BlockNoteEditor;

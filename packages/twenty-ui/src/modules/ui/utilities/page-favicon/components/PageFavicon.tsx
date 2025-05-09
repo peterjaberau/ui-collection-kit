@@ -1,9 +1,9 @@
-import { workspacePublicDataState } from '@/auth/states/workspacePublicDataState';
-import { DEFAULT_WORKSPACE_LOGO } from '@/ui/navigation/navigation-drawer/constants/DefaultWorkspaceLogo';
+import { workspacePublicDataState } from '@twenty-modules/auth/states/workspacePublicDataState';
+import { DEFAULT_WORKSPACE_LOGO } from '@twenty-modules/ui/navigation/navigation-drawer/constants/DefaultWorkspaceLogo';
 import { Helmet } from 'react-helmet-async';
 import { useRecoilValue } from 'recoil';
-import { REACT_APP_SERVER_BASE_URL } from '~/config';
-import { getImageAbsoluteURI } from 'twenty-shared/utils';
+import { REACT_APP_SERVER_BASE_URL } from '@twenty-ui/front/config';
+import { getImageAbsoluteURI } from '@ui-collection-kit/twenty-shared/src/utils';
 
 export const PageFavicon = () => {
   const workspacePublicData = useRecoilValue(workspacePublicDataState);

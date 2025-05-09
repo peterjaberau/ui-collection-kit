@@ -1,8 +1,8 @@
-import { useIsSettingsDrawer } from '@/navigation/hooks/useIsSettingsDrawer';
-import { ScrollWrapper } from '@/ui/utilities/scroll/components/ScrollWrapper';
+import { useIsSettingsDrawer } from '@twenty-modules/navigation/hooks/useIsSettingsDrawer';
+import { ScrollWrapper } from '@twenty-modules/ui/utilities/scroll/components/ScrollWrapper';
 import styled from '@emotion/styled';
 import { ReactNode } from 'react';
-import { useIsMobile } from 'twenty-ui/utilities';
+import { useIsMobile } from '@twenty-ui/utilities';
 
 const StyledItemsContainer = styled.div`
   display: flex;

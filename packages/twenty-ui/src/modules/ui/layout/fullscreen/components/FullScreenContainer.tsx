@@ -1,13 +1,13 @@
 import {
   PAGE_BAR_MIN_HEIGHT,
   PageHeader,
-} from '@/ui/layout/page/components/PageHeader';
+} from '@twenty-modules/ui/layout/page/components/PageHeader';
 import {
   Breadcrumb,
   BreadcrumbProps,
-} from '@/ui/navigation/bread-crumb/components/Breadcrumb';
+} from '@twenty-modules/ui/navigation/bread-crumb/components/Breadcrumb';
 import styled from '@emotion/styled';
-import { useIsMobile } from 'twenty-ui/utilities';
+import { useIsMobile } from '@twenty-ui/utilities';
 
 type FullScreenContainerProps = {
   children: JSX.Element | JSX.Element[];

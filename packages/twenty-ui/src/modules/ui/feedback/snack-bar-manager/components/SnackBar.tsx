@@ -4,16 +4,16 @@ import { useLingui } from '@lingui/react/macro';
 import { isUndefined } from '@sniptt/guards';
 import { ComponentPropsWithoutRef, ReactNode, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 import {
   IconAlertTriangle,
   IconInfoCircle,
   IconSquareRoundedCheck,
   IconX,
-} from 'twenty-ui/display';
-import { ProgressBar, useProgressAnimation } from 'twenty-ui/feedback';
-import { LightButton, LightIconButton } from 'twenty-ui/input';
-import { MOBILE_VIEWPORT } from 'twenty-ui/theme';
+} from '@twenty-ui/display';
+import { ProgressBar, useProgressAnimation } from '@twenty-ui/feedback';
+import { LightButton, LightIconButton } from '@twenty-ui/input';
+import { MOBILE_VIEWPORT } from '@twenty-ui/theme';
 
 export enum SnackBarVariant {
   Default = 'default',

@@ -1,4 +1,4 @@
-import { OrderBy } from '@/types/OrderBy';
+import { OrderBy } from '@twenty-modules/types/OrderBy';
 
 export type TableSortValue = {
   fieldName: string;

@@ -2,17 +2,17 @@ import styled from '@emotion/styled';
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { Key } from 'ts-key-enum';
 
-import { FieldAddressDraftValue } from '@/object-record/record-field/types/FieldInputDraftValue';
-import { FieldAddressValue } from '@/object-record/record-field/types/FieldMetadata';
-import { CountrySelect } from '@/ui/input/components/internal/country/components/CountrySelect';
-import { SELECT_COUNTRY_DROPDOWN_ID } from '@/ui/input/components/internal/country/constants/SelectCountryDropdownId';
-import { TextInputV2 } from '@/ui/input/components/TextInputV2';
-import { activeDropdownFocusIdState } from '@/ui/layout/dropdown/states/activeDropdownFocusIdState';
-import { useScopedHotkeys } from '@/ui/utilities/hotkey/hooks/useScopedHotkeys';
-import { useListenClickOutside } from '@/ui/utilities/pointer-event/hooks/useListenClickOutside';
+import { FieldAddressDraftValue } from '@twenty-modules/object-record/record-field/types/FieldInputDraftValue';
+import { FieldAddressValue } from '@twenty-modules/object-record/record-field/types/FieldMetadata';
+import { CountrySelect } from '@twenty-modules/ui/input/components/internal/country/components/CountrySelect';
+import { SELECT_COUNTRY_DROPDOWN_ID } from '@twenty-modules/ui/input/components/internal/country/constants/SelectCountryDropdownId';
+import { TextInputV2 } from '@twenty-modules/ui/input/components/TextInputV2';
+import { activeDropdownFocusIdState } from '@twenty-modules/ui/layout/dropdown/states/activeDropdownFocusIdState';
+import { useScopedHotkeys } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeys';
+import { useListenClickOutside } from '@twenty-modules/ui/utilities/pointer-event/hooks/useListenClickOutside';
 import { useRecoilValue } from 'recoil';
-import { isDefined } from 'twenty-shared/utils';
-import { MOBILE_VIEWPORT } from 'twenty-ui/theme';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { MOBILE_VIEWPORT } from '@twenty-ui/theme';
 
 const StyledAddressContainer = styled.div`
   padding: 4px 8px;

@@ -1,0 +1,391 @@
+import { useTheme } from '@emotion/react';
+import styled from '@emotion/styled';
+import { Trans, useLingui } from '@lingui/react/macro';
+import { isNonEmptyArray } from '@sniptt/guards';
+import { useState } from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+
+import { currentWorkspaceMemberState } from '@twenty-modules/auth/states/currentWorkspaceMemberState';
+import { currentWorkspaceState } from '@twenty-modules/auth/states/currentWorkspaceState';
+import { CoreObjectNameSingular } from '@twenty-modules/object-metadata/types/CoreObjectNameSingular';
+import { useDeleteOneRecord } from '@twenty-modules/object-record/hooks/useDeleteOneRecord';
+import { useFindManyRecords } from '@twenty-modules/object-record/hooks/useFindManyRecords';
+import { SettingsPageContainer } from '@twenty-modules/settings/components/SettingsPageContainer';
+import { SettingsPath } from '@twenty-modules/types/SettingsPath';
+import { SnackBarVariant } from '@twenty-modules/ui/feedback/snack-bar-manager/components/SnackBar';
+import { useSnackBar } from '@twenty-modules/ui/feedback/snack-bar-manager/hooks/useSnackBar';
+import { TextInput } from '@twenty-modules/ui/input/components/TextInput';
+import { ConfirmationModal } from '@twenty-modules/ui/layout/modal/components/ConfirmationModal';
+import { SubMenuTopBarContainer } from '@twenty-modules/ui/layout/page/components/SubMenuTopBarContainer';
+import { Table } from '@twenty-modules/ui/layout/table/components/Table';
+import { TableHeader } from '@twenty-modules/ui/layout/table/components/TableHeader';
+import { WorkspaceMember } from '@twenty-modules/workspace-member/types/WorkspaceMember';
+import { WorkspaceInviteLink } from '@twenty-modules/workspace/components/WorkspaceInviteLink';
+import { WorkspaceInviteTeam } from '@twenty-modules/workspace/components/WorkspaceInviteTeam';
+import { formatDistanceToNow } from 'date-fns';
+import { useGetWorkspaceInvitationsQuery } from '@twenty-ui/front/generated/graphql';
+import { getSettingsPath } from '@twenty-ui/front/utils/navigation/getSettingsPath';
+import { TableCell } from '../../modules/ui/layout/table/components/TableCell';
+import { TableRow } from '../../modules/ui/layout/table/components/TableRow';
+import { useDeleteWorkspaceInvitation } from '../../modules/workspace-invitation/hooks/useDeleteWorkspaceInvitation';
+import { useResendWorkspaceInvitation } from '../../modules/workspace-invitation/hooks/useResendWorkspaceInvitation';
+import { workspaceInvitationsState } from '../../modules/workspace-invitation/states/workspaceInvitationsStates';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import {
+  AppTooltip,
+  Avatar,
+  H2Title,
+  IconMail,
+  IconReload,
+  IconSearch,
+  IconTrash,
+  Status,
+  TooltipDelay,
+} from '@twenty-ui//display';
+import { IconButton } from '@twenty-ui//input';
+import { Section } from '@twenty-ui//layout';
+
+const StyledButtonContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-left: ${({ theme }) => theme.spacing(3)};
+`;
+
+const StyledTable = styled(Table)`
+  border-bottom: 1px solid ${({ theme }) => theme.border.color.light};
+`;
+
+const StyledIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: ${({ theme }) => theme.spacing(2)};
+`;
+
+const StyledTextContainerWithEllipsis = styled.div`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+const StyledSearchContainer = styled.div`
+  padding-bottom: ${({ theme }) => theme.spacing(2)};
+`;
+
+const StyledSearchInput = styled(TextInput)`
+  input {
+    background: ${({ theme }) => theme.background.transparent.lighter};
+    border: 1px solid ${({ theme }) => theme.border.color.medium};
+  }
+`;
+
+const StyledTableRows = styled.div`
+  padding-bottom: ${({ theme }) => theme.spacing(2)};
+  padding-top: ${({ theme }) => theme.spacing(2)};
+`;
+
+const StyledNoMembers = styled(TableCell)`
+  color: ${({ theme }) => theme.font.color.tertiary};
+`;
+
+export const SettingsWorkspaceMembers = () => {
+  const { t } = useLingui();
+  const { enqueueSnackBar } = useSnackBar();
+  const theme = useTheme();
+  const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
+  const [workspaceMemberToDelete, setWorkspaceMemberToDelete] = useState<
+    string | undefined
+  >();
+
+  const { records: workspaceMembers } = useFindManyRecords<WorkspaceMember>({
+    objectNameSingular: CoreObjectNameSingular.WorkspaceMember,
+  });
+  const { deleteOneRecord: deleteOneWorkspaceMember } = useDeleteOneRecord({
+    objectNameSingular: CoreObjectNameSingular.WorkspaceMember,
+  });
+
+  const { resendInvitation } = useResendWorkspaceInvitation();
+  const { deleteWorkspaceInvitation } = useDeleteWorkspaceInvitation();
+
+  const currentWorkspace = useRecoilValue(currentWorkspaceState);
+  const currentWorkspaceMember = useRecoilValue(currentWorkspaceMemberState);
+
+  const handleRemoveWorkspaceMember = async (workspaceMemberId: string) => {
+    await deleteOneWorkspaceMember?.(workspaceMemberId);
+    setIsConfirmationModalOpen(false);
+  };
+
+  const workspaceInvitations = useRecoilValue(workspaceInvitationsState);
+  const setWorkspaceInvitations = useSetRecoilState(workspaceInvitationsState);
+
+  const [searchFilter, setSearchFilter] = useState('');
+
+  const handleSearchChange = (text: string) => {
+    setSearchFilter(text);
+  };
+
+  useGetWorkspaceInvitationsQuery({
+    onError: (error: Error) => {
+      enqueueSnackBar(error.message, {
+        variant: SnackBarVariant.Error,
+      });
+    },
+    onCompleted: (data) => {
+      setWorkspaceInvitations(data?.findWorkspaceInvitations ?? []);
+    },
+  });
+
+  const handleRemoveWorkspaceInvitation = async (appTokenId: string) => {
+    const result = await deleteWorkspaceInvitation({ appTokenId });
+    if (isDefined(result.errors)) {
+      enqueueSnackBar(t`Error deleting invitation`, {
+        variant: SnackBarVariant.Error,
+        duration: 2000,
+      });
+    }
+  };
+
+  const handleResendWorkspaceInvitation = async (appTokenId: string) => {
+    const result = await resendInvitation({ appTokenId });
+    if (isDefined(result.errors)) {
+      enqueueSnackBar(t`Error resending invitation`, {
+        variant: SnackBarVariant.Error,
+        duration: 2000,
+      });
+    }
+  };
+
+  const getExpiresAtText = (expiresAt: string) => {
+    const expiresAtDate = new Date(expiresAt);
+    return expiresAtDate < new Date()
+      ? t`Expired`
+      : formatDistanceToNow(new Date(expiresAt));
+  };
+
+  const filteredWorkspaceMembers = !searchFilter
+    ? workspaceMembers
+    : workspaceMembers.filter((member) => {
+        const searchTerm = searchFilter.toLowerCase();
+        const firstName = member.name.firstName?.toLowerCase() || '';
+        const lastName = member.name.lastName?.toLowerCase() || '';
+        const email = member.userEmail?.toLowerCase() || '';
+
+        return (
+          firstName.includes(searchTerm) ||
+          lastName.includes(searchTerm) ||
+          email.includes(searchTerm)
+        );
+      });
+
+  return (
+    <SubMenuTopBarContainer
+      title={t`Members`}
+      links={[
+        {
+          children: <Trans>Workspace</Trans>,
+          href: getSettingsPath(SettingsPath.Workspace),
+        },
+        { children: <Trans>Members</Trans> },
+      ]}
+    >
+      <SettingsPageContainer>
+        {currentWorkspace?.inviteHash &&
+          currentWorkspace?.isPublicInviteLinkEnabled && (
+            <Section>
+              <H2Title
+                title={t`Invite by link`}
+                description={t`Share this link to invite users to join your workspace`}
+              />
+              <WorkspaceInviteLink
+                inviteLink={`${window.location.origin}/invite/${currentWorkspace?.inviteHash}`}
+              />
+            </Section>
+          )}
+        <Section>
+          <H2Title
+            title={t`Manage Members`}
+            description={t`Manage the members of your space here`}
+          />
+          <StyledSearchContainer>
+            <StyledSearchInput
+              value={searchFilter}
+              onChange={handleSearchChange}
+              placeholder={t`Search a team member...`}
+              fullWidth
+              LeftIcon={IconSearch}
+              sizeVariant="lg"
+            />
+          </StyledSearchContainer>
+          <StyledTable>
+            <TableRow
+              gridAutoColumns="150px 1fr 1fr"
+              mobileGridAutoColumns="100px 1fr 1fr"
+            >
+              <TableHeader>
+                <Trans>Name</Trans>
+              </TableHeader>
+              <TableHeader>
+                <Trans>Email</Trans>
+              </TableHeader>
+              <TableHeader align={'right'}></TableHeader>
+            </TableRow>
+            <StyledTableRows>
+              {filteredWorkspaceMembers.length > 0 ? (
+                filteredWorkspaceMembers.map((workspaceMember) => (
+                  <TableRow
+                    gridAutoColumns="150px 1fr 1fr"
+                    mobileGridAutoColumns="100px 1fr 1fr"
+                    key={workspaceMember.id}
+                  >
+                    <TableCell>
+                      <StyledIconWrapper>
+                        <Avatar
+                          avatarUrl={workspaceMember.avatarUrl}
+                          placeholderColorSeed={workspaceMember.id}
+                          placeholder={workspaceMember.name.firstName ?? ''}
+                          type="rounded"
+                          size="sm"
+                        />
+                      </StyledIconWrapper>
+                      <StyledTextContainerWithEllipsis
+                        id={`hover-text-${workspaceMember.id}`}
+                      >
+                        {workspaceMember.name.firstName +
+                          ' ' +
+                          workspaceMember.name.lastName}
+                      </StyledTextContainerWithEllipsis>
+                      <AppTooltip
+                        anchorSelect={`#hover-text-${workspaceMember.id}`}
+                        content={`${workspaceMember.name.firstName} ${workspaceMember.name.lastName}`}
+                        noArrow
+                        place="top"
+                        positionStrategy="fixed"
+                        delay={TooltipDelay.shortDelay}
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <StyledTextContainerWithEllipsis>
+                        {workspaceMember.userEmail}
+                      </StyledTextContainerWithEllipsis>
+                    </TableCell>
+                    <TableCell align={'right'}>
+                      {currentWorkspaceMember?.id !== workspaceMember.id && (
+                        <StyledButtonContainer>
+                          <IconButton
+                            onClick={() => {
+                              setIsConfirmationModalOpen(true);
+                              setWorkspaceMemberToDelete(workspaceMember.id);
+                            }}
+                            variant="tertiary"
+                            size="medium"
+                            Icon={IconTrash}
+                          />
+                        </StyledButtonContainer>
+                      )}
+                    </TableCell>
+                  </TableRow>
+                ))
+              ) : (
+                <StyledNoMembers>
+                  {!searchFilter
+                    ? t`No members`
+                    : t`No members match your search`}
+                </StyledNoMembers>
+              )}
+            </StyledTableRows>
+          </StyledTable>
+        </Section>
+        <Section>
+          <H2Title
+            title={t`Invite by email`}
+            description={t`Send an invite email to your team`}
+          />
+          <WorkspaceInviteTeam />
+          {isNonEmptyArray(workspaceInvitations) && (
+            <StyledTable>
+              <TableRow
+                gridAutoColumns="150px 1fr 1fr"
+                mobileGridAutoColumns="100px 1fr 1fr"
+              >
+                <TableHeader>
+                  <Trans>Email</Trans>
+                </TableHeader>
+                <TableHeader align={'right'}>
+                  <Trans>Expires in</Trans>
+                </TableHeader>
+                <TableHeader></TableHeader>
+              </TableRow>
+              <StyledTableRows>
+                {workspaceInvitations?.map((workspaceInvitation) => (
+                  <TableRow
+                    gridAutoColumns="150px 1fr 1fr"
+                    mobileGridAutoColumns="100px 1fr 1fr"
+                    key={workspaceInvitation.id}
+                  >
+                    <TableCell>
+                      <StyledIconWrapper>
+                        <IconMail
+                          size={theme.icon.size.md}
+                          stroke={theme.icon.stroke.sm}
+                        />
+                      </StyledIconWrapper>
+                      <StyledTextContainerWithEllipsis>
+                        {workspaceInvitation.email}
+                      </StyledTextContainerWithEllipsis>
+                    </TableCell>
+                    <TableCell align={'right'}>
+                      <Status
+                        color={'gray'}
+                        text={getExpiresAtText(workspaceInvitation.expiresAt)}
+                      />
+                    </TableCell>
+                    <TableCell align={'right'}>
+                      <StyledButtonContainer>
+                        <IconButton
+                          onClick={() => {
+                            handleResendWorkspaceInvitation(
+                              workspaceInvitation.id,
+                            );
+                          }}
+                          variant="tertiary"
+                          size="medium"
+                          Icon={IconReload}
+                        />
+                        <IconButton
+                          onClick={() => {
+                            handleRemoveWorkspaceInvitation(
+                              workspaceInvitation.id,
+                            );
+                          }}
+                          variant="tertiary"
+                          size="medium"
+                          Icon={IconTrash}
+                        />
+                      </StyledButtonContainer>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </StyledTableRows>
+            </StyledTable>
+          )}
+        </Section>
+      </SettingsPageContainer>
+      <ConfirmationModal
+        isOpen={isConfirmationModalOpen}
+        setIsOpen={setIsConfirmationModalOpen}
+        title={t`Account Deletion`}
+        subtitle={
+          <Trans>
+            This action cannot be undone. This will permanently delete this user
+            and remove them from all their assignments.
+          </Trans>
+        }
+        onConfirmClick={() =>
+          workspaceMemberToDelete &&
+          handleRemoveWorkspaceMember(workspaceMemberToDelete)
+        }
+        confirmButtonText={t`Delete account`}
+      />
+    </SubMenuTopBarContainer>
+  );
+};

@@ -1,4 +1,4 @@
-import { createComponentState } from '@/ui/utilities/state/component-state/utils/createComponentState';
+import { createComponentState } from '@twenty-modules/ui/utilities/state/component-state/utils/createComponentState';
 
 import { SnackBarProps } from '../components/SnackBar';
 

@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { I18nFrontDecorator } from '~/testing/decorators/I18nFrontDecorator';
-import { workspaceLogoUrl } from '~/testing/mock-data/users';
+import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFrontDecorator';
+import { workspaceLogoUrl } from '@twenty-ui/front/testing/mock-data/users';
 
 import { ImageInput } from '../ImageInput';
-import { ComponentDecorator } from 'twenty-ui/testing';
+import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof ImageInput> = {
   title: 'UI/Input/ImageInput/ImageInput',

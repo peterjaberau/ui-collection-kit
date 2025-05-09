@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
-import { LightCopyIconButton } from '@/object-record/record-field/components/LightCopyIconButton';
-import { useRegisterInputEvents } from '@/object-record/record-field/meta-types/input/hooks/useRegisterInputEvents';
-import { turnIntoEmptyStringIfWhitespacesOnly } from '~/utils/string/turnIntoEmptyStringIfWhitespacesOnly';
-import { isDefined } from 'twenty-shared/utils';
-import { TEXT_INPUT_STYLE } from 'twenty-ui/theme';
+import { LightCopyIconButton } from '@twenty-modules/object-record/record-field/components/LightCopyIconButton';
+import { useRegisterInputEvents } from '@twenty-modules/object-record/record-field/meta-types/input/hooks/useRegisterInputEvents';
+import { turnIntoEmptyStringIfWhitespacesOnly } from '@twenty-ui/front/utils/string/turnIntoEmptyStringIfWhitespacesOnly';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { TEXT_INPUT_STYLE } from '@twenty-ui/theme';
 
 export type TextAreaInputProps = {
   disabled?: boolean;

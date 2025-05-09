@@ -2,8 +2,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 import { Select, SelectProps } from '../Select';
-import { ComponentDecorator } from 'twenty-ui/testing';
-import { IconPlus } from 'twenty-ui/display';
+import { ComponentDecorator } from '@twenty-ui/testing';
+import { IconPlus } from '@twenty-ui/display';
 
 type RenderProps = SelectProps<string | number | boolean | null>;
 

@@ -1,8 +1,8 @@
-import { ScrollWrapper } from '@/ui/utilities/scroll/components/ScrollWrapper';
+import { ScrollWrapper } from '@twenty-modules/ui/utilities/scroll/components/ScrollWrapper';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useId } from 'react';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 const StyledDropdownMenuItemsExternalContainer = styled.div<{
   hasMaxHeight?: boolean;

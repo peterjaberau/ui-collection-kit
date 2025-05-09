@@ -1,14 +1,14 @@
 import { useRecoilCallback, useRecoilState } from 'recoil';
 
-import { useDropdownStates } from '@/ui/layout/dropdown/hooks/internal/useDropdownStates';
-import { useGoBackToPreviousDropdownFocusId } from '@/ui/layout/dropdown/hooks/useGoBackToPreviousDropdownFocusId';
-import { useSetActiveDropdownFocusIdAndMemorizePrevious } from '@/ui/layout/dropdown/hooks/useSetFocusedDropdownIdAndMemorizePrevious';
-import { dropdownHotkeyComponentState } from '@/ui/layout/dropdown/states/dropdownHotkeyComponentState';
-import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
-import { HotkeyScope } from '@/ui/utilities/hotkey/types/HotkeyScope';
-import { getSnapshotValue } from '@/ui/utilities/recoil-scope/utils/getSnapshotValue';
+import { useDropdownStates } from '@twenty-modules/ui/layout/dropdown/hooks/internal/useDropdownStates';
+import { useGoBackToPreviousDropdownFocusId } from '@twenty-modules/ui/layout/dropdown/hooks/useGoBackToPreviousDropdownFocusId';
+import { useSetActiveDropdownFocusIdAndMemorizePrevious } from '@twenty-modules/ui/layout/dropdown/hooks/useSetFocusedDropdownIdAndMemorizePrevious';
+import { dropdownHotkeyComponentState } from '@twenty-modules/ui/layout/dropdown/states/dropdownHotkeyComponentState';
+import { usePreviousHotkeyScope } from '@twenty-modules/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
+import { HotkeyScope } from '@twenty-modules/ui/utilities/hotkey/types/HotkeyScope';
+import { getSnapshotValue } from '@twenty-modules/ui/utilities/recoil-scope/utils/getSnapshotValue';
 import { useCallback } from 'react';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 export const useDropdown = (dropdownId?: string) => {
   const { scopeId, isDropdownOpenState, dropdownPlacementState } =

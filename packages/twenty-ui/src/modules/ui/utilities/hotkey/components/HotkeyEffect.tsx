@@ -1,6 +1,6 @@
 import { Keys } from 'react-hotkeys-hook';
 
-import { useScopedHotkeys } from '@/ui/utilities/hotkey/hooks/useScopedHotkeys';
+import { useScopedHotkeys } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeys';
 
 type HotkeyEffectProps = {
   hotkey: {

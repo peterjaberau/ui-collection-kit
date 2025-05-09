@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import { FocusEventHandler, useId } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
-import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
-import { turnIntoEmptyStringIfWhitespacesOnly } from '~/utils/string/turnIntoEmptyStringIfWhitespacesOnly';
+import { usePreviousHotkeyScope } from '@twenty-modules/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
+import { turnIntoEmptyStringIfWhitespacesOnly } from '@twenty-ui/front/utils/string/turnIntoEmptyStringIfWhitespacesOnly';
 import { InputHotkeyScope } from '../types/InputHotkeyScope';
-import { RGBA } from 'twenty-ui/theme';
+import { RGBA } from '@twenty-ui/theme';
 
 const MAX_ROWS = 5;
 

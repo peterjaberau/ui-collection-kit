@@ -1,0 +1,81 @@
+import { getYear, isThisMonth, startOfDay, startOfMonth } from 'date-fns';
+import { useMemo, useState } from 'react';
+
+import { findUpcomingCalendarEvent } from '@twenty-modules/activities/calendar/utils/findUpcomingCalendarEvent';
+import { getCalendarEventStartDate } from '@twenty-modules/activities/calendar/utils/getCalendarEventStartDate';
+import { TimelineCalendarEvent } from '@twenty-ui/front/generated/graphql';
+import { groupArrayItemsBy } from '@twenty-ui/front/utils/array/groupArrayItemsBy';
+import { sortDesc } from '@twenty-ui/front/utils/sort';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+
+export const useCalendarEvents = (calendarEvents: TimelineCalendarEvent[]) => {
+  const calendarEventsByDayTime = groupArrayItemsBy(
+    calendarEvents,
+    (calendarEvent) =>
+      startOfDay(getCalendarEventStartDate(calendarEvent)).getTime(),
+  );
+
+  const sortedDayTimes = Object.keys(calendarEventsByDayTime)
+    .map(Number)
+    .sort(sortDesc);
+
+  const daysByMonthTime = groupArrayItemsBy(sortedDayTimes, (dayTime) =>
+    startOfMonth(dayTime).getTime(),
+  );
+
+  const sortedMonthTimes = Object.keys(daysByMonthTime)
+    .map(Number)
+    .sort(sortDesc);
+
+  const monthTimesByYear = groupArrayItemsBy(sortedMonthTimes, getYear);
+
+  const getPreviousCalendarEvent = (calendarEvent: TimelineCalendarEvent) => {
+    const calendarEventIndex = calendarEvents.indexOf(calendarEvent);
+    return calendarEventIndex < calendarEvents.length - 1
+      ? calendarEvents[calendarEventIndex + 1]
+      : undefined;
+  };
+
+  const getNextCalendarEvent = (calendarEvent: TimelineCalendarEvent) => {
+    const calendarEventIndex = calendarEvents.indexOf(calendarEvent);
+    return calendarEventIndex > 0
+      ? calendarEvents[calendarEventIndex - 1]
+      : undefined;
+  };
+
+  const initialUpcomingCalendarEvent = useMemo(
+    () => findUpcomingCalendarEvent(calendarEvents),
+    [calendarEvents],
+  );
+  const lastEventInCalendar = calendarEvents.length
+    ? calendarEvents[0]
+    : undefined;
+
+  const [currentCalendarEvent, setCurrentCalendarEvent] = useState(
+    (initialUpcomingCalendarEvent &&
+      (isThisMonth(getCalendarEventStartDate(initialUpcomingCalendarEvent))
+        ? initialUpcomingCalendarEvent
+        : getPreviousCalendarEvent(initialUpcomingCalendarEvent))) ||
+      lastEventInCalendar,
+  );
+
+  const updateCurrentCalendarEvent = () => {
+    if (!currentCalendarEvent) return;
+
+    const nextCurrentCalendarEvent = getNextCalendarEvent(currentCalendarEvent);
+
+    if (isDefined(nextCurrentCalendarEvent)) {
+      setCurrentCalendarEvent(nextCurrentCalendarEvent);
+    }
+  };
+
+  return {
+    calendarEventsByDayTime,
+    currentCalendarEvent,
+    daysByMonthTime,
+    getNextCalendarEvent,
+    monthTimes: sortedMonthTimes,
+    monthTimesByYear,
+    updateCurrentCalendarEvent,
+  };
+};

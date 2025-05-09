@@ -1,7 +1,7 @@
-import { useCountries } from '@/ui/input/components/internal/hooks/useCountries';
-import { Country } from '@/ui/input/components/internal/types/Country';
-import { Dropdown } from '@/ui/layout/dropdown/components/Dropdown';
-import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
+import { useCountries } from '@twenty-modules/ui/input/components/internal/hooks/useCountries';
+import { Country } from '@twenty-modules/ui/input/components/internal/types/Country';
+import { Dropdown } from '@twenty-modules/ui/layout/dropdown/components/Dropdown';
+import { useDropdown } from '@twenty-modules/ui/layout/dropdown/hooks/useDropdown';
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
@@ -11,8 +11,8 @@ import { CountryPickerHotkeyScope } from '../types/CountryPickerHotkeyScope';
 import { PhoneCountryPickerDropdownSelect } from './PhoneCountryPickerDropdownSelect';
 
 import 'react-phone-number-input/style.css';
-import { isDefined } from 'twenty-shared/utils';
-import { IconChevronDown, IconWorld } from 'twenty-ui/display';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { IconChevronDown, IconWorld } from '@twenty-ui/display';
 
 type StyledDropdownButtonProps = {
   isUnfolded: boolean;

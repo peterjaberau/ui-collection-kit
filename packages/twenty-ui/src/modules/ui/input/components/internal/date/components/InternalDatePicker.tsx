@@ -2,26 +2,26 @@ import styled from '@emotion/styled';
 import { DateTime } from 'luxon';
 import ReactDatePicker from 'react-datepicker';
 
-import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
+import { useDropdown } from '@twenty-modules/ui/layout/dropdown/hooks/useDropdown';
 
-import { AbsoluteDatePickerHeader } from '@/ui/input/components/internal/date/components/AbsoluteDatePickerHeader';
-import { DateTimeInput } from '@/ui/input/components/internal/date/components/DateTimeInput';
-import { RelativeDatePickerHeader } from '@/ui/input/components/internal/date/components/RelativeDatePickerHeader';
-import { getHighlightedDates } from '@/ui/input/components/internal/date/utils/getHighlightedDates';
-import { UserContext } from '@/users/contexts/UserContext';
+import { AbsoluteDatePickerHeader } from '@twenty-modules/ui/input/components/internal/date/components/AbsoluteDatePickerHeader';
+import { DateTimeInput } from '@twenty-modules/ui/input/components/internal/date/components/DateTimeInput';
+import { RelativeDatePickerHeader } from '@twenty-modules/ui/input/components/internal/date/components/RelativeDatePickerHeader';
+import { getHighlightedDates } from '@twenty-modules/ui/input/components/internal/date/utils/getHighlightedDates';
+import { UserContext } from '@twenty-modules/users/contexts/UserContext';
 import {
   VariableDateViewFilterValueDirection,
   VariableDateViewFilterValueUnit,
-} from '@/views/view-filter-value/utils/resolveDateViewFilterValue';
+} from '@twenty-modules/views/view-filter-value/utils/resolveDateViewFilterValue';
 import { t } from '@lingui/core/macro';
 import { useContext } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
-import { isDefined } from 'twenty-shared/utils';
-import { IconCalendarX } from 'twenty-ui/display';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { IconCalendarX } from '@twenty-ui/display';
 import {
   MenuItemLeftContent,
   StyledHoverableMenuItemBase,
-} from 'twenty-ui/navigation';
+} from '@twenty-ui/navigation';
 
 export const MONTH_AND_YEAR_DROPDOWN_MONTH_SELECT_ID =
   'date-picker-month-and-year-dropdown-month-select';

@@ -3,17 +3,17 @@ import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 import { useRecoilValue } from 'recoil';
 
-import { NavigationDrawerCollapseButton } from '@/ui/navigation/navigation-drawer/components/NavigationDrawerCollapseButton';
+import { NavigationDrawerCollapseButton } from '@twenty-modules/ui/navigation/navigation-drawer/components/NavigationDrawerCollapseButton';
 
-import { isNavigationDrawerExpandedState } from '@/ui/navigation/states/isNavigationDrawerExpanded';
-import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
+import { isNavigationDrawerExpandedState } from '@twenty-modules/ui/navigation/states/isNavigationDrawerExpanded';
+import { useIsMobile } from '@twenty-modules/ui/utilities/responsive/hooks/useIsMobile';
 import {
   IconComponent,
   IconX,
   OverflowingTextWithTooltip,
-} from 'twenty-ui/display';
-import { LightIconButton } from 'twenty-ui/input';
-import { MOBILE_VIEWPORT } from 'twenty-ui/theme';
+} from '@twenty-ui/display';
+import { LightIconButton } from '@twenty-ui/input';
+import { MOBILE_VIEWPORT } from '@twenty-ui/theme';
 
 export const PAGE_BAR_MIN_HEIGHT = 40;
 

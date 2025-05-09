@@ -1,0 +1,48 @@
+import { Controller, useFormContext } from 'react-hook-form';
+import { z } from 'zod';
+
+import { FieldMetadataItem } from '@twenty-modules/object-metadata/types/FieldMetadataItem';
+import { fieldMetadataItemSchema } from '@twenty-modules/object-metadata/validation-schemas/fieldMetadataItemSchema';
+
+import { TextArea } from '@twenty-modules/ui/input/components/TextArea';
+import { t } from '@lingui/core/macro';
+
+export const settingsDataModelFieldDescriptionFormSchema = () => {
+  return fieldMetadataItemSchema([]).pick({
+    description: true,
+  });
+};
+
+type SettingsDataModelFieldDescriptionFormValues = z.infer<
+  ReturnType<typeof settingsDataModelFieldDescriptionFormSchema>
+>;
+
+type SettingsDataModelFieldDescriptionFormProps = {
+  disabled?: boolean;
+  fieldMetadataItem?: FieldMetadataItem;
+};
+
+export const SettingsDataModelFieldDescriptionForm = ({
+  disabled,
+  fieldMetadataItem,
+}: SettingsDataModelFieldDescriptionFormProps) => {
+  const { control } =
+    useFormContext<SettingsDataModelFieldDescriptionFormValues>();
+
+  return (
+    <Controller
+      name="description"
+      control={control}
+      defaultValue={fieldMetadataItem?.description}
+      render={({ field: { onChange, value } }) => (
+        <TextArea
+          placeholder={t`Write a description`}
+          minRows={4}
+          value={value ?? undefined}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      )}
+    />
+  );
+};

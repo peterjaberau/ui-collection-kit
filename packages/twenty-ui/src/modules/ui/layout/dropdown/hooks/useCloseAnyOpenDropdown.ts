@@ -1,9 +1,9 @@
-import { useCloseDropdownFromOutside } from '@/ui/layout/dropdown/hooks/useCloseDropdownFromOutside';
-import { activeDropdownFocusIdState } from '@/ui/layout/dropdown/states/activeDropdownFocusIdState';
-import { previousDropdownFocusIdState } from '@/ui/layout/dropdown/states/previousDropdownFocusIdState';
-import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
+import { useCloseDropdownFromOutside } from '@twenty-modules/ui/layout/dropdown/hooks/useCloseDropdownFromOutside';
+import { activeDropdownFocusIdState } from '@twenty-modules/ui/layout/dropdown/states/activeDropdownFocusIdState';
+import { previousDropdownFocusIdState } from '@twenty-modules/ui/layout/dropdown/states/previousDropdownFocusIdState';
+import { usePreviousHotkeyScope } from '@twenty-modules/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
 import { useRecoilCallback } from 'recoil';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 export const useCloseAnyOpenDropdown = () => {
   const { goBackToPreviousHotkeyScope } = usePreviousHotkeyScope();

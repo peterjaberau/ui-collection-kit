@@ -1,5 +1,5 @@
 import { PartialBlock } from '@blocknote/core';
-import { isUndefinedOrNull } from '~/utils/isUndefinedOrNull';
+import { isUndefinedOrNull } from '@twenty-ui/front/utils/isUndefinedOrNull';
 
 export const getFirstNonEmptyLineOfRichText = (
   blocks: PartialBlock[] | null,

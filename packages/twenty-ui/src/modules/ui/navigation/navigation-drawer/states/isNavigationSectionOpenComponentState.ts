@@ -1,5 +1,5 @@
-import { createComponentState } from '@/ui/utilities/state/component-state/utils/createComponentState';
-import { localStorageEffect } from '~/utils/recoil-effects';
+import { createComponentState } from '@twenty-modules/ui/utilities/state/component-state/utils/createComponentState';
+import { localStorageEffect } from '@twenty-ui/front/utils/recoil-effects';
 
 export const isNavigationSectionOpenComponentState =
   createComponentState<boolean>({

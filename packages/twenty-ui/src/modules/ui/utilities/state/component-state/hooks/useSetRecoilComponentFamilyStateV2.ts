@@ -3,10 +3,10 @@
 // We're disabling rules-of-hooks because we're sure that the call order cannot be modified
 //   because a component state cannot change its type during its lifecycle
 
-import { useAvailableComponentInstanceIdOrThrow } from '@/ui/utilities/state/component-state/hooks/useAvailableComponentInstanceIdOrThrow';
-import { ComponentFamilySelectorV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilySelectorV2';
-import { ComponentFamilyStateV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilyStateV2';
-import { globalComponentInstanceContextMap } from '@/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
+import { useAvailableComponentInstanceIdOrThrow } from '@twenty-modules/ui/utilities/state/component-state/hooks/useAvailableComponentInstanceIdOrThrow';
+import { ComponentFamilySelectorV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilySelectorV2';
+import { ComponentFamilyStateV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyStateV2';
+import { globalComponentInstanceContextMap } from '@twenty-modules/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
 import { SerializableParam, SetterOrUpdater, useSetRecoilState } from 'recoil';
 
 export const useSetRecoilComponentFamilyStateV2 = <

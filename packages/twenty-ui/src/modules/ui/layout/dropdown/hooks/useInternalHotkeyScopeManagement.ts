@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 
-import { useDropdownStates } from '@/ui/layout/dropdown/hooks/internal/useDropdownStates';
-import { HotkeyScope } from '@/ui/utilities/hotkey/types/HotkeyScope';
-import { isDeeplyEqual } from '~/utils/isDeeplyEqual';
+import { useDropdownStates } from '@twenty-modules/ui/layout/dropdown/hooks/internal/useDropdownStates';
+import { HotkeyScope } from '@twenty-modules/ui/utilities/hotkey/types/HotkeyScope';
+import { isDeeplyEqual } from '@twenty-ui/front/utils/isDeeplyEqual';
 
 export const useInternalHotkeyScopeManagement = ({
   dropdownScopeId,

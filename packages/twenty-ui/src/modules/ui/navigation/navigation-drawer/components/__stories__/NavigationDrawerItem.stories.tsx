@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ComponentWithRouterDecorator } from '~/testing/decorators/ComponentWithRouterDecorator';
-import { MemoryRouterDecorator } from '~/testing/decorators/MemoryRouterDecorator';
+import { ComponentWithRouterDecorator } from '@twenty-ui/front/testing/decorators/ComponentWithRouterDecorator';
+import { MemoryRouterDecorator } from '@twenty-ui/front/testing/decorators/MemoryRouterDecorator';
 import { NavigationDrawerItem } from '../NavigationDrawerItem';
-import { CatalogDecorator, CatalogStory } from 'twenty-ui/testing';
-import { IconSearch } from 'twenty-ui/display';
-import { getOsControlSymbol } from 'twenty-ui/utilities';
+import { CatalogDecorator, CatalogStory } from '@twenty-ui/testing';
+import { IconSearch } from '@twenty-ui/display';
+import { getOsControlSymbol } from '@twenty-ui/utilities';
 
 const StyledContainer = styled.div`
   display: flex;

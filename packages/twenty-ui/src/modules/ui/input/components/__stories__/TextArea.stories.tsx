@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 import { TextArea, TextAreaProps } from '../TextArea';
-import { ComponentDecorator } from 'twenty-ui/testing';
+import { ComponentDecorator } from '@twenty-ui/testing';
 
 type RenderProps = TextAreaProps;
 

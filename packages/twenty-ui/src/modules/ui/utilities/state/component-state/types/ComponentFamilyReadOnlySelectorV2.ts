@@ -1,5 +1,5 @@
-import { ComponentFamilyStateKeyV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilyStateKeyV2';
-import { ComponentStateTypeV2 } from '@/ui/utilities/state/component-state/types/ComponentStateTypeV2';
+import { ComponentFamilyStateKeyV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyStateKeyV2';
+import { ComponentStateTypeV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentStateTypeV2';
 import { RecoilValueReadOnly, SerializableParam } from 'recoil';
 
 export type ComponentFamilyReadOnlySelectorV2<

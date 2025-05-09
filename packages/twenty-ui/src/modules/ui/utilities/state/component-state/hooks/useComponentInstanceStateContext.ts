@@ -1,4 +1,4 @@
-import { ComponentInstanceStateContext } from '@/ui/utilities/state/component-state/types/ComponentInstanceStateContext';
+import { ComponentInstanceStateContext } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentInstanceStateContext';
 import { useContext } from 'react';
 
 export const useComponentInstanceStateContext = <

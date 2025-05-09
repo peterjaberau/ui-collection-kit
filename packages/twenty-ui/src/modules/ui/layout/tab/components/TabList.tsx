@@ -1,13 +1,13 @@
-import { TabListFromUrlOptionalEffect } from '@/ui/layout/tab/components/TabListFromUrlOptionalEffect';
-import { activeTabIdComponentState } from '@/ui/layout/tab/states/activeTabIdComponentState';
-import { TabListComponentInstanceContext } from '@/ui/layout/tab/states/contexts/TabListComponentInstanceContext';
-import { LayoutCard } from '@/ui/layout/tab/types/LayoutCard';
-import { ScrollWrapper } from '@/ui/utilities/scroll/components/ScrollWrapper';
-import { useRecoilComponentStateV2 } from '@/ui/utilities/state/component-state/hooks/useRecoilComponentStateV2';
+import { TabListFromUrlOptionalEffect } from '@twenty-modules/ui/layout/tab/components/TabListFromUrlOptionalEffect';
+import { activeTabIdComponentState } from '@twenty-modules/ui/layout/tab/states/activeTabIdComponentState';
+import { TabListComponentInstanceContext } from '@twenty-modules/ui/layout/tab/states/contexts/TabListComponentInstanceContext';
+import { LayoutCard } from '@twenty-modules/ui/layout/tab/types/LayoutCard';
+import { ScrollWrapper } from '@twenty-modules/ui/utilities/scroll/components/ScrollWrapper';
+import { useRecoilComponentStateV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useRecoilComponentStateV2';
 import styled from '@emotion/styled';
 import * as React from 'react';
 import { useEffect } from 'react';
-import { IconComponent } from 'twenty-ui/display';
+import { IconComponent } from '@twenty-ui/display';
 import { Tab } from './Tab';
 
 export type SingleTabProps<T extends string = string> = {

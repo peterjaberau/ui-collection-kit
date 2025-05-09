@@ -1,8 +1,8 @@
-import { TableHeader } from '@/ui/layout/table/components/TableHeader';
-import { sortedFieldByTableFamilyState } from '@/ui/layout/table/states/sortedFieldByTableFamilyState';
-import { TableSortValue } from '@/ui/layout/table/types/TableSortValue';
+import { TableHeader } from '@twenty-modules/ui/layout/table/components/TableHeader';
+import { sortedFieldByTableFamilyState } from '@twenty-modules/ui/layout/table/states/sortedFieldByTableFamilyState';
+import { TableSortValue } from '@twenty-modules/ui/layout/table/types/TableSortValue';
 import { useRecoilState } from 'recoil';
-import { IconArrowDown, IconArrowUp, IconComponent } from 'twenty-ui/display';
+import { IconArrowDown, IconArrowUp, IconComponent } from '@twenty-ui/display';
 
 export const SortableTableHeader = ({
   tableId,

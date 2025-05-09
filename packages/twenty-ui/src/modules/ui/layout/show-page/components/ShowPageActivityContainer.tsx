@@ -1,17 +1,17 @@
-import { SKELETON_LOADER_HEIGHT_SIZES } from '@/activities/components/SkeletonLoader';
-import { ActivityTargetableObject } from '@/activities/types/ActivityTargetableEntity';
-import { CoreObjectNameSingular } from '@/object-metadata/types/CoreObjectNameSingular';
-import { recordStoreFamilySelector } from '@/object-record/record-store/states/selectors/recordStoreFamilySelector';
-import { ScrollWrapper } from '@/ui/utilities/scroll/components/ScrollWrapper';
+import { SKELETON_LOADER_HEIGHT_SIZES } from '@twenty-modules/activities/components/SkeletonLoader';
+import { ActivityTargetableObject } from '@twenty-modules/activities/types/ActivityTargetableEntity';
+import { CoreObjectNameSingular } from '@twenty-modules/object-metadata/types/CoreObjectNameSingular';
+import { recordStoreFamilySelector } from '@twenty-modules/object-record/record-store/states/selectors/recordStoreFamilySelector';
+import { ScrollWrapper } from '@twenty-modules/ui/utilities/scroll/components/ScrollWrapper';
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { lazy, Suspense } from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { useRecoilValue } from 'recoil';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 const ActivityRichTextEditor = lazy(() =>
-  import('@/activities/components/ActivityRichTextEditor').then((module) => ({
+  import('@twenty-modules/activities/components/ActivityRichTextEditor').then((module) => ({
     default: module.ActivityRichTextEditor,
   })),
 );

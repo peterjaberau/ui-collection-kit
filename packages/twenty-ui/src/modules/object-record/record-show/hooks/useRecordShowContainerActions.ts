@@ -1,0 +1,63 @@
+import { useUpdateOneRecord } from '@twenty-modules/object-record/hooks/useUpdateOneRecord';
+import {
+  RecordUpdateHook,
+  RecordUpdateHookParams,
+} from '@twenty-modules/object-record/record-field/contexts/FieldContext';
+import { FileFolder } from '@twenty-ui/front/generated-metadata/graphql';
+import { useUploadImageMutation } from '@twenty-ui/front/generated/graphql';
+import { isUndefinedOrNull } from '@twenty-ui/front/utils/isUndefinedOrNull';
+
+interface UseRecordShowContainerActionsProps {
+  objectNameSingular: string;
+  objectRecordId: string;
+}
+
+export const useRecordShowContainerActions = ({
+  objectNameSingular,
+  objectRecordId,
+}: UseRecordShowContainerActionsProps) => {
+  const [uploadImage] = useUploadImageMutation();
+  const { updateOneRecord } = useUpdateOneRecord({ objectNameSingular });
+
+  const useUpdateOneObjectRecordMutation: RecordUpdateHook = () => {
+    const updateEntity = ({ variables }: RecordUpdateHookParams) => {
+      updateOneRecord?.({
+        idToUpdate: variables.where.id as string,
+        updateOneRecordInput: variables.updateOneRecordInput,
+      });
+    };
+
+    return [updateEntity, { loading: false }];
+  };
+
+  const onUploadPicture = async (file: File) => {
+    if (objectNameSingular !== 'person') {
+      return;
+    }
+
+    const result = await uploadImage({
+      variables: {
+        file,
+        fileFolder: FileFolder.PersonPicture,
+      },
+    });
+
+    const avatarUrl = result?.data?.uploadImage;
+
+    if (!avatarUrl || isUndefinedOrNull(updateOneRecord)) {
+      return;
+    }
+
+    await updateOneRecord({
+      idToUpdate: objectRecordId,
+      updateOneRecordInput: {
+        avatarUrl,
+      },
+    });
+  };
+
+  return {
+    onUploadPicture,
+    useUpdateOneObjectRecordMutation,
+  };
+};

@@ -1,6 +1,6 @@
-import { useAvailableComponentInstanceIdOrThrow } from '@/ui/utilities/state/component-state/hooks/useAvailableComponentInstanceIdOrThrow';
-import { ComponentStateV2 } from '@/ui/utilities/state/component-state/types/ComponentStateV2';
-import { globalComponentInstanceContextMap } from '@/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
+import { useAvailableComponentInstanceIdOrThrow } from '@twenty-modules/ui/utilities/state/component-state/hooks/useAvailableComponentInstanceIdOrThrow';
+import { ComponentStateV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentStateV2';
+import { globalComponentInstanceContextMap } from '@twenty-modules/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
 import { SetterOrUpdater, useSetRecoilState } from 'recoil';
 
 export const useSetRecoilComponentStateV2 = <ValueType>(

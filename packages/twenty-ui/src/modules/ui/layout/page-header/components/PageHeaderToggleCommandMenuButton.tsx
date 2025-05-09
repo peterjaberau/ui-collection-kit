@@ -1,15 +1,15 @@
-import { useCommandMenu } from '@/command-menu/hooks/useCommandMenu';
-import { isCommandMenuOpenedState } from '@/command-menu/states/isCommandMenuOpenedState';
-import { RootStackingContextZIndices } from '@/ui/layout/constants/RootStackingContextZIndices';
+import { useCommandMenu } from '@twenty-modules/command-menu/hooks/useCommandMenu';
+import { isCommandMenuOpenedState } from '@twenty-modules/command-menu/states/isCommandMenuOpenedState';
+import { RootStackingContextZIndices } from '@twenty-modules/ui/layout/constants/RootStackingContextZIndices';
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { i18n } from '@lingui/core';
 import { t } from '@lingui/core/macro';
 import { motion } from 'framer-motion';
 import { useRecoilValue } from 'recoil';
-import { AppTooltip, TooltipDelay, TooltipPosition } from 'twenty-ui/display';
-import { AnimatedButton } from 'twenty-ui/input';
-import { getOsControlSymbol, useIsMobile } from 'twenty-ui/utilities';
+import { AppTooltip, TooltipDelay, TooltipPosition } from '@twenty-ui/display';
+import { AnimatedButton } from '@twenty-ui/input';
+import { getOsControlSymbol, useIsMobile } from '@twenty-ui/utilities';
 
 const StyledButtonWrapper = styled.div`
   z-index: ${RootStackingContextZIndices.CommandMenuButton};

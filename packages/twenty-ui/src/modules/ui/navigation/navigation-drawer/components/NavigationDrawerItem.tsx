@@ -1,20 +1,20 @@
-import { useIsSettingsPage } from '@/navigation/hooks/useIsSettingsPage';
-import { NavigationDrawerAnimatedCollapseWrapper } from '@/ui/navigation/navigation-drawer/components/NavigationDrawerAnimatedCollapseWrapper';
-import { NavigationDrawerItemBreadcrumb } from '@/ui/navigation/navigation-drawer/components/NavigationDrawerItemBreadcrumb';
-import { NAV_DRAWER_WIDTHS } from '@/ui/navigation/navigation-drawer/constants/NavDrawerWidths';
-import { NavigationDrawerSubItemState } from '@/ui/navigation/navigation-drawer/types/NavigationDrawerSubItemState';
-import { isNavigationDrawerExpandedState } from '@/ui/navigation/states/isNavigationDrawerExpanded';
-import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
+import { useIsSettingsPage } from '@twenty-modules/navigation/hooks/useIsSettingsPage';
+import { NavigationDrawerAnimatedCollapseWrapper } from '@twenty-modules/ui/navigation/navigation-drawer/components/NavigationDrawerAnimatedCollapseWrapper';
+import { NavigationDrawerItemBreadcrumb } from '@twenty-modules/ui/navigation/navigation-drawer/components/NavigationDrawerItemBreadcrumb';
+import { NAV_DRAWER_WIDTHS } from '@twenty-modules/ui/navigation/navigation-drawer/constants/NavDrawerWidths';
+import { NavigationDrawerSubItemState } from '@twenty-modules/ui/navigation/navigation-drawer/types/NavigationDrawerSubItemState';
+import { isNavigationDrawerExpandedState } from '@twenty-modules/ui/navigation/states/isNavigationDrawerExpanded';
+import { useIsMobile } from '@twenty-modules/ui/utilities/responsive/hooks/useIsMobile';
 import isPropValid from '@emotion/is-prop-valid';
 import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { capitalize, isDefined } from 'twenty-shared/utils';
-import { IconComponent, Label, TablerIconsProps } from 'twenty-ui/display';
-import { MOBILE_VIEWPORT } from 'twenty-ui/theme';
-import { Pill } from 'twenty-ui/components';
+import { capitalize, isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { IconComponent, Label, TablerIconsProps } from '@twenty-ui/display';
+import { MOBILE_VIEWPORT } from '@twenty-ui/theme';
+import { Pill } from '@twenty-ui/components';
 
 const DEFAULT_INDENTATION_LEVEL = 1;
 

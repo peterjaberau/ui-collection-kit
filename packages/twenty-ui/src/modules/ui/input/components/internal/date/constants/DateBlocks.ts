@@ -1,7 +1,7 @@
 import { IMask } from 'react-imask';
 
-import { MAX_DATE } from '@/ui/input/components/internal/date/constants/MaxDate';
-import { MIN_DATE } from '@/ui/input/components/internal/date/constants/MinDate';
+import { MAX_DATE } from '@twenty-modules/ui/input/components/internal/date/constants/MaxDate';
+import { MIN_DATE } from '@twenty-modules/ui/input/components/internal/date/constants/MinDate';
 
 export const DATE_BLOCKS = {
   YYYY: {

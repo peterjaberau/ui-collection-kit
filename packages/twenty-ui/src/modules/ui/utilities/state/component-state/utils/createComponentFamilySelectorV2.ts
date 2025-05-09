@@ -1,14 +1,14 @@
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
 import { selectorFamily, SerializableParam } from 'recoil';
 
-import { ComponentFamilyReadOnlySelectorV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilyReadOnlySelectorV2';
-import { ComponentFamilySelectorV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilySelectorV2';
-import { ComponentFamilyStateKeyV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilyStateKeyV2';
-import { ComponentInstanceStateContext } from '@/ui/utilities/state/component-state/types/ComponentInstanceStateContext';
-import { globalComponentInstanceContextMap } from '@/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
-import { SelectorGetter } from '@/ui/utilities/state/types/SelectorGetter';
-import { SelectorSetter } from '@/ui/utilities/state/types/SelectorSetter';
-import { isDefined } from 'twenty-shared/utils';
+import { ComponentFamilyReadOnlySelectorV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyReadOnlySelectorV2';
+import { ComponentFamilySelectorV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilySelectorV2';
+import { ComponentFamilyStateKeyV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyStateKeyV2';
+import { ComponentInstanceStateContext } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentInstanceStateContext';
+import { globalComponentInstanceContextMap } from '@twenty-modules/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
+import { SelectorGetter } from '@twenty-modules/ui/utilities/state/types/SelectorGetter';
+import { SelectorSetter } from '@twenty-modules/ui/utilities/state/types/SelectorSetter';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 export function createComponentFamilySelectorV2<
   ValueType,

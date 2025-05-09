@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
+import { useDropdown } from '@twenty-modules/ui/layout/dropdown/hooks/useDropdown';
 
 export const DropdownOnToggleEffect = ({
   onDropdownClose,

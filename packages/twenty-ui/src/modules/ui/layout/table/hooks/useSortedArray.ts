@@ -1,8 +1,8 @@
-import { sortedFieldByTableFamilyState } from '@/ui/layout/table/states/sortedFieldByTableFamilyState';
-import { TableMetadata } from '@/ui/layout/table/types/TableMetadata';
+import { sortedFieldByTableFamilyState } from '@twenty-modules/ui/layout/table/states/sortedFieldByTableFamilyState';
+import { TableMetadata } from '@twenty-modules/ui/layout/table/types/TableMetadata';
 import { useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 export const useSortedArray = <T>(
   arrayToSort: T[],

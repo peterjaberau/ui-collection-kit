@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { ColorScheme } from '@/workspace-member/types/WorkspaceMember';
-import { isUndefinedOrNull } from '~/utils/isUndefinedOrNull';
+import { ColorScheme } from '@twenty-modules/workspace-member/types/WorkspaceMember';
+import { isUndefinedOrNull } from '@twenty-ui/front/utils/isUndefinedOrNull';
 
 export const useSystemColorScheme = (): ColorScheme => {
   const mediaQuery = useMemo(

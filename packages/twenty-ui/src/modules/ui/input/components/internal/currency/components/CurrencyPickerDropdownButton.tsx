@@ -1,15 +1,15 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { CurrencyCode } from '@/object-record/record-field/types/CurrencyCode';
-import { Dropdown } from '@/ui/layout/dropdown/components/Dropdown';
-import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
+import { CurrencyCode } from '@twenty-modules/object-record/record-field/types/CurrencyCode';
+import { Dropdown } from '@twenty-modules/ui/layout/dropdown/components/Dropdown';
+import { useDropdown } from '@twenty-modules/ui/layout/dropdown/hooks/useDropdown';
 
 import { CurrencyPickerHotkeyScope } from '../types/CurrencyPickerHotkeyScope';
 
-import { CURRENCIES } from '@/settings/data-model/constants/Currencies';
-import { Currency } from '@/ui/input/components/internal/types/Currency';
-import { IconChevronDown } from 'twenty-ui/display';
+import { CURRENCIES } from '@twenty-modules/settings/data-model/constants/Currencies';
+import { Currency } from '@twenty-modules/ui/input/components/internal/types/Currency';
+import { IconChevronDown } from '@twenty-ui/display';
 import { CurrencyPickerDropdownSelect } from './CurrencyPickerDropdownSelect';
 
 const StyledDropdownButtonContainer = styled.div`

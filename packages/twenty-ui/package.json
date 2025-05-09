@@ -40,6 +40,11 @@
   },
   "peerDependencies": {},
   "dependencies": {
+    "qs": "^6.11.2",
+    "@apollo/client": "^3.7.17",
+    "@apollo/server": "^4.7.3",
+    "react-imask": "^7.6.0",
+    "ts-key-enum": "^2.0.12",
     "@monaco-editor/react": "^4.6.0",
     "monaco-editor": "^0.51.0",
     "monaco-editor-auto-typings": "^0.4.5",

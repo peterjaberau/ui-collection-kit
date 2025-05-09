@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 
-import { ExpandedListDropdown } from '@/ui/layout/expandable-list/components/ExpandedListDropdown';
-import { isFirstOverflowingChildElement } from '@/ui/layout/expandable-list/utils/isFirstOverflowingChildElement';
-import { isDefined } from 'twenty-shared/utils';
-import { AnimatedContainer } from 'twenty-ui/utilities';
-import { ChipSize } from 'twenty-ui/components';
-import { OverflowingTextWithTooltip } from 'twenty-ui/display';
+import { ExpandedListDropdown } from '@twenty-modules/ui/layout/expandable-list/components/ExpandedListDropdown';
+import { isFirstOverflowingChildElement } from '@twenty-modules/ui/layout/expandable-list/utils/isFirstOverflowingChildElement';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { AnimatedContainer } from '@twenty-ui/utilities';
+import { ChipSize } from '@twenty-ui/components';
+import { OverflowingTextWithTooltip } from '@twenty-ui/display';
 
 const StyledContainer = styled.div`
   align-items: center;

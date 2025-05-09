@@ -1,5 +1,5 @@
-import { createState } from 'twenty-ui/utilities';
-import { IconApps, IconComponent } from 'twenty-ui/display';
+import { createState } from '@twenty-ui/utilities';
+import { IconApps, IconComponent } from '@twenty-ui/display';
 
 type IconPickerState = {
   Icon: IconComponent;

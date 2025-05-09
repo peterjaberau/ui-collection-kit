@@ -1,10 +1,10 @@
 import { AtomEffect, atomFamily } from 'recoil';
 
-import { ScopeInternalContext } from '@/ui/utilities/recoil-scope/scopes-internal/types/ScopeInternalContext';
+import { ScopeInternalContext } from '@twenty-modules/ui/utilities/recoil-scope/scopes-internal/types/ScopeInternalContext';
 
-import { RecoilComponentState } from '@/ui/utilities/state/component-state/types/RecoilComponentState';
-import { RecoilComponentStateKey } from '@/ui/utilities/state/component-state/types/RecoilComponentStateKey';
-import { isDefined } from 'twenty-shared/utils';
+import { RecoilComponentState } from '@twenty-modules/ui/utilities/state/component-state/types/RecoilComponentState';
+import { RecoilComponentStateKey } from '@twenty-modules/ui/utilities/state/component-state/types/RecoilComponentStateKey';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 type CreateComponentStateV2Type<ValueType> = {
   key: string;

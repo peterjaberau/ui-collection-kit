@@ -1,5 +1,5 @@
-import { ComponentInstanceStateContext } from '@/ui/utilities/state/component-state/types/ComponentInstanceStateContext';
-import { ComponentStateKeyV2 } from '@/ui/utilities/state/component-state/types/ComponentStateKeyV2';
+import { ComponentInstanceStateContext } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentInstanceStateContext';
+import { ComponentStateKeyV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentStateKeyV2';
 import { createContext } from 'react';
 
 export const createComponentInstanceContext = <

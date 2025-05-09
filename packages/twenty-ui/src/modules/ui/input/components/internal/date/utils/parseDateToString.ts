@@ -1,5 +1,5 @@
-import { DATE_PARSER_FORMAT } from '@/ui/input/components/internal/date/constants/DateParserFormat';
-import { DATE_TIME_PARSER_FORMAT } from '@/ui/input/components/internal/date/constants/DateTimeParserFormat';
+import { DATE_PARSER_FORMAT } from '@twenty-modules/ui/input/components/internal/date/constants/DateParserFormat';
+import { DATE_TIME_PARSER_FORMAT } from '@twenty-modules/ui/input/components/internal/date/constants/DateTimeParserFormat';
 import { DateTime } from 'luxon';
 
 type ParseDateToStringArgs = {

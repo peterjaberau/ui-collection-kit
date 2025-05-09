@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { useRecoilValue } from 'recoil';
 
-import { MultiWorkspaceDropdownButton } from '@/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/MultiWorkspaceDropdownButton';
-import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
+import { MultiWorkspaceDropdownButton } from '@twenty-modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/MultiWorkspaceDropdownButton';
+import { useIsMobile } from '@twenty-modules/ui/utilities/responsive/hooks/useIsMobile';
 
-import { isNavigationDrawerExpandedState } from '@/ui/navigation/states/isNavigationDrawerExpanded';
+import { isNavigationDrawerExpandedState } from '@twenty-modules/ui/navigation/states/isNavigationDrawerExpanded';
 import { NavigationDrawerCollapseButton } from './NavigationDrawerCollapseButton';
 
 const StyledContainer = styled.div`

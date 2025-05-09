@@ -1,7 +1,7 @@
-import { ComponentFamilyStateKeyV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilyStateKeyV2';
-import { ComponentFamilyStateV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilyStateV2';
-import { ComponentInstanceStateContext } from '@/ui/utilities/state/component-state/types/ComponentInstanceStateContext';
-import { globalComponentInstanceContextMap } from '@/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
+import { ComponentFamilyStateKeyV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyStateKeyV2';
+import { ComponentFamilyStateV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyStateV2';
+import { ComponentInstanceStateContext } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentInstanceStateContext';
+import { globalComponentInstanceContextMap } from '@twenty-modules/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
 import {
   AtomEffect,
   atomFamily,
@@ -10,7 +10,7 @@ import {
   SerializableParam,
   WrappedValue,
 } from 'recoil';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 type CreateComponentFamilyStateArgs<
   ValueType,

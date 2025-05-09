@@ -1,0 +1,52 @@
+import styled from '@emotion/styled';
+
+import { ImportedRow } from '@twenty-modules/spreadsheet-import/types';
+
+import { SpreadsheetColumn } from '@twenty-modules/spreadsheet-import/types/SpreadsheetColumn';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const StyledValue = styled.span`
+  color: ${({ theme }) => theme.font.color.primary};
+  font-size: ${({ theme }) => theme.font.size.sm};
+  font-weight: ${({ theme }) => theme.font.weight.medium};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+const StyledExample = styled.span`
+  color: ${({ theme }) => theme.font.color.tertiary};
+  font-size: ${({ theme }) => theme.font.size.sm};
+  font-weight: ${({ theme }) => theme.font.weight.medium};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+type UserTableColumnProps<T extends string> = {
+  column: SpreadsheetColumn<T>;
+  importedRow: ImportedRow;
+};
+
+export const UserTableColumn = <T extends string>({
+  column,
+  importedRow,
+}: UserTableColumnProps<T>) => {
+  const { header } = column;
+  const firstDefinedValue = importedRow.find(isDefined);
+
+  return (
+    <StyledContainer>
+      <StyledValue>{header}</StyledValue>
+      {firstDefinedValue && (
+        <StyledExample>{`ex: ${firstDefinedValue}`}</StyledExample>
+      )}
+    </StyledContainer>
+  );
+};

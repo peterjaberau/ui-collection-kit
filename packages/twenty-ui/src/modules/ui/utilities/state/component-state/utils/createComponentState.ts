@@ -1,6 +1,6 @@
 import { AtomEffect, atomFamily } from 'recoil';
 
-import { RecoilComponentStateKey } from '@/ui/utilities/state/component-state/types/RecoilComponentStateKey';
+import { RecoilComponentStateKey } from '@twenty-modules/ui/utilities/state/component-state/types/RecoilComponentStateKey';
 
 type CreateComponentStateType<ValueType> = {
   key: string;

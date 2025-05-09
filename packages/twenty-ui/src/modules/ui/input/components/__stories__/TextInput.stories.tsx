@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 import { TextInput, TextInputProps } from '../TextInput';
-import { ComponentDecorator } from 'twenty-ui/testing';
+import { ComponentDecorator } from '@twenty-ui/testing';
 
 type RenderProps = TextInputProps;
 

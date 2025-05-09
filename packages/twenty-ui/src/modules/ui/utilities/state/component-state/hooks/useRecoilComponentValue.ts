@@ -1,7 +1,7 @@
 import { useRecoilValue } from 'recoil';
 
-import { useAvailableScopeIdOrThrow } from '@/ui/utilities/recoil-scope/scopes-internal/hooks/useAvailableScopeId';
-import { RecoilComponentState } from '@/ui/utilities/state/component-state/types/RecoilComponentState';
+import { useAvailableScopeIdOrThrow } from '@twenty-modules/ui/utilities/recoil-scope/scopes-internal/hooks/useAvailableScopeId';
+import { RecoilComponentState } from '@twenty-modules/ui/utilities/state/component-state/types/RecoilComponentState';
 
 export const useRecoilComponentValue = <StateType>(
   componentState: RecoilComponentState<StateType>,

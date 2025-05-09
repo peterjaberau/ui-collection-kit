@@ -1,13 +1,13 @@
-import { DropdownContent } from '@/ui/layout/dropdown/components/DropdownContent';
-import { DropdownOnToggleEffect } from '@/ui/layout/dropdown/components/DropdownOnToggleEffect';
-import { DropdownComponentInstanceContext } from '@/ui/layout/dropdown/contexts/DropdownComponeInstanceContext';
-import { DropdownScope } from '@/ui/layout/dropdown/scopes/DropdownScope';
-import { dropdownHotkeyComponentState } from '@/ui/layout/dropdown/states/dropdownHotkeyComponentState';
-import { dropdownMaxHeightComponentState } from '@/ui/layout/dropdown/states/internal/dropdownMaxHeightComponentState';
-import { dropdownMaxWidthComponentState } from '@/ui/layout/dropdown/states/internal/dropdownMaxWidthComponentState';
-import { DropdownOffset } from '@/ui/layout/dropdown/types/DropdownOffset';
-import { HotkeyScope } from '@/ui/utilities/hotkey/types/HotkeyScope';
-import { useSetRecoilComponentStateV2 } from '@/ui/utilities/state/component-state/hooks/useSetRecoilComponentStateV2';
+import { DropdownContent } from '@twenty-modules/ui/layout/dropdown/components/DropdownContent';
+import { DropdownOnToggleEffect } from '@twenty-modules/ui/layout/dropdown/components/DropdownOnToggleEffect';
+import { DropdownComponentInstanceContext } from '@twenty-modules/ui/layout/dropdown/contexts/DropdownComponeInstanceContext';
+import { DropdownScope } from '@twenty-modules/ui/layout/dropdown/scopes/DropdownScope';
+import { dropdownHotkeyComponentState } from '@twenty-modules/ui/layout/dropdown/states/dropdownHotkeyComponentState';
+import { dropdownMaxHeightComponentState } from '@twenty-modules/ui/layout/dropdown/states/internal/dropdownMaxHeightComponentState';
+import { dropdownMaxWidthComponentState } from '@twenty-modules/ui/layout/dropdown/states/internal/dropdownMaxWidthComponentState';
+import { DropdownOffset } from '@twenty-modules/ui/layout/dropdown/types/DropdownOffset';
+import { HotkeyScope } from '@twenty-modules/ui/utilities/hotkey/types/HotkeyScope';
+import { useSetRecoilComponentStateV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useSetRecoilComponentStateV2';
 import styled from '@emotion/styled';
 import {
   Placement,
@@ -21,8 +21,8 @@ import { MouseEvent, ReactNode } from 'react';
 import { flushSync } from 'react-dom';
 import { Keys } from 'react-hotkeys-hook';
 import { useRecoilCallback } from 'recoil';
-import { isDefined } from 'twenty-shared/utils';
-import { useIsMobile } from 'twenty-ui/utilities';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { useIsMobile } from '@twenty-ui/utilities';
 import { useDropdown } from '../hooks/useDropdown';
 
 type Width = `${string}px` | `${number}%` | 'auto' | number;

@@ -5,13 +5,13 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { ClipboardEvent } from 'react';
 
-import { BLOCK_SCHEMA } from '@/activities/blocks/constants/Schema';
-import { getSlashMenu } from '@/activities/blocks/utils/getSlashMenu';
-import { CustomSideMenu } from '@/ui/input/editor/components/CustomSideMenu';
+import { BLOCK_SCHEMA } from '@twenty-modules/activities/blocks/constants/Schema';
+import { getSlashMenu } from '@twenty-modules/activities/blocks/utils/getSlashMenu';
+import { CustomSideMenu } from '@twenty-modules/ui/input/editor/components/CustomSideMenu';
 import {
   CustomSlashMenu,
   SuggestionItem,
-} from '@/ui/input/editor/components/CustomSlashMenu';
+} from '@twenty-modules/ui/input/editor/components/CustomSlashMenu';
 
 interface BlockEditorProps {
   editor: typeof BLOCK_SCHEMA.BlockNoteEditor;

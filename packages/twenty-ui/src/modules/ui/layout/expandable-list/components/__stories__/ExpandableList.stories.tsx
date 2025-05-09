@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 import { expect } from '@storybook/jest';
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ExpandableList } from '@/ui/layout/expandable-list/components/ExpandableList';
-import { isDefined } from 'twenty-shared/utils';
-import { Tag } from 'twenty-ui/components';
-import { ComponentDecorator } from 'twenty-ui/testing';
-import { MAIN_COLOR_NAMES } from 'twenty-ui/theme';
+import { ExpandableList } from '@twenty-modules/ui/layout/expandable-list/components/ExpandableList';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { Tag } from '@twenty-ui/components';
+import { ComponentDecorator } from '@twenty-ui/testing';
+import { MAIN_COLOR_NAMES } from '@twenty-ui/theme';
 
 const StyledContainer = styled.div`
   padding: ${({ theme }) => theme.spacing(1)};

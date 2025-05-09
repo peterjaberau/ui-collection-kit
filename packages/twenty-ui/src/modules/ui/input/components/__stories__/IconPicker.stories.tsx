@@ -1,10 +1,10 @@
 import { useArgs } from '@storybook/preview-api';
 import { Meta, StoryObj } from '@storybook/react';
 
-import { IconsProviderDecorator } from '~/testing/decorators/IconsProviderDecorator';
-import { sleep } from '~/utils/sleep';
+import { IconsProviderDecorator } from '@twenty-ui/front/testing/decorators/IconsProviderDecorator';
+import { sleep } from '@twenty-ui/front/utils/sleep';
 
-import { ComponentDecorator } from 'twenty-ui/testing';
+import { ComponentDecorator } from '@twenty-ui/testing';
 import { IconPicker, IconPickerProps } from '../IconPicker';
 
 type RenderProps = IconPickerProps;

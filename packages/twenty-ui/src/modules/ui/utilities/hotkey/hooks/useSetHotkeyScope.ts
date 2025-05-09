@@ -1,9 +1,9 @@
 import { useRecoilCallback } from 'recoil';
 
-import { DEBUG_HOTKEY_SCOPE } from '@/ui/utilities/hotkey/hooks/useScopedHotkeyCallback';
+import { DEBUG_HOTKEY_SCOPE } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeyCallback';
 
-import { isDefined } from 'twenty-shared/utils';
-import { logDebug } from '~/utils/logDebug';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { logDebug } from '@twenty-ui/front/utils/logDebug';
 import { DEFAULT_HOTKEYS_SCOPE_CUSTOM_SCOPES } from '../constants/DefaultHotkeysScopeCustomScopes';
 import { currentHotkeyScopeState } from '../states/internal/currentHotkeyScopeState';
 import { internalHotkeysEnabledScopesState } from '../states/internal/internalHotkeysEnabledScopesState';

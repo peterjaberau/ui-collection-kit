@@ -1,4 +1,4 @@
-import { formatNumber } from '~/utils/format/number';
+import { formatNumber } from '@twenty-ui/front/utils/format/number';
 
 import { EllipsisDisplay } from './EllipsisDisplay';
 

@@ -1,8 +1,8 @@
-import { InformationBannerWrapper } from '@/information-banner/components/InformationBannerWrapper';
+import { InformationBannerWrapper } from '@twenty-modules/information-banner/components/InformationBannerWrapper';
 import {
   Breadcrumb,
   BreadcrumbProps,
-} from '@/ui/navigation/bread-crumb/components/Breadcrumb';
+} from '@twenty-modules/ui/navigation/bread-crumb/components/Breadcrumb';
 import styled from '@emotion/styled';
 import { JSX, ReactNode } from 'react';
 import { PageBody } from './PageBody';

@@ -1,9 +1,9 @@
-import { DropdownScopeInternalContext } from '@/ui/layout/dropdown/scopes/scope-internal-context/DropdownScopeInternalContext';
-import { dropdownHotkeyComponentState } from '@/ui/layout/dropdown/states/dropdownHotkeyComponentState';
-import { dropdownPlacementComponentState } from '@/ui/layout/dropdown/states/dropdownPlacementComponentState';
-import { isDropdownOpenComponentState } from '@/ui/layout/dropdown/states/isDropdownOpenComponentState';
-import { useAvailableScopeIdOrThrow } from '@/ui/utilities/recoil-scope/scopes-internal/hooks/useAvailableScopeId';
-import { extractComponentState } from '@/ui/utilities/state/component-state/utils/extractComponentState';
+import { DropdownScopeInternalContext } from '@twenty-modules/ui/layout/dropdown/scopes/scope-internal-context/DropdownScopeInternalContext';
+import { dropdownHotkeyComponentState } from '@twenty-modules/ui/layout/dropdown/states/dropdownHotkeyComponentState';
+import { dropdownPlacementComponentState } from '@twenty-modules/ui/layout/dropdown/states/dropdownPlacementComponentState';
+import { isDropdownOpenComponentState } from '@twenty-modules/ui/layout/dropdown/states/isDropdownOpenComponentState';
+import { useAvailableScopeIdOrThrow } from '@twenty-modules/ui/utilities/recoil-scope/scopes-internal/hooks/useAvailableScopeId';
+import { extractComponentState } from '@twenty-modules/ui/utilities/state/component-state/utils/extractComponentState';
 
 type UseDropdownStatesProps = {
   dropdownScopeId?: string;

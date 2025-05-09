@@ -6,8 +6,8 @@ import { Key } from 'ts-key-enum';
 import { useScopedHotkeys } from '@twenty-ui/modules/ui/utilities/hotkey/hooks/useScopedHotkeys';
 
 import { RootStackingContextZIndices } from '@twenty-ui/modules/ui/layout/constants/RootStackingContextZIndices';
-import { isDefined } from 'twenty-shared/utils';
-import { Button } from 'twenty-ui/input';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { Button } from '@twenty-ui/input';
 import { DialogHotkeyScope } from '../types/DialogHotkeyScope';
 
 const StyledDialogOverlay = styled(motion.div)`

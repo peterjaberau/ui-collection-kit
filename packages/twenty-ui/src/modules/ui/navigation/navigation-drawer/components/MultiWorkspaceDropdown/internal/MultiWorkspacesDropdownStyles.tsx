@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { IconChevronDown } from 'twenty-ui/display';
+import { IconChevronDown } from '@twenty-ui/display';
 
 export const StyledContainer = styled.div<{
   isNavigationDrawerExpanded: boolean;

@@ -1,6 +1,6 @@
-import { useScopeInternalContext } from '@/ui/utilities/recoil-scope/scopes-internal/hooks/useScopeInternalContext';
-import { ComponentFamilyState } from '@/ui/utilities/state/component-state/types/ComponentFamilyState';
-import { RecoilComponentState } from '@/ui/utilities/state/component-state/types/RecoilComponentState';
+import { useScopeInternalContext } from '@twenty-modules/ui/utilities/recoil-scope/scopes-internal/hooks/useScopeInternalContext';
+import { ComponentFamilyState } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyState';
+import { RecoilComponentState } from '@twenty-modules/ui/utilities/state/component-state/types/RecoilComponentState';
 
 export const useScopeIdFromStateContext = (
   componentState: RecoilComponentState<any> | ComponentFamilyState<any, any>,

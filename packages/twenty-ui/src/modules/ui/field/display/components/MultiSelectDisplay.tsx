@@ -1,8 +1,8 @@
-import { FieldMultiSelectValue } from '@/object-record/record-field/types/FieldMetadata';
+import { FieldMultiSelectValue } from '@twenty-modules/object-record/record-field/types/FieldMetadata';
 import { styled } from '@linaria/react';
-import { Tag } from 'twenty-ui/components';
-import { SelectOption } from 'twenty-ui/input';
-import { THEME_COMMON } from 'twenty-ui/theme';
+import { Tag } from '@twenty-ui/components';
+import { SelectOption } from '@twenty-ui/input';
+import { THEME_COMMON } from '@twenty-ui/theme';
 
 const spacing1 = THEME_COMMON.spacing(1);
 

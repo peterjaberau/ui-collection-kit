@@ -1,20 +1,20 @@
-import { RecordShowRightDrawerActionMenu } from '@/action-menu/components/RecordShowRightDrawerActionMenu';
-import { RecordShowRightDrawerOpenRecordButton } from '@/action-menu/components/RecordShowRightDrawerOpenRecordButton';
-import { ActivityTargetableObject } from '@/activities/types/ActivityTargetableEntity';
-import { CommandMenuPageComponentInstanceContext } from '@/command-menu/states/contexts/CommandMenuPageComponentInstanceContext';
-import { CardComponents } from '@/object-record/record-show/components/CardComponents';
-import { FieldsCard } from '@/object-record/record-show/components/FieldsCard';
-import { SummaryCard } from '@/object-record/record-show/components/SummaryCard';
-import { RecordLayout } from '@/object-record/record-show/types/RecordLayout';
-import { RightDrawerFooter } from '@/ui/layout/right-drawer/components/RightDrawerFooter';
-import { ShowPageLeftContainer } from '@/ui/layout/show-page/components/ShowPageLeftContainer';
-import { getShowPageTabListComponentId } from '@/ui/layout/show-page/utils/getShowPageTabListComponentId';
-import { SingleTabProps, TabList } from '@/ui/layout/tab/components/TabList';
-import { activeTabIdComponentState } from '@/ui/layout/tab/states/activeTabIdComponentState';
-import { TabListComponentInstanceContext } from '@/ui/layout/tab/states/contexts/TabListComponentInstanceContext';
-import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
-import { useComponentInstanceStateContext } from '@/ui/utilities/state/component-state/hooks/useComponentInstanceStateContext';
-import { useRecoilComponentValueV2 } from '@/ui/utilities/state/component-state/hooks/useRecoilComponentValueV2';
+import { RecordShowRightDrawerActionMenu } from '@twenty-modules/action-menu/components/RecordShowRightDrawerActionMenu';
+import { RecordShowRightDrawerOpenRecordButton } from '@twenty-modules/action-menu/components/RecordShowRightDrawerOpenRecordButton';
+import { ActivityTargetableObject } from '@twenty-modules/activities/types/ActivityTargetableEntity';
+import { CommandMenuPageComponentInstanceContext } from '@twenty-modules/command-menu/states/contexts/CommandMenuPageComponentInstanceContext';
+import { CardComponents } from '@twenty-modules/object-record/record-show/components/CardComponents';
+import { FieldsCard } from '@twenty-modules/object-record/record-show/components/FieldsCard';
+import { SummaryCard } from '@twenty-modules/object-record/record-show/components/SummaryCard';
+import { RecordLayout } from '@twenty-modules/object-record/record-show/types/RecordLayout';
+import { RightDrawerFooter } from '@twenty-modules/ui/layout/right-drawer/components/RightDrawerFooter';
+import { ShowPageLeftContainer } from '@twenty-modules/ui/layout/show-page/components/ShowPageLeftContainer';
+import { getShowPageTabListComponentId } from '@twenty-modules/ui/layout/show-page/utils/getShowPageTabListComponentId';
+import { SingleTabProps, TabList } from '@twenty-modules/ui/layout/tab/components/TabList';
+import { activeTabIdComponentState } from '@twenty-modules/ui/layout/tab/states/activeTabIdComponentState';
+import { TabListComponentInstanceContext } from '@twenty-modules/ui/layout/tab/states/contexts/TabListComponentInstanceContext';
+import { useIsMobile } from '@twenty-modules/ui/utilities/responsive/hooks/useIsMobile';
+import { useComponentInstanceStateContext } from '@twenty-modules/ui/utilities/state/component-state/hooks/useComponentInstanceStateContext';
+import { useRecoilComponentValueV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useRecoilComponentValueV2';
 import styled from '@emotion/styled';
 
 const StyledShowPageRightContainer = styled.div<{ isMobile: boolean }>`

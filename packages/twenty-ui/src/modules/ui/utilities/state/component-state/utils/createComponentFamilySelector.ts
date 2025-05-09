@@ -1,8 +1,8 @@
 import { selectorFamily, SerializableParam } from 'recoil';
 
-import { ComponentFamilyStateKey } from '@/ui/utilities/state/component-state/types/ComponentFamilyStateKey';
-import { SelectorGetter } from '@/ui/utilities/state/types/SelectorGetter';
-import { SelectorSetter } from '@/ui/utilities/state/types/SelectorSetter';
+import { ComponentFamilyStateKey } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyStateKey';
+import { SelectorGetter } from '@twenty-modules/ui/utilities/state/types/SelectorGetter';
+import { SelectorSetter } from '@twenty-modules/ui/utilities/state/types/SelectorSetter';
 
 export const createComponentFamilySelector = <
   ValueType,

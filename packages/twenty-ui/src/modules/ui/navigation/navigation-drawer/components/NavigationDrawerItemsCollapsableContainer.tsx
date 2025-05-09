@@ -1,5 +1,5 @@
-import { useIsSettingsPage } from '@/navigation/hooks/useIsSettingsPage';
-import { isNavigationDrawerExpandedState } from '@/ui/navigation/states/isNavigationDrawerExpanded';
+import { useIsSettingsPage } from '@twenty-modules/navigation/hooks/useIsSettingsPage';
+import { isNavigationDrawerExpandedState } from '@twenty-modules/ui/navigation/states/isNavigationDrawerExpanded';
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { AnimationControls, motion, TargetAndTransition } from 'framer-motion';

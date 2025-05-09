@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { useSnackBarManagerScopedStates } from '@/ui/feedback/snack-bar-manager/hooks/internal/useSnackBarManagerScopedStates';
-import { useSnackBar } from '@/ui/feedback/snack-bar-manager/hooks/useSnackBar';
-import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
+import { useSnackBarManagerScopedStates } from '@twenty-modules/ui/feedback/snack-bar-manager/hooks/internal/useSnackBarManagerScopedStates';
+import { useSnackBar } from '@twenty-modules/ui/feedback/snack-bar-manager/hooks/useSnackBar';
+import { useIsMobile } from '@twenty-modules/ui/utilities/responsive/hooks/useIsMobile';
 
-import { RootStackingContextZIndices } from '@/ui/layout/constants/RootStackingContextZIndices';
+import { RootStackingContextZIndices } from '@twenty-modules/ui/layout/constants/RootStackingContextZIndices';
 import { SnackBar } from './SnackBar';
-import { MOBILE_VIEWPORT } from 'twenty-ui/theme';
+import { MOBILE_VIEWPORT } from '@twenty-ui/theme';
 
 const StyledSnackBarContainer = styled.div`
   bottom: ${({ theme }) => theme.spacing(3)};

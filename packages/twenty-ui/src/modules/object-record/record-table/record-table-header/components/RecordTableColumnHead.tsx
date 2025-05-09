@@ -1,0 +1,73 @@
+import { css, useTheme } from '@emotion/react';
+import styled from '@emotion/styled';
+
+import { FieldMetadata } from '@twenty-modules/object-record/record-field/types/FieldMetadata';
+import { isRecordTableScrolledLeftComponentState } from '@twenty-modules/object-record/record-table/states/isRecordTableScrolledLeftComponentState';
+
+import { useRecoilComponentValueV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useRecoilComponentValueV2';
+import { ColumnDefinition } from '../../types/ColumnDefinition';
+import { MOBILE_VIEWPORT } from '@twenty-ui/theme';
+import { useIcons } from '@twenty-ui/display';
+
+type RecordTableColumnHeadProps = {
+  column: ColumnDefinition<FieldMetadata>;
+};
+
+const StyledTitle = styled.div<{ hideTitle?: boolean }>`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-weight: ${({ theme }) => theme.font.weight.medium};
+  gap: ${({ theme }) => theme.spacing(1)};
+  height: ${({ theme }) => theme.spacing(8)};
+  padding-left: ${({ theme }) => theme.spacing(2)};
+  padding-right: ${({ theme }) => theme.spacing(2)};
+
+  ${({ hideTitle }) =>
+    hideTitle &&
+    css`
+      @media (max-width: ${MOBILE_VIEWPORT}px) {
+        display: none;
+      }
+    `}
+`;
+
+const StyledIcon = styled.div`
+  display: flex;
+  flex-shrink: 0;
+
+  & > svg {
+    height: ${({ theme }) => theme.icon.size.md}px;
+    width: ${({ theme }) => theme.icon.size.md}px;
+  }
+`;
+
+const StyledText = styled.span`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+export const RecordTableColumnHead = ({
+  column,
+}: RecordTableColumnHeadProps) => {
+  const theme = useTheme();
+
+  const { getIcon } = useIcons();
+  const Icon = getIcon(column.iconName);
+
+  const isRecordTableScrolledLeft = useRecoilComponentValueV2(
+    isRecordTableScrolledLeftComponentState,
+  );
+
+  return (
+    <StyledTitle
+      hideTitle={!!column.isLabelIdentifier && !isRecordTableScrolledLeft}
+    >
+      <StyledIcon>
+        <Icon size={theme.icon.size.md} />
+      </StyledIcon>
+      <StyledText>{column.label}</StyledText>
+    </StyledTitle>
+  );
+};

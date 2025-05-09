@@ -1,4 +1,4 @@
-import { createRequiredContext } from '~/utils/createRequiredContext';
+import { createRequiredContext } from '@twenty-ui/front/utils/createRequiredContext';
 
 export type SelectableListContextValue = {
   hotkeyScope: string;

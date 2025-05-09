@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import { NavigationDrawerCollapseButton } from '../NavigationDrawerCollapseButton';
-import { ComponentDecorator } from 'twenty-ui/testing';
+import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof NavigationDrawerCollapseButton> = {
   title: 'UI/Navigation/NavigationDrawer/NavigationDrawerCollapseButton',

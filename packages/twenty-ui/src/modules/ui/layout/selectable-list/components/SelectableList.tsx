@@ -1,12 +1,12 @@
 import { ReactNode, useEffect } from 'react';
 
-import { useSelectableListHotKeys } from '@/ui/layout/selectable-list/hooks/internal/useSelectableListHotKeys';
-import { SelectableListComponentInstanceContext } from '@/ui/layout/selectable-list/states/contexts/SelectableListComponentInstanceContext';
-import { SelectableListContextProvider } from '@/ui/layout/selectable-list/states/contexts/SelectableListContext';
-import { selectableItemIdsComponentState } from '@/ui/layout/selectable-list/states/selectableItemIdsComponentState';
-import { useSetRecoilComponentStateV2 } from '@/ui/utilities/state/component-state/hooks/useSetRecoilComponentStateV2';
-import { isDefined } from 'twenty-shared/utils';
-import { arrayToChunks } from '~/utils/array/arrayToChunks';
+import { useSelectableListHotKeys } from '@twenty-modules/ui/layout/selectable-list/hooks/internal/useSelectableListHotKeys';
+import { SelectableListComponentInstanceContext } from '@twenty-modules/ui/layout/selectable-list/states/contexts/SelectableListComponentInstanceContext';
+import { SelectableListContextProvider } from '@twenty-modules/ui/layout/selectable-list/states/contexts/SelectableListContext';
+import { selectableItemIdsComponentState } from '@twenty-modules/ui/layout/selectable-list/states/selectableItemIdsComponentState';
+import { useSetRecoilComponentStateV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useSetRecoilComponentStateV2';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { arrayToChunks } from '@twenty-ui/front/utils/array/arrayToChunks';
 
 type SelectableListProps = {
   children: ReactNode;

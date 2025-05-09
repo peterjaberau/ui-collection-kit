@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil';
 import { pendingHotkeyState } from '../states/internal/pendingHotkeysState';
 
 import { useScopedHotkeyCallback } from './useScopedHotkeyCallback';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 export const useSequenceHotkeys = (
   firstKey: Keys,

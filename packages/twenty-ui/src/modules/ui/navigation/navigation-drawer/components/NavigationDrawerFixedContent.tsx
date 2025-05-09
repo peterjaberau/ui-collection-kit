@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 
-import { useIsSettingsDrawer } from '@/navigation/hooks/useIsSettingsDrawer';
-import { NavigationDrawerSection } from '@/ui/navigation/navigation-drawer/components/NavigationDrawerSection';
+import { useIsSettingsDrawer } from '@twenty-modules/navigation/hooks/useIsSettingsDrawer';
+import { NavigationDrawerSection } from '@twenty-modules/ui/navigation/navigation-drawer/components/NavigationDrawerSection';
 import styled from '@emotion/styled';
-import { useIsMobile } from 'twenty-ui/utilities';
+import { useIsMobile } from '@twenty-ui/utilities';
 
 const StyledFixedContainer = styled.div<{
   isSettings?: boolean;

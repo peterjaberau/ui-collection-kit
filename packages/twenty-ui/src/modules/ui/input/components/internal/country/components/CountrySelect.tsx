@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
-import { SELECT_COUNTRY_DROPDOWN_ID } from '@/ui/input/components/internal/country/constants/SelectCountryDropdownId';
-import { useCountries } from '@/ui/input/components/internal/hooks/useCountries';
-import { Select } from '@/ui/input/components/Select';
-import { IconCircleOff, IconComponentProps } from 'twenty-ui/display';
-import { SelectOption } from 'twenty-ui/input';
+import { SELECT_COUNTRY_DROPDOWN_ID } from '@twenty-modules/ui/input/components/internal/country/constants/SelectCountryDropdownId';
+import { useCountries } from '@twenty-modules/ui/input/components/internal/hooks/useCountries';
+import { Select } from '@twenty-modules/ui/input/components/Select';
+import { IconCircleOff, IconComponentProps } from '@twenty-ui/display';
+import { SelectOption } from '@twenty-ui/input';
 
 export const CountrySelect = ({
   label,

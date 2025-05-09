@@ -1,0 +1,27 @@
+import { useContext } from 'react';
+import { useRecoilValue } from 'recoil';
+
+import { isFieldFullName } from '@twenty-modules/object-record/record-field/types/guards/isFieldFullName';
+import { isFieldNumber } from '@twenty-modules/object-record/record-field/types/guards/isFieldNumber';
+import { isFieldText } from '@twenty-modules/object-record/record-field/types/guards/isFieldText';
+import { recordStoreFamilyState } from '@twenty-modules/object-record/record-store/states/recordStoreFamilyState';
+
+import { FieldContext } from '../../contexts/FieldContext';
+
+export const useChipField = () => {
+  const { recordId, fieldDefinition } = useContext(FieldContext);
+
+  const objectNameSingular =
+    isFieldText(fieldDefinition) ||
+    isFieldFullName(fieldDefinition) ||
+    isFieldNumber(fieldDefinition)
+      ? fieldDefinition.metadata.objectMetadataNameSingular
+      : undefined;
+
+  const record = useRecoilValue(recordStoreFamilyState(recordId));
+
+  return {
+    objectNameSingular,
+    record,
+  };
+};

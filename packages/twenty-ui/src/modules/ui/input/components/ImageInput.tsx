@@ -4,10 +4,10 @@ import { Trans, useLingui } from '@lingui/react/macro';
 
 import { isNonEmptyString } from '@sniptt/guards';
 import React, { useState } from 'react';
-import { getImageAbsoluteURI, isDefined } from 'twenty-shared/utils';
-import { IconPhotoUp, IconTrash, IconUpload, IconX } from 'twenty-ui/display';
-import { Button } from 'twenty-ui/input';
-import { REACT_APP_SERVER_BASE_URL } from '~/config';
+import { getImageAbsoluteURI, isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { IconPhotoUp, IconTrash, IconUpload, IconX } from '@twenty-ui/display';
+import { Button } from '@twenty-ui/input';
+import { REACT_APP_SERVER_BASE_URL } from '@twenty-ui/front/config';
 
 const StyledContainer = styled.div`
   display: flex;

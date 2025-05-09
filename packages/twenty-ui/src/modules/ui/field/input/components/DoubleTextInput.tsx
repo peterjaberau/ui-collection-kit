@@ -8,15 +8,15 @@ import {
 } from 'react';
 import { Key } from 'ts-key-enum';
 
-import { FieldDoubleText } from '@/object-record/record-field/types/FieldDoubleText';
-import { useScopedHotkeys } from '@/ui/utilities/hotkey/hooks/useScopedHotkeys';
+import { FieldDoubleText } from '@twenty-modules/object-record/record-field/types/FieldDoubleText';
+import { useScopedHotkeys } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeys';
 
-import { FieldInputContainer } from '@/ui/field/input/components/FieldInputContainer';
-import { useListenClickOutside } from '@/ui/utilities/pointer-event/hooks/useListenClickOutside';
-import { splitFullName } from '~/utils/format/spiltFullName';
-import { turnIntoEmptyStringIfWhitespacesOnly } from '~/utils/string/turnIntoEmptyStringIfWhitespacesOnly';
+import { FieldInputContainer } from '@twenty-modules/ui/field/input/components/FieldInputContainer';
+import { useListenClickOutside } from '@twenty-modules/ui/utilities/pointer-event/hooks/useListenClickOutside';
+import { splitFullName } from '@twenty-ui/front/utils/format/spiltFullName';
+import { turnIntoEmptyStringIfWhitespacesOnly } from '@twenty-ui/front/utils/string/turnIntoEmptyStringIfWhitespacesOnly';
 import { StyledTextInput } from './TextInput';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 const StyledContainer = styled.div`
   display: flex;

@@ -1,19 +1,19 @@
 import styled from '@emotion/styled';
 
-import { useOpenCreateActivityDrawer } from '@/activities/hooks/useOpenCreateActivityDrawer';
-import { ActivityTargetableObject } from '@/activities/types/ActivityTargetableEntity';
-import { PageHotkeyScope } from '@/types/PageHotkeyScope';
-import { DropdownMenuItemsContainer } from '@/ui/layout/dropdown/components/DropdownMenuItemsContainer';
-import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
-import { SHOW_PAGE_ADD_BUTTON_DROPDOWN_ID } from '@/ui/layout/show-page/constants/ShowPageAddButtonDropdownId';
+import { useOpenCreateActivityDrawer } from '@twenty-modules/activities/hooks/useOpenCreateActivityDrawer';
+import { ActivityTargetableObject } from '@twenty-modules/activities/types/ActivityTargetableEntity';
+import { PageHotkeyScope } from '@twenty-modules/types/PageHotkeyScope';
+import { DropdownMenuItemsContainer } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuItemsContainer';
+import { useDropdown } from '@twenty-modules/ui/layout/dropdown/hooks/useDropdown';
+import { SHOW_PAGE_ADD_BUTTON_DROPDOWN_ID } from '@twenty-modules/ui/layout/show-page/constants/ShowPageAddButtonDropdownId';
 
-import { CoreObjectNameSingular } from '@/object-metadata/types/CoreObjectNameSingular';
-import { isWorkflowSubObjectMetadata } from '@/object-metadata/utils/isWorkflowSubObjectMetadata';
-import { useHasObjectReadOnlyPermission } from '@/settings/roles/hooks/useHasObjectReadOnlyPermission';
+import { CoreObjectNameSingular } from '@twenty-modules/object-metadata/types/CoreObjectNameSingular';
+import { isWorkflowSubObjectMetadata } from '@twenty-modules/object-metadata/utils/isWorkflowSubObjectMetadata';
+import { useHasObjectReadOnlyPermission } from '@twenty-modules/settings/roles/hooks/useHasObjectReadOnlyPermission';
 import { Dropdown } from '../../dropdown/components/Dropdown';
-import { Button } from 'twenty-ui/input';
-import { IconCheckbox, IconNotes, IconPlus } from 'twenty-ui/display';
-import { MenuItem } from 'twenty-ui/navigation';
+import { Button } from '@twenty-ui/input';
+import { IconCheckbox, IconNotes, IconPlus } from '@twenty-ui/display';
+import { MenuItem } from '@twenty-ui/navigation';
 
 const StyledContainer = styled.div`
   z-index: 1;

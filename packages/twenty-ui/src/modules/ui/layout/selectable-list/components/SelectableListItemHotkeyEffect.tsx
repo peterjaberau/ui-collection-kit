@@ -1,5 +1,5 @@
-import { useSelectableListListenToEnterHotkeyOnItem } from '@/ui/layout/selectable-list/hooks/useSelectableListListenToEnterHotkeyOnItem';
-import { useSelectableListContextOrThrow } from '@/ui/layout/selectable-list/states/contexts/SelectableListContext';
+import { useSelectableListListenToEnterHotkeyOnItem } from '@twenty-modules/ui/layout/selectable-list/hooks/useSelectableListListenToEnterHotkeyOnItem';
+import { useSelectableListContextOrThrow } from '@twenty-modules/ui/layout/selectable-list/states/contexts/SelectableListContext';
 
 export const SelectableListItemHotkeyEffect = ({
   itemId,

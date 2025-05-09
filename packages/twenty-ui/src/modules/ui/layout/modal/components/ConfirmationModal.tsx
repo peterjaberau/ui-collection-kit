@@ -3,13 +3,13 @@ import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { ReactNode, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { TextInput } from '@/ui/input/components/TextInput';
+import { TextInput } from '@twenty-modules/ui/input/components/TextInput';
 
-import { Modal, ModalVariants } from '@/ui/layout/modal/components/Modal';
+import { Modal, ModalVariants } from '@twenty-modules/ui/layout/modal/components/Modal';
 import { useLingui } from '@lingui/react/macro';
-import { Button, ButtonAccent } from 'twenty-ui/input';
-import { H1Title, H1TitleFontColor } from 'twenty-ui/display';
-import { Section, SectionAlignment, SectionFontColor } from 'twenty-ui/layout';
+import { Button, ButtonAccent } from '@twenty-ui/input';
+import { H1Title, H1TitleFontColor } from '@twenty-ui/display';
+import { Section, SectionAlignment, SectionFontColor } from '@twenty-ui/layout';
 
 export type ConfirmationModalProps = {
   isOpen: boolean;

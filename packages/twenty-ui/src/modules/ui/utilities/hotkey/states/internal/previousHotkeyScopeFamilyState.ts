@@ -1,4 +1,4 @@
-import { createFamilyState } from '@/ui/utilities/state/utils/createFamilyState';
+import { createFamilyState } from '@twenty-modules/ui/utilities/state/utils/createFamilyState';
 
 import { HotkeyScope } from '../../types/HotkeyScope';
 

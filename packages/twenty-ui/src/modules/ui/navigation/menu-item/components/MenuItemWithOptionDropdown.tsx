@@ -1,5 +1,5 @@
-import { SelectHotkeyScope } from '@/ui/input/types/SelectHotkeyScope';
-import { Dropdown } from '@/ui/layout/dropdown/components/Dropdown';
+import { SelectHotkeyScope } from '@twenty-modules/ui/input/types/SelectHotkeyScope';
+import { Dropdown } from '@twenty-modules/ui/layout/dropdown/components/Dropdown';
 import { useTheme } from '@emotion/react';
 import { Placement } from '@floating-ui/react';
 import { FunctionComponent, MouseEvent, ReactElement, ReactNode } from 'react';
@@ -7,14 +7,14 @@ import {
   IconChevronRight,
   IconComponent,
   IconDotsVertical,
-} from 'twenty-ui/display';
-import { LightIconButton, LightIconButtonProps } from 'twenty-ui/input';
+} from '@twenty-ui/display';
+import { LightIconButton, LightIconButtonProps } from '@twenty-ui/input';
 import {
   MenuItemAccent,
   MenuItemLeftContent,
   StyledHoverableMenuItemBase,
   StyledMenuItemLeftContent,
-} from 'twenty-ui/navigation';
+} from '@twenty-ui/navigation';
 
 export type MenuItemIconButton = {
   Wrapper?: FunctionComponent<{ iconButton: ReactElement }>;

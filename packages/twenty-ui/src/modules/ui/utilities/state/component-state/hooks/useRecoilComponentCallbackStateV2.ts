@@ -1,12 +1,12 @@
 /* eslint-disable prefer-arrow/prefer-arrow-functions */
-import { useAvailableComponentInstanceIdOrThrow } from '@/ui/utilities/state/component-state/hooks/useAvailableComponentInstanceIdOrThrow';
-import { ComponentFamilyReadOnlySelectorV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilyReadOnlySelectorV2';
-import { ComponentFamilySelectorV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilySelectorV2';
-import { ComponentFamilyStateV2 } from '@/ui/utilities/state/component-state/types/ComponentFamilyStateV2';
-import { ComponentReadOnlySelectorV2 } from '@/ui/utilities/state/component-state/types/ComponentReadOnlySelectorV2';
-import { ComponentSelectorV2 } from '@/ui/utilities/state/component-state/types/ComponentSelectorV2';
-import { ComponentStateV2 } from '@/ui/utilities/state/component-state/types/ComponentStateV2';
-import { globalComponentInstanceContextMap } from '@/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
+import { useAvailableComponentInstanceIdOrThrow } from '@twenty-modules/ui/utilities/state/component-state/hooks/useAvailableComponentInstanceIdOrThrow';
+import { ComponentFamilyReadOnlySelectorV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyReadOnlySelectorV2';
+import { ComponentFamilySelectorV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilySelectorV2';
+import { ComponentFamilyStateV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyStateV2';
+import { ComponentReadOnlySelectorV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentReadOnlySelectorV2';
+import { ComponentSelectorV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentSelectorV2';
+import { ComponentStateV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentStateV2';
+import { globalComponentInstanceContextMap } from '@twenty-modules/ui/utilities/state/component-state/utils/globalComponentInstanceContextMap';
 import { RecoilState, RecoilValueReadOnly, SerializableParam } from 'recoil';
 
 export function useRecoilComponentCallbackStateV2<ValueType>(

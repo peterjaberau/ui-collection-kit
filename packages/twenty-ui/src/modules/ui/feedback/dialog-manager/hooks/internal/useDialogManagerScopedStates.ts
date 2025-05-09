@@ -1,5 +1,5 @@
-import { useRecoilScopedStateV2 } from '@/ui/utilities/recoil-scope/hooks/useRecoilScopedStateV2';
-import { useAvailableScopeIdOrThrow } from '@/ui/utilities/recoil-scope/scopes-internal/hooks/useAvailableScopeId';
+import { useRecoilScopedStateV2 } from '@twenty-modules/ui/utilities/recoil-scope/hooks/useRecoilScopedStateV2';
+import { useAvailableScopeIdOrThrow } from '@twenty-modules/ui/utilities/recoil-scope/scopes-internal/hooks/useAvailableScopeId';
 
 import { DialogManagerScopeInternalContext } from '../../scopes/scope-internal-context/DialogManagerScopeInternalContext';
 import { dialogInternalScopedState } from '../../states/dialogInternalScopedState';

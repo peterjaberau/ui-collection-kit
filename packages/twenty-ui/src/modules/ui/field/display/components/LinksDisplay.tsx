@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
 
-import { FieldLinksValue } from '@/object-record/record-field/types/FieldMetadata';
-import { ExpandableList } from '@/ui/layout/expandable-list/components/ExpandableList';
-import { checkUrlType } from '~/utils/checkUrlType';
+import { FieldLinksValue } from '@twenty-modules/object-record/record-field/types/FieldMetadata';
+import { ExpandableList } from '@twenty-modules/ui/layout/expandable-list/components/ExpandableList';
+import { checkUrlType } from '@twenty-ui/front/utils/checkUrlType';
 import {
   getAbsoluteUrlOrThrow,
   getUrlHostnameOrThrow,
   isDefined,
-} from 'twenty-shared/utils';
-import { LinkType, RoundedLink, SocialLink } from 'twenty-ui/navigation';
+} from '@ui-collection-kit/twenty-shared/src/utils';
+import { LinkType, RoundedLink, SocialLink } from '@twenty-ui/navigation';
 
 type LinksDisplayProps = {
   value?: FieldLinksValue;

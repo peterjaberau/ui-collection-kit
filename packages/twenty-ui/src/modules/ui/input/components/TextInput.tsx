@@ -4,11 +4,11 @@ import { Key } from 'ts-key-enum';
 import {
   TextInputV2,
   TextInputV2ComponentProps,
-} from '@/ui/input/components/TextInputV2';
-import { InputHotkeyScope } from '@/ui/input/types/InputHotkeyScope';
-import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
-import { useScopedHotkeys } from '@/ui/utilities/hotkey/hooks/useScopedHotkeys';
-import { isDefined } from 'twenty-shared/utils';
+} from '@twenty-modules/ui/input/components/TextInputV2';
+import { InputHotkeyScope } from '@twenty-modules/ui/input/types/InputHotkeyScope';
+import { usePreviousHotkeyScope } from '@twenty-modules/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
+import { useScopedHotkeys } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeys';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 export type TextInputProps = TextInputV2ComponentProps & {
   disableHotkeys?: boolean;

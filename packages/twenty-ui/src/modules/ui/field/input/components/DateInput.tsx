@@ -1,16 +1,16 @@
 import { useRef, useState } from 'react';
 
-import { useRegisterInputEvents } from '@/object-record/record-field/meta-types/input/hooks/useRegisterInputEvents';
-import { TableHotkeyScope } from '@/object-record/record-table/types/TableHotkeyScope';
+import { useRegisterInputEvents } from '@twenty-modules/object-record/record-field/meta-types/input/hooks/useRegisterInputEvents';
+import { TableHotkeyScope } from '@twenty-modules/object-record/record-table/types/TableHotkeyScope';
 import {
   DateTimePicker,
   MONTH_AND_YEAR_DROPDOWN_MONTH_SELECT_ID,
   MONTH_AND_YEAR_DROPDOWN_YEAR_SELECT_ID,
-} from '@/ui/input/components/internal/date/components/InternalDatePicker';
-import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
-import { currentHotkeyScopeState } from '@/ui/utilities/hotkey/states/internal/currentHotkeyScopeState';
+} from '@twenty-modules/ui/input/components/internal/date/components/InternalDatePicker';
+import { useDropdown } from '@twenty-modules/ui/layout/dropdown/hooks/useDropdown';
+import { currentHotkeyScopeState } from '@twenty-modules/ui/utilities/hotkey/states/internal/currentHotkeyScopeState';
 import { useRecoilCallback } from 'recoil';
-import { Nullable } from 'twenty-ui/utilities';
+import { Nullable } from '@twenty-ui/utilities';
 
 export type DateInputProps = {
   value: Nullable<Date>;

@@ -1,11 +1,11 @@
-import { TextInputV2 } from '@/ui/input/components/TextInputV2';
-import { useScopedHotkeys } from '@/ui/utilities/hotkey/hooks/useScopedHotkeys';
-import { useListenClickOutside } from '@/ui/utilities/pointer-event/hooks/useListenClickOutside';
+import { TextInputV2 } from '@twenty-modules/ui/input/components/TextInputV2';
+import { useScopedHotkeys } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeys';
+import { useListenClickOutside } from '@twenty-modules/ui/utilities/pointer-event/hooks/useListenClickOutside';
 import { FocusEvent, useRef } from 'react';
 import { Key } from 'ts-key-enum';
-import { isDefined } from 'twenty-shared/utils';
-import { IconComponent, TablerIconsProps } from 'twenty-ui/display';
-import { useHotkeyScopeOnMount } from '~/hooks/useHotkeyScopeOnMount';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { IconComponent, TablerIconsProps } from '@twenty-ui/display';
+import { useHotkeyScopeOnMount } from '@twenty-ui/front/hooks/useHotkeyScopeOnMount';
 
 type NavigationDrawerInputProps = {
   className?: string;

@@ -1,0 +1,37 @@
+import { InformationBanner } from '@twenty-modules/information-banner/components/InformationBanner';
+import { useRestoreManyRecords } from '@twenty-modules/object-record/hooks/useRestoreManyRecords';
+import styled from '@emotion/styled';
+import { IconRefresh } from '@twenty-ui/display';
+
+const StyledInformationBannerDeletedRecord = styled.div`
+  height: 40px;
+  position: relative;
+
+  &:empty {
+    height: 0;
+  }
+`;
+
+export const InformationBannerDeletedRecord = ({
+  recordId,
+  objectNameSingular,
+}: {
+  recordId: string;
+  objectNameSingular: string;
+}) => {
+  const { restoreManyRecords } = useRestoreManyRecords({
+    objectNameSingular,
+  });
+
+  return (
+    <StyledInformationBannerDeletedRecord>
+      <InformationBanner
+        variant="danger"
+        message={`This record has been deleted`}
+        buttonTitle="Restore"
+        buttonIcon={IconRefresh}
+        buttonOnClick={() => restoreManyRecords({ idsToRestore: [recordId] })}
+      />
+    </StyledInformationBannerDeletedRecord>
+  );
+};

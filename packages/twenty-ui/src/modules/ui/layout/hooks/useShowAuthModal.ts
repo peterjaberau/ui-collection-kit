@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { AppPath } from '@/types/AppPath';
-import { useIsMatchingLocation } from '~/hooks/useIsMatchingLocation';
+import { AppPath } from '@twenty-modules/types/AppPath';
+import { useIsMatchingLocation } from '@twenty-ui/front/hooks/useIsMatchingLocation';
 
 export const useShowAuthModal = () => {
   const { isMatchingLocation } = useIsMatchingLocation();

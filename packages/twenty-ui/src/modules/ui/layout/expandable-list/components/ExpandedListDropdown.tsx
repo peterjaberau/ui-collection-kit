@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import { FloatingPortal, offset, shift, useFloating } from '@floating-ui/react';
 import { ReactNode } from 'react';
 
-import { StyledDropdownContentContainer } from '@/ui/layout/dropdown/components/DropdownContent';
-import { DropdownMenu } from '@/ui/layout/dropdown/components/DropdownMenu';
-import { OverlayContainer } from '@/ui/layout/overlay/components/OverlayContainer';
-import { useListenClickOutside } from '@/ui/utilities/pointer-event/hooks/useListenClickOutside';
+import { StyledDropdownContentContainer } from '@twenty-modules/ui/layout/dropdown/components/DropdownContent';
+import { DropdownMenu } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenu';
+import { OverlayContainer } from '@twenty-modules/ui/layout/overlay/components/OverlayContainer';
+import { useListenClickOutside } from '@twenty-modules/ui/utilities/pointer-event/hooks/useListenClickOutside';
 
 type ExpandedListDropdownProps = {
   anchorElement?: HTMLElement;

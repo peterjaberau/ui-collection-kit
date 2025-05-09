@@ -1,0 +1,130 @@
+import { useEffect } from 'react';
+import { useRecoilValue } from 'recoil';
+
+import { useObjectMetadataItem } from '@twenty-modules/object-metadata/hooks/useObjectMetadataItem';
+import { useFindManyRecords } from '@twenty-modules/object-record/hooks/useFindManyRecords';
+import { turnSortsIntoOrderBy } from '@twenty-modules/object-record/object-sort-dropdown/utils/turnSortsIntoOrderBy';
+import { useSetRecordIdsForColumn } from '@twenty-modules/object-record/record-board/hooks/useSetRecordIdsForColumn';
+import { currentRecordFilterGroupsComponentState } from '@twenty-modules/object-record/record-filter-group/states/currentRecordFilterGroupsComponentState';
+import { useFilterValueDependencies } from '@twenty-modules/object-record/record-filter/hooks/useFilterValueDependencies';
+import { currentRecordFiltersComponentState } from '@twenty-modules/object-record/record-filter/states/currentRecordFiltersComponentState';
+import { computeRecordGqlOperationFilter } from '@twenty-modules/object-record/record-filter/utils/computeViewRecordGqlOperationFilter';
+import { recordGroupDefinitionFamilyState } from '@twenty-modules/object-record/record-group/states/recordGroupDefinitionFamilyState';
+import { useRecordBoardRecordGqlFields } from '@twenty-modules/object-record/record-index/hooks/useRecordBoardRecordGqlFields';
+
+import { currentRecordSortsComponentState } from '@twenty-modules/object-record/record-sort/states/currentRecordSortsComponentState';
+import { useUpsertRecordsInStore } from '@twenty-modules/object-record/record-store/hooks/useUpsertRecordsInStore';
+import { useRecoilComponentValueV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useRecoilComponentValueV2';
+import { isNonEmptyString } from '@sniptt/guards';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+
+type UseLoadRecordIndexBoardProps = {
+  objectNameSingular: string;
+  boardFieldMetadataId: string | null;
+  recordBoardId: string;
+  columnId: string;
+};
+
+export const useLoadRecordIndexBoardColumn = ({
+  objectNameSingular,
+  boardFieldMetadataId,
+  recordBoardId,
+  columnId,
+}: UseLoadRecordIndexBoardProps) => {
+  const { objectMetadataItem } = useObjectMetadataItem({
+    objectNameSingular,
+  });
+  const { setRecordIdsForColumn } = useSetRecordIdsForColumn(recordBoardId);
+  const { upsertRecords: upsertRecordsInStore } = useUpsertRecordsInStore();
+
+  const recordGroupDefinition = useRecoilValue(
+    recordGroupDefinitionFamilyState(columnId),
+  );
+
+  const currentRecordFilterGroups = useRecoilComponentValueV2(
+    currentRecordFilterGroupsComponentState,
+  );
+
+  const currentRecordFilters = useRecoilComponentValueV2(
+    currentRecordFiltersComponentState,
+  );
+
+  const currentRecordSorts = useRecoilComponentValueV2(
+    currentRecordSortsComponentState,
+  );
+
+  const { filterValueDependencies } = useFilterValueDependencies();
+
+  const requestFilters = computeRecordGqlOperationFilter({
+    filterValueDependencies,
+    recordFilters: currentRecordFilters,
+    recordFilterGroups: currentRecordFilterGroups,
+    fields: objectMetadataItem.fields,
+  });
+
+  const orderBy = turnSortsIntoOrderBy(objectMetadataItem, currentRecordSorts);
+
+  const recordGqlFields = useRecordBoardRecordGqlFields({
+    objectMetadataItem,
+    recordBoardId,
+  });
+
+  let recordIndexKanbanFieldMetadataFilter: { [x: string]: any } = {};
+
+  if (isDefined(boardFieldMetadataId)) {
+    const recordIndexKanbanFieldMetadataItem = objectMetadataItem.fields.find(
+      (field) => field.id === boardFieldMetadataId,
+    );
+
+    if (!isDefined(recordIndexKanbanFieldMetadataItem)) {
+      throw new Error('Record index kanban field metadata item not found');
+    }
+
+    if (!isNonEmptyString(recordIndexKanbanFieldMetadataItem?.name ?? '')) {
+      throw new Error('Record index kanban field metadata item name not found');
+    }
+
+    recordIndexKanbanFieldMetadataFilter = {
+      [recordIndexKanbanFieldMetadataItem.name]: isDefined(
+        recordGroupDefinition?.value,
+      )
+        ? { in: [recordGroupDefinition.value] }
+        : { is: 'NULL' },
+    };
+  }
+
+  const filter = {
+    ...requestFilters,
+    ...recordIndexKanbanFieldMetadataFilter,
+  };
+
+  const {
+    records,
+    loading,
+    fetchMoreRecords,
+    queryStateIdentifier,
+    hasNextPage,
+  } = useFindManyRecords({
+    objectNameSingular,
+    filter,
+    orderBy,
+    recordGqlFields,
+    limit: 10,
+  });
+
+  useEffect(() => {
+    setRecordIdsForColumn(columnId, records);
+  }, [records, setRecordIdsForColumn, columnId]);
+
+  useEffect(() => {
+    upsertRecordsInStore(records);
+  }, [records, upsertRecordsInStore]);
+
+  return {
+    records,
+    loading,
+    fetchMoreRecords,
+    queryStateIdentifier,
+    hasNextPage,
+  };
+};

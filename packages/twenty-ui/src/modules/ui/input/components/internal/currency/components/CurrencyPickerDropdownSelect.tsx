@@ -1,13 +1,13 @@
 import { useMemo, useState } from 'react';
 
-import { DropdownMenu } from '@/ui/layout/dropdown/components/DropdownMenu';
-import { DropdownMenuItemsContainer } from '@/ui/layout/dropdown/components/DropdownMenuItemsContainer';
-import { DropdownMenuSearchInput } from '@/ui/layout/dropdown/components/DropdownMenuSearchInput';
-import { DropdownMenuSeparator } from '@/ui/layout/dropdown/components/DropdownMenuSeparator';
+import { DropdownMenu } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenu';
+import { DropdownMenuItemsContainer } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuItemsContainer';
+import { DropdownMenuSearchInput } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuSearchInput';
+import { DropdownMenuSeparator } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuSeparator';
 
-import { CURRENCIES } from '@/settings/data-model/constants/Currencies';
-import { Currency } from '@/ui/input/components/internal/types/Currency';
-import { MenuItem, MenuItemSelectAvatar } from 'twenty-ui/navigation';
+import { CURRENCIES } from '@twenty-modules/settings/data-model/constants/Currencies';
+import { Currency } from '@twenty-modules/ui/input/components/internal/types/Currency';
+import { MenuItem, MenuItemSelectAvatar } from '@twenty-ui/navigation';
 
 export const CurrencyPickerDropdownSelect = ({
   selectedCurrency,

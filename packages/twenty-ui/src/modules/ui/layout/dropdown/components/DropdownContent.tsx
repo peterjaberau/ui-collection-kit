@@ -1,16 +1,16 @@
-import { RootStackingContextZIndices } from '@/ui/layout/constants/RootStackingContextZIndices';
-import { DropdownMenu } from '@/ui/layout/dropdown/components/DropdownMenu';
-import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
-import { useInternalHotkeyScopeManagement } from '@/ui/layout/dropdown/hooks/useInternalHotkeyScopeManagement';
-import { activeDropdownFocusIdState } from '@/ui/layout/dropdown/states/activeDropdownFocusIdState';
-import { dropdownMaxHeightComponentState } from '@/ui/layout/dropdown/states/internal/dropdownMaxHeightComponentState';
-import { dropdownMaxWidthComponentState } from '@/ui/layout/dropdown/states/internal/dropdownMaxWidthComponentState';
-import { OverlayContainer } from '@/ui/layout/overlay/components/OverlayContainer';
-import { HotkeyEffect } from '@/ui/utilities/hotkey/components/HotkeyEffect';
-import { useScopedHotkeys } from '@/ui/utilities/hotkey/hooks/useScopedHotkeys';
-import { HotkeyScope } from '@/ui/utilities/hotkey/types/HotkeyScope';
-import { useListenClickOutside } from '@/ui/utilities/pointer-event/hooks/useListenClickOutside';
-import { useRecoilComponentValueV2 } from '@/ui/utilities/state/component-state/hooks/useRecoilComponentValueV2';
+import { RootStackingContextZIndices } from '@twenty-modules/ui/layout/constants/RootStackingContextZIndices';
+import { DropdownMenu } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenu';
+import { useDropdown } from '@twenty-modules/ui/layout/dropdown/hooks/useDropdown';
+import { useInternalHotkeyScopeManagement } from '@twenty-modules/ui/layout/dropdown/hooks/useInternalHotkeyScopeManagement';
+import { activeDropdownFocusIdState } from '@twenty-modules/ui/layout/dropdown/states/activeDropdownFocusIdState';
+import { dropdownMaxHeightComponentState } from '@twenty-modules/ui/layout/dropdown/states/internal/dropdownMaxHeightComponentState';
+import { dropdownMaxWidthComponentState } from '@twenty-modules/ui/layout/dropdown/states/internal/dropdownMaxWidthComponentState';
+import { OverlayContainer } from '@twenty-modules/ui/layout/overlay/components/OverlayContainer';
+import { HotkeyEffect } from '@twenty-modules/ui/utilities/hotkey/components/HotkeyEffect';
+import { useScopedHotkeys } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeys';
+import { HotkeyScope } from '@twenty-modules/ui/utilities/hotkey/types/HotkeyScope';
+import { useListenClickOutside } from '@twenty-modules/ui/utilities/pointer-event/hooks/useListenClickOutside';
+import { useRecoilComponentValueV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useRecoilComponentValueV2';
 import styled from '@emotion/styled';
 import {
   FloatingPortal,

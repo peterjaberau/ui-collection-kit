@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import { useMemo, useState } from 'react';
 
-import { Country } from '@/ui/input/components/internal/types/Country';
-import { DropdownMenuItemsContainer } from '@/ui/layout/dropdown/components/DropdownMenuItemsContainer';
-import { DropdownMenuSearchInput } from '@/ui/layout/dropdown/components/DropdownMenuSearchInput';
-import { DropdownMenuSeparator } from '@/ui/layout/dropdown/components/DropdownMenuSeparator';
+import { Country } from '@twenty-modules/ui/input/components/internal/types/Country';
+import { DropdownMenuItemsContainer } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuItemsContainer';
+import { DropdownMenuSearchInput } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuSearchInput';
+import { DropdownMenuSeparator } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuSeparator';
 
 import 'react-phone-number-input/style.css';
-import { MenuItem, MenuItemSelectAvatar } from 'twenty-ui/navigation';
+import { MenuItem, MenuItemSelectAvatar } from '@twenty-ui/navigation';
 
 const StyledIconContainer = styled.div`
   align-items: center;

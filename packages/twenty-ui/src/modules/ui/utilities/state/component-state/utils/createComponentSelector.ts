@@ -1,8 +1,8 @@
 import { selectorFamily } from 'recoil';
 
-import { RecoilComponentStateKey } from '@/ui/utilities/state/component-state/types/RecoilComponentStateKey';
-import { SelectorGetter } from '@/ui/utilities/state/types/SelectorGetter';
-import { SelectorSetter } from '@/ui/utilities/state/types/SelectorSetter';
+import { RecoilComponentStateKey } from '@twenty-modules/ui/utilities/state/component-state/types/RecoilComponentStateKey';
+import { SelectorGetter } from '@twenty-modules/ui/utilities/state/types/SelectorGetter';
+import { SelectorSetter } from '@twenty-modules/ui/utilities/state/types/SelectorSetter';
 
 export const createComponentSelector = <ValueType>({
   key,

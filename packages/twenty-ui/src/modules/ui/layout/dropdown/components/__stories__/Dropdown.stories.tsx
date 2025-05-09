@@ -3,17 +3,17 @@ import { Decorator, Meta, StoryObj } from '@storybook/react';
 import { PlayFunction } from '@storybook/types';
 import { useState } from 'react';
 
-import { DropdownMenuSkeletonItem } from '@/ui/input/relation-picker/components/skeletons/DropdownMenuSkeletonItem';
+import { DropdownMenuSkeletonItem } from '@twenty-modules/ui/input/relation-picker/components/skeletons/DropdownMenuSkeletonItem';
 
-import { DropdownMenuHeaderLeftComponent } from '@/ui/layout/dropdown/components/DropdownMenuHeader/internal/DropdownMenuHeaderLeftComponent';
-import { Avatar, IconChevronLeft } from 'twenty-ui/display';
-import { Button } from 'twenty-ui/input';
+import { DropdownMenuHeaderLeftComponent } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuHeader/internal/DropdownMenuHeaderLeftComponent';
+import { Avatar, IconChevronLeft } from '@twenty-ui/display';
+import { Button } from '@twenty-ui/input';
 import {
   MenuItem,
   MenuItemMultiSelectAvatar,
   MenuItemSelectAvatar,
-} from 'twenty-ui/navigation';
-import { ComponentDecorator } from 'twenty-ui/testing';
+} from '@twenty-ui/navigation';
+import { ComponentDecorator } from '@twenty-ui/testing';
 import { Dropdown } from '../Dropdown';
 import { DropdownMenuHeader } from '../DropdownMenuHeader/DropdownMenuHeader';
 import { DropdownMenuInput } from '../DropdownMenuInput';

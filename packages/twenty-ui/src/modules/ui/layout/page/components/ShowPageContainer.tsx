@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { ReactElement } from 'react';
 
-import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
-import { ScrollWrapper } from '@/ui/utilities/scroll/components/ScrollWrapper';
+import { useIsMobile } from '@twenty-modules/ui/utilities/responsive/hooks/useIsMobile';
+import { ScrollWrapper } from '@twenty-modules/ui/utilities/scroll/components/ScrollWrapper';
 
 const StyledOuterContainer = styled.div`
   display: flex;

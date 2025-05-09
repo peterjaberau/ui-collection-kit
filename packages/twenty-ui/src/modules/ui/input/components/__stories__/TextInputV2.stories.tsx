@@ -4,8 +4,8 @@ import { useState } from 'react';
 import {
   TextInputV2,
   TextInputV2ComponentProps,
-} from '@/ui/input/components/TextInputV2';
-import { ComponentDecorator } from 'twenty-ui/testing';
+} from '@twenty-modules/ui/input/components/TextInputV2';
+import { ComponentDecorator } from '@twenty-ui/testing';
 
 type RenderProps = TextInputV2ComponentProps;
 

@@ -6,7 +6,7 @@ import { useTheme } from '@emotion/react';
 import { RefObject } from 'react';
 
 import { useDragSelect } from '../hooks/useDragSelect';
-import { RGBA } from 'twenty-ui/theme';
+import { RGBA } from '@twenty-ui/theme';
 
 type DragSelectProps = {
   dragSelectable: RefObject<HTMLElement>;

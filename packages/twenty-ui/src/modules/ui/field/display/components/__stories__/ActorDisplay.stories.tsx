@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ComponentWithRouterDecorator } from '~/testing/decorators/ComponentWithRouterDecorator';
+import { ComponentWithRouterDecorator } from '@twenty-ui/front/testing/decorators/ComponentWithRouterDecorator';
 
-import { ActorDisplay } from '@/ui/field/display/components/ActorDisplay';
-import { CatalogDecorator } from 'twenty-ui/testing';
+import { ActorDisplay } from '@twenty-modules/ui/field/display/components/ActorDisplay';
+import { CatalogDecorator } from '@twenty-ui/testing';
 
 const meta: Meta = {
   title: 'UI/Display/ActorDisplay',

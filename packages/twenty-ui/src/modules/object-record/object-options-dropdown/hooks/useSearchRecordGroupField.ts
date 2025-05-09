@@ -1,0 +1,29 @@
+import { objectOptionsDropdownSearchInputComponentState } from '@twenty-modules/object-record/object-options-dropdown/states/objectOptionsDropdownSearchInputComponentState';
+import { useRecordIndexContextOrThrow } from '@twenty-modules/object-record/record-index/contexts/RecordIndexContext';
+import { useRecoilComponentStateV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useRecoilComponentStateV2';
+import { useMemo } from 'react';
+import { FieldMetadataType } from '@twenty-ui/front/generated-metadata/graphql';
+
+export const useSearchRecordGroupField = () => {
+  const { objectMetadataItem } = useRecordIndexContextOrThrow();
+
+  const [recordGroupFieldSearchInput, setRecordGroupFieldSearchInput] =
+    useRecoilComponentStateV2(objectOptionsDropdownSearchInputComponentState);
+
+  const filteredRecordGroupFieldMetadataItems = useMemo(() => {
+    const searchInputLowerCase =
+      recordGroupFieldSearchInput.toLocaleLowerCase();
+
+    return objectMetadataItem.fields.filter(
+      (field) =>
+        field.type === FieldMetadataType.SELECT &&
+        field.label.toLocaleLowerCase().includes(searchInputLowerCase),
+    );
+  }, [objectMetadataItem.fields, recordGroupFieldSearchInput]);
+
+  return {
+    recordGroupFieldSearchInput,
+    setRecordGroupFieldSearchInput,
+    filteredRecordGroupFieldMetadataItems,
+  };
+};

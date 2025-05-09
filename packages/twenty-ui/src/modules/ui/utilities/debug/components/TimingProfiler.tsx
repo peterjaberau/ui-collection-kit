@@ -1,6 +1,6 @@
 import { Profiler, ProfilerOnRenderCallback } from 'react';
 
-import { logDebug } from '~/utils/logDebug';
+import { logDebug } from '@twenty-ui/front/utils/logDebug';
 
 type TimingProfilerProps = {
   id: string;

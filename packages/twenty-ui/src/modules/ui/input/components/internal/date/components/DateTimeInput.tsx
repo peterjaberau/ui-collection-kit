@@ -3,16 +3,16 @@ import styled from '@emotion/styled';
 import { useCallback, useEffect, useState } from 'react';
 import { useIMask } from 'react-imask';
 
-import { DATE_BLOCKS } from '@/ui/input/components/internal/date/constants/DateBlocks';
-import { DATE_MASK } from '@/ui/input/components/internal/date/constants/DateMask';
-import { DATE_TIME_BLOCKS } from '@/ui/input/components/internal/date/constants/DateTimeBlocks';
-import { DATE_TIME_MASK } from '@/ui/input/components/internal/date/constants/DateTimeMask';
-import { MAX_DATE } from '@/ui/input/components/internal/date/constants/MaxDate';
-import { MIN_DATE } from '@/ui/input/components/internal/date/constants/MinDate';
-import { parseDateToString } from '@/ui/input/components/internal/date/utils/parseDateToString';
-import { parseStringToDate } from '@/ui/input/components/internal/date/utils/parseStringToDate';
+import { DATE_BLOCKS } from '@twenty-modules/ui/input/components/internal/date/constants/DateBlocks';
+import { DATE_MASK } from '@twenty-modules/ui/input/components/internal/date/constants/DateMask';
+import { DATE_TIME_BLOCKS } from '@twenty-modules/ui/input/components/internal/date/constants/DateTimeBlocks';
+import { DATE_TIME_MASK } from '@twenty-modules/ui/input/components/internal/date/constants/DateTimeMask';
+import { MAX_DATE } from '@twenty-modules/ui/input/components/internal/date/constants/MaxDate';
+import { MIN_DATE } from '@twenty-modules/ui/input/components/internal/date/constants/MinDate';
+import { parseDateToString } from '@twenty-modules/ui/input/components/internal/date/utils/parseDateToString';
+import { parseStringToDate } from '@twenty-modules/ui/input/components/internal/date/utils/parseStringToDate';
 import { isNull } from '@sniptt/guards';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 const StyledInputContainer = styled.div`
   align-items: center;

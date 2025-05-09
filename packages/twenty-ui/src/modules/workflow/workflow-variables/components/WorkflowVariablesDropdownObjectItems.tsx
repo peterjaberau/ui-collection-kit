@@ -1,0 +1,149 @@
+import { DropdownMenuHeader } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuHeader/DropdownMenuHeader';
+import { DropdownMenuItemsContainer } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuItemsContainer';
+import { DropdownMenuSearchInput } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuSearchInput';
+import { DropdownMenuSeparator } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuSeparator';
+import { StepOutputSchema } from '@twenty-modules/workflow/workflow-variables/types/StepOutputSchema';
+import { getCurrentSubStepFromPath } from '@twenty-modules/workflow/workflow-variables/utils/getCurrentSubStepFromPath';
+import { getStepHeaderLabel } from '@twenty-modules/workflow/workflow-variables/utils/getStepHeaderLabel';
+import { isBaseOutputSchema } from '@twenty-modules/workflow/workflow-variables/utils/isBaseOutputSchema';
+import { isRecordOutputSchema } from '@twenty-modules/workflow/workflow-variables/utils/isRecordOutputSchema';
+
+import { DropdownMenuHeaderLeftComponent } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuHeader/internal/DropdownMenuHeaderLeftComponent';
+import { useState } from 'react';
+import {
+  IconChevronLeft,
+  OverflowingTextWithTooltip,
+  useIcons,
+} from '@twenty-ui/display';
+import { MenuItemSelect } from '@twenty-ui/navigation';
+
+type WorkflowVariablesDropdownObjectItemsProps = {
+  step: StepOutputSchema;
+  onSelect: (value: string) => void;
+  onBack: () => void;
+};
+
+export const WorkflowVariablesDropdownObjectItems = ({
+  step,
+  onSelect,
+  onBack,
+}: WorkflowVariablesDropdownObjectItemsProps) => {
+  const [currentPath, setCurrentPath] = useState<string[]>([]);
+  const [searchInputValue, setSearchInputValue] = useState('');
+  const { getIcon } = useIcons();
+
+  const getDisplayedSubStepFields = () => {
+    const currentSubStep = getCurrentSubStepFromPath(step, currentPath);
+
+    if (isRecordOutputSchema(currentSubStep)) {
+      return currentSubStep.fields;
+    } else if (isBaseOutputSchema(currentSubStep)) {
+      return currentSubStep;
+    }
+  };
+
+  const getDisplayedSubStepObject = () => {
+    const currentSubStep = getCurrentSubStepFromPath(step, currentPath);
+
+    if (!isRecordOutputSchema(currentSubStep)) {
+      return;
+    }
+
+    return currentSubStep.object;
+  };
+
+  const handleSelectObject = () => {
+    const currentSubStep = getCurrentSubStepFromPath(step, currentPath);
+
+    if (!isRecordOutputSchema(currentSubStep)) {
+      return;
+    }
+
+    onSelect(
+      `{{${step.id}.${[...currentPath, currentSubStep.object.fieldIdName].join('.')}}}`,
+    );
+  };
+
+  const handleSelectField = (key: string) => {
+    setCurrentPath([...currentPath, key]);
+    setSearchInputValue('');
+  };
+
+  const goBack = () => {
+    if (currentPath.length === 0) {
+      onBack();
+    } else {
+      setCurrentPath(currentPath.slice(0, -1));
+    }
+  };
+
+  const displayedSubStepObject = getDisplayedSubStepObject();
+
+  const shouldDisplaySubStepObject = searchInputValue
+    ? displayedSubStepObject?.label &&
+      displayedSubStepObject.label
+        .toLowerCase()
+        .includes(searchInputValue.toLowerCase())
+    : true;
+
+  const displayedFields = getDisplayedSubStepFields();
+  const options = displayedFields ? Object.entries(displayedFields) : [];
+
+  const filteredOptions = searchInputValue
+    ? options.filter(
+        ([_, value]) =>
+          value.label &&
+          value.label.toLowerCase().includes(searchInputValue.toLowerCase()),
+      )
+    : options;
+
+  return (
+    <>
+      <DropdownMenuHeader
+        StartComponent={
+          <DropdownMenuHeaderLeftComponent
+            onClick={goBack}
+            Icon={IconChevronLeft}
+          />
+        }
+      >
+        <OverflowingTextWithTooltip
+          text={getStepHeaderLabel(step, currentPath)}
+        />
+      </DropdownMenuHeader>
+      <DropdownMenuSearchInput
+        autoFocus
+        value={searchInputValue}
+        onChange={(event) => setSearchInputValue(event.target.value)}
+      />
+      <DropdownMenuSeparator />
+      <DropdownMenuItemsContainer hasMaxHeight>
+        {shouldDisplaySubStepObject && displayedSubStepObject?.label && (
+          <MenuItemSelect
+            selected={false}
+            focused={false}
+            onClick={handleSelectObject}
+            text={displayedSubStepObject.label}
+            hasSubMenu={false}
+            LeftIcon={
+              displayedSubStepObject.icon
+                ? getIcon(displayedSubStepObject.icon)
+                : undefined
+            }
+          />
+        )}
+        {filteredOptions.map(([key, value]) => (
+          <MenuItemSelect
+            key={key}
+            selected={false}
+            focused={false}
+            onClick={() => handleSelectField(key)}
+            text={value.label || key}
+            hasSubMenu={!value.isLeaf}
+            LeftIcon={value.icon ? getIcon(value.icon) : undefined}
+          />
+        ))}
+      </DropdownMenuItemsContainer>
+    </>
+  );
+};

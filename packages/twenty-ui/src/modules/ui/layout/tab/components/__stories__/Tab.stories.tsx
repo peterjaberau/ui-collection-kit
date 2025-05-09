@@ -5,8 +5,8 @@ import {
   CatalogDecorator,
   CatalogStory,
   ComponentDecorator,
-} from 'twenty-ui/testing';
-import { IconCheckbox } from 'twenty-ui/display';
+} from '@twenty-ui/testing';
+import { IconCheckbox } from '@twenty-ui/display';
 
 const meta: Meta<typeof Tab> = {
   title: 'UI/Layout/Tab/Tab',

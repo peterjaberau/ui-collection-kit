@@ -1,0 +1,214 @@
+import { useApolloClient } from '@apollo/client';
+import { useCallback } from 'react';
+
+import { triggerCreateRecordsOptimisticEffect } from '@twenty-modules/apollo/optimistic-effect/utils/triggerCreateRecordsOptimisticEffect';
+import { triggerDestroyRecordsOptimisticEffect } from '@twenty-modules/apollo/optimistic-effect/utils/triggerDestroyRecordsOptimisticEffect';
+import { triggerUpdateRecordOptimisticEffect } from '@twenty-modules/apollo/optimistic-effect/utils/triggerUpdateRecordOptimisticEffect';
+import { useObjectMetadataItem } from '@twenty-modules/object-metadata/hooks/useObjectMetadataItem';
+import { useObjectMetadataItems } from '@twenty-modules/object-metadata/hooks/useObjectMetadataItems';
+import { CoreObjectNameSingular } from '@twenty-modules/object-metadata/types/CoreObjectNameSingular';
+import { useGetRecordFromCache } from '@twenty-modules/object-record/cache/hooks/useGetRecordFromCache';
+import { useCreateOneRecordMutation } from '@twenty-modules/object-record/hooks/useCreateOneRecordMutation';
+import { useDestroyOneRecordMutation } from '@twenty-modules/object-record/hooks/useDestroyOneRecordMutation';
+import { useUpdateOneRecordMutation } from '@twenty-modules/object-record/hooks/useUpdateOneRecordMutation';
+import { GraphQLView } from '@twenty-modules/views/types/GraphQLView';
+import { ViewFilterGroup } from '@twenty-modules/views/types/ViewFilterGroup';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+
+export const usePersistViewFilterGroupRecords = () => {
+  const { objectMetadataItem } = useObjectMetadataItem({
+    objectNameSingular: CoreObjectNameSingular.ViewFilterGroup,
+  });
+
+  const getRecordFromCache = useGetRecordFromCache({
+    objectNameSingular: CoreObjectNameSingular.ViewFilterGroup,
+  });
+
+  const { destroyOneRecordMutation } = useDestroyOneRecordMutation({
+    objectNameSingular: CoreObjectNameSingular.ViewFilterGroup,
+  });
+
+  const { createOneRecordMutation } = useCreateOneRecordMutation({
+    objectNameSingular: CoreObjectNameSingular.ViewFilterGroup,
+  });
+
+  const { updateOneRecordMutation } = useUpdateOneRecordMutation({
+    objectNameSingular: CoreObjectNameSingular.ViewFilterGroup,
+  });
+
+  const { objectMetadataItems } = useObjectMetadataItems();
+
+  const apolloClient = useApolloClient();
+
+  const createViewFilterGroupRecord = useCallback(
+    async (viewFilterGroup: ViewFilterGroup, view: GraphQLView) => {
+      const result = await apolloClient.mutate<{
+        createViewFilterGroup: ViewFilterGroup;
+      }>({
+        mutation: createOneRecordMutation,
+        variables: {
+          input: {
+            id: viewFilterGroup.id,
+            viewId: view.id,
+            parentViewFilterGroupId: viewFilterGroup.parentViewFilterGroupId,
+            logicalOperator: viewFilterGroup.logicalOperator,
+            positionInViewFilterGroup:
+              viewFilterGroup.positionInViewFilterGroup,
+          },
+        },
+        update: (cache, { data }) => {
+          const record = data?.createViewFilterGroup;
+          if (!isDefined(record)) return;
+
+          triggerCreateRecordsOptimisticEffect({
+            cache,
+            objectMetadataItem,
+            recordsToCreate: [record],
+            objectMetadataItems,
+          });
+        },
+      });
+
+      if (!result.data) {
+        throw new Error('Failed to create view filter group');
+      }
+
+      return { newRecordId: result.data.createViewFilterGroup.id };
+    },
+    [
+      apolloClient,
+      createOneRecordMutation,
+      objectMetadataItem,
+      objectMetadataItems,
+    ],
+  );
+
+  const createViewFilterGroupRecords = useCallback(
+    async (viewFilterGroupsToCreate: ViewFilterGroup[], view: GraphQLView) => {
+      if (!viewFilterGroupsToCreate.length) return [];
+
+      const oldToNewId = new Map<string, string>();
+
+      for (const viewFilterGroupToCreate of viewFilterGroupsToCreate) {
+        const newParentViewFilterGroupId = isDefined(
+          viewFilterGroupToCreate.parentViewFilterGroupId,
+        )
+          ? (oldToNewId.get(viewFilterGroupToCreate.parentViewFilterGroupId) ??
+            viewFilterGroupToCreate.parentViewFilterGroupId)
+          : undefined;
+
+        const { newRecordId } = await createViewFilterGroupRecord(
+          {
+            ...viewFilterGroupToCreate,
+            parentViewFilterGroupId: newParentViewFilterGroupId,
+          },
+          view,
+        );
+
+        oldToNewId.set(viewFilterGroupToCreate.id, newRecordId);
+      }
+
+      const newRecordIds = viewFilterGroupsToCreate.map((viewFilterGroup) => {
+        const newId = oldToNewId.get(viewFilterGroup.id);
+        if (!newId) {
+          throw new Error('Failed to create view filter group');
+        }
+        return newId;
+      });
+
+      return newRecordIds;
+    },
+    [createViewFilterGroupRecord],
+  );
+
+  const updateViewFilterGroupRecords = useCallback(
+    (viewFilterGroupsToUpdate: ViewFilterGroup[]) => {
+      if (!viewFilterGroupsToUpdate.length) return;
+      return Promise.all(
+        viewFilterGroupsToUpdate.map((viewFilterGroup) =>
+          apolloClient.mutate<{ updateViewFilterGroup: ViewFilterGroup }>({
+            mutation: updateOneRecordMutation,
+            variables: {
+              idToUpdate: viewFilterGroup.id,
+              input: {
+                parentViewFilterGroupId:
+                  viewFilterGroup.parentViewFilterGroupId,
+                logicalOperator: viewFilterGroup.logicalOperator,
+                positionInViewFilterGroup:
+                  viewFilterGroup.positionInViewFilterGroup,
+              },
+            },
+            update: (cache, { data }) => {
+              const record = data?.updateViewFilterGroup;
+              if (!isDefined(record)) return;
+
+              const cachedRecord = getRecordFromCache<ViewFilterGroup>(
+                record.id,
+                cache,
+              );
+              if (!isDefined(cachedRecord)) return;
+
+              triggerUpdateRecordOptimisticEffect({
+                cache,
+                objectMetadataItem,
+                currentRecord: cachedRecord,
+                updatedRecord: record,
+                objectMetadataItems,
+              });
+            },
+          }),
+        ),
+      );
+    },
+    [
+      apolloClient,
+      getRecordFromCache,
+      objectMetadataItem,
+      objectMetadataItems,
+      updateOneRecordMutation,
+    ],
+  );
+
+  const deleteViewFilterGroupRecords = useCallback(
+    (viewFilterGroupIdsToDelete: string[]) => {
+      if (!viewFilterGroupIdsToDelete.length) return;
+      return Promise.all(
+        viewFilterGroupIdsToDelete.map((viewFilterGroupId) =>
+          apolloClient.mutate<{ destroyViewFilterGroup: ViewFilterGroup }>({
+            mutation: destroyOneRecordMutation,
+            variables: {
+              idToDestroy: viewFilterGroupId,
+            },
+            update: (cache, { data }) => {
+              const record = data?.destroyViewFilterGroup;
+              if (!isDefined(record)) return;
+
+              const cachedRecord = getRecordFromCache(record.id, cache);
+              if (!isDefined(cachedRecord)) return;
+
+              triggerDestroyRecordsOptimisticEffect({
+                cache,
+                objectMetadataItem,
+                recordsToDestroy: [cachedRecord],
+                objectMetadataItems,
+              });
+            },
+          }),
+        ),
+      );
+    },
+    [
+      apolloClient,
+      destroyOneRecordMutation,
+      getRecordFromCache,
+      objectMetadataItem,
+      objectMetadataItems,
+    ],
+  );
+
+  return {
+    createViewFilterGroupRecords,
+    updateViewFilterGroupRecords,
+    deleteViewFilterGroupRecords,
+  };
+};

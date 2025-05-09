@@ -1,7 +1,7 @@
 import { SerializableParam, useRecoilValue } from 'recoil';
 
-import { useAvailableScopeIdOrThrow } from '@/ui/utilities/recoil-scope/scopes-internal/hooks/useAvailableScopeId';
-import { ComponentFamilyState } from '@/ui/utilities/state/component-state/types/ComponentFamilyState';
+import { useAvailableScopeIdOrThrow } from '@twenty-modules/ui/utilities/recoil-scope/scopes-internal/hooks/useAvailableScopeId';
+import { ComponentFamilyState } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyState';
 
 export const useRecoilComponentFamilyValue = <
   StateType,

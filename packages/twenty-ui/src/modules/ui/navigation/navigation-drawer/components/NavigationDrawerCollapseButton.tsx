@@ -1,11 +1,11 @@
-import { isNavigationDrawerExpandedState } from '@/ui/navigation/states/isNavigationDrawerExpanded';
+import { isNavigationDrawerExpandedState } from '@twenty-modules/ui/navigation/states/isNavigationDrawerExpanded';
 import styled from '@emotion/styled';
 import { useSetRecoilState } from 'recoil';
 import {
   IconLayoutSidebarLeftCollapse,
   IconLayoutSidebarRightCollapse,
-} from 'twenty-ui/display';
-import { LightIconButton } from 'twenty-ui/input';
+} from '@twenty-ui/display';
+import { LightIconButton } from '@twenty-ui/input';
 
 const StyledCollapseButton = styled.div`
   align-items: center;

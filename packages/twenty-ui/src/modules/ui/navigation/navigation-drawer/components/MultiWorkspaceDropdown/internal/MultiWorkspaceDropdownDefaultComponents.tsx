@@ -1,24 +1,24 @@
-import { DEFAULT_WORKSPACE_LOGO } from '@/ui/navigation/navigation-drawer/constants/DefaultWorkspaceLogo';
+import { DEFAULT_WORKSPACE_LOGO } from '@twenty-modules/ui/navigation/navigation-drawer/constants/DefaultWorkspaceLogo';
 
-import { useAuth } from '@/auth/hooks/useAuth';
-import { currentWorkspaceState } from '@/auth/states/currentWorkspaceState';
-import { Workspaces, workspacesState } from '@/auth/states/workspaces';
-import { useBuildWorkspaceUrl } from '@/domain-manager/hooks/useBuildWorkspaceUrl';
-import { useRedirectToWorkspaceDomain } from '@/domain-manager/hooks/useRedirectToWorkspaceDomain';
-import { AppPath } from '@/types/AppPath';
-import { SettingsPath } from '@/types/SettingsPath';
-import { SnackBarVariant } from '@/ui/feedback/snack-bar-manager/components/SnackBar';
-import { useSnackBar } from '@/ui/feedback/snack-bar-manager/hooks/useSnackBar';
-import { SelectHotkeyScope } from '@/ui/input/types/SelectHotkeyScope';
-import { Dropdown } from '@/ui/layout/dropdown/components/Dropdown';
-import { DropdownMenuHeader } from '@/ui/layout/dropdown/components/DropdownMenuHeader/DropdownMenuHeader';
-import { DropdownMenuHeaderLeftComponent } from '@/ui/layout/dropdown/components/DropdownMenuHeader/internal/DropdownMenuHeaderLeftComponent';
-import { DropdownMenuItemsContainer } from '@/ui/layout/dropdown/components/DropdownMenuItemsContainer';
-import { DropdownMenuSeparator } from '@/ui/layout/dropdown/components/DropdownMenuSeparator';
-import { useDropdown } from '@/ui/layout/dropdown/hooks/useDropdown';
-import { MULTI_WORKSPACE_DROPDOWN_ID } from '@/ui/navigation/navigation-drawer/constants/MultiWorkspaceDropdownId';
-import { multiWorkspaceDropdownState } from '@/ui/navigation/navigation-drawer/states/multiWorkspaceDropdownState';
-import { useColorScheme } from '@/ui/theme/hooks/useColorScheme';
+import { useAuth } from '@twenty-modules/auth/hooks/useAuth';
+import { currentWorkspaceState } from '@twenty-modules/auth/states/currentWorkspaceState';
+import { Workspaces, workspacesState } from '@twenty-modules/auth/states/workspaces';
+import { useBuildWorkspaceUrl } from '@twenty-modules/domain-manager/hooks/useBuildWorkspaceUrl';
+import { useRedirectToWorkspaceDomain } from '@twenty-modules/domain-manager/hooks/useRedirectToWorkspaceDomain';
+import { AppPath } from '@twenty-modules/types/AppPath';
+import { SettingsPath } from '@twenty-modules/types/SettingsPath';
+import { SnackBarVariant } from '@twenty-modules/ui/feedback/snack-bar-manager/components/SnackBar';
+import { useSnackBar } from '@twenty-modules/ui/feedback/snack-bar-manager/hooks/useSnackBar';
+import { SelectHotkeyScope } from '@twenty-modules/ui/input/types/SelectHotkeyScope';
+import { Dropdown } from '@twenty-modules/ui/layout/dropdown/components/Dropdown';
+import { DropdownMenuHeader } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuHeader/DropdownMenuHeader';
+import { DropdownMenuHeaderLeftComponent } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuHeader/internal/DropdownMenuHeaderLeftComponent';
+import { DropdownMenuItemsContainer } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuItemsContainer';
+import { DropdownMenuSeparator } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuSeparator';
+import { useDropdown } from '@twenty-modules/ui/layout/dropdown/hooks/useDropdown';
+import { MULTI_WORKSPACE_DROPDOWN_ID } from '@twenty-modules/ui/navigation/navigation-drawer/constants/MultiWorkspaceDropdownId';
+import { multiWorkspaceDropdownState } from '@twenty-modules/ui/navigation/navigation-drawer/states/multiWorkspaceDropdownState';
+import { useColorScheme } from '@twenty-modules/ui/theme/hooks/useColorScheme';
 import styled from '@emotion/styled';
 import { useLingui } from '@lingui/react/macro';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
@@ -29,16 +29,16 @@ import {
   IconPlus,
   IconSwitchHorizontal,
   IconUserPlus,
-} from 'twenty-ui/display';
-import { LightIconButton } from 'twenty-ui/input';
+} from '@twenty-ui/display';
+import { LightIconButton } from '@twenty-ui/input';
 import {
   MenuItem,
   MenuItemSelectAvatar,
   UndecoratedLink,
-} from 'twenty-ui/navigation';
-import { useSignUpInNewWorkspaceMutation } from '~/generated/graphql';
-import { getWorkspaceUrl } from '~/utils/getWorkspaceUrl';
-import { getSettingsPath } from '~/utils/navigation/getSettingsPath';
+} from '@twenty-ui/navigation';
+import { useSignUpInNewWorkspaceMutation } from '@twenty-ui/front/generated/graphql';
+import { getWorkspaceUrl } from '@twenty-ui/front/utils/getWorkspaceUrl';
+import { getSettingsPath } from '@twenty-ui/front/utils/navigation/getSettingsPath';
 
 const StyledDescription = styled.div`
   color: ${({ theme }) => theme.font.color.light};

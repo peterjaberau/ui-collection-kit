@@ -1,5 +1,5 @@
-import { ScrollWrapperComponentInstanceContext } from '@/ui/utilities/scroll/states/contexts/ScrollWrapperComponentInstanceContext';
-import { useAvailableComponentInstanceIdOrThrow } from '@/ui/utilities/state/component-state/hooks/useAvailableComponentInstanceIdOrThrow';
+import { ScrollWrapperComponentInstanceContext } from '@twenty-modules/ui/utilities/scroll/states/contexts/ScrollWrapperComponentInstanceContext';
+import { useAvailableComponentInstanceIdOrThrow } from '@twenty-modules/ui/utilities/state/component-state/hooks/useAvailableComponentInstanceIdOrThrow';
 
 export const useScrollWrapperElement = (targetComponentInstanceId?: string) => {
   const instanceId = useAvailableComponentInstanceIdOrThrow(

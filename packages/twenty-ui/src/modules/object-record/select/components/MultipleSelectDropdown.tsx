@@ -1,0 +1,126 @@
+import { Key } from 'ts-key-enum';
+
+import { StyledMultipleSelectDropdownAvatarChip } from '@twenty-modules/object-record/select/components/StyledMultipleSelectDropdownAvatarChip';
+import { SelectableItem } from '@twenty-modules/object-record/select/types/SelectableItem';
+import { DropdownMenuSkeletonItem } from '@twenty-modules/ui/input/relation-picker/components/skeletons/DropdownMenuSkeletonItem';
+import { DropdownMenuItemsContainer } from '@twenty-modules/ui/layout/dropdown/components/DropdownMenuItemsContainer';
+import { useDropdown } from '@twenty-modules/ui/layout/dropdown/hooks/useDropdown';
+import { SelectableList } from '@twenty-modules/ui/layout/selectable-list/components/SelectableList';
+import { SelectableListItem } from '@twenty-modules/ui/layout/selectable-list/components/SelectableListItem';
+import { useSelectableList } from '@twenty-modules/ui/layout/selectable-list/hooks/useSelectableList';
+import { selectedItemIdComponentState } from '@twenty-modules/ui/layout/selectable-list/states/selectedItemIdComponentState';
+import { useScopedHotkeys } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeys';
+import { useRecoilComponentValueV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useRecoilComponentValueV2';
+import { MenuItem, MenuItemMultiSelectAvatar } from '@twenty-ui/navigation';
+
+export const MultipleSelectDropdown = ({
+  selectableListId,
+  hotkeyScope,
+  itemsToSelect,
+  loadingItems,
+  filteredSelectedItems,
+  onChange,
+  searchFilter,
+}: {
+  selectableListId: string;
+  hotkeyScope: string;
+  itemsToSelect: SelectableItem[];
+  filteredSelectedItems: SelectableItem[];
+  selectedItems: SelectableItem[];
+  searchFilter: string;
+  onChange: (
+    changedItemToSelect: SelectableItem,
+    newSelectedValue: boolean,
+  ) => void;
+  loadingItems: boolean;
+}) => {
+  const { closeDropdown } = useDropdown();
+
+  const { resetSelectedItem } = useSelectableList(selectableListId);
+
+  const selectedItemId = useRecoilComponentValueV2(
+    selectedItemIdComponentState,
+    selectableListId,
+  );
+
+  const handleItemSelectChange = (
+    itemToSelect: SelectableItem,
+    newSelectedValue: boolean,
+  ) => {
+    onChange(
+      {
+        ...itemToSelect,
+        isSelected: newSelectedValue,
+      },
+      newSelectedValue,
+    );
+  };
+
+  const itemsInDropdown = [
+    ...(filteredSelectedItems ?? []),
+    ...(itemsToSelect ?? []),
+  ];
+
+  useScopedHotkeys(
+    [Key.Escape],
+    () => {
+      closeDropdown();
+      resetSelectedItem();
+    },
+    hotkeyScope,
+    [closeDropdown, resetSelectedItem],
+  );
+
+  const showNoResult =
+    itemsToSelect?.length === 0 &&
+    searchFilter !== '' &&
+    filteredSelectedItems?.length === 0 &&
+    !loadingItems;
+
+  const selectableItemIds = itemsInDropdown.map((item) => item.id);
+
+  return (
+    <SelectableList
+      selectableListInstanceId={selectableListId}
+      selectableItemIdArray={selectableItemIds}
+      hotkeyScope={hotkeyScope}
+    >
+      <DropdownMenuItemsContainer hasMaxHeight>
+        {itemsInDropdown?.map((item) => {
+          return (
+            <SelectableListItem
+              itemId={item.id}
+              onEnter={() => {
+                resetSelectedItem();
+                handleItemSelectChange(item, !item.isSelected);
+              }}
+            >
+              <MenuItemMultiSelectAvatar
+                key={item.id}
+                selected={item.isSelected}
+                isKeySelected={item.id === selectedItemId}
+                onSelectChange={(newCheckedValue) => {
+                  resetSelectedItem();
+                  handleItemSelectChange(item, newCheckedValue);
+                }}
+                avatar={
+                  <StyledMultipleSelectDropdownAvatarChip
+                    className="avatar-icon-container"
+                    name={item.name}
+                    avatarUrl={item.avatarUrl}
+                    LeftIcon={item.AvatarIcon}
+                    avatarType={item.avatarType}
+                    isIconInverted={item.isIconInverted}
+                    placeholderColorSeed={item.id}
+                  />
+                }
+              />
+            </SelectableListItem>
+          );
+        })}
+        {showNoResult && <MenuItem text="No results" />}
+        {loadingItems && <DropdownMenuSkeletonItem />}
+      </DropdownMenuItemsContainer>
+    </SelectableList>
+  );
+};

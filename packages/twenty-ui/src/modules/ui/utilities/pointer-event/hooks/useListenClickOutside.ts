@@ -1,7 +1,7 @@
-import { clickOutsideListenerIsActivatedComponentState } from '@/ui/utilities/pointer-event/states/clickOutsideListenerIsActivatedComponentState';
-import { clickOutsideListenerIsMouseDownInsideComponentState } from '@/ui/utilities/pointer-event/states/clickOutsideListenerIsMouseDownInsideComponentState';
-import { clickOutsideListenerMouseDownHappenedComponentState } from '@/ui/utilities/pointer-event/states/clickOutsideListenerMouseDownHappenedComponentState';
-import { useRecoilComponentCallbackStateV2 } from '@/ui/utilities/state/component-state/hooks/useRecoilComponentCallbackStateV2';
+import { clickOutsideListenerIsActivatedComponentState } from '@twenty-modules/ui/utilities/pointer-event/states/clickOutsideListenerIsActivatedComponentState';
+import { clickOutsideListenerIsMouseDownInsideComponentState } from '@twenty-modules/ui/utilities/pointer-event/states/clickOutsideListenerIsMouseDownInsideComponentState';
+import { clickOutsideListenerMouseDownHappenedComponentState } from '@twenty-modules/ui/utilities/pointer-event/states/clickOutsideListenerMouseDownHappenedComponentState';
+import { useRecoilComponentCallbackStateV2 } from '@twenty-modules/ui/utilities/state/component-state/hooks/useRecoilComponentCallbackStateV2';
 import React, { useEffect } from 'react';
 import { useRecoilCallback } from 'recoil';
 

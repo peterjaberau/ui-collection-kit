@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { SettingsPath } from '@/types/SettingsPath';
-import { useIsMatchingLocation } from '~/hooks/useIsMatchingLocation';
+import { SettingsPath } from '@twenty-modules/types/SettingsPath';
+import { useIsMatchingLocation } from '@twenty-ui/front/hooks/useIsMatchingLocation';
 
 export const useShowFullscreen = () => {
   const { isMatchingLocation } = useIsMatchingLocation();

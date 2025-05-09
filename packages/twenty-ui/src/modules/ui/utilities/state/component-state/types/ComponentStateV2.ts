@@ -1,5 +1,5 @@
-import { ComponentStateKeyV2 } from '@/ui/utilities/state/component-state/types/ComponentStateKeyV2';
-import { ComponentStateTypeV2 } from '@/ui/utilities/state/component-state/types/ComponentStateTypeV2';
+import { ComponentStateKeyV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentStateKeyV2';
+import { ComponentStateTypeV2 } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentStateTypeV2';
 import { RecoilState } from 'recoil';
 
 export type ComponentStateV2<StateType> = {

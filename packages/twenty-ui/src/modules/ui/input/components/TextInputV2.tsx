@@ -1,5 +1,5 @@
-import { InputErrorHelper } from '@/ui/input/components/InputErrorHelper';
-import { InputLabel } from '@/ui/input/components/InputLabel';
+import { InputErrorHelper } from '@twenty-modules/ui/input/components/InputErrorHelper';
+import { InputLabel } from '@twenty-modules/ui/input/components/InputLabel';
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import {
@@ -11,10 +11,10 @@ import {
   useRef,
   useState,
 } from 'react';
-import { useCombinedRefs } from '~/hooks/useCombinedRefs';
-import { turnIntoEmptyStringIfWhitespacesOnly } from '~/utils/string/turnIntoEmptyStringIfWhitespacesOnly';
-import { AutogrowWrapper } from 'twenty-ui/utilities';
-import { IconComponent, IconEye, IconEyeOff } from 'twenty-ui/display';
+import { useCombinedRefs } from '@twenty-ui/front/hooks/useCombinedRefs';
+import { turnIntoEmptyStringIfWhitespacesOnly } from '@twenty-ui/front/utils/string/turnIntoEmptyStringIfWhitespacesOnly';
+import { AutogrowWrapper } from '@twenty-ui/utilities';
+import { IconComponent, IconEye, IconEyeOff } from '@twenty-ui/display';
 
 const StyledContainer = styled.div<
   Pick<TextInputV2ComponentProps, 'fullWidth'>

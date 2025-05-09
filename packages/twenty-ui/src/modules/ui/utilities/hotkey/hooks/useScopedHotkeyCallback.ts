@@ -4,7 +4,7 @@ import {
 } from 'react-hotkeys-hook/dist/types';
 import { useRecoilCallback } from 'recoil';
 
-import { logDebug } from '~/utils/logDebug';
+import { logDebug } from '@twenty-ui/front/utils/logDebug';
 
 import { internalHotkeysEnabledScopesState } from '../states/internal/internalHotkeysEnabledScopesState';
 

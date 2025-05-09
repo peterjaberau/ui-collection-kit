@@ -1,0 +1,130 @@
+import { useLingui } from '@lingui/react/macro';
+import { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { useDebouncedCallback } from 'use-debounce';
+
+import { currentUserState } from '@twenty-modules/auth/states/currentUserState';
+import { currentWorkspaceMemberState } from '@twenty-modules/auth/states/currentWorkspaceMemberState';
+import { CoreObjectNameSingular } from '@twenty-modules/object-metadata/types/CoreObjectNameSingular';
+import { useUpdateOneRecord } from '@twenty-modules/object-record/hooks/useUpdateOneRecord';
+import { TextInput } from '@twenty-modules/ui/input/components/TextInput';
+import { logError } from '@twenty-ui/front/utils/logError';
+
+const StyledComboInputContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  > * + * {
+    margin-left: ${({ theme }) => theme.spacing(4)};
+  }
+`;
+
+type NameFieldsProps = {
+  autoSave?: boolean;
+  onFirstNameUpdate?: (firstName: string) => void;
+  onLastNameUpdate?: (lastName: string) => void;
+};
+
+export const NameFields = ({
+  autoSave = true,
+  onFirstNameUpdate,
+  onLastNameUpdate,
+}: NameFieldsProps) => {
+  const { t } = useLingui();
+  const currentUser = useRecoilValue(currentUserState);
+  const [currentWorkspaceMember, setCurrentWorkspaceMember] = useRecoilState(
+    currentWorkspaceMemberState,
+  );
+
+  const [firstName, setFirstName] = useState(
+    currentWorkspaceMember?.name?.firstName ?? '',
+  );
+  const [lastName, setLastName] = useState(
+    currentWorkspaceMember?.name?.lastName ?? '',
+  );
+
+  const { updateOneRecord } = useUpdateOneRecord({
+    objectNameSingular: CoreObjectNameSingular.WorkspaceMember,
+  });
+
+  // TODO: Enhance this with react-web-hook-form (https://www.react-hook-form.com)
+  const debouncedUpdate = useDebouncedCallback(async () => {
+    onFirstNameUpdate?.(firstName);
+    onLastNameUpdate?.(lastName);
+
+    try {
+      if (!currentWorkspaceMember?.id) {
+        throw new Error('User is not logged in');
+      }
+
+      if (autoSave) {
+        await updateOneRecord({
+          idToUpdate: currentWorkspaceMember?.id,
+          updateOneRecordInput: {
+            name: {
+              firstName: firstName,
+              lastName: lastName,
+            },
+          },
+        });
+
+        setCurrentWorkspaceMember({
+          ...currentWorkspaceMember,
+          name: {
+            firstName,
+            lastName,
+          },
+        });
+      }
+    } catch (error) {
+      logError(error);
+    }
+  }, 500);
+
+  useEffect(() => {
+    if (!currentWorkspaceMember) {
+      return;
+    }
+
+    const { firstName: currentFirstName, lastName: currentLastName } =
+      currentWorkspaceMember.name;
+
+    if (
+      (currentFirstName !== firstName || currentLastName !== lastName) &&
+      firstName !== '' &&
+      lastName !== ''
+    ) {
+      debouncedUpdate();
+    }
+
+    return () => {
+      debouncedUpdate.cancel();
+    };
+  }, [
+    firstName,
+    lastName,
+    currentUser,
+    debouncedUpdate,
+    autoSave,
+    currentWorkspaceMember,
+  ]);
+
+  return (
+    <StyledComboInputContainer>
+      <TextInput
+        label={t`First Name`}
+        value={firstName}
+        onChange={setFirstName}
+        placeholder="Tim"
+        fullWidth
+      />
+      <TextInput
+        label={t`Last Name`}
+        value={lastName}
+        onChange={setLastName}
+        placeholder="Cook"
+        fullWidth
+      />
+    </StyledComboInputContainer>
+  );
+};

@@ -1,11 +1,11 @@
-import { FullScreenContainer } from '@/ui/layout/fullscreen/components/FullScreenContainer';
+import { FullScreenContainer } from '@twenty-modules/ui/layout/fullscreen/components/FullScreenContainer';
 import styled from '@emotion/styled';
 import { Meta, StoryObj } from '@storybook/react';
-import { I18nFrontDecorator } from '~/testing/decorators/I18nFrontDecorator';
+import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFrontDecorator';
 import {
   ComponentDecorator,
   ComponentWithRouterDecorator,
-} from 'twenty-ui/testing';
+} from '@twenty-ui/testing';
 
 const meta: Meta<typeof FullScreenContainer> = {
   title: 'UI/Layout/FullScreenContainer',

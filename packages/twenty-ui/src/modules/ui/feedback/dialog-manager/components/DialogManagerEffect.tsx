@@ -1,22 +1,22 @@
-import { useEffect } from 'react';
+import { useEffect } from "react"
 
-import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
+import { usePreviousHotkeyScope } from "@twenty-modules/ui/utilities/hotkey/hooks/usePreviousHotkeyScope"
 
-import { useDialogManagerScopedStates } from '../hooks/internal/useDialogManagerScopedStates';
-import { DialogHotkeyScope } from '../types/DialogHotkeyScope';
+import { useDialogManagerScopedStates } from "../hooks/internal/useDialogManagerScopedStates"
+import { DialogHotkeyScope } from "../types/DialogHotkeyScope"
 
 export const DialogManagerEffect = () => {
-  const { dialogInternal } = useDialogManagerScopedStates();
+  const { dialogInternal } = useDialogManagerScopedStates()
 
-  const { setHotkeyScopeAndMemorizePreviousScope } = usePreviousHotkeyScope();
+  const { setHotkeyScopeAndMemorizePreviousScope } = usePreviousHotkeyScope()
 
   useEffect(() => {
     if (dialogInternal.queue.length === 0) {
-      return;
+      return
     }
 
-    setHotkeyScopeAndMemorizePreviousScope(DialogHotkeyScope.Dialog);
-  }, [dialogInternal.queue, setHotkeyScopeAndMemorizePreviousScope]);
+    setHotkeyScopeAndMemorizePreviousScope(DialogHotkeyScope.Dialog)
+  }, [dialogInternal.queue, setHotkeyScopeAndMemorizePreviousScope])
 
-  return <></>;
-};
+  return <></>
+}

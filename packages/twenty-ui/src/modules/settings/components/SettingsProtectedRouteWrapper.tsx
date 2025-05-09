@@ -1,0 +1,30 @@
+import { useHasSettingsPermission } from '@twenty-modules/settings/roles/hooks/useHasSettingsPermission';
+import { SettingsPath } from '@twenty-modules/types/SettingsPath';
+import { useIsFeatureEnabled } from '@twenty-modules/workspace/hooks/useIsFeatureEnabled';
+import { ReactNode } from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import { FeatureFlagKey, SettingPermissionType } from '@twenty-ui/front/generated/graphql';
+import { getSettingsPath } from '@twenty-ui/front/utils/navigation/getSettingsPath';
+
+type SettingsProtectedRouteWrapperProps = {
+  children?: ReactNode;
+  settingsPermission?: SettingPermissionType;
+  requiredFeatureFlag?: FeatureFlagKey;
+};
+
+export const SettingsProtectedRouteWrapper = ({
+  children,
+  settingsPermission,
+  requiredFeatureFlag,
+}: SettingsProtectedRouteWrapperProps) => {
+  const hasPermission = useHasSettingsPermission(settingsPermission);
+  const requiredFeatureFlagEnabled = useIsFeatureEnabled(
+    requiredFeatureFlag || null,
+  );
+
+  if ((requiredFeatureFlag && !requiredFeatureFlagEnabled) || !hasPermission) {
+    return <Navigate to={getSettingsPath(SettingsPath.ProfilePage)} replace />;
+  }
+
+  return children ?? <Outlet />;
+};

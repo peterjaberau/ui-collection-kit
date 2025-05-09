@@ -1,4 +1,4 @@
-import { useScrollWrapperElement } from '@/ui/utilities/scroll/hooks/useScrollWrapperElement';
+import { useScrollWrapperElement } from '@twenty-modules/ui/utilities/scroll/hooks/useScrollWrapperElement';
 
 export const useScrollToPosition = () => {
   const { scrollWrapperHTMLElement } = useScrollWrapperElement();

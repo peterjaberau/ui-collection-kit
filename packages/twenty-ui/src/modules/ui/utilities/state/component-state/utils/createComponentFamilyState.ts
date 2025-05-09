@@ -1,6 +1,6 @@
 import { atomFamily, SerializableParam } from 'recoil';
 
-import { ComponentFamilyStateKey } from '@/ui/utilities/state/component-state/types/ComponentFamilyStateKey';
+import { ComponentFamilyStateKey } from '@twenty-modules/ui/utilities/state/component-state/types/ComponentFamilyStateKey';
 
 export const createComponentFamilyState = <
   ValueType,

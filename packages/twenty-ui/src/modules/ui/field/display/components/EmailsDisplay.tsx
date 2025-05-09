@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 
-import { FieldEmailsValue } from '@/object-record/record-field/types/FieldMetadata';
-import { ExpandableList } from '@/ui/layout/expandable-list/components/ExpandableList';
+import { FieldEmailsValue } from '@twenty-modules/object-record/record-field/types/FieldMetadata';
+import { ExpandableList } from '@twenty-modules/ui/layout/expandable-list/components/ExpandableList';
 import { styled } from '@linaria/react';
-import { isDefined } from 'twenty-shared/utils';
-import { RoundedLink } from 'twenty-ui/navigation';
-import { THEME_COMMON } from 'twenty-ui/theme';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { RoundedLink } from '@twenty-ui/navigation';
+import { THEME_COMMON } from '@twenty-ui/theme';
 
 type EmailsDisplayProps = {
   value?: FieldEmailsValue;

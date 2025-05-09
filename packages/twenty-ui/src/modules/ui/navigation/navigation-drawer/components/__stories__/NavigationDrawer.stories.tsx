@@ -3,20 +3,20 @@ import { Meta, StoryObj } from '@storybook/react';
 import { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 
-import { currentWorkspaceMemberState } from '@/auth/states/currentWorkspaceMemberState';
-import { objectMetadataItemsState } from '@/object-metadata/states/objectMetadataItemsState';
-import { SettingsPath } from '@/types/SettingsPath';
-import { ComponentWithRouterDecorator } from '~/testing/decorators/ComponentWithRouterDecorator';
-import { ObjectMetadataItemsDecorator } from '~/testing/decorators/ObjectMetadataItemsDecorator';
-import { PrefetchLoadedDecorator } from '~/testing/decorators/PrefetchLoadedDecorator';
-import { SnackBarDecorator } from '~/testing/decorators/SnackBarDecorator';
-import { graphqlMocks } from '~/testing/graphqlMocks';
-import { generatedMockObjectMetadataItems } from '~/testing/mock-data/generatedMockObjectMetadataItems';
-import { mockedWorkspaceMemberData } from '~/testing/mock-data/users';
+import { currentWorkspaceMemberState } from '@twenty-modules/auth/states/currentWorkspaceMemberState';
+import { objectMetadataItemsState } from '@twenty-modules/object-metadata/states/objectMetadataItemsState';
+import { SettingsPath } from '@twenty-modules/types/SettingsPath';
+import { ComponentWithRouterDecorator } from '@twenty-ui/front/testing/decorators/ComponentWithRouterDecorator';
+import { ObjectMetadataItemsDecorator } from '@twenty-ui/front/testing/decorators/ObjectMetadataItemsDecorator';
+import { PrefetchLoadedDecorator } from '@twenty-ui/front/testing/decorators/PrefetchLoadedDecorator';
+import { SnackBarDecorator } from '@twenty-ui/front/testing/decorators/SnackBarDecorator';
+import { graphqlMocks } from '@twenty-ui/front/testing/graphqlMocks';
+import { generatedMockObjectMetadataItems } from '@twenty-ui/front/testing/mock-data/generatedMockObjectMetadataItems';
+import { mockedWorkspaceMemberData } from '@twenty-ui/front/testing/mock-data/users';
 
-import { CurrentWorkspaceMemberFavoritesFolders } from '@/favorites/components/CurrentWorkspaceMemberFavoritesFolders';
-import { NavigationDrawerFixedContent } from '@/ui/navigation/navigation-drawer/components/NavigationDrawerFixedContent';
-import { NavigationDrawerSubItem } from '@/ui/navigation/navigation-drawer/components/NavigationDrawerSubItem';
+import { CurrentWorkspaceMemberFavoritesFolders } from '@twenty-modules/favorites/components/CurrentWorkspaceMemberFavoritesFolders';
+import { NavigationDrawerFixedContent } from '@twenty-modules/ui/navigation/navigation-drawer/components/NavigationDrawerFixedContent';
+import { NavigationDrawerSubItem } from '@twenty-modules/ui/navigation/navigation-drawer/components/NavigationDrawerSubItem';
 import {
   IconAt,
   IconBell,
@@ -32,11 +32,11 @@ import {
   IconUser,
   IconUserCircle,
   IconUsers,
-} from 'twenty-ui/display';
-import { AdvancedSettingsToggle } from 'twenty-ui/navigation';
-import { getOsControlSymbol } from 'twenty-ui/utilities';
-import { I18nFrontDecorator } from '~/testing/decorators/I18nFrontDecorator';
-import { getSettingsPath } from '~/utils/navigation/getSettingsPath';
+} from '@twenty-ui/display';
+import { AdvancedSettingsToggle } from '@twenty-ui/navigation';
+import { getOsControlSymbol } from '@twenty-ui/utilities';
+import { I18nFrontDecorator } from '@twenty-ui/front/testing/decorators/I18nFrontDecorator';
+import { getSettingsPath } from '@twenty-ui/front/utils/navigation/getSettingsPath';
 import { NavigationDrawer } from '../NavigationDrawer';
 import { NavigationDrawerItem } from '../NavigationDrawerItem';
 import { NavigationDrawerItemGroup } from '../NavigationDrawerItemGroup';

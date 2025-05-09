@@ -1,14 +1,14 @@
 import {
   TextInputV2,
   TextInputV2Size,
-} from '@/ui/input/components/TextInputV2';
+} from '@twenty-modules/ui/input/components/TextInputV2';
 import { useRef, useState } from 'react';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
-import { useRegisterInputEvents } from '@/object-record/record-field/meta-types/input/hooks/useRegisterInputEvents';
-import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
+import { useRegisterInputEvents } from '@twenty-modules/object-record/record-field/meta-types/input/hooks/useRegisterInputEvents';
+import { usePreviousHotkeyScope } from '@twenty-modules/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
 import styled from '@emotion/styled';
-import { OverflowingTextWithTooltip } from 'twenty-ui/display';
+import { OverflowingTextWithTooltip } from '@twenty-ui/display';
 
 type InputProps = {
   value?: string;

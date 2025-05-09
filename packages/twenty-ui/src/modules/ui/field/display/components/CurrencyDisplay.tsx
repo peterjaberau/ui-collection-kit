@@ -1,11 +1,11 @@
 import { useTheme } from '@emotion/react';
 
-import { FieldCurrencyValue } from '@/object-record/record-field/types/FieldMetadata';
-import { SETTINGS_FIELD_CURRENCY_CODES } from '@/settings/data-model/constants/SettingsFieldCurrencyCodes';
-import { EllipsisDisplay } from '@/ui/field/display/components/EllipsisDisplay';
-import { isDefined } from 'twenty-shared/utils';
-import { formatAmount } from '~/utils/format/formatAmount';
-import { isUndefinedOrNull } from '~/utils/isUndefinedOrNull';
+import { FieldCurrencyValue } from '@twenty-modules/object-record/record-field/types/FieldMetadata';
+import { SETTINGS_FIELD_CURRENCY_CODES } from '@twenty-modules/settings/data-model/constants/SettingsFieldCurrencyCodes';
+import { EllipsisDisplay } from '@twenty-modules/ui/field/display/components/EllipsisDisplay';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { formatAmount } from '@twenty-ui/front/utils/format/formatAmount';
+import { isUndefinedOrNull } from '@twenty-ui/front/utils/isUndefinedOrNull';
 
 type CurrencyDisplayProps = {
   currencyValue: FieldCurrencyValue | null | undefined;

@@ -1,14 +1,14 @@
-import { currentUserState } from '@/auth/states/currentUserState';
-import { useIsSettingsPage } from '@/navigation/hooks/useIsSettingsPage';
-import { useIsPrefetchLoading } from '@/prefetch/hooks/useIsPrefetchLoading';
-import { NavigationDrawerSectionTitleSkeletonLoader } from '@/ui/navigation/navigation-drawer/components/NavigationDrawerSectionTitleSkeletonLoader';
-import { isNavigationDrawerExpandedState } from '@/ui/navigation/states/isNavigationDrawerExpanded';
-import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
+import { currentUserState } from '@twenty-modules/auth/states/currentUserState';
+import { useIsSettingsPage } from '@twenty-modules/navigation/hooks/useIsSettingsPage';
+import { useIsPrefetchLoading } from '@twenty-modules/prefetch/hooks/useIsPrefetchLoading';
+import { NavigationDrawerSectionTitleSkeletonLoader } from '@twenty-modules/ui/navigation/navigation-drawer/components/NavigationDrawerSectionTitleSkeletonLoader';
+import { isNavigationDrawerExpandedState } from '@twenty-modules/ui/navigation/states/isNavigationDrawerExpanded';
+import { useIsMobile } from '@twenty-modules/ui/utilities/responsive/hooks/useIsMobile';
 import styled from '@emotion/styled';
 import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { isDefined } from 'twenty-shared/utils';
-import { Label } from 'twenty-ui/display';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
+import { Label } from '@twenty-ui/display';
 
 const StyledTitle = styled.div`
   align-items: center;

@@ -1,16 +1,16 @@
 import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 
-import { currentWorkspaceMemberState } from '@/auth/states/currentWorkspaceMemberState';
-import { CoreObjectNameSingular } from '@/object-metadata/types/CoreObjectNameSingular';
-import { useUpdateOneRecord } from '@/object-record/hooks/useUpdateOneRecord';
-import { ColorScheme } from '@/workspace-member/types/WorkspaceMember';
+import { currentWorkspaceMemberState } from '@twenty-modules/auth/states/currentWorkspaceMemberState';
+import { CoreObjectNameSingular } from '@twenty-modules/object-metadata/types/CoreObjectNameSingular';
+import { useUpdateOneRecord } from '@twenty-modules/object-record/hooks/useUpdateOneRecord';
+import { ColorScheme } from '@twenty-modules/workspace-member/types/WorkspaceMember';
 import {
   IconComponent,
   IconMoon,
   IconSun,
   IconSunMoon,
-} from 'twenty-ui/display';
+} from '@twenty-ui/display';
 
 export const useColorScheme = () => {
   const [currentWorkspaceMember, setCurrentWorkspaceMember] = useRecoilState(

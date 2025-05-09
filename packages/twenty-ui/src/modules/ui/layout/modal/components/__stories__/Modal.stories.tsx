@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Modal } from '../Modal';
-import { ComponentDecorator } from 'twenty-ui/testing';
+import { ComponentDecorator } from '@twenty-ui/testing';
 
 const meta: Meta<typeof Modal> = {
   title: 'UI/Layout/Modal/Modal',

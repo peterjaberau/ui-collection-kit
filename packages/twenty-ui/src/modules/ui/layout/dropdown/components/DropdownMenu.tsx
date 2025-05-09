@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 
 const StyledDropdownMenu = styled.div<{
   width?: `${string}px` | `${number}%` | 'auto' | number;

@@ -2,13 +2,13 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
-import { isNavigationDrawerExpandedState } from '@/ui/navigation/states/isNavigationDrawerExpanded';
-import { navigationDrawerExpandedMemorizedState } from '@/ui/navigation/states/navigationDrawerExpandedMemorizedState';
-import { navigationMemorizedUrlState } from '@/ui/navigation/states/navigationMemorizedUrlState';
-import { useIsWorkspaceActivationStatusEqualsTo } from '@/workspace/hooks/useIsWorkspaceActivationStatusEqualsTo';
-import { WorkspaceActivationStatus } from 'twenty-shared/workspace';
-import { IconX } from 'twenty-ui/display';
-import { UndecoratedLink } from 'twenty-ui/navigation';
+import { isNavigationDrawerExpandedState } from '@twenty-modules/ui/navigation/states/isNavigationDrawerExpanded';
+import { navigationDrawerExpandedMemorizedState } from '@twenty-modules/ui/navigation/states/navigationDrawerExpandedMemorizedState';
+import { navigationMemorizedUrlState } from '@twenty-modules/ui/navigation/states/navigationMemorizedUrlState';
+import { useIsWorkspaceActivationStatusEqualsTo } from '@twenty-modules/workspace/hooks/useIsWorkspaceActivationStatusEqualsTo';
+import { WorkspaceActivationStatus } from '@ui-collection-kit/twenty-shared/src/workspace';
+import { IconX } from '@twenty-ui/display';
+import { UndecoratedLink } from '@twenty-ui/navigation';
 
 type NavigationDrawerBackButtonProps = {
   title: string;

@@ -1,4 +1,4 @@
-import { SHOW_PAGE_RIGHT_TAB_LIST } from '@/ui/layout/show-page/constants/ShowPageTabListComponentId';
+import { SHOW_PAGE_RIGHT_TAB_LIST } from '@twenty-modules/ui/layout/show-page/constants/ShowPageTabListComponentId';
 
 export const getShowPageTabListComponentId = ({
   pageId,

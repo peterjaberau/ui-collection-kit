@@ -1,4 +1,4 @@
-import { isDropdownOpenComponentState } from '@/ui/layout/dropdown/states/isDropdownOpenComponentState';
+import { isDropdownOpenComponentState } from '@twenty-modules/ui/layout/dropdown/states/isDropdownOpenComponentState';
 import { useRecoilCallback } from 'recoil';
 
 export const useCloseDropdownFromOutside = () => {

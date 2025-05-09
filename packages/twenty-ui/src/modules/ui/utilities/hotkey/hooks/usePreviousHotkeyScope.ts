@@ -1,7 +1,7 @@
 import { useRecoilCallback } from 'recoil';
 
-import { DEBUG_HOTKEY_SCOPE } from '@/ui/utilities/hotkey/hooks/useScopedHotkeyCallback';
-import { logDebug } from '~/utils/logDebug';
+import { DEBUG_HOTKEY_SCOPE } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeyCallback';
+import { logDebug } from '@twenty-ui/front/utils/logDebug';
 
 import { currentHotkeyScopeState } from '../states/internal/currentHotkeyScopeState';
 import { previousHotkeyScopeFamilyState } from '../states/internal/previousHotkeyScopeFamilyState';

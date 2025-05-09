@@ -1,7 +1,7 @@
-import { FieldDateMetadataSettings } from '@/object-record/record-field/types/FieldMetadata';
-import { UserContext } from '@/users/contexts/UserContext';
+import { FieldDateMetadataSettings } from '@twenty-modules/object-record/record-field/types/FieldMetadata';
+import { UserContext } from '@twenty-modules/users/contexts/UserContext';
 import { useContext } from 'react';
-import { formatDateTimeString } from '~/utils/string/formatDateTimeString';
+import { formatDateTimeString } from '@twenty-ui/front/utils/string/formatDateTimeString';
 import { EllipsisDisplay } from './EllipsisDisplay';
 
 type DateTimeDisplayProps = {

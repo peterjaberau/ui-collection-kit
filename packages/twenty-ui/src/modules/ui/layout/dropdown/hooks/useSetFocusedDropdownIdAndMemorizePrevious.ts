@@ -1,7 +1,7 @@
 import { useRecoilCallback } from 'recoil';
 
-import { activeDropdownFocusIdState } from '@/ui/layout/dropdown/states/activeDropdownFocusIdState';
-import { previousDropdownFocusIdState } from '@/ui/layout/dropdown/states/previousDropdownFocusIdState';
+import { activeDropdownFocusIdState } from '@twenty-modules/ui/layout/dropdown/states/activeDropdownFocusIdState';
+import { previousDropdownFocusIdState } from '@twenty-modules/ui/layout/dropdown/states/previousDropdownFocusIdState';
 
 export const useSetActiveDropdownFocusIdAndMemorizePrevious = () => {
   const setActiveDropdownFocusIdAndMemorizePrevious = useRecoilCallback(

@@ -1,4 +1,4 @@
-import { isDefined } from 'twenty-shared/utils';
+import { isDefined } from '@ui-collection-kit/twenty-shared/src/utils';
 export const isFirstOverflowingChildElement = ({
   containerElement,
   childElement,

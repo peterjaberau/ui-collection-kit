@@ -1,4 +1,4 @@
-import { RIGHT_DRAWER_CLOSE_EVENT_NAME } from '@/ui/layout/right-drawer/utils/emitRightDrawerCloseEvent';
+import { RIGHT_DRAWER_CLOSE_EVENT_NAME } from '@twenty-modules/ui/layout/right-drawer/utils/emitRightDrawerCloseEvent';
 import { useEffect } from 'react';
 
 export const useListenRightDrawerClose = (callback: () => void) => {

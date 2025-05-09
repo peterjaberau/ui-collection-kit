@@ -1,12 +1,12 @@
-import { RootStackingContextZIndices } from '@/ui/layout/constants/RootStackingContextZIndices';
-import { ModalHotkeyScope } from '@/ui/layout/modal/components/types/ModalHotkeyScope';
-import { usePreviousHotkeyScope } from '@/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
-import { useScopedHotkeys } from '@/ui/utilities/hotkey/hooks/useScopedHotkeys';
+import { RootStackingContextZIndices } from '@twenty-modules/ui/layout/constants/RootStackingContextZIndices';
+import { ModalHotkeyScope } from '@twenty-modules/ui/layout/modal/components/types/ModalHotkeyScope';
+import { usePreviousHotkeyScope } from '@twenty-modules/ui/utilities/hotkey/hooks/usePreviousHotkeyScope';
+import { useScopedHotkeys } from '@twenty-modules/ui/utilities/hotkey/hooks/useScopedHotkeys';
 import {
   ClickOutsideMode,
   useListenClickOutside,
-} from '@/ui/utilities/pointer-event/hooks/useListenClickOutside';
-import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
+} from '@twenty-modules/ui/utilities/pointer-event/hooks/useListenClickOutside';
+import { useIsMobile } from '@twenty-modules/ui/utilities/responsive/hooks/useIsMobile';
 import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';

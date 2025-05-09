@@ -1,5 +1,5 @@
-import { MobileBreadcrumb } from '@/ui/navigation/bread-crumb/components/MobileBreadcrumb';
-import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
+import { MobileBreadcrumb } from '@twenty-modules/ui/navigation/bread-crumb/components/MobileBreadcrumb';
+import { useIsMobile } from '@twenty-modules/ui/utilities/responsive/hooks/useIsMobile';
 import styled from '@emotion/styled';
 import { Fragment, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
