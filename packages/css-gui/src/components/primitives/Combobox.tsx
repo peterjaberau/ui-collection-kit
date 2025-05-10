@@ -29,7 +29,7 @@ export function Combobox({
     handleFilterItems(filterValue)
   }, [])
 
-  const { isOpen, toggleMenu, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps } =
+  const { isOpen, toggleMenu, getMenuProps, getInputProps, highlightedIndex, getItemProps } =
     useCombobox({
       id,
       initialInputValue: value,
@@ -62,7 +62,7 @@ export function Combobox({
   }
 
   return (
-    <div {...getComboboxProps()} sx={{ width: "100%" }}>
+    <div sx={{ width: "100%" }}>
       <input
         type="text"
         {...getInputProps({

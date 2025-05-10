@@ -1,6 +1,18 @@
 'use client';
 import { useState } from 'react';
-import { chakra } from '@chakra-ui/react';
+import {
+  chakra,
+  Stack,
+  Flex,
+  VStack,
+  HStack,
+  Box,
+  Center,
+  Container,
+  Heading,
+  Text,
+  SimpleGrid,
+} from '@chakra-ui/react';
 
 import { FontFamilyPreview } from '#components/examples/FontFamilyPreview';
 import { FontSizePreview } from '#components/examples/FontSizePreview';
@@ -51,73 +63,61 @@ import { CursorPreview } from '#components/examples/CursorPreview';
 
 export default function Page() {
   return (
-    <div>
-      <chakra.header
-        css={{
-          pt: [5, 6, 7],
-          px: 4,
-          textAlign: 'center',
-        }}
-      >
-        <chakra.h1 css={{ fontSize: [6, 8, '128px'], my: 0, lineHeight: 1.25 }}>
-          Properties
-        </chakra.h1>
-        <chakra.h2 css={{ color: 'muted', fontWeight: 500, my: 0 }}>
-          Preview available controls from the library
-        </chakra.h2>
-      </chakra.header>
-      <chakra.section css={{ mt: 6, pb: 6 }}>
-        <chakra.div css={{ px: [4, 5, 5], maxWidth: '114em', mx: 'auto' }}>
-          <chakra.section
-            css={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(18rem, 1fr))',
-              gap: '2rem',
-            }}
-          >
-            <FontSizePreview />
-            <FontFamilyPreview />
-            <FontStylePreview />
-            <FontWeightPreview />
-            <TextAlignPreview />
-            <TextTransformPreview />
-            <LetterSpacingPreview />
-            <TextIndentPreview />
-            <ColorPreview />
-            <AlignItemsPreview />
-            <JustifyContentPreview />
-            <FlexWrapPreview />
-            <FlexGrowPreview />
-            <FlexShrinkPreview />
-            <FlexDirectionPreview />
-            <BackgroundColorPreview />
-            <BorderColorPreview />
-            <TextDecorationColorPreview />
-            <TextDecorationLinePreview />
-            <TextDecorationStylePreview />
-            <TextDecorationThicknessPreview />
-            <AccentColorPreview />
-            <BorderWidthPreview />
-            <BorderStylePreview />
-            <OutlineColorPreview />
-            <OutlineWidthPreview />
-            <OutlineStylePreview />
-            <OutlineOffsetPreview />
-            <BorderRadiusPreview />
-            <FilterPreview />
-            <BackgroundImagePreview />
-            <BackgroundPreview />
-            <BackgroundBlendModePreview />
-            <MixBlendModePreview />
-            <OpacityPreview />
-            <BoxShadowPreview />
-            <TextShadowPreview />
-            <WidthPreview />
-            <HeightPreview />
-            <CursorPreview />
-          </chakra.section>
-        </chakra.div>
-      </chakra.section>
-    </div>
+    <Container>
+      <Stack>
+        <Center>
+          <Stack>
+            <Heading size='4xl' textAlign='center'>
+              Properties
+            </Heading>
+            <Text textStyle='xl' textAlign='center'>
+              Preview available controls from the library
+            </Text>
+          </Stack>
+        </Center>
+        <SimpleGrid columns={5} gap={12}>
+          <FontSizePreview />
+          <FontFamilyPreview />
+          <FontStylePreview />
+          <FontWeightPreview />
+          <TextAlignPreview />
+          <TextTransformPreview />
+          <LetterSpacingPreview />
+          <TextIndentPreview />
+          <ColorPreview />
+          <AlignItemsPreview />
+          <JustifyContentPreview />
+          <FlexWrapPreview />
+          <FlexGrowPreview />
+          <FlexShrinkPreview />
+          <FlexDirectionPreview />
+          <BackgroundColorPreview />
+          <BorderColorPreview />
+          <TextDecorationColorPreview />
+          <TextDecorationLinePreview />
+          <TextDecorationStylePreview />
+          <TextDecorationThicknessPreview />
+          <AccentColorPreview />
+          <BorderWidthPreview />
+          <BorderStylePreview />
+          <OutlineColorPreview />
+          <OutlineWidthPreview />
+          <OutlineStylePreview />
+          <OutlineOffsetPreview />
+          <BorderRadiusPreview />
+          <FilterPreview />
+          <BackgroundImagePreview />
+          <BackgroundPreview />
+          <BackgroundBlendModePreview />
+          <MixBlendModePreview />
+          <OpacityPreview />
+          <BoxShadowPreview />
+          <TextShadowPreview />
+          <WidthPreview />
+          <HeightPreview />
+          <CursorPreview />
+        </SimpleGrid>
+      </Stack>
+    </Container>
   );
 }

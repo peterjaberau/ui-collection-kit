@@ -1,12 +1,11 @@
 'use client';
 import { useState } from 'react';
 import { Editor, Inputs, styled, codegen } from '@ui-collection-kit/css-gui';
-import { initialStyles } from '../../data/initial-styles-font-size-preview';
+// import { initialStyles } from '../../data/initial-styles-font-size-preview';
 import { defaultTheme } from '../../data/default-theme';
 import {
   chakra,
   Stack,
-  Card,
   Center,
   Code,
   Text,
@@ -14,8 +13,8 @@ import {
   Box,
 } from '@chakra-ui/react';
 
-export function FontSizePreview() {
-  const [styles, setStyles] = useState<any>(initialStyles);
+export function FontCopyPreview() {
+  // const [styles, setStyles] = useState<any>(initialStyles);
 
   return (
     <>
@@ -32,16 +31,16 @@ export function FontSizePreview() {
           borderTopWidth='1px'
           borderBottomWidth='1px'
         >
-          <styled.p styles={styles}>
-            <chakra.span>Aa</chakra.span>
-          </styled.p>
+          {/*<styled.p styles={styles}>*/}
+          {/*  <chakra.span>Aa</chakra.span>*/}
+          {/*</styled.p>*/}
         </Center>
         <Box height='150px' padding={3}>
-          <Editor styles={styles} onChange={setStyles} theme={defaultTheme}>
-            <Inputs.FontSize />
-          </Editor>
+          {/*<Editor styles={styles} onChange={setStyles} theme={defaultTheme}>*/}
+          {/*  <Inputs.FontSize />*/}
+          {/*</Editor>*/}
         </Box>
-        <Code>{codegen.css(styles)}</Code>
+        {/*<Code>{codegen.css(styles)}</Code>*/}
       </Stack>
     </>
   );

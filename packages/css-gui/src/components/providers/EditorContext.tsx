@@ -1,15 +1,15 @@
-'use client'
-import { ThemeProvider as ThemeUIProvider } from 'theme-ui'
-import { get, unset } from 'lodash-es'
-import { createContext, ReactNode, useContext } from 'react'
-import { KeyArg, Recipe, EditorData } from './types'
-import { applyRecipe, parentPath } from './util'
-import { ThemeProvider, useTheme } from './ThemeContext'
-import { EditorConfigProvider, EditorConfig } from './EditorConfigContext'
-import { theme as uiTheme } from '../ui/theme'
-import { Theme } from '../../types/theme'
-import { DynamicControlsProvider } from './DynamicPropertiesContext'
-import { stylesToEditorSchema } from '../../lib/transformers/styles-to-editor-schema'
+"use client"
+import { chakra, ChakraProvider, defaultSystem } from "@chakra-ui/react"
+import { get, unset } from "lodash-es"
+import { createContext, ReactNode, useContext } from "react"
+import { KeyArg, Recipe, EditorData } from "./types"
+import { applyRecipe, parentPath } from "./util"
+import { ThemeProvider, useTheme } from "./ThemeContext"
+import { EditorConfigProvider, EditorConfig } from "./EditorConfigContext"
+import { theme as uiTheme } from "../ui/theme"
+import { Theme } from "../../types/theme"
+import { DynamicControlsProvider } from "./DynamicPropertiesContext"
+import { stylesToEditorSchema } from "../../lib/transformers/styles-to-editor-schema"
 
 export interface EditorContextValue<V> extends EditorData<V> {
   theme?: Theme
@@ -59,10 +59,7 @@ export function useEditor() {
     })
   }
 
-  function setFields<T>(
-    fields: Record<string, Recipe<T>>,
-    removeFields?: KeyArg[]
-  ) {
+  function setFields<T>(fields: Record<string, Recipe<T>>, removeFields?: KeyArg[]) {
     editComponentData((draft) => {
       if (removeFields) {
         removeFields.forEach((field) => {
@@ -123,11 +120,13 @@ export function EditorProvider<V>({
   showAddProperties,
   value: providedValue,
   ...values
-}: EditorContextProviderValue<V> & {
-  hideResponsiveControls?: boolean
-  showAddProperties?: boolean
-  children: ReactNode
-} | any) {
+}:
+  | (EditorContextProviderValue<V> & {
+      hideResponsiveControls?: boolean
+      showAddProperties?: boolean
+      children: ReactNode
+    })
+  | any) {
   const outerTheme = useTheme()
   const editorConfig: EditorConfig = {
     hideResponsiveControls: hideResponsiveControls ?? false,
@@ -137,16 +136,14 @@ export function EditorProvider<V>({
   const value = stylesToEditorSchema(providedValue)
 
   return (
-    <ThemeProvider theme={theme || outerTheme}>
-      <ThemeUIProvider theme={uiTheme}>
+    <ChakraProvider value={defaultSystem}>
+      <ThemeProvider theme={theme || outerTheme}>
         <EditorConfigProvider config={editorConfig}>
           <DynamicControlsProvider>
-            <EditorContext.Provider value={{ value, ...values }}>
-              {children}
-            </EditorContext.Provider>
+            <EditorContext.Provider value={{ value, ...values }}>{children}</EditorContext.Provider>
           </DynamicControlsProvider>
         </EditorConfigProvider>
-      </ThemeUIProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </ChakraProvider>
   )
 }

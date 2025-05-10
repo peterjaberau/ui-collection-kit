@@ -1,4 +1,5 @@
 'use client'
+import { chakra } from "@chakra-ui/react"
 import * as React from 'react'
 import { kebabCase } from 'lodash-es'
 import { useCombobox } from 'downshift'
@@ -93,7 +94,6 @@ export function FontFamilyInput({ label, value, onChange, onRemove }: Props) {
     toggleMenu,
     getMenuProps,
     getInputProps,
-    getComboboxProps,
     highlightedIndex,
     getItemProps,
   } = useCombobox({
@@ -153,7 +153,7 @@ export function FontFamilyInput({ label, value, onChange, onRemove }: Props) {
   }
 
   return (
-    <div {...getComboboxProps()}>
+    <div>
       {label && (
         <Label htmlFor={id} sx={{ display: 'block' }}>
           {label}
