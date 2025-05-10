@@ -13,20 +13,6 @@ import { THEME_DARK, THEME_LIGHT, ThemeContextProvider } from "../packages/twent
 import { ChakraProvider } from "@chakra-ui/react"
 import { defaultSystem, SuiProvider } from "../packages/saas/src/react"
 
-const chakraLightSystem = {
-  config: {
-    initialColorMode: "light",
-    useSystemColorMode: false,
-  },
-}
-
-const chakraDarkSystem = {
-  config: {
-    initialColorMode: "dark",
-    useSystemColorMode: false,
-  },
-}
-
 
 const preview: Preview = {
   parameters: {
@@ -71,7 +57,6 @@ const preview: Preview = {
             <div style={{ fontSize: "13px" }}>
               <ThemeProvider theme={twentyTheme}>
                 <ThemeContextProvider theme={twentyTheme}>
-                  <JsonViewWrapper />
                   <Story />
                 </ThemeContextProvider>
               </ThemeProvider>
@@ -81,14 +66,7 @@ const preview: Preview = {
             <>
               <ChakraProvider value={defaultSystem as any}>
                 <div className="font-mono antialiased">
-                  <Flex justify="space-between" grow="1" minWidth="full" width="8xl">
-                    <Box>
-                      <Story />
-                    </Box>
-                    <Box gap="4" width="400" marginEnd="auto">
-                      <JsonViewWrapper />
-                    </Box>
-                  </Flex>
+                  <Story />
                 </div>
               </ChakraProvider>
             </>
@@ -97,14 +75,16 @@ const preview: Preview = {
           {shouldApplyTwentyRefactoredTheme && (
             <>
               <ChakraProvider value={defaultSystem as any}>
-                  <ThemeProvider theme={twentyTheme}>
-                    <ThemeContextProvider theme={twentyTheme}>
-                      <Story />
-                    </ThemeContextProvider>
-                  </ThemeProvider>
+                <ThemeProvider theme={twentyTheme}>
+                  <ThemeContextProvider theme={twentyTheme}>
+                    <Story />
+                  </ThemeContextProvider>
+                </ThemeProvider>
               </ChakraProvider>
             </>
           )}
+
+
         </>
       )
     },

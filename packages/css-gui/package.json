@@ -1,0 +1,124 @@
+{
+  "name": "@ui-collection-kit/css-gui",
+  "version": "0.0.1",
+  "type": "module",
+  "homepage": "#",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+
+  "exports": {
+    ".": "./src/index.ts",
+    "./use-hotkeys": "./src/use-hotkeys/index.ts",
+    "./react": "./src/react/index.ts",
+    "./react/preset": "./src/react/preset.ts",
+    "./react/colors": "./src/react/colors.ts",
+    "./react/theme": "./src/react/theme/index.ts",
+    "./react/provider": "./src/react/provider/index.ts",
+    "./react/components": "./src/react/components/*/index.ts",
+    "./auth/supabase": "./src/auth/supabase/index.ts",
+    "./auth/clerk": "./src/auth/clerk/index.ts",
+    "./auth/auth-provider": "./src/auth/auth-provider/index.ts",
+    "./auth/auth0": "./src/auth/auth0/index.ts",
+    "./assets": "./src/assets/index.ts",
+    "./charts": "./src/charts/index.ts",
+    "./core": "./src/core/index.ts",
+    "./core/utils": "./src/core/utils/index.ts",
+    "./core/system": "./src/core/system/index.ts",
+    "./ajv": "./src/forms/ajv/index.ts",
+    "./forms/components": "./src/forms/components/index.ts",
+    "./yup": "./src/forms/yup/index.ts",
+    "./zod": "./src/forms/zod/index.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./modals": "./src/modals/index.ts",
+    "./modals-provider": "./src/modals-provider/index.ts",
+    "./nprogress": "./src/nprogress/index.ts"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+
+
+    "@emotion/react": "^11.9.0",
+    "@mdx-js/react": "^1.6.22",
+    "@radix-ui/react-accordion": "^0.1.6",
+    "@radix-ui/react-collapsible": "^0.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.0.3",
+    "@radix-ui/react-label": "^0.1.5",
+    "@radix-ui/react-popover": "^1.0.0",
+    "@radix-ui/react-select": "^0.1.1",
+    "@radix-ui/react-slider": "^1.0.0",
+    "@radix-ui/react-switch": "^1.0.0",
+    "@radix-ui/react-tabs": "^0.1.5",
+    "@radix-ui/react-toggle": "^1.0.1",
+    "@radix-ui/react-tooltip": "^0.1.7",
+    "@use-gesture/react": "^10.2.17",
+    "copy-to-clipboard": "^3.3.2",
+    "csstype": "^3.0.11",
+    "culori": "^2.0.3",
+    "downshift": "^6.1.7",
+    "escape-html": "^1.0.3",
+    "fuzzysort": "^2.0.1",
+    "get-contrast": "^3.0.0",
+    "hast-to-hyperscript": "^10.0.1",
+    "hast-util-to-html": "^8.0.3",
+    "hast-util-to-mdast": "^8.3.1",
+    "immer": "^10.1.1",
+    "mdast-util-from-markdown": "^2.0.2",
+    "mdast-util-to-hast": "^13.2.0",
+    "mdast-util-to-markdown": "^2.1.2",
+    "property-information": "^7.1.0",
+    "react-feather": "^2.0.10",
+    "rehype-parse": "^8.0.4",
+    "rehype-sanitize": "^5.0.1",
+    "rehype-stringify": "^9.0.3",
+    "remark-parse": "^10.0.1",
+    "theme-ui": "^0.14.7",
+    "unified": "^10.1.2",
+    "unist-util-remove": "^3.1.0",
+    "unist-util-visit": "^4.1.0",
+    "uuid": "^8.3.2",
+    "@theme-ui/css": "^0.17.2",
+    "@theme-ui/core": "^0.17.2"
+
+
+
+
+
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/uuid": "^10.0.0",
+
+
+
+    "@types/react": "18.0.10",
+    "@types/react-dom": "^18.0.1",
+    "@vitejs/plugin-react": "4.4.1",
+    "clean-package": "2.2.0",
+    "globby": "14.1.0",
+    "happy-dom": "17.4.4",
+    "lucide-react": "0.501.0",
+    "react": "18.1.0",
+    "react-dom": "18.0.0",
+    "typescript": "5.8.3",
+    "vite": "6.3.2",
+    "vite-plugin-dts": "4.5.3"
+
+  },
+  "peerDependencies": {
+    "react": ">= 18",
+    "react-dom": ">= 18"
+  }
+}

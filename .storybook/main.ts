@@ -10,10 +10,10 @@ const config: StorybookConfig = {
   stories: [
     // "../demos/antd-storybook/src/components/**/*.mdx",
     // "../demos/antd-storybook/src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    // "../demos/react-lite/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../demos/react-lite/**/*.stories.@(js|jsx|mjs|ts|tsx)",
 
     // "../templates/starter/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    // "../packages/unstyled/react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../packages/unstyled/react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../packages/saas/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../packages/twenty-ui/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],

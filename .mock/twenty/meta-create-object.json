@@ -1,0 +1,78 @@
+{
+  "data": {
+    "createOneObject": {
+      "nameSingular": "…",
+      "namePlural": "…",
+      "labelSingular": "…",
+      "labelPlural": "…",
+      "description": "…",
+      "icon": "…",
+      "labelIdentifierFieldMetadataId": "123e4567-e89b-12d3-a456-426614174000",
+      "imageIdentifierFieldMetadataId": "123e4567-e89b-12d3-a456-426614174000",
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "dataSourceId": "123e4567-e89b-12d3-a456-426614174000",
+      "isCustom": true,
+      "isActive": true,
+      "isSystem": true,
+      "createdAt": "2025-05-09T12:38:06.577Z",
+      "updatedAt": "2025-05-09T12:38:06.577Z",
+      "fields": {
+        "edges": {
+          "node": [
+            {
+              "type": "UUID",
+              "objectMetadataId": "123e4567-e89b-12d3-a456-426614174000",
+              "name": "…",
+              "label": "…",
+              "description": "…",
+              "icon": "…",
+              "defaultValue": null,
+              "isNullable": true,
+              "settings": {},
+              "options": [
+                {
+                  "color": "…",
+                  "label": "…",
+                  "value": "OPTION_1",
+                  "position": 1
+                }
+              ],
+              "id": "123e4567-e89b-12d3-a456-426614174000",
+              "isCustom": true,
+              "isActive": true,
+              "isSystem": true,
+              "createdAt": "2025-05-09T12:38:06.577Z",
+              "updatedAt": "2025-05-09T12:38:06.577Z",
+              "fromRelationMetadata": {
+                "id": "123e4567-e89b-12d3-a456-426614174000",
+                "relationType": "ONE_TO_ONE",
+                "toObjectMetadata": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "dataSourceId": "123e4567-e89b-12d3-a456-426614174000",
+                  "nameSingular": "…",
+                  "namePlural": "…",
+                  "isSystem": true,
+                  "isRemote": true
+                },
+                "toFieldMetadataId": "123e4567-e89b-12d3-a456-426614174000"
+              },
+              "toRelationMetadata": {
+                "id": "123e4567-e89b-12d3-a456-426614174000",
+                "relationType": "ONE_TO_ONE",
+                "fromObjectMetadata": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "dataSourceId": "123e4567-e89b-12d3-a456-426614174000",
+                  "nameSingular": "…",
+                  "namePlural": "…",
+                  "isSystem": true,
+                  "isRemote": true
+                },
+                "fromFieldMetadataId": "123e4567-e89b-12d3-a456-426614174000"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

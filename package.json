@@ -11,6 +11,11 @@
     "demos-ui-blocks": "pnpm --filter \"./demos/ui-blocks\"",
     "start-demos-ui-blocks": "pnpm demos-ui-blocks dev",
 
+
+    "demo-css-gui": "pnpm --filter \"./demos/demo-css-gui\"",
+    "start-demo-css-gui": "pnpm demo-css-gui dev",
+
+
     "template-starter": "pnpm --filter \"./templates/starter\"",
     "start-template-starter": "pnpm template-starter dev",
     "template-hr": "pnpm --filter \"./templates/hr\"",
@@ -45,6 +50,8 @@
     "**/*.{ts,tsx,js,jsx}": "prettier --write"
   },
   "dependencies": {
+    "msw": "^2.0.11",
+    "msw-storybook-addon": "2.0.0--canary.122.b3ed3b1.0",
     "react-textarea-autosize": "^8.4.1",
     "@emotion/is-prop-valid": "^1.3.0",
     "uuid": "^9.0.0",

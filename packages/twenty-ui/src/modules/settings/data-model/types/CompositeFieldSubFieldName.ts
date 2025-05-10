@@ -1,3 +1,0 @@
-import { ALL_SUB_FIELDS } from '@twenty-modules/settings/data-model/constants/AllSubFields';
-
-export type CompositeFieldSubFieldName = (typeof ALL_SUB_FIELDS)[number];
