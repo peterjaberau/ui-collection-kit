@@ -1,9 +1,9 @@
 import { defineTokens } from '@chakra-ui/react'
 
 export const letterSpacings = defineTokens.letterSpacings({
-  tighter: { value: '-0.05em' },
-  tight: { value: '-0.025em' },
-  wide: { value: '0.025em' },
-  wider: { value: '0.05em' },
-  widest: { value: '0.1em' },
+  tighter: { value: '-0.006' },
+  tight: { value: '-0.011em' },
+  wide: { value: '0.015em' },
+  wider: { value: '0.01em' },
+  widest: { value: '0em' },
 })

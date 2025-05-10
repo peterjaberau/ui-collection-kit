@@ -3,7 +3,7 @@ import { defineRecipe } from '@chakra-ui/react'
 export const buttonRecipe = defineRecipe({
   className: 'chakra-button',
   base: {
-    colorPalette: 'gray',
+    colorPalette: 'blue',
     display: 'inline-flex',
     appearance: 'none',
     alignItems: 'center',
@@ -33,27 +33,30 @@ export const buttonRecipe = defineRecipe({
   variants: {
     size: {
       xs: {
-        gap: '1',
-        h: '6',
-        minW: '6',
-        textStyle: 'xs',
-        borderRadius: 'control.sm',
+        gap: '2.5',
+        h: '7',
+        minW: '2',
+        textStyle: 'sm',
+        borderRadius: 'control.lg',
+        icon: '-mx-1',
         px: '2',
       },
       sm: {
-        gap: '2',
-        h: '7',
+        gap: '2.5',
+        h: '8',
         minW: '7',
         textStyle: 'sm',
-        borderRadius: 'control.md',
+        borderRadius: 'control.lg',
+        icon: '-mx-1',
         px: '2.5',
       },
       md: {
-        gap: '2',
-        h: '8',
+        gap: '3',
+        h: '9',
         minW: '8',
-        borderRadius: 'control.md',
+        borderRadius: 'control.lg',
         textStyle: 'sm',
+        icon: '-mx-1',
         px: '3',
       },
       lg: {
@@ -61,8 +64,8 @@ export const buttonRecipe = defineRecipe({
         h: '10',
         minW: '10',
         borderRadius: 'control.lg',
-        textStyle: 'md',
-        px: '4.5',
+        textStyle: 'sm',
+        px: '5',
       },
       xl: {
         gap: '3',
@@ -155,8 +158,8 @@ export const buttonRecipe = defineRecipe({
       },
 
       outline: {
-        borderWidth: '0.5px',
-        borderColor: 'colorPalette.emphasized',
+        borderWidth: '1px',
+        borderColor: 'colorPalette.blue.500',
         color: 'colorPalette.fg',
         _hover: {
           bg: 'colorPalette.muted',
@@ -194,6 +197,6 @@ export const buttonRecipe = defineRecipe({
   defaultVariants: {
     size: 'md',
     variant: 'surface',
-    colorPalette: 'gray',
+    colorPalette: 'blue',
   },
 })

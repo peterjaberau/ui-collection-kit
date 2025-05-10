@@ -4,22 +4,22 @@ export const semanticShadows = defineSemanticTokens.shadows({
   xs: {
     value: {
       _light:
-        '0px 1px 2px {colors.gray.900/5}, 0px 0px 1px {colors.gray.900/5}',
-      _dark: '0px 1px 1px {black/30}, 0px 0px 1px inset {colors.gray.300/5}',
+        '0 1px 2px 0 #0a0d1408',
+      _dark: '0 1px 2px 0 #0a0d1408',
     },
   },
   sm: {
     value: {
       _light:
-        '0px 2px 4px {colors.gray.900/5}, 0px 0px 2px {colors.gray.900/5}',
-      _dark: '0px 2px 4px {black/30}, 0px 0px 1px inset {colors.gray.300/5}',
+        '0 2px 4px #1b1c1d0a',
+      _dark: '0 2px 4px #1b1c1d0a',
     },
   },
   md: {
     value: {
       _light:
-        '0px 4px 8px {colors.gray.900/5}, 0px 0px 3px {colors.gray.900/5}',
-      _dark: '0px 4px 8px {black/30}, 0px 0px 1px inset {colors.gray.300/5}',
+        '0 16px 32px -12px #0e121b1a',
+      _dark: '0 16px 32px -12px #0e121b1a',
     },
   },
   lg: {
@@ -57,3 +57,9 @@ export const semanticShadows = defineSemanticTokens.shadows({
     },
   },
 })
+
+
+/*shadows are only xs, s, md
+* custom shadow
+* shadow for different variants buttons
+* */

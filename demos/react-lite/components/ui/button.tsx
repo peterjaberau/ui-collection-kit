@@ -12,7 +12,7 @@ const BUTTON_ICON_NAME = 'ButtonIcon';
 export const buttonVariants = tv({
   slots: {
     root: [
-      // base
+      // base—
       'group relative inline-flex items-center justify-center whitespace-nowrap outline-none',
       'transition duration-200 ease-out',
       // focus

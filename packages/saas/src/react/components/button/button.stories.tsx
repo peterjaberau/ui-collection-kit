@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, HStack, Stack } from '@chakra-ui/react'
+import { Box, HStack, Stack, Text } from '@chakra-ui/react'
 
 import { Button } from './index'
 
@@ -81,18 +81,84 @@ export const Variants = {
           Ghost
         </Button>
       </HStack>
+
+      <HStack>
+        <Button variant="solid" colorPalette="red">
+          Solid
+        </Button>
+        <Button
+          // @ts-ignore
+          variant="glass" colorPalette="red">
+          Glass
+        </Button>
+        <Button variant="surface" colorPalette="red">
+          Surface
+        </Button>
+        <Button variant="outline" colorPalette="red">
+          Outline
+        </Button>
+        <Button variant="subtle" colorPalette="red">
+          Subtle
+        </Button>
+        <Button variant="ghost" colorPalette="red">
+          Ghost
+        </Button>
+      </HStack>
+
+      <HStack>
+        <Button variant="solid" colorPalette="green">Sign in</Button>
+      </HStack>
+
+
     </Stack>
   ),
 }
 
 export const Sizes = {
   render: () => (
-    <HStack>
-      <Button size="xs">XSmall</Button>
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
-      <Button size="xl">XLarge</Button>
-    </HStack>
+    <Stack>
+      <Text textStyle="xl">default</Text>
+      <HStack>
+        <Button size="xl">Large</Button>
+        <Button size="lg">Medium</Button>
+        <Button size="md">Small</Button>
+        <Button size="sm">XSmall</Button>
+        <Button size="xs">XXSmall</Button>
+
+      </HStack>
+      <Text textStyle="xl">outline = stroke</Text>
+      <HStack>
+        <Button size="xl" variant={"outline"}>Large</Button>
+        <Button size="lg" variant={"outline"}>Medium</Button>
+        <Button size="md" variant={"outline"}>Small</Button>
+        <Button size="sm" variant={"outline"}>XSmall</Button>
+        <Button size="xs" variant={"outline"}>XXSmall</Button>
+      </HStack>
+      <Text textStyle="xl">subtle = lighter</Text>
+      <HStack>
+
+        <Button size="xl" variant={"subtle"}>Large</Button>
+        <Button size="lg" variant={"subtle"}>Medium</Button>
+        <Button size="md" variant={"subtle"}>Small</Button>
+        <Button size="sm" variant={"subtle"}>XSmall</Button>
+        <Button size="xs" variant={"subtle"}>XXSmall</Button>
+      </HStack>
+      <Text textStyle="xl">ghost = ghost</Text>
+      <HStack>
+        <Button size="xl" variant={"ghost"}>Large</Button>
+        <Button size="lg" variant={"ghost"}>Medium</Button>
+        <Button size="md" variant={"ghost"}>Small</Button>
+        <Button size="sm" variant={"ghost"}>XSmall</Button>
+        <Button size="xs" variant={"ghost"}>XXSmall</Button>
+      </HStack>
+    </Stack>
+
+
+
+
   ),
-}
+
+
+
+
+  }
