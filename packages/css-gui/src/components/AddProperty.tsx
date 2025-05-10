@@ -9,6 +9,7 @@ import { KeyArg } from './providers/types'
 import { joinPath } from './providers/util'
 import fuzzysort from 'fuzzysort'
 import { kebabCase } from 'lodash-es'
+import { chakra, HStack, Box } from "@chakra-ui/react"
 
 interface Props {
   field?: KeyArg
@@ -25,7 +26,7 @@ export const AddPropertyControl = ({
 
   //@ts-ignore
   const allProperties: string[] = Object.entries(propertyList)
-    .map(([name, data]) => {
+    .map(([name, data]: any) => {
       return data.input ? name : null
     })
     .filter(Boolean)
@@ -54,7 +55,7 @@ export const AddPropertyControl = ({
   return (
     <div>
       <Label>
-        <span sx={{display: 'block', mb: 1,}}>{label}</span>
+        <chakra.span css={{display: 'block', mb: 1,}}>{label}</chakra.span>
         <Combobox
           onFilterItems={handleFilterItems}
           onItemSelected={handleAddProperty}

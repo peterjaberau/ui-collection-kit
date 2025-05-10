@@ -7,6 +7,6 @@ interface LabelProps extends HTMLAttributes<HTMLLabelElement> {
 }
 export const Label = (props: LabelProps) => {
   return (
-    <Root {...props} sx={{ userSelect: 'none', fontSize: 0, fontWeight: 500, display: 'block' }} />
+    <Root {...props} style={{ userSelect: 'none', fontSize: 0, fontWeight: 500, display: 'block' }} />
   )
 }

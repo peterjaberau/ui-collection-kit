@@ -6,12 +6,18 @@ export const DROPDOWN_STYLES: any = {
   borderColor: 'border',
   width: 256,
   py: 1,
+  paddingTop: 1,
+  paddingBottom: 1,
   position: 'relative',
 }
 
 export const DROPDOWN_ITEM_STYLES: any = {
   px: 3,
   py: 2,
+  paddingLeft: 3,
+  paddingRight: 3,
+  paddingTop: 2,
+  paddingBottom: 2,
   color: 'text',
   fontSize: [0, 1, 1],
   fontWeight: 500,
@@ -30,6 +36,8 @@ export const DROPDOWN_ITEM_STYLES: any = {
 
 export const DROPDOWN_SEPARATOR_STYLES: any = {
   my: 1,
+  marginTop: 1,
+  marginBottom: 1,
   borderTop: 'thin solid',
   borderColor: 'border',
 }

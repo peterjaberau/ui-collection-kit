@@ -6,6 +6,7 @@ import { SchemaInput } from '../inputs/SchemaInput'
 import { replace } from '../../lib/array'
 import { ComponentType } from 'react'
 import { EditorPropsWithLabel } from '../../types/editor'
+import { chakra } from '@chakra-ui/react'
 
 interface CreateTupleSchema<T> {
   itemSchema: DataTypeSchema<T>
@@ -70,19 +71,19 @@ export function tupleSchema<T>({
       const { value, onChange } = props
       const linked = isLinked(value)
       return (
-        <div sx={{ display: 'flex', gap: 2 }}>
+        <chakra.div css={{ display: 'flex', gap: 2 }}>
           {linkable && (
             <Toggle.Root
               title="Link inputs"
-              sx={{
-                p: 0,
+              style={{
+                padding: 0,
                 background: 'none',
                 border: 'none',
                 color: 'muted',
 
-                '&[data-state=on]': {
-                  color: 'text',
-                },
+                // '&[data-state=on]': {
+                //   color: 'text',
+                // },
               }}
               pressed={linked}
               onPressedChange={(pressed) => {
@@ -109,7 +110,7 @@ export function tupleSchema<T>({
               />
             )
           })}
-        </div>
+        </chakra.div>
       )
     },
   }

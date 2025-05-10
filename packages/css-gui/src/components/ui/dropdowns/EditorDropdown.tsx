@@ -11,26 +11,26 @@ export const EditorDropdown = ({ onClearStyles }: EditorDropdownProps) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger
-        sx={{
+        style={{
           all: 'unset',
           lineHeight: 1,
           position: 'relative',
           color: 'muted',
         }}
       >
-        <IconButton sx={{ ml: 2 }}>
+        <IconButton style={{ marginLeft: 2 }}>
           <MoreVertical size={16} />
         </IconButton>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content sx={DROPDOWN_STYLES}>
-        <DropdownMenu.Item sx={DROPDOWN_ITEM_STYLES} onClick={onClearStyles}>
+      <DropdownMenu.Content style={DROPDOWN_STYLES}>
+        <DropdownMenu.Item style={DROPDOWN_ITEM_STYLES} onClick={onClearStyles}>
           <div
-            sx={{
+            style={{
               display: 'flex',
               alignItems: 'center',
             }}
           >
-            <Trash size={12} sx={{ color: 'muted', mr: 2 }} />{' '}
+            <Trash size={12} style={{ color: 'muted', marginRight: 2 }} />{' '}
             <span>Clear all styles</span>
           </div>
         </DropdownMenu.Item>

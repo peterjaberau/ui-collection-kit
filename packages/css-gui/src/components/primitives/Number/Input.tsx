@@ -3,7 +3,7 @@ import * as React from 'react'
 import { NumberInputProps } from './types'
 import { useDrag } from '@use-gesture/react'
 import { roundToStep } from '../../../lib/math'
-
+import { chakra } from '@chakra-ui/react'
 interface DraggableLabelProps {
   step?: number
   onUpdate: (newValue: any) => void
@@ -63,7 +63,8 @@ export const DraggableInput = ({
   )
 
   return (
-    <input
+    <>
+    <chakra.input
       type="text"
       value={internalValue}
       onKeyDown={(e) => {
@@ -95,7 +96,7 @@ export const DraggableInput = ({
         setInternalValue(newValue ?? '')
         onUpdate(newValue || 0)
       }}
-      sx={{
+      css={{
         cursor: dragging ? 'ew-resize' : 'default',
         lineHeight: 1.5,
         p: 1,
@@ -111,6 +112,7 @@ export const DraggableInput = ({
       }}
       {...bind()}
     />
+    </>
   )
 }
 

@@ -8,6 +8,7 @@ import { Combobox, Label } from './primitives'
 import { useEditor } from './providers/EditorContext'
 import { KeyArg } from './providers/types'
 import { joinPath } from './providers/util'
+import { chakra, HStack, Box } from "@chakra-ui/react"
 
 interface Props {
   field?: KeyArg
@@ -40,8 +41,8 @@ export const AddFieldsetControl = ({
   }
 
   return (
-    <div
-      sx={{
+    <chakra.div
+      css={{
         borderRadius: '6px',
         borderWidth: '1px',
         borderStyle: 'solid',
@@ -56,6 +57,6 @@ export const AddFieldsetControl = ({
         onItemSelected={handleAddFieldset}
         clearOnSelect
       />
-    </div>
+    </chakra.div>
   )
 }

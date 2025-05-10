@@ -8,6 +8,7 @@ import { joinSchemas } from './joinSchemas'
 import { angle } from './angle'
 import { SchemaInput } from '../inputs/SchemaInput'
 import { replace } from '../../lib/array'
+import { chakra } from '@chakra-ui/react'
 
 const translate = functionSchema(
   'translate',
@@ -96,8 +97,8 @@ const matrix = functionSchema(
     input(props) {
       const { value, onChange } = props
       return (
-        <div
-          sx={{
+        <chakra.div
+          css={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: 3,
@@ -119,7 +120,7 @@ const matrix = functionSchema(
               )
             })
           })}
-        </div>
+        </chakra.div>
       )
     },
   })

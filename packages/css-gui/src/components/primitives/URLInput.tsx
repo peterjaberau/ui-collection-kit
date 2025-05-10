@@ -1,7 +1,7 @@
 'use client'
 import { ChangeEvent, useId } from 'react'
 import { Label } from './Label'
-
+import { chakra } from '@chakra-ui/react'
 type URLInputProps = {
   value: string
   onChange: (newValue: string) => void
@@ -15,14 +15,14 @@ export const URLInput = ({ label, value, onChange }: URLInputProps) => {
   return (
     <Label htmlFor={fullId}>
       {label ?? 'URL'}
-      <input
+      <chakra.input
         id={fullId}
         type="url"
         value={value}
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
           onChange(e.target.value)
         }}
-        sx={{
+        css={{
           minHeight: '1.6em',
           width: '100%',
         }}

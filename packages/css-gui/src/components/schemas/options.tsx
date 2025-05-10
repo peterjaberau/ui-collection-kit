@@ -1,6 +1,7 @@
 'use client'
 import { DataTypeSchema, RegenOptions } from './types'
 import * as Select from '../ui/Select'
+import { chakra } from '@chakra-ui/react'
 
 interface CreateOptions<T extends Record<string, any>> {
   variants: { [V in keyof T]: DataTypeSchema<T[V]> }
@@ -51,7 +52,7 @@ export function optionsSchema<T extends Record<string, any>>({
       const InlineInput = variants[type].inlineInput
       // Render the select
       return (
-        <div sx={{ display: 'flex' }}>
+        <chakra.div css={{ display: 'flex' }}>
           {InlineInput && <InlineInput {...props} />}
           <Select.Root
             value={type.toString()}
@@ -77,7 +78,7 @@ export function optionsSchema<T extends Record<string, any>>({
               })}
             </Select.Content>
           </Select.Root>
-        </div>
+        </chakra.div>
       )
     },
     input(props) {

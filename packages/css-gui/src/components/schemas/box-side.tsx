@@ -5,6 +5,7 @@ import { DataTypeSchema, RegenOptions } from './types'
 import * as Toggle from '@radix-ui/react-toggle'
 import { Maximize, Minimize } from 'react-feather'
 import { SchemaInput } from '../inputs/SchemaInput'
+import { chakra } from '@chakra-ui/react'
 
 interface CreateBoxSideSchema<T> {
   itemSchema: DataTypeSchema<T>
@@ -24,7 +25,7 @@ export interface BoxSide<T> {
 export function boxSideSchema<T>({
   itemSchema,
 }: CreateBoxSideSchema<T>): DataTypeSchema<BoxSide<T>> {
-  function stringify(value: BoxSide<T>, ...args) {
+  function stringify(value: BoxSide<T>, ...args: any) {
     const { stringify, defaultValue } = itemSchema
     if (isLinked(value)) {
       return stringify(value.top, ...args)
@@ -75,15 +76,15 @@ export function boxSideSchema<T>({
       const linkToggle = (
         <Toggle.Root
           title="Show all directions (longhand)"
-          sx={{
-            p: 0,
+          style={{
+            padding: 0,
             background: 'none',
             border: 'none',
             color: 'muted',
 
-            '&[data-state=on]': {
-              color: 'text',
-            },
+            // '&[data-state=on]': {
+            //   color: 'text',
+            // },
           }}
           pressed={linked}
           onPressedChange={(pressed) => {
@@ -107,19 +108,19 @@ export function boxSideSchema<T>({
         </Toggle.Root>
       )
       return (
-        <div>
+        <chakra.div>
           {linked ? (
-            <div sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1, }}>
+            <chakra.div css={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1, }}>
               {linkToggle}
               <SchemaInput
                 schema={itemSchema}
                 {...getInputProps(props, 'top')}
                 label=""
               />
-            </div>
+            </chakra.div>
           ) : (
-            <div
-              sx={{
+            <chakra.div
+              css={{
                 display: 'grid',
                 justifyItems: 'center',
                 alignItems: 'center',
@@ -131,21 +132,21 @@ export function boxSideSchema<T>({
             `,
               }}
             >
-              <div sx={{ gridArea: 'link' }}>{linkToggle}</div>
+              <chakra.div css={{ gridArea: 'link' }}>{linkToggle}</chakra.div>
               {['top', 'left', 'right', 'bottom'].map((side) => {
                 return (
-                  <div sx={{ gridArea: side }}>
+                  <chakra.div css={{ gridArea: side }}>
                     <SchemaInput
                       schema={itemSchema}
                       {...getInputProps(props, side as any)}
                       label=""
                     />
-                  </div>
+                  </chakra.div>
                 )
               })}
-            </div>
+            </chakra.div>
           )}
-        </div>
+        </chakra.div>
       )
     },
   }

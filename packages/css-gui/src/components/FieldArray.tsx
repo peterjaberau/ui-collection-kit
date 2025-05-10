@@ -4,6 +4,7 @@ import { replace, remove, insert } from '../lib/array'
 import { EditorPropsWithLabel } from '../types/editor'
 import { SchemaInput } from './inputs/SchemaInput'
 import { DataTypeSchema } from './schemas/types'
+import { chakra, HStack, Box } from "@chakra-ui/react"
 
 export interface FieldArrayProps<T> extends EditorPropsWithLabel<T[]> {
   /**
@@ -29,15 +30,15 @@ export default function FieldArray<T>({
     const item = value[i1]
     const removed = remove(value, i1)
     if (i2 > i1) i2--
-    const final = insert(removed, i2, item)
+    const final: any = insert(removed, i2, item)
     onChange(final)
   }
 
   return (
-    <div sx={{ display: 'grid' }}>
+    <chakra.div css={{ display: 'grid' }}>
       {value.map((item, i) => {
         return (
-          <div>
+          <chakra.div>
             {isDragging && (
               <DropZone
                 onDrop={() => {
@@ -46,9 +47,9 @@ export default function FieldArray<T>({
                 }}
               />
             )}
-            <div
+            <chakra.div
               key={i}
-              sx={{
+              css={{
                 my: 1,
                 backgroundColor:
                   i === dragIndex ? 'backgroundOffset' : 'transparent',
@@ -69,8 +70,8 @@ export default function FieldArray<T>({
                   setDragIndex(-1)
                 }}
               />
-            </div>
-          </div>
+            </chakra.div>
+          </chakra.div>
         )
       })}
       {isDragging && (
@@ -81,12 +82,12 @@ export default function FieldArray<T>({
           }}
         />
       )}
-      <button
+      <chakra.button
         onClick={() => {
           const newLayerValue = addItem?.(value) ?? itemSchema.defaultValue
           onChange(value.concat([newLayerValue]))
         }}
-        sx={{
+        css={{
           width: '100%',
           appearance: 'none',
           px: 0,
@@ -101,8 +102,8 @@ export default function FieldArray<T>({
         }}
       >
         + Add {label.toLowerCase()}
-      </button>
-    </div>
+      </chakra.button>
+    </chakra.div>
   )
 }
 
@@ -113,9 +114,9 @@ interface DropZoneProps {
 function DropZone({ onDrop }: DropZoneProps) {
   const [hovered, setHovered] = useState(false)
   return (
-    <div sx={{ position: 'relative', height: '0px' }}>
-      <div
-        sx={{
+    <chakra.div css={{ position: 'relative', height: '0px' }}>
+      <chakra.div
+        css={{
           position: 'absolute',
           height: '2rem',
           width: '100%',
@@ -138,7 +139,7 @@ function DropZone({ onDrop }: DropZoneProps) {
           e.preventDefault()
         }}
         onDrop={onDrop}
-      ></div>
-    </div>
+      ></chakra.div>
+    </chakra.div>
   )
 }

@@ -6,6 +6,7 @@ import { UnitConversions } from '../../../lib/convert'
 import { convertUnits } from '../../../lib/convert'
 import { X } from 'react-feather'
 import IconButton from '../../ui/IconButton'
+import { chakra } from '@chakra-ui/react'
 
 // Mapping of units to [min, max] tuple
 type UnitRanges = Record<string, [min: number, max: number]>
@@ -38,8 +39,8 @@ export function DimensionInput(props: DimensionInputProps) {
   const allUnits = units
 
   return (
-    <div
-      sx={{
+    <chakra.div
+      css={{
         display: 'flex',
         alignItems: 'center',
         borderRadius: '0.25rem',
@@ -75,7 +76,7 @@ export function DimensionInput(props: DimensionInputProps) {
           })
         }}
       />
-    </div>
+    </chakra.div>
   )
 }
 

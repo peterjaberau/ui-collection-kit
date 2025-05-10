@@ -1,5 +1,7 @@
 'use client'
-import * as Select from '../ui/Select'
+import { Select, createListCollection, Portal } from "@chakra-ui/react"
+
+// import * as Select from '../ui/Select'
 import { InputHeader } from '../ui/InputHeader'
 
 interface Props<T extends string> {
@@ -17,35 +19,34 @@ export function SelectInput<T extends string>({
   decorateText,
   ...props
 }: Props<T>) {
-  const { value, onChange, options = [] } = props
+  const { value, onChange, options = [] }: any = props
+
+  const collection = createListCollection({
+    items: options.map((item: any) => ({
+      value: item,
+      label: item,
+    })),
+  })
+
 
   return (
     <InputHeader {...props}>
-      <Select.Root value={value} onValueChange={onChange}>
-        <Select.Trigger
-          sx={{
-            border: '1px solid',
-            borderColor: 'border',
-            borderRadius: '0.25rem',
-            height: '1.25rem',
-            px: 2,
-          }}
-        >
-          <Select.Value />
-          <Select.Icon />
-        </Select.Trigger>
-        <Select.Content>
-          {options.map((v) => {
-            return (
-              <Select.Item key={v} value={v}>
-                <Select.ItemIndicator />
-                <Select.ItemText>
-                  {decorateText ? decorateText(v) : v}
-                </Select.ItemText>
-              </Select.Item>
-            )
-          })}
-        </Select.Content>
+      <Select.Root multiple={false} defaultValue={[value]} onValueChange={onChange} collection={collection} size="xs">
+        <Select.Trigger />
+        <Portal>
+          <Select.Positioner>
+            <Select.Content>
+              {options.map((item: any) => {
+                return (
+                  <Select.Item item={item} key={item.value}>
+                    {decorateText ? decorateText(item.value) : item.value}
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                )
+              })}
+            </Select.Content>
+          </Select.Positioner>
+        </Portal>
       </Select.Root>
     </InputHeader>
   )

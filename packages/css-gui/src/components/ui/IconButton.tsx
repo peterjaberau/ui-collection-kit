@@ -1,11 +1,11 @@
 import { ButtonHTMLAttributes } from 'react'
-
+import { chakra, HStack, Box } from "@chakra-ui/react"
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export default function IconButton(props: Props) {
   return (
-    <button
-      sx={{
+    <chakra.button
+      css={{
         p: 1,
         m: 0,
         appearance: 'none',

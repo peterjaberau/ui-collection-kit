@@ -6,6 +6,7 @@ import { SelectInput } from '../inputs/SelectInput'
 import { DataTypeSchema } from './types'
 import { joinPath } from '../providers/util'
 import { randomInt } from '../../lib/random'
+import { chakra } from '@chakra-ui/react'
 
 export function themeScale(path: string): DataTypeSchema<ThemeValue> {
   return {

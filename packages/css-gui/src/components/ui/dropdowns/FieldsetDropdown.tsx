@@ -10,9 +10,9 @@ export const FieldsetDropdown = ({ onRemove }: FieldsetDropdownProps) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger
-        sx={{
-          p: 1,
-          mr: 0,
+        style={{
+          padding: 1,
+          marginRight: 0,
           appearance: 'none',
           WebkitAppearance: 'none',
           background: 'backgroundOffset',
@@ -24,26 +24,26 @@ export const FieldsetDropdown = ({ onRemove }: FieldsetDropdownProps) => {
           alignItems: 'center',
           justifyContent: 'center',
           transition: 'color .2s ease-in-out',
-          ':hover': {
-            color: 'text',
-          },
-          ':disabled': {
-            opacity: '50%',
-            cursor: 'initial',
-          },
+          // ':hover': {
+          //   color: 'text',
+          // },
+          // ':disabled': {
+          //   opacity: '50%',
+          //   cursor: 'initial',
+          // },
         }}
       >
         <MoreVertical size={15} strokeWidth={2}  />
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content sx={DROPDOWN_STYLES}>
-        <DropdownMenu.Item sx={DROPDOWN_ITEM_STYLES} onClick={onRemove}>
+      <DropdownMenu.Content style={DROPDOWN_STYLES}>
+        <DropdownMenu.Item style={DROPDOWN_ITEM_STYLES} onClick={onRemove}>
           <div
-            sx={{
+            style={{
               display: 'flex',
               alignItems: 'center',
             }}
           >
-            <Trash size={12} sx={{ color: 'muted', mr: 2 }} />{' '}
+            <Trash size={12} style={{ color: 'muted', marginRight: 2 }} />{' '}
             <span>Delete group</span>
           </div>
         </DropdownMenu.Item>

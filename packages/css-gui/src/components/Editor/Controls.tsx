@@ -1,5 +1,6 @@
 'use client'
 import { produce } from "immer"
+import { chakra, HStack, VStack, Box, IconButton, Container, Heading } from "@chakra-ui/react"
 import { Children, ComponentType, Fragment, isValidElement, ReactNode, useMemo, useState } from "react"
 import { camelCase, isNil, mapValues, uniq } from "lodash-es"
 import { RefreshCw } from "react-feather"
@@ -21,7 +22,7 @@ import { getDefaultValue, isFieldsetGroup, partitionProperties, sortProperties }
 import { stylesToEditorSchema } from "../../lib/transformers/styles-to-editor-schema"
 import { removeInternalCSSClassSyntax } from "../../lib/classes"
 import { AddFieldsetControl } from "../AddFieldset"
-import IconButton from "../ui/IconButton"
+// import IconButton from "../ui/IconButton"
 import { SchemaInput } from "../inputs/SchemaInput"
 import { EditorDropdown } from "../ui/dropdowns/EditorDropdown"
 import { FieldsetDropdown } from "../ui/dropdowns/FieldsetDropdown"
@@ -211,11 +212,11 @@ export const Editor = ({
       hideResponsiveControls={hideResponsiveControls}
     >
       {showRegenerate && (
-        <div sx={{ ml: "auto", display: "flex" }}>
-          <IconButton onClick={() => onChange(regenerateAll())} sx={{ ml: "auto" }}>
+        <HStack>
+          <IconButton onClick={() => onChange(regenerateAll())} size="2xs">
             <RefreshCw size={15} />
           </IconButton>
-        </div>
+        </HStack>
       )}
       <EditorControls showAddProperties={showAddProperties}>{children}</EditorControls>
     </EditorProvider>
@@ -227,45 +228,41 @@ interface EditorControlsProps {
   showAddProperties?: boolean
 }
 export const EditorControls = ({ children, showAddProperties }: EditorControlsProps) => {
-  const { value: styles, clearAll } = useEditor()
+  const { value: styles, clearAll }: any = useEditor()
   const [fieldsets, properties] = partitionProperties(uniq(Object.keys(styles)))
   const controls = children ? children : <ControlSet properties={sortProperties(properties)} />
 
   const fieldsetControls = children ? null : <ControlSet properties={sortProperties(fieldsets)} />
 
   return (
-    <section sx={{ pb: 5 }}>
+    <Container pb={5}>
       {showAddProperties ? (
-        <div
-          sx={{
-            display: "flex",
-            alignItems: "flex-end",
-            width: "100%",
-            borderWidth: "1px",
-            borderStyle: "solid",
-            borderColor: "border",
-            borderRadius: "6px",
-            p: 3,
-            my: 3,
-          }}
+        <HStack
+          alignItems="flex-end"
+          borderWidth="1px"
+          borderStyle="solid"
+          borderColor="border"
+          borderRadius="6px"
+          p={3}
+          my={3}
         >
-          <div sx={{ width: "100%" }}>
+          <Box width="100%">
             <AddPropertyControl styles={styles} />
-          </div>
-          <div sx={{ flexShrink: 1, width: 32 }}>
+          </Box>
+          <Box width={32} flexShrink={0}>
             <EditorDropdown onClearStyles={clearAll} />
-          </div>
-        </div>
+          </Box>
+        </HStack>
       ) : null}
       {controls}
       {showAddProperties ? (
-        <div sx={{ py: 4 }}>
+        <Box py={4}>
           <AddFieldsetControl styles={styles} />
-        </div>
+        </Box>
       ) : null}
       {fieldsetControls}
       {children ? <DynamicControls /> : null}
-    </section>
+    </Container>
   )
 }
 
@@ -281,7 +278,7 @@ type ControlSetProps = {
 }
 const ControlSet = ({ field, properties }: ControlSetProps) => {
   return (
-    <div sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+    <VStack>
       {properties.map((property) => {
         const fullField = field ? joinPath(field, property) : property
 
@@ -291,7 +288,7 @@ const ControlSet = ({ field, properties }: ControlSetProps) => {
           <Control key={property} field={fullField} showRemove />
         )
       })}
-    </div>
+    </VStack>
   )
 }
 
@@ -308,24 +305,14 @@ const FieldsetControl = ({ field }: FieldsetControlProps) => {
   const rawFieldsetName = getSelectorFunctionName(field)
 
   return (
-    <section
-      sx={{
-        borderTopWidth: "1px",
-        borderTopColor: "border",
-        borderTopStyle: "solid",
-      }}
+    <Container
+      borderTopWidth="1px"
+      borderTopColor="border"
+      borderTopStyle="solid"
     >
-      <div
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          mt: 3,
-          mb: 2,
-        }}
-      >
-        <h3
-          sx={{
+      <HStack alignItems="center" justifyContent="space-between" mb={2} mt={3}>
+        <chakra.h3
+          css={{
             mt: 0,
             fontSize: 1,
             lineHeight: 1,
@@ -336,9 +323,9 @@ const FieldsetControl = ({ field }: FieldsetControlProps) => {
           {isSelectorFunction(rawFieldsetName) ? (
             <>
               {"("}
-              <input
+              <chakra.input
                 value={argument}
-                sx={{
+                css={{
                   width: 64,
                 }}
                 onChange={(e) => {
@@ -356,25 +343,16 @@ const FieldsetControl = ({ field }: FieldsetControlProps) => {
               {")"}
             </>
           ) : null}
-        </h3>
+        </chakra.h3>
         <FieldsetDropdown onRemove={() => removeField(field)} />
-      </div>
+      </HStack>
       <GenericFieldset field={field}>
-        <div
-          sx={{
-            mb: 3,
-            p: 3,
-            borderWidth: "1px",
-            borderStyle: "solid",
-            borderColor: "border",
-            borderRadius: "6px",
-          }}
-        >
+        <Box mb={3} p={3} borderWidth="1px" borderStyle="solid" borderColor="border" borderRadius="6px">
           <AddPropertyControl field={field} styles={styles} label={`Add property to ${label}`} />
-        </div>
+        </Box>
         <ControlSet properties={properties} />
       </GenericFieldset>
-    </section>
+    </Container>
   )
 }
 
@@ -389,20 +367,20 @@ function getInputComponent(property: string) {
 function getPropertiesFromChildren(children: ReactNode): string[] {
   // Based on: https://github.com/remix-run/react-router/blob/main/packages/react-router/lib/components.tsx#L270
   let properties: string[] = []
-  Children.forEach(children, (element) => {
+  Children.forEach(children, (element: any): any => {
     if (!isValidElement(element)) {
       return
     }
     if (element.type === Fragment) {
-      properties = [...properties, ...getPropertiesFromChildren(element.props.children)]
+      properties = [...properties, ...getPropertiesFromChildren((element.props as any).children)]
     }
     // TODO defaults on nested fields
     if (typeof element.type === "function" && (element.type as any).displayName) {
       const property = camelCase((element.type as any).displayName)
       properties = [...properties, property]
     }
-    if (element.props.children) {
-      properties = [...properties, ...getPropertiesFromChildren(element.props.children)]
+    if ((element.props as any).children) {
+      properties = [...properties, ...getPropertiesFromChildren((element.props as any).children)]
     }
   })
   return properties

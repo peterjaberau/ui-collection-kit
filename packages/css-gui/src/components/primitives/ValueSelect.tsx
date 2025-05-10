@@ -1,5 +1,6 @@
-'use client'
-import * as Select from '@radix-ui/react-select'
+"use client"
+import { Select, createListCollection, Portal } from "@chakra-ui/react"
+import { useMemo } from "react"
 
 interface ValueInputProps {
   onChange: (e: any) => void
@@ -7,66 +8,31 @@ interface ValueInputProps {
   values: string[]
 }
 
-export const ValueSelect = ({
-  onChange,
-  value,
-  values,
-}: ValueInputProps): any => {
+export const ValueSelect = ({ onChange, value, values }: ValueInputProps): any => {
+  const collection = createListCollection({
+    items: values.map((item) => ({
+      value: item,
+      label: item,
+    })),
+  })
+
   return (
-    <Select.Root value={value} onValueChange={onChange}>
-      <Select.Trigger
-        sx={{
-          minHeight: '1.6em',
-          background: 'none',
-          border: 'none',
-          color: 'text',
-          width: 'max-content',
-          ':hover': {
-            background: 'backgroundOffset',
-          },
-        }}
-      >
-        <Select.Value />
-      </Select.Trigger>
-      <Select.Content
-        sx={{
-          backgroundColor: 'background',
-          text: 'text',
-          py: 1,
-          border: '1px solid',
-          borderColor: 'border',
-          borderRadius: '0.5rem',
-          fontSize: 1,
-        }}
-      >
-        <Select.Viewport>
-          {values.map((value) => {
-            return (
-              <Select.Item
-                value={value}
-                sx={{
-                  pr: 3,
-                  pl: 4,
-                  cursor: 'pointer',
-                  ':hover': {
-                    backgroundColor: 'primary',
-                  },
-                }}
-              >
-                <Select.ItemIndicator
-                  sx={{
-                    position: 'absolute',
-                    left: 3,
-                  }}
-                >
-                  ✓
-                </Select.ItemIndicator>
-                <Select.ItemText>{value}</Select.ItemText>
-              </Select.Item>
-            )
-          })}
-        </Select.Viewport>
-      </Select.Content>
+    <Select.Root multiple={false} defaultValue={[value]} onValueChange={onChange} collection={collection} size="xs">
+      <Select.Trigger />
+      <Portal>
+        <Select.Positioner>
+          <Select.Content>
+            {values.map((item: any) => {
+              return (
+                <Select.Item item={item} key={item.value}>
+                  {item.label}
+                  <Select.ItemIndicator />
+                </Select.Item>
+              )
+            })}
+          </Select.Content>
+        </Select.Positioner>
+      </Portal>
     </Select.Root>
   )
 }

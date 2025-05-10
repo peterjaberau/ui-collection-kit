@@ -1,13 +1,12 @@
-'use client'
-import { Trash, ChevronUp, ChevronDown } from 'react-feather'
-import { useState, ComponentType, useId } from 'react'
-import * as Accordion from '@radix-ui/react-accordion'
-import IconButton from './ui/IconButton'
-import { kebabCase } from 'lodash-es'
-import LayerHeader from './LayerHeader'
-import { flip, replace, remove } from '../lib/array'
-import { InputHeader } from './ui/InputHeader'
-import { EditorPropsWithLabel } from '../types/editor'
+"use client"
+import { chakra, Accordion, Center, IconButton, Box, Button, HStack } from "@chakra-ui/react"
+import { Trash, ChevronUp, ChevronDown } from "react-feather"
+import { useState, ComponentType, useId } from "react"
+import { kebabCase } from "lodash-es"
+import LayerHeader from "./LayerHeader"
+import { flip, replace, remove } from "../lib/array"
+import { InputHeader } from "./ui/InputHeader"
+import { EditorPropsWithLabel } from "../types/editor"
 
 interface LayersProps<T> extends EditorPropsWithLabel<T[]> {
   /**
@@ -32,15 +31,7 @@ export interface LayerProps<T> {
  * An alternative field array that is collapsible.
  */
 export default function Layers<T>(props: LayersProps<T>) {
-  const {
-    label = '',
-    value = [],
-    onChange,
-    content: Content,
-    stringify,
-    newItem,
-    thumbnail,
-  } = props
+  const { label = "", value = [], onChange, content: Content, stringify, newItem, thumbnail } = props
   const id = `${useId()}-${kebabCase(label)}`
   const [expandedLayer, setExpandedLayer] = useState(-1)
 
@@ -49,53 +40,31 @@ export default function Layers<T>(props: LayersProps<T>) {
   }
 
   return (
-    <div>
+    <Box>
       <InputHeader {...props} />
-      <div
-        sx={{
-          border: '1px solid',
-          borderColor: 'border',
-          borderRadius: '6px',
-        }}
-      >
+      <Box border="1px solid" borderColor="border" borderRadius="6px">
         <Accordion.Root
-          type="single"
+          multiple={false}
           collapsible
-          value={expandedLayer.toString()}
-          onValueChange={(i) => setExpandedLayer(i === '' ? -1 : +i)}
+          defaultValue={[expandedLayer.toString()]}
+          onValueChange={(i: any) => setExpandedLayer(i === "" ? -1 : +i)}
         >
           {value.map((item, i) => {
             return (
               <Accordion.Item value={i.toString()} key={i}>
-                <Accordion.Header
-                  sx={{ margin: 0, lineHeight: 0, position: 'relative' }}
-                >
-                  <Accordion.Trigger
-                    sx={{
-                      width: '100%',
-                      appearance: 'none',
-                      background: 'none',
-                      border: 'none',
-                      borderBottom: '1px solid',
-                      borderColor: 'border',
-                      cursor: 'pointer',
-                      px: 2,
-                    }}
+                <HStack>
+                  <Accordion.ItemTrigger
+                    width="100%"
+                    appearance="none"
+                    background="none"
+                    border="none"
+                    cursor="pointer"
+                    borderBottom="1px solid"
+                    px="2"
                   >
                     <LayerHeader preview={thumbnail} text={stringify([item])} />
-                  </Accordion.Trigger>
-                  <div
-                    sx={{
-                      position: 'absolute',
-                      top: 0,
-                      right: 0,
-                      height: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 1,
-                      mr: 2,
-                    }}
-                  >
+                  </Accordion.ItemTrigger>
+                  <HStack>
                     <IconButton
                       title="Delete"
                       onClick={() => {
@@ -111,15 +80,7 @@ export default function Layers<T>(props: LayersProps<T>) {
                     >
                       <Trash size={16} />
                     </IconButton>
-                    <div
-                      sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifySelf: 'right',
-                        alignSelf: 'center',
-                        gap: '-0.5rem',
-                      }}
-                    >
+                    <HStack>
                       <IconButton
                         disabled={i === 0}
                         onClick={() => {
@@ -150,46 +111,41 @@ export default function Layers<T>(props: LayersProps<T>) {
                       >
                         <ChevronDown size={16} />
                       </IconButton>
-                    </div>
-                  </div>
-                </Accordion.Header>
-                <Accordion.Content
-                  sx={{
-                    borderBottom: '1px solid',
-                    borderColor: 'border',
-                    p: 3,
-                  }}
-                >
-                  <Content
-                    value={item}
-                    onChange={(newValue) => {
-                      onChange(replace(value, i, newValue))
-                    }}
-                  />
-                </Accordion.Content>
+                    </HStack>
+                  </HStack>
+                </HStack>
+                <Accordion.ItemContent borderBottom="1px solid" borderColor="border" p={3}>
+                  <Accordion.ItemBody>
+                    <Content
+                      value={item}
+                      onChange={(newValue) => {
+                        onChange(replace(value, i, newValue))
+                      }}
+                    />
+                  </Accordion.ItemBody>
+                </Accordion.ItemContent>
               </Accordion.Item>
             )
           })}
         </Accordion.Root>
-        <button
+
+        <Button
           onClick={() => {
             onChange(value.concat([newItem()]))
           }}
-          sx={{
-            width: '100%',
-            appearance: 'none',
-            px: 0,
-            py: 2,
-            mt: 2,
-            border: 'none',
-            background: 'none',
-            cursor: 'pointer',
-            color: 'text',
-          }}
+          width="100%"
+          appearance="none"
+          px={0}
+          py={2}
+          mt={2}
+          border="none"
+          background="none"
+          cursor="pointer"
+          color="text"
         >
           + Add {label.toLowerCase()}
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   )
 }
