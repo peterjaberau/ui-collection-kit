@@ -41,9 +41,10 @@
       "@/templates": ["../templates"],
       "@/packages": ["../packages"],
       "@/demos": ["../demos"],
-      "@/apps": ["../apps"],
+      "@/apps": ["../apps"]
 
 
     }
-  }
+  },
+  "exclude": ["node_modules", "tmp"]
 }

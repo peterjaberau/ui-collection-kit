@@ -28,15 +28,10 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@/components/*": [
-        "./components/*"
-      ],
-      "@/components": [
-        "./components"
-      ]
+      "#machines/*": ["./machines/*"],
+      "#app/*": ["./app/*"],
+      "#components/*": ["./components/*"],
+      "#presets/*": ["./presets/*"]
     }
   },
   "include": [

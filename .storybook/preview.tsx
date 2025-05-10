@@ -1,14 +1,81 @@
-import { withThemeByClassName } from "@storybook/addon-themes"
-import type { Preview, ReactRenderer } from "@storybook/react"
-import { ChakraProvider } from "@chakra-ui/react"
-// import '@fontsource-variable/inter'
-import { defaultSystem, SuiProvider } from "../packages/saas/src/react"
-// import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-
 import React from "react"
-// import "./styles/tailwind.css"
-// import "./styles/tailwind.css"
-// import "./styles/styles.css"
+import type { Preview, ReactRenderer } from "@storybook/react"
+import { withThemeByClassName } from "@storybook/addon-themes"
+import "react18-json-view/src/style.css"
+import JsonView from "react18-json-view"
+import { Box, Flex } from "@chakra-ui/react"
+
+// twenty imports
+import { ThemeProvider } from "@emotion/react"
+import { THEME_DARK, THEME_LIGHT, ThemeContextProvider } from "../packages/twenty-ui/src/theme"
+
+// chakra imports
+import { ChakraProvider } from "@chakra-ui/react"
+import { defaultSystem, SuiProvider } from "../packages/saas/src/react"
+
+const chakraLightSystem = {
+  config: {
+    initialColorMode: "light",
+    useSystemColorMode: false,
+  },
+}
+
+const chakraDarkSystem = {
+  config: {
+    initialColorMode: "dark",
+    useSystemColorMode: false,
+  },
+}
+
+const CustomDecoratorRenderer: any = (Story: any, context: any) => {
+  const storyPath = context?.title
+  const shouldApplyTwentyTheme = storyPath.includes("Twenty UI")
+  const currentTheme = context?.globals?.theme
+  const isTwentyStory = storyPath.includes("Twenty UI")
+
+  const ChakraThemeDecorator: any[] = [
+    withThemeByClassName({
+      themes: {
+        light: "light",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
+    (Story: any) => (
+      <ChakraProvider value={defaultSystem}>
+        <div className="font-mono antialiased">
+          <Flex justify="space-between">
+            <Box>
+              <Story />
+            </Box>
+            <Box gap="4" width="400" marginEnd="auto"></Box>
+          </Flex>
+        </div>
+      </ChakraProvider>
+    ),
+  ]
+
+  const twentyTheme = currentTheme === "dark" ? THEME_DARK : THEME_LIGHT
+
+  const TwentyThemeDecorator = [
+    withThemeByClassName({
+      themes: {
+        light: "light",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
+    (Story: any) => (
+      <ThemeProvider theme={twentyTheme}>
+        <ThemeContextProvider theme={twentyTheme}>
+          <Story />
+        </ThemeContextProvider>
+      </ThemeProvider>
+    ),
+  ]
+
+  return isTwentyStory ? TwentyThemeDecorator : ChakraThemeDecorator
+}
 
 const preview: Preview = {
   parameters: {
@@ -29,15 +96,69 @@ const preview: Preview = {
       },
       defaultTheme: "light",
     }),
-    (Story) => (
-      <>
-        <ChakraProvider value={defaultSystem as any}>
-          <div className="font-mono antialiased">
-            <Story />
-          </div>
-        </ChakraProvider>
-      </>
-    ),
+    (Story: any, context: any): any => {
+      const storyPath = context?.title
+      const shouldApplyTwentyTheme = storyPath.includes("Twenty") && !storyPath.includes("Refactor")
+      const shouldApplyTwentyRefactoredTheme = storyPath.includes("Refactor")
+      const shouldApplyChakraTheme = !shouldApplyTwentyTheme && !shouldApplyTwentyRefactoredTheme
+
+      const currentTheme = context?.globals?.theme
+      const twentyTheme = currentTheme === "dark" ? THEME_DARK : THEME_LIGHT
+
+      const JsonViewWrapper = () => (
+        <JsonView
+          src={{ storyPath, shouldApplyTwentyTheme, shouldApplyTwentyRefactoredTheme, shouldApplyChakraTheme }}
+          collapsed={1}
+          style={{ fontSize: "13px" }}
+          theme={"github"}
+        />
+      )
+
+      return (
+        <>
+          {shouldApplyTwentyTheme && (
+            <div style={{ fontSize: "13px" }}>
+              <ThemeProvider theme={twentyTheme}>
+                <ThemeContextProvider theme={twentyTheme}>
+                  <JsonViewWrapper />
+                  <Story />
+                </ThemeContextProvider>
+              </ThemeProvider>
+            </div>
+          )}
+          {shouldApplyChakraTheme && (
+            <>
+              <ChakraProvider value={defaultSystem as any}>
+                <div className="font-mono antialiased">
+                  <Flex justify="space-between" grow="1" minWidth="full" width="8xl">
+                    <Box>
+                      <Story />
+                    </Box>
+                    <Box gap="4" width="400" marginEnd="auto">
+                      <JsonViewWrapper />
+                    </Box>
+                  </Flex>
+                </div>
+              </ChakraProvider>
+            </>
+          )}
+
+          {shouldApplyTwentyRefactoredTheme && (
+            <>
+              <ChakraProvider value={defaultSystem as any}>
+                <div style={{ fontSize: "13px" }}>
+                  <ThemeProvider theme={twentyTheme}>
+                    <ThemeContextProvider theme={twentyTheme}>
+                      <Story />
+                    </ThemeContextProvider>
+                  </ThemeProvider>
+                </div>
+              </ChakraProvider>
+            </>
+          )}
+        </>
+      )
+    },
   ],
 }
 
