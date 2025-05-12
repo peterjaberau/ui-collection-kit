@@ -64,60 +64,63 @@ import { CursorPreview } from '#components/examples/CursorPreview';
 export default function Page() {
   return (
     <Container>
-      <Stack>
-        <Center>
-          <Stack>
-            <Heading size='4xl' textAlign='center'>
-              Properties
-            </Heading>
-            <Text textStyle='xl' textAlign='center'>
-              Preview available controls from the library
-            </Text>
-          </Stack>
-        </Center>
-        <SimpleGrid columns={5} gap={12}>
-          <FontSizePreview />
-          <FontFamilyPreview />
-          <FontStylePreview />
-          <FontWeightPreview />
-          <TextAlignPreview />
-          <TextTransformPreview />
-          <LetterSpacingPreview />
-          <TextIndentPreview />
-          <ColorPreview />
-          <AlignItemsPreview />
-          <JustifyContentPreview />
-          <FlexWrapPreview />
-          <FlexGrowPreview />
-          <FlexShrinkPreview />
-          <FlexDirectionPreview />
-          <BackgroundColorPreview />
-          <BorderColorPreview />
-          <TextDecorationColorPreview />
-          <TextDecorationLinePreview />
-          <TextDecorationStylePreview />
-          <TextDecorationThicknessPreview />
-          <AccentColorPreview />
-          <BorderWidthPreview />
-          <BorderStylePreview />
-          <OutlineColorPreview />
-          <OutlineWidthPreview />
-          <OutlineStylePreview />
-          <OutlineOffsetPreview />
-          <BorderRadiusPreview />
-          <FilterPreview />
-          <BackgroundImagePreview />
-          <BackgroundPreview />
-          <BackgroundBlendModePreview />
-          <MixBlendModePreview />
-          <OpacityPreview />
-          <BoxShadowPreview />
-          <TextShadowPreview />
-          <WidthPreview />
-          <HeightPreview />
-          <CursorPreview />
-        </SimpleGrid>
-      </Stack>
+
+    <Stack >
+      <Center>
+        <Stack>
+          <Heading size='4xl' textAlign='center'>
+            Properties
+          </Heading>
+          <Text textStyle='xl' textAlign='center'>
+            Preview available controls from the library
+          </Text>
+        </Stack>
+      </Center>
+      <SimpleGrid columns={4} gap={12}>
+        <FontSizePreview />
+        <FontFamilyPreview />
+        <FontStylePreview />
+        <FontWeightPreview />
+        <TextAlignPreview />
+        <TextTransformPreview />
+        <LetterSpacingPreview />
+        <TextIndentPreview />
+        <ColorPreview />
+        <AlignItemsPreview />
+        <JustifyContentPreview />
+        <FlexWrapPreview />
+        <FlexGrowPreview />
+        <FlexShrinkPreview />
+        <FlexDirectionPreview />
+        <BackgroundColorPreview />
+        <BorderColorPreview />
+        <TextDecorationColorPreview />
+        <TextDecorationLinePreview />
+        <TextDecorationStylePreview />
+        <TextDecorationThicknessPreview />
+        <AccentColorPreview />
+        <BorderWidthPreview />
+        <BorderStylePreview />
+        <OutlineColorPreview />
+        <OutlineWidthPreview />
+        <OutlineStylePreview />
+        <OutlineOffsetPreview />
+        <BorderRadiusPreview />
+        <FilterPreview />
+        <BackgroundImagePreview />
+        <BackgroundPreview />
+        <BackgroundBlendModePreview />
+        <MixBlendModePreview />
+        <OpacityPreview />
+        <BoxShadowPreview />
+        <TextShadowPreview />
+        <WidthPreview />
+        <HeightPreview />
+        <CursorPreview />
+      </SimpleGrid>
+    </Stack>
     </Container>
+
+
   );
 }

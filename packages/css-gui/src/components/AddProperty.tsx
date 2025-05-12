@@ -55,7 +55,7 @@ export const AddPropertyControl = ({
   return (
     <div>
       <Label>
-        <chakra.span css={{display: 'block', mb: 1,}}>{label}</chakra.span>
+        <Box>{label}</Box>
         <Combobox
           onFilterItems={handleFilterItems}
           onItemSelected={handleAddProperty}

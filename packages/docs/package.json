@@ -14,7 +14,8 @@
   "files": [
     "dist",
     "data",
-    "src"
+    "src",
+    "unstyled"
   ],
   "scripts": {
     "build": "tsup",

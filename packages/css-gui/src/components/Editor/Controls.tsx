@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { produce } from "immer"
 import { chakra, HStack, VStack, Box, IconButton, Container, Heading } from "@chakra-ui/react"
 import { Children, ComponentType, Fragment, isValidElement, ReactNode, useMemo, useState } from "react"
@@ -235,34 +235,30 @@ export const EditorControls = ({ children, showAddProperties }: EditorControlsPr
   const fieldsetControls = children ? null : <ControlSet properties={sortProperties(fieldsets)} />
 
   return (
-    <Container pb={5}>
+    <>
       {showAddProperties ? (
-        <HStack
-          alignItems="flex-end"
-          borderWidth="1px"
-          borderStyle="solid"
-          borderColor="border"
-          borderRadius="6px"
-          p={3}
-          my={3}
-        >
-          <Box width="100%">
-            <AddPropertyControl styles={styles} />
-          </Box>
-          <Box width={32} flexShrink={0}>
-            <EditorDropdown onClearStyles={clearAll} />
-          </Box>
+        <HStack justifyContent="flex-end" width="100%" >
+          <AddPropertyControl styles={styles} />
+          <EditorDropdown onClearStyles={clearAll} />
         </HStack>
       ) : null}
-      {controls}
-      {showAddProperties ? (
-        <Box py={4}>
-          <AddFieldsetControl styles={styles} />
+
+      <Box border="2px dotted red" >
+        {controls}
+      </Box>
+
+
+
+      {showAddProperties ?
+        <Box border="2px dotted black" blackgroundColor="black.100" >
+        <AddFieldsetControl styles={styles} />
         </Box>
-      ) : null}
+        : null}
       {fieldsetControls}
-      {children ? <DynamicControls /> : null}
-    </Container>
+      {children ?
+          <DynamicControls />
+        : null}
+    </>
   )
 }
 
@@ -283,9 +279,13 @@ const ControlSet = ({ field, properties }: ControlSetProps) => {
         const fullField = field ? joinPath(field, property) : property
 
         return isFieldsetGroup(property) ? (
-          <FieldsetControl key={property} field={property} />
+          <Box border="2px solid blue" backgroundColor="blue.100">
+            <FieldsetControl key={property} field={property} />
+          </Box>
         ) : (
-          <Control key={property} field={fullField} showRemove />
+          <Box border="2px solid red" backgroundColor="red.100">
+            <Control key={property} field={fullField} showRemove />
+          </Box>
         )
       })}
     </VStack>
@@ -305,20 +305,9 @@ const FieldsetControl = ({ field }: FieldsetControlProps) => {
   const rawFieldsetName = getSelectorFunctionName(field)
 
   return (
-    <Container
-      borderTopWidth="1px"
-      borderTopColor="border"
-      borderTopStyle="solid"
-    >
-      <HStack alignItems="center" justifyContent="space-between" mb={2} mt={3}>
-        <chakra.h3
-          css={{
-            mt: 0,
-            fontSize: 1,
-            lineHeight: 1,
-            mb: 0,
-          }}
-        >
+    <Container>
+      <HStack justifyContent="space-between">
+        <chakra.h3>
           {rawFieldsetName}
           {isSelectorFunction(rawFieldsetName) ? (
             <>
@@ -347,9 +336,7 @@ const FieldsetControl = ({ field }: FieldsetControlProps) => {
         <FieldsetDropdown onRemove={() => removeField(field)} />
       </HStack>
       <GenericFieldset field={field}>
-        <Box mb={3} p={3} borderWidth="1px" borderStyle="solid" borderColor="border" borderRadius="6px">
           <AddPropertyControl field={field} styles={styles} label={`Add property to ${label}`} />
-        </Box>
         <ControlSet properties={properties} />
       </GenericFieldset>
     </Container>

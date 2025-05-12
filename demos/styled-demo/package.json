@@ -1,0 +1,51 @@
+{
+  "name": "styled-demo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 4077",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next-themes": "0.4.6",
+    "@ui-collection-kit/saas": "workspace:*",
+    "next": "15.3.1",
+    "dayjs": "^1.11.13",
+    "lodash": "^4.17.21",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-icons": "5.5.0",
+    "@statelyai/agent": "1.1.6",
+    "@statelyai/inspect": "^0.4.0",
+    "@xstate/graph": "^3.0.2",
+    "@xstate/react": "^5.0.3",
+    "@xstate/store": "^3.4.1",
+    "xstate": "^5.19.2",
+    "mutative": "1.1.0",
+    "set-value": "4.1.0",
+    "ts-results": "^3.3.0",
+    "react18-json-view": "^0.2.9"
+  },
+  "devDependencies": {
+    "@types/set-value": "4.0.3",
+    "@storybook/react": "^8.6.12",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "globals": "^15.15.0",
+    "storybook": "^8.6.12",
+    "typescript": "~5.7.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.0.0",
+    "@types/qs": "^6.9.15",
+    "fs-extra": "^11.3.0",
+    "glob": "^11.0.1",
+    "qs": "^6.11.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rimraf": "^5.0.7",
+    "unified": "^8.0.0",
+    "zx": "^8.1.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "node_modules/.cache/.tsbuildinfo",
+    "module": "commonjs",
+    "types": ["node"],
+    "verbatimModuleSyntax": false,
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["**/*.stories.tsx"]
+}

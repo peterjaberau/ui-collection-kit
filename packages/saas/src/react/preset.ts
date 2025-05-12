@@ -1,7 +1,7 @@
 import { createSystem, defaultBaseConfig, mergeConfigs } from '@chakra-ui/react'
 
 import { defaultThemeConfig } from './theme'
-import { utilities } from './theme/utilities'
+import { utilities } from './theme/utils'
 
 const defaultConfig = mergeConfigs(defaultBaseConfig, defaultThemeConfig)
 

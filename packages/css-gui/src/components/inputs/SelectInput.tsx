@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 import { Select, createListCollection, Portal } from "@chakra-ui/react"
 
 // import * as Select from '../ui/Select'
@@ -31,7 +32,7 @@ export function SelectInput<T extends string>({
 
   return (
     <InputHeader {...props}>
-      <Select.Root multiple={false} defaultValue={[value]} onValueChange={onChange} collection={collection} size="xs">
+      <Select.Root multiple={false} value={[value]} onValueChange={onChange} collection={collection} size="xs">
         <Select.Trigger />
         <Portal>
           <Select.Positioner>

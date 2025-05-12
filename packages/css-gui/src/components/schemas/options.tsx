@@ -1,7 +1,7 @@
-'use client'
-import { DataTypeSchema, RegenOptions } from './types'
-import * as Select from '../ui/Select'
-import { chakra } from '@chakra-ui/react'
+"use client"
+import { DataTypeSchema, RegenOptions } from "./types"
+// import * as Select from '../ui/Select'
+import { chakra, createListCollection, Select, Portal, HStack } from "@chakra-ui/react"
 
 interface CreateOptions<T extends Record<string, any>> {
   variants: { [V in keyof T]: DataTypeSchema<T[V]> }
@@ -18,7 +18,7 @@ interface CreateOptions<T extends Record<string, any>> {
  */
 export function optionsSchema<T extends Record<string, any>>({
   variants,
-  type = 'options',
+  type = "options",
   order = Object.keys(variants),
   convert,
   defaultType = order[0],
@@ -30,15 +30,10 @@ export function optionsSchema<T extends Record<string, any>>({
     }
 
     throw new Error(
-      `Provided value ${JSON.stringify(
-        value
-      )} is not one of the options [${Object.keys(variants).join(', ')}].`
+      `Provided value ${JSON.stringify(value)} is not one of the options [${Object.keys(variants).join(", ")}].`,
     )
   }
-  function regenerate({
-    previousValue,
-    ...options
-  }: RegenOptions<Unionize<T>>): Unionize<T> {
+  function regenerate({ previousValue, ...options }: RegenOptions<Unionize<T>>): Unionize<T> {
     const type = getType(previousValue)
     const newValue = variants[type].regenerate?.({ previousValue, ...options })
     return newValue ?? previousValue
@@ -50,35 +45,57 @@ export function optionsSchema<T extends Record<string, any>>({
     inlineInput(props) {
       const type = getType(props.value)
       const InlineInput = variants[type].inlineInput
+
       // Render the select
       return (
-        <chakra.div css={{ display: 'flex' }}>
+        <HStack>
           {InlineInput && <InlineInput {...props} />}
           <Select.Root
-            value={type.toString()}
-            onValueChange={(newType) => {
+            value={[type.toString()]}
+            collection={createListCollection({
+              items: order.map((typeOption) => ({
+                value: typeOption,
+                label: typeOption,
+              })),
+            })}
+            onValueChange={(details: any) => {
               props.onChange(
-                convert?.(props.value, newType) ??
-                  (variants[newType].defaultValue as any)
+                convert?.(props.value, details.value[0]) ??
+                  ((variants[details.value[0] as any] as any).defaultValue as any),
+
+                // convert?.(props.value, newType) ??
+                //   (variants[newType].defaultValue as any)
               )
             }}
           >
-            <Select.Trigger>
-              <Select.Value>{''}</Select.Value>
-              <Select.Icon />
-            </Select.Trigger>
-            <Select.Content>
-              {order.map((typeOption: any) => {
-                return (
-                  <Select.Item key={typeOption} value={typeOption}>
-                    <Select.ItemText>{typeOption}</Select.ItemText>
-                    <Select.ItemIndicator />
-                  </Select.Item>
-                )
-              })}
-            </Select.Content>
+            <Select.HiddenSelect />
+            <Select.Control>
+              <Select.Trigger>
+                <Select.ValueText placeholder="Select" />
+              </Select.Trigger>
+              <Select.IndicatorGroup>
+                {/*<Select.ClearTrigger />*/}
+                <Select.Indicator />
+              </Select.IndicatorGroup>
+            </Select.Control>
+            <Portal>
+              <Select.Positioner>
+                <Select.Content width="max-content">
+                  {order.map((typeOption: any) => {
+                    return (
+                      <Select.Item  key={typeOption} item={typeOption}>
+                       <HStack>
+                         {typeOption}
+                         <Select.ItemIndicator />
+                       </HStack>
+                      </Select.Item>
+                    )
+                  })}
+                </Select.Content>
+              </Select.Positioner>
+            </Portal>
           </Select.Root>
-        </chakra.div>
+        </HStack>
       )
     },
     input(props) {
@@ -97,9 +114,7 @@ export function optionsSchema<T extends Record<string, any>>({
     defaultValue: defaultValue ?? variants[defaultType].defaultValue,
     regenerate,
     validate: ((value: any) => {
-      return Object.values(variants).some((variantSchema) =>
-        variantSchema.validate(value)
-      )
+      return Object.values(variants).some((variantSchema) => variantSchema.validate(value))
     }) as any,
     parse(tokens) {
       // Try to find a variant that parses the options completely, and return that variant

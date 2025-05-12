@@ -11,6 +11,9 @@
     "demos-ui-blocks": "pnpm --filter \"./demos/ui-blocks\"",
     "start-demos-ui-blocks": "pnpm demos-ui-blocks dev",
 
+    "styled-demo": "pnpm --filter \"./demos/styled-demo\"",
+    "start-styled-demo": "pnpm styled-demo dev",
+
 
     "demo-css-gui": "pnpm --filter \"./demos/demo-css-gui\"",
     "start-demo-css-gui": "pnpm demo-css-gui dev",

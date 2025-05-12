@@ -1,1 +1,1 @@
-export { colors } from './theme/tokens/colors'
+export { colors } from './theme/tokens'

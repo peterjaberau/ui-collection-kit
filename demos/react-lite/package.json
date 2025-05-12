@@ -118,6 +118,8 @@
     "tailwind-variants": "^0.2.1"
   },
   "devDependencies": {
+    "@pandacss/dev": "0.53.4",
+
     "autoprefixer": "10.4.17",
     "@storybook/react": "8.6.12",
     "tailwindcss": "^3.4.14",

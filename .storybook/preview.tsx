@@ -37,7 +37,9 @@ const preview: Preview = {
       const storyPath = context?.title
       const shouldApplyTwentyTheme = storyPath.includes("Twenty") && !storyPath.includes("Refactor")
       const shouldApplyTwentyRefactoredTheme = storyPath.includes("Refactor")
-      const shouldApplyChakraTheme = !shouldApplyTwentyTheme && !shouldApplyTwentyRefactoredTheme
+      const shouldApplySaasTheme = storyPath.includes("SaasUI")
+      const shouldApplyChakraTheme = !shouldApplyTwentyTheme && !shouldApplyTwentyRefactoredTheme && !shouldApplySaasTheme
+
 
       const currentTheme = context?.globals?.theme
       const twentyTheme = currentTheme === "dark" ? THEME_DARK : THEME_LIGHT
@@ -54,13 +56,15 @@ const preview: Preview = {
       return (
         <>
           {shouldApplyTwentyTheme && (
-            <div style={{ fontSize: "13px" }}>
-              <ThemeProvider theme={twentyTheme}>
-                <ThemeContextProvider theme={twentyTheme}>
-                  <Story />
-                </ThemeContextProvider>
-              </ThemeProvider>
-            </div>
+            <html className="twenty">
+              <body>
+                  <ThemeProvider theme={twentyTheme}>
+                    <ThemeContextProvider theme={twentyTheme}>
+                      <Story />
+                    </ThemeContextProvider>
+                  </ThemeProvider>
+              </body>
+            </html>
           )}
           {shouldApplyChakraTheme && (
             <>
@@ -83,6 +87,15 @@ const preview: Preview = {
               </ChakraProvider>
             </>
           )}
+
+          {shouldApplySaasTheme && (
+            <>
+              <ChakraProvider value={defaultSystem as any}>
+                  <Story style={{fontSize: "inherit"}} />
+              </ChakraProvider>
+            </>
+          )}
+
 
 
         </>

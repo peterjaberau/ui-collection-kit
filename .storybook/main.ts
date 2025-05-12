@@ -16,6 +16,8 @@ const config: StorybookConfig = {
     "../packages/unstyled/react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../packages/saas/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../packages/twenty-ui/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../packages/icons-plus/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../packages/desing-system-plus/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-a11y",

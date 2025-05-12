@@ -26,6 +26,7 @@ export const Icon = (props: PropsType<typeof Select.Icon>) => {
 export const Content = ({ children, ...props }: PropsType<typeof Select.Content>) => {
   return (
     <Select.Content>
+      {/* Combine with the viewpoint (and the scroll arrows?) for convenience */}
       <Select.Viewport>
         <Box backgroundColor={"white"} borderRadius={"0.5rem"} padding={2} shadow={'md'}>
           {children}
