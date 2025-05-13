@@ -45,7 +45,6 @@ export const FullscreenVariant = {
 function Test() {
   const styles = useAppShellStyles()
 
-  console.log(styles)
 
   return null
 }
