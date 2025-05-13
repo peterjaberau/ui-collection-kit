@@ -1,0 +1,43 @@
+{
+  "name": "@ui-collection-kit/styling",
+  "version": "0.0.1",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "typecheck": "tsc",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "dependencies": {
+    "@pandacss/types": "^0.53.6",
+    "@pandacss/dev": "^0.53.6",
+    "effect": "3.10.19"
+  },
+  "devDependencies": {
+    "clean-package": "^2.2.0"
+  },
+  "peerDependencies": {
+    "@pandacss/dev": ">0.53.6"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./saas/preset": "./src/themes/saas/preset.ts",
+    "./saas/tokens": "./src/themes/saas/tokens.ts",
+    "./saas/theme": "./src/themes/saas/theme.ts",
+    "./alignui/preset": "./src/themes/alignui/preset.ts",
+    "./alignui/tokens": "./src/themes/alignui/tokens.ts",
+    "./alignui/theme": "./src/themes/alignui/theme.ts",
+    "./twenty/preset": "./src/themes/twenty/preset.ts",
+    "./twenty/tokens": "./src/themes/twenty/tokens.ts",
+    "./twenty/theme": "./src/themes/twenty/theme.ts"
+  }
+}

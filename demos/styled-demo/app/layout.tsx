@@ -1,5 +1,7 @@
 import { Provider } from './provider';
 import { Suspense } from 'react';
+import { NavigationBarTop } from "#app/_components/navigation-bar-top"
+import { VStack, Box, Theme } from "@chakra-ui/react"
 
 export default function RootLayout({
   children,
@@ -11,7 +13,12 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <Suspense>
             <Provider>
-              {children}
+              <VStack>
+                <NavigationBarTop/>
+                <Box>
+                  {children}
+                </Box>
+              </VStack>
             </Provider>
         </Suspense>
       </body>

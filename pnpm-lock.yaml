@@ -1089,6 +1089,9 @@ importers:
       '@ui-collection-kit/saas':
         specifier: workspace:*
         version: link:../../packages/saas
+      '@ui-collection-kit/styling':
+        specifier: workspace:*
+        version: link:../../packages/styling
       '@xstate/graph':
         specifier: ^3.0.2
         version: 3.0.2(xstate@5.19.2)
@@ -3401,22 +3404,6 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
 
-  packages/presets:
-    dependencies:
-      '@pandacss/dev':
-        specifier: ^0.53.6
-        version: 0.53.6(jsdom@26.1.0(canvas@3.1.0))(typescript@5.8.3)
-      '@pandacss/types':
-        specifier: ^0.53.6
-        version: 0.53.6
-      effect:
-        specifier: 3.10.19
-        version: 3.10.19
-    devDependencies:
-      clean-package:
-        specifier: ^2.2.0
-        version: 2.2.0
-
   packages/saas:
     dependencies:
       '@ark-ui/react':
@@ -3607,6 +3594,22 @@ importers:
     devDependencies:
       clean-package:
         specifier: 2.2.0
+        version: 2.2.0
+
+  packages/styling:
+    dependencies:
+      '@pandacss/dev':
+        specifier: ^0.53.6
+        version: 0.53.6(jsdom@26.1.0(canvas@3.1.0))(typescript@5.8.3)
+      '@pandacss/types':
+        specifier: ^0.53.6
+        version: 0.53.6
+      effect:
+        specifier: 3.10.19
+        version: 3.10.19
+    devDependencies:
+      clean-package:
+        specifier: ^2.2.0
         version: 2.2.0
 
   packages/twenty-shared:
