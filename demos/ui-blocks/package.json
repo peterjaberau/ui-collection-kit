@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "canvas": "3.1.0",
     "@ui-collection-kit/saas": "workspace:*",
     "next": "15.3.1",
     "next-themes": "0.4.6",

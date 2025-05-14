@@ -1,77 +1,58 @@
+'use client';
 import { useState } from 'react'
 import Link from 'next/link'
 import { Editor, Fieldset, Inputs, styled, codegen } from '@ui-collection-kit/css-gui'
 import { initialStyles } from '../../data/initial-styles-text-shadow-preview'
 import { defaultTheme } from '../../data/default-theme'
+import {
+  chakra,
+  Stack,
+  Center,
+  Code,
+  Text,
+  Heading,
+  Box,
+} from '@chakra-ui/react';
+import { text } from "node:stream/consumers"
 
 export function TextShadowPreview() {
   const [styles, setStyles] = useState<any>(initialStyles)
 
   return (
     <>
-      <article 
+      <Stack
         id='text-shadow'
-        sx={{ 
-          color: 'muted',
-          width: '100%', 
-          boxShadow: 'inset 0 0 0px 1px currentColor', 
-          borderRadius: '6px',
-          overflow: 'hidden',
-        }}>
-        <code sx={{ color: 'text', px: 3, py: 2, width: '100%', display: 'block', borderBottom: '1px solid', borderBottomColor: 'muted', }}>
-          &lt;Inputs.TextShadow /&gt;
-        </code>
-      <section sx={{
-            fontSize: '128px',
-            lineHeight: '1.5',
-            fontWeight: 700,
-            height: '192px',
-            borderBottom: '1px solid',
-            px: 5,
-          }}>
-          <styled.p styles={styles} style={{ transition: 'all .25s ease-in-out', cursor: 'pointer', margin: 0, lineHeight: 1, height: '100%', 
-          width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', }}>
-            <span sx={{color:'text',}}>Aa</span>
-          </styled.p>
-        </section>
-        <Editor styles={styles} onChange={setStyles} theme={defaultTheme}>
-          <div
-            sx={{
-              color: 'text',
-              px: 3, pt: 3,
-              width: '100%',
-              '& > div': { 
-                display: 'grid',
-                gap: '.5rem',
-              },
-            }}
-          >
-            <Inputs.TextShadow />
-            <Fieldset type='pseudo-class' name='hover'>
-              <h4 sx={{ mb: 0, fontSize: 0 }}>Hover :hover</h4>
-              <Inputs.TextShadow />
-            </Fieldset>
-          </div>
-        </Editor>
-        
-<div sx={{ 
-        mt: 'auto', 
-        px: 3,
-        pb: 3,
-        maxWidth: '100%',
-        color: 'text',
-        overflow: 'auto',
-        }}>
-        <pre
-          sx={{
-            width: '100%',
-            fontSize: 0,
-          }}
+        borderRadius='6px'
+        borderWidth='1px'
+        borderColor='black'
+      >
+        <Heading size='sm' padding={3}>Inputs.TextShadow</Heading>
+        <Center
+          height='150px'
+          fontWeight='900'
+          borderTopWidth='1px'
+          borderBottomWidth='1px'
+          cursor='pointer'
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          width='100%'
+          margin='0'
+
+
         >
-          {codegen.css(styles)}
-        </pre>
-      </div>
-      </article>
+          <styled.p styles={styles}>
+            <chakra.span color={'text'}>Aa</chakra.span>
+          </styled.p>
+        </Center>
+        <Box height='150px' padding={3}>
+          <Editor styles={styles} onChange={setStyles} theme={defaultTheme}>
+            <Inputs.TextShadow />
+          </Editor>
+        </Box>
+        <Code>{codegen.css(styles)}</Code>
+      </Stack>
     </>
-  )
+  );
 }
+

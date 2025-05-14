@@ -1,94 +1,97 @@
+'use client';
 import { useState } from 'react'
 import Link from 'next/link'
 import { Editor, Inputs, styled, codegen } from '@ui-collection-kit/css-gui'
 import { initialStyles } from '../../data/initial-styles-align-items-preview'
 import { defaultTheme } from '../../data/default-theme'
+import {
+  chakra,
+  Stack,
+  Center,
+  Code,
+  Text,
+  Heading,
+  Box, HStack, Flex, VStack,
+} from '@chakra-ui/react';
 
 export function AlignItemsPreview() {
   const [styles, setStyles] = useState<any>(initialStyles)
 
   return (
     <>
-      <article 
-      id='align-items'
-      sx={{ 
-        color: 'muted',
-        width: '100%', 
-        boxShadow: 'inset 0 0 0px 1px currentColor', 
-        borderRadius: '6px',
-        overflow: 'hidden',
-        }}>
-      
-        <code sx={{ color: 'text', px: 3, py: 2, width: '100%', display: 'block', borderBottom: '1px solid', borderBottomColor: 'muted', }}>
-          &lt;Inputs.AlignItems /&gt;
-        </code>
-        <section sx={{
-            fontSize: '10px',
-            height: '192px',
-            px: 4,
-            py: 3,
-            borderBottom: '1px solid',
-          }}>
-          <styled.article styles={styles} style={{ 
-              paddingTop: '.5rem',
-              gap: '.5rem', 
-              display: 'flex', 
-              flexWrap: 'wrap', 
-              margin: 0, 
-              lineHeight: '1.5',
-            }}>
-            <div sx={{ height: 'auto', minHeight: 32, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 48, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 32, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 48, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 32, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 48, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 32, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 48, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 32, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 48, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 32, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 48, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 32, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 48, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 32, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 48, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 32, p: 2, outline: '1px solid', color: 'text', }}></div>
-            <div sx={{ height: 'auto', minHeight: 48, p: 2, outline: '1px solid', color: 'text', }}></div>
-          </styled.article>
-        </section>
-        <Editor styles={styles} onChange={setStyles} theme={defaultTheme}>
-          <div
-            sx={{
-              color: 'text',
-              px: 3, pt: 3,
-              width: '100%',
-              '& > div': { 
-                display: 'grid',
-                gap: '.5rem',
-              },
-            }}
+      <Stack
+        id='align-items'
+        borderRadius='6px'
+        borderWidth='1px'
+        borderColor='black'
+        width='100%'
+
+      >
+
+        <Heading size='sm' padding={3}>Inputs.AlignItems</Heading>
+        <Stack>
+
+          <Center
+
+            height='150px'
+            fontWeight='900'
+            fontSize='10px'
+            borderTopWidth='1px'
+            borderBottomWidth='1px'
+            display='flex'
+            flexWrap={"wrap"}
           >
-            <Inputs.AlignItems />
-          </div>
-        </Editor>
-<div sx={{ 
-        px: 3,
-        pb: 3,
-        maxWidth: '100%',
-        color: 'text',
-        overflow: 'auto',
-        }}>
-        <pre
-          sx={{
-            width: '100%',
-            fontSize: 0,
-          }}
-        >
-          {codegen.css(styles)}
-        </pre>
-      </div>
-      </article>
+          <styled.p styles={styles}>
+            <Flex alignItems={"center"}>
+
+              <chakra.span height={"auto"} minHeight={12} outline={1} p={2}  bgColor={"blue.300"} margin={0} paddingTop={0} >1</chakra.span>
+              <chakra.span  height={"auto"}  minHeight={38} outline={1} p={2} bgColor={"blue.50"} margin={0} paddingTop={0} >2</chakra.span>
+              <chakra.span height={"auto"} minHeight={12} outline={1} p={2}  bgColor={"blue.300"} margin={0} paddingTop={0}  >1</chakra.span>
+              <chakra.span  height={"auto"} minHeight={38} outline={1} p={2} bgColor={"blue.50"} margin={0} paddingTop={0} >2</chakra.span>
+              <chakra.span height={"auto"} minHeight={12} outline={1} p={2}  bgColor={"blue.300"} margin={0} paddingTop={0}  >1</chakra.span>
+              <chakra.span  height={"auto"} minHeight={38} outline={1} p={2} bgColor={"blue.50"} margin={0} paddingTop={0}  >2</chakra.span>
+              <chakra.span height={"auto"} minHeight={12} outline={1} p={2}  bgColor={"blue.300"} margin={0} paddingTop={0} >1</chakra.span>
+              <chakra.span  height={"auto"} minHeight={38} outline={1} p={2} bgColor={"blue.50"} margin={0} paddingTop={0} >2</chakra.span>
+              <chakra.span height={"auto"} minHeight={12} outline={1} p={2}  bgColor={"blue.300"} margin={0} paddingTop={0} >1</chakra.span>
+              <chakra.span  height={"auto"} minHeight={38} outline={1} p={2} bgColor={"blue.50"} margin={0} paddingTop={0} >2</chakra.span>
+
+            </Flex>
+            <Flex alignItems={"center"}>
+              <chakra.span height={"auto"} minHeight={12} outline={1} p={2}  bgColor={"blue.300"} margin={0} paddingTop={0} >1</chakra.span>
+              <chakra.span  height={"auto"} minHeight={38} outline={1} p={2} bgColor={"blue.50"} margin={0} paddingTop={0} >2</chakra.span>
+              <chakra.span height={"auto"} minHeight={12} outline={1} p={2}  bgColor={"blue.300"} margin={0} paddingTop={0} >1</chakra.span>
+              <chakra.span  height={"auto"} minHeight={38} outline={1} p={2} bgColor={"blue.50"} margin={0} paddingTop={0} >2</chakra.span>
+              <chakra.span height={"auto"} minHeight={12} outline={1} p={2}  bgColor={"blue.300"} margin={0} paddingTop={0} >1</chakra.span>
+              <chakra.span  height={"auto"} minHeight={38} outline={1} p={2} bgColor={"blue.50"} margin={0} paddingTop={0} >2</chakra.span>
+
+
+            </Flex>
+
+          </styled.p>
+
+
+          </Center>
+
+        </Stack>
+        <Box height='150px' padding={3}>
+
+          <Editor styles={styles} onChange={setStyles} theme={defaultTheme}>
+            <Inputs.AlignItems  />
+          </Editor>
+        </Box>
+        <Code>{codegen.css(styles)}</Code>
+      </Stack>
     </>
-  )
+  );
 }
+
+/*
+
+<VStack>
+
+  <chakra.span  minHeight={48} outline={1} p={2} color={"blue.500"} bgColor={"blue.300"} >1</chakra.span>
+  <chakra.span  minHeight={32} outline={1} p={2}  bgColor={"black"}>2</chakra.span>
+  <chakra.span  minHeight={48} outline={1} p={2} color={"blue.500"} bgColor={"blue.300"} >1</chakra.span>
+  <chakra.span  minHeight={32} outline={1} p={2} bgColor={"black"}>2</chakra.span>
+</VStack>*/
+

@@ -22,13 +22,13 @@ export const FontFamilyExample = () => {
 
   return (
     <>
-      <styled.p styles={styles}>Fun with fonts!</styled.p>
+  {/*    <styled.p styles={styles}>Fun with fonts!</styled.p>
       <div sx={{ '& > div': { display: 'grid', gap: '1rem' } }}>
-        {/* <FontFamilyInput value={styles} onChange={setStyles}/> */}
+         <FontFamilyInput value={styles} onChange={setStyles}/>
         <Editor styles={styles} onChange={setStyles} showAddProperties>
           <Inputs.FontFamily />
         </Editor>
-      </div>
+      </div>*/}
     </>
   )
 }

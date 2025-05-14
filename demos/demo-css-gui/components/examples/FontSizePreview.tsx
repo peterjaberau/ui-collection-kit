@@ -25,7 +25,7 @@ export function FontSizePreview() {
         borderWidth='1px'
         borderColor='black'
       >
-        <Heading size='sm'>Inputs.FontSize</Heading>
+        <Heading size='sm'  padding={3}>Inputs.FontSize</Heading>
         <Center
           height='150px'
           fontWeight='900'
