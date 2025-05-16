@@ -3,7 +3,6 @@ import type { Preview, ReactRenderer } from "@storybook/react"
 import { withThemeByClassName } from "@storybook/addon-themes"
 import "react18-json-view/src/style.css"
 import JsonView from "react18-json-view"
-import { Box, Flex } from "@chakra-ui/react"
 
 // twenty imports
 import { ThemeProvider } from "@emotion/react"

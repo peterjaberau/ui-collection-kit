@@ -15,9 +15,6 @@ const themeConfig: any = defineConfig({
 const theme = createSystem(themeConfig);
 
 export const Provider = (props: { children: React.ReactNode }) => {
-
-  console.log('theme---', theme)
-
   return (
     <ChakraProvider value={theme}>
       <ThemeProvider attribute='class' disableTransitionOnChange>

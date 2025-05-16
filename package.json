@@ -7,8 +7,11 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
 
-    "dashboard-oss": "pnpm --filter \"./demos/dashboard-oss\"",
-    "start-dashboard-oss": "pnpm dashboard-oss dev",
+    "gridstack-demo": "pnpm --filter \"./demos/gridstack\"",
+    "start-gridstack-demo": "pnpm gridstack-demo dev",
+
+    "layout-demo": "pnpm --filter \"./demos/layout-demo\"",
+    "start-layout-demo": "pnpm layout-demo dev",
 
     "demos-ui-blocks": "pnpm --filter \"./demos/ui-blocks\"",
     "start-demos-ui-blocks": "pnpm demos-ui-blocks dev",
