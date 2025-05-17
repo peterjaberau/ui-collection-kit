@@ -1,10 +1,22 @@
-import { VStack } from "@chakra-ui/react"
-import { GenericLayoutProps } from './common.types'
-import { appShellConstants } from "./common.constants"
-export const AppLeftBar = (props: GenericLayoutProps) => {
+import { appShellConstants } from './common.constants';
+import { ReactNode } from 'react';
+import { AppBarInner } from '#platform/common/app.bar.inner';
+
+interface AppLeftBarProps {
+  start?: ReactNode | any;
+  center?: ReactNode | any;
+  end?: ReactNode | any;
+  css?: any;
+  [key: string]: any;
+}
+
+export const AppLeftBar = (props: AppLeftBarProps) => {
   return (
-    <VStack width={`${appShellConstants.appLeftBar.width}px`} bg='gray.300' h={'full'}>
-      {props.children}
-    </VStack>
+    <AppBarInner
+      width={appShellConstants.appLeftBar.width}
+      start={props.start}
+      center={props.center}
+      end={props.end}
+    />
   );
 };

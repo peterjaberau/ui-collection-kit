@@ -19,3 +19,4 @@ declare module '@remixicon/react' {
 
     // Add more if needed
 }
+

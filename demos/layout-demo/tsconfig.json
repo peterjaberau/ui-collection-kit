@@ -30,6 +30,7 @@
       "#machines/*": ["./machines/*"],
       "#app/*": ["./app/*"],
       "#components/*": ["./components/*"],
+      "#openmeta/*": ["./components/openmeta/*"],
       "#platform/*": ["./components/platform/*"],
       "#ui/*": ["./components/ui/*"]
     }

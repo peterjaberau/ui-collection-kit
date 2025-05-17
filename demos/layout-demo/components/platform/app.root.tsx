@@ -10,7 +10,7 @@ export const AppRoot = (props: GenericLayoutProps) => {
         width: '100vw',
         padding: '0',
         margin: '0',
-        overflow: 'auto',
+        overflow: 'hidden',
       }}
     >
       <VStack
