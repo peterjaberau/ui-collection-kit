@@ -28,7 +28,6 @@ export const rootSlotRecipe = defineSlotRecipe({
     'footerStart',
     'footerCenter',
     'footerEnd',
-    'aside',
     'left',
     'leftStart',
     'leftCenter',
@@ -88,23 +87,15 @@ export const rootSlotRecipe = defineSlotRecipe({
       minWidth: 0,
     },
 
-    // inside the body(flex.row) wrapping left and right
-    aside: {
+    // inside the body(flex.row)
+    left: {
       ...cssDev.base,
       width: '50px',
       display: 'flex',
       flexDirection: 'column',
-      wordBreak: 'break-word',
-    },
-
-    // inside the body(flex.row)
-    left: {
-      ...cssDev.base,
-      flex: 1,
-      display: 'flex',
-      flexDirection: 'column',
       justifyItems: 'space-between',
       alignItems: 'center',
+      wordBreak: 'break-word',
     },
     leftStart: {
       ...cssDev.base,
@@ -131,11 +122,12 @@ export const rootSlotRecipe = defineSlotRecipe({
     // inside the body(flex.row)
     right: {
       ...cssDev.base,
-      flex: 1,
+      width: '50px',
       display: 'flex',
       flexDirection: 'column',
       justifyItems: 'space-between',
       alignItems: 'center',
+      wordBreak: 'break-word',
     },
     rightStart: {
       ...cssDev.base,
@@ -146,6 +138,7 @@ export const rootSlotRecipe = defineSlotRecipe({
     },
     rightCenter: {
       ...cssDev.base,
+      flex: 1,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

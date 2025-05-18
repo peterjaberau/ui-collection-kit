@@ -13,8 +13,6 @@ import { RootFooter } from './root.footer';
 import { RootFooterInner } from './root.footer.inner';
 import { RootAside } from './root.aside';
 import { RootAsideInner } from './root.aside.inner';
-import { RootAsideLeft } from './root.aside.left';
-import { RootAsideRight } from './root.aside.right';
 import { RootMain } from './root.main';
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -76,8 +74,7 @@ const Index = (props: LayoutRootProps) => {
       )}
       <RootBody css={{ ...styles.body }}>
         {left && (
-          <RootAside css={{ ...styles.aside }}>
-            <RootAsideLeft
+            <RootAside
               css={{ ...styles.left }}
               start={
                 leftStart && (
@@ -101,12 +98,10 @@ const Index = (props: LayoutRootProps) => {
                 )
               }
             />
-          </RootAside>
         )}
         {main && <RootMain css={{ ...styles.main }}>{main}</RootMain>}
         {right && (
-          <RootAside css={{ ...styles.aside }}>
-            <RootAsideRight
+            <RootAside
               css={{ ...styles.right }}
               start={
                 rightStart && (
@@ -130,7 +125,6 @@ const Index = (props: LayoutRootProps) => {
                 )
               }
             />
-          </RootAside>
         )}
       </RootBody>
       {footer && (

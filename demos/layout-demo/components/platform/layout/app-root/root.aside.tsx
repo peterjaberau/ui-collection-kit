@@ -1,12 +1,14 @@
 import { Box } from '@chakra-ui/react';
-import { GenericLayoutProps } from '#components/types';
+import { LayoutThreePartsProps } from '#components/types';
 
 
-export const RootAside = (props: GenericLayoutProps) => {
-  const { children, css, ...rest } = props;
+export const RootAside = (props: LayoutThreePartsProps) => {
+  const { start, center, end, css, ...rest } = props;
   return (
     <Box css={css} {...rest}>
-      {children}
+      {start && <>{start}</>}
+      {center && <>{center}</>}
+      {end && <>{end}</>}
     </Box>
   );
 };
