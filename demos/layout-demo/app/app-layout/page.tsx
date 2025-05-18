@@ -7,7 +7,18 @@ const appLayoutConfig: any = {
   header: {
     start: [
       {
-        name: 'action-button',
+        name: 'badge',
+        props: {
+          colorPalette: 'red',
+          text: 'header.start',
+          variant: 'outline',
+          size: 'xs',
+          iconName: 'tag',
+          iconSize: '16px',
+        }
+      },
+      {
+        name: 'button',
         props: {
           text: 'Action Button',
           size: '2xs',
@@ -18,7 +29,7 @@ const appLayoutConfig: any = {
         },
       },
       {
-        name: 'action-icon-button',
+        name: 'icon-button',
         props: {
           iconName: 'camera',
           size: '2xs',

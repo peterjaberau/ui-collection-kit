@@ -2,7 +2,7 @@ import { DynamicIcon } from 'lucide-react/dynamic';
 import dynamic from 'next/dynamic';
 
 const componentMap: any = {
-  'action-button': {
+  'button': {
     component: dynamic(() =>
       import('@chakra-ui/react').then((mod) => mod.Button),
     ),
@@ -18,8 +18,7 @@ const componentMap: any = {
       );
     },
   },
-  'action-icon-button': {
-    name: 'action-icon-button',
+  'icon-button': {
     component: dynamic(() =>
       import('@chakra-ui/react').then((mod) => mod.IconButton),
     ),
@@ -31,6 +30,23 @@ const componentMap: any = {
           onClick={typeof rest.onClick === 'function' ? rest.onClick : onClick}
         >
           <DynamicIcon name={iconName} />
+        </Component>
+      );
+    },
+  },
+
+  'badge': {
+    component: dynamic(() =>
+      import('@chakra-ui/react').then((mod) => mod.Badge),
+    ),
+    renderer: (Component: React.ElementType, props: any) => {
+      const { text, iconName, iconSize, ...rest } = props;
+      return (
+        <Component
+          {...rest}
+        >
+          { iconName && <DynamicIcon name={iconName} size={iconSize} /> }
+          { text && <>{text}</> }
         </Component>
       );
     },
