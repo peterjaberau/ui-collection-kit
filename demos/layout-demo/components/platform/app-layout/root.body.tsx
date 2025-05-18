@@ -1,14 +1,15 @@
-import { Box } from "@chakra-ui/react"
-import { GenericLayoutProps } from '#components/types'
+import { Flex } from "@chakra-ui/react"
+import { GenericLayoutProps } from '#platform/common/types'
 
 export const RootBody = (props: GenericLayoutProps) => {
   const { children, css, ...rest } = props;
   return (
-    <Box
+    <Flex
+      flex={1}
       css={css}
       {...rest}
     >
       {children}
-    </Box>
+    </Flex>
   );
 };

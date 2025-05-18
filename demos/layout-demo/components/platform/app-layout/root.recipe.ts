@@ -2,9 +2,8 @@ import { defineSlotRecipe } from '@chakra-ui/react/styled-system';
 
 const cssDev = {
   base: {
-    backgroundColor: 'gray.50',
+    backgroundColor: 'yellow.200',
     border: '1px solid black',
-    padding: '4px'
   },
   root: {},
   left: {},
@@ -57,201 +56,127 @@ export const rootSlotRecipe = defineSlotRecipe({
     },
     header: {
       ...cssDev.base,
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      height: '50px'
+      backgroundColor: "white",
+      height: '50px',
+      px: '8px'
     },
     headerStart: {
       ...cssDev.base,
       flex: 1,
-      display: 'flex',
-      justifyContent: 'flex-start'
     },
     headerCenter: {
       ...cssDev.base,
       flex: 1,
-      display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
     headerEnd: {
       ...cssDev.base,
       flex: 1,
-      display: 'flex',
-      justifyContent: 'flex-end'
+      justifyContent: 'flex-end',
     },
     body: {
       ...cssDev.base,
-      display: 'flex',
-      flex: 1,
-      minWidth: 0,
-      minHeight: 0,
+      backgroundColor: "white",
     },
 
-    // inside the body(flex.row)
     main: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
-      flexDirection: 'column',
-      minWidth: 0,
+      backgroundColor: "white",
+      p: '8px',
     },
 
-    // inside the body(flex.row)
     leftBar: {
       ...cssDev.base,
+      backgroundColor: "white",
       width: '50px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyItems: 'space-between',
-      alignItems: 'center',
-      wordBreak: 'break-word',
+      py: '8px'
     },
     leftBarStart: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'start',
     },
     leftBarCenter: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center',
     },
     leftBarEnd: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
       justifyContent: 'flex-end',
-      alignItems: 'end',
     },
-
-
     left: {
       ...cssDev.base,
+      backgroundColor: "white",
       width: '250px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyItems: 'space-between',
-      alignItems: 'center',
-      wordBreak: 'break-word',
+      p: '8px',
     },
     leftStart: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'start',
     },
     leftCenter: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center',
     },
     leftEnd: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
       justifyContent: 'flex-end',
-      alignItems: 'end',
     },
-
-    // inside the body(flex.row)
 
     rightBar: {
       ...cssDev.base,
+      backgroundColor: "white",
       width: '50px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyItems: 'space-between',
-      alignItems: 'center',
-      wordBreak: 'break-word',
+      py: '8px'
     },
     rightBarStart: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'start',
     },
     rightBarCenter: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center',
     },
     rightBarEnd: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
       justifyContent: 'flex-end',
-      alignItems: 'end',
     },
 
 
     right: {
       ...cssDev.base,
+      backgroundColor: "white",
       width: '150px',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyItems: 'space-between',
-      alignItems: 'center',
-      wordBreak: 'break-word',
+      p: '8px',
     },
     rightStart: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'start',
     },
     rightCenter: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center',
     },
     rightEnd: {
       ...cssDev.base,
-      flex: 1,
-      display: 'flex',
       justifyContent: 'flex-end',
-      alignItems: 'end',
     },
 
     footer: {
       ...cssDev.base,
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      height: '50px'
+      backgroundColor: "white",
+      height: '50px',
+      px: '8px'
     },
     footerStart: {
       ...cssDev.base,
       flex: 1,
-      display: 'flex',
-      justifyContent: 'flex-start'
+      justifyContent: 'flex-start',
     },
     footerCenter: {
       ...cssDev.base,
       flex: 1,
-      display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
     footerEnd: {
       ...cssDev.base,
       flex: 1,
-      display: 'flex',
-      justifyContent: 'flex-end'
+      justifyContent: 'flex-end',
     },
   },
 });

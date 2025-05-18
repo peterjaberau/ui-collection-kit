@@ -1,14 +1,14 @@
-import { Box } from '@chakra-ui/react';
-import { LayoutThreePartsProps } from '#components/types';
+import { VStack } from '@chakra-ui/react';
+import { LayoutThreePartsProps } from '#platform/common/types';
 
 
 export const RootAside = (props: LayoutThreePartsProps) => {
   const { start, center, end, css, ...rest } = props;
   return (
-    <Box css={css} {...rest}>
+    <VStack css={css} {...rest}>
       {start && <>{start}</>}
       {center && <>{center}</>}
       {end && <>{end}</>}
-    </Box>
+    </VStack>
   );
 };

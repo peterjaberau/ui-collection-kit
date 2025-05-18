@@ -3,7 +3,7 @@
 import { type SlotRecipeProps, useSlotRecipe } from '@chakra-ui/react';
 
 import { rootSlotRecipe } from './root.recipe';
-import { LayoutThreePartsProps } from '#components/types';
+import { LayoutThreePartsProps } from '#platform/common/types'
 
 import { Root } from './root';
 import { RootBody } from './root.body';
