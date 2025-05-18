@@ -16,9 +16,9 @@ export const AppIndex = (props: GenericLayoutProps) => {
       <AppHeader>topHeader</AppHeader>
       <AppBody>
         <AppLeftBar>LB</AppLeftBar>
-        <AppLeftAside>LeftAside</AppLeftAside>
-        <AppContent>{props.children}</AppContent>
-        <AppRightAside>RightAside</AppRightAside>
+          <AppLeftAside>LeftAside</AppLeftAside>
+          <AppContent>{props.children}</AppContent>
+          <AppRightAside>RightAside</AppRightAside>
         <AppRightBar>RB</AppRightBar>
       </AppBody>
       <AppFooter>footer</AppFooter>
