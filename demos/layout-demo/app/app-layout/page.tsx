@@ -2,7 +2,6 @@
 import { Box, Badge, For } from '@chakra-ui/react';
 import AppLayout from '#platform/app-layout';
 import { UIScenarios } from '#platform/ui-atoms/ui.scenarios';
-import * as icons from "../../../../packages/icons-plus/src/index"
 
 const appLayoutConfig: any = {
   header: {
@@ -19,7 +18,7 @@ const appLayoutConfig: any = {
         name: 'button',
         props: {
           text: 'Action Button',
-          size: '2xs',
+          size: 'md',
           variant: 'outline',
           onClick: () => {
             console.log('Action Button Clicked');
@@ -30,8 +29,8 @@ const appLayoutConfig: any = {
         name: 'icon-button',
         props: {
           iconName: 'camera',
-          size: '2xs',
-          variant: 'outline',
+          size: 'xs',
+          variant: 'preset',
           onClick: () => {
             console.log('Search clicked');
           },

@@ -1,3 +1,4 @@
+'use client'
 import { DynamicIcon } from 'lucide-react/dynamic';
 import dynamic from 'next/dynamic';
 
@@ -7,40 +8,18 @@ const componentMap: any = {
   },
   'button': {
     component: dynamic(() =>
-      import('@chakra-ui/react').then((mod) => mod.Button),
+      import('./components/render.button').then((mod) => mod.RenderButton),
     ),
-    renderer: (Component: React.ElementType, props: any) => {
-      const { text, onClick, ...rest } = props;
-      return (
-        <Component
-          {...rest}
-          onClick={typeof rest.onClick === 'function' ? rest.onClick : onClick}
-        >
-          {text}
-        </Component>
-      );
-    },
   },
   'icon-button': {
     component: dynamic(() =>
-      import('@chakra-ui/react').then((mod) => mod.IconButton),
+      import('./components/render.icon-button').then((mod) => mod.RenderIconButton),
     ),
-    renderer: (Component: React.ElementType, props: any) => {
-      const { iconName, onClick, ...rest } = props;
-      return (
-        <Component
-          {...rest}
-          onClick={typeof rest.onClick === 'function' ? rest.onClick : onClick}
-        >
-          <DynamicIcon name={iconName} />
-        </Component>
-      );
-    },
   },
 
   'badge': {
     component: dynamic(() =>
-      import('@chakra-ui/react').then((mod) => mod.Badge),
+      import('@ui-collection-kit/saas/react').then((mod) => mod.Badge),
     ),
     renderer: (Component: React.ElementType, props: any) => {
       const { text, iconName, iconSize, ...rest } = props;
