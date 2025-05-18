@@ -2,6 +2,7 @@
 import { Box, Badge, For } from '@chakra-ui/react';
 import AppLayout from '#platform/app-layout';
 import { UIScenarios } from '#platform/ui-atoms/ui.scenarios';
+import * as icons from "../../../../packages/icons-plus/src/index"
 
 const appLayoutConfig: any = {
   header: {
@@ -12,9 +13,6 @@ const appLayoutConfig: any = {
           colorPalette: 'red',
           text: 'header.start',
           variant: 'outline',
-          size: 'xs',
-          iconName: 'tag',
-          iconSize: '16px',
         }
       },
       {
@@ -39,6 +37,37 @@ const appLayoutConfig: any = {
           },
         },
       },
+      {
+        name: 'menu',
+        props: {
+          defaultOpen: true,
+          text: 'Menu',
+          closeOnSelect: true,
+          variant: 'solid',
+          colorPalette: 'blue',
+          size: 'sm',
+          triggerSize: '2xs',
+          items: [
+            {
+              label: 'New Text File',
+              value: 'new-file',
+            },
+            {
+              label: 'New File...',
+              value: 'new-win',
+            },
+            {
+              label: 'Open File...',
+              value: 'open-file',
+            },
+            {
+              label: 'Export',
+              value: 'export',
+            },
+          ],
+        }
+      }
+
     ],
     center: [
       {
@@ -132,6 +161,8 @@ const GroupRenderer = ({ component, part }: any) => {
 };
 
 export default function Page() {
+
+
   return (
     <>
       <AppLayout

@@ -2,6 +2,9 @@ import { DynamicIcon } from 'lucide-react/dynamic';
 import dynamic from 'next/dynamic';
 
 const componentMap: any = {
+  'menu': {
+    component: dynamic(() => import('./components/render.menu').then((mod) => mod.RenderMenu)),
+  },
   'button': {
     component: dynamic(() =>
       import('@chakra-ui/react').then((mod) => mod.Button),

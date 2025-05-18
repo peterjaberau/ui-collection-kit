@@ -8,8 +8,8 @@ import path from "path"
 
 const config: StorybookConfig = {
   stories: [
-    // "../demos/antd-storybook/src/components/**/*.mdx",
-    // "../demos/antd-storybook/src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../demos/antd-storybook/src/components/**/*.mdx",
+    "../demos/antd-storybook/src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../demos/react-lite/**/*.stories.@(js|jsx|mjs|ts|tsx)",
 
     // "../templates/starter/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
