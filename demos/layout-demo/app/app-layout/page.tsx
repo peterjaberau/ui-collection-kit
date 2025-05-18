@@ -1,7 +1,124 @@
 'use client';
-import { Box, Badge } from '@chakra-ui/react'
-import AppLayout from '#platform/app-layout'
-import { UIScenarios } from "#platform/ui-atoms/ui.scenarios"
+import { Box, Badge, For } from '@chakra-ui/react';
+import AppLayout from '#platform/app-layout';
+import { UIScenarios } from '#platform/ui-atoms/ui.scenarios';
+
+const appLayoutConfig: any = {
+  header: {
+    start: [
+      {
+        name: 'action-button',
+        props: {
+          text: 'Action Button',
+          size: '2xs',
+          variant: 'outline',
+          onClick: () => {
+            console.log('Action Button Clicked');
+          },
+        },
+      },
+      {
+        name: 'action-icon-button',
+        props: {
+          iconName: 'camera',
+          size: '2xs',
+          variant: 'outline',
+          onClick: () => {
+            console.log('Search clicked');
+          },
+        },
+      },
+    ],
+    center: [
+      {
+        name: 'action-button',
+        props: {
+          text: 'Action Button',
+          size: '2xs',
+          variant: 'solid',
+          onClick: () => {
+            console.log('Action Button Clicked');
+          },
+        },
+      },
+      {
+        name: 'action-icon-button',
+        props: {
+          iconName: 'camera',
+          size: '2xs',
+          variant: 'solid',
+          onClick: () => {
+            console.log('Search clicked');
+          },
+        },
+      },
+    ],
+    end: [
+      {
+        name: 'action-button',
+        props: {
+          text: 'Action Button',
+          size: '2xs',
+          variant: 'surface',
+          onClick: () => {
+            console.log('Action Button Clicked');
+          },
+        },
+      },
+      {
+        name: 'action-icon-button',
+        props: {
+          iconName: 'camera',
+          size: '2xs',
+          variant: 'surface',
+          onClick: () => {
+            console.log('Search clicked');
+          },
+        },
+      },
+    ],
+  },
+  footer: {
+    start: [],
+    center: [],
+    end: [],
+  },
+  left: {
+    start: [],
+    center: [],
+    end: [],
+  },
+  right: {
+    start: [],
+    center: [],
+    end: [],
+  },
+  leftBar: {
+    start: [],
+    center: [],
+    end: [],
+  },
+  rightBar: {
+    start: [],
+    center: [],
+    end: [],
+  },
+};
+
+const GroupRenderer = ({ component, part }: any) => {
+  const slots: any[] = appLayoutConfig[component][part];
+  return (
+    <For each={slots}>
+      {(item, index) => (
+        <UIScenarios
+          key={`${component}-${part}-${index}`}
+          name={item.name}
+          input={item.props}
+        />
+      )}
+    </For>
+  );
+};
 
 export default function Page() {
   return (
@@ -10,18 +127,17 @@ export default function Page() {
         header={{
           start: (
             <>
-              <UIScenarios name={'action-button'} />
-              <UIScenarios name={'action-icon-button'} />
+              <GroupRenderer component='header' part='start' />
 
               <Badge variant='solid'>header</Badge>
               <Badge variant='outline'>start</Badge>
             </>
           ),
           center: (
-              <>
-                <Badge variant='solid'>header</Badge>
-                <Badge variant='outline'>center</Badge>
-              </>
+            <>
+              <Badge variant='solid'>header</Badge>
+              <Badge variant='outline'>center</Badge>
+            </>
           ),
           end: (
             <>
