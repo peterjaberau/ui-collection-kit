@@ -6,10 +6,13 @@ const cssDev = {
     border: '1px solid black',
   },
   root: {},
+  header: {
+    borderBottom: '1px solid',
+    borderBottomColor: 'gray.200',
+  },
   left: {},
   right: {},
   main: {},
-  header: {},
   footer: {}
 }
 
@@ -55,22 +58,19 @@ export const rootSlotRecipe = defineSlotRecipe({
       height: '100vh',
     },
     header: {
-      ...cssDev.base,
+      ...cssDev.header,
       backgroundColor: "white",
       height: '50px',
       px: '8px'
     },
     headerStart: {
-      ...cssDev.base,
       flex: 1,
     },
     headerCenter: {
-      ...cssDev.base,
       flex: 1,
       justifyContent: 'center',
     },
     headerEnd: {
-      ...cssDev.base,
       flex: 1,
       justifyContent: 'flex-end',
     },
@@ -89,19 +89,28 @@ export const rootSlotRecipe = defineSlotRecipe({
       ...cssDev.base,
       backgroundColor: "white",
       width: '50px',
-      py: '8px'
+      py: '8px',
     },
     leftBarStart: {
       ...cssDev.base,
+      justifyContent: 'start',
+      alignItems: 'center',
+      gap: '8px'
     },
     leftBarCenter: {
       ...cssDev.base,
       justifyContent: 'center',
+      alignItems: 'center',
+      gap: '8px'
     },
     leftBarEnd: {
       ...cssDev.base,
-      justifyContent: 'flex-end',
+      justifyContent: 'end',
+      alignItems: 'center',
+      gap: '8px'
     },
+
+
     left: {
       ...cssDev.base,
       backgroundColor: "white",
@@ -110,14 +119,22 @@ export const rootSlotRecipe = defineSlotRecipe({
     },
     leftStart: {
       ...cssDev.base,
+      justifyContent: 'start',
+      alignItems: 'flex-start',
+      gap: '8px'
     },
     leftCenter: {
       ...cssDev.base,
+      backgroundColor: "white",
       justifyContent: 'center',
+      alignItems: 'flex-start',
+      gap: '8px'
     },
     leftEnd: {
       ...cssDev.base,
-      justifyContent: 'flex-end',
+      justifyContent: 'end',
+      alignItems: 'flex-start',
+      gap: '8px'
     },
 
     rightBar: {
@@ -128,14 +145,21 @@ export const rootSlotRecipe = defineSlotRecipe({
     },
     rightBarStart: {
       ...cssDev.base,
+      justifyContent: 'start',
+      alignItems: 'center',
+      gap: '8px'
     },
     rightBarCenter: {
       ...cssDev.base,
       justifyContent: 'center',
+      alignItems: 'center',
+      gap: '8px'
     },
     rightBarEnd: {
       ...cssDev.base,
-      justifyContent: 'flex-end',
+      justifyContent: 'end',
+      alignItems: 'center',
+      gap: '8px'
     },
 
 
@@ -147,14 +171,22 @@ export const rootSlotRecipe = defineSlotRecipe({
     },
     rightStart: {
       ...cssDev.base,
+      justifyContent: 'start',
+      alignItems: 'flex-start',
+      gap: '8px'
     },
     rightCenter: {
       ...cssDev.base,
+      backgroundColor: "white",
       justifyContent: 'center',
+      alignItems: 'flex-start',
+      gap: '8px'
     },
     rightEnd: {
       ...cssDev.base,
-      justifyContent: 'flex-end',
+      justifyContent: 'end',
+      alignItems: 'flex-start',
+      gap: '8px'
     },
 
     footer: {

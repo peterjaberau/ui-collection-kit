@@ -1,6 +1,7 @@
 'use client';
 import { Box, Badge } from '@chakra-ui/react'
 import AppLayout from '#platform/app-layout'
+import { UIScenarios } from "#platform/ui-atoms/ui.scenarios"
 
 export default function Page() {
   return (
@@ -9,6 +10,9 @@ export default function Page() {
         header={{
           start: (
             <>
+              <UIScenarios name={'action-button'} />
+              <UIScenarios name={'action-icon-button'} />
+
               <Badge variant='solid'>header</Badge>
               <Badge variant='outline'>start</Badge>
             </>

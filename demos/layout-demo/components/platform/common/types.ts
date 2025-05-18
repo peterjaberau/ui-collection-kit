@@ -12,29 +12,16 @@ export interface GenericLayoutProps extends GenericProps, GenericCssProps {
   children: ReactNode | any;
 }
 
-export interface LayoutThreePartsProps extends GenericProps, GenericCssProps {
+export interface GenericMiscProps extends GenericLayoutProps {
+
+}
+
+export interface GenericThreePartsProps {
   start?: React.ReactNode;
   center?: React.ReactNode;
   end?: React.ReactNode;
 }
 
-export interface RootAsidePositionProps extends GenericLayoutProps {
-  start?: React.ReactNode;
-  center?: React.ReactNode;
-  end?: React.ReactNode;
-}
+export interface LayoutThreePartsProps
+  extends GenericProps, GenericCssProps, GenericThreePartsProps {}
 
-
-
-export interface AppLayoutProps {
-  children: ReactNode | any;
-  css?: any;
-  [key: string]: any;
-}
-
-
-export interface PageLayoutProps {
-  children: ReactNode | any;
-  css?: any;
-  [key: string]: any;
-}

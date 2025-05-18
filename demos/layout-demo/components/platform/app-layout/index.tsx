@@ -7,14 +7,10 @@ import { LayoutThreePartsProps } from '#platform/common/types'
 
 import { Root } from './root';
 import { RootBody } from './root.body';
-import { RootHeader } from './root.header';
-import { RootHeaderInner } from './root.header.inner';
-import { RootFooter } from './root.footer';
-import { RootFooterInner } from './root.footer.inner';
+import { RootSection } from './root.section';
+import { RootSectionInner } from './root.section.inner';
 import { RootAside } from './root.aside';
 import { RootAsideInner } from './root.aside.inner';
-import { RootBar } from './root.bar';
-import { RootBarInner } from './root.bar.inner';
 import { RootMain } from './root.main';
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -53,54 +49,54 @@ const Index = (props: LayoutRootProps) => {
   return (
     <Root css={{ ...styles.root }} {...rest}>
       {header && (
-        <RootHeader
+        <RootSection
           css={{ ...styles.header }}
           start={
             headerStart && (
-              <RootHeaderInner css={{ ...styles.headerStart }}>
+              <RootSectionInner css={{ ...styles.headerStart }}>
                 {headerStart}
-              </RootHeaderInner>
+              </RootSectionInner>
             )
           }
           center={
             headerCenter && (
-              <RootHeaderInner css={{ ...styles.headerCenter }}>
+              <RootSectionInner css={{ ...styles.headerCenter }}>
                 {headerCenter}
-              </RootHeaderInner>
+              </RootSectionInner>
             )
           }
           end={
             headerEnd && (
-              <RootHeaderInner css={{ ...styles.headerEnd }}>
+              <RootSectionInner css={{ ...styles.headerEnd }}>
                 {headerEnd}
-              </RootHeaderInner>
+              </RootSectionInner>
             )
           }
         />
       )}
       <RootBody css={{ ...styles.body }}>
         {leftBar && (
-          <RootBar
+          <RootAside
             css={{ ...styles.leftBar }}
             start={
               leftBarStart && (
-                <RootBarInner css={{ ...styles.leftBarStart }}>
+                <RootAsideInner css={{ ...styles.leftBarStart }}>
                   {leftStart}
-                </RootBarInner>
+                </RootAsideInner>
               )
             }
             center={
               leftBarCenter && (
-                <RootBarInner css={{ ...styles.leftBarCenter }}>
+                <RootAsideInner css={{ ...styles.leftBarCenter }}>
                   {leftCenter}
-                </RootBarInner>
+                </RootAsideInner>
               )
             }
             end={
               leftBarEnd && (
-                <RootBarInner css={{ ...styles.leftBarEnd }}>
+                <RootAsideInner css={{ ...styles.leftBarEnd }}>
                   {leftEnd}
-                </RootBarInner>
+                </RootAsideInner>
               )
             }
           />
@@ -161,54 +157,54 @@ const Index = (props: LayoutRootProps) => {
             />
         )}
         {rightBar && (
-          <RootBar
+          <RootAside
             css={{ ...styles.rightBar }}
             start={
               leftBarStart && (
-                <RootBarInner css={{ ...styles.rightBarStart }}>
+                <RootAsideInner css={{ ...styles.rightBarStart }}>
                   {leftStart}
-                </RootBarInner>
+                </RootAsideInner>
               )
             }
             center={
               rightBarCenter && (
-                <RootBarInner css={{ ...styles.rightBarCenter }}>
+                <RootAsideInner css={{ ...styles.rightBarCenter }}>
                   {leftCenter}
-                </RootBarInner>
+                </RootAsideInner>
               )
             }
             end={
               rightBarEnd && (
-                <RootBarInner css={{ ...styles.rightBarEnd }}>
+                <RootAsideInner css={{ ...styles.rightBarEnd }}>
                   {rightEnd}
-                </RootBarInner>
+                </RootAsideInner>
               )
             }
           />
         )}
       </RootBody>
       {footer && (
-        <RootFooter
+        <RootSection
           css={{ ...styles.footer }}
           start={
             footerStart && (
-              <RootFooterInner css={{ ...styles.footerStart }}>
+              <RootSectionInner css={{ ...styles.footerStart }}>
                 {footerStart}
-              </RootFooterInner>
+              </RootSectionInner>
             )
           }
           center={
             footerCenter && (
-              <RootFooterInner css={{ ...styles.footerCenter }}>
+              <RootSectionInner css={{ ...styles.footerCenter }}>
                 {footerCenter}
-              </RootFooterInner>
+              </RootSectionInner>
             )
           }
           end={
             footerEnd && (
-              <RootFooterInner css={{ ...styles.footerEnd }}>
+              <RootSectionInner css={{ ...styles.footerEnd }}>
                 {footerEnd}
-              </RootFooterInner>
+              </RootSectionInner>
             )
           }
         />
