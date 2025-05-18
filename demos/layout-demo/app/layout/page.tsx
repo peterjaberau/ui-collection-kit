@@ -15,12 +15,22 @@ export default function Page() {
           center: <div>root.footer.center</div>,
           end: <div>root.footer.end</div>,
         }}
+        leftBar={{
+          start: <div>root.bar.left</div>,
+          center: <div>root.bar.center</div>,
+          end: <div>root.bar.end</div>,
+        }}
         left={{
           start: <div>root.aside.left</div>,
           center: <div>root.aside.center</div>,
           end: <div>root.aside.end</div>,
         }}
         main={<div>root.main</div>}
+        rightBar={{
+          start: <div>root.bar.left</div>,
+          center: <div>root.bar.center</div>,
+          end: <div>root.bar.end</div>,
+        }}
         right={{
           start: <div>root.aside.right</div>,
           center: <div>root.aside.center</div>,

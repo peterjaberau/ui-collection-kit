@@ -28,10 +28,21 @@ export const rootSlotRecipe = defineSlotRecipe({
     'footerStart',
     'footerCenter',
     'footerEnd',
+    'leftBar',
+    'leftBarStart',
+    'leftBarCenter',
+    'leftBarEnd',
+
     'left',
     'leftStart',
     'leftCenter',
     'leftEnd',
+
+    'rightBar',
+    'rightBarStart',
+    'rightBarCenter',
+    'rightBarEnd',
+
     'right',
     'rightStart',
     'rightCenter',
@@ -88,9 +99,41 @@ export const rootSlotRecipe = defineSlotRecipe({
     },
 
     // inside the body(flex.row)
-    left: {
+    leftBar: {
       ...cssDev.base,
       width: '50px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyItems: 'space-between',
+      alignItems: 'center',
+      wordBreak: 'break-word',
+    },
+    leftBarStart: {
+      ...cssDev.base,
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'flex-start',
+      alignItems: 'start',
+    },
+    leftBarCenter: {
+      ...cssDev.base,
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    leftBarEnd: {
+      ...cssDev.base,
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'flex-end',
+      alignItems: 'end',
+    },
+
+
+    left: {
+      ...cssDev.base,
+      width: '250px',
       display: 'flex',
       flexDirection: 'column',
       justifyItems: 'space-between',
@@ -120,9 +163,42 @@ export const rootSlotRecipe = defineSlotRecipe({
     },
 
     // inside the body(flex.row)
-    right: {
+
+    rightBar: {
       ...cssDev.base,
       width: '50px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyItems: 'space-between',
+      alignItems: 'center',
+      wordBreak: 'break-word',
+    },
+    rightBarStart: {
+      ...cssDev.base,
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'flex-start',
+      alignItems: 'start',
+    },
+    rightBarCenter: {
+      ...cssDev.base,
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    rightBarEnd: {
+      ...cssDev.base,
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'flex-end',
+      alignItems: 'end',
+    },
+
+
+    right: {
+      ...cssDev.base,
+      width: '150px',
       display: 'flex',
       flexDirection: 'column',
       justifyItems: 'space-between',
@@ -150,6 +226,7 @@ export const rootSlotRecipe = defineSlotRecipe({
       justifyContent: 'flex-end',
       alignItems: 'end',
     },
+
     footer: {
       ...cssDev.base,
       display: 'flex',

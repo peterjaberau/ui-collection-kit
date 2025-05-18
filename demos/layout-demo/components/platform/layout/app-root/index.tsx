@@ -13,14 +13,18 @@ import { RootFooter } from './root.footer';
 import { RootFooterInner } from './root.footer.inner';
 import { RootAside } from './root.aside';
 import { RootAsideInner } from './root.aside.inner';
+import { RootBar } from './root.bar';
+import { RootBarInner } from './root.bar.inner';
 import { RootMain } from './root.main';
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface LayoutRootProps extends SlotRecipeProps<'layoutRoot'> {
   header?: LayoutThreePartsProps;
+  leftBar?: LayoutThreePartsProps;
   left?: LayoutThreePartsProps;
   main?: React.ReactNode;
+  rightBar?: LayoutThreePartsProps;
   right?: LayoutThreePartsProps;
   footer?: LayoutThreePartsProps;
   [key: string]: any;
@@ -36,11 +40,13 @@ const Index = (props: LayoutRootProps) => {
   /**
    * destructure the props
    */
-  const { header, left, main, right, footer, ...rest } = restProps;
-  const { start: headerStart, center: headerCenter, end: headerEnd } = header;
-  const { start: rightStart, center: rightCenter, end: rightEnd } = right;
-  const { start: leftStart, center: leftCenter, end: leftEnd } = left;
-  const { start: footerStart, center: footerCenter, end: footerEnd } = footer;
+  const { header, leftBar, left, main, rightBar, right, footer, ...rest } = restProps;
+  const { start: headerStart, center: headerCenter, end: headerEnd } = header ?? {};
+  const { start: leftBarStart, center: leftBarCenter, end: leftBarEnd } = leftBar ?? {};
+  const { start: leftStart, center: leftCenter, end: leftEnd } = left ?? {};
+  const { start: rightBarStart, center: rightBarCenter, end: rightBarEnd } = rightBar ?? {};
+  const { start: rightStart, center: rightCenter, end: rightEnd } = right ?? {};
+  const { start: footerStart, center: footerCenter, end: footerEnd } = footer ?? {};
 
   const styles = recipe(recipeProps);
 
@@ -73,6 +79,33 @@ const Index = (props: LayoutRootProps) => {
         />
       )}
       <RootBody css={{ ...styles.body }}>
+        {leftBar && (
+          <RootBar
+            css={{ ...styles.leftBar }}
+            start={
+              leftBarStart && (
+                <RootBarInner css={{ ...styles.leftBarStart }}>
+                  {leftStart}
+                </RootBarInner>
+              )
+            }
+            center={
+              leftBarCenter && (
+                <RootBarInner css={{ ...styles.leftBarCenter }}>
+                  {leftCenter}
+                </RootBarInner>
+              )
+            }
+            end={
+              leftBarEnd && (
+                <RootBarInner css={{ ...styles.leftBarEnd }}>
+                  {leftEnd}
+                </RootBarInner>
+              )
+            }
+          />
+        )}
+
         {left && (
             <RootAside
               css={{ ...styles.left }}
@@ -100,6 +133,7 @@ const Index = (props: LayoutRootProps) => {
             />
         )}
         {main && <RootMain css={{ ...styles.main }}>{main}</RootMain>}
+
         {right && (
             <RootAside
               css={{ ...styles.right }}
@@ -125,6 +159,32 @@ const Index = (props: LayoutRootProps) => {
                 )
               }
             />
+        )}
+        {rightBar && (
+          <RootBar
+            css={{ ...styles.rightBar }}
+            start={
+              leftBarStart && (
+                <RootBarInner css={{ ...styles.rightBarStart }}>
+                  {leftStart}
+                </RootBarInner>
+              )
+            }
+            center={
+              rightBarCenter && (
+                <RootBarInner css={{ ...styles.rightBarCenter }}>
+                  {leftCenter}
+                </RootBarInner>
+              )
+            }
+            end={
+              rightBarEnd && (
+                <RootBarInner css={{ ...styles.rightBarEnd }}>
+                  {rightEnd}
+                </RootBarInner>
+              )
+            }
+          />
         )}
       </RootBody>
       {footer && (
