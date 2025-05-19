@@ -1,872 +1,4 @@
-export const schemaRegister: any = {
-  "badge": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "solid",
-            "value": "solid"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "surface",
-            "value": "surface"
-          },
-          {
-            "label": "plain",
-            "value": "plain"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "subtle",
-      "size": "sm"
-    },
-    "parts": {}
-  },
-  "button": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          },
-          {
-            "label": "xl",
-            "value": "xl"
-          }
-        ]
-      },
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "solid",
-            "value": "solid"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "glass",
-            "value": "glass"
-          },
-          {
-            "label": "surface",
-            "value": "surface"
-          },
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "ghost",
-            "value": "ghost"
-          },
-          {
-            "label": "plain",
-            "value": "plain"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "md",
-      "variant": "surface",
-      "colorPalette": "gray"
-    },
-    "parts": {}
-  },
-  "code": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "solid",
-            "value": "solid"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "surface",
-            "value": "surface"
-          },
-          {
-            "label": "plain",
-            "value": "plain"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "subtle",
-      "size": "sm"
-    },
-    "parts": {}
-  },
-  "container": {
-    "fields": {
-      "centerContent": {
-        "type": "select",
-        "options": [
-          {
-            "label": "true",
-            "value": "true"
-          }
-        ]
-      },
-      "fluid": {
-        "type": "select",
-        "options": [
-          {
-            "label": "true",
-            "value": "true"
-          }
-        ]
-      }
-    },
-    "defaultProps": {},
-    "parts": {}
-  },
-  "heading": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          },
-          {
-            "label": "xl",
-            "value": "xl"
-          },
-          {
-            "label": "2xl",
-            "value": "2xl"
-          },
-          {
-            "label": "3xl",
-            "value": "3xl"
-          },
-          {
-            "label": "4xl",
-            "value": "4xl"
-          },
-          {
-            "label": "5xl",
-            "value": "5xl"
-          },
-          {
-            "label": "6xl",
-            "value": "6xl"
-          },
-          {
-            "label": "7xl",
-            "value": "7xl"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "xl"
-    },
-    "parts": {}
-  },
-  "input": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          },
-          {
-            "label": "xl",
-            "value": "xl"
-          }
-        ]
-      },
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "flushed",
-            "value": "flushed"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "md",
-      "variant": "outline"
-    },
-    "parts": {}
-  },
-  "inputAddon": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          },
-          {
-            "label": "xl",
-            "value": "xl"
-          }
-        ]
-      },
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "flushed",
-            "value": "flushed"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "md",
-      "variant": "outline"
-    },
-    "parts": {}
-  },
-  "kbd": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "raised",
-            "value": "raised"
-          },
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "plain",
-            "value": "plain"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "md",
-      "variant": "subtle"
-    },
-    "parts": {}
-  },
-  "link": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "underline",
-            "value": "underline"
-          },
-          {
-            "label": "plain",
-            "value": "plain"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "plain"
-    },
-    "parts": {}
-  },
-  "mark": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "solid",
-            "value": "solid"
-          },
-          {
-            "label": "text",
-            "value": "text"
-          },
-          {
-            "label": "plain",
-            "value": "plain"
-          }
-        ]
-      }
-    },
-    "defaultProps": {},
-    "parts": {}
-  },
-  "separator": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "solid",
-            "value": "solid"
-          },
-          {
-            "label": "dashed",
-            "value": "dashed"
-          },
-          {
-            "label": "dotted",
-            "value": "dotted"
-          }
-        ]
-      },
-      "orientation": {
-        "type": "select",
-        "options": [
-          {
-            "label": "vertical",
-            "value": "vertical"
-          },
-          {
-            "label": "horizontal",
-            "value": "horizontal"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "sm",
-      "variant": "solid",
-      "orientation": "horizontal"
-    },
-    "parts": {}
-  },
-  "skeleton": {
-    "fields": {
-      "loading": {
-        "type": "select",
-        "options": [
-          {
-            "label": "true",
-            "value": "true"
-          },
-          {
-            "label": "false",
-            "value": "false"
-          }
-        ]
-      },
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "pulse",
-            "value": "pulse"
-          },
-          {
-            "label": "shine",
-            "value": "shine"
-          },
-          {
-            "label": "none",
-            "value": "none"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "pulse",
-      "loading": true
-    },
-    "parts": {}
-  },
-  "skipNavLink": {
-    "fields": {},
-    "defaultProps": {},
-    "parts": {}
-  },
-  "spinner": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "inherit",
-            "value": "inherit"
-          },
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          },
-          {
-            "label": "xl",
-            "value": "xl"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "md"
-    },
-    "parts": {}
-  },
-  "textarea": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          },
-          {
-            "label": "xl",
-            "value": "xl"
-          }
-        ]
-      },
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "flushed",
-            "value": "flushed"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "md",
-      "variant": "outline"
-    },
-    "parts": {}
-  },
-  "icon": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "inherit",
-            "value": "inherit"
-          },
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          },
-          {
-            "label": "xl",
-            "value": "xl"
-          },
-          {
-            "label": "2xl",
-            "value": "2xl"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "inherit"
-    },
-    "parts": {}
-  },
-  "checkmark": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          }
-        ]
-      },
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "solid",
-            "value": "solid"
-          },
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "plain",
-            "value": "plain"
-          },
-          {
-            "label": "inverted",
-            "value": "inverted"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "solid",
-      "size": "md"
-    },
-    "parts": {}
-  },
-  "radiomark": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "solid",
-            "value": "solid"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          },
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "inverted",
-            "value": "inverted"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "solid",
-      "size": "md"
-    },
-    "parts": {}
-  },
-  "suiCommand": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "md"
-    },
-    "parts": {}
-  },
-  "suiIconBadge": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "outline",
-            "value": "outline"
-          },
-          {
-            "label": "solid",
-            "value": "solid"
-          },
-          {
-            "label": "subtle",
-            "value": "subtle"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          },
-          {
-            "label": "xl",
-            "value": "xl"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "outline",
-      "size": "md"
-    },
-    "parts": {}
-  },
+{
   "accordion": {
     "fields": {
       "variant": {
@@ -1096,6 +228,61 @@ export const schemaRegister: any = {
     },
     "parts": {}
   },
+  "badge": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "solid",
+            "value": "solid"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "surface",
+            "value": "surface"
+          },
+          {
+            "label": "plain",
+            "value": "plain"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "subtle",
+      "size": "sm"
+    },
+    "parts": {}
+  },
   "blockquote": {
     "fields": {
       "justify": {
@@ -1175,6 +362,74 @@ export const schemaRegister: any = {
     "defaultProps": {
       "variant": "plain",
       "size": "md"
+    },
+    "parts": {}
+  },
+  "button": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          },
+          {
+            "label": "xl",
+            "value": "xl"
+          }
+        ]
+      },
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "solid",
+            "value": "solid"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "glass",
+            "value": "glass"
+          },
+          {
+            "label": "surface",
+            "value": "surface"
+          },
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "ghost",
+            "value": "ghost"
+          },
+          {
+            "label": "plain",
+            "value": "plain"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "md",
+      "variant": "surface",
+      "colorPalette": "gray"
     },
     "parts": {}
   },
@@ -1368,8 +623,142 @@ export const schemaRegister: any = {
     },
     "parts": {}
   },
+  "checkmark": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          }
+        ]
+      },
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "solid",
+            "value": "solid"
+          },
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "plain",
+            "value": "plain"
+          },
+          {
+            "label": "inverted",
+            "value": "inverted"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "solid",
+      "size": "md"
+    },
+    "parts": {}
+  },
+  "code": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "solid",
+            "value": "solid"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "surface",
+            "value": "surface"
+          },
+          {
+            "label": "plain",
+            "value": "plain"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "subtle",
+      "size": "sm"
+    },
+    "parts": {}
+  },
   "collapsible": {
     "fields": {},
+    "defaultProps": {},
+    "parts": {}
+  },
+  "container": {
+    "fields": {
+      "centerContent": {
+        "type": "select",
+        "options": [
+          {
+            "label": "true",
+            "value": "true"
+          }
+        ]
+      },
+      "fluid": {
+        "type": "select",
+        "options": [
+          {
+            "label": "true",
+            "value": "true"
+          }
+        ]
+      }
+    },
     "defaultProps": {},
     "parts": {}
   },
@@ -1687,6 +1076,63 @@ export const schemaRegister: any = {
     "defaultProps": {},
     "parts": {}
   },
+  "heading": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          },
+          {
+            "label": "xl",
+            "value": "xl"
+          },
+          {
+            "label": "2xl",
+            "value": "2xl"
+          },
+          {
+            "label": "3xl",
+            "value": "3xl"
+          },
+          {
+            "label": "4xl",
+            "value": "4xl"
+          },
+          {
+            "label": "5xl",
+            "value": "5xl"
+          },
+          {
+            "label": "6xl",
+            "value": "6xl"
+          },
+          {
+            "label": "7xl",
+            "value": "7xl"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "xl"
+    },
+    "parts": {}
+  },
   "hoverCard": {
     "fields": {
       "size": {
@@ -1713,6 +1159,217 @@ export const schemaRegister: any = {
     },
     "defaultProps": {
       "size": "md"
+    },
+    "parts": {}
+  },
+  "icon": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "inherit",
+            "value": "inherit"
+          },
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          },
+          {
+            "label": "xl",
+            "value": "xl"
+          },
+          {
+            "label": "2xl",
+            "value": "2xl"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "inherit"
+    },
+    "parts": {}
+  },
+  "input": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          },
+          {
+            "label": "xl",
+            "value": "xl"
+          }
+        ]
+      },
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "flushed",
+            "value": "flushed"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "md",
+      "variant": "outline"
+    },
+    "parts": {}
+  },
+  "inputAddon": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          },
+          {
+            "label": "xl",
+            "value": "xl"
+          }
+        ]
+      },
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "flushed",
+            "value": "flushed"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "md",
+      "variant": "outline"
+    },
+    "parts": {}
+  },
+  "kbd": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "raised",
+            "value": "raised"
+          },
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "plain",
+            "value": "plain"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "md",
+      "variant": "subtle"
+    },
+    "parts": {}
+  },
+  "link": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "underline",
+            "value": "underline"
+          },
+          {
+            "label": "plain",
+            "value": "plain"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "plain"
     },
     "parts": {}
   },
@@ -1752,6 +1409,33 @@ export const schemaRegister: any = {
     "defaultProps": {
       "variant": "marker"
     },
+    "parts": {}
+  },
+  "mark": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "solid",
+            "value": "solid"
+          },
+          {
+            "label": "text",
+            "value": "text"
+          },
+          {
+            "label": "plain",
+            "value": "plain"
+          }
+        ]
+      }
+    },
+    "defaultProps": {},
     "parts": {}
   },
   "menu": {
@@ -2226,6 +1910,57 @@ export const schemaRegister: any = {
     },
     "parts": {}
   },
+  "radiomark": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "solid",
+            "value": "solid"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "inverted",
+            "value": "inverted"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "solid",
+      "size": "md"
+    },
+    "parts": {}
+  },
   "ratingGroup": {
     "fields": {
       "size": {
@@ -2327,6 +2062,111 @@ export const schemaRegister: any = {
     },
     "parts": {}
   },
+  "separator": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "solid",
+            "value": "solid"
+          },
+          {
+            "label": "dashed",
+            "value": "dashed"
+          },
+          {
+            "label": "dotted",
+            "value": "dotted"
+          }
+        ]
+      },
+      "orientation": {
+        "type": "select",
+        "options": [
+          {
+            "label": "vertical",
+            "value": "vertical"
+          },
+          {
+            "label": "horizontal",
+            "value": "horizontal"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "sm",
+      "variant": "solid",
+      "orientation": "horizontal"
+    },
+    "parts": {}
+  },
+  "skeleton": {
+    "fields": {
+      "loading": {
+        "type": "select",
+        "options": [
+          {
+            "label": "true",
+            "value": "true"
+          },
+          {
+            "label": "false",
+            "value": "false"
+          }
+        ]
+      },
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "pulse",
+            "value": "pulse"
+          },
+          {
+            "label": "shine",
+            "value": "shine"
+          },
+          {
+            "label": "none",
+            "value": "none"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "pulse",
+      "loading": true
+    },
+    "parts": {}
+  },
+  "skipNavLink": {
+    "fields": {},
+    "defaultProps": {},
+    "parts": {}
+  },
   "slider": {
     "fields": {
       "size": {
@@ -2380,7 +2220,69 @@ export const schemaRegister: any = {
     },
     "parts": {}
   },
+  "spinner": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "inherit",
+            "value": "inherit"
+          },
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          },
+          {
+            "label": "xl",
+            "value": "xl"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "md"
+    },
+    "parts": {}
+  },
   "stat": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "md"
+    },
+    "parts": {}
+  },
+  "status": {
     "fields": {
       "size": {
         "type": "select",
@@ -2459,6 +2361,366 @@ export const schemaRegister: any = {
       "size": "md",
       "variant": "solid",
       "orientation": "horizontal"
+    },
+    "parts": {}
+  },
+  "suiAppShell": {
+    "fields": {
+      "fullscreen": {
+        "type": "select",
+        "options": [
+          {
+            "label": "true",
+            "value": "true"
+          }
+        ]
+      },
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "plain",
+            "value": "plain"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "fullscreen": false,
+      "variant": "plain"
+    },
+    "parts": {}
+  },
+  "suiCommand": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "md"
+    },
+    "parts": {}
+  },
+  "suiGridList": {
+    "fields": {
+      "interactive": {
+        "type": "select",
+        "options": [
+          {
+            "label": "true",
+            "value": "true"
+          }
+        ]
+      },
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "simple",
+            "value": "simple"
+          },
+          {
+            "label": "rounded",
+            "value": "rounded"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "simple",
+      "size": "md"
+    },
+    "parts": {}
+  },
+  "suiIconBadge": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "solid",
+            "value": "solid"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          },
+          {
+            "label": "xl",
+            "value": "xl"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "outline",
+      "size": "md"
+    },
+    "parts": {}
+  },
+  "suiLoadingOverlay": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "fill",
+            "value": "fill"
+          },
+          {
+            "label": "fullscreen",
+            "value": "fullscreen"
+          },
+          {
+            "label": "overlay",
+            "value": "overlay"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "fill"
+    },
+    "parts": {}
+  },
+  "suiNavbar": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "neutral",
+            "value": "neutral"
+          },
+          {
+            "label": "solid",
+            "value": "solid"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "md",
+            "value": "md"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "neutral",
+      "size": "md"
+    },
+    "parts": {}
+  },
+  "suiPage": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "panel",
+            "value": "panel"
+          },
+          {
+            "label": "settings",
+            "value": "settings"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "panel"
+    },
+    "parts": {}
+  },
+  "suiPersona": {
+    "fields": {
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "2xs",
+            "value": "2xs"
+          },
+          {
+            "label": "xs",
+            "value": "xs"
+          },
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          },
+          {
+            "label": "xl",
+            "value": "xl"
+          },
+          {
+            "label": "2xl",
+            "value": "2xl"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "size": "md"
+    },
+    "parts": {}
+  },
+  "suiSection": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "annotated",
+            "value": "annotated"
+          }
+        ]
+      }
+    },
+    "defaultProps": {},
+    "parts": {}
+  },
+  "suiSidebar": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "sidebar",
+            "value": "sidebar"
+          },
+          {
+            "label": "inset",
+            "value": "inset"
+          }
+        ]
+      },
+      "mode": {
+        "type": "select",
+        "options": [
+          {
+            "label": "collapsible",
+            "value": "collapsible"
+          },
+          {
+            "label": "flyout",
+            "value": "flyout"
+          },
+          {
+            "label": "compact",
+            "value": "compact"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "md",
+            "value": "md"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "sidebar",
+      "mode": "collapsible",
+      "size": "md"
+    },
+    "parts": {}
+  },
+  "suiSidebarNavItem": {
+    "fields": {
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "muted",
+            "value": "muted"
+          }
+        ]
+      },
+      "size": {
+        "type": "select",
+        "options": [
+          {
+            "label": "sm",
+            "value": "sm"
+          },
+          {
+            "label": "md",
+            "value": "md"
+          },
+          {
+            "label": "lg",
+            "value": "lg"
+          }
+        ]
+      }
+    },
+    "defaultProps": {
+      "variant": "muted",
+      "size": "md"
     },
     "parts": {}
   },
@@ -2716,31 +2978,15 @@ export const schemaRegister: any = {
     },
     "parts": {}
   },
-  "toast": {
-    "fields": {},
-    "defaultProps": {},
-    "parts": {}
-  },
-  "tooltip": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "inverted",
-            "value": "inverted"
-          }
-        ]
-      }
-    },
-    "defaultProps": {},
-    "parts": {}
-  },
-  "status": {
+  "textarea": {
     "fields": {
       "size": {
         "type": "select",
         "options": [
+          {
+            "label": "xs",
+            "value": "xs"
+          },
           {
             "label": "sm",
             "value": "sm"
@@ -2752,12 +2998,34 @@ export const schemaRegister: any = {
           {
             "label": "lg",
             "value": "lg"
+          },
+          {
+            "label": "xl",
+            "value": "xl"
+          }
+        ]
+      },
+      "variant": {
+        "type": "select",
+        "options": [
+          {
+            "label": "outline",
+            "value": "outline"
+          },
+          {
+            "label": "subtle",
+            "value": "subtle"
+          },
+          {
+            "label": "flushed",
+            "value": "flushed"
           }
         ]
       }
     },
     "defaultProps": {
-      "size": "md"
+      "size": "md",
+      "variant": "outline"
     },
     "parts": {}
   },
@@ -2812,287 +3080,19 @@ export const schemaRegister: any = {
     },
     "parts": {}
   },
-  "suiAppShell": {
-    "fields": {
-      "fullscreen": {
-        "type": "select",
-        "options": [
-          {
-            "label": "true",
-            "value": "true"
-          }
-        ]
-      },
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "plain",
-            "value": "plain"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "fullscreen": false,
-      "variant": "plain"
-    },
+  "toast": {
+    "fields": {},
+    "defaultProps": {},
     "parts": {}
   },
-  "suiLoadingOverlay": {
+  "tooltip": {
     "fields": {
       "variant": {
         "type": "select",
         "options": [
           {
-            "label": "fill",
-            "value": "fill"
-          },
-          {
-            "label": "fullscreen",
-            "value": "fullscreen"
-          },
-          {
-            "label": "overlay",
-            "value": "overlay"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "fill"
-    },
-    "parts": {}
-  },
-  "suiPersona": {
-    "fields": {
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "2xs",
-            "value": "2xs"
-          },
-          {
-            "label": "xs",
-            "value": "xs"
-          },
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          },
-          {
-            "label": "xl",
-            "value": "xl"
-          },
-          {
-            "label": "2xl",
-            "value": "2xl"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "size": "md"
-    },
-    "parts": {}
-  },
-  "suiGridList": {
-    "fields": {
-      "interactive": {
-        "type": "select",
-        "options": [
-          {
-            "label": "true",
-            "value": "true"
-          }
-        ]
-      },
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "simple",
-            "value": "simple"
-          },
-          {
-            "label": "rounded",
-            "value": "rounded"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "simple",
-      "size": "md"
-    },
-    "parts": {}
-  },
-  "suiNavbar": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "neutral",
-            "value": "neutral"
-          },
-          {
-            "label": "solid",
-            "value": "solid"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "md",
-            "value": "md"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "neutral",
-      "size": "md"
-    },
-    "parts": {}
-  },
-  "suiSidebar": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "sidebar",
-            "value": "sidebar"
-          },
-          {
-            "label": "inset",
-            "value": "inset"
-          }
-        ]
-      },
-      "mode": {
-        "type": "select",
-        "options": [
-          {
-            "label": "collapsible",
-            "value": "collapsible"
-          },
-          {
-            "label": "flyout",
-            "value": "flyout"
-          },
-          {
-            "label": "compact",
-            "value": "compact"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "md",
-            "value": "md"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "sidebar",
-      "mode": "collapsible",
-      "size": "md"
-    },
-    "parts": {}
-  },
-  "suiSidebarNavItem": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "muted",
-            "value": "muted"
-          }
-        ]
-      },
-      "size": {
-        "type": "select",
-        "options": [
-          {
-            "label": "sm",
-            "value": "sm"
-          },
-          {
-            "label": "md",
-            "value": "md"
-          },
-          {
-            "label": "lg",
-            "value": "lg"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "muted",
-      "size": "md"
-    },
-    "parts": {}
-  },
-  "suiPage": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "panel",
-            "value": "panel"
-          },
-          {
-            "label": "settings",
-            "value": "settings"
-          }
-        ]
-      }
-    },
-    "defaultProps": {
-      "variant": "panel"
-    },
-    "parts": {}
-  },
-  "suiSection": {
-    "fields": {
-      "variant": {
-        "type": "select",
-        "options": [
-          {
-            "label": "annotated",
-            "value": "annotated"
+            "label": "inverted",
+            "value": "inverted"
           }
         ]
       }
@@ -3101,18 +3101,3 @@ export const schemaRegister: any = {
     "parts": {}
   }
 }
-
-export const getComponentSchemas = () => {
-  let newSchemaRegister: any = {};
-  const schemaRegisterKeys = Object.keys(schemaRegister);
-
-  schemaRegisterKeys.forEach((key: string) => {
-    const schemaObj = schemaRegister[key];
-    newSchemaRegister[key] = {
-      ...schemaObj,
-      parts: {}
-    };
-  });
-
-  return newSchemaRegister
-};
