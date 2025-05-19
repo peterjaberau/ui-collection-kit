@@ -1,0 +1,4986 @@
+export const domains = [
+  {
+    title: 'Domains',
+    count: 4,
+    description: 'Business domains defined',
+    href: '/architecture/domains',
+    icon: {},
+    bgColor: 'bg-yellow-100',
+    textColor: 'text-yellow-600',
+    arrowColor: 'text-yellow-600',
+  },
+  {
+    title: 'Services',
+    count: 6,
+    description: 'Services documented in the catalog',
+    href: '/architecture/services',
+    icon: {},
+    bgColor: 'bg-pink-100',
+    textColor: 'text-pink-600',
+    arrowColor: 'text-pink-600',
+  },
+  {
+    title: 'Messages',
+    count: 32,
+    description: 'Messages documented in the catalog',
+    href: '/architecture/messages',
+    icon: {},
+    bgColor: 'bg-blue-100',
+    textColor: 'text-blue-600',
+    arrowColor: 'text-blue-600',
+  },
+];
+
+export const domainsArchitecture = {
+  domains: [
+    {
+      id: 'E-Commerce-1.0.0',
+      data: {
+        domains: [
+          {
+            id: 'Orders-0.0.3',
+            data: {
+              services: [
+                {
+                  id: 'InventoryService',
+                  version: 'latest',
+                },
+                {
+                  id: 'OrdersService',
+                  version: 'latest',
+                },
+                {
+                  id: 'NotificationService',
+                  version: 'latest',
+                },
+                {
+                  id: 'ShippingService',
+                  version: 'latest',
+                },
+              ],
+              entities: [
+                {
+                  id: 'Order',
+                  version: 'latest',
+                },
+                {
+                  id: 'OrderItem',
+                  version: 'latest',
+                },
+                {
+                  id: 'Customer',
+                  version: 'latest',
+                },
+              ],
+              id: 'Orders',
+              name: 'Orders',
+              version: '0.0.3',
+              badges: [
+                {
+                  content: 'Subdomain',
+                  backgroundColor: 'blue',
+                  textColor: 'blue',
+                  icon: 'RectangleGroupIcon',
+                },
+              ],
+              owners: [
+                {
+                  id: 'dboyne',
+                },
+                {
+                  id: 'full-stack',
+                },
+              ],
+              resourceGroups: [
+                {
+                  id: 'related-resources',
+                  title: 'Core resources',
+                  items: [
+                    {
+                      id: 'InventoryService',
+                      version: 'latest',
+                      type: 'service',
+                    },
+                    {
+                      id: 'OrdersService',
+                      version: 'latest',
+                      type: 'service',
+                    },
+                    {
+                      id: 'NotificationService',
+                      version: 'latest',
+                      type: 'service',
+                    },
+                    {
+                      id: 'ShippingService',
+                      version: 'latest',
+                      type: 'service',
+                    },
+                  ],
+                  limit: 10,
+                  sidebar: true,
+                },
+              ],
+            },
+            body: 'import Footer from @catalog/components/footer.astro;warningPlease ensure all services are **updated** to the latest version for compatibility and performance improvements.The Orders domain handles all operations related to customer orders, from creation to fulfillment. This documentation provides an overview of the events and services involved in the Orders domain, helping developers and stakeholders understand the event-driven architectureTiles     Tile icon=UserGroupIcon href=/docs/teams/full-stack title=Contact the team description=Any questions? Feel free to contact the owners     Tile icon=RectangleGroupIcon href={/visualiser/domains/${frontmatter.id}/${frontmatter.version}} title={${frontmatter.services.length} services} description=This domain contains the following services. /Tiles Architecture for the Orders domainNodeGraph MessageTable format=all limit={4} showChannels={true} title=Messages in/out of the domain  Order example (sequence diagram)mermaidsequenceDiagram    participant Customer    participant OrdersService    participant InventoryService    participant NotificationService    Customer-OrdersService: Place Order    OrdersService-InventoryService: Check Inventory    InventoryService--OrdersService: Inventory Available    OrdersService-InventoryService: Reserve Inventory    OrdersService-NotificationService: Send Order Confirmation    NotificationService--Customer: Order Confirmation    OrdersService-Customer: Order Placed Successfully    OrdersService-InventoryService: Update Inventory## Flows Cancel Subscription flowDocumented flow when a user cancels their subscription.Flow id=CancelSubscription version=latest includeKey={false}  Payment processing flowDocumented flow when a user makes a payment within the order domainFlow id=PaymentFlow version=latest includeKey={false} ResourceGroupTable id=related-resources limit={4} showOwners={true} title=Core resources for the Orders domain description=Resources that are related to the Orders domain, you may find them useful Footer ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/index.mdx',
+            digest: '807e56f5425bd33f',
+            deferredRender: true,
+            collection: 'domains',
+          },
+          {
+            id: 'Payment-0.0.1',
+            data: {
+              services: [
+                {
+                  id: 'PaymentService',
+                  version: 'latest',
+                },
+              ],
+              entities: [
+                {
+                  id: 'Invoice',
+                  version: 'latest',
+                },
+                {
+                  id: 'Payment',
+                  version: 'latest',
+                },
+                {
+                  id: 'PaymentMethod',
+                  version: 'latest',
+                },
+                {
+                  id: 'Transaction',
+                  version: 'latest',
+                },
+              ],
+              id: 'Payment',
+              name: 'Payment',
+              summary:
+                'Domain that contains payment related services and messages.',
+              version: '0.0.1',
+              badges: [
+                {
+                  content: 'Subdomain',
+                  backgroundColor: 'blue',
+                  textColor: 'blue',
+                  icon: 'BoltIcon',
+                },
+              ],
+              owners: [
+                {
+                  id: 'dboyne',
+                },
+              ],
+            },
+            body: '## OverviewThe Payment Domain encompasses all services and components related to handling financial transactions within the system. It is responsible for managing payments, transactions, billing, and financial records. The domain ensures secure, reliable, and efficient processing of all payment-related activities## Bounded contextNodeGraph MessageTable format=all limit={4} ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Payment/index.mdx',
+            digest: '1d8013dca1ff4413',
+            deferredRender: true,
+            collection: 'domains',
+          },
+          {
+            id: 'Subscription-0.0.1',
+            data: {
+              services: [
+                {
+                  id: 'SubscriptionService',
+                  version: 'latest',
+                },
+              ],
+              entities: [
+                {
+                  id: 'BillingProfile',
+                  version: 'latest',
+                },
+                {
+                  id: 'SubscriptionPeriod',
+                  version: 'latest',
+                },
+              ],
+              id: 'Subscription',
+              name: 'Subscription',
+              summary:
+                'Domain that contains subscription related services and messages.',
+              version: '0.0.1',
+              badges: [
+                {
+                  content: 'Subdomain',
+                  backgroundColor: 'blue',
+                  textColor: 'blue',
+                },
+              ],
+              owners: [
+                {
+                  id: 'subscriptions-management',
+                },
+              ],
+            },
+            body: '## OverviewThe Payment Domain encompasses all services and components related to handling financial transactions within the system. It is responsible for managing payments, transactions, billing, and financial records. The domain ensures secure, reliable, and efficient processing of all payment-related activities## Bounded contextNodeGraph MessageTable format=all limit={4} ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Subscriptions/index.mdx',
+            digest: 'b4b5bcc7e54bbaea',
+            deferredRender: true,
+            collection: 'domains',
+          },
+        ],
+        id: 'E-Commerce',
+        name: 'E-Commerce',
+        version: '1.0.0',
+        badges: [
+          {
+            content: 'Core domain',
+            backgroundColor: 'blue',
+            textColor: 'blue',
+            icon: 'RectangleGroupIcon',
+          },
+          {
+            content: 'Business Critical',
+            backgroundColor: 'yellow',
+            textColor: 'yellow',
+            icon: 'ShieldCheckIcon',
+          },
+        ],
+        owners: [
+          {
+            id: 'dboyne',
+          },
+          {
+            id: 'full-stack',
+          },
+        ],
+        resourceGroups: [
+          {
+            id: 'related-resources',
+            title: 'Core FlowMart Services',
+            items: [
+              {
+                id: 'InventoryService',
+                version: 'latest',
+                type: 'service',
+              },
+              {
+                id: 'OrdersService',
+                version: 'latest',
+                type: 'service',
+              },
+              {
+                id: 'NotificationService',
+                version: 'latest',
+                type: 'service',
+              },
+              {
+                id: 'ShippingService',
+                version: 'latest',
+                type: 'service',
+              },
+              {
+                id: 'CustomerService',
+                version: 'latest',
+                type: 'service',
+              },
+              {
+                id: 'PaymentService',
+                version: 'latest',
+                type: 'service',
+              },
+              {
+                id: 'AnalyticsService',
+                version: 'latest',
+                type: 'service',
+              },
+            ],
+            limit: 10,
+            sidebar: true,
+          },
+        ],
+        services: [
+          {
+            id: 'InventoryService-0.0.2',
+            data: {
+              sends: [
+                {
+                  id: 'InventoryAdjusted',
+                  version: 'latest',
+                },
+                {
+                  id: 'OutOfStock',
+                  version: 'latest',
+                },
+                {
+                  id: 'GetOrder',
+                  version: 'latest',
+                },
+              ],
+              receives: [
+                {
+                  id: 'OrderConfirmed',
+                  version: 'latest',
+                },
+                {
+                  id: 'GetInventoryList',
+                  version: 'latest',
+                },
+                {
+                  id: 'OrderAmended',
+                  version: 'latest',
+                },
+                {
+                  id: 'UpdateInventory',
+                  version: 'latest',
+                },
+                {
+                  id: 'AddInventory',
+                  version: 'latest',
+                },
+                {
+                  id: 'GetInventoryStatus',
+                  version: 'latest',
+                },
+                {
+                  id: 'DeleteInventory',
+                  version: 'latest',
+                },
+              ],
+              id: 'InventoryService',
+              name: 'Inventory Service',
+              summary: 'Service that handles the inventory',
+              version: '0.0.2',
+              owners: [
+                {
+                  id: 'order-management',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+              deprecated: {
+                message:
+                  'This service is **being deprecated** and replaced by the new service **InventoryServiceV2**.Please contact the [team for more information](mailto:inventory-team@example.com) or visit our [website](https://eventcatalog.dev).',
+                date: '2026-05-01T00:00:00.000Z',
+              },
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe Inventory Service is a critical component of the system responsible for managing product stock levels, tracking inventory movements, and ensuring product availability. It interacts with other services to maintain accurate inventory records and supports operations such as order fulfillment, restocking, and inventory audits.Tiles     Tile icon=DocumentIcon href={/docs/services/${frontmatter.id}/${frontmatter.version}/changelog}  title=View the changelog description=Want to know the history of this service? View the change logs     Tile icon=UserGroupIcon href=/docs/teams/full-stack title=Contact the team description=Any questions? Feel free to contact the owners     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles## Core features| Feature | Description ||---------|-------------|| Real-time Stock Tracking | Monitors inventory levels across all warehouses in real-time || Automated Reordering | Triggers purchase orders when stock levels fall below defined thresholds || Multi-warehouse Support | Manages inventory across multiple warehouse locations || Batch Processing | Handles bulk inventory updates and adjustments efficiently |## Architecture diagramNodeGraph title=Hello world MessageTable format=all limit={4} # InfrastructureThe Inventory Service is hosted on AWS.The diagram below shows the infrastructure of the Inventory Service. The service is hosted on AWS and uses AWS Lambda to handle the inventory requests. The inventory is stored in an AWS Aurora database and the inventory metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Inventory DB] in api    service disk1(logos:aws-s3)[Inventory Metadata] in api    service server(logos:aws-lambda)[Inventory Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Inventory Service infrastructure in the [Inventory Service documentation](https://github.com/event-catalog/pretend-shipping-service/blob/main/README.md).Steps title=How to connect to Inventory Service  Step title=Obtain API credentials    Request API credentials from the Inventory Service team.  /Step  Step title=Install the SDK    Run the following command in your project directory:    bash    npm install inventory-service-sdk      /Step  Step title=Initialize the client  Use the following code to initialize the Inventory Service client:  js  const InventoryService = require(inventory-service-sdk);  const client = new InventoryService.Client({    clientId: YOUR_CLIENT_ID,    clientSecret: YOUR_CLIENT_SECRET,    apiUrl: https://api.inventoryservice.com/v1  });  /Step  Step title=Make API calls    You can now use the client to make API calls. For example, to get all products:  js  client.getProducts()    .then(products = console.log(products))    .catch(error = console.error(error));    /Step/StepsFooter ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/index.mdx',
+            digest: '6aaa18b0014d9edc',
+            deferredRender: true,
+            collection: 'services',
+          },
+          {
+            id: 'OrdersService-0.0.3',
+            data: {
+              sends: [
+                {
+                  id: 'OrderAmended',
+                  version: 'latest',
+                },
+                {
+                  id: 'OrderCancelled',
+                  version: 'latest',
+                },
+                {
+                  id: 'OrderConfirmed',
+                  version: 'latest',
+                },
+                {
+                  id: 'AddInventory',
+                  version: '0.0.3',
+                },
+              ],
+              receives: [
+                {
+                  id: 'InventoryAdjusted',
+                  version: '0.0.3',
+                },
+                {
+                  id: 'GetOrder',
+                  version: 'latest',
+                },
+                {
+                  id: 'PlaceOrder',
+                  version: 'latest',
+                },
+                {
+                  id: 'UserSubscriptionCancelled',
+                  version: 'latest',
+                },
+              ],
+              id: 'OrdersService',
+              name: 'Orders Service',
+              summary: 'Service that handles orders',
+              version: '0.0.3',
+              owners: [
+                {
+                  id: 'order-management',
+                },
+              ],
+              schemaPath: 'openapi-v1.yml',
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+              specifications: [
+                {
+                  type: 'asyncapi',
+                  path: 'order-service-asyncapi.yaml',
+                },
+                {
+                  type: 'openapi',
+                  path: 'openapi-v1.yml',
+                  name: 'v1 API',
+                },
+                {
+                  type: 'openapi',
+                  path: 'openapi-v2.yml',
+                  name: 'v2 API',
+                },
+              ],
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe Orders Service is responsible for managing customer orders within the system. It handles order creation, updating, status tracking, and interactions with other services such as Inventory, Payment, and Notification services to ensure smooth order processing and fulfillment.Tiles     Tile icon=DocumentIcon href={/docs/services/${frontmatter.id}/${frontmatter.version}/changelog}  title=View the changelog description=Want to know the history of this service? View the change logs     Tile icon=UserGroupIcon href=/docs/teams/full-stack title=Contact the team description=Any questions? Feel free to contact the owners     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles Core features| Feature | Description ||---------|-------------|| Order Management | Handles order creation, updates, and status tracking || Inventory Integration | Validates and processes inventory for incoming orders || Payment Processing | Integrates with payment gateways to handle payment transactions || Notification Integration | Sends notifications to users and other services |## Architecture diagram NodeGraph MessageTable format=all limit={4} ## InfrastructureThe Orders Service is hosted on AWS.The diagram below shows the infrastructure of the Orders Service. The service is hosted on AWS and uses AWS Lambda to handle the order requests. The order is stored in an AWS Aurora database and the order metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Order DB] in api    service disk1(logos:aws-s3)[Order Metadata] in api    service server(logos:aws-lambda)[Order Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Orders Service infrastructure in the [Orders Service documentation](https://github.com/event-catalog/pretend-shipping-service/blob/main/README.md).Footer ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/index.mdx',
+            digest: '45e05f02eaf8e01a',
+            deferredRender: true,
+            collection: 'services',
+          },
+          {
+            id: 'NotificationService-0.0.2',
+            data: {
+              sends: [
+                {
+                  id: 'OutOfStock',
+                  version: 'latest',
+                },
+                {
+                  id: 'GetInventoryList',
+                  version: '0.0.x',
+                },
+              ],
+              receives: [
+                {
+                  id: 'InventoryAdjusted',
+                  version: '1.0.0',
+                },
+                {
+                  id: 'PaymentProcessed',
+                  version: '^1.0.0',
+                },
+                {
+                  id: 'GetUserNotifications',
+                  version: 'x',
+                },
+                {
+                  id: 'GetNotificationDetails',
+                  version: 'x',
+                },
+              ],
+              id: 'NotificationService',
+              name: 'Notifications',
+              summary: 'Service that handles orders',
+              version: '0.0.2',
+              owners: [
+                {
+                  id: 'order-management',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe Notification Service is responsible for managing and delivering notifications to users and other services. It supports various notification channels such as email, SMS, push notifications, and in-app notifications. The service ensures reliable and timely delivery of messages and integrates with other services to trigger notifications based on specific events.Tiles     Tile icon=DocumentIcon href={/docs/services/${frontmatter.id}/${frontmatter.version}/changelog}  title=View the changelog description=Want to know the history of this service? View the change logs     Tile icon=UserGroupIcon href=/docs/teams/full-stack title=Contact the team description=Any questions? Feel free to contact the owners     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles Core features| Feature | Description ||---------|-------------|| Multi-Channel Delivery | Supports notifications via email, SMS, push notifications, and in-app messages || Template Management | Customizable notification templates with dynamic content placeholders || Delivery Status Tracking | Real-time tracking and monitoring of notification delivery status || Rate Limiting | Prevents notification flooding through configurable rate limits || Priority Queue | Handles urgent notifications with priority delivery mechanisms || Batch Processing | Efficiently processes and sends bulk notifications || Retry Mechanism | Automatic retry logic for failed notification deliveries || Event-Driven Notifications | Triggers notifications based on system events and user actions |## Architecture diagramNodeGraph MessageTable format=all limit={4} ## Core ConceptsAccordionGroup  Accordion title=Notification    - Description: A message that is sent to a user or a service.    - Attributes: notificationId, type, recipient, content, channel, status, timestamp  /Accordion  Accordion title=Channel    - Description: The medium through which the notification is delivered (e.g., email, SMS, push notification).    - Attributes: channelId, name, provider, configuration   /Accordion/AccordionGroup## InfrastructureThe Notification Service is hosted on AWS.The diagram below shows the infrastructure of the Notification Service. The service is hosted on AWS and uses AWS Lambda to handle the notification requests. The notification is stored in an AWS Aurora database and the notification metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Notification DB] in api    service disk1(logos:aws-s3)[Notification Metadata] in api    service server(logos:aws-lambda)[Notification Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Notification Service infrastructure in the [Notification Service documentation](https://github.com/event-catalog/pretend-shipping-service/blob/main/README.md).Footer ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/services/NotificationService/index.mdx',
+            digest: '2f3d49c49ec94a4a',
+            deferredRender: true,
+            collection: 'services',
+          },
+          {
+            id: 'ShippingService-0.0.1',
+            data: {
+              sends: [
+                {
+                  id: 'ShipmentCreated',
+                  version: 'latest',
+                },
+                {
+                  id: 'ReturnInitiated',
+                  version: 'latest',
+                },
+                {
+                  id: 'ShipmentDispatched',
+                  version: 'latest',
+                },
+                {
+                  id: 'ShipmentInTransit',
+                  version: 'latest',
+                },
+                {
+                  id: 'ShipmentDelivered',
+                  version: 'latest',
+                },
+                {
+                  id: 'DeliveryFailed',
+                  version: 'latest',
+                },
+              ],
+              receives: [
+                {
+                  id: 'CancelShipment',
+                  version: 'latest',
+                },
+                {
+                  id: 'CreateReturnLabel',
+                  version: 'latest',
+                },
+                {
+                  id: 'CreateShipment',
+                  version: 'latest',
+                },
+                {
+                  id: 'UpdateShipmentStatus',
+                  version: 'latest',
+                },
+                {
+                  id: 'PaymentProcessed',
+                  version: 'latest',
+                },
+              ],
+              id: 'ShippingService',
+              name: 'Shipping Service',
+              summary: 'Service that handles shipping',
+              version: '0.0.1',
+              owners: [
+                {
+                  id: 'dboyne',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe Shipping Service is responsible for managing shipping within the system. It handles order creation, updating, status tracking, and interactions with other services such as Inventory, Payment, and Notification services to ensure smooth order processing and fulfillment.Tiles     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles Core featuresThe Shipping Service is responsible for managing shipping within the system. It handles order creation, updating, status tracking, and interactions with other services such as Inventory, Payment, and Notification services to ensure smooth order processing and fulfillment.## Architecture diagram NodeGraph MessageTable format=all limit={4} Footer ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/index.mdx',
+            digest: '4e966f3f6b5fd108',
+            deferredRender: true,
+            collection: 'services',
+          },
+          {
+            id: 'PaymentService-0.0.1',
+            data: {
+              sends: [
+                {
+                  id: 'PaymentProcessed',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'GetOrder',
+                  version: 'latest',
+                },
+              ],
+              receives: [
+                {
+                  id: 'PaymentInitiated',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'GetPaymentStatus',
+                  version: 'latest',
+                },
+                {
+                  id: 'UserSubscriptionStarted',
+                  version: 'latest',
+                },
+                {
+                  id: 'InventoryAdjusted',
+                  version: 'latest',
+                },
+              ],
+              id: 'PaymentService',
+              name: 'Payment Service',
+              summary: 'Service that handles payments',
+              version: '0.0.1',
+              owners: [
+                {
+                  id: 'dboyne',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+            },
+            body: 'The Payment Service is a crucial component of our system that handles all payment-related operations. It processes payments, manages transactions, and communicates with other services through events. Using an event-driven architecture, it ensures that all actions are asynchronous, decoupled, and scalable. Core features| Feature | Description ||---------|-------------|| Payment Processing | Processes payments and manages transactions || Event-Driven Architecture | Ensures asynchronous, decoupled, and scalable operations || Integration with Payment Gateways | Interfaces with external payment providers |NodeGraph MessageTable format=all limit={4} ## InfrastructureThe Payment Service is hosted on AWS.The diagram below shows the infrastructure of the Payment Service. The service is hosted on AWS and uses AWS Lambda to handle the payment requests. The payment is stored in an AWS Aurora database and the payment metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Payment DB] in api    service disk1(logos:aws-s3)[Payment Metadata] in api    service server(logos:aws-lambda)[Payment Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Payment Service infrastructure in the [Payment Service documentation](https://github.com/event-catalog/pretend-payment-service/blob/main/README.md). Key Components- Payment API: Exposes endpoints for initiating payments and querying payment status.- Payment Processor: Handles the core payment processing logic.- Event Bus: Manages the communication between services using events.- Payment Gateway: Interfaces with external payment providers.- Transaction Service: Manages transaction records and states.- Notification Service: Sends notifications related to payment status changes.- Database: Stores transaction data and payment status.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/index.mdx',
+            digest: 'f34269b53f50aded',
+            deferredRender: true,
+            collection: 'services',
+          },
+          {
+            id: 'SubscriptionService-0.0.1',
+            data: {
+              sends: [
+                {
+                  id: 'UserSubscriptionStarted',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'UserSubscriptionCancelled',
+                  version: '0.0.1',
+                },
+              ],
+              receives: [
+                {
+                  id: 'SubscribeUser',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'CancelSubscription',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'GetSubscriptionStatus',
+                  version: 'latest',
+                },
+                {
+                  id: 'PaymentProcessed',
+                  version: '0.0.1',
+                },
+              ],
+              id: 'SubscriptionService',
+              name: 'Subscription Service',
+              summary: 'Service that handles subscriptions',
+              version: '0.0.1',
+              owners: [
+                {
+                  id: 'subscriptions-management',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-subscription-service',
+              },
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe subscription Service is responsible for handling customer subscriptions in our system. It handles new subscriptions, cancelling subscriptions and updating them.Tiles     Tile icon=DocumentIcon href={/docs/services/${frontmatter.id}/${frontmatter.version}/changelog}  title=View the changelog description=Want to know the history of this service? View the change logs     Tile icon=UserGroupIcon href=/docs/teams/full-stack title=Contact the team description=Any questions? Feel free to contact the owners     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles Core features| Feature | Description ||---------|-------------|| Subscription Management | Handles subscription creation, updates, and status tracking || Payment Processing | Integrates with payment gateways to handle payment transactions || Notification Integration | Sends notifications to users and other services || Multi-Channel Fulfillment | Supports multiple fulfillment channels (e.g., shipping, in-store pickup) |## Architecture diagram NodeGraph MessageTable format=all limit={4} ## InfrastructureThe Subscription Service is hosted on AWS.The diagram below shows the infrastructure of the Subscription Service. The service is hosted on AWS and uses AWS Lambda to handle the subscription requests. The subscription is stored in an AWS Aurora database and the subscription metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Subscription DB] in api    service disk1(logos:aws-s3)[Subscription Metadata] in api    service server(logos:aws-lambda)[Subscription Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Subscription Service infrastructure in the [Subscription Service documentation](https://github.com/event-catalog/pretend-subscription-service/blob/main/README.md).Footer ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/index.mdx',
+            digest: 'd5a21a4bb4809fb0',
+            deferredRender: true,
+            collection: 'services',
+          },
+        ],
+        entities: [],
+        latestVersion: '1.0.0',
+        versions: ['1.0.0'],
+      },
+      filePath: '../examples/default/domains/E-Commerce/index.mdx',
+      digest: 'eb51cb6c9ca73a4b',
+      deferredRender: true,
+      collection: 'domains',
+      sends: [
+        {
+          id: 'InventoryAdjusted-1.0.1',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'InventoryAdjusted',
+            name: 'Inventory adjusted',
+            summary: 'Indicates a change in inventory level',
+            version: '1.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/InventoryAdjusted/index.mdx',
+          digest: 'ade660eb81993fdd',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'OutOfStock-0.0.4',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OutOfStock',
+            name: 'Inventory out of stock',
+            summary: 'Indicates inventory is out of stock',
+            version: '0.0.4',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/OutOfStock/index.mdx',
+          digest: '5a97dd73fa169ad6',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetOrder-0.0.1',
+          data: {
+            id: 'GetOrder',
+            name: 'Get order details',
+            summary:
+              'GET request that will return detailed information about a specific order, identified by its orderId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/queries/GetOrder/index.mdx',
+          digest: '71f186bfcba04dad',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'OrderAmended-0.0.1',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderAmended',
+            name: 'Order amended',
+            summary: 'Indicates an order has been changed',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderAmended/index.mdx',
+          digest: '1c2e739addd67a6a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'OrderCancelled-0.0.1',
+          data: {
+            channels: [
+              {
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderCancelled',
+            name: 'Order cancelled',
+            summary: 'Indicates an order has been canceled',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderCancelled/index.mdx',
+          digest: '978875f2e0eb596a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'OrderConfirmed-0.0.1',
+          data: {
+            channels: [
+              {
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderConfirmed',
+            name: 'Order confirmed',
+            summary: 'Indicates an order has been confirmed',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+                icon: 'StarIcon',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderConfirmed/index.mdx',
+          digest: '25c0eccde9d78e40',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'AddInventory-0.0.3',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'AddInventory',
+            name: 'Add inventory',
+            summary: 'Command that will add item to a given inventory id',
+            version: '0.0.3',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/commands/AddInventory/index.mdx',
+          digest: '106b7429daebcbb9',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'OutOfStock-0.0.4',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OutOfStock',
+            name: 'Inventory out of stock',
+            summary: 'Indicates inventory is out of stock',
+            version: '0.0.4',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/OutOfStock/index.mdx',
+          digest: '5a97dd73fa169ad6',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetInventoryList-0.0.1',
+          data: {
+            id: 'GetInventoryList',
+            name: 'List inventory list',
+            summary: 'GET request that will return inventory list',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/queries/GetInventoryList/index.mdx',
+          digest: '4517b5ebf16ef267',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'ShipmentCreated-0.0.1',
+          data: {
+            id: 'ShipmentCreated',
+            name: 'Shipment created',
+            summary: 'Event that is emitted when a shipment is created.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ShipmentCreated/index.mdx',
+          digest: '81baf1c8ce150762',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'ReturnInitiated-0.0.1',
+          data: {
+            id: 'ReturnInitiated',
+            name: 'Return initiated',
+            summary: 'Event that is emitted when a return is initiated.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ReturnInitiated/index.mdx',
+          digest: '8c07547b7d221ec0',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'ShipmentDispatched-0.0.1',
+          data: {
+            id: 'ShipmentDispatched',
+            name: 'Shipment dispatched',
+            summary: 'Event that is emitted when a shipment is dispatched.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ShipmentDispatched/index.mdx',
+          digest: 'cb4e2735758f102b',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'ShipmentInTransit-0.0.1',
+          data: {
+            id: 'ShipmentInTransit',
+            name: 'Shipment in transit',
+            summary: 'Event that is emitted when a shipment is in transit.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ShipmentInTransit/index.mdx',
+          digest: '57803e3280f01326',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'ShipmentDelivered-0.0.1',
+          data: {
+            id: 'ShipmentDelivered',
+            name: 'Shipment delivered',
+            summary: 'Event that is emitted when a shipment is delivered.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ShipmentDelivered/index.mdx',
+          digest: '4aa31b957c9f7f14',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'DeliveryFailed-0.0.1',
+          data: {
+            id: 'DeliveryFailed',
+            name: 'Delivery failed',
+            summary: 'Event that is emitted when a shipment delivery fails.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/DeliveryFailed/index.mdx',
+          digest: '388b45c6a5232dd7',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'PaymentProcessed-0.0.1',
+          data: {
+            id: 'PaymentProcessed',
+            name: 'Payment Processed',
+            summary:
+              'Event is triggered after the payment has been successfully processed',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentProcessed/versioned/0.0.1/index.mdx',
+          digest: '1b67685ce94288a6',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetOrder-0.0.1',
+          data: {
+            id: 'GetOrder',
+            name: 'Get order details',
+            summary:
+              'GET request that will return detailed information about a specific order, identified by its orderId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/queries/GetOrder/index.mdx',
+          digest: '71f186bfcba04dad',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'UserSubscriptionStarted-0.0.1',
+          data: {
+            id: 'UserSubscriptionStarted',
+            name: 'User subscription started',
+            summary:
+              'An event that is triggered when a new user subscription has started',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/events/UserSubscriptionStarted/index.mdx',
+          digest: '975a26dbf5b9579a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'UserSubscriptionCancelled-0.0.1',
+          data: {
+            id: 'UserSubscriptionCancelled',
+            name: 'User subscription cancelled',
+            summary:
+              'An event that is triggered when a users subscription has been cancelled',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/events/UserSubscriptionCancelled/index.mdx',
+          digest: 'f4393a7ec584dfcb',
+          deferredRender: true,
+          collection: 'events',
+        },
+      ],
+      receives: [
+        {
+          id: 'OrderConfirmed-0.0.1',
+          data: {
+            channels: [
+              {
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderConfirmed',
+            name: 'Order confirmed',
+            summary: 'Indicates an order has been confirmed',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+                icon: 'StarIcon',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderConfirmed/index.mdx',
+          digest: '25c0eccde9d78e40',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetInventoryList-0.0.1',
+          data: {
+            id: 'GetInventoryList',
+            name: 'List inventory list',
+            summary: 'GET request that will return inventory list',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/queries/GetInventoryList/index.mdx',
+          digest: '4517b5ebf16ef267',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'OrderAmended-0.0.1',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderAmended',
+            name: 'Order amended',
+            summary: 'Indicates an order has been changed',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderAmended/index.mdx',
+          digest: '1c2e739addd67a6a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'UpdateInventory-0.0.3',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'UpdateInventory',
+            name: 'Update inventory',
+            summary: 'Command that will update a given inventory item',
+            version: '0.0.3',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'PUT',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/commands/UpdateInventory/index.mdx',
+          digest: '7a6aa4f22e442604',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'AddInventory-0.0.3',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'AddInventory',
+            name: 'Add inventory',
+            summary: 'Command that will add item to a given inventory id',
+            version: '0.0.3',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/commands/AddInventory/index.mdx',
+          digest: '106b7429daebcbb9',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'GetInventoryStatus-0.0.1',
+          data: {
+            id: 'GetInventoryStatus',
+            name: 'Get inventory status',
+            summary:
+              'GET request that will return the current stock status for a specific product.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'GET Request',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/queries/GetInventoryStatus/index.mdx',
+          digest: '00eb1684c4519d03',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'DeleteInventory-0.0.3',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'DeleteInventory',
+            name: 'Delete Inventory',
+            summary:
+              'Command that will delete a given inventory item from the system',
+            version: '0.0.3',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'DELETE',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/commands/DeleteInventory/index.mdx',
+          digest: '17b28d5ec21cc1f1',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'GetOrder-0.0.1',
+          data: {
+            id: 'GetOrder',
+            name: 'Get order details',
+            summary:
+              'GET request that will return detailed information about a specific order, identified by its orderId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/queries/GetOrder/index.mdx',
+          digest: '71f186bfcba04dad',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'PlaceOrder-0.0.1',
+          data: {
+            id: 'PlaceOrder',
+            name: 'Place Order',
+            summary: 'Command that will place an order',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/commands/PlaceOrder/index.mdx',
+          digest: '19d07e3824d444da',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'UserSubscriptionCancelled-0.0.1',
+          data: {
+            id: 'UserSubscriptionCancelled',
+            name: 'User subscription cancelled',
+            summary:
+              'An event that is triggered when a users subscription has been cancelled',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/events/UserSubscriptionCancelled/index.mdx',
+          digest: 'f4393a7ec584dfcb',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'InventoryAdjusted-1.0.1',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'InventoryAdjusted',
+            name: 'Inventory adjusted',
+            summary: 'Indicates a change in inventory level',
+            version: '1.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/InventoryAdjusted/index.mdx',
+          digest: 'ade660eb81993fdd',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'PaymentProcessed-1.0.0',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'payments.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'PaymentProcessed',
+            name: 'Payment Processed',
+            summary:
+              'Event is triggered after the payment has been successfully processed',
+            version: '1.0.0',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentProcessed/index.mdx',
+          digest: '45b319e31a874a90',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetUserNotifications-0.0.1',
+          data: {
+            id: 'GetUserNotifications',
+            name: 'Get user notifications',
+            summary:
+              'GET request that will return a list of notifications for a specific user, with options to filter by status (unread or all).',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/NotificationService/queries/GetUserNotifications/index.mdx',
+          digest: '4b02e9790b934892',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'GetNotificationDetails-0.0.1',
+          data: {
+            id: 'GetNotificationDetails',
+            name: 'Get notification details',
+            summary:
+              'GET request that will return detailed information about a specific notification, identified by its notificationId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/NotificationService/queries/GetNotificationDetails/index.mdx',
+          digest: '5825f3b294eb2545',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'CancelShipment-0.0.1',
+          data: {
+            id: 'CancelShipment',
+            name: 'Cancel shipment',
+            summary:
+              'POST request that will cancel a shipment, identified by its shipmentId.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/commands/CancelShipment/index.mdx',
+          digest: '48d96360e9322568',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'CreateReturnLabel-0.0.1',
+          data: {
+            id: 'CreateReturnLabel',
+            name: 'Create return label',
+            summary:
+              'POST request that will create a return label for a specific shipment, identified by its shipmentId.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/commands/CreateReturnLabel/index.mdx',
+          digest: '0a834e6a2e68b14a',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'CreateShipment-0.0.1',
+          data: {
+            id: 'CreateShipment',
+            name: 'Create shipment',
+            summary:
+              'POST request that will create a shipment for a specific order, identified by its orderId.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/commands/CreateShipment/index.mdx',
+          digest: '98b8b56fe0d04090',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'UpdateShipmentStatus-0.0.1',
+          data: {
+            id: 'UpdateShipmentStatus',
+            name: 'Update shipment status',
+            summary:
+              'POST request that will update the status of a shipment, identified by its shipmentId.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/commands/UpdateShipmentStatus/index.mdx',
+          digest: '73cf35e5d36acfd9',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'PaymentProcessed-1.0.0',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'payments.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'PaymentProcessed',
+            name: 'Payment Processed',
+            summary:
+              'Event is triggered after the payment has been successfully processed',
+            version: '1.0.0',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentProcessed/index.mdx',
+          digest: '45b319e31a874a90',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'PaymentInitiated-0.0.1',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'payments.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'PaymentInitiated',
+            name: 'Payment Initiated',
+            summary:
+              'Event is triggered when a user initiates a payment through the Payment Service',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentInitiated/index.mdx',
+          digest: '9dba7743582f388c',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetPaymentStatus-0.0.1',
+          data: {
+            id: 'GetPaymentStatus',
+            name: 'Get payment status',
+            summary:
+              'GET request that will return the payment status for a specific order, identified by its orderId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/queries/GetPaymentStatus/index.mdx',
+          digest: '85185bb48c156df5',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'UserSubscriptionStarted-0.0.1',
+          data: {
+            id: 'UserSubscriptionStarted',
+            name: 'User subscription started',
+            summary:
+              'An event that is triggered when a new user subscription has started',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/events/UserSubscriptionStarted/index.mdx',
+          digest: '975a26dbf5b9579a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'InventoryAdjusted-1.0.1',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'InventoryAdjusted',
+            name: 'Inventory adjusted',
+            summary: 'Indicates a change in inventory level',
+            version: '1.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/InventoryAdjusted/index.mdx',
+          digest: 'ade660eb81993fdd',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'SubscribeUser-0.0.1',
+          data: {
+            id: 'SubscribeUser',
+            name: 'Subscribe user',
+            summary: 'Command that will try and subscribe a given user',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/commands/SubscribeUser/index.mdx',
+          digest: 'a96417bf8e330295',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'CancelSubscription-0.0.1',
+          data: {
+            id: 'CancelSubscription',
+            name: 'Cancel subscription',
+            summary: 'Command that will try and cancel a users subscription',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/commands/CancelSubscription/index.mdx',
+          digest: 'ff2d317b58f56dbe',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'GetSubscriptionStatus-0.0.2',
+          data: {
+            id: 'GetSubscriptionStatus',
+            name: 'Get subscription status',
+            summary:
+              'GET request that will return the current subscription status for a specific user, identified by their userId.',
+            version: '0.0.2',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/queries/GetSubscriptionStatus/index.mdx',
+          digest: 'c8a50e0186a41b74',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'PaymentProcessed-0.0.1',
+          data: {
+            id: 'PaymentProcessed',
+            name: 'Payment Processed',
+            summary:
+              'Event is triggered after the payment has been successfully processed',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentProcessed/versioned/0.0.1/index.mdx',
+          digest: '1b67685ce94288a6',
+          deferredRender: true,
+          collection: 'events',
+        },
+      ],
+    },
+    {
+      id: 'Orders-0.0.3',
+      data: {
+        services: [
+          {
+            id: 'InventoryService-0.0.2',
+            data: {
+              sends: [
+                {
+                  id: 'InventoryAdjusted',
+                  version: 'latest',
+                },
+                {
+                  id: 'OutOfStock',
+                  version: 'latest',
+                },
+                {
+                  id: 'GetOrder',
+                  version: 'latest',
+                },
+              ],
+              receives: [
+                {
+                  id: 'OrderConfirmed',
+                  version: 'latest',
+                },
+                {
+                  id: 'GetInventoryList',
+                  version: 'latest',
+                },
+                {
+                  id: 'OrderAmended',
+                  version: 'latest',
+                },
+                {
+                  id: 'UpdateInventory',
+                  version: 'latest',
+                },
+                {
+                  id: 'AddInventory',
+                  version: 'latest',
+                },
+                {
+                  id: 'GetInventoryStatus',
+                  version: 'latest',
+                },
+                {
+                  id: 'DeleteInventory',
+                  version: 'latest',
+                },
+              ],
+              id: 'InventoryService',
+              name: 'Inventory Service',
+              summary: 'Service that handles the inventory',
+              version: '0.0.2',
+              owners: [
+                {
+                  id: 'order-management',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+              deprecated: {
+                message:
+                  'This service is **being deprecated** and replaced by the new service **InventoryServiceV2**.Please contact the [team for more information](mailto:inventory-team@example.com) or visit our [website](https://eventcatalog.dev).',
+                date: '2026-05-01T00:00:00.000Z',
+              },
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe Inventory Service is a critical component of the system responsible for managing product stock levels, tracking inventory movements, and ensuring product availability. It interacts with other services to maintain accurate inventory records and supports operations such as order fulfillment, restocking, and inventory audits.Tiles     Tile icon=DocumentIcon href={/docs/services/${frontmatter.id}/${frontmatter.version}/changelog}  title=View the changelog description=Want to know the history of this service? View the change logs     Tile icon=UserGroupIcon href=/docs/teams/full-stack title=Contact the team description=Any questions? Feel free to contact the owners     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles## Core features| Feature | Description ||---------|-------------|| Real-time Stock Tracking | Monitors inventory levels across all warehouses in real-time || Automated Reordering | Triggers purchase orders when stock levels fall below defined thresholds || Multi-warehouse Support | Manages inventory across multiple warehouse locations || Batch Processing | Handles bulk inventory updates and adjustments efficiently |## Architecture diagramNodeGraph title=Hello world MessageTable format=all limit={4} # InfrastructureThe Inventory Service is hosted on AWS.The diagram below shows the infrastructure of the Inventory Service. The service is hosted on AWS and uses AWS Lambda to handle the inventory requests. The inventory is stored in an AWS Aurora database and the inventory metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Inventory DB] in api    service disk1(logos:aws-s3)[Inventory Metadata] in api    service server(logos:aws-lambda)[Inventory Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Inventory Service infrastructure in the [Inventory Service documentation](https://github.com/event-catalog/pretend-shipping-service/blob/main/README.md).Steps title=How to connect to Inventory Service  Step title=Obtain API credentials    Request API credentials from the Inventory Service team.  /Step  Step title=Install the SDK    Run the following command in your project directory:    bash    npm install inventory-service-sdk      /Step  Step title=Initialize the client  Use the following code to initialize the Inventory Service client:  js  const InventoryService = require(inventory-service-sdk);  const client = new InventoryService.Client({    clientId: YOUR_CLIENT_ID,    clientSecret: YOUR_CLIENT_SECRET,    apiUrl: https://api.inventoryservice.com/v1  });  /Step  Step title=Make API calls    You can now use the client to make API calls. For example, to get all products:  js  client.getProducts()    .then(products = console.log(products))    .catch(error = console.error(error));    /Step/StepsFooter ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/index.mdx',
+            digest: '6aaa18b0014d9edc',
+            deferredRender: true,
+            collection: 'services',
+          },
+          {
+            id: 'OrdersService-0.0.3',
+            data: {
+              sends: [
+                {
+                  id: 'OrderAmended',
+                  version: 'latest',
+                },
+                {
+                  id: 'OrderCancelled',
+                  version: 'latest',
+                },
+                {
+                  id: 'OrderConfirmed',
+                  version: 'latest',
+                },
+                {
+                  id: 'AddInventory',
+                  version: '0.0.3',
+                },
+              ],
+              receives: [
+                {
+                  id: 'InventoryAdjusted',
+                  version: '0.0.3',
+                },
+                {
+                  id: 'GetOrder',
+                  version: 'latest',
+                },
+                {
+                  id: 'PlaceOrder',
+                  version: 'latest',
+                },
+                {
+                  id: 'UserSubscriptionCancelled',
+                  version: 'latest',
+                },
+              ],
+              id: 'OrdersService',
+              name: 'Orders Service',
+              summary: 'Service that handles orders',
+              version: '0.0.3',
+              owners: [
+                {
+                  id: 'order-management',
+                },
+              ],
+              schemaPath: 'openapi-v1.yml',
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+              specifications: [
+                {
+                  type: 'asyncapi',
+                  path: 'order-service-asyncapi.yaml',
+                },
+                {
+                  type: 'openapi',
+                  path: 'openapi-v1.yml',
+                  name: 'v1 API',
+                },
+                {
+                  type: 'openapi',
+                  path: 'openapi-v2.yml',
+                  name: 'v2 API',
+                },
+              ],
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe Orders Service is responsible for managing customer orders within the system. It handles order creation, updating, status tracking, and interactions with other services such as Inventory, Payment, and Notification services to ensure smooth order processing and fulfillment.Tiles     Tile icon=DocumentIcon href={/docs/services/${frontmatter.id}/${frontmatter.version}/changelog}  title=View the changelog description=Want to know the history of this service? View the change logs     Tile icon=UserGroupIcon href=/docs/teams/full-stack title=Contact the team description=Any questions? Feel free to contact the owners     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles Core features| Feature | Description ||---------|-------------|| Order Management | Handles order creation, updates, and status tracking || Inventory Integration | Validates and processes inventory for incoming orders || Payment Processing | Integrates with payment gateways to handle payment transactions || Notification Integration | Sends notifications to users and other services |## Architecture diagram NodeGraph MessageTable format=all limit={4} ## InfrastructureThe Orders Service is hosted on AWS.The diagram below shows the infrastructure of the Orders Service. The service is hosted on AWS and uses AWS Lambda to handle the order requests. The order is stored in an AWS Aurora database and the order metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Order DB] in api    service disk1(logos:aws-s3)[Order Metadata] in api    service server(logos:aws-lambda)[Order Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Orders Service infrastructure in the [Orders Service documentation](https://github.com/event-catalog/pretend-shipping-service/blob/main/README.md).Footer ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/index.mdx',
+            digest: '45e05f02eaf8e01a',
+            deferredRender: true,
+            collection: 'services',
+          },
+          {
+            id: 'NotificationService-0.0.2',
+            data: {
+              sends: [
+                {
+                  id: 'OutOfStock',
+                  version: 'latest',
+                },
+                {
+                  id: 'GetInventoryList',
+                  version: '0.0.x',
+                },
+              ],
+              receives: [
+                {
+                  id: 'InventoryAdjusted',
+                  version: '1.0.0',
+                },
+                {
+                  id: 'PaymentProcessed',
+                  version: '^1.0.0',
+                },
+                {
+                  id: 'GetUserNotifications',
+                  version: 'x',
+                },
+                {
+                  id: 'GetNotificationDetails',
+                  version: 'x',
+                },
+              ],
+              id: 'NotificationService',
+              name: 'Notifications',
+              summary: 'Service that handles orders',
+              version: '0.0.2',
+              owners: [
+                {
+                  id: 'order-management',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe Notification Service is responsible for managing and delivering notifications to users and other services. It supports various notification channels such as email, SMS, push notifications, and in-app notifications. The service ensures reliable and timely delivery of messages and integrates with other services to trigger notifications based on specific events.Tiles     Tile icon=DocumentIcon href={/docs/services/${frontmatter.id}/${frontmatter.version}/changelog}  title=View the changelog description=Want to know the history of this service? View the change logs     Tile icon=UserGroupIcon href=/docs/teams/full-stack title=Contact the team description=Any questions? Feel free to contact the owners     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles Core features| Feature | Description ||---------|-------------|| Multi-Channel Delivery | Supports notifications via email, SMS, push notifications, and in-app messages || Template Management | Customizable notification templates with dynamic content placeholders || Delivery Status Tracking | Real-time tracking and monitoring of notification delivery status || Rate Limiting | Prevents notification flooding through configurable rate limits || Priority Queue | Handles urgent notifications with priority delivery mechanisms || Batch Processing | Efficiently processes and sends bulk notifications || Retry Mechanism | Automatic retry logic for failed notification deliveries || Event-Driven Notifications | Triggers notifications based on system events and user actions |## Architecture diagramNodeGraph MessageTable format=all limit={4} ## Core ConceptsAccordionGroup  Accordion title=Notification    - Description: A message that is sent to a user or a service.    - Attributes: notificationId, type, recipient, content, channel, status, timestamp  /Accordion  Accordion title=Channel    - Description: The medium through which the notification is delivered (e.g., email, SMS, push notification).    - Attributes: channelId, name, provider, configuration   /Accordion/AccordionGroup## InfrastructureThe Notification Service is hosted on AWS.The diagram below shows the infrastructure of the Notification Service. The service is hosted on AWS and uses AWS Lambda to handle the notification requests. The notification is stored in an AWS Aurora database and the notification metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Notification DB] in api    service disk1(logos:aws-s3)[Notification Metadata] in api    service server(logos:aws-lambda)[Notification Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Notification Service infrastructure in the [Notification Service documentation](https://github.com/event-catalog/pretend-shipping-service/blob/main/README.md).Footer ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/services/NotificationService/index.mdx',
+            digest: '2f3d49c49ec94a4a',
+            deferredRender: true,
+            collection: 'services',
+          },
+          {
+            id: 'ShippingService-0.0.1',
+            data: {
+              sends: [
+                {
+                  id: 'ShipmentCreated',
+                  version: 'latest',
+                },
+                {
+                  id: 'ReturnInitiated',
+                  version: 'latest',
+                },
+                {
+                  id: 'ShipmentDispatched',
+                  version: 'latest',
+                },
+                {
+                  id: 'ShipmentInTransit',
+                  version: 'latest',
+                },
+                {
+                  id: 'ShipmentDelivered',
+                  version: 'latest',
+                },
+                {
+                  id: 'DeliveryFailed',
+                  version: 'latest',
+                },
+              ],
+              receives: [
+                {
+                  id: 'CancelShipment',
+                  version: 'latest',
+                },
+                {
+                  id: 'CreateReturnLabel',
+                  version: 'latest',
+                },
+                {
+                  id: 'CreateShipment',
+                  version: 'latest',
+                },
+                {
+                  id: 'UpdateShipmentStatus',
+                  version: 'latest',
+                },
+                {
+                  id: 'PaymentProcessed',
+                  version: 'latest',
+                },
+              ],
+              id: 'ShippingService',
+              name: 'Shipping Service',
+              summary: 'Service that handles shipping',
+              version: '0.0.1',
+              owners: [
+                {
+                  id: 'dboyne',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe Shipping Service is responsible for managing shipping within the system. It handles order creation, updating, status tracking, and interactions with other services such as Inventory, Payment, and Notification services to ensure smooth order processing and fulfillment.Tiles     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles Core featuresThe Shipping Service is responsible for managing shipping within the system. It handles order creation, updating, status tracking, and interactions with other services such as Inventory, Payment, and Notification services to ensure smooth order processing and fulfillment.## Architecture diagram NodeGraph MessageTable format=all limit={4} Footer ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/index.mdx',
+            digest: '4e966f3f6b5fd108',
+            deferredRender: true,
+            collection: 'services',
+          },
+        ],
+        entities: [
+          {
+            id: 'Order-1.0.0',
+            data: {
+              aggregateRoot: true,
+              identifier: 'orderId',
+              properties: [
+                {
+                  name: 'orderId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Unique identifier for the order',
+                },
+                {
+                  name: 'customerId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Identifier for the customer placing the order',
+                },
+                {
+                  name: 'orderDate',
+                  type: 'DateTime',
+                  required: true,
+                  description: 'Date and time when the order was placed',
+                },
+                {
+                  name: 'status',
+                  type: 'string',
+                  required: true,
+                  description:
+                    'Current status of the order (e.g., Pending, Processing, Shipped, Delivered, Cancelled)',
+                },
+                {
+                  name: 'orderItems',
+                  type: 'array',
+                  required: true,
+                  description: 'List of items included in the order',
+                },
+                {
+                  name: 'totalAmount',
+                  type: 'decimal',
+                  required: true,
+                  description: 'Total monetary value of the order',
+                },
+                {
+                  name: 'shippingAddress',
+                  type: 'Address',
+                  required: true,
+                  description: 'Address where the order should be shipped',
+                },
+              ],
+              id: 'Order',
+              name: 'Order',
+              summary:
+                'Represents a customers request to purchase products or services.',
+              version: '1.0.0',
+            },
+            body: '## OverviewThe Order entity captures all details related to a customers purchase request. It serves as the central aggregate root within the Orders domain, coordinating information about the customer, products ordered, payment, and shipping. Entity PropertiesEntityPropertiesTable ## Relationships*   **Customer:** Each order belongs to one Customer (identified by customerId).*   **OrderItem:** An order contains one or more OrderItem entities detailing the specific products and quantities.*   **Payment:** An order is typically associated with a Payment entity (not detailed here).*   **Shipment:** An order may lead to one or more Shipment entities (not detailed here).## Examples*   **Order #12345:** A customer orders 2 units of Product A and 1 unit of Product B, to be shipped to their home address. Status is Processing.*   **Order #67890:** A customer places a large order for multiple items, requiring special shipping arrangements. Status is Pending until payment confirmation.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/entities/Order/index.mdx',
+            digest: 'b76e69f63f8bf2d5',
+            deferredRender: true,
+            collection: 'entities',
+          },
+          {
+            id: 'OrderItem-1.0.0',
+            data: {
+              identifier: 'orderItemId',
+              properties: [
+                {
+                  name: 'orderItemId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Unique identifier for the order item',
+                },
+                {
+                  name: 'orderId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Identifier for the parent Order',
+                },
+                {
+                  name: 'productId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Identifier for the product being ordered',
+                },
+                {
+                  name: 'productName',
+                  type: 'string',
+                  required: false,
+                  description: 'Name of the product at the time of order',
+                },
+                {
+                  name: 'quantity',
+                  type: 'integer',
+                  required: true,
+                  description: 'Number of units of the product ordered',
+                },
+                {
+                  name: 'unitPrice',
+                  type: 'decimal',
+                  required: true,
+                  description:
+                    'Price per unit of the product at the time of order',
+                },
+                {
+                  name: 'totalPrice',
+                  type: 'decimal',
+                  required: true,
+                  description:
+                    'Total price for this item line (quantity * unitPrice)',
+                },
+              ],
+              id: 'OrderItem',
+              name: 'OrderItem',
+              summary: 'Represents a single item within a customers order.',
+              version: '1.0.0',
+            },
+            body: '## OverviewThe OrderItem entity details a specific product and its quantity requested within an Order. It holds information about the product, the quantity ordered, and the price calculation for that line item. OrderItems are part of the Order aggregate. Entity PropertiesEntityPropertiesTable ## Relationships*   **Order:** Each OrderItem belongs to exactly one Order (identified by orderId). It is a constituent part of the Order aggregate.*   **Product:** Each OrderItem refers to one Product (identified by productId).## Examples*   **OrderItem A (for Order #12345):** Product ID: P001, Quantity: 2, Unit Price: $50.00, Total Price: $100.00*   **OrderItem B (for Order #12345):** Product ID: P002, Quantity: 1, Unit Price: $75.00, Total Price: $75.00',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/entities/OrderItem/index.mdx',
+            digest: '52e5e80b7d383f9b',
+            deferredRender: true,
+            collection: 'entities',
+          },
+          {
+            id: 'Customer-1.0.0',
+            data: {
+              identifier: 'customerId',
+              properties: [
+                {
+                  name: 'customerId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Unique identifier for the customer',
+                },
+                {
+                  name: 'firstName',
+                  type: 'string',
+                  required: true,
+                  description: 'Customers first name',
+                },
+                {
+                  name: 'lastName',
+                  type: 'string',
+                  required: true,
+                  description: 'Customers last name',
+                },
+                {
+                  name: 'email',
+                  type: 'string',
+                  required: true,
+                  description: 'Customers primary email address (unique)',
+                },
+                {
+                  name: 'phone',
+                  type: 'string',
+                  required: false,
+                  description: 'Customers phone number',
+                },
+                {
+                  name: 'addresses',
+                  type: 'array',
+                  required: false,
+                  description:
+                    'List of addresses associated with the customer (e.g., shipping, billing)',
+                },
+                {
+                  name: 'dateRegistered',
+                  type: 'DateTime',
+                  required: true,
+                  description: 'Date and time when the customer registered',
+                },
+              ],
+              id: 'Customer',
+              name: 'Customer',
+              summary:
+                'Represents an individual or organization that places orders.',
+              version: '1.0.0',
+            },
+            body: '## OverviewThe Customer entity holds information about the individuals or organizations who interact with the system, primarily by placing orders. It stores contact details, addresses, and other relevant personal or business information. Entity PropertiesEntityPropertiesTable ## Relationships*   **Order:** A customer can have multiple Order entities. The Order entity holds a reference (customerId) back to the Customer.*   **Address:** A customer can have multiple associated Address value objects or entities.## Examples*   **Customer A:** Jane Doe, registered on 2023-01-15, with a primary shipping address and a billing address.*   **Customer B:** John Smith, a long-time customer with multiple past orders.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Orders/entities/Customer/index.mdx',
+            digest: '5e0ecb5a1abe55bd',
+            deferredRender: true,
+            collection: 'entities',
+          },
+        ],
+        id: 'Orders',
+        name: 'Orders',
+        version: '0.0.3',
+        badges: [
+          {
+            content: 'Subdomain',
+            backgroundColor: 'blue',
+            textColor: 'blue',
+            icon: 'RectangleGroupIcon',
+          },
+        ],
+        owners: [
+          {
+            id: 'dboyne',
+          },
+          {
+            id: 'full-stack',
+          },
+        ],
+        resourceGroups: [
+          {
+            id: 'related-resources',
+            title: 'Core resources',
+            items: [
+              {
+                id: 'InventoryService',
+                version: 'latest',
+                type: 'service',
+              },
+              {
+                id: 'OrdersService',
+                version: 'latest',
+                type: 'service',
+              },
+              {
+                id: 'NotificationService',
+                version: 'latest',
+                type: 'service',
+              },
+              {
+                id: 'ShippingService',
+                version: 'latest',
+                type: 'service',
+              },
+            ],
+            limit: 10,
+            sidebar: true,
+          },
+        ],
+        domains: [],
+        latestVersion: '0.0.3',
+        versions: ['0.0.3'],
+      },
+      filePath:
+        '../examples/default/domains/E-Commerce/subdomains/Orders/index.mdx',
+      digest: '807e56f5425bd33f',
+      deferredRender: true,
+      collection: 'domains',
+      sends: [
+        {
+          id: 'InventoryAdjusted-1.0.1',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'InventoryAdjusted',
+            name: 'Inventory adjusted',
+            summary: 'Indicates a change in inventory level',
+            version: '1.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/InventoryAdjusted/index.mdx',
+          digest: 'ade660eb81993fdd',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'OutOfStock-0.0.4',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OutOfStock',
+            name: 'Inventory out of stock',
+            summary: 'Indicates inventory is out of stock',
+            version: '0.0.4',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/OutOfStock/index.mdx',
+          digest: '5a97dd73fa169ad6',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetOrder-0.0.1',
+          data: {
+            id: 'GetOrder',
+            name: 'Get order details',
+            summary:
+              'GET request that will return detailed information about a specific order, identified by its orderId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/queries/GetOrder/index.mdx',
+          digest: '71f186bfcba04dad',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'OrderAmended-0.0.1',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderAmended',
+            name: 'Order amended',
+            summary: 'Indicates an order has been changed',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderAmended/index.mdx',
+          digest: '1c2e739addd67a6a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'OrderCancelled-0.0.1',
+          data: {
+            channels: [
+              {
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderCancelled',
+            name: 'Order cancelled',
+            summary: 'Indicates an order has been canceled',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderCancelled/index.mdx',
+          digest: '978875f2e0eb596a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'OrderConfirmed-0.0.1',
+          data: {
+            channels: [
+              {
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderConfirmed',
+            name: 'Order confirmed',
+            summary: 'Indicates an order has been confirmed',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+                icon: 'StarIcon',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderConfirmed/index.mdx',
+          digest: '25c0eccde9d78e40',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'AddInventory-0.0.3',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'AddInventory',
+            name: 'Add inventory',
+            summary: 'Command that will add item to a given inventory id',
+            version: '0.0.3',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/commands/AddInventory/index.mdx',
+          digest: '106b7429daebcbb9',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'OutOfStock-0.0.4',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OutOfStock',
+            name: 'Inventory out of stock',
+            summary: 'Indicates inventory is out of stock',
+            version: '0.0.4',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/OutOfStock/index.mdx',
+          digest: '5a97dd73fa169ad6',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetInventoryList-0.0.1',
+          data: {
+            id: 'GetInventoryList',
+            name: 'List inventory list',
+            summary: 'GET request that will return inventory list',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/queries/GetInventoryList/index.mdx',
+          digest: '4517b5ebf16ef267',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'ShipmentCreated-0.0.1',
+          data: {
+            id: 'ShipmentCreated',
+            name: 'Shipment created',
+            summary: 'Event that is emitted when a shipment is created.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ShipmentCreated/index.mdx',
+          digest: '81baf1c8ce150762',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'ReturnInitiated-0.0.1',
+          data: {
+            id: 'ReturnInitiated',
+            name: 'Return initiated',
+            summary: 'Event that is emitted when a return is initiated.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ReturnInitiated/index.mdx',
+          digest: '8c07547b7d221ec0',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'ShipmentDispatched-0.0.1',
+          data: {
+            id: 'ShipmentDispatched',
+            name: 'Shipment dispatched',
+            summary: 'Event that is emitted when a shipment is dispatched.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ShipmentDispatched/index.mdx',
+          digest: 'cb4e2735758f102b',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'ShipmentInTransit-0.0.1',
+          data: {
+            id: 'ShipmentInTransit',
+            name: 'Shipment in transit',
+            summary: 'Event that is emitted when a shipment is in transit.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ShipmentInTransit/index.mdx',
+          digest: '57803e3280f01326',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'ShipmentDelivered-0.0.1',
+          data: {
+            id: 'ShipmentDelivered',
+            name: 'Shipment delivered',
+            summary: 'Event that is emitted when a shipment is delivered.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/ShipmentDelivered/index.mdx',
+          digest: '4aa31b957c9f7f14',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'DeliveryFailed-0.0.1',
+          data: {
+            id: 'DeliveryFailed',
+            name: 'Delivery failed',
+            summary: 'Event that is emitted when a shipment delivery fails.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/events/DeliveryFailed/index.mdx',
+          digest: '388b45c6a5232dd7',
+          deferredRender: true,
+          collection: 'events',
+        },
+      ],
+      receives: [
+        {
+          id: 'OrderConfirmed-0.0.1',
+          data: {
+            channels: [
+              {
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderConfirmed',
+            name: 'Order confirmed',
+            summary: 'Indicates an order has been confirmed',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+                icon: 'StarIcon',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderConfirmed/index.mdx',
+          digest: '25c0eccde9d78e40',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetInventoryList-0.0.1',
+          data: {
+            id: 'GetInventoryList',
+            name: 'List inventory list',
+            summary: 'GET request that will return inventory list',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/queries/GetInventoryList/index.mdx',
+          digest: '4517b5ebf16ef267',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'OrderAmended-0.0.1',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'orders.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'OrderAmended',
+            name: 'Order amended',
+            summary: 'Indicates an order has been changed',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/events/OrderAmended/index.mdx',
+          digest: '1c2e739addd67a6a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'UpdateInventory-0.0.3',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'UpdateInventory',
+            name: 'Update inventory',
+            summary: 'Command that will update a given inventory item',
+            version: '0.0.3',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'PUT',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/commands/UpdateInventory/index.mdx',
+          digest: '7a6aa4f22e442604',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'AddInventory-0.0.3',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'AddInventory',
+            name: 'Add inventory',
+            summary: 'Command that will add item to a given inventory id',
+            version: '0.0.3',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/commands/AddInventory/index.mdx',
+          digest: '106b7429daebcbb9',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'GetInventoryStatus-0.0.1',
+          data: {
+            id: 'GetInventoryStatus',
+            name: 'Get inventory status',
+            summary:
+              'GET request that will return the current stock status for a specific product.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'GET Request',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/queries/GetInventoryStatus/index.mdx',
+          digest: '00eb1684c4519d03',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'DeleteInventory-0.0.3',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'DeleteInventory',
+            name: 'Delete Inventory',
+            summary:
+              'Command that will delete a given inventory item from the system',
+            version: '0.0.3',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'DELETE',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/commands/DeleteInventory/index.mdx',
+          digest: '17b28d5ec21cc1f1',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'GetOrder-0.0.1',
+          data: {
+            id: 'GetOrder',
+            name: 'Get order details',
+            summary:
+              'GET request that will return detailed information about a specific order, identified by its orderId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/queries/GetOrder/index.mdx',
+          digest: '71f186bfcba04dad',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'PlaceOrder-0.0.1',
+          data: {
+            id: 'PlaceOrder',
+            name: 'Place Order',
+            summary: 'Command that will place an order',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/commands/PlaceOrder/index.mdx',
+          digest: '19d07e3824d444da',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'UserSubscriptionCancelled-0.0.1',
+          data: {
+            id: 'UserSubscriptionCancelled',
+            name: 'User subscription cancelled',
+            summary:
+              'An event that is triggered when a users subscription has been cancelled',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/events/UserSubscriptionCancelled/index.mdx',
+          digest: 'f4393a7ec584dfcb',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'InventoryAdjusted-1.0.1',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'InventoryAdjusted',
+            name: 'Inventory adjusted',
+            summary: 'Indicates a change in inventory level',
+            version: '1.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/InventoryAdjusted/index.mdx',
+          digest: 'ade660eb81993fdd',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'PaymentProcessed-1.0.0',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'payments.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'PaymentProcessed',
+            name: 'Payment Processed',
+            summary:
+              'Event is triggered after the payment has been successfully processed',
+            version: '1.0.0',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentProcessed/index.mdx',
+          digest: '45b319e31a874a90',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetUserNotifications-0.0.1',
+          data: {
+            id: 'GetUserNotifications',
+            name: 'Get user notifications',
+            summary:
+              'GET request that will return a list of notifications for a specific user, with options to filter by status (unread or all).',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/NotificationService/queries/GetUserNotifications/index.mdx',
+          digest: '4b02e9790b934892',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'GetNotificationDetails-0.0.1',
+          data: {
+            id: 'GetNotificationDetails',
+            name: 'Get notification details',
+            summary:
+              'GET request that will return detailed information about a specific notification, identified by its notificationId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/NotificationService/queries/GetNotificationDetails/index.mdx',
+          digest: '5825f3b294eb2545',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'CancelShipment-0.0.1',
+          data: {
+            id: 'CancelShipment',
+            name: 'Cancel shipment',
+            summary:
+              'POST request that will cancel a shipment, identified by its shipmentId.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/commands/CancelShipment/index.mdx',
+          digest: '48d96360e9322568',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'CreateReturnLabel-0.0.1',
+          data: {
+            id: 'CreateReturnLabel',
+            name: 'Create return label',
+            summary:
+              'POST request that will create a return label for a specific shipment, identified by its shipmentId.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/commands/CreateReturnLabel/index.mdx',
+          digest: '0a834e6a2e68b14a',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'CreateShipment-0.0.1',
+          data: {
+            id: 'CreateShipment',
+            name: 'Create shipment',
+            summary:
+              'POST request that will create a shipment for a specific order, identified by its orderId.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/commands/CreateShipment/index.mdx',
+          digest: '98b8b56fe0d04090',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'UpdateShipmentStatus-0.0.1',
+          data: {
+            id: 'UpdateShipmentStatus',
+            name: 'Update shipment status',
+            summary:
+              'POST request that will update the status of a shipment, identified by its shipmentId.',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/ShippingService/commands/UpdateShipmentStatus/index.mdx',
+          digest: '73cf35e5d36acfd9',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'PaymentProcessed-1.0.0',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'payments.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'PaymentProcessed',
+            name: 'Payment Processed',
+            summary:
+              'Event is triggered after the payment has been successfully processed',
+            version: '1.0.0',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentProcessed/index.mdx',
+          digest: '45b319e31a874a90',
+          deferredRender: true,
+          collection: 'events',
+        },
+      ],
+    },
+    {
+      id: 'Payment-0.0.1',
+      data: {
+        services: [
+          {
+            id: 'PaymentService-0.0.1',
+            data: {
+              sends: [
+                {
+                  id: 'PaymentProcessed',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'GetOrder',
+                  version: 'latest',
+                },
+              ],
+              receives: [
+                {
+                  id: 'PaymentInitiated',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'GetPaymentStatus',
+                  version: 'latest',
+                },
+                {
+                  id: 'UserSubscriptionStarted',
+                  version: 'latest',
+                },
+                {
+                  id: 'InventoryAdjusted',
+                  version: 'latest',
+                },
+              ],
+              id: 'PaymentService',
+              name: 'Payment Service',
+              summary: 'Service that handles payments',
+              version: '0.0.1',
+              owners: [
+                {
+                  id: 'dboyne',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-shipping-service',
+              },
+            },
+            body: 'The Payment Service is a crucial component of our system that handles all payment-related operations. It processes payments, manages transactions, and communicates with other services through events. Using an event-driven architecture, it ensures that all actions are asynchronous, decoupled, and scalable. Core features| Feature | Description ||---------|-------------|| Payment Processing | Processes payments and manages transactions || Event-Driven Architecture | Ensures asynchronous, decoupled, and scalable operations || Integration with Payment Gateways | Interfaces with external payment providers |NodeGraph MessageTable format=all limit={4} ## InfrastructureThe Payment Service is hosted on AWS.The diagram below shows the infrastructure of the Payment Service. The service is hosted on AWS and uses AWS Lambda to handle the payment requests. The payment is stored in an AWS Aurora database and the payment metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Payment DB] in api    service disk1(logos:aws-s3)[Payment Metadata] in api    service server(logos:aws-lambda)[Payment Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Payment Service infrastructure in the [Payment Service documentation](https://github.com/event-catalog/pretend-payment-service/blob/main/README.md). Key Components- Payment API: Exposes endpoints for initiating payments and querying payment status.- Payment Processor: Handles the core payment processing logic.- Event Bus: Manages the communication between services using events.- Payment Gateway: Interfaces with external payment providers.- Transaction Service: Manages transaction records and states.- Notification Service: Sends notifications related to payment status changes.- Database: Stores transaction data and payment status.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/index.mdx',
+            digest: 'f34269b53f50aded',
+            deferredRender: true,
+            collection: 'services',
+          },
+        ],
+        entities: [
+          {
+            id: 'Invoice-1.0.0',
+            data: {
+              identifier: 'invoiceId',
+              properties: [
+                {
+                  name: 'invoiceId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Unique identifier for the invoice.',
+                },
+                {
+                  name: 'customerId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Identifier of the customer being invoiced.',
+                },
+                {
+                  name: 'orderId',
+                  type: 'UUID',
+                  required: false,
+                  description:
+                    'Identifier of the associated order, if applicable.',
+                },
+                {
+                  name: 'subscriptionId',
+                  type: 'UUID',
+                  required: false,
+                  description:
+                    'Identifier of the associated subscription, if applicable.',
+                },
+                {
+                  name: 'invoiceNumber',
+                  type: 'string',
+                  required: true,
+                  description:
+                    'Human-readable, sequential identifier for the invoice (may have specific format).',
+                },
+                {
+                  name: 'issueDate',
+                  type: 'Date',
+                  required: true,
+                  description: 'Date the invoice was generated and issued.',
+                },
+                {
+                  name: 'dueDate',
+                  type: 'Date',
+                  required: true,
+                  description:
+                    'Date by which the payment for the invoice is due.',
+                },
+                {
+                  name: 'totalAmount',
+                  type: 'decimal',
+                  required: true,
+                  description: 'The total amount due on the invoice.',
+                },
+                {
+                  name: 'currency',
+                  type: 'string',
+                  required: true,
+                  description: 'Currency of the invoice amount.',
+                },
+                {
+                  name: 'status',
+                  type: 'string',
+                  required: true,
+                  description: 'Current status of the invoice.',
+                },
+                {
+                  name: 'billingAddressId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Identifier for the billing address used on this invoice.',
+                },
+                {
+                  name: 'lineItems',
+                  type: 'array',
+                  required: true,
+                  description:
+                    'List of individual items or services being charged on the invoice.',
+                },
+                {
+                  name: 'createdAt',
+                  type: 'DateTime',
+                  required: true,
+                  description: 'Timestamp when the invoice record was created.',
+                },
+                {
+                  name: 'paidAt',
+                  type: 'DateTime',
+                  required: false,
+                  description: 'Timestamp when the invoice was marked as paid.',
+                },
+              ],
+              id: 'Invoice',
+              name: 'Invoice',
+              summary:
+                'Represents a bill issued to a customer, detailing charges for products or services.',
+              version: '1.0.0',
+            },
+            body: '## OverviewThe Invoice entity represents a formal request for payment issued by the business to a customer. It details the products, services, quantities, prices, taxes, and total amount due, along with payment terms. Entity PropertiesEntityPropertiesTable ## Relationships*   **Customer:** An invoice is issued to one Customer.*   **Order/Subscription:** An invoice may be related to one or more Orders or a specific Subscription period.*   **Payment:** An invoice is settled by one or more Payment transactions.*   **InvoiceLineItem:** An invoice contains multiple InvoiceLineItems detailing the charges.*   **BillingProfile:** Invoice generation often uses details from the customers BillingProfile.## Examples*   Invoice #INV-00123 issued to Jane Doe for her monthly subscription renewal, due in 15 days.*   Invoice #INV-00124 issued to Acme Corp for consulting services rendered in the previous month, status Paid.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Payment/entities/Invoice/index.mdx',
+            digest: '2e24f1a0970b8fcf',
+            deferredRender: true,
+            collection: 'entities',
+          },
+          {
+            id: 'Payment-1.0.0',
+            data: {
+              identifier: 'paymentId',
+              properties: [
+                {
+                  name: 'paymentId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Unique identifier for the payment transaction.',
+                },
+                {
+                  name: 'customerId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Identifier of the customer making the payment.',
+                },
+                {
+                  name: 'invoiceId',
+                  type: 'UUID',
+                  required: false,
+                  description:
+                    'Identifier of the invoice this payment settles.',
+                },
+                {
+                  name: 'orderId',
+                  type: 'UUID',
+                  required: false,
+                  description: 'Identifier of the order this payment is for.',
+                },
+                {
+                  name: 'paymentMethodId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Identifier of the payment method used (e.g., credit card, bank transfer).',
+                },
+                {
+                  name: 'amount',
+                  type: 'decimal',
+                  required: true,
+                  description:
+                    'The amount of money transferred in the payment.',
+                },
+                {
+                  name: 'currency',
+                  type: 'string',
+                  required: true,
+                  description: 'Currency of the payment amount.',
+                },
+                {
+                  name: 'status',
+                  type: 'string',
+                  required: true,
+                  description: 'Current status of the payment transaction.',
+                },
+                {
+                  name: 'transactionReference',
+                  type: 'string',
+                  required: false,
+                  description:
+                    'External reference ID from the payment processor or bank.',
+                },
+                {
+                  name: 'paymentDate',
+                  type: 'DateTime',
+                  required: true,
+                  description:
+                    'Timestamp when the payment was processed or attempted.',
+                },
+                {
+                  name: 'failureReason',
+                  type: 'string',
+                  required: false,
+                  description:
+                    'Reason provided by the payment gateway if the payment failed.',
+                },
+                {
+                  name: 'refundAmount',
+                  type: 'decimal',
+                  required: false,
+                  description:
+                    'The amount refunded, if any part of the payment was returned.',
+                },
+                {
+                  name: 'refundDate',
+                  type: 'DateTime',
+                  required: false,
+                  description: 'Timestamp when the refund was processed.',
+                },
+              ],
+              id: 'Payment',
+              name: 'Payment',
+              summary:
+                'Represents a payment transaction made by a customer, usually to settle an invoice or pay for an order.',
+              version: '1.0.0',
+            },
+            body: '## OverviewThe Payment entity records the details of a monetary transaction initiated by a customer towards the business. It captures the amount, currency, payment method used, status (success, failure, refund), and links to the relevant invoice or order being paid. Entity PropertiesEntityPropertiesTable ## Relationships*   **Customer:** A payment is made by one Customer.*   **Invoice/Order:** A payment typically corresponds to one Invoice or Order.*   **PaymentMethod:** A payment is executed using a specific PaymentMethod.*   **Transaction:** A payment attempt often results in one or more lower-level Transaction records (e.g., authorization, capture).## Examples*   Payment #PAY-98765 from Jane Doe for $19.99 via Credit Card ending in 1234, status Succeeded, settling Invoice #INV-00123.*   Payment #PAY-98766 attempt from John Smith for $50.00 via Bank Transfer, status Failed (Reason: Insufficient Funds).*   Payment #PAY-98760 for $100.00, partially refunded for $25.00 on 2024-05-18.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Payment/entities/Payment/index.mdx',
+            digest: '4800672f12b30efc',
+            deferredRender: true,
+            collection: 'entities',
+          },
+          {
+            id: 'PaymentMethod-1.0.0',
+            data: {
+              identifier: 'paymentMethodId',
+              properties: [
+                {
+                  name: 'paymentMethodId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Unique identifier for the payment method.',
+                },
+                {
+                  name: 'customerId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Identifier of the customer who owns this payment method.',
+                },
+                {
+                  name: 'type',
+                  type: 'string',
+                  required: true,
+                  description: 'The type of payment method.',
+                },
+                {
+                  name: 'details',
+                  type: 'object',
+                  required: true,
+                  description:
+                    'Contains type-specific, often sensitive details (e.g., last 4 digits of card, card brand, bank name, account type, token). **Never store raw PANs or sensitive data.**',
+                },
+                {
+                  name: 'isDefault',
+                  type: 'boolean',
+                  required: true,
+                  description:
+                    'Indicates if this is the customers default payment method.',
+                },
+                {
+                  name: 'billingAddressId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Identifier for the billing address verified for this payment method.',
+                },
+                {
+                  name: 'status',
+                  type: 'string',
+                  required: true,
+                  description: 'Current status of the payment method.',
+                },
+                {
+                  name: 'createdAt',
+                  type: 'DateTime',
+                  required: true,
+                  description: 'Timestamp when the payment method was added.',
+                },
+                {
+                  name: 'updatedAt',
+                  type: 'DateTime',
+                  required: true,
+                  description:
+                    'Timestamp when the payment method was last updated.',
+                },
+              ],
+              id: 'PaymentMethod',
+              name: 'PaymentMethod',
+              summary:
+                'Represents a payment instrument a customer can use, like a credit card or bank account.',
+              version: '1.0.0',
+            },
+            body: '## OverviewThe PaymentMethod entity represents a specific payment instrument registered by a customer, such as a credit card or a linked bank account. It stores necessary (non-sensitive) details required to initiate payments and links to the associated customer and billing address.**Security Note:** Sensitive details like full card numbers or bank account numbers should **never** be stored directly. Rely on tokenization provided by payment gateways. Entity PropertiesEntityPropertiesTable ## Relationships*   **Customer:** A payment method belongs to one Customer.*   **Address:** Linked to a specific billing Address.*   **Payment:** Used to make Payment transactions.*   **Subscription:** May be designated as the payment method for a Subscription.## Examples*   Jane Does default Visa card ending in 1234, expiring 12/2025, status Active.*   John Smiths linked bank account (Chase, Checking), status Active.*   An old MasterCard ending in 5678 belonging to Jane Doe, status Expired.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Payment/entities/PaymentMethod/index.mdx',
+            digest: 'ad998bb9a47b6182',
+            deferredRender: true,
+            collection: 'entities',
+          },
+          {
+            id: 'Transaction-1.0.0',
+            data: {
+              identifier: 'transactionId',
+              properties: [
+                {
+                  name: 'transactionId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Unique identifier for this specific gateway transaction.',
+                },
+                {
+                  name: 'paymentId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Identifier of the parent Payment this transaction belongs to.',
+                },
+                {
+                  name: 'type',
+                  type: 'string',
+                  required: true,
+                  description:
+                    'The type of operation performed with the payment gateway.',
+                },
+                {
+                  name: 'gatewayReferenceId',
+                  type: 'string',
+                  required: true,
+                  description:
+                    'Unique transaction ID provided by the external payment gateway.',
+                },
+                {
+                  name: 'amount',
+                  type: 'decimal',
+                  required: true,
+                  description:
+                    'The amount associated with this specific transaction operation.',
+                },
+                {
+                  name: 'currency',
+                  type: 'string',
+                  required: true,
+                  description: 'Currency of the transaction amount.',
+                },
+                {
+                  name: 'status',
+                  type: 'string',
+                  required: true,
+                  description:
+                    'Status reported by the gateway for this specific operation.',
+                },
+                {
+                  name: 'responseCode',
+                  type: 'string',
+                  required: false,
+                  description: 'Response code returned by the payment gateway.',
+                },
+                {
+                  name: 'responseMessage',
+                  type: 'string',
+                  required: false,
+                  description:
+                    'Detailed message or reason returned by the gateway.',
+                },
+                {
+                  name: 'processedAt',
+                  type: 'DateTime',
+                  required: true,
+                  description:
+                    'Timestamp when the transaction was processed by the gateway.',
+                },
+                {
+                  name: 'rawRequest',
+                  type: 'text',
+                  required: false,
+                  description:
+                    'Raw request payload sent to the gateway (use with caution).',
+                },
+                {
+                  name: 'rawResponse',
+                  type: 'text',
+                  required: false,
+                  description:
+                    'Raw response payload received from the gateway (use with caution).',
+                },
+              ],
+              id: 'Transaction',
+              name: 'Transaction',
+              summary:
+                'Represents a low-level interaction with a payment gateway or processor (e.g., authorize, capture, refund, void).',
+              version: '1.0.0',
+            },
+            body: '## OverviewThe Transaction entity logs the individual interactions with an external payment processor (like Stripe, PayPal, Adyen) that occur as part of processing a Payment. This provides a detailed audit trail of gateway operations, including authorizations, captures, refunds, and any associated success or failure responses. Entity PropertiesEntityPropertiesTable ## Relationships*   **Payment:** A transaction is part of one Payment.## Examples*   **Authorization Success:** Type: Authorize, PaymentID: PAY-98765, GatewayRef: auth_abc, Amount: $19.99, Status: Success.*   **Capture Success:** Type: Capture, PaymentID: PAY-98765, GatewayRef: ch_def, Amount: $19.99, Status: Success (following the authorization).*   **Authorization Failure:** Type: Authorize, PaymentID: PAY-98766, GatewayRef: auth_ghi, Amount: $50.00, Status: Failure, ResponseCode: declined, ResponseMessage: Insufficient Funds.*   **Refund Success:** Type: Refund, PaymentID: PAY-98760, GatewayRef: re_jkl, Amount: $25.00, Status: Success.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Payment/entities/Transaction/index.mdx',
+            digest: '9469e84c8e06f7c2',
+            deferredRender: true,
+            collection: 'entities',
+          },
+        ],
+        id: 'Payment',
+        name: 'Payment',
+        summary: 'Domain that contains payment related services and messages.',
+        version: '0.0.1',
+        badges: [
+          {
+            content: 'Subdomain',
+            backgroundColor: 'blue',
+            textColor: 'blue',
+            icon: 'BoltIcon',
+          },
+        ],
+        owners: [
+          {
+            id: 'dboyne',
+          },
+        ],
+        domains: [],
+        latestVersion: '0.0.1',
+        versions: ['0.0.1'],
+      },
+      filePath:
+        '../examples/default/domains/E-Commerce/subdomains/Payment/index.mdx',
+      digest: '1d8013dca1ff4413',
+      deferredRender: true,
+      collection: 'domains',
+      sends: [
+        {
+          id: 'PaymentProcessed-0.0.1',
+          data: {
+            id: 'PaymentProcessed',
+            name: 'Payment Processed',
+            summary:
+              'Event is triggered after the payment has been successfully processed',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentProcessed/versioned/0.0.1/index.mdx',
+          digest: '1b67685ce94288a6',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetOrder-0.0.1',
+          data: {
+            id: 'GetOrder',
+            name: 'Get order details',
+            summary:
+              'GET request that will return detailed information about a specific order, identified by its orderId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'order-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/OrdersService/queries/GetOrder/index.mdx',
+          digest: '71f186bfcba04dad',
+          deferredRender: true,
+          collection: 'queries',
+        },
+      ],
+      receives: [
+        {
+          id: 'PaymentInitiated-0.0.1',
+          data: {
+            channels: [
+              {
+                parameters: {
+                  env: 'staging',
+                },
+                id: 'payments.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'PaymentInitiated',
+            name: 'Payment Initiated',
+            summary:
+              'Event is triggered when a user initiates a payment through the Payment Service',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentInitiated/index.mdx',
+          digest: '9dba7743582f388c',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'GetPaymentStatus-0.0.1',
+          data: {
+            id: 'GetPaymentStatus',
+            name: 'Get payment status',
+            summary:
+              'GET request that will return the payment status for a specific order, identified by its orderId.',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/queries/GetPaymentStatus/index.mdx',
+          digest: '85185bb48c156df5',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'UserSubscriptionStarted-0.0.1',
+          data: {
+            id: 'UserSubscriptionStarted',
+            name: 'User subscription started',
+            summary:
+              'An event that is triggered when a new user subscription has started',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/events/UserSubscriptionStarted/index.mdx',
+          digest: '975a26dbf5b9579a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'InventoryAdjusted-1.0.1',
+          data: {
+            channels: [
+              {
+                id: 'inventory.{env}.events',
+                version: 'latest',
+              },
+            ],
+            id: 'InventoryAdjusted',
+            name: 'Inventory adjusted',
+            summary: 'Indicates a change in inventory level',
+            version: '1.0.1',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+              {
+                content: 'Broker:Apache Kafka',
+                backgroundColor: 'yellow',
+                textColor: 'yellow',
+                icon: 'kafka',
+              },
+            ],
+            owners: [
+              {
+                id: 'dboyne',
+              },
+              {
+                id: 'msmith',
+              },
+              {
+                id: 'asmith',
+              },
+              {
+                id: 'full-stack',
+              },
+              {
+                id: 'mobile-devs',
+              },
+            ],
+            schemaPath: 'schema.avro',
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Orders/services/InventoryService/events/InventoryAdjusted/index.mdx',
+          digest: 'ade660eb81993fdd',
+          deferredRender: true,
+          collection: 'events',
+        },
+      ],
+    },
+    {
+      id: 'Subscription-0.0.1',
+      data: {
+        services: [
+          {
+            id: 'SubscriptionService-0.0.1',
+            data: {
+              sends: [
+                {
+                  id: 'UserSubscriptionStarted',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'UserSubscriptionCancelled',
+                  version: '0.0.1',
+                },
+              ],
+              receives: [
+                {
+                  id: 'SubscribeUser',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'CancelSubscription',
+                  version: '0.0.1',
+                },
+                {
+                  id: 'GetSubscriptionStatus',
+                  version: 'latest',
+                },
+                {
+                  id: 'PaymentProcessed',
+                  version: '0.0.1',
+                },
+              ],
+              id: 'SubscriptionService',
+              name: 'Subscription Service',
+              summary: 'Service that handles subscriptions',
+              version: '0.0.1',
+              owners: [
+                {
+                  id: 'subscriptions-management',
+                },
+              ],
+              repository: {
+                language: 'JavaScript',
+                url: 'https://github.com/event-catalog/pretend-subscription-service',
+              },
+            },
+            body: 'import Footer from @catalog/components/footer.astro;## OverviewThe subscription Service is responsible for handling customer subscriptions in our system. It handles new subscriptions, cancelling subscriptions and updating them.Tiles     Tile icon=DocumentIcon href={/docs/services/${frontmatter.id}/${frontmatter.version}/changelog}  title=View the changelog description=Want to know the history of this service? View the change logs     Tile icon=UserGroupIcon href=/docs/teams/full-stack title=Contact the team description=Any questions? Feel free to contact the owners     Tile icon=BoltIcon href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Sends ${frontmatter.sends.length} messages} description=This service sends messages to downstream consumers     Tile icon=BoltIcon  href={/visualiser/services/${frontmatter.id}/${frontmatter.version}} title={Receives ${frontmatter.receives.length} messages} description=This service receives messages from other services /Tiles Core features| Feature | Description ||---------|-------------|| Subscription Management | Handles subscription creation, updates, and status tracking || Payment Processing | Integrates with payment gateways to handle payment transactions || Notification Integration | Sends notifications to users and other services || Multi-Channel Fulfillment | Supports multiple fulfillment channels (e.g., shipping, in-store pickup) |## Architecture diagram NodeGraph MessageTable format=all limit={4} ## InfrastructureThe Subscription Service is hosted on AWS.The diagram below shows the infrastructure of the Subscription Service. The service is hosted on AWS and uses AWS Lambda to handle the subscription requests. The subscription is stored in an AWS Aurora database and the subscription metadata is stored in an AWS S3 bucket.mermaidarchitecture-beta    group api(logos:aws)    service db(logos:aws-aurora)[Subscription DB] in api    service disk1(logos:aws-s3)[Subscription Metadata] in api    service server(logos:aws-lambda)[Subscription Handler] in api    db:L -- R:server    disk1:T -- B:serverYou can find more information about the Subscription Service infrastructure in the [Subscription Service documentation](https://github.com/event-catalog/pretend-subscription-service/blob/main/README.md).Footer ',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/index.mdx',
+            digest: 'd5a21a4bb4809fb0',
+            deferredRender: true,
+            collection: 'services',
+          },
+        ],
+        entities: [
+          {
+            id: 'BillingProfile-1.0.0',
+            data: {
+              identifier: 'billingProfileId',
+              properties: [
+                {
+                  name: 'billingProfileId',
+                  type: 'UUID',
+                  required: true,
+                  description: 'Unique identifier for the billing profile.',
+                },
+                {
+                  name: 'customerId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Identifier of the customer this billing profile belongs to.',
+                },
+                {
+                  name: 'billingEmail',
+                  type: 'string',
+                  required: false,
+                  description:
+                    'Specific email address for sending invoices and billing notifications.',
+                },
+                {
+                  name: 'companyName',
+                  type: 'string',
+                  required: false,
+                  description: 'Company name for billing purposes.',
+                },
+                {
+                  name: 'taxId',
+                  type: 'string',
+                  required: false,
+                  description: 'Tax identification number (e.g., VAT ID, EIN).',
+                },
+                {
+                  name: 'billingAddressId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Identifier for the primary billing address associated with this profile.',
+                },
+                {
+                  name: 'preferredPaymentMethodId',
+                  type: 'UUID',
+                  required: false,
+                  description:
+                    'Customers preferred payment method for charges related to this profile.',
+                },
+                {
+                  name: 'createdAt',
+                  type: 'DateTime',
+                  required: true,
+                  description:
+                    'Timestamp when the billing profile was created.',
+                },
+                {
+                  name: 'updatedAt',
+                  type: 'DateTime',
+                  required: true,
+                  description:
+                    'Timestamp when the billing profile was last updated.',
+                },
+              ],
+              id: 'BillingProfile',
+              name: 'BillingProfile',
+              summary:
+                'Stores billing-related contact information and preferences for a customer, often used for invoices and communication.',
+              version: '1.0.0',
+            },
+            body: '## OverviewThe BillingProfile entity consolidates billing-specific details for a customer, such as the billing address, contact email for invoices, tax information, and potentially preferred payment methods. This might be distinct from the customers general contact information or shipping addresses. Entity PropertiesEntityPropertiesTable ## Relationships*   **Customer:** A billing profile belongs to one Customer. A customer might potentially have multiple profiles in complex scenarios, but often just one.*   **Address:** Linked to a primary billing Address.*   **PaymentMethod:** May specify a preferred PaymentMethod.*   **Invoice:** Invoices are typically generated using information from the BillingProfile.*   **Subscription:** Subscriptions may use the associated customers BillingProfile for charging.## Examples*   Jane Does personal billing profile with her home address and primary email.*   Acme Corps billing profile with their HQ address, VAT ID, and accounts payable email address.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Subscriptions/entities/BillingProfile/index.mdx',
+            digest: 'a6ba8d592799fd54',
+            deferredRender: true,
+            collection: 'entities',
+          },
+          {
+            id: 'SubscriptionPeriod-1.0.0',
+            data: {
+              identifier: 'subscriptionPeriodId',
+              properties: [
+                {
+                  name: 'subscriptionPeriodId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Unique identifier for this specific subscription period.',
+                },
+                {
+                  name: 'subscriptionId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Identifier of the parent Subscription this period belongs to.',
+                },
+                {
+                  name: 'planId',
+                  type: 'UUID',
+                  required: true,
+                  description:
+                    'Identifier of the Plan active during this period.',
+                },
+                {
+                  name: 'startDate',
+                  type: 'Date',
+                  required: true,
+                  description: 'The start date of this billing period.',
+                },
+                {
+                  name: 'endDate',
+                  type: 'Date',
+                  required: true,
+                  description: 'The end date of this billing period.',
+                },
+                {
+                  name: 'invoiceId',
+                  type: 'UUID',
+                  required: false,
+                  description:
+                    'Identifier of the invoice created for this periods charge.',
+                },
+                {
+                  name: 'paymentId',
+                  type: 'UUID',
+                  required: false,
+                  description:
+                    'Identifier of the payment that settled the invoice for this period.',
+                },
+                {
+                  name: 'status',
+                  type: 'string',
+                  required: true,
+                  description:
+                    'Status specific to this period (reflects invoicing/payment state).',
+                },
+                {
+                  name: 'amountBilled',
+                  type: 'decimal',
+                  required: false,
+                  description:
+                    'The actual amount billed for this period (could differ from plan due to promotions, usage, etc.).',
+                },
+                {
+                  name: 'currency',
+                  type: 'string',
+                  required: false,
+                  description: 'Currency of the billed amount.',
+                },
+                {
+                  name: 'createdAt',
+                  type: 'DateTime',
+                  required: true,
+                  description:
+                    'Timestamp when this period record was created (often at the start of the period).',
+                },
+              ],
+              id: 'SubscriptionPeriod',
+              name: 'SubscriptionPeriod',
+              summary:
+                'Represents a single billing cycle or interval within a subscriptions lifetime.',
+              version: '1.0.0',
+            },
+            body: '## OverviewThe SubscriptionPeriod entity tracks the state and details of a specific billing cycle within a Subscription. It links the subscription to the relevant invoice and payment for that interval and records the exact dates and amount billed. Entity PropertiesEntityPropertiesTable ## Relationships*   **Subscription:** A subscription period belongs to one Subscription.*   **Plan:** Reflects the Plan active during this period.*   **Invoice:** May be associated with one Invoice generated for this period.*   **Payment:** May be associated with one Payment that settled the periods invoice.## Examples*   Period for Jane Does Pro Plan from 2024-05-01 to 2024-05-31, invoiced via #INV-00123, status Paid.*   Period for Acme Corps Enterprise Plan from 2024-04-15 to 2024-05-14, status Billed, awaiting payment.*   The first period (trial) for a new subscription from 2024-05-20 to 2024-06-19, status Active, amountBilled $0.00.',
+            filePath:
+              '../examples/default/domains/E-Commerce/subdomains/Subscriptions/entities/SubscriptionPeriod/index.mdx',
+            digest: '6fafd64db9d7994d',
+            deferredRender: true,
+            collection: 'entities',
+          },
+        ],
+        id: 'Subscription',
+        name: 'Subscription',
+        summary:
+          'Domain that contains subscription related services and messages.',
+        version: '0.0.1',
+        badges: [
+          {
+            content: 'Subdomain',
+            backgroundColor: 'blue',
+            textColor: 'blue',
+          },
+        ],
+        owners: [
+          {
+            id: 'subscriptions-management',
+          },
+        ],
+        domains: [],
+        latestVersion: '0.0.1',
+        versions: ['0.0.1'],
+      },
+      filePath:
+        '../examples/default/domains/E-Commerce/subdomains/Subscriptions/index.mdx',
+      digest: 'b4b5bcc7e54bbaea',
+      deferredRender: true,
+      collection: 'domains',
+      sends: [
+        {
+          id: 'UserSubscriptionStarted-0.0.1',
+          data: {
+            id: 'UserSubscriptionStarted',
+            name: 'User subscription started',
+            summary:
+              'An event that is triggered when a new user subscription has started',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/events/UserSubscriptionStarted/index.mdx',
+          digest: '975a26dbf5b9579a',
+          deferredRender: true,
+          collection: 'events',
+        },
+        {
+          id: 'UserSubscriptionCancelled-0.0.1',
+          data: {
+            id: 'UserSubscriptionCancelled',
+            name: 'User subscription cancelled',
+            summary:
+              'An event that is triggered when a users subscription has been cancelled',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/events/UserSubscriptionCancelled/index.mdx',
+          digest: 'f4393a7ec584dfcb',
+          deferredRender: true,
+          collection: 'events',
+        },
+      ],
+      receives: [
+        {
+          id: 'SubscribeUser-0.0.1',
+          data: {
+            id: 'SubscribeUser',
+            name: 'Subscribe user',
+            summary: 'Command that will try and subscribe a given user',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/commands/SubscribeUser/index.mdx',
+          digest: 'a96417bf8e330295',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'CancelSubscription-0.0.1',
+          data: {
+            id: 'CancelSubscription',
+            name: 'Cancel subscription',
+            summary: 'Command that will try and cancel a users subscription',
+            version: '0.0.1',
+            badges: [
+              {
+                content: 'New!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+            sidebar: {
+              badge: 'POST',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/commands/CancelSubscription/index.mdx',
+          digest: 'ff2d317b58f56dbe',
+          deferredRender: true,
+          collection: 'commands',
+        },
+        {
+          id: 'GetSubscriptionStatus-0.0.2',
+          data: {
+            id: 'GetSubscriptionStatus',
+            name: 'Get subscription status',
+            summary:
+              'GET request that will return the current subscription status for a specific user, identified by their userId.',
+            version: '0.0.2',
+            badges: [
+              {
+                content: 'Recently updated!',
+                backgroundColor: 'green',
+                textColor: 'green',
+              },
+            ],
+            owners: [
+              {
+                id: 'subscriptions-management',
+              },
+            ],
+            schemaPath: 'schema.json',
+            sidebar: {
+              badge: 'GET',
+            },
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Subscriptions/services/SubscriptionService/queries/GetSubscriptionStatus/index.mdx',
+          digest: 'c8a50e0186a41b74',
+          deferredRender: true,
+          collection: 'queries',
+        },
+        {
+          id: 'PaymentProcessed-0.0.1',
+          data: {
+            id: 'PaymentProcessed',
+            name: 'Payment Processed',
+            summary:
+              'Event is triggered after the payment has been successfully processed',
+            version: '0.0.1',
+            owners: [
+              {
+                id: 'dboyne',
+              },
+            ],
+          },
+          filePath:
+            '../examples/default/domains/E-Commerce/subdomains/Payment/services/PaymentService/events/PaymentProcessed/versioned/0.0.1/index.mdx',
+          digest: '1b67685ce94288a6',
+          deferredRender: true,
+          collection: 'events',
+        },
+      ],
+    },
+  ],
+};
+
+export const pageData = {
+  pageIndex: {
+    title: 'Architecture overview',
+    content: domains,
+  },
+};

@@ -1,0 +1,8 @@
+{
+  "/visualiser/services/InventoryService/0.0.2-receives": false,
+  "/visualiser/services/NotificationService/0.0.2": false,
+  "/visualiser/domains/E-Commerce/1.0.0": true,
+  "/docs/domains/Payment/0.0.1-entities": true,
+  "/docs/domains/E-Commerce/1.0.0": true,
+  "/visualiser/services/NotificationService/0.0.2-receives": true
+}

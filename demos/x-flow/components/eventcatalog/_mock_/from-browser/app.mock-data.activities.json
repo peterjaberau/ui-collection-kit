@@ -1,0 +1,70 @@
+{
+  "state": {
+    "data": {
+      "1": {
+        "id": "1",
+        "user": {
+          "id": "1",
+          "email": "hello@saas-ui.dev",
+          "name": "Renata Alink",
+          "firstName": "Renata",
+          "lastName": "Alink",
+          "avatar": "https://www.saas-ui.dev/showcase-avatar.jpg",
+          "status": "online",
+          "workspace": {
+            "tags": [
+              "developer",
+              "designer",
+              "partner",
+              "prospect"
+            ]
+          }
+        },
+        "type": "action",
+        "data": {
+          "action": "created-contact"
+        },
+        "date": "2025-05-03T04:15:55.695Z"
+      },
+      "2": {
+        "id": "2",
+        "user": {
+          "id": "1",
+          "email": "hello@saas-ui.dev",
+          "name": "Renata Alink",
+          "firstName": "Renata",
+          "lastName": "Alink",
+          "avatar": "https://www.saas-ui.dev/showcase-avatar.jpg",
+          "status": "online",
+          "workspace": {
+            "tags": [
+              "developer",
+              "designer",
+              "partner",
+              "prospect"
+            ]
+          }
+        },
+        "type": "comment",
+        "data": {
+          "comment": "Just talked with the customer and they will upgrade to Pro."
+        },
+        "date": "2025-05-03T04:15:55.695Z"
+      },
+      "3": {
+        "id": "3",
+        "user": {
+          "id": "2",
+          "name": "Eelco Wiersma"
+        },
+        "type": "update",
+        "data": {
+          "field": "status",
+          "value": "active"
+        },
+        "date": "2025-05-03T04:15:55.695Z"
+      }
+    }
+  },
+  "version": 0
+}

@@ -1,0 +1,1315 @@
+{
+  "state": {
+    "data": {
+      "d2c20f59-b86b-4b99-be95-6f9b5dd8279a": {
+        "id": "d2c20f59-b86b-4b99-be95-6f9b5dd8279a",
+        "firstName": "Kiyoko",
+        "lastName": "Nakano",
+        "name": "Kiyoko Nakano",
+        "email": "kiyoko.nakano@hotmail.name",
+        "status": "new",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2023-01-31T17:41:50.364Z",
+        "updatedAt": "2020-02-18T21:21:27.241Z"
+      },
+      "7cda5dc8-8bc0-4f14-9a1f-c644c4941ada": {
+        "id": "7cda5dc8-8bc0-4f14-9a1f-c644c4941ada",
+        "firstName": "Anan",
+        "lastName": "Lawal",
+        "name": "Anan Lawal",
+        "email": "anan+lawal@aim.biz",
+        "status": "new",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2024-03-08T10:01:55.450Z",
+        "updatedAt": "2022-07-27T17:26:57.477Z"
+      },
+      "602d3e18-ae4e-4bbf-806d-e6f8b1cbdb25": {
+        "id": "602d3e18-ae4e-4bbf-806d-e6f8b1cbdb25",
+        "firstName": "Erla",
+        "lastName": "Kamau",
+        "name": "Erla Kamau",
+        "email": "erla+kamau894@orange.info",
+        "status": "active",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2025-01-03T02:15:52.581Z",
+        "updatedAt": "2022-09-26T09:19:17.226Z"
+      },
+      "e6f2158f-6b4e-4c00-bc5d-025b4dfb2773": {
+        "id": "e6f2158f-6b4e-4c00-bc5d-025b4dfb2773",
+        "firstName": "Sombun",
+        "lastName": "Wambui",
+        "name": "Sombun Wambui",
+        "email": "sombun.wambui212@aim.com",
+        "status": "active",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2020-12-01T11:29:14.102Z",
+        "updatedAt": "2022-03-26T01:33:39.500Z"
+      },
+      "5f571200-17cd-4514-8809-549762379308": {
+        "id": "5f571200-17cd-4514-8809-549762379308",
+        "firstName": "Luis",
+        "lastName": "Matthews",
+        "name": "Luis Matthews",
+        "email": "luis-matthews@earthlink.biz",
+        "status": "new",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-07-07T15:55:22.086Z",
+        "updatedAt": "2022-08-27T17:06:23.621Z"
+      },
+      "c04edb96-b545-4502-bdcb-4f811d134fec": {
+        "id": "c04edb96-b545-4502-bdcb-4f811d134fec",
+        "firstName": "Pawel",
+        "lastName": "Wood",
+        "name": "Pawel Wood",
+        "email": "pawelwood@club-internet.biz",
+        "status": "new",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2020-05-31T05:21:18.399Z",
+        "updatedAt": "2021-02-06T07:46:50.450Z"
+      },
+      "954da390-6d47-4666-806d-5795ebb8730d": {
+        "id": "954da390-6d47-4666-806d-5795ebb8730d",
+        "firstName": "Maryam",
+        "lastName": "Yamada",
+        "name": "Maryam Yamada",
+        "email": "maryam_yamada@aim.name",
+        "status": "active",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2022-11-20T04:40:26.424Z",
+        "updatedAt": "2020-12-01T16:47:35.877Z"
+      },
+      "54d1b7c9-b0a9-4924-ba0d-33a7ed684266": {
+        "id": "54d1b7c9-b0a9-4924-ba0d-33a7ed684266",
+        "firstName": "Yuko",
+        "lastName": "Takeuchi",
+        "name": "Yuko Takeuchi",
+        "email": "yuko-takeuchi@sympatico.io",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2023-03-01T22:01:45.509Z",
+        "updatedAt": "2024-07-18T03:21:42.983Z"
+      },
+      "901e6661-4e00-4a72-b31d-fb0ae699ccfc": {
+        "id": "901e6661-4e00-4a72-b31d-fb0ae699ccfc",
+        "firstName": "Agata",
+        "lastName": "Huber",
+        "name": "Agata Huber",
+        "email": "agata.huber@yahoo.net",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-04-04T03:42:39.928Z",
+        "updatedAt": "2024-03-10T15:38:11.826Z"
+      },
+      "f42750a2-194d-4e48-a198-e28ad6a7044f": {
+        "id": "f42750a2-194d-4e48-a198-e28ad6a7044f",
+        "firstName": "Jan",
+        "lastName": "Zalewski",
+        "name": "Jan Zalewski",
+        "email": "jan-zalewski@juno.biz",
+        "status": "active",
+        "type": "customer",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2022-12-22T00:09:43.679Z",
+        "updatedAt": "2024-12-20T07:40:18.600Z"
+      },
+      "93138efb-237f-48c4-89bd-f410785323d0": {
+        "id": "93138efb-237f-48c4-89bd-f410785323d0",
+        "firstName": "Shlomo",
+        "lastName": "Borkowski",
+        "name": "Shlomo Borkowski",
+        "email": "shlomo-borkowski22@earthlink.biz",
+        "status": "active",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2023-04-19T00:15:06.746Z",
+        "updatedAt": "2021-04-29T09:49:28.956Z"
+      },
+      "87c07b9f-4cda-4b27-ad26-1772126eba8d": {
+        "id": "87c07b9f-4cda-4b27-ad26-1772126eba8d",
+        "firstName": "Zhiqiang",
+        "lastName": "Borkowski",
+        "name": "Zhiqiang Borkowski",
+        "email": "zhiqiangborkowski@yahoo.dev",
+        "status": "new",
+        "type": "lead",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2025-04-03T22:16:17.741Z",
+        "updatedAt": "2021-12-11T09:55:25.104Z"
+      },
+      "ac3d6056-3051-4a41-bfe2-c750715abf5a": {
+        "id": "ac3d6056-3051-4a41-bfe2-c750715abf5a",
+        "firstName": "Susan",
+        "lastName": "Arnarson",
+        "name": "Susan Arnarson",
+        "email": "susan_arnarson812@t-online.biz",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-04-19T19:52:10.415Z",
+        "updatedAt": "2020-11-12T10:35:06.194Z"
+      },
+      "1886b359-b274-419c-845a-9437fc446b02": {
+        "id": "1886b359-b274-419c-845a-9437fc446b02",
+        "firstName": "Hanna",
+        "lastName": "Richardson",
+        "name": "Hanna Richardson",
+        "email": "hannarichardson@neuf.com",
+        "status": "new",
+        "type": "lead",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2024-05-04T13:01:59.169Z",
+        "updatedAt": "2023-04-30T10:03:31.836Z"
+      },
+      "a760d5c2-5c05-483d-b772-97a59d88cd34": {
+        "id": "a760d5c2-5c05-483d-b772-97a59d88cd34",
+        "firstName": "Jerzy",
+        "lastName": "Audu",
+        "name": "Jerzy Audu",
+        "email": "jerzy+audu@shaw.biz",
+        "status": "new",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-10-24T14:35:35.789Z",
+        "updatedAt": "2024-10-30T14:04:00.894Z"
+      },
+      "59fc1bf1-746a-4ca7-8516-7b669db42296": {
+        "id": "59fc1bf1-746a-4ca7-8516-7b669db42296",
+        "firstName": "Ming",
+        "lastName": "Dijkstra",
+        "name": "Ming Dijkstra",
+        "email": "ming_dijkstra620@web.net",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2021-04-28T07:27:40.158Z",
+        "updatedAt": "2022-08-21T11:21:38.797Z"
+      },
+      "68276103-371c-4475-92e1-b4684445581f": {
+        "id": "68276103-371c-4475-92e1-b4684445581f",
+        "firstName": "Rebecca",
+        "lastName": "Lehmann",
+        "name": "Rebecca Lehmann",
+        "email": "rebeccalehmann@home.org",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2023-02-21T05:28:16.982Z",
+        "updatedAt": "2021-10-19T15:58:06.565Z"
+      },
+      "1e8522c8-9263-4fdd-bf31-fd3c4d9df8c2": {
+        "id": "1e8522c8-9263-4fdd-bf31-fd3c4d9df8c2",
+        "firstName": "Prasit",
+        "lastName": "Zhang",
+        "name": "Prasit Zhang",
+        "email": "prasit-zhang755@gmx.com",
+        "status": "active",
+        "type": "lead",
+        "tags": [
+          "designer"
+        ],
+        "createdAt": "2022-01-13T03:35:38.320Z",
+        "updatedAt": "2023-12-14T12:16:16.072Z"
+      },
+      "462a8275-f843-4b92-9fb9-3970df9a285d": {
+        "id": "462a8275-f843-4b92-9fb9-3970df9a285d",
+        "firstName": "Usha",
+        "lastName": "Paramar",
+        "name": "Usha Paramar",
+        "email": "usha.paramar@optusnet.biz",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2025-02-26T01:11:13.940Z",
+        "updatedAt": "2020-10-05T09:45:22.707Z"
+      },
+      "74505173-e1f8-468e-8327-b363e973467a": {
+        "id": "74505173-e1f8-468e-8327-b363e973467a",
+        "firstName": "Yukio",
+        "lastName": "Neumann",
+        "name": "Yukio Neumann",
+        "email": "yukio.neumann@planet.dev",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2025-01-18T17:35:13.463Z",
+        "updatedAt": "2023-11-08T11:28:09.151Z"
+      },
+      "f9d1fb17-ea44-45a1-8ad5-0df76f135875": {
+        "id": "f9d1fb17-ea44-45a1-8ad5-0df76f135875",
+        "firstName": "Rattana",
+        "lastName": "Saha",
+        "name": "Rattana Saha",
+        "email": "rattanasaha624@aliceadsl.dev",
+        "status": "new",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2025-02-20T17:31:35.143Z",
+        "updatedAt": "2023-01-18T18:35:06.663Z"
+      },
+      "3a9a32fe-42a7-4e3d-a162-482a74c3b0c4": {
+        "id": "3a9a32fe-42a7-4e3d-a162-482a74c3b0c4",
+        "firstName": "Andrea",
+        "lastName": "Mohammed",
+        "name": "Andrea Mohammed",
+        "email": "andrea-mohammed@chello.org",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-05-07T22:50:14.549Z",
+        "updatedAt": "2023-03-09T15:58:40.269Z"
+      },
+      "0d80f00d-8865-4b36-b892-3df2be13db02": {
+        "id": "0d80f00d-8865-4b36-b892-3df2be13db02",
+        "firstName": "Kristina",
+        "lastName": "Schmid",
+        "name": "Kristina Schmid",
+        "email": "kristina_schmid@orange.name",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2024-08-16T14:54:41.706Z",
+        "updatedAt": "2022-09-20T21:12:11.080Z"
+      },
+      "8e6755df-03b2-4edb-8686-cf741b92c073": {
+        "id": "8e6755df-03b2-4edb-8686-cf741b92c073",
+        "firstName": "Ngozi",
+        "lastName": "Dai",
+        "name": "Ngozi Dai",
+        "email": "ngozi.dai@shaw.net",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2025-05-03T13:40:28.874Z",
+        "updatedAt": "2023-12-28T15:10:20.224Z"
+      },
+      "6f19410c-8177-4f93-9d3b-e1417d7bd85b": {
+        "id": "6f19410c-8177-4f93-9d3b-e1417d7bd85b",
+        "firstName": "Thulani",
+        "lastName": "Richards",
+        "name": "Thulani Richards",
+        "email": "thulanirichards946@windstream.io",
+        "status": "active",
+        "type": "customer",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2024-02-12T10:14:39.736Z",
+        "updatedAt": "2023-11-18T02:35:13.790Z"
+      },
+      "f09767c1-54c5-4a9e-b14f-052ab4e91b2f": {
+        "id": "f09767c1-54c5-4a9e-b14f-052ab4e91b2f",
+        "firstName": "Sibusiso",
+        "lastName": "Zaytseva",
+        "name": "Sibusiso Zaytseva",
+        "email": "sibusiso+zaytseva@wanadoo.biz",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2022-06-24T20:28:50.620Z",
+        "updatedAt": "2021-01-27T02:37:48.019Z"
+      },
+      "5e637931-9128-4671-81fb-c2afb424da0d": {
+        "id": "5e637931-9128-4671-81fb-c2afb424da0d",
+        "firstName": "Miriam",
+        "lastName": "Ishii",
+        "name": "Miriam Ishii",
+        "email": "miriam_ishii@me.io",
+        "status": "new",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-02-24T03:39:55.503Z",
+        "updatedAt": "2023-09-24T05:06:28.822Z"
+      },
+      "25a6bd83-77dc-42ad-b700-0a5930e22a4b": {
+        "id": "25a6bd83-77dc-42ad-b700-0a5930e22a4b",
+        "firstName": "Abubakar",
+        "lastName": "Mazibuko",
+        "name": "Abubakar Mazibuko",
+        "email": "abubakar-mazibuko4@rediffmail.dev",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2020-11-27T03:46:17.680Z",
+        "updatedAt": "2023-10-18T09:59:58.308Z"
+      },
+      "d8b35baa-537e-499a-a5fe-3e65fe60481c": {
+        "id": "d8b35baa-537e-499a-a5fe-3e65fe60481c",
+        "firstName": "Simon",
+        "lastName": "Ishikawa",
+        "name": "Simon Ishikawa",
+        "email": "simon_ishikawa277@chello.org",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2020-07-16T03:54:55.915Z",
+        "updatedAt": "2024-01-09T04:14:38.210Z"
+      },
+      "bebb24f6-11fc-4a74-bf2a-e742efa9d174": {
+        "id": "bebb24f6-11fc-4a74-bf2a-e742efa9d174",
+        "firstName": "Sara",
+        "lastName": "Mikhaylova",
+        "name": "Sara Mikhaylova",
+        "email": "sara-mikhaylova893@planet.com",
+        "status": "active",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2020-02-27T15:48:26.759Z",
+        "updatedAt": "2021-12-16T23:43:29.417Z"
+      },
+      "20bda388-f70a-40a8-97e8-7a2ba4724093": {
+        "id": "20bda388-f70a-40a8-97e8-7a2ba4724093",
+        "firstName": "Rajesh",
+        "lastName": "Owen",
+        "name": "Rajesh Owen",
+        "email": "rajesh.owen628@verizon.com",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-09-02T03:07:06.091Z",
+        "updatedAt": "2020-01-26T21:38:23.643Z"
+      },
+      "4c68c684-03c6-419f-a710-0cc2d0ce1d98": {
+        "id": "4c68c684-03c6-419f-a710-0cc2d0ce1d98",
+        "firstName": "Carlos",
+        "lastName": "Bala",
+        "name": "Carlos Bala",
+        "email": "carlos_bala450@googlemail.com",
+        "status": "new",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2021-12-13T17:57:52.462Z",
+        "updatedAt": "2024-09-06T17:04:08.363Z"
+      },
+      "d89f783a-c10c-4bfb-9c0c-ce95c1f1357c": {
+        "id": "d89f783a-c10c-4bfb-9c0c-ce95c1f1357c",
+        "firstName": "Wanchai",
+        "lastName": "Ragnarsson",
+        "name": "Wanchai Ragnarsson",
+        "email": "wanchai-ragnarsson944@verizon.io",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2022-06-18T15:19:33.231Z",
+        "updatedAt": "2022-02-04T12:29:21.815Z"
+      },
+      "4a2c2a33-617f-42fb-acea-f58dd829ec87": {
+        "id": "4a2c2a33-617f-42fb-acea-f58dd829ec87",
+        "firstName": "Pawel",
+        "lastName": "Hauksson",
+        "name": "Pawel Hauksson",
+        "email": "pawel-hauksson49@googlemail.org",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2022-11-12T20:03:48.090Z",
+        "updatedAt": "2023-03-01T23:07:26.379Z"
+      },
+      "4f291f63-7ae0-4665-a768-0db5f5c5dea2": {
+        "id": "4f291f63-7ae0-4665-a768-0db5f5c5dea2",
+        "firstName": "Sunita",
+        "lastName": "Coetzee",
+        "name": "Sunita Coetzee",
+        "email": "sunita.coetzee91@rocketmail.info",
+        "status": "active",
+        "type": "customer",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2025-01-15T09:32:16.741Z",
+        "updatedAt": "2025-03-06T11:02:52.079Z"
+      },
+      "70395058-a8c6-4fa1-90d7-7fc3f0aa7d61": {
+        "id": "70395058-a8c6-4fa1-90d7-7fc3f0aa7d61",
+        "firstName": "Thulani",
+        "lastName": "Becker",
+        "name": "Thulani Becker",
+        "email": "thulanibecker@aliceadsl.biz",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2022-06-14T16:26:54.774Z",
+        "updatedAt": "2023-06-27T03:58:33.343Z"
+      },
+      "ecba9406-154c-478b-b556-df48fa27f15c": {
+        "id": "ecba9406-154c-478b-b556-df48fa27f15c",
+        "firstName": "Cheng",
+        "lastName": "Kimani",
+        "name": "Cheng Kimani",
+        "email": "cheng_kimani@outlook.com",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2023-01-01T17:27:25.020Z",
+        "updatedAt": "2020-02-12T13:59:49.307Z"
+      },
+      "b4aa7cc2-1d7a-4c4c-a50d-0e09c80ca192": {
+        "id": "b4aa7cc2-1d7a-4c4c-a50d-0e09c80ca192",
+        "firstName": "Kai",
+        "lastName": "Bevan",
+        "name": "Kai Bevan",
+        "email": "kai-bevan645@live.io",
+        "status": "active",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2022-09-05T16:32:21.849Z",
+        "updatedAt": "2020-02-16T00:49:06.333Z"
+      },
+      "f3120fe8-f947-4e66-89dd-7629d63405fe": {
+        "id": "f3120fe8-f947-4e66-89dd-7629d63405fe",
+        "firstName": "Sabine",
+        "lastName": "Petrova",
+        "name": "Sabine Petrova",
+        "email": "sabine_petrova@hotmail.info",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2022-06-12T07:08:46.985Z",
+        "updatedAt": "2021-04-21T21:02:35.683Z"
+      },
+      "eb6a0e20-0a76-483b-9868-79c786e50289": {
+        "id": "eb6a0e20-0a76-483b-9868-79c786e50289",
+        "firstName": "Ekaterina",
+        "lastName": "Smith",
+        "name": "Ekaterina Smith",
+        "email": "ekaterina-smith103@web.info",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2025-03-18T11:20:18.628Z",
+        "updatedAt": "2020-10-23T09:49:49.451Z"
+      },
+      "e4b4cc24-5c86-49f0-b9a8-95394a011a4c": {
+        "id": "e4b4cc24-5c86-49f0-b9a8-95394a011a4c",
+        "firstName": "Arnar",
+        "lastName": "Muhammad",
+        "name": "Arnar Muhammad",
+        "email": "arnar.muhammad@comcast.com",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2022-02-26T14:30:31.664Z",
+        "updatedAt": "2024-06-26T08:31:55.251Z"
+      },
+      "72275c2f-001b-4914-9252-903017b4edcd": {
+        "id": "72275c2f-001b-4914-9252-903017b4edcd",
+        "firstName": "Yelena",
+        "lastName": "Sunday",
+        "name": "Yelena Sunday",
+        "email": "yelenasunday@optonline.info",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2022-08-31T17:24:29.777Z",
+        "updatedAt": "2024-07-29T03:33:27.077Z"
+      },
+      "cc71444e-eb05-4965-a5e5-ac798bbf6a6f": {
+        "id": "cc71444e-eb05-4965-a5e5-ac798bbf6a6f",
+        "firstName": "Winai",
+        "lastName": "Sun",
+        "name": "Winai Sun",
+        "email": "winaisun355@juno.name",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2023-10-16T02:07:28.175Z",
+        "updatedAt": "2024-12-09T22:00:15.369Z"
+      },
+      "8ad93eb2-b5e7-44bb-8596-633db935e548": {
+        "id": "8ad93eb2-b5e7-44bb-8596-633db935e548",
+        "firstName": "Gita",
+        "lastName": "Yuan",
+        "name": "Gita Yuan",
+        "email": "gita_yuan@yandex.biz",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2021-06-05T02:11:26.502Z",
+        "updatedAt": "2023-07-07T14:53:29.906Z"
+      },
+      "28d4dc39-093f-4b12-b48f-602dc777fa34": {
+        "id": "28d4dc39-093f-4b12-b48f-602dc777fa34",
+        "firstName": "Saman",
+        "lastName": "Mondal",
+        "name": "Saman Mondal",
+        "email": "saman-mondal992@rocketmail.name",
+        "status": "new",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2024-06-27T23:40:33.629Z",
+        "updatedAt": "2021-12-15T19:32:24.924Z"
+      },
+      "2da2f653-85a6-4c76-b08e-1e47352d7587": {
+        "id": "2da2f653-85a6-4c76-b08e-1e47352d7587",
+        "firstName": "Samran",
+        "lastName": "David",
+        "name": "Samran David",
+        "email": "samran.david989@freenet.name",
+        "status": "active",
+        "type": "customer",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2024-03-22T06:04:27.173Z",
+        "updatedAt": "2020-10-19T06:53:50.089Z"
+      },
+      "86bf3a32-f598-485c-92d5-7c18a6cdddf4": {
+        "id": "86bf3a32-f598-485c-92d5-7c18a6cdddf4",
+        "firstName": "Lan",
+        "lastName": "Santos",
+        "name": "Lan Santos",
+        "email": "lan_santos@ntlworld.name",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2024-06-04T17:50:54.742Z",
+        "updatedAt": "2024-04-15T20:02:16.583Z"
+      },
+      "882aa026-5268-4165-ba86-bb3be24341d8": {
+        "id": "882aa026-5268-4165-ba86-bb3be24341d8",
+        "firstName": "Sunil",
+        "lastName": "Peng",
+        "name": "Sunil Peng",
+        "email": "sunil_peng@juno.info",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2021-12-24T11:34:53.236Z",
+        "updatedAt": "2024-06-16T18:43:53.983Z"
+      },
+      "c5b40264-66ea-4494-b9a3-ff922ce88acc": {
+        "id": "c5b40264-66ea-4494-b9a3-ff922ce88acc",
+        "firstName": "Lihua",
+        "lastName": "Marciniak",
+        "name": "Lihua Marciniak",
+        "email": "lihua_marciniak157@aim.biz",
+        "status": "new",
+        "type": "lead",
+        "tags": [
+          "designer"
+        ],
+        "createdAt": "2024-02-02T02:13:01.764Z",
+        "updatedAt": "2020-12-08T00:24:32.675Z"
+      },
+      "63efb116-d6ab-4f6d-95db-c55d6be6f1c0": {
+        "id": "63efb116-d6ab-4f6d-95db-c55d6be6f1c0",
+        "firstName": "Amit",
+        "lastName": "Levy",
+        "name": "Amit Levy",
+        "email": "amitlevy139@me.com",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2024-09-14T05:53:55.624Z",
+        "updatedAt": "2024-09-14T10:43:46.981Z"
+      },
+      "592cceff-adda-4421-8aa0-1fd496f40cf3": {
+        "id": "592cceff-adda-4421-8aa0-1fd496f40cf3",
+        "firstName": "Anan",
+        "lastName": "Eze",
+        "name": "Anan Eze",
+        "email": "anan.eze@zonnet.dev",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2024-11-16T18:17:57.505Z",
+        "updatedAt": "2021-04-27T08:16:46.720Z"
+      },
+      "4f446025-97f1-4a2e-a584-de74216cc9d6": {
+        "id": "4f446025-97f1-4a2e-a584-de74216cc9d6",
+        "firstName": "Yun",
+        "lastName": "Chebet",
+        "name": "Yun Chebet",
+        "email": "yun+chebet@windstream.biz",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-06-06T17:34:18.573Z",
+        "updatedAt": "2021-01-16T08:50:53.504Z"
+      },
+      "e5fd9286-6ecb-4dc8-832e-c5604b025104": {
+        "id": "e5fd9286-6ecb-4dc8-832e-c5604b025104",
+        "firstName": "Yasuo",
+        "lastName": "Smoakley",
+        "name": "Yasuo Smoakley",
+        "email": "yasuo.smoakley@aol.net",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "designer"
+        ],
+        "createdAt": "2022-10-31T02:37:56.682Z",
+        "updatedAt": "2024-02-23T20:05:05.339Z"
+      },
+      "9f7ec734-8e7d-44ff-8d31-211faeb489af": {
+        "id": "9f7ec734-8e7d-44ff-8d31-211faeb489af",
+        "firstName": "Jianjun",
+        "lastName": "De-Bruijn",
+        "name": "Jianjun De-Bruijn",
+        "email": "jianjun.de-bruijn942@juno.dev",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2023-01-30T01:45:29.284Z",
+        "updatedAt": "2023-11-26T10:01:57.873Z"
+      },
+      "17e90a65-f961-4dcb-b421-1015aa8d3174": {
+        "id": "17e90a65-f961-4dcb-b421-1015aa8d3174",
+        "firstName": "Mohammad",
+        "lastName": "Joseph",
+        "name": "Mohammad Joseph",
+        "email": "mohammadjoseph20@outlook.dev",
+        "status": "active",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2023-09-13T18:00:32.936Z",
+        "updatedAt": "2020-03-10T01:49:19.616Z"
+      },
+      "28b7a0b7-1a7e-4682-b170-b99c9f2b73b7": {
+        "id": "28b7a0b7-1a7e-4682-b170-b99c9f2b73b7",
+        "firstName": "Andreas",
+        "lastName": "Jones",
+        "name": "Andreas Jones",
+        "email": "andreasjones@optusnet.biz",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2023-10-07T16:11:30.184Z",
+        "updatedAt": "2023-11-15T07:30:04.249Z"
+      },
+      "9b853f72-0d63-440c-9088-7c18a3307b5e": {
+        "id": "9b853f72-0d63-440c-9088-7c18a3307b5e",
+        "firstName": "Kenji",
+        "lastName": "Yamazaki",
+        "name": "Kenji Yamazaki",
+        "email": "kenji+yamazaki184@ntlworld.com",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2022-11-10T07:10:38.869Z",
+        "updatedAt": "2023-11-25T04:34:19.789Z"
+      },
+      "7856ab51-2ead-49fa-a766-b4b58beb7867": {
+        "id": "7856ab51-2ead-49fa-a766-b4b58beb7867",
+        "firstName": "Haruna",
+        "lastName": "Mutuku",
+        "name": "Haruna Mutuku",
+        "email": "harunamutuku@ntlworld.net",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2020-04-29T16:32:33.174Z",
+        "updatedAt": "2022-01-16T01:15:28.438Z"
+      },
+      "b60164ce-7e07-48a2-9bc0-52a2c2cbb9c4": {
+        "id": "b60164ce-7e07-48a2-9bc0-52a2c2cbb9c4",
+        "firstName": "Ilya",
+        "lastName": "Koech",
+        "name": "Ilya Koech",
+        "email": "ilya-koech@ig.org",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2024-07-10T20:29:12.219Z",
+        "updatedAt": "2020-04-23T23:00:05.373Z"
+      },
+      "89388340-07db-4235-91af-6dc1678b0d07": {
+        "id": "89388340-07db-4235-91af-6dc1678b0d07",
+        "firstName": "Matthew",
+        "lastName": "Dai",
+        "name": "Matthew Dai",
+        "email": "matthew+dai@sky.io",
+        "status": "new",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2022-12-23T13:32:53.741Z",
+        "updatedAt": "2023-01-22T02:19:13.686Z"
+      },
+      "b9b5ac3a-a60b-4f79-b0a1-a155b6aaf9e1": {
+        "id": "b9b5ac3a-a60b-4f79-b0a1-a155b6aaf9e1",
+        "firstName": "Amit",
+        "lastName": "Lange",
+        "name": "Amit Lange",
+        "email": "amit_lange362@rediffmail.name",
+        "status": "new",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2023-05-15T07:55:01.359Z",
+        "updatedAt": "2023-09-24T11:43:01.459Z"
+      },
+      "26912b64-c700-4d71-bc56-bac9a3a6c93f": {
+        "id": "26912b64-c700-4d71-bc56-bac9a3a6c93f",
+        "firstName": "Yusuf",
+        "lastName": "Martinez",
+        "name": "Yusuf Martinez",
+        "email": "yusuf-martinez344@optonline.name",
+        "status": "new",
+        "type": "lead",
+        "tags": [
+          "designer"
+        ],
+        "createdAt": "2021-12-23T23:39:14.974Z",
+        "updatedAt": "2025-04-16T12:13:29.169Z"
+      },
+      "4a37497a-24aa-4aa3-9811-ef2fc5d2a79c": {
+        "id": "4a37497a-24aa-4aa3-9811-ef2fc5d2a79c",
+        "firstName": "Andri",
+        "lastName": "Hauksson",
+        "name": "Andri Hauksson",
+        "email": "andrihauksson948@free.net",
+        "status": "active",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2023-08-08T02:12:24.558Z",
+        "updatedAt": "2023-12-27T01:37:05.363Z"
+      },
+      "cd682fbe-3786-44d3-9cb7-807579c450ab": {
+        "id": "cd682fbe-3786-44d3-9cb7-807579c450ab",
+        "firstName": "Peng",
+        "lastName": "Ragnarsson",
+        "name": "Peng Ragnarsson",
+        "email": "peng-ragnarsson876@live.dev",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2024-08-16T22:10:26.461Z",
+        "updatedAt": "2021-12-28T23:08:46.094Z"
+      },
+      "00007b6d-1d8b-4d2e-827c-6bd4429659d4": {
+        "id": "00007b6d-1d8b-4d2e-827c-6bd4429659d4",
+        "firstName": "Anah",
+        "lastName": "Suissa",
+        "name": "Anah Suissa",
+        "email": "anah_suissa@me.info",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2024-10-03T15:41:37.967Z",
+        "updatedAt": "2023-10-19T04:27:47.470Z"
+      },
+      "10a2856f-66bd-44a4-a08e-865dd6ed5a59": {
+        "id": "10a2856f-66bd-44a4-a08e-865dd6ed5a59",
+        "firstName": "Arnar",
+        "lastName": "Peng",
+        "name": "Arnar Peng",
+        "email": "arnar_peng@uol.org",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-06-22T16:09:44.501Z",
+        "updatedAt": "2021-07-04T16:18:02.750Z"
+      },
+      "b3efc7ad-fa08-49a9-8753-bd755e77a60c": {
+        "id": "b3efc7ad-fa08-49a9-8753-bd755e77a60c",
+        "firstName": "Graham",
+        "lastName": "Hofmann",
+        "name": "Graham Hofmann",
+        "email": "graham.hofmann@bigpond.dev",
+        "status": "active",
+        "type": "customer",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2024-08-04T18:26:36.793Z",
+        "updatedAt": "2022-07-28T15:23:05.732Z"
+      },
+      "9fbe5a6b-7a46-4b75-a200-10517798935a": {
+        "id": "9fbe5a6b-7a46-4b75-a200-10517798935a",
+        "firstName": "Linda",
+        "lastName": "Idris",
+        "name": "Linda Idris",
+        "email": "lindaidris61@optusnet.name",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2020-04-09T10:16:20.464Z",
+        "updatedAt": "2020-12-01T18:24:22.781Z"
+      },
+      "a430c3ff-501d-458c-9101-ca0b4ab48537": {
+        "id": "a430c3ff-501d-458c-9101-ca0b4ab48537",
+        "firstName": "Pricha",
+        "lastName": "Dayan",
+        "name": "Pricha Dayan",
+        "email": "pricha.dayan@rambler.org",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2021-11-14T20:19:53.845Z",
+        "updatedAt": "2023-11-08T00:53:05.428Z"
+      },
+      "f9f34605-2a30-46d9-906e-af09c3cc2a44": {
+        "id": "f9f34605-2a30-46d9-906e-af09c3cc2a44",
+        "firstName": "Umar",
+        "lastName": "Hayashi",
+        "name": "Umar Hayashi",
+        "email": "umar-hayashi617@t-online.name",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "designer"
+        ],
+        "createdAt": "2021-12-15T11:17:29.068Z",
+        "updatedAt": "2020-02-15T06:59:41.097Z"
+      },
+      "3886b18d-a967-436f-b322-ff5f0c3d2c54": {
+        "id": "3886b18d-a967-436f-b322-ff5f0c3d2c54",
+        "firstName": "Miguel-Angel",
+        "lastName": "Pan",
+        "name": "Miguel-Angel Pan",
+        "email": "miguel-angelpan@googlemail.io",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2021-04-11T22:14:01.917Z",
+        "updatedAt": "2023-03-25T01:34:18.377Z"
+      },
+      "2653a30a-2edd-4673-9268-09a6c6dc2241": {
+        "id": "2653a30a-2edd-4673-9268-09a6c6dc2241",
+        "firstName": "Jakub",
+        "lastName": "Ray",
+        "name": "Jakub Ray",
+        "email": "jakubray447@bluewin.info",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2021-06-30T17:04:35.478Z",
+        "updatedAt": "2023-12-25T00:44:55.074Z"
+      },
+      "f980b65f-487c-4a9c-aabc-12ea1a759d99": {
+        "id": "f980b65f-487c-4a9c-aabc-12ea1a759d99",
+        "firstName": "Agnieszka",
+        "lastName": "Zawadzki",
+        "name": "Agnieszka Zawadzki",
+        "email": "agnieszka.zawadzki509@virgilio.io",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2022-04-30T15:03:30.398Z",
+        "updatedAt": "2022-04-12T03:41:21.574Z"
+      },
+      "db082f67-9311-4a5e-805c-037c4fd222a8": {
+        "id": "db082f67-9311-4a5e-805c-037c4fd222a8",
+        "firstName": "Luis",
+        "lastName": "King",
+        "name": "Luis King",
+        "email": "luis_king@orange.name",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2020-03-20T16:42:55.538Z",
+        "updatedAt": "2023-01-25T20:22:12.391Z"
+      },
+      "43c11aae-6d22-4d11-abd3-3e1aaa886ee0": {
+        "id": "43c11aae-6d22-4d11-abd3-3e1aaa886ee0",
+        "firstName": "Bongani",
+        "lastName": "De-Graaf",
+        "name": "Bongani De-Graaf",
+        "email": "bonganide-graaf@neuf.name",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2025-01-30T07:12:08.173Z",
+        "updatedAt": "2023-01-10T16:08:34.282Z"
+      },
+      "65c32a79-ea48-4e6a-9dc1-8fe201cf3d2f": {
+        "id": "65c32a79-ea48-4e6a-9dc1-8fe201cf3d2f",
+        "firstName": "Horst",
+        "lastName": "Richardson",
+        "name": "Horst Richardson",
+        "email": "horst-richardson@uol.dev",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2023-09-01T23:58:11.116Z",
+        "updatedAt": "2021-08-27T15:53:08.589Z"
+      },
+      "587a4f0a-615f-4106-bc0c-192f9fde8a38": {
+        "id": "587a4f0a-615f-4106-bc0c-192f9fde8a38",
+        "firstName": "Richard",
+        "lastName": "Pan",
+        "name": "Richard Pan",
+        "email": "richard-pan@virgilio.biz",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "designer"
+        ],
+        "createdAt": "2021-01-18T03:10:09.351Z",
+        "updatedAt": "2020-10-16T10:18:16.748Z"
+      },
+      "44e0521e-1319-42f1-a78f-33abed817e52": {
+        "id": "44e0521e-1319-42f1-a78f-33abed817e52",
+        "firstName": "Rachel",
+        "lastName": "Koch",
+        "name": "Rachel Koch",
+        "email": "rachel_koch737@comcast.name",
+        "status": "active",
+        "type": "lead",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2022-02-16T11:50:05.186Z",
+        "updatedAt": "2025-03-01T05:35:10.328Z"
+      },
+      "7bdb7646-ba97-4e42-a0bf-40a508d54309": {
+        "id": "7bdb7646-ba97-4e42-a0bf-40a508d54309",
+        "firstName": "Birgir",
+        "lastName": "Hill",
+        "name": "Birgir Hill",
+        "email": "birgir_hill@sbcglobal.info",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2022-06-23T19:25:53.482Z",
+        "updatedAt": "2022-03-30T22:01:00.922Z"
+      },
+      "b39300cf-b1fa-45b0-8bed-5b65ecc7c7bd": {
+        "id": "b39300cf-b1fa-45b0-8bed-5b65ecc7c7bd",
+        "firstName": "Arnar",
+        "lastName": "Janssen",
+        "name": "Arnar Janssen",
+        "email": "arnar.janssen@msn.biz",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2021-08-15T04:06:46.719Z",
+        "updatedAt": "2022-06-13T03:25:26.214Z"
+      },
+      "1549c901-fba4-436e-b4cf-b752e646bd99": {
+        "id": "1549c901-fba4-436e-b4cf-b752e646bd99",
+        "firstName": "Dorota",
+        "lastName": "Gaby",
+        "name": "Dorota Gaby",
+        "email": "dorota-gaby@tiscali.org",
+        "status": "new",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2022-10-15T22:36:53.814Z",
+        "updatedAt": "2025-01-26T01:40:34.152Z"
+      },
+      "60582b23-5dee-4dd3-a34a-ca5b3dfef864": {
+        "id": "60582b23-5dee-4dd3-a34a-ca5b3dfef864",
+        "firstName": "Lucia",
+        "lastName": "Sah",
+        "name": "Lucia Sah",
+        "email": "lucia_sah@att.io",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "designer"
+        ],
+        "createdAt": "2025-03-23T07:59:34.823Z",
+        "updatedAt": "2024-06-07T00:09:47.155Z"
+      },
+      "97489183-2388-4a67-8df1-c5b473ffea52": {
+        "id": "97489183-2388-4a67-8df1-c5b473ffea52",
+        "firstName": "Somnuek",
+        "lastName": "Mishra",
+        "name": "Somnuek Mishra",
+        "email": "somnuek_mishra@yahoo.dev",
+        "status": "active",
+        "type": "lead",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2025-01-04T13:45:31.695Z",
+        "updatedAt": "2024-08-28T07:25:59.906Z"
+      },
+      "5ab0f248-68fd-4d5a-a303-13a7c32c5b4c": {
+        "id": "5ab0f248-68fd-4d5a-a303-13a7c32c5b4c",
+        "firstName": "Gunnar",
+        "lastName": "Sikora",
+        "name": "Gunnar Sikora",
+        "email": "gunnar.sikora872@ig.dev",
+        "status": "active",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2024-08-29T05:18:38.143Z",
+        "updatedAt": "2020-03-22T11:00:28.931Z"
+      },
+      "bb2e3cd2-ed9d-4ae4-bceb-d84dd24c033d": {
+        "id": "bb2e3cd2-ed9d-4ae4-bceb-d84dd24c033d",
+        "firstName": "Irina",
+        "lastName": "Castillo",
+        "name": "Irina Castillo",
+        "email": "irina_castillo974@comcast.net",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2023-04-02T13:50:48.543Z",
+        "updatedAt": "2025-02-02T23:59:43.183Z"
+      },
+      "3fb25181-cac7-49c5-90a0-cd05a4d7953e": {
+        "id": "3fb25181-cac7-49c5-90a0-cd05a4d7953e",
+        "firstName": "Heike",
+        "lastName": "Barman",
+        "name": "Heike Barman",
+        "email": "heike.barman238@aol.info",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2020-05-31T14:23:23.817Z",
+        "updatedAt": "2021-11-19T14:25:30.519Z"
+      },
+      "43621f28-4f42-4bec-a49d-c93207c84758": {
+        "id": "43621f28-4f42-4bec-a49d-c93207c84758",
+        "firstName": "Karolina",
+        "lastName": "Cheng",
+        "name": "Karolina Cheng",
+        "email": "karolina_cheng336@t-online.com",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "developer"
+        ],
+        "createdAt": "2023-10-13T22:00:05.825Z",
+        "updatedAt": "2023-07-19T12:44:06.867Z"
+      },
+      "a2b56cd2-5afa-4613-a2b0-828a742a69ab": {
+        "id": "a2b56cd2-5afa-4613-a2b0-828a742a69ab",
+        "firstName": "Lijun",
+        "lastName": "Alonso",
+        "name": "Lijun Alonso",
+        "email": "lijun+alonso@voila.org",
+        "status": "active",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2024-08-31T05:39:36.498Z",
+        "updatedAt": "2024-05-22T18:54:51.533Z"
+      },
+      "8c3176d3-a85f-42a2-88ba-0156a9410125": {
+        "id": "8c3176d3-a85f-42a2-88ba-0156a9410125",
+        "firstName": "Aisha",
+        "lastName": "Andreeva",
+        "name": "Aisha Andreeva",
+        "email": "aisha.andreeva@voila.io",
+        "status": "active",
+        "type": "customer",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2021-04-26T07:09:14.493Z",
+        "updatedAt": "2025-02-20T14:21:06.018Z"
+      },
+      "77cdb84a-0237-4e08-8a9a-4dfd3033d1d7": {
+        "id": "77cdb84a-0237-4e08-8a9a-4dfd3033d1d7",
+        "firstName": "Janet",
+        "lastName": "Michalak",
+        "name": "Janet Michalak",
+        "email": "janet-michalak@aim.name",
+        "status": "new",
+        "type": "lead",
+        "tags": [],
+        "createdAt": "2023-05-26T03:46:45.752Z",
+        "updatedAt": "2020-10-06T04:05:44.186Z"
+      },
+      "2d08972b-f1c5-4a08-9ef7-e2230e2b0076": {
+        "id": "2d08972b-f1c5-4a08-9ef7-e2230e2b0076",
+        "firstName": "Udom",
+        "lastName": "Saetan",
+        "name": "Udom Saetan",
+        "email": "udom_saetan986@sky.io",
+        "status": "new",
+        "type": "lead",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2022-05-24T17:17:35.944Z",
+        "updatedAt": "2023-02-16T16:32:53.701Z"
+      },
+      "69561621-79d4-4a60-b314-080725393ee3": {
+        "id": "69561621-79d4-4a60-b314-080725393ee3",
+        "firstName": "Yaakv",
+        "lastName": "Ray",
+        "name": "Yaakv Ray",
+        "email": "yaakvray@laposte.name",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "designer"
+        ],
+        "createdAt": "2022-05-31T13:57:44.146Z",
+        "updatedAt": "2023-07-01T08:35:46.647Z"
+      },
+      "3a79e9a6-3532-4463-b97c-ec2a77881107": {
+        "id": "3a79e9a6-3532-4463-b97c-ec2a77881107",
+        "firstName": "Amit",
+        "lastName": "Volkova",
+        "name": "Amit Volkova",
+        "email": "amit.volkova@planet.net",
+        "status": "new",
+        "type": "lead",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2024-11-28T22:42:15.398Z",
+        "updatedAt": "2023-12-16T22:45:34.685Z"
+      },
+      "89df8c03-b0f6-4439-9a7d-dcde97b86149": {
+        "id": "89df8c03-b0f6-4439-9a7d-dcde97b86149",
+        "firstName": "Miguel-Angel",
+        "lastName": "Walters",
+        "name": "Miguel-Angel Walters",
+        "email": "miguel-angelwalters69@hotmail.name",
+        "status": "active",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2024-12-03T08:02:42.352Z",
+        "updatedAt": "2022-02-08T13:11:52.000Z"
+      },
+      "3541d7c9-a85d-478a-b67f-0fe233ccfdbc": {
+        "id": "3541d7c9-a85d-478a-b67f-0fe233ccfdbc",
+        "firstName": "Laxmi",
+        "lastName": "Ahmed",
+        "name": "Laxmi Ahmed",
+        "email": "laxmi-ahmed@voila.io",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "prospect"
+        ],
+        "createdAt": "2021-01-19T17:42:37.355Z",
+        "updatedAt": "2023-04-11T14:51:15.027Z"
+      },
+      "28d5e769-865e-44c1-a66e-0aefb4846e60": {
+        "id": "28d5e769-865e-44c1-a66e-0aefb4846e60",
+        "firstName": "Yhudiyt",
+        "lastName": "Otieno",
+        "name": "Yhudiyt Otieno",
+        "email": "yhudiytotieno765@att.org",
+        "status": "active",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2022-03-02T04:35:12.274Z",
+        "updatedAt": "2020-06-21T09:16:20.796Z"
+      },
+      "7840d25e-5bf7-41b2-9409-014401defa77": {
+        "id": "7840d25e-5bf7-41b2-9409-014401defa77",
+        "firstName": "Ashok",
+        "lastName": "Kondo",
+        "name": "Ashok Kondo",
+        "email": "ashok+kondo@qq.info",
+        "status": "inactive",
+        "type": "lead",
+        "tags": [
+          "designer"
+        ],
+        "createdAt": "2021-07-09T07:32:04.957Z",
+        "updatedAt": "2024-10-25T01:03:52.803Z"
+      },
+      "3013503f-3b71-466f-a72c-1d3a8485e6b4": {
+        "id": "3013503f-3b71-466f-a72c-1d3a8485e6b4",
+        "firstName": "Kevin",
+        "lastName": "Baldursson",
+        "name": "Kevin Baldursson",
+        "email": "kevin-baldursson185@freenet.name",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2023-10-30T08:27:21.716Z",
+        "updatedAt": "2020-07-16T18:55:29.765Z"
+      },
+      "345299d2-490f-4be1-a8ad-b5a703ad2789": {
+        "id": "345299d2-490f-4be1-a8ad-b5a703ad2789",
+        "firstName": "Josefa",
+        "lastName": "Otieno",
+        "name": "Josefa Otieno",
+        "email": "josefa-otieno963@blueyonder.io",
+        "status": "new",
+        "type": "customer",
+        "tags": [
+          "partner"
+        ],
+        "createdAt": "2023-07-28T11:33:32.123Z",
+        "updatedAt": "2024-09-21T06:48:26.364Z"
+      },
+      "f71baf07-241d-4fa8-bead-0d99e68fe174": {
+        "id": "f71baf07-241d-4fa8-bead-0d99e68fe174",
+        "firstName": "Michael",
+        "lastName": "Allen",
+        "name": "Michael Allen",
+        "email": "michael.allen739@facebook.biz",
+        "status": "inactive",
+        "type": "customer",
+        "tags": [],
+        "createdAt": "2023-12-20T12:51:28.404Z",
+        "updatedAt": "2022-11-22T18:53:29.939Z"
+      }
+    }
+  },
+  "version": 0
+}

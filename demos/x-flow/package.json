@@ -10,6 +10,10 @@
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "shelljs": "^0.8.5",
+    "lucide-react": "^0.453.0",
+    "@headlessui/react": "2.2.4",
+    "@heroicons/react": "2.2.0",
     "@ui-collection-kit/unstyled-react": "workspace:*",
     "@ui-collection-kit/accordion": "workspace:*",
     "@ui-collection-kit/anatomy": "workspace:*",
@@ -157,6 +161,7 @@
     "@rc-component/color-picker": "^3.0.1"
   },
   "devDependencies": {
+    "@types/shelljs": "^0.8.15",
     "@types/set-value": "4.0.3",
     "@types/lodash-es": "^4.17.12",
     "@ant-design/v5-patch-for-react-19": "^1.0.3",

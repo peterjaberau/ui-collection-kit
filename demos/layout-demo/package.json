@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "2.2.4",
+    "@heroicons/react": "2.2.0",
     "underscore": "^1.13.7",
     "gridstack": "^12.1.2",
     "next-themes": "0.4.6",
