@@ -22,6 +22,7 @@ export interface TNodeItem {
     width?: string | number; // Configure panel width
     hideDesc?: boolean; // Configuration panel description
   };
+  nodeWidget?:string; // Custom node component
   getSettingSchema?: (
     nodeId: string,
     nodeType: string,
@@ -43,6 +44,7 @@ export interface TNodeItem {
   disabledCopy?: boolean;
   disabledDelete?: boolean;
   onTesting: (node: any, nodes: any) => void; // Single point debugging method
+  showTestingBtn?: boolean;
 }
 
 export interface TNodeGroup {
@@ -118,8 +120,20 @@ export interface THandle {
 export interface FlowProps {
   key?: string;
   initialValues?: {
-    nodes: any[];
-    edges: any;
+    nodes: Array<{
+      id: string;
+      type: string;
+      data: Record<string, any>;
+      position: {
+        x: number;
+        y: number;
+      };
+    }>;
+    edges: Array<{
+      id: string;
+      source: string;
+      target: string;
+    }>;
   };
   layout?: 'LR' | 'TB';
   /**

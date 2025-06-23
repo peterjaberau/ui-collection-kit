@@ -30,6 +30,7 @@ export default memo((props: any) => {
 
   return (
     <Handle
+      {...handleProps}
       type="source"
       position={position}
       isConnectable={isConnectable}
@@ -43,7 +44,6 @@ export default memo((props: any) => {
         setIsShowTooltip(false);
         setOpenNodeSelectPopover(true);
       }}
-      {...handleProps}
       {...rest}
     >
       {(selected || isHovered || openNodeSelectPopover) && (

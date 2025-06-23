@@ -111,7 +111,7 @@ const CardList = (props: any) => {
             </div>
           );
         })}
-        {!hideAdd && (
+        {(!schema.max || fields.length < schema.max) && !hideAdd && (
           <div className="fr-list-add-btn">
             <Button
               {...addBtnProps}

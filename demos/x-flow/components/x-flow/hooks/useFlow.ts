@@ -13,7 +13,7 @@ import { message } from 'antd';
 // 1. Try to reuse existing methods of reactflow instead of reinventing the wheel
 // 2. Do not expose new methods and states unless necessary
 
-export const useFlow = () => {
+export const useFlow: any = () => {
   const storeApi = useStoreApi();
   const instance = storeApi.getState();
 
@@ -107,7 +107,7 @@ export const useFlow = () => {
       const newEdges = {
         id: uuid(),
         source: nodeId,
-        target: storeApi.getState().copyNodes[0].id,
+        target: storeApi.getState().copyNodes[0]?.id,
         ...data,
       };
       record(() => {
