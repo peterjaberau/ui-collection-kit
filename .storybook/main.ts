@@ -6,16 +6,13 @@ import path from 'path';
 
 const config: StorybookConfig = {
   stories: [
-    "../templates/starter/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../packages/unstyled/react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../demos/react-lite/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    // "../templates/starter/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../packages/ui-components/unstyled-react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    // "../demos/react-lite/**/*.stories.@(js|jsx|mjs|ts|tsx)",
 
   ],
   addons: [
-      '@storybook/addon-a11y',
-      '@storybook/addon-essentials',
-      '@storybook/addon-themes',
-      '@storybook/addon-interactions',
+      '@storybook/addon-a11y'
   ],
   framework: {
     name: "@storybook/react-vite",

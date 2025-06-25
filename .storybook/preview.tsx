@@ -1,9 +1,5 @@
-import { withThemeByClassName } from "@storybook/addon-themes"
-import type { Preview, ReactRenderer } from "@storybook/react"
-import React from "react"
-// import "./styles/tailwind.css"
+import type { Preview } from '@storybook/react-vite'
 import "./styles/tailwind.css"
-// import "./styles/styles.css"
 
 const preview: Preview = {
   parameters: {
@@ -15,23 +11,10 @@ const preview: Preview = {
       },
     },
     layout: "padded",
+    controls: { disable: true },
+    backgrounds: { disable: true },
+    viewport: { disable: true },
   },
-  decorators: [
-    withThemeByClassName({
-      themes: {
-        light: "light",
-        dark: "dark",
-      },
-      defaultTheme: "light",
-    }),
-    (Story) => (
-      <>
-        <div className="font-mono antialiased">
-          <Story />
-        </div>
-      </>
-    ),
-  ],
 }
 
 export default preview

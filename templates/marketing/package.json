@@ -7,8 +7,6 @@
     "dev": "next dev  -p 4021",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "compute-map": "node ./scripts/computeMap.js"
   },
   "dependencies": {
@@ -62,7 +60,6 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
     "@svgr/webpack": "^8.1.0",
     "@types/d3-scale": "^4.0.8",
     "@types/leaflet": "^1.9.15",
@@ -70,11 +67,7 @@
     "@types/ms": "2.1.0",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.0.3",
-    "eslint-config-next": "14.2.5",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-tailwindcss": "^3.17.5",
     "postcss": "^8",
-    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.14",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5"

@@ -1,0 +1,15 @@
+import type { Meta } from '@storybook/react-vite'
+
+const meta: Meta = {
+  title: 'UI / Unstyled / Switch',
+}
+
+export default meta
+
+export { Basic } from './examples/basic'
+export { Controlled } from './examples/controlled'
+export { Disabled } from './examples/disabled'
+export { InitialValue } from './examples/initial-value'
+export { RenderProp } from './examples/render-prop'
+export { RootProvider } from './examples/root-provider'
+export { WithField } from './examples/with-field'

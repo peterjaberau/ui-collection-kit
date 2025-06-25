@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "next dev -p 4020",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache"
+    "start": "next start"
   },
   "dependencies": {
     "next": "15.4.0-canary.7",
@@ -45,7 +43,6 @@
   },
   "devDependencies": {
     "autoprefixer": "10.4.17",
-    "@storybook/react": "8.6.12",
     "tailwindcss": "^3.4.14",
     "tailwindcss-animate": "^1.0.7",
     "@types/ms": "2.1.0",
@@ -53,8 +50,6 @@
     "@types/react": "19.1.2",
     "@types/react-dom": "19.0.3",
     "postcss": "^8",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.8",
     "typescript": "^5"
   },
   "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af"

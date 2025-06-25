@@ -6,17 +6,17 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+
+
     "template-starter": "pnpm --filter \"./templates/starter\"",
     "start-template-starter": "pnpm template-starter dev",
+
     "template-hr": "pnpm --filter \"./templates/hr\"",
     "start-template-hr": "pnpm template-hr dev",
 
     "demos-react-lite": "pnpm --filter \"./demos/react-lite\"",
     "start-demos-react-lite": "pnpm demos-react-lite dev",
 
-
-    "present-storybook": "pnpm --filter \"./apps/present\"",
-    "start-present-storybook": "pnpm present-storybook storybook",
     "packages": "pnpm --filter=./packages/** -r",
     "build": "pnpm packages -- build",
     "postbuild": "pnpm document-types && pnpm document-attr",
@@ -65,22 +65,15 @@
     "tsx": "4.19.3",
     "typescript": "5.8.3",
     "vercel-submodules": "1.0.10",
-    "vite": "6.3.0",
+
     "vite-plugin-dts": "4.5.3",
     "vitest": "3.1.1"
   },
   "devDependencies": {
-    "storybook": "8.6.12",
-    "@storybook/addon-a11y": "8.6.12",
-    "@storybook/addon-essentials": "8.6.12",
-    "@storybook/addon-themes": "8.6.12",
-    "@storybook/addon-interactions": "8.6.12",
-    "@storybook/blocks": "^8.6.7",
-    "@storybook/react": "8.6.12",
-    "@storybook/nextjs": "^8.6.7",
-    "@storybook/react-vite": "8.6.12",
-    "@storybook/manager-api": "8.6.12",
-    "@storybook/theming": "8.6.12",
+    "@storybook/addon-a11y": "9.0.10",
+    "@storybook/react-vite": "9.0.10",
+    "storybook": "9.0.10",
+    "vite": "6.3.5",
     "@types/react-dom": ">=18.3.1",
     "@types/react": ">=18.3.1",
     "react": ">=18.3.1",
@@ -94,6 +87,11 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@storybook/*": "8.6.12"
+    }
   },
   "packageManager": "pnpm@10.8.1"
 }

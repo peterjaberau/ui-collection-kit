@@ -1,0 +1,12 @@
+import type { Meta } from '@storybook/react-vite'
+
+const meta: Meta = {
+  title: 'UI / Unstyled / Carousel',
+}
+
+export default meta
+
+export { Autoplay } from './examples/autoplay'
+export { Basic } from './examples/basic'
+export { Controlled } from './examples/controlled'
+export { RootProvider } from './examples/root-provider'
