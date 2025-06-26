@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Scatter Chart",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Scatter Chart",
+
 }
 
 export { ScatterChartBasic as Basic } from "../__compositions__/examples/charts/scatter-chart-basic"

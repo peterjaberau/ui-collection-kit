@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Slider",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Slider",
+
+} 
 
 export { SliderBasic as Basic } from "../__compositions__/examples/components/slider/slider-basic"
 export { SliderChangeEnd as ChangeEnd } from "../__compositions__/examples/components/slider/slider-change-end"

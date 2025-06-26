@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Breadcrumb",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Breadcrumb",
+
+} 
 
 export { BreadcrumbBasic as Basic } from "../__compositions__/examples/components/breadcrumb/breadcrumb-basic"
 export { BreadcrumbWithEllipsis as Ellipsis } from "../__compositions__/examples/components/breadcrumb/breadcrumb-with-ellipsis"

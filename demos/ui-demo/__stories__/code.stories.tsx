@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Typography / Code",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Typography / Code",
+
+} 
 
 export { CodeBasic as Basic } from "../__compositions__/examples/components/code/code-basic"
 export { CodeWithColors as Colors } from "../__compositions__/examples/components/code/code-with-colors"

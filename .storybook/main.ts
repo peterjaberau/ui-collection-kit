@@ -1,46 +1,54 @@
-import { dirname, join } from "path";
-import type { StorybookConfig } from '@storybook/react-vite'
-import { mergeConfig } from 'vite';
-import tailwindConfig from './tailwind.config';
-import path from 'path';
+import type { StorybookConfig } from "@storybook/react-vite"
+import { mergeConfig } from "vite"
 
 const config: StorybookConfig = {
   stories: [
-    // "../templates/starter/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../packages/ui-components/unstyled-react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    // "../demos/react-lite/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-
+    "../demos/ui-demo/**/*.mdx)",
+    "../demos/ui-demo/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    // "!**/node_modules/**"
   ],
-  addons: [
-      '@storybook/addon-a11y'
-  ],
+  addons: ["@storybook/addon-a11y", "@storybook/addon-themes", "@storybook/addon-docs"],
   framework: {
     name: "@storybook/react-vite",
-    options: {},
+    options: { builder: {} },
   },
-  staticDirs: ['../public'],
+  staticDirs: ["../public"],
   core: {
     disableTelemetry: true,
+    disableProjectJson: true,
   },
   typescript: {
     reactDocgen: false,
   },
+  refs: {
+    "@chakra-ui/react": {
+      disable: true,
+    },
+  },
 
   viteFinal: async (config, { configType }) => {
     return mergeConfig(config, {
-      css: {
-        postcss: {
-          plugins: [
-            require('tailwindcss')(tailwindConfig),
-            require('autoprefixer'),
-          ],
-        },
+      optimizeDeps: {
+        include: [
+          "@emotion/react",
+          "@emotion/styled",
+          "react/jsx-runtime",
+          "react/jsx-dev-runtime",
+        ],
+        exclude: ["@storybook/*"],
       },
+      // css: {
+      //   postcss: {
+      //     plugins: [require("tailwindcss")(tailwindConfig), require("autoprefixer")],
+      //   },
+      // },
       esbuild: {
-        jsx: 'automatic',
+        jsx: "automatic",
       },
-    });
+    })
   },
+
 }
 
 export default config

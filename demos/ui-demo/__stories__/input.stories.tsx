@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Input",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Input",
+
+} 
 
 export { InputBasic as Basic } from "../__compositions__/examples/components/input/input-basic"
 export { InputSizeTable as Sizes } from "../__compositions__/examples/components/input/input-size-table"

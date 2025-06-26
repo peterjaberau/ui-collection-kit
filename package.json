@@ -80,9 +80,11 @@
     "vitest": "3.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "9.0.10",
-    "@storybook/react-vite": "9.0.10",
-    "storybook": "9.0.10",
+    "@storybook/addon-docs": "^9.0.13",
+    "@storybook/addon-a11y": "9.0.13",
+    "@storybook/react-vite": "9.0.13",
+    "@storybook/addon-themes": "^9.0.13",
+    "storybook": "9.0.13",
     "vite": "6.3.5",
     "@types/react-dom": ">=18.3.1",
     "@types/react": ">=18.3.1",
@@ -97,11 +99,6 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@storybook/*": "8.6.12"
-    }
   },
   "packageManager": "pnpm@10.8.1"
 }

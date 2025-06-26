@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Donut Chart",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Charts / Donut Chart",
+
+} 
 
 export { DonutChartBasic as Basic } from "../__compositions__/examples/charts/donut-chart-basic"
 export { DonutChartWithPointLabel as PointLabel } from "../__compositions__/examples/charts/donut-chart-with-point-label"

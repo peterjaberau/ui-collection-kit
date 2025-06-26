@@ -4,7 +4,7 @@ export const steps: TourStepDetails[] = [
   {
     type: 'dialog',
     id: 'step-0',
-    title: 'UI / Unstyled / Centered tour (no target)',
+    title: 'Unstyled / Centered tour (no target)',
     description: 'This is the center of the world. Ready to start the tour?',
     actions: [{ label: 'Next', action: 'next' }],
   },

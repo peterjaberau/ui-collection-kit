@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Progress Circle",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Progress Circle",
+
+} 
 
 export { ProgressCircleBasic as Basic } from "../__compositions__/examples/components/progress/progress-circle-basic"
 export { ProgressCircleIndeterminate as Indeterminate } from "../__compositions__/examples/components/progress/progress-circle-indeterminate"

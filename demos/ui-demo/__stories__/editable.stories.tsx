@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Editable",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Editable",
+
+} 
 
 export { EditableBasic as Basic } from "../__compositions__/examples/components/editable/editable-basic"
 export { EditableControlled as Controlled } from "../__compositions__/examples/components/editable/editable-controlled"

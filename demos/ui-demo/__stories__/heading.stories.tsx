@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Typography / Heading",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Typography / Heading",
+
+} 
 
 export { HeadingBasic as Basic } from "../__compositions__/examples/components/heading/heading-basic"
 export { HeadingWithSizes as Sizes } from "../__compositions__/examples/components/heading/heading-with-sizes"

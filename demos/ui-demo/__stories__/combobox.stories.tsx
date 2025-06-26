@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Combobox",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Combobox",
+
+} 
 
 export { ComboboxBasic as Basic } from "../__compositions__/examples/components/combobox/combobox-basic"
 export { ComboboxAutoHighlight as AutoHighlight } from "../__compositions__/examples/components/combobox/combobox-autohighlight"

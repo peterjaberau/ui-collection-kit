@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Radio",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Radio",
+
+} 
 
 export { RadioBasic as Basic } from "../__compositions__/examples/components/radio/radio-basic"
 export { RadioControlled as Controlled } from "../__compositions__/examples/components/radio/radio-controlled"

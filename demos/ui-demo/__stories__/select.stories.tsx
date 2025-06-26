@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Select",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Select",
+
+}
 
 export { SelectAsyncLoading as AsyncLoading } from "../__compositions__/examples/components/select/select-async-loading"
 export { SelectBasic as Basic } from "../__compositions__/examples/components/select/select-basic"

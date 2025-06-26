@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Color Swatch",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Color Swatch",
+
+} 
 
 export { ColorSwatchBasic as Basic } from "../__compositions__/examples/components/color-swatch/color-swatch-basic"
 export { ColorSwatchMixed as Mixed } from "../__compositions__/examples/components/color-swatch/color-swatch-mixed"

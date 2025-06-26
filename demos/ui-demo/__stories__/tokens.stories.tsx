@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box, Center, For, SimpleGrid, Text } from "@chakra-ui/react"
 
 export default {
-  title: "Foundations / Tokens",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Foundations / Tokens",
+
+} 
 
 export { TokensAnimationStyle as AnimationStyle } from "../__compositions__/examples/tokens/animation-style"
 export { TokensFocusRing as FocusRing } from "../__compositions__/examples/tokens/focus-ring"

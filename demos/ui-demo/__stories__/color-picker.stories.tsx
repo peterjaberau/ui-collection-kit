@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Color Picker",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Color Picker",
+
+} 
 
 export { ColorPickerBasic as Basic } from "../__compositions__/examples/components/color-picker/color-picker-basic"
 export { ColorPickerChangeEnd as ChangeEnd } from "../__compositions__/examples/components/color-picker/color-picker-change-end"

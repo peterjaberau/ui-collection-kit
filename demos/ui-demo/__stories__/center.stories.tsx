@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Layout / Center",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Layout / Center",
+
 }
 
 export { CenterBasic as Basic } from "../__compositions__/examples/components/center/center-basic"

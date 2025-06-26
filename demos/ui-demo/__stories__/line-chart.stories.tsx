@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Line Chart",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Line Chart",
+
 }
 
 export { LineChartAxesLabel as AxesLabel } from "../__compositions__/examples/charts/line-chart-axes-label"

@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Radial Chart",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Radial Chart",
+
 }
 
 export { RadialChartBasic as Basic } from "../__compositions__/examples/charts/radial-chart-basic"

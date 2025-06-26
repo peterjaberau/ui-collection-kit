@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Layout / Stack",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Layout / Stack",
+
+} 
 
 export { StackBasic as Basic } from "../__compositions__/examples/components/stack/stack-basic"
 export { StackHorizontal as Horizontal } from "../__compositions__/examples/components/stack/stack-horizontal"

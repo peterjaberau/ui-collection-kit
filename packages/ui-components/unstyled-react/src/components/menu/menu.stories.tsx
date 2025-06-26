@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react-vite'
 
 const meta: Meta = {
-  title: 'UI / Unstyled / Menu',
+  title: 'Unstyled / Menu',
 }
 
 export default meta

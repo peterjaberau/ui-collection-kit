@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Native Select",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Native Select",
+
+} 
 
 export { NativeSelectBasic as Basic } from "../__compositions__/examples/components/native-select/native-select-basic"
 export { NativeSelectControlled as Controlled } from "../__compositions__/examples/components/native-select/native-select-controlled"

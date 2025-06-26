@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Blockquote",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Blockquote",
+
+} 
 
 export { BlockquoteBasic as Basic } from "../__compositions__/examples/components/blockquote/blockquote-basic"
 export { BlockquoteVariantTable as Variants } from "../__compositions__/examples/components/blockquote/blockquote-variant-table"

@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / List",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / List",
+
+} 
 
 export { ListBasic as Basic } from "../__compositions__/examples/components/list/list-basic"
 export { ListNested as Nested } from "../__compositions__/examples/components/list/list-nested"

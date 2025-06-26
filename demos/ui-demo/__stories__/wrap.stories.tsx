@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Layout / Wrap",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Layout / Wrap",
+
+} 
 
 export { WrapBasic as Basic } from "../__compositions__/examples/components/wrap/wrap-basic"
 export { WrapResponsive as Responsive } from "../__compositions__/examples/components/wrap/wrap-responsive"

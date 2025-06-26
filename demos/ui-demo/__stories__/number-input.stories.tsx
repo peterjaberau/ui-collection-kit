@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / NumberInput",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / NumberInput",
+
+} 
 
 export { NumberInputBasic as Basic } from "../__compositions__/examples/components/number-input/number-input-basic"
 export { NumberInputControlled as Controlled } from "../__compositions__/examples/components/number-input/number-input-controlled"

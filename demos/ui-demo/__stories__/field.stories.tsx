@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Field",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Field",
+
+}
 
 export { FieldBasic as Basic } from "../__compositions__/examples/components/field/field-basic"
 export { FieldHorizontal as Horizontal } from "../__compositions__/examples/components/field/field-horizontal"

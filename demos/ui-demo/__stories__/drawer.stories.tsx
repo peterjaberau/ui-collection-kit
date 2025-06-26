@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Drawer",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Drawer",
+
+} 
 
 export { DrawerBasic as Basic } from "../__compositions__/examples/components/drawer/drawer-basic"
 export { DrawerWithContext as Context } from "../__compositions__/examples/components/drawer/drawer-with-context"

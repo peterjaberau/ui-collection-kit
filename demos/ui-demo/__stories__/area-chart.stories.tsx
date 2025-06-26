@@ -1,14 +1,7 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Area Chart",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Area Chart",
 }
 
 export { AreaChartBasic as Basic } from "../__compositions__/examples/charts/area-chart-basic"

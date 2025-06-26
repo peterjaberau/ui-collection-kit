@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Checkbox Card",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Checkbox Card",
+
+} 
 
 export { CheckboxCardBasic as Basic } from "../__compositions__/examples/components/checkbox/checkbox-card-basic"
 export { CheckboxCardWithDescription as Description } from "../__compositions__/examples/components/checkbox/checkbox-card-with-description"

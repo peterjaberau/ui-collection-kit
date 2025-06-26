@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Textarea",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Textarea",
+
+} 
 
 export { TextareaBasic as Basic } from "../__compositions__/examples/components/textarea/textarea-basic"
 export { TextareaSizeTable as Sizes } from "../__compositions__/examples/components/textarea/textarea-size-table"

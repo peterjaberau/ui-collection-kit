@@ -1,14 +1,7 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Bar Chart",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Bar Chart",
 }
 
 export { BarChartBarColor as BarColor } from "../__compositions__/examples/charts/bar-chart-bar-color"

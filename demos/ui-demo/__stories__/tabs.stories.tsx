@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Tabs",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Tabs",
+
+} 
 
 export { TabsBasic as Basic } from "../__compositions__/examples/components/tabs/tabs-basic"
 export { TabsControlled as Controlled } from "../__compositions__/examples/components/tabs/tabs-controlled"

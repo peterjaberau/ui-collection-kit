@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Stat",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Stat",
+
+} 
 
 export { StatBasic as Basic } from "../__compositions__/examples/components/stat/stat-basic"
 export { StatWithFormatOptions as FormatOptions } from "../__compositions__/examples/components/stat/stat-with-format-options"

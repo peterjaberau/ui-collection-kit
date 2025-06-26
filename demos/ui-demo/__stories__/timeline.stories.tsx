@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Timeline",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Timeline",
+
+} 
 
 export { TimelineAlternating as Alternating } from "../__compositions__/examples/components/timeline/timeline-alternating"
 export { TimelineBasic as Basic } from "../__compositions__/examples/components/timeline/timeline-basic"

@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Image",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Image",
+
+} 
 
 export { ImageBasic as Basic } from "../__compositions__/examples/components/image/image-basic"
 export { ImageCircular as Circular } from "../__compositions__/examples/components/image/image-circular"

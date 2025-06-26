@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Bar List",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Bar List",
+
 }
 
 export { BarListAscending as Ascending } from "../__compositions__/examples/charts/bar-list-ascending"

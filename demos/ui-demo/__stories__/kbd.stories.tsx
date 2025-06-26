@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Kbd",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Kbd",
+
+} 
 
 export { KbdBasic as Basic } from "../__compositions__/examples/components/kbd/kbd-basic"
 export { KbdFunctionKeys as FunctionKeys } from "../__compositions__/examples/components/kbd/kbd-function-keys"

@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Foundations / System",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Foundations / System",
+
+} 
 
 export { SystemAlertRecipe as AlertRecipe } from "../__compositions__/examples/system/alert-recipe"
 export { SystemColorPalette as ColorPalette } from "../__compositions__/examples/system/color-palette"

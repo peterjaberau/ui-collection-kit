@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Bar Segment",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Bar Segment",
+
 }
 
 export { BarSegmentBasic as Basic } from "../__compositions__/examples/charts/bar-segment-basic"

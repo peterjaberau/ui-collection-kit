@@ -3,16 +3,9 @@ import { Toaster } from "@ui-collection-kit/ui"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Toast",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-        <Toaster />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Toast",
+
+} 
 
 export { ToasterBasic as Basic } from "../__compositions__/examples/components/toaster/toaster-basic"
 export { ToasterClosable as Closable } from "../__compositions__/examples/components/toaster/toaster-closable"

@@ -4,15 +4,9 @@ import { useState } from "react"
 import { Badge, Box, Button, Center, For, Link, Stack, Text } from "@chakra-ui/react"
 
 export default {
-  title: "Foundations / Sandbox",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Foundations / Sandbox",
+
+}
 
 const TimeStamp = () => {
   const [data] = useState(() => new Date().toISOString())

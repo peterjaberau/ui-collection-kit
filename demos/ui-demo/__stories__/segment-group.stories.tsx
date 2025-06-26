@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Segment Group",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Segment Group",
+
+} 
 
 export { SegmentedControlBasic as Basic } from "../__compositions__/examples/components/segmented-control/segmented-control-basic"
 export { SegmentedControlControlled as Controlled } from "../__compositions__/examples/components/segmented-control/segmented-control-controlled"

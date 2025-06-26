@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Radar Chart",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Radar Chart",
+
 }
 
 export { RadarChartBasic as Basic } from "../__compositions__/examples/charts/radar-chart-basic"

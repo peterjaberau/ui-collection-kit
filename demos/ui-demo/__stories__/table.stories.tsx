@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Table",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Table",
+
+} 
 
 export { TableBasic as Basic } from "../__compositions__/examples/components/table/table-basic"
 export { TableWithColumnBorder as ColumnBorder } from "../__compositions__/examples/components/table/table-with-column-border"

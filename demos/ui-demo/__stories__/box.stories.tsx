@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Layout / Box",
-  decorators: [
-    (Story) => (
-      <Box p="4">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Layout / Box",
+
+} 
 
 export { BoxBasic as Basic } from "../__compositions__/examples/components/box/box-basic"
 export { BoxWithPseudoProps as PseudoProps } from "../__compositions__/examples/components/box/box-with-pseudo-props"

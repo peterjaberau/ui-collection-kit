@@ -1,16 +1,11 @@
 import type { Meta } from "@storybook/react-vite"
 import { Box } from "@chakra-ui/react"
 
-export default {
-  title: "Components / Accordion",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+const meta: Meta = {
+  title: "Styled / Components / Accordion",
+}
+
+export default meta
 
 export { AccordionBasic as Basic } from "../__compositions__/examples/components/accordion/accordion-basic"
 export { AccordionControlled as Controlled } from "../__compositions__/examples/components/accordion/accordion-controlled"

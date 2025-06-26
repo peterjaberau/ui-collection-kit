@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react-vite'
 
 const meta: Meta = {
-  title: 'UI / Unstyled / Fieldset',
+  title: 'Unstyled / Fieldset',
 }
 
 export default meta

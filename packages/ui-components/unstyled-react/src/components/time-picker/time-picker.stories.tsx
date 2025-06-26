@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react-vite'
 
 const meta: Meta = {
-  title: 'UI / Unstyled / Time Picker',
+  title: 'Unstyled / Time Picker',
 }
 
 export default meta

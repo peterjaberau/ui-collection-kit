@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Steps",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Steps",
+
+} 
 
 export { StepsBasic as Basic } from "../__compositions__/examples/components/steps/steps-basic"
 export { StepsControlled as Controlled } from "../__compositions__/examples/components/steps/steps-controlled"

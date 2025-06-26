@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react-vite'
 
 const meta: Meta = {
-  title: 'UI / Unstyled / Combobox',
+  title: 'Unstyled / Combobox',
 }
 
 export default meta

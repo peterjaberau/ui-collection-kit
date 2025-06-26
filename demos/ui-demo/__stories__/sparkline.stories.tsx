@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Sparkline",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Sparkline",
+
 }
 
 export { SparklineBarChart as BarChart } from "../__compositions__/examples/charts/sparkline-bar-chart"

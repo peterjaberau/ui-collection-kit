@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Password Input",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Password Input",
+
+} 
 
 export { PasswordInputBasic as Basic } from "../__compositions__/examples/components/password-input/password-input-basic"
 export { PasswordInputControlled as Controlled } from "../__compositions__/examples/components/password-input/password-input-controlled"

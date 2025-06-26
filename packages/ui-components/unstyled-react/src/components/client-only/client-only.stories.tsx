@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react-vite'
 
 const meta: Meta = {
-  title: 'UI / Unstyled / ClientOnly',
+  title: 'Unstyled / ClientOnly',
 }
 
 export default meta

@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Avatar",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Avatar",
+
+} 
 
 export { AvatarBasic as Basic } from "../__compositions__/examples/components/avatar/avatar-basic"
 export { AvatarGroupWithStacking as GroupStacking } from "../__compositions__/examples/components/avatar/avatar-group-with-stacking"

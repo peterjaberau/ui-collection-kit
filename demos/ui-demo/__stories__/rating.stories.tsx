@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Rating",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Rating",
+
+} 
 
 export { RatingBasic as Basic } from "../__compositions__/examples/components/rating/rating-basic"
 export { RatingControlled as Controlled } from "../__compositions__/examples/components/rating/rating-controlled"

@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Hooks / createOverlay",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Hooks / createOverlay",
+
+} 
 
 export { OverlayBasic as Basic } from "../__compositions__/examples/components/overlay/overlay-basic"
 export { OverlayWithAlert as Alert } from "../__compositions__/examples/components/overlay/overlay-with-alert"

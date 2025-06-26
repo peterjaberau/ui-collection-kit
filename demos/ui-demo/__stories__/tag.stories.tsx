@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Tag",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Tag",
+
+} 
 
 export { TagBasic as Basic } from "../__compositions__/examples/components/tag/tag-basic"
 export { TagWithAvatar as Avatar } from "../__compositions__/examples/components/tag/tag-with-avatar"

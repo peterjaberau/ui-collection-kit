@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Dialog",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Dialog",
+
+} 
 
 export { DialogBasic as Basic } from "../__compositions__/examples/components/dialog/dialog-basic"
 export { DialogControlled as Controlled } from "../__compositions__/examples/components/dialog/dialog-controlled"

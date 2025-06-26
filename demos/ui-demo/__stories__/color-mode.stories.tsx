@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Color Mode",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Color Mode",
+
+}
 
 export { ColorModeBasic as Basic } from "../__compositions__/examples/components/color-mode/color-mode-basic"
 export { ColorModeForced as Forced } from "../__compositions__/examples/components/color-mode/color-mode-forced"

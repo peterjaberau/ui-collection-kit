@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react-vite'
 
 const meta: Meta = {
-  title: 'UI / Unstyled / Radio Group',
+  title: 'Unstyled / Radio Group',
 }
 
 export default meta

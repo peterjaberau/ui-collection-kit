@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Pagination",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Pagination",
+
+} 
 
 export { PaginationAsLink as AsLink } from "../__compositions__/examples/components/pagination/pagination-as-link"
 export { PaginationAttached as Attached } from "../__compositions__/examples/components/pagination/pagination-attached"

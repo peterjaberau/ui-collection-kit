@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Pie Chart",
-  decorators: [
-    (Story: any) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
+  title: "Styled / Charts / Pie Chart",
+
 }
 
 export { PieChartBasic as Basic } from "../__compositions__/examples/charts/pie-chart-basic"

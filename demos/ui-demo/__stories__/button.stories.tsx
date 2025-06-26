@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Button",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Button",
+
+} 
 
 export { ButtonBasic as Basic } from "../__compositions__/examples/components/button/button-basic"
 export { ButtonSizeTable as Sizes } from "../__compositions__/examples/components/button/button-size-table"

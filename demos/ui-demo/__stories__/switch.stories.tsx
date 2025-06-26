@@ -2,15 +2,9 @@ import type { Meta } from "@storybook/react"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Switch",
-  decorators: [
-    (Story) => (
-      <Box p="10">
-        <Story />
-      </Box>
-    ),
-  ],
-} satisfies Meta as any
+  title: "Styled / Components / Switch",
+
+} 
 
 export { SwitchBasic as Basic } from "../__compositions__/examples/components/switch/switch-basic"
 export { SwitchControlled as Controlled } from "../__compositions__/examples/components/switch/switch-controlled"
