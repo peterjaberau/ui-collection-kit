@@ -7,6 +7,10 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
 
+    "style-actors-demo": "pnpm --filter \"./demos/style-actors-demo\"",
+    "start-style-actors-demo": "pnpm style-actors-demo dev",
+
+
     "ui-demo": "pnpm --filter \"./demos/ui-demo\"",
     "start-ui-demo": "pnpm ui-demo dev",
 

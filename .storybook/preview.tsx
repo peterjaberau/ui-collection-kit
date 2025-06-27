@@ -1,14 +1,9 @@
 import type { Preview } from "@storybook/react-vite"
 import { withThemeByClassName } from "@storybook/addon-themes"
+import { MINIMAL_VIEWPORTS } from "storybook/viewport"
 import { ChakraProvider, createSystem, defaultConfig } from "@chakra-ui/react"
-import {
-  Title,
-  Subtitle,
-  Description,
-  Primary,
-  Controls,
-  Stories,
-} from '@storybook/addon-docs/blocks';
+import { WithTheme } from "./decorators/withTheme"
+import { Title, Subtitle, Description, Primary, Controls, Stories } from "@storybook/addon-docs/blocks"
 
 import { ColorModeProvider } from "../packages/ui/src/components/color-mode"
 
@@ -40,9 +35,13 @@ const preview: Preview = {
       //     <Stories />
       //   </>
       // ),
-
     },
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: "^on.*" },
+    jsx: { showFunctions: true }, // To show functions in sources
+    backgrounds: { disable: true },
+    viewport: {
+      viewports: MINIMAL_VIEWPORTS,
+    },
     options: {
       storySort: {
         method: "alphabetical",
@@ -51,7 +50,38 @@ const preview: Preview = {
     },
     layout: "padded",
   },
-  tags: ['autodocs'],
+  globalTypes: {
+    theme: {
+      toolbar: {
+        title: "Theme",
+        icon: "mirror",
+        items: [
+          { value: "light", right: "☼", title: "Light" },
+          { value: "dark", right: "☾", title: "Dark" },
+        ],
+        dynamicTitle: true,
+      },
+    },
+    lang: {
+      toolbar: {
+        title: "Language",
+        icon: "globe",
+        items: [{ value: "en", right: "English", title: "En" }],
+        dynamicTitle: true,
+      },
+    },
+    platform: {
+      toolbar: {
+        title: "Platform",
+        items: [
+          { value: "desktop", title: "Desktop", icon: "browser" },
+          { value: "mobile", title: "Mobile", icon: "mobile" },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  tags: ["autodocs"],
   decorators: [
     withThemeByClassName({
       defaultTheme: "light",
@@ -60,13 +90,12 @@ const preview: Preview = {
         dark: "dark",
       },
     }),
+
     (Story: any, context: any) => {
       return (
-        // <ColorModeProvider forcedTheme={context.globals.theme} enableSystem={false}>
         <ChakraProvider value={system}>
           <Story />
         </ChakraProvider>
-        // </ColorModeProvider>
       )
     },
   ],
