@@ -1,10 +1,5 @@
 'use client';
-import {
-  ChakraProvider,
-  // defineConfig,
-  // defaultConfig,
-  // createSystem,
-} from "@chakra-ui/react"
+import { ChakraProvider } from "@chakra-ui/react"
 import { ThemeProvider } from 'next-themes';
 import { Stack } from '@chakra-ui/react';
 import { useStylingActor } from '../actors/hooks/useStylingActor';

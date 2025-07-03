@@ -1,8 +1,7 @@
-import { GlobalProvider } from '../actors/provider'
+import { GlobalProvider } from '../actors/provider';
 import { Provider } from './provider';
 import { Suspense } from 'react';
-import { NavigationBarTop } from "#app/_components/navigation-bar-top"
-import { VStack, Box, Theme } from "@chakra-ui/react"
+import { VStack, Box, Theme, Flex } from '@chakra-ui/react';
 
 export default function RootLayout({
   children,
@@ -15,12 +14,10 @@ export default function RootLayout({
         <Suspense>
           <GlobalProvider>
             <Provider>
-              <VStack>
-                <NavigationBarTop/>
-                <Box>
-                  {children}
-                </Box>
-              </VStack>
+              <Box>
+
+                {children}
+              </Box>
             </Provider>
           </GlobalProvider>
         </Suspense>

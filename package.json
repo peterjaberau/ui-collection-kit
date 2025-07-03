@@ -10,9 +10,14 @@
     "style-actors-demo": "pnpm --filter \"./demos/style-actors-demo\"",
     "start-style-actors-demo": "pnpm style-actors-demo dev",
 
+    "ui-atlaskit": "pnpm --filter \"./demos/ui-atlaskit\"",
+    "start-ui-atlaskit": "pnpm ui-atlaskit dev",
 
-    "ui-demo": "pnpm --filter \"./demos/ui-demo\"",
-    "start-ui-demo": "pnpm ui-demo dev",
+    "ui-kit-extended": "pnpm --filter \"./demos/ui-kit-extended\"",
+    "start-ui-kit-extended": "pnpm ui-kit-extended dev",
+
+
+
 
 
     "template-starter": "pnpm --filter \"./templates/starter\"",
@@ -47,6 +52,17 @@
     "**/*.{ts,tsx,js,jsx}": "prettier --write"
   },
   "dependencies": {
+    "@statelyai/agent": "1.1.6",
+    "@statelyai/inspect": "^0.4.0",
+    "@xstate/graph": "^3.0.2",
+    "@xstate/react": "^5.0.3",
+    "@xstate/store": "^3.4.1",
+    "xstate": "^5.19.2",
+    "mutative": "1.1.0",
+    "set-value": "4.1.0",
+    "ts-results": "^3.3.0",
+
+
 
     "@chakra-ui/react": "^3.21.0",
     "@chakra-ui/charts": "^3.21.0",
@@ -84,6 +100,7 @@
     "vitest": "3.1.1"
   },
   "devDependencies": {
+    "@types/set-value": "4.0.3",
     "@storybook/addon-docs": "^9.0.13",
     "@storybook/addon-a11y": "9.0.13",
     "@storybook/react-vite": "9.0.13",
@@ -99,7 +116,8 @@
     "tailwindcss": "^3.4.14",
     "tailwindcss-animate": "^1.0.7",
     "autoprefixer": "^10.4.21",
-    "postcss": "^8"
+    "postcss": "^8",
+    "styled-components": "^6.1.8"
   },
   "engines": {
     "node": ">=18.0.0"

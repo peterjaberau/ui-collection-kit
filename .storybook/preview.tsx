@@ -1,23 +1,7 @@
 import type { Preview } from "@storybook/react-vite"
-import { withThemeByClassName } from "@storybook/addon-themes"
 import { MINIMAL_VIEWPORTS } from "storybook/viewport"
-import { ChakraProvider, createSystem, defaultConfig } from "@chakra-ui/react"
 import { WithTheme } from "./decorators/withTheme"
-import { Title, Subtitle, Description, Primary, Controls, Stories } from "@storybook/addon-docs/blocks"
-
-import { ColorModeProvider } from "../packages/ui/src/components/color-mode"
-
-const system = createSystem(defaultConfig, {
-  theme: {
-    tokens: {
-      fonts: {
-        heading: { value: "Inter, sans-serif" },
-        body: { value: "Inter, sans-serif" },
-        mono: { value: "Roboto Mono, monospace" },
-      },
-    },
-  },
-})
+import { GlobalProvider } from "./actors/provider"
 
 const preview: Preview = {
   parameters: {
@@ -25,19 +9,9 @@ const preview: Preview = {
       codePanel: true,
       toc: true,
 
-      // page: () => (
-      //   <>
-      //     <Title />
-      //     <Subtitle />
-      //     <Description />
-      //     <Primary />
-      //     <Controls />
-      //     <Stories />
-      //   </>
-      // ),
     },
     actions: { argTypesRegex: "^on.*" },
-    jsx: { showFunctions: true }, // To show functions in sources
+    jsx: { showFunctions: true },
     backgrounds: { disable: true },
     viewport: {
       viewports: MINIMAL_VIEWPORTS,
@@ -51,13 +25,14 @@ const preview: Preview = {
     layout: "padded",
   },
   globalTypes: {
-    theme: {
+    style: {
       toolbar: {
-        title: "Theme",
-        icon: "mirror",
+        title: "Style",
+        icon: "paintbrush",
         items: [
-          { value: "light", right: "☼", title: "Light" },
-          { value: "dark", right: "☾", title: "Dark" },
+          { value: "default", title: "Default" },
+          { value: "alignui", title: "Align UI" },
+          { value: "saas", title: "SaaS" },
         ],
         dynamicTitle: true,
       },
@@ -83,19 +58,12 @@ const preview: Preview = {
   },
   tags: ["autodocs"],
   decorators: [
-    withThemeByClassName({
-      defaultTheme: "light",
-      themes: {
-        light: "light",
-        dark: "dark",
-      },
-    }),
 
     (Story: any, context: any) => {
       return (
-        <ChakraProvider value={system}>
-          <Story />
-        </ChakraProvider>
+        <GlobalProvider>
+          <WithTheme story={<Story />} context={context}/>
+        </GlobalProvider>
       )
     },
   ],

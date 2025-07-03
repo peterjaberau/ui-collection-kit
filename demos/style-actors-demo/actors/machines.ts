@@ -8,6 +8,7 @@ export const rootMachine = createMachine({
     input,
   }),
 })
+
 export const stylingMachine = createMachine({
   initial: "loading",
   context: ({ input }) => ({
@@ -62,6 +63,14 @@ export const appSessionMachine = createMachine({
 })
 
 export const pageSessionMachine = createMachine({
+  context: ({ input }) => ({
+    pageSession: dataDefault.pageSession,
+    input,
+  }),
+})
+
+
+export const dataTransformerMachine = createMachine({
   context: ({ input }) => ({
     pageSession: dataDefault.pageSession,
     input,

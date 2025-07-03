@@ -1,62 +1,22 @@
-import { defineConfig, defaultConfig, createSystem, ChakraProvider } from '@chakra-ui/react';
-import { withThemeByClassName } from "@storybook/addon-themes"
+import { ChakraProvider } from "@chakra-ui/react"
+import { useStylingActor } from "../actors/hooks/useStylingActor"
 import { ColorModeProvider } from "../../packages/ui/src"
+import { useEffect, useState } from "react"
 
-const themeDefault = createSystem(defaultConfig, {
-  cssVarsPrefix: 'theme-default'
-})
+export const WithTheme: any = ({ story, context }: any) => {
+  const { getStyleByName, defaultStyle } = useStylingActor()
+  const [locaStyle, setLocalStyle] = useState(defaultStyle)
 
-const themeWithFont = createSystem(defaultConfig, {
-  theme: {
-    tokens: {
-      fonts: {
-        heading: { value: "Inter, sans-serif" },
-        body: { value: "Inter, sans-serif" },
-        mono: { value: "Roboto Mono, monospace" },
-      },
-    },
-  },
-  cssVarsPrefix: 'theme-with-font'
-})
+  useEffect(() => {
+    setLocalStyle(getStyleByName(context?.globals?.style) || defaultStyle)
+  }, [context?.globals?.style])
 
-const themeCustom = createSystem(defaultConfig, {
-  cssVarsPrefix: 'theme-custom'
-})
-
-const STYLES = {
-  'style-default': themeDefault,
-  'style-with-font': themeWithFont,
-  'style-custom': themeCustom,
-};
-
-export const WithTheme = (Story: any, context: any) => {
   return (
-
-      <ColorModeProvider
-        forcedTheme={context?.global?.theme}
-        enableSystem={false}
-      >
-        <ChakraProvider value={themeDefault}>
-          <Story />
-        </ChakraProvider>
+    <ChakraProvider value={locaStyle}>
+      <ColorModeProvider forcedTheme={context?.globals?.theme} enableSystem={false}>
+        {story}
       </ColorModeProvider>
+    </ChakraProvider>
+  )
+}
 
-  );
-};
-
-/*
-
-import type {Decorator} from '@storybook/react-webpack5';
-
-import {ThemeProvider} from '../../src';
-
-export const WithTheme: Decorator = (Story, context) => {
-    return (
-        <ThemeProvider theme={context.globals.theme} direction={context.globals.direction}>
-            <Story {...context} />
-        </ThemeProvider>
-    );
-};
-
-
- */

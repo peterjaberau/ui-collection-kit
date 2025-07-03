@@ -1,12 +1,12 @@
 'use client';
-import { Box, HStack, Stack, Button } from '@chakra-ui/react';
-import { useRouter } from "next/navigation"
+import { Box, Badge, For } from '@chakra-ui/react';
+
+
 
 export default function Page() {
-  const navigate = useRouter();
   return (
     <>
-      home
+
     </>
   );
 }

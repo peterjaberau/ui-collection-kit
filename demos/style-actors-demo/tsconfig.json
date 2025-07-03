@@ -28,7 +28,11 @@
       }
     ],
     "paths": {
+      "@/lib/*": ["./lib/*"],
+      "@/components/*": ["./components/*"],
       "#machines/*": ["./machines/*"],
+      "#actors/*": ["./actors/*"],
+      "#plugins/*": ["./components/plugins/*"],
       "#app/*": ["./app/*"],
       "#components/*": ["./components/*"],
       "#presets/*": ["./presets/*"]
