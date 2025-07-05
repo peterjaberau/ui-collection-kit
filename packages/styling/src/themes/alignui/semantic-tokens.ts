@@ -59,19 +59,19 @@ export const semanticColors = defineSemanticTokens.colors({
       value: { _light: '{colors.white}', _dark: '{colors.black}' },
     },
     muted: {
-      value: { _light: '{colors.gray.50}', _dark: '{colors.gray.950}' },
+      value: { _light: '{colors.blue.50}', _dark: '{colors.blue.950}' },
     },
     subtle: {
-      value: { _light: '{colors.gray.100}', _dark: '{colors.gray.900}' },
+      value: { _light: '{colors.blue.300}', _dark: '{colors.blue.900}' },
     },
     emphasized: {
-      value: { _light: '{colors.gray.200}', _dark: '{colors.gray.800}' },
+      value: { _light: '{colors.blue.200}', _dark: '{colors.blue.800}' },
     },
     inverted: {
       value: { _light: '{colors.black}', _dark: '{colors.white}' },
     },
     content: {
-      value: { _light: '{colors.gray.50}', _dark: '{colors.gray.950}' },
+      value: { _light: '{colors.blue.800}', _dark: '{colors.blue.950}' },
     },
     panel: {
       value: { _light: '{colors.white}', _dark: '{colors.gray.900}' },
@@ -81,7 +81,7 @@ export const semanticColors = defineSemanticTokens.colors({
         _light:
           'color-mix(in oklch, {colors.white} var(--overlay-translucency), transparent)',
         _dark:
-          'color-mix(in oklch, {colors.gray.900} var(--overlay-translucency), transparent)',
+          'color-mix(in oklch, {colors.blue.900} var(--overlay-translucency), transparent)',
       },
     },
     backdrop: {
@@ -136,16 +136,16 @@ export const semanticColors = defineSemanticTokens.colors({
 
   border: {
     DEFAULT: {
-      value: { _light: '{colors.gray.200}', _dark: '{colors.gray.800}' },
+      value: { _light: '{colors.blue.500}', _dark: '{colors.blue.950}' },
     },
     muted: {
       value: { _light: '{colors.gray.50}', _dark: '{colors.gray.950}' },
     },
     subtle: {
-      value: { _light: '{colors.gray.100}', _dark: '{colors.gray.900}' },
+      value: { _light: '{colors.blue.100}', _dark: '{colors.blue.950}' },
     },
     emphasized: {
-      value: { _light: '{colors.gray.300}', _dark: '{colors.gray.700}' },
+      value: { _light: '{colors.blue.500}', _dark: '{colors.blue.950}' },
     },
     inverted: {
       value: { _light: '{colors.gray.800}', _dark: '{colors.gray.200}' },
@@ -559,13 +559,13 @@ export const semanticColors = defineSemanticTokens.colors({
       value: { _light: '{colors.blue.50}', _dark: '{colors.blue.950}' },
     },
     subtle: {
-      value: { _light: '{colors.blue.100}', _dark: '{colors.blue.900}' },
+      value: { _light: '{colors.white}', _dark: '{colors.blue.600}' },
     },
     emphasized: {
-      value: { _light: '{colors.blue.200}', _dark: '{colors.blue.800}' },
+      value: { _light: '{colors.blue.600}', _dark: '{colors.blue.600}' },
     },
     solid: {
-      value: { _light: '{colors.blue.600}', _dark: '{colors.blue.600}' },
+      value: { _light: '{colors.blue.500}', _dark: '{colors.blue.700}' },
     },
     focusRing: {
       value: { _light: '{colors.blue.600}', _dark: '{colors.blue.600}' },

@@ -5,7 +5,7 @@
 @layer base {
   /*#region Colors */
   :root {
-    --gray-950: #171717;
+    --gray-950: #000000;
     --gray-900: #1c1c1c;
     --gray-800: #292929;
     --gray-700: #333333;

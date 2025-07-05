@@ -3,7 +3,7 @@ import { defineRecipe } from '@chakra-ui/react/styled-system'
 export const buttonRecipe = defineRecipe({
   className: 'chakra-button',
   base: {
-    colorPalette: 'gray',
+    colorPalette: 'blue',
     display: 'inline-flex',
     appearance: 'none',
     alignItems: 'center',
@@ -33,28 +33,31 @@ export const buttonRecipe = defineRecipe({
   variants: {
     size: {
       xs: {
-        gap: '1',
-        h: '6',
+        gap: '2.5',
+        h: '7',
         minW: '6',
-        textStyle: 'xs',
-        borderRadius: 'control.sm',
+        textStyle: 'sm',
+        borderRadius: 'control.lg',
         px: '2',
+        icon: '-mx-1',
       },
       sm: {
-        gap: '2',
-        h: '7',
+        gap: '2.5',
+        h: '8',
         minW: '7',
         textStyle: 'sm',
-        borderRadius: 'control.md',
+        borderRadius: 'control.lg',
         px: '2.5',
+        icon: '-mx-1',
       },
       md: {
-        gap: '2',
-        h: '8',
+        gap: '3',
+        h: '10',
         minW: '8',
-        borderRadius: 'control.md',
+        borderRadius: 'control.lg',
         textStyle: 'sm',
-        px: '3',
+        px: '3.5',
+        icon: '-mx-1',
       },
       lg: {
         gap: '3',
@@ -63,6 +66,7 @@ export const buttonRecipe = defineRecipe({
         borderRadius: 'control.lg',
         textStyle: 'md',
         px: '4.5',
+        icon: '-mx-1',
       },
       xl: {
         gap: '3',
@@ -80,10 +84,10 @@ export const buttonRecipe = defineRecipe({
         boxShadow: 'sm',
         color: 'colorPalette.contrast',
         _hover: {
-          bg: 'colorPalette.solid/90',
+          bg: 'colorPalette.700',
         },
         _popupExpanded: {
-          bg: 'colorPalette.solid/90',
+          bg: 'colorPalette.500',
         },
       },
 
@@ -92,10 +96,14 @@ export const buttonRecipe = defineRecipe({
         color: 'colorPalette.fg',
         _hover: {
           bg: 'colorPalette.subtle',
+          borderWidth: '1px',
+          borderColor: 'colorPalette.600',
         },
         _popupExpanded: {
           bg: 'colorPalette.subtle',
+
         },
+
       },
 
       glass: {
@@ -155,11 +163,12 @@ export const buttonRecipe = defineRecipe({
       },
 
       outline: {
-        borderWidth: '0.5px',
+        borderWidth: '1px',
         borderColor: 'colorPalette.emphasized',
         color: 'colorPalette.fg',
         _hover: {
           bg: 'colorPalette.muted',
+          borderColor: 'transparent'
         },
         _popupExpanded: {
           bg: 'colorPalette.muted',
@@ -167,9 +176,12 @@ export const buttonRecipe = defineRecipe({
       },
 
       ghost: {
+
         color: 'colorPalette.fg',
         _hover: {
-          bg: 'colorPalette.subtle',
+          bg: 'colorPalette.muted',
+          borderColor: 'transparent'
+
         },
         _popupExpanded: {
           bg: 'colorPalette.subtle',
@@ -180,6 +192,9 @@ export const buttonRecipe = defineRecipe({
         color: 'colorPalette.fg',
       },
     },
+
+
+
   },
 
   compoundVariants: [
@@ -193,7 +208,7 @@ export const buttonRecipe = defineRecipe({
 
   defaultVariants: {
     size: 'md',
-    variant: 'surface',
-    colorPalette: 'gray',
+    variant: 'solid',
+    colorPalette: 'blue',
   },
 })
