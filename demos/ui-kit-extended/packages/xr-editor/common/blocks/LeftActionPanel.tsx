@@ -2,18 +2,18 @@ import { chakra, defineSlotRecipe, useSlotRecipe } from "@chakra-ui/react"
 import { Box, Stack } from "@chakra-ui/react"
 
 
-export const FlexibleEdge = ({children}: any) => {
+export const LeftActionPanel = ({children}: any) => {
 
   return (
-    <Box
-      data-name="FlexibleEdge"
+    <Stack
+      data-name="LeftActionPanel"
+      justify="space-between"
       css={{
         height: "full",
-        width: "50px",
-        bg: "bg.panel",
       }}
     >
       {children}
-    </Box>
+
+    </Stack>
   )
 }

@@ -2,17 +2,16 @@ import { chakra, defineSlotRecipe, useSlotRecipe } from "@chakra-ui/react"
 import { Box, Container, HStack } from "@chakra-ui/react"
 
 
-export const WorkbenchHeader = ({children}: any) => {
-
+export const WorkbenchToolbar = ({children}: any) => {
   return (
     <HStack
-      data-name="WorkbenchHeader"
+      data-name="WorkbenchToolbar"
       css={{
         width: "full",
-        height: "40px",
+        height: "50px",
         bg: "bg.panel",
-        // bg: "gray.solid",
-        // color: "fg.inverted"
+        borderBottom: "1px solid",
+        borderBottomColor: "border"
       }}
     >
       {children}

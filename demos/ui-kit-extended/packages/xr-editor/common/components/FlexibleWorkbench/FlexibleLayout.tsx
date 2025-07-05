@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { Stack, For, Container } from "@chakra-ui/react"
 import { FlexibleComponent } from "./FlexibleComponent"
-import { FlexibleSplit1 } from "./FlexibleSplit"
+import { FlexibleSplit } from "./FlexibleSplit"
 
 export interface IFlexibleLayoutProps {
   className?: string
@@ -24,9 +24,9 @@ export const FlexibleLayout = ({
 
   const RenderFlexibleSplit = () => {
     return (
-      <FlexibleSplit1 direction={direction} defaultSize={defaultSize}>
+      <FlexibleSplit direction={direction} defaultSize={defaultSize}>
         {children}
-      </FlexibleSplit1>
+      </FlexibleSplit>
     )
   }
 

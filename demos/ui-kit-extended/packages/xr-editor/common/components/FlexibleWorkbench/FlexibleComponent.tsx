@@ -1,7 +1,7 @@
 import { chakra, defineSlotRecipe, useSlotRecipe } from "@chakra-ui/react"
 import { Box, Container, Flex } from "@chakra-ui/react"
 
-export const FlexibleComponent = ({ children }: any) => {
+export const FlexibleComponent = ({ children, direction }: any) => {
   return (
     <Flex
       data-name="FlexibleComponent"
@@ -12,6 +12,7 @@ export const FlexibleComponent = ({ children }: any) => {
       }}
     >
       <Flex
+        flexDirection={direction}
         css={{
           width: "full",
           height: "full",

@@ -9,7 +9,7 @@ export const WorkbenchFooter = ({children}: any) => {
       data-name="WorkbenchFooter"
       css={{
         width: "full",
-        height: "50px",
+        height: "40px",
         bg: "bg.panel",
       }}
     >

@@ -25,7 +25,7 @@ const getCachedSplitterConfig = (childrenCount: number) => {
   return config
 }
 
-export const FlexibleSplit1 = ({
+export const FlexibleSplit = ({
   children,
   direction,
   defaultSize,
