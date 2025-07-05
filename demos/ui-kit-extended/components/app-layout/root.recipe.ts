@@ -114,7 +114,7 @@ export const rootSlotRecipe = defineSlotRecipe({
     left: {
       ...cssDev.base,
       backgroundColor: "white",
-      width: '250px',
+      width: 'full',
       p: '8px',
     },
     leftStart: {
@@ -166,7 +166,7 @@ export const rootSlotRecipe = defineSlotRecipe({
     right: {
       ...cssDev.base,
       backgroundColor: "white",
-      width: '150px',
+      width: 'full',
       p: '8px',
     },
     rightStart: {

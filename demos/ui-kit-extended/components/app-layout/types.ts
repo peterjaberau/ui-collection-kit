@@ -23,5 +23,12 @@ export interface GenericThreePartsProps {
 }
 
 export interface LayoutThreePartsProps
-  extends GenericProps, GenericCssProps, GenericThreePartsProps {}
+  extends GenericProps, GenericCssProps, GenericThreePartsProps {
+  side?: 'left' | 'right' | 'top' | 'bottom';
+  propSizes?: {
+    start?: number,
+    min?: number,
+    max?: number,
+  } | any
+}
 

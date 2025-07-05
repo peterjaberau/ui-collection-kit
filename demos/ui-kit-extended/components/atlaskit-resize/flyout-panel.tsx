@@ -33,17 +33,21 @@ function getProposedWidth({
   initialWidth,
   location,
   direction,
+  minWidth,
+  maxWidth
 }: {
   initialWidth: number
   location: DragLocationHistory
   direction: "left" | "right"
+  minWidth?: number
+  maxWidth?: number
 }): number {
   const diffX =
     direction === "left"
       ? location.current.input.clientX - location.initial.input.clientX
       : location.initial.input.clientX - location.current.input.clientX
 
-  return Math.min(Math.max(sizes[direction].min, initialWidth + diffX), sizes[direction].max)
+  return Math.min(Math.max(minWidth ? minWidth : sizes[direction].min, initialWidth + diffX), maxWidth? maxWidth : sizes[direction].max)
 }
 
 function getProposedHeight({
@@ -64,9 +68,12 @@ function getProposedHeight({
 }
 
 
-export function FlyoutPanel({ children, side }: { children: any, side: "left" | "right" | "top" | "bottom" }) {
-  const [initialWidth, setInitialWidth] = useState(sizes[side].start)
-  const [initialHeight, setInitialHeight] = useState(sizes[side].start)
+export function FlyoutPanel(
+  { children, side, propSizes }:
+  { children: any, side: "left" | "right" | "top" | "bottom", propSizes?: any }) {
+
+  const [initialWidth, setInitialWidth] = useState(propSizes?.start || sizes[side].start)
+  const [initialHeight, setInitialHeight] = useState(propSizes?.start || sizes[side].start)
 
   const [dragging, setDragging] = useState(false)
   const contentRef = useRef<HTMLDivElement | null>(null)
@@ -93,6 +100,8 @@ export function FlyoutPanel({ children, side }: { children: any, side: "left" | 
             initialWidth,
             location,
             direction: side,
+            minWidth: propSizes?.min || sizes[side].min,
+            maxWidth: propSizes?.max  || sizes[side].max,
           })
           content.style.setProperty("--local-resizing-width", `${newWidth}px`)
         } else if (side === "top" || side === "bottom") {
@@ -184,7 +193,7 @@ export function FlyoutPanel({ children, side }: { children: any, side: "left" | 
     )
   } else if (side === "top" || side === "bottom") {
     return (
-      <Flex flexDir="column" flexShrink={0} flexGrow={0} order={side === "bottom" ? 2 : 0}>
+      <Flex flexDirection="column" flexShrink={0} flexGrow={0} order={side === "bottom" ? 2 : 0}>
         {side === "bottom" && (
           <Box
             ref={dividerRef}

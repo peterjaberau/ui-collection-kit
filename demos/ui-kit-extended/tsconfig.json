@@ -28,11 +28,15 @@
       }
     ],
     "paths": {
+      "#design-system/*": ["./packages/design-system/*"],
+
+
       "#lib/*": ["./lib/*"],
       "#actors/*": ["./actors/*"],
       "#plugins/*": ["./plugins/*"],
       "#app/*": ["./app/*"],
       "#components/*": ["./components/*"],
+      "#packages/*": ["./packages/*"],
       "#utils/*": ["./utils/*"]
     }
   },

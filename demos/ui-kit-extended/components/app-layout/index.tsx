@@ -39,10 +39,11 @@ const Index = (props: LayoutRootProps) => {
   const { header, leftBar, left, main, rightBar, right, footer, ...rest } = restProps;
   const { start: headerStart, center: headerCenter, end: headerEnd } = header ?? {};
   const { start: leftBarStart, center: leftBarCenter, end: leftBarEnd } = leftBar ?? {};
-  const { start: leftStart, center: leftCenter, end: leftEnd } = left ?? {};
+  const { start: leftStart, center: leftCenter, end: leftEnd, propSizes: leftSizes } = left ?? {};
   const { start: rightBarStart, center: rightBarCenter, end: rightBarEnd } = rightBar ?? {};
-  const { start: rightStart, center: rightCenter, end: rightEnd } = right ?? {};
+  const { start: rightStart, center: rightCenter, end: rightEnd, propSizes: rightSizes } = right ?? {};
   const { start: footerStart, center: footerCenter, end: footerEnd } = footer ?? {};
+
 
   const styles = recipe(recipeProps);
 
@@ -105,6 +106,8 @@ const Index = (props: LayoutRootProps) => {
         {left && (
             <RootAside
               css={{ ...styles.left }}
+              propSizes={leftSizes}
+              side='left'
               start={
                 leftStart && (
                   <RootAsideInner css={{ ...styles.leftStart }}>
@@ -133,6 +136,8 @@ const Index = (props: LayoutRootProps) => {
         {right && (
             <RootAside
               css={{ ...styles.right }}
+              propSizes={rightSizes}
+              side='right'
               start={
                 rightStart && (
                   <RootAsideInner css={{ ...styles.rightStart }}>

@@ -8,11 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "react-resizable-panels": "^3.0.3",
+    "bind-event-listener": "^3.0.0",
+    "@ark-ui/react": "5.16.0",
     "ts-tiny-invariant": "^2.0.5",
     "@atlaskit/pragmatic-drag-and-drop-auto-scroll": "2.1.1",
     "@atlaskit/pragmatic-drag-and-drop": "latest",
     "@atlaskit/pragmatic-drag-and-drop-flourish": "2.0.3",
     "@atlaskit/pragmatic-drag-and-drop-live-region": "1.3.0",
+    "@atlaskit/pragmatic-drag-and-drop-react-drop-indicator": "3.2.1",
+    "@atlaskit/pragmatic-drag-and-drop-hitbox": "1.1.0",
     "@atlaskit/app-provider": "latest",
     "@ui-collection-kit/unstyled-react": "workspace:*",
     "react-remove-scroll-bar": "^2.3.8",
