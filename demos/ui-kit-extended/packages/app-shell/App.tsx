@@ -1,3 +1,4 @@
+import { useSystemRegistry } from "#packages/actors/hooks/useSystemRegistry"
 import { Box, chakra, defineSlotRecipe, Stack, useSlotRecipe } from "@chakra-ui/react"
 import { Container, VStack, Button } from "@chakra-ui/react"
 import { FlexibleWorkbench } from "./common/components/FlexibleWorkbench/FlexibleWorkbench"
@@ -25,6 +26,7 @@ import { VAlignerTop } from "./common/components/Workbench/aligner/VAlignerTop"
 import { VAlignerBottom } from "./common/components/Workbench/aligner/VAlignerBottom"
 import { VAlignerMiddle } from "./common/components/Workbench/aligner/VAlignerMiddle"
 import { DebuggerDemo } from "./common/demos/DebuggerDemo"
+import { DemoRegistryList, DemoIconsRegistryList } from "#packages/app-shell/common/demos/DemoRegistryList"
 
 const appSlotRecipe = defineSlotRecipe({
   slots: ["root", "workbench"],
@@ -32,8 +34,10 @@ const appSlotRecipe = defineSlotRecipe({
     root: {
       height: "100vh",
       width: "100vw",
-      overflow: "hidden",
+      maxHeight: "100vh",
+      scrollbarWidth: "none", // Firefox
       "&::-webkit-scrollbar": {
+        display: 'none', // Safari and Chrome
         width: 0,
         height: 0,
       },
@@ -49,6 +53,10 @@ export const AppRoot = () => {
   const recipe = useSlotRecipe({ recipe: appSlotRecipe })
   const styles = recipe()
 
+  const { registryNames, registryComponent }: any = useSystemRegistry()
+
+  console.log("registryNames", registryNames)
+
   return (
     <Container
       data-name="app-root"
@@ -56,6 +64,7 @@ export const AppRoot = () => {
       css={{
         width: "100vw",
         height: "100vh",
+
         p: 0,
         background: "bg.emphasized",
       }}
@@ -90,7 +99,13 @@ export const AppRoot = () => {
           </FlexibleEdge>
 
           <FlexibleLayout type="split" defaultSize={[15, 70, 15]}>
-            <FlexibleLayout>right.sidebar</FlexibleLayout>
+            <FlexibleLayout>
+              <DemoIconsRegistryList />
+
+            </FlexibleLayout>
+
+
+
             <FlexibleLayout direction="column">
               <WorkbenchToolbar>
                 <HAligner>
@@ -126,7 +141,9 @@ export const AppRoot = () => {
               </FlexibleLayout>
             </FlexibleLayout>
 
-            <FlexibleLayout>left.sidebar</FlexibleLayout>
+            <FlexibleLayout>
+              <DemoRegistryList />
+            </FlexibleLayout>
           </FlexibleLayout>
           <FlexibleEdge>
             <VAligner>

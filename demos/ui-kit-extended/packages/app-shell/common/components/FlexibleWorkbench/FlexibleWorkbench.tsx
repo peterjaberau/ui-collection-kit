@@ -11,7 +11,6 @@ export const FlexibleWorkbench = ({children}: any) => {
         css={{
           width: "full",
           height: "full",
-          overflow: "hidden",
         }}
       >
         {children}

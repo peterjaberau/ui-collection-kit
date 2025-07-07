@@ -62,7 +62,8 @@
     "mutative": "1.1.0",
     "set-value": "4.1.0",
     "ts-results": "^3.3.0",
-    "react18-json-view": "^0.2.9"
+    "react18-json-view": "^0.2.9",
+    "@ui-collection-kit/icons": "workspace:*"
 
   },
   "devDependencies": {

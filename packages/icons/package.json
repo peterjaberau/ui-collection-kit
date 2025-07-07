@@ -1,0 +1,27 @@
+{
+  "name": "@ui-collection-kit/icons",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "description": "@ui-collection-kit Icons",
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf lib && esbuild src/index.ts src/__generated__/svg.ts --outdir=lib --bundle --format=esm --packages=external",
+    "generate": "rm -fr src/__generated__ && tsx generate.ts && prettier --write src/__generated__",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@svgo/jsx": "^0.4.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "change-case": "^5.4.4",
+    "react": "^19",
+    "react-dom": "^19",
+    "svgo": "^3.3.2"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19"
+  }
+
+}

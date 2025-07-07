@@ -46,7 +46,8 @@ export const FlexibleSplit = ({
       css={{
         width: "full",
         height: "full",
-        bg: "bg.emphasized",
+        // bg: "bg.emphasized",
+        background: 'bg.panel',
       }}
     >
       <Splitter.Root
@@ -57,7 +58,7 @@ export const FlexibleSplit = ({
       >
         {childrenArray.map((child: any, index: number) => (
           <React.Fragment key={index}>
-            <Splitter.Panel id={`panel-${index}`} >
+            <Splitter.Panel id={`panel-${index}`}>
               {React.isValidElement(child)
                 ? React.cloneElement(child, {
                   ...(child.props || {}), // Preserve original props
@@ -68,9 +69,14 @@ export const FlexibleSplit = ({
 
 
 
+            {/* handler */}
             {index < childrenArray.length - 1 && (
               <Splitter.ResizeTrigger id={config.resizeTriggerIds[index]} aria-label={`Resize panel ${index + 1}`}>
-                <Stack height="full" width="full" justify="center" align="center">
+                <Stack height="full" width="full" justify="center" align="center"
+                css={{
+                  bg: "bg.emphasized",
+                }}
+                >
                   <Stack
                     css={{
                       h: direction === "column" ? "6px" : "100px",

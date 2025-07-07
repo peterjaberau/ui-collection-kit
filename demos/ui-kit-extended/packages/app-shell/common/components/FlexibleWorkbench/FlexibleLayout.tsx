@@ -35,7 +35,7 @@ export const FlexibleLayout = ({
   }
   return (
     <Stack
-      flex={1}
+      // flex={1}
       css={{
         width: "full",
         height: "full",

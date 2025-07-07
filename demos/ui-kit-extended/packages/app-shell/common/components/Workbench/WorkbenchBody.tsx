@@ -7,6 +7,7 @@ export const WorkbenchBody = ({ children }: any) => {
       justify="space-between"
       alignItems="flex-start"
       data-name="WorkbenchBody"
+      overflow="hidden"
       flex={1}
     >
       {children}

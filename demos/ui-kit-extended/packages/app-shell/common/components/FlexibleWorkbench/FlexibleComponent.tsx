@@ -6,6 +6,7 @@ export const FlexibleComponent = ({ children, direction }: any) => {
     <Flex
       data-name="FlexibleComponent"
       flex={1}
+      py={2}
       css={{
         width: "full",
         height: "full",
@@ -16,7 +17,21 @@ export const FlexibleComponent = ({ children, direction }: any) => {
         css={{
           width: "full",
           height: "full",
-          background: 'bg.panel'
+          overflow: "auto",
+
+          // scrollbarWidth: "thin",
+          "&::-webkit-scrollbar": {
+            // display: "none",
+            width: "5px",
+            height: "50px",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "transparent",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "gray.100",
+            borderRadius: "5px",
+          },
         }}
       >
         {children}
