@@ -15,7 +15,7 @@ import {
   LeftActionPanelDemosBottom,
   LeftActionPanelDemosCenter,
   LeftActionPanelDemosTop,
-} from "#packages/xr-editor/common/demos/LeftActionPanelDemos"
+} from "./common/demos/LeftActionPanelDemos"
 import { HAligner } from "./common/components/Workbench/aligner/HAligner"
 import { HAlignerLeft } from "./common/components/Workbench/aligner/HAlignerLeft"
 import { HAlignerRight } from "./common/components/Workbench/aligner/HAlignerRight"
@@ -24,6 +24,7 @@ import { VAligner } from "./common/components/Workbench/aligner/VAligner"
 import { VAlignerTop } from "./common/components/Workbench/aligner/VAlignerTop"
 import { VAlignerBottom } from "./common/components/Workbench/aligner/VAlignerBottom"
 import { VAlignerMiddle } from "./common/components/Workbench/aligner/VAlignerMiddle"
+import { DebuggerDemo } from "./common/demos/DebuggerDemo"
 
 const appSlotRecipe = defineSlotRecipe({
   slots: ["root", "workbench"],
@@ -44,7 +45,7 @@ const appSlotRecipe = defineSlotRecipe({
   },
 })
 
-export const AppRoot = ({ children }: any) => {
+export const AppRoot = () => {
   const recipe = useSlotRecipe({ recipe: appSlotRecipe })
   const styles = recipe()
 
@@ -59,42 +60,52 @@ export const AppRoot = ({ children }: any) => {
         background: "bg.emphasized",
       }}
     >
-      {children}
-    </Container>
-  )
-}
-
-export const XREditorApp = () => {
-  return (
-    <AppRoot>
       <FlexibleWorkbench>
         <WorkbenchHeader>
           <HAligner>
-            <HAlignerLeft>HAlignerLeft</HAlignerLeft>
-            <HAlignerCenter>HAlignerCenter</HAlignerCenter>
-            <HAlignerRight>HAlignerRight</HAlignerRight>
+            <HAlignerLeft>
+              <LeftActionPanelDemosTop />
+            </HAlignerLeft>
+            <HAlignerCenter>
+              <LeftActionPanelDemosCenter />
+            </HAlignerCenter>
+            <HAlignerRight>
+              <LeftActionPanelDemosBottom />
+            </HAlignerRight>
           </HAligner>
         </WorkbenchHeader>
-
         <WorkbenchBody>
           <FlexibleEdge>
-            <LeftActionPanel>
-              <LeftActionPanelTop>
+            <VAligner>
+              <VAlignerTop>
                 <LeftActionPanelDemosTop />
-              </LeftActionPanelTop>
-              <LeftActionPanelMiddle>
+              </VAlignerTop>
+              <VAlignerMiddle>
                 <LeftActionPanelDemosCenter />
-              </LeftActionPanelMiddle>
-              <LeftActionPanelBottom>
+              </VAlignerMiddle>
+              <VAlignerBottom>
                 <LeftActionPanelDemosBottom />
-              </LeftActionPanelBottom>
-            </LeftActionPanel>
+              </VAlignerBottom>
+            </VAligner>
           </FlexibleEdge>
 
           <FlexibleLayout type="split" defaultSize={[15, 70, 15]}>
             <FlexibleLayout>right.sidebar</FlexibleLayout>
             <FlexibleLayout direction="column">
-              <WorkbenchToolbar>WorkbenchToolbar</WorkbenchToolbar>
+              <WorkbenchToolbar>
+                <HAligner>
+                  <HAlignerLeft>
+                    <LeftActionPanelDemosTop />
+                  </HAlignerLeft>
+                  <HAlignerCenter>
+                    <LeftActionPanelDemosCenter />
+                  </HAlignerCenter>
+                  <HAlignerRight>
+                    <LeftActionPanelDemosBottom />
+                  </HAlignerRight>
+                </HAligner>
+              </WorkbenchToolbar>
+
               <FlexibleLayout type="split" direction="column" defaultSize={[70, 30]}>
                 <FlexibleLayout type="split" defaultSize={[20, 20, 60]}>
                   <FlexibleLayout type="component">layout.split.layout.component</FlexibleLayout>
@@ -107,7 +118,11 @@ export const XREditorApp = () => {
                     </FlexibleLayout>
                   </FlexibleLayout>
                 </FlexibleLayout>
-                <FlexibleLayout>layout.component</FlexibleLayout>
+                <FlexibleLayout>
+
+                  <DebuggerDemo />
+
+                </FlexibleLayout>
               </FlexibleLayout>
             </FlexibleLayout>
 
@@ -129,12 +144,18 @@ export const XREditorApp = () => {
         </WorkbenchBody>
         <WorkbenchFooter>
           <HAligner>
-            <HAlignerLeft>HAlignerLeft</HAlignerLeft>
-            <HAlignerCenter>HAlignerCenter</HAlignerCenter>
-            <HAlignerRight>HAlignerRight</HAlignerRight>
+            <HAlignerLeft>
+              <LeftActionPanelDemosTop />
+            </HAlignerLeft>
+            <HAlignerCenter>
+              <LeftActionPanelDemosCenter />
+            </HAlignerCenter>
+            <HAlignerRight>
+              <LeftActionPanelDemosBottom />
+            </HAlignerRight>
           </HAligner>
         </WorkbenchFooter>
       </FlexibleWorkbench>
-    </AppRoot>
+    </Container>
   )
 }
