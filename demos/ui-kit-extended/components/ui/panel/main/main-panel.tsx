@@ -16,8 +16,6 @@ export type RemixUIMainPanelProps = {
 const RenderPanelPlugin: any = ({ pluginRecord }: any, panelRef: any) => {
   const localRef = useRef<HTMLDivElement>(null)
 
-  console.log("---pluginRecord-----", pluginRecord)
-  console.log("---panelRef-----", panelRef)
 
 
   return (

@@ -221,7 +221,6 @@ const FlyoutPanel = ({children, onResize, panelType = 'left', panelSize}: any) =
           delta = -deltaY
           break
       }
-      console.log('delta----', delta)
 
 
     },
@@ -260,7 +259,6 @@ function AppShell() {
   })
 
   const updatePanelSize = useCallback((delta: number) => {
-    console.log(delta)
 
     // setPanelSizes((prev) => ({
     //   ...prev,
@@ -270,9 +268,6 @@ function AppShell() {
 
 
   const updatePanelDelta = useCallback(({panelType, delta}: any) => {
-    console.log({
-      panelType:panelType, delta:delta
-    })
 
     setPanelSizes((prev) => ({
       ...prev,

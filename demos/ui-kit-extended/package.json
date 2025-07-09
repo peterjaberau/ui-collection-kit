@@ -8,8 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@elastic/eui": "^105.0.0",
     "react-resizable-panels": "^3.0.3",
     "bind-event-listener": "^3.0.0",
+    "@emotion/cache": "^11.14.0",
+    "@emotion/css": "^11.13.5",
     "@ark-ui/react": "5.16.0",
     "ts-tiny-invariant": "^2.0.5",
     "@atlaskit/pragmatic-drag-and-drop-auto-scroll": "2.1.1",

@@ -1,17 +1,19 @@
-'use client';
+"use client"
 import { ChakraProvider } from "@chakra-ui/react"
-import { ThemeProvider } from 'next-themes';
-import { Stack } from '@chakra-ui/react';
-import { useStylingActor } from "#actors/hooks/useStylingActor";
+import { ThemeProvider } from "next-themes"
+import { Stack } from "@chakra-ui/react"
+import { useStylingActor } from "#actors/hooks/useStylingActor"
+// import { EuiThemeProviderCustom } from "#packages/app-shell/common/providers/ThemeProvider"
 
 export const Provider = (props: { children: React.ReactNode }) => {
-
-  const { active, activeStyleDef } = useStylingActor();
+  const { active, activeStyleDef } = useStylingActor()
   return (
-    <ChakraProvider value={activeStyleDef}>
-      <ThemeProvider attribute='class' disableTransitionOnChange>
-        <Stack>{props.children}</Stack>
-      </ThemeProvider>
-    </ChakraProvider>
-  );
-};
+    // <EuiThemeProviderCustom>
+      <ChakraProvider value={activeStyleDef}>
+        <ThemeProvider attribute="class" disableTransitionOnChange>
+          <Stack>{props.children}</Stack>
+        </ThemeProvider>
+      </ChakraProvider>
+    // </EuiThemeProviderCustom>
+  )
+}

@@ -26,7 +26,7 @@ import { VAlignerTop } from "./common/components/Workbench/aligner/VAlignerTop"
 import { VAlignerBottom } from "./common/components/Workbench/aligner/VAlignerBottom"
 import { VAlignerMiddle } from "./common/components/Workbench/aligner/VAlignerMiddle"
 import { DebuggerDemo } from "./common/demos/DebuggerDemo"
-import { DemoRegistryList, DemoIconsRegistryList } from "#packages/app-shell/common/demos/DemoRegistryList"
+import { DemoRegistryList, DemoIconsRegistryList, DemoIconsLib } from "#packages/app-shell/common/demos/DemoRegistryList"
 
 const appSlotRecipe = defineSlotRecipe({
   slots: ["root", "workbench"],
@@ -55,7 +55,6 @@ export const AppRoot = () => {
 
   const { registryNames, registryComponent }: any = useSystemRegistry()
 
-  console.log("registryNames", registryNames)
 
   return (
     <Container
@@ -100,7 +99,8 @@ export const AppRoot = () => {
 
           <FlexibleLayout type="split" defaultSize={[15, 70, 15]}>
             <FlexibleLayout>
-              <DemoIconsRegistryList />
+              <DemoIconsLib />
+              {/*<DemoIconsRegistryList />*/}
 
             </FlexibleLayout>
 

@@ -20,10 +20,14 @@ export const FlexibleComponent = ({ children, direction }: any) => {
           overflow: "auto",
 
           // scrollbarWidth: "thin",
-          "&::-webkit-scrollbar": {
+          "&::-webkit-scrollbar:vertical": {
             // display: "none",
             width: "5px",
-            height: "50px",
+            height: "5px",
+            // height: "50px",
+          },
+          "&::-webkit-scrollbar": {
+            height: "0px",
           },
           "&::-webkit-scrollbar-track": {
             background: "transparent",

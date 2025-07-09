@@ -41,6 +41,7 @@
     }
   },
   "include": [
+    "icon.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

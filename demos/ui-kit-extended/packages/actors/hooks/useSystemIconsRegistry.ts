@@ -10,7 +10,17 @@ export function useSystemIconsRegistry() {
   const iconsRegistry = sysIconsRegistryState.context.registry
   const iconRegistryNames = Object.keys(iconsRegistry)
 
+
+
+
+  // const iconsCacheRegistry = sysIconsRegistryState.context.cacheRegistry
+
   const iconRegistryComponent = (name: string) => iconsRegistry[name]
+
+  const iconsLib = sysIconsRegistryState.context.iconsLib
+
+  console.log("--iconsLib--", iconsLib)
+  console.log("--sysIconsRegistryState.context--", sysIconsRegistryState.context)
 
   return {
     sysIconsRegistryActorRef,
@@ -20,5 +30,9 @@ export function useSystemIconsRegistry() {
     iconsRegistry,
     iconRegistryNames,
     iconRegistryComponent,
+
+    iconsLib
+
+    // iconsCacheRegistry
   }
 }

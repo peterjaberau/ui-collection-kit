@@ -12,8 +12,6 @@ export function useStylingActor() {
 
   const activeStyleDef = stylingState.context.library[active] || stylingState.context.library['default']
 
-  console.log('active', active)
-  console.log('activeStyleDef', activeStyleDef)
 
 
 

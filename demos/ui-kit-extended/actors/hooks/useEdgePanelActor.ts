@@ -14,7 +14,6 @@ export function useEdgePanelActor({ id }: any) {
 
   // const { pinned, size, position, minSize = 100 } = edgePanelState.context
 
-  console.log('---edgePanelState-----', edgePanelState.context)
 
 
   return {

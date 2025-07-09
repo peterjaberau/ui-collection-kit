@@ -3,5 +3,6 @@ export default {
   styles: {},
   registry: null,
   iconsRegistry: null,
+  examplesRegistry: null,
   components: null,
 }

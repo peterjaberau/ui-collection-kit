@@ -105,12 +105,6 @@ const FlayoutItem = ({ actorRef }) => {
     // allFixtures, pixelSizes, pixelPlacements
   } = useFlyoutActor(actorRef)
 
-  console.log('-----flyoutActorRef----', {
-    'flyoutState.context': flyoutState.context,
-    name: name,
-    id: id,
-    displayName: displayName,
-  })
 
   return (
     isReady && (

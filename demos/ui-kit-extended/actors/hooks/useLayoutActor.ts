@@ -8,7 +8,6 @@ export function useLayoutActor() {
   const layoutState: any = useSelector(layoutActorRef, state => state)
   const sendToLayout = layoutActorRef.send
 
-  console.log('---layoutState-----', layoutState.context)
 
   const panels = layoutState.context.panels
 
