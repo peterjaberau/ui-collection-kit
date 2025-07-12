@@ -1,6 +1,5 @@
 import { useSelector } from "@xstate/react"
 import { useSystem } from "./useSystem"
-import { useQuery, keepPreviousData } from "@tanstack/react-query"
 
 export function useSystemRegistry() {
   const { systemActorRef } = useSystem()
@@ -11,18 +10,7 @@ export function useSystemRegistry() {
   const registry = sysRegistryState.context.registry
   const registryNames = Object.keys(registry)
 
-  const registryComponent = (name: string) => registry[name]
 
-  const searchComponents = (value: string | undefined) => {
-    return useQuery({
-      queryKey: ["registry-search", value ?? ""],
-      queryFn: () => {
-        if (!value || value.trim().length === 0) return registryNames
-        return registryNames.filter((name) => name.toLowerCase().includes(value.toLowerCase()))
-      },
-      staleTime: 5 * 60 * 1000, // optional: 5 minutes
-    })
-  }
 
   return {
     sysRegistryActorRef,
@@ -31,7 +19,5 @@ export function useSystemRegistry() {
 
     registry,
     registryNames,
-    registryComponent,
-    searchComponents,
   }
 }

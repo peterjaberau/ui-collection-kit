@@ -6,8 +6,8 @@ import {
   sysGlobalsMachine,
   sysStylesMachine,
   sysRegistryMachine,
-  sysIconsRegistryMachine,
-  sysExamplesRegistryMachine,
+  navigationSystemMachine,
+  sidePanelsMachine,
 } from './system.machines'
 
 export const systemMachine = createMachine({
@@ -15,8 +15,9 @@ export const systemMachine = createMachine({
     spawnChild(sysGlobalsMachine, { systemId: 'sys-globals' }),
     spawnChild(sysStylesMachine, { systemId: 'sys-styles' }),
     spawnChild(sysRegistryMachine, { systemId: 'sys-registry' }),
-    spawnChild(sysIconsRegistryMachine, { systemId: 'sys-icons-registry' }),
-    spawnChild(sysExamplesRegistryMachine, { systemId: 'sys-examples-registry' }),
+    spawnChild(navigationSystemMachine, { systemId: 'navigation-system' }),
+    spawnChild(sidePanelsMachine, { systemId: 'side-panels' }),
+
   ]
 })
 

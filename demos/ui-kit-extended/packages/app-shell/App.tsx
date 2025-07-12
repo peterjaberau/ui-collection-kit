@@ -27,6 +27,7 @@ import { VAlignerBottom } from "./common/components/Workbench/aligner/VAlignerBo
 import { VAlignerMiddle } from "./common/components/Workbench/aligner/VAlignerMiddle"
 import { DebuggerDemo } from "./common/demos/DebuggerDemo"
 import { DemoRegistryList, DemoIconsRegistryList, DemoIconsLib } from "#packages/app-shell/common/demos/DemoRegistryList"
+import { ComponentPanel } from "#packages/ui/ComponentPanel"
 
 const appSlotRecipe = defineSlotRecipe({
   slots: ["root", "workbench"],
@@ -57,6 +58,7 @@ export const AppRoot = () => {
 
 
   return (
+    // Page
     <Container
       data-name="app-root"
       fluid
@@ -68,7 +70,10 @@ export const AppRoot = () => {
         background: "bg.emphasized",
       }}
     >
+      {/* Page */}
       <FlexibleWorkbench>
+
+        {/*PageHeader*/}
         <WorkbenchHeader>
           <HAligner>
             <HAlignerLeft>
@@ -82,7 +87,10 @@ export const AppRoot = () => {
             </HAlignerRight>
           </HAligner>
         </WorkbenchHeader>
+
+        {/*PageBody*/}
         <WorkbenchBody>
+          {/*PageAside*/}
           <FlexibleEdge>
             <VAligner>
               <VAlignerTop>
@@ -97,16 +105,21 @@ export const AppRoot = () => {
             </VAligner>
           </FlexibleEdge>
 
+          {/*PageContent*/}
+          {/*PageContentLayout*/}
+
+          {/*PageContentSplitter*/}
           <FlexibleLayout type="split" defaultSize={[15, 70, 15]}>
+
+            {/*PageContentCOmp*/}
             <FlexibleLayout>
-              <DemoIconsLib />
-              {/*<DemoIconsRegistryList />*/}
+              {/*<DemoIconsLib />*/}
+              <ComponentPanel />
 
             </FlexibleLayout>
 
-
-
             <FlexibleLayout direction="column">
+              {/*PageToolbar*/}
               <WorkbenchToolbar>
                 <HAligner>
                   <HAlignerLeft>
@@ -144,7 +157,10 @@ export const AppRoot = () => {
             <FlexibleLayout>
               <DemoRegistryList />
             </FlexibleLayout>
+
           </FlexibleLayout>
+
+          {/*PageAside*/}
           <FlexibleEdge>
             <VAligner>
               <VAlignerTop>
@@ -158,7 +174,11 @@ export const AppRoot = () => {
               </VAlignerBottom>
             </VAligner>
           </FlexibleEdge>
+
+
         </WorkbenchBody>
+
+        {/*PageFooter*/}
         <WorkbenchFooter>
           <HAligner>
             <HAlignerLeft>
@@ -172,6 +192,7 @@ export const AppRoot = () => {
             </HAlignerRight>
           </HAligner>
         </WorkbenchFooter>
+
       </FlexibleWorkbench>
     </Container>
   )

@@ -1,8 +1,6 @@
-import { GlobalProvider } from '../actors/provider'
+import { SystemProvider } from '#actors/system.provider';
 import { Provider } from './provider';
-
-
-// import { NavigationBarTop } from "#app/_components/navigation-bar-top"
+import { Suspense } from 'react';
 
 export default function RootLayout({
   children,
@@ -12,12 +10,11 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body suppressHydrationWarning>
-          <GlobalProvider>
-            <Provider>
-
-                  {children}
-            </Provider>
-          </GlobalProvider>
+        <Suspense>
+          <SystemProvider>
+            <Provider>{children}</Provider>
+          </SystemProvider>
+        </Suspense>
       </body>
     </html>
   );

@@ -6,6 +6,9 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "ui-extend": "pnpm --filter \"./demos/ui-extend\"",
+    "start-ui-extend": "pnpm ui-extend dev",
+
     "style-actors-demo": "pnpm --filter \"./demos/style-actors-demo\"",
     "start-style-actors-demo": "pnpm style-actors-demo dev",
     "ui-atlaskit": "pnpm --filter \"./demos/ui-atlaskit\"",
