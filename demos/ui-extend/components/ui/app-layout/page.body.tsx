@@ -1,7 +1,8 @@
 import { Stack, HStack } from "@chakra-ui/react"
-import { PageSidePanel } from '#components/ui/navigation-system/page.sidepanel';
 
-export const PageBody = ({ children }: any) => {
+export const PageBody = ({
+                           children
+}: any) => {
   return (
       <HStack
         data-name="page-body"
@@ -18,7 +19,10 @@ export const PageBody = ({ children }: any) => {
 }
 
 
-export const PageBodyInner = ({ children }: any) => {
+export const PageBodyInner = (
+  { children, sideBottom }:
+  { children?: any; sideBottom?: any; }
+) => {
   return (
     <Stack
       flex={1}
@@ -37,7 +41,8 @@ export const PageBodyInner = ({ children }: any) => {
       >
         {children}
       </HStack>
-      <PageSidePanel actorId={'panelBottom'}>bottom side panel</PageSidePanel>
+      {sideBottom}
+
     </Stack>
   )
 }

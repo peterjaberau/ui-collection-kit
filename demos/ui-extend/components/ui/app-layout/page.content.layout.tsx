@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Stack, For, Container } from '@chakra-ui/react';
+import React from 'react';
+import { Stack } from '@chakra-ui/react';
 import { PageContentComponent } from './page.content.comp';
 import { PageContentSplitter } from './page.content.splitter';
 

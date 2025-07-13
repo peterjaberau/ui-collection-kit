@@ -11,7 +11,6 @@ const configCache = new Map<
 >();
 
 const getCachedSplitterConfig = (childrenCount: number) => {
-  // Check if configuration already exists in cache
   if (configCache.has(childrenCount)) {
     return configCache.get(childrenCount)!;
   }

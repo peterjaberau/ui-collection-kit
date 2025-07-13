@@ -1,4 +1,37 @@
 export default {
+  system: {
+    appLayout: {
+      header: {
+        start: {},
+        center: {},
+        end: {},
+      },
+      footer: {
+        start: {},
+        center: {},
+        end: {},
+      },
+      barLeft: {
+        start: {},
+        center: {},
+        end: {},
+      },
+      barRight: {
+        start: {},
+        center: {},
+        end: {},
+      },
+      toolbar: {
+        start: {},
+        center: {},
+        end: {},
+      },
+      sideLeft: {},
+      sideRight: {},
+      sideContent: {},
+    },
+  },
+
   globals: {},
   styles: {},
   pages: {},
@@ -35,7 +68,6 @@ export default {
         },
       },
     },
-
     toolbar: {
       isVisible: true,
       parts: {
@@ -50,7 +82,6 @@ export default {
         },
       },
     },
-
     asideLeft: {
       isVisible: true,
       parts: {
