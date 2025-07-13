@@ -12,7 +12,7 @@ import {
   PageFooterCenter,
   PageFooterEnd,
 } from '../page.footer';
-import { PageBody } from '../page.body';
+import { PageBody, PageBodyInner } from '../page.body';
 import {
   PageAside,
   PageAsideStart,
@@ -86,59 +86,59 @@ export const NavigationSystemDemo = () => {
             </PageAsideEnd>
           </PageAside>
         )}
+        <PageBodyInner>
 
+          {mounted && (
+            <PageSidePanel actorId={'panelLeft'}>left side panel</PageSidePanel>
+          )}
 
-        {mounted && (
-          <PageSidePanel actorId={'panelLeft'}>left side panel</PageSidePanel>
-        )}
+          <PageContent>
+            <PageContentLayout type='split' defaultSize={[100]}>
+              {/*<PageContentLayout>PageContentComponent</PageContentLayout>*/}
 
-        <PageContent>
-          <PageContentLayout type='split' defaultSize={[100]}>
-            {/*<PageContentLayout>PageContentComponent</PageContentLayout>*/}
+              <PageContentLayout direction='column'>
+                {visibleItems.toolbar && <PageToolbar>PageToolbar</PageToolbar>}
 
-            <PageContentLayout direction='column'>
-              {visibleItems.toolbar && <PageToolbar>PageToolbar</PageToolbar>}
-
-              <PageContentLayout
-                type='split'
-                direction='column'
-                defaultSize={[70, 30]}
-              >
-                <PageContentLayout type='split' defaultSize={[20, 20, 60]}>
-                  <PageContentLayout type='component'>
-                    component
-                  </PageContentLayout>
-                  <PageContentLayout>component</PageContentLayout>
-                  <PageContentLayout>
-                    <PageContentLayout
-                      type='split'
-                      direction='column'
-                      defaultSize={[20, 20, 60]}
-                    >
-                      <PageContentLayout type='component'>
-                        PageContentComponent
+                <PageContentLayout
+                  type='split'
+                  direction='column'
+                  defaultSize={[70, 30]}
+                >
+                  <PageContentLayout type='split' defaultSize={[20, 20, 60]}>
+                    <PageContentLayout type='component'>
+                      component
+                    </PageContentLayout>
+                    <PageContentLayout>component</PageContentLayout>
+                    <PageContentLayout>
+                      <PageContentLayout
+                        type='split'
+                        direction='column'
+                        defaultSize={[20, 20, 60]}
+                      >
+                        <PageContentLayout type='component'>
+                          PageContentComponent
+                        </PageContentLayout>
+                        <PageContentLayout>component</PageContentLayout>
+                        <PageContentLayout>component</PageContentLayout>
                       </PageContentLayout>
-                      <PageContentLayout>component</PageContentLayout>
-                      <PageContentLayout>component</PageContentLayout>
                     </PageContentLayout>
                   </PageContentLayout>
+                  <PageContentLayout>component</PageContentLayout>
                 </PageContentLayout>
-                <PageContentLayout>component</PageContentLayout>
               </PageContentLayout>
+
+              {/*<PageContentLayout>PageContentComponent</PageContentLayout>*/}
             </PageContentLayout>
 
-            {/*<PageContentLayout>PageContentComponent</PageContentLayout>*/}
-          </PageContentLayout>
-          {/*{mounted && (*/}
-          {/*  <PageSidePanel actorId={'panelBottom'}>bottom side panel</PageSidePanel>*/}
-          {/*)}*/}
 
-        </PageContent>
+          </PageContent>
 
 
-        {mounted && (
-          <PageSidePanel actorId={'panelRight'}>right side panel</PageSidePanel>
-        )}
+          {mounted && (
+            <PageSidePanel actorId={'panelRight'}>right side panel</PageSidePanel>
+          )}
+
+        </PageBodyInner>
         {visibleItems.asideRight && (
           <PageAside position={'right'}>
             <PageAsideStart>
@@ -153,6 +153,9 @@ export const NavigationSystemDemo = () => {
           </PageAside>
         )}
       </PageBody>
+
+
+
       {visibleItems.footer && (
         <PageFooter>
           <PageFooterStart>

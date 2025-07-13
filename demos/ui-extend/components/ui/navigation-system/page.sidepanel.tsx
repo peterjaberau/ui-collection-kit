@@ -61,7 +61,8 @@ export const PageSidePanel = ({ actorId, children }: any) => {
     onExpandChange,
     onPin,
     onExpand,
-    isReady
+    isReady,
+    isVertical
   } = useSidePanel(actorId);
 
   //
@@ -73,7 +74,7 @@ export const PageSidePanel = ({ actorId, children }: any) => {
       <Box
         css={{
           background: 'bg.panel',
-          height: 'full',
+          height: (!isVertical && 'full')
         }}
         asChild
       >

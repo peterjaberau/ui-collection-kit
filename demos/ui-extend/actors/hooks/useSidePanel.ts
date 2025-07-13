@@ -18,7 +18,7 @@ export function useSidePanel(actorId: any) {
 
   const sendToSidePanel = sidePanelActorRef?.send;
 
-  const onExpandChange = ({ expand }) => {
+  const onExpandChange = ({ expand }: any) => {
     sendToSidePanel({
       type: 'onExpandChange',
       value: expand,
@@ -37,12 +37,7 @@ export function useSidePanel(actorId: any) {
     });
   };
 
-  console.log('sidePanelState', {
-    isInstance: isInstance,
-    sidePanelState: sidePanelState,
-    sidePanelsState: sidePanelsState,
-    sidePanelActorRef: sidePanelActorRef
-  });
+  const isVertical = sidePanelContent?.placement === 'top' || sidePanelContent?.placement === 'bottom';
 
 
   return {
@@ -58,6 +53,7 @@ export function useSidePanel(actorId: any) {
     onExpand,
 
     isInstance,
-    isReady
+    isReady,
+    isVertical
   };
 }

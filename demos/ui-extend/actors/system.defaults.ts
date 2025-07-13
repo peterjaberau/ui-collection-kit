@@ -213,6 +213,38 @@ export default {
         expand: true,
       },
     },
+
+    {
+      id: 'panelContentBottom',
+      content: {
+        title: 'Content Bottom Panel',
+        placement: 'bottom',
+        mode: 'fixed',
+        defaultExpand: true,
+        expandable: true,
+        pin: true,
+        minWidth: 100,
+        minHeight: 0,
+        fullscreen: false,
+        destroyOnClose: false,
+        showHandleWhenCollapsed: true,
+        showHandleWideArea: false,
+        classNames: {
+          content: '',
+          handle: '',
+        },
+        styles: {
+          content: {},
+          handle: {},
+        },
+        defaultSize: {
+          width: '100%',
+          height: '350px',
+        },
+        headerHeight: 0,
+        expand: true,
+      },
+    },
   ],
 
   draggablePanel: {
