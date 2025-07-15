@@ -9,6 +9,7 @@ import { PageContentLayout } from './page.content.layout';
 import { PageToolbar } from './page.toolbar';
 import { useEffect, useState } from 'react';
 import { PageSidePanel } from './page.sidepanel';
+import { PageSideResizable } from './page.sideresizable';
 
 const Index = ({
   children,
@@ -80,10 +81,20 @@ const Index = ({
           }
         >
           {sideLeft && mounted && (
-            <PageSidePanel actorId={'panelLeft'}>{sideLeft}</PageSidePanel>
+            <PageSideResizable actorId={'panelLeft'}>{sideLeft}</PageSideResizable>
+            // <PageSidePanel actorId={'panelLeft'}>{sideLeft}</PageSidePanel>
           )}
 
           <PageContent
+            toolbar={
+              toolbar && (
+                <PageToolbar
+                  start={toolbar?.start || null}
+                  center={toolbar?.center || null}
+                  end={toolbar?.end || null}
+                />
+              )
+            }
             sideContent={
               sideContent && (
                 <PageSidePanel actorId={'panelContentBottom'}>
@@ -92,43 +103,31 @@ const Index = ({
               )
             }
           >
-            <PageContentLayout type='split' defaultSize={[100]}>
-              <PageContentLayout direction='column'>
-                {toolbar && (
-                  <PageToolbar
-                    start={toolbar?.start || null}
-                    center={toolbar?.center || null}
-                    end={toolbar?.end || null}
-                  />
-                )}
-
-                <PageContentLayout
-                  type='split'
-                  direction='column'
-                  defaultSize={[70, 30]}
-                >
-                  <PageContentLayout type='split' defaultSize={[20, 20, 60]}>
+            <PageContentLayout
+              type='split'
+              direction='column'
+              defaultSize={[70, 30]}
+            >
+              <PageContentLayout type='split' defaultSize={[20, 20, 60]}>
+                <PageContentLayout type='component'>
+                  component
+                </PageContentLayout>
+                <PageContentLayout>component</PageContentLayout>
+                <PageContentLayout>
+                  <PageContentLayout
+                    type='split'
+                    direction='column'
+                    defaultSize={[20, 20, 60]}
+                  >
                     <PageContentLayout type='component'>
-                      component
+                      PageContentComponent
                     </PageContentLayout>
                     <PageContentLayout>component</PageContentLayout>
-                    <PageContentLayout>
-                      <PageContentLayout
-                        type='split'
-                        direction='column'
-                        defaultSize={[20, 20, 60]}
-                      >
-                        <PageContentLayout type='component'>
-                          PageContentComponent
-                        </PageContentLayout>
-                        <PageContentLayout>component</PageContentLayout>
-                        <PageContentLayout>component</PageContentLayout>
-                      </PageContentLayout>
-                    </PageContentLayout>
+                    <PageContentLayout>component</PageContentLayout>
                   </PageContentLayout>
-                  <PageContentLayout>component</PageContentLayout>
                 </PageContentLayout>
               </PageContentLayout>
+              <PageContentLayout>component</PageContentLayout>
             </PageContentLayout>
           </PageContent>
 

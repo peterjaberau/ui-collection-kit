@@ -56,3 +56,31 @@ const Index = ({ title, trigger, children }: any) => {
 };
 
 export default Index;
+
+
+/*
+
+Left, Pinned, Fixed
+    flex-shrink: 0;
+    border: 0 solid #f0f0f0;
+    border-inline-end-width: 1px;
+    position: relative;
+
+
+Bottom, Pinned, Fixed
+    flex-shrink: 0;
+    border: 0 solid #f0f0f0;
+    border-block-start-width: 1px;
+    position: relative;
+
+
+Left, Pinned, Floating
+    flex-shrink: 0;
+    border: 0 solid #f0f0f0;
+    border-inline-end-width: 1px;
+    position: absolute;
+    z-index: 200;
+    inset-block: 0px 0;
+    inset-inline-start: 0;
+    height: calc(100% - 0px);
+ */

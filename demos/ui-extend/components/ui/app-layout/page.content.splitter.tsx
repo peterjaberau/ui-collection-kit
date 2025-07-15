@@ -85,13 +85,17 @@ export const PageContentSplitter = ({
                   justify='center'
                   align='center'
                   css={{
+                    borderRadius: 'md',
                     bg: 'bg.emphasized',
+                    _hover: {
+                      bg: 'border.info'
+                    }
                   }}
                 >
                   <Stack
                     css={{
-                      h: direction === 'column' ? '6px' : '100px',
-                      w: direction === 'column' ? '100px' : '6px',
+                      h: direction === 'column' ? '5px' : '100px',
+                      w: direction === 'column' ? '100px' : '5px',
                     }}
                   />
                 </Stack>

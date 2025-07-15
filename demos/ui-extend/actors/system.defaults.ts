@@ -119,6 +119,7 @@ export default {
         title: 'Left Panel',
         placement: 'left',
         mode: 'fixed',
+
         defaultExpand: true,
         expandable: true,
         pin: true,

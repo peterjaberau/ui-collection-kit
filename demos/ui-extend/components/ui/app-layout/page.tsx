@@ -21,6 +21,7 @@ export const Page = ({
       }}
     >
       <Stack
+        gap={1}
         css={{
           width: 'full',
           height: 'full',
