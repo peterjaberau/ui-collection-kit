@@ -4,9 +4,13 @@ import { IoSearch as IconSearch } from 'react-icons/io5';
 import { HiOutlineLightningBolt as IconBolt } from 'react-icons/hi';
 import { LuFilePlus as IconFileNew } from 'react-icons/lu';
 import { useSidePanel } from '#actors/hooks/useSidePanel';
+import { DrawerBlock } from '#components/ui-blocks/drawer';
+import { useDisclosure } from "@mantine/hooks";
+import { Drawer } from '@mantine/core';
 
 export const DemoPanelAsideLeftStart = () => {
   const { onExpand, sidePanelContent, isReady } = useSidePanel('panelLeft');
+  const [opened, { open, close }] = useDisclosure(false);
 
 
   return (
@@ -20,9 +24,17 @@ export const DemoPanelAsideLeftStart = () => {
       <IconButton variant="ghost">
         <IconSearch />
       </IconButton>
-      <IconButton variant="ghost">
+      {/*<DrawerBlock*/}
+      {/*  opened={opened} onClose={close}*/}
+      {/*/>*/}
+      <Drawer opened={opened} onClose={close} withCloseButton={false}>
+        Drawer without header, press escape or click on overlay to close
+      </Drawer>
+      <IconButton variant="ghost" onClick={open}>
         <IconBolt />
       </IconButton>
+
+
       <IconButton variant="ghost">
         <IconFileNew />
       </IconButton>

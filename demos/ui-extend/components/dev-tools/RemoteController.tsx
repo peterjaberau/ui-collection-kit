@@ -1,5 +1,5 @@
 'use client';
-import FloatingPanel from '#components/ui/floating-panel';
+import FloatingPanel from '#components/ui-blocks/floating-panel';
 import { LuBolt, LuEye, LuEyeClosed } from 'react-icons/lu';
 import { useNavigationSystem } from '#actors/hooks/useNavigationSystem';
 import { For, Stack, Wrap, IconButton, Button } from '@chakra-ui/react';

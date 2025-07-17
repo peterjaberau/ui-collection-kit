@@ -28,12 +28,24 @@
       }
     ],
     "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "~/*": [
+        "./public/*"
+      ],
+      "@/components/*": [
+        "./components/*"
+      ],
+      "@/components": [
+        "./components"
+      ],
       "#actors/*": ["./actors/*"],
       "#actor-hooks/*": ["./actors/hooks*"],
       "#app/*": ["./app/*"],
       "#components/*": ["./components/*"],
       "#blocks/*": ["./blocks/*"],
-      "#utils/*": ["./utils/*"]
+      "#utils/*": ["./utils/*"],
     }
   },
   "include": [

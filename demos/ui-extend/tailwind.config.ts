@@ -605,11 +605,11 @@ const config: any = {
       keyframes: {
         'accordion-down': {
           from: { height: '0', opacity: '0' },
-          to: { height: '46px', opacity: '1' },
+          to: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
         },
         'accordion-up': {
           from: {
-            height: '46px',
+            height: 'var(--radix-accordion-content-height)',
             opacity: '1',
           },
           to: { height: '0', opacity: '0' },

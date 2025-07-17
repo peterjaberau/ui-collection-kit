@@ -1,7 +1,14 @@
-import SettingsModal from '@/components/settings-modal';
+import dynamic from 'next/dynamic';
+
 import HeaderMobile from '@/components/header-mobile';
 import Sidebar from '@/components/sidebar';
 
+const DynamicSettingsModal = dynamic(
+  () => import('@/components/settings-modal'),
+  {
+    ssr: false,
+  },
+);
 
 export default function Layout({
   children,
@@ -18,7 +25,7 @@ export default function Layout({
         </div>
       </div>
 
-      <SettingsModal />
+      <DynamicSettingsModal />
     </>
   );
 }

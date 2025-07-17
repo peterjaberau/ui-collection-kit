@@ -1,8 +1,11 @@
-import AuthSlider from "@/app/(auth)/auth-slider";
+import dynamic from 'next/dynamic';
+
 import AuthFooter from './footer';
 import AuthHeader from './header';
 
-
+const DynamicAuthCarousel = dynamic(() => import('./auth-slider'), {
+  ssr: false,
+});
 
 export default function Layout({
   children,
@@ -31,7 +34,7 @@ export default function Layout({
 
       <div className='hidden lg:block'>
         <div className='relative size-full'>
-          <AuthSlider />
+          <DynamicAuthCarousel />
         </div>
       </div>
     </div>

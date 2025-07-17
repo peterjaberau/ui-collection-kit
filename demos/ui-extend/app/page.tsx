@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import AppLayout from '#components/ui/app-layout';
+import AppLayout from '#components/ui-blocks/app-layout';
 
 import { RemoteController } from '#components/dev-tools/RemoteController';
 import {

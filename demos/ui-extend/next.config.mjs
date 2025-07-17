@@ -4,12 +4,12 @@ const nextConfig = {
   /* config options here */
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   transpilePackages: ['@lobehub/ui'],
-  // experimental: {
-  //     inlineCss: true,
-  //     useCache: true,
-  //     clientSegmentCache: true,
-  //     ppr: true,
-  // },
+  experimental: {
+      inlineCss: true,
+      useCache: true,
+      clientSegmentCache: true,
+      // ppr: true,
+  },
 };
 
 export default nextConfig;
