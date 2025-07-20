@@ -8,8 +8,7 @@ import { PageContent } from './page.content';
 import { PageContentLayout } from './page.content.layout';
 import { PageToolbar } from './page.toolbar';
 import { useEffect, useState } from 'react';
-import { PageSidePanel } from './page.sidepanel';
-// import { PageSideResizable } from './page.sideresizable';
+import { PageSidePanel, PageDraggableFloatingPanel } from './page.sidepanel';
 
 const Index = ({
   children,
@@ -81,7 +80,6 @@ const Index = ({
           }
         >
           {sideLeft && mounted && (
-            // <PageSideResizable actorId={'panelLeft'}>{sideLeft}</PageSideResizable>
             <PageSidePanel actorId={'panelLeft'}>{sideLeft}</PageSidePanel>
           )}
 

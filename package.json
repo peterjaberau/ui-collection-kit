@@ -9,6 +9,10 @@
     "ui-extend": "pnpm --filter \"./demos/ui-extend\"",
     "start-ui-extend": "pnpm ui-extend dev",
 
+
+    "ui-designable": "pnpm --filter \"./demos/ui-designable\"",
+    "start-ui-designable": "pnpm ui-designable dev",
+
     "style-actors-demo": "pnpm --filter \"./demos/style-actors-demo\"",
     "start-style-actors-demo": "pnpm style-actors-demo dev",
     "ui-atlaskit": "pnpm --filter \"./demos/ui-atlaskit\"",

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import AppLayout from '#components/ui-blocks/app-layout';
-
+import { LevaController } from '#components/dev-tools/leva/LevaController'
 import { RemoteController } from '#components/dev-tools/RemoteController';
 import {
   DemoPageHeaderCenter,
@@ -42,6 +42,7 @@ export default function Page() {
   return (
     <>
       {mounted && <RemoteController />}
+      {mounted &&  <LevaController />}
 
       <AppLayout
         header={{

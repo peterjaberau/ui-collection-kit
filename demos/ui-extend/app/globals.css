@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 @layer base {
   /*#region Colors */
   :root {
+
     --gray-950: #171717;
     --gray-900: #1c1c1c;
     --gray-800: #292929;

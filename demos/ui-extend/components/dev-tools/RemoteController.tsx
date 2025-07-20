@@ -4,6 +4,7 @@ import { LuBolt, LuEye, LuEyeClosed } from 'react-icons/lu';
 import { useNavigationSystem } from '#actors/hooks/useNavigationSystem';
 import { For, Stack, Wrap, IconButton, Button } from '@chakra-ui/react';
 import { Checkbox } from '@chakra-ui/react';
+// import { LevaController } from './leva/LevaController'
 
 export const RemoteController = () => {
   const { visibleItems, toggleVisiblity }: any = useNavigationSystem();

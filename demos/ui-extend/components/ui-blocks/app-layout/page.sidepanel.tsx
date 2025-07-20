@@ -6,11 +6,9 @@ import {
   DraggablePanelFooter,
   DraggablePanelHeader,
 } from '@lobehub/ui';
-import {
-  type HTMLAttributes,
-  type CSSProperties,
-} from 'react';
-import { Box } from '@chakra-ui/react';
+import { type HTMLAttributes, type CSSProperties, useState } from 'react';
+import { Box, HStack, Stack } from '@chakra-ui/react';
+import { DrawerResizer } from '#components/ui-plus/DrawerResizer';
 
 interface PageSidePanelProps {
   placement?: 'left' | 'right' | 'top' | 'bottom';
@@ -62,7 +60,7 @@ export const PageSidePanel = ({ actorId, children }: any) => {
     onPin,
     onExpand,
     isReady,
-    isVertical
+    isVertical,
   } = useSidePanel(actorId);
 
   //
@@ -74,7 +72,7 @@ export const PageSidePanel = ({ actorId, children }: any) => {
       <Box
         css={{
           background: 'bg.panel',
-          height: (!isVertical && 'full')
+          height: !isVertical && 'full',
         }}
         asChild
       >
@@ -106,5 +104,50 @@ export const PageSidePanel = ({ actorId, children }: any) => {
         </DraggablePanel>
       </Box>
     )
+  );
+};
+
+export const PageSideResizablePanel = () => {
+  const [width, setWidth] = useState(650);
+
+  return (
+    <HStack
+      css={{
+        border: '10px solid',
+        background: 'bg.panel',
+        height: 'full',
+        // width: 'full',
+      }}
+    >
+      <Stack
+        h='100%'
+        flex={1}
+        width={width}
+        maxWidth={width}
+        background={'red'}
+      ></Stack>
+      <DrawerResizer minSize={500} maxSize={1500} onResize={setWidth} />
+    </HStack>
+  );
+};
+
+import DraggableFloatingPanel from '#components/ui-plus/DraggablePanel';
+
+export const PageDraggableFloatingPanel = ({
+  children,
+  position = 'left',
+  float = false,
+}: {
+  children?: any,
+  position?: 'left' | 'right' | 'top' | 'bottom';
+  float?: boolean;
+}) => {
+  return (
+    <DraggableFloatingPanel
+      position={position}
+      float={float}
+    >
+      {children}
+    </DraggableFloatingPanel>
   );
 };
