@@ -6,13 +6,12 @@ import {
   useSelection,
 } from '../../hooks';
 import { observer } from '@formily/reactive-react';
-import { chakra, Box } from '@chakra-ui/react'
 
 export const DashedBox = observer(() => {
-  const hover = useHover();
-  const prefix = usePrefix('aux-dashed-box');
-  const selection = useSelection();
-  const rect = useValidNodeOffsetRect(hover?.node);
+  const hover = useHover()
+  const prefix = usePrefix('aux-dashed-box')
+  const selection = useSelection()
+  const rect = useValidNodeOffsetRect(hover?.node)
   const createTipsStyle = () => {
     const baseStyle: React.CSSProperties = {
       top: 0,
@@ -21,23 +20,23 @@ export const DashedBox = observer(() => {
       boxSizing: 'border-box',
       visibility: 'hidden',
       zIndex: 2,
-    };
-    if (rect) {
-      baseStyle.transform = `perspective(1px) translate3d(${rect.x}px,${rect.y}px,0)`;
-      baseStyle.height = rect.height;
-      baseStyle.width = rect.width;
-      baseStyle.visibility = 'visible';
     }
-    return baseStyle;
-  };
-  if (!hover.node) return null;
-  if (hover.node.hidden) return null;
-  if (selection.selected.includes(hover.node.id)) return null;
+    if (rect) {
+      baseStyle.transform = `perspective(1px) translate3d(${rect.x}px,${rect.y}px,0)`
+      baseStyle.height = rect.height
+      baseStyle.width = rect.width
+      baseStyle.visibility = 'visible'
+    }
+    return baseStyle
+  }
+  if (!hover.node) return null
+  if (hover.node.hidden) return null
+  if (selection.selected.includes(hover.node.id)) return null
   return (
-    <Box data-id='aux-dashed-box' css={createTipsStyle()}>
-      <chakra.span
-        className={'aux-dashed-box-title'}
-        css={{
+    <div className={prefix} style={createTipsStyle()}>
+      <span
+        className={prefix + '-title'}
+        style={{
           position: 'absolute',
           bottom: '100%',
           left: 0,
@@ -48,9 +47,9 @@ export const DashedBox = observer(() => {
         }}
       >
         {hover?.node.getMessage('title')}
-      </chakra.span>
-    </Box>
-  );
-});
+      </span>
+    </div>
+  )
+})
 
-DashedBox.displayName = 'DashedBox';
+DashedBox.displayName = 'DashedBox'

@@ -1,7 +1,5 @@
-'use client'
-import React, { useMemo } from 'react'
-import ReactDOM from 'react-dom'
-import { createRoot } from 'react-dom/client'
+'use client';
+import React, { useMemo } from 'react';
 import {
   Designer,
   DesignerToolsWidget,
@@ -18,25 +16,22 @@ import {
   ViewPanel,
   SettingsPanel,
   ComponentTreeWidget,
-} from '#packages/react'
-import {
-  SettingsForm,
-  setNpmCDNRegistry,
-} from '#packages/react-settings-form'
+} from '#packages/react';
+import { SettingsForm, setNpmCDNRegistry } from '#packages/react-settings-form';
 import {
   createDesigner,
   GlobalRegistry,
   Shortcut,
   KeyCode,
-} from '#packages/core'
+} from '#packages/core';
 import {
-  LogoWidget,
   ActionsWidget,
   PreviewWidget,
   SchemaEditorWidget,
   MarkupSchemaWidget,
-} from './widgets'
-import { saveSchema } from './service'
+  LogoWidget
+} from './widgets';
+import { saveSchema } from './service';
 import {
   Form,
   Field,
@@ -65,9 +60,9 @@ import {
   FormCollapse,
   FormLayout,
   FormGrid,
-} from '../components'
+} from '../components';
 
-setNpmCDNRegistry('//unpkg.com')
+setNpmCDNRegistry('//unpkg.com');
 
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {
@@ -94,7 +89,7 @@ GlobalRegistry.registerDesignerLocales({
       Displays: 'Displays',
     },
   },
-})
+});
 
 export const DesignablePlayground = () => {
   const engine = useMemo(
@@ -107,21 +102,21 @@ export const DesignablePlayground = () => {
               [KeyCode.Control, KeyCode.S],
             ],
             handler(ctx) {
-              saveSchema(ctx.engine)
+              saveSchema(ctx.engine);
             },
           }),
         ],
         rootComponentName: 'Form',
       }),
-    []
-  )
+    [],
+  );
   return (
-    <Designer engine={engine}>
+    <Designer engine={engine} prefixCls='dn-' theme='light' position='fixed'>
       <StudioPanel logo={<LogoWidget />} actions={<ActionsWidget />}>
         <CompositePanel>
-          <CompositePanel.Item title="panels.Component" icon="Component">
+          <CompositePanel.Item title='panels.Component' icon='Component'>
             <ResourceWidget
-              title="sources.Inputs"
+              title='sources.Inputs'
               sources={[
                 Input,
                 Password,
@@ -142,7 +137,7 @@ export const DesignablePlayground = () => {
               ]}
             />
             <ResourceWidget
-              title="sources.Layouts"
+              title='sources.Layouts'
               sources={[
                 Card,
                 FormGrid,
@@ -153,28 +148,28 @@ export const DesignablePlayground = () => {
               ]}
             />
             <ResourceWidget
-              title="sources.Arrays"
+              title='sources.Arrays'
               sources={[ArrayCards, ArrayTable]}
             />
-            <ResourceWidget title="sources.Displays" sources={[Text]} />
+            <ResourceWidget title='sources.Displays' sources={[Text]} />
           </CompositePanel.Item>
-          <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
+          <CompositePanel.Item title='panels.OutlinedTree' icon='Outline'>
             <OutlineTreeWidget />
           </CompositePanel.Item>
-          <CompositePanel.Item title="panels.History" icon="History">
+          <CompositePanel.Item title='panels.History' icon='History'>
             <HistoryWidget />
           </CompositePanel.Item>
         </CompositePanel>
-        <Workspace id="form">
+        <Workspace id='form'>
           <WorkspacePanel>
-            <ToolbarPanel style={{ background: 'bg.muted'  }}>
+            <ToolbarPanel style={{ background: 'bg.muted' }}>
               <DesignerToolsWidget />
               <ViewToolsWidget
                 use={['DESIGNABLE', 'JSONTREE', 'MARKUP', 'PREVIEW']}
               />
             </ToolbarPanel>
-            <ViewportPanel style={{ height: '100%', background: 'bg.panel'  }}>
-              <ViewPanel type="DESIGNABLE">
+            <ViewportPanel style={{ height: '100%', background: 'bg.panel' }}>
+              <ViewPanel type='DESIGNABLE'>
                 {() => (
                   <ComponentTreeWidget
                     components={{
@@ -209,26 +204,24 @@ export const DesignablePlayground = () => {
                   />
                 )}
               </ViewPanel>
-              <ViewPanel type="JSONTREE" scrollable={false}>
+              <ViewPanel type='JSONTREE' scrollable={false}>
                 {(tree, onChange) => (
                   <SchemaEditorWidget tree={tree} onChange={onChange} />
                 )}
               </ViewPanel>
-              <ViewPanel type="MARKUP" scrollable={false}>
+              <ViewPanel type='MARKUP' scrollable={false}>
                 {(tree) => <MarkupSchemaWidget tree={tree} />}
               </ViewPanel>
-              <ViewPanel type="PREVIEW">
+              <ViewPanel type='PREVIEW'>
                 {(tree) => <PreviewWidget tree={tree} />}
               </ViewPanel>
             </ViewportPanel>
           </WorkspacePanel>
         </Workspace>
-        <SettingsPanel title="panels.PropertySettings">
-          <SettingsForm uploadAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" />
+        <SettingsPanel title='panels.PropertySettings'>
+          <SettingsForm uploadAction='https://www.mocky.io/v2/5cc8019d300000980a055e76' />
         </SettingsPanel>
       </StudioPanel>
     </Designer>
-  )
-}
-
-
+  );
+};

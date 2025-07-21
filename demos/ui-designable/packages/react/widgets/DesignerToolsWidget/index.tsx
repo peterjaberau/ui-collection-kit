@@ -1,6 +1,5 @@
 import React, { Fragment, useRef } from 'react';
-import { InputNumber } from 'antd';
-import { Button, ButtonGroup } from '@chakra-ui/react';
+import { Button, InputNumber } from 'antd';
 import { observer } from '@formily/reactive-react';
 import { CursorType, ScreenType } from '#packages/core';
 import {
@@ -12,8 +11,6 @@ import {
 } from '../../hooks';
 import { IconWidget } from '../IconWidget';
 import cls from 'classnames';
-import { HStack } from '@chakra-ui/react';
-// import './styles.less';
 
 type DesignerToolsType = 'HISTORY' | 'CURSOR' | 'SCREEN_TYPE';
 
@@ -32,12 +29,11 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
     const sizeRef = useRef<{ width?: any; height?: any }>({});
     const prefix = usePrefix('designer-tools');
     const renderHistoryController = () => {
-      if (!props?.use?.includes('HISTORY')) return null;
+      if (!props.use?.includes('HISTORY')) return null;
       return (
-        <ButtonGroup>
+        <Button.Group size='small' style={{ marginRight: 20 }}>
           <Button
-            size='sm'
-            variant='ghost'
+            size='small'
             disabled={!history?.allowUndo}
             onClick={() => {
               history.undo();
@@ -46,8 +42,7 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
             <IconWidget infer='Undo' />
           </Button>
           <Button
-            size='sm'
-            variant='ghost'
+            size='small'
             disabled={!history?.allowRedo}
             onClick={() => {
               history.redo();
@@ -55,7 +50,7 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
           >
             <IconWidget infer='Redo' />
           </Button>
-        </ButtonGroup>
+        </Button.Group>
       );
     };
 
@@ -63,10 +58,9 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
       if (workbench.type !== 'DESIGNABLE') return null;
       if (!props.use?.includes('CURSOR')) return null;
       return (
-        <ButtonGroup>
+        <Button.Group size='small' style={{ marginRight: 20 }}>
           <Button
-            size='sm'
-            variant='ghost'
+            size='small'
             disabled={cursor.type === CursorType.Normal}
             onClick={() => {
               cursor.setType(CursorType.Normal);
@@ -75,8 +69,7 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
             <IconWidget infer='Move' />
           </Button>
           <Button
-            size='sm'
-            variant='ghost'
+            size='small'
             disabled={cursor.type === CursorType.Selection}
             onClick={() => {
               cursor.setType(CursorType.Selection);
@@ -84,7 +77,7 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
           >
             <IconWidget infer='Selection' />
           </Button>
-        </ButtonGroup>
+        </Button.Group>
       );
     };
 
@@ -126,8 +119,8 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
           />
           {(screen.width !== '100%' || screen.height !== '100%') && (
             <Button
-              size='sm'
-              variant='ghost'
+              size='small'
+              style={{ marginRight: 20 }}
               onClick={() => {
                 screen.resetSize();
               }}
@@ -142,10 +135,9 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
     const renderScreenTypeController = () => {
       if (!props.use?.includes('SCREEN_TYPE')) return null;
       return (
-        <ButtonGroup>
+        <Button.Group size='small' style={{ marginRight: 20 }}>
           <Button
-            size='sm'
-            variant='ghost'
+            size='small'
             disabled={screen.type === ScreenType.PC}
             onClick={() => {
               screen.setType(ScreenType.PC);
@@ -154,8 +146,7 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
             <IconWidget infer='PC' />
           </Button>
           <Button
-            size='sm'
-            variant='ghost'
+            size='small'
             disabled={screen.type === ScreenType.Mobile}
             onClick={() => {
               screen.setType(ScreenType.Mobile);
@@ -164,8 +155,7 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
             <IconWidget infer='Mobile' />
           </Button>
           <Button
-            size='sm'
-            variant='ghost'
+            size='small'
             disabled={screen.type === ScreenType.Responsive}
             onClick={() => {
               screen.setType(ScreenType.Responsive);
@@ -173,7 +163,7 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
           >
             <IconWidget infer='Responsive' />
           </Button>
-        </ButtonGroup>
+        </Button.Group>
       );
     };
 
@@ -182,8 +172,8 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
       if (screen.type !== ScreenType.Mobile) return;
       return (
         <Button
-          size='sm'
-          variant='ghost'
+          size='small'
+          style={{ marginRight: 20 }}
           onClick={() => {
             screen.setFlip(!screen.flip);
           }}
@@ -200,13 +190,13 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> | any =
     };
 
     return (
-      <HStack data-id='designer-tools' style={props.style} alignItems='center'>
+      <div style={props.style} className={cls(prefix, props.className)}>
         {renderHistoryController()}
         {renderCursorController()}
         {renderScreenTypeController()}
         {renderMobileController()}
         {renderResponsiveController()}
-      </HStack>
+      </div>
     );
   });
 

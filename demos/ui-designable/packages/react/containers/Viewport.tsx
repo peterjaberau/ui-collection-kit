@@ -3,7 +3,6 @@ import { usePrefix, useViewport } from '../hooks';
 import { AuxToolWidget, EmptyWidget } from '../widgets';
 import { Viewport as ViewportType } from '#packages/core';
 import { requestIdle, globalThisPolyfill } from '#packages/shared';
-import { Box } from '@chakra-ui/react'
 import cls from 'classnames';
 export interface IViewportProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'placeholder'> {
@@ -50,19 +49,13 @@ export const Viewport: React.FC<IViewportProps> = ({
   }, [viewport]);
 
   return (
-    <Box
-      data-id='viewport'
+    <div
       {...props}
       ref={ref}
-      css={{
+      className={cls(prefix, props.className)}
+      style={{
         opacity: !loaded ? 0 : 1,
-        overflow: isFrameRef.current ? 'hidden' : 'auto',
-        h: 'full',
-        w: 'full',
-        position: 'relative',
-        outline: 'none',
-        boxSizing: 'border-box',
-        userSelect: 'none',
+        overflow: isFrameRef.current ? 'hidden' : 'overlay',
         ...props.style,
       }}
     >
@@ -71,6 +64,6 @@ export const Viewport: React.FC<IViewportProps> = ({
       <EmptyWidget dragTipsDirection={dragTipsDirection}>
         {placeholder}
       </EmptyWidget>
-    </Box>
+    </div>
   );
 };

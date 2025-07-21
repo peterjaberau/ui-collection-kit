@@ -2,27 +2,28 @@ import React from 'react';
 import { TreeNode } from '#packages/core';
 import { usePrefix } from '../../hooks';
 import { IconWidget } from '../IconWidget';
-import { Button } from '@chakra-ui/react';
+import { Button } from 'antd'
+
 export interface ICopyProps {
   node: TreeNode;
   style?: React.CSSProperties;
 }
 
 export const Copy: React.FC<ICopyProps> = ({ node, style }) => {
-  const prefix = usePrefix('aux-copy');
-  if (node === node.root) return null;
+  const prefix = usePrefix('aux-copy')
+  if (node === node.root) return null
   return (
     <Button
-      data-id='aux-copy'
-      size='2xs'
-      variant='outline'
+      className={prefix}
+      style={style}
+      type="primary"
       onClick={() => {
-        TreeNode.clone([node]);
+        TreeNode.clone([node])
       }}
     >
-      <IconWidget infer='Clone' />
+      <IconWidget infer="Clone" />
     </Button>
-  );
-};
+  )
+}
 
-Copy.displayName = 'Copy';
+Copy.displayName = 'Copy'

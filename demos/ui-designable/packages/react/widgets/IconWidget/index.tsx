@@ -133,7 +133,7 @@ IconWidget.ShadowSVG = (props) => {
   const width = isNumSize(props.width) ? `${props.width}px` : props.width;
   const height = isNumSize(props.height) ? `${props.height}px` : props.height;
   useEffect(() => {
-    if (ref.current) {
+    if (ref.current && !ref.current.shadowRoot) {
       const root = ref.current.attachShadow({
         mode: 'open',
       });

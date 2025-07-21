@@ -3,7 +3,8 @@ import { isValid } from '#packages/shared';
 import cls from 'classnames';
 import { IconWidget, TextWidget } from '../widgets';
 import { usePrefix } from '../hooks';
-import { Stack, HStack, Box, IconButton } from '@chakra-ui/react';
+import { IconButton, Stack, HStack, Card, Box } from '@chakra-ui/react';
+import { LuPenTool, LuFolderTree, LuHistory, LuPin, LuPinOff, LuPanelLeftClose, LuPanelLeftOpen } from 'react-icons/lu';
 
 export interface ICompositePanelProps {
   direction?: 'left' | 'right';
@@ -23,6 +24,17 @@ export interface ICompositePanelItemProps {
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   extra?: React.ReactNode;
 }
+
+const iconsMap = {
+  0: <LuPenTool />,
+  1: <LuFolderTree />,
+  2: <LuHistory />,
+  pin: <LuPin />,
+  unPin: <LuPinOff />,
+  closeLeft: <LuPanelLeftClose />,
+  openLeft: <LuPanelLeftOpen />
+
+};
 
 const parseItems = (
   children: React.ReactNode,
@@ -62,7 +74,6 @@ export const CompositePanel:
     props.defaultActiveKey ?? getDefaultKey(props.children),
   );
   const activeKeyRef = useRef(null);
-  const [pinning, setPinning] = useState(props.defaultPinning ?? false);
   const [visible, setVisible] = useState(props.defaultOpen ?? true);
   const items = parseItems(props.children);
   const currentItem = findItem(items, activeKey);
@@ -82,154 +93,63 @@ export const CompositePanel:
     if (!content || !visible) return;
     return (
       <Stack
-        data-id='composite-panel-tabs-content'
+        w='300px'
         h='full'
-        css={{
-          h: 'full',
-          width: '300px',
-          borderRight: '1px Solid',
-          borderRightColor: 'border',
-          '&.pinning': {
-            position: 'absolute',
-            zIndex: 1,
-            left: '100%',
-            top: 0,
-            boxShadow: 'md',
-            borderRight: '1px solid transparent',
-          },
-        }}
+        boxSizing='content-box'
+        borderRight='1px solid'
+        borderColor='border.muted'
       >
-        <HStack
-          justify='between'
-          css={{
-            justifyContent: 'space-between',
-            borderBottom: '1px solid',
-            borderBottomColor: 'border',
-            padding: '14px 7px',
-          }}
-        >
-          <Box flex={1} fontSize='20px'>
-            <TextWidget>{currentItem.title}</TextWidget>
-          </Box>
-          <HStack justify='flex-end'>
-            <Box>{currentItem.extra}</Box>
-            {!pinning && (
-              <IconButton variant='ghost' size='sm'>
-                <IconWidget
-                  infer='PushPinOutlined'
-                  className={prefix + '-tabs-header-pin'}
-                  onClick={() => {
-                    setPinning(!pinning);
-                  }}
-                />
-              </IconButton>
-            )}
-            {pinning && (
-              <IconButton variant='ghost' size='sm'>
-                <IconWidget
-                  infer='PushPinFilled'
-                  className={prefix + '-tabs-header-pin-filled'}
-                  onClick={() => {
-                    setPinning(!pinning);
-                  }}
-                />
-              </IconButton>
-            )}
-            <IconButton variant='ghost' size='sm'>
-              <IconWidget
-                infer='Close'
-                className={prefix + '-tabs-header-close'}
-                onClick={() => {
-                  setVisible(false);
-                }}
-              />
-            </IconButton>
-          </HStack>
-        </HStack>
-        <Stack
-          h='full'
-          css={{
-            flexGrow: 2,
-            flexShrink: 2,
-            overflow: 'auto',
-            overflowX: 'hidden',
-          }}
-        >
-          {content}
-        </Stack>
+        <Card.Root border='none'>
+          <Card.Header p={0} >
+            <HStack justify='space-between'>
+              <HStack flex={1} px={4}>
+                <Card.Title m={0}>{currentItem.title}</Card.Title>
+              </HStack>
+              <HStack>
+                {currentItem.extra}
+                <IconButton
+                  variant='ghost'
+                  size='sm'
+                  onClick={() =>  setVisible(false)}
+                >
+                  {iconsMap.closeLeft}
+                </IconButton>
+              </HStack>
+            </HStack>
+
+          </Card.Header>
+          <Card.Body p={0}>
+            {content}
+          </Card.Body>
+        </Card.Root>
       </Stack>
     );
   };
 
   return (
-    <HStack
-      data-id='composite-panel'
-      position='relative'
-      userSelect='none'
-      zIndex={2}
-      h='full'
-    >
+    <HStack alignItems='flex-start' gap={0}>
       <Stack
-        data-id='composite-panel-tabs'
-        position='relative'
-        zIndex={2}
-        borderRight='1px solid'
-        borderRightColor='border'
-        width='50px'
+        flex={1}
         h='full'
+        borderRight='1px solid'
+        borderColor='border.muted'
       >
         {items.map((item, index) => {
-          const takeTab = () => {
-            if (item.href) {
-              return <a href={item.href}>{item.icon}</a>;
-            }
-            return (
-              <IconButton size='sm' variant='ghost'>
-                <IconWidget
-                  tooltip={
-                    props.showNavTitle
-                      ? null
-                      : {
-                          title: <TextWidget>{item.title}</TextWidget>,
-                          placement:
-                            props.direction === 'right' ? 'left' : 'right',
-                        }
-                  }
-                  infer={item.icon}
-                />
-              </IconButton>
-            );
-          };
-          const shape = item.shape ?? 'tab';
-          const Comp = shape === 'link' ? 'a' : 'div';
           return (
-            <Comp
-              className={cls(prefix + '-tabs-pane', {
-                active: activeKey === item.key,
-              })}
+            <IconButton
               key={index}
-              href={item.href}
+              variant={activeKey === item.key ? 'surface' : 'ghost'}
               onClick={(e: any) => {
-                if (shape === 'tab') {
-                  if (activeKey === item.key) {
-                    setVisible(!visible);
-                  } else {
-                    setVisible(true);
-                  }
-                  if (!props?.activeKey || !props?.onChange)
-                    setActiveKey(item.key);
+                if (activeKey === item.key) {
+                  setVisible(!visible);
+                } else {
+                  setVisible(true);
+                  setActiveKey(item.key);
                 }
-                item.onClick?.(e);
-                props.onChange?.(item.key);
               }}
             >
-              {takeTab()}
-              {props.showNavTitle && item.title ? (
-                <div className={prefix + '-tabs-pane-title'}>
-                  <TextWidget>{item.title}</TextWidget>
-                </div>
-              ) : null}
-            </Comp>
+              {iconsMap[index]}
+            </IconButton>
           );
         })}
       </Stack>

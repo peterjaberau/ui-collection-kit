@@ -7,7 +7,6 @@ import { Copy } from './Copy';
 import { Delete } from './Delete';
 import { DragHandler } from './DragHandler';
 import cls from 'classnames';
-import { chakra, Box, HStack } from '@chakra-ui/react';
 
 const HELPER_DEBOUNCE_TIMEOUT = 100;
 
@@ -29,55 +28,55 @@ export const Helpers: React.FC<IHelpersProps> = ({ node, nodeRect }) => {
   const viewport = useViewport();
   const unmountRef = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState('top-right');
+  const [position, setPosition] = useState('top-right')
 
   useLayoutEffect(() => {
-    let request = null;
+    let request = null
 
     const getYInViewport = (nodeRect: DOMRect, helpersRect: DOMRect) => {
       if (nodeRect.top - viewport.scrollY > helpersRect.height) {
-        return 'top';
+        return 'top'
       } else if (
         viewport.isScrollTop &&
         nodeRect.height + helpersRect.height > viewport.height
       ) {
-        return 'inner-top';
+        return 'inner-top'
       } else if (
         nodeRect.bottom >= viewport.scrollY + viewport.height &&
         nodeRect.height + helpersRect.height > viewport.height
       ) {
-        return 'inner-bottom';
+        return 'inner-bottom'
       }
 
-      return 'bottom';
-    };
+      return 'bottom'
+    }
 
     const getXInViewport = (nodeRect: DOMRect, helpersRect: DOMRect) => {
-      const widthDelta = helpersRect.width - nodeRect.width;
+      const widthDelta = helpersRect.width - nodeRect.width
       if (widthDelta >= 0) {
         if (nodeRect.x < widthDelta) {
-          return 'left';
+          return 'left'
         } else if (nodeRect.right + widthDelta > viewport.width) {
-          return 'right';
+          return 'right'
         } else {
-          return 'center';
+          return 'center'
         }
       }
-      return 'right';
-    };
+      return 'right'
+    }
 
     const update = () => {
-      const helpersRect = ref.current?.getBoundingClientRect();
-      if (!helpersRect || !nodeRect) return;
-      if (unmountRef.current) return;
+      const helpersRect = ref.current?.getBoundingClientRect()
+      if (!helpersRect || !nodeRect) return
+      if (unmountRef.current) return
       setPosition(
         getYInViewport(nodeRect, helpersRect) +
-          '-' +
-          getXInViewport(nodeRect, helpersRect),
-      );
-    };
+        '-' +
+        getXInViewport(nodeRect, helpersRect)
+      )
+    }
 
-    update();
+    update()
 
     return reaction(
       () => [
@@ -89,42 +88,29 @@ export const Helpers: React.FC<IHelpersProps> = ({ node, nodeRect }) => {
         viewport.isScrollTop,
       ],
       () => {
-        clearTimeout(request);
-        request = setTimeout(update, HELPER_DEBOUNCE_TIMEOUT);
-      },
-    );
-  }, [viewport, nodeRect]);
+        clearTimeout(request)
+        request = setTimeout(update, HELPER_DEBOUNCE_TIMEOUT)
+      }
+    )
+  }, [viewport, nodeRect])
 
-  if (!nodeRect || !node) return null;
+  if (!nodeRect || !node) return null
 
   return (
-    <Box
-      data-id='aux-helpers'
-      css={{
-        ...(position
-          ? {
-              position: 'absolute',
-              top: '100%',
-              right: 0,
-            }
-          : undefined),
-      }}
+    <div
+      className={cls(prefix, {
+        [position]: true,
+      })}
       ref={ref}
     >
-      <HStack
-        data-id='aux-helpers-content'
-        css={{
-          flexWrap: 'nowrap',
-          whiteSpace: 'nowrap',
-        }}
-      >
+      <div className={cls(prefix + '-content')}>
         <Selector node={node} />
         {node?.allowClone() === false ? null : <Copy node={node} />}
         {node?.allowDrag() === false ? null : <DragHandler node={node} />}
         {node?.allowDelete() === false ? null : <Delete node={node} />}
-      </HStack>
-    </Box>
-  );
-};
+      </div>
+    </div>
+  )
+}
 
-Helpers.displayName = 'Helpers';
+Helpers.displayName = 'Helpers'

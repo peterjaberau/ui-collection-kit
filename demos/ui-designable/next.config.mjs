@@ -10,6 +10,9 @@ const nextConfig = {
       clientSegmentCache: true,
       // ppr: true,
   },
+  lessLoaderOptions: {
+    javascriptEnabled: true
+  },
 };
 
 export default withLess(nextConfig);

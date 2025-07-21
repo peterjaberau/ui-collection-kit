@@ -1,11 +1,4 @@
-import '#packages/formily/antd/components/common/Container/styles.less'
-import '#packages/formily/antd/components/components/ArrayCards/styles.less'
-import '#packages/formily/antd/components/components/ArrayTable/styles.less'
-import '#packages/formily/antd/components/components/Form/styles.less'
-import '#packages/formily/antd/components/components/FormGrid/styles.less'
-import '#packages/formily/antd/components/components/Text/styles.less'
-import '#packages/formily/setters/components/DataSourceSetter/styles.less'
-import '#packages/formily/setters/components/ReactionsSetter/styles.less'
+import './styles.css'
 
 import { SystemProvider } from '#actors/system.provider';
 import { Provider } from './provider';
@@ -18,7 +11,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body suppressHydrationWarning>
+    {/*<head>*/}
+    {/*  <link rel="stylesheet" href="https://designable-antd.formilyjs.org/playground.30312a0e35612156c598.css" precedence="default" />*/}
+    {/*</head>*/}
+      <body suppressHydrationWarning >
         <Suspense>
           <SystemProvider>
             <Provider>{children}</Provider>

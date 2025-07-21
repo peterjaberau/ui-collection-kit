@@ -4,7 +4,6 @@ import { observer } from '@formily/reactive-react';
 import { useTree, useWorkbench } from '../hooks';
 import { Viewport } from '../containers';
 import { requestIdle } from '#packages/shared';
-import { Box } from '@chakra-ui/react'
 
 export interface IViewPanelProps {
   type: WorkbenchTypes;
@@ -24,41 +23,40 @@ export const ViewPanel: React.FC<IViewPanelProps> | any = observer((props: any) 
     if (workbench.type === props.type) {
       requestIdle(() => {
         requestAnimationFrame(() => {
-          setVisible(true);
-        });
-      });
+          setVisible(true)
+        })
+      })
     } else {
-      setVisible(false);
+      setVisible(false)
     }
-  }, [workbench.type]);
-  if (workbench.type !== props.type) return null;
+  }, [workbench.type])
+  if (workbench.type !== props.type) return null
   const render = () => {
     return props.children(tree, (payload) => {
-      tree.from(payload);
-      tree.takeSnapshot();
-    });
-  };
+      tree.from(payload)
+      tree.takeSnapshot()
+    })
+  }
   if (workbench.type === 'DESIGNABLE')
     return (
       <Viewport dragTipsDirection={props.dragTipsDirection}>
         {render()}
       </Viewport>
-    );
+    )
   return (
-    <Box
-      data-id='view-panel'
-      css={{
-        overflow: props.scrollable ? 'auto' : 'hidden',
+    <div
+      style={{
+        overflow: props.scrollable ? 'overlay' : 'hidden',
         height: '100%',
         cursor: 'auto',
         userSelect: 'text',
       }}
     >
       {visible && render()}
-    </Box>
-  );
-});
+    </div>
+  )
+})
 
 ViewPanel.defaultProps = {
   scrollable: true,
-};
+}

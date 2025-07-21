@@ -20,9 +20,10 @@ export const Form: DnFC<React.ComponentProps<typeof FormilyForm>> = observer(
     )
     return (
       <FormilyForm
+        data-id='designable-form'
         {...props}
         style={{ ...props.style }}
-        className={prefix}
+        className={'ds-designable-form'}
         form={form}
       >
         {props.children}
