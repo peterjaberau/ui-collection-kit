@@ -5,7 +5,7 @@ const nextConfig = {
   /* config options here */
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   experimental: {
-      inlineCss: true,
+      // inlineCss: true,
       useCache: true,
       clientSegmentCache: true,
       // ppr: true,
@@ -15,4 +15,6 @@ const nextConfig = {
   },
 };
 
-export default withLess(nextConfig);
+export default withLess({
+  ...nextConfig,
+});

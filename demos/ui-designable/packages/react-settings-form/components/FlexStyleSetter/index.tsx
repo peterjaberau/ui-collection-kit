@@ -4,11 +4,37 @@ import { Radio } from '@formily/antd-v5'
 import { usePrefix, IconWidget } from '#packages/react'
 import { InputItems } from '../InputItems'
 import cls from 'classnames'
+import { HStack, Icon, RadioCard } from '@chakra-ui/react';
 // import './styles.less'
 
 export interface IFlexStyleSetterProps {
   className?: string
   style?: React.CSSProperties
+}
+
+export const RadioGroupRenderer = (props: any) => {
+  return (
+    <RadioCard.Root
+      orientation='vertical'
+      align='center'
+      w='full'
+      size='sm'
+      value={props?.value || ''}
+      defaultValue={props?.value || ''}
+      onValueChange={(e) => props.onChange?.(e.value)}
+    >
+      <HStack flex={1} justify='center' alignItems='center'>
+        {props.datasource.map((item: any) => (
+          <RadioCard.Item key={item.value} value={item.value}>
+            <RadioCard.ItemHiddenInput />
+            <RadioCard.ItemControl p={2} >
+              <Icon fontSize='14px'>{item.label}</Icon>
+            </RadioCard.ItemControl>
+          </RadioCard.Item>
+        ))}
+      </HStack>
+    </RadioCard.Root>
+  )
 }
 
 export const FlexStyleSetter: React.FC<IFlexStyleSetterProps> = observer(
@@ -17,7 +43,7 @@ export const FlexStyleSetter: React.FC<IFlexStyleSetterProps> = observer(
     const prefix = usePrefix('flex-style-setter')
     return (
       <div className={cls(prefix, props.className)} style={props.style}>
-        <InputItems vertical>
+        <InputItems>
           <Field
             name="flexDirection"
             basePath={field.address.parent()}

@@ -162,7 +162,7 @@ export const DesignablePlayground = () => {
         </CompositePanel>
         <Workspace id='form'>
           <WorkspacePanel>
-            <ToolbarPanel style={{ background: 'bg.muted' }}>
+            <ToolbarPanel>
               <DesignerToolsWidget />
               <ViewToolsWidget
                 use={['DESIGNABLE', 'JSONTREE', 'MARKUP', 'PREVIEW']}

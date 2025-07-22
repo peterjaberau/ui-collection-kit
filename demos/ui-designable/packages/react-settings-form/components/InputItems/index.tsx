@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { usePrefix, IconWidget } from '#packages/react'
 import cls from 'classnames'
+import { Stack, Icon } from '@chakra-ui/react'
 // import './styles.less'
 
 export interface IInputItemsContext {
@@ -32,9 +33,9 @@ export const InputItems: React.FC<IInputItemsProps> | any & {
   const prefix = usePrefix('input-items')
   return (
     <InputItemsContext.Provider value={props}>
-      <div className={cls(prefix, props.className)} style={props.style}>
+      <Stack bg='bg.emphasized' p={2} borderRadius='sm'>
         {props.children}
-      </div>
+      </Stack>
     </InputItemsContext.Provider>
   )
 }
@@ -47,19 +48,14 @@ InputItems.Item = (props: any) => {
   const prefix = usePrefix('input-items-item')
   const ctx = useContext(InputItemsContext)
   return (
-    <div
-      className={cls(prefix, props.className, {
-        vertical: props.vertical || ctx.vertical,
-      })}
-      style={{ width: props.width || ctx.width, ...props.style }}
-    >
+    <Stack mb='10px' w='full' gap={0}>
       {props.icon && (
-        <div className={prefix + '-icon'}>
+        <Icon>
           <IconWidget infer={props.icon} size={16} />
-        </div>
+        </Icon>
       )}
-      {props.title && <div className={prefix + '-title'}>{props.title}</div>}
+      {props.title && <div>{props.title}</div>}
       <div className={prefix + '-controller'}>{props.children}</div>
-    </div>
+    </Stack>
   )
 }

@@ -6,7 +6,7 @@ export interface IWorkspaceItemProps {
   flexable?: boolean
 }
 
-export const WorkspacePanel: React.FC & {
+export const WorkspacePanel: React.FC | any & {
   Item?: React.FC<IWorkspaceItemProps>
 } = (props) => {
   const prefix = usePrefix('workspace-panel')

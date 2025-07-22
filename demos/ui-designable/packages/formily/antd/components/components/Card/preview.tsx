@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card as AntdCard } from 'antd'
+import { Card as ChakraCard } from '@chakra-ui/react'
 
 import { createBehavior, createResource } from '#packages/core'
 import { DnFC } from '#packages/react'
@@ -9,17 +10,20 @@ import { AllLocales } from '../../locales'
 
 export const Card: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
   return (
-    <AntdCard
-      {...props}
-      title={
-        <span data-content-editable="x-component-props.title">
-          {props.title}
-        </span>
-      }
-    >
-      {props.children}
-    </AntdCard>
-  )
+    <>
+
+      <AntdCard
+        {...props}
+        title={
+          <span data-content-editable="x-component-props.title">
+            {props.title}
+          </span>
+        }
+      >
+        {props.children}
+      </AntdCard>
+    </>
+  );
 }
 
 Card.Behavior = createBehavior({
