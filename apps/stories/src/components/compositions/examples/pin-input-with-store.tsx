@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Button,
-  ButtonGroup,
-  PinInput,
-  Stack,
-  usePinInput,
-} from "@chakra-ui/react"
+import { Button, ButtonGroup, PinInput, Stack, usePinInput } from "@chakra-ui/react"
 
 export const PinInputWithStore = () => {
   const store = usePinInput()
@@ -22,9 +16,7 @@ export const PinInputWithStore = () => {
       </PinInput.RootProvider>
 
       <ButtonGroup variant="outline" size="sm">
-        <Button onClick={() => store.setValue(["1", "2", "3", "4"])}>
-          Set value
-        </Button>
+        <Button onClick={() => store.setValue(["1", "2", "3", "4"])}>Set value</Button>
         <Button onClick={() => store.clearValue()}>Clear value</Button>
       </ButtonGroup>
     </Stack>

@@ -1,12 +1,4 @@
-import {
-  Avatar,
-  Button,
-  Card,
-  HStack,
-  Stack,
-  Strong,
-  Text,
-} from "@chakra-ui/react"
+import { Avatar, Button, Card, HStack, Stack, Strong, Text } from "@chakra-ui/react"
 import { LuCheck, LuX } from "react-icons/lu"
 
 export const CardWithAvatar = () => {
@@ -29,8 +21,7 @@ export const CardWithAvatar = () => {
         </HStack>
         <Card.Description>
           <Strong color="fg">Nate Foss </Strong>
-          has requested to join your team. You can approve or decline their
-          request.
+          has requested to join your team. You can approve or decline their request.
         </Card.Description>
       </Card.Body>
       <Card.Footer>

@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Layout / Wrap",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { WrapBasic as Basic } from "../compositions/examples/wrap-basic"
 export { WrapResponsive as Responsive } from "../compositions/examples/wrap-responsive"

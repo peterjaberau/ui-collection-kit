@@ -1,13 +1,7 @@
 "use client"
 
-import {
-  For,
-  Span,
-  Table,
-  type TableRootProps,
-  useSlotRecipe,
-} from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { For, Span, Table, type TableRootProps, useSlotRecipe } from "@chakra-ui/react"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const TableSizeTable = () => {
   const recipe = useSlotRecipe({ key: "table" })

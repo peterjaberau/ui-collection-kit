@@ -6,13 +6,7 @@ export const TabsWithVertical = () => {
     <SimpleGrid columns={2} gap="14" width="full">
       <For each={["line", "enclosed", "outline", "plain"]}>
         {(variant) => (
-          <Tabs.Root
-            key={variant}
-            defaultValue="members"
-            orientation="vertical"
-            variant={variant}
-            colorPalette="teal"
-          >
+          <Tabs.Root key={variant} defaultValue="members" orientation="vertical" variant={variant} colorPalette="teal">
             <Tabs.List>
               <Tabs.Trigger value="members">
                 <LuUser />
@@ -27,13 +21,9 @@ export const TabsWithVertical = () => {
                 Settings
               </Tabs.Trigger>
             </Tabs.List>
-            <Tabs.Content value="members">
-              Manage your team members
-            </Tabs.Content>
+            <Tabs.Content value="members">Manage your team members</Tabs.Content>
             <Tabs.Content value="projects">Manage your projects</Tabs.Content>
-            <Tabs.Content value="tasks">
-              Manage your tasks for freelancers
-            </Tabs.Content>
+            <Tabs.Content value="tasks">Manage your tasks for freelancers</Tabs.Content>
           </Tabs.Root>
         )}
       </For>

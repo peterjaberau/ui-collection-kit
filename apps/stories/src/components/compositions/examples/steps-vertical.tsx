@@ -2,12 +2,7 @@ import { Button, ButtonGroup, Stack, Steps } from "@chakra-ui/react"
 
 export const StepsVertical = () => {
   return (
-    <Steps.Root
-      orientation="vertical"
-      height="400px"
-      defaultStep={1}
-      count={steps.length}
-    >
+    <Steps.Root orientation="vertical" height="400px" defaultStep={1} count={steps.length}>
       <Steps.List>
         {steps.map((step, index) => (
           <Steps.Item key={index} index={index} title={step.title}>

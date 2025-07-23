@@ -1,11 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  Portal,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Combobox, Portal, useFilter, useListCollection } from "@chakra-ui/react"
 
 export const ComboboxMinCharacter = () => {
   const { contains } = useFilter({ sensitivity: "base" })

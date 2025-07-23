@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from "react"
 import { createPortal } from "react-dom"
 import Frame, { type FrameContextProps, useFrame } from "react-frame-component"
-import { EnvironmentProvider, useEnvironmentContext } from "@ui-kit/components"
+import { EnvironmentProvider, useEnvironmentContext } from "@chakra-ui/react"
 
 export default {
   title: "Components / Environment",
@@ -51,9 +51,7 @@ function useWindow() {
   }
 }
 
-function FrameContext(props: {
-  children: (ctx: FrameContextProps) => React.ReactNode
-}) {
+function FrameContext(props: { children: (ctx: FrameContextProps) => React.ReactNode }) {
   const ctx = useFrame()
   return props.children(ctx)
 }

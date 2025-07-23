@@ -16,11 +16,7 @@ export const PieChartBasic = () => {
   return (
     <Chart.Root boxSize="200px" mx="auto" chart={chart}>
       <PieChart>
-        <Pie
-          isAnimationActive={false}
-          data={chart.data}
-          dataKey={chart.key("value")}
-        >
+        <Pie isAnimationActive={false} data={chart.data} dataKey={chart.key("value")}>
           {chart.data.map((item) => (
             <Cell key={item.name} fill={chart.color(item.color)} />
           ))}

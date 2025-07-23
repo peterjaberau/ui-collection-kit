@@ -1,16 +1,7 @@
 "use client"
 
-import {
-  Button,
-  For,
-  Heading,
-  Popover,
-  Portal,
-  Textarea,
-  chakra,
-  useSlotRecipe,
-} from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { Button, For, Heading, Popover, Portal, Textarea, chakra, useSlotRecipe } from "@chakra-ui/react"
+import { PlaygroundTable } from "../lib/playground-table"
 import { HiChat } from "react-icons/hi"
 
 export const PopoverSizeTable = () => {
@@ -43,10 +34,7 @@ export const PopoverSizeTable = () => {
                           <Heading size="sm">Confirmation!</Heading>
                         </Popover.Header>
                         <Popover.Body>
-                          <Textarea
-                            size={v}
-                            placeholder="Type your comment here"
-                          />
+                          <Textarea size={v} placeholder="Type your comment here" />
                         </Popover.Body>
                         <Popover.Footer gap="2">
                           <Button size={v} variant="solid">

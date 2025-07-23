@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Data List",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { DataListBasic as Basic } from "../compositions/examples/data-list-basic"
 export { DataListSizeTable as Sizes } from "../compositions/examples/data-list-size-table"

@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Color Picker",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { ColorPickerBasic as Basic } from "../compositions/examples/color-picker-basic"
 export { ColorPickerChangeEnd as ChangeEnd } from "../compositions/examples/color-picker-change-end"

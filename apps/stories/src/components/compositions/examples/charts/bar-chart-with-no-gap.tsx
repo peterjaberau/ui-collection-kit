@@ -27,11 +27,7 @@ export const BarChartWithNoGap = () => {
           dataKey={chart.key("month")}
           tickFormatter={(value) => value.slice(0, 3)}
         />
-        <Tooltip
-          cursor={{ fill: chart.color("bg.muted") }}
-          animationDuration={100}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip cursor={{ fill: chart.color("bg.muted") }} animationDuration={100} content={<Chart.Tooltip />} />
         {chart.series.map((item) => (
           <Bar
             isAnimationActive={false}

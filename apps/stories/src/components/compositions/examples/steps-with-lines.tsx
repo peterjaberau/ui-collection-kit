@@ -5,14 +5,7 @@ export const StepsWithLines = () => {
     <Steps.Root defaultStep={1} count={steps.length}>
       <Steps.List gap="4">
         {steps.map((item, index) => (
-          <Steps.Item
-            flex="1!"
-            flexDir="column"
-            alignItems="flex-start"
-            index={index}
-            key={index}
-            gap="2"
-          >
+          <Steps.Item flex="1!" flexDir="column" alignItems="flex-start" index={index} key={index} gap="2">
             <Steps.Separator h="3px" flex="unset" display="initial!" mx="0!" />
             <Steps.Trigger>
               <Steps.Title>{item.title}</Steps.Title>

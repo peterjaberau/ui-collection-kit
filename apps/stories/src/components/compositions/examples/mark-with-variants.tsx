@@ -6,8 +6,7 @@ export const MarkWithVariants = () => {
       <For each={["subtle", "solid", "text", "plain"]}>
         {(variant) => (
           <Text key={variant}>
-            The <Mark variant={variant}>design system</Mark> is a collection of
-            UI elements
+            The <Mark variant={variant}>design system</Mark> is a collection of UI elements
           </Text>
         )}
       </For>

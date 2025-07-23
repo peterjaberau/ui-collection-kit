@@ -1,21 +1,11 @@
-import {
-  Button,
-  Field,
-  Fieldset,
-  For,
-  Input,
-  NativeSelect,
-  Stack,
-} from "@chakra-ui/react"
+import { Button, Field, Fieldset, For, Input, NativeSelect, Stack } from "@chakra-ui/react"
 
 export const FieldsetBasic = () => {
   return (
     <Fieldset.Root size="lg" maxW="md">
       <Stack>
         <Fieldset.Legend>Contact details</Fieldset.Legend>
-        <Fieldset.HelperText>
-          Please provide your contact details below.
-        </Fieldset.HelperText>
+        <Fieldset.HelperText>Please provide your contact details below.</Fieldset.HelperText>
       </Stack>
 
       <Fieldset.Content>

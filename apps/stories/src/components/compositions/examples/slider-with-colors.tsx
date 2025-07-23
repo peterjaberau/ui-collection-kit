@@ -7,12 +7,7 @@ export const SliderWithColors = () => {
     <Stack gap="4" align="flex-start">
       <For each={colors}>
         {(color) => (
-          <Slider.Root
-            key={color}
-            width="200px"
-            colorPalette={color}
-            defaultValue={[40]}
-          >
+          <Slider.Root key={color} width="200px" colorPalette={color} defaultValue={[40]}>
             <Slider.Control>
               <Slider.Track>
                 <Slider.Range />

@@ -5,11 +5,7 @@ export const RadioDisabled = () => {
     <RadioGroup.Root defaultValue="2">
       <HStack gap="6">
         {items.map((item) => (
-          <RadioGroup.Item
-            key={item.value}
-            value={item.value}
-            disabled={item.disabled}
-          >
+          <RadioGroup.Item key={item.value} value={item.value} disabled={item.disabled}>
             <RadioGroup.ItemHiddenInput />
             <RadioGroup.ItemIndicator />
             <RadioGroup.ItemText>{item.label}</RadioGroup.ItemText>

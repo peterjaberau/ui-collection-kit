@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  ColorPicker,
-  HStack,
-  Portal,
-  Square,
-  parseColor,
-} from "@chakra-ui/react"
+import { ColorPicker, HStack, Portal, Square, parseColor } from "@chakra-ui/react"
 import { LuCheck, LuPlus } from "react-icons/lu"
 
 export const ColorPickerWithSwatchesAndTrigger = () => {

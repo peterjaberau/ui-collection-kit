@@ -1,7 +1,7 @@
 "use client"
 
 import { For, Span, Textarea, useRecipe } from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const TextareaVariantTable = () => {
   const recipe = useRecipe({ key: "textarea" })

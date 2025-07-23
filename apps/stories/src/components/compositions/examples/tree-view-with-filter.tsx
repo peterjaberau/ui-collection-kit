@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Highlight,
-  Input,
-  Stack,
-  TreeView,
-  createTreeCollection,
-  useFilter,
-} from "@chakra-ui/react"
+import { Highlight, Input, Stack, TreeView, createTreeCollection, useFilter } from "@chakra-ui/react"
 import { useState } from "react"
 import { LuFile, LuFolder } from "react-icons/lu"
 
@@ -20,9 +13,7 @@ export const TreeViewWithFilter = () => {
 
   const search = (search: string) => {
     setQuery(search)
-    const nextCollection = initialCollection.filter((node) =>
-      contains(node.name, search),
-    )
+    const nextCollection = initialCollection.filter((node) => contains(node.name, search))
 
     // update collection
     setCollection(nextCollection)
@@ -33,11 +24,7 @@ export const TreeViewWithFilter = () => {
 
   return (
     <Stack gap="3">
-      <Input
-        size="sm"
-        placeholder="Search for files: 'react'"
-        onChange={(e) => search(e.target.value)}
-      />
+      <Input size="sm" placeholder="Search for files: 'react'" onChange={(e) => search(e.target.value)} />
 
       <TreeView.Root
         collection={collection}
@@ -53,10 +40,7 @@ export const TreeViewWithFilter = () => {
                 <TreeView.BranchControl>
                   <LuFolder />
                   <TreeView.BranchText>
-                    <Highlight
-                      query={[query]}
-                      styles={{ bg: "gray.emphasized" }}
-                    >
+                    <Highlight query={[query]} styles={{ bg: "gray.emphasized" }}>
                       {node.name}
                     </Highlight>
                   </TreeView.BranchText>
@@ -65,10 +49,7 @@ export const TreeViewWithFilter = () => {
                 <TreeView.Item>
                   <LuFile />
                   <TreeView.ItemText>
-                    <Highlight
-                      query={[query]}
-                      styles={{ bg: "gray.emphasized" }}
-                    >
+                    <Highlight query={[query]} styles={{ bg: "gray.emphasized" }}>
                       {node.name}
                     </Highlight>
                   </TreeView.ItemText>

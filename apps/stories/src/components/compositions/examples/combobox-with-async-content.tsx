@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  HStack,
-  Portal,
-  Span,
-  Spinner,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Combobox, HStack, Portal, Span, Spinner, useListCollection } from "@chakra-ui/react"
 import { useState } from "react"
 import { useAsync } from "react-use"
 
@@ -21,9 +14,7 @@ export const ComboboxWithAsyncContent = () => {
   })
 
   const state = useAsync(async () => {
-    const response = await fetch(
-      `https://swapi.py4e.com/api/people/?search=${inputValue}`,
-    )
+    const response = await fetch(`https://swapi.py4e.com/api/people/?search=${inputValue}`)
     const data = await response.json()
     set(data.results)
   }, [inputValue, set])

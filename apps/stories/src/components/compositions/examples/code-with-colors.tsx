@@ -1,18 +1,11 @@
 import { Code, Stack, Text } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
+import { colorPalettes } from "../lib/color-palettes"
 
 export const CodeWithColors = () => {
   return (
     <Stack gap="2" align="flex-start">
       {colorPalettes.map((colorPalette) => (
-        <Stack
-          align="center"
-          key={colorPalette}
-          direction="row"
-          gap="10"
-          px="4"
-          width="full"
-        >
+        <Stack align="center" key={colorPalette} direction="row" gap="10" px="4" width="full">
           <Text minW="8ch" textStyle="sm">
             {colorPalette}
           </Text>

@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  Portal,
-  Span,
-  Stack,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Combobox, Portal, Span, Stack, useListCollection } from "@chakra-ui/react"
 
 export const ComboboxWithCustomFilter = () => {
   const { collection, set } = useListCollection({

@@ -1,18 +1,18 @@
 import { keyframes } from "@emotion/react"
 import type { Meta } from "@storybook/react-vite"
 import { useState } from "react"
-import { Badge, Box, Button, Center, For, Link, Stack, Text } from "@ui-kit/components"
+import { Badge, Box, Button, Center, For, Link, Stack, Text } from "@chakra-ui/react"
 
 export default {
   title: "Foundations / Sandbox",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 const TimeStamp = () => {
   const [data] = useState(() => new Date().toISOString())

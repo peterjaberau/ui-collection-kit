@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Download Trigger",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { DownloadTriggerBasic as Basic } from "../compositions/examples/download-trigger-basic"
 export { DownloadTriggerWithFileSize as FileSize } from "../compositions/examples/download-trigger-with-file-size"

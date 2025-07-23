@@ -1,15 +1,7 @@
 "use client"
 
-import {
-  Button,
-  ButtonGroup,
-  For,
-  Span,
-  Steps,
-  type StepsRootProps,
-  useSlotRecipe,
-} from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { Button, ButtonGroup, For, Span, Steps, type StepsRootProps, useSlotRecipe } from "@chakra-ui/react"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const StepsSizeTable = () => {
   const recipe = useSlotRecipe({ key: "steps" })
@@ -33,12 +25,7 @@ export const StepsSizeTable = () => {
               <For each={recipe.variantMap.size}>
                 {(v) => (
                   <td key={v}>
-                    <DemoSteps
-                      size={v}
-                      variant={c}
-                      minW="600px"
-                      defaultStep={1}
-                    />
+                    <DemoSteps size={v} variant={c} minW="600px" defaultStep={1} />
                   </td>
                 )}
               </For>

@@ -1,22 +1,11 @@
-import {
-  Button,
-  CloseButton,
-  Dialog,
-  For,
-  HStack,
-  Portal,
-} from "@chakra-ui/react"
+import { Button, CloseButton, Dialog, For, HStack, Portal } from "@chakra-ui/react"
 
 export const DialogWithPlacement = () => {
   return (
     <HStack wrap="wrap" gap="4">
       <For each={["top", "center", "bottom"]}>
         {(placement) => (
-          <Dialog.Root
-            key={placement}
-            placement={placement}
-            motionPreset="slide-in-bottom"
-          >
+          <Dialog.Root key={placement} placement={placement} motionPreset="slide-in-bottom">
             <Dialog.Trigger asChild>
               <Button variant="outline">Open Dialog ({placement}) </Button>
             </Dialog.Trigger>
@@ -29,9 +18,8 @@ export const DialogWithPlacement = () => {
                   </Dialog.Header>
                   <Dialog.Body>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua.
                     </p>
                   </Dialog.Body>
                   <Dialog.Footer>

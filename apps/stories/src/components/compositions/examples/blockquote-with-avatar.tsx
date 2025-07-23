@@ -7,9 +7,8 @@ export const BlockquoteWithAvatar = () => {
         <Blockquote.Icon opacity="0.4" boxSize="10" rotate="180deg" />
       </Float>
       <Blockquote.Content cite="Uzumaki Naruto">
-        If anyone thinks he is something when he is nothing, he deceives
-        himself. Each one should test his own actions. Then he can take pride in
-        himself, without comparing himself to anyone else.
+        If anyone thinks he is something when he is nothing, he deceives himself. Each one should test his own actions.
+        Then he can take pride in himself, without comparing himself to anyone else.
       </Blockquote.Content>
       <Blockquote.Caption>
         <cite>

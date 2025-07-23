@@ -13,11 +13,7 @@ export const MenuWithDangerItem = () => {
           <Menu.Content>
             <Menu.Item value="rename">Rename</Menu.Item>
             <Menu.Item value="export">Export</Menu.Item>
-            <Menu.Item
-              value="delete"
-              color="fg.error"
-              _hover={{ bg: "bg.error", color: "fg.error" }}
-            >
+            <Menu.Item value="delete" color="fg.error" _hover={{ bg: "bg.error", color: "fg.error" }}>
               Delete...
             </Menu.Item>
           </Menu.Content>

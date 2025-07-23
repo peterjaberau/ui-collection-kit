@@ -1,8 +1,8 @@
 "use client"
 
 import { Button, For, Span, useRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 import { HiArrowRight } from "react-icons/hi"
 
 export const ButtonVariantTable = () => {
@@ -12,9 +12,7 @@ export const ButtonVariantTable = () => {
       <thead>
         <tr>
           <td />
-          <For each={recipe.variantMap.variant}>
-            {(v) => <td key={v}>{v}</td>}
-          </For>
+          <For each={recipe.variantMap.variant}>{(v) => <td key={v}>{v}</td>}</For>
         </tr>
       </thead>
       <tbody>

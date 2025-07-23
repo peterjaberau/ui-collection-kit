@@ -1,16 +1,12 @@
 import { For, HStack, RadioCard, Stack } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
+import { colorPalettes } from "../lib/color-palettes"
 
 export const RadioCardWithColors = () => {
   return (
     <Stack gap="8">
       <For each={colorPalettes}>
         {(colorPalette) => (
-          <RadioCard.Root
-            key={colorPalette}
-            colorPalette={colorPalette}
-            defaultValue="next"
-          >
+          <RadioCard.Root key={colorPalette} colorPalette={colorPalette} defaultValue="next">
             <RadioCard.Label>Select Framework</RadioCard.Label>
             <HStack align="stretch">
               {items.map((item) => (

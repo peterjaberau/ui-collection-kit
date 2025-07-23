@@ -1,8 +1,8 @@
 "use client"
 
 import { Badge, For, Span, useRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const BadgeSizeTable = () => {
   const recipe = useRecipe({ key: "badge" })

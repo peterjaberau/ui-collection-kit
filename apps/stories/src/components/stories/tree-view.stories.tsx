@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / TreeView",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { TreeViewBasic as Basic } from "../compositions/examples/tree-view-basic"
 export { TreeViewAsync as LazyLoad } from "../compositions/examples/tree-view-async"

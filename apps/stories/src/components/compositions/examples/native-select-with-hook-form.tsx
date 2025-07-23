@@ -27,10 +27,7 @@ export const NativeSelectWithHookForm = () => {
       <Field.Root invalid={!!errors.framework}>
         <Field.Label>Framework</Field.Label>
         <NativeSelect.Root size="sm" width="240px">
-          <NativeSelect.Field
-            placeholder="Select option"
-            {...register("framework")}
-          >
+          <NativeSelect.Field placeholder="Select option" {...register("framework")}>
             <option value="react">React</option>
             <option value="vue">Vue</option>
             <option value="angular">Angular</option>

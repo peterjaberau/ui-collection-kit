@@ -13,9 +13,7 @@ export const CheckboxCardWithGroup = () => {
             <CheckboxCard.Control>
               <CheckboxCard.Content>
                 <CheckboxCard.Label>{item.title}</CheckboxCard.Label>
-                <CheckboxCard.Description>
-                  {item.description}
-                </CheckboxCard.Description>
+                <CheckboxCard.Description>{item.description}</CheckboxCard.Description>
               </CheckboxCard.Content>
               <CheckboxCard.Indicator />
             </CheckboxCard.Control>

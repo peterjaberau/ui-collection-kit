@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Button,
-  ButtonGroup,
-  HStack,
-  TreeView,
-  createTreeCollection,
-  useTreeViewContext,
-} from "@chakra-ui/react"
+import { Button, ButtonGroup, HStack, TreeView, createTreeCollection, useTreeViewContext } from "@chakra-ui/react"
 import { isEqual } from "es-toolkit"
 import { useMemo } from "react"
 import { LuFile, LuFolder } from "react-icons/lu"
@@ -20,18 +13,10 @@ const ExpandCollapseAll = () => {
   )
   return (
     <ButtonGroup size="2xs" variant="outline">
-      <Button
-        aria-label="Expand all"
-        onClick={() => tree.expand()}
-        hidden={isAllExpanded}
-      >
+      <Button aria-label="Expand all" onClick={() => tree.expand()} hidden={isAllExpanded}>
         Expand all
       </Button>
-      <Button
-        aria-label="Collapse all"
-        onClick={() => tree.collapse()}
-        hidden={!isAllExpanded}
-      >
+      <Button aria-label="Collapse all" onClick={() => tree.collapse()} hidden={!isAllExpanded}>
         Collapse all
       </Button>
     </ButtonGroup>

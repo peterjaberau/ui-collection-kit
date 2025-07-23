@@ -8,12 +8,7 @@ export const TreeViewWithSizes = () => {
     <Stack gap="8">
       <For each={["xs", "sm", "md"]}>
         {(size) => (
-          <TreeView.Root
-            collection={collection}
-            maxW="sm"
-            size={size}
-            key={size}
-          >
+          <TreeView.Root collection={collection} maxW="sm" size={size} key={size}>
             <TreeView.Label>Tree (size={size})</TreeView.Label>
             <TreeView.Tree>
               <TreeView.Node

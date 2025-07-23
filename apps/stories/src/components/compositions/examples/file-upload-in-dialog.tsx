@@ -15,18 +15,14 @@ export const FileUploadInDialog = () => {
               <Dialog.Title>Upload File</Dialog.Title>
             </Dialog.Header>
             <Dialog.Body pb="6">
-              <Dialog.Description mb="4">
-                Here's a dialog with a file dropzone component.
-              </Dialog.Description>
+              <Dialog.Description mb="4">Here's a dialog with a file dropzone component.</Dialog.Description>
               <FileUpload.Root>
                 <FileUpload.HiddenInput />
                 <FileUpload.Dropzone width="full">
                   <Icon size="xl" color="fg.muted">
                     <LuUpload />
                   </Icon>
-                  <FileUpload.DropzoneContent>
-                    Drag and drop files here
-                  </FileUpload.DropzoneContent>
+                  <FileUpload.DropzoneContent>Drag and drop files here</FileUpload.DropzoneContent>
                 </FileUpload.Dropzone>
                 <FileUpload.List />
               </FileUpload.Root>

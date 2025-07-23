@@ -5,11 +5,7 @@ import { LuCheck } from "react-icons/lu"
 
 export const ColorPickerWithSwatchAndInput = () => {
   return (
-    <ColorPicker.Root
-      size="xs"
-      defaultValue={parseColor("#eb5e41")}
-      maxW="200px"
-    >
+    <ColorPicker.Root size="xs" defaultValue={parseColor("#eb5e41")} maxW="200px">
       <ColorPicker.HiddenInput />
       <ColorPicker.Control>
         <ColorPicker.Trigger />

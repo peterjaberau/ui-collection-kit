@@ -1,8 +1,8 @@
 "use client"
 
 import { Breadcrumb, For, Span, Stack, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const BreadcrumbSizeTable = () => {
   const recipe = useSlotRecipe({ key: "breadcrumb" })
@@ -41,9 +41,7 @@ export const BreadcrumbSizeTable = () => {
   )
 }
 
-const DemoBreadcrumb = (
-  props: Breadcrumb.RootProps & { separator?: string },
-) => {
+const DemoBreadcrumb = (props: Breadcrumb.RootProps & { separator?: string }) => {
   const { separator, ...rest } = props
   return (
     <Breadcrumb.Root {...rest}>

@@ -1,12 +1,4 @@
-import {
-  Button,
-  Field,
-  Input,
-  Popover,
-  Portal,
-  Stack,
-  Textarea,
-} from "@chakra-ui/react"
+import { Button, Field, Input, Popover, Portal, Stack, Textarea } from "@chakra-ui/react"
 
 export const PopoverWithForm = () => {
   return (

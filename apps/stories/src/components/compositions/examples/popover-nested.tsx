@@ -13,10 +13,7 @@ export const PopoverNested = () => {
           <Popover.Content>
             <Popover.Arrow />
             <Popover.Body>
-              <Text mb="4">
-                Naruto is a Japanese manga series written and illustrated by
-                Masashi Kishimoto.
-              </Text>
+              <Text mb="4">Naruto is a Japanese manga series written and illustrated by Masashi Kishimoto.</Text>
 
               <Popover.Root>
                 <Popover.Trigger asChild>

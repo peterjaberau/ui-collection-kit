@@ -4,11 +4,7 @@ import { ColorPicker, HStack, Portal, parseColor } from "@chakra-ui/react"
 
 export const ColorPickerCloseOnSwatchClick = () => {
   return (
-    <ColorPicker.Root
-      closeOnSelect
-      defaultValue={parseColor("#eb5e41")}
-      maxW="200px"
-    >
+    <ColorPicker.Root closeOnSelect defaultValue={parseColor("#eb5e41")} maxW="200px">
       <ColorPicker.HiddenInput />
       <ColorPicker.Label>Color</ColorPicker.Label>
       <ColorPicker.Control>

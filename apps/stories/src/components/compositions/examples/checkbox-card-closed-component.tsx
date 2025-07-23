@@ -11,10 +11,7 @@ export interface CheckboxCardProps extends ChakraCheckboxCard.RootProps {
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>
 }
 
-export const CheckboxCard = React.forwardRef<
-  HTMLInputElement,
-  CheckboxCardProps
->(function CheckboxCard(props, ref) {
+export const CheckboxCard = React.forwardRef<HTMLInputElement, CheckboxCardProps>(function CheckboxCard(props, ref) {
   const {
     inputProps,
     label,
@@ -37,14 +34,8 @@ export const CheckboxCard = React.forwardRef<
         {hasContent && (
           <ContentWrapper>
             {icon}
-            {label && (
-              <ChakraCheckboxCard.Label>{label}</ChakraCheckboxCard.Label>
-            )}
-            {description && (
-              <ChakraCheckboxCard.Description>
-                {description}
-              </ChakraCheckboxCard.Description>
-            )}
+            {label && <ChakraCheckboxCard.Label>{label}</ChakraCheckboxCard.Label>}
+            {description && <ChakraCheckboxCard.Description>{description}</ChakraCheckboxCard.Description>}
             {indicatorPlacement === "inside" && indicator}
           </ContentWrapper>
         )}

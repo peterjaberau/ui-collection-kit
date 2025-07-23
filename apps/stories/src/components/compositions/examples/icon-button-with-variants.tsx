@@ -7,11 +7,7 @@ export const IconButtonWithVariants = () => {
       <For each={["solid", "subtle", "surface", "outline", "ghost"]}>
         {(variant) => (
           <VStack key={variant}>
-            <IconButton
-              aria-label="Call support"
-              key={variant}
-              variant={variant}
-            >
+            <IconButton aria-label="Call support" key={variant} variant={variant}>
               <LuVoicemail />
             </IconButton>
             <Text textStyle="sm">{variant}</Text>

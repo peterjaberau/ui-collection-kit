@@ -1,14 +1,6 @@
 "use client"
 
-import {
-  ColorSwatch,
-  Combobox,
-  HStack,
-  Stack,
-  Text,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { ColorSwatch, Combobox, HStack, Stack, Text, useFilter, useListCollection } from "@chakra-ui/react"
 import { useState } from "react"
 
 export const ComboboxColorPicker = () => {
@@ -27,9 +19,7 @@ export const ComboboxColorPicker = () => {
     setSelectedColor(details.items[0] || null)
   }
 
-  const handleInputValueChange = (
-    details: Combobox.InputValueChangeDetails,
-  ) => {
+  const handleInputValueChange = (details: Combobox.InputValueChangeDetails) => {
     filter(details.inputValue)
   }
 

@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Button,
-  Combobox,
-  Popover,
-  Portal,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Button, Combobox, Popover, Portal, useFilter, useListCollection } from "@chakra-ui/react"
 
 export const ComboboxInPopover = () => {
   return (
@@ -40,10 +33,7 @@ const ComboboxDemo = () => {
   })
 
   return (
-    <Combobox.Root
-      collection={collection}
-      onInputValueChange={(e) => filter(e.inputValue)}
-    >
+    <Combobox.Root collection={collection} onInputValueChange={(e) => filter(e.inputValue)}>
       <Combobox.Control>
         <Combobox.Input placeholder="Type to search" />
         <Combobox.IndicatorGroup>

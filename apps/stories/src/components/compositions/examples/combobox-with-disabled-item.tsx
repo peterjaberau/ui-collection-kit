@@ -1,14 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  HStack,
-  Icon,
-  Portal,
-  Span,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Combobox, HStack, Icon, Portal, Span, useFilter, useListCollection } from "@chakra-ui/react"
 
 export const ComboboxWithDisabledItem = () => {
   const { contains } = useFilter({ sensitivity: "base" })
@@ -129,14 +121,7 @@ const companies: Company[] = [
           />
         </g>
         <defs>
-          <linearGradient
-            id="nvidia-b"
-            x1="16"
-            x2="5.5"
-            y1="-.5"
-            y2="18"
-            gradientUnits="userSpaceOnUse"
-          >
+          <linearGradient id="nvidia-b" x1="16" x2="5.5" y1="-.5" y2="18" gradientUnits="userSpaceOnUse">
             <stop stopColor="#85B737" />
             <stop offset="1" stopColor="#597B20" />
           </linearGradient>

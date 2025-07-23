@@ -16,11 +16,7 @@ export const DonutChartWithPointLabel = () => {
   return (
     <Chart.Root boxSize="200px" chart={chart} mx="auto">
       <PieChart margin={{ left: 40 }}>
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip hideLabel />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip hideLabel />} />
         <Pie
           innerRadius={80}
           outerRadius={100}
@@ -34,11 +30,7 @@ export const DonutChartWithPointLabel = () => {
           }}
         >
           {chart.data.map((item) => (
-            <Cell
-              key={item.name}
-              strokeWidth={2}
-              fill={chart.color(item.color)}
-            />
+            <Cell key={item.name} strokeWidth={2} fill={chart.color(item.color)} />
           ))}
         </Pie>
       </PieChart>

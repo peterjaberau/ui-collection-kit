@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Icon Button",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { IconButtonBasic as Basic } from "../compositions/examples/icon-button-basic"
 export { IconButtonRounded as Rounded } from "../compositions/examples/icon-button-rounded"

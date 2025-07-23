@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  FileUpload,
-  Float,
-  HStack,
-  Input,
-  type InputProps,
-  useFileUploadContext,
-} from "@chakra-ui/react"
+import { FileUpload, Float, HStack, Input, type InputProps, useFileUploadContext } from "@chakra-ui/react"
 import { HiX } from "react-icons/hi"
 
 const FilePasteInput = (props: InputProps) => {
@@ -27,28 +20,13 @@ const FileImageList = () => {
   return (
     <HStack wrap="wrap" gap="3">
       {fileUpload.acceptedFiles.map((file) => (
-        <FileUpload.Item
-          p="2"
-          width="auto"
-          key={file.name}
-          file={file}
-          pos="relative"
-        >
+        <FileUpload.Item p="2" width="auto" key={file.name} file={file} pos="relative">
           <Float placement="top-start">
-            <FileUpload.ItemDeleteTrigger
-              p="0.5"
-              rounded="l1"
-              bg="bg"
-              borderWidth="1px"
-            >
+            <FileUpload.ItemDeleteTrigger p="0.5" rounded="l1" bg="bg" borderWidth="1px">
               <HiX />
             </FileUpload.ItemDeleteTrigger>
           </Float>
-          <FileUpload.ItemPreviewImage
-            boxSize="12"
-            rounded="l1"
-            objectFit="cover"
-          />
+          <FileUpload.ItemPreviewImage boxSize="12" rounded="l1" objectFit="cover" />
         </FileUpload.Item>
       ))}
     </HStack>

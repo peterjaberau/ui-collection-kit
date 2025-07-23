@@ -1,6 +1,6 @@
 import { Avatar, For, HStack, Span, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const AvatarVariantTable = () => {
   const recipe = useSlotRecipe({ key: "avatar" })
@@ -9,9 +9,7 @@ export const AvatarVariantTable = () => {
       <thead>
         <tr>
           <td />
-          <For each={recipe.variantMap.variant}>
-            {(v) => <td key={v}>{v}</td>}
-          </For>
+          <For each={recipe.variantMap.variant}>{(v) => <td key={v}>{v}</td>}</For>
         </tr>
       </thead>
       <tbody>

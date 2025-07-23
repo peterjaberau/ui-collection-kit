@@ -1,8 +1,8 @@
 "use client"
 
 import { Avatar, For, Span, Stack, Tag, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 import { HiCheck, HiOutlineBriefcase } from "react-icons/hi"
 
 export const TagVariantTable = () => {
@@ -12,9 +12,7 @@ export const TagVariantTable = () => {
       <thead>
         <tr>
           <td />
-          <For each={recipe.variantMap.variant}>
-            {(v) => <td key={v}>{v}</td>}
-          </For>
+          <For each={recipe.variantMap.variant}>{(v) => <td key={v}>{v}</td>}</For>
         </tr>
       </thead>
       <tbody>
@@ -55,11 +53,7 @@ export const TagVariantTable = () => {
                         <Tag.Label>Projects</Tag.Label>
                       </Tag.Root>
 
-                      <Tag.Root
-                        variant={v}
-                        colorPalette={c}
-                        borderRadius="full"
-                      >
+                      <Tag.Root variant={v} colorPalette={c} borderRadius="full">
                         <Tag.StartElement>
                           <Avatar.Root size="full">
                             <Avatar.Image src="https://bit.ly/dan-abramov" />

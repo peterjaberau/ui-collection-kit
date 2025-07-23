@@ -7,11 +7,7 @@ export const IconButtonWithSizes = () => {
       <For each={["xs", "sm", "md", "lg"]}>
         {(size) => (
           <VStack key={size}>
-            <IconButton
-              aria-label="Search database"
-              variant="outline"
-              size={size}
-            >
+            <IconButton aria-label="Search database" variant="outline" size={size}>
               <LuPhone />
             </IconButton>
             <Text textStyle="sm">{size}</Text>

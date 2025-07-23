@@ -1,11 +1,4 @@
-import {
-  Field,
-  Fieldset,
-  For,
-  Input,
-  NativeSelect,
-  Textarea,
-} from "@chakra-ui/react"
+import { Field, Fieldset, For, Input, NativeSelect, Textarea } from "@chakra-ui/react"
 
 export const FieldsetWithInvalid = () => {
   return (
@@ -36,9 +29,7 @@ export const FieldsetWithInvalid = () => {
           <Textarea name="notes" />
         </Field.Root>
       </Fieldset.Content>
-      <Fieldset.ErrorText>
-        Some fields are invalid. Please check them.
-      </Fieldset.ErrorText>
+      <Fieldset.ErrorText>Some fields are invalid. Please check them.</Fieldset.ErrorText>
     </Fieldset.Root>
   )
 }

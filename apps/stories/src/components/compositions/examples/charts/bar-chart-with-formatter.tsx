@@ -36,11 +36,7 @@ export const BarChartWithFormatter = () => {
             notation: "compact",
           })}
         />
-        <Tooltip
-          cursor={{ fill: chart.color("bg.muted") }}
-          animationDuration={0}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip cursor={{ fill: chart.color("bg.muted") }} animationDuration={0} content={<Chart.Tooltip />} />
         {chart.series.map((item) => (
           <Bar
             isAnimationActive={false}

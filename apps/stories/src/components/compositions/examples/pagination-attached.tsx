@@ -15,10 +15,7 @@ export const PaginationAttached = () => {
 
         <Pagination.Items
           render={(page) => (
-            <IconButton
-              variant={{ base: "outline", _selected: "solid" }}
-              zIndex={{ _selected: "1" }}
-            >
+            <IconButton variant={{ base: "outline", _selected: "solid" }} zIndex={{ _selected: "1" }}>
               {page.value}
             </IconButton>
           )}

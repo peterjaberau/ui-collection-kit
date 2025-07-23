@@ -1,4 +1,4 @@
-import { ColorModeButton } from "compositions/ui/color-mode"
+import { ColorModeButton } from "@ui-kit/components"
 
 export const ColorModeIconButton = () => {
   return <ColorModeButton />

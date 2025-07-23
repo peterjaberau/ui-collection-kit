@@ -10,9 +10,7 @@ export const AlertWithCustomization = () => {
         </Alert.Indicator>
         <Alert.Content color="fg">
           <Alert.Title>Black Friday Sale (20% off)</Alert.Title>
-          <Alert.Description>
-            Upgrade your plan to get access to the sale.
-          </Alert.Description>
+          <Alert.Description>Upgrade your plan to get access to the sale.</Alert.Description>
         </Alert.Content>
         <Link alignSelf="center" fontWeight="medium">
           Upgrade
@@ -28,9 +26,7 @@ export const AlertWithCustomization = () => {
         status="success"
       >
         <LuPercent />
-        <Alert.Title textStyle="sm">
-          Heads up: Black Friday Sale (20% off)
-        </Alert.Title>
+        <Alert.Title textStyle="sm">Heads up: Black Friday Sale (20% off)</Alert.Title>
       </Alert.Root>
     </Stack>
   )

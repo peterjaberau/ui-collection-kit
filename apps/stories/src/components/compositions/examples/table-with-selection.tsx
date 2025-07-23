@@ -9,10 +9,7 @@ export const TableWithSelection = () => {
   const indeterminate = selection.length > 0 && selection.length < items.length
 
   const rows = items.map((item) => (
-    <Table.Row
-      key={item.name}
-      data-selected={selection.includes(item.name) ? "" : undefined}
-    >
+    <Table.Row key={item.name} data-selected={selection.includes(item.name) ? "" : undefined}>
       <Table.Cell>
         <Checkbox.Root
           size="sm"
@@ -21,9 +18,7 @@ export const TableWithSelection = () => {
           checked={selection.includes(item.name)}
           onCheckedChange={(changes) => {
             setSelection((prev) =>
-              changes.checked
-                ? [...prev, item.name]
-                : selection.filter((name) => name !== item.name),
+              changes.checked ? [...prev, item.name] : selection.filter((name) => name !== item.name),
             )
           }}
         >
@@ -48,9 +43,7 @@ export const TableWithSelection = () => {
               aria-label="Select all rows"
               checked={indeterminate ? "indeterminate" : selection.length > 0}
               onCheckedChange={(changes) => {
-                setSelection(
-                  changes.checked ? items.map((item) => item.name) : [],
-                )
+                setSelection(changes.checked ? items.map((item) => item.name) : [])
               }}
             >
               <Checkbox.HiddenInput />

@@ -1,15 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  CartesianGrid,
-  Legend,
-  Line,
-  LineChart,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts"
+import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts"
 
 export const LineChartNoDots = () => {
   const chart = useChart({
@@ -47,11 +39,7 @@ export const LineChartNoDots = () => {
           dataKey={chart.key("windows")}
           stroke={chart.color("border")}
         />
-        <Tooltip
-          animationDuration={100}
-          cursor={{ stroke: chart.color("border") }}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip animationDuration={100} cursor={{ stroke: chart.color("border") }} content={<Chart.Tooltip />} />
         <Legend verticalAlign="top" align="right" content={<Chart.Legend />} />
         {chart.series.map((item) => (
           <Line

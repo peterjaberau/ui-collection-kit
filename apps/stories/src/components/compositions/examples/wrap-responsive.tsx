@@ -1,5 +1,5 @@
 import { Wrap } from "@chakra-ui/react"
-import { DecorativeBox } from "compositions/lib/decorative-box"
+import { DecorativeBox } from "../lib/decorative-box"
 
 export const WrapResponsive = () => (
   <Wrap gap={["12px", "24px"]} justify={["center", "flex-start"]}>

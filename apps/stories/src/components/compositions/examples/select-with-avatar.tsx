@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Avatar,
-  HStack,
-  Select,
-  createListCollection,
-  useSelectContext,
-} from "@chakra-ui/react"
+import { Avatar, HStack, Select, createListCollection, useSelectContext } from "@chakra-ui/react"
 
 const SelectValue = () => {
   const select = useSelectContext()
@@ -67,20 +61,17 @@ const members = createListCollection({
     {
       name: "Jessica Jones",
       id: "jessica_jones",
-      avatar:
-        "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100",
+      avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100",
     },
     {
       name: "Kenneth Johnson",
       id: "kenneth_johnson",
-      avatar:
-        "https://images.unsplash.com/photo-1523477800337-966dbabe060b?w=100",
+      avatar: "https://images.unsplash.com/photo-1523477800337-966dbabe060b?w=100",
     },
     {
       name: "Kate Wilson",
       id: "kate_wilson",
-      avatar:
-        "https://images.unsplash.com/photo-1609712409631-dbbb050746d1?w=100",
+      avatar: "https://images.unsplash.com/photo-1609712409631-dbbb050746d1?w=100",
     },
   ],
   itemToString: (item) => item.name,

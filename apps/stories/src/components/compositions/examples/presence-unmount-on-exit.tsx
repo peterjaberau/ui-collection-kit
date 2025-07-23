@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Alert,
-  Button,
-  Center,
-  Presence,
-  Stack,
-  useDisclosure,
-} from "@chakra-ui/react"
+import { Alert, Button, Center, Presence, Stack, useDisclosure } from "@chakra-ui/react"
 
 export const PresenceUnmountOnExit = () => {
   const { open, onToggle } = useDisclosure()
@@ -15,9 +8,7 @@ export const PresenceUnmountOnExit = () => {
     <Stack gap="4">
       <Alert.Root>
         <Alert.Indicator />
-        <Alert.Title>
-          Check the DOM to see that the element is removed when not present.
-        </Alert.Title>
+        <Alert.Title>Check the DOM to see that the element is removed when not present.</Alert.Title>
       </Alert.Root>
       <Button alignSelf="flex-start" onClick={onToggle}>
         Click Me

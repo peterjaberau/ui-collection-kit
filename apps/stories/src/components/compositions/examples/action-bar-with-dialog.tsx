@@ -17,9 +17,7 @@ export const ActionBarWithDialog = () => {
         <Portal>
           <ActionBar.Positioner>
             <ActionBar.Content>
-              <ActionBar.SelectionTrigger>
-                4 selected
-              </ActionBar.SelectionTrigger>
+              <ActionBar.SelectionTrigger>4 selected</ActionBar.SelectionTrigger>
 
               <ActionBar.Separator />
 
@@ -43,9 +41,7 @@ export const ActionBarWithDialog = () => {
                         <Dialog.Title>Delete projects</Dialog.Title>
                       </Dialog.Header>
                       <Dialog.Body>
-                        <Dialog.Description>
-                          Are you sure you want to delete 4 projects?
-                        </Dialog.Description>
+                        <Dialog.Description>Are you sure you want to delete 4 projects?</Dialog.Description>
                       </Dialog.Body>
                       <Dialog.Footer>
                         <Button variant="outline">Cancel</Button>

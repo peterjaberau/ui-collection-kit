@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Typography / Heading",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { HeadingBasic as Basic } from "../compositions/examples/heading-basic"
 export { HeadingWithSizes as Sizes } from "../compositions/examples/heading-with-sizes"

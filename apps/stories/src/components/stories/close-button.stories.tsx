@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Close Button",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { CloseButtonBasic as Basic } from "../compositions/examples/close-button-basic"
 export { CloseButtonWithSizes as Sizes } from "../compositions/examples/close-button-with-sizes"

@@ -1,7 +1,7 @@
 "use client"
 
 import { Box, Button, Stack } from "@chakra-ui/react"
-import { useColorMode, useColorModeValue } from "compositions/ui/color-mode"
+import { useColorMode, useColorModeValue } from "@ui-kit/components"
 
 export const ColorModeValue = () => {
   const { toggleColorMode } = useColorMode()

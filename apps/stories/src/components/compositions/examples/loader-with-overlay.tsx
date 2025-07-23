@@ -1,14 +1,6 @@
 "use client"
 
-import {
-  Box,
-  Button,
-  Field,
-  Input,
-  Loader,
-  LoaderOverlay,
-  Stack,
-} from "@chakra-ui/react"
+import { Box, Button, Field, Input, Loader, LoaderOverlay, Stack } from "@chakra-ui/react"
 import { useState } from "react"
 
 export const LoaderWithOverlay = () => {
@@ -33,11 +25,7 @@ export const LoaderWithOverlay = () => {
           </LoaderOverlay>
         )}
       </Box>
-      <Button
-        alignSelf="flex-start"
-        variant="outline"
-        onClick={() => setLoading((c) => !c)}
-      >
+      <Button alignSelf="flex-start" variant="outline" onClick={() => setLoading((c) => !c)}>
         Toggle loading
       </Button>
     </Stack>

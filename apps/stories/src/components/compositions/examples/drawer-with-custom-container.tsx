@@ -1,33 +1,23 @@
 "use client"
 
-import {
-  Button,
-  CloseButton,
-  Drawer,
-  Portal,
-  Stack,
-  type StackProps,
-  Text,
-} from "@chakra-ui/react"
+import { Button, CloseButton, Drawer, Portal, Stack, type StackProps, Text } from "@chakra-ui/react"
 import { forwardRef, useRef } from "react"
 
-const DrawerContainer = forwardRef<HTMLDivElement, StackProps>(
-  function DrawerContainer(props, ref) {
-    return (
-      <Stack
-        pos="relative"
-        overflow="hidden"
-        align="flex-start"
-        p="8"
-        minH="400px"
-        layerStyle="fill.subtle"
-        outline="2px solid gray"
-        ref={ref}
-        {...props}
-      />
-    )
-  },
-)
+const DrawerContainer = forwardRef<HTMLDivElement, StackProps>(function DrawerContainer(props, ref) {
+  return (
+    <Stack
+      pos="relative"
+      overflow="hidden"
+      align="flex-start"
+      p="8"
+      minH="400px"
+      layerStyle="fill.subtle"
+      outline="2px solid gray"
+      ref={ref}
+      {...props}
+    />
+  )
+})
 
 export const DrawerWithCustomContainer = () => {
   const portalRef = useRef<HTMLDivElement | null>(null)
@@ -53,8 +43,8 @@ export const DrawerWithCustomContainer = () => {
             </Drawer.Header>
             <Drawer.Body>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
               </p>
             </Drawer.Body>
             <Drawer.Footer>

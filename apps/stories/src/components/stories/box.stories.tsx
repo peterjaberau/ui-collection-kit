@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Layout / Box",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="4">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { BoxBasic as Basic } from "../compositions/examples/box-basic"
 export { BoxWithPseudoProps as PseudoProps } from "../compositions/examples/box-with-pseudo-props"

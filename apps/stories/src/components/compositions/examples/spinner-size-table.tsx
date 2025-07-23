@@ -7,9 +7,7 @@ export const SpinnerSizeTable = () => {
   return (
     <div>
       <For each={recipe.variantMap.size}>
-        {(size) => (
-          <Spinner key={size} margin={3} color="green.500" size={size} />
-        )}
+        {(size) => <Spinner key={size} margin={3} color="green.500" size={size} />}
       </For>
     </div>
   )

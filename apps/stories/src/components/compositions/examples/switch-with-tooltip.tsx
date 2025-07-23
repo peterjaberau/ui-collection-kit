@@ -1,5 +1,5 @@
 import { Switch } from "@chakra-ui/react"
-import { Tooltip } from "compositions/ui/tooltip"
+import { Tooltip } from "@ui-kit/components"
 import { useId } from "react"
 
 export const SwitchWithTooltip = () => {

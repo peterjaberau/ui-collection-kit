@@ -10,9 +10,7 @@ export const EmptyStateWithAction = () => {
         </EmptyState.Indicator>
         <VStack textAlign="center">
           <EmptyState.Title>Start adding tokens</EmptyState.Title>
-          <EmptyState.Description>
-            Add a new design token to get started
-          </EmptyState.Description>
+          <EmptyState.Description>Add a new design token to get started</EmptyState.Description>
         </VStack>
         <ButtonGroup>
           <Button>Create token</Button>

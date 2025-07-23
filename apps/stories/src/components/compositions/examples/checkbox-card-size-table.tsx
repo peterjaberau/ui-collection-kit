@@ -1,7 +1,7 @@
 "use client"
 
 import { CheckboxCard, For, Stack, useSlotRecipe } from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const CheckboxCardSizeTable = () => {
   const recipe = useSlotRecipe({ key: "checkboxCard" })

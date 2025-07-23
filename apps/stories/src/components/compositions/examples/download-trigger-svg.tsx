@@ -8,12 +8,7 @@ const data = String.raw`
 
 export const DownloadTriggerSvg = () => {
   return (
-    <DownloadTrigger
-      data={data}
-      fileName="sample.svg"
-      mimeType="image/svg+xml"
-      asChild
-    >
+    <DownloadTrigger data={data} fileName="sample.svg" mimeType="image/svg+xml" asChild>
       <Button variant="outline">Download svg</Button>
     </DownloadTrigger>
   )

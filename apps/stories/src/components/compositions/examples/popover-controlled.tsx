@@ -16,9 +16,7 @@ export const PopoverControlled = () => {
         <Popover.Positioner>
           <Popover.Content>
             <Popover.Arrow />
-            <Popover.Body>
-              This is a popover with the same width as the trigger button
-            </Popover.Body>
+            <Popover.Body>This is a popover with the same width as the trigger button</Popover.Body>
           </Popover.Content>
         </Popover.Positioner>
       </Portal>

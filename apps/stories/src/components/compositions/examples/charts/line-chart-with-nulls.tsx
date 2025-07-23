@@ -20,21 +20,13 @@ export const LineChartWithNulls = () => {
   return (
     <Chart.Root maxH="sm" chart={chart}>
       <LineChart data={chart.data} margin={{ left: 40, right: 40, top: 40 }}>
-        <CartesianGrid
-          stroke={chart.color("border")}
-          strokeDasharray="3 3"
-          horizontal={false}
-        />
+        <CartesianGrid stroke={chart.color("border")} strokeDasharray="3 3" horizontal={false} />
         <XAxis
           dataKey={chart.key("month")}
           tickFormatter={(value) => value.slice(0, 3)}
           stroke={chart.color("border")}
         />
-        <YAxis
-          dataKey={chart.key("sales")}
-          stroke={chart.color("border")}
-          domain={[140, "dataMax"]}
-        />
+        <YAxis dataKey={chart.key("sales")} stroke={chart.color("border")} domain={[140, "dataMax"]} />
         <Tooltip
           animationDuration={100}
           cursor={{ stroke: chart.color("border") }}

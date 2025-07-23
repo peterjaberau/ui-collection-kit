@@ -36,12 +36,7 @@ export const SelectVirtualized = () => {
   }
 
   return (
-    <Select.Root
-      maxW="sm"
-      size="sm"
-      collection={collection}
-      scrollToIndexFn={handleScrollToIndexFn}
-    >
+    <Select.Root maxW="sm" size="sm" collection={collection} scrollToIndexFn={handleScrollToIndexFn}>
       <Select.Label>Country</Select.Label>
       <Select.Control>
         <Select.Trigger>

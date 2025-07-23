@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Fieldset",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { FieldsetBasic as Basic } from "../compositions/examples/fieldset-basic"
 export { FieldsetWithDisabled as Disabled } from "../compositions/examples/fieldset-with-disabled"

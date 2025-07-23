@@ -1,5 +1,5 @@
 import { Stack } from "@chakra-ui/react"
-import { DecorativeBox } from "compositions/lib/decorative-box"
+import { DecorativeBox } from "../lib/decorative-box"
 
 export const StackWithResponsiveDirection = () => {
   return (

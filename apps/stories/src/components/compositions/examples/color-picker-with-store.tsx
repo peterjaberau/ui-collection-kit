@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  ColorPicker,
-  HStack,
-  Portal,
-  parseColor,
-  useColorPicker,
-} from "@chakra-ui/react"
+import { ColorPicker, HStack, Portal, parseColor, useColorPicker } from "@chakra-ui/react"
 
 export const ColorPickerWithStore = () => {
   const colorPicker = useColorPicker({

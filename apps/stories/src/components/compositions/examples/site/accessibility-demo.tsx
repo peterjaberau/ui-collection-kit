@@ -7,13 +7,7 @@ export const AccessibilityDemo = () => (
       <Image borderRadius="md" src="https://bit.ly/2k1H1t6" alt="Room" />
       <Flex align="baseline" mt={2}>
         <Badge colorPalette="teal">Plus</Badge>
-        <Text
-          ml={2}
-          textTransform="uppercase"
-          fontSize="sm"
-          fontWeight="bold"
-          color="pink.800"
-        >
+        <Text ml={2} textTransform="uppercase" fontSize="sm" fontWeight="bold" color="pink.800">
           Verified &bull; Cape Town
         </Text>
       </Flex>

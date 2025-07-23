@@ -35,9 +35,7 @@ export const TimelineWithSizes = () => {
               <Timeline.Content textStyle="xs">
                 <Timeline.Title mt={size === "sm" ? "-2px" : undefined}>
                   <Span fontWeight="medium">sage</Span>
-                  changed status from <Badge size="sm">
-                    In progress
-                  </Badge> to{" "}
+                  changed status from <Badge size="sm">In progress</Badge> to{" "}
                   <Badge colorPalette="teal" size="sm">
                     Completed
                   </Badge>

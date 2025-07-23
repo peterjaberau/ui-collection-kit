@@ -5,12 +5,7 @@ import { RxFrame, RxImage, RxSquare, RxText } from "react-icons/rx"
 
 export const TreeViewCustomIcon = () => {
   return (
-    <TreeView.Root
-      collection={collection}
-      maxW="sm"
-      size="sm"
-      defaultExpandedValue={["ROOT"]}
-    >
+    <TreeView.Root collection={collection} maxW="sm" size="sm" defaultExpandedValue={["ROOT"]}>
       <TreeView.Label srOnly>Tree</TreeView.Label>
       <TreeView.Tree>
         <TreeView.Node
@@ -18,9 +13,7 @@ export const TreeViewCustomIcon = () => {
             nodeState.isBranch ? (
               <TreeView.BranchControl>
                 <TreeViewNodeIcon type={node.type} />
-                <TreeView.BranchText fontWeight="medium">
-                  {node.name}
-                </TreeView.BranchText>
+                <TreeView.BranchText fontWeight="medium">{node.name}</TreeView.BranchText>
               </TreeView.BranchControl>
             ) : (
               <TreeView.Item>

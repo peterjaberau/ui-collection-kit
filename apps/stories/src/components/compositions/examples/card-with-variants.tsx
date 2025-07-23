@@ -13,8 +13,7 @@ export const CardWithVariants = () => {
               </Avatar.Root>
               <Card.Title mb="2">Nue Camp</Card.Title>
               <Card.Description>
-                This is the card body. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit.
+                This is the card body. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Card.Description>
             </Card.Body>
             <Card.Footer justifyContent="flex-end">

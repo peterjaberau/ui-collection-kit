@@ -1,4 +1,4 @@
-import { Prose } from "compositions/ui/prose"
+import { Prose } from "@ui-kit/components"
 import Markdown from "react-markdown"
 
 export const ProseWithReactMarkdown = () => {

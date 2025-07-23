@@ -1,8 +1,8 @@
 "use client"
 
 import { For, Slider, Span, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const SliderSizeTable = () => {
   const recipe = useSlotRecipe({ key: "slider" })
@@ -26,12 +26,7 @@ export const SliderSizeTable = () => {
               <For each={recipe.variantMap.size}>
                 {(v) => (
                   <td>
-                    <Slider.Root
-                      defaultValue={[40]}
-                      colorPalette={c}
-                      size={v}
-                      minW="160px"
-                    >
+                    <Slider.Root defaultValue={[40]} colorPalette={c} size={v} minW="160px">
                       <Slider.Control>
                         <Slider.Track>
                           <Slider.Range />

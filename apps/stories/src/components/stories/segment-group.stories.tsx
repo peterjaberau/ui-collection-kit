@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Segment Group",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { SegmentedControlBasic as Basic } from "../compositions/examples/segmented-control-basic"
 export { SegmentedControlControlled as Controlled } from "../compositions/examples/segmented-control-controlled"

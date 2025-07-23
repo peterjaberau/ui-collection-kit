@@ -36,9 +36,5 @@ const TickValue = () => {
     }
   }, [])
 
-  return (
-    <span style={{ fontWeight: "bold", color: "tomato", padding: 4 }}>
-      {value}
-    </span>
-  )
+  return <span style={{ fontWeight: "bold", color: "tomato", padding: 4 }}>{value}</span>
 }

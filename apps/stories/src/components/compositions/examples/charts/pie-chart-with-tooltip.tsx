@@ -16,20 +16,12 @@ export const PieChartBasic = () => {
   return (
     <Chart.Root boxSize="200px" chart={chart}>
       <PieChart>
-        <Pie
-          isAnimationActive={false}
-          data={chart.data}
-          dataKey={chart.key("value")}
-        >
+        <Pie isAnimationActive={false} data={chart.data} dataKey={chart.key("value")}>
           {chart.data.map((item) => (
             <Cell key={item.name} fill={chart.color(item.color)} />
           ))}
         </Pie>
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip hideLabel />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip hideLabel />} />
       </PieChart>
     </Chart.Root>
   )

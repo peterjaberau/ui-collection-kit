@@ -1,7 +1,7 @@
 "use client"
 
 import { For, Span, Tabs, Text, useSlotRecipe } from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const TabsSizeTable = () => {
   const recipe = useSlotRecipe({ key: "tabs" })
@@ -25,29 +25,17 @@ export const TabsSizeTable = () => {
               <For each={recipe.variantMap.size}>
                 {(v) => (
                   <td key={v}>
-                    <Tabs.Root
-                      defaultValue="settings"
-                      size={v}
-                      variant={c}
-                      mt="3"
-                      minW="300px"
-                    >
+                    <Tabs.Root defaultValue="settings" size={v} variant={c} mt="3" minW="300px">
                       <Tabs.List>
                         <Tabs.Trigger value="settings">Settings</Tabs.Trigger>
                         <Tabs.Trigger value="billing">Billing</Tabs.Trigger>
                       </Tabs.List>
                       <Tabs.ContentGroup>
                         <Tabs.Content value="settings">
-                          <Text fontSize="sm">
-                            Settings - Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit.
-                          </Text>
+                          <Text fontSize="sm">Settings - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
                         </Tabs.Content>
                         <Tabs.Content value="billing">
-                          <Text fontSize="sm">
-                            Billing - Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit.
-                          </Text>
+                          <Text fontSize="sm">Billing - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
                         </Tabs.Content>
                       </Tabs.ContentGroup>
                     </Tabs.Root>

@@ -1,12 +1,7 @@
 "use client"
 
 import { Box, Spinner, Stack, useSlotRecipe } from "@chakra-ui/react"
-import {
-  HiCheckCircle,
-  HiExclamationCircle,
-  HiX,
-  HiXCircle,
-} from "react-icons/hi"
+import { HiCheckCircle, HiExclamationCircle, HiX, HiXCircle } from "react-icons/hi"
 
 export const ToasterStatic = () => {
   const recipe = useSlotRecipe({ key: "toast" })
@@ -23,11 +18,7 @@ export const ToasterStatic = () => {
         <Box as="button" css={styles.actionTrigger}>
           Retry
         </Box>
-        <Box
-          as="button"
-          css={styles.closeTrigger}
-          className="chakra-toast__closeTrigger"
-        >
+        <Box as="button" css={styles.closeTrigger} className="chakra-toast__closeTrigger">
           <HiX />
         </Box>
       </Box>
@@ -43,11 +34,7 @@ export const ToasterStatic = () => {
         <Box as="button" css={styles.actionTrigger}>
           Retry
         </Box>
-        <Box
-          as="button"
-          css={styles.closeTrigger}
-          className="chakra-toast__closeTrigger"
-        >
+        <Box as="button" css={styles.closeTrigger} className="chakra-toast__closeTrigger">
           <HiX />
         </Box>
       </Box>
@@ -63,11 +50,7 @@ export const ToasterStatic = () => {
         <Box as="button" css={styles.actionTrigger}>
           Retry
         </Box>
-        <Box
-          as="button"
-          css={styles.closeTrigger}
-          className="chakra-toast__closeTrigger"
-        >
+        <Box as="button" css={styles.closeTrigger} className="chakra-toast__closeTrigger">
           <HiX />
         </Box>
       </Box>
@@ -83,11 +66,7 @@ export const ToasterStatic = () => {
         <Box as="button" css={styles.actionTrigger}>
           Retry
         </Box>
-        <Box
-          as="button"
-          css={styles.closeTrigger}
-          className="chakra-toast__closeTrigger"
-        >
+        <Box as="button" css={styles.closeTrigger} className="chakra-toast__closeTrigger">
           <HiX />
         </Box>
       </Box>

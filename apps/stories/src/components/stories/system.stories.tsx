@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Foundations / System",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { SystemAlertRecipe as AlertRecipe } from "../compositions/examples/system/alert-recipe"
 export { SystemColorPalette as ColorPalette } from "../compositions/examples/system/color-palette"

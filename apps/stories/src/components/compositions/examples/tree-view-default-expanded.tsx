@@ -5,11 +5,7 @@ import { LuFile, LuFolder } from "react-icons/lu"
 
 export const TreeViewDefaultExpanded = () => {
   return (
-    <TreeView.Root
-      collection={collection}
-      maxW="sm"
-      defaultExpandedValue={["node_modules", "node_modules/@types"]}
-    >
+    <TreeView.Root collection={collection} maxW="sm" defaultExpandedValue={["node_modules", "node_modules/@types"]}>
       <TreeView.Label>Tree</TreeView.Label>
       <TreeView.Tree>
         <TreeView.Node

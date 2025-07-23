@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Layout / AspectRatio",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="4">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { AspectRatioResponsive as Responsive } from "../compositions/examples/aspect-ratio-responsive"
 export { AspectRatioWithImage as Image } from "../compositions/examples/aspect-ratio-with-image"

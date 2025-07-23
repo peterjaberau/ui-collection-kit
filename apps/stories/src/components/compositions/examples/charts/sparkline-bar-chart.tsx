@@ -20,12 +20,7 @@ export const SparklineBarChart = () => {
   return (
     <Chart.Root width="28" height="12" chart={chart}>
       <BarChart data={chart.data} barSize={8}>
-        <Bar
-          isAnimationActive={false}
-          dataKey={chart.key("value")}
-          fill={chart.color("teal.solid")}
-          stroke=""
-        >
+        <Bar isAnimationActive={false} dataKey={chart.key("value")} fill={chart.color("teal.solid")} stroke="">
           {chart.data.map((item) => (
             <Cell key={item.value} fill={chart.color(item.fill)} />
           ))}

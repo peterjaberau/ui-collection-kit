@@ -1,11 +1,6 @@
 "use client"
 
-import {
-  Checkmark,
-  TreeView,
-  createTreeCollection,
-  useTreeViewNodeContext,
-} from "@chakra-ui/react"
+import { Checkmark, TreeView, createTreeCollection, useTreeViewNodeContext } from "@chakra-ui/react"
 import { LuFile, LuFolder } from "react-icons/lu"
 
 const TreeNodeCheckbox = (props: TreeView.NodeCheckboxProps) => {

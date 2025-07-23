@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box, SkipNavContent, SkipNavLink } from "@ui-kit/components"
+import { Box, SkipNavContent, SkipNavLink } from "@chakra-ui/react"
 
 export default {
   title: "Components / Skip Nav",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export const BasicExample = () => (
   <>

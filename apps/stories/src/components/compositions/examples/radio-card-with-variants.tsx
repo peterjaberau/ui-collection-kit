@@ -5,12 +5,7 @@ export const RadioCardWithVariants = () => {
     <Stack gap="8">
       <For each={["surface", "subtle", "outline", "solid"]}>
         {(variant) => (
-          <RadioCard.Root
-            colorPalette="teal"
-            key={variant}
-            variant={variant}
-            defaultValue="next"
-          >
+          <RadioCard.Root colorPalette="teal" key={variant} variant={variant} defaultValue="next">
             <RadioCard.Label>variant = ({variant})</RadioCard.Label>
             <HStack align="stretch">
               {items.map((item) => (

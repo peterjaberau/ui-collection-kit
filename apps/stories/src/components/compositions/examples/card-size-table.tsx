@@ -1,7 +1,7 @@
 "use client"
 
 import { Button, Card, For, Span, useSlotRecipe } from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const CardSizeTable = () => {
   const recipe = useSlotRecipe({ key: "card" })
@@ -28,10 +28,7 @@ export const CardSizeTable = () => {
                     <Card.Root size={s} variant={v}>
                       <Card.Body gap="2">
                         <Card.Title>Card Title</Card.Title>
-                        <Card.Description>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit.
-                        </Card.Description>
+                        <Card.Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card.Description>
                       </Card.Body>
                       <Card.Footer>
                         <Button variant="solid" colorPalette="blue">

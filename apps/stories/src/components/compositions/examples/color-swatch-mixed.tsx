@@ -5,10 +5,7 @@ export const ColorSwatchMixed = () => {
     <HStack>
       <ColorSwatchMix size="lg" items={["red", "pink"]} />
       <ColorSwatchMix size="lg" items={["red", "pink", "green"]} />
-      <ColorSwatchMix
-        size="lg"
-        items={["lightgreen", "green", "darkgreen", "black"]}
-      />
+      <ColorSwatchMix size="lg" items={["lightgreen", "green", "darkgreen", "black"]} />
     </HStack>
   )
 }

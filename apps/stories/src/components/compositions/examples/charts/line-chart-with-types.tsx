@@ -4,16 +4,7 @@ import { Chart, useChart } from "@chakra-ui/charts"
 import { For, SimpleGrid, Stack, Text } from "@chakra-ui/react"
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts"
 
-const curveTypes = [
-  "linear",
-  "bump",
-  "basis",
-  "step",
-  "stepBefore",
-  "stepAfter",
-  "natural",
-  "monotone",
-] as const
+const curveTypes = ["linear", "bump", "basis", "step", "stepBefore", "stepAfter", "natural", "monotone"] as const
 
 export const LineChartWithTypes = () => {
   const chart = useChart({
@@ -44,10 +35,7 @@ export const LineChartWithTypes = () => {
             </Text>
             <Chart.Root maxH="sm" chart={chart}>
               <LineChart accessibilityLayer data={chart.data}>
-                <CartesianGrid
-                  stroke={chart.color("border")}
-                  vertical={false}
-                />
+                <CartesianGrid stroke={chart.color("border")} vertical={false} />
                 <XAxis
                   dataKey={chart.key("month")}
                   tickLine={false}

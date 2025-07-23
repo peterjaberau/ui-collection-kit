@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Skeleton",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { SkeletonBasic as Basic } from "../compositions/examples/skeleton-basic"
 export { SkeletonForFeed as Feed } from "../compositions/examples/skeleton-for-feed"

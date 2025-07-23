@@ -1,8 +1,8 @@
 "use client"
 
 import { For, Span, Tabs, Text, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const TabsVariantTable = () => {
   const recipe = useSlotRecipe({ key: "tabs" })
@@ -11,9 +11,7 @@ export const TabsVariantTable = () => {
       <thead>
         <tr>
           <td />
-          <For each={recipe.variantMap.variant}>
-            {(v) => <td key={v}>{v}</td>}
-          </For>
+          <For each={recipe.variantMap.variant}>{(v) => <td key={v}>{v}</td>}</For>
         </tr>
       </thead>
       <tbody>
@@ -28,29 +26,17 @@ export const TabsVariantTable = () => {
               <For each={recipe.variantMap.variant}>
                 {(v) => (
                   <td key={v}>
-                    <Tabs.Root
-                      defaultValue="settings"
-                      variant={v}
-                      colorPalette={c}
-                      mt="3"
-                      minW="300px"
-                    >
+                    <Tabs.Root defaultValue="settings" variant={v} colorPalette={c} mt="3" minW="300px">
                       <Tabs.List>
                         <Tabs.Trigger value="settings">Settings</Tabs.Trigger>
                         <Tabs.Trigger value="billing">Billing</Tabs.Trigger>
                       </Tabs.List>
                       <Tabs.ContentGroup>
                         <Tabs.Content value="settings">
-                          <Text fontSize="sm">
-                            Settings - Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit.
-                          </Text>
+                          <Text fontSize="sm">Settings - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
                         </Tabs.Content>
                         <Tabs.Content value="billing">
-                          <Text fontSize="sm">
-                            Billing - Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit.
-                          </Text>
+                          <Text fontSize="sm">Billing - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
                         </Tabs.Content>
                       </Tabs.ContentGroup>
                     </Tabs.Root>

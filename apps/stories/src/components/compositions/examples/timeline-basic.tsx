@@ -15,8 +15,7 @@ export const TimelineBasic = () => {
           <Timeline.Title>Product Shipped</Timeline.Title>
           <Timeline.Description>13th May 2021</Timeline.Description>
           <Text textStyle="sm">
-            We shipped your product via <strong>FedEx</strong> and it should
-            arrive within 3-5 business days.
+            We shipped your product via <strong>FedEx</strong> and it should arrive within 3-5 business days.
           </Text>
         </Timeline.Content>
       </Timeline.Item>

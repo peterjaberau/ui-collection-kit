@@ -1,4 +1,4 @@
-import { chakra } from "../../src"
+import { chakra } from "@chakra-ui/react"
 
 export const DecorativeBox = chakra("div", {
   base: {

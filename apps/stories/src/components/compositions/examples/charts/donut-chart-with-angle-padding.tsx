@@ -15,11 +15,7 @@ export const DonutChartWithAnglePadding = () => {
   return (
     <Chart.Root boxSize="200px" chart={chart} mx="auto">
       <PieChart>
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip hideLabel />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip hideLabel />} />
         <Pie
           innerRadius={80}
           outerRadius={100}

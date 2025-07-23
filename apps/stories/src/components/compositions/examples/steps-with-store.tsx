@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Button,
-  ButtonGroup,
-  Code,
-  Stack,
-  Steps,
-  useSteps,
-} from "@chakra-ui/react"
+import { Button, ButtonGroup, Code, Stack, Steps, useSteps } from "@chakra-ui/react"
 
 export const StepsWithStore = () => {
   const steps = useSteps({

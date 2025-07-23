@@ -56,11 +56,7 @@ export const LineChartCustomTooltip = () => {
           stroke={chart.color("border")}
           label={{ value: "Customers", position: "left", angle: -90 }}
         />
-        <Tooltip
-          animationDuration={100}
-          cursor={false}
-          content={<CustomTooltip />}
-        />
+        <Tooltip animationDuration={100} cursor={false} content={<CustomTooltip />} />
         {chart.series.map((item) => (
           <Line
             key={item.name}

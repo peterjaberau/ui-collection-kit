@@ -1,15 +1,6 @@
 "use client"
 
-import {
-  Button,
-  CloseButton,
-  Dialog,
-  HoverCard,
-  Link,
-  Portal,
-  Stack,
-  Text,
-} from "@chakra-ui/react"
+import { Button, CloseButton, Dialog, HoverCard, Link, Portal, Stack, Text } from "@chakra-ui/react"
 
 export const HoverCardInDialog = () => {
   return (

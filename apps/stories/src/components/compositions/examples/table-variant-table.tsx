@@ -1,14 +1,8 @@
 "use client"
 
-import {
-  For,
-  Span,
-  Table,
-  type TableRootProps,
-  useSlotRecipe,
-} from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { For, Span, Table, type TableRootProps, useSlotRecipe } from "@chakra-ui/react"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const TableVariantTable = () => {
   const recipe = useSlotRecipe({ key: "table" })
@@ -17,9 +11,7 @@ export const TableVariantTable = () => {
       <thead>
         <tr>
           <td />
-          <For each={recipe.variantMap.variant}>
-            {(v) => <td key={v}>{v}</td>}
-          </For>
+          <For each={recipe.variantMap.variant}>{(v) => <td key={v}>{v}</td>}</For>
         </tr>
       </thead>
       <tbody>

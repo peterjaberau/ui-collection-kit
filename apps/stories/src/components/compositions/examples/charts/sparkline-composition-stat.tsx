@@ -23,23 +23,13 @@ export const SparklineCompositionStat = () => {
 
 const SparkLine = () => {
   const chart = useChart({
-    data: [
-      { value: 10 },
-      { value: 16 },
-      { value: 19 },
-      { value: 15 },
-      { value: 12 },
-      { value: 15 },
-    ],
+    data: [{ value: 10 }, { value: 16 }, { value: 19 }, { value: 15 }, { value: 12 }, { value: 15 }],
     series: [{ color: "teal.solid" }],
   })
 
   return (
     <Chart.Root height="10" chart={chart}>
-      <AreaChart
-        data={chart.data}
-        margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
-      >
+      <AreaChart data={chart.data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
         {chart.series.map((item) => (
           <Area
             key={item.name}

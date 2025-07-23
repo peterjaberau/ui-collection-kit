@@ -1,15 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Legend,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts"
+import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from "recharts"
 
 export const BarChartPercent = () => {
   const chart = useChart({
@@ -40,15 +32,8 @@ export const BarChartPercent = () => {
           dataKey={chart.key("month")}
           tickFormatter={(value) => value.slice(0, 3)}
         />
-        <YAxis
-          stroke={chart.color("border.emphasized")}
-          tickFormatter={chart.formatNumber({ style: "percent" })}
-        />
-        <Tooltip
-          cursor={{ fill: chart.color("bg.muted") }}
-          animationDuration={100}
-          content={<Chart.Tooltip />}
-        />
+        <YAxis stroke={chart.color("border.emphasized")} tickFormatter={chart.formatNumber({ style: "percent" })} />
+        <Tooltip cursor={{ fill: chart.color("bg.muted") }} animationDuration={100} content={<Chart.Tooltip />} />
         <Legend content={<Chart.Legend />} />
         {chart.series.map((item) => (
           <Bar

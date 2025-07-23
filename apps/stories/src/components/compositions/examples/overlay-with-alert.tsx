@@ -14,11 +14,7 @@ const alert = createOverlay<AlertProps>((props) => {
   const { onConfirm, content, title = "Are you sure?", ...rest } = props
   const cancelRef = useRef<HTMLButtonElement | null>(null)
   return (
-    <Dialog.Root
-      {...rest}
-      role="alertdialog"
-      initialFocusEl={() => cancelRef.current}
-    >
+    <Dialog.Root {...rest} role="alertdialog" initialFocusEl={() => cancelRef.current}>
       <Portal>
         <Dialog.Backdrop />
         <Dialog.Positioner>
@@ -52,8 +48,7 @@ export const OverlayWithAlert = () => {
               console.log("confirmed")
               alert.close("a")
             },
-            content:
-              "Remove this item will clear all the data and cannot be undone.",
+            content: "Remove this item will clear all the data and cannot be undone.",
           })
         }}
       >

@@ -1,7 +1,7 @@
 "use client"
 
 import { Badge, DataList, For, useSlotRecipe } from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const DataListSizeTable = () => {
   const recipe = useSlotRecipe({ key: "dataList" })

@@ -15,9 +15,7 @@ export const RadioCardWithIcon = () => {
                   {item.icon}
                 </Icon>
                 <RadioCard.ItemText>{item.title}</RadioCard.ItemText>
-                <RadioCard.ItemDescription>
-                  {item.description}
-                </RadioCard.ItemDescription>
+                <RadioCard.ItemDescription>{item.description}</RadioCard.ItemDescription>
               </RadioCard.ItemContent>
               <RadioCard.ItemIndicator />
             </RadioCard.ItemControl>

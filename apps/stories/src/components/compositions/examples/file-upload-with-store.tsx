@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Button,
-  Code,
-  FileUpload,
-  Stack,
-  useFileUpload,
-} from "@chakra-ui/react"
+import { Button, Code, FileUpload, Stack, useFileUpload } from "@chakra-ui/react"
 import { HiUpload } from "react-icons/hi"
 
 export const FileUploadWithStore = () => {

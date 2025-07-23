@@ -4,12 +4,7 @@ import { Portal, Select, createListCollection } from "@chakra-ui/react"
 
 export const SelectWithPositioning = () => {
   return (
-    <Select.Root
-      collection={frameworks}
-      size="sm"
-      width="320px"
-      positioning={{ placement: "top", flip: false }}
-    >
+    <Select.Root collection={frameworks} size="sm" width="320px" positioning={{ placement: "top", flip: false }}>
       <Select.HiddenSelect />
       <Select.Label>Select framework</Select.Label>
       <Select.Control>

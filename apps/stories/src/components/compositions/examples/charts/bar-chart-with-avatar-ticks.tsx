@@ -21,11 +21,7 @@ const AvatarTicks = (props: Partial<AvatarTickProps>) => {
   const avatarUrl = data[index].avatar
   return (
     <foreignObject x={x - 15} y={y} width={50} height={50}>
-      <img
-        src={avatarUrl}
-        alt="avatar"
-        style={{ width: 30, height: 30, borderRadius: "50%" }}
-      />
+      <img src={avatarUrl} alt="avatar" style={{ width: 30, height: 30, borderRadius: "50%" }} />
     </foreignObject>
   )
 }
@@ -38,18 +34,10 @@ export const BarChartWithAvatarTicks = () => {
   return (
     <Chart.Root maxH="sm" chart={chart}>
       <BarChart data={chart.data} margin={{ bottom: 20 }}>
-        <XAxis
-          dataKey="name"
-          tick={<AvatarTicks />}
-          stroke={chart.color("border.emphasized")}
-        />
+        <XAxis dataKey="name" tick={<AvatarTicks />} stroke={chart.color("border.emphasized")} />
         <YAxis stroke={chart.color("border.emphasized")} />
         {chart.series.map((item) => (
-          <Bar
-            key={item.name}
-            dataKey={chart.key(item.name)}
-            fill={chart.color(item.color)}
-          />
+          <Bar key={item.name} dataKey={chart.key(item.name)} fill={chart.color(item.color)} />
         ))}
       </BarChart>
     </Chart.Root>

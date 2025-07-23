@@ -11,11 +11,7 @@ export const RadioCardWithCustomIndicator = () => {
             <RadioCard.ItemHiddenInput />
             <RadioCard.ItemControl>
               <RadioCard.ItemText>{item.title}</RadioCard.ItemText>
-              <RadioCard.ItemIndicator
-                color="fg"
-                borderWidth="0"
-                checked={<LuCheck />}
-              />
+              <RadioCard.ItemIndicator color="fg" borderWidth="0" checked={<LuCheck />} />
             </RadioCard.ItemControl>
           </RadioCard.Item>
         ))}

@@ -4,14 +4,7 @@ export const MenuWithContextTrigger = () => {
   return (
     <Menu.Root>
       <Menu.ContextTrigger width="full">
-        <Center
-          height="40"
-          userSelect="none"
-          borderWidth="2px"
-          borderStyle="dashed"
-          rounded="lg"
-          padding="4"
-        >
+        <Center height="40" userSelect="none" borderWidth="2px" borderStyle="dashed" rounded="lg" padding="4">
           Right click here
         </Center>
       </Menu.ContextTrigger>

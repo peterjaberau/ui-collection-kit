@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  ButtonGroup,
-  Heading,
-  IconButton,
-  Pagination,
-  Stack,
-  Table,
-} from "@chakra-ui/react"
+import { ButtonGroup, Heading, IconButton, Pagination, Stack, Table } from "@chakra-ui/react"
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
 
 export const TableWithPagination = () => {
@@ -42,11 +35,7 @@ export const TableWithPagination = () => {
           </Pagination.PrevTrigger>
 
           <Pagination.Items
-            render={(page) => (
-              <IconButton variant={{ base: "ghost", _selected: "outline" }}>
-                {page.value}
-              </IconButton>
-            )}
+            render={(page) => <IconButton variant={{ base: "ghost", _selected: "outline" }}>{page.value}</IconButton>}
           />
 
           <Pagination.NextTrigger asChild>

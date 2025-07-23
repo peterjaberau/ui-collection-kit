@@ -9,8 +9,7 @@ export const HeadingWithHighlight = () => {
         </Highlight>
       </Heading>
       <Text fontSize="md" color="fg.muted">
-        Chakra UI is a simple, modular and accessible component library that
-        gives you the building blocks you need.
+        Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need.
       </Text>
     </Stack>
   )

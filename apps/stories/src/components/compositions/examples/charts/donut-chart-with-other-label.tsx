@@ -48,11 +48,7 @@ export const DonutChartWithOtherLabel = () => {
   return (
     <Chart.Root aspectRatio="square" maxW="sm" chart={chart} mx="auto">
       <PieChart>
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip hideLabel />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip hideLabel />} />
         <Pie
           innerRadius={60}
           outerRadius={100}

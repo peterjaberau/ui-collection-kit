@@ -13,9 +13,7 @@ export const EmptyStateSizes = () => {
               </EmptyState.Indicator>
               <VStack textAlign="center">
                 <EmptyState.Title>Your cart is empty</EmptyState.Title>
-                <EmptyState.Description>
-                  Explore our products and add items to your cart
-                </EmptyState.Description>
+                <EmptyState.Description>Explore our products and add items to your cart</EmptyState.Description>
               </VStack>
             </EmptyState.Content>
           </EmptyState.Root>

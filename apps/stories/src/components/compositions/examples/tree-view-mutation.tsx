@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  HStack,
-  IconButton,
-  TreeView,
-  createTreeCollection,
-  useTreeViewContext,
-} from "@chakra-ui/react"
+import { HStack, IconButton, TreeView, createTreeCollection, useTreeViewContext } from "@chakra-ui/react"
 import { useState } from "react"
 import { LuFile, LuFolder, LuPlus, LuTrash } from "react-icons/lu"
 
@@ -41,23 +35,13 @@ export const TreeViewMutation = () => {
               <TreeView.BranchControl role="">
                 <LuFolder />
                 <TreeView.BranchText>{node.name}</TreeView.BranchText>
-                <TreeNodeActions
-                  node={node}
-                  indexPath={indexPath}
-                  onRemove={removeNode}
-                  onAdd={addNode}
-                />
+                <TreeNodeActions node={node} indexPath={indexPath} onRemove={removeNode} onAdd={addNode} />
               </TreeView.BranchControl>
             ) : (
               <TreeView.Item>
                 <LuFile />
                 <TreeView.ItemText>{node.name}</TreeView.ItemText>
-                <TreeNodeActions
-                  node={node}
-                  indexPath={indexPath}
-                  onRemove={removeNode}
-                  onAdd={addNode}
-                />
+                <TreeNodeActions node={node} indexPath={indexPath} onRemove={removeNode} onAdd={addNode} />
               </TreeView.Item>
             )
           }

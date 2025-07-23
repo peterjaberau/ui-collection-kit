@@ -1,14 +1,6 @@
 "use client"
 
-import {
-  Badge,
-  Combobox,
-  For,
-  HStack,
-  Portal,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Badge, Combobox, For, HStack, Portal, useFilter, useListCollection } from "@chakra-ui/react"
 import { useState } from "react"
 
 export const ComboboxControlled = () => {

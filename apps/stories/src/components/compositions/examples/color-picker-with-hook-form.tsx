@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Button,
-  ColorPicker,
-  HStack,
-  Portal,
-  Stack,
-  parseColor,
-} from "@chakra-ui/react"
+import { Button, ColorPicker, HStack, Portal, Stack, parseColor } from "@chakra-ui/react"
 import { Controller, useForm } from "react-hook-form"
 
 interface FormValues {

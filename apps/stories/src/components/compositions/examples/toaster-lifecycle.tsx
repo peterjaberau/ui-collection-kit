@@ -1,7 +1,7 @@
 "use client"
 
 import { Button, HStack, Stack, Text } from "@chakra-ui/react"
-import { toaster } from "compositions/ui/toaster"
+import { toaster } from "@ui-kit/components"
 import { useState } from "react"
 
 export const ToasterLifecycle = () => {
@@ -33,8 +33,7 @@ export const ToasterLifecycle = () => {
           const date = new Date(time)
           return (
             <HStack as="pre" fontFamily="mono" textStyle="sm" key={i}>
-              {date.toLocaleTimeString()}{" "}
-              <Text fontWeight="bold">{toastStatus}</Text>
+              {date.toLocaleTimeString()} <Text fontWeight="bold">{toastStatus}</Text>
             </HStack>
           )
         })}

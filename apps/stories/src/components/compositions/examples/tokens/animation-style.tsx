@@ -8,21 +8,9 @@ export const TokensAnimationStyle = () => {
   return (
     <Stack gap="8" mb="8" align="flex-start">
       <HStack wrap="wrap">
-        <For
-          each={[
-            "slide-fade-in",
-            "slide-fade-out",
-            "scale-fade-in",
-            "scale-fade-out",
-          ]}
-        >
+        <For each={["slide-fade-in", "slide-fade-out", "scale-fade-in", "scale-fade-out"]}>
           {(animation) => (
-            <Button
-              size="sm"
-              variant="outline"
-              key={animation}
-              onClick={() => setAnimation(animation)}
-            >
+            <Button size="sm" variant="outline" key={animation} onClick={() => setAnimation(animation)}>
               {animation}
             </Button>
           )}

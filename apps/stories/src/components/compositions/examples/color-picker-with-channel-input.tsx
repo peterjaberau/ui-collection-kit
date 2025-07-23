@@ -1,14 +1,6 @@
 "use client"
 
-import {
-  ColorPicker,
-  For,
-  HStack,
-  Portal,
-  VStack,
-  getColorChannels,
-  parseColor,
-} from "@chakra-ui/react"
+import { ColorPicker, For, HStack, Portal, VStack, getColorChannels, parseColor } from "@chakra-ui/react"
 
 const ChannelInputs = (props: { format: ColorPicker.ColorFormat }) => {
   const channels = getColorChannels(props.format)
@@ -17,16 +9,8 @@ const ChannelInputs = (props: { format: ColorPicker.ColorFormat }) => {
       <For each={channels}>
         {(channel) => (
           <VStack gap="1" key={channel} flex="1">
-            <ColorPicker.ChannelInput
-              channel={channel}
-              px="0"
-              height="7"
-              textStyle="xs"
-              textAlign="center"
-            />
-            <ColorPicker.ChannelText>
-              {channel.charAt(0).toUpperCase()}
-            </ColorPicker.ChannelText>
+            <ColorPicker.ChannelInput channel={channel} px="0" height="7" textStyle="xs" textAlign="center" />
+            <ColorPicker.ChannelText>{channel.charAt(0).toUpperCase()}</ColorPicker.ChannelText>
           </VStack>
         )}
       </For>

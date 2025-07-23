@@ -6,12 +6,7 @@ export const SliderWithMarks = () => {
       <For each={["sm", "md", "lg"]}>
         {(size) => (
           <VStack key={size} align="flex-start">
-            <Slider.Root
-              key={size}
-              size={size}
-              defaultValue={[40]}
-              width="200px"
-            >
+            <Slider.Root key={size} size={size} defaultValue={[40]} width="200px">
               <Slider.Control>
                 <Slider.Track>
                   <Slider.Range />

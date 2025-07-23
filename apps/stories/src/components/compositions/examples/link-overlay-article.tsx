@@ -1,11 +1,4 @@
-import {
-  Heading,
-  Link,
-  LinkBox,
-  LinkOverlay,
-  Span,
-  Text,
-} from "@chakra-ui/react"
+import { Heading, Link, LinkBox, LinkOverlay, Span, Text } from "@chakra-ui/react"
 
 export const LinkOverlayArticle = () => {
   return (
@@ -17,8 +10,7 @@ export const LinkOverlayArticle = () => {
         <LinkOverlay href="#">Chakra V3 Workshop</LinkOverlay>
       </Heading>
       <Text mb="3" color="fg.muted">
-        Catch up on whats been cooking at Chakra UI and explore some of the
-        popular community resources.
+        Catch up on whats been cooking at Chakra UI and explore some of the popular community resources.
       </Text>
       <Link href="#inner-link" variant="underline" colorPalette="teal">
         Inner Link

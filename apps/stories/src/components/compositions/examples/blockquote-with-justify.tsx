@@ -11,9 +11,8 @@ export const BlockquoteWithJustify = () => {
             </Text>
             <Blockquote.Root variant="plain" justify={justify}>
               <Blockquote.Content cite="Uzumaki Naruto">
-                If anyone thinks he is something when he is nothing, he deceives
-                himself. Each one should test his own actions. Then he can take
-                pride in himself, without comparing himself to anyone else.
+                If anyone thinks he is something when he is nothing, he deceives himself. Each one should test his own
+                actions. Then he can take pride in himself, without comparing himself to anyone else.
               </Blockquote.Content>
               <Blockquote.Caption>
                 — <cite>Uzumaki Naruto</cite>

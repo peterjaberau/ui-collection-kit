@@ -5,12 +5,7 @@ import { groupBy } from "es-toolkit"
 
 export const SelectWithCountry = () => {
   return (
-    <Select.Root
-      collection={countries}
-      size="sm"
-      width="320px"
-      defaultValue={["NG"]}
-    >
+    <Select.Root collection={countries} size="sm" width="320px" defaultValue={["NG"]}>
       <Select.HiddenSelect />
       <Select.Label>Select country</Select.Label>
       <Select.Control>
@@ -69,6 +64,4 @@ const countries = createListCollection({
   itemToValue: (item) => item.value,
 })
 
-const continents = Object.entries(
-  groupBy(countries.items, (item) => item.continent),
-)
+const continents = Object.entries(groupBy(countries.items, (item) => item.continent))

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button, Field, Input, Stack } from "@chakra-ui/react"
-import { PasswordInput } from "compositions/ui/password-input"
+import { PasswordInput } from "@ui-kit/components"
 import { useForm } from "react-hook-form"
 
 interface FormValues {

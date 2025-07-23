@@ -47,15 +47,8 @@ export const SparklineWithInteraction = () => {
         </Text>
       </Box>
       <Chart.Root width="full" height="12" flex="1" chart={chart}>
-        <AreaChart
-          data={chart.data}
-          onMouseMove={onMouseMove}
-          onMouseLeave={onMouseLeave}
-        >
-          <Tooltip
-            cursor={{ stroke: chart.color("teal.solid"), strokeWidth: 2 }}
-            content={() => null}
-          />
+        <AreaChart data={chart.data} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
+          <Tooltip cursor={{ stroke: chart.color("teal.solid"), strokeWidth: 2 }} content={() => null} />
           {chart.series.map((item) => (
             <Area
               activeDot={{ stroke: chart.color("bg") }}

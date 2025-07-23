@@ -8,10 +8,7 @@ export const EditableWithFinalFocus = () => {
 
   return (
     <Stack>
-      <Editable.Root
-        finalFocusEl={() => ref.current}
-        defaultValue="Final fantasy"
-      >
+      <Editable.Root finalFocusEl={() => ref.current} defaultValue="Final fantasy">
         <Editable.Preview />
         <Editable.Input />
         <Editable.Control>

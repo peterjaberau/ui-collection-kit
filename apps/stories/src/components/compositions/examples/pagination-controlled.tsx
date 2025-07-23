@@ -8,12 +8,7 @@ export const PaginationControlled = () => {
   const [page, setPage] = useState(1)
 
   return (
-    <Pagination.Root
-      count={20}
-      pageSize={2}
-      page={page}
-      onPageChange={(e) => setPage(e.page)}
-    >
+    <Pagination.Root count={20} pageSize={2} page={page} onPageChange={(e) => setPage(e.page)}>
       <ButtonGroup variant="ghost" size="sm">
         <Pagination.PrevTrigger asChild>
           <IconButton>
@@ -22,11 +17,7 @@ export const PaginationControlled = () => {
         </Pagination.PrevTrigger>
 
         <Pagination.Items
-          render={(page) => (
-            <IconButton variant={{ base: "ghost", _selected: "outline" }}>
-              {page.value}
-            </IconButton>
-          )}
+          render={(page) => <IconButton variant={{ base: "ghost", _selected: "outline" }}>{page.value}</IconButton>}
         />
 
         <Pagination.NextTrigger asChild>

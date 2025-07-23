@@ -19,17 +19,9 @@ export const ScatterChartLegend = () => {
   return (
     <Chart.Root maxH="sm" chart={chart}>
       <ScatterChart margin={{ top: 20, right: 30, bottom: 5, left: 0 }}>
-        <XAxis
-          type="number"
-          dataKey={chart.key("x")}
-          stroke={chart.color("border")}
-        />
+        <XAxis type="number" dataKey={chart.key("x")} stroke={chart.color("border")} />
         <Legend content={<Chart.Legend />} />
-        <YAxis
-          type="number"
-          dataKey={chart.key("y")}
-          stroke={chart.color("border")}
-        />
+        <YAxis type="number" dataKey={chart.key("y")} stroke={chart.color("border")} />
 
         {chart.series.map((series, index) => (
           <Scatter

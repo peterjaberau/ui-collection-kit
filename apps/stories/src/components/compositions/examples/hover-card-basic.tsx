@@ -1,13 +1,4 @@
-import {
-  Avatar,
-  HStack,
-  HoverCard,
-  Icon,
-  Link,
-  Portal,
-  Stack,
-  Text,
-} from "@chakra-ui/react"
+import { Avatar, HStack, HoverCard, Icon, Link, Portal, Stack, Text } from "@chakra-ui/react"
 import { LuChartLine } from "react-icons/lu"
 
 export const HoverCardBasic = () => {
@@ -31,8 +22,7 @@ export const HoverCardBasic = () => {
                     Chakra UI
                   </Text>
                   <Text textStyle="sm" color="fg.muted">
-                    The most powerful toolkit for building modern web
-                    applications.
+                    The most powerful toolkit for building modern web applications.
                   </Text>
                 </Stack>
                 <HStack color="fg.subtle">

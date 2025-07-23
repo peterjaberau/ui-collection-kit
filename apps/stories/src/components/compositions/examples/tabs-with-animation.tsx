@@ -7,8 +7,7 @@ const items = [
   },
   {
     title: "2",
-    content:
-      "Pariatur in veniam Lorem est occaecat do magna nisi mollit ipsum sit adipisicing fugiat ex.",
+    content: "Pariatur in veniam Lorem est occaecat do magna nisi mollit ipsum sit adipisicing fugiat ex.",
   },
 ]
 

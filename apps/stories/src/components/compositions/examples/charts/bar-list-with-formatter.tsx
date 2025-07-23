@@ -14,16 +14,13 @@ export const BarListWithFormatter = () => {
     series: [{ name: "name", color: "pink.subtle" }],
   })
 
-  const getPercent = (value: number) =>
-    chart.getValuePercent("value", value).toFixed(0)
+  const getPercent = (value: number) => chart.getValuePercent("value", value).toFixed(0)
 
   return (
     <BarList.Root chart={chart}>
       <BarList.Content>
         <BarList.Bar />
-        <BarList.Value
-          valueFormatter={(value) => `${value} (${getPercent(value)}%)`}
-        />
+        <BarList.Value valueFormatter={(value) => `${value} (${getPercent(value)}%)`} />
       </BarList.Content>
     </BarList.Root>
   )

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button, HStack } from "@chakra-ui/react"
-import { DarkMode, LightMode, useColorMode } from "compositions/ui/color-mode"
+import { DarkMode, LightMode, useColorMode } from "@ui-kit/components"
 
 export const ColorModeForced = () => {
   const { toggleColorMode } = useColorMode()

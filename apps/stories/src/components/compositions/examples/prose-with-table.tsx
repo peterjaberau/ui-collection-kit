@@ -1,4 +1,4 @@
-import { Prose } from "compositions/ui/prose"
+import { Prose } from "@ui-kit/components"
 
 // Used for syntax highlighting
 const html = String.raw

@@ -19,8 +19,8 @@ export const DialogWithCover = () => {
               </Dialog.CloseTrigger>
             </Dialog.Header>
             <Dialog.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
             </Dialog.Body>
           </Dialog.Content>
         </Dialog.Positioner>

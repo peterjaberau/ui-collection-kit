@@ -14,11 +14,7 @@ export const PaginationWithVariants = () => {
         </Pagination.PrevTrigger>
 
         <Pagination.Items
-          render={(page) => (
-            <IconButton variant={{ base: "outline", _selected: "solid" }}>
-              {page.value}
-            </IconButton>
-          )}
+          render={(page) => <IconButton variant={{ base: "outline", _selected: "solid" }}>{page.value}</IconButton>}
         />
 
         <Pagination.NextTrigger asChild>

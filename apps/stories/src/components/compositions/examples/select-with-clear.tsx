@@ -4,12 +4,7 @@ import { Portal, Select, createListCollection } from "@chakra-ui/react"
 
 export const SelectWithClear = () => {
   return (
-    <Select.Root
-      collection={animeMovies}
-      defaultValue={["spirited_away"]}
-      size="sm"
-      width="320px"
-    >
+    <Select.Root collection={animeMovies} defaultValue={["spirited_away"]} size="sm" width="320px">
       <Select.HiddenSelect />
       <Select.Label>Select fav. anime</Select.Label>
       <Select.Control>

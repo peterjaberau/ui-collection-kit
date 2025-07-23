@@ -22,19 +22,13 @@ export const TextareaWithHookForm = () => {
       <Stack gap="4" align="flex-start" maxW="sm">
         <Field.Root invalid={!!errors.username}>
           <Field.Label>Username</Field.Label>
-          <Input
-            placeholder="@username"
-            {...register("username", { required: "Username is required" })}
-          />
+          <Input placeholder="@username" {...register("username", { required: "Username is required" })} />
           <Field.ErrorText>{errors.username?.message}</Field.ErrorText>
         </Field.Root>
 
         <Field.Root invalid={!!errors.bio}>
           <Field.Label>Profile bio</Field.Label>
-          <Textarea
-            placeholder="I am ..."
-            {...register("bio", { required: "Bio is required" })}
-          />
+          <Textarea placeholder="I am ..." {...register("bio", { required: "Bio is required" })} />
           <Field.HelperText>A short description of yourself</Field.HelperText>
           <Field.ErrorText>{errors.bio?.message}</Field.ErrorText>
         </Field.Root>

@@ -1,5 +1,5 @@
 import { Progress } from "@chakra-ui/react"
-import { InfoTip } from "compositions/ui/toggle-tip"
+import { InfoTip } from "@ui-kit/components"
 
 export const ProgressWithLabelInfo = () => {
   return (

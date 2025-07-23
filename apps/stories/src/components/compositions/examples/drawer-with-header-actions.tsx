@@ -1,10 +1,4 @@
-import {
-  Button,
-  ButtonGroup,
-  CloseButton,
-  Drawer,
-  Portal,
-} from "@chakra-ui/react"
+import { Button, ButtonGroup, CloseButton, Drawer, Portal } from "@chakra-ui/react"
 
 export const DrawerWithHeaderActions = () => {
   return (
@@ -30,8 +24,8 @@ export const DrawerWithHeaderActions = () => {
             </Drawer.Header>
             <Drawer.Body>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
               </p>
             </Drawer.Body>
           </Drawer.Content>

@@ -1,17 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  CartesianGrid,
-  Legend,
-  Line,
-  LineChart,
-  ReferenceDot,
-  ReferenceLine,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts"
+import { CartesianGrid, Legend, Line, LineChart, ReferenceDot, ReferenceLine, Tooltip, XAxis, YAxis } from "recharts"
 
 export const LineChartWithReferencePoint = () => {
   const chart = useChart({
@@ -44,17 +34,8 @@ export const LineChartWithReferencePoint = () => {
           tickFormatter={(value) => value.slice(0, 3)}
           stroke={chart.color("border")}
         />
-        <YAxis
-          axisLine={false}
-          tickLine={false}
-          tickMargin={10}
-          stroke={chart.color("border")}
-        />
-        <Tooltip
-          animationDuration={100}
-          cursor={false}
-          content={<Chart.Tooltip />}
-        />
+        <YAxis axisLine={false} tickLine={false} tickMargin={10} stroke={chart.color("border")} />
+        <Tooltip animationDuration={100} cursor={false} content={<Chart.Tooltip />} />
         <ReferenceDot
           x={latest?.month}
           y={latest?.thisYear}

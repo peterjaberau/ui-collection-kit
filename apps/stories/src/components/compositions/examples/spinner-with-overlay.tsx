@@ -5,9 +5,8 @@ export const SpinnerWithOverlay = () => {
     <Box position="relative" aria-busy="true" userSelect="none">
       <Heading>Some heading text</Heading>
       <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-        consectetur libero, id ultricies urna. Sed ac consectetur libero, id
-        fames ac ante ipsum primis in faucibus.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac consectetur libero, id ultricies urna. Sed ac
+        consectetur libero, id fames ac ante ipsum primis in faucibus.
       </Text>
       <Box pos="absolute" inset="0" bg="bg/80">
         <Center h="full">

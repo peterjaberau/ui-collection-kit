@@ -11,9 +11,7 @@ export const PopoverWithOffset = () => {
       <Portal>
         <Popover.Positioner>
           <Popover.Content>
-            <Popover.Body>
-              This popover has a custom offset from its trigger
-            </Popover.Body>
+            <Popover.Body>This popover has a custom offset from its trigger</Popover.Body>
           </Popover.Content>
         </Popover.Positioner>
       </Portal>

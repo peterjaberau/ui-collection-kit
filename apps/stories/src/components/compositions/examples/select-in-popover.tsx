@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Button,
-  Popover,
-  Portal,
-  Select,
-  createListCollection,
-} from "@chakra-ui/react"
+import { Button, Popover, Portal, Select, createListCollection } from "@chakra-ui/react"
 
 export const SelectInPopover = () => {
   return (
@@ -22,11 +16,7 @@ export const SelectInPopover = () => {
           <Popover.Content>
             <Popover.Header>Select in Popover</Popover.Header>
             <Popover.Body>
-              <Select.Root
-                collection={frameworks}
-                size="sm"
-                positioning={{ sameWidth: true, placement: "bottom" }}
-              >
+              <Select.Root collection={frameworks} size="sm" positioning={{ sameWidth: true, placement: "bottom" }}>
                 <Select.HiddenSelect />
                 <Select.Control>
                   <Select.Trigger>

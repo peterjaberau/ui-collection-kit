@@ -1,14 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  HStack,
-  Icon,
-  Portal,
-  Stack,
-  Text,
-  createListCollection,
-} from "@chakra-ui/react"
+import { Combobox, HStack, Icon, Portal, Stack, Text, createListCollection } from "@chakra-ui/react"
 import { useMemo, useState } from "react"
 
 interface Tag {
@@ -52,11 +44,7 @@ export const ComboboxWithCreateableOptions = () => {
       return tag
     })
 
-    setValue(
-      selectedValue === "custom" && selectedTag
-        ? [selectedTag?.name]
-        : details.value,
-    )
+    setValue(selectedValue === "custom" && selectedTag ? [selectedTag?.name] : details.value)
     setTags(tempTags)
 
     setInputValue(selectedTag?.name ?? "")
@@ -144,19 +132,11 @@ export const ComboboxWithCreateableOptions = () => {
 
                 return (
                   <Combobox.Item key={tag.id} item={tag}>
-                    <HStack
-                      direction="row"
-                      justify="space-between"
-                      align="center"
-                    >
+                    <HStack direction="row" justify="space-between" align="center">
                       <Stack direction="row" align="center" gap={2}>
                         <Text fontWeight="medium">{tag.name}</Text>
                         {tag.custom && (
-                          <Text
-                            fontSize="xs"
-                            color="blue.500"
-                            fontWeight="medium"
-                          >
+                          <Text fontSize="xs" color="blue.500" fontWeight="medium">
                             CUSTOM
                           </Text>
                         )}

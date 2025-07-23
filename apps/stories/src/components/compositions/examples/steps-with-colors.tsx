@@ -1,17 +1,12 @@
 import { Button, ButtonGroup, For, Stack, Steps } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
+import { colorPalettes } from "../lib/color-palettes"
 
 export const StepsWithColors = () => {
   return (
     <Stack gap="10" width="full">
       <For each={colorPalettes}>
         {(colorPalette) => (
-          <Steps.Root
-            key={colorPalette}
-            defaultStep={1}
-            count={steps.length}
-            colorPalette={colorPalette}
-          >
+          <Steps.Root key={colorPalette} defaultStep={1} count={steps.length} colorPalette={colorPalette}>
             <Steps.List>
               {steps.map((step, index) => (
                 <Steps.Item key={index} index={index} title={step.title}>
@@ -27,9 +22,7 @@ export const StepsWithColors = () => {
                 {step.description}
               </Steps.Content>
             ))}
-            <Steps.CompletedContent>
-              All steps are complete!
-            </Steps.CompletedContent>
+            <Steps.CompletedContent>All steps are complete!</Steps.CompletedContent>
 
             <ButtonGroup size="sm" variant="outline">
               <Steps.PrevTrigger asChild>

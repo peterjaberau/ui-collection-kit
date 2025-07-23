@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Box,
-  Button,
-  CloseButton,
-  Dialog,
-  Portal,
-  Stack,
-} from "@chakra-ui/react"
+import { Box, Button, CloseButton, Dialog, Portal, Stack } from "@chakra-ui/react"
 import { useRef } from "react"
 import Lorem from "react-lorem-ipsum"
 

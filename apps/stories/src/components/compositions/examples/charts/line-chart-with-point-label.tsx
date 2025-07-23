@@ -1,14 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  CartesianGrid,
-  LabelList,
-  Line,
-  LineChart,
-  Tooltip,
-  XAxis,
-} from "recharts"
+import { CartesianGrid, LabelList, Line, LineChart, Tooltip, XAxis } from "recharts"
 
 export const LineChartWithPointLabel = () => {
   const chart = useChart({
@@ -26,11 +19,7 @@ export const LineChartWithPointLabel = () => {
   return (
     <Chart.Root maxH="md" chart={chart}>
       <LineChart data={chart.data} margin={{ left: 40, right: 40, top: 40 }}>
-        <CartesianGrid
-          stroke={chart.color("border")}
-          strokeDasharray="3 3"
-          horizontal={false}
-        />
+        <CartesianGrid stroke={chart.color("border")} strokeDasharray="3 3" horizontal={false} />
         <XAxis
           dataKey={chart.key("name")}
           tickFormatter={(value) => value.slice(0, 3)}

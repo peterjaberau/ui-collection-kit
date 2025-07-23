@@ -3,13 +3,7 @@ import { RiAppleFill, RiBankCardFill, RiPaypalFill } from "react-icons/ri"
 
 export const RadioCardWithoutIndicator = () => {
   return (
-    <RadioCard.Root
-      orientation="horizontal"
-      align="center"
-      justify="center"
-      maxW="lg"
-      defaultValue="paypal"
-    >
+    <RadioCard.Root orientation="horizontal" align="center" justify="center" maxW="lg" defaultValue="paypal">
       <RadioCard.Label>Payment method</RadioCard.Label>
       <HStack align="stretch">
         {items.map((item) => (

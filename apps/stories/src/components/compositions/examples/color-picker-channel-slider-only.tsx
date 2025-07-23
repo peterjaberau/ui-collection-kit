@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  ColorPicker,
-  For,
-  Portal,
-  Stack,
-  getColorChannels,
-  parseColor,
-} from "@chakra-ui/react"
+import { ColorPicker, For, Portal, Stack, getColorChannels, parseColor } from "@chakra-ui/react"
 
 const ChannelSliders = (props: { format: ColorPicker.ColorFormat }) => {
   const channels = getColorChannels(props.format)
@@ -16,9 +9,7 @@ const ChannelSliders = (props: { format: ColorPicker.ColorFormat }) => {
       <For each={channels}>
         {(channel) => (
           <Stack gap="1" key={channel}>
-            <ColorPicker.ChannelText minW="5ch">
-              {channel}
-            </ColorPicker.ChannelText>
+            <ColorPicker.ChannelText minW="5ch">{channel}</ColorPicker.ChannelText>
             <ColorPicker.ChannelSlider channel={channel} />
           </Stack>
         )}

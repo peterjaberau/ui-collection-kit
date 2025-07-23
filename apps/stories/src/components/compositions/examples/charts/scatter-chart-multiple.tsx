@@ -36,15 +36,8 @@ export const ScatterChartMultiple = () => {
           stroke={chart.color("border")}
           domain={["dataMin - 10", "dataMax + 10"]}
         />
-        <YAxis
-          type="number"
-          dataKey={chart.key("y")}
-          stroke={chart.color("border")}
-        />
-        <Tooltip
-          cursor={{ strokeDasharray: "3 3" }}
-          content={<Chart.Tooltip hideLabel />}
-        />
+        <YAxis type="number" dataKey={chart.key("y")} stroke={chart.color("border")} />
+        <Tooltip cursor={{ strokeDasharray: "3 3" }} content={<Chart.Tooltip hideLabel />} />
         {chart.series.map((series, index) => (
           <Scatter
             name={series.label?.toString()}

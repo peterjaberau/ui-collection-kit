@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  InputGroup,
-  Portal,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Combobox, InputGroup, Portal, useFilter, useListCollection } from "@chakra-ui/react"
 import { LuCode } from "react-icons/lu"
 
 export const ComboboxWithInputGroup = () => {
@@ -18,11 +12,7 @@ export const ComboboxWithInputGroup = () => {
   })
 
   return (
-    <Combobox.Root
-      collection={collection}
-      onInputValueChange={(e) => filter(e.inputValue)}
-      width="320px"
-    >
+    <Combobox.Root collection={collection} onInputValueChange={(e) => filter(e.inputValue)} width="320px">
       <Combobox.Label>Select framework</Combobox.Label>
       <Combobox.Control>
         <InputGroup startElement={<LuCode />}>

@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Button,
-  CloseButton,
-  Drawer,
-  Input,
-  Portal,
-  Stack,
-} from "@chakra-ui/react"
+import { Button, CloseButton, Drawer, Input, Portal, Stack } from "@chakra-ui/react"
 import { useRef } from "react"
 
 export const DrawerWithInitialFocus = () => {
@@ -28,8 +21,8 @@ export const DrawerWithInitialFocus = () => {
             </Drawer.Header>
             <Drawer.Body>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
               </p>
               <Stack mt="5">
                 <Input defaultValue="Naruto" placeholder="First name" />

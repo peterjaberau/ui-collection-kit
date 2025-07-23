@@ -5,12 +5,7 @@ export const CheckboxCardWithVariants = () => {
     <Stack maxW="320px">
       <For each={["subtle", "surface", "outline"]}>
         {(variant) => (
-          <CheckboxCard.Root
-            defaultChecked
-            key={variant}
-            variant={variant}
-            colorPalette="teal"
-          >
+          <CheckboxCard.Root defaultChecked key={variant} variant={variant} colorPalette="teal">
             <CheckboxCard.HiddenInput />
             <CheckboxCard.Control>
               <CheckboxCard.Label>Checkbox {variant}</CheckboxCard.Label>

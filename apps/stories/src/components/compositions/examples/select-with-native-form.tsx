@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Button,
-  Portal,
-  Select,
-  Stack,
-  createListCollection,
-} from "@chakra-ui/react"
+import { Button, Portal, Select, Stack, createListCollection } from "@chakra-ui/react"
 
 export const SelectWithNativeForm = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

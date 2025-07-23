@@ -56,9 +56,7 @@ export const RadioWithHookForm = () => {
           )}
         />
 
-        {errors.value && (
-          <Fieldset.ErrorText>{errors.value?.message}</Fieldset.ErrorText>
-        )}
+        {errors.value && <Fieldset.ErrorText>{errors.value?.message}</Fieldset.ErrorText>}
 
         <Button size="sm" type="submit" alignSelf="flex-start">
           Submit

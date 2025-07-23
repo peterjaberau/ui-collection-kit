@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  ActionBar,
-  Button,
-  Checkbox,
-  Kbd,
-  Portal,
-  Table,
-} from "@chakra-ui/react"
+import { ActionBar, Button, Checkbox, Kbd, Portal, Table } from "@chakra-ui/react"
 import { useState } from "react"
 
 export const TableWithSelectionActionBar = () => {
@@ -17,10 +10,7 @@ export const TableWithSelectionActionBar = () => {
   const indeterminate = hasSelection && selection.length < items.length
 
   const rows = items.map((item) => (
-    <Table.Row
-      key={item.name}
-      data-selected={selection.includes(item.name) ? "" : undefined}
-    >
+    <Table.Row key={item.name} data-selected={selection.includes(item.name) ? "" : undefined}>
       <Table.Cell>
         <Checkbox.Root
           size="sm"
@@ -29,9 +19,7 @@ export const TableWithSelectionActionBar = () => {
           checked={selection.includes(item.name)}
           onCheckedChange={(changes) => {
             setSelection((prev) =>
-              changes.checked
-                ? [...prev, item.name]
-                : selection.filter((name) => name !== item.name),
+              changes.checked ? [...prev, item.name] : selection.filter((name) => name !== item.name),
             )
           }}
         >
@@ -57,9 +45,7 @@ export const TableWithSelectionActionBar = () => {
                 aria-label="Select all rows"
                 checked={indeterminate ? "indeterminate" : selection.length > 0}
                 onCheckedChange={(changes) => {
-                  setSelection(
-                    changes.checked ? items.map((item) => item.name) : [],
-                  )
+                  setSelection(changes.checked ? items.map((item) => item.name) : [])
                 }}
               >
                 <Checkbox.HiddenInput />
@@ -78,9 +64,7 @@ export const TableWithSelectionActionBar = () => {
         <Portal>
           <ActionBar.Positioner>
             <ActionBar.Content>
-              <ActionBar.SelectionTrigger>
-                {selection.length} selected
-              </ActionBar.SelectionTrigger>
+              <ActionBar.SelectionTrigger>{selection.length} selected</ActionBar.SelectionTrigger>
               <ActionBar.Separator />
               <Button variant="outline" size="sm">
                 Delete <Kbd>⌫</Kbd>

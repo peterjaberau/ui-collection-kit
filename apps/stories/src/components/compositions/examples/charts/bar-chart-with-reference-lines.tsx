@@ -1,15 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  ReferenceArea,
-  ReferenceLine,
-  Tooltip,
-  XAxis,
-} from "recharts"
+import { Bar, BarChart, CartesianGrid, ReferenceArea, ReferenceLine, Tooltip, XAxis } from "recharts"
 
 export const BarChartWithReferenceLines = () => {
   const chart = useChart({
@@ -35,11 +27,7 @@ export const BarChartWithReferenceLines = () => {
           dataKey={chart.key("month")}
           tickFormatter={(value) => value.slice(0, 3)}
         />
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip />} />
         <ReferenceArea
           y1={76000}
           y2={90000}
@@ -51,11 +39,7 @@ export const BarChartWithReferenceLines = () => {
             fill: chart.color("red.fg"),
           }}
         />
-        <ReferenceLine
-          y={80000}
-          stroke={chart.color("red.fg")}
-          strokeDasharray="3 3"
-        />
+        <ReferenceLine y={80000} stroke={chart.color("red.fg")} strokeDasharray="3 3" />
         {chart.series.map((item) => (
           <Bar
             isAnimationActive={false}

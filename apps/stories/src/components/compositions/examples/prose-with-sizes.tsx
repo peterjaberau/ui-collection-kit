@@ -1,5 +1,5 @@
 import { For, Stack, Text } from "@chakra-ui/react"
-import { Prose } from "compositions/ui/prose"
+import { Prose } from "@ui-kit/components"
 
 export const ProseWithSizes = () => {
   return (
@@ -19,14 +19,11 @@ export const ProseWithSizes = () => {
               </h4>
 
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                at dolor nec ex rutrum semper. Praesent ultricies purus eget
-                lectus tristique egestas ac in lacus. Nulla eleifend lorem
-                risus, sit amet dictum nisi gravida eget. Suspendisse odio sem,
-                scelerisque congue luctus nec, scelerisque ultrices orci.
-                Praesent tincidunt, risus ut commodo cursus, ligula orci
-                tristique justo, vitae sollicitudin lacus risus dictum orci.
-                Press <kbd>Ctrl</kbd> +<kbd>C</kbd> to copy
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at dolor nec ex rutrum semper. Praesent
+                ultricies purus eget lectus tristique egestas ac in lacus. Nulla eleifend lorem risus, sit amet dictum
+                nisi gravida eget. Suspendisse odio sem, scelerisque congue luctus nec, scelerisque ultrices orci.
+                Praesent tincidunt, risus ut commodo cursus, ligula orci tristique justo, vitae sollicitudin lacus risus
+                dictum orci. Press <kbd>Ctrl</kbd> +<kbd>C</kbd> to copy
               </p>
             </Prose>
           </Stack>

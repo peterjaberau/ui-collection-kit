@@ -2,8 +2,8 @@
 
 import type { AccordionRootProps } from "@chakra-ui/react"
 import { Accordion, For, Span, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const AccordionSizeTable = () => {
   const recipe = useSlotRecipe({ key: "accordion" })

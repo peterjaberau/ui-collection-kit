@@ -37,11 +37,7 @@ export const LineChartValueFormatter = () => {
             notation: "compact",
           })}
         />
-        <Tooltip
-          animationDuration={100}
-          cursor={false}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip animationDuration={100} cursor={false} content={<Chart.Tooltip />} />
         {chart.series.map((item) => (
           <Line
             key={item.name}

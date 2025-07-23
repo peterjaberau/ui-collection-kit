@@ -1,15 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  Area,
-  AreaChart,
-  CartesianGrid,
-  Legend,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts"
+import { Area, AreaChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from "recharts"
 
 export const AreaChartWithGradient = () => {
   const chart = useChart({
@@ -33,11 +25,7 @@ export const AreaChartWithGradient = () => {
   return (
     <Chart.Root maxH="sm" chart={chart}>
       <AreaChart data={chart.data}>
-        <CartesianGrid
-          stroke={chart.color("border")}
-          vertical={false}
-          strokeDasharray="3 3"
-        />
+        <CartesianGrid stroke={chart.color("border")} vertical={false} strokeDasharray="3 3" />
         <XAxis
           dataKey={chart.key("month")}
           tickLine={false}
@@ -46,11 +34,7 @@ export const AreaChartWithGradient = () => {
           tickFormatter={(value) => value.slice(0, 3)}
         />
         <YAxis tickLine={false} axisLine={false} />
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip />} />
         <Legend content={<Chart.Legend />} />
 
         {chart.series.map((item) => (

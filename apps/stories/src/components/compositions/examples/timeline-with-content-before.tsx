@@ -15,9 +15,7 @@ export const TimelineWithContentBefore = () => {
                 <Timeline.Indicator>1</Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </Timeline.Title>
+                <Timeline.Title>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Timeline.Title>
               </Timeline.Content>
             </Timeline.Item>
 
@@ -30,9 +28,7 @@ export const TimelineWithContentBefore = () => {
                 <Timeline.Indicator>2</Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </Timeline.Title>
+                <Timeline.Title>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Timeline.Title>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline.Root>

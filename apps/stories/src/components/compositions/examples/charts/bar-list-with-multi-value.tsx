@@ -17,8 +17,7 @@ export const BarListWithMultiValue = () => {
     series: [{ name: "name", color: "teal.subtle" }],
   })
 
-  const getPercent = (value: number) =>
-    chart.getValuePercent("value", value).toFixed(2)
+  const getPercent = (value: number) => chart.getValuePercent("value", value).toFixed(2)
 
   return (
     <BarList.Root chart={chart}>

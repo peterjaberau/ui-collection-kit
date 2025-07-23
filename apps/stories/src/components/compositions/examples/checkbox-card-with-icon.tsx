@@ -1,10 +1,4 @@
-import {
-  CheckboxCard,
-  CheckboxGroup,
-  Float,
-  Icon,
-  SimpleGrid,
-} from "@chakra-ui/react"
+import { CheckboxCard, CheckboxGroup, Float, Icon, SimpleGrid } from "@chakra-ui/react"
 import { HiGlobeAlt, HiLockClosed, HiShieldCheck, HiUser } from "react-icons/hi"
 
 export const CheckboxCardWithIcon = () => {
@@ -20,9 +14,7 @@ export const CheckboxCardWithIcon = () => {
                   {item.icon}
                 </Icon>
                 <CheckboxCard.Label>{item.label}</CheckboxCard.Label>
-                <CheckboxCard.Description>
-                  {item.description}
-                </CheckboxCard.Description>
+                <CheckboxCard.Description>{item.description}</CheckboxCard.Description>
               </CheckboxCard.Content>
               <Float placement="top-end" offset="6">
                 <CheckboxCard.Indicator />

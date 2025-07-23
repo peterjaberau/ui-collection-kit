@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  For,
-  Portal,
-  Select,
-  Stack,
-  createListCollection,
-} from "@chakra-ui/react"
+import { For, Portal, Select, Stack, createListCollection } from "@chakra-ui/react"
 
 export const SelectWithVariants = () => {
   return (

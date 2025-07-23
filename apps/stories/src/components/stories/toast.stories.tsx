@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react-vite"
-import { Toaster } from "compositions/ui/toaster"
-import { Box } from "@ui-kit/components"
+import { Toaster } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Toast",
@@ -12,7 +12,7 @@ export default {
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { ToasterBasic as Basic } from "../compositions/examples/toaster-basic"
 export { ToasterClosable as Closable } from "../compositions/examples/toaster-closable"

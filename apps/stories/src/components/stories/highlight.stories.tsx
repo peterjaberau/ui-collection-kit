@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Typography / Highlight",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { HighlightBasic as Basic } from "../compositions/examples/highlight-basic"
 export { HighlightMultiple as Multiple } from "../compositions/examples/highlight-multiple"

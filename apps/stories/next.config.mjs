@@ -2,12 +2,12 @@
 
 const nextConfig = {
   /* config options here */
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   experimental: {
-      inlineCss: true,
-      useCache: true,
-      clientSegmentCache: true,
+    inlineCss: true,
+    useCache: true,
+    clientSegmentCache: true,
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

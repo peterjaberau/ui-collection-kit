@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Button,
-  Checkbox,
-  CheckboxGroup,
-  Code,
-  Fieldset,
-} from "@chakra-ui/react"
+import { Button, Checkbox, CheckboxGroup, Code, Fieldset } from "@chakra-ui/react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useController, useForm } from "react-hook-form"
 import { z } from "zod"
@@ -64,9 +58,7 @@ export const CheckboxWithGroupHookForm = () => {
           </Fieldset.Content>
         </CheckboxGroup>
 
-        {errors.framework && (
-          <Fieldset.ErrorText>{errors.framework.message}</Fieldset.ErrorText>
-        )}
+        {errors.framework && <Fieldset.ErrorText>{errors.framework.message}</Fieldset.ErrorText>}
 
         <Button size="sm" type="submit" alignSelf="flex-start">
           Submit

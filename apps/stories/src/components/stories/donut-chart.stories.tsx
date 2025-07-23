@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Charts / Donut Chart",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { DonutChartBasic as Basic } from "../compositions/examples/charts/donut-chart-basic"
 export { DonutChartWithPointLabel as PointLabel } from "../compositions/examples/charts/donut-chart-with-point-label"

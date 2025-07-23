@@ -1,8 +1,8 @@
 "use client"
 
 import { CheckboxCard, For, Span, Stack, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const CheckboxCardVariantTable = () => {
   const recipe = useSlotRecipe({ key: "checkboxCard" })
@@ -11,9 +11,7 @@ export const CheckboxCardVariantTable = () => {
       <thead>
         <tr>
           <td />
-          <For each={recipe.variantMap.variant}>
-            {(v) => <td key={v}>{v}</td>}
-          </For>
+          <For each={recipe.variantMap.variant}>{(v) => <td key={v}>{v}</td>}</For>
         </tr>
       </thead>
       <tbody>
@@ -30,17 +28,8 @@ export const CheckboxCardVariantTable = () => {
                   <td key={v}>
                     <Stack gap="4">
                       <DemoCheckboxCard variant={v} colorPalette={c} />
-                      <DemoCheckboxCard
-                        variant={v}
-                        colorPalette={c}
-                        defaultChecked
-                      />
-                      <DemoCheckboxCard
-                        variant={v}
-                        colorPalette={c}
-                        defaultChecked
-                        disabled
-                      />
+                      <DemoCheckboxCard variant={v} colorPalette={c} defaultChecked />
+                      <DemoCheckboxCard variant={v} colorPalette={c} defaultChecked disabled />
                     </Stack>
                   </td>
                 )}

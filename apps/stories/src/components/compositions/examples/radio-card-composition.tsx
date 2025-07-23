@@ -12,9 +12,7 @@ export const RadioCardComposition = () => {
               <RadioCard.ItemIndicator />
               <RadioCard.ItemContent>
                 <RadioCard.ItemText>{item.title}</RadioCard.ItemText>
-                <RadioCard.ItemDescription>
-                  {item.description}
-                </RadioCard.ItemDescription>
+                <RadioCard.ItemDescription>{item.description}</RadioCard.ItemDescription>
               </RadioCard.ItemContent>
             </RadioCard.ItemControl>
           </RadioCard.Item>

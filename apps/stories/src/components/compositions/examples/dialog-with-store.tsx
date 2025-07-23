@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Button,
-  CloseButton,
-  Dialog,
-  Portal,
-  useDialog,
-} from "@chakra-ui/react"
+import { Button, CloseButton, Dialog, Portal, useDialog } from "@chakra-ui/react"
 
 export const DialogWithStore = () => {
   const dialog = useDialog()
@@ -26,8 +20,8 @@ export const DialogWithStore = () => {
             </Dialog.Header>
             <Dialog.Body>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
               </p>
             </Dialog.Body>
             <Dialog.Footer>

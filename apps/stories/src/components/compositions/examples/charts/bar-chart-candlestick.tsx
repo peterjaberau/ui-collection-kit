@@ -1,15 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Cell,
-  ErrorBar,
-  XAxis,
-  YAxis,
-} from "recharts"
+import { Bar, BarChart, CartesianGrid, Cell, ErrorBar, XAxis, YAxis } from "recharts"
 
 export const BarChartCandlestick = () => {
   const chart = useChart({
@@ -34,27 +26,15 @@ export const BarChartCandlestick = () => {
           domain={["dataMin - 0.5", "dataMax + 0.5"]}
           tickFormatter={chart.formatNumber({ maximumFractionDigits: 1 })}
         />
-        <Bar
-          isAnimationActive={false}
-          barSize={40}
-          dataKey={chart.key("open_close")}
-          fill={chart.color("teal.solid")}
-        >
+        <Bar isAnimationActive={false} barSize={40} dataKey={chart.key("open_close")} fill={chart.color("teal.solid")}>
           {data.map((item) => (
             <Cell
               key={item.date}
-              fill={
-                item.open_close[0] > item.open_close[1]
-                  ? chart.color("red.solid")
-                  : chart.color("green.solid")
-              }
+              fill={item.open_close[0] > item.open_close[1] ? chart.color("red.solid") : chart.color("green.solid")}
             />
           ))}
           <ErrorBar
-            dataKey={(obj) => [
-              obj.open_close[0] - obj.high_low[0],
-              obj.high_low[1] - obj.open_close[1],
-            ]}
+            dataKey={(obj) => [obj.open_close[0] - obj.high_low[0], obj.high_low[1] - obj.open_close[1]]}
             width={2}
             stroke={chart.color("fg")}
           />

@@ -17,13 +17,7 @@ export const RadialChartBasic = () => {
     <Chart.Root maxW="sm" chart={chart} mx="auto">
       <RadialBarChart data={chart.data} barSize={20}>
         <Tooltip cursor={false} content={<Chart.Tooltip nameKey="month" />} />
-        <RadialBar
-          isAnimationActive={false}
-          dataKey={chart.key("value")}
-          background
-          startAngle={90}
-          endAngle={-270}
-        >
+        <RadialBar isAnimationActive={false} dataKey={chart.key("value")} background startAngle={90} endAngle={-270}>
           {chart.data.map(({ color }) => (
             <Cell key={color} fill={chart.color(color)} stroke="none" />
           ))}

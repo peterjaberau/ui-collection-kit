@@ -32,11 +32,7 @@ export const ScatterChartBasic = () => {
           tickFormatter={(value) => `${value}°C`}
           domain={[10, "dataMax + 3"]}
         />
-        <YAxis
-          type="number"
-          dataKey={chart.key("sales")}
-          stroke={chart.color("border")}
-        />
+        <YAxis type="number" dataKey={chart.key("sales")} stroke={chart.color("border")} />
         {chart.series.map((series, index) => (
           <Scatter
             name={series.name?.toString()}

@@ -1,12 +1,5 @@
 import { Box, Button, Group, Menu, Portal } from "@chakra-ui/react"
-import {
-  LuClipboard,
-  LuCopy,
-  LuFileSearch,
-  LuMessageSquare,
-  LuScissors,
-  LuShare,
-} from "react-icons/lu"
+import { LuClipboard, LuCopy, LuFileSearch, LuMessageSquare, LuScissors, LuShare } from "react-icons/lu"
 
 const horizontalMenuItems = [
   { label: "Cut", value: "cut", icon: <LuScissors /> },

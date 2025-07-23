@@ -10,12 +10,7 @@ const data = async () => {
 
 export const DownloadTriggerWithPromise = () => {
   return (
-    <DownloadTrigger
-      data={data}
-      fileName="sample.jpg"
-      mimeType="image/jpeg"
-      asChild
-    >
+    <DownloadTrigger data={data} fileName="sample.jpg" mimeType="image/jpeg" asChild>
       <Button variant="outline">
         <LuImageDown /> Download
       </Button>

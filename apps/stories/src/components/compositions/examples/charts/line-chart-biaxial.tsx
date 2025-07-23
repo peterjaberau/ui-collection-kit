@@ -1,16 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  CartesianGrid,
-  Label,
-  Legend,
-  Line,
-  LineChart,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts"
+import { CartesianGrid, Label, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts"
 
 export const LineChartBiaxial = () => {
   const chart = useChart({
@@ -32,10 +23,7 @@ export const LineChartBiaxial = () => {
 
   return (
     <Chart.Root maxH="sm" chart={chart}>
-      <LineChart
-        data={chart.data}
-        margin={{ left: 20, bottom: 20, right: 20, top: 20 }}
-      >
+      <LineChart data={chart.data} margin={{ left: 20, bottom: 20, right: 20, top: 20 }}>
         <CartesianGrid stroke={chart.color("border")} vertical={false} />
         <XAxis
           axisLine={false}
@@ -66,11 +54,7 @@ export const LineChartBiaxial = () => {
         >
           <Label value="Mac" position="right" angle={90} offset={-10} />
         </YAxis>
-        <Tooltip
-          animationDuration={100}
-          cursor={{ stroke: chart.color("border") }}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip animationDuration={100} cursor={{ stroke: chart.color("border") }} content={<Chart.Tooltip />} />
         <Legend
           verticalAlign="top"
           align="right"

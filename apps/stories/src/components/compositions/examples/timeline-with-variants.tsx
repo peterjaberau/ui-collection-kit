@@ -35,8 +35,7 @@ export const TimelineWithVariants = () => {
               <Timeline.Content>
                 <Timeline.Title>
                   <Span fontWeight="medium">sage</Span>
-                  changed status from <Badge>In progress</Badge> to{" "}
-                  <Badge colorPalette="teal">Completed</Badge>
+                  changed status from <Badge>In progress</Badge> to <Badge colorPalette="teal">Completed</Badge>
                 </Timeline.Title>
               </Timeline.Content>
             </Timeline.Item>

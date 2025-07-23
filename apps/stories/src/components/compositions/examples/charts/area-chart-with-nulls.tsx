@@ -30,21 +30,14 @@ export const AreaChartWithNulls = () => {
             </Heading>
             <Chart.Root maxH="sm" chart={chart}>
               <AreaChart data={chart.data}>
-                <CartesianGrid
-                  stroke={chart.color("border.muted")}
-                  vertical={false}
-                />
+                <CartesianGrid stroke={chart.color("border.muted")} vertical={false} />
                 <XAxis
                   axisLine={false}
                   tickLine={false}
                   dataKey={chart.key("month")}
                   tickFormatter={(value) => value.slice(0, 3)}
                 />
-                <Tooltip
-                  cursor={false}
-                  animationDuration={100}
-                  content={<Chart.Tooltip />}
-                />
+                <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip />} />
                 {chart.series.map((item) => (
                   <Area
                     key={item.name}

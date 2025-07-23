@@ -53,11 +53,7 @@ const getNodeId = (uid: string, node: string) => `${uid}/${node}`
 export const TreeViewContextMenu = () => {
   const uid = useId()
   return (
-    <TreeView.Root
-      collection={collection}
-      maxW="sm"
-      ids={{ node: (value) => getNodeId(uid, value) }}
-    >
+    <TreeView.Root collection={collection} maxW="sm" ids={{ node: (value) => getNodeId(uid, value) }}>
       <TreeView.Label>Tree</TreeView.Label>
       <TreeView.Tree>
         <TreeView.Node

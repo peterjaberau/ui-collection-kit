@@ -1,5 +1,5 @@
 import { Button, CloseButton, Dialog, Portal } from "@chakra-ui/react"
-import { Tooltip } from "compositions/ui/tooltip"
+import { Tooltip } from "@ui-kit/components"
 
 export const TooltipWithDialog = () => {
   return (
@@ -20,8 +20,8 @@ export const TooltipWithDialog = () => {
             </Dialog.Header>
             <Dialog.Body>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
               </p>
             </Dialog.Body>
             <Dialog.Footer>

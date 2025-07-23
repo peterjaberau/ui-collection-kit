@@ -31,12 +31,7 @@ export const LineChartStartEndTick = () => {
             position: "bottom",
           }}
         />
-        <YAxis
-          axisLine={false}
-          tickLine={false}
-          tickMargin={10}
-          stroke={chart.color("border")}
-        />
+        <YAxis axisLine={false} tickLine={false} tickMargin={10} stroke={chart.color("border")} />
         {chart.series.map((item) => (
           <Line
             type="natural"

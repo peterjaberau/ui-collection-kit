@@ -20,9 +20,7 @@ export const StepsWithSizes = () => {
                 {step.description}
               </Steps.Content>
             ))}
-            <Steps.CompletedContent>
-              All steps are complete!
-            </Steps.CompletedContent>
+            <Steps.CompletedContent>All steps are complete!</Steps.CompletedContent>
 
             <ButtonGroup size="sm" variant="outline">
               <Steps.PrevTrigger asChild>

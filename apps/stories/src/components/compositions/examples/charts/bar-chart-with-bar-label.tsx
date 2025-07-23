@@ -1,15 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  LabelList,
-  Legend,
-  Tooltip,
-  XAxis,
-} from "recharts"
+import { Bar, BarChart, CartesianGrid, LabelList, Legend, Tooltip, XAxis } from "recharts"
 
 export const BarChartWithBarLabel = () => {
   const chart = useChart({
@@ -36,11 +28,7 @@ export const BarChartWithBarLabel = () => {
           dataKey={chart.key("month")}
           tickFormatter={(value) => value.slice(0, 3)}
         />
-        <Tooltip
-          cursor={{ fill: chart.color("bg.muted") }}
-          animationDuration={100}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip cursor={{ fill: chart.color("bg.muted") }} animationDuration={100} content={<Chart.Tooltip />} />
         <Legend content={<Chart.Legend />} />
         {chart.series.map((item) => (
           <Bar

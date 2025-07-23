@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  Field,
-  Portal,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Combobox, Field, Portal, useFilter, useListCollection } from "@chakra-ui/react"
 
 export const ComboboxWithField = () => {
   const { contains } = useFilter({ sensitivity: "base" })
@@ -19,10 +13,7 @@ export const ComboboxWithField = () => {
   return (
     <Field.Root width="320px">
       <Field.Label>Select framework</Field.Label>
-      <Combobox.Root
-        collection={collection}
-        onInputValueChange={(e) => filter(e.inputValue)}
-      >
+      <Combobox.Root collection={collection} onInputValueChange={(e) => filter(e.inputValue)}>
         <Combobox.Control>
           <Combobox.Input placeholder="Type to search" />
           <Combobox.IndicatorGroup>

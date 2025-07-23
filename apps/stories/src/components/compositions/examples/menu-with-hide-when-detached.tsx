@@ -3,15 +3,7 @@ import { Box, Center, Flex, Menu, Portal, Text } from "@chakra-ui/react"
 export const MenuWithHideWhenDetached = () => {
   return (
     <Center minH="sm">
-      <Flex
-        w="300px"
-        h="full"
-        overflowX="auto"
-        gapX="6"
-        p="4"
-        borderWidth="1px"
-        bg="bg.subtle"
-      >
+      <Flex w="300px" h="full" overflowX="auto" gapX="6" p="4" borderWidth="1px" bg="bg.subtle">
         {[...Array(6).keys()].map((x) => (
           <Box layerStyle="fill.surface" p="4" borderRadius="md" key={x}>
             <Text>Item{x}</Text>

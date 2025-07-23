@@ -1,13 +1,10 @@
 "use client"
 
 import { Avatar, For, HStack, Span, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
-function omit<T extends string | undefined>(
-  arr: T[] | undefined,
-  omit: T[],
-): T[] {
+function omit<T extends string | undefined>(arr: T[] | undefined, omit: T[]): T[] {
   return arr?.filter((v) => !omit?.includes(v)) ?? []
 }
 

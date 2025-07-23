@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Typography / LinkOverlay",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { LinkOverlayBasic as Basic } from "../compositions/examples/link-overlay-basic"
 export { LinkOverlayArticle as Article } from "../compositions/examples/link-overlay-article"

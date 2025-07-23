@@ -21,9 +21,7 @@ export const TreeViewWithLinks = () => {
                 <a href={node.href}>
                   <LuFile />
                   <TreeView.ItemText>{node.name}</TreeView.ItemText>
-                  {node.href?.startsWith("http") && (
-                    <LuExternalLink size={12} />
-                  )}
+                  {node.href?.startsWith("http") && <LuExternalLink size={12} />}
                 </a>
               </TreeView.Item>
             )

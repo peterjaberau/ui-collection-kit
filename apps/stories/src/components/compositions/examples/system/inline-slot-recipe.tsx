@@ -41,25 +41,15 @@ const { withProvider, withContext } = createSlotRecipeContext({
 
 // 2. Create the components
 
-interface CheckboxRootProps
-  extends HTMLChakraProps<"div", RecipeVariantProps<typeof checkbox>> {}
+interface CheckboxRootProps extends HTMLChakraProps<"div", RecipeVariantProps<typeof checkbox>> {}
 
-const CheckboxRoot = withProvider<HTMLDivElement, CheckboxRootProps>(
-  "div",
-  "root",
-)
+const CheckboxRoot = withProvider<HTMLDivElement, CheckboxRootProps>("div", "root")
 
 interface CheckboxLabelProps extends HTMLChakraProps<"label"> {}
-const CheckboxLabel = withContext<HTMLLabelElement, CheckboxLabelProps>(
-  "label",
-  "label",
-)
+const CheckboxLabel = withContext<HTMLLabelElement, CheckboxLabelProps>("label", "label")
 
 interface CheckboxControlProps extends HTMLChakraProps<"input"> {}
-const CheckboxControl = withContext<HTMLInputElement, CheckboxControlProps>(
-  "input",
-  "control",
-)
+const CheckboxControl = withContext<HTMLInputElement, CheckboxControlProps>("input", "control")
 
 // 3. Use the components
 

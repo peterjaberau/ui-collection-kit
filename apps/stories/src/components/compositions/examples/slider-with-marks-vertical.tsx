@@ -8,12 +8,7 @@ const marks = [
 
 export const SliderWithMarksVertical = () => {
   return (
-    <Slider.Root
-      height="200px"
-      orientation="vertical"
-      colorPalette="pink"
-      defaultValue={[40]}
-    >
+    <Slider.Root height="200px" orientation="vertical" colorPalette="pink" defaultValue={[40]}>
       <Slider.Control>
         <Slider.Track>
           <Slider.Range />

@@ -1,39 +1,20 @@
 "use client"
 
-import {
-  Badge,
-  Combobox,
-  Portal,
-  Wrap,
-  createListCollection,
-} from "@chakra-ui/react"
+import { Badge, Combobox, Portal, Wrap, createListCollection } from "@chakra-ui/react"
 import { useMemo, useState } from "react"
 
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "GraphQL",
-  "PostgreSQL",
-]
+const skills = ["JavaScript", "TypeScript", "React", "Node.js", "GraphQL", "PostgreSQL"]
 
 export const ComboboxWithMultiple = () => {
   const [searchValue, setSearchValue] = useState("")
   const [selectedSkills, setSelectedSkills] = useState<string[]>([])
 
   const filteredItems = useMemo(
-    () =>
-      skills.filter((item) =>
-        item.toLowerCase().includes(searchValue.toLowerCase()),
-      ),
+    () => skills.filter((item) => item.toLowerCase().includes(searchValue.toLowerCase())),
     [searchValue],
   )
 
-  const collection = useMemo(
-    () => createListCollection({ items: filteredItems }),
-    [filteredItems],
-  )
+  const collection = useMemo(() => createListCollection({ items: filteredItems }), [filteredItems])
 
   const handleValueChange = (details: Combobox.ValueChangeDetails) => {
     setSelectedSkills(details.value)

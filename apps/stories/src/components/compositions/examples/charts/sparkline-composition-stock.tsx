@@ -1,15 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  Badge,
-  Box,
-  Card,
-  FormatNumber,
-  Span,
-  Stack,
-  Stat,
-} from "@chakra-ui/react"
+import { Badge, Box, Card, FormatNumber, Span, Stack, Stat } from "@chakra-ui/react"
 import { Area, AreaChart } from "recharts"
 
 export const SparklineCompositionStock = () => {
@@ -70,19 +62,11 @@ export const SparklineCompositionStock = () => {
 
         <Stat.Root size="sm" alignItems="flex-end">
           <Span fontWeight="medium">
-            <FormatNumber
-              value={closing.value}
-              style="currency"
-              currency="USD"
-            />
+            <FormatNumber value={closing.value} style="currency" currency="USD" />
           </Span>
           <Badge colorPalette={trend > 0 ? "green" : "red"} gap="0">
             <Stat.UpIndicator />
-            <FormatNumber
-              value={trend}
-              style="percent"
-              maximumFractionDigits={2}
-            />
+            <FormatNumber value={trend} style="percent" maximumFractionDigits={2} />
           </Badge>
         </Stat.Root>
       </Card.Body>

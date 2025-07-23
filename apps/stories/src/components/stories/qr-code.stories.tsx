@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / QrCode",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { QrCodeBasic as Basic } from "../compositions/examples/qr-code-basic"
 export { QrCodeWithErrorLevel as WithErrorLevel } from "../compositions/examples/qr-code-with-error-level"

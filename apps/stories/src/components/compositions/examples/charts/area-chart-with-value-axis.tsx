@@ -24,11 +24,7 @@ export const AreaChartWithValueAxis = () => {
 
   return (
     <Chart.Root maxH="sm" chart={chart}>
-      <AreaChart
-        accessibilityLayer
-        data={chart.data}
-        margin={{ bottom: 24, left: 24 }}
-      >
+      <AreaChart accessibilityLayer data={chart.data} margin={{ bottom: 24, left: 24 }}>
         <XAxis
           dataKey={chart.key("month")}
           tickMargin={8}
@@ -36,11 +32,7 @@ export const AreaChartWithValueAxis = () => {
           stroke={chart.color("border")}
         />
         <YAxis stroke={chart.color("border")} />
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip />} />
         {chart.series.map((item) => (
           <Area
             type="natural"

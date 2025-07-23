@@ -1,15 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  For,
-  HStack,
-  Portal,
-  Span,
-  Spinner,
-  useCombobox,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Combobox, For, HStack, Portal, Span, Spinner, useCombobox, useListCollection } from "@chakra-ui/react"
 import { useRef, useState } from "react"
 import { useAsync } from "react-use"
 
@@ -31,9 +22,7 @@ export const ComboboxRehydrateValue = () => {
   })
 
   const state = useAsync(async () => {
-    const response = await fetch(
-      `https://swapi.py4e.com/api/people/?search=${inputValue}`,
-    )
+    const response = await fetch(`https://swapi.py4e.com/api/people/?search=${inputValue}`)
     const data = await response.json()
     set(data.results)
   }, [inputValue, set])
@@ -66,10 +55,7 @@ export const ComboboxRehydrateValue = () => {
                 {state.error.message}
               </Span>
             ) : (
-              <For
-                each={collection.items}
-                fallback={<Combobox.Empty>No items</Combobox.Empty>}
-              >
+              <For each={collection.items} fallback={<Combobox.Empty>No items</Combobox.Empty>}>
                 {(item) => (
                   <Combobox.Item key={item.name} item={item}>
                     <HStack justify="space-between" textStyle="sm">

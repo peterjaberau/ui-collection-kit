@@ -23,9 +23,7 @@ const dialog = createOverlay<DialogProps>((props) => {
               </Dialog.Header>
             )}
             <Dialog.Body spaceY="4">
-              {description && (
-                <Dialog.Description>{description}</Dialog.Description>
-              )}
+              {description && <Dialog.Description>{description}</Dialog.Description>}
               {content}
             </Dialog.Body>
           </Dialog.Content>
@@ -42,9 +40,7 @@ export const OverlayWithUpdate = () => {
         onClick={async () => {
           dialog.open("a", {
             title: "Initial Modal Title",
-            content: (
-              <Box textStyle="sm">This text will update in 2 seconds.</Box>
-            ),
+            content: <Box textStyle="sm">This text will update in 2 seconds.</Box>,
           })
 
           setTimeout(() => {

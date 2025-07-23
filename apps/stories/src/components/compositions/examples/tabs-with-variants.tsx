@@ -21,13 +21,9 @@ export const TabsWithVariants = () => {
                 Settings
               </Tabs.Trigger>
             </Tabs.List>
-            <Tabs.Content value="members">
-              Manage your team members
-            </Tabs.Content>
+            <Tabs.Content value="members">Manage your team members</Tabs.Content>
             <Tabs.Content value="projects">Manage your projects</Tabs.Content>
-            <Tabs.Content value="tasks">
-              Manage your tasks for freelancers
-            </Tabs.Content>
+            <Tabs.Content value="tasks">Manage your tasks for freelancers</Tabs.Content>
           </Tabs.Root>
         )}
       </For>

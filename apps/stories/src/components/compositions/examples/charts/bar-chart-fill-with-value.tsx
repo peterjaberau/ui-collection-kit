@@ -29,17 +29,9 @@ export const BarChartFillWithValue = () => {
             dataKey={chart.key(item.name)}
             fill={chart.color(item.color)}
           >
-            <LabelList
-              position="top"
-              dataKey={chart.key("views")}
-              offset={10}
-              style={{ fontWeight: "500" }}
-            />
+            <LabelList position="top" dataKey={chart.key("views")} offset={10} style={{ fontWeight: "500" }} />
             {chart.data.map((item) => (
-              <Cell
-                key={item.name}
-                fill={chart.color(item.views > 0 ? "green.solid" : "red.solid")}
-              />
+              <Cell key={item.name} fill={chart.color(item.views > 0 ? "green.solid" : "red.solid")} />
             ))}
           </Bar>
         ))}

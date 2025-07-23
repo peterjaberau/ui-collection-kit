@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Kbd",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { KbdBasic as Basic } from "../compositions/examples/kbd-basic"
 export { KbdFunctionKeys as FunctionKeys } from "../compositions/examples/kbd-function-keys"

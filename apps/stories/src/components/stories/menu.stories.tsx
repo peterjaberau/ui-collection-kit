@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Menu",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { MenuBasic as Basic } from "../compositions/examples/menu-basic"
 export { MenuWithAnchorRect as AnchorRect } from "../compositions/examples/menu-with-anchor-rect"

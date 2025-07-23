@@ -52,11 +52,7 @@ export const AreaChartFillWithValue = () => {
             notation: "compact",
           })}
         />
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip />} />
         <defs>
           <Chart.Gradient
             id="uv-gradient"

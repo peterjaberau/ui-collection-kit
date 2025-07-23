@@ -1,8 +1,5 @@
 import { Stack } from "@chakra-ui/react"
-import {
-  PasswordInput,
-  PasswordStrengthMeter,
-} from "compositions/ui/password-input"
+import { PasswordInput, PasswordStrengthMeter } from "@ui-kit/components"
 
 export const PasswordInputWithStrengthIndicator = () => {
   return (

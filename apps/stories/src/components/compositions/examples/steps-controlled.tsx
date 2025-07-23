@@ -7,11 +7,7 @@ export const StepsControlled = () => {
   const [step, setStep] = useState(1)
 
   return (
-    <Steps.Root
-      step={step}
-      onStepChange={(e) => setStep(e.step)}
-      count={steps.length}
-    >
+    <Steps.Root step={step} onStepChange={(e) => setStep(e.step)} count={steps.length}>
       <Steps.List>
         {steps.map((step, index) => (
           <Steps.Item key={index} index={index} title={step.title}>

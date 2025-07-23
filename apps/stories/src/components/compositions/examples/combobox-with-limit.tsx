@@ -1,11 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  Portal,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Combobox, Portal, useFilter, useListCollection } from "@chakra-ui/react"
 import { useRef } from "react"
 
 export const ComboboxWithLimit = () => {
@@ -20,12 +15,7 @@ export const ComboboxWithLimit = () => {
   })
 
   return (
-    <Combobox.Root
-      collection={collection}
-      onInputValueChange={(e) => filter(e.inputValue)}
-      openOnClick
-      width="320px"
-    >
+    <Combobox.Root collection={collection} onInputValueChange={(e) => filter(e.inputValue)} openOnClick width="320px">
       <Combobox.Label>Select framework</Combobox.Label>
       <Combobox.Control>
         <Combobox.Input placeholder="Type to search" />

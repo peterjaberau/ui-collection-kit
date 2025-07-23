@@ -1,31 +1,13 @@
 "use client"
 
-import {
-  HStack,
-  IconButton,
-  Portal,
-  Select,
-  createListCollection,
-  useSelectContext,
-} from "@chakra-ui/react"
-import {
-  RiAngularjsLine,
-  RiForbidLine,
-  RiReactjsLine,
-  RiSvelteLine,
-  RiVuejsLine,
-} from "react-icons/ri"
+import { HStack, IconButton, Portal, Select, createListCollection, useSelectContext } from "@chakra-ui/react"
+import { RiAngularjsLine, RiForbidLine, RiReactjsLine, RiSvelteLine, RiVuejsLine } from "react-icons/ri"
 
 const SelectTrigger = () => {
   const select = useSelectContext()
   const items = select.selectedItems as Framework[]
   return (
-    <IconButton
-      px="2"
-      variant="outline"
-      size="sm"
-      {...select.getTriggerProps()}
-    >
+    <IconButton px="2" variant="outline" size="sm" {...select.getTriggerProps()}>
       {select.hasSelectedItems ? items[0].icon : <RiForbidLine />}
     </IconButton>
   )

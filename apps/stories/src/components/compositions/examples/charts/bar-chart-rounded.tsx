@@ -19,12 +19,7 @@ export const BarChartRounded = () => {
       <BarChart data={chart.data} barSize={40}>
         <CartesianGrid stroke={chart.color("border.muted")} vertical={false} />
         <XAxis axisLine={false} tickLine={false} dataKey={chart.key("type")} />
-        <YAxis
-          axisLine={false}
-          tickLine={false}
-          domain={[0, 100]}
-          tickFormatter={(value) => `${value}%`}
-        />
+        <YAxis axisLine={false} tickLine={false} domain={[0, 100]} tickFormatter={(value) => `${value}%`} />
         {chart.series.map((item) => (
           <Bar
             key={item.name}

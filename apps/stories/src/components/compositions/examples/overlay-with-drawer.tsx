@@ -23,9 +23,7 @@ const drawer = createOverlay<DialogProps>((props) => {
               </Drawer.Header>
             )}
             <Drawer.Body spaceY="4">
-              {description && (
-                <Drawer.Description>{description}</Drawer.Description>
-              )}
+              {description && <Drawer.Description>{description}</Drawer.Description>}
               {content}
             </Drawer.Body>
           </Drawer.Content>

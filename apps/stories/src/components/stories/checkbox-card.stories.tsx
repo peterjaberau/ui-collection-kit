@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Checkbox Card",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { CheckboxCardBasic as Basic } from "../compositions/examples/checkbox-card-basic"
 export { CheckboxCardWithDescription as Description } from "../compositions/examples/checkbox-card-with-description"

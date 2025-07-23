@@ -7,12 +7,7 @@ export const ColorPickerControlled = () => {
   const [color, setColor] = useState(parseColor("#eb5e41"))
 
   return (
-    <ColorPicker.Root
-      value={color}
-      format="hsla"
-      onValueChange={(e) => setColor(e.value)}
-      maxW="200px"
-    >
+    <ColorPicker.Root value={color} format="hsla" onValueChange={(e) => setColor(e.value)} maxW="200px">
       <ColorPicker.HiddenInput />
       <ColorPicker.Label>Color</ColorPicker.Label>
       <ColorPicker.Control>

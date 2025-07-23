@@ -6,11 +6,7 @@ import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 
 const formSchema = z.object({
-  value: z.array(
-    z
-      .number({ message: "Value is required" })
-      .min(60, { message: "Value must be greater than 60" }),
-  ),
+  value: z.array(z.number({ message: "Value is required" }).min(60, { message: "Value must be greater than 60" })),
 })
 
 type FormValues = z.infer<typeof formSchema>

@@ -34,11 +34,7 @@ export const ScatterChartTrendLine = () => {
           stroke={chart.color("border")}
           domain={[10, "dataMax + 3"]}
         />
-        <YAxis
-          type="number"
-          dataKey={chart.key("sales")}
-          stroke={chart.color("border")}
-        />
+        <YAxis type="number" dataKey={chart.key("sales")} stroke={chart.color("border")} />
         <Scatter
           isAnimationActive={false}
           line={{ stroke: chart.color("red.solid") }}
@@ -68,8 +64,7 @@ interface Item {
 
 function getTrendLine(data: Item[]): [Item, Item] {
   // Calculate means
-  const meanX =
-    data.reduce((sum, item) => sum + item.temperature, 0) / data.length
+  const meanX = data.reduce((sum, item) => sum + item.temperature, 0) / data.length
   const meanY = data.reduce((sum, item) => sum + item.sales, 0) / data.length
 
   // Calculate slope using least squares method

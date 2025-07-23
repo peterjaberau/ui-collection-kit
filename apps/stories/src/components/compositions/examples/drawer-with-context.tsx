@@ -19,9 +19,8 @@ export const DrawerWithContext = () => {
                 <Drawer.Body pt="6" spaceY="3">
                   <p>Drawer is open: {store.open ? "true" : "false"}</p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.
                   </p>
                   <button onClick={() => store.setOpen(false)}>Close</button>
                 </Drawer.Body>

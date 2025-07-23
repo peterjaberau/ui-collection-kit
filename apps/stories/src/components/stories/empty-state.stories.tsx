@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Empty State",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { EmptyStateBasic as Basic } from "../compositions/examples/empty-state-basic"
 export { EmptyStateWithAction as Action } from "../compositions/examples/empty-state-with-action"

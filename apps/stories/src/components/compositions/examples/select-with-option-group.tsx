@@ -52,6 +52,4 @@ const collection = createListCollection({
   ],
 })
 
-const categories = Object.entries(
-  groupBy(collection.items, (item) => item.category),
-)
+const categories = Object.entries(groupBy(collection.items, (item) => item.category))

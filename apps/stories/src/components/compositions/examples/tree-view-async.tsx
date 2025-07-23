@@ -22,9 +22,7 @@ const response: Record<string, Node[]> = {
 }
 
 // function to load children of a node
-function loadChildren(
-  details: TreeView.LoadChildrenDetails<Node>,
-): Promise<Node[]> {
+function loadChildren(details: TreeView.LoadChildrenDetails<Node>): Promise<Node[]> {
   const value = details.valuePath.join("/")
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -48,11 +46,7 @@ export const TreeViewAsync = () => {
           render={({ node, nodeState }) =>
             nodeState.isBranch ? (
               <TreeView.BranchControl>
-                {nodeState.loading ? (
-                  <LuLoaderCircle style={{ animation: "spin 1s infinite" }} />
-                ) : (
-                  <LuFolder />
-                )}
+                {nodeState.loading ? <LuLoaderCircle style={{ animation: "spin 1s infinite" }} /> : <LuFolder />}
                 <TreeView.BranchText>{node.name}</TreeView.BranchText>
               </TreeView.BranchControl>
             ) : (

@@ -18,10 +18,7 @@ export const RadarChartWithFilledGrid = () => {
   return (
     <Chart.Root maxW="sm" chart={chart} mx="auto">
       <RadarChart data={chart.data}>
-        <PolarGrid
-          stroke="none"
-          style={{ fill: chart.color("teal.solid"), fillOpacity: 0.1 }}
-        />
+        <PolarGrid stroke="none" style={{ fill: chart.color("teal.solid"), fillOpacity: 0.1 }} />
         <PolarAngleAxis dataKey={chart.key("month")} />
         {chart.series.map((item) => (
           <Radar

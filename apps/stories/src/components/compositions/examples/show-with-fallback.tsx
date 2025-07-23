@@ -10,10 +10,7 @@ export const ShowWithFallback = () => {
       <Button variant="outline" onClick={() => setCount(count + 1)}>
         Value: {count}
       </Button>
-      <Show
-        when={count > 3}
-        fallback={<Text>Not there yet. Keep clicking...</Text>}
-      >
+      <Show when={count > 3} fallback={<Text>Not there yet. Keep clicking...</Text>}>
         <div>Congrats! I am here</div>
       </Show>
     </Stack>

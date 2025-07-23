@@ -1,12 +1,6 @@
 import { Avatar, Group, Menu, Portal } from "@chakra-ui/react"
 
-const names = [
-  "Naruto Uzumaki",
-  "Sakura Haruno",
-  "Kakashi Hatake",
-  "Hinata Hyuga",
-  "Shikamaru Nara",
-]
+const names = ["Naruto Uzumaki", "Sakura Haruno", "Kakashi Hatake", "Hinata Hyuga", "Shikamaru Nara"]
 const maxAvatars = 3
 
 export const AvatarWithOverflow = () => {

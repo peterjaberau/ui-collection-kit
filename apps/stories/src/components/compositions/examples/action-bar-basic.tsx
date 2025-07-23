@@ -17,9 +17,7 @@ export const ActionBarBasic = () => {
         <Portal>
           <ActionBar.Positioner>
             <ActionBar.Content>
-              <ActionBar.SelectionTrigger>
-                2 selected
-              </ActionBar.SelectionTrigger>
+              <ActionBar.SelectionTrigger>2 selected</ActionBar.SelectionTrigger>
               <ActionBar.Separator />
               <Button variant="outline" size="sm">
                 <LuTrash2 />

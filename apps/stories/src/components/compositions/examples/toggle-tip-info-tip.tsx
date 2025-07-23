@@ -1,5 +1,5 @@
 import { FormatByte, HStack, Text } from "@chakra-ui/react"
-import { InfoTip } from "compositions/ui/toggle-tip"
+import { InfoTip } from "@ui-kit/components"
 
 export const ToggleTipInfoTip = () => {
   return (

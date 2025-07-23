@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box, Flex, useBreakpointValue } from "@ui-kit/components"
+import { Box, Flex, useBreakpointValue } from "@chakra-ui/react"
 
 export default {
   title: "Hooks / useBreakpointValue",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export const Basic = () => {
   const value = useBreakpointValue({ base: false, lg: true }, { ssr: false })

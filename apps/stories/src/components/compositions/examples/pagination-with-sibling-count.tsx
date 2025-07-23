@@ -5,12 +5,7 @@ import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
 
 export const PaginationWithSiblingCount = () => {
   return (
-    <Pagination.Root
-      count={200}
-      pageSize={10}
-      defaultPage={10}
-      siblingCount={2}
-    >
+    <Pagination.Root count={200} pageSize={10} defaultPage={10} siblingCount={2}>
       <ButtonGroup variant="ghost" size="sm">
         <Pagination.PrevTrigger asChild>
           <IconButton>
@@ -19,11 +14,7 @@ export const PaginationWithSiblingCount = () => {
         </Pagination.PrevTrigger>
 
         <Pagination.Items
-          render={(page) => (
-            <IconButton variant={{ base: "ghost", _selected: "outline" }}>
-              {page.value}
-            </IconButton>
-          )}
+          render={(page) => <IconButton variant={{ base: "ghost", _selected: "outline" }}>{page.value}</IconButton>}
         />
 
         <Pagination.NextTrigger asChild>

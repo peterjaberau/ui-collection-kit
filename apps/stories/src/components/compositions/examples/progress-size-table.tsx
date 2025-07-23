@@ -1,8 +1,8 @@
 "use client"
 
 import { For, Progress, Span, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const ProgressSizeTable = () => {
   const recipe = useSlotRecipe({ key: "progress" })
@@ -26,12 +26,7 @@ export const ProgressSizeTable = () => {
               <For each={recipe.variantMap.size}>
                 {(v) => (
                   <td>
-                    <Progress.Root
-                      minW="200px"
-                      colorPalette={c}
-                      size={v}
-                      value={65}
-                    >
+                    <Progress.Root minW="200px" colorPalette={c} size={v} value={65}>
                       <Progress.Track>
                         <Progress.Range />
                       </Progress.Track>

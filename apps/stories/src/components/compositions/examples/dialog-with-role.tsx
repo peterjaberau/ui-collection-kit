@@ -17,8 +17,8 @@ export const DialogWithRole = () => {
             </Dialog.Header>
             <Dialog.Body>
               <p>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our systems.
+                This action cannot be undone. This will permanently delete your account and remove your data from our
+                systems.
               </p>
             </Dialog.Body>
             <Dialog.Footer>

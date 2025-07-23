@@ -1,5 +1,5 @@
 import { Stack } from "@chakra-ui/react"
-import { PasswordInput } from "compositions/ui/password-input"
+import { PasswordInput } from "@ui-kit/components"
 
 export const PasswordInputWithSizes = () => {
   return (

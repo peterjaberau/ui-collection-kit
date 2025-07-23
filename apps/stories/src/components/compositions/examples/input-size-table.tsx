@@ -1,7 +1,7 @@
 "use client"
 
 import { For, Input, Span, Stack, useRecipe } from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const InputSizeTable = () => {
   const recipe = useRecipe({ key: "input" })

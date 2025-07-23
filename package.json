@@ -6,31 +6,22 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "template-starter": "pnpm --filter \"./templates/starter\"",
-    "start-template-starter": "pnpm template-starter dev",
-    "template-hr": "pnpm --filter \"./templates/hr\"",
-    "start-template-hr": "pnpm template-hr dev",
-    "demos-react-lite": "pnpm --filter \"./demos/react-lite\"",
-    "start-demos-react-lite": "pnpm demos-react-lite dev",
 
     "packages": "pnpm --filter=./packages/** -r",
     "build": "pnpm packages -- build",
-    "postbuild": "pnpm document-types && pnpm document-attr",
-    "sync-pkgs": "tsx scripts/sync-packages.ts",
     "clean-pkgs": "pnpm -r exec rm -rf dist .swc *.log",
     "clean": "pnpm clean-pkgs && rm -rf node_modules",
-    "generate-machine": "plop machine && pnpm sync-pkgs",
-    "generate-util": "plop utility && pnpm sync-pkgs",
     "typecheck": "pnpm packages -- typecheck",
     "prettier": "prettier --check packages/**/*",
     "prettier-fix": "prettier --write packages/**/*",
-    "lint": "eslint packages",
-    "document-types": "tsx scripts/typedocs.ts",
-    "document-attr": "tsx scripts/data-attr.ts"
+    "lint": "eslint packages"
   },
 
   "dependencies": {
     "@chakra-ui/react": "^3.22.0",
+    "@ark-ui/react": "^5.18.0",
+    "@chakra-ui/charts": "^3.22.0",
+    "react-markdown": "^10.1.0",
     "@statelyai/agent": "1.1.6",
     "@statelyai/inspect": "^0.4.0",
     "@xstate/graph": "^3.0.2",
@@ -43,7 +34,6 @@
     "xstate": "^5.19.2",
 
 
-    "@axe-core/playwright": "4.10.2",
     "@eslint/eslintrc": "3.3.1",
     "@types/node": "24.1.0",
     "@types/signale": "1.4.7",
@@ -54,15 +44,9 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-prettier": "^5.5.3",
-    "fast-glob": "^3.3.3",
-    "find-packages": "10.0.4",
-    "node-fetch": "^3.3.2",
     "plop": "^4.0.1",
     "prettier": "3.6.2",
     "prettier-plugin-svelte": "3.3.3",
-    "scule": "1.3.0",
-    "signale": "1.4.0",
-    "ts-morph": "26.0.0",
     "tsup": "8.5.0",
     "tsx": "4.20.3",
     "typescript": "5.8.3",
@@ -74,10 +58,12 @@
   },
 
   "devDependencies": {
+
     "@storybook/addon-a11y": "^9.0.18",
     "@storybook/addon-docs": "^9.0.18",
     "@storybook/addon-themes": "^9.0.18",
     "@storybook/react-vite": "^9.0.18",
+    "rimraf": "^6.0.1",
     "@types/jsdom": "^21.1.7",
     "jsdom": "^26.1.0",
     "clean-package": "2.2.0",

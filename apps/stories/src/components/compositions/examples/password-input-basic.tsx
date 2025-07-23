@@ -1,4 +1,4 @@
-import { PasswordInput } from "compositions/ui/password-input"
+import { PasswordInput } from "@ui-kit/components"
 
 export const PasswordInputBasic = () => {
   return <PasswordInput />

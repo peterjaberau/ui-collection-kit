@@ -1,11 +1,6 @@
 "use client"
 
-import {
-  Button,
-  FileUpload,
-  Float,
-  useFileUploadContext,
-} from "@chakra-ui/react"
+import { Button, FileUpload, Float, useFileUploadContext } from "@chakra-ui/react"
 import { LuFileImage, LuX } from "react-icons/lu"
 
 const FileUploadList = () => {
@@ -15,13 +10,7 @@ const FileUploadList = () => {
   return (
     <FileUpload.ItemGroup>
       {files.map((file) => (
-        <FileUpload.Item
-          w="auto"
-          boxSize="20"
-          p="2"
-          file={file}
-          key={file.name}
-        >
+        <FileUpload.Item w="auto" boxSize="20" p="2" file={file} key={file.name}>
           <FileUpload.ItemPreviewImage />
           <Float placement="top-end">
             <FileUpload.ItemDeleteTrigger boxSize="4" layerStyle="fill.solid">

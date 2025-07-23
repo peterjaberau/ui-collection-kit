@@ -1,4 +1,4 @@
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Charts / Bar Chart",

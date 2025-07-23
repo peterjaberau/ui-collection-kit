@@ -1,21 +1,10 @@
 "use client"
 
-import {
-  Portal,
-  Select,
-  Span,
-  Stack,
-  createListCollection,
-} from "@chakra-ui/react"
+import { Portal, Select, Span, Stack, createListCollection } from "@chakra-ui/react"
 
 export const SelectWithItemDescription = () => {
   return (
-    <Select.Root
-      collection={frameworks}
-      size="sm"
-      width="320px"
-      defaultValue={["pro"]}
-    >
+    <Select.Root collection={frameworks} size="sm" width="320px" defaultValue={["pro"]}>
       <Select.HiddenSelect />
       <Select.Label>Select plan</Select.Label>
       <Select.Control>

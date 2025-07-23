@@ -1,11 +1,6 @@
 "use client"
 
-import {
-  Combobox,
-  Portal,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Combobox, Portal, useFilter, useListCollection } from "@chakra-ui/react"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { useRef } from "react"
 import { flushSync } from "react-dom"

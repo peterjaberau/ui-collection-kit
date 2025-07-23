@@ -3,15 +3,7 @@
 import { Chart, useChart } from "@chakra-ui/charts"
 import { HStack, VStack } from "@chakra-ui/react"
 import { LuArrowUp } from "react-icons/lu"
-import {
-  CartesianGrid,
-  Legend,
-  Line,
-  LineChart,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts"
+import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts"
 
 export const LineChartLegendInteraction = () => {
   const chart = useChart({
@@ -40,17 +32,8 @@ export const LineChartLegendInteraction = () => {
             tickFormatter={(value) => value.slice(0, 3)}
             stroke={chart.color("border")}
           />
-          <YAxis
-            axisLine={false}
-            tickLine={false}
-            tickMargin={10}
-            stroke={chart.color("border")}
-          />
-          <Tooltip
-            animationDuration={100}
-            cursor={false}
-            content={<Chart.Tooltip />}
-          />
+          <YAxis axisLine={false} tickLine={false} tickMargin={10} stroke={chart.color("border")} />
+          <Tooltip animationDuration={100} cursor={false} content={<Chart.Tooltip />} />
           <Legend content={<Chart.Legend interaction="hover" />} />
           {chart.series.map((item) => (
             <Line
@@ -74,12 +57,7 @@ const Container = (props: React.PropsWithChildren) => {
   return (
     <VStack pos="relative" gap="4">
       {children}
-      <HStack
-        textStyle="xs"
-        bottom="1"
-        color="teal.fg"
-        animation="slide-to-top 1s infinite"
-      >
+      <HStack textStyle="xs" bottom="1" color="teal.fg" animation="slide-to-top 1s infinite">
         Hover on "mac" <LuArrowUp />
       </HStack>
     </VStack>

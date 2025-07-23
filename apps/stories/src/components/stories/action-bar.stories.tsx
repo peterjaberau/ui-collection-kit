@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / Action Bar",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { ActionBarBasic as Basic } from "../compositions/examples/action-bar-basic"
 export { ActionBarWithCloseTrigger as CloseTrigger } from "../compositions/examples/action-bar-with-close-trigger"

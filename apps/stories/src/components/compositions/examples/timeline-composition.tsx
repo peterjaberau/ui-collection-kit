@@ -1,12 +1,4 @@
-import {
-  Avatar,
-  Button,
-  Card,
-  Icon,
-  Input,
-  Span,
-  Timeline,
-} from "@chakra-ui/react"
+import { Avatar, Button, Card, Icon, Input, Span, Timeline } from "@chakra-ui/react"
 import { LuPen, LuX } from "react-icons/lu"
 import LoremIpsum from "react-lorem-ipsum"
 

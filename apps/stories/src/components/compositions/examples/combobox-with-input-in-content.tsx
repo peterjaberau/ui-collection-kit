@@ -1,14 +1,6 @@
 "use client"
 
-import {
-  Button,
-  Combobox,
-  Portal,
-  Show,
-  Span,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Button, Combobox, Portal, Show, Span, useFilter, useListCollection } from "@chakra-ui/react"
 import { useState } from "react"
 import { LuChevronsUpDown } from "react-icons/lu"
 
@@ -58,14 +50,7 @@ export const ComboboxWithInputInContent = () => {
       <Portal>
         <Combobox.Positioner>
           <Combobox.Content px="0">
-            <Combobox.Input
-              mt="-1"
-              minH="8"
-              px="3"
-              border="none"
-              outline="none"
-              placeholder="Search status"
-            />
+            <Combobox.Input mt="-1" minH="8" px="3" border="none" outline="none" placeholder="Search status" />
             <Combobox.ItemGroup borderTopWidth="1px" pt="1" px="1">
               {collection.items.map((item) => (
                 <Combobox.Item item={item} key={item.value}>

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button, HStack } from "@chakra-ui/react"
-import { toaster } from "compositions/ui/toaster"
+import { toaster } from "@ui-kit/components"
 import { useId, useState } from "react"
 import { HiPause, HiPlay } from "react-icons/hi"
 
@@ -39,21 +39,11 @@ export const ToasterPauseAndPlay = () => {
       <Button variant="outline" size="sm" onClick={show} disabled={shown}>
         Show Toast
       </Button>
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={pause}
-        disabled={!shown || paused}
-      >
+      <Button variant="outline" size="sm" onClick={pause} disabled={!shown || paused}>
         <HiPause />
         Pause Toast
       </Button>
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={play}
-        disabled={!shown || !paused}
-      >
+      <Button variant="outline" size="sm" onClick={play} disabled={!shown || !paused}>
         <HiPlay />
         Play Toast
       </Button>

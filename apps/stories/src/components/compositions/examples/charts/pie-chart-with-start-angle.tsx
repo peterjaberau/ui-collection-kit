@@ -16,11 +16,7 @@ export const PieChartWithStartAngle = () => {
   return (
     <Chart.Root boxSize="320px" mx="auto" chart={chart}>
       <PieChart>
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip hideLabel />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip hideLabel />} />
         <Pie
           isAnimationActive={false}
           data={chart.data}

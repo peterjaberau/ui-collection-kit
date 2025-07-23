@@ -10,9 +10,4 @@ export const ColorSwatchWithAlpha = () => {
   )
 }
 
-const colors = [
-  "rgba(255, 0, 0, 0.5)",
-  "rgba(0, 0, 255, 0.7)",
-  "rgba(0, 255, 0, 0.4)",
-  "rgba(255, 192, 203, 0.6)",
-]
+const colors = ["rgba(255, 0, 0, 0.5)", "rgba(0, 0, 255, 0.7)", "rgba(0, 255, 0, 0.4)", "rgba(255, 192, 203, 0.6)"]

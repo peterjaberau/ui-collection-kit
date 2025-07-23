@@ -1,8 +1,8 @@
 "use client"
 
 import { Blockquote, For, Span, useSlotRecipe } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { colorPalettes } from "../lib/color-palettes"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const BlockquoteVariantTable = () => {
   const recipe = useSlotRecipe({ key: "blockquote" })
@@ -11,9 +11,7 @@ export const BlockquoteVariantTable = () => {
       <thead>
         <tr>
           <td />
-          <For each={recipe.variantMap.variant}>
-            {(v) => <td key={v}>{v}</td>}
-          </For>
+          <For each={recipe.variantMap.variant}>{(v) => <td key={v}>{v}</td>}</For>
         </tr>
       </thead>
       <tbody>
@@ -43,10 +41,7 @@ export const BlockquoteVariantTable = () => {
 const DemoBlockquote = (props: Blockquote.RootProps) => {
   return (
     <Blockquote.Root {...props}>
-      <Blockquote.Content>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
-        sapiente.
-      </Blockquote.Content>
+      <Blockquote.Content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, sapiente.</Blockquote.Content>
     </Blockquote.Root>
   )
 }

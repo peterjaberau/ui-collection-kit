@@ -12,9 +12,7 @@ export const PopoverWithSameWidth = () => {
         <Popover.Positioner>
           <Popover.Content width="auto">
             <Popover.Arrow />
-            <Popover.Body>
-              This is a popover with the same width as the trigger button
-            </Popover.Body>
+            <Popover.Body>This is a popover with the same width as the trigger button</Popover.Body>
           </Popover.Content>
         </Popover.Positioner>
       </Portal>

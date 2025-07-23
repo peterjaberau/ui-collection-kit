@@ -10,11 +10,7 @@ export const HighlightSearchQuery = () => {
       <Stack gap="1">
         {results.map((item) => (
           <p key={item}>
-            <Highlight
-              ignoreCase
-              query={query}
-              styles={{ fontWeight: "semibold" }}
-            >
+            <Highlight ignoreCase query={query} styles={{ fontWeight: "semibold" }}>
               {item}
             </Highlight>
           </p>

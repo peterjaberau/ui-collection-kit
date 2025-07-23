@@ -22,9 +22,7 @@ const dialog = createOverlay<DialogProps>((props) => {
               </Dialog.Header>
             )}
             <Dialog.Body spaceY="4">
-              {description && (
-                <Dialog.Description>{description}</Dialog.Description>
-              )}
+              {description && <Dialog.Description>{description}</Dialog.Description>}
               {content}
             </Dialog.Body>
           </Dialog.Content>

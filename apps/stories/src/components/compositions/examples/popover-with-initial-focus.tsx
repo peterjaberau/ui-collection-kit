@@ -17,9 +17,7 @@ export const PopoverWithInitialFocus = () => {
           <Popover.Content>
             <Popover.Header>Manage Your Channels</Popover.Header>
             <Popover.Arrow />
-            <Popover.Body>
-              This is a popover with the same width as the trigger button
-            </Popover.Body>
+            <Popover.Body>This is a popover with the same width as the trigger button</Popover.Body>
             <Popover.Footer>
               <Box fontSize="sm" flex="1">
                 Step 2 of 4

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@chakra-ui/react"
-import { toaster } from "compositions/ui/toaster"
+import { toaster } from "@ui-kit/components"
 
 export const ToasterPersistent = () => {
   return (

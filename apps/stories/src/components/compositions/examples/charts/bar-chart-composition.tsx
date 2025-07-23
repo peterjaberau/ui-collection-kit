@@ -51,11 +51,7 @@ export const BarChartComposition = () => {
     <Card.Root maxW="md">
       <Card.Header alignItems="flex-start">
         <Card.Title>OS Downloads</Card.Title>
-        <SegmentGroup.Root
-          size="xs"
-          value={currentKey}
-          onValueChange={(e) => setCurrentKey(e.value as CurrentKey)}
-        >
+        <SegmentGroup.Root size="xs" value={currentKey} onValueChange={(e) => setCurrentKey(e.value as CurrentKey)}>
           <SegmentGroup.Indicator />
           <SegmentGroup.Items
             items={[
@@ -81,10 +77,7 @@ export const BarChartComposition = () => {
               dataKey={chart.key("month")}
               tickFormatter={(value) => value.slice(0, 3)}
             />
-            <Bar
-              dataKey={chart.key(currentKey)}
-              fill={chart.color(series?.color)}
-            />
+            <Bar dataKey={chart.key(currentKey)} fill={chart.color(series?.color)} />
           </BarChart>
         </Chart.Root>
       </Card.Body>

@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  ColorPicker,
-  For,
-  HStack,
-  Portal,
-  Stack,
-  parseColor,
-} from "@chakra-ui/react"
+import { ColorPicker, For, HStack, Portal, Stack, parseColor } from "@chakra-ui/react"
 import { LuCheck } from "react-icons/lu"
 
 export const ColorPickerWithSizes = () => {
@@ -15,11 +8,7 @@ export const ColorPickerWithSizes = () => {
     <Stack gap="8" maxW="sm">
       <For each={["2xs", "xs", "sm", "md", "lg", "xl", "2xl"]}>
         {(size) => (
-          <ColorPicker.Root
-            key={size}
-            defaultValue={parseColor("#eb5e41")}
-            size={size}
-          >
+          <ColorPicker.Root key={size} defaultValue={parseColor("#eb5e41")} size={size}>
             <ColorPicker.HiddenInput />
             <ColorPicker.Label>Color ({size})</ColorPicker.Label>
             <ColorPicker.Control>

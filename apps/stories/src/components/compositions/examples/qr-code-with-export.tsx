@@ -7,11 +7,7 @@ export const QrCodeWithExport = () => {
         <QrCode.Pattern />
       </QrCode.Frame>
 
-      <QrCode.DownloadTrigger
-        asChild
-        fileName="qr-code.png"
-        mimeType="image/png"
-      >
+      <QrCode.DownloadTrigger asChild fileName="qr-code.png" mimeType="image/png">
         <Button variant="outline" size="xs" mt="3">
           Download
         </Button>

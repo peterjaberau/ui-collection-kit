@@ -7,19 +7,10 @@ export const BarChartHistogram = () => {
   const chart = useChart({ data })
   return (
     <Chart.Root maxH="sm" chart={chart}>
-      <BarChart
-        data={chart.data}
-        margin={{ top: 20, right: 20, bottom: 20, left: 40 }}
-      >
+      <BarChart data={chart.data} margin={{ top: 20, right: 20, bottom: 20, left: 40 }}>
         <CartesianGrid strokeDasharray="3 3" stroke={chart.color("border")} />
-        <XAxis
-          dataKey="from"
-          ticks={ticks}
-          label={{ value: "Value Range", position: "insideBottom", offset: -5 }}
-        />
-        <YAxis
-          label={{ value: "Frequency", angle: -90, position: "insideLeft" }}
-        />
+        <XAxis dataKey="from" ticks={ticks} label={{ value: "Value Range", position: "insideBottom", offset: -5 }} />
+        <YAxis label={{ value: "Frequency", angle: -90, position: "insideLeft" }} />
         <Tooltip
           formatter={(value) => [`${value}`, "Frequency"]}
           labelFormatter={(label) => {
@@ -27,11 +18,7 @@ export const BarChartHistogram = () => {
             return bin ? `Range: ${bin.from}-${bin.to}` : ""
           }}
         />
-        <Bar
-          dataKey="value"
-          fill={chart.color("teal.solid")}
-          name="Frequency"
-        />
+        <Bar dataKey="value" fill={chart.color("teal.solid")} name="Frequency" />
       </BarChart>
     </Chart.Root>
   )

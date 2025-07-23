@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / File Upload",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { FileUploadAcceptedFiles as AcceptedFiles } from "../compositions/examples/file-upload-accepted-files"
 export { FileUploadBasic as Basic } from "../compositions/examples/file-upload-basic"

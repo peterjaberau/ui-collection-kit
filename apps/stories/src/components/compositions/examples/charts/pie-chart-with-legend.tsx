@@ -16,12 +16,7 @@ export const PieChartWithLegend = () => {
     <Chart.Root boxSize="200px" mx="auto" chart={chart}>
       <PieChart>
         <Legend content={<Chart.Legend />} />
-        <Pie
-          isAnimationActive={false}
-          data={chart.data}
-          dataKey={chart.key("value")}
-          nameKey="name"
-        >
+        <Pie isAnimationActive={false} data={chart.data} dataKey={chart.key("value")} nameKey="name">
           {chart.data.map((item) => (
             <Cell key={item.name} fill={chart.color(item.color)} />
           ))}

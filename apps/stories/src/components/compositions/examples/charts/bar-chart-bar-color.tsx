@@ -18,12 +18,7 @@ export const BarChartBarColor = () => {
       <BarChart data={chart.data}>
         <CartesianGrid stroke={chart.color("border.muted")} vertical={false} />
         <XAxis axisLine={false} tickLine={false} dataKey={chart.key("type")} />
-        <YAxis
-          axisLine={false}
-          tickLine={false}
-          domain={[0, 100]}
-          tickFormatter={(value) => `${value}%`}
-        />
+        <YAxis axisLine={false} tickLine={false} domain={[0, 100]} tickFormatter={(value) => `${value}%`} />
         <Bar isAnimationActive={false} dataKey={chart.key("allocation")}>
           {chart.data.map((item) => (
             <Cell key={item.type} fill={chart.color(item.color)} />

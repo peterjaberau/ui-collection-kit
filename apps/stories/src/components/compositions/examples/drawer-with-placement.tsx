@@ -1,11 +1,4 @@
-import {
-  Button,
-  CloseButton,
-  Drawer,
-  For,
-  HStack,
-  Portal,
-} from "@chakra-ui/react"
+import { Button, CloseButton, Drawer, For, HStack, Portal } from "@chakra-ui/react"
 
 export const DrawerWithPlacement = () => {
   return (
@@ -29,9 +22,8 @@ export const DrawerWithPlacement = () => {
                     <Drawer.Title>Drawer Title</Drawer.Title>
                   </Drawer.Header>
                   <Drawer.Body>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.
                   </Drawer.Body>
                   <Drawer.Footer>
                     <Drawer.ActionTrigger asChild>

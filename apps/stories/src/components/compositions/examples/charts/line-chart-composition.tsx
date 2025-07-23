@@ -34,10 +34,7 @@ export const LineChartComposition = () => {
               axisLine={false}
               dataKey={chart.key("month")}
               tickFormatter={(value) => value.slice(0, 3)}
-              ticks={[
-                chart.data[0].month,
-                chart.data[chart.data.length - 1].month,
-              ]}
+              ticks={[chart.data[0].month, chart.data[chart.data.length - 1].month]}
               stroke={chart.color("border")}
             />
             {chart.series.map((item) => (
@@ -60,9 +57,7 @@ export const LineChartComposition = () => {
                 <ColorSwatch boxSize="2" value={chart.color(item.color)} />
                 {item.label}
               </Stat.Label>
-              <Stat.ValueText fontWeight="medium">
-                {item.name ? chart.getTotal(item.name) : "-"}
-              </Stat.ValueText>
+              <Stat.ValueText fontWeight="medium">{item.name ? chart.getTotal(item.name) : "-"}</Stat.ValueText>
             </Stat.Root>
           ))}
         </HStack>

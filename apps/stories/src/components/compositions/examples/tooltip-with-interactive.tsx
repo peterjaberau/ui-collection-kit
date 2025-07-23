@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/react"
-import { Tooltip } from "compositions/ui/tooltip"
+import { Tooltip } from "@ui-kit/components"
 
 export const TooltipWithInteractive = () => {
   return (

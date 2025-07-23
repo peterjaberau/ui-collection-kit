@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  ButtonGroup,
-  For,
-  IconButton,
-  Pagination,
-  Stack,
-} from "@chakra-ui/react"
+import { ButtonGroup, For, IconButton, Pagination, Stack } from "@chakra-ui/react"
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
 
 export const PaginationWithSizes = () => {
@@ -24,9 +18,7 @@ export const PaginationWithSizes = () => {
 
               <Pagination.Items
                 render={(page) => (
-                  <IconButton variant={{ base: "ghost", _selected: "outline" }}>
-                    {page.value}
-                  </IconButton>
+                  <IconButton variant={{ base: "ghost", _selected: "outline" }}>{page.value}</IconButton>
                 )}
               />
 

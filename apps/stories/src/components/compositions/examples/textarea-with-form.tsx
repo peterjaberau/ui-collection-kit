@@ -14,9 +14,7 @@ export const TextareaWithForm = () => {
         <Field.Root>
           <Field.Label>Issue Details</Field.Label>
           <Textarea placeholder="Type your message here..." />
-          <Field.HelperText>
-            You can @mention people and refer to issues and pull requests.
-          </Field.HelperText>
+          <Field.HelperText>You can @mention people and refer to issues and pull requests.</Field.HelperText>
         </Field.Root>
         <Button alignSelf="flex-start" variant="solid" mt="3">
           Submit

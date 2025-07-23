@@ -33,9 +33,7 @@ export const SelectAsyncLoading = () => {
           <Select.ValueText placeholder="Select pokemon" />
         </Select.Trigger>
         <Select.IndicatorGroup>
-          {state.loading && (
-            <Spinner size="xs" borderWidth="1.5px" color="fg.muted" />
-          )}
+          {state.loading && <Spinner size="xs" borderWidth="1.5px" color="fg.muted" />}
           <Select.Indicator />
         </Select.IndicatorGroup>
       </Select.Control>

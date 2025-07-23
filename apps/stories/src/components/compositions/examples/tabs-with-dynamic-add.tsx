@@ -48,12 +48,7 @@ export const TabsWithDynamicAdd = () => {
   }
 
   return (
-    <Tabs.Root
-      value={selectedTab}
-      variant="outline"
-      size="sm"
-      onValueChange={(e) => setSelectedTab(e.value)}
-    >
+    <Tabs.Root value={selectedTab} variant="outline" size="sm" onValueChange={(e) => setSelectedTab(e.value)}>
       <Tabs.List flex="1 1 auto">
         {tabs.map((item) => (
           <Tabs.Trigger value={item.id} key={item.id}>
@@ -70,13 +65,7 @@ export const TabsWithDynamicAdd = () => {
             />
           </Tabs.Trigger>
         ))}
-        <Button
-          alignSelf="center"
-          ms="2"
-          size="2xs"
-          variant="ghost"
-          onClick={addTab}
-        >
+        <Button alignSelf="center" ms="2" size="2xs" variant="ghost" onClick={addTab}>
           <LuPlus /> Add Tab
         </Button>
       </Tabs.List>
@@ -88,12 +77,10 @@ export const TabsWithDynamicAdd = () => {
               {item.content} {item.id}
             </Heading>
             <Text>
-              Dolore ex esse laboris elit magna esse sunt. Pariatur in veniam
-              Lorem est occaecat do magna nisi mollit ipsum sit adipisicing
-              fugiat ex. Pariatur ullamco exercitation ea qui adipisicing. Id
-              cupidatat aute id ut excepteur exercitation magna pariatur. Mollit
-              irure irure reprehenderit pariatur eiusmod proident Lorem deserunt
-              duis cillum mollit.
+              Dolore ex esse laboris elit magna esse sunt. Pariatur in veniam Lorem est occaecat do magna nisi mollit
+              ipsum sit adipisicing fugiat ex. Pariatur ullamco exercitation ea qui adipisicing. Id cupidatat aute id ut
+              excepteur exercitation magna pariatur. Mollit irure irure reprehenderit pariatur eiusmod proident Lorem
+              deserunt duis cillum mollit.
             </Text>
           </Tabs.Content>
         ))}

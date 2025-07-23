@@ -5,10 +5,7 @@ export const LocaleProviderBasic = () => {
     <LocaleProvider locale="ar-AE">
       <Stack gap="4" maxW="sm" dir="rtl">
         <Heading>مرحباً بكم في تشاكرا يو آي</Heading>
-        <Text textStyle="body-sm">
-          هذا مثال على كيفية استخدام موفر اللغة في تطبيقك. يمكنك تغيير اللغة
-          بسهولة.
-        </Text>
+        <Text textStyle="body-sm">هذا مثال على كيفية استخدام موفر اللغة في تطبيقك. يمكنك تغيير اللغة بسهولة.</Text>
         <Slider.Root defaultValue={[50]}>
           <Slider.Control>
             <Slider.Track>

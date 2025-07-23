@@ -18,26 +18,14 @@ export const LineChartWithCustomDot = () => {
   return (
     <Chart.Root maxH="sm" chart={chart}>
       <LineChart data={chart.data}>
-        <CartesianGrid
-          stroke={chart.color("border")}
-          strokeDasharray="3 3"
-          horizontal={false}
-        />
+        <CartesianGrid stroke={chart.color("border")} strokeDasharray="3 3" horizontal={false} />
         <XAxis
           dataKey={chart.key("month")}
           tickFormatter={(value) => value.slice(0, 3)}
           stroke={chart.color("border")}
         />
-        <YAxis
-          dataKey={chart.key("sales")}
-          stroke={chart.color("border")}
-          domain={[160, "dataMax + 10"]}
-        />
-        <Tooltip
-          animationDuration={100}
-          cursor={{ stroke: chart.color("border") }}
-          content={<Chart.Tooltip />}
-        />
+        <YAxis dataKey={chart.key("sales")} stroke={chart.color("border")} domain={[160, "dataMax + 10"]} />
+        <Tooltip animationDuration={100} cursor={{ stroke: chart.color("border") }} content={<Chart.Tooltip />} />
         {chart.series.map((item) => (
           <Line
             key={item.name}

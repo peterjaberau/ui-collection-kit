@@ -16,9 +16,7 @@ export const ColorPickerWithTriggerInInput = () => {
             </ColorPicker.Trigger>
           }
           endElementProps={{ px: "1" }}
-          endElement={
-            <ColorPicker.EyeDropperTrigger size="xs" variant="ghost" />
-          }
+          endElement={<ColorPicker.EyeDropperTrigger size="xs" variant="ghost" />}
         >
           <ColorPicker.Input />
         </InputGroup>

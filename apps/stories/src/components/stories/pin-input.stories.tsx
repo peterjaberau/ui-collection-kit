@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react-vite"
-import { Box } from "@ui-kit/components"
+import { Box } from "@chakra-ui/react"
 
 export default {
   title: "Components / PinInput",
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <Box p="10">
         <Story />
       </Box>
     ),
   ],
-} satisfies Meta
+} as Meta
 
 export { PinInputAlphanumeric as Alphanumeric } from "../compositions/examples/pin-input-alphanumeric"
 export { PinInputAttached as Attached } from "../compositions/examples/pin-input-attached"

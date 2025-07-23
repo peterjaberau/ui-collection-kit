@@ -32,27 +32,18 @@ export const CheckboxWithHookForm = () => {
           name="enabled"
           render={({ field }) => (
             <Field.Root invalid={invalid} disabled={field.disabled}>
-              <Checkbox.Root
-                checked={field.value}
-                onCheckedChange={({ checked }) => field.onChange(checked)}
-              >
+              <Checkbox.Root checked={field.value} onCheckedChange={({ checked }) => field.onChange(checked)}>
                 <Checkbox.HiddenInput />
                 <Checkbox.Control />
                 <Checkbox.Label>Checkbox</Checkbox.Label>
               </Checkbox.Root>
-              <Field.ErrorText>
-                {form.formState.errors.enabled?.message}
-              </Field.ErrorText>
+              <Field.ErrorText>{form.formState.errors.enabled?.message}</Field.ErrorText>
             </Field.Root>
           )}
         />
 
         <HStack>
-          <Button
-            size="xs"
-            variant="outline"
-            onClick={() => form.setValue("enabled", !enabled.field.value)}
-          >
+          <Button size="xs" variant="outline" onClick={() => form.setValue("enabled", !enabled.field.value)}>
             Toggle
           </Button>
           <Button size="xs" variant="outline" onClick={() => form.reset()}>

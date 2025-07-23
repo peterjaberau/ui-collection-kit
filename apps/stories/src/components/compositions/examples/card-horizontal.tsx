@@ -12,8 +12,7 @@ export const CardHorizontal = () => (
       <Card.Body>
         <Card.Title mb="2">The perfect latte</Card.Title>
         <Card.Description>
-          Caffè latte is a coffee beverage of Italian origin made with espresso
-          and steamed milk.
+          Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.
         </Card.Description>
         <HStack mt="4">
           <Badge>Hot</Badge>

@@ -1,13 +1,6 @@
 "use client"
 
-import {
-  Button,
-  CloseButton,
-  Dialog,
-  Portal,
-  Select,
-  createListCollection,
-} from "@chakra-ui/react"
+import { Button, CloseButton, Dialog, Portal, Select, createListCollection } from "@chakra-ui/react"
 
 export const SelectInDialog = () => {
   return (

@@ -1,5 +1,5 @@
 import { Container, For, Stack } from "@chakra-ui/react"
-import { DecorativeBox } from "compositions/lib/decorative-box"
+import { DecorativeBox } from "../lib/decorative-box"
 
 export const ContainerWithSizes = () => {
   return (
@@ -8,8 +8,8 @@ export const ContainerWithSizes = () => {
         {(size) => (
           <Container key={size} maxW={size} px="2">
             <DecorativeBox>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              consectetur, tortor in lacinia eleifend, dui nisl tristique nunc.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur, tortor in lacinia eleifend,
+              dui nisl tristique nunc.
             </DecorativeBox>
           </Container>
         )}

@@ -29,14 +29,12 @@ const items = [
     value: "info",
     icon: <LuTags />,
     title: "Product Info",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio vel dui euismod fermentum.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio vel dui euismod fermentum.",
   },
   {
     value: "stats",
     icon: <LuChartBarStacked />,
     title: "Stats",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio vel dui euismod fermentum.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio vel dui euismod fermentum.",
   },
 ]

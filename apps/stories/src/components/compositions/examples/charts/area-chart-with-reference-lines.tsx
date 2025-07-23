@@ -1,16 +1,7 @@
 "use client"
 
 import { Chart, useChart } from "@chakra-ui/charts"
-import {
-  Area,
-  AreaChart,
-  CartesianGrid,
-  Legend,
-  ReferenceLine,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts"
+import { Area, AreaChart, CartesianGrid, Legend, ReferenceLine, Tooltip, XAxis, YAxis } from "recharts"
 
 export const AreaChartWithReferenceLines = () => {
   const chart = useChart({
@@ -42,11 +33,7 @@ export const AreaChartWithReferenceLines = () => {
           dataKey={chart.key("month")}
           tickFormatter={(value) => value.slice(0, 3)}
         />
-        <Tooltip
-          cursor={false}
-          animationDuration={100}
-          content={<Chart.Tooltip />}
-        />
+        <Tooltip cursor={false} animationDuration={100} content={<Chart.Tooltip />} />
         <Legend content={<Chart.Legend />} />
         <ReferenceLine
           x="August"

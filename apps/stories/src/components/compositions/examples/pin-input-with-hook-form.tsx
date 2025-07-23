@@ -28,10 +28,7 @@ export const PinInputWithHookForm = () => {
             control={control}
             name="pin"
             render={({ field }) => (
-              <PinInput.Root
-                value={field.value}
-                onValueChange={(e) => field.onChange(e.value)}
-              >
+              <PinInput.Root value={field.value} onValueChange={(e) => field.onChange(e.value)}>
                 <PinInput.HiddenInput />
                 <PinInput.Control>
                   <PinInput.Input index={0} />

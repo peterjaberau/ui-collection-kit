@@ -26,17 +26,8 @@ export const LineChartBasic = () => {
           tickFormatter={(value) => value.slice(0, 3)}
           stroke={chart.color("border")}
         />
-        <YAxis
-          axisLine={false}
-          tickLine={false}
-          tickMargin={10}
-          stroke={chart.color("border")}
-        />
-        <Tooltip
-          animationDuration={100}
-          cursor={false}
-          content={<Chart.Tooltip />}
-        />
+        <YAxis axisLine={false} tickLine={false} tickMargin={10} stroke={chart.color("border")} />
+        <Tooltip animationDuration={100} cursor={false} content={<Chart.Tooltip />} />
         {chart.series.map((item) => (
           <Line
             key={item.name}

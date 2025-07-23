@@ -24,11 +24,7 @@ export const AreaChartWithAxisLabel = () => {
 
   return (
     <Chart.Root maxH="sm" chart={chart}>
-      <AreaChart
-        accessibilityLayer
-        data={chart.data}
-        margin={{ bottom: 24, left: 24 }}
-      >
+      <AreaChart accessibilityLayer data={chart.data} margin={{ bottom: 24, left: 24 }}>
         <XAxis
           dataKey={chart.key("month")}
           tickLine={false}

@@ -19,12 +19,7 @@ function ComboboxValue() {
     <Stack mt="2">
       {selectedItems.map((item) => (
         <HStack key={item.value} textStyle="sm" p="1" borderWidth="1px">
-          <Image
-            boxSize="10"
-            p="2"
-            src={item.logo}
-            alt={item.label + " logo"}
-          />
+          <Image boxSize="10" p="2" src={item.logo} alt={item.label + " logo"} />
           <span>{item.label}</span>
         </HStack>
       ))}

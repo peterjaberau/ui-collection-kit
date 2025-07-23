@@ -1,7 +1,7 @@
 "use client"
 
 import { For, Span, Stack, Textarea, useRecipe } from "@chakra-ui/react"
-import { PlaygroundTable } from "compositions/lib/playground-table"
+import { PlaygroundTable } from "../lib/playground-table"
 
 export const TextareaSizeTable = () => {
   const recipe = useRecipe({ key: "textarea" })
@@ -19,11 +19,7 @@ export const TextareaSizeTable = () => {
               <td>
                 <Stack minW="320px">
                   <Textarea size={v} placeholder="Placeholder" />
-                  <Textarea
-                    variant="subtle"
-                    size={v}
-                    placeholder="Placeholder"
-                  />
+                  <Textarea variant="subtle" size={v} placeholder="Placeholder" />
                 </Stack>
               </td>
             </tr>

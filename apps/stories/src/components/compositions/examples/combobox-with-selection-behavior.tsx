@@ -1,14 +1,6 @@
 "use client"
 
-import {
-  Box,
-  Combobox,
-  Heading,
-  Stack,
-  Text,
-  useFilter,
-  useListCollection,
-} from "@chakra-ui/react"
+import { Box, Combobox, Heading, Stack, Text, useFilter, useListCollection } from "@chakra-ui/react"
 
 export const ComboboxWithSelectionBehavior = () => {
   return (

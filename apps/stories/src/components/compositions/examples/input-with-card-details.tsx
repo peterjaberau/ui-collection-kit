@@ -10,10 +10,7 @@ const images = cardImages as unknown as CardImages
 const CardImage = (props: ReturnType<typeof usePaymentInputs>) => {
   const { meta, getCardImageProps } = props
   return (
-    <Show
-      when={meta.cardType}
-      fallback={<LuCreditCard size={16} aria-hidden="true" />}
-    >
+    <Show when={meta.cardType} fallback={<LuCreditCard size={16} aria-hidden="true" />}>
       <svg {...getCardImageProps({ images })} />
     </Show>
   )
@@ -23,10 +20,7 @@ export const InputWithCardDetails = () => {
   const payment = usePaymentInputs()
   return (
     <Box spaceY="-1px">
-      <InputGroup
-        zIndex={{ _focusWithin: "1" }}
-        endElement={<CardImage {...payment} />}
-      >
+      <InputGroup zIndex={{ _focusWithin: "1" }} endElement={<CardImage {...payment} />}>
         <Input roundedBottom="0" {...payment.getCardNumberProps()} />
       </InputGroup>
       <Group w="full" attached>

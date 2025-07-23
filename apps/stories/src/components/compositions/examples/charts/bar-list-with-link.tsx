@@ -17,9 +17,7 @@ export const BarListWithLink = () => {
   return (
     <BarList.Root chart={chart}>
       <BarList.Content>
-        <BarList.Bar
-          label={({ payload }) => <a href={payload.href}>{payload.name}</a>}
-        />
+        <BarList.Bar label={({ payload }) => <a href={payload.href}>{payload.name}</a>} />
         <BarList.Value />
       </BarList.Content>
     </BarList.Root>

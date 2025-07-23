@@ -11,11 +11,7 @@ export const ButtonWithLoadingToggle = () => {
       <Button loading={loading} onClick={() => setLoading(!loading)}>
         <MdAdsClick /> Click me
       </Button>
-      <Checkbox.Root
-        size="sm"
-        checked={loading}
-        onCheckedChange={() => setLoading(!loading)}
-      >
+      <Checkbox.Root size="sm" checked={loading} onCheckedChange={() => setLoading(!loading)}>
         <Checkbox.HiddenInput />
         <Checkbox.Control />
         <Checkbox.Label>Loading</Checkbox.Label>

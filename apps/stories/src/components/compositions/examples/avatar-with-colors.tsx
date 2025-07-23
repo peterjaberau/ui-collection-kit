@@ -1,5 +1,5 @@
 import { Avatar, Stack, Text } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
+import { colorPalettes } from "../lib/color-palettes"
 
 export const AvatarWithColors = () => {
   return (

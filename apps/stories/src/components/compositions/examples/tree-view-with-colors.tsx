@@ -1,7 +1,7 @@
 "use client"
 
 import { For, TreeView, Wrap, createTreeCollection } from "@chakra-ui/react"
-import { colorPalettes } from "compositions/lib/color-palettes"
+import { colorPalettes } from "../lib/color-palettes"
 import { LuFile, LuFolder } from "react-icons/lu"
 
 export const TreeViewWithColors = () => {

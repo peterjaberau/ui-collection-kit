@@ -6,12 +6,7 @@ import { useState } from "react"
 export const SelectControlled = () => {
   const [value, setValue] = useState<string[]>([])
   return (
-    <Select.Root
-      collection={frameworks}
-      width="320px"
-      value={value}
-      onValueChange={(e) => setValue(e.value)}
-    >
+    <Select.Root collection={frameworks} width="320px" value={value} onValueChange={(e) => setValue(e.value)}>
       <Select.HiddenSelect />
       <Select.Label>Select framework</Select.Label>
       <Select.Control>
