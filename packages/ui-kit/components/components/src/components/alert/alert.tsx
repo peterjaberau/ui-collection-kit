@@ -16,12 +16,11 @@ interface StatusProps {
   status: ConditionalValue<"info" | "warning" | "success" | "error" | "neutral">
 }
 
-export const [AlertStatusProvider, useAlertStatusContext] =
-  createContext<StatusProps>({
-    name: "AlertStatusContext",
-    hookName: "useAlertStatusContext",
-    providerName: "<Alert />",
-  })
+export const [AlertStatusProvider, useAlertStatusContext] = createContext<StatusProps>({
+  name: "AlertStatusContext",
+  hookName: "useAlertStatusContext",
+  providerName: "<Alert />",
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -36,60 +35,41 @@ export { useAlertStyles }
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface AlertRootBaseProps
-  extends SlotRecipeProps<"alert">,
-    UnstyledProp {}
+export interface AlertRootBaseProps extends SlotRecipeProps<"alert">, UnstyledProp {}
 
-export interface AlertRootProps
-  extends HTMLUIKitProps<"div", AlertRootBaseProps> {}
+export interface AlertRootProps extends HTMLUIKitProps<"div", AlertRootBaseProps> {}
 
-export const AlertRoot = withProvider<HTMLDivElement, AlertRootProps>(
-  "div",
-  "root",
-  {
-    forwardAsChild: true,
-    wrapElement(element, props) {
-      return (
-        // @ts-ignore fix later
-        <AlertStatusProvider value={{ status: props.status || "info" }}>
-          {element}
-        </AlertStatusProvider>
-      )
-    },
+export const AlertRoot = withProvider<HTMLDivElement, AlertRootProps>("div", "root", {
+  forwardAsChild: true,
+  wrapElement(element, props) {
+    return (
+      // @ts-ignore fix later
+      <AlertStatusProvider value={{ status: props.status || "info" }}>{element}</AlertStatusProvider>
+    )
   },
-)
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const AlertPropsProvider =
-  PropsProvider as React.Provider<AlertRootBaseProps>
+export const AlertPropsProvider = PropsProvider as React.Provider<AlertRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface AlertTitleProps extends HTMLUIKitProps<"div"> {}
 
-export const AlertTitle = withContext<HTMLDivElement, AlertTitleProps>(
-  "div",
-  "title",
-)
+export const AlertTitle = withContext<HTMLDivElement, AlertTitleProps>("div", "title")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface AlertDescriptionProps extends HTMLUIKitProps<"div"> {}
 
-export const AlertDescription = withContext<
-  HTMLDivElement,
-  AlertDescriptionProps
->("div", "description")
+export const AlertDescription = withContext<HTMLDivElement, AlertDescriptionProps>("div", "description")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface AlertContentProps extends HTMLUIKitProps<"div"> {}
 
-export const AlertContent = withContext<HTMLDivElement, AlertContentProps>(
-  "div",
-  "content",
-)
+export const AlertContent = withContext<HTMLDivElement, AlertContentProps>("div", "content")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -103,18 +83,16 @@ const iconMap = {
 
 export interface AlertIndicatorProps extends HTMLUIKitProps<"span"> {}
 
-export const AlertIndicator = forwardRef<SVGSVGElement, AlertIndicatorProps>(
-  function AlertIndicator(props, ref) {
-    const api = useAlertStatusContext()
-    const styles = useAlertStyles()
+export const AlertIndicator = forwardRef<SVGSVGElement, AlertIndicatorProps>(function AlertIndicator(props, ref) {
+  const api = useAlertStatusContext()
+  const styles = useAlertStyles()
 
-    const Icon = typeof api.status === "string" ? iconMap[api.status] : Fragment
-    const { children = <Icon />, ...rest } = props
+  const Icon = typeof api.status === "string" ? iconMap[api.status] : Fragment
+  const { children = <Icon />, ...rest } = props
 
-    return (
-      <uikit.span ref={ref} {...rest} css={[styles.indicator, props.css]}>
-        {children}
-      </uikit.span>
-    )
-  },
-)
+  return (
+    <uikit.span ref={ref} {...rest} css={[styles.indicator, props.css]}>
+      {children}
+    </uikit.span>
+  )
+})

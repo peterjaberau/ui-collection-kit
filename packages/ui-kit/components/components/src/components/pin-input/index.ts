@@ -23,7 +23,4 @@ export * as PinInput from "./namespace"
 
 export { usePinInput, usePinInputContext } from "@ui-kit/base/pin-input"
 
-export type {
-  UsePinInputProps,
-  UsePinInputReturn,
-} from "@ui-kit/base/pin-input"
+export type { UsePinInputProps, UsePinInputReturn } from "@ui-kit/base/pin-input"

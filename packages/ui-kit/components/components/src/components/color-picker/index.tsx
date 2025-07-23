@@ -70,11 +70,7 @@ export type {
   ColorPickerEyeDropperProps,
 } from "./color-picker"
 
-export {
-  parseColor,
-  useColorPicker,
-  useColorPickerContext,
-} from "@ui-kit/base/color-picker"
+export { parseColor, useColorPicker, useColorPickerContext } from "@ui-kit/base/color-picker"
 
 export type {
   ColorPickerColorFormat,

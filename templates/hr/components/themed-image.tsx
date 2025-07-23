@@ -14,7 +14,6 @@ export const ThemedImage = React.forwardRef<
     setImgSrc(theme === 'dark' && srcDark ? srcDark || src : src);
   }, [theme, src, srcDark]);
 
-  // eslint-disable-next-line jsx-a11y/alt-text
   return <img ref={forwardedRef} src={imgSrc} {...rest} />;
 });
 ThemedImage.displayName = 'ThemedImage';

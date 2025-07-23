@@ -29,23 +29,12 @@ interface CreateIconOptions {
 }
 
 export function createIcon(options: CreateIconOptions) {
-  const {
-    viewBox = "0 0 24 24",
-    d: pathDefinition,
-    displayName,
-    defaultProps = {},
-  } = options
+  const { viewBox = "0 0 24 24", d: pathDefinition, displayName, defaultProps = {} } = options
 
   const path = Children.toArray(options.path)
 
   const Comp = forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-    <Icon
-      ref={ref}
-      asChild={false}
-      viewBox={viewBox}
-      {...defaultProps}
-      {...props}
-    >
+    <Icon ref={ref} asChild={false} viewBox={viewBox} {...defaultProps} {...props}>
       {path.length ? path : <path fill="currentColor" d={pathDefinition} />}
     </Icon>
   ))

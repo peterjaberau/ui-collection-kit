@@ -6,12 +6,9 @@ import { toPx } from "./unit-conversion"
 export const addNegativeTokens: TokenMiddleware = {
   enforce: "pre",
   transform(dictionary) {
-    const { prefix, allTokens, formatCssVar, formatTokenName, registerToken } =
-      dictionary
+    const { prefix, allTokens, formatCssVar, formatTokenName, registerToken } = dictionary
 
-    const tokens = allTokens.filter(
-      ({ extensions }) => extensions.category === "spacing",
-    )
+    const tokens = allTokens.filter(({ extensions }) => extensions.category === "spacing")
 
     tokens.forEach((token) => {
       const originalPath = token.path.slice()
@@ -46,13 +43,7 @@ export const addNegativeTokens: TokenMiddleware = {
   },
 }
 
-const units = new Set([
-  "spacing",
-  "sizes",
-  "borderWidths",
-  "fontSizes",
-  "radii",
-])
+const units = new Set(["spacing", "sizes", "borderWidths", "fontSizes", "radii"])
 
 export const addPixelUnit: TokenMiddleware = {
   enforce: "post",
@@ -74,9 +65,7 @@ export const addVirtualPalette: TokenMiddleware = {
   transform(dictionary) {
     const { allTokens, registerToken, formatTokenName } = dictionary
 
-    const tokens = allTokens.filter(
-      ({ extensions }) => extensions.category === "colors",
-    )
+    const tokens = allTokens.filter(({ extensions }) => extensions.category === "colors")
 
     const keys = new Map<string, string[]>()
     const colorPalettes = new Map<string, Token[]>()
@@ -133,15 +122,8 @@ export const addVirtualPalette: TokenMiddleware = {
 export const removeEmptyTokens: TokenMiddleware = {
   enforce: "post",
   transform(dictionary) {
-    dictionary.allTokens = dictionary.allTokens.filter(
-      (token) => token.value !== "",
-    )
+    dictionary.allTokens = dictionary.allTokens.filter((token) => token.value !== "")
   },
 }
 
-export const tokenMiddlewares = [
-  addNegativeTokens,
-  addVirtualPalette,
-  addPixelUnit,
-  removeEmptyTokens,
-]
+export const tokenMiddlewares = [addNegativeTokens, addVirtualPalette, addPixelUnit, removeEmptyTokens]

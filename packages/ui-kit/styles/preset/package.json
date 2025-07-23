@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/style-preset",
-  "version": "3.22.0",
+  "version": "0.0.1",
   "description": "Style preset for UI Kit",
   "type": "module",
   "main": "dist/cjs/index.cjs",
@@ -47,7 +47,6 @@
     "@pandacss/types": "^0.54.0"
   },
   "devDependencies": {
-    "@ui-kit/cli": "workspace:*",
     "globby": "14.1.0"
   }
 }

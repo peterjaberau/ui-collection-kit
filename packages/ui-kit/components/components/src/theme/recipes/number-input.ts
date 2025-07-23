@@ -101,10 +101,7 @@ export const numberInputSlotRecipe = defineSlotRecipe({
       },
     },
 
-    variant: mapEntries(inputRecipe.variants!.variant, (key, variantStyles) => [
-      key,
-      { input: variantStyles },
-    ]),
+    variant: mapEntries(inputRecipe.variants!.variant, (key, variantStyles) => [key, { input: variantStyles }]),
   },
 
   defaultVariants: {

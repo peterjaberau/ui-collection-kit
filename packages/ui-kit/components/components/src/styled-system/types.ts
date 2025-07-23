@@ -1,17 +1,7 @@
 import type { PropertiesFallback } from "csstype"
 import type { Dict, DistributiveOmit } from "../utils"
-import type {
-  ConditionalValue,
-  CssKeyframes,
-  Nested,
-  SystemStyleObject,
-} from "./css.types"
-import type {
-  RecipeCreatorFn,
-  RecipeDefinition,
-  SlotRecipeConfig,
-  SlotRecipeCreatorFn,
-} from "./recipe.types"
+import type { ConditionalValue, CssKeyframes, Nested, SystemStyleObject } from "./css.types"
+import type { RecipeCreatorFn, RecipeDefinition, SlotRecipeConfig, SlotRecipeCreatorFn } from "./recipe.types"
 
 export type CssProperty = keyof PropertiesFallback
 
@@ -19,9 +9,7 @@ export type CssVarProperties = {
   [key in `--${string}`]?: ConditionalValue<string | number>
 }
 
-export interface CssProperties
-  extends PropertiesFallback<String | Number>,
-    CssVarProperties {}
+export interface CssProperties extends PropertiesFallback<String | Number>, CssVarProperties {}
 
 interface Recursive<T> {
   [key: string]: T | Recursive<T>
@@ -69,9 +57,7 @@ export type TokenDefinition = {
 }
 
 export type SemanticTokenDefinition = {
-  [key in TokenCategory]?: Recursive<
-    TokenSchema<PrimitiveTokenValue | Record<string, PrimitiveTokenValue>>
-  >
+  [key in TokenCategory]?: Recursive<TokenSchema<PrimitiveTokenValue | Record<string, PrimitiveTokenValue>>>
 }
 
 export interface TokenCssVar {
@@ -171,17 +157,9 @@ export interface TransformArgs<T = any> {
   utils: TransformUtils
 }
 
-export type PropertyTransform = (
-  value: any,
-  args: TransformArgs,
-) => Nested<CssProperties> | undefined
+export type PropertyTransform = (value: any, args: TransformArgs) => Nested<CssProperties> | undefined
 
-export type PropertyValues =
-  | TokenCategory
-  | string[]
-  | { type: string }
-  | Record<string, string>
-  | ThemeFn
+export type PropertyValues = TokenCategory | string[] | { type: string } | Record<string, string> | ThemeFn
 
 export interface UtilityPropertyConfig {
   /**
@@ -320,10 +298,7 @@ export interface ThemingConfig {
 }
 
 export interface PreflightConfig {
-  preflight?:
-    | boolean
-    | { scope?: string | undefined; level?: "parent" | "element" | undefined }
-    | undefined
+  preflight?: boolean | { scope?: string | undefined; level?: "parent" | "element" | undefined } | undefined
 }
 
 export type CascadeLayer = "reset" | "base" | "tokens" | "recipes"

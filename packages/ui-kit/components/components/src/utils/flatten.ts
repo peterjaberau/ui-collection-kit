@@ -1,9 +1,6 @@
 import { type WalkObjectStopFn, walkObject } from "./walk-object"
 
-export function flatten(
-  values: Record<string, Record<string, any>>,
-  stop?: WalkObjectStopFn,
-) {
+export function flatten(values: Record<string, Record<string, any>>, stop?: WalkObjectStopFn) {
   const result: Record<string, any> = {}
 
   walkObject(

@@ -24,15 +24,8 @@ export type {
   AccordionValueChangeDetails,
 } from "./accordion"
 
-export {
-  useAccordion,
-  useAccordionContext,
-  useAccordionItemContext,
-} from "@ui-kit/base/accordion"
+export { useAccordion, useAccordionContext, useAccordionItemContext } from "@ui-kit/base/accordion"
 
-export type {
-  UseAccordionProps,
-  UseAccordionReturn,
-} from "@ui-kit/base/accordion"
+export type { UseAccordionProps, UseAccordionReturn } from "@ui-kit/base/accordion"
 
 export * as Accordion from "./namespace"

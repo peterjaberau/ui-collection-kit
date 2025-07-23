@@ -1,10 +1,4 @@
-export {
-  ListRoot,
-  ListRootPropsProvider,
-  ListItem,
-  ListIndicator,
-  useListStyles,
-} from "./list"
+export { ListRoot, ListRootPropsProvider, ListItem, ListIndicator, useListStyles } from "./list"
 
 export type { ListRootProps, ListItemProps, ListIndicatorProps } from "./list"
 

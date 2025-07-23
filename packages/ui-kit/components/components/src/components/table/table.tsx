@@ -26,62 +26,53 @@ export { useTableStyles }
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface TableRootBaseProps
-  extends SlotRecipeProps<"table">,
-    UnstyledProp {}
+export interface TableRootBaseProps extends SlotRecipeProps<"table">, UnstyledProp {}
 
-export interface TableRootProps
-  extends HTMLUIKitProps<"table", TableRootBaseProps> {
+export interface TableRootProps extends HTMLUIKitProps<"table", TableRootBaseProps> {
   /**
    * If `true`, the table will style its descendants with nested selectors
    */
   native?: boolean | undefined
 }
 
-export const TableRoot = forwardRef<HTMLTableElement, TableRootProps>(
-  function TableRoot({ native, ...props }, ref) {
-    const { styles, props: rootProps, classNames } = useRecipeResult(props)
+export const TableRoot = forwardRef<HTMLTableElement, TableRootProps>(function TableRoot({ native, ...props }, ref) {
+  const { styles, props: rootProps, classNames } = useRecipeResult(props)
 
-    const rootCss = useMemo((): SystemStyleObject => {
-      if (!native) return styles.root
-      return {
-        ...styles.root,
-        "& thead": styles.header,
-        "& tbody": styles.body,
-        "& tfoot": styles.footer,
-        "& thead th": styles.columnHeader,
-        "& tr": styles.row,
-        "& td": styles.cell,
-        "& caption": styles.caption,
-      }
-    }, [styles, native])
+  const rootCss = useMemo((): SystemStyleObject => {
+    if (!native) return styles.root
+    return {
+      ...styles.root,
+      "& thead": styles.header,
+      "& tbody": styles.body,
+      "& tfoot": styles.footer,
+      "& thead th": styles.columnHeader,
+      "& tr": styles.row,
+      "& td": styles.cell,
+      "& caption": styles.caption,
+    }
+  }, [styles, native])
 
-    return (
-      <ClassNamesProvider value={classNames}>
-        <StylesProvider value={styles}>
-          <uikit.table
-            ref={ref}
-            {...rootProps}
-            css={[rootCss, props.css]}
-            className={cx(classNames?.["root"], props.className)}
-          />
-        </StylesProvider>
-      </ClassNamesProvider>
-    )
-  },
-)
+  return (
+    <ClassNamesProvider value={classNames}>
+      <StylesProvider value={styles}>
+        <uikit.table
+          ref={ref}
+          {...rootProps}
+          css={[rootCss, props.css]}
+          className={cx(classNames?.["root"], props.className)}
+        />
+      </StylesProvider>
+    </ClassNamesProvider>
+  )
+})
 
-export const TableRootPropsProvider =
-  PropsProvider as React.Provider<TableRootBaseProps>
+export const TableRootPropsProvider = PropsProvider as React.Provider<TableRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TableRowProps extends HTMLUIKitProps<"tr"> {}
 
-export const TableRow = withContext<HTMLTableRowElement, TableRowProps>(
-  "tr",
-  "row",
-)
+export const TableRow = withContext<HTMLTableRowElement, TableRowProps>("tr", "row")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -101,46 +92,31 @@ export const TableScrollArea = uikit("div", {
 
 export interface TableHeaderProps extends HTMLUIKitProps<"thead"> {}
 
-export const TableHeader = withContext<
-  HTMLTableSectionElement,
-  TableHeaderProps
->("thead", "header")
+export const TableHeader = withContext<HTMLTableSectionElement, TableHeaderProps>("thead", "header")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TableFooterProps extends HTMLUIKitProps<"tfoot"> {}
 
-export const TableFooter = withContext<
-  HTMLTableSectionElement,
-  TableFooterProps
->("tfoot", "footer")
+export const TableFooter = withContext<HTMLTableSectionElement, TableFooterProps>("tfoot", "footer")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TableColumnHeaderProps extends HTMLUIKitProps<"th"> {}
 
-export const TableColumnHeader = withContext<
-  HTMLTableCellElement,
-  TableColumnHeaderProps
->("th", "columnHeader")
+export const TableColumnHeader = withContext<HTMLTableCellElement, TableColumnHeaderProps>("th", "columnHeader")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TableCellProps extends HTMLUIKitProps<"td"> {}
 
-export const TableCell = withContext<HTMLTableCellElement, TableCellProps>(
-  "td",
-  "cell",
-)
+export const TableCell = withContext<HTMLTableCellElement, TableCellProps>("td", "cell")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TableCaptionProps extends HTMLUIKitProps<"caption"> {}
 
-export const TableCaption = withContext<
-  HTMLTableCaptionElement,
-  TableCaptionProps
->("caption", "caption", {
+export const TableCaption = withContext<HTMLTableCaptionElement, TableCaptionProps>("caption", "caption", {
   defaultProps: {
     captionSide: "bottom",
   },
@@ -150,24 +126,16 @@ export const TableCaption = withContext<
 
 export interface TableBodyProps extends HTMLUIKitProps<"tbody"> {}
 
-export const TableBody = withContext<HTMLTableSectionElement, TableBodyProps>(
-  "tbody",
-  "body",
-)
+export const TableBody = withContext<HTMLTableSectionElement, TableBodyProps>("tbody", "body")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TableColumnGroupProps extends HTMLUIKitProps<"colgroup"> {}
 
-export const TableColumnGroup = withContext<
-  HTMLTableColElement,
-  TableColumnGroupProps
->("colgroup")
+export const TableColumnGroup = withContext<HTMLTableColElement, TableColumnGroupProps>("colgroup")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TableColumnProps extends HTMLUIKitProps<"col"> {}
 
-export const TableColumn = withContext<HTMLTableColElement, TableColumnProps>(
-  "col",
-)
+export const TableColumn = withContext<HTMLTableColElement, TableColumnProps>("col")

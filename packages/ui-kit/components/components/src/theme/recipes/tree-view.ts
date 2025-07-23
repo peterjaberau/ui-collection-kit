@@ -9,11 +9,9 @@ const baseItemStyle = defineStyle({
   userSelect: "none",
   position: "relative",
   "--tree-depth": "calc(var(--depth) - 1)",
-  "--tree-indentation-offset":
-    "calc(var(--tree-indentation) * var(--tree-depth))",
+  "--tree-indentation-offset": "calc(var(--tree-indentation) * var(--tree-depth))",
   "--tree-icon-offset": "calc(var(--tree-icon-size) * var(--tree-depth) * 0.5)",
-  "--tree-offset":
-    "calc(var(--tree-padding-inline) + var(--tree-indentation-offset) + var(--tree-icon-offset))",
+  "--tree-offset": "calc(var(--tree-padding-inline) + var(--tree-indentation-offset) + var(--tree-icon-offset))",
   ps: "var(--tree-offset)",
   pe: "var(--tree-padding-inline)",
   py: "var(--tree-padding-block)",
@@ -79,10 +77,8 @@ export const treeViewSlotRecipe = defineSlotRecipe({
       bg: "border",
       position: "absolute",
       "--tree-depth": "calc(var(--depth) - 1)",
-      "--tree-indentation-offset":
-        "calc(var(--tree-indentation) * var(--tree-depth))",
-      "--tree-offset":
-        "calc(var(--tree-padding-inline) + var(--tree-indentation-offset))",
+      "--tree-indentation-offset": "calc(var(--tree-indentation) * var(--tree-depth))",
+      "--tree-offset": "calc(var(--tree-padding-inline) + var(--tree-indentation-offset))",
       "--tree-icon-offset": "calc(var(--tree-icon-size) * 0.5 * var(--depth))",
       insetInlineStart: "calc(var(--tree-offset) + var(--tree-icon-offset))",
       zIndex: "1",

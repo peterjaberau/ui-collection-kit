@@ -1,10 +1,7 @@
 "use client"
 
 import type { Assign } from "@ui-kit/base"
-import {
-  Editable as ArkEditable,
-  useEditableContext,
-} from "@ui-kit/base/editable"
+import { Editable as ArkEditable, useEditableContext } from "@ui-kit/base/editable"
 import { ark } from "@ui-kit/base/factory"
 import { forwardRef } from "react"
 import { mergeProps } from "../../merge-props"
@@ -29,19 +26,16 @@ export { useEditableStyles }
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface EditableRootProviderBaseProps
-  extends Assign<
-      ArkEditable.RootProviderBaseProps,
-      SlotRecipeProps<"editable">
-    >,
+  extends Assign<ArkEditable.RootProviderBaseProps, SlotRecipeProps<"editable">>,
     UnstyledProp {}
 
-export interface EditableRootProviderProps
-  extends HTMLUIKitProps<"div", EditableRootProviderBaseProps> {}
+export interface EditableRootProviderProps extends HTMLUIKitProps<"div", EditableRootProviderBaseProps> {}
 
-export const EditableRootProvider = withProvider<
-  HTMLDivElement,
-  EditableRootProviderProps
->(ArkEditable.RootProvider, "root", { forwardAsChild: true })
+export const EditableRootProvider = withProvider<HTMLDivElement, EditableRootProviderProps>(
+  ArkEditable.RootProvider,
+  "root",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -49,114 +43,96 @@ export interface EditableRootBaseProps
   extends Assign<ArkEditable.RootBaseProps, SlotRecipeProps<"editable">>,
     UnstyledProp {}
 
-export interface EditableRootProps
-  extends HTMLUIKitProps<"div", EditableRootBaseProps> {}
+export interface EditableRootProps extends HTMLUIKitProps<"div", EditableRootBaseProps> {}
 
-export const EditableRoot = withProvider<HTMLDivElement, EditableRootProps>(
-  ArkEditable.Root,
-  "root",
-  { forwardAsChild: true },
-)
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export const EditablePropsProvider =
-  PropsProvider as React.Provider<EditableRootBaseProps>
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface EditablePreviewProps
-  extends HTMLUIKitProps<"span", ArkEditable.PreviewBaseProps> {}
-
-export const EditablePreview = withContext<
-  HTMLSpanElement,
-  EditablePreviewProps
->(ArkEditable.Preview, "preview", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface EditableInputProps
-  extends HTMLUIKitProps<"input", ArkEditable.InputBaseProps> {}
-
-export const EditableInput = withContext<HTMLInputElement, EditableInputProps>(
-  ArkEditable.Input,
-  "input",
-  { forwardAsChild: true },
-)
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface EditableTextareaProps
-  extends HTMLUIKitProps<"textarea", ArkEditable.InputBaseProps> {}
-
-const ArkEditableTextarea = forwardRef<
-  HTMLTextAreaElement,
-  EditableTextareaProps
->(function EditableTextarea(props, ref) {
-  const editable = useEditableContext()
-  const mergedProps = mergeProps(editable.getInputProps(), props)
-  return <ark.textarea ref={ref} {...mergedProps} />
+export const EditableRoot = withProvider<HTMLDivElement, EditableRootProps>(ArkEditable.Root, "root", {
+  forwardAsChild: true,
 })
 
-export const EditableTextarea = withContext<
-  HTMLInputElement,
-  EditableTextareaProps
->(ArkEditableTextarea, "input", { forwardAsChild: true })
+////////////////////////////////////////////////////////////////////////////////////
+
+export const EditablePropsProvider = PropsProvider as React.Provider<EditableRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface EditableControlProps
-  extends HTMLUIKitProps<"div", ArkEditable.ControlBaseProps> {}
+export interface EditablePreviewProps extends HTMLUIKitProps<"span", ArkEditable.PreviewBaseProps> {}
 
-export const EditableControl = withContext<
-  HTMLDivElement,
-  EditableControlProps
->(ArkEditable.Control, "control", { forwardAsChild: true })
+export const EditablePreview = withContext<HTMLSpanElement, EditablePreviewProps>(ArkEditable.Preview, "preview", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface EditableAreaProps
-  extends HTMLUIKitProps<"div", ArkEditable.AreaBaseProps> {}
+export interface EditableInputProps extends HTMLUIKitProps<"input", ArkEditable.InputBaseProps> {}
 
-export const EditableArea = withContext<HTMLDivElement, EditableAreaProps>(
-  ArkEditable.Area,
-  "area",
+export const EditableInput = withContext<HTMLInputElement, EditableInputProps>(ArkEditable.Input, "input", {
+  forwardAsChild: true,
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface EditableTextareaProps extends HTMLUIKitProps<"textarea", ArkEditable.InputBaseProps> {}
+
+const ArkEditableTextarea = forwardRef<HTMLTextAreaElement, EditableTextareaProps>(
+  function EditableTextarea(props, ref) {
+    const editable = useEditableContext()
+    const mergedProps = mergeProps(editable.getInputProps(), props)
+    return <ark.textarea ref={ref} {...mergedProps} />
+  },
+)
+
+export const EditableTextarea = withContext<HTMLInputElement, EditableTextareaProps>(ArkEditableTextarea, "input", {
+  forwardAsChild: true,
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface EditableControlProps extends HTMLUIKitProps<"div", ArkEditable.ControlBaseProps> {}
+
+export const EditableControl = withContext<HTMLDivElement, EditableControlProps>(ArkEditable.Control, "control", {
+  forwardAsChild: true,
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface EditableAreaProps extends HTMLUIKitProps<"div", ArkEditable.AreaBaseProps> {}
+
+export const EditableArea = withContext<HTMLDivElement, EditableAreaProps>(ArkEditable.Area, "area", {
+  forwardAsChild: true,
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface EditableEditTriggerProps extends HTMLUIKitProps<"button", ArkEditable.EditTriggerBaseProps> {}
+
+export const EditableEditTrigger = withContext<HTMLButtonElement, EditableEditTriggerProps>(
+  ArkEditable.EditTrigger,
+  "editTrigger",
   { forwardAsChild: true },
 )
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface EditableEditTriggerProps
-  extends HTMLUIKitProps<"button", ArkEditable.EditTriggerBaseProps> {}
+export interface EditableSubmitTriggerProps extends HTMLUIKitProps<"button", ArkEditable.SubmitTriggerBaseProps> {}
 
-export const EditableEditTrigger = withContext<
-  HTMLButtonElement,
-  EditableEditTriggerProps
->(ArkEditable.EditTrigger, "editTrigger", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface EditableSubmitTriggerProps
-  extends HTMLUIKitProps<"button", ArkEditable.SubmitTriggerBaseProps> {}
-
-export const EditableSubmitTrigger = withContext<
-  HTMLButtonElement,
-  EditableSubmitTriggerProps
->(ArkEditable.SubmitTrigger, "submitTrigger", { forwardAsChild: true })
+export const EditableSubmitTrigger = withContext<HTMLButtonElement, EditableSubmitTriggerProps>(
+  ArkEditable.SubmitTrigger,
+  "submitTrigger",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface EditableCancelTriggerProps
-  extends HTMLUIKitProps<"button", ArkEditable.CancelTriggerBaseProps> {}
+export interface EditableCancelTriggerProps extends HTMLUIKitProps<"button", ArkEditable.CancelTriggerBaseProps> {}
 
-export const EditableCancelTrigger = withContext<
-  HTMLButtonElement,
-  EditableCancelTriggerProps
->(ArkEditable.CancelTrigger, "cancelTrigger", { forwardAsChild: true })
+export const EditableCancelTrigger = withContext<HTMLButtonElement, EditableCancelTriggerProps>(
+  ArkEditable.CancelTrigger,
+  "cancelTrigger",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export const EditableContext = ArkEditable.Context
 
-export interface EditableValueChangeDetails
-  extends ArkEditable.ValueChangeDetails {}
+export interface EditableValueChangeDetails extends ArkEditable.ValueChangeDetails {}

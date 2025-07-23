@@ -55,17 +55,11 @@ export function useBreakpoint(options: UseBreakpointOptions = {}) {
  * useBreakpointValue
  * -----------------------------------------------------------------------------*/
 
-export type UseBreakpointValueOptions = Omit<
-  UseBreakpointOptions,
-  "breakpoints"
->
+export type UseBreakpointValueOptions = Omit<UseBreakpointOptions, "breakpoints">
 
 type Value<T> = Dict<T> | Array<T | null>
 
-export function useBreakpointValue<T = any>(
-  value: Value<T>,
-  opts?: UseBreakpointValueOptions,
-): T | undefined {
+export function useBreakpointValue<T = any>(value: Value<T>, opts?: UseBreakpointValueOptions): T | undefined {
   const sys = useUIKitContext()
   const normalized = sys.normalizeValue(value)
   const breakpoint = useBreakpoint({

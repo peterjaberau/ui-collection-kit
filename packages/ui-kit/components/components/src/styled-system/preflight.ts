@@ -104,15 +104,13 @@ export function createPreflight(options: PreflightConfig) {
     },
     "code, kbd, samp, pre": {
       fontSize: "1em",
-      "--font-mono-fallback":
-        "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New'",
+      "--font-mono-fallback": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New'",
       fontFamily: "var(--global-font-mono, var(--font-mono-fallback))",
     },
-    'input[type="text"], input[type="email"], input[type="search"], input[type="password"]':
-      {
-        WebkitAppearance: "none",
-        MozAppearance: "none",
-      },
+    'input[type="text"], input[type="email"], input[type="search"], input[type="password"]': {
+      WebkitAppearance: "none",
+      MozAppearance: "none",
+    },
     "input[type='search']": {
       WebkitAppearance: "textfield",
       outlineOffset: "-2px",
@@ -124,10 +122,9 @@ export function createPreflight(options: PreflightConfig) {
       WebkitAppearance: "button",
       font: "inherit",
     },
-    'input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button':
-      {
-        height: "auto",
-      },
+    'input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
+      height: "auto",
+    },
     "input[type='number']": {
       MozAppearance: "textfield",
     },

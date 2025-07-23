@@ -1,4 +1,4 @@
-import { type FilePathTreeNode, TreeCollection, type TreeCollectionOptions, filePathToTree } from "@ui-kit/collection"
+import { type FilePathTreeNode, TreeCollection, type TreeCollectionOptions, filePathToTree } from "@ui-kit/core-collection"
 
 export const collection = <T>(options: TreeCollectionOptions<T>): TreeCollection<T> => {
   return new TreeCollection(options)

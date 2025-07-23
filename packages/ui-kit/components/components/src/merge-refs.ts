@@ -1,9 +1,6 @@
 export type ReactRef<T> = React.RefCallback<T> | React.MutableRefObject<T>
 
-export function assignRef<T = any>(
-  ref: ReactRef<T> | null | undefined,
-  value: T,
-) {
+export function assignRef<T = any>(ref: ReactRef<T> | null | undefined, value: T) {
   if (ref == null) return
 
   if (typeof ref === "function") {

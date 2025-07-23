@@ -16,30 +16,25 @@ const { withPropsProvider, useRecipeResult } = createRecipeContext({
   key: "colorSwatch",
 })
 
-export interface ColorSwatchBaseProps
-  extends UnstyledProp,
-    RecipeProps<"colorSwatch"> {
+export interface ColorSwatchBaseProps extends UnstyledProp, RecipeProps<"colorSwatch"> {
   value: string
 }
 
-export interface ColorSwatchProps
-  extends Assign<HTMLUIKitProps<"span">, ColorSwatchBaseProps> {}
+export interface ColorSwatchProps extends Assign<HTMLUIKitProps<"span">, ColorSwatchBaseProps> {}
 
-export const ColorSwatch = forwardRef<HTMLSpanElement, ColorSwatchProps>(
-  function ColorSwatch(props, ref) {
-    const { value, ...restProps } = props
-    const { styles, className, props: localProps } = useRecipeResult(restProps)
-    return (
-      <uikit.span
-        {...localProps}
-        ref={ref}
-        data-value={value}
-        css={[styles, { "--color": value }, props.css]}
-        className={cx(className, props.className)}
-      />
-    )
-  },
-)
+export const ColorSwatch = forwardRef<HTMLSpanElement, ColorSwatchProps>(function ColorSwatch(props, ref) {
+  const { value, ...restProps } = props
+  const { styles, className, props: localProps } = useRecipeResult(restProps)
+  return (
+    <uikit.span
+      {...localProps}
+      ref={ref}
+      data-value={value}
+      css={[styles, { "--color": value }, props.css]}
+      className={cx(className, props.className)}
+    />
+  )
+})
 
 export const ColorSwatchPropsProvider = withPropsProvider<ColorSwatchProps>()
 
@@ -68,9 +63,7 @@ export const ColorSwatchMix = (props: ColorSwatchMixProps) => {
               rounded="none"
               value={item}
               boxShadow="none"
-              gridColumn={
-                isThreeColors && isLast ? "span 2 / span 2" : undefined
-              }
+              gridColumn={isThreeColors && isLast ? "span 2 / span 2" : undefined}
               width={isThreeColors && isLast ? "unset" : undefined}
             />
           )

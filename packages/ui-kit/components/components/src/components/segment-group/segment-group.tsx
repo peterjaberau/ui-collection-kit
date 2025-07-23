@@ -25,36 +25,26 @@ export { useSegmentGroupStyles }
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface SegmentGroupRootProviderBaseProps
-  extends Assign<
-      ArkSegmentGroup.RootProviderBaseProps,
-      SlotRecipeProps<"segmentGroup">
-    >,
+  extends Assign<ArkSegmentGroup.RootProviderBaseProps, SlotRecipeProps<"segmentGroup">>,
     UnstyledProp {}
 
-export interface SegmentGroupRootProviderProps
-  extends HTMLUIKitProps<"div", SegmentGroupRootProviderBaseProps> {}
+export interface SegmentGroupRootProviderProps extends HTMLUIKitProps<"div", SegmentGroupRootProviderBaseProps> {}
 
-export const SegmentGroupRootProvider = withProvider<
-  HTMLDivElement,
-  SegmentGroupRootProviderProps
->(ArkSegmentGroup.RootProvider, "root", { forwardAsChild: true })
+export const SegmentGroupRootProvider = withProvider<HTMLDivElement, SegmentGroupRootProviderProps>(
+  ArkSegmentGroup.RootProvider,
+  "root",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface SegmentGroupRootBaseProps
-  extends Assign<
-      ArkSegmentGroup.RootBaseProps,
-      SlotRecipeProps<"segmentGroup">
-    >,
+  extends Assign<ArkSegmentGroup.RootBaseProps, SlotRecipeProps<"segmentGroup">>,
     UnstyledProp {}
 
-export interface SegmentGroupRootProps
-  extends HTMLUIKitProps<"div", SegmentGroupRootBaseProps> {}
+export interface SegmentGroupRootProps extends HTMLUIKitProps<"div", SegmentGroupRootBaseProps> {}
 
-export const SegmentGroupRoot = withProvider<
-  HTMLDivElement,
-  SegmentGroupRootProps
->(ArkSegmentGroup.Root, "root", {
+export const SegmentGroupRoot = withProvider<HTMLDivElement, SegmentGroupRootProps>(ArkSegmentGroup.Root, "root", {
   forwardAsChild: true,
   forwardProps: ["orientation"],
   defaultProps: {
@@ -64,38 +54,35 @@ export const SegmentGroupRoot = withProvider<
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const SegmentGroupPropsProvider =
-  PropsProvider as React.Provider<SegmentGroupRootBaseProps>
+export const SegmentGroupPropsProvider = PropsProvider as React.Provider<SegmentGroupRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface SegmentGroupItemProps
-  extends HTMLUIKitProps<"label", ArkSegmentGroup.ItemBaseProps> {}
+export interface SegmentGroupItemProps extends HTMLUIKitProps<"label", ArkSegmentGroup.ItemBaseProps> {}
 
-export const SegmentGroupItem = withContext<
-  HTMLLabelElement,
-  SegmentGroupItemProps
->(ArkSegmentGroup.Item, "item", { forwardAsChild: true })
+export const SegmentGroupItem = withContext<HTMLLabelElement, SegmentGroupItemProps>(ArkSegmentGroup.Item, "item", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface SegmentGroupItemTextProps
-  extends HTMLUIKitProps<"span", ArkSegmentGroup.ItemTextBaseProps> {}
+export interface SegmentGroupItemTextProps extends HTMLUIKitProps<"span", ArkSegmentGroup.ItemTextBaseProps> {}
 
-export const SegmentGroupItemText = withContext<
-  HTMLSpanElement,
-  SegmentGroupItemTextProps
->(ArkSegmentGroup.ItemText, "itemText", { forwardAsChild: true })
+export const SegmentGroupItemText = withContext<HTMLSpanElement, SegmentGroupItemTextProps>(
+  ArkSegmentGroup.ItemText,
+  "itemText",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface SegmentGroupIndicatorProps
-  extends HTMLUIKitProps<"div", ArkSegmentGroup.IndicatorBaseProps> {}
+export interface SegmentGroupIndicatorProps extends HTMLUIKitProps<"div", ArkSegmentGroup.IndicatorBaseProps> {}
 
-export const SegmentGroupIndicator = withContext<
-  HTMLSpanElement,
-  SegmentGroupIndicatorProps
->(ArkSegmentGroup.Indicator, "indicator", { forwardAsChild: true })
+export const SegmentGroupIndicator = withContext<HTMLSpanElement, SegmentGroupIndicatorProps>(
+  ArkSegmentGroup.Indicator,
+  "indicator",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -105,8 +92,7 @@ interface Item {
   disabled?: boolean | undefined
 }
 
-export interface SegmentGroupItemsProps
-  extends Omit<SegmentGroupItemProps, "value"> {
+export interface SegmentGroupItemsProps extends Omit<SegmentGroupItemProps, "value"> {
   items: Array<string | Item>
 }
 
@@ -123,12 +109,7 @@ export const SegmentGroupItems = (props: SegmentGroupItemsProps) => {
   return (
     <For each={data}>
       {(item) => (
-        <SegmentGroupItem
-          key={item.value}
-          value={item.value}
-          disabled={item.disabled}
-          {...rest}
-        >
+        <SegmentGroupItem key={item.value} value={item.value} disabled={item.disabled} {...rest}>
           <SegmentGroupItemText>{item.label}</SegmentGroupItemText>
           <SegmentGroupItemHiddenInput />
         </SegmentGroupItem>
@@ -144,5 +125,4 @@ export const SegmentGroupItemHiddenInput = ArkSegmentGroup.ItemHiddenInput
 export const SegmentGroupContext = ArkSegmentGroup.Context
 export const SegmentGroupItemContext = ArkSegmentGroup.ItemContext
 
-export interface SegmentGroupValueChangeDetails
-  extends ArkSegmentGroup.ValueChangeDetails {}
+export interface SegmentGroupValueChangeDetails extends ArkSegmentGroup.ValueChangeDetails {}

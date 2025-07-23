@@ -16,14 +16,8 @@ export type {
   CollapsibleTriggerProps,
 } from "./collapsible"
 
-export {
-  useCollapsible,
-  useCollapsibleContext,
-} from "@ui-kit/base/collapsible"
+export { useCollapsible, useCollapsibleContext } from "@ui-kit/base/collapsible"
 
-export type {
-  UseCollapsibleProps,
-  UseCollapsibleReturn,
-} from "@ui-kit/base/collapsible"
+export type { UseCollapsibleProps, UseCollapsibleReturn } from "@ui-kit/base/collapsible"
 
 export * as Collapsible from "./namespace"

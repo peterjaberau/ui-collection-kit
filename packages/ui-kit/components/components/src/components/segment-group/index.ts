@@ -22,15 +22,8 @@ export type {
   SegmentGroupItemsProps,
 } from "./segment-group"
 
-export {
-  useSegmentGroup,
-  useSegmentGroupContext,
-  useSegmentGroupItemContext,
-} from "@ui-kit/base/segment-group"
+export { useSegmentGroup, useSegmentGroupContext, useSegmentGroupItemContext } from "@ui-kit/base/segment-group"
 
-export type {
-  UseSegmentGroupProps,
-  UseSegmentGroupReturn,
-} from "@ui-kit/base/segment-group"
+export type { UseSegmentGroupProps, UseSegmentGroupReturn } from "@ui-kit/base/segment-group"
 
 export * as SegmentGroup from "./namespace"

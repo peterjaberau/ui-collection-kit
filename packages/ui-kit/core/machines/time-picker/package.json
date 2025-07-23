@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-time-picker",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "Core logic for the time-picker widget implemented as a state machine",
   "keywords": [
     "js",

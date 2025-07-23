@@ -1,12 +1,7 @@
 "use client"
 
 import { Field as ArkField } from "@ui-kit/base/field"
-import {
-  type HTMLUIKitProps,
-  type RecipeProps,
-  type UnstyledProp,
-  createRecipeContext,
-} from "../../styled-system"
+import { type HTMLUIKitProps, type RecipeProps, type UnstyledProp, createRecipeContext } from "../../styled-system"
 
 const { withContext, PropsProvider } = createRecipeContext({
   key: "input",

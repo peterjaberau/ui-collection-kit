@@ -21,12 +21,7 @@ export type {
   CheckboxCheckedChangeDetails,
 } from "./checkbox"
 
-export {
-  useCheckbox,
-  useCheckboxContext,
-  useCheckboxGroup,
-  useCheckboxGroupContext,
-} from "@ui-kit/base/checkbox"
+export { useCheckbox, useCheckboxContext, useCheckboxGroup, useCheckboxGroupContext } from "@ui-kit/base/checkbox"
 
 export type {
   UseCheckboxProps,

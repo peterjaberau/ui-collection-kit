@@ -21,46 +21,30 @@ export { useBlockquoteStyles }
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface BlockquoteRootBaseProps
-  extends SlotRecipeProps<"blockquote">,
-    UnstyledProp {}
+export interface BlockquoteRootBaseProps extends SlotRecipeProps<"blockquote">, UnstyledProp {}
 
-export interface BlockquoteRootProps
-  extends HTMLUIKitProps<"figure", BlockquoteRootBaseProps> {}
+export interface BlockquoteRootProps extends HTMLUIKitProps<"figure", BlockquoteRootBaseProps> {}
 
-export const BlockquoteRoot = withProvider<HTMLElement, BlockquoteRootProps>(
-  "figure",
-  "root",
-)
+export const BlockquoteRoot = withProvider<HTMLElement, BlockquoteRootProps>("figure", "root")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const BlockquotePropsProvider =
-  PropsProvider as React.Provider<BlockquoteRootBaseProps>
+export const BlockquotePropsProvider = PropsProvider as React.Provider<BlockquoteRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface BlockquoteContentProps extends HTMLUIKitProps<"blockquote"> {}
 
-export const BlockquoteContent = withContext<
-  HTMLElement,
-  BlockquoteContentProps
->("blockquote", "content")
+export const BlockquoteContent = withContext<HTMLElement, BlockquoteContentProps>("blockquote", "content")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface BlockquoteCaptionProps extends HTMLUIKitProps<"figcaption"> {}
 
-export const BlockquoteCaption = withContext<
-  HTMLElement,
-  BlockquoteCaptionProps
->("figcaption", "caption")
+export const BlockquoteCaption = withContext<HTMLElement, BlockquoteCaptionProps>("figcaption", "caption")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface BlockquoteIconProps extends HTMLUIKitProps<"svg"> {}
 
-export const BlockquoteIcon = withContext<SVGElement, BlockquoteIconProps>(
-  QuoteIcon,
-  "icon",
-)
+export const BlockquoteIcon = withContext<SVGElement, BlockquoteIconProps>(QuoteIcon, "icon")

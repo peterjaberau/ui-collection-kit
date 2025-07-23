@@ -23,7 +23,4 @@ export * as Progress from "./namespace"
 
 export { useProgress, useProgressContext } from "@ui-kit/base/progress"
 
-export type {
-  UseProgressProps,
-  UseProgressReturn,
-} from "@ui-kit/base/progress"
+export type { UseProgressProps, UseProgressReturn } from "@ui-kit/base/progress"

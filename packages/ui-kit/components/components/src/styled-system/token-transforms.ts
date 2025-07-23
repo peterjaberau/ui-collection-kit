@@ -69,12 +69,10 @@ export const addColorPalette: TokenTransformer = {
 
     const value = dict.formatTokenName(path)
 
-    const keys = token.path
-      .slice(token.path.indexOf(root) + 1)
-      .reduce<string[][]>((acc, _, i, arr) => {
-        acc.push(arr.slice(i))
-        return acc
-      }, [])
+    const keys = token.path.slice(token.path.indexOf(root) + 1).reduce<string[][]>((acc, _, i, arr) => {
+      acc.push(arr.slice(i))
+      return acc
+    }, [])
 
     if (keys.length === 0) {
       keys.push([""])
@@ -86,8 +84,4 @@ export const addColorPalette: TokenTransformer = {
   },
 }
 
-export const tokenTransforms = [
-  addCssVariables,
-  addConditionalCssVariables,
-  addColorPalette,
-]
+export const tokenTransforms = [addCssVariables, addConditionalCssVariables, addColorPalette]

@@ -1,19 +1,7 @@
 "use client"
 
-import {
-  Children,
-  cloneElement,
-  forwardRef,
-  isValidElement,
-  memo,
-  useMemo,
-} from "react"
-import {
-  type HTMLUIKitProps,
-  type InferRecipeProps,
-  type JsxStyleProps,
-  uikit,
-} from "../../styled-system"
+import { Children, cloneElement, forwardRef, isValidElement, memo, useMemo } from "react"
+import { type HTMLUIKitProps, type InferRecipeProps, type JsxStyleProps, uikit } from "../../styled-system"
 import { cx, dataAttr } from "../../utils"
 
 const StyledGroup = uikit("div", {
@@ -127,14 +115,7 @@ export interface GroupProps extends HTMLUIKitProps<"div", VariantProps> {
 
 export const Group = memo(
   forwardRef<HTMLDivElement, GroupProps>(function Group(props, ref) {
-    const {
-      align = "center",
-      justify = "flex-start",
-      children,
-      wrap,
-      skip,
-      ...rest
-    } = props
+    const { align = "center", justify = "flex-start", children, wrap, skip, ...rest } = props
 
     const _children = useMemo(() => {
       let childArray = Children.toArray(children).filter(isValidElement)

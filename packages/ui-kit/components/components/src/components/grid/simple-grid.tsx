@@ -1,11 +1,7 @@
 "use client"
 
 import { forwardRef } from "react"
-import {
-  type ConditionalValue,
-  type SystemContext,
-  useUIKitContext,
-} from "../../styled-system"
+import { type ConditionalValue, type SystemContext, useUIKitContext } from "../../styled-system"
 import { mapObject } from "../../utils"
 import { Grid, type GridProps } from "./grid"
 
@@ -20,9 +16,7 @@ interface SimpleGridOptions {
   columns?: ConditionalValue<number> | undefined
 }
 
-export interface SimpleGridProps
-  extends Omit<GridProps, "columns">,
-    SimpleGridOptions {}
+export interface SimpleGridProps extends Omit<GridProps, "columns">, SimpleGridOptions {}
 
 /**
  * SimpleGrid
@@ -34,18 +28,14 @@ export interface SimpleGridProps
  *
  * @see Docs #/simplegrid
  */
-export const SimpleGrid = forwardRef<HTMLDivElement, SimpleGridProps>(
-  function SimpleGrid(props, ref) {
-    const { columns, minChildWidth, ...rest } = props
+export const SimpleGrid = forwardRef<HTMLDivElement, SimpleGridProps>(function SimpleGrid(props, ref) {
+  const { columns, minChildWidth, ...rest } = props
 
-    const sys = useUIKitContext()
-    const templateColumns = minChildWidth
-      ? widthToColumns(minChildWidth, sys)
-      : countToColumns(columns)
+  const sys = useUIKitContext()
+  const templateColumns = minChildWidth ? widthToColumns(minChildWidth, sys) : countToColumns(columns)
 
-    return <Grid ref={ref} templateColumns={templateColumns} {...rest} />
-  },
-)
+  return <Grid ref={ref} templateColumns={templateColumns} {...rest} />
+})
 
 function toPx(n: string | number) {
   return typeof n === "number" ? `${n}px` : n
@@ -59,7 +49,5 @@ function widthToColumns(width: any, sys: SystemContext) {
 }
 
 function countToColumns(count: any) {
-  return mapObject(count, (value) =>
-    value === null ? null : `repeat(${value}, minmax(0, 1fr))`,
-  )
+  return mapObject(count, (value) => (value === null ? null : `repeat(${value}, minmax(0, 1fr))`))
 }

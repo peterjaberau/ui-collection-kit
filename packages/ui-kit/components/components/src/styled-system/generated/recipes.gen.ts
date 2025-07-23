@@ -571,7 +571,17 @@ export type DrawerVariantMap = {
 
 // Editable
 
-export type EditableSlot = "root" | "area" | "label" | "preview" | "input" | "editTrigger" | "submitTrigger" | "cancelTrigger" | "control" | "textarea"
+export type EditableSlot =
+  | "root"
+  | "area"
+  | "label"
+  | "preview"
+  | "input"
+  | "editTrigger"
+  | "submitTrigger"
+  | "cancelTrigger"
+  | "control"
+  | "textarea"
 
 export interface EditableVariant {
   /** @default "md" */
@@ -605,7 +615,16 @@ export type EmptyStateVariantMap = {
 
 // Field
 
-export type FieldSlot = "root" | "errorText" | "helperText" | "input" | "label" | "select" | "textarea" | "requiredIndicator" | "requiredIndicator"
+export type FieldSlot =
+  | "root"
+  | "errorText"
+  | "helperText"
+  | "input"
+  | "label"
+  | "select"
+  | "textarea"
+  | "requiredIndicator"
+  | "requiredIndicator"
 
 export interface FieldVariant {
   /** @default "vertical" */
@@ -756,7 +775,15 @@ export type NativeSelectVariantMap = {
 
 // NumberInput
 
-export type NumberInputSlot = "root" | "label" | "input" | "control" | "valueText" | "incrementTrigger" | "decrementTrigger" | "scrubber"
+export type NumberInputSlot =
+  | "root"
+  | "label"
+  | "input"
+  | "control"
+  | "valueText"
+  | "incrementTrigger"
+  | "decrementTrigger"
+  | "scrubber"
 
 export interface NumberInputVariant {
   /** @default "md" */
@@ -825,7 +852,16 @@ export type PopoverVariantMap = {
 
 // Progress
 
-export type ProgressSlot = "root" | "label" | "track" | "range" | "valueText" | "view" | "circle" | "circleTrack" | "circleRange"
+export type ProgressSlot =
+  | "root"
+  | "label"
+  | "track"
+  | "range"
+  | "valueText"
+  | "view"
+  | "circle"
+  | "circleTrack"
+  | "circleRange"
 
 export interface ProgressVariant {
   /** @default "outline" */
@@ -848,7 +884,16 @@ export type ProgressVariantMap = {
 
 // ProgressCircle
 
-export type ProgressCircleSlot = "root" | "label" | "track" | "range" | "valueText" | "view" | "circle" | "circleTrack" | "circleRange"
+export type ProgressCircleSlot =
+  | "root"
+  | "label"
+  | "track"
+  | "range"
+  | "valueText"
+  | "view"
+  | "circle"
+  | "circleTrack"
+  | "circleRange"
 
 export interface ProgressCircleVariant {
   /** @default "md" */
@@ -899,7 +944,15 @@ export type RadioCardVariantMap = {
 
 // RadioGroup
 
-export type RadioGroupSlot = "root" | "label" | "item" | "itemText" | "itemControl" | "indicator" | "itemAddon" | "itemIndicator"
+export type RadioGroupSlot =
+  | "root"
+  | "label"
+  | "item"
+  | "itemText"
+  | "itemControl"
+  | "indicator"
+  | "itemAddon"
+  | "itemIndicator"
 
 export interface RadioGroupVariant {
   /** @default "solid" */
@@ -1231,7 +1284,15 @@ export type StatusVariantMap = {
 
 // Timeline
 
-export type TimelineSlot = "root" | "item" | "content" | "separator" | "indicator" | "connector" | "title" | "description"
+export type TimelineSlot =
+  | "root"
+  | "item"
+  | "content"
+  | "separator"
+  | "indicator"
+  | "connector"
+  | "title"
+  | "description"
 
 export interface TimelineVariant {
   /** @default "solid" */
@@ -1445,7 +1506,9 @@ export interface ConfigRecipeSlots {
   treeView: TreeViewSlot
 }
 
-export type SlotRecipeRecord<T, K> = T extends keyof ConfigRecipeSlots ? Record<ConfigRecipeSlots[T], K> : Record<string, K>
+export type SlotRecipeRecord<T, K> = T extends keyof ConfigRecipeSlots
+  ? Record<ConfigRecipeSlots[T], K>
+  : Record<string, K>
 
 export type SlotRecipeProps<T> = T extends keyof ConfigSlotRecipes
   ? ConfigSlotRecipes[T]["__type"] & { recipe?: SlotRecipeDefinition | undefined }

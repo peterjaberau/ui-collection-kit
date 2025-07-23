@@ -1,24 +1,9 @@
-import {
-  type Dict,
-  compact,
-  createProps,
-  isFunction,
-  isObject,
-  isString,
-  mapObject,
-  memo,
-  walkObject,
-} from "../utils"
+import { type Dict, compact, createProps, isFunction, isObject, isString, mapObject, memo, walkObject } from "../utils"
 import { cssVar } from "./css-var"
 import { esc } from "./esc"
 import { expandTokenReferences as _expandReferences } from "./expand-reference"
 import { mapToJson } from "./map-to-json"
-import {
-  TOKEN_PATH_REGEX,
-  expandReferences,
-  getReferences,
-  hasReference,
-} from "./references"
+import { TOKEN_PATH_REGEX, expandReferences, getReferences, hasReference } from "./references"
 import { tokenMiddlewares } from "./token-middleware"
 import { tokenTransforms } from "./token-transforms"
 import type {
@@ -47,27 +32,16 @@ function expandBreakpoints(breakpoints?: Record<string, string>) {
   if (!breakpoints) return { breakpoints: {}, sizes: {} }
   return {
     breakpoints: mapObject(breakpoints, (value) => ({ value })),
-    sizes: Object.fromEntries(
-      Object.entries(breakpoints).map(([key, value]) => [
-        `breakpoint-${key}`,
-        { value },
-      ]),
-    ),
+    sizes: Object.fromEntries(Object.entries(breakpoints).map(([key, value]) => [`breakpoint-${key}`, { value }])),
   }
 }
 
 export function createTokenDictionary(options: Options): TokenDictionary {
-  const {
-    prefix = "",
-    tokens = {},
-    semanticTokens = {},
-    breakpoints = {},
-  } = options
+  const { prefix = "", tokens = {}, semanticTokens = {}, breakpoints = {} } = options
 
   const formatTokenName = (path: string[]) => path.join(".")
 
-  const formatCssVar = (path: string[], prefix: string) =>
-    cssVar(path.join("-"), { prefix })
+  const formatCssVar = (path: string[], prefix: string) => cssVar(path.join("-"), { prefix })
 
   const allTokens: Token[] = []
   const tokenNameMap: Map<string, Token> = new Map()
@@ -146,9 +120,7 @@ export function createTokenDictionary(options: Options): TokenDictionary {
         const category = path[0]
 
         const name = formatTokenName(path)
-        const t = isString(entry.value)
-          ? { value: { base: entry.value } }
-          : entry
+        const t = isString(entry.value) ? { value: { base: entry.value } } : entry
 
         const token: Token = {
           value: t.value.base || "",
@@ -219,11 +191,7 @@ export function createTokenDictionary(options: Options): TokenDictionary {
       byCategory.set(category, new Map())
     }
 
-    const value = negative
-      ? token.extensions.conditions
-        ? token.originalValue
-        : token.value
-      : cssVar!.ref
+    const value = negative ? (token.extensions.conditions ? token.originalValue : token.value) : cssVar!.ref
 
     byCategory.get(category)!.set(prop, value)
     flatMap.set([category, prop].join("."), value)
@@ -240,10 +208,7 @@ export function createTokenDictionary(options: Options): TokenDictionary {
         colorPaletteMap.set(name, new Map())
       }
 
-      const virtualPath = replaceRootWithColorPalette(
-        [...token.path],
-        [...root],
-      )
+      const virtualPath = replaceRootWithColorPalette([...token.path], [...root])
 
       const virtualName = formatTokenName(virtualPath)
 
@@ -276,10 +241,7 @@ export function createTokenDictionary(options: Options): TokenDictionary {
 
         colorPaletteMap
           .get(computedName)!
-          .set(
-            colorPaletteToken.extensions.cssVar!.var,
-            virtualToken.extensions.cssVar!.ref,
-          )
+          .set(colorPaletteToken.extensions.cssVar!.var, virtualToken.extensions.cssVar!.ref)
       }
     })
   }
@@ -314,9 +276,7 @@ export function createTokenDictionary(options: Options): TokenDictionary {
       return { invalid: true, value: colorPath }
     }
 
-    const percent = opacityToken
-      ? Number(opacityToken) * 100 + "%"
-      : `${rawOpacity}%`
+    const percent = opacityToken ? Number(opacityToken) * 100 + "%" : `${rawOpacity}%`
     const color = colorToken ?? colorPath
 
     return {
@@ -508,9 +468,7 @@ function getConditionalTokens(token: Token) {
 
 function replaceRootWithColorPalette(path: string[], roots: string[]) {
   const startIndex = path.findIndex((_, index) =>
-    roots.every(
-      (rootElement, rootIndex) => path[index + rootIndex] === rootElement,
-    ),
+    roots.every((rootElement, rootIndex) => path[index + rootIndex] === rootElement),
   )
 
   if (startIndex === -1) {

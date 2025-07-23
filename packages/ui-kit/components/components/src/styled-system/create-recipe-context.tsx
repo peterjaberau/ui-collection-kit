@@ -12,14 +12,10 @@ import { type RecipeKey, type UseRecipeOptions, useRecipe } from "./use-recipe"
 
 const upperFirst = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
-export function createRecipeContext<K extends RecipeKey>(
-  options: UseRecipeOptions<K>,
-) {
+export function createRecipeContext<K extends RecipeKey>(options: UseRecipeOptions<K>) {
   const { key: recipeKey, recipe: recipeConfig } = options
 
-  const contextName = upperFirst(
-    recipeKey || (recipeConfig as any).className || "Component",
-  )
+  const contextName = upperFirst(recipeKey || (recipeConfig as any).className || "Component")
 
   const [PropsProvider, usePropsContext] = createContext<Record<string, any>>({
     strict: false,
@@ -36,10 +32,7 @@ export function createRecipeContext<K extends RecipeKey>(
     }) as SystemRecipeFn<{}, {}>
 
     // @ts-ignore
-    const [variantProps, otherProps] = useMemo(
-      () => recipe.splitVariantProps(restProps),
-      [recipe, restProps],
-    )
+    const [variantProps, otherProps] = useMemo(() => recipe.splitVariantProps(restProps), [recipe, restProps])
     const styles = unstyled ? EMPTY_STYLES : recipe(variantProps)
 
     return {
@@ -52,16 +45,11 @@ export function createRecipeContext<K extends RecipeKey>(
   const withContext = <T, P>(
     Component: React.ElementType<any>,
     options?: JsxFactoryOptions<P>,
-  ): React.ForwardRefExoticComponent<
-    React.PropsWithoutRef<P> & React.RefAttributes<T>
-  > => {
+  ): React.ForwardRefExoticComponent<React.PropsWithoutRef<P> & React.RefAttributes<T>> => {
     const SuperComponent = uikit(Component, {}, options as any)
     const StyledComponent = forwardRef<any, any>((inProps, ref) => {
       const propsContext = usePropsContext()
-      const props = useMemo(
-        () => mergeProps(propsContext, inProps),
-        [inProps, propsContext],
-      )
+      const props = useMemo(() => mergeProps(propsContext, inProps), [inProps, propsContext])
       const { styles, className, props: localProps } = useRecipeResult(props)
 
       return (

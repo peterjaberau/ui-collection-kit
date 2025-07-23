@@ -1,4 +1,4 @@
-import type { TreeCollection, TreeNode } from "@ui-kit/collection"
+import type { TreeCollection, TreeNode } from "@ui-kit/core-collection"
 import type { Machine, Service } from "@ui-kit/core"
 import type { TypeaheadState } from "@ui-kit/core-dom-query"
 import type { CommonProperties, DirectionProperty, PropTypes, RequiredBy } from "@ui-kit/core-types"
@@ -249,4 +249,4 @@ export interface TreeViewApi<T extends PropTypes = PropTypes, V = TreeNode> {
   getBranchIndentGuideProps(props: NodeProps): T["element"]
 }
 
-export type { TreeNode } from "@ui-kit/collection"
+export type { TreeNode } from "@ui-kit/core-collection"

@@ -75,16 +75,7 @@ export const defaultThemeConfig = defineConfig({
   },
 })
 
-export {
-  recipes,
-  slotRecipes,
-  breakpoints,
-  keyframes,
-  textStyles,
-  layerStyles,
-  animationStyles,
-  globalCss,
-}
+export { recipes, slotRecipes, breakpoints, keyframes, textStyles, layerStyles, animationStyles, globalCss }
 
 export * from "./recipes.export"
 export * from "./slot-recipes.export"

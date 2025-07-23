@@ -44,10 +44,6 @@ export type {
   ComboboxValueChangeDetails,
 } from "./combobox"
 
-export {
-  useCombobox,
-  useComboboxContext,
-  useComboboxItemContext,
-} from "@ui-kit/base/combobox"
+export { useCombobox, useComboboxContext, useComboboxItemContext } from "@ui-kit/base/combobox"
 
 export * as Combobox from "./namespace"

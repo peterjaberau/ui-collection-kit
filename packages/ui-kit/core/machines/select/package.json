@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-select",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "Core logic for the select widget implemented as a state machine",
   "keywords": [
     "js",
@@ -36,7 +36,7 @@
     "@ui-kit/core": "workspace:*",
     "@ui-kit/core-popper": "workspace:*",
     "@ui-kit/core-dom-query": "workspace:*",
-    "@ui-kit/collection": "workspace:*",
+    "@ui-kit/core-collection": "workspace:*",
     "@ui-kit/core-utils": "workspace:*",
     "@ui-kit/core-dismissable": "workspace:*",
     "@ui-kit/core-types": "workspace:*"

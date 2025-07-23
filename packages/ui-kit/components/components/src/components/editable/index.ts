@@ -30,9 +30,6 @@ export type {
 
 export { useEditable, useEditableContext } from "@ui-kit/base/editable"
 
-export type {
-  UseEditableProps,
-  UseEditableReturn,
-} from "@ui-kit/base/editable"
+export type { UseEditableProps, UseEditableReturn } from "@ui-kit/base/editable"
 
 export * as Editable from "./namespace"

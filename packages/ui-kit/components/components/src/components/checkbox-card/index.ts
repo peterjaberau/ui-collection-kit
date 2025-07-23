@@ -25,10 +25,7 @@ export type {
   CheckboxCardDescriptionProps,
 } from "./checkbox-card"
 
-export {
-  useCheckbox as useCheckboxCard,
-  useCheckboxContext as useCheckboxCardContext,
-} from "@ui-kit/base/checkbox"
+export { useCheckbox as useCheckboxCard, useCheckboxContext as useCheckboxCardContext } from "@ui-kit/base/checkbox"
 
 export type {
   UseCheckboxProps as UseCheckboxCardProps,

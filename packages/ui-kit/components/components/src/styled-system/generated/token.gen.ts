@@ -830,15 +830,52 @@ export type EasingsToken = "ease-in" | "ease-out" | "ease-in-out" | "ease-in-smo
 
 export type FontsToken = "heading" | "body" | "mono"
 
-export type FontSizesToken = "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl"
+export type FontSizesToken =
+  | "2xs"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
+  | "4xl"
+  | "5xl"
+  | "6xl"
+  | "7xl"
+  | "8xl"
+  | "9xl"
 
-export type FontWeightsToken = "thin" | "extralight" | "light" | "normal" | "medium" | "semibold" | "bold" | "extrabold" | "black"
+export type FontWeightsToken =
+  | "thin"
+  | "extralight"
+  | "light"
+  | "normal"
+  | "medium"
+  | "semibold"
+  | "bold"
+  | "extrabold"
+  | "black"
 
 export type LetterSpacingsToken = "tighter" | "tight" | "wide" | "wider" | "widest"
 
 export type LineHeightsToken = "shorter" | "short" | "moderate" | "tall" | "taller"
 
-export type RadiiToken = "none" | "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "full" | "l1" | "l2" | "l3"
+export type RadiiToken =
+  | "none"
+  | "2xs"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
+  | "4xl"
+  | "full"
+  | "l1"
+  | "l2"
+  | "l3"
 
 export type SpacingToken =
   | "1"

@@ -1,6 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react"
 import { useStylingActor } from "../actors/hooks/useStylingActor"
-import { ColorModeProvider } from "../../packages/ui/src"
 import { useEffect, useState } from "react"
 
 export const WithTheme: any = ({ story, context }: any) => {
@@ -13,9 +12,7 @@ export const WithTheme: any = ({ story, context }: any) => {
 
   return (
     <ChakraProvider value={locaStyle}>
-      <ColorModeProvider forcedTheme={context?.globals?.theme} enableSystem={false}>
         {story}
-      </ColorModeProvider>
     </ChakraProvider>
   )
 }

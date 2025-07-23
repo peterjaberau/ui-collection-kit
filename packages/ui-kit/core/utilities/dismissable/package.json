@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-dismissable",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "Dismissable layer utilities for the DOM",
   "keywords": [
     "js",

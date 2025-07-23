@@ -25,9 +25,6 @@ export type {
 
 export { usePagination, usePaginationContext } from "@ui-kit/base/pagination"
 
-export type {
-  UsePaginationProps,
-  UsePaginationReturn,
-} from "@ui-kit/base/pagination"
+export type { UsePaginationProps, UsePaginationReturn } from "@ui-kit/base/pagination"
 
 export * as Pagination from "./namespace"

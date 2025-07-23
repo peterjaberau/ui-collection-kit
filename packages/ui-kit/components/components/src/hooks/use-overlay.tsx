@@ -174,11 +174,7 @@ export function createOverlay<T extends Dict>(
   }
 
   function Viewport() {
-    const overlays = React.useSyncExternalStore(
-      subscribe,
-      getSnapshot,
-      getSnapshot,
-    )
+    const overlays = React.useSyncExternalStore(subscribe, getSnapshot, getSnapshot)
     return (
       <>
         {overlays.map((props, index) => (

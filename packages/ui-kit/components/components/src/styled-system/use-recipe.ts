@@ -3,12 +3,7 @@
 import { useMemo } from "react"
 import type { ConfigRecipes } from "./generated/recipes.gen"
 import { useUIKitContext } from "./provider"
-import type {
-  RecipeDefinition,
-  RecipeVariantMap,
-  RecipeVariantProps,
-  SystemRecipeFn,
-} from "./recipe.types"
+import type { RecipeDefinition, RecipeVariantMap, RecipeVariantProps, SystemRecipeFn } from "./recipe.types"
 
 export type RecipeKey = keyof ConfigRecipes | (string & {})
 
@@ -17,13 +12,9 @@ export interface UseRecipeOptions<K extends RecipeKey> {
   recipe?: RecipeDefinition | undefined
 }
 
-export function useRecipe<
-  Options extends { key: RecipeKey; recipe?: RecipeDefinition | undefined },
->(
+export function useRecipe<Options extends { key: RecipeKey; recipe?: RecipeDefinition | undefined }>(
   options: Options,
-): Options["key"] extends keyof ConfigRecipes
-  ? ConfigRecipes[Options["key"]]
-  : SystemRecipeFn<{}, {}>
+): Options["key"] extends keyof ConfigRecipes ? ConfigRecipes[Options["key"]] : SystemRecipeFn<{}, {}>
 
 export function useRecipe<Options extends { recipe: RecipeDefinition }>(
   options: Options,

@@ -42,8 +42,7 @@ const createFocusRing = (selector: string) => {
           [selector]: {
             outlineWidth: "var(--focus-ring-width, 3px)",
             outlineStyle: "var(--focus-ring-style, solid)",
-            outlineColor:
-              "color-mix(in srgb, var(--focus-ring-color), transparent 60%)",
+            outlineColor: "color-mix(in srgb, var(--focus-ring-color), transparent 60%)",
             borderColor: "var(--focus-ring-color)",
           },
         },
@@ -71,27 +70,20 @@ const createTransition = (value: string) => {
 }
 
 export const defaultConditions = defineConditions({
-  hover: [
-    "@media (hover: hover)",
-    "&:is(:hover, [data-hover]):not(:disabled, [data-disabled])",
-  ],
-  active:
-    "&:is(:active, [data-active]):not(:disabled, [data-disabled], [data-state=open])",
+  hover: ["@media (hover: hover)", "&:is(:hover, [data-hover]):not(:disabled, [data-disabled])"],
+  active: "&:is(:active, [data-active]):not(:disabled, [data-disabled], [data-state=open])",
   focus: "&:is(:focus, [data-focus])",
   focusWithin: "&:is(:focus-within, [data-focus-within])",
   focusVisible: "&:is(:focus-visible, [data-focus-visible])",
-  disabled:
-    "&:is(:disabled, [disabled], [data-disabled], [aria-disabled=true])",
+  disabled: "&:is(:disabled, [disabled], [data-disabled], [aria-disabled=true])",
   visited: "&:visited",
   target: "&:target",
   readOnly: "&:is([data-readonly], [aria-readonly=true], [readonly])",
   readWrite: "&:read-write",
   empty: "&:is(:empty, [data-empty])",
-  checked:
-    "&:is(:checked, [data-checked], [aria-checked=true], [data-state=checked])",
+  checked: "&:is(:checked, [data-checked], [aria-checked=true], [data-state=checked])",
   enabled: "&:enabled",
-  expanded:
-    "&:is([aria-expanded=true], [data-expanded], [data-state=expanded])",
+  expanded: "&:is([aria-expanded=true], [data-expanded], [data-state=expanded])",
   highlighted: "&[data-highlighted]",
   complete: "&[data-complete]",
   incomplete: "&[data-incomplete]",
@@ -115,36 +107,27 @@ export const defaultConditions = defineConditions({
   odd: "&:nth-of-type(odd)",
 
   peerFocus: ".peer:is(:focus, [data-focus]) ~ &",
-  peerHover:
-    ".peer:is(:hover, [data-hover]):not(:disabled, [data-disabled]) ~ &",
-  peerActive:
-    ".peer:is(:active, [data-active]):not(:disabled, [data-disabled]) ~ &",
+  peerHover: ".peer:is(:hover, [data-hover]):not(:disabled, [data-disabled]) ~ &",
+  peerActive: ".peer:is(:active, [data-active]):not(:disabled, [data-disabled]) ~ &",
   peerFocusWithin: ".peer:focus-within ~ &",
   peerFocusVisible: ".peer:is(:focus-visible, [data-focus-visible]) ~ &",
   peerDisabled: ".peer:is(:disabled, [disabled], [data-disabled]) ~ &",
-  peerChecked:
-    ".peer:is(:checked, [data-checked], [aria-checked=true], [data-state=checked]) ~ &",
+  peerChecked: ".peer:is(:checked, [data-checked], [aria-checked=true], [data-state=checked]) ~ &",
   peerInvalid: ".peer:is(:invalid, [data-invalid], [aria-invalid=true]) ~ &",
-  peerExpanded:
-    ".peer:is([aria-expanded=true], [data-expanded], [data-state=expanded]) ~ &",
+  peerExpanded: ".peer:is([aria-expanded=true], [data-expanded], [data-state=expanded]) ~ &",
   peerPlaceholderShown: ".peer:placeholder-shown ~ &",
 
   groupFocus: ".group:is(:focus, [data-focus]) &",
-  groupHover:
-    ".group:is(:hover, [data-hover]):not(:disabled, [data-disabled]) &",
-  groupActive:
-    ".group:is(:active, [data-active]):not(:disabled, [data-disabled]) &",
+  groupHover: ".group:is(:hover, [data-hover]):not(:disabled, [data-disabled]) &",
+  groupActive: ".group:is(:active, [data-active]):not(:disabled, [data-disabled]) &",
   groupFocusWithin: ".group:focus-within &",
   groupFocusVisible: ".group:is(:focus-visible, [data-focus-visible]) &",
   groupDisabled: ".group:is(:disabled, [disabled], [data-disabled]) &",
-  groupChecked:
-    ".group:is(:checked, [data-checked], [aria-checked=true], [data-state=checked]) &",
-  groupExpanded:
-    ".group:is([aria-expanded=true], [data-expanded], [data-state=expanded]) &",
+  groupChecked: ".group:is(:checked, [data-checked], [aria-checked=true], [data-state=checked]) &",
+  groupExpanded: ".group:is([aria-expanded=true], [data-expanded], [data-state=expanded]) &",
   groupInvalid: ".group:invalid &",
 
-  indeterminate:
-    "&:is(:indeterminate, [data-indeterminate], [aria-checked=mixed], [data-state=indeterminate])",
+  indeterminate: "&:is(:indeterminate, [data-indeterminate], [aria-checked=mixed], [data-state=indeterminate])",
   required: "&:is([data-required], [aria-required=true])",
   valid: "&:is([data-valid], [data-state=valid])",
   invalid: "&:is([data-invalid], [aria-invalid=true], [data-state=invalid])",
@@ -209,8 +192,7 @@ export const defaultConditions = defineConditions({
 
 const currentBgVar = cssVar("bg-currentcolor")
 
-const isCurrentBgVar = (value: string) =>
-  value === currentBgVar.ref || value === "currentBg"
+const isCurrentBgVar = (value: string) => value === currentBgVar.ref || value === "currentBg"
 
 const colorValues = (theme: any) => ({
   ...theme("colors"),
@@ -234,8 +216,7 @@ export const defaultBaseConfig = defineConfig({
       values: colorValues,
       shorthand: ["bgColor"],
       transform(value, args) {
-        if (isCurrentBgVar(args.raw))
-          return { backgroundColor: currentBgVar.ref }
+        if (isCurrentBgVar(args.raw)) return { backgroundColor: currentBgVar.ref }
         const styleObj = createColorMixTransform("backgroundColor")(value, args)
         return {
           ...styleObj,
@@ -251,9 +232,7 @@ export const defaultBaseConfig = defineConfig({
       shorthand: ["bgClip"],
       values: ["text"],
       transform(value) {
-        return value === "text"
-          ? { color: "transparent", backgroundClip: "text" }
-          : { backgroundClip: value }
+        return value === "text" ? { color: "transparent", backgroundClip: "text" } : { backgroundClip: value }
       },
     },
     backgroundGradient: {
@@ -293,8 +272,7 @@ export const defaultBaseConfig = defineConfig({
         const styles = createColorMixTransform("--gradient-via")(value, args)
         return {
           ...styles,
-          "--gradient-via-stops":
-            "var(--gradient-from), var(--gradient-via), var(--gradient-to)",
+          "--gradient-via-stops": "var(--gradient-from), var(--gradient-via), var(--gradient-to)",
         }
       },
     },
@@ -526,10 +504,7 @@ export const defaultBaseConfig = defineConfig({
       values: colorValues,
       transform(value, args) {
         return {
-          "& > :not(style, [hidden]) ~ :not(style, [hidden])": divideColor(
-            value,
-            args,
-          ),
+          "& > :not(style, [hidden]) ~ :not(style, [hidden])": divideColor(value, args),
         }
       },
     },
@@ -649,9 +624,7 @@ export const defaultBaseConfig = defineConfig({
       transform: createColorMixTransform("outlineColor"),
     },
     focusRing: createFocusRing("&:is(:focus, [data-focus])"),
-    focusVisibleRing: createFocusRing(
-      "&:is(:focus-visible, [data-focus-visible])",
-    ),
+    focusVisibleRing: createFocusRing("&:is(:focus-visible, [data-focus-visible])"),
     focusRingColor: {
       values: colorValues,
       transform: createColorMixTransform("--focus-ring-color"),
@@ -694,9 +667,7 @@ export const defaultBaseConfig = defineConfig({
       //@ts-ignore
       transform: (value, { raw, token }) => {
         const bp = token.raw(`breakpoints.${raw}`)
-        const media = bp
-          ? `@breakpoint ${raw}`
-          : `@media screen and (min-width: ${value})`
+        const media = bp ? `@breakpoint ${raw}` : `@media screen and (min-width: ${value})`
         return {
           [media]: { display: "none" },
         }
@@ -707,9 +678,7 @@ export const defaultBaseConfig = defineConfig({
       //@ts-ignore
       transform(value, { raw, token }) {
         const bp = token.raw(`breakpoints.${raw}`)
-        const media = bp
-          ? `@breakpoint ${raw}Down`
-          : `@media screen and (max-width: ${value})`
+        const media = bp ? `@breakpoint ${raw}Down` : `@media screen and (max-width: ${value})`
         return {
           [media]: {
             display: "none",
@@ -818,8 +787,7 @@ export const defaultBaseConfig = defineConfig({
           "--ring-offset-shadow": `var(--ring-inset) 0 0 0 var(--ring-offset-width) var(--ring-offset-color)`,
           "--ring-shadow": `var(--ring-inset) 0 0 0 calc(var(--ring-width) + var(--ring-offset-width)) var(--ring-color)`,
           "--ring-width": value,
-          boxShadow:
-            "var(--ring-offset-shadow), var(--ring-shadow), var(--shadow, 0 0 #0000)",
+          boxShadow: "var(--ring-offset-shadow), var(--ring-shadow), var(--shadow, 0 0 #0000)",
         }
       },
     },
@@ -975,29 +943,15 @@ export const defaultBaseConfig = defineConfig({
     },
     // transition
     transition: {
-      values: [
-        "all",
-        "common",
-        "colors",
-        "opacity",
-        "position",
-        "backgrounds",
-        "size",
-        "shadow",
-        "transform",
-      ],
+      values: ["all", "common", "colors", "opacity", "position", "backgrounds", "size", "shadow", "transform"],
       transform(value) {
         switch (value) {
           case "all":
             return createTransition("all")
           case "position":
-            return createTransition(
-              "left, right, top, bottom, inset-inline, inset-block",
-            )
+            return createTransition("left, right, top, bottom, inset-inline, inset-block")
           case "colors":
-            return createTransition(
-              "color, background-color, border-color, text-decoration-color, fill, stroke",
-            )
+            return createTransition("color, background-color, border-color, text-decoration-color, fill, stroke")
           case "opacity":
             return createTransition("opacity")
           case "shadow":
@@ -1007,9 +961,7 @@ export const defaultBaseConfig = defineConfig({
           case "size":
             return createTransition("width, height")
           case "backgrounds":
-            return createTransition(
-              "background, background-color, background-image, background-position",
-            )
+            return createTransition("background, background-color, background-image, background-position")
           case "common":
             return createTransition(
               "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
@@ -1022,13 +974,11 @@ export const defaultBaseConfig = defineConfig({
     transitionDuration: { values: "durations" },
     transitionProperty: {
       values: {
-        common:
-          "background-color, border-color, color, fill, stroke, opacity, box-shadow, translate, transform",
+        common: "background-color, border-color, color, fill, stroke, opacity, box-shadow, translate, transform",
         colors: "background-color, border-color, color, fill, stroke",
         size: "width, height",
         position: "left, right, top, bottom, inset-inline, inset-block",
-        background:
-          "background, background-color, background-image, background-position",
+        background: "background, background-color, background-image, background-position",
       },
     },
     transitionTimingFunction: { values: "easings" },

@@ -27,12 +27,7 @@ export interface UseControllableStateProps<T> {
  * @see Docs #/docs/hooks/use-controllable#usecontrollablestate
  */
 export function useControllableState<T>(props: UseControllableStateProps<T>) {
-  const {
-    value: valueProp,
-    defaultValue,
-    onChange,
-    shouldUpdate = (prev, next) => prev !== next,
-  } = props
+  const { value: valueProp, defaultValue, onChange, shouldUpdate = (prev, next) => prev !== next } = props
 
   const onChangeProp = useCallbackRef(onChange)
   const shouldUpdateProp = useCallbackRef(shouldUpdate)

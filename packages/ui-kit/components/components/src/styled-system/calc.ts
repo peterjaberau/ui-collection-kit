@@ -13,17 +13,13 @@ function resolveReference(operand: Operand): string {
 const toExpression = (operator: Operator, ...operands: Array<Operand>) =>
   operands.map(resolveReference).join(` ${operator} `).replace(/calc/g, "")
 
-const add = (...operands: Array<Operand>) =>
-  `calc(${toExpression("+", ...operands)})`
+const add = (...operands: Array<Operand>) => `calc(${toExpression("+", ...operands)})`
 
-const subtract = (...operands: Array<Operand>) =>
-  `calc(${toExpression("-", ...operands)})`
+const subtract = (...operands: Array<Operand>) => `calc(${toExpression("-", ...operands)})`
 
-const multiply = (...operands: Array<Operand>) =>
-  `calc(${toExpression("*", ...operands)})`
+const multiply = (...operands: Array<Operand>) => `calc(${toExpression("*", ...operands)})`
 
-const divide = (...operands: Array<Operand>) =>
-  `calc(${toExpression("/", ...operands)})`
+const divide = (...operands: Array<Operand>) => `calc(${toExpression("/", ...operands)})`
 
 const negate = (x: Operand) => {
   const value = resolveReference(x)

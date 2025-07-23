@@ -1,22 +1,13 @@
 "use client"
 
-import {
-  type HTMLUIKitProps,
-  type RecipeProps,
-  type UnstyledProp,
-  createRecipeContext,
-} from "../../styled-system"
+import { type HTMLUIKitProps, type RecipeProps, type UnstyledProp, createRecipeContext } from "../../styled-system"
 
 const { withContext, PropsProvider } = createRecipeContext({
   key: "spinner",
 })
 
-export interface SpinnerProps
-  extends HTMLUIKitProps<"span">,
-    UnstyledProp,
-    RecipeProps<"spinner"> {}
+export interface SpinnerProps extends HTMLUIKitProps<"span">, UnstyledProp, RecipeProps<"spinner"> {}
 
 export const Spinner = withContext<HTMLSpanElement, SpinnerProps>("span")
 
-export const SpinnerPropsProvider =
-  PropsProvider as React.Provider<SpinnerProps>
+export const SpinnerPropsProvider = PropsProvider as React.Provider<SpinnerProps>

@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-floating-panel",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "Core logic for the floating-panel widget implemented as a state machine",
   "keywords": [
     "js",

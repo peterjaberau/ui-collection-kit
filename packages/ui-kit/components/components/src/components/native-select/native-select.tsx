@@ -18,13 +18,12 @@ interface NativeSelectBaseProps {
   invalid?: boolean | undefined
 }
 
-const [NativeSelectBasePropsProvider, useNativeSelectBaseProps] =
-  createContext<NativeSelectBaseProps>({
-    name: "NativeSelectBasePropsContext",
-    hookName: "useNativeSelectBaseProps",
-    providerName: "<NativeSelectRoot />",
-    strict: false,
-  })
+const [NativeSelectBasePropsProvider, useNativeSelectBaseProps] = createContext<NativeSelectBaseProps>({
+  name: "NativeSelectBasePropsContext",
+  hookName: "useNativeSelectBaseProps",
+  providerName: "<NativeSelectRoot />",
+  strict: false,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -44,13 +43,9 @@ export interface NativeSelectRootBaseProps
     UnstyledProp,
     NativeSelectBaseProps {}
 
-export interface NativeSelectRootProps
-  extends HTMLUIKitProps<"div", NativeSelectRootBaseProps> {}
+export interface NativeSelectRootProps extends HTMLUIKitProps<"div", NativeSelectRootBaseProps> {}
 
-export const NativeSelectRoot = withProvider<
-  HTMLDivElement,
-  NativeSelectRootProps
->("div", "root", {
+export const NativeSelectRoot = withProvider<HTMLDivElement, NativeSelectRootProps>("div", "root", {
   wrapElement(element, props) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const field = useFieldContext()
@@ -58,54 +53,47 @@ export const NativeSelectRoot = withProvider<
     const disabled = Boolean(field?.disabled ?? props.disabled)
     const invalid = Boolean(field?.invalid ?? props.invalid)
 
-    return (
-      <NativeSelectBasePropsProvider value={{ disabled, invalid }}>
-        {element}
-      </NativeSelectBasePropsProvider>
-    )
+    return <NativeSelectBasePropsProvider value={{ disabled, invalid }}>{element}</NativeSelectBasePropsProvider>
   },
 })
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const NativeSelectPropsProvider =
-  PropsProvider as React.Provider<NativeSelectRootBaseProps>
+export const NativeSelectPropsProvider = PropsProvider as React.Provider<NativeSelectRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 type Omitted = "disabled" | "required" | "readOnly" | "size"
 
-export interface NativeSelectFieldProps
-  extends Omit<HTMLUIKitProps<"select">, Omitted> {
+export interface NativeSelectFieldProps extends Omit<HTMLUIKitProps<"select">, Omitted> {
   placeholder?: string | undefined
 }
 
 const StyledSelect = uikit(ArkField.Select, {}, { forwardAsChild: true })
 
-export const NativeSelectField = forwardRef<
-  HTMLSelectElement,
-  NativeSelectFieldProps
->(function NativeSelectField(props, ref) {
-  const { children, placeholder, ...restProps } = props
+export const NativeSelectField = forwardRef<HTMLSelectElement, NativeSelectFieldProps>(
+  function NativeSelectField(props, ref) {
+    const { children, placeholder, ...restProps } = props
 
-  const { disabled, invalid } = useNativeSelectBaseProps()
-  const styles = useNativeSelectStyles()
-  const classNames = useClassNames()
+    const { disabled, invalid } = useNativeSelectBaseProps()
+    const styles = useNativeSelectStyles()
+    const classNames = useClassNames()
 
-  return (
-    <StyledSelect
-      disabled={disabled}
-      data-invalid={dataAttr(invalid)}
-      {...(restProps as any)}
-      ref={ref}
-      className={cx(classNames.field, props.className)}
-      css={[styles.field, props.css]}
-    >
-      {placeholder && <option value="">{placeholder}</option>}
-      {children}
-    </StyledSelect>
-  )
-})
+    return (
+      <StyledSelect
+        disabled={disabled}
+        data-invalid={dataAttr(invalid)}
+        {...(restProps as any)}
+        ref={ref}
+        className={cx(classNames.field, props.className)}
+        css={[styles.field, props.css]}
+      >
+        {placeholder && <option value="">{placeholder}</option>}
+        {children}
+      </StyledSelect>
+    )
+  },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 

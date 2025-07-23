@@ -4,15 +4,9 @@ import type { Dict } from "./types"
 type PredicateFn<T> = (key: T) => boolean
 
 export interface SplitPropsFn {
-  <T extends Dict, K extends keyof T>(
-    props: T,
-    keys: K[],
-  ): [Pick<T, K>, Omit<T, K>]
+  <T extends Dict, K extends keyof T>(props: T, keys: K[]): [Pick<T, K>, Omit<T, K>]
 
-  <T extends Dict, K extends PredicateFn<keyof T>>(
-    props: T,
-    keys: K,
-  ): [Dict, Dict]
+  <T extends Dict, K extends PredicateFn<keyof T>>(props: T, keys: K): [Dict, Dict]
 }
 
 const splitPropFn = (props: Dict, predicate: PredicateFn<keyof Dict>) => {
@@ -30,16 +24,12 @@ const splitPropFn = (props: Dict, predicate: PredicateFn<keyof Dict>) => {
 }
 
 export const splitProps: SplitPropsFn = (props: any, keys: any[]) => {
-  const predicate = isFunction(keys)
-    ? keys
-    : (key: keyof Dict) => keys.includes(key)
+  const predicate = isFunction(keys) ? keys : (key: keyof Dict) => keys.includes(key)
   return splitPropFn(props, predicate)
 }
 
 export const createSplitProps = <T>(keys: (keyof T)[]) => {
-  return function split<Props extends Partial<T>>(
-    props: Props,
-  ): [T, Omit<Props, keyof T>] {
+  return function split<Props extends Partial<T>>(props: Props): [T, Omit<Props, keyof T>] {
     // @ts-expect-error
     return splitProps(props, keys)
   }

@@ -45,11 +45,7 @@ export type {
   SelectValueTextProps,
 } from "./select"
 
-export {
-  useSelect,
-  useSelectContext,
-  useSelectItemContext,
-} from "@ui-kit/base/select"
+export { useSelect, useSelectContext, useSelectItemContext } from "@ui-kit/base/select"
 
 export type { UseSelectProps, UseSelectReturn } from "@ui-kit/base/select"
 

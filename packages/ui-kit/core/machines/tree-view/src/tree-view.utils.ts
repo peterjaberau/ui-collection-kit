@@ -1,4 +1,4 @@
-import type { TreeNode, TreeSkipFn } from "@ui-kit/collection"
+import type { TreeNode, TreeSkipFn } from "@ui-kit/core-collection"
 import type { Params } from "@ui-kit/core"
 import type { TreeViewSchema } from "./tree-view.types"
 

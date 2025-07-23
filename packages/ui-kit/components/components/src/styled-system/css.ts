@@ -1,23 +1,13 @@
-import {
-  type Dict,
-  compact,
-  isObject,
-  isString,
-  memo,
-  mergeWith,
-  walkObject,
-} from "../utils"
+import { type Dict, compact, isObject, isString, memo, mergeWith, walkObject } from "../utils"
 import type { SystemStyleObject } from "./css.types"
 import { sortAtRules } from "./sort-at-rules"
 import type { SystemContext } from "./types"
 
 const importantRegex = /\s*!(important)?/i
 
-const isImportant = (v: unknown) =>
-  isString(v) ? importantRegex.test(v) : false
+const isImportant = (v: unknown) => (isString(v) ? importantRegex.test(v) : false)
 
-const withoutImportant = (v: unknown) =>
-  isString(v) ? v.replace(importantRegex, "").trim() : v
+const withoutImportant = (v: unknown) => (isString(v) ? v.replace(importantRegex, "").trim() : v)
 
 type CssFnOptions = Pick<SystemContext, "conditions"> & {
   normalize: (styles: Dict) => Dict
@@ -38,9 +28,7 @@ export function createCssFn(context: CssFnOptions) {
       const important = isImportant(value)
       if (value == null) return
 
-      const [prop, ...selectors] = conditions
-        .sort(paths)
-        .map(conditions.resolve)
+      const [prop, ...selectors] = conditions.sort(paths).map(conditions.resolve)
 
       if (important) {
         value = withoutImportant(value)
@@ -48,11 +36,9 @@ export function createCssFn(context: CssFnOptions) {
 
       let transformed = transform(prop, value) ?? Object.create(null)
 
-      transformed = walkObject(
-        transformed,
-        (v) => (isString(v) && important ? `${v} !important` : v),
-        { getKey: (prop) => conditions.expandAtRule(prop) },
-      )
+      transformed = walkObject(transformed, (v) => (isString(v) && important ? `${v} !important` : v), {
+        getKey: (prop) => conditions.expandAtRule(prop),
+      })
 
       mergeByPath(result, selectors.flat(), transformed)
     })
@@ -72,9 +58,7 @@ function mergeByPath(target: Dict, paths: string[], value: Dict) {
 }
 
 function compactFn(...styles: Dict[]) {
-  return styles.filter(
-    (style) => isObject(style) && Object.keys(compact(style)).length > 0,
-  )
+  return styles.filter((style) => isObject(style) && Object.keys(compact(style)).length > 0)
 }
 
 function mergeCss(ctx: CssFnOptions) {

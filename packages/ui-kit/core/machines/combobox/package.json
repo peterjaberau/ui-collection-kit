@@ -1,6 +1,6 @@
 {
-  "name": "@ui-kit/combobox",
-  "version": "1.11.0",
+  "name": "@ui-kit/core-combobox",
+  "version": "0.0.1",
   "description": "Core logic for the combobox widget implemented as a state machine",
 
 
@@ -20,7 +20,7 @@
   "dependencies": {
     "@ui-kit/core-anatomy": "workspace:*",
     "@ui-kit/core-aria-hidden": "workspace:*",
-    "@ui-kit/collection": "workspace:*",
+    "@ui-kit/core-collection": "workspace:*",
     "@ui-kit/core": "workspace:*",
     "@ui-kit/core-dismissable": "workspace:*",
     "@ui-kit/core-dom-query": "workspace:*",

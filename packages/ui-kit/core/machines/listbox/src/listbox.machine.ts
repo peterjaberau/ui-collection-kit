@@ -1,5 +1,5 @@
-import type { CollectionItem, ListCollection } from "@ui-kit/collection"
-import { Selection } from "@ui-kit/collection"
+import type { CollectionItem, ListCollection } from "@ui-kit/core-collection"
+import { Selection } from "@ui-kit/core-collection"
 import { createMachine } from "@ui-kit/core"
 import { getByTypeahead, observeAttributes, raf, scrollIntoView } from "@ui-kit/core-dom-query"
 import { getInteractionModality, trackFocusVisible as trackFocusVisibleFn } from "@ui-kit/core-focus-visible"

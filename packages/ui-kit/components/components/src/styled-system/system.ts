@@ -1,13 +1,5 @@
 import { isCssProperty } from "@pandacss/is-valid-prop"
-import {
-  type Dict,
-  compact,
-  flatten,
-  isObject,
-  memo,
-  mergeWith,
-  splitProps,
-} from "../utils"
+import { type Dict, compact, flatten, isObject, memo, mergeWith, splitProps } from "../utils"
 import { createBreakpoints } from "./breakpoints"
 import { createConditions } from "./conditions"
 import { mergeConfigs } from "./config"
@@ -19,12 +11,7 @@ import { createPreflight } from "./preflight"
 import { createSerializeFn } from "./serialize"
 import { createSlotRecipeFn } from "./sva"
 import { createTokenDictionary } from "./token-dictionary"
-import type {
-  SystemConfig,
-  SystemContext,
-  TokenDictionary,
-  TokenFn,
-} from "./types"
+import type { SystemConfig, SystemContext, TokenDictionary, TokenFn } from "./types"
 import { createUtility } from "./utility"
 
 export function createSystem(...configs: SystemConfig[]): SystemContext {
@@ -69,10 +56,7 @@ export function createSystem(...configs: SystemConfig[]): SystemContext {
     })
 
     for (const [key, values] of Object.entries(compositions)) {
-      const flatValues = flatten(
-        values ?? {},
-        (v) => isObject(v) && "value" in v,
-      )
+      const flatValues = flatten(values ?? {}, (v) => isObject(v) && "value" in v)
 
       utility.register(key, {
         values: Object.keys(flatValues),
@@ -88,9 +72,7 @@ export function createSystem(...configs: SystemConfig[]): SystemContext {
 
   const properties = new Set(["css", ...utility.keys(), ...conditions.keys()])
 
-  const isValidProperty = memo(
-    (prop: string) => properties.has(prop) || isCssProperty(prop),
-  )
+  const isValidProperty = memo((prop: string) => properties.has(prop) || isCssProperty(prop))
 
   const normalizeValue = (value: any): any => {
     if (Array.isArray(value)) {
@@ -149,10 +131,7 @@ export function createSystem(...configs: SystemConfig[]): SystemContext {
 
   function getGlobalCss() {
     const keyframes = Object.fromEntries(
-      Object.entries(theme.keyframes ?? {}).map(([key, value]) => [
-        `@keyframes ${key}`,
-        value,
-      ]),
+      Object.entries(theme.keyframes ?? {}).map(([key, value]) => [`@keyframes ${key}`, value]),
     )
     const result = Object.assign({}, keyframes, css(serialize(globalCss)))
     return layers.wrap("base", result)

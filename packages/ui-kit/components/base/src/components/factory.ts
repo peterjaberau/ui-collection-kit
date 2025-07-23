@@ -1,5 +1,5 @@
 // Do not replace with '@ui-kit/core-react'
-import { mergeProps } from '@ui-kit/core-core'
+import { mergeProps } from '@ui-kit/core'
 import type React from 'react'
 import {
   Children,

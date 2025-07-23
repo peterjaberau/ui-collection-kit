@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/components",
-  "version": "3.22.0",
+  "version": "0.0.1",
   "description": "Responsive and accessible React UI components built with React and Emotion",
   "author": "Peter Jaber",
   "type": "module",

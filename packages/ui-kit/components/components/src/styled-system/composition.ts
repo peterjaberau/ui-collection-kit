@@ -51,13 +51,7 @@ export type TextStyles = Recursive<Token<TextStyle>>
  * Layer styles
  * -----------------------------------------------------------------------------*/
 
-type LogicalPlacement =
-  | "Inline"
-  | "Block"
-  | "InlineStart"
-  | "InlineEnd"
-  | "BlockStart"
-  | "BlockEnd"
+type LogicalPlacement = "Inline" | "Block" | "InlineStart" | "InlineEnd" | "BlockStart" | "BlockEnd"
 
 type PhysicalPlacement = "Top" | "Right" | "Bottom" | "Left"
 

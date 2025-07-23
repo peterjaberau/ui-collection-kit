@@ -1,9 +1,7 @@
 import type { ConditionalValue, SystemStyleObject } from "../../styled-system"
 import { mapObject } from "../../utils"
 
-export type StackDirection = ConditionalValue<
-  "row" | "column" | "row-reverse" | "column-reverse"
->
+export type StackDirection = ConditionalValue<"row" | "column" | "row-reverse" | "column-reverse">
 
 interface Options {
   gap: SystemStyleObject["gap"]

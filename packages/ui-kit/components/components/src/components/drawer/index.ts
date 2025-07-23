@@ -34,14 +34,8 @@ export type {
   DrawerActionTriggerProps,
 } from "./drawer"
 
-export {
-  useDialogContext as useDrawerContext,
-  useDialog as useDrawer,
-} from "@ui-kit/base/dialog"
+export { useDialogContext as useDrawerContext, useDialog as useDrawer } from "@ui-kit/base/dialog"
 
-export type {
-  UseDialogProps as UseDrawerProps,
-  UseDialogReturn as UseDrawerReturn,
-} from "@ui-kit/base/dialog"
+export type { UseDialogProps as UseDrawerProps, UseDialogReturn as UseDrawerReturn } from "@ui-kit/base/dialog"
 
 export * as Drawer from "./namespace"

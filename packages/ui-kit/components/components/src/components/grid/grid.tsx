@@ -1,11 +1,7 @@
 "use client"
 
 import { forwardRef } from "react"
-import {
-  type HTMLUIKitProps,
-  type SystemStyleObject,
-  uikit,
-} from "../../styled-system"
+import { type HTMLUIKitProps, type SystemStyleObject, uikit } from "../../styled-system"
 
 export interface GridOptions {
   templateColumns?: SystemStyleObject["gridTemplateColumns"] | undefined
@@ -19,44 +15,40 @@ export interface GridOptions {
   inline?: boolean | undefined
 }
 
-export interface GridProps
-  extends Omit<HTMLUIKitProps<"div">, keyof GridOptions>,
-    GridOptions {}
+export interface GridProps extends Omit<HTMLUIKitProps<"div">, keyof GridOptions>, GridOptions {}
 
-export const Grid = forwardRef<HTMLDivElement, GridProps>(
-  function Grid(props, ref) {
-    const {
-      templateAreas,
-      column,
-      row,
-      autoFlow,
-      autoRows,
-      templateRows,
-      autoColumns,
-      templateColumns,
-      inline,
-      ...rest
-    } = props
+export const Grid = forwardRef<HTMLDivElement, GridProps>(function Grid(props, ref) {
+  const {
+    templateAreas,
+    column,
+    row,
+    autoFlow,
+    autoRows,
+    templateRows,
+    autoColumns,
+    templateColumns,
+    inline,
+    ...rest
+  } = props
 
-    return (
-      <uikit.div
-        {...rest}
-        ref={ref}
-        css={[
-          {
-            display: inline ? "inline-grid" : "grid",
-            gridTemplateAreas: templateAreas,
-            gridAutoColumns: autoColumns,
-            gridColumn: column,
-            gridRow: row,
-            gridAutoFlow: autoFlow,
-            gridAutoRows: autoRows,
-            gridTemplateRows: templateRows,
-            gridTemplateColumns: templateColumns,
-          },
-          props.css,
-        ]}
-      />
-    )
-  },
-)
+  return (
+    <uikit.div
+      {...rest}
+      ref={ref}
+      css={[
+        {
+          display: inline ? "inline-grid" : "grid",
+          gridTemplateAreas: templateAreas,
+          gridAutoColumns: autoColumns,
+          gridColumn: column,
+          gridRow: row,
+          gridAutoFlow: autoFlow,
+          gridAutoRows: autoRows,
+          gridTemplateRows: templateRows,
+          gridTemplateColumns: templateColumns,
+        },
+        props.css,
+      ]}
+    />
+  )
+})

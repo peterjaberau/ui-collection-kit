@@ -1,4 +1,4 @@
-import { parseColor, type Color, type ColorChannel } from "@ui-kit/color-utils"
+import { parseColor, type Color, type ColorChannel } from "@ui-kit/core-color-utils"
 
 export function getChannelDisplayColor(color: Color, channel: ColorChannel) {
   switch (channel) {

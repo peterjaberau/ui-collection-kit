@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-remove-scroll",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "JavaScript utility to remove scroll on body",
   "keywords": [
     "js",

@@ -3,9 +3,7 @@ import { toPx, toRem } from "./unit-conversion"
 
 const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
-export function createBreakpoints(
-  breakpoints: Record<string, string>,
-): SystemContext["breakpoints"] {
+export function createBreakpoints(breakpoints: Record<string, string>): SystemContext["breakpoints"] {
   const sorted = sort(breakpoints)
   const values = Object.fromEntries(sorted)
 
@@ -25,10 +23,7 @@ export function createBreakpoints(
       .flatMap((name) => {
         const value = get(name)
 
-        const down: [string, string] = [
-          `${name}Down`,
-          build({ max: adjust(value.min) }),
-        ]
+        const down: [string, string] = [`${name}Down`, build({ max: adjust(value.min) })]
 
         const up: [string, string] = [name, build({ min: value.min })]
         const _only: [string, string] = [`${name}Only`, only(name)]
@@ -40,10 +35,7 @@ export function createBreakpoints(
         permuations.map(([min, max]) => {
           const minValue = get(min)
           const maxValue = get(max)
-          return [
-            `${min}To${capitalize(max)}`,
-            build({ min: minValue.min, max: adjust(maxValue.min) }),
-          ]
+          return [`${min}To${capitalize(max)}`, build({ min: minValue.min, max: adjust(maxValue.min) })]
         }),
       )
 
@@ -129,19 +121,7 @@ function getPermutations(values: string[]) {
   return result
 }
 
-function build({
-  min,
-  max,
-}: {
-  min?: string | null | undefined
-  max?: string | null | undefined
-}) {
+function build({ min, max }: { min?: string | null | undefined; max?: string | null | undefined }) {
   if (min == null && max == null) return ""
-  return [
-    "@media screen",
-    min && `(min-width: ${min})`,
-    max && `(max-width: ${max})`,
-  ]
-    .filter(Boolean)
-    .join(" and ")
+  return ["@media screen", min && `(min-width: ${min})`, max && `(max-width: ${max})`].filter(Boolean).join(" and ")
 }

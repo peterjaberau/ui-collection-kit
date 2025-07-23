@@ -1,11 +1,7 @@
 "use client"
 
 import { forwardRef } from "react"
-import {
-  type ConditionalValue,
-  type SystemStyleObject,
-  uikit,
-} from "../../styled-system"
+import { type ConditionalValue, type SystemStyleObject, uikit } from "../../styled-system"
 import { compact, mapObject } from "../../utils"
 import type { BoxProps } from "../box"
 
@@ -20,34 +16,21 @@ export interface GridItemProps extends BoxProps {
 }
 
 function spanFn(span?: ConditionalValue<number | "auto">) {
-  return mapObject(span, (value) =>
-    value === "auto" ? "auto" : `span ${value}/span ${value}`,
-  )
+  return mapObject(span, (value) => (value === "auto" ? "auto" : `span ${value}/span ${value}`))
 }
 
-export const GridItem = forwardRef<HTMLDivElement, GridItemProps>(
-  function GridItem(props, ref) {
-    const {
-      area,
-      colSpan,
-      colStart,
-      colEnd,
-      rowEnd,
-      rowSpan,
-      rowStart,
-      ...rest
-    } = props
+export const GridItem = forwardRef<HTMLDivElement, GridItemProps>(function GridItem(props, ref) {
+  const { area, colSpan, colStart, colEnd, rowEnd, rowSpan, rowStart, ...rest } = props
 
-    const styles = compact({
-      gridArea: area,
-      gridColumn: spanFn(colSpan),
-      gridRow: spanFn(rowSpan),
-      gridColumnStart: colStart,
-      gridColumnEnd: colEnd,
-      gridRowStart: rowStart,
-      gridRowEnd: rowEnd,
-    })
+  const styles = compact({
+    gridArea: area,
+    gridColumn: spanFn(colSpan),
+    gridRow: spanFn(rowSpan),
+    gridColumnStart: colStart,
+    gridColumnEnd: colEnd,
+    gridRowStart: rowStart,
+    gridRowEnd: rowEnd,
+  })
 
-    return <uikit.div ref={ref} css={styles} {...rest} />
-  },
-)
+  return <uikit.div ref={ref} css={styles} {...rest} />
+})

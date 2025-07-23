@@ -11,9 +11,7 @@ export const getReferences = (value: string) => {
   const matches = value.match(REFERENCE_REGEX)
   if (!matches) return []
 
-  return matches
-    .map((match) => match.replace(CURLY_REGEX, ""))
-    .map((value) => value.trim())
+  return matches.map((match) => match.replace(CURLY_REGEX, "")).map((value) => value.trim())
 }
 
 export const hasReference = (value: string) => REFERENCE_REGEX.test(value)

@@ -8,8 +8,6 @@ import { Stack, type StackProps } from "./stack"
  *
  * @see Docs #/docs/components/stack
  */
-export const HStack = forwardRef<HTMLDivElement, StackProps>(
-  function HStack(props, ref) {
-    return <Stack align="center" {...props} direction="row" ref={ref} />
-  },
-)
+export const HStack = forwardRef<HTMLDivElement, StackProps>(function HStack(props, ref) {
+  return <Stack align="center" {...props} direction="row" ref={ref} />
+})

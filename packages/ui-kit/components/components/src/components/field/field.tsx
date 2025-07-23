@@ -27,55 +27,39 @@ export { useFieldStyles }
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface FieldRootBaseProps
-  extends Assign<ArkField.RootBaseProps, SlotRecipeProps<"field">>,
-    UnstyledProp {}
+export interface FieldRootBaseProps extends Assign<ArkField.RootBaseProps, SlotRecipeProps<"field">>, UnstyledProp {}
 
-export interface FieldRootProps
-  extends HTMLUIKitProps<"div", FieldRootBaseProps> {}
+export interface FieldRootProps extends HTMLUIKitProps<"div", FieldRootBaseProps> {}
 
-export const FieldRoot = withProvider<HTMLDivElement, FieldRootProps>(
-  ArkField.Root,
-  "root",
-  { forwardAsChild: true },
-)
+export const FieldRoot = withProvider<HTMLDivElement, FieldRootProps>(ArkField.Root, "root", { forwardAsChild: true })
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const FieldPropsProvider =
-  PropsProvider as React.Provider<FieldRootBaseProps>
+export const FieldPropsProvider = PropsProvider as React.Provider<FieldRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface FieldLabelProps
-  extends HTMLUIKitProps<"label", ArkField.LabelBaseProps> {}
+export interface FieldLabelProps extends HTMLUIKitProps<"label", ArkField.LabelBaseProps> {}
 
-export const FieldLabel = withContext<HTMLLabelElement, FieldLabelProps>(
-  ArkField.Label,
-  "label",
-  { forwardAsChild: true },
-)
+export const FieldLabel = withContext<HTMLLabelElement, FieldLabelProps>(ArkField.Label, "label", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface FieldHelperTextProps
-  extends HTMLUIKitProps<"div", ArkField.HelperTextBaseProps> {}
+export interface FieldHelperTextProps extends HTMLUIKitProps<"div", ArkField.HelperTextBaseProps> {}
 
-export const FieldHelperText = withContext<
-  HTMLDivElement,
-  FieldHelperTextProps
->(ArkField.HelperText, "helperText", { forwardAsChild: true })
+export const FieldHelperText = withContext<HTMLDivElement, FieldHelperTextProps>(ArkField.HelperText, "helperText", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface FieldErrorTextProps
-  extends HTMLUIKitProps<"div", ArkField.ErrorTextBaseProps> {}
+export interface FieldErrorTextProps extends HTMLUIKitProps<"div", ArkField.ErrorTextBaseProps> {}
 
-export const FieldErrorText = withContext<HTMLDivElement, FieldErrorTextProps>(
-  ArkField.ErrorText,
-  "errorText",
-  { forwardAsChild: true },
-)
+export const FieldErrorText = withContext<HTMLDivElement, FieldErrorTextProps>(ArkField.ErrorText, "errorText", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -91,29 +75,28 @@ export interface FieldRequiredIndicatorProps extends HTMLUIKitProps<"span"> {
   fallback?: React.ReactNode | undefined
 }
 
-export const FieldRequiredIndicator = forwardRef<
-  HTMLSpanElement,
-  FieldRequiredIndicatorProps
->(function RequiredIndicator(props, ref) {
-  const { fallback, children = "*", ...restProps } = props
+export const FieldRequiredIndicator = forwardRef<HTMLSpanElement, FieldRequiredIndicatorProps>(
+  function RequiredIndicator(props, ref) {
+    const { fallback, children = "*", ...restProps } = props
 
-  const field = useFieldContext()
-  const classNames = useClassNames()
-  const styles = useFieldStyles()
+    const field = useFieldContext()
+    const classNames = useClassNames()
+    const styles = useFieldStyles()
 
-  if (!field?.required) {
-    return fallback
-  }
+    if (!field?.required) {
+      return fallback
+    }
 
-  return (
-    <uikit.span
-      ref={ref}
-      aria-hidden="true"
-      {...restProps}
-      className={cx(classNames.requiredIndicator, props.className)}
-      css={[styles.requiredIndicator, props.css]}
-    >
-      {children}
-    </uikit.span>
-  )
-})
+    return (
+      <uikit.span
+        ref={ref}
+        aria-hidden="true"
+        {...restProps}
+        className={cx(classNames.requiredIndicator, props.className)}
+        css={[styles.requiredIndicator, props.css]}
+      >
+        {children}
+      </uikit.span>
+    )
+  },
+)

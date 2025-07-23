@@ -1,6 +1,6 @@
 import { defineConfig } from "tsup"
 import { readFileSync, writeFileSync } from "fs"
-import rootConfig from "../../../../tsup.config"
+import rootConfig from "../../../../../tsup.config"
 
 export default defineConfig({
   ...rootConfig,

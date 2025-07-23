@@ -14,29 +14,23 @@ const { useRecipeResult, PropsProvider } = createRecipeContext({
   key: "separator",
 })
 
-export interface SeparatorBaseProps
-  extends RecipeProps<"separator">,
-    UnstyledProp {}
+export interface SeparatorBaseProps extends RecipeProps<"separator">, UnstyledProp {}
 
-export interface SeparatorProps
-  extends HTMLUIKitProps<"span", SeparatorBaseProps> {}
+export interface SeparatorProps extends HTMLUIKitProps<"span", SeparatorBaseProps> {}
 
-export const Separator = forwardRef<HTMLSpanElement, SeparatorProps>(
-  function Separator(props, ref) {
-    const { styles, className, props: otherProps } = useRecipeResult(props)
-    const orientation = props.orientation || "horizontal"
-    return (
-      <uikit.span
-        ref={ref}
-        role={isString(orientation) ? "separator" : "presentation"}
-        aria-orientation={isString(orientation) ? orientation : undefined}
-        {...omit(otherProps, ["orientation"])}
-        className={cx(className, props.className)}
-        css={[styles, props.css]}
-      />
-    )
-  },
-)
+export const Separator = forwardRef<HTMLSpanElement, SeparatorProps>(function Separator(props, ref) {
+  const { styles, className, props: otherProps } = useRecipeResult(props)
+  const orientation = props.orientation || "horizontal"
+  return (
+    <uikit.span
+      ref={ref}
+      role={isString(orientation) ? "separator" : "presentation"}
+      aria-orientation={isString(orientation) ? orientation : undefined}
+      {...omit(otherProps, ["orientation"])}
+      className={cx(className, props.className)}
+      css={[styles, props.css]}
+    />
+  )
+})
 
-export const SeparatorPropsProvider =
-  PropsProvider as React.Provider<SeparatorBaseProps>
+export const SeparatorPropsProvider = PropsProvider as React.Provider<SeparatorBaseProps>

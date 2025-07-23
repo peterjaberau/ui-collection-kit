@@ -39,11 +39,7 @@ export type {
   StepsTriggerProps,
 } from "./steps"
 
-export {
-  useSteps,
-  useStepsContext,
-  useStepsItemContext,
-} from "@ui-kit/base/steps"
+export { useSteps, useStepsContext, useStepsItemContext } from "@ui-kit/base/steps"
 
 export type { UseStepsProps, UseStepsReturn } from "@ui-kit/base/steps"
 

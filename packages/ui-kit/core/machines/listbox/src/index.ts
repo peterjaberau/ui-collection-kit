@@ -27,4 +27,4 @@ export type {
   GridCollectionOptions,
   ListCollection,
   SelectionMode,
-} from "@ui-kit/collection"
+} from "@ui-kit/core-collection"

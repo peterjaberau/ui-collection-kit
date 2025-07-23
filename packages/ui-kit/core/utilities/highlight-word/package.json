@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-highlight-word",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "Highlight a portion of text in a string",
   "keywords": [
     "js",

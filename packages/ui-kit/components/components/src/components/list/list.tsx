@@ -9,32 +9,19 @@ import {
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-const {
-  withProvider,
-  withContext,
-  useStyles: useListStyles,
-  PropsProvider,
-} = createSlotRecipeContext({ key: "list" })
+const { withProvider, withContext, useStyles: useListStyles, PropsProvider } = createSlotRecipeContext({ key: "list" })
 
 export { useListStyles }
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ListRootBaseProps
-  extends SlotRecipeProps<"list">,
-    UnstyledProp {}
+export interface ListRootBaseProps extends SlotRecipeProps<"list">, UnstyledProp {}
 
-export interface ListRootProps
-  extends HTMLUIKitProps<"ul", ListRootBaseProps> {}
+export interface ListRootProps extends HTMLUIKitProps<"ul", ListRootBaseProps> {}
 
-export const ListRoot = withProvider<HTMLUListElement, ListRootProps>(
-  "ul",
-  "root",
-  { defaultProps: { role: "list" } },
-)
+export const ListRoot = withProvider<HTMLUListElement, ListRootProps>("ul", "root", { defaultProps: { role: "list" } })
 
-export const ListRootPropsProvider =
-  PropsProvider as React.Provider<ListRootBaseProps>
+export const ListRootPropsProvider = PropsProvider as React.Provider<ListRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -46,7 +33,4 @@ export const ListItem = withContext<HTMLLIElement, ListItemProps>("li", "item")
 
 export interface ListIndicatorProps extends HTMLUIKitProps<"span"> {}
 
-export const ListIndicator = withContext<HTMLSpanElement, ListIndicatorProps>(
-  "span",
-  "indicator",
-)
+export const ListIndicator = withContext<HTMLSpanElement, ListIndicatorProps>("span", "indicator")

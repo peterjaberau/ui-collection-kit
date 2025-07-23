@@ -1,17 +1,8 @@
 import { clone, mergeWith } from "../utils"
 import type { CompositionStyles } from "./composition"
-import type {
-  GlobalStyleIdentityFn,
-  KeyframeIdentityFn,
-  SystemStyleIdentityFn,
-} from "./css.types"
+import type { GlobalStyleIdentityFn, KeyframeIdentityFn, SystemStyleIdentityFn } from "./css.types"
 import type { RecipeIdentityFn, SlotRecipeIdentityFn } from "./recipe.types"
-import type {
-  ConditionRecord,
-  SemanticTokenDefinition,
-  SystemConfig,
-  TokenDefinition,
-} from "./types"
+import type { ConditionRecord, SemanticTokenDefinition, SystemConfig, TokenDefinition } from "./types"
 
 /* -----------------------------------------------------------------------------
  * Core creators
@@ -31,9 +22,7 @@ export const defineStyle: SystemStyleIdentityFn = (v) => v
 
 export const defineTextStyles = (v: CompositionStyles["textStyles"]) => v
 
-export const defineAnimationStyles = (
-  v: CompositionStyles["animationStyles"],
-) => v
+export const defineAnimationStyles = (v: CompositionStyles["animationStyles"]) => v
 
 export const defineLayerStyles = (v: CompositionStyles["layerStyles"]) => v
 
@@ -44,9 +33,7 @@ export const defineLayerStyles = (v: CompositionStyles["layerStyles"]) => v
 type ProxyValue<T> = {
   <Value>(definition: Value extends T ? Value : T): Value
 } & {
-  [K in keyof Required<T>]: <Value>(
-    definition: Value extends T[K] ? Value : T[K],
-  ) => Value
+  [K in keyof Required<T>]: <Value>(definition: Value extends T[K] ? Value : T[K]) => Value
 }
 
 function createProxy<T>(): ProxyValue<T> {
@@ -59,8 +46,7 @@ function createProxy<T>(): ProxyValue<T> {
 }
 
 export const defineTokens = /* @__PURE__ */ createProxy<TokenDefinition>()
-export const defineSemanticTokens =
-  /* @__PURE__ */ createProxy<SemanticTokenDefinition>()
+export const defineSemanticTokens = /* @__PURE__ */ createProxy<SemanticTokenDefinition>()
 
 /* -----------------------------------------------------------------------------
  * System creators

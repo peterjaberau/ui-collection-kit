@@ -11,11 +11,7 @@ import { ThemeContext, withEmotionCache } from "@emotion/react"
 import { serializeStyles } from "@emotion/serialize"
 //@ts-ignore
 import { useInsertionEffectAlwaysWithSyncFallback } from "@emotion/use-insertion-effect-with-fallbacks"
-import {
-  getRegisteredStyles,
-  insertStyles,
-  registerStyles,
-} from "@emotion/utils"
+import { getRegisteredStyles, insertStyles, registerStyles } from "@emotion/utils"
 import * as React from "react"
 import { mergeProps } from "../merge-props"
 import { mergeRefs } from "../merge-refs"
@@ -35,9 +31,7 @@ const composeShouldForwardProps = (tag: any, options: any, isReal: boolean) => {
     const optionsShouldForwardProp = options.shouldForwardProp
     shouldForwardProp =
       tag.__emotion_forwardProp && optionsShouldForwardProp
-        ? (propName: string) =>
-            tag.__emotion_forwardProp(propName) &&
-            optionsShouldForwardProp(propName)
+        ? (propName: string) => tag.__emotion_forwardProp(propName) && optionsShouldForwardProp(propName)
         : optionsShouldForwardProp
   }
 
@@ -53,9 +47,7 @@ let isBrowser = typeof document !== "undefined"
 const Insertion = ({ cache, serialized, isStringTag }: any) => {
   registerStyles(cache, serialized, isStringTag)
 
-  const rules = useInsertionEffectAlwaysWithSyncFallback(() =>
-    insertStyles(cache, serialized, isStringTag),
-  )
+  const rules = useInsertionEffectAlwaysWithSyncFallback(() => insertStyles(cache, serialized, isStringTag))
 
   if (!isBrowser && rules !== undefined) {
     let serializedNames = serialized.name
@@ -138,27 +130,16 @@ const createStyled = (tag: any, configOrCva: any = {}, options: any = {}) => {
 
     const fallbackShouldForwardProp = (prop: string, variantKeys: string[]) => {
       const emotionSfp =
-        typeof tag === "string" && tag.charCodeAt(0) > 96
-          ? testOmitPropsOnStringTag
-          : testOmitPropsOnComponent
+        typeof tag === "string" && tag.charCodeAt(0) > 96 ? testOmitPropsOnStringTag : testOmitPropsOnComponent
       const uikitSfp = !variantKeys?.includes(prop) && !isValidProperty(prop)
       return emotionSfp(prop) && uikitSfp
     }
 
-    const shouldForwardProp =
-      composeShouldForwardProps(tag, options, isReal) ||
-      fallbackShouldForwardProp
+    const shouldForwardProp = composeShouldForwardProps(tag, options, isReal) || fallbackShouldForwardProp
 
-    const propsWithDefault = React.useMemo(
-      () => Object.assign({}, options.defaultProps, compact(inProps)),
-      [inProps],
-    )
+    const propsWithDefault = React.useMemo(() => Object.assign({}, options.defaultProps, compact(inProps)), [inProps])
 
-    const { props, styles: styleProps } = useResolvedProps(
-      propsWithDefault,
-      cvaRecipe,
-      shouldForwardProp,
-    )
+    const { props, styles: styleProps } = useResolvedProps(propsWithDefault, cvaRecipe, shouldForwardProp)
 
     let className = ""
     let classInterpolations: any[] = [styleProps]
@@ -172,20 +153,12 @@ const createStyled = (tag: any, configOrCva: any = {}, options: any = {}) => {
     }
 
     if (typeof props.className === "string") {
-      className = getRegisteredStyles(
-        cache.registered,
-        classInterpolations,
-        props.className,
-      )
+      className = getRegisteredStyles(cache.registered, classInterpolations, props.className)
     } else if (props.className != null) {
       className = cx(className, props.className)
     }
 
-    const serialized = serializeStyles(
-      styles.concat(classInterpolations),
-      cache.registered,
-      mergedProps,
-    )
+    const serialized = serializeStyles(styles.concat(classInterpolations), cache.registered, mergedProps)
     className = cx(className, `${cache.key}-${serialized.name}`)
 
     if (targetClassName !== undefined) {
@@ -214,8 +187,7 @@ const createStyled = (tag: any, configOrCva: any = {}, options: any = {}) => {
     finalProps.className = className.trim()
     finalProps.ref = ref
 
-    const forwardAsChild =
-      options.forwardAsChild || options.forwardProps?.includes("asChild")
+    const forwardAsChild = options.forwardAsChild || options.forwardProps?.includes("asChild")
 
     if (props.asChild && !forwardAsChild) {
       const child = React.Children.only(props.children)
@@ -233,11 +205,7 @@ const createStyled = (tag: any, configOrCva: any = {}, options: any = {}) => {
       finalProps.as = undefined
       return (
         <React.Fragment>
-          <Insertion
-            cache={cache}
-            serialized={serialized}
-            isStringTag={typeof FinalTag === "string"}
-          />
+          <Insertion cache={cache} serialized={serialized} isStringTag={typeof FinalTag === "string"} />
           <FinalTag asChild {...finalProps}>
             <props.as>{finalProps.children}</props.as>
           </FinalTag>
@@ -247,11 +215,7 @@ const createStyled = (tag: any, configOrCva: any = {}, options: any = {}) => {
 
     return (
       <React.Fragment>
-        <Insertion
-          cache={cache}
-          serialized={serialized}
-          isStringTag={typeof FinalTag === "string"}
-        />
+        <Insertion cache={cache} serialized={serialized} isStringTag={typeof FinalTag === "string"} />
         <FinalTag {...finalProps} />
       </React.Fragment>
     )
@@ -260,11 +224,7 @@ const createStyled = (tag: any, configOrCva: any = {}, options: any = {}) => {
   Styled.displayName =
     identifierName !== undefined
       ? identifierName
-      : `uikit(${
-          typeof baseTag === "string"
-            ? baseTag
-            : baseTag.displayName || baseTag.name || "Component"
-        })`
+      : `uikit(${typeof baseTag === "string" ? baseTag : baseTag.displayName || baseTag.name || "Component"})`
 
   Styled.__emotion_real = Styled
   Styled.__emotion_base = baseTag
@@ -273,10 +233,7 @@ const createStyled = (tag: any, configOrCva: any = {}, options: any = {}) => {
 
   Object.defineProperty(Styled, "toString", {
     value() {
-      if (
-        targetClassName === undefined &&
-        process.env.NODE_ENV !== "production"
-      ) {
+      if (targetClassName === undefined && process.env.NODE_ENV !== "production") {
         return "NO_COMPONENT_SELECTOR"
       }
       return `.${targetClassName}`

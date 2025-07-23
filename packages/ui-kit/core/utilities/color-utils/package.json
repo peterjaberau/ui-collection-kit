@@ -1,6 +1,6 @@
 {
-  "name": "@ui-kit/color-utils",
-  "version": "1.11.0",
+  "name": "@ui-kit/core-color-utils",
+  "version": "0.0.1",
   "description": "Color utilities for ui-kit",
   "keywords": [
     "js",

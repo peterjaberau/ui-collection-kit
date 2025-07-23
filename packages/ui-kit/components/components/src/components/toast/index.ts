@@ -1,11 +1,4 @@
-export {
-  ToastActionTrigger,
-  ToastCloseTrigger,
-  ToastDescription,
-  ToastIndicator,
-  ToastRoot,
-  ToastTitle,
-} from "./toast"
+export { ToastActionTrigger, ToastCloseTrigger, ToastDescription, ToastIndicator, ToastRoot, ToastTitle } from "./toast"
 export type {
   ToastActionTriggerProps,
   ToastCloseTriggerProps,
@@ -18,8 +11,4 @@ export type {
 export * as Toast from "./namespace"
 
 export { Toaster, createToaster, useToastStyles } from "./toast"
-export type {
-  CreateToasterProps,
-  CreateToasterReturn,
-  ToasterProps,
-} from "./toast"
+export type { CreateToasterProps, CreateToasterReturn, ToasterProps } from "./toast"

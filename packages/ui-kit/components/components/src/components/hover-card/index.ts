@@ -26,7 +26,4 @@ export * as HoverCard from "./namespace"
 
 export { useHoverCard, useHoverCardContext } from "@ui-kit/base/hover-card"
 
-export type {
-  UseHoverCardProps,
-  UseHoverCardReturn,
-} from "@ui-kit/base/hover-card"
+export type { UseHoverCardProps, UseHoverCardReturn } from "@ui-kit/base/hover-card"

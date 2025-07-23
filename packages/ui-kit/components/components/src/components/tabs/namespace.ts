@@ -21,9 +21,4 @@ export type {
 
 export { TabsContext as Context } from "@ui-kit/base/tabs"
 
-export type {
-  UseTabsProps,
-  UseTabsReturn,
-  TabsFocusChangeDetails,
-  TabsValueChangeDetails,
-} from "@ui-kit/base/tabs"
+export type { UseTabsProps, UseTabsReturn, TabsFocusChangeDetails, TabsValueChangeDetails } from "@ui-kit/base/tabs"

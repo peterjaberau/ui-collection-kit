@@ -1,4 +1,4 @@
-import { isGridCollection, type CollectionItem } from "@ui-kit/collection"
+import { isGridCollection, type CollectionItem } from "@ui-kit/core-collection"
 import type { Service } from "@ui-kit/core"
 import {
   ariaAttr,

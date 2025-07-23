@@ -5,8 +5,4 @@ export {
   ListRootPropsProvider as RootPropsProvider,
 } from "./list"
 
-export type {
-  ListIndicator as IndicatorProps,
-  ListItemProps as ItemProps,
-  ListRootProps as RootProps,
-} from "./list"
+export type { ListIndicator as IndicatorProps, ListItemProps as ItemProps, ListRootProps as RootProps } from "./list"

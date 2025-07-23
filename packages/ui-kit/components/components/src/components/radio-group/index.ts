@@ -22,15 +22,8 @@ export type {
   RadioGroupValueChangeDetails,
 } from "./radio-group"
 
-export {
-  useRadioGroup,
-  useRadioGroupItemContext,
-  useRadioGroupContext,
-} from "@ui-kit/base/radio-group"
+export { useRadioGroup, useRadioGroupItemContext, useRadioGroupContext } from "@ui-kit/base/radio-group"
 
-export type {
-  UseRadioGroupProps,
-  UseRadioGroupReturn,
-} from "@ui-kit/base/radio-group"
+export type { UseRadioGroupProps, UseRadioGroupReturn } from "@ui-kit/base/radio-group"
 
 export * as RadioGroup from "./namespace"

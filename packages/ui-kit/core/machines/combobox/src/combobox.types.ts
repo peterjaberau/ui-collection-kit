@@ -1,4 +1,4 @@
-import type { CollectionItem, CollectionOptions, ListCollection } from "@ui-kit/collection"
+import type { CollectionItem, CollectionOptions, ListCollection } from "@ui-kit/core-collection"
 import type { EventObject, Machine, Service } from "@ui-kit/core"
 import type { InteractOutsideHandlers } from "@ui-kit/core-dismissable"
 import type { Placement, PositioningOptions } from "@ui-kit/core-popper"

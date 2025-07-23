@@ -15,25 +15,17 @@ export interface ThemeProps extends HTMLUIKitProps<"div"> {
   hasBackground?: boolean | undefined
 }
 
-export const Theme = forwardRef<HTMLDivElement, ThemeProps>(
-  function Theme(props, ref) {
-    const {
-      appearance,
-      style,
-      className,
-      hasBackground = true,
-      ...rest
-    } = props
-    return (
-      <uikit.div
-        color="fg"
-        bg={hasBackground ? "bg" : undefined}
-        colorPalette="gray"
-        {...rest}
-        className={cx("uikit-theme", appearance, className)}
-        style={{ ...style, colorScheme: appearance }}
-        ref={ref}
-      />
-    )
-  },
-)
+export const Theme = forwardRef<HTMLDivElement, ThemeProps>(function Theme(props, ref) {
+  const { appearance, style, className, hasBackground = true, ...rest } = props
+  return (
+    <uikit.div
+      color="fg"
+      bg={hasBackground ? "bg" : undefined}
+      colorPalette="gray"
+      {...rest}
+      className={cx("uikit-theme", appearance, className)}
+      style={{ ...style, colorScheme: appearance }}
+      ref={ref}
+    />
+  )
+})

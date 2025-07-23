@@ -28,14 +28,8 @@ export type {
   NumberInputValueInvalidDetails,
 } from "./number-input"
 
-export {
-  useNumberInput,
-  useNumberInputContext,
-} from "@ui-kit/base/number-input"
+export { useNumberInput, useNumberInputContext } from "@ui-kit/base/number-input"
 
-export type {
-  UseNumberInputProps,
-  UseNumberInputReturn,
-} from "@ui-kit/base/number-input"
+export type { UseNumberInputProps, UseNumberInputReturn } from "@ui-kit/base/number-input"
 
 export * as NumberInput from "./namespace"

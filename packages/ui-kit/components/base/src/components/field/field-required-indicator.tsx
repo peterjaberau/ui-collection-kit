@@ -1,4 +1,4 @@
-import { mergeProps } from '@ui-kit/core-core'
+import { mergeProps } from '@ui-kit/core'
 import { forwardRef } from 'react'
 import { type HTMLProps, type PolymorphicProps, ark } from '../factory'
 import { useFieldContext } from './use-field-context'

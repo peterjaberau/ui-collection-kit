@@ -25,15 +25,8 @@ export type {
   RatingGroupHoverChangeDetails,
 } from "./rating-group"
 
-export {
-  useRatingGroup,
-  useRatingGroupContext,
-  useRatingGroupItemContext,
-} from "@ui-kit/base/rating-group"
+export { useRatingGroup, useRatingGroupContext, useRatingGroupItemContext } from "@ui-kit/base/rating-group"
 
-export type {
-  UseRatingGroupProps,
-  UseRatingGroupReturn,
-} from "@ui-kit/base/rating-group"
+export type { UseRatingGroupProps, UseRatingGroupReturn } from "@ui-kit/base/rating-group"
 
 export * as RatingGroup from "./namespace"

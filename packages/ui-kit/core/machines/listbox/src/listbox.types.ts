@@ -1,4 +1,4 @@
-import type { CollectionItem, GridCollection, ListCollection, Selection, SelectionMode } from "@ui-kit/collection"
+import type { CollectionItem, GridCollection, ListCollection, Selection, SelectionMode } from "@ui-kit/core-collection"
 import type { EventObject, Machine, Service } from "@ui-kit/core"
 import type { TypeaheadState } from "@ui-kit/core-dom-query"
 import type { CommonProperties, DirectionProperty, OrientationProperty, PropTypes, RequiredBy } from "@ui-kit/core-types"

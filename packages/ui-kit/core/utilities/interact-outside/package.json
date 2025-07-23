@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-interact-outside",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "Track interactions or focus outside an element",
   "keywords": [
     "js",

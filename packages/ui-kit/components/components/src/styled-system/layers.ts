@@ -14,9 +14,7 @@ const layerOrder = {
   recipes: 3,
 }
 
-export function createLayers(
-  config: Pick<SystemConfig, "layers" | "disableLayers">,
-): Layers {
+export function createLayers(config: Pick<SystemConfig, "layers" | "disableLayers">): Layers {
   const layers = config.layers ?? defaultLayers
   const values = Object.values(layers) as CascadeLayer[]
   const names = values.sort((a, b) => layerOrder[a] - layerOrder[b])

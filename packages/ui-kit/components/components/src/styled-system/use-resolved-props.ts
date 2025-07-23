@@ -2,12 +2,7 @@ import { useMemo } from "react"
 import { splitProps } from "../utils"
 import { useUIKitContext } from "./provider"
 
-const htmlProps = new Set([
-  "htmlWidth",
-  "htmlHeight",
-  "htmlSize",
-  "htmlTranslate",
-])
+const htmlProps = new Set(["htmlWidth", "htmlHeight", "htmlSize", "htmlTranslate"])
 
 export function isHtmlProp(prop: unknown) {
   return typeof prop === "string" && htmlProps.has(prop)
@@ -18,24 +13,15 @@ interface ResolvedPropsResult {
   props: Record<string, any>
 }
 
-export function useResolvedProps(
-  inProps: any,
-  cvaRecipe: any,
-  shouldForwardProps: any,
-): ResolvedPropsResult {
+export function useResolvedProps(inProps: any, cvaRecipe: any, shouldForwardProps: any): ResolvedPropsResult {
   const { css, isValidProperty } = useUIKitContext()
 
   const { children, ...props } = inProps
 
   const result = useMemo(() => {
-    const [forwardedProps, restProps_B] = splitProps(props, (key) =>
-      shouldForwardProps(key, cvaRecipe.variantKeys),
-    )
+    const [forwardedProps, restProps_B] = splitProps(props, (key) => shouldForwardProps(key, cvaRecipe.variantKeys))
 
-    const [variantProps, restProps_C] = splitProps(
-      restProps_B,
-      cvaRecipe.variantKeys,
-    )
+    const [variantProps, restProps_C] = splitProps(restProps_B, cvaRecipe.variantKeys)
 
     const [styleProps, elementProps] = splitProps(restProps_C, isValidProperty)
 

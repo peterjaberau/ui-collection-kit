@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-styles",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "main": "src/index.ts",
   "private": true,
   "dependencies": {

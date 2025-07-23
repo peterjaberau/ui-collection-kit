@@ -21,10 +21,7 @@ export interface UseMediaQueryOptions {
   getWindow?(): typeof window
 }
 
-export function useMediaQuery(
-  query: string[],
-  options: UseMediaQueryOptions = {},
-): boolean[] {
+export function useMediaQuery(query: string[], options: UseMediaQueryOptions = {}): boolean[] {
   const { fallback: _fallback = [], ssr = true, getWindow } = options
   const getWin = useCallbackRef(getWindow)
 
@@ -50,12 +47,7 @@ export function useMediaQuery(
         return { media, matches }
       })
 
-      return prev.every(
-        (v, i) =>
-          v.matches === current[i].matches && v.media === current[i].media,
-      )
-        ? prev
-        : current
+      return prev.every((v, i) => v.matches === current[i].matches && v.media === current[i].media) ? prev : current
     })
 
     const mql = queries.map((query) => win.matchMedia(query))

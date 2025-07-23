@@ -1,24 +1,9 @@
 import type { Assign } from "@ui-kit/base"
-import type {
-  ComponentProps,
-  ComponentPropsWithoutRef,
-  ElementType,
-  FunctionComponent,
-  JSX,
-} from "react"
-import type {
-  Dict,
-  DistributiveOmit,
-  DistributiveUnion,
-  Pretty,
-} from "../utils"
+import type { ComponentProps, ComponentPropsWithoutRef, ElementType, FunctionComponent, JSX } from "react"
+import type { Dict, DistributiveOmit, DistributiveUnion, Pretty } from "../utils"
 import type { MinimalNested, SystemStyleObject } from "./css.types"
 import type { SystemProperties } from "./generated/system.gen"
-import type {
-  RecipeDefinition,
-  RecipeSelection,
-  RecipeVariantRecord,
-} from "./recipe.types"
+import type { RecipeDefinition, RecipeSelection, RecipeVariantRecord } from "./recipe.types"
 
 export interface UnstyledProp {
   /**
@@ -40,39 +25,23 @@ export interface HtmlProps {
   htmlContent?: string | undefined
 }
 
-export type HtmlProp =
-  | "color"
-  | "size"
-  | "translate"
-  | "transition"
-  | "width"
-  | "height"
-  | "content"
+export type HtmlProp = "color" | "size" | "translate" | "transition" | "width" | "height" | "content"
 
 export type PatchHtmlProps<T> = DistributiveOmit<T, HtmlProp> & HtmlProps
 
-export type JsxHtmlProps<T extends Dict, P extends Dict = {}> = Assign<
-  PatchHtmlProps<T>,
-  P
+export type JsxHtmlProps<T extends Dict, P extends Dict = {}> = Assign<PatchHtmlProps<T>, P>
+
+export type UIKitComponent<T extends ElementType, P extends Dict = {}> = FunctionComponent<
+  HTMLUIKitProps<T, P> & { ref?: any | undefined }
 >
 
-export type UIKitComponent<
-  T extends ElementType,
-  P extends Dict = {},
-> = FunctionComponent<HTMLUIKitProps<T, P> & { ref?: any | undefined }>
-
-export type HTMLUIKitProps<
-  T extends ElementType,
-  P extends Dict = {},
-> = JsxHtmlProps<
+export type HTMLUIKitProps<T extends ElementType, P extends Dict = {}> = JsxHtmlProps<
   ComponentPropsWithoutRef<T>,
   Assign<JsxStyleProps, P> & PolymorphicProps
 >
 
 export type JsxElement<T extends ElementType, P extends Dict> =
-  T extends UIKitComponent<infer A, infer B>
-    ? UIKitComponent<A, Pretty<DistributiveUnion<P, B>>>
-    : UIKitComponent<T, P>
+  T extends UIKitComponent<infer A, infer B> ? UIKitComponent<A, Pretty<DistributiveUnion<P, B>>> : UIKitComponent<T, P>
 
 export interface JsxFactory {
   <T extends ElementType>(component: T): UIKitComponent<T, {}>
@@ -89,10 +58,7 @@ type JsxElements = {
 
 export type StyledFactoryFn = JsxFactory & JsxElements
 
-export type DataAttr = Record<
-  `data-${string}`,
-  string | number | undefined | null | boolean
->
+export type DataAttr = Record<`data-${string}`, string | number | undefined | null | boolean>
 
 export interface JsxFactoryOptions<TProps> {
   forwardProps?: string[] | undefined
@@ -101,14 +67,8 @@ export interface JsxFactoryOptions<TProps> {
   shouldForwardProp?(prop: string, variantKeys: string[]): boolean
 }
 
-export interface JsxStyleProps
-  extends SystemProperties,
-    MinimalNested<SystemStyleObject> {
-  css?:
-    | SystemStyleObject
-    | undefined
-    | Omit<(SystemStyleObject | undefined)[], keyof any[]>
+export interface JsxStyleProps extends SystemProperties, MinimalNested<SystemStyleObject> {
+  css?: SystemStyleObject | undefined | Omit<(SystemStyleObject | undefined)[], keyof any[]>
 }
 
-export type InferRecipeProps<T> =
-  T extends UIKitComponent<any, infer P> ? P : {}
+export type InferRecipeProps<T> = T extends UIKitComponent<any, infer P> ? P : {}

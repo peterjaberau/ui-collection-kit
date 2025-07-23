@@ -8,12 +8,6 @@ export {
   TagRootPropsProvider,
 } from "./tag"
 
-export type {
-  TagRootProps,
-  TagCloseTriggerProps,
-  TagLabelProps,
-  TagStartElementProps,
-  TagEndElementProps,
-} from "./tag"
+export type { TagRootProps, TagCloseTriggerProps, TagLabelProps, TagStartElementProps, TagEndElementProps } from "./tag"
 
 export * as Tag from "./namespace"

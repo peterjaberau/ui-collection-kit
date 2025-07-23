@@ -4,7 +4,7 @@ import {
   type CollectionItem,
   type CollectionOptions,
   type GridCollectionOptions,
-} from "@ui-kit/collection"
+} from "@ui-kit/core-collection"
 
 export const collection = <T extends CollectionItem>(options: CollectionOptions<T>): ListCollection<T> => {
   return new ListCollection<T>(options)

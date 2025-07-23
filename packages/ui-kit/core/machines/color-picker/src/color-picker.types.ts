@@ -1,4 +1,4 @@
-import type { Color, ColorAxes, ColorChannel, ColorFormat, ColorType } from "@ui-kit/color-utils"
+import type { Color, ColorAxes, ColorChannel, ColorFormat, ColorType } from "@ui-kit/core-color-utils"
 import type { EventObject, Machine, Service } from "@ui-kit/core"
 import type { InteractOutsideHandlers } from "@ui-kit/core-dismissable"
 import type { PositioningOptions } from "@ui-kit/core-popper"

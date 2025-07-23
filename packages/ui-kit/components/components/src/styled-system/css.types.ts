@@ -41,10 +41,7 @@ export interface ModernCssProperties {
   d?: String | undefined
 }
 
-export interface CssProperties
-  extends PropertiesFallback<String | Number>,
-    ModernCssProperties,
-    CssVarProperties {
+export interface CssProperties extends PropertiesFallback<String | Number>, ModernCssProperties, CssVarProperties {
   initialLetterAlign?: String | undefined
 }
 
@@ -89,25 +86,19 @@ export type NestedCssProperties = Nested<CssProperties>
 
 export type SystemStyleObject = Nested<SystemProperties & CssVarProperties>
 
-export type SystemStyleIdentityFn = (
-  style: SystemStyleObject,
-) => SystemStyleObject
+export type SystemStyleIdentityFn = (style: SystemStyleObject) => SystemStyleObject
 
 export interface GlobalStyleObject {
   [selector: string]: SystemStyleObject
 }
 
-export type GlobalStyleIdentityFn = (
-  global: GlobalStyleObject,
-) => GlobalStyleObject
+export type GlobalStyleIdentityFn = (global: GlobalStyleObject) => GlobalStyleObject
 
 type FilterStyleObject<P extends string> = {
   [K in P]?: K extends keyof SystemStyleObject ? SystemStyleObject[K] : unknown
 }
 
-export type CompositionStyleObject<Property extends string> = Nested<
-  FilterStyleObject<Property> & CssVarProperties
->
+export type CompositionStyleObject<Property extends string> = Nested<FilterStyleObject<Property> & CssVarProperties>
 
 /* -----------------------------------------------------------------------------
  * Jsx style props

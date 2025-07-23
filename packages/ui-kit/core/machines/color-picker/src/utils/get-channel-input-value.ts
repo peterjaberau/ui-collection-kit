@@ -1,4 +1,4 @@
-import { parseColor, type Color, type ColorChannelRange } from "@ui-kit/color-utils"
+import { parseColor, type Color, type ColorChannelRange } from "@ui-kit/core-color-utils"
 import type { ExtendedColorChannel } from "../color-picker.types"
 
 export function getChannelValue(color: Color, channel: ExtendedColorChannel | null | undefined): string {

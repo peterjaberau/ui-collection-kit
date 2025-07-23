@@ -1,4 +1,4 @@
-import { parseColor, type Color } from "@ui-kit/color-utils"
+import { parseColor, type Color } from "@ui-kit/core-color-utils"
 import { createGuards, createMachine, type Scope } from "@ui-kit/core"
 import { trackDismissableElement } from "@ui-kit/core-dismissable"
 import {

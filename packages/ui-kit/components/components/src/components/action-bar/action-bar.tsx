@@ -23,22 +23,17 @@ export { useActionBarStyles }
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface ActionBarRootProviderBaseProps
-  extends Assign<
-      ArkPopover.RootProviderBaseProps,
-      SlotRecipeProps<"actionBar">
-    >,
+  extends Assign<ArkPopover.RootProviderBaseProps, SlotRecipeProps<"actionBar">>,
     UnstyledProp {}
 
-export interface ActionBarRootProviderProps
-  extends ActionBarRootProviderBaseProps {}
+export interface ActionBarRootProviderProps extends ActionBarRootProviderBaseProps {}
 
-export const ActionBarRootProvider =
-  withRootProvider<ActionBarRootProviderBaseProps>(ArkPopover.RootProvider, {
-    defaultProps: {
-      lazyMount: true,
-      unmountOnExit: true,
-    },
-  })
+export const ActionBarRootProvider = withRootProvider<ActionBarRootProviderBaseProps>(ArkPopover.RootProvider, {
+  defaultProps: {
+    lazyMount: true,
+    unmountOnExit: true,
+  },
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -46,78 +41,65 @@ export interface ActionBarRootBaseProps
   extends Assign<ArkPopover.RootBaseProps, SlotRecipeProps<"actionBar">>,
     UnstyledProp {}
 
-export interface ActionBarRootProps
-  extends Omit<ActionBarRootBaseProps, "positioning"> {
+export interface ActionBarRootProps extends Omit<ActionBarRootBaseProps, "positioning"> {
   children: React.ReactNode
 }
 
-export const ActionBarRoot = withRootProvider<ActionBarRootProps>(
-  ArkPopover.Root,
-  {
-    defaultProps: {
-      autoFocus: false,
-      lazyMount: true,
-      unmountOnExit: true,
-    },
+export const ActionBarRoot = withRootProvider<ActionBarRootProps>(ArkPopover.Root, {
+  defaultProps: {
+    autoFocus: false,
+    lazyMount: true,
+    unmountOnExit: true,
   },
-)
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const ActionBarPropsProvider =
-  PropsProvider as React.Provider<ActionBarRootBaseProps>
+export const ActionBarPropsProvider = PropsProvider as React.Provider<ActionBarRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface ActionBarPositionerProps extends HTMLUIKitProps<"div"> {}
 
-export const ActionBarPositioner = withContext<
-  HTMLDivElement,
-  ActionBarPositionerProps
->("div", "positioner", { forwardAsChild: true })
+export const ActionBarPositioner = withContext<HTMLDivElement, ActionBarPositionerProps>("div", "positioner", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ActionBarContentProps
-  extends HTMLUIKitProps<"div", ArkPopover.ContentBaseProps> {}
+export interface ActionBarContentProps extends HTMLUIKitProps<"div", ArkPopover.ContentBaseProps> {}
 
-export const ActionBarContent = withContext<
-  HTMLDivElement,
-  ActionBarContentProps
->(ArkPopover.Content, "content", { forwardAsChild: true })
+export const ActionBarContent = withContext<HTMLDivElement, ActionBarContentProps>(ArkPopover.Content, "content", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface ActionBarSeparatorProps extends HTMLUIKitProps<"div"> {}
 
-export const ActionBarSeparator = withContext<
-  HTMLDivElement,
-  ActionBarSeparatorProps
->("div", "separator")
+export const ActionBarSeparator = withContext<HTMLDivElement, ActionBarSeparatorProps>("div", "separator")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ActionBarSelectionTriggerProps
-  extends HTMLUIKitProps<"button"> {}
+export interface ActionBarSelectionTriggerProps extends HTMLUIKitProps<"button"> {}
 
-export const ActionBarSelectionTrigger = withContext<
-  HTMLButtonElement,
-  ActionBarSelectionTriggerProps
->("button", "selectionTrigger")
+export const ActionBarSelectionTrigger = withContext<HTMLButtonElement, ActionBarSelectionTriggerProps>(
+  "button",
+  "selectionTrigger",
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ActionBarCloseTriggerProps
-  extends HTMLUIKitProps<"button", ArkPopover.CloseTriggerProps> {}
+export interface ActionBarCloseTriggerProps extends HTMLUIKitProps<"button", ArkPopover.CloseTriggerProps> {}
 
-export const ActionBarCloseTrigger = withContext<
-  HTMLButtonElement,
-  ActionBarCloseTriggerProps
->(ArkPopover.CloseTrigger, "closeTrigger", { forwardAsChild: true })
+export const ActionBarCloseTrigger = withContext<HTMLButtonElement, ActionBarCloseTriggerProps>(
+  ArkPopover.CloseTrigger,
+  "closeTrigger",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export const ActionBarContext = ArkPopover.Context
 
-export interface ActionBarOpenChangeDetails
-  extends ArkPopover.OpenChangeDetails {}
+export interface ActionBarOpenChangeDetails extends ArkPopover.OpenChangeDetails {}

@@ -1,4 +1,4 @@
-import type { ColorChannel } from "@ui-kit/color-utils"
+import type { ColorChannel } from "@ui-kit/core-color-utils"
 import type { Scope } from "@ui-kit/core"
 import { getRelativePoint, queryAll } from "@ui-kit/core-dom-query"
 import type { Point } from "@ui-kit/core-types"

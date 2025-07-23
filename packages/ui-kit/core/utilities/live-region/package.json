@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-live-region",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "Implementing live region for screen readers",
   "keywords": [
     "js",

@@ -30,9 +30,7 @@ export interface PopoverRootProviderProps extends PopoverRootProviderBaseProps {
   children: React.ReactNode
 }
 
-export const PopoverRootProvider = withRootProvider<PopoverRootProviderProps>(
-  ArkPopover.RootProvider,
-)
+export const PopoverRootProvider = withRootProvider<PopoverRootProviderProps>(ArkPopover.RootProvider)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -48,147 +46,115 @@ export const PopoverRoot = withRootProvider<PopoverRootProps>(ArkPopover.Root)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const PopoverPropsProvider =
-  PropsProvider as React.Provider<PopoverRootBaseProps>
+export const PopoverPropsProvider = PropsProvider as React.Provider<PopoverRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface PopoverTriggerProps
-  extends HTMLUIKitProps<"button", ArkPopover.TriggerBaseProps> {}
+export interface PopoverTriggerProps extends HTMLUIKitProps<"button", ArkPopover.TriggerBaseProps> {}
 
-export const PopoverTrigger = withContext<
-  HTMLButtonElement,
-  PopoverTriggerProps
->(ArkPopover.Trigger, "trigger", { forwardAsChild: true })
+export const PopoverTrigger = withContext<HTMLButtonElement, PopoverTriggerProps>(ArkPopover.Trigger, "trigger", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface PopoverPositionerProps
-  extends HTMLUIKitProps<"div", ArkPopover.PositionerBaseProps> {}
+export interface PopoverPositionerProps extends HTMLUIKitProps<"div", ArkPopover.PositionerBaseProps> {}
 
-export const PopoverPositioner = withContext<
-  HTMLDivElement,
-  PopoverPositionerProps
->(ArkPopover.Positioner, "positioner", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface PopoverContentProps
-  extends HTMLUIKitProps<"div", ArkPopover.ContentBaseProps> {}
-
-export const PopoverContent = withContext<HTMLDivElement, PopoverContentProps>(
-  ArkPopover.Content,
-  "content",
+export const PopoverPositioner = withContext<HTMLDivElement, PopoverPositionerProps>(
+  ArkPopover.Positioner,
+  "positioner",
   { forwardAsChild: true },
 )
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface PopoverArrowTipProps
-  extends HTMLUIKitProps<"div", ArkPopover.ArrowTipBaseProps> {}
+export interface PopoverContentProps extends HTMLUIKitProps<"div", ArkPopover.ContentBaseProps> {}
 
-export const PopoverArrowTip = withContext<
-  HTMLDivElement,
-  PopoverArrowTipProps
->(ArkPopover.ArrowTip, "arrowTip", { forwardAsChild: true })
+export const PopoverContent = withContext<HTMLDivElement, PopoverContentProps>(ArkPopover.Content, "content", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface PopoverArrowProps
-  extends HTMLUIKitProps<"div", ArkPopover.ArrowBaseProps> {}
+export interface PopoverArrowTipProps extends HTMLUIKitProps<"div", ArkPopover.ArrowTipBaseProps> {}
 
-export const PopoverArrow = withContext<HTMLDivElement, PopoverArrowProps>(
-  ArkPopover.Arrow,
-  "arrow",
-  {
-    forwardAsChild: true,
-    defaultProps: { children: <PopoverArrowTip /> },
-  },
-)
+export const PopoverArrowTip = withContext<HTMLDivElement, PopoverArrowTipProps>(ArkPopover.ArrowTip, "arrowTip", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface PopoverCloseTriggerProps
-  extends HTMLUIKitProps<"button", ArkPopover.CloseTriggerBaseProps> {}
+export interface PopoverArrowProps extends HTMLUIKitProps<"div", ArkPopover.ArrowBaseProps> {}
 
-export const PopoverCloseTrigger = withContext<
-  HTMLButtonElement,
-  PopoverCloseTriggerProps
->(ArkPopover.CloseTrigger, "closeTrigger", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface PopoverIndicatorProps
-  extends HTMLUIKitProps<"div", ArkPopover.IndicatorBaseProps> {}
-
-export const PopoverIndicator = withContext<
-  HTMLDivElement,
-  PopoverIndicatorProps
->(ArkPopover.Indicator, "indicator", { forwardAsChild: true })
+export const PopoverArrow = withContext<HTMLDivElement, PopoverArrowProps>(ArkPopover.Arrow, "arrow", {
+  forwardAsChild: true,
+  defaultProps: { children: <PopoverArrowTip /> },
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface PopoverTitleProps
-  extends HTMLUIKitProps<"div", ArkPopover.TitleBaseProps> {}
+export interface PopoverCloseTriggerProps extends HTMLUIKitProps<"button", ArkPopover.CloseTriggerBaseProps> {}
 
-export const PopoverTitle = withContext<HTMLDivElement, PopoverTitleProps>(
-  ArkPopover.Title,
-  "title",
+export const PopoverCloseTrigger = withContext<HTMLButtonElement, PopoverCloseTriggerProps>(
+  ArkPopover.CloseTrigger,
+  "closeTrigger",
   { forwardAsChild: true },
 )
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface PopoverIndicatorProps extends HTMLUIKitProps<"div", ArkPopover.IndicatorBaseProps> {}
+
+export const PopoverIndicator = withContext<HTMLDivElement, PopoverIndicatorProps>(ArkPopover.Indicator, "indicator", {
+  forwardAsChild: true,
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface PopoverTitleProps extends HTMLUIKitProps<"div", ArkPopover.TitleBaseProps> {}
+
+export const PopoverTitle = withContext<HTMLDivElement, PopoverTitleProps>(ArkPopover.Title, "title", {
+  forwardAsChild: true,
+})
 
 // description
 
-export interface PopoverDescriptionProps
-  extends HTMLUIKitProps<"div", ArkPopover.DescriptionBaseProps> {}
+export interface PopoverDescriptionProps extends HTMLUIKitProps<"div", ArkPopover.DescriptionBaseProps> {}
 
-export const PopoverDescription = withContext<
-  HTMLDivElement,
-  PopoverDescriptionProps
->(ArkPopover.Description, "description", { forwardAsChild: true })
+export const PopoverDescription = withContext<HTMLDivElement, PopoverDescriptionProps>(
+  ArkPopover.Description,
+  "description",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface PopoverFooterProps extends HTMLUIKitProps<"footer"> {}
 
-export const PopoverFooter = withContext<HTMLDivElement, PopoverFooterProps>(
-  "footer",
-  "footer",
-)
+export const PopoverFooter = withContext<HTMLDivElement, PopoverFooterProps>("footer", "footer")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface PopoverHeaderProps
-  extends HTMLUIKitProps<"div", ArkPopover.TitleBaseProps> {}
+export interface PopoverHeaderProps extends HTMLUIKitProps<"div", ArkPopover.TitleBaseProps> {}
 
-export const PopoverHeader = withContext<HTMLDivElement, PopoverHeaderProps>(
-  "header",
-  "header",
-)
+export const PopoverHeader = withContext<HTMLDivElement, PopoverHeaderProps>("header", "header")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface PopoverBodyProps extends HTMLUIKitProps<"div"> {}
 
-export const PopoverBody = withContext<HTMLDivElement, PopoverBodyProps>(
-  "div",
-  "body",
-)
+export const PopoverBody = withContext<HTMLDivElement, PopoverBodyProps>("div", "body")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface PopoverAnchorProps
-  extends HTMLUIKitProps<"div", ArkPopover.AnchorBaseProps> {}
+export interface PopoverAnchorProps extends HTMLUIKitProps<"div", ArkPopover.AnchorBaseProps> {}
 
-export const PopoverAnchor = withContext<HTMLDivElement, PopoverAnchorProps>(
-  ArkPopover.Anchor,
-  undefined,
-  { forwardAsChild: true },
-)
+export const PopoverAnchor = withContext<HTMLDivElement, PopoverAnchorProps>(ArkPopover.Anchor, undefined, {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export const PopoverContext = ArkPopover.Context
 
-export interface PopoverOpenChangeDetails
-  extends ArkPopover.OpenChangeDetails {}
+export interface PopoverOpenChangeDetails extends ArkPopover.OpenChangeDetails {}

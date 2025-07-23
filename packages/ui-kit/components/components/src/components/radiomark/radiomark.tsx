@@ -11,9 +11,7 @@ import {
 } from "../../styled-system"
 import { dataAttr } from "../../utils"
 
-export interface RadiomarkProps
-  extends HTMLUIKitProps<"span", RecipeProps<"radiomark">>,
-    UnstyledProp {
+export interface RadiomarkProps extends HTMLUIKitProps<"span", RecipeProps<"radiomark">>, UnstyledProp {
   /**
    * Whether the checkmark is checked
    */
@@ -24,27 +22,21 @@ export interface RadiomarkProps
   disabled?: boolean | undefined
 }
 
-export const Radiomark = forwardRef<HTMLSpanElement, RadiomarkProps>(
-  function Radiomark(props, ref) {
-    const recipe = useRecipe({ key: "radiomark", recipe: props.recipe })
-    const [variantProps, restProps] = recipe.splitVariantProps(props)
+export const Radiomark = forwardRef<HTMLSpanElement, RadiomarkProps>(function Radiomark(props, ref) {
+  const recipe = useRecipe({ key: "radiomark", recipe: props.recipe })
+  const [variantProps, restProps] = recipe.splitVariantProps(props)
 
-    const { checked, disabled, unstyled, children, ...rest } = restProps
+  const { checked, disabled, unstyled, children, ...rest } = restProps
 
-    const styles = unstyled ? EMPTY_STYLES : recipe(variantProps)
+  const styles = unstyled ? EMPTY_STYLES : recipe(variantProps)
 
-    const sharedProps = {
-      ref,
-      "data-checked": dataAttr(checked),
-      "data-disabled": dataAttr(disabled),
-      ...rest,
-      css: [styles, props.css],
-    }
+  const sharedProps = {
+    ref,
+    "data-checked": dataAttr(checked),
+    "data-disabled": dataAttr(disabled),
+    ...rest,
+    css: [styles, props.css],
+  }
 
-    return (
-      <uikit.span {...sharedProps}>
-        {checked && <span className="dot" />}
-      </uikit.span>
-    )
-  },
-)
+  return <uikit.span {...sharedProps}>{checked && <span className="dot" />}</uikit.span>
+})

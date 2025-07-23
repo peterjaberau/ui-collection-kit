@@ -1,11 +1,7 @@
 "use client"
 
 import { forwardRef } from "react"
-import {
-  type HTMLUIKitProps,
-  type SystemStyleObject,
-  uikit,
-} from "../../styled-system"
+import { type HTMLUIKitProps, type SystemStyleObject, uikit } from "../../styled-system"
 
 export interface FlexOptions {
   align?: SystemStyleObject["alignItems"] | undefined
@@ -20,36 +16,24 @@ export interface FlexOptions {
 
 export interface FlexProps extends HTMLUIKitProps<"div", FlexOptions> {}
 
-export const Flex = forwardRef<HTMLDivElement, FlexProps>(
-  function Flex(props, ref) {
-    const {
-      direction,
-      align,
-      justify,
-      wrap,
-      basis,
-      grow,
-      shrink,
-      inline,
-      ...rest
-    } = props
+export const Flex = forwardRef<HTMLDivElement, FlexProps>(function Flex(props, ref) {
+  const { direction, align, justify, wrap, basis, grow, shrink, inline, ...rest } = props
 
-    return (
-      <uikit.div
-        ref={ref}
-        {...rest}
-        css={{
-          display: inline ? "inline-flex" : "flex",
-          flexDirection: direction,
-          alignItems: align,
-          justifyContent: justify,
-          flexWrap: wrap,
-          flexBasis: basis,
-          flexGrow: grow,
-          flexShrink: shrink,
-          ...props.css,
-        }}
-      />
-    )
-  },
-)
+  return (
+    <uikit.div
+      ref={ref}
+      {...rest}
+      css={{
+        display: inline ? "inline-flex" : "flex",
+        flexDirection: direction,
+        alignItems: align,
+        justifyContent: justify,
+        flexWrap: wrap,
+        flexBasis: basis,
+        flexGrow: grow,
+        flexShrink: shrink,
+        ...props.css,
+      }}
+    />
+  )
+})

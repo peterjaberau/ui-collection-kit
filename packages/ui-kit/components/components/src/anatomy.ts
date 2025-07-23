@@ -26,13 +26,7 @@ export const actionBarAnatomy = createAnatomy("action-bar").parts(
   "closeTrigger",
 )
 
-export const alertAnatomy = createAnatomy("alert").parts(
-  "title",
-  "description",
-  "root",
-  "indicator",
-  "content",
-)
+export const alertAnatomy = createAnatomy("alert").parts("title", "description", "root", "indicator", "content")
 
 export const breadcrumbAnatomy = createAnatomy("breadcrumb").parts(
   "link",
@@ -44,21 +38,9 @@ export const breadcrumbAnatomy = createAnatomy("breadcrumb").parts(
   "separator",
 )
 
-export const blockquoteAnatomy = createAnatomy("blockquote").parts(
-  "root",
-  "icon",
-  "content",
-  "caption",
-)
+export const blockquoteAnatomy = createAnatomy("blockquote").parts("root", "icon", "content", "caption")
 
-export const cardAnatomy = createAnatomy("card").parts(
-  "root",
-  "header",
-  "body",
-  "footer",
-  "title",
-  "description",
-)
+export const cardAnatomy = createAnatomy("card").parts("root", "header", "body", "footer", "title", "description")
 
 export const checkboxCardAnatomy = createAnatomy("checkbox-card", [
   "root",
@@ -70,86 +52,39 @@ export const checkboxCardAnatomy = createAnatomy("checkbox-card", [
   "content",
 ])
 
-export const dataListAnatomy = createAnatomy("data-list").parts(
-  "root",
-  "item",
-  "itemLabel",
-  "itemValue",
-)
+export const dataListAnatomy = createAnatomy("data-list").parts("root", "item", "itemLabel", "itemValue")
 
-export const dialogAnatomy = arkDialogAnatomy.extendWith(
-  "header",
-  "body",
-  "footer",
-  "backdrop",
-)
+export const dialogAnatomy = arkDialogAnatomy.extendWith("header", "body", "footer", "backdrop")
 
-export const drawerAnatomy = arkDialogAnatomy.extendWith(
-  "header",
-  "body",
-  "footer",
-  "backdrop",
-)
+export const drawerAnatomy = arkDialogAnatomy.extendWith("header", "body", "footer", "backdrop")
 
 export const editableAnatomy = arkEditableAnatomy.extendWith("textarea")
 
-export const emptyStateAnatomy = createAnatomy("empty-state", [
-  "root",
-  "content",
-  "indicator",
-  "title",
-  "description",
-])
+export const emptyStateAnatomy = createAnatomy("empty-state", ["root", "content", "indicator", "title", "description"])
 
 export const fieldAnatomy = arkFieldAnatomy.extendWith("requiredIndicator")
 
 export const fieldsetAnatomy = arkFieldsetAnatomy.extendWith("content")
 
-export const fileUploadAnatomy = arkFileUploadAnatomy.extendWith(
-  "itemContent",
-  "dropzoneContent",
-  "fileText",
-)
+export const fileUploadAnatomy = arkFileUploadAnatomy.extendWith("itemContent", "dropzoneContent", "fileText")
 
-export const listAnatomy = createAnatomy("list").parts(
-  "root",
-  "item",
-  "indicator",
-)
+export const listAnatomy = createAnatomy("list").parts("root", "item", "indicator")
 
 export const menuAnatomy = arkMenuAnatomy.extendWith("itemCommand")
 
-export const nativeSelectAnatomy = createAnatomy("select").parts(
-  "root",
-  "field",
-  "indicator",
-)
+export const nativeSelectAnatomy = createAnatomy("select").parts("root", "field", "indicator")
 
-export const popoverAnatomy = arkPopoverAnatomy.extendWith(
-  "header",
-  "body",
-  "footer",
-)
+export const popoverAnatomy = arkPopoverAnatomy.extendWith("header", "body", "footer")
 
-export const radioGroupAnatomy = arkRadioGroupAnatomy.extendWith(
-  "itemAddon",
-  "itemIndicator",
-)
+export const radioGroupAnatomy = arkRadioGroupAnatomy.extendWith("itemAddon", "itemIndicator")
 
-export const radioCardAnatomy = radioGroupAnatomy.extendWith(
-  "itemContent",
-  "itemDescription",
-)
+export const radioCardAnatomy = radioGroupAnatomy.extendWith("itemContent", "itemDescription")
 
-export const ratingGroupAnatomy =
-  arkRatingGroupAnatomy.extendWith("itemIndicator")
+export const ratingGroupAnatomy = arkRatingGroupAnatomy.extendWith("itemIndicator")
 
 export const selectAnatomy = arkSelectAnatomy.extendWith("indicatorGroup")
 
-export const comboboxAnatomy = arkComboboxAnatomy.extendWith(
-  "indicatorGroup",
-  "empty",
-)
+export const comboboxAnatomy = arkComboboxAnatomy.extendWith("indicatorGroup", "empty")
 
 export const sliderAnatomy = arkSliderAnatomy.extendWith("markerIndicator")
 
@@ -210,13 +145,7 @@ export const tabsAnatomy = createAnatomy("tabs").parts(
   "indicator",
 )
 
-export const tagAnatomy = createAnatomy("tag").parts(
-  "root",
-  "label",
-  "closeTrigger",
-  "startElement",
-  "endElement",
-)
+export const tagAnatomy = createAnatomy("tag").parts("root", "label", "closeTrigger", "startElement", "endElement")
 
 export const timelineAnatomy = createAnatomy("timeline").parts(
   "root",
@@ -229,8 +158,7 @@ export const timelineAnatomy = createAnatomy("timeline").parts(
   "description",
 )
 
-export const colorPickerAnatomy =
-  arkColorPickerAnatomy.extendWith("channelText")
+export const colorPickerAnatomy = arkColorPickerAnatomy.extendWith("channelText")
 
 export { treeViewAnatomy } from "@ui-kit/base/tree-view"
 export { avatarAnatomy } from "@ui-kit/base/avatar"

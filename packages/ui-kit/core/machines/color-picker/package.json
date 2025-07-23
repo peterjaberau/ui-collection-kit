@@ -1,6 +1,6 @@
 {
-  "name": "@ui-kit/color-picker",
-  "version": "1.11.0",
+  "name": "@ui-kit/core-color-picker",
+  "version": "0.0.1",
   "description": "Core logic for the color-picker widget implemented as a state machine",
 
 
@@ -31,7 +31,7 @@
     "@ui-kit/core-dom-query": "workspace:*",
     "@ui-kit/core-dismissable": "workspace:*",
     "@ui-kit/core-utils": "workspace:*",
-    "@ui-kit/color-utils": "workspace:*",
+    "@ui-kit/core-color-utils": "workspace:*",
     "@ui-kit/core-popper": "workspace:*",
     "@ui-kit/core-types": "workspace:*"
   },

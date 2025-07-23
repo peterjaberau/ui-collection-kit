@@ -5,9 +5,7 @@ const mapEntries = <T extends Dict, R extends Dict>(
   obj: T,
   fn: (key: string, value: T[keyof T]) => [string, R[keyof R]],
 ): R => {
-  return Object.fromEntries(
-    Object.entries(obj).map(([key, value]) => fn(key, value)),
-  ) as R
+  return Object.fromEntries(Object.entries(obj).map(([key, value]) => fn(key, value))) as R
 }
 
 export const createConditions = (options: ConditionConfig): Condition => {

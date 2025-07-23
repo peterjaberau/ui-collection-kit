@@ -11,17 +11,7 @@ export interface SkipNavContentProps extends HTMLUIKitProps<"div"> {}
  * @see Docs #/docs/components/skip-nav
  */
 
-export const SkipNavContent = forwardRef<HTMLDivElement, SkipNavContentProps>(
-  function SkipNavContent(props, ref) {
-    const { id = fallbackId, ...rest } = props
-    return (
-      <uikit.div
-        ref={ref}
-        id={id}
-        tabIndex={-1}
-        style={{ outline: 0 }}
-        {...rest}
-      />
-    )
-  },
-)
+export const SkipNavContent = forwardRef<HTMLDivElement, SkipNavContentProps>(function SkipNavContent(props, ref) {
+  const { id = fallbackId, ...rest } = props
+  return <uikit.div ref={ref} id={id} tabIndex={-1} style={{ outline: 0 }} {...rest} />
+})

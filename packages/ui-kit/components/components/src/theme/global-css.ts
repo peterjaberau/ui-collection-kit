@@ -12,29 +12,14 @@ export const globalCss = defineGlobalStyles({
     "--ring-offset-shadow": "0 0 #0000",
     "--ring-shadow": "0 0 #0000",
     ...Object.fromEntries(
-      [
-        "brightness",
-        "contrast",
-        "grayscale",
-        "hue-rotate",
-        "invert",
-        "saturate",
-        "sepia",
-        "drop-shadow",
-      ].map((prop) => [`--${prop}`, empty]),
+      ["brightness", "contrast", "grayscale", "hue-rotate", "invert", "saturate", "sepia", "drop-shadow"].map(
+        (prop) => [`--${prop}`, empty],
+      ),
     ),
     ...Object.fromEntries(
-      [
-        "blur",
-        "brightness",
-        "contrast",
-        "grayscale",
-        "hue-rotate",
-        "invert",
-        "opacity",
-        "saturate",
-        "sepia",
-      ].map((prop) => [`--backdrop-${prop}`, empty]),
+      ["blur", "brightness", "contrast", "grayscale", "hue-rotate", "invert", "opacity", "saturate", "sepia"].map(
+        (prop) => [`--backdrop-${prop}`, empty],
+      ),
     ),
     "--global-font-mono": "fonts.mono",
     "--global-font-body": "fonts.body",

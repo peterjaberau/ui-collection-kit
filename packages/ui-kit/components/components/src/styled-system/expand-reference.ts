@@ -5,10 +5,7 @@ import { esc } from "./esc"
  * Allows nested token references, e.g. `token(colors.xxx.yyy, token(colors.aaa.bbb, blue))`
  * Properly ignore CSS vars in fallback syntax, e.g. `token(colors.xxx.yyy, var(--some-var, var(--can-be-nested, blue)))`
  */
-export const expandTokenReferences = (
-  str: string,
-  resolve: (path: string) => string | undefined,
-) => {
+export const expandTokenReferences = (str: string, resolve: (path: string) => string | undefined) => {
   let expanded = ""
   let index = 0
 
@@ -118,9 +115,7 @@ export const expandTokenReferences = (
         // Try to resolve the token path, which is the left part of the token fn
         // `token(tokenPath, fallback))`
         //        ^^^^^^^^^
-        const resolved = tokenPath
-          ? (resolve(tokenPath) ?? esc(tokenPath))
-          : tokenPath
+        const resolved = tokenPath ? (resolve(tokenPath) ?? esc(tokenPath)) : tokenPath
 
         if (fallback) {
           // `, colors.xxx.yyy` -> `colors.xxx.yyy`

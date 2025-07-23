@@ -1,9 +1,7 @@
 import { type Dict, isObject, walkObject } from "../utils"
 import type { SystemContext } from "./types"
 
-export function createSerializeFn(
-  options: Pick<SystemContext, "conditions" | "isValidProperty">,
-) {
+export function createSerializeFn(options: Pick<SystemContext, "conditions" | "isValidProperty">) {
   const { conditions, isValidProperty } = options
 
   return function serialize(styles: Dict) {

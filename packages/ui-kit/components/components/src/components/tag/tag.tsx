@@ -10,64 +10,42 @@ import { CloseIcon } from "../icons"
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-const {
-  withProvider,
-  withContext,
-  useStyles: useTagStyles,
-  PropsProvider,
-} = createSlotRecipeContext({ key: "tag" })
+const { withProvider, withContext, useStyles: useTagStyles, PropsProvider } = createSlotRecipeContext({ key: "tag" })
 
 export { useTagStyles }
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface TagRootBaseProps
-  extends SlotRecipeProps<"tag">,
-    UnstyledProp {}
+export interface TagRootBaseProps extends SlotRecipeProps<"tag">, UnstyledProp {}
 
-export interface TagRootProps
-  extends HTMLUIKitProps<"span", TagRootBaseProps> {}
+export interface TagRootProps extends HTMLUIKitProps<"span", TagRootBaseProps> {}
 
-export const TagRoot = withProvider<HTMLSpanElement, TagRootProps>(
-  "div",
-  "root",
-)
+export const TagRoot = withProvider<HTMLSpanElement, TagRootProps>("div", "root")
 
-export const TagRootPropsProvider =
-  PropsProvider as React.Provider<TagRootBaseProps>
+export const TagRootPropsProvider = PropsProvider as React.Provider<TagRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TagLabelProps extends HTMLUIKitProps<"span"> {}
 
-export const TagLabel = withContext<HTMLSpanElement, TagLabelProps>(
-  "span",
-  "label",
-)
+export const TagLabel = withContext<HTMLSpanElement, TagLabelProps>("span", "label")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TagCloseTriggerProps extends HTMLUIKitProps<"button"> {}
 
-export const TagCloseTrigger = withContext<
-  HTMLButtonElement,
-  TagCloseTriggerProps
->("button", "closeTrigger", { defaultProps: { children: <CloseIcon /> } })
+export const TagCloseTrigger = withContext<HTMLButtonElement, TagCloseTriggerProps>("button", "closeTrigger", {
+  defaultProps: { children: <CloseIcon /> },
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TagStartElementProps extends HTMLUIKitProps<"span"> {}
 
-export const TagStartElement = withContext<
-  HTMLSpanElement,
-  TagStartElementProps
->("span", "startElement")
+export const TagStartElement = withContext<HTMLSpanElement, TagStartElementProps>("span", "startElement")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface TagEndElementProps extends HTMLUIKitProps<"span"> {}
 
-export const TagEndElement = withContext<HTMLSpanElement, TagEndElementProps>(
-  "span",
-  "endElement",
-)
+export const TagEndElement = withContext<HTMLSpanElement, TagEndElementProps>("span", "endElement")

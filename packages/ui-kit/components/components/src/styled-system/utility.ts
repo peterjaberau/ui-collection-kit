@@ -1,12 +1,7 @@
 import { type Dict, isFunction, isString, memo } from "../utils"
 import { colorMix } from "./color-mix"
 import { mapToJson } from "./map-to-json"
-import type {
-  TokenDictionary,
-  Utility,
-  UtilityConfig,
-  UtilityPropertyConfig,
-} from "./types"
+import type { TokenDictionary, Utility, UtilityConfig, UtilityPropertyConfig } from "./types"
 
 interface Options {
   tokens: TokenDictionary
@@ -71,10 +66,7 @@ export function createUtility(options: Options) {
 
   const propTypes = new Map<string, Set<string>>()
 
-  const assignPropertyType = (
-    property: string,
-    config: UtilityPropertyConfig | undefined,
-  ) => {
+  const assignPropertyType = (property: string, config: UtilityPropertyConfig | undefined) => {
     if (!config) return
 
     const values = getPropertyValues(config, (key) => `type:Tokens["${key}"]`)
@@ -130,10 +122,7 @@ export function createUtility(options: Options) {
     return map
   }
 
-  const getPropertyValues = (
-    config: UtilityPropertyConfig,
-    resolveFn?: (key: string) => string,
-  ) => {
+  const getPropertyValues = (config: UtilityPropertyConfig, resolveFn?: (key: string) => string) => {
     const { values } = config
 
     const fn = (key: string) => {

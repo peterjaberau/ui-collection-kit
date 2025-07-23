@@ -1,11 +1,6 @@
 "use client"
 
-import {
-  type HTMLUIKitProps,
-  type RecipeProps,
-  type UnstyledProp,
-  createRecipeContext,
-} from "../../styled-system"
+import { type HTMLUIKitProps, type RecipeProps, type UnstyledProp, createRecipeContext } from "../../styled-system"
 
 const { withContext, PropsProvider } = createRecipeContext({
   key: "link",

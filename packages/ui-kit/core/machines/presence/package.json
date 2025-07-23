@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-presence",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "Core logic for the presence widget implemented as a state machine",
   "keywords": [
     "js",

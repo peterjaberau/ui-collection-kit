@@ -49,9 +49,6 @@ export type {
 
 export { useFileUpload, useFileUploadContext } from "@ui-kit/base/file-upload"
 
-export type {
-  UseFileUploadProps,
-  UseFileUploadReturn,
-} from "@ui-kit/base/file-upload"
+export type { UseFileUploadProps, UseFileUploadReturn } from "@ui-kit/base/file-upload"
 
 export * as FileUpload from "./namespace"

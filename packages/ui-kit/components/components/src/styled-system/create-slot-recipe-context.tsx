@@ -10,11 +10,7 @@ import { uikit } from "./factory"
 import type { JsxFactoryOptions } from "./factory.types"
 import type { ConfigRecipeSlots } from "./generated/recipes.gen"
 import type { SystemSlotRecipeFn } from "./recipe.types"
-import {
-  type SlotRecipeKey,
-  type UseSlotRecipeOptions,
-  useSlotRecipe,
-} from "./use-slot-recipe"
+import { type SlotRecipeKey, type UseSlotRecipeOptions, useSlotRecipe } from "./use-slot-recipe"
 
 interface WrapElementProps<P> {
   wrapElement?(element: React.ReactElement, props: P): React.ReactElement
@@ -24,33 +20,23 @@ export interface WithRootProviderOptions<P> extends WrapElementProps<P> {
   defaultProps?: Partial<P> | undefined
 }
 
-export interface WithProviderOptions<P>
-  extends JsxFactoryOptions<P>,
-    WrapElementProps<P> {}
+export interface WithProviderOptions<P> extends JsxFactoryOptions<P>, WrapElementProps<P> {}
 
 export interface WithContextOptions<P> extends JsxFactoryOptions<P> {}
 
 const upperFirst = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
-export const createSlotRecipeContext = <R extends SlotRecipeKey>(
-  options: UseSlotRecipeOptions<R>,
-) => {
+export const createSlotRecipeContext = <R extends SlotRecipeKey>(options: UseSlotRecipeOptions<R>) => {
   const { key: recipeKey, recipe: recipeConfig } = options
 
-  const contextName = upperFirst(
-    recipeKey || (recipeConfig as any).className || "Component",
-  )
+  const contextName = upperFirst(recipeKey || (recipeConfig as any).className || "Component")
 
-  const [StylesProvider, useStyles] = createContext<
-    Record<string, SystemStyleObject>
-  >({
+  const [StylesProvider, useStyles] = createContext<Record<string, SystemStyleObject>>({
     name: `${contextName}StylesContext`,
     errorMessage: `use${contextName}Styles returned is 'undefined'. Seems you forgot to wrap the components in "<${contextName}.Root />" `,
   })
 
-  const [ClassNamesProvider, useClassNames] = createContext<
-    Record<string, string>
-  >({
+  const [ClassNamesProvider, useClassNames] = createContext<Record<string, string>>({
     name: `${contextName}ClassNameContext`,
     errorMessage: `use${contextName}ClassNames returned is 'undefined'. Seems you forgot to wrap the components in "<${contextName}.Root />" `,
     strict: false,
@@ -72,10 +58,7 @@ export const createSlotRecipeContext = <R extends SlotRecipeKey>(
     }) as SystemSlotRecipeFn<string, {}, {}>
 
     // @ts-ignore
-    const [variantProps, otherProps] = useMemo(
-      () => slotRecipe.splitVariantProps(restProps),
-      [restProps, slotRecipe],
-    )
+    const [variantProps, otherProps] = useMemo(() => slotRecipe.splitVariantProps(restProps), [restProps, slotRecipe])
     const styles = useMemo(
       () => (unstyled ? EMPTY_SLOT_STYLES : slotRecipe(variantProps)),
       [unstyled, variantProps, slotRecipe],
@@ -96,10 +79,7 @@ export const createSlotRecipeContext = <R extends SlotRecipeKey>(
 
     const StyledComponent = (inProps: any) => {
       const propsContext = usePropsContext()
-      const props = useMemo(
-        () => mergeProps(defaultProps, propsContext, inProps),
-        [propsContext, inProps],
-      )
+      const props = useMemo(() => mergeProps(defaultProps, propsContext, inProps), [propsContext, inProps])
       const { styles, classNames, props: rootProps } = useRecipeResult(props)
 
       return (
@@ -120,18 +100,13 @@ export const createSlotRecipeContext = <R extends SlotRecipeKey>(
     Component: React.ElementType<any>,
     slot: R extends keyof ConfigRecipeSlots ? ConfigRecipeSlots[R] : string,
     options?: WithProviderOptions<P>,
-  ): React.ForwardRefExoticComponent<
-    React.PropsWithoutRef<P> & React.RefAttributes<T>
-  > => {
+  ): React.ForwardRefExoticComponent<React.PropsWithoutRef<P> & React.RefAttributes<T>> => {
     const { defaultProps, ...restOptions } = options ?? {}
     const SuperComponent = uikit(Component, {}, restOptions as any)
 
     const StyledComponent = forwardRef<any, any>((inProps, ref) => {
       const propsContext = usePropsContext()
-      const props = useMemo(
-        () => mergeProps(defaultProps ?? {}, propsContext, inProps),
-        [propsContext, inProps],
-      )
+      const props = useMemo(() => mergeProps(defaultProps ?? {}, propsContext, inProps), [propsContext, inProps])
       const { styles, props: rootProps, classNames } = useRecipeResult(props)
       const className = classNames[slot as keyof typeof classNames]
 
@@ -161,9 +136,7 @@ export const createSlotRecipeContext = <R extends SlotRecipeKey>(
     Component: React.ElementType<any>,
     slot?: R extends keyof ConfigRecipeSlots ? ConfigRecipeSlots[R] : string,
     options?: WithContextOptions<P>,
-  ): React.ForwardRefExoticComponent<
-    React.PropsWithoutRef<P> & React.RefAttributes<T>
-  > => {
+  ): React.ForwardRefExoticComponent<React.PropsWithoutRef<P> & React.RefAttributes<T>> => {
     const SuperComponent = uikit(Component, {}, options as any)
     const StyledComponent = forwardRef<any, any>((props, ref) => {
       const styles = useStyles()

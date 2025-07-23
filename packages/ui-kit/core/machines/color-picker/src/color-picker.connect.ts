@@ -1,4 +1,4 @@
-import { getColorAreaGradient, normalizeColor } from "@ui-kit/color-utils"
+import { getColorAreaGradient, normalizeColor } from "@ui-kit/core-color-utils"
 import { getEventKey, getEventPoint, getEventStep, isLeftClick, isModifierKey } from "@ui-kit/core-dom-query"
 import { dataAttr, query, visuallyHiddenStyle } from "@ui-kit/core-dom-query"
 import { getPlacementStyles } from "@ui-kit/core-popper"

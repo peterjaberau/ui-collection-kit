@@ -15,9 +15,7 @@ export interface ForProps<T> {
   children: (item: Exclude<T, undefined>, index: number) => React.ReactNode
 }
 
-export function For<T extends string | number | Dict | undefined>(
-  props: ForProps<T>,
-): React.ReactNode {
+export function For<T extends string | number | Dict | undefined>(props: ForProps<T>): React.ReactNode {
   const { each, fallback, children } = props
 
   if (each?.length === 0) {

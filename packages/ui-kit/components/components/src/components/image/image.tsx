@@ -1,11 +1,7 @@
 "use client"
 
 import { forwardRef } from "react"
-import {
-  type HTMLUIKitProps,
-  type SystemStyleObject,
-  uikit,
-} from "../../styled-system"
+import { type HTMLUIKitProps, type SystemStyleObject, uikit } from "../../styled-system"
 import { cx } from "../../utils"
 
 interface ImageOptions {
@@ -31,17 +27,15 @@ export interface ImageProps extends HTMLUIKitProps<"img", ImageOptions> {}
  *
  * @see Docs #/docs/components/image
  */
-export const Image = forwardRef<HTMLImageElement, ImageProps>(
-  function Image(props, ref) {
-    const { align, fit = "cover", ...rest } = props
-    return (
-      <uikit.img
-        ref={ref}
-        objectFit={fit}
-        objectPosition={align}
-        className={cx("uikit-image", props.className)}
-        {...rest}
-      />
-    )
-  },
-)
+export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(props, ref) {
+  const { align, fit = "cover", ...rest } = props
+  return (
+    <uikit.img
+      ref={ref}
+      objectFit={fit}
+      objectPosition={align}
+      className={cx("uikit-image", props.className)}
+      {...rest}
+    />
+  )
+})

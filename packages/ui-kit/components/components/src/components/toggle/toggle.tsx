@@ -26,43 +26,31 @@ export interface ToggleRootProviderBaseProps
   extends Assign<ArkToggle.RootBaseProps, SlotRecipeProps<"toggle">>,
     UnstyledProp {}
 
-export interface ToggleRootProviderProps
-  extends HTMLUIKitProps<"button", ToggleRootProviderBaseProps> {}
+export interface ToggleRootProviderProps extends HTMLUIKitProps<"button", ToggleRootProviderBaseProps> {}
 
-export const ToggleRootProvider = withProvider<
-  HTMLButtonElement,
-  ToggleRootProviderProps
->(ArkToggle.Root, "root", { forwardAsChild: true })
+export const ToggleRootProvider = withProvider<HTMLButtonElement, ToggleRootProviderProps>(ArkToggle.Root, "root", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ToggleRootBaseProps
-  extends Assign<ArkToggle.RootBaseProps, SlotRecipeProps<"toggle">>,
-    UnstyledProp {}
+export interface ToggleRootBaseProps extends Assign<ArkToggle.RootBaseProps, SlotRecipeProps<"toggle">>, UnstyledProp {}
 
-export interface ToggleRootProps
-  extends HTMLUIKitProps<"button", ToggleRootBaseProps> {}
+export interface ToggleRootProps extends HTMLUIKitProps<"button", ToggleRootBaseProps> {}
 
-export const ToggleRoot = withProvider<HTMLButtonElement, ToggleRootProps>(
-  ArkToggle.Root,
-  "root",
-  { forwardAsChild: true },
-)
+export const ToggleRoot = withProvider<HTMLButtonElement, ToggleRootProps>(ArkToggle.Root, "root", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const TogglePropsProvider =
-  PropsProvider as React.Provider<ToggleRootBaseProps>
+export const TogglePropsProvider = PropsProvider as React.Provider<ToggleRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ToggleIndicatorProps
-  extends HTMLUIKitProps<"div", ArkToggle.IndicatorBaseProps> {}
+export interface ToggleIndicatorProps extends HTMLUIKitProps<"div", ArkToggle.IndicatorBaseProps> {}
 
-export const ToggleIndicator = withContext<
-  HTMLButtonElement,
-  ToggleIndicatorProps
->(ArkToggle.Indicator, "indicator", {
+export const ToggleIndicator = withContext<HTMLButtonElement, ToggleIndicatorProps>(ArkToggle.Indicator, "indicator", {
   forwardAsChild: true,
   defaultProps: { _empty: { display: "none" } },
 })

@@ -1,10 +1,7 @@
 "use client"
 
 import type { Assign, CollectionItem } from "@ui-kit/base"
-import {
-  Combobox as ArkCombobox,
-  useComboboxContext,
-} from "@ui-kit/base/combobox"
+import { Combobox as ArkCombobox, useComboboxContext } from "@ui-kit/base/combobox"
 import { type JSX, forwardRef } from "react"
 import {
   type HTMLUIKitProps,
@@ -29,10 +26,7 @@ export { useComboboxStyles }
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface ComboboxRootProviderBaseProps<T extends CollectionItem = any>
-  extends Assign<
-      ArkCombobox.RootProviderBaseProps<T>,
-      SlotRecipeProps<"combobox">
-    >,
+  extends Assign<ArkCombobox.RootProviderBaseProps<T>, SlotRecipeProps<"combobox">>,
     UnstyledProp {}
 
 export interface ComboboxRootProviderProps<T extends CollectionItem = any>
@@ -42,12 +36,13 @@ interface ComboboxRootProviderComponent {
   <T extends CollectionItem>(props: ComboboxRootProviderProps<T>): JSX.Element
 }
 
-export const ComboboxRootProvider = withProvider<
-  HTMLDivElement,
-  ComboboxRootProviderProps
->(ArkCombobox.RootProvider, "root", {
-  forwardAsChild: true,
-}) as ComboboxRootProviderComponent
+export const ComboboxRootProvider = withProvider<HTMLDivElement, ComboboxRootProviderProps>(
+  ArkCombobox.RootProvider,
+  "root",
+  {
+    forwardAsChild: true,
+  },
+) as ComboboxRootProviderComponent
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -59,31 +54,22 @@ export interface ComboboxRootProps<T extends CollectionItem = any>
   extends HTMLUIKitProps<"div", ComboboxRootBaseProps<T>> {}
 
 export interface ComboboxRootComponent {
-  <T extends CollectionItem>(
-    props: ComboboxRootProps<T> & React.RefAttributes<HTMLDivElement>,
-  ): JSX.Element
+  <T extends CollectionItem>(props: ComboboxRootProps<T> & React.RefAttributes<HTMLDivElement>): JSX.Element
 }
 
-export const ComboboxRoot = withProvider<HTMLDivElement, ComboboxRootProps>(
-  ArkCombobox.Root,
-  "root",
-  { forwardAsChild: true },
-) as ComboboxRootComponent
+export const ComboboxRoot = withProvider<HTMLDivElement, ComboboxRootProps>(ArkCombobox.Root, "root", {
+  forwardAsChild: true,
+}) as ComboboxRootComponent
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const ComboboxPropsProvider =
-  PropsProvider as React.Provider<ComboboxRootBaseProps>
+export const ComboboxPropsProvider = PropsProvider as React.Provider<ComboboxRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ComboboxTriggerProps
-  extends HTMLUIKitProps<"button", ArkCombobox.TriggerBaseProps> {}
+export interface ComboboxTriggerProps extends HTMLUIKitProps<"button", ArkCombobox.TriggerBaseProps> {}
 
-export const ComboboxTrigger = withContext<
-  HTMLButtonElement,
-  ComboboxTriggerProps
->(ArkCombobox.Trigger, "trigger", {
+export const ComboboxTrigger = withContext<HTMLButtonElement, ComboboxTriggerProps>(ArkCombobox.Trigger, "trigger", {
   forwardAsChild: true,
   forwardProps: ["focusable"],
   defaultProps: {
@@ -93,157 +79,137 @@ export const ComboboxTrigger = withContext<
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ComboboxPositionerProps
-  extends HTMLUIKitProps<"div", ArkCombobox.PositionerBaseProps> {}
+export interface ComboboxPositionerProps extends HTMLUIKitProps<"div", ArkCombobox.PositionerBaseProps> {}
 
-export const ComboboxPositioner = withContext<
-  HTMLDivElement,
-  ComboboxPositionerProps
->(ArkCombobox.Positioner, "positioner", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface ComboboxContentProps
-  extends HTMLUIKitProps<"div", ArkCombobox.ContentBaseProps> {}
-
-export const ComboboxContent = withContext<
-  HTMLDivElement,
-  ComboboxContentProps
->(ArkCombobox.Content, "content", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface ComboboxInputProps
-  extends HTMLUIKitProps<"input", ArkCombobox.InputBaseProps> {}
-
-export const ComboboxInput = withContext<HTMLInputElement, ComboboxInputProps>(
-  ArkCombobox.Input,
-  "input",
+export const ComboboxPositioner = withContext<HTMLDivElement, ComboboxPositionerProps>(
+  ArkCombobox.Positioner,
+  "positioner",
   { forwardAsChild: true },
 )
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ComboboxClearTriggerProps
-  extends HTMLUIKitProps<"button", ArkCombobox.ClearTriggerBaseProps> {}
+export interface ComboboxContentProps extends HTMLUIKitProps<"div", ArkCombobox.ContentBaseProps> {}
 
-export const ComboboxClearTrigger = withContext<
-  HTMLButtonElement,
-  ComboboxClearTriggerProps
->(ArkCombobox.ClearTrigger, "clearTrigger", {
+export const ComboboxContent = withContext<HTMLDivElement, ComboboxContentProps>(ArkCombobox.Content, "content", {
   forwardAsChild: true,
-  defaultProps: {
-    children: <CloseIcon />,
-  },
 })
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface ComboboxInputProps extends HTMLUIKitProps<"input", ArkCombobox.InputBaseProps> {}
+
+export const ComboboxInput = withContext<HTMLInputElement, ComboboxInputProps>(ArkCombobox.Input, "input", {
+  forwardAsChild: true,
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface ComboboxClearTriggerProps extends HTMLUIKitProps<"button", ArkCombobox.ClearTriggerBaseProps> {}
+
+export const ComboboxClearTrigger = withContext<HTMLButtonElement, ComboboxClearTriggerProps>(
+  ArkCombobox.ClearTrigger,
+  "clearTrigger",
+  {
+    forwardAsChild: true,
+    defaultProps: {
+      children: <CloseIcon />,
+    },
+  },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface ComboboxIndicatorGroupProps extends HTMLUIKitProps<"div"> {}
 
-export const ComboboxIndicatorGroup = withContext<
-  HTMLDivElement,
-  ComboboxIndicatorGroupProps
->("div", "indicatorGroup")
+export const ComboboxIndicatorGroup = withContext<HTMLDivElement, ComboboxIndicatorGroupProps>("div", "indicatorGroup")
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ComboboxItemGroupProps
-  extends HTMLUIKitProps<"div", ArkCombobox.ItemGroupBaseProps> {}
+export interface ComboboxItemGroupProps extends HTMLUIKitProps<"div", ArkCombobox.ItemGroupBaseProps> {}
 
-export const ComboboxItemGroup = withContext<
-  HTMLDivElement,
-  ComboboxItemGroupProps
->(ArkCombobox.ItemGroup, "itemGroup", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface ComboboxItemGroupLabelProps
-  extends HTMLUIKitProps<"div", ArkCombobox.ItemGroupLabelBaseProps> {}
-
-export const ComboboxItemGroupLabel = withContext<
-  HTMLDivElement,
-  ComboboxItemGroupLabelProps
->(ArkCombobox.ItemGroupLabel, "itemGroupLabel", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface ComboboxItemProps
-  extends HTMLUIKitProps<"div", ArkCombobox.ItemBaseProps> {}
-
-export const ComboboxItem = withContext<HTMLDivElement, ComboboxItemProps>(
-  ArkCombobox.Item,
-  "item",
+export const ComboboxItemGroup = withContext<HTMLDivElement, ComboboxItemGroupProps>(
+  ArkCombobox.ItemGroup,
+  "itemGroup",
   { forwardAsChild: true },
 )
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ComboboxItemTextProps
-  extends HTMLUIKitProps<"div", ArkCombobox.ItemTextBaseProps> {}
+export interface ComboboxItemGroupLabelProps extends HTMLUIKitProps<"div", ArkCombobox.ItemGroupLabelBaseProps> {}
 
-export const ComboboxItemText = withContext<
-  HTMLDivElement,
-  ComboboxItemTextProps
->(ArkCombobox.ItemText, "itemText", { forwardAsChild: true })
+export const ComboboxItemGroupLabel = withContext<HTMLDivElement, ComboboxItemGroupLabelProps>(
+  ArkCombobox.ItemGroupLabel,
+  "itemGroupLabel",
+  { forwardAsChild: true },
+)
+
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ComboboxItemIndicatorProps
-  extends HTMLUIKitProps<"div", ArkCombobox.ItemIndicatorBaseProps> {}
+export interface ComboboxItemProps extends HTMLUIKitProps<"div", ArkCombobox.ItemBaseProps> {}
 
-export const ComboboxItemIndicator = withContext<
-  HTMLDivElement,
-  ComboboxItemIndicatorProps
->(ArkCombobox.ItemIndicator, "itemIndicator", {
+export const ComboboxItem = withContext<HTMLDivElement, ComboboxItemProps>(ArkCombobox.Item, "item", {
   forwardAsChild: true,
-  defaultProps: {
-    children: <CheckIcon />,
-  },
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface ComboboxItemTextProps extends HTMLUIKitProps<"div", ArkCombobox.ItemTextBaseProps> {}
+
+export const ComboboxItemText = withContext<HTMLDivElement, ComboboxItemTextProps>(ArkCombobox.ItemText, "itemText", {
+  forwardAsChild: true,
 })
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ComboboxControlProps
-  extends HTMLUIKitProps<"div", ArkCombobox.ControlBaseProps> {}
+export interface ComboboxItemIndicatorProps extends HTMLUIKitProps<"div", ArkCombobox.ItemIndicatorBaseProps> {}
 
-export const ComboboxControl = withContext<
-  HTMLDivElement,
-  ComboboxControlProps
->(ArkCombobox.Control, "control", { forwardAsChild: true })
+export const ComboboxItemIndicator = withContext<HTMLDivElement, ComboboxItemIndicatorProps>(
+  ArkCombobox.ItemIndicator,
+  "itemIndicator",
+  {
+    forwardAsChild: true,
+    defaultProps: {
+      children: <CheckIcon />,
+    },
+  },
+)
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface ComboboxControlProps extends HTMLUIKitProps<"div", ArkCombobox.ControlBaseProps> {}
+
+export const ComboboxControl = withContext<HTMLDivElement, ComboboxControlProps>(ArkCombobox.Control, "control", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface ComboboxLabelProps
-  extends HTMLUIKitProps<"label", ArkCombobox.LabelBaseProps> {}
+export interface ComboboxLabelProps extends HTMLUIKitProps<"label", ArkCombobox.LabelBaseProps> {}
 
-export const ComboboxLabel = withContext<HTMLLabelElement, ComboboxLabelProps>(
-  ArkCombobox.Label,
-  "label",
-  { forwardAsChild: true },
-)
+export const ComboboxLabel = withContext<HTMLLabelElement, ComboboxLabelProps>(ArkCombobox.Label, "label", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface ComboboxEmptyProps extends HTMLUIKitProps<"div"> {}
 
-export const ComboboxEmpty = forwardRef<HTMLDivElement, ComboboxEmptyProps>(
-  function ComboboxEmpty(props, ref) {
-    const combobox = useComboboxContext()
-    const styles = useComboboxStyles()
-    const classNames = useClassNames()
-    if (combobox.collection.size !== 0) return null
-    return (
-      <uikit.div
-        ref={ref}
-        {...props}
-        role="presentation"
-        data-scope="combobox"
-        data-part="empty"
-        className={cx(classNames.empty, props.className)}
-        css={[styles.empty, props.css]}
-      />
-    )
-  },
-)
+export const ComboboxEmpty = forwardRef<HTMLDivElement, ComboboxEmptyProps>(function ComboboxEmpty(props, ref) {
+  const combobox = useComboboxContext()
+  const styles = useComboboxStyles()
+  const classNames = useClassNames()
+  if (combobox.collection.size !== 0) return null
+  return (
+    <uikit.div
+      ref={ref}
+      {...props}
+      role="presentation"
+      data-scope="combobox"
+      data-part="empty"
+      className={cx(classNames.empty, props.className)}
+      css={[styles.empty, props.css]}
+    />
+  )
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -258,11 +224,8 @@ export const ComboboxItemContext = ArkCombobox.ItemContext
 export interface ComboboxHighlightChangeDetails<T extends CollectionItem = any>
   extends ArkCombobox.HighlightChangeDetails<T> {}
 
-export interface ComboboxValueChangeDetails<T extends CollectionItem = any>
-  extends ArkCombobox.ValueChangeDetails<T> {}
+export interface ComboboxValueChangeDetails<T extends CollectionItem = any> extends ArkCombobox.ValueChangeDetails<T> {}
 
-export interface ComboboxOpenChangeDetails
-  extends ArkCombobox.OpenChangeDetails {}
+export interface ComboboxOpenChangeDetails extends ArkCombobox.OpenChangeDetails {}
 
-export interface ComboboxInputValueChangeDetails
-  extends ArkCombobox.InputValueChangeDetails {}
+export interface ComboboxInputValueChangeDetails extends ArkCombobox.InputValueChangeDetails {}

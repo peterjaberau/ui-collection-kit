@@ -21,8 +21,7 @@ export const toastSlotRecipe = defineSlotRecipe({
       height: "var(--height)",
       opacity: "var(--opacity)",
       willChange: "translate, opacity, scale",
-      transition:
-        "translate 400ms, scale 400ms, opacity 400ms, height 400ms, box-shadow 200ms",
+      transition: "translate 400ms, scale 400ms, opacity 400ms, height 400ms, box-shadow 200ms",
       transitionTimingFunction: "cubic-bezier(0.21, 1.02, 0.73, 1)",
       _closed: {
         transition: "translate 400ms, scale 400ms, opacity 200ms",

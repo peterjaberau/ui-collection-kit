@@ -30,19 +30,16 @@ export { useRadioGroupStyles }
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface RadioGroupRootProviderBaseProps
-  extends Assign<
-      ArkRadioGroup.RootProviderBaseProps,
-      SlotRecipeProps<"radioGroup">
-    >,
+  extends Assign<ArkRadioGroup.RootProviderBaseProps, SlotRecipeProps<"radioGroup">>,
     UnstyledProp {}
 
-export interface RadioGroupRootProviderProps
-  extends HTMLUIKitProps<"div", RadioGroupRootProviderBaseProps> {}
+export interface RadioGroupRootProviderProps extends HTMLUIKitProps<"div", RadioGroupRootProviderBaseProps> {}
 
-export const RadioGroupRootProvider = withProvider<
-  HTMLDivElement,
-  RadioGroupRootProviderProps
->(ArkRadioGroup.RootProvider, "root", { forwardAsChild: true })
+export const RadioGroupRootProvider = withProvider<HTMLDivElement, RadioGroupRootProviderProps>(
+  ArkRadioGroup.RootProvider,
+  "root",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -50,87 +47,77 @@ export interface RadioGroupRootBaseProps
   extends Assign<ArkRadioGroup.RootBaseProps, SlotRecipeProps<"radioGroup">>,
     UnstyledProp {}
 
-export interface RadioGroupRootProps
-  extends HTMLUIKitProps<"div", RadioGroupRootBaseProps> {}
+export interface RadioGroupRootProps extends HTMLUIKitProps<"div", RadioGroupRootBaseProps> {}
 
-export const RadioGroupRoot = withProvider<HTMLDivElement, RadioGroupRootProps>(
-  ArkRadioGroup.Root,
-  "root",
+export const RadioGroupRoot = withProvider<HTMLDivElement, RadioGroupRootProps>(ArkRadioGroup.Root, "root", {
+  forwardAsChild: true,
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export const RadioGroupPropsProvider = PropsProvider as React.Provider<RadioGroupRootBaseProps>
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface RadioGroupLabelProps extends HTMLUIKitProps<"div", ArkRadioGroup.LabelBaseProps> {}
+
+export const RadioGroupLabel = withContext<HTMLDivElement, RadioGroupLabelProps>(ArkRadioGroup.Label, "label", {
+  forwardAsChild: true,
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface RadioGroupItemProps extends HTMLUIKitProps<"div", ArkRadioGroup.ItemBaseProps> {}
+
+export const RadioGroupItem = withContext<HTMLDivElement, RadioGroupItemProps>(ArkRadioGroup.Item, "item", {
+  forwardAsChild: true,
+})
+
+////////////////////////////////////////////////////////////////////////////////////
+
+export interface RadioGroupItemTextProps extends HTMLUIKitProps<"span", ArkRadioGroup.ItemTextBaseProps> {}
+
+export const RadioGroupItemText = withContext<HTMLSpanElement, RadioGroupItemTextProps>(
+  ArkRadioGroup.ItemText,
+  "itemText",
   { forwardAsChild: true },
 )
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const RadioGroupPropsProvider =
-  PropsProvider as React.Provider<RadioGroupRootBaseProps>
+export interface RadioGroupItemControlProps extends HTMLUIKitProps<"div", ArkRadioGroup.ItemControlBaseProps> {}
 
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface RadioGroupLabelProps
-  extends HTMLUIKitProps<"div", ArkRadioGroup.LabelBaseProps> {}
-
-export const RadioGroupLabel = withContext<
-  HTMLDivElement,
-  RadioGroupLabelProps
->(ArkRadioGroup.Label, "label", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface RadioGroupItemProps
-  extends HTMLUIKitProps<"div", ArkRadioGroup.ItemBaseProps> {}
-
-export const RadioGroupItem = withContext<HTMLDivElement, RadioGroupItemProps>(
-  ArkRadioGroup.Item,
-  "item",
+export const RadioGroupItemControl = withContext<HTMLDivElement, RadioGroupItemControlProps>(
+  ArkRadioGroup.ItemControl,
+  "itemControl",
   { forwardAsChild: true },
 )
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface RadioGroupItemTextProps
-  extends HTMLUIKitProps<"span", ArkRadioGroup.ItemTextBaseProps> {}
-
-export const RadioGroupItemText = withContext<
-  HTMLSpanElement,
-  RadioGroupItemTextProps
->(ArkRadioGroup.ItemText, "itemText", { forwardAsChild: true })
-
-////////////////////////////////////////////////////////////////////////////////////
-
-export interface RadioGroupItemControlProps
-  extends HTMLUIKitProps<"div", ArkRadioGroup.ItemControlBaseProps> {}
-
-export const RadioGroupItemControl = withContext<
-  HTMLDivElement,
-  RadioGroupItemControlProps
->(ArkRadioGroup.ItemControl, "itemControl", { forwardAsChild: true })
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface RadioGroupItemIndicatorProps extends HTMLUIKitProps<"span"> {}
 
-export const RadioGroupItemIndicator = forwardRef<
-  HTMLSpanElement,
-  RadioGroupItemIndicatorProps
->(function RadioGroupItemIndicator(props, ref) {
-  const styles = useRadioGroupStyles()
-  return (
-    <ArkRadioGroup.ItemContext>
-      {(itemState) => (
-        <ArkRadioGroup.ItemControl asChild>
-          <Radiomark
-            ref={ref}
-            unstyled
-            {...props}
-            checked={itemState.checked}
-            disabled={itemState.disabled}
-            css={[styles["itemControl"], props.css]}
-          />
-        </ArkRadioGroup.ItemControl>
-      )}
-    </ArkRadioGroup.ItemContext>
-  )
-})
+export const RadioGroupItemIndicator = forwardRef<HTMLSpanElement, RadioGroupItemIndicatorProps>(
+  function RadioGroupItemIndicator(props, ref) {
+    const styles = useRadioGroupStyles()
+    return (
+      <ArkRadioGroup.ItemContext>
+        {(itemState) => (
+          <ArkRadioGroup.ItemControl asChild>
+            <Radiomark
+              ref={ref}
+              unstyled
+              {...props}
+              checked={itemState.checked}
+              disabled={itemState.disabled}
+              css={[styles["itemControl"], props.css]}
+            />
+          </ArkRadioGroup.ItemControl>
+        )}
+      </ArkRadioGroup.ItemContext>
+    )
+  },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -138,8 +125,7 @@ export interface RadioGroupContextProps {
   children: (context: UseRadioGroupContext) => JSX.Element
 }
 
-export const RadioGroupContext: React.FC<RadioGroupContextProps> =
-  ArkRadioGroup.Context
+export const RadioGroupContext: React.FC<RadioGroupContextProps> = ArkRadioGroup.Context
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -147,12 +133,10 @@ export interface RadioGroupItemContextProps {
   children: (context: UseRadioGroupItemContext) => JSX.Element
 }
 
-export const RadioGroupItemContext: React.FC<RadioGroupItemContextProps> =
-  ArkRadioGroup.ItemContext
+export const RadioGroupItemContext: React.FC<RadioGroupItemContextProps> = ArkRadioGroup.ItemContext
 
 ////////////////////////////////////////////////////////////////////////////////////
 
 export const RadioGroupItemHiddenInput = ArkRadioGroup.ItemHiddenInput
 
-export interface RadioGroupValueChangeDetails
-  extends ArkRadioGroup.ValueChangeDetails {}
+export interface RadioGroupValueChangeDetails extends ArkRadioGroup.ValueChangeDetails {}

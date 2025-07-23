@@ -31,19 +31,16 @@ export { useRatingGroupStyles }
 ////////////////////////////////////////////////////////////////////////////////////
 
 export interface RatingGroupRootProviderBaseProps
-  extends Assign<
-      ArkRatingGroup.RootProviderBaseProps,
-      SlotRecipeProps<"ratingGroup">
-    >,
+  extends Assign<ArkRatingGroup.RootProviderBaseProps, SlotRecipeProps<"ratingGroup">>,
     UnstyledProp {}
 
-export interface RatingGroupRootProviderProps
-  extends HTMLUIKitProps<"div", RatingGroupRootProviderBaseProps> {}
+export interface RatingGroupRootProviderProps extends HTMLUIKitProps<"div", RatingGroupRootProviderBaseProps> {}
 
-export const RatingGroupRootProvider = withProvider<
-  HTMLDivElement,
-  RatingGroupRootProviderProps
->(ArkRatingGroup.RootProvider, "root", { forwardAsChild: true })
+export const RatingGroupRootProvider = withProvider<HTMLDivElement, RatingGroupRootProviderProps>(
+  ArkRatingGroup.RootProvider,
+  "root",
+  { forwardAsChild: true },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -51,38 +48,31 @@ export interface RatingGroupRootBaseProps
   extends Assign<ArkRatingGroup.RootBaseProps, SlotRecipeProps<"ratingGroup">>,
     UnstyledProp {}
 
-export interface RatingGroupRootProps
-  extends HTMLUIKitProps<"div", RatingGroupRootBaseProps> {}
+export interface RatingGroupRootProps extends HTMLUIKitProps<"div", RatingGroupRootBaseProps> {}
 
-export const RatingGroupRoot = withProvider<
-  HTMLDivElement,
-  RatingGroupRootProps
->(ArkRatingGroup.Root, "root", { forwardAsChild: true })
+export const RatingGroupRoot = withProvider<HTMLDivElement, RatingGroupRootProps>(ArkRatingGroup.Root, "root", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export const RatingGroupPropsProvider =
-  PropsProvider as React.Provider<RatingGroupRootBaseProps>
+export const RatingGroupPropsProvider = PropsProvider as React.Provider<RatingGroupRootBaseProps>
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface RatingGroupLabelProps
-  extends HTMLUIKitProps<"div", ArkRatingGroup.LabelBaseProps> {}
+export interface RatingGroupLabelProps extends HTMLUIKitProps<"div", ArkRatingGroup.LabelBaseProps> {}
 
-export const RatingGroupLabel = withContext<
-  HTMLDivElement,
-  RatingGroupLabelProps
->(ArkRatingGroup.Label, "label", { forwardAsChild: true })
+export const RatingGroupLabel = withContext<HTMLDivElement, RatingGroupLabelProps>(ArkRatingGroup.Label, "label", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface RatingGroupItemProps
-  extends HTMLUIKitProps<"div", ArkRatingGroup.ItemBaseProps> {}
+export interface RatingGroupItemProps extends HTMLUIKitProps<"div", ArkRatingGroup.ItemBaseProps> {}
 
-export const RatingGroupItem = withContext<
-  HTMLDivElement,
-  RatingGroupItemProps
->(ArkRatingGroup.Item, "item", { forwardAsChild: true })
+export const RatingGroupItem = withContext<HTMLDivElement, RatingGroupItemProps>(ArkRatingGroup.Item, "item", {
+  forwardAsChild: true,
+})
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -96,33 +86,31 @@ function cloneIcon(icon: React.ReactElement | undefined, type: "bg" | "fg") {
   return cloneElement(icon, props)
 }
 
-export const RatingGroupItemIndicator = forwardRef<
-  HTMLSpanElement,
-  RatingGroupItemIndicatorProps
->(function RatingGroupItemIndicator(props, ref) {
-  const { icon = <StarIcon />, ...rest } = props
-  const styles = useRatingGroupStyles()
-  const itemState = useRatingGroupItemContext()
+export const RatingGroupItemIndicator = forwardRef<HTMLSpanElement, RatingGroupItemIndicatorProps>(
+  function RatingGroupItemIndicator(props, ref) {
+    const { icon = <StarIcon />, ...rest } = props
+    const styles = useRatingGroupStyles()
+    const itemState = useRatingGroupItemContext()
 
-  return (
-    <uikit.span
-      {...rest}
-      data-highlighted={itemState.highlighted ? "" : undefined}
-      data-checked={itemState.checked ? "" : undefined}
-      data-half={itemState.half ? "" : undefined}
-      css={[styles.itemIndicator, props.css]}
-      ref={ref}
-    >
-      {cloneIcon(icon, "bg")}
-      {cloneIcon(icon, "fg")}
-    </uikit.span>
-  )
-})
+    return (
+      <uikit.span
+        {...rest}
+        data-highlighted={itemState.highlighted ? "" : undefined}
+        data-checked={itemState.checked ? "" : undefined}
+        data-half={itemState.half ? "" : undefined}
+        css={[styles.itemIndicator, props.css]}
+        ref={ref}
+      >
+        {cloneIcon(icon, "bg")}
+        {cloneIcon(icon, "fg")}
+      </uikit.span>
+    )
+  },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface RatingGroupItemsProps
-  extends Omit<RatingGroupItemProps, "index"> {}
+export interface RatingGroupItemsProps extends Omit<RatingGroupItemProps, "index"> {}
 
 export const RatingGroupItems = (props: RatingGroupItemsProps) => {
   const api = useRatingGroupContext()
@@ -139,16 +127,16 @@ export const RatingGroupItems = (props: RatingGroupItemsProps) => {
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-export interface RatingGroupControlProps
-  extends HTMLUIKitProps<"div", ArkRatingGroup.ControlBaseProps> {}
+export interface RatingGroupControlProps extends HTMLUIKitProps<"div", ArkRatingGroup.ControlBaseProps> {}
 
-export const RatingGroupControl = withContext<
-  HTMLDivElement,
-  RatingGroupControlProps
->(ArkRatingGroup.Control, "control", {
-  forwardAsChild: true,
-  defaultProps: { children: <RatingGroupItems /> },
-})
+export const RatingGroupControl = withContext<HTMLDivElement, RatingGroupControlProps>(
+  ArkRatingGroup.Control,
+  "control",
+  {
+    forwardAsChild: true,
+    defaultProps: { children: <RatingGroupItems /> },
+  },
+)
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -156,8 +144,6 @@ export const RatingGroupContext = ArkRatingGroup.Context
 export const RatingGroupItemContext = ArkRatingGroup.ItemContext
 export const RatingGroupHiddenInput = ArkRatingGroup.HiddenInput
 
-export interface RatingGroupValueChangeDetails
-  extends ArkRatingGroup.ValueChangeDetails {}
+export interface RatingGroupValueChangeDetails extends ArkRatingGroup.ValueChangeDetails {}
 
-export interface RatingGroupHoverChangeDetails
-  extends ArkRatingGroup.HoverChangeDetails {}
+export interface RatingGroupHoverChangeDetails extends ArkRatingGroup.HoverChangeDetails {}

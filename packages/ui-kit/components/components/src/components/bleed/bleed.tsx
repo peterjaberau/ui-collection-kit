@@ -1,11 +1,7 @@
 "use client"
 
 import { forwardRef } from "react"
-import {
-  type HTMLUIKitProps,
-  type SystemStyleObject,
-  uikit,
-} from "../../styled-system"
+import { type HTMLUIKitProps, type SystemStyleObject, uikit } from "../../styled-system"
 import { isCssUnit, isCssVar, mapObject } from "../../utils"
 
 export interface BleedProps extends HTMLUIKitProps<"div"> {
@@ -35,36 +31,25 @@ export interface BleedProps extends HTMLUIKitProps<"div"> {
   blockEnd?: SystemStyleObject["marginBlockEnd"] | undefined
 }
 
-const valueFn = (v: string) =>
-  isCssUnit(v) || isCssVar(v) ? v : `token(spacing.${v}, ${v})`
+const valueFn = (v: string) => (isCssUnit(v) || isCssVar(v) ? v : `token(spacing.${v}, ${v})`)
 
-export const Bleed = forwardRef<HTMLDivElement, BleedProps>(
-  function Bleed(props, ref) {
-    const {
-      inline,
-      inlineStart,
-      inlineEnd,
-      block,
-      blockStart,
-      blockEnd,
-      ...rest
-    } = props
+export const Bleed = forwardRef<HTMLDivElement, BleedProps>(function Bleed(props, ref) {
+  const { inline, inlineStart, inlineEnd, block, blockStart, blockEnd, ...rest } = props
 
-    return (
-      <uikit.div
-        ref={ref}
-        {...rest}
-        css={{
-          "--bleed-inline-start": mapObject(inline ?? inlineStart, valueFn),
-          "--bleed-inline-end": mapObject(inline ?? inlineEnd, valueFn),
-          "--bleed-block-start": mapObject(block ?? blockStart, valueFn),
-          "--bleed-block-end": mapObject(block ?? blockEnd, valueFn),
-          marginInlineStart: "calc(var(--bleed-inline-start, 0) * -1)",
-          marginInlineEnd: "calc(var(--bleed-inline-end, 0) * -1)",
-          marginBlockStart: "calc(var(--bleed-block-start, 0) * -1)",
-          marginBlockEnd: "calc(var(--bleed-block-end, 0) * -1)",
-        }}
-      />
-    )
-  },
-)
+  return (
+    <uikit.div
+      ref={ref}
+      {...rest}
+      css={{
+        "--bleed-inline-start": mapObject(inline ?? inlineStart, valueFn),
+        "--bleed-inline-end": mapObject(inline ?? inlineEnd, valueFn),
+        "--bleed-block-start": mapObject(block ?? blockStart, valueFn),
+        "--bleed-block-end": mapObject(block ?? blockEnd, valueFn),
+        marginInlineStart: "calc(var(--bleed-inline-start, 0) * -1)",
+        marginInlineEnd: "calc(var(--bleed-inline-end, 0) * -1)",
+        marginBlockStart: "calc(var(--bleed-block-start, 0) * -1)",
+        marginBlockEnd: "calc(var(--bleed-block-end, 0) * -1)",
+      }}
+    />
+  )
+})

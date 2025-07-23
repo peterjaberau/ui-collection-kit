@@ -27,9 +27,6 @@ export type {
 
 export { useClipboard, useClipboardContext } from "@ui-kit/base/clipboard"
 
-export type {
-  UseClipboardProps,
-  UseClipboardReturn,
-} from "@ui-kit/base/clipboard"
+export type { UseClipboardProps, UseClipboardReturn } from "@ui-kit/base/clipboard"
 
 export * as Clipboard from "./namespace"

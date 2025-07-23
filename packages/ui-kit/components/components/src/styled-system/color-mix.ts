@@ -18,9 +18,7 @@ export const colorMix = (value: string, token: TransformArgs["token"]) => {
     return { invalid: true, value: rawColor }
   }
 
-  const percent = opacityToken
-    ? Number(opacityToken) * 100 + "%"
-    : `${rawOpacity}%`
+  const percent = opacityToken ? Number(opacityToken) * 100 + "%" : `${rawOpacity}%`
 
   const color = colorToken ?? rawColor
 

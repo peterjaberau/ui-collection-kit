@@ -1,6 +1,6 @@
 {
-  "name": "@ui-kit/clipboard",
-  "version": "1.11.0",
+  "name": "@ui-kit/core-clipboard",
+  "version": "0.0.1",
   "description": "Core logic for the clipboard widget implemented as a state machine",
 
 

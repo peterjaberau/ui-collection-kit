@@ -1,6 +1,6 @@
 {
-  "name": "@ui-kit/collection",
-  "version": "1.11.0",
+  "name": "@ui-kit/core-collection",
+  "version": "0.0.1",
   "description": "Utilities to manage a collection of items.",
   "keywords": [
     "js",

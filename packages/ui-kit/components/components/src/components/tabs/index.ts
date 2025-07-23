@@ -22,11 +22,6 @@ export type {
 
 export { useTabs, useTabsContext, TabsContext } from "@ui-kit/base/tabs"
 
-export type {
-  UseTabsProps,
-  UseTabsReturn,
-  TabsFocusChangeDetails,
-  TabsValueChangeDetails,
-} from "@ui-kit/base/tabs"
+export type { UseTabsProps, UseTabsReturn, TabsFocusChangeDetails, TabsValueChangeDetails } from "@ui-kit/base/tabs"
 
 export * as Tabs from "./namespace"

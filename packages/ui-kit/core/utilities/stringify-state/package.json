@@ -1,6 +1,6 @@
 {
   "name": "@ui-kit/core-stringify-state",
-  "version": "1.11.0",
+  "version": "0.0.1",
   "description": "Helper to stringify state of ui-kit machines",
   "keywords": [
     "js",
