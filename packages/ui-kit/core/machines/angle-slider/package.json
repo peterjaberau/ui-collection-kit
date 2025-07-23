@@ -1,0 +1,40 @@
+{
+  "name": "@ui-kit/core-angle-slider",
+  "version": "1.11.0",
+  "description": "Core logic for the angle-slider widget implemented as a state machine",
+
+
+  "homepage": "#",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "repository": "#/packages/angle-slider",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "#"
+  },
+  "dependencies": {
+    "@ui-kit/core-anatomy": "workspace:*",
+    "@ui-kit/core": "workspace:*",
+    "@ui-kit/core-dom-query": "workspace:*",
+    "@ui-kit/core-rect-utils": "workspace:*",
+    "@ui-kit/core-utils": "workspace:*",
+    "@ui-kit/core-types": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

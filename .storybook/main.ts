@@ -3,10 +3,7 @@ import { mergeConfig } from "vite"
 
 const config: StorybookConfig = {
   stories: [
-    "../packages/ui-components/unstyled-react/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../demos/ui-demo/**/*.mdx)",
-    "../demos/ui-demo/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    // "!**/node_modules/**"
+    "../packages/ui-kit/components/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: ["@storybook/addon-a11y", "@storybook/addon-themes", "@storybook/addon-docs"],
   framework: {

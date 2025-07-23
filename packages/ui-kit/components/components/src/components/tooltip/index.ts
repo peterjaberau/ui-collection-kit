@@ -1,0 +1,29 @@
+export {
+  TooltipArrow,
+  TooltipArrowTip,
+  TooltipContent,
+  TooltipPositioner,
+  TooltipRoot,
+  TooltipRootProvider,
+  TooltipPropsProvider,
+  TooltipTrigger,
+  TooltipContext,
+  useTooltipStyles,
+} from "./tooltip"
+
+export type {
+  TooltipArrowProps,
+  TooltipArrowTipProps,
+  TooltipContentProps,
+  TooltipPositionerProps,
+  TooltipRootProps,
+  TooltipRootProviderProps,
+  TooltipTriggerProps,
+  TooltipOpenChangeDetails,
+} from "./tooltip"
+
+export * as Tooltip from "./namespace"
+
+export { useTooltip, useTooltipContext } from "@ui-kit/base/tooltip"
+
+export type { UseTooltipProps, UseTooltipReturn } from "@ui-kit/base/tooltip"

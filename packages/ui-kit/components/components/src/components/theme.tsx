@@ -1,0 +1,39 @@
+"use client"
+
+import { forwardRef } from "react"
+import { type HTMLUIKitProps, uikit } from "../styled-system"
+import { cx } from "../utils"
+
+export interface ThemeProps extends HTMLUIKitProps<"div"> {
+  /**
+   * The appearance of the theme.
+   */
+  appearance?: "light" | "dark" | undefined
+  /**
+   * Whether to apply the theme background and color.
+   */
+  hasBackground?: boolean | undefined
+}
+
+export const Theme = forwardRef<HTMLDivElement, ThemeProps>(
+  function Theme(props, ref) {
+    const {
+      appearance,
+      style,
+      className,
+      hasBackground = true,
+      ...rest
+    } = props
+    return (
+      <uikit.div
+        color="fg"
+        bg={hasBackground ? "bg" : undefined}
+        colorPalette="gray"
+        {...rest}
+        className={cx("uikit-theme", appearance, className)}
+        style={{ ...style, colorScheme: appearance }}
+        ref={ref}
+      />
+    )
+  },
+)

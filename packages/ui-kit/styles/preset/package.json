@@ -1,0 +1,53 @@
+{
+  "name": "@ui-kit/style-preset",
+  "version": "3.22.0",
+  "description": "Style preset for UI Kit",
+  "type": "module",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Peter Jaber",
+  "license": "MIT",
+  "homepage": "#",
+  "scripts": {
+    "theme:eject": "uikit eject --outdir=src",
+    "theme:sync": "tsx scripts/sync.ts",
+    "theme": "pnpm theme:eject && pnpm theme:sync",
+    "prepack": "tsx ../../scripts/conditions.ts",
+    "postpack": "tsx ../../scripts/conditions.ts --restore",
+    "build:fast": "tsx ../../scripts/build/main.ts",
+    "prebuild": "pnpm clean && pnpm theme",
+    "build": "tsx ../../scripts/build/main.ts --dts",
+    "dev": "pnpm build:fast --watch",
+    "clean": "tsx scripts/clean.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "dev": "./src/index.ts",
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@pandacss/types": "^0.54.0"
+  },
+  "devDependencies": {
+    "@ui-kit/cli": "workspace:*",
+    "globby": "14.1.0"
+  }
+}

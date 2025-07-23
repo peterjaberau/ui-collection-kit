@@ -1,0 +1,40 @@
+export {
+  SliderControl,
+  SliderLabel,
+  SliderMarker,
+  SliderMarkerGroup,
+  SliderMarkerIndicator,
+  SliderRange,
+  SliderRoot,
+  SliderRootProvider,
+  SliderPropsProvider,
+  SliderThumb,
+  SliderTrack,
+  SliderValueText,
+  SliderDraggingIndicator,
+  SliderContext,
+  SliderHiddenInput,
+  useSliderStyles,
+} from "./slider"
+
+export type {
+  SliderControlProps,
+  SliderLabelProps,
+  SliderMarkerProps,
+  SliderMarkerIndicatorProps,
+  SliderRangeProps,
+  SliderRootProps,
+  SliderRootProviderProps,
+  SliderThumbProps,
+  SliderTrackProps,
+  SliderValueTextProps,
+  SliderMarkerGroupProps,
+  SliderDraggingIndicatorProps,
+  SliderValueChangeDetails,
+} from "./slider"
+
+export { useSlider, useSliderContext } from "@ui-kit/base/slider"
+
+export type { UseSliderProps, UseSliderReturn } from "@ui-kit/base/slider"
+
+export * as Slider from "./namespace"

@@ -14,7 +14,7 @@ const config = {
                 // '../templates/starter/stories/**/*{.js,.ts,.jsx,.tsx}',
                 // '../templates/starter/components/**/*{.js,.ts,.jsx,.tsx}'
 
-                path.resolve(__dirname, "../packages/unstyled/react/src/**/*{.js,.ts,.jsx,.tsx}"),
+                // path.resolve(__dirname, "../packages/unstyled/react/src/**/*{.js,.ts,.jsx,.tsx}"),
                 path.resolve(__dirname, "../templates/starter/components/**/*{.js,.ts,.jsx,.tsx}"),
                 path.resolve(__dirname, "../templates/starter/stories/**/*{.js,.ts,.jsx,.tsx}"),
                 path.resolve(__dirname, "../demos/react-lite/components/**/*{.js,.ts,.jsx,.tsx}"),

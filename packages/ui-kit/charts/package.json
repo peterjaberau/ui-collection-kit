@@ -1,0 +1,54 @@
+{
+  "name": "@ui-kit/charts",
+  "version": "3.22.0",
+  "description": "Data visualization components for UIKit UI",
+  "type": "module",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Peter Jaber",
+  "license": "MIT",
+  "homepage": "#",
+  "scripts": {
+    "prepack": "tsx ../../scripts/conditions.ts",
+    "postpack": "tsx ../../scripts/conditions.ts --restore",
+    "build:fast": "tsx ../../scripts/build/main.ts",
+    "build": "tsx ../../scripts/build/main.ts --dts",
+    "dev": "pnpm build:fast --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "dev": "./src/index.ts",
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "@ui-kit/components": "workspace:*",
+    "recharts": "2.15.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "peerDependencies": {
+    "@ui-kit/components": ">=3",
+    "recharts": ">=2",
+    "react": ">=18",
+    "react-dom": ">=18"
+  }
+}

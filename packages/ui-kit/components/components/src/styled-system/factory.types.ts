@@ -1,0 +1,114 @@
+import type { Assign } from "@ui-kit/base"
+import type {
+  ComponentProps,
+  ComponentPropsWithoutRef,
+  ElementType,
+  FunctionComponent,
+  JSX,
+} from "react"
+import type {
+  Dict,
+  DistributiveOmit,
+  DistributiveUnion,
+  Pretty,
+} from "../utils"
+import type { MinimalNested, SystemStyleObject } from "./css.types"
+import type { SystemProperties } from "./generated/system.gen"
+import type {
+  RecipeDefinition,
+  RecipeSelection,
+  RecipeVariantRecord,
+} from "./recipe.types"
+
+export interface UnstyledProp {
+  /**
+   * If `true`, the element will opt out of the theme styles.
+   */
+  unstyled?: boolean | undefined
+}
+
+export interface PolymorphicProps {
+  as?: ElementType | undefined
+  asChild?: boolean | undefined
+}
+
+export interface HtmlProps {
+  htmlSize?: number | undefined
+  htmlWidth?: string | number | undefined
+  htmlHeight?: string | number | undefined
+  htmlTranslate?: "yes" | "no" | undefined
+  htmlContent?: string | undefined
+}
+
+export type HtmlProp =
+  | "color"
+  | "size"
+  | "translate"
+  | "transition"
+  | "width"
+  | "height"
+  | "content"
+
+export type PatchHtmlProps<T> = DistributiveOmit<T, HtmlProp> & HtmlProps
+
+export type JsxHtmlProps<T extends Dict, P extends Dict = {}> = Assign<
+  PatchHtmlProps<T>,
+  P
+>
+
+export type UIKitComponent<
+  T extends ElementType,
+  P extends Dict = {},
+> = FunctionComponent<HTMLUIKitProps<T, P> & { ref?: any | undefined }>
+
+export type HTMLUIKitProps<
+  T extends ElementType,
+  P extends Dict = {},
+> = JsxHtmlProps<
+  ComponentPropsWithoutRef<T>,
+  Assign<JsxStyleProps, P> & PolymorphicProps
+>
+
+export type JsxElement<T extends ElementType, P extends Dict> =
+  T extends UIKitComponent<infer A, infer B>
+    ? UIKitComponent<A, Pretty<DistributiveUnion<P, B>>>
+    : UIKitComponent<T, P>
+
+export interface JsxFactory {
+  <T extends ElementType>(component: T): UIKitComponent<T, {}>
+  <T extends ElementType, P extends RecipeVariantRecord>(
+    component: T,
+    recipe: RecipeDefinition<P>,
+    options?: JsxFactoryOptions<Assign<ComponentProps<T>, RecipeSelection<P>>>,
+  ): JsxElement<T, RecipeSelection<P>>
+}
+
+type JsxElements = {
+  [K in keyof JSX.IntrinsicElements]: UIKitComponent<K, {}>
+}
+
+export type StyledFactoryFn = JsxFactory & JsxElements
+
+export type DataAttr = Record<
+  `data-${string}`,
+  string | number | undefined | null | boolean
+>
+
+export interface JsxFactoryOptions<TProps> {
+  forwardProps?: string[] | undefined
+  defaultProps?: (Partial<TProps> & DataAttr) | undefined
+  forwardAsChild?: boolean | undefined
+  shouldForwardProp?(prop: string, variantKeys: string[]): boolean
+}
+
+export interface JsxStyleProps
+  extends SystemProperties,
+    MinimalNested<SystemStyleObject> {
+  css?:
+    | SystemStyleObject
+    | undefined
+    | Omit<(SystemStyleObject | undefined)[], keyof any[]>
+}
+
+export type InferRecipeProps<T> =
+  T extends UIKitComponent<any, infer P> ? P : {}
