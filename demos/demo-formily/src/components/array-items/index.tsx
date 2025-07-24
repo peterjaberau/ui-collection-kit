@@ -16,18 +16,19 @@ import {
   usePrefixCls,
 } from '../__builtins__'
 import useStyle from './style'
+import { chakra } from '@chakra-ui/react'
 
 const SortableItem = SortableElement((props) => {
   const prefixCls = usePrefixCls('formily-array-items')
   const [wrapSSR, hashId] = useStyle(prefixCls)
 
   return wrapSSR(
-    <div
+    <chakra.div
       {...props}
-      className={cls(`${prefixCls}-item`, hashId, props.className)}
+      // className={cls(`${prefixCls}-item`, hashId, props.className)}
     >
       {props.children}
-    </div>
+    </chakra.div>
   )
 })
 
@@ -35,12 +36,12 @@ const SortableList = SortableContainer((props) => {
   const prefixCls = usePrefixCls('formily-array-items')
   const [wrapSSR, hashId] = useStyle(prefixCls)
   return wrapSSR(
-    <div
+    <chakra.div
       {...props}
-      className={cls(`${prefixCls}-list`, hashId, props.className)}
+      // className={cls(`${prefixCls}-list`, hashId, props.className)}
     >
       {props.children}
-    </div>
+    </chakra.div>
   )
 })
 
@@ -76,7 +77,7 @@ const InternalArrayItems: ReactFC<React.HTMLAttributes<HTMLDivElement>> =
         >
           <SortableList
             list={dataSource.slice()}
-            className={`${prefixCls}-sort-helper`}
+            // className={`${prefixCls}-sort-helper`}
             onSortEnd={(event) => {
               const { oldIndex, newIndex } = event
               field.move(oldIndex, newIndex)
@@ -97,11 +98,13 @@ const InternalArrayItems: ReactFC<React.HTMLAttributes<HTMLDivElement>> =
                     lockAxis="y"
                     index={index}
                   >
-                    <div className={`${prefixCls}-item-inner`}>
+                    <chakra.div
+                      // className={`${prefixCls}-item-inner`}
+                    >
                       {items ? (
                         <RecursionField schema={items} name={index} />
                       ) : null}
-                    </div>
+                    </chakra.div>
                   </SortableItem>
                 </ArrayBase.Item>
               )
@@ -121,17 +124,17 @@ const Item: ReactFC<
   const prefixCls = usePrefixCls('formily-array-items')
   const [wrapSSR, hashId] = useStyle(prefixCls)
   return wrapSSR(
-    <div
+    <chakra.div
       {...props}
       onChange={() => {}}
-      className={cls(
-        `${prefixCls}-${props.type || 'card'}`,
-        hashId,
-        props.className
-      )}
+      // className={cls(
+      //   // `${prefixCls}-${props.type || 'card'}`,
+      //   hashId,
+      //   props.className
+      // )}
     >
       {props.children}
-    </div>
+    </chakra.div>
   )
 }
 

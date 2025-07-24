@@ -6,3 +6,9 @@ declare module "react" {
     [key: `--${string}`]: string | number
   }
 }
+
+declare module 'mfetch' {
+  type Fetch = typeof fetch
+  const mfetch: Fetch | any
+  export { mfetch as fetch }
+}

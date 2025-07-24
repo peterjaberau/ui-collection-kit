@@ -11,6 +11,7 @@
     "@ui-kit/components": "workspace:*",
     "@emotion/react": "^11.14.0",
     "react-lorem-ipsum": "^1.4.10",
+    "mfetch": "^0.2.27",
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
