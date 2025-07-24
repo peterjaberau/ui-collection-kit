@@ -1,7 +1,7 @@
 "use client"
 
 import { chakra } from "@chakra-ui/react"
-import { DecorativeBox } from "../lib/decorative-box"
+import { DecorativeBox } from "../../lib/decorative-box"
 
 const Flex = chakra("div", {
   base: {

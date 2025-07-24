@@ -7,6 +7,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
 
+    "demo-formily": "pnpm --filter \"./demos/demo-formily\"",
+    "start-demo-formily": "pnpm demo-formily dev",
+
     "packages": "pnpm --filter=./packages/** -r",
     "build": "pnpm packages -- build",
     "clean-pkgs": "pnpm -r exec rm -rf dist .swc *.log",
