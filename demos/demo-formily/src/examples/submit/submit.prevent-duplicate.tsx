@@ -1,5 +1,5 @@
-import { FormButtonGroup, FormItem, Input } from '../../components'
-import { Submit } from '../../components/submit'
+import { FormButtonGroup, FormItem, Input } from '@ui-kit/forms'
+import { Submit } from '@ui-kit/forms'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
 import React from 'react'

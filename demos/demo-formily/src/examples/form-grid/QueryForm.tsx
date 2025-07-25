@@ -11,7 +11,7 @@ import {
   Submit,
   Reset,
   FormButtonGroup,
-} from '../../components'
+} from '@ui-kit/forms'
 
 const useCollapseGrid = (maxRows: number) => {
   const grid = useMemo(

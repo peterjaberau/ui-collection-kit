@@ -7,7 +7,7 @@ import {
   Submit,
   Reset,
   FormButtonGroup,
-} from '../../components'
+} from '@ui-kit/forms'
 import { createSchemaField } from '@formily/react'
 import { Button } from 'antd'
 

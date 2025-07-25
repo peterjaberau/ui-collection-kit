@@ -5,7 +5,7 @@ import {
   FormItem,
   FormButtonGroup,
   Submit,
-} from '../../components'
+} from '@ui-kit/forms'
 import { createForm, onFieldReact, FormPathPattern, Field } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import { action } from '@formily/reactive'

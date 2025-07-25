@@ -1,4 +1,4 @@
-import { FormGrid } from '../../components'
+import { FormGrid } from '@ui-kit/forms'
 import React from 'react'
 
 const { GridColumn } = FormGrid

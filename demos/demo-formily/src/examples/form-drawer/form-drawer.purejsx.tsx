@@ -7,7 +7,7 @@ import {
   Submit,
   Reset,
   FormButtonGroup,
-} from '../../components'
+} from '@ui-kit/forms'
 import { Field } from '@formily/react'
 import { Button } from 'antd'
 

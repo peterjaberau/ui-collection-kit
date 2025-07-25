@@ -4,9 +4,9 @@ import {
   Input,
   FormButtonGroup,
 
-} from '../../components'
-import { Submit } from '../../components/submit'
-import ArrayCards from '../../components/array-cards'
+} from '@ui-kit/forms'
+import { Submit } from '@ui-kit/forms'
+import { ArrayCards } from "@ui-kit/forms"
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 

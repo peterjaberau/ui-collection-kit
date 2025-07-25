@@ -5,7 +5,7 @@ import {
   FormItem,
   Input,
   Submit,
-} from '../../components'
+} from '@ui-kit/forms'
 import { createForm } from '@formily/core'
 import { Field, FormProvider, ObjectField, VoidField } from '@formily/react'
 import React from 'react'

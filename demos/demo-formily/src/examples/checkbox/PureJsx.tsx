@@ -1,4 +1,4 @@
-import { Checkbox, FormButtonGroup, FormItem, Submit } from '../../components'
+import { Checkbox, FormButtonGroup, FormItem, Submit } from '@ui-kit/forms'
 import {
   createForm,
   Field as FieldType,

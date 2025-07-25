@@ -5,7 +5,7 @@ import {
   ArrayCollapse,
   FormButtonGroup,
   Submit,
-} from '../../components'
+} from '@ui-kit/forms'
 import { createForm, onFieldChange, onFieldReact } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 

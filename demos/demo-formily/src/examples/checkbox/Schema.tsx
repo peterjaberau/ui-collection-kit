@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkbox, FormItem, FormButtonGroup, Submit } from '../../components'
+import { Checkbox, FormItem, FormButtonGroup, Submit } from '@ui-kit/forms'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import type { CheckboxChangeEvent } from 'antd/es/checkbox'

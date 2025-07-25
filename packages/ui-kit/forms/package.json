@@ -1,15 +1,25 @@
 {
-  "name": "@ui-kit-demos/formily",
+  "name": "@ui-kit/forms",
   "version": "0.0.1",
-  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "next dev -p 4071",
-    "build": "next build",
-    "start": "next start"
+    "build": "vite build",
+    "typecheck": "tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/components/*/index.ts"
   },
   "dependencies": {
     "@ui-kit/components": "workspace:*",
-    "@ui-kit/forms": "workspace:*",
     "@emotion/react": "^11.14.0",
     "react-lorem-ipsum": "^1.4.10",
     "mfetch": "^0.2.27",

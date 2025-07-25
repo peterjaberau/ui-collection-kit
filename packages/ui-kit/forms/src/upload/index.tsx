@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { Field } from '@formily/core'
 import { connect, mapProps, useField } from '@formily/react'
-import { Upload as AntdUpload, Button } from 'antd'
+import { Upload as AntdUpload } from 'antd'
+import { Button } from '@chakra-ui/react'
 import {
   UploadChangeParam,
   UploadProps as AntdUploadProps,

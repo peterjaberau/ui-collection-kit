@@ -7,7 +7,7 @@ import {
   FormGrid,
   FormButtonGroup,
   Submit,
-} from '../../components'
+} from '@ui-kit/forms'
 import { createForm } from '@formily/core'
 import { Field } from '@formily/react'
 

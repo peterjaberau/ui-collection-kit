@@ -1,4 +1,4 @@
-import { Cascader, FormButtonGroup, FormItem, Submit } from '../../components'
+import { Cascader, FormButtonGroup, FormItem, Submit } from '@ui-kit/forms'
 import {
   createForm,
   Field,

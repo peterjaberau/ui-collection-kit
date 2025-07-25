@@ -4,7 +4,7 @@ import {
   FormLayout,
   Password,
   Submit,
-} from '../../components'
+} from '@ui-kit/forms'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider, ISchema } from '@formily/react'
 import React from 'react'

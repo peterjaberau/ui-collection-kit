@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select, FormItem, FormButtonGroup, Submit } from '../../components'
+import { Select, FormItem, FormButtonGroup, Submit } from '@ui-kit/forms'
 import {
   createForm,
   onFieldReact,

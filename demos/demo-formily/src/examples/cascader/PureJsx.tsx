@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cascader, FormItem, FormButtonGroup, Submit } from '../../components'
+import { Cascader, FormItem, FormButtonGroup, Submit } from '@ui-kit/forms'
 import {
   createForm,
   onFieldReact,

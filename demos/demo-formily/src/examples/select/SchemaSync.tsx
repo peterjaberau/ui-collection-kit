@@ -1,4 +1,4 @@
-import { FormButtonGroup, FormItem, Select, Submit } from '../../components'
+import { FormButtonGroup, FormItem, Select, Submit } from '@ui-kit/forms'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider, ISchema } from '@formily/react'
 import React from 'react'

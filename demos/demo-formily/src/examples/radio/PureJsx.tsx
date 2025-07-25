@@ -1,4 +1,4 @@
-import { FormButtonGroup, FormItem, Radio, Submit } from '../../components'
+import { FormButtonGroup, FormItem, Radio, Submit } from '@ui-kit/forms'
 import { createForm } from '@formily/core'
 import { Field, FormProvider } from '@formily/react'
 import React from 'react'
