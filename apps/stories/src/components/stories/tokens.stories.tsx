@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react-vite"
 import { Box, Center, For, SimpleGrid, Text } from "@chakra-ui/react"
 
 export default {
-  title: "Foundations / Tokens",
+  title: "Chakra / Foundations / Tokens",
   decorators: [
     (Story: any) => (
       <Box p="10">

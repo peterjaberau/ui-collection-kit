@@ -105,7 +105,7 @@ const useArrayTableSources = () => {
       if (!schema['x-component-props']?.['dataIndex'] && !schema['name'])
         return []
       const name = schema['x-component-props']?.['dataIndex'] || schema['name']
-      const field = arrayField.query(arrayField.address.concat(name)).take()
+      const field : any = arrayField.query(arrayField.address.concat(name)).take()
       const columnProps =
         field?.component?.[1] || schema['x-component-props'] || {}
       const display = field?.display || schema['x-display']
@@ -278,7 +278,7 @@ const ArrayTablePagination: ReactFC<IArrayTablePaginationProps> = (props) => {
   const handleChange = (current: number) => {
     setCurrent(current)
   }
-  const handleSizeChange = (_, size: number) => {
+  const handleSizeChange = (_: any, size: number) => {
     setPageSize(size)
   }
 
@@ -380,7 +380,7 @@ const WrapperComp = (props: React.HTMLAttributes<HTMLTableSectionElement>) => {
   )
 }
 
-const RowComp: ReactFC<React.HTMLAttributes<HTMLTableRowElement>> = (props) => {
+const RowComp: ReactFC<React.HTMLAttributes<HTMLTableRowElement>> = (props: any) => {
   const prefixCls = usePrefixCls('formily-array-table')
   const index = props['data-row-key'] || 0
   return (

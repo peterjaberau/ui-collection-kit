@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, FormItem, FormButtonGroup, Reset } from '@formily/antd-v5'
+import { Input, FormItem, FormButtonGroup, Reset } from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 
@@ -12,7 +12,7 @@ const SchemaField = createSchemaField({
 
 const form = createForm()
 
-const Demo: React.FC = () => {
+export const ResetVerify: React.FC = () => {
   return (
     <FormProvider form={form}>
       <SchemaField>
@@ -39,4 +39,4 @@ const Demo: React.FC = () => {
   )
 }
 
-export default Demo
+

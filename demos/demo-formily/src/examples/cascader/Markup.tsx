@@ -1,4 +1,4 @@
-import { Cascader, FormButtonGroup, FormItem, Submit } from '@formily/antd-v5'
+import { Cascader, FormButtonGroup, FormItem, Submit } from '../../components'
 import {
   createForm,
   Field,
@@ -65,7 +65,7 @@ const form = createForm({
   },
 })
 
-const Demo: React.FC = () => {
+export const CascaderMarkup: React.FC = () => {
   return (
     <FormProvider form={form}>
       <SchemaField>
@@ -88,4 +88,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

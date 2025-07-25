@@ -3,7 +3,7 @@ import { Toaster } from "@ui-kit/components"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Toast",
+  title: "Chakra / Components / Toast",
   decorators: [
     (Story: any) => (
       <Box p="10">

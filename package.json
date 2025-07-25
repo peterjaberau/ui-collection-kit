@@ -21,6 +21,8 @@
   },
 
   "dependencies": {
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.0",
     "@chakra-ui/react": "^3.22.0",
     "@ark-ui/react": "^5.18.0",
     "@chakra-ui/charts": "^3.22.0",

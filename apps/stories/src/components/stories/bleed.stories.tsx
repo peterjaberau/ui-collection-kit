@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react-vite"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Layout / Bleed",
+  title: "Chakra / Layout / Bleed",
   decorators: [
     (Story: any) => (
       <Box p="4">

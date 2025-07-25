@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Bar Segment",
+  title: "Chakra / Charts / Bar Segment",
   decorators: [
     (Story: any) => (
       <Box p="10">

@@ -1,10 +1,10 @@
-import { DatePicker, FormButtonGroup, FormItem, Submit } from '@formily/antd-v5'
+import { DatePicker, FormButtonGroup, FormItem, Submit } from '../../components'
 import { createForm } from '@formily/core'
 import { Field, FormProvider } from '@formily/react'
 import React from 'react'
 
 const form = createForm()
-const Demo: React.FC = () => {
+export const DatePickerPureJsx: React.FC = () => {
   return (
     <FormProvider form={form}>
       <Field
@@ -102,4 +102,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

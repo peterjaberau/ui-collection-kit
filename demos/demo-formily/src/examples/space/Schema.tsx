@@ -5,7 +5,7 @@ import {
   Input,
   Space,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider, ISchema } from '@formily/react'
 import React from 'react'
@@ -102,7 +102,7 @@ const schema: ISchema = {
     },
   },
 }
-const Demo: React.FC = () => {
+export const SpaceSchema: React.FC = () => {
   return (
     <FormProvider form={form}>
       <FormLayout labelCol={6} wrapperCol={16}>
@@ -115,4 +115,4 @@ const Demo: React.FC = () => {
   )
 }
 
-export default Demo
+

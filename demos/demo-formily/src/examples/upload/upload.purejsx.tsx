@@ -5,7 +5,7 @@ import {
   FormLayout,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, Field } from '@formily/react'
 import { Button } from 'antd'

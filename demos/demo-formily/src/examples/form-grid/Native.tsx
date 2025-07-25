@@ -1,4 +1,4 @@
-import { FormGrid } from '@formily/antd-v5'
+import { FormGrid } from '../../components'
 import React from 'react'
 
 const { GridColumn } = FormGrid
@@ -19,7 +19,7 @@ const Cell = ({ children }: any) => {
   )
 }
 
-const Demo: React.FC = () => {
+export const FormGridNative: React.FC = () => {
   return (
     <React.Fragment>
       <p>maxColumns 3 + minColumns 2</p>
@@ -163,4 +163,4 @@ const Demo: React.FC = () => {
     </React.Fragment>
   )
 }
-export default Demo
+

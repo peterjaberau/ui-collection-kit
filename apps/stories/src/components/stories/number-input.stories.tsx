@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react-vite"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / NumberInput",
+  title: "Chakra / Components / NumberInput",
   decorators: [
     (Story: any) => (
       <Box p="10">

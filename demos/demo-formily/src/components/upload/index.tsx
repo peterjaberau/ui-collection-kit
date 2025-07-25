@@ -186,7 +186,7 @@ const getPlaceholder = (props: IUploadProps) => {
   return null
 }
 
-export const Upload: ComposedUpload = connect(
+export const Upload: ComposedUpload | any = connect(
   (props: React.PropsWithChildren<IUploadProps>) => {
     return (
       <AntdUpload {...useUploadProps(props)}>

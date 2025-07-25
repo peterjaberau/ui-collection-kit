@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react-vite"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Segment Group",
+  title: "Chakra / Components / Segment Group",
   decorators: [
     (Story: any) => (
       <Box p="10">

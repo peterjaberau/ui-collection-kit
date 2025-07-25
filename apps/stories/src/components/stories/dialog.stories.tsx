@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react-vite"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Dialog",
+  title: "Chakra / Components / Dialog",
   decorators: [
     (Story: any) => (
       <Box p="10">

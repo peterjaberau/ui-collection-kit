@@ -1,4 +1,4 @@
-import { DatePicker, FormButtonGroup, FormItem, Submit } from '@formily/antd-v5'
+import { DatePicker, FormButtonGroup, FormItem, Submit } from '../../components'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
 import React from 'react'
@@ -12,7 +12,7 @@ const SchemaField: any = createSchemaField({
 
 const form = createForm()
 
-const Demo: React.FC = () => {
+export const DatePickerMarkup: React.FC = () => {
   return (
     <FormProvider form={form}>
       <SchemaField>
@@ -111,4 +111,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

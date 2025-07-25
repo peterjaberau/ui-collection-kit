@@ -1,4 +1,4 @@
-import { Checkbox, FormButtonGroup, FormItem, Submit } from '@formily/antd-v5'
+import { Checkbox, FormButtonGroup, FormItem, Submit } from '../../components'
 import {
   createForm,
   Field as FieldType,
@@ -58,7 +58,7 @@ const form = createForm({
   },
 })
 
-const Demo = () => {
+export const CheckboxPureJsx = () => {
   return (
     <FormProvider form={form}>
       <Field
@@ -90,4 +90,4 @@ const Demo = () => {
   )
 }
 
-export default Demo
+

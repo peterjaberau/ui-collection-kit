@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkbox, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { Checkbox, FormItem, FormButtonGroup, Submit } from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import type { CheckboxChangeEvent } from 'antd/es/checkbox'
@@ -46,7 +46,7 @@ const schema = {
   },
 }
 
-const Demo: React.FC = () => {
+export const CheckboxSchema: React.FC = () => {
   return (
     <FormProvider form={form}>
       <SchemaField schema={schema} />
@@ -57,4 +57,4 @@ const Demo: React.FC = () => {
   )
 }
 
-export default Demo
+

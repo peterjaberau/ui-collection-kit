@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react-vite"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Color Mode",
+  title: "Chakra / Components / Color Mode",
   decorators: [
     (Story: any) => (
       <Box p="10">

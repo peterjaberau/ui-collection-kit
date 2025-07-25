@@ -1,10 +1,10 @@
 import React from 'react'
-import { Input, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { Input, FormItem, FormButtonGroup, Submit } from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, Field } from '@formily/react'
 
 const form = createForm()
-const Demo: React.FC = () => {
+export const InputPureJsx: React.FC = () => {
   return (
     <FormProvider form={form}>
       <Field
@@ -41,4 +41,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

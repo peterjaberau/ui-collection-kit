@@ -6,7 +6,7 @@ import {
   Editable,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import { Button, Alert } from 'antd'

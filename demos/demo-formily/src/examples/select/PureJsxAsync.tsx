@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { Select, FormItem, FormButtonGroup, Submit } from '../../components'
 import {
   createForm,
   onFieldReact,
@@ -14,7 +14,7 @@ const useAsyncDataSource = (
   pattern: FormPathPattern,
   service: (field: FieldType) => Promise<FieldDataSource>
 ) => {
-  onFieldReact(pattern, (field: FieldType) => {
+  onFieldReact(pattern, (field: FieldType | any) => {
     field.loading = true
     service(field).then(
       action.bound?.((data) => {
@@ -61,7 +61,7 @@ const form = createForm({
   },
 })
 
-const Demo = () => (
+export const SelectPureJsxAsync = () => (
   <FormProvider form={form}>
     <Field
       name="linkage"
@@ -98,4 +98,4 @@ const Demo = () => (
     </FormButtonGroup>
   </FormProvider>
 )
-export default Demo
+

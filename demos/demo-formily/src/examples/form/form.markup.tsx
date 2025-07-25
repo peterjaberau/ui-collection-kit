@@ -7,12 +7,12 @@ import {
   FormGrid,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { Field } from '@formily/react'
 
 const form = createForm()
-const Demo = () => {
+export const FormMarkup = () => {
   return (
     <Form
       form={form}
@@ -71,4 +71,4 @@ const Demo = () => {
   )
 }
 
-export default Demo
+

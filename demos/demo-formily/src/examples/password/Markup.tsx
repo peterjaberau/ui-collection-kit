@@ -4,7 +4,7 @@ import {
   FormLayout,
   Password,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
 import React from 'react'
@@ -18,7 +18,7 @@ const SchemaField = createSchemaField({
 
 const form = createForm()
 
-const Demo: React.FC = () => {
+export const PasswordMarkup: React.FC = () => {
   return (
     <FormProvider form={form}>
       <FormLayout labelCol={6} wrapperCol={10}>
@@ -41,4 +41,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

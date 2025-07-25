@@ -5,7 +5,7 @@ import {
   ArrayCollapse,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm, onFieldChange, onFieldReact } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 

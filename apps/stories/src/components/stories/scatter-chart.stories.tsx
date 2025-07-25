@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Scatter Chart",
+  title: "Chakra / Charts / Scatter Chart",
   decorators: [
     (Story: any) => (
       <Box p="10">

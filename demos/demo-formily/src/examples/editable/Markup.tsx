@@ -5,7 +5,7 @@ import {
   FormItem,
   Input,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm, ObjectField } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
 import React from 'react'
@@ -21,7 +21,7 @@ const SchemaField: any = createSchemaField({
 
 const form = createForm()
 
-const Demo: React.FC = () => {
+export const EditableMarkup: React.FC = () => {
   return (
     <FormProvider form={form}>
       <SchemaField>
@@ -86,4 +86,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

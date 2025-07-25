@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cascader, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { Cascader, FormItem, FormButtonGroup, Submit } from '../../components'
 import {
   createForm,
   onFieldReact,
@@ -58,7 +58,7 @@ const form = createForm({
   },
 })
 
-const Demo = () => {
+export const CascaderPureJsx = () => {
   return (
     <FormProvider form={form}>
       <Field
@@ -81,4 +81,4 @@ const Demo = () => {
   )
 }
 
-export default Demo
+

@@ -5,7 +5,7 @@ import {
   FormItem,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import {
   createForm,
   onFieldReact,

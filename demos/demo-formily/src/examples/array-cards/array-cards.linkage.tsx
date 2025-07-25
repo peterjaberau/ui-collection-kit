@@ -3,7 +3,7 @@ import {
   FormItem,
   Input,
   FormButtonGroup,
-} from '@formily/antd-v5'
+} from '../../components'
 import { Submit } from '../../components/submit'
 import ArrayCards from '../../components/array-cards'
 import { createForm, onFieldChange, onFieldReact } from '@formily/core'

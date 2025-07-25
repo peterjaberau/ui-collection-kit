@@ -4,7 +4,7 @@ import Frame, { type FrameContextProps, useFrame } from "react-frame-component"
 import { EnvironmentProvider, useEnvironmentContext } from "@chakra-ui/react"
 
 export default {
-  title: "Components / Environment",
+  title: "Chakra / Components / Environment",
 }
 
 const Portal = (props: React.PropsWithChildren<{}>) => {

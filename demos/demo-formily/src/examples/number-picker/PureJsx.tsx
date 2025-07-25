@@ -4,12 +4,12 @@ import {
   FormItem,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, Field } from '@formily/react'
 
 const form = createForm()
-const Demo: React.FC = () => {
+export const NumberPickerPureJsx: React.FC = () => {
   return (
     <FormProvider form={form}>
       <Field
@@ -33,4 +33,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

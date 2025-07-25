@@ -6,7 +6,7 @@ import {
   FormItem,
   Input,
   FormLayout,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 const SchemaField = createSchemaField({

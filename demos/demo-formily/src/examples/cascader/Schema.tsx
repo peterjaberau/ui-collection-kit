@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cascader, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { Cascader, FormItem, FormButtonGroup, Submit } from '../../components'
 import { createForm, FieldDataSource, Field } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import { action } from '@formily/reactive'
@@ -75,7 +75,7 @@ const schema = {
   },
 }
 
-const Demo = () => {
+export const CascaderSchema = () => {
   return (
     <FormProvider form={form}>
       <SchemaField
@@ -88,4 +88,4 @@ const Demo = () => {
     </FormProvider>
   )
 }
-export default Demo
+

@@ -1,4 +1,4 @@
-import { Checkbox, FormButtonGroup, FormItem, Submit } from '@formily/antd-v5'
+import { Checkbox, FormButtonGroup, FormItem, Submit } from '../../components'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
 import React from 'react'
@@ -12,7 +12,7 @@ const SchemaField = createSchemaField({
 
 const form = createForm()
 
-const Demo: React.FC = () => {
+export const CheckboxMarkup: React.FC = () => {
   return (
     <FormProvider form={form}>
       <SchemaField>
@@ -45,4 +45,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

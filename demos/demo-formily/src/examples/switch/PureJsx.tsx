@@ -1,10 +1,10 @@
-import { FormButtonGroup, FormItem, Submit, Switch } from '@formily/antd-v5'
+import { FormButtonGroup, FormItem, Submit, Switch } from '../../components'
 import { createForm } from '@formily/core'
 import { Field, FormProvider } from '@formily/react'
 import React from 'react'
 
 const form = createForm()
-const Demo: React.FC = () => {
+export const SwitchPureJsx: React.FC = () => {
   return (
     <FormProvider form={form}>
       <Field
@@ -19,4 +19,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

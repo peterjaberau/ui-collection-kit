@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Badge, Box, Button, Center, For, Link, Stack, Text } from "@chakra-ui/react"
 
 export default {
-  title: "Foundations / Sandbox",
+  title: "Chakra / Foundations / Sandbox",
   decorators: [
     (Story: any) => (
       <Box p="10">

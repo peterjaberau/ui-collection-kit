@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormDialog, FormItem, FormLayout, Input } from '@formily/antd-v5'
+import { FormDialog, FormItem, FormLayout, Input } from '../../components'
 import { createSchemaField } from '@formily/react'
 import { Button } from 'antd'
 

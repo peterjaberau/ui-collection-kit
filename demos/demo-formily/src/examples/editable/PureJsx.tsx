@@ -5,14 +5,14 @@ import {
   FormItem,
   Input,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { Field, FormProvider, ObjectField, VoidField } from '@formily/react'
 import React from 'react'
 
 const form = createForm()
 
-const Demo: React.FC = () => {
+export const EditablePureJsx: React.FC = () => {
   return (
     <FormProvider form={form}>
       <Field
@@ -76,4 +76,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

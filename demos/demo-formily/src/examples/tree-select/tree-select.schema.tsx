@@ -1,5 +1,5 @@
 import React from 'react'
-import { TreeSelect, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { TreeSelect, FormItem, FormButtonGroup, Submit } from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 

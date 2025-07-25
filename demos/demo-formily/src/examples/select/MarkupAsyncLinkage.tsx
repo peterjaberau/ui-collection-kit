@@ -1,10 +1,10 @@
 import React from 'react'
-import { Select, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { Select, FormItem, FormButtonGroup, Submit } from '../../components'
 import { createForm, onFieldReact, FormPathPattern, Field } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import { action } from '@formily/reactive'
 
-const SchemaField = createSchemaField({
+const SchemaField: any = createSchemaField({
   components: {
     Select,
     FormItem,
@@ -15,7 +15,7 @@ const useAsyncDataSource = (
   pattern: FormPathPattern,
   service: (field: Field) => Promise<{ label: string; value: any }[]>
 ) => {
-  onFieldReact(pattern, (field: Field) => {
+  onFieldReact(pattern, (field: Field | any) => {
     field.loading = true
     service(field).then(
       action.bound?.((data) => {
@@ -62,7 +62,7 @@ const form = createForm({
   },
 })
 
-const Demo: React.FC = () => {
+export const SelectMarkupAsyncLinkage: React.FC = () => {
   return (
     <FormProvider form={form}>
       <SchemaField>
@@ -100,4 +100,4 @@ const Demo: React.FC = () => {
   )
 }
 
-export default Demo
+

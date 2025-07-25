@@ -84,7 +84,7 @@ const form = createForm({
   },
 })
 
-const Demo = () => {
+export const SelectMarkupAsync = () => {
   return (
     <FormProvider form={form}>
       <SchemaField>
@@ -108,4 +108,4 @@ const Demo = () => {
     </FormProvider>
   )
 }
-export default Demo
+

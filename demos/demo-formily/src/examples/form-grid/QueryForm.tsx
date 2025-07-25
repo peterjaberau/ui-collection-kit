@@ -11,7 +11,7 @@ import {
   Submit,
   Reset,
   FormButtonGroup,
-} from '@formily/antd-v5'
+} from '../../components'
 
 const useCollapseGrid = (maxRows: number) => {
   const grid = useMemo(
@@ -125,7 +125,7 @@ const SchemaField = createSchemaField({
   },
 })
 
-const Demo = () => {
+export const FormGridQueryForm = () => {
   const form = useMemo(() => createForm(), [])
   return (
     <FormProvider form={form}>
@@ -183,4 +183,4 @@ const Demo = () => {
   )
 }
 
-export default Demo
+

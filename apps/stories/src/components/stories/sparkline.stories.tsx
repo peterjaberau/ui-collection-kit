@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Charts / Sparkline",
+  title: "Chakra / Charts / Sparkline",
   decorators: [
     (Story: any) => (
       <Box p="10">

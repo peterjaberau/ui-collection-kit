@@ -5,13 +5,13 @@ import {
   FormLayout,
   FormButtonGroup,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, createSchemaField } from '@formily/react'
 import { Button } from 'antd'
 import { UploadOutlined, InboxOutlined } from '@ant-design/icons'
 
-const NormalUpload = (props) => {
+const NormalUpload: any = (props: any) => {
   return (
     <Upload
       {...props}
@@ -25,7 +25,7 @@ const NormalUpload = (props) => {
   )
 }
 
-const CardUpload = (props) => {
+const CardUpload: any = (props: any) => {
   return (
     <Upload
       {...props}
@@ -40,7 +40,7 @@ const CardUpload = (props) => {
   )
 }
 
-const DraggerUpload = (props) => {
+const DraggerUpload: any = (props: any) => {
   return (
     <Upload.Dragger
       {...props}
@@ -60,7 +60,7 @@ const DraggerUpload = (props) => {
   )
 }
 
-const SchemaField = createSchemaField({
+const SchemaField: any = createSchemaField({
   components: {
     NormalUpload,
     CardUpload,

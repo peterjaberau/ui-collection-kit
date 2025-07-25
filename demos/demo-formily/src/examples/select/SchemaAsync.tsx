@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { Select, FormItem, FormButtonGroup, Submit } from '../../components'
 import {
   createForm,
   onFieldReact,
@@ -13,7 +13,7 @@ const useAsyncDataSource = (
   pattern: FormPathPattern,
   service: (field: FieldType) => Promise<{ label: string; value: any }[]>
 ) => {
-  onFieldReact(pattern, (field: FieldType) => {
+  onFieldReact(pattern, (field: FieldType | any) => {
     field.loading = true
     service(field).then(
       action.bound?.((data) => {
@@ -60,7 +60,7 @@ const form = createForm({
   },
 })
 
-const Demo: React.FC = () => {
+export const SelectSchemaAsync: React.FC = () => {
   return (
     <FormProvider form={form}>
       <Field
@@ -100,4 +100,4 @@ const Demo: React.FC = () => {
   )
 }
 
-export default Demo
+

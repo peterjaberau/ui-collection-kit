@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react-vite"
 import { Box, Flex, useBreakpointValue } from "@chakra-ui/react"
 
 export default {
-  title: "Hooks / useBreakpointValue",
+  title: "Chakra / Hooks / useBreakpointValue",
   decorators: [
     (Story: any) => (
       <Box p="10">

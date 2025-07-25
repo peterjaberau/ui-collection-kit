@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react-vite"
 import { Box } from "@chakra-ui/react"
 
 export default {
-  title: "Typography / Prose",
+  title: "Chakra / Typography / Prose",
   decorators: [
     (Story: any) => (
       <Box p="10">

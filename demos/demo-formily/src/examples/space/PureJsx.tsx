@@ -5,13 +5,13 @@ import {
   Input,
   Space,
   Submit,
-} from '@formily/antd-v5'
+} from '../../components'
 import { createForm } from '@formily/core'
 import { Field, FormProvider, VoidField } from '@formily/react'
 import React from 'react'
 
 const form = createForm()
-const Demo: React.FC = () => {
+export const SpacePureJsx: React.FC = () => {
   return (
     <FormProvider form={form}>
       <FormLayout labelCol={6} wrapperCol={16}>
@@ -107,4 +107,4 @@ const Demo: React.FC = () => {
     </FormProvider>
   )
 }
-export default Demo
+

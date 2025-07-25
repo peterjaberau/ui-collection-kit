@@ -1,11 +1,11 @@
 import React from 'react'
-import { Select, FormItem, FormButtonGroup, Submit } from '@formily/antd-v5'
+import { Select, FormItem, FormButtonGroup, Submit } from '../../components'
 import { createForm } from '@formily/core'
 import { FormProvider, Field } from '@formily/react'
 
 const form = createForm()
 
-const Demo = () => {
+export const SelectPureJsxSync = () => {
   return (
     <FormProvider form={form}>
       <Field
@@ -32,4 +32,4 @@ const Demo = () => {
   )
 }
 
-export default Demo
+
