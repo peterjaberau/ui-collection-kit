@@ -18,7 +18,7 @@ const SchemaField = createSchemaField({
   },
 })
 
-const loadData = async (field) => {
+const loadData = async (field: any) => {
   const linkage = field.query('linkage').get('value')
   if (!linkage) return []
   return new Promise((resolve) => {
@@ -118,9 +118,10 @@ const loadData = async (field) => {
   })
 }
 
-const useAsyncDataSource = (service) => (field) => {
+const useAsyncDataSource = (service: any) => (field: any) => {
   field.loading = true
   service(field).then(
+    // @ts-ignore
     action.bound((data) => {
       field.dataSource = data
       field.loading = false

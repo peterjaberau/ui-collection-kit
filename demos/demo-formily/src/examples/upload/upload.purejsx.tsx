@@ -11,7 +11,7 @@ import { FormProvider, Field } from '@formily/react'
 import { Button } from 'antd'
 import { UploadOutlined, InboxOutlined } from '@ant-design/icons'
 
-const NormalUpload = (props) => {
+const NormalUpload = (props: any) => {
   return (
     <Upload
       {...props}
@@ -25,7 +25,7 @@ const NormalUpload = (props) => {
   )
 }
 
-const CardUpload = (props) => {
+const CardUpload = (props: any) => {
   return (
     <Upload
       {...props}
@@ -40,7 +40,7 @@ const CardUpload = (props) => {
   )
 }
 
-const DraggerUpload = (props) => {
+const DraggerUpload = (props: any) => {
   return (
     <Upload.Dragger
       {...props}

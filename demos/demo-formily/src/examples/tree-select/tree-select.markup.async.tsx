@@ -22,9 +22,10 @@ const useAsyncDataSource = (
   pattern: FormPathPattern,
   service: (field: Field) => Promise<{ label: string; value: any }[]>
 ) => {
-  onFieldReact(pattern, (field) => {
+  onFieldReact(pattern, (field: any) => {
     field.loading = true
     service(field).then(
+      // @ts-ignore
       action.bound((data) => {
         field.dataSource = data
         field.loading = false
@@ -36,7 +37,7 @@ const useAsyncDataSource = (
 const form = createForm({
   effects: () => {
     useAsyncDataSource('select', async (field) => {
-      const linkage = field.query('linkage').get('value')
+      const linkage: any = field.query('linkage').get('value')
       if (!linkage) return []
       return new Promise((resolve) => {
         setTimeout(() => {
@@ -62,7 +63,7 @@ const form = createForm({
                     key: '0-0-2',
                   },
                 ],
-              },
+              } as any,
               {
                 label: 'BBB',
                 value: 'ccc',
@@ -128,7 +129,7 @@ const form = createForm({
                     key: '0-1-2',
                   },
                 ],
-              },
+              } as any,
             ])
           }
         }, 1500)
