@@ -1,16 +1,25 @@
-import React from 'react';
-import cls from 'classnames';
-import { usePrefix } from '../../hooks';
-export interface IPCSimulatorProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  className?: string;
-  style?: React.CSSProperties;
-}
-export const PCSimulator: React.FC<IPCSimulatorProps> = (props) => {
-  const prefix = usePrefix('pc-simulator')
+import React from "react"
+import { Card } from "@chakra-ui/react"
+
+export const PCSimulator: React.FC<any> = (props) => {
   return (
-    <div {...props} className={cls(prefix, props.className)}>
-      {props.children}
-    </div>
+    <Card.Root css={{ width: "800px", height: "600px" }}>
+      <Card.Header css={{ borderBottom: "1px solid", borderBottomColor: "border.emphasized" }}>
+        <Card.Title>Simulator</Card.Title>
+      </Card.Header>
+      <Card.Body
+        css={{
+          width: "100%",
+          height: "100%",
+          minHeight: "100px",
+          overflow: "hidden",
+          position: "relative",
+          boxSizing: "border-box",
+          userSelect: "none",
+        }}
+      >
+        {props.children}
+      </Card.Body>
+    </Card.Root>
   )
 }

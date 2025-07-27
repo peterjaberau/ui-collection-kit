@@ -7,12 +7,12 @@ import { TreeNode, ITreeNode } from '#packages/core'
 import { MonacoInput } from '#packages/react-settings-form'
 
 export interface ISchemaEditorWidgetProps {
-  tree: TreeNode
-  onChange?: (tree: ITreeNode) => void
+  tree: TreeNode | any
+  onChange?: (tree: ITreeNode | any) => void
 }
 
-export const SchemaEditorWidget: React.FC<ISchemaEditorWidgetProps> = (
-  props
+export const SchemaEditorWidget: React.FC<ISchemaEditorWidgetProps | any> | any = (
+  props: any
 ) => {
   return (
     <MonacoInput

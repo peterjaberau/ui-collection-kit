@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import {
   isResourceHost,
   isResourceList,
@@ -7,19 +7,13 @@ import {
   IResource,
 } from '#packages/core';
 import { isFn } from '#packages/shared';
-import { observer } from '@formily/reactive-react';
-import { usePrefix } from '../../hooks';
-import { IconWidget } from '../IconWidget';
-import { TextWidget } from '../TextWidget';
-import { LuPlus, LuMinus } from 'react-icons/lu'
-import { SimpleGrid, Box } from '@chakra-ui/react'
-import cls from 'classnames';
+import { SimpleGrid, Box, Button, Stack, HStack, Card, For } from "@chakra-ui/react"
+import { observer } from "@formily/reactive-react"
 
 
 export type SourceMapper = (resource: IResource) => React.ReactNode | any;
 
 export interface IResourceWidgetProps {
-  title: React.ReactNode;
   sources?: IResourceLike[];
   className?: string;
   defaultExpand?: boolean;
@@ -28,35 +22,12 @@ export interface IResourceWidgetProps {
 
 export const ResourceWidget: React.FC<IResourceWidgetProps> | any = observer(
   (props: any) => {
-    const prefix = usePrefix('resource')
-    const [expand, setExpand] = useState(props.defaultExpand)
     const renderNode = (source: IResource) => {
       const { node, icon, title, thumb, span } = source
       return (
-        <div
-          className={prefix + '-item'}
-          style={{ gridColumnStart: `span ${span || 1}` }}
-          key={node.id}
-          data-designer-source-id={node.id}
-        >
-          {thumb && <img className={prefix + '-item-thumb'} src={thumb} />}
-          {icon && React.isValidElement(icon) ? (
-            <>{icon}</>
-          ) : (
-            <IconWidget
-              className={prefix + '-item-icon'}
-              infer={icon}
-              style={{ width: 150, height: 40 }}
-            />
-          )}
-          <span className={prefix + '-item-text'}>
-            {
-              <TextWidget>
-                {title || node.children[0]?.getMessage('title')}
-              </TextWidget>
-            }
-          </span>
-        </div>
+        <Button variant="subtle" data-designer-source-id={node.id} key={node.id}>
+          {title || node.children[0]?.getMessage("title")}
+        </Button>
       )
     }
     // @ts-ignore
@@ -69,51 +40,21 @@ export const ResourceWidget: React.FC<IResourceWidgetProps> | any = observer(
       return buf
     }, [])
 
-    const remainItems =
-      sources.reduce((length, source) => {
-        return length + (source.span ?? 1)
-      }, 0) % 3
 
+    console.log('sources', sources)
 
     return (
-      <div
-        className={cls(prefix, props.className, {
-          expand,
-        })}
-      >
-        <div
-          className={prefix + '-header'}
-          onClick={(e) => {
-            e.stopPropagation()
-            e.preventDefault()
-            setExpand(!expand)
-          }}
-        >
-          <div className={prefix + '-header-expand'}>
-            <IconWidget infer="Expand" size={10} />
-          </div>
-          <div className={prefix + '-header-content'}>
-            <TextWidget>{props.title}</TextWidget>
-          </div>
-        </div>
-
-
-        <div className={prefix + '-content-wrapper'}>
-          <div className={prefix + '-content'}>
-            {sources.map(isFn(props.children) ? props.children : renderNode)}
-            {remainItems ? (
-              <div
-                className={prefix + '-item-remain'}
-                style={{ gridColumnStart: `span ${3 - remainItems}` }}
-              ></div>
-            ) : null}
-          </div>
-        </div>
-      </div>
+      <Card.Root css={{ width: "300px", height: "100%" }}>
+        <Card.Header css={{ borderBottom: "1px solid", borderBottomColor: "border.emphasized" }}>
+          <Card.Title>Components</Card.Title>
+        </Card.Header>
+        <Card.Body maxH="calc(100vh - 100px)" overflowY="auto">
+          <SimpleGrid columns={2} gap={2}>
+            {sources && sources.map(isFn(props.children) ? props.children : renderNode)}
+          </SimpleGrid>
+        </Card.Body>
+      </Card.Root>
     )
   }
 )
 
-ResourceWidget.defaultProps = {
-  defaultExpand: true,
-}

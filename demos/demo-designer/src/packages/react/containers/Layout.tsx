@@ -3,6 +3,7 @@ import { each } from '#packages/shared';
 import { DesignerLayoutContext } from '../context';
 import { IDesignerLayoutProps } from '../types';
 import cls from 'classnames'
+import { chakra } from '@chakra-ui/react';
 
 export const Layout: React.FC<IDesignerLayoutProps> | any = (props: any) => {
   const layout = useContext(DesignerLayoutContext)
@@ -20,12 +21,14 @@ export const Layout: React.FC<IDesignerLayoutProps> | any = (props: any) => {
     return <Fragment>{props.children}</Fragment>
   }
   return (
-    <div
+    <chakra.div
       ref={ref}
+
       className={cls({
         [`${props.prefixCls}app`]: true,
         [`${props.prefixCls}${props.theme}`]: props.theme,
       })}
+
     >
       <DesignerLayoutContext.Provider
         value={{
@@ -36,7 +39,7 @@ export const Layout: React.FC<IDesignerLayoutProps> | any = (props: any) => {
       >
         {props.children}
       </DesignerLayoutContext.Provider>
-    </div>
+    </chakra.div>
   )
 }
 

@@ -12,7 +12,7 @@ export const useDesigner = (effects?: IEffects): Engine => {
     useContext(DesignerEngineContext);
   useEffect(() => {
     if (isFn(effects)) {
-      return effects(designer);
+      return effects(designer)
     }
   }, []);
   return designer;

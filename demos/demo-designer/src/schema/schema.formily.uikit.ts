@@ -2,7 +2,17 @@
 export const schemaLayouts = {
   AspectRatio: {
     type: 'object',
-    properties: {}
+    properties: {
+      ratio: {
+        type: 'number',
+        enum: [21/9, 16/9, 9/16, 4/3, 1.85],
+        'x-decorator': 'FormItem',
+        'x-decorator-props': {
+          layout: 'vertical',
+        },
+        'x-component': 'Select',
+      }
+    }
   },
   Bleed: {
     type: 'object',
@@ -593,6 +603,15 @@ export const schemaComponents = {
   Button: {
     type: 'object',
     properties: {
+      text: {
+        type: 'string',
+        default: 'Button',
+        'x-decorator': 'FormItem',
+        'x-decorator-props': {
+          layout: 'vertical',
+        },
+        "x-component": "Input",
+      },
       spinnerPlacement: {
         "type": "string",
         "enum": [
