@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     "../packages/ui-kit/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../apps/stories/src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../demos/demo-formily/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../demos/demo-designer/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: ["@storybook/addon-a11y", "@storybook/addon-themes", "@storybook/addon-docs"],
   framework: {
