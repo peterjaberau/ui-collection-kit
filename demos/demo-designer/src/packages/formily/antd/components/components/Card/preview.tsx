@@ -1,0 +1,52 @@
+import React from 'react'
+import { Card as AntdCard } from 'antd'
+import { Card as ChakraCard } from '@chakra-ui/react'
+
+import { createBehavior, createResource } from '#packages/core'
+import { DnFC } from '#packages/react'
+import { createVoidFieldSchema } from '../Field'
+import { AllSchemas } from '../../schemas'
+import { AllLocales } from '../../locales'
+
+export const Card: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
+  return (
+    <>
+
+      <AntdCard
+        {...props}
+        title={
+          props.title
+        }
+      >
+        {props.children}
+      </AntdCard>
+    </>
+  );
+}
+
+Card.Behavior = createBehavior({
+  name: 'Card',
+  extends: ['Field'],
+  selector: (node) => node.props['x-component'] === 'Card',
+  designerProps: {
+    droppable: true,
+    propsSchema: createVoidFieldSchema(AllSchemas.Card),
+  },
+  designerLocales: AllLocales.Card,
+})
+
+Card.Resource = createResource({
+  icon: 'CardSource',
+  elements: [
+    {
+      componentName: 'Field',
+      props: {
+        type: 'void',
+        'x-component': 'Card',
+        'x-component-props': {
+          title: 'Title',
+        },
+      },
+    },
+  ],
+})
