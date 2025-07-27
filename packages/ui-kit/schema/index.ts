@@ -56,7 +56,242 @@ export const objectKeys = {
   visuallyHiddenStyle: {},
 }
 
-export const schema = {
+export const schemaLayouts = {
+  AspectRatio: {
+    type: 'object',
+    properties: {}
+  },
+  Bleed: {
+    type: 'object',
+    properties: {}
+  },
+  Box: {
+    type: 'object',
+    properties: {}
+  },
+  Center: {
+    type: 'object',
+    properties: {}
+  },
+  Container: {
+    type: 'object',
+    properties: {}
+  },
+  Flex: {
+    type: 'object',
+    properties: {}
+  },
+  Float: {
+    type: 'object',
+    properties: {}
+  },
+  Grid: {
+    type: 'object',
+    properties: {}
+  },
+  Group: {
+    type: 'object',
+    properties: {}
+  },
+  SimpleGrid: {
+    type: 'object',
+    properties: {}
+  },
+  Stack: {
+    type: 'object',
+    properties: {}
+  },
+  Wrap: {
+    type: 'object',
+    properties: {}
+  },
+}
+
+export const schemaTypography = {
+  Blockquote: {
+    type: 'object',
+    properties: {}
+  },
+  Code: {
+    type: 'object',
+    properties: {}
+  },
+  Em: {
+    type: 'object',
+    properties: {}
+  },
+  Heading: {
+    type: 'object',
+    properties: {}
+  },
+  Highlight: {
+    type: 'object',
+    properties: {}
+  },
+  Kbd: {
+    type: 'object',
+    properties: {}
+  },
+  Link: {
+    type: 'object',
+    properties: {}
+  },
+  LinkOverlay: {
+    type: 'object',
+    properties: {}
+  },
+  List: {
+    type: 'object',
+    properties: {}
+  },
+  Mark: {
+    type: 'object',
+    properties: {}
+  },
+  Prose: {
+    type: 'object',
+    properties: {}
+  },
+  Text: {
+    type: 'object',
+    properties: {}
+  },
+}
+
+export const schemaUtilities = {
+  ClientOnly: {
+    type: 'object',
+    properties: {}
+  },
+  DownloadTrigger: {
+    type: 'object',
+    properties: {
+      data: {
+        type: 'string',
+      },
+      filename: {
+        type: 'string',
+      },
+      mimeType: {
+        type: 'string',
+      },
+    }
+  },
+  EnvironmentProvider: {
+    type: 'object',
+    properties: {
+      value: {
+        type: 'string',
+        format: 'function',
+      }
+    }
+  },
+  For: {
+    type: 'object',
+    properties: {
+      each: {
+        type: 'array',
+      },
+      fallback: {
+        type: 'string',
+        format: 'function',
+      }
+    }
+  },
+  FormatByte: {
+    type: 'object',
+    properties: {
+      value: {
+        type: 'number',
+        required: true,
+      },
+      unit: {
+        type: 'string',
+        enum: ['bit', 'byte'],
+      },
+      unitDisplay: {
+        type: 'string',
+        enum: ['narrow', 'short', 'long'],
+      }
+    }
+  },
+  Presence: {
+    type: 'object',
+    properties: {
+      present: {
+        type: 'boolean',
+      },
+      immediate: {
+        type: 'boolean',
+      },
+      onExitComplete: {
+        type: 'string',
+        format: 'function',
+      }
+    }
+  },
+  Portal: {
+    type: 'object',
+    properties: {
+      container: {
+        type: 'string',
+        format: 'function',
+      },
+      disabled: {
+        type: 'boolean',
+      }
+    }
+  },
+  Show: {
+    type: 'object',
+    properties: {
+      when: {
+        type: 'string',
+        format: 'function',
+      },
+      fallback: {
+        type: 'string',
+        format: 'function',
+      }
+    }
+  },
+  VisuallyHidden: {
+    type: 'object',
+    properties: {}
+  },
+  Theme: {
+    type: 'object',
+    properties: {
+      appearance: {
+        type: 'string',
+        enum: ['light', 'dark'],
+        defaultValue: 'light',
+      },
+      colorPalette: {
+        "type": "string",
+        "enum": [
+          "gray",
+          "red",
+          "orange",
+          "yellow",
+          "green",
+          "teal",
+          "blue",
+          "cyan",
+          "purple",
+          "pink"
+        ],
+        defaultValue: 'gray',
+      },
+      hasBackground: {
+        type: 'boolean',
+      }
+    }
+  },
+
+}
+
+export const schemaComponents = {
   Accordion: {
     type: 'object',
     properties: {
@@ -1006,7 +1241,6 @@ export const schema = {
       }
     }
   },
-
   ColorPicker: {
     type: 'object',
     properties: {
@@ -1209,7 +1443,6 @@ export const schema = {
       },
     }
   },
-
   Dialog: {
     type: 'object',
     properties: {
@@ -1355,7 +1588,6 @@ export const schema = {
       }
     }
   },
-
   Drawer: {
     type: 'object',
     properties: {
@@ -1400,7 +1632,6 @@ export const schema = {
       }
     }
   },
-
   Editable: {
     type: 'object',
     properties: {
@@ -1557,7 +1788,6 @@ export const schema = {
       },
     }
   },
-
   Field: {
     type: 'object',
     properties: {
@@ -1605,7 +1835,6 @@ export const schema = {
       }
     }
   },
-
   Fieldset: {
     type: 'object',
     properties: {
@@ -1725,8 +1954,6 @@ export const schema = {
       }
     }
   },
-
-
   HoverCard: {
     type: 'object',
     properties: {
@@ -1825,7 +2052,6 @@ export const schema = {
       },
     }
   },
-
   Icon: {
     type: 'object',
     properties: {
@@ -1847,7 +2073,6 @@ export const schema = {
       }
     }
   },
-
   IconButton: {
     type: 'object',
     properties: {
@@ -1909,7 +2134,6 @@ export const schema = {
     type: 'object',
     properties: {}
   },
-
   Input: {
     type: 'object',
     properties: {
@@ -1953,7 +2177,6 @@ export const schema = {
       },
     }
   },
-
   Menu: {
     type: 'object',
     properties: {
@@ -2094,7 +2317,6 @@ export const schema = {
       },
     }
   },
-
   NumberInput: {
     type: 'object',
     properties: {
@@ -2221,7 +2443,6 @@ export const schema = {
       }
     }
   },
-
   Pagination: {
     type: 'object',
     properties: {
@@ -2261,7 +2482,6 @@ export const schema = {
       }
     }
   },
-
   PasswordInput: {
     type: 'object',
     properties: {
@@ -2278,7 +2498,6 @@ export const schema = {
       }
     }
   },
-
   PinInput: {
     type: 'object',
     properties: {
@@ -2404,8 +2623,6 @@ export const schema = {
       }
     }
   },
-
-
   Popover: {
     type: 'object',
     properties: {
@@ -2524,7 +2741,6 @@ export const schema = {
       },
     }
   },
-
   ProgressCircle: {
     type: 'object',
     properties: {
@@ -2560,7 +2776,6 @@ export const schema = {
       }
     }
   },
-
   Progress: {
     type: 'object',
     properties: {
@@ -2656,7 +2871,6 @@ export const schema = {
       }
     }
   },
-
   QrCode: {
     type: 'object',
     properties: {
@@ -2721,7 +2935,6 @@ export const schema = {
 
     }
   },
-
   RadioCard: {
     type: 'object',
     properties: {
@@ -2779,7 +2992,6 @@ export const schema = {
       },
     }
   },
-
   Radio: {
     type: 'object',
     properties: {
@@ -2858,7 +3070,6 @@ export const schema = {
       }
     }
   },
-
   Rating: {
     type: 'object',
     properties: {
@@ -2942,7 +3153,6 @@ export const schema = {
       }
 
     },
-
   SegmentedControl: {
       type: 'object',
       properties: {
@@ -3013,8 +3223,6 @@ export const schema = {
 
       }
     },
-
-
   NativeSelect: {
     type: 'object',
     properties: {
@@ -3065,7 +3273,6 @@ export const schema = {
       }
     }
   },
-
   Select: {
     type: 'object',
     properties: {
@@ -3241,7 +3448,6 @@ export const schema = {
 
     }
   },
-
   Separator: {
     tupe: 'object',
     properties: {
@@ -3287,7 +3493,6 @@ export const schema = {
       },
     }
   },
-
   Skeleton: {
     type: 'object',
     properties: {
@@ -3323,7 +3528,6 @@ export const schema = {
 
     }
   },
-
   Slider: {
     type: 'object',
     properties: {
@@ -3467,7 +3671,6 @@ export const schema = {
       }
     }
   },
-
   Spinner: {
     type: 'object',
     properties: {
@@ -3501,7 +3704,6 @@ export const schema = {
       },
     }
   },
-
   Stat: {
     type: 'object',
     properties: {
@@ -3535,7 +3737,6 @@ export const schema = {
       }
     }
   },
-
   Status: {
     type: 'object',
     properties: {
@@ -3570,7 +3771,6 @@ export const schema = {
 
     }
   },
-
   Steps: {
     type: 'object',
     properties: {
@@ -3653,8 +3853,6 @@ export const schema = {
 
     }
   },
-
-
   Switch: {
     type: 'object',
     properties: {
@@ -3736,8 +3934,6 @@ export const schema = {
       },
     }
   },
-
-
   Tabs: {
     type: 'object',
     properties: {
@@ -3844,7 +4040,6 @@ export const schema = {
       }
     }
   },
-
   Table: {
     type: 'object',
     properties: {
@@ -3903,7 +4098,6 @@ export const schema = {
 
     }
   },
-
   Tag: {
     type: 'object',
     properties: {
@@ -3948,7 +4142,6 @@ export const schema = {
       },
     }
   },
-
   Textarea: {
     type: 'object',
     properties: {
@@ -3984,7 +4177,6 @@ export const schema = {
       },
     }
   },
-
   Timeline: {
     type: 'object',
     properties: {
@@ -4029,7 +4221,6 @@ export const schema = {
       },
     }
   },
-
   Toast: {
     type: 'object',
     properties: {
@@ -4051,7 +4242,6 @@ export const schema = {
       },
     }
   },
-
   ToggleTip: {
     type: 'object',
     properties: {
@@ -4170,25 +4360,237 @@ export const schema = {
       },
     }
   },
+  Tooltip: {
+    type: 'object',
+    properties: {
+      closeDelay: {
+        type: 'number',
+        defaultValue: 500,
+      },
+      closeOnClick: {
+        type: 'boolean',
+        defaultValue: 'true',
+      },
+      closeOnEscape: {
+        type: 'boolean',
+        defaultValue: 'true',
+      },
+      closeOnPointerDown: {
+        type: 'boolean',
+        defaultValue: 'true',
+      },
+      closeOnScroll: {
+        type: 'boolean',
+        defaultValue: 'true',
+      },
+      interactive: {
+        type: 'boolean',
+        defaultValue: 'false',
+      },
+      lazyMount: {
+        type: 'boolean',
+        defaultValue: 'false',
+      },
+      openDelay: {
+        type: 'number',
+        defaultValue: 1000,
+      },
+      skipAnimationOnMount: {
+        type: 'boolean',
+        defaultValue: 'false',
+      },
+      unmountOnExit: {
+        type: 'boolean',
+        defaultValue: 'false',
+      },
+      unstyled: {
+        type: 'boolean',
+      },
+      ariaLabel: {
+        type: 'string',
+      },
+      defaultOpen: {
+        type: 'boolean',
+      },
+      disabled: {
+        type: 'boolean',
+      },
+      id: {
+        type: 'string',
+      },
+      ids: {
+        type: 'array',
+        items: {
+          type: 'string',
+        },
+      },
+      immediate: {
+        type: 'boolean',
+      },
+      onExitComplete: {
+        type: 'string',
+        format: 'function',
+      },
+      onOpenChange: {
+        type: 'string',
+        format: 'function',
+      },
+      open: {
+        type: 'boolean',
+      },
+      positioning: {
+        type: 'object',
+      },
+      present: {
+        type: 'boolean',
+      }
+    }
 
-  Blockquote: {},
-  List: {},
+  },
+  TreeView: {
+    type: 'object',
+    properties: {
+      collection: {
+        type: 'array',
+      },
+      expandOnClick: {
+        type: 'boolean',
+        defaultValue: 'true',
+      },
+      lazyMount: {
+        type: 'boolean',
+        defaultValue: 'false',
+      },
+      selectionMode: {
+        type: 'string',
+        enum: ['single', 'multiple'],
+        defaultValue: 'single',
+      },
+      typeahead: {
+        type: 'boolean',
+        defaultValue: 'true',
+      },
+      unmountOnExit: {
+        type: 'boolean',
+        defaultValue: 'false',
+      },
+      colorPalette: {
+        "type": "string",
+        "enum": [
+          "gray",
+          "red",
+          "orange",
+          "yellow",
+          "green",
+          "teal",
+          "blue",
+          "cyan",
+          "purple",
+          "pink"
+        ],
+        defaultValue: 'gray',
+      },
+      size: {
+        "type": "string",
+        "enum": [
+          "xs",
+          "sm",
+          "md",
+        ],
+        defaultValue: 'md',
+      },
+      variant: {
+        "type": "string",
+        "enum": [
+          "subtle",
+          "solid",
+        ],
+        defaultValue: 'subtle'
+      },
+      unstyled: {
+        type: 'boolean',
+      },
+      checkedValue: {
+        type: 'array',
+        items: {
+          type: 'string',
+        }
+      },
+      defaultCheckedValue: {
+        type: 'array',
+        items: {
+          type: 'string',
+        }
+      },
+      defaultExpandedValue: {
+        type: 'array',
+        items: {
+          type: 'string',
+        }
+      },
+      defaultFocusedValue: {
+        type: 'string',
+      },
+      defaultSelectedValue: {
+        type: 'array',
+        items: {
+          type: 'string',
+        }
+      },
+      expandedValue: {
+        type: 'array',
+        items: {
+          type: 'string',
+        }
+      },
+      focusedValue: {
+        type: 'string',
+      },
+      ids: {
+        type: 'array',
+        items: {
+          type: 'string',
+        },
+      },
+      loadChildren: {
+        type: 'string',
+        format: 'function',
+      },
+      onCheckedChange: {
+        type: 'string',
+        format: 'function',
+      },
+      onExpandedChange: {
+        type: 'string',
+        format: 'function',
+      },
+      onFocusChange: {
+        type: 'string',
+        format: 'function',
+      },
+      onLoadChildrenComplete: {
+        type: 'string',
+        format: 'function',
+      },
+      onLoadChildrenError: {
+        type: 'string',
+        format: 'function',
+      },
+      onSelectionChange: {
+        type: 'string',
+        format: 'function',
+      },
+      selectedValue: {
+        type: 'array',
+        items: {
+          type: 'string',
+        }
+      },
+      animateContent: {
+        type: 'boolean',
+      }
 
+    }
+  },
 
-
-  RadioGroup: {},
-  RatingGroup: {},
-  SegmentGroup: {},
-
-
-
-  Tag: {},
-  Timeline: {},
-  Toast: {},
-  Toggle: {},
-  Tooltip: {},
-  defaultBaseConfig: {},
-  defaultConfig: {},
-  defaultSystem: {},
-  visuallyHiddenStyle: {},
 }
