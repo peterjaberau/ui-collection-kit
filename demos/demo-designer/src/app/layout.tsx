@@ -3,6 +3,7 @@ import { Provider as ChakraProvider } from './provider';
 import { Suspense } from 'react';
 
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,6 +16,13 @@ export default function RootLayout({
     >
       <body
         suppressHydrationWarning
+        style={{
+          height: '100%',
+          width: '100%',
+          margin: 0,
+          padding: 0,
+          overflow: 'hidden',
+        }}
         className='bg-bg-white-0 text-text-strong-950'
       >
         <Suspense>

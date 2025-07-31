@@ -6,7 +6,7 @@ import {
   createSystem,
 } from '@chakra-ui/react';
 import { ThemeProvider } from 'next-themes';
-
+// import "./globals.css";
 
 import { Stack } from '@chakra-ui/react';
 
@@ -21,7 +21,7 @@ export const Provider = (props: { children: React.ReactNode }) => {
   return (
       <ChakraProvider value={theme}>
         <ThemeProvider attribute='class' disableTransitionOnChange>
-          <Stack>{props.children}</Stack>
+          {props.children}
         </ThemeProvider>
       </ChakraProvider>
   );
