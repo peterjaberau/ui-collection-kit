@@ -2,7 +2,7 @@ import React from 'react';
 import { useTree, usePrefix } from '../../hooks';
 import { observer } from '@formily/reactive-react';
 import { IconWidget } from '../IconWidget';
-// import './styles.less';
+import { chakra } from '@chakra-ui/react';
 
 export interface IEmptyWidgetProps {
   dragTipsDirection?: 'left' | 'right';
@@ -13,8 +13,8 @@ export const EmptyWidget: React.FC<IEmptyWidgetProps> | any = observer((props: a
   const prefix = usePrefix('empty');
   const renderEmpty = () => {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <div className='animations'>
+      <chakra.div css={{ display: 'flex', flexDirection: 'column' }}>
+        <chakra.div className='animations'>
           <IconWidget
             infer={
               props.dragTipsDirection === 'left'
@@ -24,29 +24,29 @@ export const EmptyWidget: React.FC<IEmptyWidgetProps> | any = observer((props: a
             size={240}
           />
           <IconWidget infer='BatchDragAnimation' size={240} />
-        </div>
-        <div className='hotkeys-list'>
-          <div>
+        </chakra.div>
+        <chakra.div className='hotkeys-list'>
+          <chakra.div>
             Selection <IconWidget infer='Command' /> + Click /{' '}
             <IconWidget infer='Shift' /> + Click /{' '}
             <IconWidget infer='Command' /> + A
-          </div>
-          <div>
+          </chakra.div>
+          <chakra.div>
             Copy <IconWidget infer='Command' /> + C / Paste{' '}
             <IconWidget infer='Command' /> + V
-          </div>
-          <div>
+          </chakra.div>
+          <chakra.div>
             Delete <IconWidget infer='Delete' />
-          </div>
-        </div>
-      </div>
+          </chakra.div>
+        </chakra.div>
+      </chakra.div>
     );
   };
   if (!tree?.children?.length) {
     return (
-      <div className={prefix}>
+      <chakra.div className={prefix}>
         {props.children ? props.children : renderEmpty()}
-      </div>
+      </chakra.div>
     );
   }
   return null;

@@ -1,6 +1,7 @@
 import React, { createContext, useContext } from 'react'
 import { useResponsiveFormLayout } from './useResponsiveFormLayout'
 import { usePrefixCls } from '../__builtins__'
+import { chakra, Stack } from '@chakra-ui/react'
 import cls from 'classnames'
 
 export interface IFormLayoutProps {
@@ -109,9 +110,11 @@ export const FormLayout: React.FC<React.PropsWithChildren<IFormLayoutProps>> & {
     )
   }
   return (
-    <div ref={ref} className={layoutClassName} style={style}>
+    <Stack
+      data-id='form-layout'
+      ref={ref} className={layoutClassName} css={style}>
       {renderChildren()}
-    </div>
+    </Stack>
   )
 }
 

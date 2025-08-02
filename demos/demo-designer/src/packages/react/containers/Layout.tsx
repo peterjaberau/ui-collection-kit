@@ -28,6 +28,9 @@ export const Layout: React.FC<IDesignerLayoutProps> | any = (props: any) => {
         [`${props.prefixCls}app`]: true,
         [`${props.prefixCls}${props.theme}`]: props.theme,
       })}
+      css={{
+        h: 'full',
+      }}
 
     >
       <DesignerLayoutContext.Provider
@@ -46,5 +49,5 @@ export const Layout: React.FC<IDesignerLayoutProps> | any = (props: any) => {
 Layout.defaultProps = {
   theme: 'light',
   prefixCls: 'dn-',
-  position: 'fixed',
+  position: 'relative',
 }

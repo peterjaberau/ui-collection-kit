@@ -38,16 +38,11 @@ export const Alert: ISchema = {
         defaultValue: 'md',
       },
     },
-
-
     inline: {
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
     },
-
-
-
     colorPalette: {
       type: 'string',
       enum: ['gray', 'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'cyan', 'purple', 'pink'],

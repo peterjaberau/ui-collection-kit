@@ -4,8 +4,8 @@ import { Radio } from '@ui-kit/forms'
 import { usePrefix, IconWidget } from '#packages/react'
 import { InputItems } from '../InputItems'
 import cls from 'classnames'
-import { HStack, Icon, RadioCard } from '@chakra-ui/react';
-// import './styles.less'
+import { HStack, Icon, RadioCard, chakra } from '@chakra-ui/react';
+
 
 export interface IFlexStyleSetterProps {
   className?: string
@@ -42,7 +42,7 @@ export const FlexStyleSetter: React.FC<IFlexStyleSetterProps> = observer(
     const field = useField()
     const prefix = usePrefix('flex-style-setter')
     return (
-      <div className={cls(prefix, props.className)} style={props.style}>
+      <chakra.div className={cls(prefix, props.className)} css={props.style}>
         <InputItems>
           <Field
             name="flexDirection"
@@ -186,7 +186,7 @@ export const FlexStyleSetter: React.FC<IFlexStyleSetterProps> = observer(
             component={[Radio.Group, { optionType: 'button' }]}
           />
         </InputItems>
-      </div>
+      </chakra.div>
     )
   }
 )

@@ -27038,17 +27038,17 @@ div.ant-typography-edit-content.ant-typography-rtl {
     flex-grow: 1;
 }
 .dn-main-panel-container.root {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
 }
 .dn-main-panel-container.absolute {
-    position: absolute;
+    /*position: absolute;*/
 }
 .dn-main-panel-container.relative {
-    position: relative;
+    /*position: relative;*/
 }
 .dn-main-panel-header {
     display: flex;
@@ -27070,11 +27070,11 @@ div.ant-typography-edit-content.ant-typography-rtl {
     justify-content: flex-end;
 }
 .dn-main-panel.root {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
 }
 .dn-composite-panel {
     flex-grow: 0;

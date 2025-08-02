@@ -44,16 +44,9 @@ export const ResourceWidget: React.FC<IResourceWidgetProps> | any = observer(
     console.log('sources', sources)
 
     return (
-      <Card.Root css={{ width: "300px", height: "100%" }}>
-        <Card.Header css={{ borderBottom: "1px solid", borderBottomColor: "border.emphasized" }}>
-          <Card.Title>Components</Card.Title>
-        </Card.Header>
-        <Card.Body maxH="calc(100vh - 100px)" overflowY="auto">
-          <SimpleGrid columns={2} gap={2}>
-            {sources && sources.map(isFn(props.children) ? props.children : renderNode)}
-          </SimpleGrid>
-        </Card.Body>
-      </Card.Root>
+      <SimpleGrid columns={3} gap={2}>
+        {sources && sources.map(isFn(props.children) ? props.children : renderNode)}
+      </SimpleGrid>
     )
   }
 )

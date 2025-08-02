@@ -6,5 +6,7 @@ export interface ISettingFormProps {
   uploadAction?: string
   components?: Record<string, React.FC<any>>
   effects?: (form: Form) => void
-  scope?: any
+  scope?: any,
+  schemaTarget?: string
+  logs?: string
 }

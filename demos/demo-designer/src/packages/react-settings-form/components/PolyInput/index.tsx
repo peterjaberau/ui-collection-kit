@@ -1,8 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { Button } from 'antd'
-import { usePrefix, IconWidget } from '#packages/react'
-import cls from 'classnames'
-// import './styles.less'
+import React, { useEffect, useState, useRef } from "react"
+import { IconWidget } from "#packages/react"
+import { HStack, Button } from "@chakra-ui/react"
 
 export interface IInput {
   style?: React.CSSProperties
@@ -36,11 +34,7 @@ const getEventValue = (event: any) => {
   return event
 }
 
-const createTypes = (
-  types: PolyTypes,
-  exclude: string[],
-  include: string[]
-) => {
+const createTypes = (types: PolyTypes, exclude: string[], include: string[]) => {
   return types.filter(({ type }) => {
     if (Array.isArray(include) && include.length) {
       return include.includes(type)
@@ -53,16 +47,7 @@ const createTypes = (
 }
 
 export function createPolyInput(polyTypes: PolyTypes = []): React.FC<IInput> {
-  return ({
-    className,
-    style,
-    value,
-    onChange,
-    exclude,
-    include,
-    ...props
-  }) => {
-    const prefix = usePrefix('poly-input')
+  return ({ className, style, value, onChange, exclude, include, ...props }) => {
     const types = createTypes(polyTypes, exclude, include)
     const [current, setCurrent] = useState(types[0]?.type)
     const type = types?.find(({ type }) => type === current)
@@ -78,8 +63,7 @@ export function createPolyInput(polyTypes: PolyTypes = []): React.FC<IInput> {
 
     const getNextType = () => {
       const currentIndex = types?.findIndex(({ type }) => type === current)
-      const nextIndex =
-        currentIndex + 1 > types?.length - 1 ? 0 : currentIndex + 1
+      const nextIndex = currentIndex + 1 > types?.length - 1 ? 0 : currentIndex + 1
       return types[nextIndex]
     }
 
@@ -88,9 +72,9 @@ export function createPolyInput(polyTypes: PolyTypes = []): React.FC<IInput> {
     }
 
     return (
-      <div className={cls(prefix, className)} style={style}>
+      <HStack data-id="poly-input" css={style}>
         {component && (
-          <div className={prefix + '-content'}>
+          <HStack data-id="poly-input-content" flex={2}>
             {React.createElement(component, {
               ...props,
               value: type?.toInputValue ? type?.toInputValue(value) : value,
@@ -100,33 +84,20 @@ export function createPolyInput(polyTypes: PolyTypes = []): React.FC<IInput> {
                 onChange?.(transformOnChangeValue(value, type))
               },
             })}
-          </div>
+          </HStack>
         )}
         <Button
-          className={prefix + '-controller'}
-          style={{
-            width: !component ? '100%' : 'auto',
-          }}
-          block
+          variant="outline"
           onClick={() => {
             const nextType = getNextType()
             if (nextType === type) return
             setCurrent(nextType?.type)
-            onChange?.(
-              transformOnChangeValue(
-                typesValue.current[nextType?.type],
-                nextType
-              )
-            )
+            onChange?.(transformOnChangeValue(typesValue.current[nextType?.type], nextType))
           }}
         >
-          {type?.icon ? (
-            <IconWidget infer={type.icon} />
-          ) : (
-            type?.title || type?.type
-          )}
+          {type?.icon ? <IconWidget infer={type.icon} /> : type?.title || type?.type}
         </Button>
-      </div>
+      </HStack>
     )
   }
 }

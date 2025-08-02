@@ -64,7 +64,7 @@ export const BoxStyleSetter: React.FC<IMarginStyleSetterProps> | any = observer(
     }
 
     return (
-      <FoldItem className={cls(prefix, props.className)} label={field.title}>
+      <FoldItem  label={field.title}>
         <FoldItem.Base>
           <SizeInput
             {...createPositionHandler('all', props)}

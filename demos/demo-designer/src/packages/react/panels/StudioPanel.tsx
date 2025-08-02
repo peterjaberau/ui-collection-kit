@@ -19,7 +19,7 @@ const StudioPanelInternal: React.FC<IStudioPanelProps> = ({
 }: any) => {
   const prefix = usePrefix('main-panel');
   const position = usePosition();
-  const classNameBase = cls('root', position, props.className);
+  const classNameBase = cls('root', props.className);
   if (logo || actions) {
     return (
       <div {...props} className={cls(`${prefix}-container`, classNameBase)}>
@@ -43,7 +43,7 @@ export const StudioPanel: React.FC<IStudioPanelProps> | any = (props: any) => {
     <Layout
       theme={props.theme}
       prefixCls={props.prefixCls}
-      position={props.position}
+      // position={props.position}
     >
       <StudioPanelInternal {...props} />
     </Layout>

@@ -1,88 +1,87 @@
-import React, { Fragment, useRef, useMemo } from 'react';
-import { FormItem, IFormItemProps } from '@ui-kit/forms';
-import { useField, observer } from '@formily/react';
-import { observable } from '@formily/reactive';
-import { IconWidget, usePrefix } from '#packages/react';
-import cls from 'classnames';
-// import './styles.less';
+import React, { Fragment, useRef, useMemo } from "react"
+import { FormItem, IFormItemProps } from "@ui-kit/forms"
+import { useField, observer } from "@formily/react"
+import { observable } from "@formily/reactive"
+import { usePrefix } from "#packages/react"
 
-const ExpandedMap = new Map<string, boolean>();
+import { Collapsible, chakra, Button, HStack } from "@chakra-ui/react"
+import { LuChevronDown, LuChevronRight } from "react-icons/lu"
+
+const ExpandedMap = new Map<string, boolean>()
 
 export const FoldItem:
   | React.FC<IFormItemProps>
   | (any & {
-      Base?: React.FC;
-      Extra?: React.FC;
+      Base?: React.FC
+      Extra?: React.FC
     }) = observer(({ className, style, children, ...props }: any) => {
-  const prefix = usePrefix('fold-item');
-  const field = useField();
-  const expand = useMemo(
-    () => observable.ref(ExpandedMap.get(field.address.toString())),
-    [],
-  );
-  const slots = useRef({ base: null, extra: null });
+  const prefix = usePrefix("fold-item")
+  const field = useField()
+  const expand = useMemo(() => observable.ref(ExpandedMap.get(field.address.toString())), [])
+  const slots = useRef({ base: null, extra: null })
   React.Children.forEach(children, (node: any) => {
     if (React.isValidElement(node)) {
-      if (node?.['type']?.['displayName'] === 'FoldItem.Base') {
+      if (node?.["type"]?.["displayName"] === "FoldItem.Base") {
         // @ts-ignore
-        slots.current.base = node['props']?.children;
+        slots.current.base = node["props"]?.children
       }
-      if (node?.['type']?.['displayName'] === 'FoldItem.Extra') {
+      if (node?.["type"]?.["displayName"] === "FoldItem.Extra") {
         // @ts-ignore
-        slots.current.extra = node['props']?.children;
+        slots.current.extra = node["props"]?.children
       }
     }
-  });
+  })
   return (
-    <div className={cls(prefix, className)}>
-      <div
-        className={prefix + '-base'}
-        onClick={() => {
-          expand.value = !expand.value;
-          ExpandedMap.set(field.address.toString(), expand.value);
+    <Collapsible.Root
+      open={expand.value}
+      onOpenChange={(e) => {
+        expand.value = e.open
+        ExpandedMap.set(field.address.toString(), e.open)
+      }}
+    >
+      <Collapsible.Trigger
+        css={{
+          width: "100%",
         }}
       >
         <FormItem.BaseItem
           {...props}
           label={
-            <span
-              className={cls(prefix + '-title', {
-                expand: expand.value,
-              })}
+            <HStack
+              css={{
+                cursor: "pointer",
+              }}
             >
-              {slots.current.extra && <IconWidget infer='Expand' size={10} />}
+              {expand.value ? <LuChevronDown /> : <LuChevronRight />}
               {props.label}
-            </span>
+            </HStack>
           }
         >
-          <div
-            style={{ width: '100%' }}
+          <chakra.div
             onClick={(e) => {
-              e.stopPropagation();
+              e.stopPropagation()
             }}
           >
             {slots.current.base}
-          </div>
+          </chakra.div>
         </FormItem.BaseItem>
-      </div>
-      {expand.value && slots.current.extra && (
-        <div className={prefix + '-extra'}>{slots.current.extra}</div>
-      )}
-    </div>
-  );
-});
+      </Collapsible.Trigger>
+      {expand.value && slots.current.extra && <Collapsible.Content>{slots.current.extra}</Collapsible.Content>}
+    </Collapsible.Root>
+  )
+})
 
 const Base: React.FC = () => {
-  return <Fragment />;
-};
+  return <Fragment />
+}
 
-Base.displayName = 'FoldItem.Base';
+Base.displayName = "FoldItem.Base"
 
 const Extra: React.FC = () => {
-  return <Fragment />;
-};
+  return <Fragment />
+}
 
-Extra.displayName = 'FoldItem.Extra';
+Extra.displayName = "FoldItem.Extra"
 
-FoldItem.Base = Base;
-FoldItem.Extra = Extra;
+FoldItem.Base = Base
+FoldItem.Extra = Extra

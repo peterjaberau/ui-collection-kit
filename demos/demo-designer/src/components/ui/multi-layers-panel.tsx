@@ -28,7 +28,9 @@ import { ScrollArea, ScrollBar } from "./scroll-area"
 export const MultiLayersPanel: any = ({ items, filters }: any) => {
   return (
     <MultiLayersPanelRoot>
-      <MultiLayersPanelScope filters={ filters || [] } />
+      {filters && (
+        <MultiLayersPanelScope filters={ filters } />
+      )}
       <MultiLayersPanelView items={items} />
     </MultiLayersPanelRoot>
   )

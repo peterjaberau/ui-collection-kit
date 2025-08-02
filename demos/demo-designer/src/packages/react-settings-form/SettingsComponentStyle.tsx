@@ -24,7 +24,7 @@ const GlobalState = {
   idleRequest: null,
 }
 
-export const SettingsForm: React.FC<ISettingFormProps> = observer(
+export const SettingsComponentStyle: React.FC<ISettingFormProps> = observer(
   (props) => {
     const workbench = useWorkbench()
     const currentWorkspace =
@@ -34,12 +34,15 @@ export const SettingsForm: React.FC<ISettingFormProps> = observer(
     const node = useSelectedNode(currentWorkspaceId)
     const selected = useSelected(currentWorkspaceId)
     const prefix = usePrefix('settings-form')
-    const schema = node?.designerProps?.propsSchema
+    const schema = node?.designerProps?.propsSchema?.properties['component-style-group']
+
+
     const isEmpty = !(
       node &&
-      node.designerProps?.propsSchema &&
+      schema &&
       selected.length === 1
     )
+
     const form = useMemo(() => {
       return createForm({
         initialValues: node?.designerProps?.defaultProps,

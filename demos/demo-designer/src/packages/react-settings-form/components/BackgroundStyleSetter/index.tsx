@@ -19,7 +19,7 @@ export const BackgroundStyleSetter: React.FC<IBackgroundStyleSetterProps> =
     const field = useField()
     const prefix = usePrefix('background-style-setter')
     return (
-      <FoldItem className={cls(prefix, props.className)} label={field.title}>
+      <FoldItem  label={field.title}>
         <FoldItem.Base>
           <Field
             name="backgroundColor"

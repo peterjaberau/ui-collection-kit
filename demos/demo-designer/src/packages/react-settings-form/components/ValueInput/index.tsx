@@ -4,7 +4,8 @@
  */
 import React from 'react'
 import { createPolyInput } from '../PolyInput'
-import { Input, Button, Popover, InputNumber, Select } from 'antd'
+import { Input as ChakraInput, Button } from '@chakra-ui/react'
+import { Input, Popover, InputNumber, Select } from 'antd'
 import { MonacoInput } from '../MonacoInput'
 import { TextWidget } from '#packages/react'
 
@@ -39,7 +40,7 @@ export const ValueInput = createPolyInput([
   {
     type: 'TEXT',
     icon: 'Text',
-    component: Input,
+    component: ChakraInput,
     checker: isNormalText,
   },
   {
@@ -63,7 +64,7 @@ export const ValueInput = createPolyInput([
           }
           trigger="click"
         >
-          <Button block>
+          <Button css={{ display: 'block'}} variant="outline">
             <TextWidget token="SettingComponents.ValueInput.expression" />
           </Button>
         </Popover>

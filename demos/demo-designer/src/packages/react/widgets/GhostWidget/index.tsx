@@ -4,7 +4,8 @@ import { CursorStatus } from '#packages/core';
 import { autorun } from '@formily/reactive';
 import { observer } from '@formily/reactive-react';
 import { NodeTitleWidget } from '../NodeTitleWidget';
-// import './styles.less';
+import { chakra } from '@chakra-ui/react';
+
 
 export const GhostWidget = observer(() => {
   const designer = useDesigner();
@@ -26,21 +27,21 @@ export const GhostWidget = observer(() => {
   );
   const renderNodes = () => {
     return (
-      <span
-        style={{
+      <chakra.span
+        css={{
           whiteSpace: 'nowrap',
         }}
       >
         <NodeTitleWidget node={firstNode} />
         {movingNodes.length > 1 ? '...' : ''}
-      </span>
+      </chakra.span>
     );
   };
   if (!firstNode) return null;
   return cursor.status === CursorStatus.Dragging ? (
-    <div ref={ref} className={prefix}>
+    <chakra.div ref={ref} className={prefix}>
       {renderNodes()}
-    </div>
+    </chakra.div>
   ) : null;
 });
 

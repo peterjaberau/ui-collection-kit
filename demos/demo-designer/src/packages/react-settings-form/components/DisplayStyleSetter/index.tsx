@@ -49,8 +49,6 @@ export const DisplayStyleSetter: React.FC<IDisplayStyleSetterProps> = observer(
       <>
         <FormItem.BaseItem
           label={field.title}
-          className={cls(prefix, props.className)}
-          style={props.style}
         >
           <RadioCard.Root
             orientation='vertical'

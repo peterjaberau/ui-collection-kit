@@ -1,5 +1,10 @@
 "use client"
-import React, { useMemo } from "react"
+import React, { useEffect, useMemo, useState } from "react"
+import { createDesigner, Shortcut, KeyCode } from "#packages/core"
+import { saveSchema } from "#packages/formily/antd/playground/service"
+import { MultiLayersPanel } from "#components/ui/multi-layers-panel"
+import { useDesignerActor } from "#packages/actors/hooks/useDesignerActor"
+import { useDesignerEngineActor } from "#packages/actors/hooks/useDesignerEngineActor"
 import {
   Designer,
   DesignerToolsWidget,
@@ -9,19 +14,26 @@ import {
   ResourceWidget,
   HistoryWidget,
   StudioPanel,
-  CompositePanel,
   WorkspacePanel,
   ToolbarPanel,
   ViewportPanel,
   ViewDesignablePanel,
   ViewPanel,
-  SettingsPanel,
   ComponentTreeWidget,
 } from "#packages/react"
-import { SettingsForm, setNpmCDNRegistry } from "#packages/react-settings-form"
-import { createDesigner, GlobalRegistry, Shortcut, KeyCode } from "#packages/core"
+
+import {
+  SettingsField,
+  SettingsComponent,
+  SettingsComponentStyle,
+  SettingsFormProps,
+  SettingsDecorator,
+  SettingsDecoratorStyle,
+  setNpmCDNRegistry,
+} from "#packages/react-settings-form"
+import { GlobalRegistry } from "#packages/core"
 import { ActionsWidget, PreviewWidget, SchemaEditorWidget, MarkupSchemaWidget, LogoWidget } from "./widgets"
-import { saveSchema } from "./service"
+
 import {
   Alert,
   Button,
@@ -54,9 +66,169 @@ import {
   FormGrid,
 } from "../components"
 import { Stack, HStack, Tabs, Box } from "@chakra-ui/react"
+import { Simulator } from "#packages/react"
+import { SelectedNode } from "./widgets/extended/SelectedNode"
+import { CurrentWorkbench } from "./widgets/extended/CurrentWorkbench"
 
 import * as allSchemas from "../components/schemas"
 import * as allLocales from "../components/locales"
+
+const mockPanels: any = {
+  filters: [
+    { label: "React", value: "react" },
+    { label: "Solid", value: "solid" },
+    { label: "Vue", value: "vue" },
+    { label: "Angular", value: "angular" },
+    { label: "Svelte", value: "svelte" },
+    { label: "Preact", value: "preact" },
+    { label: "Qwik", value: "qwik" },
+    { label: "Lit", value: "lit" },
+    { label: "Alpine.js", value: "alpinejs" },
+    { label: "Ember", value: "ember" },
+    { label: "Next.js", value: "nextjs" },
+  ],
+  items: [
+    {
+      title: "Presets",
+      value: "presets",
+      sections: [
+        {
+          title: "Components",
+          value: "components",
+          content: (
+            <ResourceWidget
+              sources={[
+                Alert,
+                Button,
+                Card,
+                Text,
+                Input,
+                Password,
+                NumberPicker,
+                Rate,
+                Slider,
+                Select,
+                TreeSelect,
+                Cascader,
+                Transfer,
+                Checkbox,
+                Radio,
+                DatePicker,
+                TimePicker,
+                Upload,
+                Switch,
+                ObjectContainer,
+                FormGrid,
+                FormTab,
+                FormLayout,
+                FormCollapse,
+                Space,
+
+                ArrayCards,
+                ArrayTable,
+              ]}
+            />
+          ),
+        },
+        {
+          title: "Outlines",
+          value: "outlines",
+          content: <OutlineTreeWidget />,
+        },
+        {
+          title: "History",
+          value: "history",
+          content: <HistoryWidget />,
+        },
+      ],
+    },
+    {
+      title: "View Tools",
+      value: "view-tools",
+      sections: [
+        {
+          title: "JSONTREE",
+          value: "jsonTree",
+          content: (
+            <ViewPanel scrollable={false}>
+              {(tree, onChange) => <SchemaEditorWidget tree={tree} onChange={onChange} />}
+            </ViewPanel>
+          ),
+        },
+        {
+          title: "Markup",
+          value: "markup",
+          content: <ViewPanel scrollable={false}>{(tree) => <MarkupSchemaWidget tree={tree} />}</ViewPanel>,
+        },
+        {
+          title: "Preview",
+          value: "preview",
+          content: <ViewPanel>{(tree) => <PreviewWidget tree={tree} />}</ViewPanel>,
+        },
+      ],
+    },
+
+    // component-group, decorator-group, component-style-group, decorator-style-group, field-group
+    {
+      title: "Property Settings",
+      value: "property-settings",
+      sections: [
+        {
+          title: "Form Properties",
+          value: "form-group",
+          content: <SettingsFormProps />,
+        },
+        {
+          title: "Fields Properties",
+          value: "field-group",
+          content: <SettingsField />,
+        },
+
+        {
+          title: "Component Properties",
+          value: "component-group",
+          content: <SettingsComponent />,
+        },
+
+        {
+          title: "Component Style",
+          value: "component-style-group",
+          content: <SettingsComponentStyle />,
+        },
+
+        {
+          title: "Decorator Properties",
+          value: "decorator-group",
+          content: <SettingsDecorator />,
+        },
+
+        {
+          title: "Decorator Style",
+          value: "decorator-style-group",
+          content: <SettingsDecoratorStyle />,
+        },
+      ],
+    },
+
+    {
+      title: "State",
+      value: "state",
+      sections: [
+        {
+          title: "Select Node",
+          value: "select-node",
+          content: <SelectedNode />,
+        },
+        {
+          title: "Current Workbench",
+          value: "current-workbench",
+          content: <CurrentWorkbench />,
+        },
+      ],
+    },
+
+  ],
+}
 
 setNpmCDNRegistry("//unpkg.com")
 
@@ -88,6 +260,15 @@ GlobalRegistry.registerDesignerLocales({
 })
 
 export const DesignablePlayground = () => {
+  // const { designerEngine } = useDesignerEngineActor()
+
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+
+
   const engine = useMemo(
     () =>
       createDesigner({
@@ -102,168 +283,75 @@ export const DesignablePlayground = () => {
             },
           }),
         ],
-        rootComponentName: "Form",
+        rootComponentName: 'Form',
       }),
-    [],
+    []
   )
 
-  console.log("GlobalRegistry", {
-    DesignerToolsWidget: DesignerToolsWidget,
-    ComponentTreeWidget: ComponentTreeWidget,
-  })
-  // @ts-ignore
   return (
-    <Designer engine={engine} prefixCls="dn-" theme="light" position="fixed">
-      <StudioPanel logo={<LogoWidget />} actions={<ActionsWidget />}>
-        <Tabs.Root defaultValue="components" variant="plain" width='500px' height='full'>
-          <Tabs.List bg="bg.muted" rounded="l3" p="1">
-            <Tabs.Trigger value="components">
-              Components
-            </Tabs.Trigger>
-            <Tabs.Trigger value="debug">
-              Debug
-            </Tabs.Trigger>
-            <Tabs.Indicator rounded="l2" />
-          </Tabs.List>
-          <Tabs.Content value="components">
-            <Box maxH='calc(100vh - 50px)' width='full'>
-              <ResourceWidget
-                sources={[
-                  Alert,
-                  Button,
-                  Card,
-                  Text,
-                  Input,
-                  Password,
-                  NumberPicker,
-                  Rate,
-                  Slider,
-                  Select,
-                  TreeSelect,
-                  Cascader,
-                  Transfer,
-                  Checkbox,
-                  Radio,
-                  DatePicker,
-                  TimePicker,
-                  Upload,
-                  Switch,
-                  ObjectContainer,
-                  FormGrid,
-                  FormTab,
-                  FormLayout,
-                  FormCollapse,
-                  Space,
-
-                  ArrayCards,
-                  ArrayTable,
-                ]}
-              />
-            </Box>
-          </Tabs.Content>
-          <Tabs.Content value="debug">
-            <Stack h='full' width='full'>
-              <OutlineTreeWidget />
-              <HistoryWidget />
+    <Designer engine={engine} prefixCls="dn-" theme="light">
+      <HStack h="full" alignItems="flex-start">
+        {mounted && (
+          <>
+            <Stack h="full" w="600px" p={4}>
+              <Box h="full" shadow="md" borderRadius="md">
+                <MultiLayersPanel items={mockPanels.items} filters={mockPanels.filters} />
+              </Box>
             </Stack>
-          </Tabs.Content>
-        </Tabs.Root>
-
-
-        <Workspace id="form">
-          <WorkspacePanel>
-            <ToolbarPanel>
-              <DesignerToolsWidget />
-              <ViewToolsWidget use={["DESIGNABLE", "JSONTREE", "MARKUP", "PREVIEW"]} />
-            </ToolbarPanel>
-            <ViewportPanel style={{ height: "100%", background: "bg.panel" }}>
-              <ViewDesignablePanel type="DESIGNABLE">
-                {() => (
-                  <ComponentTreeWidget
-                    components={{
-                      Alert,
-                      Button,
-                      Text,
-                      Card,
-                      Form,
-                      Field,
-                      Input,
-                      Select,
-                      TreeSelect,
-                      Cascader,
-                      Radio,
-                      Checkbox,
-                      Slider,
-                      Rate,
-                      NumberPicker,
-                      Transfer,
-                      Password,
-                      DatePicker,
-                      TimePicker,
-                      Upload,
-                      Switch,
-                      ArrayCards,
-                      ArrayTable,
-                      Space,
-                      FormTab,
-                      FormCollapse,
-                      FormGrid,
-                      FormLayout,
-                      ObjectContainer,
-                    }}
-                  />
-                )}
-              </ViewDesignablePanel>
-              {/*<ViewPanel type="JSONTREE" scrollable={false}>*/}
-              {/*  {(tree, onChange) => <SchemaEditorWidget tree={tree} onChange={onChange} />}*/}
-              {/*</ViewPanel>*/}
-              {/*<ViewPanel type="MARKUP" scrollable={false}>*/}
-              {/*  {(tree) => <MarkupSchemaWidget tree={tree} />}*/}
-              {/*</ViewPanel>*/}
-              {/*<ViewPanel type="PREVIEW">{(tree) => <PreviewWidget tree={tree} />}</ViewPanel>*/}
-            </ViewportPanel>
-          </WorkspacePanel>
-        </Workspace>
-        <Tabs.Root defaultValue="jsonTree" variant="plain" width='500px' height='full'>
-          <Tabs.List bg="bg.muted" rounded="l3" p="1">
-            <Tabs.Trigger value="jsonTree">
-              JSONTREE
-            </Tabs.Trigger>
-            <Tabs.Trigger value="markup">
-              Markup
-            </Tabs.Trigger>
-            <Tabs.Trigger value="preview">
-              Preview
-            </Tabs.Trigger>
-            <Tabs.Indicator rounded="l2" />
-          </Tabs.List>
-          <Tabs.Content value="jsonTree">
-            <ViewportPanel style={{ height: "100%", background: "bg.panel" }}>
-            <ViewPanel type="JSONTREE" scrollable={false}>
-              {(tree, onChange) => <SchemaEditorWidget tree={tree} onChange={onChange} />}
-            </ViewPanel>
-            </ViewportPanel>
-          </Tabs.Content>
-          <Tabs.Content value="markup">
-            {/* @ts-ignore */}
-            <ViewportPanel style={{ height: "100%", background: "bg.panel" }}>
-              <ViewPanel type="MARKUP" scrollable={false}>
-                {(tree) => <MarkupSchemaWidget tree={tree} />}
-              </ViewPanel>
-            </ViewportPanel>
-          </Tabs.Content>
-          <Tabs.Content value="preview">
-            {/* @ts-ignore */}
-            <ViewportPanel style={{ height: "100%", background: "bg.panel" }}>
-              <ViewPanel type="PREVIEW">{(tree) => <PreviewWidget tree={tree} />}</ViewPanel>
-            </ViewportPanel>
-          </Tabs.Content>
-        </Tabs.Root>
-
-        <SettingsPanel title="panels.PropertySettings">
-          <SettingsForm uploadAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" />
-        </SettingsPanel>
-      </StudioPanel>
+          </>
+        )}
+        <StudioPanel logo={<LogoWidget />} actions={<ActionsWidget />}>
+          <HStack>
+            <Workspace id="form">
+              <WorkspacePanel>
+                <ToolbarPanel>
+                  <DesignerToolsWidget />
+                  <ViewToolsWidget use={["DESIGNABLE", "JSONTREE", "MARKUP", "PREVIEW"]} />
+                </ToolbarPanel>
+                <ViewportPanel style={{ height: "100%", background: "bg.panel" }}>
+                  <ViewDesignablePanel type="DESIGNABLE">
+                    {() => (
+                      <ComponentTreeWidget
+                        components={{
+                          Alert,
+                          Button,
+                          Text,
+                          Card,
+                          Form,
+                          Field,
+                          Input,
+                          Select,
+                          TreeSelect,
+                          Cascader,
+                          Radio,
+                          Checkbox,
+                          Slider,
+                          Rate,
+                          NumberPicker,
+                          Transfer,
+                          Password,
+                          DatePicker,
+                          TimePicker,
+                          Upload,
+                          Switch,
+                          ArrayCards,
+                          ArrayTable,
+                          Space,
+                          FormTab,
+                          FormCollapse,
+                          FormGrid,
+                          FormLayout,
+                          ObjectContainer,
+                        }}
+                      />
+                    )}
+                  </ViewDesignablePanel>
+                </ViewportPanel>
+              </WorkspacePanel>
+            </Workspace>
+          </HStack>
+        </StudioPanel>
+      </HStack>
     </Designer>
   )
 }

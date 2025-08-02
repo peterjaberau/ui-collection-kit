@@ -1,4 +1,4 @@
-const data = {
+export const widgetSchemas = {
   Alert: {
     type: "object",
     properties: {

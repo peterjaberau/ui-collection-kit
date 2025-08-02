@@ -53,8 +53,6 @@ export const FontStyleSetter: React.FC<IFontStyleSetterProps> = observer(
     return (
       <FoldItem
         label={field.title}
-        className={cls(prefix, props.className)}
-        style={props.style}
       >
         <FoldItem.Base>
           <Field

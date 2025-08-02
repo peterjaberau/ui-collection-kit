@@ -19,14 +19,14 @@ export interface IOutlineTreeWidgetProps {
 
 export const OutlineTreeWidget: React.FC<IOutlineTreeWidgetProps> = observer(
   ({ onClose, style, renderActions, renderTitle, className, ...props }) => {
-    const ref = useRef<HTMLDivElement>()
+    const ref = useRef<HTMLDivElement>(null)
     const prefix = usePrefix("outline-tree")
     const workbench = useWorkbench()
     const current = workbench?.activeWorkspace || workbench?.currentWorkspace
     const workspaceId = current?.id
     const tree = useTree(workspaceId)
     const outline = useOutline(workspaceId)
-    const outlineRef = useRef<Viewport>()
+    const outlineRef = useRef<Viewport>(null)
     useLayoutEffect(() => {
       if (!workspaceId) return
       if (outlineRef.current && outlineRef.current !== outline) {
@@ -44,21 +44,14 @@ export const OutlineTreeWidget: React.FC<IOutlineTreeWidgetProps> = observer(
     if (!outline || !workspaceId) return null
     return (
       <NodeContext.Provider value={{ renderActions, renderTitle }}>
-          <Card.Root ref={ref} flex={1}>
-            <Card.Header css={{ borderBottom: "1px solid", borderBottomColor: "border.emphasized" }}>
-              <Card.Title>OutlinedTree</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <OutlineTreeNode node={tree} workspaceId={workspaceId} />
-              <chakra.div
-                css={{
-                  pointerEvents: "none",
-                }}
-              >
-                <Insertion workspaceId={workspaceId} />
-              </chakra.div>
-            </Card.Body>
-          </Card.Root>
+        <OutlineTreeNode node={tree} workspaceId={workspaceId} />
+        <chakra.div
+          css={{
+            pointerEvents: "none",
+          }}
+        >
+          <Insertion workspaceId={workspaceId} />
+        </chakra.div>
       </NodeContext.Provider>
     )
   },
