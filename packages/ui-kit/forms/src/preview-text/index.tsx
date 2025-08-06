@@ -147,6 +147,10 @@ const Select: React.FC<React.PropsWithChildren<SelectProps<any>>> = observer(
       : props?.options?.length
       ? props.options
       : []
+
+
+      console.log('preview---', { field })
+
     const placeholder = usePlaceholder()
     const getSelected = () => {
       const value = props.value

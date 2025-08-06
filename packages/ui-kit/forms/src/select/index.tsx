@@ -42,36 +42,52 @@ const ChakraSelectRenderer = (props: any) => {
   )
 }
 
+
 export const Select: ReactFC<any> = connect(
   ChakraSelect.Root,
   mapProps(
     {
       dataSource: 'options',
+      // onInput: 'onValueChange'
       // loading: true,
     } as any,
     (props: any, field: any) => {
-
-      console.log('Select props:', {
-        props, field
-      })
 
       const collection = createListCollection({
         items: props.options || [],
         itemToValue: (item: any) => item.value,
         itemToString: (item: any) => item.label,
       })
-      console.log(collection.items)
+      console.log({
+        collection: collection,
+        props: props,
+        field: field
+      })
+
+
+
+      const onValueChange = field.onInput
+
 
 
       return {
         collection: collection,
-        // value: props.value,
+        // value: [props.value],
         disabled: field?.['loading'] || field?.['validating'] || props.disabled,
         css: {
           flex: 1,
         },
         size: props.size,
         ...props,
+        onValueChange: (e: any) => {
+
+          if (onValueChange) {
+
+            console.log('onValueChange', e?.value)
+
+            onValueChange(e?.value)
+          }
+        },
         children: (
           <ChakraSelectRenderer
             options={collection.items}
@@ -82,22 +98,9 @@ export const Select: ReactFC<any> = connect(
     }
 
 
-
-      // return {
-      //   ...props,
-      //   style: {
-      //     flex: 1,
-      //   },
-      //   suffixIcon:
-      //     field?.['loading'] || field?.['validating'] ? (
-      //       <LoadingOutlined />
-      //     ) : (
-      //       props.suffixIcon
-      //     ),
-      // }
-    // }
   ),
   mapReadPretty(PreviewText.Select)
+
 )
 
 export default Select
