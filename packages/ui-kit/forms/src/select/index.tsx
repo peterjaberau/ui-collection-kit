@@ -60,7 +60,13 @@ export const Select: ReactFC<any> = connect(
         itemToValue: (item: any) => item.value,
         itemToString: (item: any) => item.label,
       })
-      console.log(collection.items)
+      // console.log({
+      //   collection: collection,
+      //   props: props,
+      //   field: field
+      // })
+
+      const onValueChange = field.onInput
 
 
       return {
@@ -72,6 +78,12 @@ export const Select: ReactFC<any> = connect(
         },
         size: props.size,
         ...props,
+        onValueChange: (e: any) => {
+          if (onValueChange) {
+            console.log('onValueChange', e?.value)
+            onValueChange(e?.value)
+          }
+        },
         children: (
           <ChakraSelectRenderer
             options={collection.items}
@@ -80,22 +92,6 @@ export const Select: ReactFC<any> = connect(
         )
       }
     }
-
-
-
-      // return {
-      //   ...props,
-      //   style: {
-      //     flex: 1,
-      //   },
-      //   suffixIcon:
-      //     field?.['loading'] || field?.['validating'] ? (
-      //       <LoadingOutlined />
-      //     ) : (
-      //       props.suffixIcon
-      //     ),
-      // }
-    // }
   ),
   mapReadPretty(PreviewText.Select)
 )
