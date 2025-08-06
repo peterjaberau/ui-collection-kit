@@ -7,38 +7,33 @@ import {
   useField,
   useFieldSchema,
 } from '@formily/react'
-import cls from 'classnames'
 import React from 'react'
 import { ArrayBase } from '../array-base'
 import {
   SortableContainer,
   SortableElement,
-  usePrefixCls,
 } from '../__builtins__'
-import useStyle from './style'
-import { chakra } from '@chakra-ui/react'
+import { chakra, HStack } from '@chakra-ui/react'
 
 const SortableItem = SortableElement((props) => {
-  const prefixCls = usePrefixCls('formily-array-items')
-  const [wrapSSR, hashId] = useStyle(prefixCls)
 
-  return wrapSSR(
-    <chakra.div
+  return (
+    <HStack
+      css={{
+        justify: 'flex-start',
+        alignItems: 'center',
+      }}
       {...props}
-      // className={cls(`${prefixCls}-item`, hashId, props.className)}
     >
       {props.children}
-    </chakra.div>
+    </HStack>
   )
 })
 
 const SortableList = SortableContainer((props) => {
-  const prefixCls = usePrefixCls('formily-array-items')
-  const [wrapSSR, hashId] = useStyle(prefixCls)
-  return wrapSSR(
+  return (
     <chakra.div
       {...props}
-      // className={cls(`${prefixCls}-list`, hashId, props.className)}
     >
       {props.children}
     </chakra.div>
@@ -62,22 +57,18 @@ const useAddition = () => {
 const InternalArrayItems: ReactFC<React.HTMLAttributes<HTMLDivElement>> =
   observer((props) => {
     const field = useField<ArrayField>()
-    const prefixCls = usePrefixCls('formily-array-items')
-    const [wrapSSR, hashId] = useStyle(prefixCls)
     const schema = useFieldSchema()
     const addition = useAddition()
     const dataSource = Array.isArray(field.value) ? field.value : []
     if (!schema) throw new Error('can not found schema object')
-    return wrapSSR(
+    return (
       <ArrayBase>
-        <div
+        <chakra.div
           {...props}
           onChange={() => {}}
-          className={cls(prefixCls, hashId, props.className)}
         >
           <SortableList
             list={dataSource.slice()}
-            // className={`${prefixCls}-sort-helper`}
             onSortEnd={(event) => {
               const { oldIndex, newIndex } = event
               field.move(oldIndex, newIndex)
@@ -99,7 +90,6 @@ const InternalArrayItems: ReactFC<React.HTMLAttributes<HTMLDivElement>> =
                     index={index}
                   >
                     <chakra.div
-                      // className={`${prefixCls}-item-inner`}
                     >
                       {items ? (
                         <RecursionField schema={items} name={index} />
@@ -111,7 +101,7 @@ const InternalArrayItems: ReactFC<React.HTMLAttributes<HTMLDivElement>> =
             })}
           </SortableList>
           {addition}
-        </div>
+        </chakra.div>
       </ArrayBase>
     )
   })
@@ -121,17 +111,10 @@ const Item: ReactFC<
     type?: 'card' | 'divide'
   }
 > = (props) => {
-  const prefixCls = usePrefixCls('formily-array-items')
-  const [wrapSSR, hashId] = useStyle(prefixCls)
-  return wrapSSR(
+  return (
     <chakra.div
       {...props}
       onChange={() => {}}
-      // className={cls(
-      //   // `${prefixCls}-${props.type || 'card'}`,
-      //   hashId,
-      //   props.className
-      // )}
     >
       {props.children}
     </chakra.div>

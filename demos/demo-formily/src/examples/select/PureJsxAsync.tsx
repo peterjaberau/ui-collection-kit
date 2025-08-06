@@ -67,8 +67,8 @@ export const SelectPureJsxAsync = () => (
       name="linkage"
       title="Linkage selection box"
       dataSource={[
-        { label: '发请求1', value: 1 },
-        { label: '发请求2', value: 2 },
+       { label: 'Send a request 1', value: 1 },
+        { label: 'Send request 2', value: 2 },
       ]}
       decorator={[FormItem]}
       component={[
@@ -94,7 +94,7 @@ export const SelectPureJsxAsync = () => (
       ]}
     />
     <FormButtonGroup>
-      <Submit onSubmit={console.log}>提交</Submit>
+      <Submit onSubmit={console.log}>Submit</Submit>
     </FormButtonGroup>
   </FormProvider>
 )

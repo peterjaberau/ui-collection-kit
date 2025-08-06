@@ -7,13 +7,11 @@ import {
   useField,
   useFieldSchema,
 } from '@formily/react'
-import { Card, CardProps, Empty } from 'antd'
-import cls from 'classnames'
+import { Empty } from 'antd'
+import { Card as ChakraCard, HStack } from '@chakra-ui/react'
 import React from 'react'
 import { ArrayBase } from '../array-base'
-import { usePrefixCls } from '../__builtins__'
 import { chakra } from '@chakra-ui/react'
-import useStyle from './style'
 
 const isAdditionComponent = (schema: ISchema) => {
   return schema['x-component']?.indexOf('Addition') > -1
@@ -49,12 +47,10 @@ const isOperationComponent = (schema: ISchema) => {
   )
 }
 
-export const InternalArrayCards: ReactFC<CardProps> = observer((props) => {
+export const InternalArrayCards: ReactFC<any> = observer((props) => {
   const field = useField<ArrayField>()
   const schema = useFieldSchema()
   const dataSource = Array.isArray(field.value) ? field.value : []
-  const prefixCls = usePrefixCls('formily-array-cards', props)
-  const [wrapSSR, hashId] = useStyle(prefixCls)
 
   if (!schema) throw new Error('can not found schema object')
 
@@ -95,6 +91,7 @@ export const InternalArrayCards: ReactFC<CardProps> = observer((props) => {
           {props.extra}
         </chakra.span>
       )
+
       const content = items ? (
         <RecursionField
           schema={items}
@@ -112,15 +109,23 @@ export const InternalArrayCards: ReactFC<CardProps> = observer((props) => {
           index={index}
           record={() => field.value?.[index]}
         >
-          <Card
-            {...props}
-            onChange={() => {}}
-            className={cls(`${prefixCls}-item`, hashId, props.className)}
-            title={title}
-            extra={extra}
-          >
-            {content}
-          </Card>
+          <>
+            <ChakraCard.Root
+              {...props}
+            >
+              <ChakraCard.Header>
+                <HStack w='full'>
+                  <HStack flex='1'>
+                    <ChakraCard.Title>{title}</ChakraCard.Title>
+                  </HStack>
+                  <HStack>
+                    {extra}
+                  </HStack>
+                </HStack>
+              </ChakraCard.Header>
+              <ChakraCard.Body>{content}</ChakraCard.Body>
+            </ChakraCard.Root>
+          </>
         </ArrayBase.Item>
       )
     })
@@ -138,18 +143,20 @@ export const InternalArrayCards: ReactFC<CardProps> = observer((props) => {
   const renderEmpty = () => {
     if (dataSource?.length) return
     return (
-      <Card
+      <ChakraCard.Root
         {...props}
-        onChange={() => {}}
-        className={cls(`${prefixCls}-item`, hashId, props.className)}
-        title={props.title || field.title}
       >
-        <Empty />
-      </Card>
+        <ChakraCard.Header>
+          <ChakraCard.Title>{props.title || field.title}</ChakraCard.Title>
+        </ChakraCard.Header>
+        <ChakraCard.Body>
+          <Empty />
+        </ChakraCard.Body>
+      </ChakraCard.Root>
     )
   }
 
-  return wrapSSR(
+  return (
     <ArrayBase>
       {renderEmpty()}
       {renderItems()}

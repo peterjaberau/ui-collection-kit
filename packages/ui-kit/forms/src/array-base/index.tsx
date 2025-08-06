@@ -129,23 +129,15 @@ const SortHandle: ReactFC<CommonProps> = (props: any) => {
 
 const Index: React.FC<React.HTMLAttributes<HTMLSpanElement>> = (props: any) => {
   const index = useIndex()
-  const prefixCls = usePrefixCls("formily-array-base")
-  const [wrapSSR, hashId] = useStyle(prefixCls)
-  return wrapSSR(
-    <chakra.span {...props}>
-      #{(index || 0) + 1}.
-    </chakra.span>,
-  )
+  return <chakra.span {...props}>#{(index || 0) + 1}.</chakra.span>
 }
 
 const Addition: ReactFC<IArrayBaseAdditionProps> = (props: any) => {
   const self = useField()
   const array = useArray()
-  const prefixCls = usePrefixCls("formily-array-base")
-  const [wrapSSR, hashId] = useStyle(prefixCls)
   if (!array) return null
   if (array.field?.pattern !== "editable" && array.field?.pattern !== "disabled") return null
-  return wrapSSR(
+  return (
     <Button
       variant="outline"
       {...props}
@@ -167,7 +159,7 @@ const Addition: ReactFC<IArrayBaseAdditionProps> = (props: any) => {
     >
       {isUndef(props.icon) ? <PlusOutlined /> : props.icon}
       {props.title || self.title}
-    </Button>,
+    </Button>
   )
 }
 const Copy = forwardRef<HTMLButtonElement, CommonProps>((props: any, ref) => {
@@ -178,7 +170,7 @@ const Copy = forwardRef<HTMLButtonElement, CommonProps>((props: any, ref) => {
   const [wrapSSR, hashId] = useStyle(prefixCls)
   if (!array) return null
   if (array.field?.pattern !== "editable") return null
-  return wrapSSR(
+  return (
     <IconButton
       variant="ghost"
       {...props}
@@ -200,7 +192,7 @@ const Copy = forwardRef<HTMLButtonElement, CommonProps>((props: any, ref) => {
     >
       {isUndef(props.icon) ? <CopyOutlined /> : props.icon}
       {props.title || self.title}
-    </IconButton>,
+    </IconButton>
   )
 })
 
@@ -208,12 +200,10 @@ const Remove = forwardRef<HTMLSpanElement, CommonProps>((props: any, ref: any) =
   const index = useIndex(props.index)
   const self = useField()
   const array = useArray()
-  const prefixCls = usePrefixCls("formily-array-base")
-  const [wrapSSR, hashId] = useStyle(prefixCls)
 
   if (!array) return null
   if (array.field?.pattern !== "editable") return null
-  return wrapSSR(
+  return (
     <IconButton
       variant="ghost"
       {...props}
@@ -232,7 +222,7 @@ const Remove = forwardRef<HTMLSpanElement, CommonProps>((props: any, ref: any) =
     >
       {isUndef(props.icon) ? <DeleteOutlined /> : props.icon}
       {props.title || self.title}
-    </IconButton>,
+    </IconButton>
   )
 })
 
@@ -240,7 +230,6 @@ const MoveDown = forwardRef<HTMLSpanElement, CommonProps>((props: any, ref: any)
   const index = useIndex(props.index)
   const self = useField()
   const array = useArray()
-  const prefixCls = usePrefixCls("formily-array-base")
   if (!array) return null
   if (array.field?.pattern !== "editable") return null
   return (
@@ -270,7 +259,6 @@ const MoveUp = forwardRef<HTMLSpanElement, CommonProps>((props: any, ref: any) =
   const index = useIndex(props.index)
   const self = useField()
   const array = useArray()
-  const prefixCls = usePrefixCls("formily-array-base")
   if (!array) return null
   if (array.field?.pattern !== "editable") return null
   return (

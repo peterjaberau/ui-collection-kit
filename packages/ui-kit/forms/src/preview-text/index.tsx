@@ -132,8 +132,9 @@ const NumberPicker: React.FC<React.PropsWithChildren<InputNumberProps>> =
 
   })
 
-const Select: React.FC<React.PropsWithChildren<SelectProps<any>>> = observer(
+const Select: React.FC<any> = observer(
   (props) => {
+
 
 
     const field = useField<Field>()

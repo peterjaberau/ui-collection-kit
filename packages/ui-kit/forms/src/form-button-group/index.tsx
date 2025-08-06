@@ -1,8 +1,8 @@
 /**
- * 1. FormItem网格布局
- * 2. 居中，居右，居左布局
- * 3. 行内布局
- * 4. 吸底布局
+ * 1. FormItem grid layout
+ * 2. Set the layout in the center, the right, the left
+ * 3. Intra-line layout
+ * 4. Bottom-sucking layout
  */
 import { ReactFC } from '@formily/react'
 import { Space } from 'antd'

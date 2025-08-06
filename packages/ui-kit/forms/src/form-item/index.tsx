@@ -254,6 +254,7 @@ export const FormItem: ComposeFormItem = Object.assign(
   connect(
     BaseItem,
     mapProps((props, field) => {
+
       if (isVoidField(field))
         return {
           label: field.title || props.label,

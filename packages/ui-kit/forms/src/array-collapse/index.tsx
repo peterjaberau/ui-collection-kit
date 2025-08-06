@@ -215,7 +215,7 @@ const InternalArrayCollapse: ReactFC<IArrayCollapseProps> = observer(
         </Collapse>
       )
     }
-    return wrapSSR(
+    return (
       <ArrayBase
         onAdd={(index) => {
           setActiveKeys(insertActiveKeys(activeKeys, index))

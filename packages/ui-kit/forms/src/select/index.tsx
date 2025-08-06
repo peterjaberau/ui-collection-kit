@@ -47,13 +47,8 @@ export const Select: ReactFC<any> = connect(
   mapProps(
     {
       dataSource: 'options',
-      // loading: true,
     } as any,
     (props: any, field: any) => {
-
-      console.log('Select props:', {
-        props, field
-      })
 
       const collection = createListCollection({
         items: props.options || [],
@@ -63,15 +58,17 @@ export const Select: ReactFC<any> = connect(
       // console.log({
       //   collection: collection,
       //   props: props,
-      //   field: field
+      //   field: field,
+      //   initialValue: [field?.['initialValue']],
       // })
 
       const onValueChange = field.onInput
+      const defaultValue = [field.initialValue]
 
 
       return {
+        lazyMount: true,
         collection: collection,
-        // value: props.value,
         disabled: field?.['loading'] || field?.['validating'] || props.disabled,
         css: {
           flex: 1,
@@ -80,7 +77,7 @@ export const Select: ReactFC<any> = connect(
         ...props,
         onValueChange: (e: any) => {
           if (onValueChange) {
-            console.log('onValueChange', e?.value)
+            // console.log('onValueChange', e?.value)
             onValueChange(e?.value)
           }
         },

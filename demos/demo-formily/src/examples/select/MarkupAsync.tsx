@@ -1,4 +1,5 @@
-import { FormButtonGroup, FormItem, Select, Submit } from "@formily/antd-v5"
+import { FormButtonGroup, FormItem } from "@formily/antd-v5"
+import { Select, Submit } from "@ui-kit/forms"
 import { createForm, Field, FieldDataSource, FormPathPattern, onFieldInit, onFieldReact } from "@formily/core"
 import { createSchemaField, FormProvider } from "@formily/react"
 import { action, observable } from "@formily/reactive"
@@ -103,7 +104,7 @@ export const SelectMarkupAsync = () => {
         />
       </SchemaField>
       <FormButtonGroup>
-        <Submit onSubmit={console.log}>提交</Submit>
+        <Submit onSubmit={console.log}>Submit</Submit>
       </FormButtonGroup>
     </FormProvider>
   )

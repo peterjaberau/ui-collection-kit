@@ -100,6 +100,7 @@ export const FormLayout: React.FC<React.PropsWithChildren<IFormLayoutProps>> & {
         newDeepLayout.colon = props.colon
       }
     }
+
     return (
       <FormLayoutDeepContext.Provider value={newDeepLayout}>
         <FormLayoutShallowContext.Provider value={shallow ? props : undefined}>
