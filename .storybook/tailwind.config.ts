@@ -1,12 +1,12 @@
 import path from 'path';
 // import tailwindConfig from '../templates/starter/tailwind.config'
 
-import tailwindConfig from '../packages/ui-foundation/shared/styles/src/tailwind/starter/tailwind.config'
+// import tailwindConfig from '../packages/ui-foundation/shared/styles/src/tailwind/starter/tailwind.config'
 
 const config = {
     presets: [
         {
-            ...tailwindConfig,
+            // ...tailwindConfig,
             content: [
                 // '../demos/react-lite/components/**/*{.js,.ts,.jsx,.tsx}',
                 // '../demos/react-lite/stories/**/*{.js,.ts,.jsx,.tsx}',

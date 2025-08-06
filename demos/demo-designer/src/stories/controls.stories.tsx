@@ -12,4 +12,9 @@ export default {
   ],
 } as Meta
 
-export { ButtonControls } from '../examples/controls/button.controls'
+export { ButtonDecorator } from '../examples/controls/button.decorator'
+export { AlertDecorator } from '../examples/controls/alert.decorator'
+export { BadgeDecorator } from '../examples/controls/badge.decorator'
+export { FieldDecorator } from '../examples/controls/field.decorator'
+export { FieldSetDecorator } from '../examples/controls/fieldset.decorator'
+export { InputDecorator } from '../examples/controls/input.decorator'

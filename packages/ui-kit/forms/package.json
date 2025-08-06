@@ -19,6 +19,7 @@
     "./*": "./src/components/*/index.ts"
   },
   "dependencies": {
+    "radix-ui": "^1.4.2",
     "@ui-kit/components": "workspace:*",
     "@emotion/react": "^11.14.0",
     "react-lorem-ipsum": "^1.4.10",

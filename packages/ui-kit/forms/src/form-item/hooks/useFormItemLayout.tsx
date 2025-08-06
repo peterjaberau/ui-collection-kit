@@ -32,5 +32,10 @@ export const useFormItemLayout = (props: IFormItemProps) => {
     tooltipIcon: props.tooltipIcon ?? layout.tooltipIcon ?? (
       <QuestionCircleOutlined />
     ),
+
+
+    colorPalette: props.colorPalette ?? 'gray',
+    orientation: props.orientation ?? layoutType === 'vertical' ?? 'horizontal',
+    unstyled: props.unstyled || false,
   }
 }

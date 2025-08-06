@@ -12,12 +12,14 @@ import type {
   TreeSelectProps,
 } from 'antd'
 import { Space, Tag } from 'antd'
+import { Tag as ChakraTag, Text as ChakraText, Box } from '@chakra-ui/react'
 import type { DefaultOptionType } from 'antd/lib/cascader'
 import type { RangePickerProps as DateRangePickerProps } from 'antd/lib/date-picker'
 import cls from 'classnames'
 import React, { createContext, useContext } from 'react'
 import { formatDayjsValue, usePrefixCls } from '../__builtins__'
 import useStyle from './style'
+import { Input as _Input, InputGroup, NumberInput } from '@chakra-ui/react'
 
 export const PlaceholderContext = createContext<React.ReactNode>('N/A')
 
@@ -28,22 +30,45 @@ export const usePlaceholder = (value?: any) => {
   return isValid(value) && value !== '' ? value : placeholder
 }
 
-const Input: React.FC<React.PropsWithChildren<InputProps>> = observer(
+const Input: React.FC<React.PropsWithChildren<any>> = observer(
   (props) => {
     const prefixCls = usePrefixCls('form-text', props)
     const [wrapSSR, hashId] = useStyle(prefixCls)
-    return wrapSSR(
-      <Space
-        className={cls(prefixCls, hashId, props.className)}
-        style={props.style}
+
+
+    return (
+      <InputGroup
+        flex="1"
+        startElement={props.prefix}
+        endElement={props.suffix}
+        startAddon={props.addonBefore}
+        endAddon={props.addonAfter}
       >
-        {props.addonBefore}
-        {props.prefix}
-        {usePlaceholder(props.value)}
-        {props.suffix}
-        {props.addonAfter}
-      </Space>
+        <_Input
+          colorPalette={props.colorPalette}
+          placeholder={props.placeholder}
+          size={props.size}
+          value={usePlaceholder(props.value)}
+          variant={props.variant}
+          disabled={props.disabled}
+        />
+      </InputGroup>
     )
+
+
+
+    // return wrapSSR(
+    //   <Space
+    //     className={cls(prefixCls, hashId, props.className)}
+    //     style={props.style}
+    //   >
+    //     {props.addonBefore}
+    //     {props.prefix}
+    //     {usePlaceholder(props.value)}
+    //     {props.suffix}
+    //     {props.addonAfter}
+    //   </Space>
+    // )
   }
 )
 
@@ -51,7 +76,38 @@ const NumberPicker: React.FC<React.PropsWithChildren<InputNumberProps>> =
   observer((props) => {
     const prefixCls = usePrefixCls('form-text', props)
     const [wrapSSR, hashId] = useStyle(prefixCls)
-    return wrapSSR(
+
+    // return (
+    //   <NumberInput.Root defaultValue={usePlaceholder(
+    //     props.formatter
+    //       ? props.formatter(String(props.value), {
+    //         userTyping: false,
+    //         input: '',
+    //       })
+    //       : props.value
+    //   )}>
+    //     <NumberInput.Control />
+    //     <InputGroup
+    //       startElementProps={{ pointerEvents: "auto" }}
+    //       flex="1"
+    //       startElement={props['prefix']}
+    //       endElement={props['suffix']}
+    //       startAddon={props.addonBefore}
+    //       endAddon={props.addonAfter}
+    //     >
+    //       <NumberInput.Input
+    //
+    //       />
+    //     </InputGroup>
+    //
+    //   </NumberInput.Root>
+    //
+    // )
+
+
+
+
+       return wrapSSR(
       <Space
         className={cls(prefixCls, hashId, props.className)}
         style={props.style}
@@ -70,13 +126,21 @@ const NumberPicker: React.FC<React.PropsWithChildren<InputNumberProps>> =
         {props.addonAfter}
       </Space>
     )
+
+
+
+
   })
 
 const Select: React.FC<React.PropsWithChildren<SelectProps<any>>> = observer(
   (props) => {
+
+
     const field = useField<Field>()
     const prefixCls = usePrefixCls('form-text', props)
     const [wrapSSR, hashId] = useStyle(prefixCls)
+
+
 
     const dataSource: any[] = field?.dataSource?.length
       ? field.dataSource
@@ -86,6 +150,9 @@ const Select: React.FC<React.PropsWithChildren<SelectProps<any>>> = observer(
     const placeholder = usePlaceholder()
     const getSelected = () => {
       const value = props.value
+
+
+
       if (props.mode === 'multiple' || props.mode === 'tags') {
         if (props.labelInValue) {
           return isArr(value) ? value : []
@@ -120,16 +187,24 @@ const Select: React.FC<React.PropsWithChildren<SelectProps<any>>> = observer(
       if (!selected.length) return placeholder
       if (selected.length === 1) return getLabel(selected[0])
       return selected.map((item, key) => {
-        return <Tag key={key}>{getLabel(item)}</Tag>
+        return (
+          <ChakraTag.Root key={key}>
+            <ChakraTag.Label>
+              {getLabel(item)}
+            </ChakraTag.Label>
+          </ChakraTag.Root>
+        )
       })
     }
+
+
     return wrapSSR(
-      <div
-        className={cls(prefixCls, hashId, props.className)}
-        style={props.style}
+      <Box
+        // className={cls(prefixCls, hashId, props.className)}
+        // style={props.style}
       >
         {getLabels()}
-      </div>
+      </Box>
     )
   }
 )
@@ -316,9 +391,9 @@ const TimeRangePicker: React.FC<
     return isArr(labels) ? labels.join('~') : labels
   }
   return (
-    <div className={cls(prefixCls, props.className)} style={props.style}>
+    <ChakraText css={props.style}>
       {getLabels()}
-    </div>
+    </ChakraText>
   )
 }
 

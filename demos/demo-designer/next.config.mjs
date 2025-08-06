@@ -7,6 +7,9 @@ const nextConfig = {
     inlineCss: true,
     useCache: true,
     clientSegmentCache: true,
+    optimizePackageImports: ["@chakra-ui/react", "@ark-ui/react"],
+    externalDir: true,
+
 
   },
 

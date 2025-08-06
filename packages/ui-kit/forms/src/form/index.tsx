@@ -22,13 +22,13 @@ export interface FormProps extends IFormLayoutProps {
 }
 
 export const Form: React.FC<React.PropsWithChildren<FormProps>> = ({
-  form,
-  component = 'form',
-  onAutoSubmit,
-  onAutoSubmitFailed,
-  previewTextPlaceholder,
-  ...props
-}) => {
+                                                                     form,
+                                                                     component = 'form',
+                                                                     onAutoSubmit,
+                                                                     onAutoSubmitFailed,
+                                                                     previewTextPlaceholder,
+                                                                     ...props
+                                                                   }) => {
   const top = useParentForm()
   const renderContent = (form: FormType | ObjectField) => (
     <RecordScope getRecord={() => (isForm(form) ? form.values : form.value)}>

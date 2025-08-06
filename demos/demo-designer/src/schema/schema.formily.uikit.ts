@@ -1,995 +1,840 @@
-
 export const schemaLayouts = {
   AspectRatio: {
-    type: 'object',
+    type: "object",
     properties: {
       ratio: {
-        type: 'number',
-        enum: [21/9, 16/9, 9/16, 4/3, 1.85],
-        'x-decorator': 'FormItem',
-        'x-decorator-props': {
-          layout: 'vertical',
+        type: "number",
+        enum: [21 / 9, 16 / 9, 9 / 16, 4 / 3, 1.85],
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
         },
-        'x-component': 'Select',
-      }
-    }
+        "x-component": "Select",
+      },
+    },
   },
   Bleed: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Box: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Center: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Container: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Flex: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Float: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Grid: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Group: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   SimpleGrid: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Stack: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Wrap: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
 }
 
 export const schemaTypography = {
   Blockquote: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Code: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Em: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Heading: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Highlight: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Kbd: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Link: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   LinkOverlay: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   List: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Mark: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Prose: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Text: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
 }
 
 export const schemaUtilities = {
   ClientOnly: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   DownloadTrigger: {
-    type: 'object',
+    type: "object",
     properties: {
       data: {
-        type: 'string',
+        type: "string",
       },
       filename: {
-        type: 'string',
+        type: "string",
       },
       mimeType: {
-        type: 'string',
+        type: "string",
       },
-    }
+    },
   },
   EnvironmentProvider: {
-    type: 'object',
+    type: "object",
     properties: {
       value: {
-        type: 'string',
-        format: 'function',
-      }
-    }
+        type: "string",
+        format: "function",
+      },
+    },
   },
   For: {
-    type: 'object',
+    type: "object",
     properties: {
       each: {
-        type: 'array',
+        type: "array",
       },
       fallback: {
-        type: 'string',
-        format: 'function',
-      }
-    }
+        type: "string",
+        format: "function",
+      },
+    },
   },
   FormatByte: {
-    type: 'object',
+    type: "object",
     properties: {
       value: {
-        type: 'number',
+        type: "number",
         required: true,
       },
       unit: {
-        type: 'string',
-        enum: ['bit', 'byte'],
+        type: "string",
+        enum: ["bit", "byte"],
       },
       unitDisplay: {
-        type: 'string',
-        enum: ['narrow', 'short', 'long'],
-      }
-    }
+        type: "string",
+        enum: ["narrow", "short", "long"],
+      },
+    },
   },
   Presence: {
-    type: 'object',
+    type: "object",
     properties: {
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
-      }
-    }
+        type: "string",
+        format: "function",
+      },
+    },
   },
   Portal: {
-    type: 'object',
+    type: "object",
     properties: {
       container: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       disabled: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+      },
+    },
   },
   Show: {
-    type: 'object',
+    type: "object",
     properties: {
       when: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       fallback: {
-        type: 'string',
-        format: 'function',
-      }
-    }
+        type: "string",
+        format: "function",
+      },
+    },
   },
   VisuallyHidden: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Theme: {
-    type: 'object',
+    type: "object",
     properties: {
       appearance: {
-        type: 'string',
-        enum: ['light', 'dark'],
-        default: 'light',
+        type: "string",
+        enum: ["light", "dark"],
+        default: "light",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       hasBackground: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+      },
+    },
   },
-
 }
+
+/*
+
+  title: "",
+ "x-decorator": "FormItem",
+  "x-decorator-props": {
+    layout: "vertical",
+  },
+  "x-component": "Input",
+
+
+
+  title: "",
+  "x-decorator": "FormItem",
+  "x-decorator-props": {
+    layout: "vertical",
+  },
+  "x-component": "Select",
+
+ */
 
 export const schemaComponents = {
   Accordion: {
-    type: 'object',
+    type: "object",
     properties: {
       collapsible: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       defaultValue: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       multiple: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       orientation: {
-        type: 'string',
-        default: 'vertical',
-        enum: ['vertical', 'horizontal'],
+        type: "string",
+        default: "vertical",
+        enum: ["vertical", "horizontal"],
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       onFocusChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       unmountOnExit: {
-        type: 'boolean',
+        type: "boolean",
         default: false,
       },
       value: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
-    }
+    },
   },
   ActionBar: {
-    type: 'object',
+    type: "object",
     properties: {
       autoFocus: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnEscape: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnInteractOutside: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       modal: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       portalled: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       skipAnimationOnMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultOpen: {
-        type: 'boolean',
+        type: "boolean",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       open: {
-        type: 'boolean',
+        type: "boolean",
       },
       positioning: {
-        type: 'object',
+        type: "object",
       },
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
-    }
+    },
   },
   Alert: {
-    "type": "object",
-    "properties": {
-      "title": {
-        "type": "string",
-        "default": "This is an alert"
+    type: "object",
+    properties: {
+      title: {
+        type: "string",
+        title: "Title",
+        default: "This is an alert",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Input",
       },
-      "status": {
-        "type": "string",
-        "enum": [
-          "info",
-          "warning",
-          "success",
-          "error",
-          "neutral"
-        ],
-        "default": "info"
-
+      description: {
+        type: "string",
+        title: "Description",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Input",
       },
-      "variant": {
-        "type": "string",
-        "enum": [
-          "subtle",
-          "surface",
-          "outline",
-          "solid"
-        ],
-        "default": "subtle"
+      status: {
+        type: "string",
+        enum: ["info", "warning", "success", "error", "neutral"],
+        default: "info",
+        title: "Status",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
       },
-      "size": {
-        "type": "string",
-        "enum": [
-          "lg",
-          "md",
-          "sm"
-        ],
-        "default": "md"
+      variant: {
+        type: "string",
+        enum: ["subtle", "surface", "outline", "solid"],
+        title: "Variant",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
       },
-      "inline": {
-        "type": "boolean",
+      size: {
+        type: "string",
+        enum: ["lg", "md", "sm"],
+        default: "md",
+        title: "Size",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
       },
-      "colorPalette": {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        "default": "gray",
-      }
+      inline: {
+        type: "boolean",
+        title: "Inline",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Switch",
+      },
+      colorPalette: {
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
+        title: "colorPalette",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
+      },
     },
   },
   Avatar: {
     colorPalette: {
-      "type": "string",
-      "enum": [
-        "gray",
-        "red",
-        "orange",
-        "yellow",
-        "green",
-        "teal",
-        "blue",
-        "cyan",
-        "purple",
-        "pink"
-      ],
-      default: 'gray',
+      type: "string",
+      enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+      default: "gray",
     },
     size: {
-      "type": "string",
-      "enum": [
-        "full",
-        "2xs",
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-        "2xl",
-      ],
-      default: 'md',
+      type: "string",
+      enum: ["full", "2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+      default: "md",
     },
     variant: {
-      "type": "string",
-      "enum": [
-        "solid",
-        "subtle",
-        "outline",
-      ],
-      "default": "subtle"
+      type: "string",
+      enum: ["solid", "subtle", "outline"],
+      default: "subtle",
     },
     shape: {
-      "type": "string",
-      "enum": [
-        "square",
-        "rounded",
-        "full",
-      ],
-      "default": "full"
+      type: "string",
+      enum: ["square", "rounded", "full"],
+      default: "full",
     },
     unstyled: {
-      type: 'boolean',
+      type: "boolean",
     },
     ids: {
-      type: 'array',
+      type: "array",
       items: {
-        type: 'string',
+        type: "string",
       },
     },
     onStatusChange: {
-      type: 'string',
-      format: 'function',
+      type: "string",
+      format: "function",
     },
     borderless: {
-      type: 'boolean',
+      type: "boolean",
     },
   },
   Badge: {
-    type: 'object',
-    properties: {
-      colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
-      },
-      variant: {
-        "type": "string",
-        "enum": [
-          "solid",
-          "subtle",
-          "outline",
-          "surface",
-          "plain"
-        ],
-        "default": "subtle"
-      },
-      size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'sm',
-      },
-    }
-  },
-  Breadcrumb: {
-    type: 'object',
-    properties: {
-      colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
-      },
-      variant: {
-        "type": "string",
-        "enum": [
-          "underline",
-          "plain",
-        ],
-        "default": "plain"
-      },
-      unstyled: {
-        type: 'boolean',
-      },
-    }
-  },
-  Button: {
-    type: 'object',
+    type: "object",
     properties: {
       text: {
-        type: 'string',
-        default: 'Button',
-        'x-decorator': 'FormItem',
-        'x-decorator-props': {
-          layout: 'vertical',
+        type: "string",
+        default: "Badge",
+        title: "Badge",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Input",
+      },
+      colorPalette: {
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
+        title: "Color Palette",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
+      },
+      variant: {
+        type: "string",
+        enum: ["solid", "subtle", "outline", "surface", "plain"],
+        default: "subtle",
+        title: "Variant",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
+      },
+      size: {
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "sm",
+        title: "Size",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
+      },
+    },
+  },
+  Breadcrumb: {
+    type: "object",
+    properties: {
+      colorPalette: {
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
+      },
+      variant: {
+        type: "string",
+        enum: ["underline", "plain"],
+        default: "plain",
+      },
+      unstyled: {
+        type: "boolean",
+      },
+    },
+  },
+  Button: {
+    type: "object",
+    properties: {
+      text: {
+        type: "string",
+        default: "Button",
+        title: "Text",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
         },
         "x-component": "Input",
       },
       spinnerPlacement: {
-        "type": "string",
-        "enum": [
-          "start",
-          "end",
-        ],
-        "default": "start",
-        "title": "Spinner Placement",
-        'x-decorator': 'FormItem',
-        'x-decorator-props': {
-          layout: 'vertical',
+        type: "string",
+        enum: ["start", "end"],
+        default: "start",
+        title: "Spinner Placement",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
         },
         "x-component": "Select",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        'default': 'gray',
-        "title": "colorPalette",
-        'x-decorator': 'FormItem',
-        'x-decorator-props': {
-          'layout': 'vertical',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
+        title: "colorPalette",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
         },
         "x-component": "Select",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "2xs",
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-          "2xl",
-        ],
-        default: 'md',
-        "title": "Size",
-        'x-decorator': 'FormItem',
-        'x-decorator-props': {
-          'layout': 'vertical',
+        type: "string",
+        enum: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+        default: "md",
+        title: "Size",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
         },
         "x-component": "Select",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "solid",
-          "subtle",
-          "surface",
-          "outline",
-          "ghost",
-          "plain"
-        ],
-        "default": "solid",
-        "title": "Variant",
-        'x-decorator': 'FormItem',
-        'x-decorator-props': {
-          'layout': 'vertical',
+        type: "string",
+        enum: ["solid", "subtle", "surface", "outline", "ghost", "plain"],
+        default: "solid",
+        title: "Variant",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
         },
         "x-component": "Select",
       },
       loading: {
-        type: 'boolean',
-        "title": "Loading",
-        'x-decorator': 'FormItem',
-        'x-decorator-props': {
-          'layout': 'vertical',
+        type: "boolean",
+        title: "Loading",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
         },
         "x-component": "Switch",
       },
       loadingText: {
-        "type": "string",
-        "title": "loadingText",
-        'x-decorator': 'FormItem',
-        'x-decorator-props': {
-          'layout': 'vertical',
+        type: "string",
+        title: "loadingText",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
         },
         "x-component": "Input",
       },
-    }
+    },
   },
   Card: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "elevated",
-          "outline",
-          "subtle",
-        ],
-        "default": "outline"
+        type: "string",
+        enum: ["elevated", "outline", "subtle"],
+        default: "outline",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   CheckboxCard: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "surface",
-          "subtle",
-          "outline",
-          "solid"
-        ],
-        "default": "outline"
+        type: "string",
+        enum: ["surface", "subtle", "outline", "solid"],
+        default: "outline",
       },
       align: {
-        "type": "string",
-        "enum": [
-          "start",
-          "end",
-          "center",
-        ],
-        "default": "start"
+        type: "string",
+        enum: ["start", "end", "center"],
+        default: "start",
       },
       orientation: {
-        "type": "string",
-        "enum": [
-          "vertical",
-          "horizontal",
-        ],
-        "default": "horizontal"
+        type: "string",
+        enum: ["vertical", "horizontal"],
+        default: "horizontal",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       justify: {
-        "type": "string",
-        "enum": [
-          "start",
-          "end",
-          "center",
-        ],
+        type: "string",
+        enum: ["start", "end", "center"],
       },
-    }
+    },
   },
   Checkbox: {
-    type: 'object',
+    type: "object",
     properties: {
       value: {
-        type: 'string',
-        default: 'on',
+        type: "string",
+        default: "on",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "solid",
-          "subtle",
-        ],
-        "default": "solid"
+        type: "string",
+        enum: ["outline", "solid", "subtle"],
+        default: "solid",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       checked: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultChecked: {
-        type: 'boolean',
+        type: "boolean",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onCheckedChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Clipboard: {
-    type: 'object',
+    type: "object",
     properties: {
       timeout: {
-        type: 'number',
+        type: "number",
         default: 3000,
       },
       defaultValue: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       onStatusChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       value: {
-        type: 'string',
+        type: "string",
       },
-    }
+    },
   },
   CloseButton: {
     spinnerPlacement: {
-      "type": "string",
-      "enum": [
-        "start",
-        "end",
-      ],
-      "default": "start"
+      type: "string",
+      enum: ["start", "end"],
+      default: "start",
     },
     colorPalette: {
-      "type": "string",
-      "enum": [
-        "gray",
-        "red",
-        "orange",
-        "yellow",
-        "green",
-        "teal",
-        "blue",
-        "cyan",
-        "purple",
-        "pink"
-      ],
-      default: 'gray',
+      type: "string",
+      enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+      default: "gray",
     },
     size: {
-      "type": "string",
-      "enum": [
-        "2xs",
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-        "2xl",
-      ],
-      default: 'md',
+      type: "string",
+      enum: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+      default: "md",
     },
     variant: {
-      "type": "string",
-      "enum": [
-        "solid",
-        "subtle",
-        "surface",
-        "outline",
-        "ghost",
-        "plain"
-      ],
-      "default": "solid"
+      type: "string",
+      enum: ["solid", "subtle", "surface", "outline", "ghost", "plain"],
+      default: "solid",
     },
     loading: {
-      type: 'boolean',
+      type: "boolean",
     },
     loadingText: {
-      "type": "string",
+      type: "string",
     },
   },
   Collapsible: {
-    type: 'object',
+    type: "object",
     properties: {
       lazyMount: {
         type: "boolean",
@@ -1000,22 +845,21 @@ export const schemaComponents = {
         default: "false",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultOpen: {
-        type: 'boolean',
+        type: "boolean",
       },
 
       disabled: {
         type: "boolean",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
-
 
       onExitComplete: {
         type: "string",
@@ -1028,53 +872,33 @@ export const schemaComponents = {
       open: {
         type: "boolean",
       },
-    }
+    },
   },
   Combobox: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-          "flushed",
-        ],
-        "default": "outline"
+        type: "string",
+        enum: ["outline", "subtle", "flushed"],
+        default: "outline",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
 
@@ -1082,3513 +906,2957 @@ export const schemaComponents = {
         type: "array",
       },
       composite: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       defaultInputValue: {
-        type: 'string',
-        default: '',
+        type: "string",
+        default: "",
       },
       defaultValue: {
-        type: 'array',
+        type: "array",
         default: [],
       },
       inputBehavior: {
-        type: 'string',
-        enum: ['none', 'autohighlight', 'autocomplete'],
-        default: 'none',
+        type: "string",
+        enum: ["none", "autohighlight", "autocomplete"],
+        default: "none",
       },
       lazyMount: {
-        type: 'boolean',
+        type: "boolean",
       },
       loopFocus: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       openOnChange: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       openOnClick: {
-        type: 'boolean',
+        type: "boolean",
       },
       openOnKeyPress: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       positioning: {
-        type: 'string'
+        type: "string",
       },
       selectionBehavior: {
-        type: 'string',
-        enum: ['replace', 'clear', 'preserve'],
-        default: 'replace',
+        type: "string",
+        enum: ["replace", "clear", "preserve"],
+        default: "replace",
       },
       skipAnimationOnMount: {
-        type: 'boolean',
+        type: "boolean",
       },
       unmountOnExit: {
-        type: 'boolean',
+        type: "boolean",
       },
 
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       allowCustomValue: {
-        type: 'boolean',
+        type: "boolean",
       },
       autoFocus: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnSelect: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultHighlightedValue: {
-        type: 'string',
+        type: "string",
       },
       defaultOpen: {
-        type: 'boolean',
+        type: "boolean",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       disableLayer: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       highlightedValue: {
-        type: 'string',
+        type: "string",
       },
 
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       inputValue: {
-        type: 'string',
+        type: "string",
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       multiple: {
-        type: 'boolean',
+        type: "boolean",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       navigate: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onHighlightChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInputValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInteractOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onSelect: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       placeholder: {
-        type: 'string',
+        type: "string",
       },
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
       scrollToIndexFn: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       value: {
-        type: 'array'
-      }
-    }
+        type: "array",
+      },
+    },
   },
   ColorPicker: {
-    type: 'object',
+    type: "object",
     properties: {
       closeOnSelect: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       defaultFormat: {
-        type: 'string',
-        enum: ['hex', 'rgba', 'hsl', 'hsv'],
-        default: 'rgba',
+        type: "string",
+        enum: ["hex", "rgba", "hsl", "hsv"],
+        default: "rgba",
       },
       defaultValue: {
-        type: 'string',
-        default: '#000000',
+        type: "string",
+        default: "#000000",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       openAutoFocus: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       skipAnimationOnMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "2xs",
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-          "2xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-        ],
-        "default": "outline"
+        type: "string",
+        enum: ["outline", "subtle"],
+        default: "outline",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultOpen: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       format: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       inline: {
-        type: 'boolean',
+        type: "boolean",
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFormatChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInteractOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function'
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChangeEnd: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       open: {
-        type: 'boolean',
+        type: "boolean",
       },
       positioning: {
-        type: 'object',
+        type: "object",
       },
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
       value: {
-        type: 'string',
-      }
-    }
-
+        type: "string",
+      },
+    },
   },
   DataList: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       orientation: {
-        type: 'string',
-        enum: ['vertical', 'horizontal'],
-        default: 'vertical',
+        type: "string",
+        enum: ["vertical", "horizontal"],
+        default: "vertical",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "subtle",
-          "bold",
-        ],
-        "default": "subtle"
+        type: "string",
+        enum: ["subtle", "bold"],
+        default: "subtle",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Dialog: {
-    type: 'object',
+    type: "object",
     properties: {
       closeOnEscape: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnInteractOutside: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       defaultOpen: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       modal: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       preventScroll: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       role: {
-        type: 'string',
-        enum: ['dialog', 'alertdialog'],
-        default: 'dialog',
+        type: "string",
+        enum: ["dialog", "alertdialog"],
+        default: "dialog",
       },
       skipAnimationOnMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       trapFocus: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       placement: {
-        type: 'string',
-        enum: ['center', 'top', 'bottom'],
-        default: 'top',
+        type: "string",
+        enum: ["center", "top", "bottom"],
+        default: "top",
       },
       scrollBehavior: {
-        type: 'string',
-        enum: ['inside', 'outside'],
-        default: 'outside',
+        type: "string",
+        enum: ["inside", "outside"],
+        default: "outside",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-          "cover",
-          "full",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg", "xl", "cover", "full"],
+        default: "md",
       },
       motionPreset: {
-        type: 'string',
-        enum: ['scale', 'slide-in-bottom', 'slide-in-top', 'slide-in-right', 'slide-in-left', 'none'],
-        default: 'scale',
+        type: "string",
+        enum: ["scale", "slide-in-bottom", "slide-in-top", "slide-in-right", "slide-in-left", "none"],
+        default: "scale",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       ariaLabel: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       onEscapeKeyDown: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInteractOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       open: {
-        type: 'boolean',
+        type: "boolean",
       },
       persistentElements: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
       restoreFocus: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+      },
+    },
   },
   Drawer: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-          "full",
-        ],
-        default: 'xs',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg", "xl", "full"],
+        default: "xs",
       },
       placement: {
-        type: 'string',
-        enum: ['start', 'end', 'top', 'bottom'],
-        default: 'end',
+        type: "string",
+        enum: ["start", "end", "top", "bottom"],
+        default: "end",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       contained: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+      },
+    },
   },
   Editable: {
-    type: 'object',
+    type: "object",
     properties: {
       activationMode: {
-        type: 'string',
-        enum: ['click', 'dblclick', 'focus', 'none'],
-        default: 'focus',
+        type: "string",
+        enum: ["click", "dblclick", "focus", "none"],
+        default: "focus",
       },
       selectOnFocus: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       submitMode: {
-        type: 'string',
-        enum: ['enter', 'blur', 'none'],
-        default: 'both',
+        type: "string",
+        enum: ["enter", "blur", "none"],
+        default: "both",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       autoResize: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultEdit: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultValue: {
-        type: 'string',
+        type: "string",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       edit: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       maxLength: {
-        type: 'number',
+        type: "number",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onEditChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInteractOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueCommit: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueRevert: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       placeholder: {
-        type: 'string',
+        type: "string",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
       value: {
-        type: 'string',
-      }
-    }
+        type: "string",
+      },
+    },
   },
   EmptyState: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Field: {
-    type: 'object',
+    type: "object",
     properties: {
-      colorPalette: {
+      label: {
+        type: "string",
+        title: "Label",
+        default: "Field Label",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Input",
+      },
+      placeholder: {
+        type: "string",
+        title: "Placeholder",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Input",
+      },
+      helperText: {
+        type: "string",
+        title: "Helper text",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Input",
+      },
+      errorText: {
+        type: "string",
+        title: "Error text",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Input",
+      },
+      optionalText: {
         "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        "title": "Optional text",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Input",
+      },
+
+      colorPalette: {
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
+        title: "Color Palette",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
       },
       orientation: {
-        type: 'string',
-        enum: ['vertical', 'horizontal'],
-        default: 'vertical',
-      },
-      unstyled: {
-        type: 'boolean',
+        type: "string",
+        enum: ["vertical", "horizontal"],
+        default: "vertical",
+        "title": "Orientation",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Select",
       },
       disabled: {
-        type: 'boolean',
-      },
-      ids: {
-        type: 'array',
-        items: {
-          type: 'string',
+        type: "boolean",
+        title: "Disabled",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
         },
+        "x-component": "Switch",
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
+        title: "Invalid",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Switch",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
+        title: "Read Only",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Switch",
       },
       required: {
-        type: 'boolean',
-      }
-    }
-  },
-  Fieldset: {
-    type: 'object',
-    properties: {
-      colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
-      },
-      size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "boolean",
+        "title": "Required",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Switch",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
+        title: "Unstyled",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Switch",
       },
+      ids: {
+        type: "array",
+        items: {
+          type: "string",
+        },
+      },
+    },
+  },
+  Fieldset: {
+    type: "object",
+    properties: {
+      content: {
+        type: "object",
+      },
+      colorPalette: {
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
+        title: "Color Palette",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
+      },
+      size: {
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
+        title: "Size",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Select",
+      },
+
       invalid: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+        title: "Invalid",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Switch",
+      },
+      disabled: {
+        type: "boolean",
+        title: "Disabled",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Switch",
+      },
+      unstyled: {
+        type: "boolean",
+        title: "Unstyled",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Switch",
+      },
+    },
   },
   FileUpload: {
-    type: 'object',
+    type: "object",
     properties: {
       allowDrop: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       locale: {
-        type: 'string',
-        default: 'en',
+        type: "string",
+        default: "en",
       },
       maxFiles: {
-        type: 'number',
+        type: "number",
         default: 1,
       },
       maxFileSize: {
-        type: 'string',
-        default: 'Infinity', // Infinity
+        type: "string",
+        default: "Infinity", // Infinity
       },
       minFileSize: {
-        type: 'string',
-        default: '0',
+        type: "string",
+        default: "0",
       },
       preventDocumentDrop: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       accept: {
-        type: 'array',
+        type: "array",
       },
       acceptedFiles: {
-        type: 'array',
+        type: "array",
       },
       capture: {
-        type: 'string',
-        enum: ['user', 'environment'],
+        type: "string",
+        enum: ["user", "environment"],
       },
       defaultAcceptedFiles: {
-        type: 'array',
+        type: "array",
       },
       directory: {
-        type: 'boolean',
+        type: "boolean",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       ids: {
-        type: 'array',
+        type: "array",
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onFileAccept: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFileChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFileReject: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
       transformFiles: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       validate: {
-        type: 'string',
-        format: 'function',
-      }
-    }
+        type: "string",
+        format: "function",
+      },
+    },
   },
   HoverCard: {
-    type: 'object',
+    type: "object",
     properties: {
       closeDelay: {
-        type: 'number',
+        type: "number",
         default: 300,
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       openDelay: {
-        type: 'number',
+        type: "number",
         default: 700,
       },
       skipAnimationOnMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultOpen: {
-        type: 'boolean',
+        type: "boolean",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInteractOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       open: {
-        type: 'boolean',
+        type: "boolean",
       },
       positioning: {
-        type: 'object',
+        type: "object",
       },
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Icon: {
-    type: 'object',
+    type: "object",
     properties: {
       size: {
-        "type": "string",
-        "enum": [
-          "2xs",
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-          "2xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+        default: "md",
       },
       color: {
-        "type": "string",
-      }
-    }
+        type: "string",
+      },
+    },
   },
   IconButton: {
-    type: 'object',
+    type: "object",
     properties: {
       spinnerPlacement: {
-        "type": "string",
-        "enum": [
-          "start",
-          "end",
-        ],
-        "default": "start"
+        type: "string",
+        enum: ["start", "end"],
+        default: "start",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "2xs",
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-          "2xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "solid",
-          "subtle",
-          "surface",
-          "outline",
-          "ghost",
-          "plain"
-        ],
-        default: 'solid'
+        type: "string",
+        enum: ["solid", "subtle", "surface", "outline", "ghost", "plain"],
+        default: "solid",
       },
       loading: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Image: {
-    type: 'object',
-    properties: {}
+    type: "object",
+    properties: {},
   },
   Input: {
-    type: 'object',
+    type: "object",
     properties: {
+      placeholder: {
+        type: "string",
+        "title": "Placeholder",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Input",
+      },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
+        "title": "Color Palette",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Select",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "2xs",
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-          "2xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+        default: "md",
+        "title": "Size",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Select",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-          "flushed",
-        ],
-        "default": "outline"
+        type: "string",
+        enum: ["outline", "subtle", "flushed"],
+        default: "outline",
+        "title": "Variant",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Select",
       },
-    }
+      disabled: {
+        type: "boolean",
+        title: "Disabled",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          layout: "vertical",
+        },
+        "x-component": "Switch",
+      },
+      startElement: {
+        type: "string",
+        "title": "Start Element",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Input",
+      },
+      endElement: {
+        type: "string",
+        "title": "End Element",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Input",
+      },
+      startAddon: {
+        type: "string",
+        "title": "Start Addon",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Input",
+      },
+      endAddon: {
+        type: "string",
+        "title": "End Addon",
+        "x-decorator": "FormItem",
+        "x-decorator-props": {
+          "layout": "vertical",
+        },
+        "x-component": "Input",
+      },
+    },
   },
   Menu: {
-    type: 'object',
+    type: "object",
     properties: {
       closeOnSelect: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       composite: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       loopFocus: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       skipAnimationOnMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       typeahead: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "subtle",
-          "solid",
-        ],
-        "default": "subtle"
+        type: "string",
+        enum: ["subtle", "solid"],
+        default: "subtle",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       anchorPoint: {
-        type: 'object',
+        type: "object",
       },
       ariaLabel: {
-        type: 'string',
+        type: "string",
       },
       defaultHighlightedValue: {
-        type: 'string',
+        type: "string",
       },
       defaultOpen: {
-        type: 'boolean',
+        type: "boolean",
       },
       highlightedValue: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       navigate: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onEscapeKeyDown: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onHighlightChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInteractOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onSelect: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       open: {
-        type: 'boolean',
+        type: "boolean",
       },
       positioning: {
-        type: 'object',
+        type: "object",
       },
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   NumberInput: {
-    type: 'object',
+    type: "object",
     properties: {
       allowOverflow: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       clampValueOnBlur: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       focusInputOnChange: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       inputMode: {
-        type: 'string',
-        default: 'decimal',
+        type: "string",
+        default: "decimal",
       },
       locale: {
-        type: 'string',
-        default: 'en-US',
+        type: "string",
+        default: "en-US",
       },
       max: {
-        type: 'number',
+        type: "number",
       },
       min: {
-        type: 'number',
+        type: "number",
       },
       pattern: {
-        type: 'string',
-        default: '-?[0-9]*(.[0-9]+)?',
+        type: "string",
+        default: "-?[0-9]*(.[0-9]+)?",
       },
       spinOnPress: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       step: {
-        type: 'number',
+        type: "number",
         default: 1,
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-          "flushed",
-        ],
-        "default": "outline"
+        type: "string",
+        enum: ["outline", "subtle", "flushed"],
+        default: "outline",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       allowMouseWheel: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultValue: {
-        type: 'string',
+        type: "string",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onFocusChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueInvalid: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
       value: {
-        type: 'string',
-      }
-    }
+        type: "string",
+      },
+    },
   },
   Pagination: {
-    type: 'object',
+    type: "object",
     properties: {
       defaultPage: {
-        type: 'number',
+        type: "number",
         default: 1,
       },
       defaultPageSize: {
-        type: 'number',
+        type: "number",
         default: 10,
       },
       siblingCount: {
-        type: 'number',
+        type: "number",
         default: 1,
       },
       type: {
-        type: 'string',
-        enum: ['button', 'link'],
-        default: 'button',
+        type: "string",
+        enum: ["button", "link"],
+        default: "button",
       },
       count: {
-        type: 'number',
+        type: "number",
       },
       onPageChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPageSizeChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       page: {
-        type: 'number',
+        type: "number",
       },
       pageSize: {
-        type: 'number',
-      }
-    }
+        type: "number",
+      },
+    },
   },
   PasswordInput: {
-    type: 'object',
+    type: "object",
     properties: {
       defaultVisible: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       visible: {
-        type: 'boolean',
+        type: "boolean",
       },
       onVisibleChange: {
-        type: 'string',
-        format: 'function',
-      }
-    }
+        type: "string",
+        format: "function",
+      },
+    },
   },
   PinInput: {
-    type: 'object',
+    type: "object",
     properties: {
       placeholder: {
-        type: 'string',
-        default: '○',
+        type: "string",
+        default: "○",
       },
       type: {
-        "type": "string",
-        "enum": [
-          "numeric",
-          "alphabetic",
-          "alphanumeric",
-        ],
-        default: 'numeric',
+        type: "string",
+        enum: ["numeric", "alphabetic", "alphanumeric"],
+        default: "numeric",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "2xs",
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-          "2xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-          "flushed",
-        ],
-        "default": "outline"
+        type: "string",
+        enum: ["outline", "subtle", "flushed"],
+        default: "outline",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       autoFocus: {
-        type: 'boolean',
+        type: "boolean",
       },
       blurOnComplete: {
-        type: 'boolean',
+        type: "boolean",
       },
       count: {
-        type: 'number',
+        type: "number",
       },
       defaultValue: {
-        type: 'array',
+        type: "array",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       mask: {
-        type: 'boolean',
+        type: "boolean",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueInvalid: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       opt: {
-        type: 'boolean',
+        type: "boolean",
       },
       pattern: {
-        type: 'string',
+        type: "string",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
       value: {
-        type: 'array',
+        type: "array",
       },
       attached: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+      },
+    },
   },
   Popover: {
-    type: 'object',
+    type: "object",
     properties: {
       autoFocus: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnEscape: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnInteractOutside: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       modal: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       portalled: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       skipAnimationOnMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultOpen: {
-        type: 'boolean',
+        type: "boolean",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       onEscapeKeyDown: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInteractOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       open: {
-        type: 'boolean',
+        type: "boolean",
       },
       persistentElements: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       positioning: {
-        type: 'object',
+        type: "object",
       },
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   ProgressCircle: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        type: 'string',
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg", "xl"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+      },
+    },
   },
   Progress: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       defaultValue: {
-        type: 'number',
+        type: "number",
         default: 50,
       },
       formatOptions: {
-        type: 'object',
+        type: "object",
       },
       locale: {
-        type: 'string',
-        default: 'en-US',
+        type: "string",
+        default: "en-US",
       },
       max: {
-        type: 'number',
+        type: "number",
         default: 100,
       },
       min: {
-        type: 'number',
+        type: "number",
         default: 0,
       },
       orientation: {
-        type: 'string',
-        enum: ['horizontal', 'vertical'],
-        default: 'horizontal',
+        type: "string",
+        enum: ["horizontal", "vertical"],
+        default: "horizontal",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-        ],
-        default: 'outline',
+        type: "string",
+        enum: ["outline", "subtle"],
+        default: "outline",
       },
       shape: {
-        "type": "string",
-        "enum": [
-          "square",
-          "rounded",
-          "full",
-        ],
-        default: 'rounded',
+        type: "string",
+        enum: ["square", "rounded", "full"],
+        default: "rounded",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg", "xl"],
+        default: "md",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       value: {
-        type: 'number',
+        type: "number",
       },
       striped: {
-        type: 'boolean',
+        type: "boolean",
       },
       animated: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+      },
+    },
   },
   QrCode: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        type: 'string',
-        "enum": [
-          "2xs",
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-          "2xl",
-          "full",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl", "full"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultValue: {
-        type: 'string',
+        type: "string",
       },
       encoding: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       pixelSize: {
-        type: 'number',
+        type: "number",
       },
       value: {
-        type: 'string',
-      }
-
-    }
+        type: "string",
+      },
+    },
   },
   RadioCard: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "surface",
-          "subtle",
-          "outline",
-          "solid",
-        ],
-        default: 'outline'
+        type: "string",
+        enum: ["surface", "subtle", "outline", "solid"],
+        default: "outline",
       },
       align: {
-        type: 'string',
-        enum: ['start', 'center', 'end'],
-        default: 'start',
+        type: "string",
+        enum: ["start", "center", "end"],
+        default: "start",
       },
       orientation: {
-        type: 'string',
-        enum: ['vertical', 'horizontal'],
-        default: 'horizontal',
+        type: "string",
+        enum: ["vertical", "horizontal"],
+        default: "horizontal",
       },
       justify: {
-        type: 'string',
-        enum: ['start', 'center', 'end'],
+        type: "string",
+        enum: ["start", "center", "end"],
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Radio: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-          "solid",
-        ],
-        "default": "solid"
+        type: "string",
+        enum: ["outline", "subtle", "solid"],
+        default: "solid",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultValue: {
-        type: 'string',
+        type: "string",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       orientation: {
-        type: 'string',
-        enum: ['vertical', 'horizontal'],
+        type: "string",
+        enum: ["vertical", "horizontal"],
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       value: {
-        type: 'string',
-      }
-    }
+        type: "string",
+      },
+    },
   },
   Rating: {
-    type: 'object',
+    type: "object",
     properties: {
       count: {
-        type: 'number',
+        type: "number",
         default: 5,
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       allowHalf: {
-        type: 'boolean',
+        type: "boolean",
       },
       autoFocus: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultValue: {
-        type: 'number',
+        type: "number",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onHoverChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
       value: {
-        type: 'number',
-      }
-    }
-
+        type: "number",
+      },
+    },
   },
   SegmentedControl: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultValue: {
-        type: 'string',
+        type: "string",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       orientation: {
-        type: 'string',
-        enum: ['vertical', 'horizontal'],
+        type: "string",
+        enum: ["vertical", "horizontal"],
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       value: {
-        type: 'string',
-      }
-
-    }
+        type: "string",
+      },
+    },
   },
   NativeSelect: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-          "plain",
-        ],
-        "default": "outline"
+        type: "string",
+        enum: ["outline", "subtle", "plain"],
+        default: "outline",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg", "xl"],
+        default: "md",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       unstyled: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+      },
+    },
   },
   Select: {
-    type: 'object',
+    type: "object",
     properties: {
       collection: {
-        type: 'array',
+        type: "array",
       },
       closeOnSelect: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       composite: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       loopFocus: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       skipAnimationOnMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
 
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-        ],
-        "default": "outline"
+        type: "string",
+        enum: ["outline", "subtle"],
+        default: "outline",
       },
 
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
 
       defaultHighlightedValue: {
-        type: 'string',
+        type: "string",
       },
       defaultOpen: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultValue: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
-        }
+          type: "string",
+        },
       },
       deselectable: {
-        type: 'boolean',
+        type: "boolean",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       highlightedValue: {
-        type: 'string',
+        type: "string",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       multiple: {
-        type: 'boolean',
+        type: "boolean",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onHighlightChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInteractOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onSelect: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       open: {
-        type: 'boolean',
+        type: "boolean",
       },
       positioning: {
-        type: 'object',
+        type: "object",
       },
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
       scrollToIndexFn: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       value: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
-        }
-      }
-
-    }
+          type: "string",
+        },
+      },
+    },
   },
   Separator: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "solid",
-          "dashed",
-          "dotted",
-        ],
-        default: 'solid'
+        type: "string",
+        enum: ["solid", "dashed", "dotted"],
+        default: "solid",
       },
       orientation: {
-        type: 'string',
-        enum: ['horizontal', 'vertical'],
-        default: 'horizontal',
+        type: "string",
+        enum: ["horizontal", "vertical"],
+        default: "horizontal",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
-    }
+    },
   },
   Skeleton: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       loading: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "pulse",
-          "shine",
-          "none",
-        ],
-        default: 'pulse'
-      }
-
-    }
+        type: "string",
+        enum: ["pulse", "shine", "none"],
+        default: "pulse",
+      },
+    },
   },
   Slider: {
-    type: 'object',
+    type: "object",
     properties: {
       max: {
-        type: 'number',
+        type: "number",
         default: 100,
       },
       min: {
-        type: 'number',
+        type: "number",
         default: 0,
       },
       minStepsBetweenThumbs: {
-        type: 'number',
+        type: "number",
         default: 0,
       },
       orientation: {
-        type: 'string',
-        enum: ['horizontal', 'vertical'],
-        default: 'horizontal',
+        type: "string",
+        enum: ["horizontal", "vertical"],
+        default: "horizontal",
       },
       origin: {
-        type: 'string',
-        enum: ['center', 'end', 'start'],
-        default: 'start',
+        type: "string",
+        enum: ["center", "end", "start"],
+        default: "start",
       },
       step: {
-        type: 'number',
+        type: "number",
         default: 1,
       },
       thumbAlignment: {
-        type: 'string',
-        enum: ['center', 'contain'],
-        default: 'contain',
+        type: "string",
+        enum: ["center", "contain"],
+        default: "contain",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "solid",
-        ],
-        default: 'outline'
+        type: "string",
+        enum: ["outline", "solid"],
+        default: "outline",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       ariaLabel: {
-        type: 'string',
+        type: "string",
       },
       ariaLabelledBy: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
-        }
+          type: "string",
+        },
       },
       defaultValue: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'number',
-        }
+          type: "number",
+        },
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       form: {
-        type: 'string',
+        type: "string",
       },
       getAriaValueText: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       name: {
-        type: 'string',
+        type: "string",
       },
       onFocusChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChangeEnd: {
-        type: 'string',
+        type: "string",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       thumbSize: {
-        type: 'object',
+        type: "object",
         properties: {
           width: {
-            type: 'number',
+            type: "number",
           },
           height: {
-            type: 'number',
-          }
-        }
+            type: "number",
+          },
+        },
       },
       value: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'number',
-        }
-      }
-    }
+          type: "number",
+        },
+      },
+    },
   },
   Spinner: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        type: 'string',
-        "enum": [
-          "inherit",
-          "xs",
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["inherit", "xs", "sm", "md", "lg", "xl"],
+        default: "md",
       },
-    }
+    },
   },
   Stat: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        type: 'string',
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
-      }
-    }
+        type: "boolean",
+      },
+    },
   },
   Status: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        type: 'string',
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
-      }
-
-    }
+        type: "boolean",
+      },
+    },
   },
   Steps: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       orientation: {
-        type: 'string',
-        enum: ['horizontal', 'vertical'],
-        default: 'horizontal',
+        type: "string",
+        enum: ["horizontal", "vertical"],
+        default: "horizontal",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "solid",
-          "subtle",
-        ],
-        default: 'solid'
+        type: "string",
+        enum: ["solid", "subtle"],
+        default: "solid",
       },
 
       size: {
-        type: 'string',
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
 
       count: {
-        type: 'number',
+        type: "number",
       },
 
       defaultStep: {
-        type: 'number',
+        type: "number",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
 
       linear: {
-        type: 'boolean',
+        type: "boolean",
       },
 
       onStepChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onStepComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       step: {
-        type: 'number',
+        type: "number",
       },
-
-    }
+    },
   },
   Switch: {
-    type: 'object',
+    type: "object",
     properties: {
       value: {
-        type: 'boolean',
-        default: 'on',
+        type: "boolean",
+        default: "on",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
 
       variant: {
-        "type": "string",
-        "enum": [
-          "solid",
-          "raised",
-        ],
-        "default": "solid"
+        type: "string",
+        enum: ["solid", "raised"],
+        default: "solid",
       },
 
       size: {
-        type: 'string',
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       checked: {
-        type: 'boolean',
+        type: "boolean",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
 
       invalid: {
-        type: 'boolean',
+        type: "boolean",
       },
       label: {
-        type: 'string',
+        type: "string",
       },
 
       name: {
-        type: 'string',
+        type: "string",
       },
       onCheckedChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       readOnly: {
-        type: 'boolean',
+        type: "boolean",
       },
       required: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Tabs: {
-    type: 'object',
+    type: "object",
     properties: {
       activationMode: {
-        type: 'string',
-        enum: ['manual', 'automatic'],
-        default: 'automatic',
+        type: "string",
+        enum: ["manual", "automatic"],
+        default: "automatic",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       loopFocus: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       orientation: {
-        type: 'string',
-        enum: ['horizontal', 'vertical'],
-        default: 'horizontal',
+        type: "string",
+        enum: ["horizontal", "vertical"],
+        default: "horizontal",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "line",
-          "subtle",
-          "enclosed",
-          "outline",
-          "plain",
-        ],
-        default: 'line'
+        type: "string",
+        enum: ["line", "subtle", "enclosed", "outline", "plain"],
+        default: "line",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       composite: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultValue: {
-        type: 'string',
+        type: "string",
       },
       deselectable: {
-        type: 'boolean',
+        type: "boolean",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       navigate: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onValueChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       value: {
-        type: 'string',
+        type: "string",
       },
       fitted: {
-        type: 'boolean',
+        type: "boolean",
       },
       justify: {
-        type: 'string',
-        enum: ['start', 'center', 'end'],
-      }
-    }
+        type: "string",
+        enum: ["start", "center", "end"],
+      },
+    },
   },
   Table: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "line",
-          "outline",
-        ],
-        default: 'line'
+        type: "string",
+        enum: ["line", "outline"],
+        default: "line",
       },
 
       size: {
-        type: 'string',
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg"],
+        default: "md",
       },
       native: {
-        type: 'boolean',
+        type: "boolean",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       interactive: {
-        type: 'boolean',
+        type: "boolean",
       },
       stickyHeader: {
-        type: 'boolean',
+        type: "boolean",
       },
       striped: {
-        type: 'boolean',
+        type: "boolean",
       },
       showColumnBorder: {
-        type: 'boolean',
+        type: "boolean",
       },
-
-    }
+    },
   },
   Tag: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        type: 'string',
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-          "xl",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg", "xl"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "solid",
-          "subtle",
-          "outline",
-          "surface",
-        ],
-        default: 'solid'
+        type: "string",
+        enum: ["solid", "subtle", "outline", "surface"],
+        default: "solid",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Textarea: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "outline",
-          "subtle",
-          "flushed",
-        ],
-        default: 'outline'
+        type: "string",
+        enum: ["outline", "subtle", "flushed"],
+        default: "outline",
       },
       size: {
-        type: 'string',
-        enum: ['xs', 'sm', 'md', 'lg', 'xl'],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg", "xl"],
+        default: "md",
       },
-    }
+    },
   },
   Timeline: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "subtle",
-          "solid",
-          "outline",
-          "plain"
-        ],
-        default: 'solid'
+        type: "string",
+        enum: ["subtle", "solid", "outline", "plain"],
+        default: "solid",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "sm",
-          "md",
-          "lg",
-          "xl"
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["sm", "md", "lg", "xl"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Toast: {
-    type: 'object',
+    type: "object",
     properties: {
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
-    }
+    },
   },
   ToggleTip: {
-    type: 'object',
+    type: "object",
     properties: {
       autoFocus: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnEscape: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnInteractOutside: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       modal: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       portalled: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       skipAnimationOnMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-          "lg",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md", "lg"],
+        default: "md",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       defaultOpen: {
-        type: 'boolean',
+        type: "boolean",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       onEscapeKeyDown: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onInteractOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onPointerDownOutside: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       open: {
-        type: 'boolean',
+        type: "boolean",
       },
       persistentElements: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       positioning: {
-        type: 'object',
+        type: "object",
       },
       present: {
-        type: 'boolean',
+        type: "boolean",
       },
-    }
+    },
   },
   Tooltip: {
-    type: 'object',
+    type: "object",
     properties: {
       closeDelay: {
-        type: 'number',
+        type: "number",
         default: 500,
       },
       closeOnClick: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnEscape: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnPointerDown: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       closeOnScroll: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       interactive: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       openDelay: {
-        type: 'number',
+        type: "number",
         default: 1000,
       },
       skipAnimationOnMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       ariaLabel: {
-        type: 'string',
+        type: "string",
       },
       defaultOpen: {
-        type: 'boolean',
+        type: "boolean",
       },
       disabled: {
-        type: 'boolean',
+        type: "boolean",
       },
       id: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       immediate: {
-        type: 'boolean',
+        type: "boolean",
       },
       onExitComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onOpenChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       open: {
-        type: 'boolean',
+        type: "boolean",
       },
       positioning: {
-        type: 'object',
+        type: "object",
       },
       present: {
-        type: 'boolean',
-      }
-    }
-
+        type: "boolean",
+      },
+    },
   },
   TreeView: {
-    type: 'object',
+    type: "object",
     properties: {
       collection: {
-        type: 'array',
+        type: "array",
       },
       expandOnClick: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       lazyMount: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       selectionMode: {
-        type: 'string',
-        enum: ['single', 'multiple'],
-        default: 'single',
+        type: "string",
+        enum: ["single", "multiple"],
+        default: "single",
       },
       typeahead: {
-        type: 'boolean',
-        default: 'true',
+        type: "boolean",
+        default: "true",
       },
       unmountOnExit: {
-        type: 'boolean',
-        default: 'false',
+        type: "boolean",
+        default: "false",
       },
       colorPalette: {
-        "type": "string",
-        "enum": [
-          "gray",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "teal",
-          "blue",
-          "cyan",
-          "purple",
-          "pink"
-        ],
-        default: 'gray',
+        type: "string",
+        enum: ["gray", "red", "orange", "yellow", "green", "teal", "blue", "cyan", "purple", "pink"],
+        default: "gray",
       },
       size: {
-        "type": "string",
-        "enum": [
-          "xs",
-          "sm",
-          "md",
-        ],
-        default: 'md',
+        type: "string",
+        enum: ["xs", "sm", "md"],
+        default: "md",
       },
       variant: {
-        "type": "string",
-        "enum": [
-          "subtle",
-          "solid",
-        ],
-        default: 'subtle'
+        type: "string",
+        enum: ["subtle", "solid"],
+        default: "subtle",
       },
       unstyled: {
-        type: 'boolean',
+        type: "boolean",
       },
       checkedValue: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
-        }
+          type: "string",
+        },
       },
       defaultCheckedValue: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
-        }
+          type: "string",
+        },
       },
       defaultExpandedValue: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
-        }
+          type: "string",
+        },
       },
       defaultFocusedValue: {
-        type: 'string',
+        type: "string",
       },
       defaultSelectedValue: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
-        }
+          type: "string",
+        },
       },
       expandedValue: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
-        }
+          type: "string",
+        },
       },
       focusedValue: {
-        type: 'string',
+        type: "string",
       },
       ids: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
         },
       },
       loadChildren: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onCheckedChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onExpandedChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onFocusChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onLoadChildrenComplete: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onLoadChildrenError: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       onSelectionChange: {
-        type: 'string',
-        format: 'function',
+        type: "string",
+        format: "function",
       },
       selectedValue: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
-        }
+          type: "string",
+        },
       },
       animateContent: {
-        type: 'boolean',
-      }
-
-    }
+        type: "boolean",
+      },
+    },
   },
-
 }

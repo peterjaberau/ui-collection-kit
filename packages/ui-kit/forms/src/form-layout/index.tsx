@@ -1,7 +1,6 @@
 import React, { createContext, useContext } from 'react'
 import { useResponsiveFormLayout } from './useResponsiveFormLayout'
 import { usePrefixCls } from '../__builtins__'
-import { chakra, Stack } from '@chakra-ui/react'
 import cls from 'classnames'
 
 export interface IFormLayoutProps {
@@ -67,13 +66,13 @@ export const FormLayout: React.FC<React.PropsWithChildren<IFormLayoutProps>> & {
   useFormDeepLayout: () => IFormLayoutContext
   useFormShallowLayout: () => IFormLayoutContext
 } = ({
-  shallow = true,
-  children,
-  prefixCls,
-  className,
-  style,
-  ...otherProps
-}) => {
+       shallow = true,
+       children,
+       prefixCls,
+       className,
+       style,
+       ...otherProps
+     }) => {
   const { ref, props } = useResponsiveFormLayout(otherProps)
   const deepLayout = useFormDeepLayout()
   const formPrefixCls = usePrefixCls('form', { prefixCls })
@@ -110,11 +109,9 @@ export const FormLayout: React.FC<React.PropsWithChildren<IFormLayoutProps>> & {
     )
   }
   return (
-    <Stack
-      data-id='form-layout'
-      ref={ref} className={layoutClassName} css={style}>
+    <div ref={ref} className={layoutClassName} style={style}>
       {renderChildren()}
-    </Stack>
+    </div>
   )
 }
 

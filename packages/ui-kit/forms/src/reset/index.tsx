@@ -1,13 +1,14 @@
 import { IFieldResetOptions, IFormFeedback } from '@formily/core'
 import { useParentForm } from '@formily/react'
 import { isFn } from '@formily/shared'
-import { Button, ButtonProps } from 'antd'
+import { Button as ChakraButton } from '@chakra-ui/react'
 import React from 'react'
 
-export interface IResetProps extends IFieldResetOptions, ButtonProps {
+export interface IResetProps extends IFieldResetOptions {
   onClick?: (e: React.MouseEvent<Element, MouseEvent>) => any
   onResetValidateSuccess?: (payload: any) => void
   onResetValidateFailed?: (feedbacks: IFormFeedback[]) => void
+  [key: string]: any
 }
 
 export const Reset: React.FC<React.PropsWithChildren<IResetProps>> = ({
@@ -19,8 +20,9 @@ export const Reset: React.FC<React.PropsWithChildren<IResetProps>> = ({
 }) => {
   const form = useParentForm()
   return (
-    <Button
+    <ChakraButton
       {...props}
+      variant='subtle'
       onClick={(e) => {
         if (isFn(props.onClick)) {
           if (props.onClick(e) === false) return
@@ -35,7 +37,7 @@ export const Reset: React.FC<React.PropsWithChildren<IResetProps>> = ({
       }}
     >
       {props.children}
-    </Button>
+    </ChakraButton>
   )
 }
 

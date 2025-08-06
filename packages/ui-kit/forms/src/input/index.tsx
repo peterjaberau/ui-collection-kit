@@ -1,31 +1,28 @@
-import { LoadingOutlined } from '@ant-design/icons'
-import { connect, mapProps, mapReadPretty, ReactFC } from '@formily/react'
-import { Input as AntdInput } from 'antd'
-import React from 'react'
-import { PreviewText } from '../preview-text'
+import { LoadingOutlined } from "@ant-design/icons"
+import { connect, mapProps, mapReadPretty, ReactFC } from "@formily/react"
+import { Input as AntdInput } from "antd"
+import { InputGroup, Input as _Input, Textarea as _Textarea } from "@chakra-ui/react"
+import React from "react"
+import { PreviewText } from "../preview-text"
 
-const InternalInput: ReactFC<any> = connect(
-  AntdInput,
-  mapProps((props, field: any) => {
-    return {
-      ...props,
-      suffix: (
-        <span>
-          {field?.['loading'] || field?.['validating'] ? (
-            <LoadingOutlined />
-          ) : (
-            props.suffix
-          )}
-        </span>
-      ),
-    }
-  }),
-  mapReadPretty(PreviewText.Input)
+const _InternalInput: ReactFC<any> = connect(
+  _Input,
+  mapProps((props: any, field: any) => ({
+    ...props,
+  })),
+  mapReadPretty(PreviewText.Input),
 )
-const TextArea = connect(AntdInput.TextArea, mapReadPretty(PreviewText.Input))
 
-export const Input = Object.assign(InternalInput, {
-  TextArea,
+const _InternalTextarea = connect(
+  _Textarea,
+  mapProps((props: any, field: any) => ({
+    ...props,
+    disabled: field?.["loading"] || field?.["validating"] || props.disabled,
+    readOnly: props.readOnly,
+  })),
+  mapReadPretty(PreviewText.Input),
+)
+
+export const Input = Object.assign(_InternalInput, {
+  TextArea: _InternalTextarea,
 })
-
-export default Input

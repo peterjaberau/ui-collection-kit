@@ -2,7 +2,6 @@ export interface IFormItemProps {
   className?: string
   style?: React.CSSProperties
   prefixCls?: string
-  label?: React.ReactNode
   colon?: boolean
   tooltip?: React.ReactNode
   tooltipIcon?: React.ReactNode
@@ -31,5 +30,18 @@ export interface IFormItemProps {
   getPopupContainer?: (node: HTMLElement) => HTMLElement
   asterisk?: boolean
   gridSpan?: number
-  bordered?: boolean
+  bordered?: boolean,
+
+
+  label?: React.ReactNode
+  optionalText?: React.ReactNode,
+  helperText?: React.ReactNode,
+  errorText?: React.ReactNode,
+  colorPalette?: string,
+  orientation?: 'horizontal' | 'vertical',
+  disabled?: boolean,
+  invalid?: boolean,
+  readOnly?: boolean,
+  required?: boolean,
+  unstyled?: boolean,
 }
