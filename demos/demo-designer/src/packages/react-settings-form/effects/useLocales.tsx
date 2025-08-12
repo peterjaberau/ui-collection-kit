@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { isVoidField, onFieldReact } from '@formily/core'
 import { TreeNode, GlobalRegistry } from '#packages/core'

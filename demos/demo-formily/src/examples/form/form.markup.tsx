@@ -16,8 +16,8 @@ export const FormMarkup = () => {
   return (
     <Form
       form={form}
-      layout="vertical"
-      feedbackLayout="terse"
+      layout="horizontal"
+      feedbackLayout="loose"
       onAutoSubmit={console.log}
       onAutoSubmitFailed={console.log}
     >

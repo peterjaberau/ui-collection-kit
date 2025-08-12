@@ -15,7 +15,7 @@ import {
   FormGrid,
   FormLayout,
   FormTab,
-} from '@ui-kit/forms'
+} from '@formily/antd-v5'
 import { Slider } from 'antd'
 import {
   SizeInput,

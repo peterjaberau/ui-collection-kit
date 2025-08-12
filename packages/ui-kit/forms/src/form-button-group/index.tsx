@@ -5,8 +5,7 @@
  * 4. Bottom-sucking layout
  */
 import { ReactFC } from '@formily/react'
-import { Space } from 'antd'
-import { SpaceProps } from 'antd/lib/space'
+import { Flex as Space } from '@chakra-ui/react'
 import cls from 'classnames'
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import StickyBox from 'react-sticky-box'
@@ -18,12 +17,9 @@ interface IStickyProps extends React.ComponentProps<typeof StickyBox> {
   align?: React.CSSProperties['textAlign']
 }
 
-type IFormButtonGroupProps = Omit<SpaceProps, 'align' | 'size'> & {
-  align?: React.CSSProperties['textAlign']
-  gutter?: number
-}
 
-type ComposedButtonGroup = ReactFC<IFormButtonGroupProps> & {
+
+type ComposedButtonGroup = ReactFC<any> & {
   Sticky: ReactFC<React.PropsWithChildren<IStickyProps>>
   FormItem: ReactFC<
     IFormItemProps & {
@@ -63,21 +59,18 @@ export const FormButtonGroup: ComposedButtonGroup = ({
   gutter,
   ...props
 }) => {
-  const prefixCls = usePrefixCls('formily-button-group')
   return (
     <Space
       {...props}
-      size={gutter}
-      className={cls(prefixCls, props.className)}
-      style={{
+      gap={gutter}
+      css={{
         ...props.style,
-        justifyContent:
+        justify:
           align === 'left'
             ? 'flex-start'
             : align === 'right'
             ? 'flex-end'
             : 'center',
-        display: 'flex',
       }}
     >
       {props.children}
@@ -99,7 +92,7 @@ FormButtonGroup.FormItem = ({ gutter, ...props }: any) => {
       colon={false}
     >
       {props.children?.['length'] ? (
-        <Space size={gutter}>{props.children}</Space>
+        <Space gap={gutter || 2}>{props.children}</Space>
       ) : (
         props.children
       )}
@@ -124,7 +117,7 @@ FormButtonGroup.Sticky = ({ align = 'left', ...props }) => {
   return wrapSSR(
     <StickyBox
       {...props}
-      className={cls(`${prefixCls}-sticky`, hashId, props.className)}
+      // className={cls(`${prefixCls}-sticky`, hashId, props.className)}
       style={{
         backgroundColor: color,
         ...props.style,
@@ -133,7 +126,7 @@ FormButtonGroup.Sticky = ({ align = 'left', ...props }) => {
     >
       <div
         ref={ref}
-        className={`${prefixCls}-sticky-inner`}
+        // className={`${prefixCls}-sticky-inner`}
         style={{
           ...props.style,
           justifyContent:

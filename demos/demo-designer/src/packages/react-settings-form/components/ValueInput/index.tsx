@@ -2,6 +2,7 @@
  * Support text, numbers, booleans, expressions
  * Todo: JSON, rich text, formula
  */
+'use client'
 import React from 'react'
 import { createPolyInput } from '../PolyInput'
 import { Input as ChakraInput, Button } from '@chakra-ui/react'

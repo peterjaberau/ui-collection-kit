@@ -10,7 +10,7 @@ import {
   ISchema,
   Schema,
 } from '@formily/react'
-import { FormItem } from '@ui-kit/forms'
+import { FormItem } from '@formily/antd-v5'
 import { each, reduce } from '@formily/shared'
 import { createBehavior } from '#packages/core'
 import {

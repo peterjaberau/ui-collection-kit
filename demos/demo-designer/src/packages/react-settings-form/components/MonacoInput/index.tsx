@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useRef, useEffect } from 'react'
 import Editor, { EditorProps, loader } from '@monaco-editor/react'
 import { TextWidget, IconWidget, usePrefix, useTheme } from '#packages/react'

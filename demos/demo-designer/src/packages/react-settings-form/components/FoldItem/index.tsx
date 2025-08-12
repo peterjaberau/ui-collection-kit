@@ -1,5 +1,6 @@
+'use client'
 import React, { Fragment, useRef, useMemo } from "react"
-import { FormItem, IFormItemProps } from "@ui-kit/forms"
+import { FormItem, IFormItemProps } from "@formily/antd-v5"
 import { useField, observer } from "@formily/react"
 import { observable } from "@formily/reactive"
 import { usePrefix } from "#packages/react"

@@ -74,27 +74,15 @@ const InternalArrayItems: ReactFC<React.HTMLAttributes<HTMLDivElement>> =
               field.move(oldIndex, newIndex)
             }}
           >
+
             {dataSource?.map((item, index) => {
               const items = Array.isArray(schema.items)
                 ? schema.items[index] || schema.items[0]
                 : schema.items
               return (
-                <ArrayBase.Item
-                  key={index}
-                  index={index}
-                  record={() => field.value?.[index]}
-                >
-                  <SortableItem
-                    key={`item-${index}`}
-                    lockAxis="y"
-                    index={index}
-                  >
-                    <chakra.div
-                    >
-                      {items ? (
-                        <RecursionField schema={items} name={index} />
-                      ) : null}
-                    </chakra.div>
+                <ArrayBase.Item key={index} index={index} record={() => field.value?.[index]}>
+                  <SortableItem key={`item-${index}`} lockAxis="y" index={index}>
+                    <chakra.div>{items ? <RecursionField schema={items} name={index} /> : null}</chakra.div>
                   </SortableItem>
                 </ArrayBase.Item>
               )

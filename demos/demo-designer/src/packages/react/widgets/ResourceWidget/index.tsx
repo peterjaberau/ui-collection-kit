@@ -41,7 +41,6 @@ export const ResourceWidget: React.FC<IResourceWidgetProps> | any = observer(
     }, [])
 
 
-    console.log('sources', sources)
 
     return (
       <SimpleGrid columns={3} gap={2}>

@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from 'react';
 import { SegmentGroup, Button, HStack } from '@chakra-ui/react';
 

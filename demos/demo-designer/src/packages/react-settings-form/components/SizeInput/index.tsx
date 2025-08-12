@@ -1,5 +1,5 @@
+'use client'
 import { InputNumber } from 'antd'
-import { NumberInput } from '@chakra-ui/react'
 import { createPolyInput } from '../PolyInput'
 
 const takeNumber = (value: any) => {

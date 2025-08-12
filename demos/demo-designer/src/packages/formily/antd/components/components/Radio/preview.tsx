@@ -1,5 +1,5 @@
 import React from 'react'
-import { Radio as FormilyRadio } from '@ui-kit/forms'
+import { Radio as FormilyRadio } from '@formily/antd-v5'
 import { createBehavior, createResource } from '#packages/core'
 import { DnFC } from '#packages/react'
 import { createFieldSchema } from '../Field'

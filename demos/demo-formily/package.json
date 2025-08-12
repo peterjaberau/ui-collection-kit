@@ -13,6 +13,7 @@
     "@ark-ui/react": "^5.18.3",
     "@ui-kit/components": "workspace:*",
     "@ui-kit/forms": "workspace:*",
+    "@ui-kit/ui-forms": "workspace:*",
     "@emotion/react": "^11.14.0",
     "react-lorem-ipsum": "^1.4.10",
     "mfetch": "^0.2.27",

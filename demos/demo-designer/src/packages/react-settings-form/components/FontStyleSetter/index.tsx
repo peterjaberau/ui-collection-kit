@@ -1,11 +1,13 @@
+'use client'
 import React from 'react'
 import { usePrefix, IconWidget } from '#packages/react'
 import { useField, Field, observer } from '@formily/react'
-import { Select, Radio, NumberPicker } from '@ui-kit/forms'
+import { Select, Radio, NumberPicker } from '@formily/antd-v5'
 import { FoldItem } from '../FoldItem'
 import { InputItems } from '../InputItems'
 import { SizeInput } from '../SizeInput'
 import { ColorInput } from '../ColorInput'
+import { chakra } from '@chakra-ui/react'
 import cls from 'classnames'
 export interface IFontStyleSetterProps {
   className?: string
@@ -18,16 +20,16 @@ const createFontFamilyOptions = (fonts: string[]) => {
     const label = splited?.[0]
     const value = splited?.[1]
     return {
-      label: <span style={{ fontFamily: value }}>{label}</span>,
+      label: label,
       value,
     }
   })
 }
 
 const FontFamilyOptions = createFontFamilyOptions([
-  '宋体=SimSun',
-  '微软雅黑=Microsoft Yahei',
-  '苹方=PingFang SC',
+  'SimSun',
+  'Microsoft Yahei',
+  'PingFang SC',
   'Andale Mono=andale mono,monospace',
   'Arial=arial,helvetica,sans-serif',
   'Arial Black=arial black,sans-serif',

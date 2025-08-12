@@ -8,7 +8,7 @@ import {
   ISchema,
 } from '@formily/react'
 import { GlobalRegistry } from '#packages/core'
-import { ArrayItems } from '@ui-kit/forms'
+import { ArrayItems } from '@formily/antd-v5'
 import { FoldItem } from '#packages/react-settings-form'
 import { Select } from 'antd'
 

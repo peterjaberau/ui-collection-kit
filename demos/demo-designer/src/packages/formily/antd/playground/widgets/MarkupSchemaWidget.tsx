@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { TreeNode } from '#packages/core'
 import { MonacoInput } from '#packages/react-settings-form'
@@ -91,7 +92,7 @@ import {
   FormCollapse,
   ArrayTable,
   ArrayCards,
-} from '@ui-kit/forms'
+} from '@formily/antd-v5'
 import { Card, Slider, Rate } from 'antd'
 
 const Text: React.FC<{

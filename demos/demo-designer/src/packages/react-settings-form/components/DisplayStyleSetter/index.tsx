@@ -1,7 +1,8 @@
+'use client'
 import React from 'react';
 import { useField, Field, observer } from '@formily/react';
 import { Field as FieldType } from '@formily/core';
-import { FormItem } from '@ui-kit/forms';
+import { FormItem } from '@formily/antd-v5';
 import { Radio } from 'antd';
 import { usePrefix, IconWidget } from '#packages/react';
 import { FlexStyleSetter } from '../FlexStyleSetter';

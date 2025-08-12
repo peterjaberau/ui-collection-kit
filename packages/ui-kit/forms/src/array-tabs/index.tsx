@@ -7,6 +7,7 @@ import {
   useFieldSchema,
 } from '@formily/react'
 import { Tabs, TabsProps } from 'antd'
+import { Tabs as ChakraTabs, For, Button } from '@chakra-ui/react'
 import { Badge } from '@chakra-ui/react'
 import React, { Fragment, useState } from 'react'
 
@@ -56,6 +57,7 @@ export const ArrayTabs: React.FC<React.PropsWithChildren<TabsProps>> = observer(
     }
 
     return (
+
       <Tabs
         {...props}
         activeKey={activeKey}
@@ -80,6 +82,62 @@ export const ArrayTabs: React.FC<React.PropsWithChildren<TabsProps>> = observer(
           }
         })}
       ></Tabs>
+
+
+      /*
+      *
+ <ChakraTabs.Root
+        value={activeKey}
+        onValueChange={(e) => {
+          setActiveKey(e.value)
+        }}
+      >
+        <ChakraTabs.List>
+          <For each={dataSource}>
+            {(item, index) => {
+              const items = Array.isArray(schema.items)
+                ? schema.items[index]
+                : schema.items
+              const key = `tab-${index}`
+              return (
+                <ChakraTabs.Trigger
+                  key={key}
+                  value={key}
+                  onClick={() => {
+                    setActiveKey(key)
+                  }}
+                >
+                  <FeedbackBadge index={index} />
+                </ChakraTabs.Trigger>
+              )
+            }}
+          </For>
+          <Button onClick={onEdit} size='sm' variant='outline'>
+            Add
+          </Button>
+        </ChakraTabs.List>
+
+        <For each={dataSource}>
+          {(item, index) => {
+            const items = Array.isArray(schema.items)
+              ? schema.items[index]
+              : schema.items
+            const key = `tab-${index}`
+            return (
+              <ChakraTabs.Content key={key} value={key}>
+                {items ? (
+                  <RecursionField schema={items} name={index} />
+                ) : null}
+              </ChakraTabs.Content>
+            )
+          }}
+        </For>
+
+      </ChakraTabs.Root>
+      *
+      *
+      *
+      * */
     )
   }
 )

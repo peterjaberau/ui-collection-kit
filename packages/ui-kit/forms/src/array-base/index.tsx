@@ -1,12 +1,17 @@
-import { CopyOutlined, DeleteOutlined, DownOutlined, MenuOutlined, PlusOutlined, UpOutlined } from "@ant-design/icons"
 import { ArrayField } from "@formily/core"
 import { ReactFC, RecordScope, RecordsScope, Schema, useField, useFieldSchema } from "@formily/react"
 import { clone, isUndef, isValid } from "@formily/shared"
 import { Button, IconButton, ButtonProps, chakra } from "@chakra-ui/react"
-import cls from "classnames"
 import React, { createContext, forwardRef, useContext } from "react"
-import { SortableHandle, usePrefixCls } from "../__builtins__"
-import useStyle from "./style"
+import { SortableHandle } from "../__builtins__"
+import {
+  LuGripVertical,
+  LuCopy as CopyOutlined,
+  LuTrash2 as DeleteOutlined,
+  LuChevronDown as DownOutlined,
+  LuChevronUp as UpOutlined,
+  LuPlus as PlusOutlined,
+} from "react-icons/lu"
 
 export interface IArrayBaseAdditionProps extends ButtonProps {
   title?: string
@@ -109,14 +114,18 @@ const Item: ReactFC<IArrayBaseItemProps> = ({ children, ...props }) => {
 }
 
 const InternalSortHandle: any = SortableHandle((props: any) => {
-  const prefixCls = usePrefixCls("formily-array-base")
-  const [wrapSSR, hashId] = useStyle(prefixCls)
-  return wrapSSR(
-    <MenuOutlined
+  return (
+    <IconButton
       {...props}
-      className={cls(`${prefixCls}-sort-handle`, hashId, props.className)}
-      style={{ ...props.style }}
-    />,
+      variant="plain"
+      size="sm"
+      css={{
+        ...props.style,
+        cursor: "move",
+      }}
+    >
+      <LuGripVertical />
+    </IconButton>
   )
 })
 
@@ -166,8 +175,6 @@ const Copy = forwardRef<HTMLButtonElement, CommonProps>((props: any, ref) => {
   const self = useField()
   const array = useArray()
   const index = useIndex(props.index) || 0
-  const prefixCls = usePrefixCls("formily-array-base")
-  const [wrapSSR, hashId] = useStyle(prefixCls)
   if (!array) return null
   if (array.field?.pattern !== "editable") return null
   return (

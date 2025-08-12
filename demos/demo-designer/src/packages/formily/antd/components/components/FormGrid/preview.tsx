@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormGrid as FormilyGird } from '@ui-kit/forms'
+import { FormGrid as FormilyGird } from '@formily/antd-v5'
 import { TreeNode, createBehavior, createResource } from '#packages/core'
 import {
   DnFC,

@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react"
 import { useField, observer } from "@formily/react"
 import { Collapsible, Button, Box, HStack, Icon } from "@chakra-ui/react"

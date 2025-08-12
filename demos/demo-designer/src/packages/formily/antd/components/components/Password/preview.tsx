@@ -1,5 +1,5 @@
 import React from 'react'
-import { Password as FormilyPassword } from '@ui-kit/forms'
+import { Password as FormilyPassword } from '@formily/antd-v5'
 import { createBehavior, createResource } from '#packages/core'
 import { DnFC } from '#packages/react'
 import { createFieldSchema } from '../Field'

@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { IconWidget } from '#packages/react'
 import { BoxStyleSetter } from '../BoxStyleSetter'

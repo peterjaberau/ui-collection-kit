@@ -1,3 +1,4 @@
+'use client'
 import React from "react"
 import { observer } from "@formily/reactive-react"
 import JsonView from "react18-json-view"

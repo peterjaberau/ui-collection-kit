@@ -20,31 +20,29 @@ export const NodePathWidget: React.FC<INodePathWidgetProps> = observer((props) =
     .reverse()
     .concat(selected)
   return (
-    <>
-      <ChakraBreadcrumb.Root>
-        <ChakraBreadcrumb.List>
-          <For each={nodes}>
-            {(node: any, index: any) => {
-              return (
-                <>
-                  <ChakraBreadcrumb.Item key={node.id}>
-                    <ChakraBreadcrumb.Link
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        e.preventDefault()
-                        selection.select(node)
-                      }}
-                    >
-                      <NodeTitleWidget node={node} />
-                    </ChakraBreadcrumb.Link>
-                  </ChakraBreadcrumb.Item>
-                  {index < nodes.length - 1 && <ChakraBreadcrumb.Separator />}
-                </>
-              )
-            }}
-          </For>
-        </ChakraBreadcrumb.List>
-      </ChakraBreadcrumb.Root>
-    </>
+    <ChakraBreadcrumb.Root>
+      <ChakraBreadcrumb.List>
+        <For each={nodes}>
+          {(node: any, index: any) => {
+            return (
+              <React.Fragment key={node.id}>
+                <ChakraBreadcrumb.Item key={node.id}>
+                  <ChakraBreadcrumb.Link
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      e.preventDefault()
+                      selection.select(node)
+                    }}
+                  >
+                    <NodeTitleWidget node={node} />
+                  </ChakraBreadcrumb.Link>
+                </ChakraBreadcrumb.Item>
+                {index < nodes.length - 1 && <ChakraBreadcrumb.Separator />}
+              </React.Fragment>
+            )
+          }}
+        </For>
+      </ChakraBreadcrumb.List>
+    </ChakraBreadcrumb.Root>
   )
 })

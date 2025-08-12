@@ -8,7 +8,7 @@ import {
   useNodeIdProps,
   DnFC,
 } from '#packages/react'
-import { ArrayBase } from '@ui-kit/forms'
+import { ArrayBase } from '@formily/antd-v5'
 import { observer } from '@formily/react'
 import { LoadTemplate } from '../../common/LoadTemplate'
 import cls from 'classnames'

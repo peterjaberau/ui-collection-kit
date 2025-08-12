@@ -1,6 +1,7 @@
+'use client'
 import React, { useEffect, useState, useRef } from "react"
 import { IconWidget } from "#packages/react"
-import { HStack, Button } from "@chakra-ui/react"
+import { HStack, Button, Box } from "@chakra-ui/react"
 
 export interface IInput {
   style?: React.CSSProperties
@@ -86,17 +87,22 @@ export function createPolyInput(polyTypes: PolyTypes = []): React.FC<IInput> {
             })}
           </HStack>
         )}
-        <Button
-          variant="outline"
-          onClick={() => {
-            const nextType = getNextType()
-            if (nextType === type) return
-            setCurrent(nextType?.type)
-            onChange?.(transformOnChangeValue(typesValue.current[nextType?.type], nextType))
-          }}
-        >
-          {type?.icon ? <IconWidget infer={type.icon} /> : type?.title || type?.type}
-        </Button>
+          <Box
+            px={2}
+            py={0.3}
+            borderRadius='md'
+            border='1px solid'
+            borderColor='border.emphasized'
+            cursor='pointer'
+            onClick={() => {
+              const nextType = getNextType()
+              if (nextType === type) return
+              setCurrent(nextType?.type)
+              onChange?.(transformOnChangeValue(typesValue.current[nextType?.type], nextType))
+            }}
+          >
+            {type?.icon ? <IconWidget infer={type.icon} /> : type?.title || type?.type}
+          </Box>
       </HStack>
     )
   }

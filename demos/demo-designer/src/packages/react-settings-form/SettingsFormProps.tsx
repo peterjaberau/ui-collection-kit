@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { createForm } from '@formily/core'
-import { Form } from '@ui-kit/forms'
+import { Form } from '@formily/antd-v5'
 import { observer } from '@formily/react'
 import { requestIdle, cancelIdle } from '#packages/shared'
 import {
@@ -56,6 +56,11 @@ export const SettingsFormProps: React.FC<ISettingFormProps> = observer(
         },
       })
     }, [node, node?.props, schema, operation, isEmpty])
+
+
+
+
+
 
     const render = () => {
       if (!isEmpty) {

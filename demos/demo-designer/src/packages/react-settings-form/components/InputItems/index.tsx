@@ -1,3 +1,4 @@
+'use client'
 import React, { useContext } from "react"
 import { usePrefix, IconWidget } from "#packages/react"
 import cls from "classnames"

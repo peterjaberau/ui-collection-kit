@@ -1,6 +1,7 @@
+'use client'
 import React from 'react'
 import { Field, useField, observer } from '@formily/react'
-import { Radio } from '@ui-kit/forms'
+import { Radio } from '@formily/antd-v5'
 import { usePrefix, IconWidget } from '#packages/react'
 import { InputItems } from '../InputItems'
 import cls from 'classnames'

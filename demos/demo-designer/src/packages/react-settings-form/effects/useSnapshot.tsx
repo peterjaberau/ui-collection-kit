@@ -1,3 +1,4 @@
+'use client'
 import { Operation } from '#packages/core'
 import { onFieldInputValueChange } from '@formily/core'
 

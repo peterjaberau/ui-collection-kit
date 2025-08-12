@@ -1,3 +1,4 @@
+'use client'
 import React, { useMemo } from 'react'
 import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/react'
@@ -28,7 +29,7 @@ import {
   FormCollapse,
   ArrayTable,
   ArrayCards,
-} from '@ui-kit/forms'
+} from '@formily/antd-v5'
 import { Card, Slider, Rate } from 'antd'
 import { Button } from '@chakra-ui/react'
 import { TreeNode } from '#packages/core'

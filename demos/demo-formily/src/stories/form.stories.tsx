@@ -13,3 +13,4 @@ export default {
 } as Meta
 
 export { FormMarkup } from "../examples/form/form.markup"
+export { FormMarkupMui } from "../examples/form/form.markup.mui"

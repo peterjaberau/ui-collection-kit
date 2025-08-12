@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { usePrefix } from '#packages/react'
 import { useField, observer } from '@formily/react'

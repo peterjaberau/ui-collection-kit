@@ -7,6 +7,7 @@ import React, { useState } from "react"
 import { FormLayoutShallowContext } from "../form-layout"
 import { pickDataProps, usePrefixCls } from "../__builtins__"
 import { useFormItemLayout, useOverflow } from "./hooks"
+import { Field as ChakraField, Text, HStack, Box, Popover as ChakraPopover, Portal } from "@chakra-ui/react"
 import useStyle from "./style"
 import { IFormItemProps } from "./types"
 
@@ -26,6 +27,7 @@ const ICON_MAP: any = {
 export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({ children, ...props }) => {
   const [active, setActive] = useState(false)
   const formLayout = useFormItemLayout(props)
+
   const { containerRef, contentRef, overflow } = useOverflow<HTMLDivElement, HTMLSpanElement>()
   const {
     label,
@@ -61,7 +63,7 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({ ch
   const wrapperStyle = { ...formLayout.wrapperStyle }
   const prefixCls = usePrefixCls("formily-item", props)
   const [wrapSSR, hashId] = useStyle(prefixCls)
-  // 固定宽度
+  // fixedWidth
   let enableCol = false
   if (labelWidth || wrapperWidth) {
     if (labelWidth) {
@@ -72,7 +74,7 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({ ch
       wrapperStyle.width = wrapperWidth === "auto" ? undefined : wrapperWidth
       wrapperStyle.maxWidth = wrapperWidth === "auto" ? undefined : wrapperWidth
     }
-    // 栅格模式
+    // Wrapper mode
   }
   if (labelCol || wrapperCol) {
     if (!labelStyle.width && !wrapperStyle.width && layout !== "vertical") {
@@ -82,29 +84,29 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({ ch
 
   const formatChildren =
     feedbackLayout === "popover" ? (
-      <Popover
-        autoAdjustOverflow
-        overlayClassName={`${prefixCls}-popover`}
-        placement="top"
-        content={
-          <div
-            className={cls({
-              [`${prefixCls}-${feedbackStatus}-help`]: !!feedbackStatus,
-              [`${prefixCls}-help`]: true,
-            })}
-          >
-            {feedbackStatus ? ICON_MAP[feedbackStatus] : null} {feedbackText}
-          </div>
-        }
-        open={!!feedbackText}
-        getPopupContainer={getPopupContainer}
-      >
-        <>{children}</>
-      </Popover>
+      <ChakraPopover.Root open={!!feedbackText} positioning={{ placement: "bottom-end" }}>
+        <ChakraPopover.Trigger asChild>
+          <>
+            {children}
+          </>
+        </ChakraPopover.Trigger>
+        <Portal>
+          <ChakraPopover.Positioner>
+            <ChakraPopover.Content>
+              <ChakraPopover.Arrow />
+              <ChakraPopover.Body>
+                <ChakraPopover.Title>
+                  {feedbackStatus ? ICON_MAP[feedbackStatus] : null} {feedbackText}
+                </ChakraPopover.Title>
+
+              </ChakraPopover.Body>
+            </ChakraPopover.Content>
+          </ChakraPopover.Positioner>
+        </Portal>
+      </ChakraPopover.Root>
     ) : (
       children
     )
-
 
   const gridStyles: React.CSSProperties = {}
 
@@ -170,91 +172,43 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({ ch
     )
   }
 
-  return wrapSSR(
-    <div
+  return (
+    <ChakraField.Root
+      orientation={props.layout}
       {...pickDataProps(props)}
-      style={{
+      css={{
         ...style,
         ...gridStyles,
+        w: "full",
       }}
       data-grid-span={props.gridSpan}
-      className={cls(
-        props.className,
-        {
-          [`${prefixCls}`]: true,
-          [`${prefixCls}-layout-${layout}`]: true,
-          [`${prefixCls}-${feedbackStatus}`]: !!feedbackStatus,
-          [`${prefixCls}-feedback-has-text`]: !!feedbackText,
-          [`${prefixCls}-size-${size}`]: !!size,
-          [`${prefixCls}-feedback-layout-${feedbackLayout}`]: !!feedbackLayout,
-          [`${prefixCls}-fullness`]: !!fullness || !!inset || !!feedbackIcon,
-          [`${prefixCls}-inset`]: !!inset,
-          [`${prefixCls}-active`]: active,
-          [`${prefixCls}-inset-active`]: !!inset && active,
-          [`${prefixCls}-label-align-${labelAlign}`]: true,
-          [`${prefixCls}-control-align-${wrapperAlign}`]: true,
-          [`${prefixCls}-label-wrap`]: !!labelWrap,
-          [`${prefixCls}-control-wrap`]: !!wrapperWrap,
-          [`${prefixCls}-bordered-none`]: bordered === false || !!inset || !!feedbackIcon,
-        },
-        hashId,
-      )}
-      onFocus={() => {
-        if (feedbackIcon || inset) {
-          setActive(true)
-        }
-      }}
-      onBlur={() => {
-        if (feedbackIcon || inset) {
-          setActive(false)
-        }
-      }}
     >
-      {renderLabel()}
-      <div
-        className={cls({
-          [`${prefixCls}-control`]: true,
-          [`${prefixCls}-item-col-${wrapperCol}`]: enableCol && !!wrapperCol && label,
-        })}
-      >
-        <div className={cls(`${prefixCls}-control-content`)}>
-          {addonBefore && <div className={cls(`${prefixCls}-addon-before`)}>{addonBefore}</div>}
-          <div
-            style={wrapperStyle}
-            className={cls({
-              [`${prefixCls}-control-content-component`]: true,
-              [`${prefixCls}-control-content-component-has-feedback-icon`]: !!feedbackIcon,
-            })}
-          >
-            <FormLayoutShallowContext.Provider value={{}}>{formatChildren}</FormLayoutShallowContext.Provider>
-            {feedbackIcon && <div className={cls(`${prefixCls}-feedback-icon`)}>{feedbackIcon}</div>}
-          </div>
-          {addonAfter && <div className={cls(`${prefixCls}-addon-after`)}>{addonAfter}</div>}
-        </div>
-        {!!feedbackText && feedbackLayout !== "popover" && feedbackLayout !== "none" && (
-          <div
-            className={cls({
-              [`${prefixCls}-${feedbackStatus}-help`]: !!feedbackStatus,
-              [`${prefixCls}-help`]: true,
-              [`${prefixCls}-help-enter`]: true,
-              [`${prefixCls}-help-enter-active`]: true,
-            })}
-          >
-            {feedbackText}
-          </div>
-        )}
-        {extra && <div className={cls(`${prefixCls}-extra`)}>{extra}</div>}
-      </div>
-    </div>,
+      <ChakraField.Label>
+        {label}
+        {asterisk && <ChakraField.RequiredIndicator />}
+      </ChakraField.Label>
+      <HStack w="full" justify="space-between" align="center">
+        <HStack>{addonBefore && <Box>{addonBefore}</Box>}</HStack>
+        <HStack flex={1}>
+          <FormLayoutShallowContext.Provider value={{}}>{formatChildren}</FormLayoutShallowContext.Provider>
+        </HStack>
+        <HStack justify="flex-end">
+          {feedbackIcon && <Box>{feedbackIcon}</Box>}
+          {addonAfter && <Box>{addonAfter}</Box>}
+        </HStack>
+      </HStack>
+
+      {!!feedbackText && feedbackLayout !== "popover" && feedbackLayout !== "none" && <Box>{feedbackText}</Box>}
+      {extra && <Box>{extra}</Box>}
+    </ChakraField.Root>
   )
 }
 
-// 适配
+// Adaptation
 export const FormItem: ComposeFormItem = Object.assign(
   connect(
     BaseItem,
     mapProps((props, field) => {
-
       if (isVoidField(field))
         return {
           label: field.title || props.label,

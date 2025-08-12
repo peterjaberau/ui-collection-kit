@@ -8,7 +8,7 @@ import {
   useFieldSchema,
 } from '@formily/react'
 import { Empty } from 'antd'
-import { Card as ChakraCard, HStack } from '@chakra-ui/react'
+import { Card as ChakraCard, HStack, Stack } from '@chakra-ui/react'
 import React from 'react'
 import { ArrayBase } from '../array-base'
 import { chakra } from '@chakra-ui/react'
@@ -158,9 +158,12 @@ export const InternalArrayCards: ReactFC<any> = observer((props) => {
 
   return (
     <ArrayBase>
+      <Stack w='full'>
+
       {renderEmpty()}
       {renderItems()}
       {renderAddition()}
+      </Stack>
     </ArrayBase>
   )
 })
