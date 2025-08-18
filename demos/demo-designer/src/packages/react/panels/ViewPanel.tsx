@@ -16,7 +16,12 @@ export const ViewPanel: React.FC<IViewPanelProps> | any = observer((props: any) 
   const tree = useTree()
 
   const render = () => {
+
+
     return props.children(tree, (payload) => {
+
+
+
       tree.from(payload)
       tree.takeSnapshot()
     })

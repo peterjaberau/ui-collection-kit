@@ -78,6 +78,7 @@ const DESIGNER_GlobalRegistry = {
   },
 
   setDesignerBehaviors: (behaviors: IBehaviorLike[]) => {
+
     DESIGNER_BEHAVIORS_STORE.value = behaviors.reduce<IBehavior[]>(
       (buf, behavior) => {
         if (isBehaviorHost(behavior)) {
@@ -89,9 +90,12 @@ const DESIGNER_GlobalRegistry = {
       },
       []
     )
+
+
   },
 
   getDesignerBehaviors: (node: TreeNode) => {
+
     return DESIGNER_BEHAVIORS_STORE.value.filter((pattern) =>
       pattern.selector(node)
     )
@@ -108,6 +112,9 @@ const DESIGNER_GlobalRegistry = {
   getDesignerMessage: (token: string, locales?: IDesignerLocales) => {
     const lang = getISOCode(DESIGNER_LANGUAGE_STORE.value)
     const locale = locales ? locales[lang] : DESIGNER_LOCALES_STORE.value[lang]
+
+
+
     if (!locale) {
       for (let key in DESIGNER_LOCALES_STORE.value) {
         const message = Path.getIn(
@@ -136,12 +143,17 @@ const DESIGNER_GlobalRegistry = {
     packages.forEach((sources) => {
       reSortBehaviors(results, sources)
     })
+
+
     if (results.length) {
       DESIGNER_BEHAVIORS_STORE.value = results
     }
+
+
   },
 }
 
 export type IDesignerRegistry = typeof DESIGNER_GlobalRegistry
 
 export const GlobalRegistry: IDesignerRegistry = DESIGNER_GlobalRegistry
+

@@ -27,6 +27,8 @@ export const OutlineTreeWidget: React.FC<IOutlineTreeWidgetProps> = observer(
     const tree = useTree(workspaceId)
     const outline = useOutline(workspaceId)
     const outlineRef = useRef<Viewport>(null)
+
+
     useLayoutEffect(() => {
       if (!workspaceId) return
       if (outlineRef.current && outlineRef.current !== outline) {

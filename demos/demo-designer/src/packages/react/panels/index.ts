@@ -1,4 +1,4 @@
-// import './styles.less';
+;
 export * from './StudioPanel';
 export * from './WorkspacePanel';
 export * from './ToolbarPanel';

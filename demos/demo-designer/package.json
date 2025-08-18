@@ -11,7 +11,7 @@
     "shiki": "^3.9.1",
     "@chakra-ui/react": "^3.24.0",
     "@ark-ui/react": "^5.18.3",
-
+    "@formily/antd": "^2.3.7",
     "react-hotkeys-hook": "^5.1.0",
     "ahooks": "^3.9.0",
     "axios-mock-adapter": "^2.1.0",
@@ -50,6 +50,12 @@
     "classnames": "^2.5.1",
     "react-sticky-box": "^2.0.5",
     "react-is": "^19.1.0",
+    "use-stick-to-bottom": "^1.1.1",
+    "harden-react-markdown": "^1.0.4",
+    "remark-gfm": "^4.0.1",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "katex": "^0.16.22",
 
     "es-toolkit": "1.39.5",
     "react-spinners": "0.17.0",
@@ -178,6 +184,10 @@
     "tailwind-variants": "^0.2.1"
   },
   "devDependencies": {
+    "style-loader": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "less": "^4.4.0",
+    "less-loader": "^12.3.0",
     "autoprefixer": "10.4.17",
     "tailwindcss": "^3.4.14",
     "tailwindcss-animate": "^1.0.7",

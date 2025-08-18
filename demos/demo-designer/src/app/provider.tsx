@@ -5,6 +5,7 @@ import {
   defaultConfig,
   createSystem,
 } from '@chakra-ui/react';
+import { Toaster } from '@ui-kit/components';
 import { ThemeProvider } from 'next-themes';
 // import "./globals.css";
 
@@ -23,6 +24,7 @@ export const Provider = (props: { children: React.ReactNode }) => {
         <ThemeProvider attribute='class' disableTransitionOnChange>
           {props.children}
         </ThemeProvider>
+        <Toaster />
       </ChakraProvider>
   );
 };

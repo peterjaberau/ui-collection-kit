@@ -10,6 +10,7 @@ import * as icons from '../icons';
 GlobalRegistry.registerDesignerIcons(icons);
 
 export const Designer: React.FC<IDesignerProps> | any = (props: any) => {
+
   const engine = useDesigner();
   const ref = useRef<Engine>(null);
   useEffect(() => {

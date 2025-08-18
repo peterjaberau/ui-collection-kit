@@ -19,7 +19,7 @@ import { IconWidget } from '../IconWidget';
 import { NodeTitleWidget } from '../NodeTitleWidget';
 import { NodeContext } from './context';
 import cls from 'classnames';
-// import './styles.less';
+;
 export interface IOutlineTreeNodeProps {
   node: TreeNode;
   style?: React.CSSProperties;
@@ -37,6 +37,7 @@ export const OutlineTreeNode: React.FC<IOutlineTreeNodeProps> = observer(
     const cursor = useCursor();
     const selection = useSelection(workspaceId);
     const moveHelper = useMoveHelper(workspaceId);
+
 
     useEffect(() => {
       return engine.subscribeTo(DragMoveEvent, () => {

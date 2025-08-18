@@ -11,7 +11,6 @@ import { AllLocales } from '../../locales'
 export const Card: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
   return (
     <>
-
       <AntdCard
         {...props}
         title={
@@ -23,6 +22,8 @@ export const Card: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
     </>
   );
 }
+
+
 
 Card.Behavior = createBehavior({
   name: 'Card',

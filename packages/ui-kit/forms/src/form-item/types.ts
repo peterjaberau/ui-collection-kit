@@ -44,4 +44,5 @@ export interface IFormItemProps {
   readOnly?: boolean,
   required?: boolean,
   unstyled?: boolean,
+  [key: string]: any
 }

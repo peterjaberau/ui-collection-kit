@@ -1,5 +1,4 @@
 import './locales';
-// import './theme.less';
 export * from './panels';
 export * from './widgets';
 export * from './context';

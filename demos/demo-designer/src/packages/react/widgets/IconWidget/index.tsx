@@ -4,7 +4,7 @@ import { observer } from '@formily/reactive-react';
 import { Tooltip, TooltipProps } from 'antd';
 import { usePrefix, useRegistry, useTheme } from '../../hooks';
 import cls from 'classnames';
-// import './styles.less';
+;
 
 const IconContext = createContext<IconProviderProps>(null);
 

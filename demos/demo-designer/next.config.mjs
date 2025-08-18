@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+import withLess from 'next-with-less';
+
 
 const nextConfig = {
   /* config options here */
@@ -30,6 +32,9 @@ const nextConfig = {
 
     },
   },
+
+
+
 
 }
 

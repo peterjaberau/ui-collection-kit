@@ -420,7 +420,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "middle", null],
+        enum: ["large", "small", "middle"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -538,7 +538,7 @@ const data = {
     },
     size: {
       type: "string",
-      enum: ["large", "small", "middle", null],
+      enum: ["large", "small", "middle"],
       "x-decorator": "FormItem",
       "x-component": "Select",
     },
@@ -610,7 +610,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "middle", null],
+        enum: ["large", "small", "middle"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -700,7 +700,7 @@ const data = {
         },
         size: {
           type: "string",
-          enum: ["large", "small", "middle", null],
+          enum: ["large", "small", "middle"],
           "x-decorator": "FormItem",
           "x-component": "Select",
           "x-component-props": {
@@ -754,7 +754,7 @@ const data = {
       },
       feedbackLayout: {
         type: "string",
-        enum: ["loose", "terse", "popover", "none", null],
+        enum: ["loose", "terse", "popover", "none"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -763,7 +763,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "default", null],
+        enum: ["large", "small", "default"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -772,7 +772,7 @@ const data = {
       },
       layout: {
         type: "string",
-        enum: ["vertical", "horizontal", "inline", null],
+        enum: ["vertical", "horizontal", "inline"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -781,7 +781,7 @@ const data = {
       },
       tooltipLayout: {
         type: "string",
-        enum: ["icon", "text", null],
+        enum: ["icon", "text"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -790,7 +790,7 @@ const data = {
       },
       labelAlign: {
         type: "string",
-        enum: ["left", "right", null],
+        enum: ["left", "right"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -799,7 +799,7 @@ const data = {
       },
       wrapperAlign: {
         type: "string",
-        enum: ["left", "right", null],
+        enum: ["left", "right"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -979,6 +979,9 @@ const data = {
         type: "number",
         "x-decorator": "FormItem",
         "x-component": "NumberPicker",
+        "x-component-props": {
+          defaultValue: 3,
+        },
       },
       breakpoints: {
         type: "number",
@@ -1083,7 +1086,7 @@ const data = {
       },
       feedbackLayout: {
         type: "string",
-        enum: ["loose", "terse", "popover", "none", null],
+        enum: ["loose", "terse", "popover", "none"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1092,7 +1095,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "default", null],
+        enum: ["large", "small", "default"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1101,7 +1104,7 @@ const data = {
       },
       layout: {
         type: "string",
-        enum: ["vertical", "horizontal", "inline", null],
+        enum: ["vertical", "horizontal", "inline"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1110,7 +1113,7 @@ const data = {
       },
       tooltipLayout: {
         type: "string",
-        enum: ["icon", "text", null],
+        enum: ["icon", "text"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1119,7 +1122,7 @@ const data = {
       },
       labelAlign: {
         type: "string",
-        enum: ["left", "right", null],
+        enum: ["left", "right"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1128,7 +1131,7 @@ const data = {
       },
       wrapperAlign: {
         type: "string",
-        enum: ["left", "right", null],
+        enum: ["left", "right"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1196,7 +1199,7 @@ const data = {
       },
       feedbackLayout: {
         type: "string",
-        enum: ["loose", "terse", "popover", "none", null],
+        enum: ["loose", "terse", "popover", "none"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1205,7 +1208,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "default", null],
+        enum: ["large", "small", "default"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1214,7 +1217,7 @@ const data = {
       },
       layout: {
         type: "string",
-        enum: ["vertical", "horizontal", "inline", null],
+        enum: ["vertical", "horizontal", "inline"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1223,7 +1226,7 @@ const data = {
       },
       tooltipLayout: {
         type: "string",
-        enum: ["icon", "text", null],
+        enum: ["icon", "text"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1232,7 +1235,7 @@ const data = {
       },
       labelAlign: {
         type: "string",
-        enum: ["left", "right", null],
+        enum: ["left", "right"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1241,7 +1244,7 @@ const data = {
       },
       wrapperAlign: {
         type: "string",
-        enum: ["left", "right", null],
+        enum: ["left", "right"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1301,7 +1304,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "default", null],
+        enum: ["large", "small", "default"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1377,7 +1380,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "middle", null],
+        enum: ["large", "small", "middle"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1453,7 +1456,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "middle", null],
+        enum: ["large", "small", "middle"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1545,7 +1548,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "middle", null],
+        enum: ["large", "small", "middle"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -1637,7 +1640,7 @@ const data = {
     properties: {
       mode: {
         type: "string",
-        enum: ["multiple", "tags", null],
+        enum: ["multiple", "tags"],
         "x-decorator": "FormItem",
         "x-component": "Radio.Group",
         "x-component-props": {
@@ -1769,7 +1772,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "middle", null],
+        enum: ["large", "small", "middle"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {
@@ -2029,7 +2032,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "middle", null],
+        enum: ["large", "small", "middle"],
         "x-decorator": "FormItem",
         "x-component": "Select",
       },
@@ -2143,7 +2146,7 @@ const data = {
         },
         size: {
           type: "string",
-          enum: ["large", "small", "middle", null],
+          enum: ["large", "small", "middle"],
           "x-decorator": "FormItem",
           "x-component": "Select",
         },
@@ -2330,7 +2333,7 @@ const data = {
       },
       size: {
         type: "string",
-        enum: ["large", "small", "middle", null],
+        enum: ["large", "small", "middle"],
         "x-decorator": "FormItem",
         "x-component": "Select",
         "x-component-props": {

@@ -75,6 +75,7 @@ export class Workspace {
       moveInsertionType: 'block',
     })
     this.operation = new Operation(this)
+    // @ts-ignore
     this.history = new History(this, {
       onPush: (item) => {
         this.operation.dispatch(new HistoryPushEvent(item))
