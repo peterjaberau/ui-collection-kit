@@ -61,15 +61,15 @@ function MenuItemList(props: IMenuItemListProps) {
         _.isEqual(sourcePath.slice(0, -1), targetPath.slice(0, -1))
       ) {
         // same level move
-        const from = sourcePath[sourcePath.length - 1];
-        let to = targetPath[targetPath.length - 1];
+        const from: any = sourcePath[sourcePath.length - 1];
+        let to: any = targetPath[targetPath.length - 1];
         if (from < to) {
           to -= 1;
         }
         onMoveItem(targetPath, from, to);
       } else {
         // cross level move
-        let targetIndex = targetPath[targetPath.length - 1];
+        let targetIndex : any= targetPath[targetPath.length - 1];
         let targetListPath = targetPath;
         let size = 0;
 
@@ -130,7 +130,7 @@ function MenuItemList(props: IMenuItemListProps) {
 
 export function menuPropertyView(itemsComp: NavListCompType) {
   const items = itemsComp.getView();
-  const getItemByPath = (path: number[], scope?: NavCompType[]): NavCompType => {
+  const getItemByPath: any = (path: number[] | any, scope?: NavCompType[] | any): NavCompType => {
     if (!scope) {
       scope = items;
     }
@@ -140,7 +140,7 @@ export function menuPropertyView(itemsComp: NavListCompType) {
     return getItemByPath(path.slice(1), scope[path[0]].children.items.getView());
   };
 
-  const getItemListByPath = (path: number[], root?: NavListCompType): NavListCompType => {
+  const getItemListByPath = (path: number[] | any, root?: NavListCompType | any): NavListCompType => {
     if (!root) {
       root = itemsComp;
     }
@@ -153,13 +153,13 @@ export function menuPropertyView(itemsComp: NavListCompType) {
   return controlItem(
     { filterText: menuItemLabel },
     <MenuItemList
-      items={items}
+      items={items as any}
       onAddItem={(path: number[], value: any) => {
         const itemList = getItemListByPath(path);
         itemList.addItem(value);
         return itemList.getView().length;
       }}
-      onDeleteItem={(path: number[]) => {
+      onDeleteItem={(path: number[] | any) => {
         getItemListByPath(path).deleteItem(path[path.length - 1]);
       }}
       onAddSubItem={(path: number[], value: any) => {

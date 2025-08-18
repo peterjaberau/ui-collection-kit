@@ -22,7 +22,7 @@ export class ModuleEventComp extends simpleMultiComp({
   list: ModuleEventListComp,
   enableEventTestMessage: valueComp<boolean>(true),
 } as any) {
-  nameGen = new NameGenerator();
+  nameGen: any = new NameGenerator();
 
   names() {
     return (this as any).children.list.getView().map((i: any) => i.children.name.getView()) as any;

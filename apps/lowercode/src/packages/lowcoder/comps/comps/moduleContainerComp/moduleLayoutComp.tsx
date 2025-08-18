@@ -3,15 +3,15 @@ import { stateComp, UICompBuilder, valueComp, withDefault } from "#lowcoder/comp
 import { NameGenerator } from "#lowcoder/comps/utils";
 import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
 import { trans } from "#lowcoder/i18n";
-import { DEFAULT_POSITION_PARAMS, PositionParams } from "#lowcoder/";
-import { ResizeHandleAxis } from "#lowcoder/gridLayoutPropTypes";
-import { Layout } from "#lowcoder/utils";
+import { DEFAULT_POSITION_PARAMS, PositionParams } from "#lowcoder/layout/calculateUtils";
+import { ResizeHandleAxis } from "#lowcoder/layout/gridLayoutPropTypes";
+import { Layout } from "#lowcoder/layout/utils";
 import _ from "lodash";
 import { CompAction, CompActionTypes } from "#lowcoder-core/index";
 import { ReactElement, useContext } from "react";
 import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
-import { ScrollBar, Section, sectionNames } from "lowcoder-design";
+import { ScrollBar, Section, sectionNames } from "#lowcoder-design/index";
 import { getAllCompItems, IContainer } from "../containerBase";
 import { SimpleContainerComp } from "../containerBase/simpleContainerComp";
 import { GridItemsType } from "../containerComp/containerView";
@@ -34,7 +34,7 @@ const ModulePreviewWrapper = styled.div`
 const defaultHeight = 57;
 const defaultWidth = 24;
 
-const childrenMap = {
+const childrenMap: any = {
   io: IOComp,
   methods: ModuleMethodListComp,
   events: ModuleEventComp,
@@ -107,8 +107,9 @@ function ModuleLayoutView(props: IProps) {
   );
 }
 
-export const ModuleLayoutCompBase = new UICompBuilder(childrenMap, () => null).build();
+export const ModuleLayoutCompBase: any = new UICompBuilder(childrenMap, () => null).build();
 
+// @ts-ignore
 export class ModuleLayoutComp extends ModuleLayoutCompBase implements IContainer {
   getView(): JSX.Element {
     const isRowCountLocked = this.children.autoScaleCompHeight.getView();
@@ -120,14 +121,14 @@ export class ModuleLayoutComp extends ModuleLayoutCompBase implements IContainer
         containerView={this.children.container.containerView({
           rowCount,
           isRowCountLocked,
-          onRowCountChange: (rowCount) => {
+          onRowCountChange: (rowCount: any) => {
             this.children.containerRowCount.dispatchChangeValueAction(rowCount);
           },
         })}
         onPositionParamsChange={(params) => {
           setTimeout(() => this.children.positionParams.dispatchChangeValueAction(params));
         }}
-        onLayoutChange={(layout) => {
+        onLayoutChange={(layout: any) => {
           this.children.containerSize.dispatchChangeValueAction({
             height: layout[moduleContainerId].h,
             width: layout[moduleContainerId].w,

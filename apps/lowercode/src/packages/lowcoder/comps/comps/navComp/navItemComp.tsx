@@ -54,7 +54,7 @@ export class NavItemComp extends MultiBaseComp<ChildrenType> {
     return parseChildrenFromValueAndChildrenMap(params, {
       ...childrenMap,
       items: navListComp(),
-    }) as unknown as ChildrenType;
+    } as any) as any;
   }
 
   protected override ignoreChildDefaultValue() {
@@ -82,7 +82,7 @@ type NavItemExposing = {
   items: Node<RecordNodeToValue<NavItemExposing>[]>;
 };
 
-export function navListComp() {
+export function navListComp(): any {
   const NavItemListCompBase = list(NavItemComp);
 
   return class NavItemListComp extends NavItemListCompBase {

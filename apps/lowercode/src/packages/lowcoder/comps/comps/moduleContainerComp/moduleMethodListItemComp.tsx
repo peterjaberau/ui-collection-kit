@@ -6,15 +6,15 @@ import { CompAction, customAction, isCustomAction } from "#lowcoder-core/index";
 import { getPromiseAfterDispatch } from "#lowcoder/util/promiseUtils";
 import ModuleMethodParamListComp from "./moduleMethodParamListComp";
 
-export const WithParamsActionControl = withParams(ActionSelectorControl, []);
+export const WithParamsActionControl: any = withParams(ActionSelectorControl, []);
 
-const childrenMap = {
+const childrenMap: any = {
   name: CompNameControl,
   action: WithParamsActionControl,
   params: ModuleMethodParamListComp,
 };
 
-const ModuleMethodListItemBase = new MultiCompBuilder(childrenMap, (props) => props).build();
+const ModuleMethodListItemBase: any = new MultiCompBuilder(childrenMap, (props) => props).build();
 
 const ExecuteMethodActionType = "execute_module_method";
 
@@ -25,7 +25,7 @@ interface ExecuteMethodAction {
 export class ModuleMethodListItemComp extends ModuleMethodListItemBase {
   async execute(params: any[]) {
     const paramsMap: Record<string, any> = {};
-    this.children.params.getView().forEach((param, idx) => {
+    this.children.params.getView().forEach((param: any, idx: any) => {
       const defaultValue = param.children.defaultValue.getView();
       const paramName = param.children.name.getView();
       paramsMap[paramName] = params[idx] ?? defaultValue;

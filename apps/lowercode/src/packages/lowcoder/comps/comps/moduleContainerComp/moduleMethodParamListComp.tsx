@@ -7,20 +7,20 @@ import { list } from "#lowcoder/comps/generators/list";
 import { NameGenerator } from "#lowcoder/comps/utils/nameGenerator";
 import { trans } from "#lowcoder/i18n";
 import { multiChangeAction } from "#lowcoder-core/index";
-import { ControlPropertyViewWrapper } from "lowcoder-design";
+import { ControlPropertyViewWrapper } from "#lowcoder-design/index";
 import { useEffect } from "react";
 import ParamListItemComp, {
   getParamOptionLabel,
   ModuleMethodParamType,
 } from "./moduleMethodParamListItemComp";
 
-const ParamListCompBase = list(ParamListItemComp);
+const ParamListCompBase: any = list(ParamListItemComp);
 
 class ModuleMethodParamListComp extends ParamListCompBase {
   nameGen = new NameGenerator();
 
   handleAdd() {
-    const names = this.getView().map((i) => i.children.name.getView());
+    const names = this.getView().map((i: any) => i.children.name.getView());
     const name = this.nameGen.init(names).genItemName("param");
     this.dispatch(
       this.pushAction({
@@ -74,7 +74,7 @@ class ModuleMethodParamListComp extends ParamListCompBase {
 
   getParamsData() {
     const ret: Record<string, any> = {};
-    this.getView().forEach((i) => {
+    this.getView().forEach((i: any) => {
       const name = i.children.name.getView();
       const testValue = i.children.test.getView();
       const defaultValue = i.children.defaultValue.getView();
@@ -88,7 +88,7 @@ class ModuleMethodParamListComp extends ParamListCompBase {
   }
 
   getParams() {
-    const params = this.getView().map((i) => {
+    const params = this.getView().map((i: any) => {
       const defaultValue = i.children.defaultValue.getView();
       const testValue = i.children.test.getView();
       if (!!i.children.test.children.comp.unevaledValue) {
@@ -128,7 +128,7 @@ function PropertyView(props: PropertyViewProps) {
         onAdd={onAdd}
       >
         {(newIdx) =>
-          items.map((i, idx) => (
+          items.map((i: any, idx: any) => (
             <ParamItem
               key={idx}
               {...i.children}

@@ -46,7 +46,7 @@ const children = {
 
 const QueryLibraryCompBase = simpleMultiComp(children);
 
-export const QueryLibraryComp = class extends QueryLibraryCompBase {
+export const QueryLibraryComp: any = class extends QueryLibraryCompBase {
   propertyView(params: { onPublish: () => void; onHistoryShow: () => void; setModify: any; modify: boolean }) {
     return (
       <PropertyView comp={this} onPublish={params.onPublish} onHistoryShow={params.onHistoryShow} setModify={params.setModify} modify={params.modify} />

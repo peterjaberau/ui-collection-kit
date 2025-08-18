@@ -20,7 +20,7 @@ const childrenMap = {
 
 const ModuleEventListItemCompBase = new MultiCompBuilder(childrenMap, (props) => props).build();
 
-export const ModuleEventListItemComp = withExposingRaw(ModuleEventListItemCompBase, {}, (comp) => {
+export const ModuleEventListItemComp: any = withExposingRaw(ModuleEventListItemCompBase, {}, (comp) => {
   const name = comp.children.name.getView();
   const node = fromRecord({
     trigger: new FunctionNode(fromValue(name), (n) => {

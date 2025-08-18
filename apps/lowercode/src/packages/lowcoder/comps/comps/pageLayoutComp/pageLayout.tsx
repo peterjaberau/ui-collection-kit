@@ -1,7 +1,7 @@
 import { AnimationStyleType, ContainerStyleType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
 import { EditorContext } from "#lowcoder/comps/editorState";
 import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
-import { HintPlaceHolder, ScrollBar } from "lowcoder-design";
+import { HintPlaceHolder, ScrollBar } from "#lowcoder-design/index";
 import { ReactNode, useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
@@ -10,7 +10,7 @@ import { LayoutViewProps } from "./pageLayoutCompBuilder";
 import { ConfigProvider, Layout } from 'antd';
 import { contrastBackground, contrastText } from "#lowcoder/comps/controls/styleControlConstants";
 import { useRef, useState } from "react";
-import { LowcoderAppView } from "appView/LowcoderAppView";
+import { LowcoderAppView } from "#lowcoder/appView/LowcoderAppView";
 import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -151,8 +151,8 @@ export type LayoutProps = LayoutViewProps & {
 
 
 export function PageLayout(props: LayoutProps & { siderCollapsed: boolean; setSiderCollapsed: (collapsed: boolean) => void }) {
-  const {container, siderCollapsed, setSiderCollapsed, animationStyle} = props;
-  const { showHeader, showFooter, showSider } = container;
+  const {container, siderCollapsed, setSiderCollapsed, animationStyle}: any = props;
+  const { showHeader, showFooter, showSider }: any = container;
   const { items: headerItems, ...otherHeaderProps } = container.header;
   const { items: bodyItems, ...otherBodyProps } = container.body["0"].children.view.getView();
   const { items: footerItems, ...otherFooterProps } = container.footer;
@@ -164,12 +164,12 @@ export function PageLayout(props: LayoutProps & { siderCollapsed: boolean; setSi
     bodyStyle,
     footerStyle,
     horizontalGridCells,
-  } = container; 
+  } = container;
 
   const editorState = useContext(EditorContext);
   const maxWidth = editorState.getAppSettings().maxWidth;
   const isMobile = checkIsMobile(maxWidth);
-  const appRef = useRef();
+  const appRef: any = useRef(null);
 
   // Handle mobile responsiveness for sider collapse
   useEffect(() => {
@@ -204,10 +204,10 @@ export function PageLayout(props: LayoutProps & { siderCollapsed: boolean; setSi
         <Layout id="pageLayout" style={{padding: "0px", overflowY: "scroll"}} hasSider={showSider && !container.innerSider}>
           {showSider && !container.innerSider && !container.siderRight && (
             <><BackgroundColorContext.Provider value={siderStyle?.siderBackground}>
-              <Sider 
+              <Sider
                 width={container.siderWidth}
-                style={{ padding: "0px", margin: '0px', backgroundColor: siderStyle?.siderBackground || 'transparent' }} 
-                collapsible={container.siderCollapsible && !isMobile} 
+                style={{ padding: "0px", margin: '0px', backgroundColor: siderStyle?.siderBackground || 'transparent' }}
+                collapsible={container.siderCollapsible && !isMobile}
                 breakpoint={container.siderCollapsible ? "sm" : undefined}
                 collapsedWidth={container.siderCollapsedWidth}
                 collapsed={siderCollapsed} onCollapse={(value) => onSiderCollapse(value)}
@@ -263,10 +263,10 @@ export function PageLayout(props: LayoutProps & { siderCollapsed: boolean; setSi
                   <><Layout style={{ padding: '0px' }} hasSider={showSider && container.innerSider}>
                     {showSider && !container.siderRight && (
                       <BackgroundColorContext.Provider value={siderStyle?.siderBackground}>
-                        <Sider 
-                          width={container.siderWidth} 
-                          style={{ padding: "0px", margin: '0px', marginTop: style.borderWidth, backgroundColor: siderStyle?.siderBackground || 'transparent' }} 
-                          collapsible={container.siderCollapsible && !isMobile} 
+                        <Sider
+                          width={container.siderWidth}
+                          style={{ padding: "0px", margin: '0px', marginTop: style.borderWidth, backgroundColor: siderStyle?.siderBackground || 'transparent' }}
+                          collapsible={container.siderCollapsible && !isMobile}
                           breakpoint={container.siderCollapsible ? "sm" : undefined}
                           collapsedWidth={container.siderCollapsedWidth}
                           collapsed={siderCollapsed} onCollapse={(value) => setSiderCollapsed(value)}
@@ -330,9 +330,9 @@ export function PageLayout(props: LayoutProps & { siderCollapsed: boolean; setSi
                       </Content>
                       {showSider && container.siderRight && (
                         <BackgroundColorContext.Provider value={siderStyle?.siderBackground}>
-                          <Sider 
+                          <Sider
                             width={container.siderWidth}
-                            style={{ padding: "0px", margin: '0px', backgroundColor: siderStyle?.siderBackground || 'transparent' }} 
+                            style={{ padding: "0px", margin: '0px', backgroundColor: siderStyle?.siderBackground || 'transparent' }}
                             collapsible={container.siderCollapsible && !isMobile}
                             breakpoint={container.siderCollapsible ? "sm" : undefined}
                             collapsedWidth={container.siderCollapsedWidth}
@@ -426,9 +426,9 @@ export function PageLayout(props: LayoutProps & { siderCollapsed: boolean; setSi
             {showSider && !container.innerSider && container.siderRight && (
               <>
                 <BackgroundColorContext.Provider value={siderStyle?.siderBackground}>
-                <Sider 
+                <Sider
                   width={container.siderWidth}
-                  style={{ padding: "0px", margin: '0px', backgroundColor: siderStyle?.siderBackground || 'transparent'}} 
+                  style={{ padding: "0px", margin: '0px', backgroundColor: siderStyle?.siderBackground || 'transparent'}}
                   collapsible={container.siderCollapsible && !isMobile}
                   breakpoint={container.siderCollapsible ? "sm" : undefined}
                   collapsedWidth={container.siderCollapsedWidth}

@@ -69,7 +69,7 @@ export class ContainerCompBuilder<
         return this.children.container.getCompTree();
       }
       findContainer(key: string): IContainer | undefined {
-        const foundContainer = this.children.container.findContainer(key);
+        const foundContainer: any = this.children.container.findContainer(key);
         if (foundContainer) {
           return foundContainer === this.children.container ? this : foundContainer;
         }
@@ -83,6 +83,6 @@ export class ContainerCompBuilder<
         return this.children.container.autoHeight();
       }
     }
-    return Container;
+    return Container as any;
   }
 }

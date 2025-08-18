@@ -5,23 +5,23 @@ import { list } from "#lowcoder/comps/generators/list";
 import { NameGenerator } from "#lowcoder/comps/utils";
 import { GreyTextColor } from "#lowcoder/constants/style";
 import { trans } from "#lowcoder/i18n";
-import { controlItem, Section, TacoButton } from "lowcoder-design";
+import { controlItem, Section, TacoButton } from "#lowcoder-design/index";
 import styled from "styled-components";
 import { ModuleMethodListItemComp, WithParamsActionControl } from "./moduleMethodListItemComp";
 import ModuleMethodParamListComp from "./moduleMethodParamListComp";
 import { ConfigViewSection } from "./styled";
 
-const MethodName = styled.div`
+const MethodName: any = styled.div`
   color: ${GreyTextColor};
 `;
 
-const ModuleMethodListCompBase = list(ModuleMethodListItemComp);
+const ModuleMethodListCompBase: any = list(ModuleMethodListItemComp);
 
 class ModuleMethodListComp extends ModuleMethodListCompBase {
   nameGen = new NameGenerator();
 
   names() {
-    return this.getView().map((i) => i.children.name.getView());
+    return this.getView().map((i: any) => i.children.name.getView());
   }
 
   handleAdd() {
@@ -38,7 +38,7 @@ class ModuleMethodListComp extends ModuleMethodListCompBase {
   }
 
   async executeMethodByName(name: string, params: any) {
-    const method = this.getView().find((i) => i.children.name.getView() === name);
+    const method = this.getView().find((i: any) => i.children.name.getView() === name);
     if (!method) {
       return;
     }
@@ -46,7 +46,7 @@ class ModuleMethodListComp extends ModuleMethodListCompBase {
   }
 
   getTestView() {
-    const methodTriggers = this.getView().map((i) => {
+    const methodTriggers = this.getView().map((i: any) => {
       const name = i.children.name.getView();
 
       const handleExecute = () => {

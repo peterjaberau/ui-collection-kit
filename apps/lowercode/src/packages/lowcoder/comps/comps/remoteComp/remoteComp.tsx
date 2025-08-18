@@ -68,7 +68,7 @@ const RemoteCompView = React.memo((props: React.PropsWithChildren<RemoteCompView
   const lowcoderCompPackageVersion = editorState?.getAppSettings().lowcoderCompVersion || 'latest';
   const latestLowcoderCompsVersion = useSelector((state: AppState) => state.npmPlugin.packageVersion['lowcoder-comps']);
 
-  let packageVersion = 'latest';
+  let packageVersion: any = 'latest';
   // lowcoder-comps's package version
   if (isLowcoderComp && source !== 'bundle') {
     packageVersion = lowcoderCompPackageVersion === 'latest' && Boolean(latestLowcoderCompsVersion)
@@ -111,7 +111,7 @@ export function remoteComp<T extends RemoteCompInfo = RemoteCompInfo>(
   remoteInfo?: T,
   loader?: RemoteCompLoader<T>,
   loadingElement?: () => React.ReactNode
-) {
+): any {
   class RemoteComp extends simpleMultiComp({}) {
     compValue: any;
     remoteInfo = remoteInfo;
