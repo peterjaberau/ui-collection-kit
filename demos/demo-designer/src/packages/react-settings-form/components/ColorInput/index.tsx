@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { Input, Popover } from 'antd'
 import { usePrefix } from '#packages/react'
 import { SketchPicker } from 'react-color'
-// import './styles.less'
+
 
 export interface IColorInputProps {
   value?: string

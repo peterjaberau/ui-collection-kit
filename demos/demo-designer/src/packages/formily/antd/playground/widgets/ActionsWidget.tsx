@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect } from 'react';
-import { SegmentGroup, Button, HStack } from '@chakra-ui/react';
+import { SegmentGroup, Button, Center } from '@chakra-ui/react';
 
 import { useDesigner, TextWidget } from '#packages/react';
 import { GlobalRegistry } from '#packages/core';
@@ -26,7 +26,7 @@ export const ActionsWidget = observer(() => {
     }
   }, []);
   return (
-    <HStack>
+    <Center flex={1}>
       <Button color='colorPalette.contrast'>{GlobalRegistry.getDesignerLanguage()}</Button>
       <SegmentGroup.Root
         value={GlobalRegistry.getDesignerLanguage()}
@@ -45,6 +45,6 @@ export const ActionsWidget = observer(() => {
       >
         Save
       </Button>
-    </HStack>
+    </Center>
   );
 });

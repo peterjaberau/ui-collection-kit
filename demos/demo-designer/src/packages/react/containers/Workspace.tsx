@@ -15,6 +15,7 @@ export const Workspace: React.FC<IWorkspaceProps> | any = ({
 }) => {
   const oldId = useRef<string>(null);
   const designer = useDesigner();
+
   const workspace = useMemo(() => {
     if (!designer) return;
     if (oldId.current && oldId.current !== id) {

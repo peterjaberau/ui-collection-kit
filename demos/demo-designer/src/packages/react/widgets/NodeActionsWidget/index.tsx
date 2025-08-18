@@ -1,55 +1,41 @@
-import React from 'react';
-import { Space, Typography, Divider, TypographyProps } from 'antd';
-import { observer } from '@formily/reactive-react';
-import { usePrefix, useTreeNode, useSelected } from '../../hooks';
-import { IconWidget } from '../IconWidget';
-import { TextWidget } from '../TextWidget';
-import cls from 'classnames';
-// import './styles.less';
+import React from "react"
+import { observer } from "@formily/reactive-react"
+import { useTreeNode, useSelected } from "../../hooks"
+import { HStack, Separator, Button } from "@chakra-ui/react"
+import { LuColumns3 } from "react-icons/lu"
 
 export interface INodeActionsWidgetProps {
-  className?: string;
-  style?: React.CSSProperties;
-  activeShown?: boolean;
+  className?: string
+  style?: React.CSSProperties
+  activeShown?: boolean
 }
 
-export interface INodeActionsWidgetActionProps
-  extends Omit<React.ComponentProps<'a'>, 'title' | 'type' | 'ref'>,
-    Partial<TypographyProps['Link']> {
-  className?: string;
-  style?: React.CSSProperties;
-  title: React.ReactNode;
-  icon?: React.ReactNode;
-}
-
-export const NodeActionsWidget: React.FC<INodeActionsWidgetProps> | any & {
-  Action?: React.FC<INodeActionsWidgetActionProps>;
-} = observer((props: any) => {
-  const node = useTreeNode();
-  const prefix = usePrefix('node-actions');
-  const selected = useSelected();
-  if (selected.indexOf(node.id) === -1 && props.activeShown) return null;
+export const NodeActionsWidget: any = observer((props: any) => {
+  const node = useTreeNode()
+  const selected = useSelected()
+  if (selected.indexOf(node.id) === -1 && props.activeShown) return null
   return (
-    <div className={cls(prefix, props.className)} style={props.style}>
-      <div className={prefix + '-content'}>
-        <Space split={<Divider type='vertical' />}>{props.children}</Space>
-      </div>
-    </div>
-  );
-});
+    <HStack>
+      <Separator flex="1" />
+      {props.children}
+      <Separator flex="1" />
+    </HStack>
+  )
+})
 
 NodeActionsWidget.Action = ({ icon, title, ...props }) => {
-  const prefix = usePrefix('node-actions-item');
   return (
-    <Typography.Link
+    <Button
+      variant="outline"
+      size="2xs"
+      css={{
+        fontSize: "xs",
+      }}
       {...props}
-      className={cls(props.className, prefix)}
-      data-click-stop-propagation='true'
+      data-click-stop-propagation="true"
     >
-      <span className={prefix + '-text'}>
-        <IconWidget infer={icon} />
-        <TextWidget>{title}</TextWidget>
-      </span>
-    </Typography.Link>
-  );
-};
+      <LuColumns3 />
+      {title}
+    </Button>
+  )
+}

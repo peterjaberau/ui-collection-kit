@@ -8,7 +8,7 @@ import { parseExpression, parse } from '@babel/parser'
 import { uid } from '#packages/shared'
 import { format } from './format'
 import cls from 'classnames'
-// import './styles.less'
+
 import './config'
 import { initMonaco } from './config'
 

@@ -1,4 +1,3 @@
-import { ThemeEditorState } from "../types/editor";
 
 // these are common between light and dark modes
 // we can assume that light mode's value will be used for dark mode as well
@@ -120,7 +119,7 @@ export const defaultDarkThemeStyles = {
 };
 
 // Default theme state
-export const defaultThemeState: ThemeEditorState = {
+export const defaultThemeState: any = {
   styles: {
     light: defaultLightThemeStyles,
     dark: defaultDarkThemeStyles,

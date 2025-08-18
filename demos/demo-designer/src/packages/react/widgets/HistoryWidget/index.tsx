@@ -11,6 +11,7 @@ export const HistoryWidget: React.FC = observer(() => {
   const workbench = useWorkbench()
   const currentWorkspace = workbench?.activeWorkspace || workbench?.currentWorkspace
   const prefix = usePrefix("history")
+
   if (!currentWorkspace) return null
   return (
     <>

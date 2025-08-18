@@ -10,7 +10,7 @@ import { usePrefix, TextWidget } from '#packages/react'
 import { Header } from './Header'
 import { traverseTree } from './shared'
 import { ITreeDataSource } from './types'
-// import './styles.less'
+
 
 const SchemaField = createSchemaField({
   components: {

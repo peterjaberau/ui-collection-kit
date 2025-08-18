@@ -1,19 +1,20 @@
 {
-  "name": "@ui-collection-kit",
   "private": true,
   "author": "Peter Jaber",
   "license": "MIT",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-
-
     "demo-designer": "pnpm --filter \"./demos/demo-designer\"",
     "start-demo-designer": "pnpm demo-designer dev",
 
+    "lowercode": "pnpm --filter \"./apps/lowercode\"",
+    "start-lowercode": "pnpm lowercode dev",
+
+    "app-pro": "pnpm --filter \"./apps/app-pro\"",
+    "start-app-pro": "pnpm app-pro dev",
     "demo-formily": "pnpm --filter \"./demos/demo-formily\"",
     "start-demo-formily": "pnpm demo-formily dev",
-
     "packages": "pnpm --filter=./packages/** -r",
     "build": "pnpm packages -- build",
     "clean-pkgs": "pnpm -r exec rm -rf dist .swc *.log",
@@ -23,78 +24,69 @@
     "prettier-fix": "prettier --write packages/**/*",
     "lint": "eslint packages"
   },
-
   "dependencies": {
-
-    "@emotion/react": "11.14.0",
-    "@emotion/styled": "11.14.0",
-    "shiki": "^3.9.1",
-    "@chakra-ui/react": "^3.24.0",
     "@ark-ui/react": "^5.18.3",
     "@chakra-ui/charts": "^3.22.0",
-    "react-markdown": "^10.1.0",
+    "@chakra-ui/react": "^3.24.0",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.0",
+    "@eslint/eslintrc": "3.3.1",
     "@statelyai/agent": "1.1.6",
     "@statelyai/inspect": "^0.4.0",
-    "@xstate/graph": "^3.0.2",
-    "@xstate/react": "^5.0.3",
-    "@xstate/store": "^3.4.1",
-    "mutative": "1.1.0",
-    "set-value": "4.1.0",
-    "ts-results": "^3.3.0",
-    "vercel-submodules": "1.0.10",
-    "xstate": "^5.19.2",
-
-
-    "@eslint/eslintrc": "3.3.1",
     "@types/node": "24.1.0",
     "@types/signale": "1.4.7",
     "@typescript-eslint/eslint-plugin": "8.38.0",
     "@typescript-eslint/parser": "8.38.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "@xstate/graph": "^3.0.2",
+    "@xstate/react": "^5.0.3",
+    "@xstate/store": "^3.4.1",
     "dotenv": "17.2.0",
     "eslint": "9.31.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-prettier": "^5.5.3",
+    "mutative": "1.1.0",
     "plop": "^4.0.1",
     "prettier": "3.6.2",
     "prettier-plugin-svelte": "3.3.3",
+    "react-markdown": "^10.1.0",
+    "set-value": "4.1.0",
+    "shiki": "^3.9.1",
+    "storybook": "^9.0.18",
+    "ts-results": "^3.3.0",
     "tsup": "8.5.0",
     "tsx": "4.20.3",
     "typescript": "5.8.3",
+    "vercel-submodules": "1.0.10",
     "vite": "^7.0.5",
-    "@vitejs/plugin-react": "^4.7.0",
     "vite-plugin-dts": "4.5.4",
     "vitest": "3.2.4",
-    "storybook": "^9.0.18"
+    "xstate": "^5.19.2"
   },
-
   "devDependencies": {
-
     "@storybook/addon-a11y": "^9.0.18",
     "@storybook/addon-docs": "^9.0.18",
     "@storybook/addon-themes": "^9.0.18",
     "@storybook/react-vite": "^9.0.18",
-    "rimraf": "^6.0.1",
     "@types/jsdom": "^21.1.7",
-    "jsdom": "^26.1.0",
+    "@types/react": ">=18.3.1",
+    "@types/react-dom": ">=18.3.1",
+    "@types/set-value": "4.0.3",
+    "autoprefixer": "^10.4.21",
     "clean-package": "2.2.0",
+    "cross-env": "^7.0.3",
+    "jsdom": "^26.1.0",
+    "postcss": "^8",
+    "react": ">=18.3.1",
+    "react-dom": ">=18.3.1",
+    "rimraf": "^6.0.1",
     "styled-components": "^6.1.19",
     "tailwind-merge": "^2.5.4",
     "tailwind-variants": "^0.2.1",
     "tailwindcss": "^3.4.14",
     "tailwindcss-animate": "^1.0.7",
-
-    "cross-env": "^7.0.3",
-
-    "@types/react": ">=18.3.1",
-    "@types/react-dom": ">=18.3.1",
-    "@types/set-value": "4.0.3",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8",
-    "react": ">=18.3.1",
-    "react-dom": ">=18.3.1",
     "zod": "^3.24.2"
-
   },
   "engines": {
     "node": ">=18.0.0"

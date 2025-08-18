@@ -3,8 +3,10 @@ import React, { useEffect, useMemo, useState } from "react"
 import { createDesigner, Shortcut, KeyCode } from "#packages/core"
 import { saveSchema } from "#packages/formily/antd/playground/service"
 import { MultiLayersPanel } from "#components/ui/multi-layers-panel"
+import { Toaster } from '@chakra-ui/react'
 import { useDesignerActor } from "#packages/actors/hooks/useDesignerActor"
 import { useDesignerEngineActor } from "#packages/actors/hooks/useDesignerEngineActor"
+import { useDesignerRegistry } from "#packages/actors/hooks/useDesignerRegistry"
 import {
   Designer,
   DesignerToolsWidget,
@@ -142,31 +144,6 @@ const mockPanels: any = {
         },
       ],
     },
-    {
-      title: "View Tools",
-      value: "view-tools",
-      sections: [
-        {
-          title: "JSONTREE",
-          value: "jsonTree",
-          content: (
-            <ViewPanel scrollable={false}>
-              {(tree, onChange) => <SchemaEditorWidget tree={tree} onChange={onChange} />}
-            </ViewPanel>
-          ),
-        },
-        {
-          title: "Markup",
-          value: "markup",
-          content: <ViewPanel scrollable={false}>{(tree) => <MarkupSchemaWidget tree={tree} />}</ViewPanel>,
-        },
-        {
-          title: "Preview",
-          value: "preview",
-          content: <ViewPanel>{(tree) => <PreviewWidget tree={tree} />}</ViewPanel>,
-        },
-      ],
-    },
 
     // component-group, decorator-group, component-style-group, decorator-style-group, field-group
     {
@@ -206,6 +183,45 @@ const mockPanels: any = {
           title: "Decorator Style",
           value: "decorator-style-group",
           content: <SettingsDecoratorStyle />,
+        },
+      ],
+    },
+
+
+  ],
+}
+
+const mockStatePanels: any = {
+  filters: [
+
+  ],
+  items: [
+    {
+      title: "View Tools",
+      value: "view-tools",
+      sections: [
+        {
+          title: "JSONTREE",
+          value: "jsonTree",
+          content: (
+            <ViewPanel type="JSONTREE" scrollable={false}>
+              {(tree, onChange) => {
+                return (
+                  <SchemaEditorWidget tree={tree} onChange={onChange} />
+                )
+              }}
+            </ViewPanel>
+          ),
+        },
+        {
+          title: "Markup",
+          value: "markup",
+          content: <ViewPanel type="MARKUP" scrollable={false}>{(tree) => <MarkupSchemaWidget tree={tree} />}</ViewPanel>,
+        },
+        {
+          title: "Preview",
+          value: "preview",
+          content: <ViewPanel type="PREVIEW">{(tree) => <PreviewWidget tree={tree} />}</ViewPanel>,
         },
       ],
     },
@@ -261,13 +277,16 @@ GlobalRegistry.registerDesignerLocales({
 
 export const DesignablePlayground = () => {
   // const { designerEngine } = useDesignerEngineActor()
+  const {
+    designerRegistry,
+    getLocales, getIcons, getBehaviors,
+    isLoading, isReady,
+  } = useDesignerRegistry()
 
   const [mounted, setMounted] = useState(false)
   useEffect(() => {
     setMounted(true)
   }, [])
-
-
 
   const engine = useMemo(
     () =>
@@ -288,17 +307,20 @@ export const DesignablePlayground = () => {
     []
   )
 
+  // console.log("GlobalRegistry", {
+  //   engine,
+  //   GlobalRegistry
+  // })
+
   return (
     <Designer engine={engine} prefixCls="dn-" theme="light">
       <HStack h="full" alignItems="flex-start">
         {mounted && (
-          <>
-            <Stack h="full" w="600px" p={4}>
-              <Box h="full" shadow="md" borderRadius="md">
-                <MultiLayersPanel items={mockPanels.items} filters={mockPanels.filters} />
-              </Box>
-            </Stack>
-          </>
+          <Stack h="full" w="600px" p={4}>
+            <Box h="full" shadow="md" borderRadius="md">
+              <MultiLayersPanel items={mockPanels.items} filters={mockPanels.filters} />
+            </Box>
+          </Stack>
         )}
         <StudioPanel logo={<LogoWidget />} actions={<ActionsWidget />}>
           <HStack>
@@ -351,6 +373,16 @@ export const DesignablePlayground = () => {
             </Workspace>
           </HStack>
         </StudioPanel>
+
+        {mounted && (
+          <>
+            <Stack h="full" w="800px" p={4}>
+              <Box h="full" shadow="md" borderRadius="md">
+                <MultiLayersPanel items={mockStatePanels.items} filters={mockStatePanels.filters} />
+              </Box>
+            </Stack>
+          </>
+        )}
       </HStack>
     </Designer>
   )

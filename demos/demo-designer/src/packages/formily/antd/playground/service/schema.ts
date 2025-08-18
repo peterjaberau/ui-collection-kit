@@ -1,4 +1,6 @@
 import { Engine } from '#packages/core'
+import { toaster } from '@ui-kit/components'
+
 import {
   transformToSchema,
   transformToTreeNode,
@@ -10,7 +12,13 @@ export const saveSchema = (designer: Engine) => {
     'formily-schema',
     JSON.stringify(transformToSchema(designer.getCurrentTree()))
   )
-  message.success('Save Success')
+
+
+  toaster.create({
+    title: "Save Success",
+    closable: true,
+    duration: 6000,
+  })
 }
 
 export const loadInitialSchema = (designer: Engine) => {

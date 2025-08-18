@@ -1,24 +1,21 @@
 import { Grid, IGridOptions } from "@formily/grid"
-import { Grid as ChakraGrid, GridItem as ChakraGridItem, chakra } from "@chakra-ui/react"
-
 import { observer } from "@formily/react"
 import { markRaw } from "@formily/reactive"
 import React, { useContext, useLayoutEffect, useMemo, useRef } from "react"
 import { useFormLayout } from "../form-layout"
 import { pickDataProps } from "../__builtins__"
+import { chakra } from "@chakra-ui/react"
 
-const FormGridContext = React.createContext<any>(null as any)
+const FormGridContext = React.createContext<Grid<HTMLElement>>(null as any)
 
 export interface IFormGridProps extends IGridOptions {
   grid?: Grid<HTMLElement>
   style?: React.CSSProperties
-  [key: string]: any
 }
 
 export interface IGridColumnProps {
   gridSpan?: number
   style?: React.CSSProperties
-  [key: string]: any
 }
 
 export const createFormGrid = (props: IFormGridProps) => {
@@ -28,11 +25,11 @@ export const createFormGrid = (props: IFormGridProps) => {
 export const useFormGrid = () => useContext(FormGridContext)
 
 const InternalFormGrid = observer(
-  ({ children, className, style, ...props }: React.PropsWithChildren<IFormGridProps>) => {
+  ({ children, style, ...props }: React.PropsWithChildren<IFormGridProps>) => {
     const layout = useFormLayout()
     const options = {
       columnGap: layout?.gridColumnGap ?? 8,
-      rowGap: layout?.gridRowGap ?? 4,
+      rowGap: layout?.gridRowGap ?? 8,
       ...props,
     }
     const grid = useMemo(() => markRaw(options?.grid ? options.grid : new Grid(options)), [Grid.id(options)])
@@ -46,17 +43,18 @@ const InternalFormGrid = observer(
     }, [grid])
     return (
       <FormGridContext.Provider value={grid}>
-        <ChakraGrid
-          {...dataProps}
-          templateColumns={grid.templateColumns}
-          gap={grid.gap}
+        <chakra.div
           css={{
+            display: "grid",
             ...style,
+            gridTemplateColumns: grid.templateColumns,
+            gap: grid.gap,
           }}
+          {...dataProps}
           ref={ref}
         >
           {children}
-        </ChakraGrid>
+        </chakra.div>
       </FormGridContext.Provider>
     )
   },
@@ -68,9 +66,9 @@ const InternalFormGrid = observer(
 export const GridColumn: React.FC<React.PropsWithChildren<IGridColumnProps>> = observer(
   ({ gridSpan = 1, children, ...props }) => {
     return (
-      <ChakraGridItem {...props} css={props.style} data-grid-span={gridSpan}>
+      <chakra.div {...props} css={props.style} data-grid-span={gridSpan}>
         {children}
-      </ChakraGridItem>
+      </chakra.div>
     )
   },
 )

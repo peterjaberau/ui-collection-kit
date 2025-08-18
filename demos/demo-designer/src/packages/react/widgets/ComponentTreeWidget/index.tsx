@@ -4,7 +4,9 @@ import { TreeNodeContext, DesignerComponentsContext } from '../../context';
 import { IDesignerComponents } from '../../types';
 import { TreeNode, GlobalRegistry } from '#packages/core';
 import { observer } from '@formily/reactive-react';
+import { chakra } from '@chakra-ui/react';
 import cls from 'classnames';
+import { useDesignerTree } from "#packages/actors/hooks/useDesignerTree"
 
 export interface IComponentTreeWidgetProps {
   style?: React.CSSProperties;
@@ -20,6 +22,9 @@ export interface ITreeNodeWidgetProps {
 export const TreeNodeWidget: React.FC<ITreeNodeWidgetProps> = observer(
   (props: ITreeNodeWidgetProps) => {
     const designer = useDesigner(props.node?.designerProps?.effects)
+
+
+
     const components = useComponents()
     const node = props.node
     const renderChildren = () => {
@@ -44,10 +49,15 @@ export const TreeNodeWidget: React.FC<ITreeNodeWidgetProps> = observer(
       const componentName = node.componentName
       const Component = components[componentName]
       const dataId = {}
+
+
       if (Component) {
         if (designer) {
           dataId[designer?.props?.nodeIdAttrName] = node.id
         }
+
+
+
         return React.createElement(
           Component,
           renderProps(dataId),
@@ -62,6 +72,8 @@ export const TreeNodeWidget: React.FC<ITreeNodeWidgetProps> = observer(
 
     if (!node) return null
     if (node.hidden) return null
+
+
     return React.createElement(
       TreeNodeContext.Provider,
       { value: node },
@@ -72,26 +84,37 @@ export const TreeNodeWidget: React.FC<ITreeNodeWidgetProps> = observer(
 
 export const ComponentTreeWidget: React.FC<IComponentTreeWidgetProps> =
   observer((props: IComponentTreeWidgetProps) => {
+
+
+
     const tree = useTree()
     const prefix = usePrefix('component-tree')
     const designer = useDesigner()
     const dataId = {}
     if (designer && tree) {
       dataId[designer?.props?.nodeIdAttrName] = tree.id
+
     }
     useEffect(() => {
       GlobalRegistry.registerDesignerBehaviors(props.components)
     }, [])
+
+
+
+
+
+
+
+
+
     return (
-      <div
-        style={{ ...props.style, ...tree?.props?.style }}
-        className={cls(prefix, props.className)}
+      <chakra.div
         {...dataId}
       >
         <DesignerComponentsContext.Provider value={props.components}>
           <TreeNodeWidget node={tree} />
         </DesignerComponentsContext.Provider>
-      </div>
+      </chakra.div>
     )
   })
 

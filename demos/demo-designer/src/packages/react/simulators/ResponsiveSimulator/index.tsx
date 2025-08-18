@@ -13,7 +13,7 @@ import { IconWidget } from '../../widgets';
 import { ResizeHandle, ResizeHandleType } from './handle';
 
 import cls from 'classnames';
-// import './styles.less';
+;
 
 const useResizeEffect = (
   container: React.MutableRefObject<HTMLDivElement>,
@@ -158,7 +158,7 @@ export const ResponsiveSimulator: React.FC<IResponsiveSimulatorProps> =
             left: 0,
             height: '100%',
             width: '100%',
-            overflow: 'overlay',
+            overflow: auto,
           }}
         >
           <div

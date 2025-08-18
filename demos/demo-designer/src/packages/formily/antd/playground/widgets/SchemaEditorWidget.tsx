@@ -15,6 +15,9 @@ export interface ISchemaEditorWidgetProps {
 export const SchemaEditorWidget: React.FC<ISchemaEditorWidgetProps | any> | any = (
   props: any
 ) => {
+
+
+
   return (
     <MonacoInput
       {...props}

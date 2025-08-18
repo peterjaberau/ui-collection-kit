@@ -13,7 +13,7 @@ import { MdAbc as IconDisplayInline } from 'react-icons/md';
 import { CgDisplayFlex as IconDisplayFlex } from 'react-icons/cg';
 import { RiInputMethodLine as IconDisplayInlineBlock } from 'react-icons/ri';
 
-// import './styles.less'
+
 
 export interface IDisplayStyleSetterProps {
   className?: string;

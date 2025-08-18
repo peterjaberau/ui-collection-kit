@@ -4,11 +4,29 @@ const nextConfig = {
   /* config options here */
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   experimental: {
-    optimizePackageImports: ["@chakra-ui/react", "@ark-ui/react"],
-    externalDir: true,
     inlineCss: true,
     useCache: true,
     clientSegmentCache: true,
+    optimizePackageImports: ["@chakra-ui/react", "@ark-ui/react"],
+    externalDir: true,
+  },
+
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              icon: true,
+            },
+          },
+        ],
+        as: '*.js',
+      },
+
+
+    },
   },
 }
 

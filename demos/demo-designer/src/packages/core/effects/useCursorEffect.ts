@@ -18,6 +18,10 @@ export const useCursorEffect = (engine: Engine) => {
     if (engine.cursor.status === CursorStatus.Dragging) return
     engine.cursor.setPosition(event.data)
   })
+
+
+
+
   engine.subscribeTo(DragStartEvent, (event) => {
     engine.cursor.setStatus(CursorStatus.DragStart)
     engine.cursor.setDragStartPosition(event.data)

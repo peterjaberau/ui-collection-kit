@@ -1,40 +1,62 @@
-import React from 'react';
-import { usePrefix, usePosition } from '../hooks';
-import { Layout } from '../containers';
-import cls from 'classnames';
+import React from "react"
+import { usePrefix, usePosition } from "../hooks"
+import { Layout } from "../containers"
+import { HStack, VStack, Box } from "@chakra-ui/react"
+import cls from "classnames"
 export interface IStudioPanelProps {
-  style?: React.CSSProperties;
-  className?: string;
-  logo?: React.ReactNode;
-  actions?: React.ReactNode;
-  prefixCls?: string;
-  theme?: string;
-  position?: React.ComponentProps<typeof Layout>['position'];
+  style?: React.CSSProperties
+  className?: string
+  logo?: React.ReactNode
+  actions?: React.ReactNode
+  prefixCls?: string
+  theme?: string
+  position?: React.ComponentProps<typeof Layout>["position"]
 }
 
-const StudioPanelInternal: React.FC<IStudioPanelProps> = ({
-  logo,
-  actions,
-  ...props
-}: any) => {
-  const prefix = usePrefix('main-panel');
-  const position = usePosition();
-  const classNameBase = cls('root', props.className);
+const StudioPanelInternal: React.FC<IStudioPanelProps> = ({ logo, actions, ...props }: any) => {
+  const prefix = usePrefix("main-panel")
+  const position = usePosition()
+  const classNameBase = cls("root", props.className)
+
+
   if (logo || actions) {
     return (
-      <div {...props} className={cls(`${prefix}-container`, classNameBase)}>
-        <div className={prefix + '-header'}>
-          <div className={prefix + '-header-logo'}>{logo}</div>
-          <div className={prefix + '-header-actions'}>{actions}</div>
-        </div>
-        <div className={prefix}>{props.children}</div>
-      </div>
+      <Box
+        data-id="studio-panel"
+        css={{
+          h: "100%",
+          w: "100%",
+          minH: "100px",
+          position: "relative",
+          outline: "none",
+          boxSizing: "border-box",
+          userSelect: "none",
+          overflow: "hidden",
+        }}
+      >
+        <HStack data-id="studio-panel-header" css={{ w: "full", justify: 'center', flex: 1 }}>
+          {actions}
+        </HStack>
+        <Box data-id="studio-panel-body">{props.children}</Box>
+      </Box>
     )
   }
   return (
-    <div {...props} className={cls(prefix, classNameBase)}>
+    <Box
+      data-id="studio-panel"
+      css={{
+        h: "100%",
+        w: "100%",
+        minH: "100px",
+        position: "relative",
+        outline: "none",
+        boxSizing: "border-box",
+        userSelect: "none",
+        overflow: "hidden",
+      }}
+    >
       {props.children}
-    </div>
+    </Box>
   )
 }
 
@@ -43,7 +65,6 @@ export const StudioPanel: React.FC<IStudioPanelProps> | any = (props: any) => {
     <Layout
       theme={props.theme}
       prefixCls={props.prefixCls}
-      // position={props.position}
     >
       <StudioPanelInternal {...props} />
     </Layout>

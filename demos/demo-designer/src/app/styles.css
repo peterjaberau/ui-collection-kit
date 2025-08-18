@@ -27182,7 +27182,7 @@ div.ant-typography-edit-content.ant-typography-rtl {
 .dn-composite-panel-tabs-body {
     flex-grow: 2;
     flex-shrink: 2;
-    overflow: overlay;
+    overflow: auto;
     overflow-x: hidden;
     height: 100%;
 }
@@ -27284,7 +27284,7 @@ div.ant-typography-edit-content.ant-typography-rtl {
 .dn-settings-panel-body {
     flex-grow: 2;
     flex-shrink: 2;
-    overflow: overlay;
+    overflow: auto;
     height: 100%;
 }
 .dn-settings-panel-opener {
@@ -27323,7 +27323,7 @@ div.ant-typography-edit-content.ant-typography-rtl {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    overflow: overlay;
+    overflow: auto;
 }
 
 .dn-icon {
@@ -27801,7 +27801,7 @@ div.ant-typography-edit-content.ant-typography-rtl {
     height: 100%;
     width: 100%;
     padding-bottom: 20px;
-    overflow: overlay;
+    overflow: auto;
 }
 .dn-outline-tree-aux {
     position: absolute;
@@ -28057,7 +28057,7 @@ div.ant-typography-edit-content.ant-typography-rtl {
     left: 0;
     height: 100%;
     position: absolute;
-    overflow: overlay;
+    overflow: auto;
 }
 .dn-mobile-simulator-body {
     display: flex;
@@ -29328,7 +29328,7 @@ div.ant-typography-edit-content.ant-typography-rtl {
 }
 .dn-drawer-setter-body {
     padding: 10px 20px;
-    overflow: overlay;
+    overflow: auto;
     overflow-x: hidden;
     flex-grow: 2;
 }
@@ -29654,7 +29654,7 @@ div.ant-typography-edit-content.ant-typography-rtl {
 }
 .dn-settings-form-wrapper .dn-settings-form-content {
     flex-grow: 1;
-    overflow: overlay;
+    overflow: auto;
 }
 .dn-settings-form-wrapper .ant-formily-item {
     border-bottom: 1px solid #f0f0f0;
