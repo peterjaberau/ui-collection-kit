@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `;
 
 export default function PageContent(props: IProps) {
-  const { name, compInfo, showBasicInfo = true, showExamples = true } = props;
+  const { name, compInfo, showBasicInfo = true, showExamples = true }: any = props;
   const Example = examples[name];
   return (
     <Wrapper>

@@ -63,7 +63,7 @@ const ContainerAudio = (props: RecordConstructorToView<typeof childrenMap>) => {
   );
 };
 
-const childrenMap = {
+const childrenMap: any = {
   src: withDefault(StringStateControl, trans("audio.defaultSrcUrl")),
   onEvent: eventHandlerControl(EventOptions),
   style: styleControl(AudioStyle , 'style'),

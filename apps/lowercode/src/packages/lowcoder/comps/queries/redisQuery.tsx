@@ -7,7 +7,7 @@ import {
   QueryConfigWrapper,
   QueryTutorialButton,
   ValueFromOption,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { QueryTutorials } from "#lowcoder/util/tutorialUtils";
 import {
   ParamsNumberControl,

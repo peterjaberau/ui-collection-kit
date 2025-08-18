@@ -91,7 +91,7 @@ const EventOptions = [
 ] as const;
 
 let MentionTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     ...textInputChildren,
     viewRef: RefControl<TextAreaRef>,
     allowClear: BoolControl,
@@ -104,7 +104,7 @@ let MentionTmpComp = (function () {
   };
 
   return new UICompBuilder(childrenMap, (props) => {
-    const { mentionList } = props;
+    const { mentionList }: any = props;
     const [validateState, setvalidateState] = useState({});
     const [activationFlag, setActivationFlag] = useState(false);
     const [prefix, setPrefix] = useState<PrefixType>("@");

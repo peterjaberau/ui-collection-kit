@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   padding: 0 8px;
 `
 
-const childrenMap = {
+const childrenMap: any = {
   value: booleanExposingStateControl("value"),
   switchState: BoolCodeControl,
   onEvent: eventHandlerControl(EventOptions),

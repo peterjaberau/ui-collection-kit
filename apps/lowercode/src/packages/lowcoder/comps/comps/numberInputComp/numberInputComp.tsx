@@ -20,7 +20,7 @@ import {
   NameConfigRequired,
   withExposingConfigs,
 } from "#lowcoder/comps/generators/withExposing";
-import { Section, sectionNames, ValueFromOption } from "lowcoder-design";
+import { Section, sectionNames, ValueFromOption } from "#lowcoder-design/index";
 import { ReactNode, useEffect, useRef, useState, useCallback } from "react";
 import styled, { css } from "styled-components";
 import { RecordConstructorToView } from "#lowcoder-core/index";
@@ -276,7 +276,7 @@ const UndefinedNumberControl = codeControl<number | undefined>((value: any) => {
   return !value || isNaN(result) ? undefined : result;
 });
 
-const childrenMap = {
+const childrenMap: any = {
   defaultValue: stringExposingStateControl("defaultValue"), // It is more convenient for string to handle various states, save raw input here
   value: numberExposingStateControl("value"), // It is more convenient for string to handle various states, save raw input here
   placeholder: StringControl,

@@ -31,7 +31,7 @@ import {
   isValidGradient,
   toHex,
   wrapperToControlItem,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { CSSProperties, lazy, ReactNode, Suspense } from "react";
 import {
   showTransform,

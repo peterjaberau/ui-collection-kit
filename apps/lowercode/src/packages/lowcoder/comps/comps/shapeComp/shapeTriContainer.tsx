@@ -77,7 +77,7 @@ export type TriContainerProps = TriContainerViewProps & {
 };
 
 export function ShapeTriContainer(props: TriContainerProps) {
-  const { container, icon } = props;
+  const { container, icon }: any = props;
   // const { showHeader, showFooter } = container;
   // When the header and footer are not displayed, the body must be displayed
   const showBody = true;

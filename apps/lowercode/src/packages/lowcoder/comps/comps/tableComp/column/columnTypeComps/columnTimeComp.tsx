@@ -52,7 +52,7 @@ export function formatTime(time: string, format: string) {
   return parsedTime.isValid() ? parsedTime.format(format) : "";
 }
 
-const childrenMap = {
+const childrenMap: any = {
   text: StringControl,
   prefixIcon: IconControl,
   suffixIcon: IconControl,
@@ -70,7 +70,7 @@ type TimeEditProps = {
 };
 
 export const TimeEdit = React.memo((props: TimeEditProps) => {
-  const pickerRef = useRef<any>();
+  const pickerRef = useRef<any>(null);
   const [panelOpen, setPanelOpen] = useState(true);
   const mountedRef = useRef(true);
 

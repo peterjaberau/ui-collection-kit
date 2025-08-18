@@ -53,7 +53,7 @@ interface LazyCompViewProps {
 }
 
 const LazyCompView = React.memo((props: React.PropsWithChildren<LazyCompViewProps>) => {
-  const { loadComp, loadingElement, errorElement } = props;
+  const { loadComp, loadingElement, errorElement }: any = props;
   const [error, setError] = useState<any>("");
   const currentTheme = useContext(ThemeContext)?.theme;
   const showComponentLoadingIndicators = currentTheme?.showComponentLoadingIndicators;

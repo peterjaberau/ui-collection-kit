@@ -40,7 +40,7 @@ interface IMenuItemListProps {
 }
 
 function MenuItemList(props: IMenuItemListProps) {
-  const { node, onAddItem, onDeleteItem, onMoveItem, onAddSubItem, renderItemContent } = props;
+  const { node, onAddItem, onDeleteItem, onMoveItem, onAddSubItem, renderItemContent }: any = props;
   const contextValue = useContext(DraggableTreeContext);
   const [active, setActive] = useState<IDragData | null>(null);
   const isDraggingWithSub = active && active.node.items.length > 0;
@@ -150,7 +150,7 @@ interface DraggableTreeProps<T = any>
 }
 
 export function DraggableTree<T = any>(props: DraggableTreeProps<T>) {
-  const { node, renderItemContent, ...otherProps } = props;
+  const { node, renderItemContent, ...otherProps }: any = props;
   const [foldedStatus, setFoldedState] = useState<Record<string, boolean>>({});
 
   const getItemByPath = (path: number[] | any, scope?: DraggableTreeNode[] | any): DraggableTreeNode => {

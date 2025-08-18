@@ -26,7 +26,7 @@ interface EmptyContentProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const EmptyContent = (props: EmptyContentProps) => {
-  const { text, ...divProps } = props;
+  const { text, ...divProps }: any = props;
   return (
     <NoCompDiv {...divProps}>
       <NoCompP>{text}</NoCompP>

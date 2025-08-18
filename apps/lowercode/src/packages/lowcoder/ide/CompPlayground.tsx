@@ -118,7 +118,7 @@ interface IProps {
 }
 
 export function CompPlayground(props: IProps) {
-  const { compFactory, layoutInfo, initialValue } = props;
+  const { compFactory, layoutInfo, initialValue }: any = props;
   const [methodParams, setMethodParams] = useState<string[]>([]);
 
   const handleChangeMethodParams = (e: ChangeEvent<HTMLTextAreaElement>) => {

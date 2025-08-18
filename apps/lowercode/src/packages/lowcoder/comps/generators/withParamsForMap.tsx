@@ -43,7 +43,7 @@ export function withParamsForMapWithDefault<T extends MultiCompConstructor>(
   const CHILD_KEY = "__comp__";
 
   const MapCtor = map(WithParamsCompCtor, false);
-  const childrenMap = {
+  const childrenMap: any = {
     [CHILD_KEY]: WithParamsCompCtor,
     __map__: MapCtor,
   };

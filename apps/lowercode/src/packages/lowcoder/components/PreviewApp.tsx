@@ -27,7 +27,7 @@ export default function PreviewApp(props: {
   theme: ThemeDetail;
   dsl: JSONObject;
 }) {
-  const { theme } = props;
+  const { theme }: any = props;
   const [view, setView] = useState<React.ReactNode>(null);
   let ins: Comp | null = null;
 

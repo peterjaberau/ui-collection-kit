@@ -1,5 +1,5 @@
 import React from "react";
-import { DatasourceForm, FormInputItem, FormKeyValueItem, FormSection } from "lowcoder-design";
+import { DatasourceForm, FormInputItem, FormKeyValueItem, FormSection } from "#lowcoder-design/index";
 import { SnowflakeConfig } from "#lowcoder/api/datasourceApi";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import {
@@ -17,7 +17,7 @@ import { trans } from "#lowcoder/i18n";
 const OUTSIDE_EXT_FIELDS = ["schema", "warehouse", "role"];
 
 export const SnowflakeDatasourceForm = (props: DatasourceFormProps) => {
-  const { form, datasource } = props;
+  const { form, datasource }: any = props;
   const datasourceConfig = datasource?.datasourceConfig as SnowflakeConfig;
 
   return (

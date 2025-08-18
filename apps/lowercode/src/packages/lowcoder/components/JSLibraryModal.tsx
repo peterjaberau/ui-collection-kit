@@ -112,7 +112,7 @@ const JSLibraryCard = (
     setError: (error: URLErrorType) => void;
   }
 ) => {
-  const { meta } = props;
+  const { meta }: any = props;
 
   const [loading, setLoading] = useState(false);
 

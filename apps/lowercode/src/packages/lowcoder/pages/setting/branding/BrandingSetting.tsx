@@ -1,6 +1,6 @@
 import { HelpText } from "#lowcoder/components/HelpText";
 import { Upload, Switch, Card, Input, message, Divider, Row, Col, Image } from "antd";
-import { TacoButton, CustomSelect, messageInstance, Dropdown, ResetIcon, CustomModal } from "lowcoder-design";
+import { TacoButton, CustomSelect, messageInstance, Dropdown, ResetIcon, CustomModal } from "#lowcoder-design/index";
 import React, { useEffect, useMemo, useState, useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";

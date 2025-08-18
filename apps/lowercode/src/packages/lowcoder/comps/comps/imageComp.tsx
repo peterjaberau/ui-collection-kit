@@ -222,7 +222,7 @@ const ContainerImg = (props: RecordConstructorToView<typeof childrenMap>) => {
   );
 };
 
-const childrenMap = {
+const childrenMap: any = {
   sourceMode: dropdownControl(ModeOptions, "standard"),
   src: withDefault(StringStateControl, "https://temp.im/350x400"),
   iconScoutAsset: IconscoutControl(AssetType.ILLUSTRATION),

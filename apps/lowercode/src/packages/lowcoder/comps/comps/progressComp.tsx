@@ -1,5 +1,5 @@
 import { default as Progress } from "antd/es/progress";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { numberExposingStateControl } from "../controls/codeStateControl";
 import { BoolControl } from "../controls/boolControl";
 import { UICompBuilder } from "../generators";
@@ -50,7 +50,7 @@ export const ProgressStyled = styled(Progress)<{ $style: ProgressStyleType,$anim
 `;
 
 const ProgressBasicComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     value: numberExposingStateControl('value', 60),
     showInfo: BoolControl,
     style: styleControl(ProgressStyle, 'style'),

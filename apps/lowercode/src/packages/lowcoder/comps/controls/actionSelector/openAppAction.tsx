@@ -1,6 +1,6 @@
 import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import { withDefault } from "#lowcoder/comps/generators/simpleGenerators";
-import { BranchDiv } from "lowcoder-design";
+import { BranchDiv } from "#lowcoder-design/index";
 import { KeyValue } from "#lowcoder/types/common";
 import ApplicationSelectControl from "../appSelectControl";
 import { BoolControl } from "../boolControl";
@@ -8,7 +8,7 @@ import { keyValueListControl } from "../keyValueListControl";
 import { keyValueListToSearchStr, openApp } from "../../../util/appUtils";
 import { trans } from "#lowcoder/i18n";
 
-const childrenMap = {
+const childrenMap: any = {
   applicationId: ApplicationSelectControl,
   query: withDefault(keyValueListControl(false, [], "string"), [{ key: "", value: "" }]),
   hash: withDefault(keyValueListControl(false, [], "string"), [{ key: "", value: "" }]),

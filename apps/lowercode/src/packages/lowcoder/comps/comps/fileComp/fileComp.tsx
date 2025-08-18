@@ -445,7 +445,7 @@ const Upload = (
     forceCapture: boolean
   },
 ) => {
-  const { dispatch, files, style } = props
+  const { dispatch, files, style }: any = props
   const [fileList, setFileList] = useState<UploadFile[]>(files.map((f) => ({ ...f, status: "done" })) as UploadFile[])
   const [showModal, setShowModal] = useState(false)
   const isMobile = checkIsMobile(window.innerWidth)
@@ -596,7 +596,7 @@ const UploadTypeOptions = [
   { label: trans("file.directory"), value: "directory" },
 ] as const
 
-const childrenMap = {
+const childrenMap: any = {
   text: withDefault(StringControl, trans("file.upload")),
   uploadType: dropdownControl(UploadTypeOptions, "single"),
   ...commonChildren,

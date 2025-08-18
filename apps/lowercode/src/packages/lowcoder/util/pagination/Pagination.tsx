@@ -39,7 +39,7 @@ const PaginationComp = (props: PaginationCompProps) => {
         marginTop,
         marginBottom,
         simple,
-    } = props;
+    }: any = props;
 
     const handlePageChange = (page: number, pageSize: number | undefined) => {
         if (setCurrentPage) {

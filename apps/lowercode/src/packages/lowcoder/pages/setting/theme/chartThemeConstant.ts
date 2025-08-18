@@ -1,4 +1,4 @@
-import { chartColorPalette } from "lowcoder-design";
+import { chartColorPalette } from "#lowcoder-design/index";
 
 export const ChartTheme = {
   color: chartColorPalette,

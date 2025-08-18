@@ -1,6 +1,6 @@
 import { GroupRoleInfo, GroupUser, OrgGroup, TacoRoles, RoleIdType } from "#lowcoder/constants/orgConstants";
 import { User } from "#lowcoder/constants/userConstants";
-import { AddIcon, ArrowIcon, CustomSelect, Dropdown, PackUpIcon, Search, SuperUserIcon } from "lowcoder-design";
+import { AddIcon, ArrowIcon, CustomSelect, Dropdown, PackUpIcon, Search, SuperUserIcon } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import ProfileImage from "#lowcoder/pages/common/profileImage";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
@@ -82,7 +82,7 @@ const GroupUsersPermission: React.FC<GroupPermissionProp> = (props) => {
     modify,
     loading,
     setElements
-  } = props;
+  }: any = props;
   const [searchValue, setSearchValue] = useState("")
   const [roleFilter, setRoleFilter] = useState<RoleIdType | "">("")
   const dispatch = useDispatch();

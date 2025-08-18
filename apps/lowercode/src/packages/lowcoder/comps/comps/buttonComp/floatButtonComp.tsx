@@ -79,7 +79,7 @@ const buttonGroupOption = new MultiCompBuilder(
     ))
     .build();
 
-const childrenMap = {
+const childrenMap: any = {
     value: stringExposingStateControl("value"),
     includeMargin: BoolControl.DEFAULT_TRUE,
     image: StringControl,

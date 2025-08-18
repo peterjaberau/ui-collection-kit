@@ -137,7 +137,7 @@ export function formatDate(date: string, format: string) {
   return mom.isValid() ? mom.format(format) : "";
 }
 
-const childrenMap = {
+const childrenMap: any = {
   text: StringControl,
   format: withDefault(StringControl, DATE_FORMAT),
   inputFormat: withDefault(StringControl, DATE_FORMAT),

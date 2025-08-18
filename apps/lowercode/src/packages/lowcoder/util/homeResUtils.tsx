@@ -5,7 +5,7 @@ import {
   MobileAppIcon,
   ModuleDocIcon,
   NavDocIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { HomeResTypeEnum } from "../types/homeRes";
 import {
   APPLICATION_VIEW_URL,

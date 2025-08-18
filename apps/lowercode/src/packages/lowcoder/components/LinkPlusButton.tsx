@@ -46,7 +46,7 @@ interface IProps {
 }
 
 export default function LinkPlusButton(props: PropsWithChildren<IProps>) {
-  const { icon, children, onClick } = props;
+  const { icon, children, onClick }: any = props;
   return (
     <Btn onClick={onClick}>
       {icon && <Icon>{icon}</Icon>}

@@ -5,7 +5,7 @@ import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import { TransferStyle, TransferStyleType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
 import { NewChildren, UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import { trans } from "#lowcoder/i18n";
 import { NumberControl, StringControl } from "#lowcoder/comps/controls/codeControl";
@@ -56,7 +56,7 @@ const defaultItems = [
 
 const EventOptions = [changeEvent, searchEvent, selectedChangeEvent] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   style: styleControl(TransferStyle , 'style'),
   onEvent: eventHandlerControl(EventOptions),
   sourceTitle: withDefault(StringControl, trans('transfer.sourceTitle')),

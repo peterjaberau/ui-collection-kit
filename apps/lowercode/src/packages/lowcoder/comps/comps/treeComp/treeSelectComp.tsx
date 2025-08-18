@@ -55,7 +55,7 @@ const checkedStrategyOptions = [
   { label: trans("tree.showChild"), value: "child" },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   ...treeCommonChildren,
   selectType: dropdownControl(selectTypeOptions, "single"),
   checkedStrategy: dropdownControl(checkedStrategyOptions, "parent"),
@@ -86,7 +86,7 @@ function getCheckedStrategy(v: ValueFromOption<typeof checkedStrategyOptions>) {
 const TreeCompView = (
   props: RecordConstructorToView<typeof childrenMap> & { dispatch: DispatchType }
 ) => {
-  const { treeData, selectType, value, expanded, style,labelStyle, inputValue } = props;
+  const { treeData, selectType, value, expanded, style,labelStyle, inputValue }: any = props;
   const isSingle = selectType === "single";
   const [
     validateState,

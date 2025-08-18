@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
-import { NofileIcon } from "lowcoder-design";
+import { NofileIcon } from "#lowcoder-design/index";
 import { EmptyTab } from "./BottomTabs";
 import { CompNameContext, EditorContext } from "#lowcoder/comps/editorState";
 import { BottomSidebar } from "./BottomSidebar";
@@ -182,7 +182,7 @@ interface BottomLeftProps {
 }
 
 function BottomLeft(props: BottomLeftProps) {
-  const { items, onOpenCreatePanel, onCopy, onSelect, onDelete } = props;
+  const { items, onOpenCreatePanel, onCopy, onSelect, onDelete }: any = props;
   const editorState = useContext(EditorContext);
   const selectedDataSourceId = editorState.selectedQueryComp()?.children.datasourceId.getView();
   const selectedQueryType = editorState.selectedQueryComp()?.children.compType.getView();

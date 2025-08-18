@@ -4,7 +4,7 @@ import { withExposingConfigs } from "../generators/withExposing";
 import { EvalParamType, ParamsConfig } from "../controls/actionSelector/executeCompTypes";
 import { JSONObject } from "../../util/jsonTypes";
 import { trans } from "#lowcoder/i18n";
-import { notificationInstance } from "lowcoder-design";
+import { notificationInstance } from "#lowcoder-design/index";
 import type { ArgsProps, NotificationPlacement } from "antd/es/notification/interface";
 
 const params: ParamsConfig = [

@@ -1,6 +1,6 @@
 import { EditorContext } from "#lowcoder/comps/editorState";
 import { MultiCompBuilder, valueComp } from "#lowcoder/comps/generators";
-import { ControlPropertyViewWrapper } from "lowcoder-design";
+import { ControlPropertyViewWrapper } from "#lowcoder-design/index";
 import { Dropdown } from "#lowcoder-design/components/Dropdown";
 import { useContext } from "react";
 import { ControlParams } from "./controlParams";
@@ -11,7 +11,7 @@ interface IProps {
 }
 
 function QuerySelect(props: IProps) {
-  const { onChange, value } = props;
+  const { onChange, value }: any = props;
   const editorState = useContext(EditorContext);
   return (
     <Dropdown
@@ -27,7 +27,7 @@ function QuerySelect(props: IProps) {
   );
 }
 
-const childrenMap = {
+const childrenMap: any = {
   value: valueComp<string>(""),
 };
 

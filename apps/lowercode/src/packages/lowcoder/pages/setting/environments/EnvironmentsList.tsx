@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Alert, Empty, Spin, Card, Row, Col } from "antd";
 import { SyncOutlined, CloudServerOutlined } from "@ant-design/icons";
-import { AddIcon, Search, TacoButton } from "lowcoder-design";
+import { AddIcon, Search, TacoButton } from "#lowcoder-design/index";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { selectEnvironments, selectEnvironmentsLoading, selectEnvironmentsError } from "#lowcoder/redux/selectors/enterpriseSelectors";
@@ -94,7 +94,7 @@ const EnvironmentsList: React.FC = () => {
     const sortedStats = Object.entries(stats).sort(([a], [b]) => {
       const aIndex = typeOrder.indexOf(a);
       const bIndex = typeOrder.indexOf(b);
-      
+
       if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
       if (aIndex !== -1) return -1;
       if (bIndex !== -1) return 1;
@@ -122,10 +122,10 @@ const EnvironmentsList: React.FC = () => {
     // Sort by license status: licensed environments first
     const aLicensed = a.isLicensed !== false; // licensed or unknown (default to licensed)
     const bLicensed = b.isLicensed !== false; // licensed or unknown (default to licensed)
-    
+
     if (aLicensed && !bLicensed) return -1; // a licensed, b unlicensed - a comes first
     if (!aLicensed && bLicensed) return 1;  // a unlicensed, b licensed - b comes first
-    
+
     // If both have same license status, sort by environment name
     return (a.environmentName || "").localeCompare(b.environmentName || "");
   });
@@ -165,15 +165,15 @@ const EnvironmentsList: React.FC = () => {
           onChange={(e) => setSearchText(e.target.value)}
           style={{ width: "192px", height: "32px", margin: "0 12px 0 0" }}
         />
-        <RefreshBtn 
-          buttonType="normal" 
+        <RefreshBtn
+          buttonType="normal"
           icon={<SyncOutlined spin={isLoading} />}
           onClick={handleRefresh}
         >
           {trans("environments.refresh")}
         </RefreshBtn>
-        <AddBtn 
-          buttonType="primary" 
+        <AddBtn
+          buttonType="primary"
           icon={<AddIcon />}
           onClick={() => setIsCreateModalVisible(true)}
         >
@@ -209,14 +209,14 @@ const EnvironmentsList: React.FC = () => {
         )}
 
         {!isLoading && !error && filteredEnvironments.length === 0 && searchText && (
-          <Empty 
+          <Empty
             description={trans("environments.noEnvironmentsFoundMatching", { searchText })}
             style={{ margin: "60px 0" }}
           />
         )}
 
         {!isLoading && !error && environments.length === 0 && !searchText && (
-          <Empty 
+          <Empty
             description={trans("environments.noEnvironmentsFound")}
             style={{ margin: "60px 0" }}
           />

@@ -10,7 +10,7 @@ import styled, { css } from "styled-components";
 import { UICompBuilder, withDefault } from "../../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
 import { selectDivRefMethods, } from "./selectInputConstants";
-import { ScrollBar, Section, sectionNames } from "lowcoder-design";
+import { ScrollBar, Section, sectionNames } from "#lowcoder-design/index";
 import { hiddenPropertyView, disabledPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import { trans } from "#lowcoder/i18n";
 import { hasIcon } from "#lowcoder/comps/utils";

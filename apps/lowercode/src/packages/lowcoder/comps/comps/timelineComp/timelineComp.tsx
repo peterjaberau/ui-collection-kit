@@ -80,7 +80,7 @@ const modeOptions = [
   { label: trans("timeLine.alternate"), value: "alternate" },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   value: jsonControl(convertTimeLineData, timelineDate),
   mode: dropdownControl(modeOptions, "alternate"),
   reverse: BoolControl,
@@ -111,7 +111,7 @@ const TimelineComp = (
     dispatch: (action: CompAction) => void;
   }
 ) => {
-  const { value, dispatch, style, mode, reverse, onEvent } = props;
+  const { value, dispatch, style, mode, reverse, onEvent }: any = props;
   const [icons, setIcons] = useState<React.ReactNode[]>([]);
   const handleClickEvent = useCompClickEventHandler({onEvent})
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { DatasourceForm, FormCheckboxItem, FormInputItem, FormSection } from "lowcoder-design";
+import { DatasourceForm, FormCheckboxItem, FormInputItem, FormSection } from "#lowcoder-design/index";
 import { OracleConfig } from "../../../api/datasourceApi";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import {
@@ -13,7 +13,7 @@ import {
 import { trans } from "#lowcoder/i18n";
 
 export const OracleDatasourceForm = (props: DatasourceFormProps) => {
-  const { form, datasource } = props;
+  const { form, datasource }: any = props;
   const datasourceConfig = datasource?.datasourceConfig as OracleConfig;
 
   return (

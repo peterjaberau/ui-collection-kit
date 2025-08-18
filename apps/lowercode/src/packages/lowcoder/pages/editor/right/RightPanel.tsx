@@ -1,4 +1,4 @@
-import { Tabs } from "lowcoder-design";
+import { Tabs } from "#lowcoder-design/index";
 import PropertyView from "./PropertyView";
 import InsertView from "./InsertView";
 import type UIComp from "#lowcoder/comps/comps/uiComp";
@@ -18,7 +18,7 @@ type RightPanelProps = {
 };
 
 function RightPanel(props: RightPanelProps) {
-  const { onTabChange, showPropertyPane, uiComp } = props;
+  const { onTabChange, showPropertyPane, uiComp }: any = props;
   const uiCompType = uiComp && (uiComp.children.compType.getView() as UiLayoutType);
   const aggregationApp = uiCompType && isAggregationApp(uiCompType);
   const [activeKey, setActiveKey] = useState("insert");

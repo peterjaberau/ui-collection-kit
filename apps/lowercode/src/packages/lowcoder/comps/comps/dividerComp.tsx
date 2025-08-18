@@ -4,7 +4,7 @@ import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import { alignControl } from "#lowcoder/comps/controls/alignControl";
 import { UICompBuilder, withDefault } from "#lowcoder/comps/generators";
 import { NameConfig, NameConfigHidden } from "#lowcoder/comps/generators/withExposing";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import _ from "lodash";
 import styled from "styled-components";
 import { styleControl } from "#lowcoder/comps/controls/styleControl";
@@ -83,7 +83,7 @@ const StyledDivider = styled(Divider)<IProps>`
   }
 `;
 
-const childrenMap = {
+const childrenMap: any = {
   title: StringControl,
   align: alignControl(),
   type: BoolControl,

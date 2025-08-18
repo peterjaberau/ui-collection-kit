@@ -19,7 +19,7 @@ type InviteLandingProp = RouteComponentProps<{ invitationId: string }, StaticCon
 
 // @ts-ignore
 function InviteLanding(props: InviteLandingProp) {
-  const { invitationId, fetchConfig } = props;
+  const { invitationId, fetchConfig }: any = props;
   const fetchUserFinished = useSelector(isFetchUserFinished);
   useEffect(() => {
     if (!fetchUserFinished) {

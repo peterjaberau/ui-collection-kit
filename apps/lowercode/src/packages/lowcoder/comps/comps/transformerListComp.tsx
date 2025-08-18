@@ -6,13 +6,13 @@ import { bottomResListComp } from "#lowcoder/comps/generators/bottomResList";
 import { withExposingRaw } from "#lowcoder/comps/generators/withExposing";
 import { trans } from "#lowcoder/i18n";
 import { fromRecord } from "#lowcoder-core/index";
-import { DocLink } from "lowcoder-design";
+import { DocLink } from "#lowcoder-design/index";
 import { BottomTabs } from "#lowcoder/pages/editor/bottom/BottomTabs";
 import { ReactNode } from "react";
 import { BottomResComp, BottomResCompResult, BottomResTypeEnum } from "#lowcoder/types/bottomRes";
 import { QueryTutorials } from "#lowcoder/util/tutorialUtils";
 import { SimpleNameComp } from "./simpleNameComp";
-import { markdownCompCss, TacoMarkDown } from "lowcoder-design";
+import { markdownCompCss, TacoMarkDown } from "#lowcoder-design/index";
 import SupaDemoDisplay from "#lowcoder/comps/utils/supademoDisplay";
 
 const TransformerItemCompBase = new MultiCompBuilder(

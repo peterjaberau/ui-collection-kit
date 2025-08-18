@@ -62,7 +62,7 @@ const PasswordStyle = styled(InputPassword)<{
 `;
 
 let PasswordTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     ...textInputChildren,
     viewRef: RefControl<InputRef>,
     label: withDefault(LabelControl, { text: trans("password.label") }),

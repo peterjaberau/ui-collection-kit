@@ -1,7 +1,7 @@
 import { default as Typography } from "antd/es/typography";
 import OrgApi from "#lowcoder/api/orgApi";
 import { buildGroupId } from "#lowcoder/constants/routesURL";
-import { AddIcon, CustomModal, EditPopover } from "lowcoder-design";
+import { AddIcon, CustomModal, EditPopover } from "#lowcoder-design/index";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGroupsAction, updateGroupAction } from "#lowcoder/redux/reduxActions/orgActions";
@@ -18,7 +18,7 @@ import {
 } from "./styledComponents";
 import {
   MembersIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import styled from "styled-components";
 import { trans } from "#lowcoder/i18n";
 import { Table } from "#lowcoder/components/Table";
@@ -66,7 +66,7 @@ interface ElementsState {
 
 export default function PermissionSetting(props: PermissionSettingProps) {
 
-  const {currentPage, setCurrentPage, pageSize, setPageSize} = props;
+  const {currentPage, setCurrentPage, pageSize, setPageSize}: any = props;
   let dataSource: DataItemInfo[] = [];
   const user = useSelector(getUser);
   const orgId = user.currentOrgId;

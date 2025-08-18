@@ -6,7 +6,7 @@ import {
   ScrollBar,
   TacoButton,
   UnfoldWhiteIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import React, { ReactNode, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { EditorContext } from "../../../comps/editorState";
@@ -216,7 +216,7 @@ export function BottomTabs<T extends TabsConfigType>(props: {
     isStreamQuery = false,
     isSocketConnected = false,
     disconnectSocket,
-  } = props;
+  }: any = props;
   const [key, setKey] = useState<TabsConfigKeyType<typeof tabsConfig>>("general");
   const [error, setError] = useState<string | undefined>(undefined);
   const [editing, setEditing] = useState(false);

@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react";
-import { ArrowIcon } from "lowcoder-design";
+import { ArrowIcon } from "#lowcoder-design/index";
 import styled from "styled-components";
 import { trans } from "#lowcoder/i18n";
 import { useParams } from "react-router-dom";
@@ -10,7 +10,7 @@ import { getTicket, updateTicketDescription, addComment, uploadAttachment } from
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../setting/styled";
 import { HeaderBack } from "../setting/permission/styledComponents";
 import { SUPPORT_URL } from "#lowcoder/constants/routesURL";
-import { TacoMarkDown } from "lowcoder-design";
+import { TacoMarkDown } from "#lowcoder-design/index";
 import remarkGfm from 'remark-gfm';
 import { contrastColor } from "#lowcoder/comps/controls/styleControlConstants";
 import 'react-quill-new/dist/quill.snow.css';

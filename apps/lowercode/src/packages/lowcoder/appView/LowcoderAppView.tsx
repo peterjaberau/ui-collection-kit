@@ -18,7 +18,7 @@ function LowcoderAppViewBase<I = any, O = any>(
   props: LowcoderAppViewProps<I, O>,
   ref: React.Ref<AppViewInstance | undefined>
 ) {
-  const { appId, className, onModuleEventTriggered, onModuleOutputChange, ...options } = props;
+  const { appId, className, onModuleEventTriggered, onModuleOutputChange, ...options }: any = props;
 
   const [instance, setInstance] = useState<AppViewInstance | undefined>();
   const nodeRef = useRef<HTMLDivElement>(null);

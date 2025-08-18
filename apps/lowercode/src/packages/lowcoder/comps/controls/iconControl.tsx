@@ -25,7 +25,7 @@ import {
   TacoButton,
   useIcon,
   wrapperToControlItem,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { memo, ReactNode, useCallback, useMemo, useState } from "react";
 import styled from "styled-components";
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
@@ -210,7 +210,7 @@ type ChangeModeAction = {
 };
 
 export const IconControlView = memo((props: { value: string }) => {
-  const { value } = props;
+  const { value }: any = props;
   const icon = useIcon(value);
 
   return useMemo(() => {

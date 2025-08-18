@@ -60,7 +60,7 @@ const InputStyle = styled(Input)<{
   }
 `;
 
-const childrenMap = {
+const childrenMap: any = {
   ...textInputChildren,
   viewRef: RefControl<InputRef>,
   showCount: BoolControl,

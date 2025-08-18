@@ -124,7 +124,7 @@ function submitForm(editorState: EditorState, formName: string) {
   }
 }
 
-const childrenMap = {
+const childrenMap: any = {
   text: withDefault(StringControl, trans("button.button")),
   type: dropdownControl(typeOptions, ""),
   onEvent: ButtonEventHandlerControl,

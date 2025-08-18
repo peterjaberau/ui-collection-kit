@@ -2,7 +2,7 @@ import { PopupCard } from "#lowcoder-design/components/popupCard";
 import { Input } from "#lowcoder-design/components/Input";
 import { EditorContext } from "#lowcoder/comps/editorState";
 import { valueComp } from "#lowcoder/comps/generators";
-import { ControlPropertyViewWrapper } from "lowcoder-design";
+import { ControlPropertyViewWrapper } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import { ReactNode, useContext, useRef, useState } from "react";
 import { ControlParams } from "./controlParams";
@@ -14,7 +14,7 @@ interface PropertyViewProps {
 }
 
 function PropertyView(props: PropertyViewProps) {
-  const { comp, onValidate } = props;
+  const { comp, onValidate }: any = props;
   const [error, setError] = useState("");
   const editorState = useContext(EditorContext);
   const prevName = comp.getView();

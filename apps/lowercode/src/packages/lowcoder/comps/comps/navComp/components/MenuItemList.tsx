@@ -39,7 +39,7 @@ interface IMenuItemListProps {
 const menuItemLabel = trans("navigation.itemsDesc");
 
 function MenuItemList(props: IMenuItemListProps) {
-  const { items, onAddItem, onDeleteItem, onMoveItem, onAddSubItem } = props;
+  const { items, onAddItem, onDeleteItem, onMoveItem, onAddSubItem }: any = props;
 
   const [active, setActive] = useState<IDragData | null>(null);
   const isDraggingWithSub = active && active.item.children.items.getView().length > 0;

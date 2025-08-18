@@ -19,7 +19,7 @@ export const ColumnValueTooltip = trans("table.columnValueTooltip");
 
 const LinkEventOptions = [clickEvent, doubleClickEvent] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   text: StringControl,
   onClick: eventHandlerControl(LinkEventOptions),
   disabled: BoolCodeControl,

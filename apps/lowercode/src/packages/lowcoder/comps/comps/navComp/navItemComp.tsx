@@ -11,7 +11,7 @@ import { ReactNode } from "react";
 
 const events = [clickEvent];
 
-const childrenMap = {
+const childrenMap: any = {
   label: StringControl,
   hidden: BoolCodeControl,
   active: BoolCodeControl,

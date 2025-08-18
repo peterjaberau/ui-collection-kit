@@ -16,7 +16,7 @@ export interface TextAreaProps extends AntdTextAreaProps {
 }
 
 function TacoTextArea(props: TextAreaProps, ref: React.Ref<TextAreaRef>) {
-  const { onChange, value, debounce = INPUT_DEFAULT_ONCHANGE_DEBOUNCE, ...inputProps } = props;
+  const { onChange, value, debounce = INPUT_DEFAULT_ONCHANGE_DEBOUNCE, ...inputProps }: any = props;
   const [internalValue, setIntervalValue] = useState(value);
   const isTypingRef = useRef(0);
 

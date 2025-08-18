@@ -31,7 +31,7 @@ import {
   TempStateIcon,
   TraceApiIcon,
   TransformerIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { BottomResTypeEnum } from "#lowcoder/types/bottomRes";
 import { HttpMethod } from "#lowcoder/api/api";
 

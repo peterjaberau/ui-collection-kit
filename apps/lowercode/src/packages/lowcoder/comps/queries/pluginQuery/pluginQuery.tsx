@@ -22,7 +22,7 @@ import {
   QueryConfigItemWrapper,
   QueryConfigLabel,
   QueryConfigWrapper,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import React, { ReactNode, useEffect, useState } from "react";
 import { FunctionProperty, toQueryView } from "../queryCompUtils";
 import { CompConstructor } from "#lowcoder-core/index";
@@ -72,7 +72,7 @@ interface ActionSelectViewProps {
 }
 
 function ActionSelectView(props: ActionSelectViewProps) {
-  const { config, currentActionName, onActionChange } = props;
+  const { config, currentActionName, onActionChange }: any = props;
   const [currentCategory, setCategory] = useState<string>("");
 
   const filter = (category: string) => (i: ActionConfig) => {

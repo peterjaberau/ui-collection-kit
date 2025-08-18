@@ -54,7 +54,7 @@ const CommandMap = {
   none: ParamsStringControl,
 };
 
-const childrenMap = {
+const childrenMap: any = {
   httpMethod: valueComp<HttpMethodValue>("GET"),
   path: ParamsStringControl,
   // cookies: withDefault(keyValueListControl(), [{ key: "", value: "" }]),
@@ -142,7 +142,7 @@ const HttpQueryPropertyView = (props: {
   supportHttpMethods?: HttpMethodValue[];
   supportBodyTypes?: BodyTypeValue[];
 }) => {
-  const { comp, supportHttpMethods, supportBodyTypes } = props;
+  const { comp, supportHttpMethods, supportBodyTypes }: any = props;
   const { children, dispatch } = comp;
 
   return (

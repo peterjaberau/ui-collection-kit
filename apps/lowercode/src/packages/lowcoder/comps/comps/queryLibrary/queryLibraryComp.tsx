@@ -105,7 +105,7 @@ const PropertyView = (props: {
     setModify?: any
     modify?: boolean
 }) => {
-  const { comp, onPublish, onHistoryShow, setModify, modify } = props;
+  const { comp, onPublish, onHistoryShow, setModify, modify }: any = props;
 
   const reduxDispatch = useDispatch();
 

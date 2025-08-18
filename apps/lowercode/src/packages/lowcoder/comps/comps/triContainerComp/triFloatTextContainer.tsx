@@ -7,7 +7,7 @@ import {
 } from "#lowcoder/comps/controls/styleControlConstants";
 import { EditorContext } from "#lowcoder/comps/editorState";
 import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
-import { HintPlaceHolder, ScrollBar, TacoMarkDown } from "lowcoder-design";
+import { HintPlaceHolder, ScrollBar, TacoMarkDown } from "#lowcoder-design/index";
 import { ReactNode, useContext } from "react";
 import styled, { css } from "styled-components";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
@@ -177,7 +177,7 @@ export type TriContainerProps = TriContainerViewProps & {
 };
 
 export function TriContainer(props: TriContainerProps) {
-  const {container, text, animationStyle} = props;
+  const {container, text, animationStyle}: any = props;
   const { showHeader, showFooter, horizontalGridCells } = container;
   // When the header and footer are not displayed, the body must be displayed
   const showBody = container.showBody || (!showHeader && !showFooter);

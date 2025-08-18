@@ -1,7 +1,7 @@
 import { MultiCompBuilder } from "../../generators";
 import { BoolPureControl } from "../../controls/boolControl";
 import { StringControl } from "../../controls/codeControl";
-import { CustomModal } from "lowcoder-design";
+import { CustomModal } from "#lowcoder-design/index";
 import { isEmpty } from "lodash";
 import { QueryResult } from "../queryComp";
 import { trans } from "#lowcoder/i18n";

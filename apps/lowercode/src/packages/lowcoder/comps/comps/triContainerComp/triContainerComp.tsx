@@ -26,11 +26,11 @@ import {
 import { SimpleContainerComp } from "../containerBase/simpleContainerComp";
 import { ContainerBodyChildComp } from "./containerBodyChildComp";
 import { trans } from "#lowcoder/i18n";
-import { ControlNode } from "lowcoder-design";
+import { ControlNode } from "#lowcoder-design/index";
 import { SliderControl } from "#lowcoder/comps/controls/sliderControl";
 import { useMergeCompStyles } from "#lowcoder/util/hooks";
 
-const childrenMap = {
+const childrenMap: any = {
   header: SimpleContainerComp,
   // Support future tab or step container expansion
   body: withDefault(sameTypeMap(ContainerBodyChildComp), {

@@ -17,7 +17,7 @@ import { CanvasContainerID } from "#lowcoder/constants/domLocators";
 import { Layers } from "#lowcoder/constants/Layers";
 import { trans } from "#lowcoder/i18n";
 import { changeChildAction, DispatchType, RecordConstructorToComp, RecordConstructorToView } from "#lowcoder-core/index";
-import { Drawer, HintPlaceHolder, Section, sectionNames } from "lowcoder-design";
+import { Drawer, HintPlaceHolder, Section, sectionNames } from "#lowcoder-design/index";
 import { useCallback, useEffect, useMemo } from "react";
 import { ResizeHandle } from "react-resizable";
 import styled from "styled-components";
@@ -102,7 +102,7 @@ function transToPxSize(size: string | number) {
   return isNumeric(size) ? size + "px" : (size as string);
 }
 
-const childrenMap = {
+const childrenMap: any = {
   visible: booleanExposingStateControl("visible"),
   onEvent: eventHandlerControl(EventOptions),
   width: StringControl,
@@ -175,7 +175,7 @@ const DrawerView = React.memo((
   props: ToViewReturn<ChildrenType> & { dispatch: DispatchType }
 ) => {
   const isTopBom = useMemo(() => ["top", "bottom"].includes(props.placement), [props.placement]);
-  const { items, ...otherContainerProps } = props.container;
+  const { items, ...otherContainerProps }: any = props.container;
   const userViewMode = useUserViewMode();
   const appID = useApplicationId();
   const resizable = useMemo(() => !userViewMode && (!isTopBom || !props.autoHeight), [userViewMode, isTopBom, props.autoHeight]);

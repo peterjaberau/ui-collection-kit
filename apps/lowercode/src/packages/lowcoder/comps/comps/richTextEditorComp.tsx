@@ -6,7 +6,7 @@ import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
 import { ChangeEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
 import { UICompBuilder, withDefault } from "#lowcoder/comps/generators";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import React, { ChangeEvent, Suspense, useEffect, useRef, useState } from "react";
 import type ReactQuill from "react-quill-new";
 import { useDebounce } from "react-use";
@@ -170,7 +170,7 @@ const toolbarOptions: any = [
   ["clean"],
 ];
 
-const childrenMap = {
+const childrenMap: any = {
   value: stringExposingStateControl("value"),
   hideToolbar: BoolControl,
   readOnly: BoolControl,

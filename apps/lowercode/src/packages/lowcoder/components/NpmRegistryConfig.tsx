@@ -37,10 +37,10 @@ export function NpmRegistryConfig(props: NpmRegistryConfigProps) {
     if (props.initialData && !initialConfigSet) {
       let initConfig: NpmRegistryConfigEntryInput = {...initialRegistryConfig};
       if (props.initialData) {
-        const {scope} = props.initialData;
+        const {scope}: any = props.initialData;
         const {type: scopeTye, pattern} = scope;
-        const {url, auth} = props.initialData.registry;
-        const {type: authType, credentials} = props.initialData.registry.auth;
+        const {url, auth}: any = props.initialData.registry;
+        const {type: authType, credentials}: any = props.initialData.registry.auth;
         initConfig.scope = scopeTye;
         initConfig.pattern = pattern || "";
         initConfig.url = url;

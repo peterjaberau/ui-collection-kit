@@ -245,7 +245,7 @@ export function getColumnsAggr(
 }
 
 function renderTitle(props: { title: string; tooltip: string; editable: boolean }) {
-  const { title, tooltip, editable } = props;
+  const { title, tooltip, editable }: any = props;
   return (
     <div>
       <Tooltip title={tooltip}>

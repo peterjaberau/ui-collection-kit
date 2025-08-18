@@ -135,7 +135,7 @@ const VerticalAlignmentOptions = [
   { label: <AlignVerticalCenter />, value: "center" },
   { label: <AlignBottom />, value: "flex-end" },
 ] as const;
-const childrenMap = {
+const childrenMap: any = {
   text: stringExposingStateControl(
     "text",
     trans("textShow.text", { name: "{{currentUser.name}}" })

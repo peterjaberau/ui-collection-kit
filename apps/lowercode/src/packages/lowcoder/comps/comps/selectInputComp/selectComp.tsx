@@ -21,7 +21,7 @@ import { fixOldInputCompData } from "../textInputComp/textInputConstants";
 import { migrateOldData, withDefault } from "#lowcoder/comps/generators/simpleGenerators";
 
 let SelectBasicComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     ...SelectChildrenMap,
     defaultValue: stringExposingStateControl("defaultValue"),
     value: stringExposingStateControl("value"),

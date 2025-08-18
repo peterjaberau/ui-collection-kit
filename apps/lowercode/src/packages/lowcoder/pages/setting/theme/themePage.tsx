@@ -13,7 +13,7 @@ import CreateModal from "./createModal";
 import history from "#lowcoder/util/history";
 import { THEME_DETAIL } from "#lowcoder/constants/routesURL";
 import { currentOrgAdmin } from "#lowcoder/util/permissionUtils";
-import { AddIcon } from "lowcoder-design";
+import { AddIcon } from "#lowcoder-design/index";
 import { CreateButton, ThemeContent } from "./styledComponents";
 import { genQueryId } from "#lowcoder/comps/utils/idGenerator";
 import { trans } from "#lowcoder/i18n";

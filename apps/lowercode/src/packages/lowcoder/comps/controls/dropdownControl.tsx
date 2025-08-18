@@ -10,7 +10,7 @@ import {
   Dropdown,
   OptionsType,
   ValueFromOption,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { ReactNode, useEffect, useState } from "react";
 import { ControlParams } from "./controlParams";
 
@@ -39,7 +39,7 @@ interface DropdownPropertyViewProps<T extends OptionsType>
 }
 
 function DropdownPropertyView<T extends OptionsType>(props: DropdownPropertyViewProps<T>) {
-  const { options, onChange, value, ...params } = props;
+  const { options, onChange, value, ...params }: any = props;
   const [finalOptions, setFinalOptions] = useState<T>(
     typeof options === "function" ? ([] as unknown as T) : options
   );

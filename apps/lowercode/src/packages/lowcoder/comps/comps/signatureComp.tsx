@@ -18,7 +18,7 @@ import { stateComp, withDefault } from "#lowcoder/comps/generators/simpleGenerat
 import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import { trans } from "#lowcoder/i18n";
 import { changeValueAction, multiChangeAction } from "#lowcoder-core/index";
-import { Section, sectionNames, UndoIcon } from "lowcoder-design";
+import { Section, sectionNames, UndoIcon } from "#lowcoder-design/index";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { ResizePayload, useResizeDetector } from "react-resize-detector";
 import type SignatureCanvasType from "react-signature-canvas";
@@ -95,7 +95,7 @@ const Wrapper = styled.div<{ $style: SignatureStyleType; $isEmpty: boolean }>`
   }
 `;
 
-const childrenMap = {
+const childrenMap: any = {
   tips: withDefault(StringControl, trans('signature.signHere')),
   onEvent: ChangeEventHandlerControl,
   label: withDefault(LabelControl, {position: 'column', text: ''}),

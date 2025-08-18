@@ -35,7 +35,7 @@ export function FlowContainerView(
   props: FlowContainerProps & { minHeight: string; selectable: boolean; maxWidth: number }
 ) {
   const layouts = props.layout;
-  const { selectable, minHeight, maxWidth } = props;
+  const { selectable, minHeight, maxWidth }: any = props;
   const editorState = useContext(EditorContext);
   const bgColor = (useContext(ThemeContext)?.theme || defaultTheme).canvas;
 

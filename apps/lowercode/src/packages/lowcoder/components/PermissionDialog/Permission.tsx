@@ -215,7 +215,7 @@ function getPermissionOptionView(
 }
 
 function PermissionSelectorOption(props: { optionView: AddAppOptionView }) {
-  const { optionView } = props
+  const { optionView }: any = props
   const groupIcon = optionView.type === "Group" && (
     <StyledGroupIcon $color={getInitialsAndColorCode(optionView.name)[1]} />
   )
@@ -228,7 +228,7 @@ function PermissionSelectorOption(props: { optionView: AddAppOptionView }) {
 }
 
 function PermissionSelectorLabel(props: { view: AddAppOptionView }) {
-  const { view } = props
+  const { view }: any = props
   const groupIcon = view.type === "Group" && (
     <StyledGroupIcon $color={getInitialsAndColorCode(view.name)[1]} $side={9} />
   )
@@ -252,7 +252,7 @@ function PermissionSelectorLabel(props: { view: AddAppOptionView }) {
 }
 
 function PermissionTagRender(props: CustomTagProps) {
-  const { label, value, closable, onClose } = props
+  const { label, value, closable, onClose }: any = props
   return (
     <StyledTag
       closeIcon={<CloseIcon style={{ width: "12px", height: "12px" }} />}
@@ -280,7 +280,7 @@ const PermissionSelector = (props: {
   filterItems: PermissionItem[]
   supportRoles: { label: string; value: PermissionRole }[]
 }) => {
-  const { selectedItems, setSelectRole, setSelectedItems, user } = props
+  const { selectedItems, setSelectRole, setSelectedItems, user }: any = props
   const [roleSelectVisible, setRoleSelectVisible] = useState(false)
   const selectRef = useRef<HTMLDivElement>(null)
   const [optionViews, setOptionViews] = useState<AddAppOptionView[]>()
@@ -415,7 +415,7 @@ export const Permission = (props: {
   onCancel: () => void
   addPermission: (userIds: string[], groupIds: string[], role: string) => void
 }) => {
-  const { onCancel } = props
+  const { onCancel }: any = props
   const user = useSelector(getUser)
   const [selectRole, setSelectRole] = useState<ApplicationRoleType>("viewer")
   const [selectedItems, setSelectedItems] = useState<PermissionAddEntity[]>([])

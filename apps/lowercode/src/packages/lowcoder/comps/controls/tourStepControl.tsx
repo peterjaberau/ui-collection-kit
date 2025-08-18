@@ -17,7 +17,7 @@ import {
   SimpleAbstractComp,
   withFunction
 } from "#lowcoder-core/index";
-import { controlItem, Dropdown, Option, OptionsType, ValueFromOption } from "lowcoder-design";
+import { controlItem, Dropdown, Option, OptionsType, ValueFromOption } from "#lowcoder-design/index";
 import { getNextEntityName } from "#lowcoder/util/stringUtils";
 import { ControlParams } from "#lowcoder/comps/controls/controlParams";
 import { ReactNode, useContext, useEffect, useState } from "react";
@@ -193,7 +193,7 @@ export function manualTourStepsControl<T extends TourStepControlType>(
     : ManualOptionControl;
 }
 
-type TourStepChildType = { 
+type TourStepChildType = {
   title: InstanceType<typeof StringControl>,
 };
 type TourStepControlType = new (params: CompParams<any>) => MultiBaseComp<
@@ -281,7 +281,7 @@ interface DropdownPropertyViewProps<T extends OptionsType>
 }
 
 function EditorStateDropdownPropertyView<T extends OptionsType>(props: DropdownPropertyViewProps<T>) {
-  const { options, onChange, value, ...params } = props;
+  const { options, onChange, value, ...params }: any = props;
   const [finalOptions, setFinalOptions] = useState<T>(
     typeof options === "function" ? ([] as unknown as T) : options
   );

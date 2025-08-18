@@ -136,7 +136,7 @@ const EventOptions = [
 ] as const;;
 
 let JsonLottieTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     sourceMode: dropdownControl(ModeOptions, "standard"),
     value: withDefault(
       ArrayOrJSONObjectControl,

@@ -16,7 +16,7 @@ import {
   QueryConfigWrapper,
   QueryTutorialButton,
   ValueFromOption,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { QueryTutorials } from "#lowcoder/util/tutorialUtils";
@@ -75,7 +75,7 @@ const EsMethodOptions = [
 ] as const;
 
 export let EsQuery = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     esMethod: valueComp<ValueFromOption<typeof EsMethodOptions>>("SEARCH"),
     httpMethod: dropdownControl(HttpMethodOptions, "GET"),
     prefix: ParamsStringControl,
@@ -141,7 +141,7 @@ const EsQueryPropertyView = (props: {
   dispatch: DispatchType;
   datasourceId: string;
 }) => {
-  const { children, dispatch } = props;
+  const { children, dispatch }: any = props;
 
   const datasource = useSelector(getDataSource).find(
     (info) => info.datasource.id === props.datasourceId

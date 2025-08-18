@@ -118,7 +118,7 @@ const BarcodeScannerComponent = React.lazy(
 );
 
 const ScannerTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     data: arrayStringExposingStateControl("data"),
     text: withDefault(StringControl, trans("scanner.text")),
     continuous: BoolControl,

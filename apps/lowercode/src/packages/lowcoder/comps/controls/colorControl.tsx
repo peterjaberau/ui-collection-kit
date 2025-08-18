@@ -1,5 +1,5 @@
 import { ColorCodeControl } from "./codeControl";
-import { ColorSelect, controlItem, ControlPropertyViewWrapper, IconDep } from "lowcoder-design";
+import { ColorSelect, controlItem, ControlPropertyViewWrapper, IconDep } from "#lowcoder-design/index";
 import styled from "styled-components";
 import React, { useContext, useEffect, useState } from "react";
 import { ControlParams } from "./controlParams";
@@ -90,7 +90,7 @@ function ColorItem(props: {
   controlThis: ColorControl;
   propertyView: (param: ControlParams) => React.ReactNode;
 }) {
-  const { param, controlThis, propertyView } = props;
+  const { param, controlThis, propertyView }: any = props;
   const [showDep, setShowDep] = useState(param.isDep);
   const [focus, setFocus] = useState(false);
   const inputRef = React.createRef<HTMLDivElement>();

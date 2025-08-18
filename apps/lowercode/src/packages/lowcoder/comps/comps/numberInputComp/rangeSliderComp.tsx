@@ -1,5 +1,5 @@
 import { trans } from "#lowcoder/i18n";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { numberExposingStateControl } from "../../controls/codeStateControl";
 import { UICompBuilder } from "../../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
@@ -10,7 +10,7 @@ import { NumberControl } from "#lowcoder/comps/controls/codeControl";
 import { useCallback, useRef, useEffect } from "react";
 
 const RangeSliderBasicComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     ...SliderChildren,
     start: numberExposingStateControl("start", 10),
     end: numberExposingStateControl("end", 60),

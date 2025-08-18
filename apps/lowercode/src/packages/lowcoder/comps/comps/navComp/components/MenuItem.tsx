@@ -50,7 +50,7 @@ const MenuItem = React.forwardRef((props: IMenuItemProps, ref: React.Ref<HTMLDiv
     onDelete,
     onAddSubMenu,
     ...divProps
-  } = props;
+  }: any = props;
 
   const [isConfigPopShow, showConfigPop] = useState(false);
 

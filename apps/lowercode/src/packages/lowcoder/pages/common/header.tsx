@@ -27,7 +27,7 @@ import {
   RefreshIcon,
   Right,
   TacoButton,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import dayjs from "dayjs";
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
@@ -333,7 +333,7 @@ const BrandLogo = styled.img`
 `
 
 function HeaderProfile(props: { user: User }) {
-  const { user } = props;
+  const { user }: any = props;
   const fetchingUser = useSelector(isFetchingUser);
   if (fetchingUser) {
     return <Skeleton.Avatar shape="circle" size={28} />;
@@ -375,9 +375,9 @@ type HeaderProps = {
 export default function Header(props: HeaderProps) {
   const editorState = useContext(EditorContext);
   const { blockEditing, fetchApplication } = useContext(ExternalEditorContext);
-  const { togglePanel } = props;
-  const { toggleEditorModeStatus } = props;
-  const { left, bottom, right } = props.panelStatus;
+  const { togglePanel }: any = props;
+  const { toggleEditorModeStatus }: any = props;
+  const { left, bottom, right }: any = props.panelStatus;
   const user = useSelector(getUser);
   const application = useSelector(currentApplication);
   const isPublicApp = useSelector(isPublicApplication);

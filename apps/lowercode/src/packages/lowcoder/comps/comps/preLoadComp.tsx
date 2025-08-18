@@ -13,7 +13,7 @@ import { CodeTextControl } from "#lowcoder/comps/controls/codeTextControl";
 import SimpleStringControl from "#lowcoder/comps/controls/simpleStringControl";
 import { MultiCompBuilder, withPropertyViewFn } from "#lowcoder/comps/generators";
 import { list } from "#lowcoder/comps/generators/list";
-import { BaseSection, CustomModal, PlusIcon, ScrollBar } from "lowcoder-design";
+import { BaseSection, CustomModal, PlusIcon, ScrollBar } from "#lowcoder-design/index";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
@@ -206,7 +206,7 @@ class GlobalCSSComp extends CodeTextControl implements RunAndClearable<string> {
   }
 }
 
-const childrenMap = {
+const childrenMap: any = {
   libs: LibsComp,
   script: ScriptComp,
   css: CSSComp,

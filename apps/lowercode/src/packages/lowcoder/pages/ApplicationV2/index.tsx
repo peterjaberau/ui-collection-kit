@@ -30,7 +30,7 @@ import {
   AppsIcon,
   EnterpriseIcon,
   UserIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import React, { useCallback, useEffect, useState, useMemo } from "react";
 import { fetchHomeData } from "#lowcoder/redux/reduxActions/applicationActions";
 import { fetchSubscriptionsAction } from "#lowcoder/redux/reduxActions/subscriptionActions";

@@ -1,4 +1,4 @@
-import { OptionsType } from "lowcoder-design";
+import { OptionsType } from "#lowcoder-design/index";
 import { ReactNode } from "react";
 import styled from "styled-components";
 import { MultiCompBuilder } from "../generators";

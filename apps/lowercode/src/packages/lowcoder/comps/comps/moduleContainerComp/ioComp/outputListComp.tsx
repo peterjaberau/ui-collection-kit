@@ -80,7 +80,7 @@ interface PropertyViewProps {
 }
 
 function PropertyView(props: PropertyViewProps) {
-  const { onDelete, onValidateName, onAdd, items } = props;
+  const { onDelete, onValidateName, onAdd, items }: any = props;
 
   return (
     <div>
@@ -117,7 +117,7 @@ interface OutputItemProps {
 }
 
 function OutputItem(props: OutputItemProps) {
-  const { name, value, description, onDelete, onValidateName } = props;
+  const { name, value, description, onDelete, onValidateName }: any = props;
 
   const content = (
     <>

@@ -20,7 +20,7 @@ import { AnimationStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import { styleControl } from "#lowcoder/comps/controls/styleControl";
 
 export const ContainerBaseComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     disabled: BoolCodeControl,
     animationStyle: styleControl(AnimationStyle),
   };

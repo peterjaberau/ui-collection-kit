@@ -43,7 +43,7 @@ export default function InputList(props: Omit<InputListProps, "children">) {
     placeholder,
     itemRules,
     ...otherProps
-  } = props;
+  }: any = props;
   const [form] = useForm();
 
   useEffect(() => {

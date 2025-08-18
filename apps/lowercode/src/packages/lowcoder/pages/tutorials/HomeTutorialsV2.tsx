@@ -7,7 +7,7 @@ import {
 import { markUserStatus } from "#lowcoder/redux/reduxActions/userActions";
 import { useDispatch } from "react-redux";
 import { trans } from "#lowcoder/i18n";
-import { TutorialsTooltip } from "lowcoder-design";
+import { TutorialsTooltip } from "#lowcoder-design/index";
 
 export const createAppItemClass = "joyride-create-app-item";
 

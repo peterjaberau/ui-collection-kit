@@ -85,7 +85,7 @@ const triggerOptions = [
 ] as const;
 
 const DropdownTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     text: withDefault(StringControl, trans("menu")),
     onlyMenu: BoolControl,
     triggerMode: dropdownControl(triggerOptions, "hover"),

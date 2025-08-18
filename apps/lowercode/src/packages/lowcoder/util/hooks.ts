@@ -187,7 +187,7 @@ export function useMergeCompStyles(
   const themeId = theme?.themeId;
   const appSettingsComp = editorState?.getAppSettingsComp();
   const preventAppStylesOverwriting = appSettingsComp?.getView()?.preventAppStylesOverwriting;
-  const { preventStyleOverwriting, appliedThemeId } = props;
+  const { preventStyleOverwriting, appliedThemeId }: any = props;
 
   const styleKeys = Object.keys(props).filter(key => key.toLowerCase().endsWith('style') || key.toLowerCase().endsWith('styles'));
   const styleProps: Record<string, any> = {};

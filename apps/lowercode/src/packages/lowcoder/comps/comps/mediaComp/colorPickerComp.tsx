@@ -58,7 +58,7 @@ export const colorPickerEvent = eventHandlerControl([
   changeEvent
 ] as const);
 
-const childrenMap = {
+const childrenMap: any = {
   ...textInputChildren,
   value: stringExposingStateControl('value', '#3377ff'),
   style: styleControl(ColorPickerStyle , 'style'),

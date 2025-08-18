@@ -7,7 +7,7 @@ import { valueComp, withTypeAndChildren } from "#lowcoder/comps/generators";
 import { list } from "#lowcoder/comps/generators/list";
 import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import { HookComp } from "#lowcoder/comps/hooks/hookComp";
-import { BranchDiv, Dropdown } from "lowcoder-design";
+import { BranchDiv, Dropdown } from "#lowcoder-design/index";
 import { mapValues } from "lodash";
 import { Fragment, ReactNode } from "react";
 import { getPromiseAfterDispatch } from "#lowcoder/util/promiseUtils";
@@ -69,7 +69,7 @@ class ParamsValueControl extends ParamsValueTmpControl {
 }
 
 const ExecuteCompTmpAction = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     name: SimpleNameComp,
     methodName: valueComp<string>(""),
     params: ParamsValueControl,

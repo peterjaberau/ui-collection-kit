@@ -1,4 +1,4 @@
-import { ArrowIcon } from "lowcoder-design";
+import { ArrowIcon } from "#lowcoder-design/index";
 import styled from "styled-components";
 import { trans } from "#lowcoder/i18n"; // Assuming this is how you get the user's language
 import { useParams } from "react-router-dom";
@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react';
 import { Card, Tag, List } from 'antd';
 import { CheckCircleOutlined } from '@ant-design/icons';
 import { Level1SettingPageContent } from "../styled";
-import { TacoMarkDown } from "lowcoder-design";
+import { TacoMarkDown } from "#lowcoder-design/index";
 import ProductDescriptions, {Translations} from "./ProductDescriptions";
 import { SubscriptionProductsEnum } from "#lowcoder/constants/subscriptionConstants";
 import { useSubscriptionContext } from "#lowcoder/util/context/SubscriptionContext";

@@ -82,7 +82,7 @@ const Wrapper = styled.div<{
 `;
 
 let TextAreaTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     ...textInputChildren,
     viewRef: RefControl<TextAreaRef>,
     allowClear: BoolControl,

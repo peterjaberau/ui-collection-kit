@@ -2,13 +2,13 @@ import { FunctionControl } from "#lowcoder/comps/controls/codeControl";
 import { MultiCompBuilder } from "#lowcoder/comps/generators";
 import { QueryResult } from "./queryComp";
 import { QueryTutorials } from "#lowcoder/util/tutorialUtils";
-import { DocLink } from "lowcoder-design";
+import { DocLink } from "#lowcoder-design/index";
 import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
 import { trans } from "#lowcoder/i18n";
 import { QUERY_EXECUTION_ERROR, QUERY_EXECUTION_OK } from "../../constants/queryConstants";
 
 export const JSQuery = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     script: FunctionControl,
   };
   return new MultiCompBuilder(childrenMap, (props) => {

@@ -72,7 +72,7 @@ export * from "#lowcoder/comps/utils";
 export * from "#lowcoder/comps/utils/themeContext";
 
 // design
-export * from "lowcoder-design";
+export * from "#lowcoder-design/index";
 export * from "#lowcoder-core/index";
 
 // controls

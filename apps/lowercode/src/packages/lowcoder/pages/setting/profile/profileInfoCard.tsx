@@ -13,7 +13,7 @@ import { trans } from "#lowcoder/i18n";
 
 export function ProfileInfoCard(props: ProfileModalCardProps) {
   const user = useSelector(getUser);
-  const { setModalContent, setTitle, setShowBackLink } = props;
+  const { setModalContent, setTitle, setShowBackLink }: any = props;
   const hasPass = user.hasPassword;
   const email = getConnectedName(user, UserConnectionSource.email);
   return (

@@ -212,8 +212,8 @@ function useCodeMirror(
   props: CodeEditorProps,
   container: MutableRefObject<HTMLDivElement | undefined>
 ) {
-  const { value, onChange } = props;
-  const viewRef = useRef<EditorView>();
+  const { value, onChange }: any = props;
+  const viewRef: any = useRef<EditorView>(null);
 
   // will not trigger view.setState when typing inputs, to avoid focus chaos
   const isTypingRef = useRef(0);
@@ -352,7 +352,7 @@ function CodeEditorCommon(
     cardStyle?: React.CSSProperties;
   }
 ) {
-  const { editor, children, disabled, cardStyle, onClick, ...editorProps } = props;
+  const { editor, children, disabled, cardStyle, onClick, ...editorProps }: any = props;
   const { view, isFocus } = useCodeMirror(editorProps, editor);
   return (
     <CodeEditorWrapper onClick={onClick ? (e) => view && onClick(e, view) : undefined}>
@@ -373,7 +373,7 @@ function CodeEditorCommon(
 
 // for the standalone code editor, eliminating some styles
 function CodeEditorForPanel(props: CodeEditorProps) {
-  const editor = useRef<HTMLDivElement>();
+  const editor: any = useRef<HTMLDivElement>(null);
   return (
     <CodeEditorCommon {...props} editor={editor} cardStyle={{ borderRadius: "8px" }}>
       <CodeEditorPanelContainer
@@ -389,8 +389,8 @@ function CodeEditorForPanel(props: CodeEditorProps) {
  * encapsulate CodeMirror: https://codemirror.net/6/
  */
 export function CodeEditor(props: CodeEditorProps) {
-  const editor = useRef<HTMLDivElement>();
-  const { expandable = true, ...editorProps } = props;
+  const editor = useRef<HTMLDivElement>(null);
+  const { expandable = true, ...editorProps }: any = props;
   const [disabled, setDisabled] = useState(false);
   return (
     <CodeEditorTooltipContainer>

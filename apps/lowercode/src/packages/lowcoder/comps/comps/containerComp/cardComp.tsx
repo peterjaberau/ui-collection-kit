@@ -172,7 +172,7 @@ const ActionOptionControl = optionsControl(ActionIconOption, {
 });
 
 export const ContainerBaseComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     showTitle: BoolControl.DEFAULT_TRUE,
     title: withDefault(StringControl, trans('card.title')),
     size: dropdownControl(sizeOptions, 'small'),

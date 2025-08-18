@@ -16,7 +16,7 @@ import {
   MultiselectTagIcon,
   Section,
   sectionNames,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { SelectOptionControl } from "../../controls/optionsControl";
 import { SelectEventHandlerControl } from "../../controls/eventHandlerControl";
 import { default as AntdSelect } from "antd/es/select";

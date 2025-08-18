@@ -29,7 +29,7 @@ import {
   TacoButton,
   wrapperToControlItem,
   useShape,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { ReactNode, useCallback, useState } from "react";
 import styled from "styled-components";
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
@@ -172,7 +172,7 @@ type ChangeModeAction = {
 };
 
 function ShapeControlView(props: { value: any }) {
-  const { value } = props;
+  const { value }: any = props;
   // console.log("ShapeControlView ", value);
   const icon = useShape(value);
   if (icon) {

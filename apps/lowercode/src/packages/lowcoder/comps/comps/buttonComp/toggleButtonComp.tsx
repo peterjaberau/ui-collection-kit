@@ -50,7 +50,7 @@ const ButtonCompWrapperStyled = styled(ButtonCompWrapper)<{
 `;
 
 const ToggleTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     value: booleanExposingStateControl("value"),
     showText: withDefault(BoolControl, true),
     trueText: withDefault(StringControl, trans("toggleButton.trueDefaultText")),

@@ -11,7 +11,7 @@ import {
   TacoInput,
   useIcon,
   wrapperToControlItem,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 import Popover from "antd/es/popover";
@@ -552,7 +552,7 @@ export const IconPicker = (props: {
 };
 
 export function IconControlView(props: { value: string, uuid: string }) {
-  const { value } = props;
+  const { value }: any = props;
   const icon = useIcon(value);
 
   if (icon) {

@@ -1,11 +1,11 @@
 import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
 import { trans } from "#lowcoder/i18n";
-import { BranchDiv } from "lowcoder-design";
+import { BranchDiv } from "#lowcoder-design/index";
 import { FunctionControl } from "../codeControl";
 
 const RunScriptTmpAction = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     script: FunctionControl,
   };
   return new MultiCompBuilder(childrenMap, () => {

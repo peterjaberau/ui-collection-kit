@@ -8,7 +8,7 @@ import {
   QueryConfigWrapper,
   QueryPropertyViewWrapper,
   QuerySectionWrapper,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import _, { pick } from "lodash";
 import { ControlParams } from "../../controls/controlParams";
 import styled from "styled-components";

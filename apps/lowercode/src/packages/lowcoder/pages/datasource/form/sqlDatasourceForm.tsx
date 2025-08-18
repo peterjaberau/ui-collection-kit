@@ -1,5 +1,5 @@
 import React from "react";
-import { DatasourceForm, FormCheckboxItem, FormSection } from "lowcoder-design";
+import { DatasourceForm, FormCheckboxItem, FormSection } from "#lowcoder-design/index";
 import { SQLConfig } from "#lowcoder/api/datasourceApi";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import {
@@ -23,7 +23,7 @@ export const sqlDatasourceForm =
     supportPreparedStatement?: boolean;
   }) =>
   (props: DatasourceFormProps) => {
-    const { form, datasource } = props;
+    const { form, datasource }: any = props;
     const { supportDatabase = true, supportSSL = true, supportPreparedStatement = true } = config;
     const datasourceConfig = datasource?.datasourceConfig as SQLConfig;
 

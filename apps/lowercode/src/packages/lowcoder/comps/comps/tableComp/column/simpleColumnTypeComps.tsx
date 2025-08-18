@@ -50,7 +50,7 @@ export const ButtonTypeOptions = [
 
 const ButtonEventOptions = [clickEvent, doubleClickEvent] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   text: StringControl,
   buttonType: dropdownControl(ButtonTypeOptions, "primary"),
   onClick: eventHandlerControl(ButtonEventOptions),

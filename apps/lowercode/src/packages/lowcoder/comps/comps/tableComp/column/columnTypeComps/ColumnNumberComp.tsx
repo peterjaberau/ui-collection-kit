@@ -36,7 +36,7 @@ const NumberViewWrapper = styled.div`
 
 const NumberEventOptions = [clickEvent, doubleClickEvent] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   text: NumberControl,
   step: withDefault(NumberControl, 1),
   precision: RangeControl.closed(0, 20, 0),
@@ -160,7 +160,7 @@ export const ColumnNumberComp = (function () {
     getBaseValue
   )
     .setEditViewFn((props) => {
-      const { value, onChange, onChangeEnd, otherProps } = props;
+      const { value, onChange, onChangeEnd, otherProps }: any = props;
       return (
         <ColumnNumberEdit
           value={value}

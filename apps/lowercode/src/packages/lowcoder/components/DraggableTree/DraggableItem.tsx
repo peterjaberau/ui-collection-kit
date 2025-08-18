@@ -76,7 +76,7 @@ function DraggableItem(props: IProps, ref: Ref<HTMLDivElement>) {
     children,
     path,
     ...divProps
-  } = props;
+  }: any = props;
   const context = useContext(DraggableTreeContext);
   const positionLineIndent = context.positionLineIndent?.(path, dropInAsSub);
   const showPositionLine = (context.showDropInPositionLine ?? true) || !dropInAsSub;

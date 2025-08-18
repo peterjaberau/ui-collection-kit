@@ -9,7 +9,7 @@ import { getDynamicStringSegments, isDynamicSegment } from "#lowcoder-core/index
 import alasql from "alasql";
 import { trans } from "#lowcoder/i18n";
 
-const childrenMap = {
+const childrenMap: any = {
   databaseType: dropdownControl(
     [
       { label: "Data Query", value: "dataQuery" },
@@ -95,7 +95,7 @@ export class AlaSqlQuery extends AlaSqlTmpQuery {
 }
 
 const PropertyView = (props: { comp: InstanceType<typeof AlaSqlQuery>; datasourceId: string }) => {
-  const { comp } = props;
+  const { comp }: any = props;
   const { children } = comp;
 
   return (

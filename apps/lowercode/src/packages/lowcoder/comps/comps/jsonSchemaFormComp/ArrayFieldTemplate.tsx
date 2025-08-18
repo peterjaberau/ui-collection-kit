@@ -18,7 +18,7 @@ type UiProps = {
 };
 
 const ArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
-  const { items, canAdd, onAddClick, title, uiSchema, registry } = props;
+  const { items, canAdd, onAddClick, title, uiSchema, registry }: any = props;
 
   // Get UI schema configuration
   const { rowGutter = 8, colSpan = DEFAULT_RESPONSIVE_COL_SPAN } = getUiOptions(uiSchema)?.["ui:props"] as UiProps || {};

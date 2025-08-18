@@ -1,5 +1,5 @@
 import { ADMIN_ROLE, SUPER_ADMIN_ROLE } from "#lowcoder/constants/orgConstants";
-import { AddIcon, CustomModal, DangerIcon, EditPopover, SearchIcon, CheckoutIcon } from "lowcoder-design";
+import { AddIcon, CustomModal, DangerIcon, EditPopover, SearchIcon, CheckoutIcon } from "#lowcoder-design/index";
 import { useDispatch, useSelector } from "react-redux";
 import { createOrgAction, deleteOrgAction, switchOrg } from "#lowcoder/redux/reduxActions/orgActions";
 import styled from "styled-components";

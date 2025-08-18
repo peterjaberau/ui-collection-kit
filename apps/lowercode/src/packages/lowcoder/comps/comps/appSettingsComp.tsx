@@ -2,7 +2,7 @@ import { ThemeDetail, ThemeType } from "#lowcoder/api/commonSettingApi";
 import { RecordConstructorToComp } from "#lowcoder-core/index";
 import { dropdownInputSimpleControl } from "#lowcoder/comps/controls/dropdownInputSimpleControl";
 import { MultiCompBuilder, valueComp, withDefault } from "#lowcoder/comps/generators";
-import { AddIcon, BaseSection, Dropdown } from "lowcoder-design";
+import { AddIcon, BaseSection, Dropdown } from "#lowcoder-design/index";
 import { EllipsisSpan } from "#lowcoder/pages/setting/theme/styledComponents";
 import { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -204,7 +204,7 @@ const AppCategories = Object.keys(ApplicationCategoriesEnum).map(
   }
 )
 
-const childrenMap = {
+const childrenMap: any = {
   title: withDefault(StringControl, ''),
   description: withDefault(StringControl, ''),
   icon: IconControl,
@@ -244,7 +244,7 @@ function AppGeneralSettingsModal(props: ChildrenInstance) {
     category,
     showHeaderInPublic,
     lowcoderCompVersion,
-  } = props;
+  }: any = props;
 
   useEffect(() => {
     setLowcoderCompVersions([
@@ -359,7 +359,7 @@ function AppCanvasSettingsModal(props: ChildrenInstance) {
     gridBgImageSize,
     gridBgImagePosition,
     gridBgImageOrigin,
-  } = props;
+  }: any = props;
 
   const THEME_OPTIONS = themeList?.map((theme) => ({
     label: theme.name,

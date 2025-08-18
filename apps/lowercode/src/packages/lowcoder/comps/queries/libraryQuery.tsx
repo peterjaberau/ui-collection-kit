@@ -21,7 +21,7 @@ import {
   QueryConfigLabel,
   QueryConfigWrapper,
   QueryTutorialButton,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
@@ -129,7 +129,7 @@ type QueryLibraryUpdateAction = {
   dsl: any;
 };
 
-const childrenMap = {
+const childrenMap: any = {
   libraryQueryId: valueComp<string>(""),
   libraryQueryRecordId: valueComp<string>("latest"),
   libraryQueryType: valueComp<string>(""),
@@ -246,7 +246,7 @@ export const LibraryQuery = class extends LibraryQueryBase {
 };
 
 const PropertyView = (props: { comp: InstanceType<typeof LibraryQuery> }) => {
-  const { children, dispatch } = props.comp;
+  const { children, dispatch }: any = props.comp;
   const queryId = children.libraryQueryId.getView();
   const recordId = children.libraryQueryRecordId.getView();
 

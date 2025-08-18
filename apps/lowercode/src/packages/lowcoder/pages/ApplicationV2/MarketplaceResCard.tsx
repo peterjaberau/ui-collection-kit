@@ -145,7 +145,7 @@ const OperationWrapper = styled.div`
 const MONTH_MILLIS = 30 * 24 * 60 * 60 * 1000;
 
 export function MarketplaceResCard(props: { res: HomeRes; }) {
-  const { res } = props;
+  const { res }: any = props;
 
   const subTitle = trans("home.resCardSubTitle", { time: timestampToHumanReadable(res.lastModifyTime, MONTH_MILLIS), creator: res.creator});
 

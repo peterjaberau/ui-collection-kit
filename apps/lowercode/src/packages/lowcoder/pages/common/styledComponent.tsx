@@ -1,7 +1,7 @@
 import React, { CSSProperties } from "react";
 import styled from "styled-components";
 
-import { CommonGrayLabel, EmptyDataIcon } from "lowcoder-design";
+import { CommonGrayLabel, EmptyDataIcon } from "#lowcoder-design/index";
 import { Layers } from "#lowcoder/constants/Layers";
 import _ from "lodash";
 import { useResizeDetector } from "react-resize-detector";
@@ -138,7 +138,7 @@ export const EmptyContent = (props: {
   style?: CSSProperties;
   text?: string;
 }) => {
-  const { text = trans("emptyContent") } = props;
+  const { text = trans("emptyContent") }: any = props;
   return (
     <EmptyContentWrapper style={props.style} className={props.className}>
       <EmptyDataIcon />

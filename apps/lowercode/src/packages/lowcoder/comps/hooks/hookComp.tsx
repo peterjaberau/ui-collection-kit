@@ -26,7 +26,7 @@ import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import dayjs from "dayjs";
 import { ConstructorToComp } from "#lowcoder-core/index";
-import { ScrollBar, Section, sectionNames } from "lowcoder-design";
+import { ScrollBar, Section, sectionNames } from "#lowcoder-design/index";
 import React, { useContext, useEffect, useMemo, useCallback } from "react";
 import { useInterval, useTitle, useWindowSize } from "react-use";
 import { useCurrentUser } from "#lowcoder/util/currentUser";

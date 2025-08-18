@@ -8,7 +8,7 @@ import {
   ScrollBar,
   UnfoldIcon,
   LeftShow,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import React, { useCallback, useContext, useMemo, useState, useEffect, useRef } from "react";
 import _, { get, set } from "lodash";
 import styled from "styled-components";
@@ -150,7 +150,7 @@ const CustomDropdown = styled(Dropdown)`
 `;
 
 export const LeftLayersContent = (props: LeftLayersContentProps) => {
-  const { uiComp } = props;
+  const { uiComp }: any = props;
   const editorState = useContext(EditorContext);
   const [expandedKeys, setExpandedKeys] = useState<Array<React.Key>>([]);
   const dispatch = useDispatch();

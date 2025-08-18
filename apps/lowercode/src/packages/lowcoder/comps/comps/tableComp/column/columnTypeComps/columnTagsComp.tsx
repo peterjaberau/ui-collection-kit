@@ -118,7 +118,7 @@ function getTagIcon(tagText: any, tagOptions: any[]) {
   return foundOption ? foundOption.icon : undefined;
 }
 
-const childrenMap = {
+const childrenMap: any = {
   text: TagsControl,
   tagColors: ColoredTagOptionControl,
   onEvent: eventHandlerControl([clickEvent]),

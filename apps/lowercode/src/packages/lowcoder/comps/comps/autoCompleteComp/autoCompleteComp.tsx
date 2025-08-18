@@ -66,7 +66,7 @@ const InputStyle = styled(Input)<{ $style: InputLikeStyleType }>`
   `}
 `
 
-const childrenMap = {
+const childrenMap: any = {
   ...textInputChildren,
   viewRef: RefControl<InputRef>,
   allowClear: BoolControl.DEFAULT_TRUE,
@@ -112,7 +112,7 @@ let AutoCompleteCompBase = (function () {
       autocompleteIconColor,
       componentSize,
       filterOptionsByInput,
-    } = props
+    }: any = props
 
     const getTextInputValidate = useCallback(() => {
       return {

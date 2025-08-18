@@ -14,7 +14,7 @@ interface IAppSelectProps {
 }
 
 export default function ApplicationSelect(props: IAppSelectProps) {
-  const { value, onChange, highlightCurrent } = props;
+  const { value, onChange, highlightCurrent }: any = props;
   const appId = useApplicationId();
   const dispatch = useDispatch();
   const applications = useSelector(normalAppListSelector).filter(

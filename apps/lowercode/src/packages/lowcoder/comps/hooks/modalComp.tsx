@@ -11,7 +11,7 @@ import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposin
 import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
 import { CanvasContainerID } from "#lowcoder/constants/domLocators";
 import { Layers } from "#lowcoder/constants/Layers";
-import { HintPlaceHolder, Modal, Section, sectionNames } from "lowcoder-design";
+import { HintPlaceHolder, Modal, Section, sectionNames } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import { changeChildAction, DispatchType, RecordConstructorToComp } from "#lowcoder-core/index";
 import { CSSProperties, useCallback, useEffect, useMemo, useRef } from "react";
@@ -104,7 +104,7 @@ type ChildrenType = NewChildren<RecordConstructorToComp<typeof childrenMap>> & {
   container: InstanceType<typeof SimpleContainerComp>
 };
 
-const childrenMap = {
+const childrenMap: any = {
   visible: booleanExposingStateControl("visible"),
   onEvent: eventHandlerControl(EventOptions),
   width: StringControl,

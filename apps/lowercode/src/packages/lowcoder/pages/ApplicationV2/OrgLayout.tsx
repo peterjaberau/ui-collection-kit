@@ -9,7 +9,7 @@ import { normalAppListSelector } from "../../redux/selectors/applicationSelector
 import history from "#lowcoder/util/history";
 import { ALL_APPLICATIONS_URL, ORG_HOME_URL } from "#lowcoder/constants/routesURL";
 import { default as AntdBreadcrumb } from "antd/es/breadcrumb";
-import { ArrowIcon } from "lowcoder-design";
+import { ArrowIcon } from "#lowcoder-design/index";
 import { Avatar, Button, Card, Col, Row, Space, Typography, Select, Tooltip } from "antd";
 import { useRef } from "react";
 import { LowcoderAppView } from "appView/LowcoderAppView";
@@ -18,7 +18,7 @@ import {
   ApplicationDocIcon,
   ModuleDocIcon,
   AvatarGroupCompIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 
 import { SERVER_HOST } from "#lowcoder/constants/apiConstants";
 import { sdkConfig } from "#lowcoder/constants/sdkConfig";
@@ -128,7 +128,7 @@ export interface OrgLayoutLayoutProps {
 
 export function OrgLayout(props: OrgLayoutLayoutProps) {
 
-  const { breadcrumb = []} = props;
+  const { breadcrumb = []}: any = props;
   const currentPath = useLocation().pathname;
 
   const breadcrumbItems = [
@@ -152,7 +152,7 @@ export function OrgLayout(props: OrgLayoutLayoutProps) {
   ];
 
   const user = useSelector(getUser);
-  const apps = useSelector(normalAppListSelector); 
+  const apps = useSelector(normalAppListSelector);
   const currentOrg = useSelector(getHomeOrg);
   const appRef = useRef();
   const baseURL = sdkConfig.baseURL || SERVER_HOST;
@@ -182,19 +182,19 @@ export function OrgLayout(props: OrgLayoutLayoutProps) {
             <h1 style={{color: "#ffffff", marginTop : "12px"}}>{trans("home.orgHomeTitle")}</h1>
           </StyleOrgCover>
           <Card style={{ marginBottom: "20px" }}>
-            
+
             <h3 style={{color: "#444", marginTop : "12px"}}>{currentOrg?.name}</h3>
 
             <Divider />
 
-            { defaultHomePage ?  
+            { defaultHomePage ?
               <LowcoderAppView
                 ref={appRef}
                 appId={defaultHomePage || ""}
                 baseUrl={baseURL}
               />
-              : 
-              
+              :
+
               <Card style={{ marginBottom: "20px" }}>
                 <Title level={4}>{trans("home.allApplications")}</Title>
                 <Space direction="horizontal" size={10}>
@@ -227,8 +227,8 @@ export function OrgLayout(props: OrgLayoutLayoutProps) {
 
             }
 
-          </Card>  
-          
+          </Card>
+
         </OrgView>
       </ContentWrapper>
     </Wrapper>

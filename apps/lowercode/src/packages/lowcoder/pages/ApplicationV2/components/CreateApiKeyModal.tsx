@@ -5,7 +5,7 @@ import {
   CloseEyeIcon,
   CustomModal,
   UnderlineCss,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import { default as Form } from "antd/es/form";
 import { default as Input } from "antd/es/input";
@@ -99,7 +99,7 @@ function CreateApiKeyModal(props: CreateApiKeyModalProps) {
     modalVisible,
     closeModal,
     onConfigCreate
-  } = props;
+  }: any = props;
   const [form] = Form.useForm();
   const [saveLoading, setSaveLoading] = useState(false);
   const [apiKey, setApiKey] = useState<{id: string, token: string}>();

@@ -42,7 +42,7 @@ import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposin
 import { SliderControl } from "#lowcoder/comps/controls/sliderControl";
 import { eventHandlerControl, sortChangeEvent } from "#lowcoder/comps/controls/eventHandlerControl";
 
-const childrenMap = {
+const childrenMap: any = {
   noOfRows: withIsLoadingMethod(NumberOrJSONObjectArrayControl), // FIXME: migrate "noOfRows" to "data"
   listData: stateComp<JSONArray>([]),
   noOfColumns: withDefault(NumberControl, 1),

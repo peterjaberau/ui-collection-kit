@@ -24,7 +24,7 @@ import {
   UsageStatisticsIcon,
   AutitLogsIcon,
   BrandingIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
 import { selectSystemConfig } from "#lowcoder/redux/selectors/configSelectors";

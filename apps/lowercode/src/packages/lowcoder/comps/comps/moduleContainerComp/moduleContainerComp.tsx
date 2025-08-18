@@ -21,7 +21,7 @@ const StyledInnerGrid = styled(InnerGrid)<ContainerBaseProps & { $bordered: bool
 `;
 
 function ModuleContainerView(props: ContainerBaseProps) {
-  const { onRowCountChange: onRowHeightChange, ...otherProps } = props;
+  const { onRowCountChange: onRowHeightChange, ...otherProps }: any = props;
   const { readOnly } = useContext(ExternalEditorContext);
   const rowHeightChangeRef = useRef(
     _.debounce((rowHeight: number) => {

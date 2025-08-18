@@ -7,7 +7,7 @@ import Tooltip from "antd/es/tooltip";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useCallback, useMemo } from "react";
 import { styled } from "styled-components";
-import { AddIcon, CustomModal, EditPopover, TacoButton, messageInstance } from "lowcoder-design";
+import { AddIcon, CustomModal, EditPopover, TacoButton, messageInstance } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import { PopoverIcon } from "#lowcoder/pages/setting/permission/styledComponents";
 import CreateApiKeyModal from "./CreateApiKeyModal";
@@ -108,8 +108,8 @@ export default function UserApiKeysCard() {
         if (newApiKey?.id === record.id) {
           return (
             <Tooltip placement="topLeft" title={trans("profile.apiKeyCopy")}>
-              <div 
-                onClick={() => handleCopy(newApiKey.token)} 
+              <div
+                onClick={() => handleCopy(newApiKey.token)}
                 style={{ cursor: 'pointer', width: '500px' }}
               >
                 {newApiKey.token}
@@ -122,9 +122,9 @@ export default function UserApiKeysCard() {
         return <div>{value}</div>;
       }
     },
-    { 
-      title: " ", 
-      dataIndex: "operation", 
+    {
+      title: " ",
+      dataIndex: "operation",
       width: "208px",
       render: (_: unknown, record: ApiKeyType) => (
         <OperationWrapper>
@@ -138,7 +138,7 @@ export default function UserApiKeysCard() {
     },
   ], [newApiKey, handleCopy, handleDeleteApiKey]);
 
-  const dataSource = useMemo(() => 
+  const dataSource = useMemo(() =>
     apiKeys.map((apiKey, i) => ({
       ...apiKey,
       key: i,
@@ -163,11 +163,11 @@ export default function UserApiKeysCard() {
             {trans("profile.createApiKey")}
           </CreateButton>
         </Flex>
-        
+
         {Boolean(newApiKey) && (
-          <Alert 
-            message={trans("profile.apiKeyInfo")} 
-            type="info" 
+          <Alert
+            message={trans("profile.apiKeyInfo")}
+            type="info"
             style={{marginBottom: '16px'}}
           />
         )}

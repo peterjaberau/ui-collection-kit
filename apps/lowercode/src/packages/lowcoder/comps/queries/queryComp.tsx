@@ -42,7 +42,7 @@ import {
   multiChangeAction,
   wrapActionExtraInfo,
 } from "#lowcoder-core/index";
-import { ValueFromOption } from "lowcoder-design";
+import { ValueFromOption } from "#lowcoder-design/index";
 import { ReactNode, useEffect } from "react";
 import {
   BottomResComp,
@@ -126,7 +126,7 @@ const EventOptions = [
   { label: trans("query.fail"), value: "fail", description: trans("query.failDesc") },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   id: valueComp<string>(""),
   name: SimpleNameComp,
   order: valueComp<number>(0),
@@ -323,7 +323,7 @@ interface QueryViewProps {
 
 // @ts-ignore
 function QueryView(props: QueryViewProps) {
-  const { comp } = props;
+  const { comp }: any = props;
 
   useEffect(() => {
     // Automatically load when page load

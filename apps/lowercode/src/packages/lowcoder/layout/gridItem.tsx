@@ -151,7 +151,7 @@ export const GridItem = React.memo((props: GridItemProps) => {
 
   const onDragStart = useCallback((e: DragEvent<HTMLDivElement>) => {
     e.stopPropagation();
-    const { i } = props as Required<GridItemProps>;
+    const { i }: any = props as Required<GridItemProps>;
     draggingUtils.clearData();
     draggingUtils.setData("i", i);
     e.dataTransfer.setDragImage(TransparentImg, 0, 0);
@@ -160,12 +160,12 @@ export const GridItem = React.memo((props: GridItemProps) => {
 
   const onDrag = useCallback((e: DragEvent<HTMLDivElement>) => {
     e.stopPropagation();
-    const { i } = props as Required<GridItemProps>;
+    const { i }: any = props as Required<GridItemProps>;
     props.onDrag?.(i, e, elementRef.current as HTMLDivElement);
   }, [props.i, props.onDrag]);
 
   const onDragEnd = useCallback((e: DragEvent<HTMLDivElement>) => {
-    const { i } = props as Required<GridItemProps>;
+    const { i }: any = props as Required<GridItemProps>;
     props.onDragEnd?.(i, e, elementRef.current as HTMLDivElement);
     draggingUtils.clearData();
   },[props.i, props.onDragEnd]);
@@ -189,7 +189,7 @@ export const GridItem = React.memo((props: GridItemProps) => {
     if (!handler) return;
     const oldSize = resizing;
     let localDragging = dragging;
-    let { cols, maxRows, x, y, w, h, i, maxH, minH, minW, maxW } = props;
+    let { cols, maxRows, x, y, w, h, i, maxH, minH, minW, maxW }: any = props;
     let [xx, yy] = [x, y];
 
     const resizeNorth = handle.indexOf("n") >= 0;
@@ -289,7 +289,7 @@ export const GridItem = React.memo((props: GridItemProps) => {
   }, [onResizeHandler]);
 
   const mixinDraggable = useCallback((child: ReactElement, isDraggable: boolean): ReactElement => {
-    const { i } = props as Required<GridItemProps>;
+    const { i }: any = props as Required<GridItemProps>;
     const testSelectorClass = `lowcoder-${props.compType}`;
     return (
       <div
@@ -342,7 +342,7 @@ export const GridItem = React.memo((props: GridItemProps) => {
     isResizable: boolean,
     zIndex: number,
   ): ReactElement => {
-    const { cols, x, minW, minH, maxW, maxH, resizeHandles } = props;
+    const { cols, x, minW, minH, maxW, maxH, resizeHandles }: any = props;
     // This is the max possible width - doesn't go to infinity because of the width of the window
     const maxWidth = calcGridItemPosition(props, 0, 0, cols - x, 0).width;
     // Calculate min/max constraints using our min & maxes
@@ -451,7 +451,7 @@ export const GridItem = React.memo((props: GridItemProps) => {
       isResizable,
       compType,
       resizeHandles,
-    } = props;
+    }: any = props;
     // log.debug("GridItem. name: ", name, " filpNameDiv: ", flipNameDiv, " position.top: ", position.top);
     const nameBottom = showName.bottom - position.top - position.height;
     const nameTop = showName.top + position.top;
@@ -538,7 +538,7 @@ export const GridItem = React.memo((props: GridItemProps) => {
     resizing?.height,
   ]);
 
-  const { isDraggable, isResizable, layoutHide, children, isSelected, clickItem, zIndex } = props;
+  const { isDraggable, isResizable, layoutHide, children, isSelected, clickItem, zIndex }: any = props;
 
   const pos = useMemo(calcPosition, [calcPosition]);
 

@@ -1,4 +1,4 @@
-import { ControlPropertyViewWrapper, KeyValueList, OptionsType } from "lowcoder-design";
+import { ControlPropertyViewWrapper, KeyValueList, OptionsType } from "#lowcoder-design/index";
 import { ReactNode } from "react";
 import styled from "styled-components";
 import { list } from "../generators/list";

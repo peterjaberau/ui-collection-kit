@@ -24,7 +24,7 @@ import { TemporaryStateItemComp } from "#lowcoder/comps/comps/temporaryStateComp
  * This component builds the Property Panel and the fake 'UI' for the Tour component
  */
 let TourBasicComp = (function() {
-  const childrenMap = {
+  const childrenMap: any = {
     ...TourChildrenMap,
     defaultValue: stringExposingStateControl("defaultValue"),
     value: stringExposingStateControl("value")

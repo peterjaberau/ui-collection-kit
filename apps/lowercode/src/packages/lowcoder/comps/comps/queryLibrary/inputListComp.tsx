@@ -17,7 +17,7 @@ import { EmptyContent } from "../../../components/EmptyContent";
 import { QueryLibraryContext } from "../../../util/context/QueryLibraryContext";
 import { list } from "../../generators/list";
 
-const childrenMap = {
+const childrenMap: any = {
   name: CompNameControl,
   description: valueComp<string>(""),
   value: JSONValueControl,

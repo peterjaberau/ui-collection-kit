@@ -1,6 +1,6 @@
 import axios from "axios";
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
-import { LinkButton } from "lowcoder-design";
+import { LinkButton } from "#lowcoder-design/index";
 import { useApplicationId, useShallowEqualSelector } from "#lowcoder/util/hooks";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -53,7 +53,7 @@ interface PluginViewProps {
 }
 
 export function PluginItem(props: PluginViewProps) {
-  const { name, onRemove } = props;
+  const { name, onRemove }: any = props;
   const dispatch = useDispatch();
   const appId = useApplicationId();
   const { onDrag, searchValue } = useContext(RightContext);

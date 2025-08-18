@@ -20,7 +20,7 @@ const TextWrapper = styled.div`
   gap: 4px;
 `;
 
-const childrenMap = {
+const childrenMap: any = {
   text: StringOrNumberControl,
   prefixIcon: IconControl,
   suffixIcon: IconControl,

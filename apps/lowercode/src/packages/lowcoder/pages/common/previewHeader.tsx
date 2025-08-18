@@ -3,7 +3,7 @@ import Header from "#lowcoder/components/layout/Header";
 import { SHARE_TITLE } from "#lowcoder/constants/apiConstants";
 import { ALL_APPLICATIONS_URL, APPLICATION_VIEW_URL, AUTH_LOGIN_URL } from "#lowcoder/constants/routesURL";
 import { User } from "#lowcoder/constants/userConstants";
-import { EllipsisTextCss, isDarkColor, TacoButton, TextEditIcon } from "lowcoder-design";
+import { EllipsisTextCss, isDarkColor, TacoButton, TextEditIcon } from "#lowcoder-design/index";
 import { useSelector } from "react-redux";
 import { currentApplication, getTemplateId, isPublicApplication } from "#lowcoder/redux/selectors/applicationSelector";
 import { getUser, isFetchingUser } from "#lowcoder/redux/selectors/usersSelectors";
@@ -118,7 +118,7 @@ const BrandLogo = styled.img`
 `
 
 export function HeaderProfile(props: { user: User }) {
-  const { user } = props;
+  const { user }: any = props;
   const fetchingUser = useSelector(isFetchingUser);
   const templateId = useSelector(getTemplateId);
   const isPublicApp = useSelector(isPublicApplication);

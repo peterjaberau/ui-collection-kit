@@ -70,7 +70,7 @@ function withTmpState<T extends CodeControlJSONType>(
   control: T,
   initialValue: ConstructorToView<T>
 ) {
-  const childrenMap = {
+  const childrenMap: any = {
     value: stateComp<ConstructorToView<T>>(initialValue),
     defaultValue: control,
   };

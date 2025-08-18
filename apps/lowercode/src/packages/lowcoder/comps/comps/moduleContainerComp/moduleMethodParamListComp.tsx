@@ -111,7 +111,7 @@ interface PropertyViewProps {
 }
 
 function PropertyView(props: PropertyViewProps) {
-  const { onDelete, onTypeChange, onAdd, onParamsConfigChange, comp } = props;
+  const { onDelete, onTypeChange, onAdd, onParamsConfigChange, comp }: any = props;
   const items = comp.getView();
 
   useEffect(() => {
@@ -154,7 +154,7 @@ interface ParamItemProps {
 }
 
 function ParamItem(props: ParamItemProps) {
-  const { name, type, description, defaultValue, onDelete, onTypeChange } = props;
+  const { name, type, description, defaultValue, onDelete, onTypeChange }: any = props;
   const label = getParamOptionLabel(type.getView() as ModuleMethodParamType);
   const [cnLabel] = label.split(" ");
 

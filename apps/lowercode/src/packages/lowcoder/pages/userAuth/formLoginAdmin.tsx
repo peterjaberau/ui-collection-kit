@@ -1,4 +1,4 @@
-import { FormInput, PasswordInput } from "lowcoder-design";
+import { FormInput, PasswordInput } from "#lowcoder-design/index";
 import {
   ConfirmButton,
   FormWrapperMobile,

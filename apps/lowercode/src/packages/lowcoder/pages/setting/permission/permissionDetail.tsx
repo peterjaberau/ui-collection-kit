@@ -25,7 +25,7 @@ export enum GroupUserKey {
 
 export default function PermissionSetting(props: {currentPageProp: number, pageSizeProp: number}) {
 
-  const {currentPageProp, pageSizeProp} = props;
+  const {currentPageProp, pageSizeProp}: any = props;
   const user = useSelector(getUser);
   const [elements, setElements] = useState<any>({ elements: [], total: 0, role: "" });
   const [group, setGroup] = useState<OrgGroup>();

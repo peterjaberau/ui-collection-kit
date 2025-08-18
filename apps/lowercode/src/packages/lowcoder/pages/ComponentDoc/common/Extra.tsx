@@ -14,7 +14,7 @@ interface IProps {
 }
 
 export default function Extra(props: IProps) {
-  const { compName } = props;
+  const { compName }: any = props;
   const [content, setContent] = useState("");
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { TacoButton, CustomModal, Alert } from "lowcoder-design"
+import { TacoButton, CustomModal, Alert } from "#lowcoder-design/index"
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateAppMetaAction } from "#lowcoder/redux/reduxActions/applicationActions";
@@ -214,7 +214,7 @@ export function UpdateAppModal({ visible, onCancel, onOk, res, folderId }: Updat
 }
 
 export function HomeResCard(props: { res: HomeRes; onMove: (res: HomeRes) => void; setModify:any; modify: boolean }) {
-  const { res, onMove, setModify, modify } = props;
+  const { res, onMove, setModify, modify }: any = props;
   const [dialogVisible, setDialogVisible] = useState(false)
   const dispatch = useDispatch();
 
@@ -354,7 +354,7 @@ export function HomeResCard(props: { res: HomeRes; onMove: (res: HomeRes) => voi
 }
 
 export function Back(props: { mode: string }) {
-  const { mode } = props;
+  const { mode }: any = props;
   return mode === "folder" ?
       <Wrapper style={{cursor: "pointer"}}>
         <Card>

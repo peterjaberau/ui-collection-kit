@@ -1,5 +1,5 @@
 import { GreyTextColor } from "#lowcoder/constants/style";
-import { TacoButton, CustomModal, TacoInput } from "lowcoder-design";
+import { TacoButton, CustomModal, TacoInput } from "#lowcoder-design/index";
 import styled from "styled-components";
 
 export const TwoColumnSettingPageContent = styled.div`

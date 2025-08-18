@@ -78,7 +78,7 @@ type DelegatedAction = {
   action: any;
 };
 
-const childrenMap = {
+const childrenMap: any = {
   appId: valueComp<string>(""),
   error: valueComp<string>(""),
   inputs: ModuleInputComp,

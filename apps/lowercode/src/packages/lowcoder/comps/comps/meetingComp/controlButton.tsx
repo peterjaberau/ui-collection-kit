@@ -162,7 +162,7 @@ function submitForm(editorState: EditorState, formName: string) {
   }
 }
 
-const childrenMap = {
+const childrenMap: any = {
   iconSize: withDefault(StringControl, "20px"),
   type: dropdownControl(typeOptions, ""),
   autoHeight: withDefault(AutoHeightControl, "fixed"),

@@ -10,7 +10,7 @@ import {
   LockIcon,
   UnLockIcon,
   CloseEyeIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import history from "#lowcoder/util/history";
 import { OAUTH_PROVIDER_SETTING } from "#lowcoder/constants/routesURL";
 import {
@@ -51,15 +51,15 @@ export const IdSourceDetail = (props: IdSourceDetailProps) => {
   const {
     config: configDetail,
     totalEnabledConfigs,
-  } = props.location.state;
+  }: any = props.location.state;
   const [form] = useForm();
   const [lock, setLock] = useState(() => {
-    const { config } = props.location.state;
+    const { config }: any = props.location.state;
     return !config.ifLocal;
   });
   const [saveLoading, setSaveLoading] = useState(false);
   const [saveDisable, setSaveDisable] = useState(() => {
-    const { config } = props.location.state;
+    const { config }: any = props.location.state;
     if (
       (config.authType === AuthType.Form && !config.enable) ||
       (!config.ifLocal && !config.enable)

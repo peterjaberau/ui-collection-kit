@@ -117,7 +117,7 @@ function handleMouseDown(e: MouseEvent, editorState: EditorState, showLeftPanel:
 export const EditorGlobalHotKeys = React.memo((props: GlobalProps) => {
   const editorState = useContext(EditorContext);
   const { history: editorHistory } = useContext(ExternalEditorContext);
-  const { togglePanel, panelStatus, toggleShortcutList } = props;
+  const { togglePanel, panelStatus, toggleShortcutList }: any = props;
   const applicationId = useApplicationId();
   const mountedRef = useRef(true);
 

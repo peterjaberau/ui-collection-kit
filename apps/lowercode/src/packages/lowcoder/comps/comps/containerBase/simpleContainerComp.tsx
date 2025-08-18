@@ -29,7 +29,7 @@ const SimpleContainerTmpComp: any = new MultiCompBuilder(children, (props, dispa
 
 // @ts-ignore
 export class SimpleContainerComp extends SimpleContainerTmpComp implements IContainer {
-  realSimpleContainer(key?: string): SimpleContainerComp | undefined {
+  realSimpleContainer(key?: string): SimpleContainerComp | any {
     const compMap = this.children.items.children
     if (_.isNil(key) || compMap.hasOwnProperty(key)) {
       return this

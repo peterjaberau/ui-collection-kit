@@ -18,7 +18,7 @@ import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import { CanvasContainerID } from "#lowcoder/constants/domLocators";
 import { CNRootContainer } from "#lowcoder/constants/styleSelectors";
-import { isValidColor, isValidGradient, ScrollBar } from "lowcoder-design";
+import { isValidColor, isValidGradient, ScrollBar } from "#lowcoder-design/index";
 import { defaultTheme } from "#lowcoder/constants/themeConstants";
 import { isEqual } from "lodash";
 import { DEFAULT_GRID_COLUMNS, DEFAULT_ROW_COUNT, DEFAULT_ROW_HEIGHT } from "#lowcoder/layout/calculateUtils";

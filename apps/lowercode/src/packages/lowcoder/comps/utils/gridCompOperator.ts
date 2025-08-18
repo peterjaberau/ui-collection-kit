@@ -23,7 +23,7 @@ import {
   replaceCompAction,
   wrapActionExtraInfo,
 } from "#lowcoder-core/index";
-import { CustomModal, messageInstance } from "lowcoder-design";
+import { CustomModal, messageInstance } from "#lowcoder-design/index";
 import { pasteKey, undoKey } from "#lowcoder/util/keyUtils";
 import { genRandomKey } from "./idGenerator";
 import { getLatestVersion, getRemoteCompType, parseCompType } from "./remote";

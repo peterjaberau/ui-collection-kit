@@ -6,14 +6,14 @@ import { NumberControl, StringControl } from "#lowcoder/comps/controls/codeContr
 import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 import { withDefault } from "#lowcoder/comps/generators";
 import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
-import { labelCss, Section, Tooltip, UnderlineCss } from "lowcoder-design";
-import { ValueFromOption } from "lowcoder-design";
+import { labelCss, Section, Tooltip, UnderlineCss } from "#lowcoder-design/index";
+import { ValueFromOption } from "#lowcoder-design/index";
 import { isEmpty } from "lodash";
 import { Fragment, ReactElement, ReactNode } from "react";
 import styled, { css } from "styled-components";
-import { AlignLeft } from "lowcoder-design";
-import { AlignRight } from "lowcoder-design";
-import { StarIcon } from "lowcoder-design";
+import { AlignLeft } from "#lowcoder-design/index";
+import { AlignRight } from "#lowcoder-design/index";
+import { StarIcon } from "#lowcoder-design/index";
 
 import { AnimationStyleType, LabelStyleType, heightCalculator, widthCalculator } from "./styleControlConstants";
 
@@ -167,7 +167,7 @@ function getLabelWidth(width: number, widthUnit: string): string {
 }
 
 export const LabelControl = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     text: withDefault(StringControl, trans("label")),
     tooltip: StringControl,
     hidden: BoolControl,

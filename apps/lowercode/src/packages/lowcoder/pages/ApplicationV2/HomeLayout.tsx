@@ -20,7 +20,7 @@ import {
   HomeEmptyIcon,
   HomeListIcon,
   Search,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { canEditApp, canManageApp } from "../../util/permissionUtils";
 import { HomeResKey, HomeResTypeEnum, NavigationTypes } from "../../types/homeRes";
 import { HomeResInfo } from "../../util/homeResUtils";
@@ -330,7 +330,7 @@ export function HomeLayout(props: HomeLayoutProps) {
     modify,
     setIsCreated,
     isCreated
-  } = props;
+  }: any = props;
 
   const user = useSelector(getUser);
   const isFetching = useSelector(isFetchingFolderElements);

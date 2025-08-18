@@ -131,7 +131,7 @@ function fixOldStyleData(oldData: any) {
   return oldData;
 }
 
-const childrenMap = {
+const childrenMap: any = {
   logoUrl: StringControl,
   logoEvent: withDefault(eventHandlerControl(logoEventHandlers), [{ name: "click" }]),
   horizontalAlignment: alignWithJustifyControl(),

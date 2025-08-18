@@ -61,7 +61,7 @@ export interface CompIDEProps {
 }
 
 export function CompIDE(props: CompIDEProps) {
-  const { compMap, compMeta, packageName, packageVersion } = props;
+  const { compMap, compMeta, packageName, packageVersion }: any = props;
   const [currentCompName, setCurrentCompName] = useState<string>(Object.keys(compMeta)[0]);
   const layoutInfo = compMeta[currentCompName]?.layoutInfo || { w: 5, h: 5 };
 

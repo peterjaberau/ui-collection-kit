@@ -20,7 +20,7 @@ import {
   QueryPropertyViewWrapper,
   QuerySectionWrapper,
   TriggerTypeStyled,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { BottomTabs } from "#lowcoder/pages/editor/bottom/BottomTabs";
 import { useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
@@ -68,7 +68,7 @@ const ComponentListWrapper = styled.div`
 `;
 
 export function QueryPropertyView(props: { comp: InstanceType<typeof QueryComp> }) {
-  const { comp } = props;
+  const { comp }: any = props;
 
   const editorState = useContext(EditorContext);
   const datasource = useSelector(getDataSource);
@@ -214,7 +214,7 @@ export const QueryGeneralPropertyView = (props: {
   comp: InstanceType<typeof QueryComp>;
   placement?: PageType;
 }) => {
-  const { comp, placement = "editor" } = props;
+  const { comp, placement = "editor" }: any = props;
   const editorState = useContext(EditorContext);
   const datasource = useSelector(getDataSource);
 
@@ -522,7 +522,7 @@ export const QueryVariablesPropertyView = (props: {
   comp: InstanceType<typeof QueryComp>;
   placement?: PageType;
 }) => {
-  const { comp, placement = "editor" } = props;
+  const { comp, placement = "editor" }: any = props;
 
   const children = comp.children;
   let datasourceId = children.datasourceId.getView();
@@ -706,7 +706,7 @@ export function ComponentUsagePanel(props: {
   components: { componentType: string, componentName: string; path: string; value: string }[];
   onSelect: (componentType: string, componentName: string, path: string) => void;
 }) {
-  const { components, onSelect } = props;
+  const { components, onSelect }: any = props;
 
   return (
     <Wrapper>
@@ -733,7 +733,7 @@ export const QueryUsagePropertyView = React.memo((props: {
   comp: InstanceType<typeof QueryComp>;
   placement?: PageType;
 }) => {
-  const { comp, placement = "editor" } = props;
+  const { comp, placement = "editor" }: any = props;
   const [ loading, setLoading ] = useState(false);
   const [ usageObjects, setUsageObjects ] = useState<any[]>([]);
   const editorState = useContext(EditorContext);

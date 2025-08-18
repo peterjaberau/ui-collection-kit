@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { EditPopover, PointIcon, Search, TacoButton } from "lowcoder-design";
+import { EditPopover, PointIcon, Search, TacoButton } from "#lowcoder-design/index";
 import { useState, useEffect } from "react";
 import { useDebouncedValue } from "#lowcoder/util/hooks";
 import { useDispatch, useSelector } from "react-redux";

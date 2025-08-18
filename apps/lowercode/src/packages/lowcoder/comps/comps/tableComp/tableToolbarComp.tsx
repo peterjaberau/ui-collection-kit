@@ -446,7 +446,7 @@ const FilterFooter = memo(function FilterFooter(props: {
   setFilterItems: (items: FilterItemType[]) => void;
   setVisible: (v: boolean) => void;
 }) {
-  const { filterItems, setFilterItems, setVisible } = props;
+  const { filterItems, setFilterItems, setVisible }: any = props;
 
   const handleAddFilter = useCallback(() => {
     setFilterItems(filterItems.concat(genFilterViewItem()));
@@ -499,7 +499,7 @@ const FilterContent = memo(function FilterContent(props: {
     updateFilter,
     handleStackTypeChange,
     removeFilter,
-  } = props;
+  }: any = props;
 
   const handleColumnKeyChange = useCallback((filter: FilterItemType, value: string) => {
     updateFilter({ ...filter, columnKey: value });
@@ -580,7 +580,7 @@ const TableFilterView = memo(function TableFilterView(props: {
   onFilterChange: (filters: TableFilterDataType[], stackType: TableFilter["stackType"]) => void;
   setVisible: (v: boolean) => void;
 }) {
-  const { columnKeyNames, tableFilter, onFilterChange, setVisible } = props;
+  const { columnKeyNames, tableFilter, onFilterChange, setVisible }: any = props;
   const [stackTypeState, setStackTypeState] = useState(tableFilter.stackType);
   const [filterItems, setFilterItems] = useState<FilterItemType[]>(() =>
     tableFilter.filters.length > 0
@@ -655,7 +655,7 @@ const ColumnSetting = memo(function ColumnSetting(props: {
   columns: Array<ColumnCompType>;
   setVisible: (v: boolean) => void;
 }) {
-  const { columns, setVisible } = props;
+  const { columns, setVisible }: any = props;
 
   // Memoize checked states for all columns
   const checkedStates = useMemo(() => columns.map((c) => !c.getView().tempHide), [columns]);
@@ -729,7 +729,7 @@ const ToolbarPopover = memo(function ToolbarPopover(props: {
   iconClassName: string;
   content: JSX.Element;
 }) {
-  const { visible, setVisible, Icon, iconClassName, content } = props;
+  const { visible, setVisible, Icon, iconClassName, content }: any = props;
 
   const handleVisibleChange = useCallback((v: boolean) => {
     setVisible(v);
@@ -778,7 +778,7 @@ export const TableToolbar = memo(function TableToolbar(props: {
     onSaveChanges,
     onCancelChanges,
     onEvent,
-  } = props;
+  }: any = props;
 
   const theme = useContext(ThemeContext)?.theme;
   const filtered = useMemo(() => toolbar.filter.filters.length > 0, [toolbar.filter.filters.length]);
@@ -892,7 +892,7 @@ export const TableToolbar = memo(function TableToolbar(props: {
 TableToolbar.displayName = 'TableToolbar';
 
 export const TableToolbarComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     showRefresh: BoolControl,
     showDownload: BoolControl,
     showFilter: BoolControl,

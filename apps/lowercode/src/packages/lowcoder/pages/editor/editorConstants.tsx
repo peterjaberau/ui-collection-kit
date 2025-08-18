@@ -105,7 +105,7 @@ import {
   PivotTableCompIconSmall,
   GraphChartCompIconSmall,
   TagsCompIconSmall,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 
 // Memoize icon components to prevent unnecessary re-renders
 const MemoizedIcon = memo(({ Icon }: { Icon: React.ComponentType }) => <Icon />);
@@ -238,7 +238,7 @@ export const CompStateIcon: {
   step: <MemoizedIcon Icon={StepCompIconSmall} />,
   table: <MemoizedIcon Icon={TableCompIconSmall} />,
   text: <MemoizedIcon Icon={TextCompIconSmall} />,
-  multiTags: <MemoizedIcon Icon={TagsCompIconSmall} />, 
+  multiTags: <MemoizedIcon Icon={TagsCompIconSmall} />,
   timeline: <MemoizedIcon Icon={TimeLineCompIconSmall} />,
   toggleButton: <MemoizedIcon Icon={ToggleButtonCompIconSmall} />,
   tour: <MemoizedIcon Icon={TourCompIconSmall} />,

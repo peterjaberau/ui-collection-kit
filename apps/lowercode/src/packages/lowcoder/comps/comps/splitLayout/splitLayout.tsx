@@ -63,7 +63,7 @@ const OrientationOptions = [
   },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   disabled: BoolControl,
   columns: SplitColumnOptionControl,
   containers: withDefault(sameTypeMap(SimpleContainerComp), {

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import dayjs from "dayjs";
 import { default as AntdBreadcrumb } from "antd/es/breadcrumb";
-import { ArrowIcon } from "lowcoder-design";
+import { ArrowIcon } from "#lowcoder-design/index";
 
 import { getUser } from "../../redux/selectors/usersSelectors";
 import { getCurrentUser } from "../../redux/selectors/usersSelectors";
@@ -24,13 +24,13 @@ import {
   BlurFinishInput,
   OtpFormInput, // maybe to use
   PasswordInput, // maybe to use
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 
 import {
   ApplicationDocIcon,
   ModuleDocIcon,
   AvatarGroupCompIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 
 import { useDispatch } from "react-redux";
 import { beforeImgUpload, getBase64 } from "#lowcoder/util/fileUtils";
@@ -172,7 +172,7 @@ const getInitials = (name: string) => {
 
 export function UserProfileLayout(props: UserProfileLayoutProps) {
 
-  const { breadcrumb = []} = props;
+  const { breadcrumb = []}: any = props;
   const user = useSelector(getUser);
   const currentUser = useSelector(getCurrentUser);
   const apps = useSelector(normalAppListSelector);

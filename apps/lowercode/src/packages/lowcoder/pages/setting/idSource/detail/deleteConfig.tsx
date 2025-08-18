@@ -4,7 +4,7 @@ import { trans } from "#lowcoder/i18n";
 import { useState } from "react";
 import { validateResponse } from "#lowcoder/api/apiUtils";
 import IdSourceApi from "#lowcoder/api/idSourceApi";
-import { CustomModal } from "lowcoder-design";
+import { CustomModal } from "#lowcoder-design/index";
 import history from "#lowcoder/util/history";
 import { OAUTH_PROVIDER_SETTING } from "#lowcoder/constants/routesURL";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";

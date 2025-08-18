@@ -35,7 +35,7 @@ interface AppViewProps {
 }
 
 export function AppView(props: AppViewProps) {
-  const { dsl, moduleDsl, appId, moduleInputs, onCompChange, onModuleEventTriggered } = props;
+  const { dsl, moduleDsl, appId, moduleInputs, onCompChange, onModuleEventTriggered }: any = props;
 
   const onModuleEventTriggeredRef = useRef(onModuleEventTriggered);
   onModuleEventTriggeredRef.current = onModuleEventTriggered;

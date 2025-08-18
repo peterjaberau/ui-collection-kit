@@ -74,7 +74,7 @@ const FormWrapper = styled.div`
 
 const eventOptions = [submitEvent] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   initialData: JSONObjectControl,
   resetAfterSubmit: BoolControl,
   disabled: BoolCodeControl,
@@ -89,7 +89,7 @@ type FormProps = TriContainerViewProps &
   RecordConstructorToView<typeof childrenMap> & { dispatch: DispatchType };
 
 function dispatchAsyncAddCompsAction(props: FormProps, columnInfos: FullColumnInfo[]) {
-  const { dispatch, layout, positionParams } = props.container.body[0].children.view.getView();
+  const { dispatch, layout, positionParams }: any = props.container.body[0].children.view.getView();
   let y = 0;
   const infos = columnInfos.map(({ column, compName }) => {
     const layoutItem: LayoutItem = {
@@ -133,7 +133,7 @@ function onCreate(
   editorState: EditorState,
   formName: string
 ): string {
-  const { dispatch } = props;
+  const { dispatch }: any = props;
   const nameGenerator = editorState.getNameGenerator();
   const infos = data.columns.map((column) => {
     const compName = nameGenerator.genItemName("form" + _.upperFirst(column.comp.type));

@@ -9,7 +9,7 @@ export default function DataSourceIcon(props: {
   size?: "middle" | "large";
   httpMethod?: HttpMethod;
 }) {
-  const { dataSourceType, size, httpMethod } = props;
+  const { dataSourceType, size, httpMethod }: any = props;
   const datasourceList = useSelector(getDataSource);
   const datasource = datasourceList.find((i) => i.datasource.type === dataSourceType);
   return getBottomResIcon(

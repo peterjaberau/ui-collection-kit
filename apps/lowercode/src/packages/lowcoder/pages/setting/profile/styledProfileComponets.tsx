@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { FormInput, OtpFormInput, PasswordInput } from "lowcoder-design";
+import { FormInput, OtpFormInput, PasswordInput } from "#lowcoder-design/index";
 import { TacoButton } from "#lowcoder-design/components/button"
 
 const FormInputStyle = css`

@@ -86,7 +86,7 @@ const ColWrapper = styled(Col)<{
   }
 `;
 
-const childrenMap = {
+const childrenMap: any = {
   disabled: BoolCodeControl,
   columns: ColumnOptionControl,
   containers: withDefault(sameTypeMap(SimpleContainerComp), {
@@ -185,7 +185,7 @@ const ColumnLayout = (props: ColumnLayoutProps) => {
     columnStyle,
     horizontalGridCells,
     mainScrollbar
-  } = props;
+  }: any = props;
 
   // Extract minWidths from columns
   const minWidths = columns.map(column => column.minWidth || null);

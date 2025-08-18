@@ -1,5 +1,5 @@
 import React from "react";
-import { DatasourceForm, FormInputItem, FormSection } from "lowcoder-design";
+import { DatasourceForm, FormInputItem, FormSection } from "#lowcoder-design/index";
 import { EsConfig } from "../../../api/datasourceApi";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import {
@@ -11,7 +11,7 @@ import {
 import { trans } from "#lowcoder/i18n";
 
 export const EsDatasourceForm = (props: DatasourceFormProps) => {
-  const { form, datasource } = props;
+  const { form, datasource }: any = props;
   const datasourceConfig = datasource?.datasourceConfig as EsConfig;
 
   return (

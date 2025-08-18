@@ -80,7 +80,7 @@ export const treeCommonChildren = {
 };
 
 export function useTree(props: RecordConstructorToView<typeof treeCommonChildren>) {
-  const { treeData, expanded, defaultExpandAll } = props;
+  const { treeData, expanded, defaultExpandAll }: any = props;
   useEffect(() => {
     if (defaultExpandAll) {
       expanded.onChange(expandAll(treeData));

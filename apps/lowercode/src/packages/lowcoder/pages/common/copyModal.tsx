@@ -1,5 +1,5 @@
 import { APPLICATION_VIEW_URL } from "#lowcoder/constants/routesURL";
-import { CustomModal, CustomSelect, TacoInput } from "lowcoder-design";
+import { CustomModal, CustomSelect, TacoInput } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -30,7 +30,7 @@ export function CopyModal(props: CopyModalProps) {
         folder.subApplications?.findIndex((app) => app?.applicationId === props.id) > -1
     )?.folderId || ""
   );
-  const { visible, close, name, type, id } = props;
+  const { visible, close, name, type, id }: any = props;
   const appName = name.length > 25 ? `${name.substring(0, 25)}...` : name;
 
   return (

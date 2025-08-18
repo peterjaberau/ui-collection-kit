@@ -1,12 +1,12 @@
 import InviteApi, { InviteInfo } from "#lowcoder/api/inviteApi";
-import { CommonTextLabel, CustomModal, TacoButton, TacoInput } from "lowcoder-design";
+import { CommonTextLabel, CustomModal, TacoButton, TacoInput } from "#lowcoder-design/index";
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { AppState } from "#lowcoder/redux/reducers";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import styled from "styled-components";
 import { validateResponse } from "#lowcoder/api/apiUtils";
-import { WhiteLoading } from "lowcoder-design";
+import { WhiteLoading } from "#lowcoder-design/index";
 import { genInviteLink } from "#lowcoder/util/urlUtils";
 import { HelpText } from "#lowcoder/components/HelpText";
 import copyToClipboard from "copy-to-clipboard";
@@ -27,7 +27,7 @@ const StyledLoading = styled(WhiteLoading)`
 `;
 
 function InviteContent(props: { inviteInfo: InviteInfo, onClose?: () => void }) {
-  const { inviteInfo, onClose } = props;
+  const { inviteInfo, onClose }: any = props;
   const inviteLink = genInviteLink(inviteInfo?.inviteCode);
   const inviteText = trans("memberSettings.inviteText", {
     userName: inviteInfo.createUserName,
@@ -110,7 +110,7 @@ function InviteDialog(props: {
   trigger: ReactNode;
   style?: CSSProperties;
 }) {
-  const { orgId } = props;
+  const { orgId }: any = props;
   const [inviteInfo, setInviteInfo] = useState<InviteInfo>();
   const [inviteDialogVisible, setInviteDialogVisible] = useState(false);
   useEffect(() => {

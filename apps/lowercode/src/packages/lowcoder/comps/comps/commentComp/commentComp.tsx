@@ -88,7 +88,7 @@ const EventOptions = [
   mentionEvent,
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   value: jsonControl(convertCommentData, commentDate),
   title: withDefault(StringControl, trans("comment.titledDefaultValue")),
   placeholder: withDefault(StringControl, trans("comment.placeholder")),
@@ -129,7 +129,7 @@ const CommentCompBase = (
     placeholder,
     deleteAble,
     animationStyle,
-  } = props;
+  }: any = props;
   type PrefixType = "@" | keyof typeof mentionList;
   // Used to save the consolidated list of mentions
   const [MentionListData, setMentionList] = useState<typeof mentionList>([]);

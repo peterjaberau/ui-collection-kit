@@ -10,7 +10,7 @@ import {
   ConstructorToDataType,
   SimpleComp,
 } from "#lowcoder-core/index";
-import { ControlPropertyViewWrapper } from "lowcoder-design";
+import { ControlPropertyViewWrapper } from "#lowcoder-design/index";
 import { ReactNode } from "react";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 

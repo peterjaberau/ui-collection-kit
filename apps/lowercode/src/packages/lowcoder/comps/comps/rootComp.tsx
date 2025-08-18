@@ -47,7 +47,7 @@ interface RootViewProps extends HTMLAttributes<HTMLDivElement> {
   isModuleRoot: boolean;
 }
 
-const childrenMap = {
+const childrenMap: any = {
   ui: UIComp,
   queries: QueryListComp,
   tempStates: TemporaryStateListComp,
@@ -62,7 +62,7 @@ const childrenMap = {
 
 const RootView = React.memo((props: RootViewProps) => {
   const previewTheme = useContext(ThemeContext);
-  const { comp, isModuleRoot, ...divProps } = props;
+  const { comp, isModuleRoot, ...divProps }: any = props;
   const [editorState, setEditorState] = useState<EditorState>();
   const [propertySectionState, setPropertySectionState] = useState<PropertySectionState>({});
   const { readOnly } = useContext(ExternalEditorContext);

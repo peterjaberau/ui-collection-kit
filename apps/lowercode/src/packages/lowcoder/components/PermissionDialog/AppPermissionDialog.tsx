@@ -36,7 +36,7 @@ export const AppPermissionDialog = React.memo((props: {
   visible: boolean;
   onVisibleChange: (visible: boolean) => void;
 }) => {
-  const { applicationId } = props;
+  const { applicationId }: any = props;
   const dispatch = useDispatch();
   const appPermissionInfo = useSelector(getAppPermissionInfo);
 
@@ -197,7 +197,7 @@ function AppShareView(props: {
   permissionInfo: AppPermissionInfo;
   isModule: boolean;
 }) {
-  const { applicationId, permissionInfo, isModule } = props;
+  const { applicationId, permissionInfo, isModule }: any = props;
   const [isPublic, setPublic] = useState(permissionInfo.publicToAll);
   const [isPublicToMarketplace, setPublicToMarketplace] = useState(permissionInfo.publicToMarketplace);
   const dispatch = useDispatch();

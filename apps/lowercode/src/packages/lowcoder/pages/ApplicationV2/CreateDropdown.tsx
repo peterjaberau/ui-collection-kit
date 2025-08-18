@@ -9,7 +9,7 @@ import {
   PackUpIcon,
   PcNavIcon,
   TacoButton,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import React, { FunctionComponent, useState } from "react";
 import type { ItemType } from "antd/es/menu/interface";
 import { HomeResInfo } from "../../util/homeResUtils";
@@ -149,7 +149,7 @@ function NavLayoutPickModal(props: {
   visible: boolean;
   setVisible: (v: boolean) => void;
 }) {
-  const { visible, setVisible, onCreate } = props;
+  const { visible, setVisible, onCreate }: any = props;
   return (
     <CustomModal
       open={visible}
@@ -186,7 +186,7 @@ function NavLayoutPickModal(props: {
 }
 
 export const CreateDropdown = (props: { defaultVisible?: boolean; mode: HomeLayoutMode; setModify: any; modify: boolean }) => {
-  const { defaultVisible, mode, setModify, modify} = props;
+  const { defaultVisible, mode, setModify, modify}: any = props;
   const [createDropdownVisible, setCreateDropdownVisible] = useState(false);
   const [layoutPickerVisible, setLayoutPickerVisible] = useState(false);
 

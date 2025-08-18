@@ -113,7 +113,7 @@ const LinksMenu = React.memo(({ options }: { options: any[] }) => {
 LinksMenu.displayName = 'LinksMenu';
 
 const ColumnLinksCompTmp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     options: manualOptionsControl(OptionItem, {
       initOptions: [{ label: trans("table.option1") }],
     }),

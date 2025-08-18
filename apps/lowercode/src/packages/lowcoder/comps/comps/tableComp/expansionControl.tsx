@@ -26,7 +26,7 @@ const ContainerView = (props: ContainerBaseProps) => {
 };
 
 function ExpandView(props: { containerProps: ConstructorToView<typeof SimpleContainerComp> }) {
-  const { containerProps } = props;
+  const { containerProps }: any = props;
   const background = useContext(BackgroundColorContext);
   return (
     <ContainerView

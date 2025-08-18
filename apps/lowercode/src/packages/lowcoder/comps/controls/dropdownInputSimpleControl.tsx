@@ -1,6 +1,6 @@
 import { MultiCompBuilder } from "#lowcoder/comps/generators";
 import { CompAction, CompActionTypes } from "#lowcoder-core/index";
-import { OptionsType, ValueFromOption } from "lowcoder-design";
+import { OptionsType, ValueFromOption } from "#lowcoder-design/index";
 import { ReactNode } from "react";
 import { ControlPlacement } from "./controlParams";
 import { dropdownControl } from "./dropdownControl";
@@ -24,7 +24,7 @@ export function dropdownInputSimpleControl(
   dropdownDefaultValue: ValueFromOption<OptionsType>,
   inputDefaultValue?: number
 ) {
-  const childrenMap = {
+  const childrenMap: any = {
     dropdown: dropdownControl(options, dropdownDefaultValue),
     input: numberSimpleControl(inputDefaultValue),
   };

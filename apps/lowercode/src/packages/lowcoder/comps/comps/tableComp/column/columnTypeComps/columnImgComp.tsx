@@ -14,7 +14,7 @@ import { clickEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventH
 
 export const ColumnValueTooltip = trans("table.columnValueTooltip");
 
-const childrenMap = {
+const childrenMap: any = {
   src: withDefault(StringControl, "{{currentCell}}"),
   size: withDefault(NumberControl, "50"),
   onEvent: eventHandlerControl([clickEvent]),

@@ -112,7 +112,7 @@ const SelectOptionWithEventsControl = optionsControl(SelectOptionWithEvents, {
   uniqField: "value",
 });
 
-const childrenMap = {
+const childrenMap: any = {
   text: StringControl,
   options: SelectOptionWithEventsControl,
   onEvent: eventHandlerControl(SelectOptionEventOptions),

@@ -53,7 +53,7 @@ interface TabTitleProps {
 }
 
 export const TabTitle = memo(function TabTitle(props: TabTitleProps) {
-  const { icon, text } = props;
+  const { icon, text }: any = props;
   return (
     <TabTitleWrapper>
       {icon && <IconWrapper>{icon}</IconWrapper>}

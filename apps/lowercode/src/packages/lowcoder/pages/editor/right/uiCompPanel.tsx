@@ -21,7 +21,7 @@ import {
   PropertySectionContextType,
   PropertySectionState,
   labelCss,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { TransparentImg } from "../../../util/commonUtils";
 import { RightContext } from "./rightContext";
 import { useSelector } from "react-redux";
@@ -66,7 +66,7 @@ const HovDiv = styled.div`
 `;
 
 const IconContain = (props: { Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>> }) => {
-  const { Icon } = props;
+  const { Icon }: any = props;
   const brandingSettings = useSelector(getBrandingSetting);
 
   return (

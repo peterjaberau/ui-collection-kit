@@ -1,6 +1,6 @@
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 import React, { CSSProperties, ReactNode, useMemo, useRef } from "react";
-import { CheckBox, PackUpIcon, TacoButton } from "lowcoder-design";
+import { CheckBox, PackUpIcon, TacoButton } from "#lowcoder-design/index";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ReactHotkeys from "#lowcoder/util/hotkeys";
@@ -199,10 +199,10 @@ const BrandingWrapper = (props: {
 
   return (
     <>
-      
+
       <Row style={{ minHeight: '500px' }}>
         <StyledBrandingColumn md={12} sm={24} $bgImage={brandingImage}>
-          {brandingText && ( 
+          {brandingText && (
             <StyledBrandingText>
               {brandingText}
             </StyledBrandingText>
@@ -225,7 +225,7 @@ export const AuthContainer = (props: {
   orgId?: string;
 }) => {
   const brandingSettings = useSelector(getBrandingSetting);
-  
+
   const showEEBranding = useMemo(() => {
     return props.isEE && !isEmpty(brandingSettings);
   }, [props.isEE, brandingSettings]);

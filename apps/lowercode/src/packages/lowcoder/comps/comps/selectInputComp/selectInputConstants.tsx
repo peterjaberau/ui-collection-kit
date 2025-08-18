@@ -1,4 +1,4 @@
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { ChildrenTypeToDepsKeys, depsConfig } from "../../generators/withExposing";
 import { BoolControl } from "../../controls/boolControl";
 import { CustomRuleControl } from "../../controls/codeControl";
@@ -77,7 +77,7 @@ export const useSelectInputValidate = (props: ValidationParams) => {
   useEffect(() => {
     props.value.onChange?.(defaultValue)
   }, [defaultValue]);
-  
+
   useEffect(() => {
     if (!changeRef.current) return;
 

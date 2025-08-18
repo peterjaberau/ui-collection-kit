@@ -139,7 +139,7 @@ import {
   AutoCompleteCompIcon,
   ResponsiveLayoutCompIcon,
   MermaidCompIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 
 type Registry = {
   [key in UICompType]?: UICompManifest;

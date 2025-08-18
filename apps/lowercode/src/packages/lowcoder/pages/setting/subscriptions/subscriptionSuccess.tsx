@@ -6,7 +6,7 @@ import { HeaderBack } from "../permission/styledComponents";
 import history from "#lowcoder/util/history";
 import { SUBSCRIPTION_SETTING } from "#lowcoder/constants/routesURL";
 import { Flex, Typography, Card } from 'antd';
-import { ArrowIcon } from "lowcoder-design";
+import { ArrowIcon } from "#lowcoder-design/index";
 
 const { Title, Paragraph } = Typography;
 

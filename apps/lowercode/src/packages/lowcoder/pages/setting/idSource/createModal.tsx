@@ -1,4 +1,4 @@
-import { CustomSelect } from "lowcoder-design";
+import { CustomSelect } from "#lowcoder-design/index";
 import {
   CustomModalStyled,
 } from "../styled";
@@ -29,7 +29,7 @@ function CreateModal(props: CreateModalProp) {
     oauthProvidersList,
     closeModal,
     onConfigCreate
-  } = props;
+  }: any = props;
   const [form] = Form.useForm();
 
   const handleSave = () => {
@@ -97,7 +97,7 @@ function CreateModal(props: CreateModalProp) {
           </CustomSelect>
         </Form.Item>
       </FormStyled>
-      
+
       {selectedAuthType === AuthType.Generic && (
         <GenericOAuthForm
           authType={selectedAuthType}

@@ -111,7 +111,7 @@ function EditableCellComp<T extends JSONValue>(props: EditableCellProps<T>) {
     cellTooltip,
     cellIndex,
     ...otherProps
-  } = props;
+  }: any = props;
 
   const status = _.isNil(changeValue) ? "normal" : "toSave";
   const editable = editViewFn ? props.editable : false;

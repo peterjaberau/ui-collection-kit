@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   }
 `;
 export default function ExampleGroup(props: React.PropsWithChildren<IProps>) {
-  const { title, description, children } = props;
+  const { title, description, children }: any = props;
   const tabs = React.Children.map(children as ReactElement, (child: ReactElement) => {
     return {
       title: child.props.title,

@@ -72,7 +72,7 @@ export const VariablesControl = class extends list(VariableControl) {
   }
 };
 
-const childrenMap = {
+const childrenMap: any = {
   path: ParamsStringControl,
   headers: withDefault(keyValueListControl(), [{ key: "", value: "" }]),
   params: withDefault(keyValueListControl(), [{ key: "", value: "" }]),
@@ -106,7 +106,7 @@ function parseVariables(value: JSONValue): string[] {
 }
 
 const PropertyView = (props: { comp: InstanceType<typeof GraphqlQuery>; datasourceId: string }) => {
-  const { comp } = props;
+  const { comp }: any = props;
   const { children } = comp;
 
   return (

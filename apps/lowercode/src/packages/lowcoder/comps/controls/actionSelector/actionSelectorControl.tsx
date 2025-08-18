@@ -17,7 +17,7 @@ import {
   isMyCustomAction,
   UpdateActionContextAction,
 } from "#lowcoder-core/index";
-import { Dropdown, HighContainer, Treediv } from "lowcoder-design";
+import { Dropdown, HighContainer, Treediv } from "#lowcoder-design/index";
 import { useContext } from "react";
 import { limitExecutor, setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
 import { getPromiseAfterExecuteDispatch, handlePromiseAfterResult } from "#lowcoder/util/promiseUtils";
@@ -149,7 +149,7 @@ interface PropertyViewProps {
 }
 
 function ActionSelectorControlPropertyView(props: PropertyViewProps) {
-  const { comp, placement, label } = props;
+  const { comp, placement, label }: any = props;
   const editorState = useContext(EditorContext);
   const eventHandlerSlowdownUrl = trans("docUrls.eventHandlerSlowdown");
   return (

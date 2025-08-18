@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { default as Modal } from "antd/es/modal";
-import { CloseIcon } from "lowcoder-design";
+import { CloseIcon } from "#lowcoder-design/index";
 import styled from "styled-components";
 import { Layers } from "#lowcoder/constants/Layers";
 
@@ -32,7 +32,7 @@ function VideoDialog(props: {
   visible: boolean;
   setVisible: (v: boolean) => void;
 }) {
-  const { videoSrc, visible, setVisible } = props;
+  const { videoSrc, visible, setVisible }: any = props;
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {

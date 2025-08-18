@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ArrowIcon } from "lowcoder-design";
+import { ArrowIcon } from "#lowcoder-design/index";
 import styled from "styled-components";
 import { trans } from "#lowcoder/i18n";
 import { useParams } from "react-router-dom";

@@ -12,7 +12,7 @@ type Props = {
 
 export function listPropertyView(compType: ListCompType) {
   return (props: Props) => {
-    const { comp } = props;
+    const { comp }: any = props;
     const children = comp.children;
     return (
       <>

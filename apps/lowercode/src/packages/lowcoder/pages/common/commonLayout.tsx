@@ -1,7 +1,7 @@
 import { Route, Switch, useLocation } from "react-router-dom";
 import { default as Layout } from "antd/es/layout";
 import { AppHeader } from "#lowcoder/pages/common/header";
-import { Menu } from "lowcoder-design";
+import { Menu } from "#lowcoder-design/index";
 import history from "#lowcoder/util/history";
 import styled from "styled-components";
 import * as React from "react";
@@ -53,7 +53,7 @@ export function CommonLayout(props: LayoutProps) {
   const user = useSelector<AppState, User>(getUser);
   const applications = useSelector<AppState, ApplicationMeta[]>(normalAppListSelector);
   const currentPath = useLocation().pathname;
-  const { sidebarTitle, sidebarItems } = props;
+  const { sidebarTitle, sidebarItems }: any = props;
 
   const paths = sidebarItems.map((item) => item.routePath);
   const key = paths.includes(currentPath)

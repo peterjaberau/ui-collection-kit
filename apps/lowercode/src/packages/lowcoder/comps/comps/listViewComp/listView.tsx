@@ -225,7 +225,7 @@ type Props = {
 };
 
 export function ListView(props: Props) {
-  const { comp } = props;
+  const { comp }: any = props;
   const children = comp.children;
   const ref: any = useRef(null);
   const editorState = useContext(EditorContext);

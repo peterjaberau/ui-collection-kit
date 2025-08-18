@@ -11,7 +11,7 @@ import { CanvasContainerID } from "#lowcoder/constants/domLocators";
 import { Layers } from "#lowcoder/constants/Layers";
 import { trans } from "#lowcoder/i18n";
 import { changeChildAction, CompActionTypes, ConstructorToView } from "#lowcoder-core/index";
-import { HintPlaceHolder, TacoButton } from "lowcoder-design";
+import { HintPlaceHolder, TacoButton } from "#lowcoder-design/index";
 import { createContext, useContext } from "react";
 import styled from "styled-components";
 import { NameGenerator } from "#lowcoder/comps/utils";
@@ -53,7 +53,7 @@ const ModalConfigView = React.memo((props: {
   containerProps: ConstructorToView<typeof SimpleContainerComp>;
   onCancel: () => void;
 }) => {
-  const { visible, containerProps, onCancel } = props;
+  const { visible, containerProps, onCancel }: any = props;
   const background = useContext(BackgroundColorContext);
   const { modalWidth = 520 } = useContext(SlotConfigContext);
   if (!visible) {
@@ -88,7 +88,7 @@ const ModalConfigView = React.memo((props: {
   );
 }, (prevProps, nextProps) => isEqual(prevProps, nextProps));
 
-const childrenMap = {
+const childrenMap: any = {
   container: SimpleContainerComp,
   showConfigModal: stateComp<boolean>(false),
 };

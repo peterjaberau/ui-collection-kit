@@ -1,7 +1,7 @@
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
 import { HelpText } from "#lowcoder/components/HelpText";
 import { GreyTextColor } from "#lowcoder/constants/style";
-import { CustomModal, CustomSelect, TacoButton } from "lowcoder-design";
+import { CustomModal, CustomSelect, TacoButton } from "#lowcoder-design/index";
 import { lazy, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCommonSettings, setCommonSettings } from "#lowcoder/redux/reduxActions/commonSettingsActions";

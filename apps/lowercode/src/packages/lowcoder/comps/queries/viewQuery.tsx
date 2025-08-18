@@ -3,7 +3,7 @@ import { list } from "../generators/list";
 import { ParamsJsonControl } from "../controls/paramsControl";
 import { FunctionProperty, toQueryView } from "./queryCompUtils";
 
-const childrenMap = {
+const childrenMap: any = {
   fields: list(ParamsJsonControl),
 };
 

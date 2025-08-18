@@ -81,7 +81,7 @@ function fixOldData(oldData: any) {
 }
 
 const LinkTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     text: withDefault(StringControl, trans("link.link")),
     onEvent: ButtonEventHandlerControl,
     disabled: BoolCodeControl,

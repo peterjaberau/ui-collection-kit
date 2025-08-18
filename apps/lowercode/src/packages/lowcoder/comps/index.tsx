@@ -118,7 +118,7 @@ import {
   BarChartCompIcon,
   LineChartCompIcon,
   ScatterChartCompIcon
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { ModuleComp } from "./comps/moduleComp/moduleComp";
 import { TableComp } from "./comps/tableComp/tableComp";
 import { defaultTableData } from "./comps/tableComp/mockTableComp";

@@ -17,7 +17,7 @@ import {
   LeftColorPaletteIcon,
   LeftJSSettingIcon,
   ScrollBar,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { useTemplateViewMode } from "#lowcoder/util/hooks";
 import {
   type PanelStatus,
@@ -404,7 +404,7 @@ const DeviceWrapper = ({
 }
 
 function EditorView(props: EditorViewProps) {
-  const { uiComp } = props;
+  const { uiComp }: any = props;
   const params = useParams<AppPathParams>();
   const editorState = useContext(EditorContext);
   const { readOnly, hideHeader } = useContext(ExternalEditorContext);

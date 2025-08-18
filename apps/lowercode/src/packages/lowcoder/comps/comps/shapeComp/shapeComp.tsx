@@ -27,7 +27,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { EditorContext } from "#lowcoder/comps/editorState";
 
 export const ContainerBaseComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     disabled: BoolCodeControl,
     icon: withDefault(ShapeControl, ""),
   };

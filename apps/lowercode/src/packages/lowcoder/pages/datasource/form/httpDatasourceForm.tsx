@@ -8,7 +8,7 @@ import {
   FormSectionLabel,
   FormSelectItem,
   ValueFromOption,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import React, { useState } from "react";
 import {
@@ -48,7 +48,7 @@ const UrlRules: Rule[] = [
 ];
 
 export const HttpDatasourceForm = (props: DatasourceFormProps) => {
-  const { form, datasource } = props;
+  const { form, datasource }: any = props;
   const datasourceConfig = datasource?.datasourceConfig as HttpConfig;
   // const oauthConfig = datasourceConfig?.authConfig as OAuthConfig;
 

@@ -90,9 +90,9 @@ function ColumnTypeView(props: {
     height?: number;
     width?: number;
   }>({ done: false });
-  
+
   // Use refs for cleanup
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout>(null);
   const mountedRef = useRef(true);
   const parentElementRef = useRef<HTMLElement | null>(null);
 
@@ -115,11 +115,11 @@ function ColumnTypeView(props: {
   // Memoize event handlers
   const delayMouseEnter = useCallback(() => {
     if (!mountedRef.current) return;
-    
+
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    
+
     timeoutRef.current = setTimeout(() => {
       if (mountedRef.current) {
         setIsHover(true);
@@ -129,7 +129,7 @@ function ColumnTypeView(props: {
 
   const handleMouseLeave = useCallback(() => {
     if (!mountedRef.current) return;
-    
+
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
@@ -144,16 +144,16 @@ function ColumnTypeView(props: {
   // Check for overflow
   useEffect(() => {
     if (!mountedRef.current) return;
-    
+
     const wrapperEle = wrapperRef.current;
     if (!isHover || !wrapperEle) {
       return;
     }
-    
+
     const overflow =
       wrapperEle.clientHeight < wrapperEle.scrollHeight ||
       wrapperEle.clientWidth < wrapperEle.scrollWidth;
-      
+
     if (overflow || childIsOverflow(wrapperEle.children)) {
       if (!hasOverflow) {
         setHasOverflow(true);
@@ -166,10 +166,10 @@ function ColumnTypeView(props: {
   // Adjust position
   useEffect(() => {
     if (!mountedRef.current) return;
-    
+
     const wrapperEle = wrapperRef.current;
     const hoverEle = hoverViewRef.current;
-    
+
     if (!isHover || !hasOverflow) {
       if (parentElementRef.current) {
         parentElementRef.current.style.zIndex = "";
@@ -206,7 +206,7 @@ function ColumnTypeView(props: {
       tableEle.getBoundingClientRect().x +
       tableEle.offsetWidth -
       (hoverEle.getBoundingClientRect().x + width);
-      
+
     let left;
     if (leftOverflow > 0) {
       left = leftOverflow;

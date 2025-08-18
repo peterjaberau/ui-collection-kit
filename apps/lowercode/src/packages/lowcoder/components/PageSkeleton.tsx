@@ -69,7 +69,7 @@ export default function PageSkeleton(props: IProps) {
     hideHeader = false,
     hideSideBar = false,
     hideContent = false,
-  } = props;
+  }: any = props;
   const skeleton = (
     <SkeletonWrapper>
       <div>

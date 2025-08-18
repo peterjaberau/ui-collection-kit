@@ -165,7 +165,7 @@ const columnBatchOptions = [
 type ColumnBatchOptionValueType = typeof columnBatchOptions[number]["value"];
 
 const HideIcon = React.memo((props: { hide: boolean; setHide: (hide: boolean) => void }) => {
-  const { hide, setHide } = props;
+  const { hide, setHide }: any = props;
   const Eye = hide ? CloseEye : OpenEye;
 
   const handleClick = useCallback((e: React.MouseEvent) => {
@@ -296,7 +296,7 @@ function ColumnPropertyView<T extends MultiBaseComp<TableChildrenType>>(props: {
   comp: T;
   columnLabel: string;
 }) {
-  const { comp } = props;
+  const { comp }: any = props;
   const [viewMode, setViewMode] = useState<ViewOptionType>('normal');
   const [summaryRow, setSummaryRow] = useState(0);
   const [columnFilterType, setColumnFilterType] = useState<ColumnFilterOptionValueType>("all");

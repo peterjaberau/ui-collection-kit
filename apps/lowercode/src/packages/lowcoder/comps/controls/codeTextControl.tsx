@@ -4,7 +4,7 @@ import { EditorContext } from "#lowcoder/comps/editorState";
 import { valueComp } from "#lowcoder/comps/generators";
 import { CompExposingContext } from "#lowcoder/comps/generators/withContext";
 import { exposingDataForAutoComplete } from "#lowcoder/comps/utils/exposingTypes";
-import { ControlPropertyViewWrapper } from "lowcoder-design";
+import { ControlPropertyViewWrapper } from "#lowcoder-design/index";
 import { debounce } from "lodash";
 import { ReactNode, Suspense, lazy, useContext, useMemo } from "react";
 import type { CodeEditorProps } from "#lowcoder/base/codeEditor/codeEditorTypes";
@@ -23,7 +23,7 @@ interface CodeTextEditorProps extends Omit<CodeEditorProps, "onChange"> {
 const emptyExposingData = {};
 
 function CodeTextEditor(props: CodeTextEditorProps) {
-  const { codeText, onChange, enableExposingDataAutoCompletion = false, ...params } = props;
+  const { codeText, onChange, enableExposingDataAutoCompletion = false, ...params }: any = props;
   const compExposingData = useContext(CompExposingContext);
   const editorState = useContext(EditorContext);
 

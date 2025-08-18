@@ -1,4 +1,4 @@
-import { CustomModal, DatasourceForm, FormInputItem, FormSection } from "lowcoder-design";
+import { CustomModal, DatasourceForm, FormInputItem, FormSection } from "#lowcoder-design/index";
 import { RuleObject, StoreValue } from "rc-field-form/lib/interface";
 import { createFolder } from "../../redux/reduxActions/folderActions";
 import React, { useCallback, useMemo } from "react";

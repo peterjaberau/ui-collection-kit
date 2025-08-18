@@ -124,7 +124,7 @@ interface KeyValueItemProps extends Omit<EditPopoverProps, "children"> {
 }
 
 export function KeyValueItem(props: KeyValueItemProps) {
-  const { name, value, clickPopoverContent, ...editPopoverProps } = props;
+  const { name, value, clickPopoverContent, ...editPopoverProps }: any = props;
   const [isPopShow, showPop] = useState(props.defaultShowPopover);
 
   const itemContent = (
@@ -181,7 +181,7 @@ export default function KeyValueItemList(props: PropsWithChildren<ItemListProps>
     valueTitle,
     emptyText = trans("module.emptyText"),
     onEmptyClick,
-  } = props;
+  }: any = props;
   const count = Children.count(children);
   return (
     <ListWrapper>

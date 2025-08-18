@@ -55,7 +55,7 @@ const selectTypeOptions = [
 ] as const;
 
 // TODO: support drag, edit mode
-const childrenMap = {
+const childrenMap: any = {
   ...treeCommonChildren,
   selectType: dropdownControl(selectTypeOptions, "single"),
   checkStrictly: BoolControl,
@@ -71,7 +71,7 @@ const childrenMap = {
 };
 
 const TreeCompView = (props: RecordConstructorToView<typeof childrenMap>) => {
-  const { treeData, selectType, value, expanded, checkStrictly, style, labelStyle } = props;
+  const { treeData, selectType, value, expanded, checkStrictly, style, labelStyle }: any = props;
   const [height, setHeight] = useState<number>();
   const selectable = selectType === "single" || selectType === "multi";
   const checkable = selectType === "check";

@@ -228,7 +228,7 @@ interface ResCreateModalProps extends CustomModalProps {
 }
 
 export function ResCreatePanel(props: ResCreateModalProps) {
-  const { onSelect, onClose, recentlyUsed, datasource, placement = "editor" } = props;
+  const { onSelect, onClose, recentlyUsed, datasource, placement = "editor" }: any = props;
   const [isScrolling, setScrolling] = useState(false);
   const [visible, setVisible] = useState(false);
   const [curlModalVisible, setCurlModalVisible] = useState(false);

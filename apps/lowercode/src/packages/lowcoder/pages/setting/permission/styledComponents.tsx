@@ -11,7 +11,7 @@ import {
   Tooltip,
   WarnIcon,
   WhiteLoading,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
 import { i18nObjs, trans } from "#lowcoder/i18n";
@@ -381,7 +381,7 @@ interface Group {
 }
 
 export function UserDetailPopup(props: { userId: string; title: string }) {
-  const { userId, title } = props;
+  const { userId, title }: any = props;
   const [userInfo, setUserInfo] = useState<User | null>(null);
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(false);

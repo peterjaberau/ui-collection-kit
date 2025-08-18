@@ -4,7 +4,7 @@ import { isEmpty } from "lodash";
 import { useEffect, useState } from "react";
 import { DocumentViewer } from "react-documents";
 import styled, { css } from "styled-components";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { StringControl } from "../controls/codeControl";
 import { UICompBuilder, withDefault } from "../generators";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "../generators/withExposing";
@@ -72,7 +72,7 @@ const DraggableFileViewer = (props: {
 };
 
 let FileViewerBasicComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     src: StringControl,
     autoHeight: withDefault(AutoHeightControl,'auto'),
     showVerticalScrollbar: withDefault(BoolControl, false),

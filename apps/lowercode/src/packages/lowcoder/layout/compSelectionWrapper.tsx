@@ -2,10 +2,10 @@ import { EditorContext } from "#lowcoder/comps/editorState";
 import { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import { Layers } from "#lowcoder/constants/Layers";
 import { ModulePrimaryColor, PrimaryColor } from "#lowcoder/constants/style";
-import { fadeColor } from "lowcoder-design";
-import { CloseEyeIcon } from "lowcoder-design";
-import { DragWhiteIcon } from "lowcoder-design";
-import { WidthDragIcon } from "lowcoder-design";
+import { fadeColor } from "#lowcoder-design/index";
+import { CloseEyeIcon } from "#lowcoder-design/index";
+import { DragWhiteIcon } from "#lowcoder-design/index";
+import { WidthDragIcon } from "#lowcoder-design/index";
 import React, {
   MouseEvent,
   MouseEventHandler,
@@ -18,7 +18,7 @@ import React, {
 } from "react";
 import { ResizePayload, useResizeDetector } from "react-resize-detector";
 import styled, { css } from "styled-components";
-import { EllipsisTextCss } from "lowcoder-design";
+import { EllipsisTextCss } from "#lowcoder-design/index";
 import { draggingUtils } from "./draggingUtils";
 import type { ResizeHandleAxis } from "./gridLayoutPropTypes";
 import { isEqual } from "lodash";
@@ -373,7 +373,7 @@ export const CompSelectionWrapper = React.memo((props: {
   // });
 
   // log.debug("CompSelectionWrapper. name: ", props.name, " zIndex: ", zIndex);
-  const { nameConfig, resizeIconSize } = props;
+  const { nameConfig, resizeIconSize }: any = props;
 
   return (
     <div id={props.id} style={{ ...props.style, zIndex }} className={props.className}>

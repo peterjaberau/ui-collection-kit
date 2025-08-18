@@ -52,7 +52,7 @@ const createErrorResponse = (
   }
 }
 
-const childrenMap = {
+const childrenMap: any = {
   path: ParamsStringControl,
   destroySocketConnection: FunctionControl,
   isSocketConnected: stateComp<boolean>(false),
@@ -163,7 +163,7 @@ export class StreamQuery extends StreamTmpQuery {
 }
 
 const PropertyView = (props: { comp: InstanceType<typeof StreamQuery>; datasourceId: string }) => {
-  const { comp } = props;
+  const { comp }: any = props;
 
   return (
     <>

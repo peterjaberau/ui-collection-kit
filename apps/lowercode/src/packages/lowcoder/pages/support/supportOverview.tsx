@@ -5,7 +5,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Helmet } from "react-helmet";
 import { useUserDetails } from "./useUserDetails";
 import StepModal from "#lowcoder/components/StepModal";
-import { Search, TacoButton } from "lowcoder-design";
+import { Search, TacoButton } from "#lowcoder-design/index";
 import { Table } from "../../components/Table";
 import { Avatar, Flex, Tooltip } from "antd";
 import { buildSupportTicketLink } from "#lowcoder/constants/routesURL";

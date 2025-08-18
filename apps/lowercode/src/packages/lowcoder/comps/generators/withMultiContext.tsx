@@ -40,7 +40,7 @@ export function withMultiContext<TCtor extends MultiCompConstructor>(VariantComp
   const WithParamCompCtor = withParamsWithDefault(VariantCompCtor, {});
   type WithParamComp = ConstructorToComp<typeof WithParamCompCtor>;
   const MapCtor = map(WithParamCompCtor, false);
-  const childrenMap = {
+  const childrenMap: any = {
     [COMP_KEY]: WithParamCompCtor,
     /** only used when some keys have different status from the common comp */
     [MAP_KEY]: MapCtor,

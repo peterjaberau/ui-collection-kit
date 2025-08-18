@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CustomModal, TacoButton } from "lowcoder-design";
+import { CustomModal, TacoButton } from "#lowcoder-design/index";
 import { QueryLibraryEditorView } from "./queryLibraryEditorView";
 import { ReadOnlyMask } from "../common/styledComponent";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,7 @@ import { getCompContainer, useCompInstance } from "../../comps/utils/useCompInst
 import { QueryLibraryComp } from "../../comps/comps/queryLibrary/queryLibraryComp";
 import { SnapshotList } from "../../components/SnapshotList";
 import { timestampToHumanReadable } from "../../util/dateTimeUtils";
-import { ScrollBar } from "lowcoder-design";
+import { ScrollBar } from "#lowcoder-design/index";
 import QueryLibrarySkeletonView from "./QueryLibrarySkeletonView";
 import { ReadonlyTag } from "../common/freeLimitTag";
 import { trans } from "#lowcoder/i18n";
@@ -75,7 +75,7 @@ export const QueryLibraryHistoryView = (props: {
   compContainer: ReturnType<typeof getCompContainer>;
   onClose: () => void;
 }) => {
-  const { libraryQueryId, compContainer, onClose } = props;
+  const { libraryQueryId, compContainer, onClose }: any = props;
   const dispatch = useDispatch();
   const queryLibraryRecords = useSelector(getQueryLibraryRecords);
   const queryLibraryRecordsDSL = useSelector(getQueryLibraryRecordsDSL);

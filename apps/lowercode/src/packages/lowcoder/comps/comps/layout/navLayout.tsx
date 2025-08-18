@@ -185,7 +185,7 @@ function convertTreeData(data: any) {
 }
 
 let NavTmpLayout = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     onEvent: eventHandlerControl(EventOptions),
     dataOptionType: dropdownControl(DataOptionType, DataOption.Manual),
     items: withDefault(LayoutMenuItemListComp, [

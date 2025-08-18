@@ -50,7 +50,7 @@ const falseValuesOptions = [
   },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   text: BoolCodeControl,
   falseValues: dropdownControl(falseValuesOptions, ""),
   iconTrue: IconControl,

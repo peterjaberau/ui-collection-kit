@@ -136,7 +136,7 @@ export class ColumnTypeCompBuilder<
           options,
           avatars,
           ...safeProps
-        } = props;
+        }: any = props;
         return safeProps;
       }
     );

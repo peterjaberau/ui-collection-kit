@@ -24,7 +24,7 @@ export const BadgeStatusOptions = [
 
 export type StatusType = PresetStatusColorType | "none";
 
-const childrenMap = {
+const childrenMap: any = {
   text: StringControl,
   status: stringUnionControl(BadgeStatusOptions, "none"),
 };

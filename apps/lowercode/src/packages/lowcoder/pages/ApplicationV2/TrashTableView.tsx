@@ -1,6 +1,6 @@
 import { timestampToHumanReadable } from "../../util/dateTimeUtils";
 import { Table } from "../../components/Table";
-import { CustomModal, TacoButton } from "lowcoder-design";
+import { CustomModal, TacoButton } from "#lowcoder-design/index";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { HomeResInfo } from "../../util/homeResUtils";
@@ -34,7 +34,7 @@ const EditBtn = styled(TacoButton)`
 `;
 
 export const TrashTableView = (props: { resources: HomeRes[] , setModify: any, modify: boolean }) => {
-  const {resources, setModify, modify} = props;
+  const {resources, setModify, modify}: any = props;
   const dispatch = useDispatch();
 
   return (

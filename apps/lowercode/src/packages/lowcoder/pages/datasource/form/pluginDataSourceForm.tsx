@@ -20,7 +20,7 @@ import {
   FormSelectItemProps,
   TacoButton,
   TacoMarkDown,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import { AdvancedSettingFormSectionLabel, CertValidationFormItem, DatasourceNameFormInputItem, ForwardCookiesFormItem, GeneralSettingFormSectionLabel, encryptedPlaceholder } from "../form";
 import {
@@ -129,7 +129,7 @@ function getDefaultValues(def: DataSourcePluginMeta, datasource?: Datasource) {
 }
 
 export const PluginDataSourceForm = (props: DatasourceFormProps) => {
-  const { form, datasource, dataSourceTypeInfo, onFormReadyStatusChange } = props;
+  const { form, datasource, dataSourceTypeInfo, onFormReadyStatusChange }: any = props;
   const [extraParamConfigs, setExtraParamConfigs] = useState<DataSourceParamConfig[]>([]);
   const [isExtraParamsRefreshing, setExtraParamRefreshing] = useState(false);
   const [isExtraParamsRefreshError, setExtraParamRefreshError] = useState(false);

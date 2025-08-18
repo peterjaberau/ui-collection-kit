@@ -32,7 +32,7 @@ const StyledIconWrapper = styled(IconWrapper)`
 
 const DropdownEventOptions = [clickEvent] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   buttonType: dropdownControl(ButtonTypeOptions, "primary"),
   label: withDefault(StringControl, 'Menu'),
   prefixIcon: IconControl,

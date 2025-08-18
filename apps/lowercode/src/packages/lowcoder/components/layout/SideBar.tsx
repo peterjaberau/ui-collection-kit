@@ -23,7 +23,7 @@ const Sider = styled(LayoutSider)`
 `;
 
 export default function SideBar(props: SiderProps) {
-  const { children, ...otherProps } = props;
+  const { children, ...otherProps }: any = props;
   return (
     <Sider theme="light" width={244} {...otherProps}>
       {props.children}

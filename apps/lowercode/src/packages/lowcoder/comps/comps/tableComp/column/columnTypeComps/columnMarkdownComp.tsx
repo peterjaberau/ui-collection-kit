@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 
 const MarkdownEventOptions = [clickEvent] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   text: StringControl,
   onEvent: eventHandlerControl(MarkdownEventOptions),
 };

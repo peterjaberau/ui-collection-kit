@@ -3,13 +3,13 @@ import { GoogleSheetsConfig } from "../../../api/datasourceApi";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import { DatasourceNameFormInputItem, GeneralSettingFormSectionLabel } from "../form";
 import { trans } from "#lowcoder/i18n";
-import { DatasourceForm, FormSection, FormTextAreaItem } from "lowcoder-design";
+import { DatasourceForm, FormSection, FormTextAreaItem } from "#lowcoder-design/index";
 
 /**
  * todo check service account
  */
 export const GoogleSheetsDatasourceForm = (props: DatasourceFormProps) => {
-  const { form, datasource } = props;
+  const { form, datasource }: any = props;
   const datasourceConfig = datasource?.datasourceConfig as GoogleSheetsConfig;
 
   return (

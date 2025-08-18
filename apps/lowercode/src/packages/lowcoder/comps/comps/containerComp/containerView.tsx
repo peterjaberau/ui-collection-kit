@@ -324,7 +324,7 @@ const GridItemWrapper = React.memo(React.forwardRef(
     ref: React.ForwardedRef<HTMLDivElement>
   ) => {
     const editorState = useContext(EditorContext);
-    const { children, ...divProps } = props;
+    const { children, ...divProps }: any = props;
     return (
       <ItemWrapper ref={ref} $disableInteract={editorState?.disableInteract} {...divProps}>
         {props.children}
@@ -343,7 +343,7 @@ export const InnerGrid = React.memo((props: ViewPropsWithSelect) => {
     onRowCountChange,
     enableGridLines,
     isRowCountLocked,
-  } = props;
+  }: any = props;
   const horizontalGridCells = props.horizontalGridCells ? String(props.horizontalGridCells) : undefined;
   const currentTheme = useContext(ThemeContext)?.theme;
   const [currentRowCount, setRowCount] = useState(rowCount || Infinity);

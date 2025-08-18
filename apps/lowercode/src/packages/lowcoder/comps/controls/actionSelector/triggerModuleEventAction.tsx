@@ -2,11 +2,11 @@ import { triggerModuleEventAction, routeByNameAction } from "#lowcoder-core/inde
 import { SimpleNameComp } from "#lowcoder/comps/comps/simpleNameComp";
 import { CompNameContext, EditorContext } from "#lowcoder/comps/editorState";
 import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
-import { BranchDiv, Dropdown } from "lowcoder-design";
+import { BranchDiv, Dropdown } from "#lowcoder-design/index";
 import { ModuleLayoutCompName } from "#lowcoder/constants/compConstants";
 import { trans } from "#lowcoder/i18n";
 
-const childrenMap = {
+const childrenMap: any = {
   name: SimpleNameComp,
 };
 

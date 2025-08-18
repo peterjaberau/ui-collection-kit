@@ -4,7 +4,7 @@ import { EsDatasourceForm } from "./esDatasourceForm";
 import { SMTPDatasourceForm } from "./smtpDatasourceForm";
 import { FormInstance } from "antd/es/form/hooks/useForm";
 import { MongoDatasourceForm } from "./mongoDatasourceForm";
-import { FormSize } from "lowcoder-design";
+import { FormSize } from "#lowcoder-design/index";
 import { GoogleSheetsDatasourceForm } from "./googleSheetsDatasourceForm";
 import { DatasourceType } from "#lowcoder/constants/queryConstants";
 import { Datasource } from "#lowcoder/constants/datasourceConstants";

@@ -95,7 +95,7 @@ export const QueryLibraryEditorView = (props: {
   bodyLeft: ReactNode;
   bodyRight: ReactNode;
 }) => {
-  const { comp, title, subTitle, headerRight, bodyLeft, bodyRight } = props;
+  const { comp, title, subTitle, headerRight, bodyLeft, bodyRight }: any = props;
   const query = comp.children.query;
 
   const queryLibrary = useSelector(getQueryLibrary);

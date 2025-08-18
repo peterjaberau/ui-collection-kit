@@ -490,7 +490,7 @@ const TableTdLoading = styled(Skeleton.Button)<SkeletonButtonProps & {
 `;
 
 const ResizeableTitle = (props: any) => {
-  const { onResize, onResizeStop, width, viewModeResizable, ...restProps } = props;
+  const { onResize, onResizeStop, width, viewModeResizable, ...restProps }: any = props;
   const [childWidth, setChildWidth] = useState(0);
   const resizeRef = useRef<HTMLDivElement>(null);
   const isUserViewMode = useUserViewMode();
@@ -597,7 +597,7 @@ const TableCellView = React.memo((props: {
     loading,
     customAlign,
     ...restProps
-  } = props;
+  }: any = props;
 
   const [editing, setEditing] = useState(false);
   const rowContext = useContext(TableRowContext);
@@ -713,7 +713,7 @@ function ResizeableTableComp<RecordType extends object>(props: CustomTableProps<
     customLoading,
     onCellClick,
     ...restProps
-  } = props;
+  }: any = props;
   const [resizeData, setResizeData] = useState({ index: -1, width: -1 });
 
   // Memoize resize handlers
@@ -838,7 +838,7 @@ export const TableCompView = React.memo((props: {
   const viewMode = useUserViewMode();
   const compName = useContext(CompNameContext);
   const [loading, setLoading] = useState(false);
-  const { comp, onDownload, onRefresh } = props;
+  const { comp, onDownload, onRefresh }: any = props;
   const compChildren = comp.children;
   const style = compChildren.style.getView();
   const rowStyle = compChildren.rowStyle.getView();

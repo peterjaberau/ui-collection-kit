@@ -20,7 +20,7 @@ const fallbacks = {
 };
 
 export default function LazyRoute(props: IProps) {
-  const { fallback = "normal", ...routeProps } = props;
+  const { fallback = "normal", ...routeProps }: any = props;
   return (
     <Suspense fallback={fallbacks[fallback]}>
       <Route {...routeProps}></Route>

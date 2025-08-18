@@ -91,7 +91,7 @@ function DraggableItem(props: IProps, ref: Ref<HTMLDivElement>) {
     isOver = false,
     dragListeners,
     ...divProps
-  } = props;
+  }: any = props;
   return (
     <Wrapper $isOver={isOver} $dragging={dragging} $dropInAsSub={dropInAsSub} ref={ref} {...divProps}>
       <div className="draggable-handle-icon">

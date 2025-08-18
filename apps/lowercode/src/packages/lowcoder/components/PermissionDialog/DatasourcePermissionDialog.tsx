@@ -19,7 +19,7 @@ export const DatasourcePermissionDialog = (props: {
   visible: boolean;
   onVisibleChange: (visible: boolean) => void;
 }) => {
-  const { datasourceId } = props;
+  const { datasourceId }: any = props;
   const dispatch = useDispatch();
   const permissionInfo = useSelector(getDataSourcePermissionInfo)[datasourceId];
 

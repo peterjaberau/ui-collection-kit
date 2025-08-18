@@ -20,7 +20,7 @@ import {
   PropertySectionState,
   labelCss,
   sectionNames,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { Card, Divider, Flex, Input, List } from "antd";
 import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
 import dsl from "./detail/previewDsl";
@@ -80,7 +80,7 @@ const IconContain = (props: {
   Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>,
   isSelected: boolean,
 }) => {
-  const { Icon, isSelected } = props;
+  const { Icon, isSelected }: any = props;
   const brandingSettings = useSelector(getBrandingSetting);
 
   return (
@@ -116,7 +116,7 @@ Object.keys(uiCompCategoryNames).forEach((cat) => {
 })
 
 export const ThemeCompPanel = (props: any) => {
-  const { theme } = props;
+  const { theme }: any = props;
   const [searchValue, setSearchValue] = useState("");
   const [propertySectionState, setPropertySectionState] = useState<PropertySectionState>(initialState);
   const [searchedPropertySectionState, setSearchedPropertySectionState] = useState<PropertySectionState>({});

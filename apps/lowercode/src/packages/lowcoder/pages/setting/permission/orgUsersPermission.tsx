@@ -10,7 +10,7 @@ import {
   ModalFooterWrapper,
   SuperUserIcon,
   TacoButton,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { trans, transToNode } from "#lowcoder/i18n";
 import InviteDialog from "#lowcoder/pages/common/inviteDialog";
 import ProfileImage from "#lowcoder/pages/common/profileImage";
@@ -63,7 +63,7 @@ type UsersPermissionProp = {
 };
 
 function OrgUsersPermission(props: UsersPermissionProp) {
-  const { orgId, orgUsers, currentUser, setModify, modify, loading } = props;
+  const { orgId, orgUsers, currentUser, setModify, modify, loading }: any = props;
   const adminCount = orgUsers.filter(
     (user) => user.role === ADMIN_ROLE || user.role === SUPER_ADMIN_ROLE,
   ).length;

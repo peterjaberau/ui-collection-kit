@@ -97,7 +97,7 @@ interface PropertyViewProps {
 }
 
 function PropertyView(props: PropertyViewProps) {
-  const { onDelete, onAdd, items } = props;
+  const { onDelete, onAdd, items }: any = props;
 
   return (
     <div>
@@ -132,7 +132,7 @@ interface MethodItemProps {
 }
 
 function MethodItem(props: MethodItemProps) {
-  const { name, action, params, onDelete } = props;
+  const { name, action, params, onDelete }: any = props;
 
   const handleOnParamsConfigChange = () => {
     action.dispatch(WithParamsActionControl.setPartialParamDataAction(params.getParamsData()));

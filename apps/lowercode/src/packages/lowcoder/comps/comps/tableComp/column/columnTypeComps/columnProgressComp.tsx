@@ -65,7 +65,7 @@ const InputNumberStyled = styled(InputNumber)`
   }
 `;
 
-const childrenMap = {
+const childrenMap: any = {
   text: NumberControl,
   showValue: BoolControl,
 };

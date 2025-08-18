@@ -1,5 +1,5 @@
 import React from "react";
-import { DatasourceForm, FormSection } from "lowcoder-design";
+import { DatasourceForm, FormSection } from "#lowcoder-design/index";
 import { SQLConfig } from "../../../api/datasourceApi";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import {
@@ -12,7 +12,7 @@ import {
 } from "../form";
 
 export const SMTPDatasourceForm = (props: DatasourceFormProps) => {
-  const { form, datasource } = props;
+  const { form, datasource }: any = props;
   const datasourceConfig = datasource?.datasourceConfig as SQLConfig;
 
   return (

@@ -58,7 +58,7 @@ const Wrapper = styled.div`
 `;
 
 export default function Exposing(props: IProps) {
-  const { compName, compFactory } = props;
+  const { compName, compFactory }: any = props;
   const [exposingInfo, setExposingInfo] = useState<IExposingInfo>({});
 
   useEffect(() => {

@@ -417,7 +417,7 @@ const CustomEditText = (props: { value?: string; onChange?: (value: string) => v
 }
 
 const SortableItem = (props: { item: RowItem; form: FormInstance; index: number }) => {
-  const { item, form } = props
+  const { item, form }: any = props
   const { columnName, columnType, compItems } = item
   const disabled = !Form.useWatch(["columns", columnName, "enabled"], form)
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({

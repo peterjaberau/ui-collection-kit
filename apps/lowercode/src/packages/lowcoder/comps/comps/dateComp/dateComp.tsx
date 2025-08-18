@@ -422,7 +422,7 @@ export function fixOldDateOrTimeRangeData(oldData: any) {
 }
 
 let DateRangeTmpCmp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     defaultStart: stringExposingStateControl("defaultStart"),
     start: stringExposingStateControl("start"),
     defaultEnd: stringExposingStateControl("defaultEnd"),

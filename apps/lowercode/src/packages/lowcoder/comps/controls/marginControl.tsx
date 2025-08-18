@@ -16,7 +16,7 @@ const MarginContainer = styled.div<{}>`
   }
 `;
 export const MarginControl = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     left: withDefault(StringControl, ""),
     right: withDefault(StringControl, ""),
     top: withDefault(StringControl, ""),

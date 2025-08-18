@@ -6,7 +6,7 @@ import { LabelControl } from "#lowcoder/comps/controls/labelControl";
 import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import { SwitchStyle, SwitchStyleType, LabelStyle,  InputFieldStyle, AnimationStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
-import { Section, lightenColor, sectionNames } from "lowcoder-design";
+import { Section, lightenColor, sectionNames } from "#lowcoder-design/index";
 import styled, { css } from "styled-components";
 import { UICompBuilder } from "../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../generators/withExposing";
@@ -88,7 +88,7 @@ function fixOldData(oldData: any) {
  * Switch Comp
  */
 let SwitchTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     defaultValue: booleanExposingStateControl("defaultValue"),
     value: booleanExposingStateControl("value"),
     label: LabelControl,

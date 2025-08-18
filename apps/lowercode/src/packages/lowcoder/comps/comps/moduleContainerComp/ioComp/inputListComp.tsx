@@ -73,7 +73,7 @@ interface PropertyViewProps {
 }
 
 function PropertyView(props: PropertyViewProps) {
-  const { onDelete, onTypeChange, onAdd, items } = props;
+  const { onDelete, onTypeChange, onAdd, items }: any = props;
   const editorState = useContext(EditorContext);
 
   const handleAdd = () => {
@@ -118,7 +118,7 @@ interface InputItemProps {
 }
 
 function InputItem(props: InputItemProps) {
-  const { name, type, description, defaultValue, onDelete, onTypeChange } = props;
+  const { name, type, description, defaultValue, onDelete, onTypeChange }: any = props;
 
   const content = (
     <>

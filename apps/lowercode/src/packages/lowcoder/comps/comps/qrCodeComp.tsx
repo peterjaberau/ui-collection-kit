@@ -6,7 +6,7 @@ import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import { AnimationStyle, QRCodeStyle, heightCalculator,	widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
 import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { QRCodeSVG } from "qrcode.react";
 import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import { trans } from "#lowcoder/i18n";
@@ -26,7 +26,7 @@ const levelOptions = [
   { label: trans("QRCode.H"), value: "H" },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   value: stringExposingStateControl('value'),
   level: dropdownControl(levelOptions, 'L'),
   includeMargin: BoolControl.DEFAULT_TRUE,

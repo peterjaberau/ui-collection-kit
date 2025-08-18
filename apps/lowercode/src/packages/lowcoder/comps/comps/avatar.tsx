@@ -120,7 +120,7 @@ const sideOptions = [
   { label: trans('labelProp.right'), value: "right" },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   style: styleControl(avatarContainerStyle , 'style'),
   avatarStyle: styleControl(AvatarStyle , 'avatarStyle'),
   labelStyle: styleControl(avatarLabelStyle , 'labelStyle'),
@@ -141,7 +141,7 @@ const childrenMap = {
 };
 
 const AvatarView = (props: RecordConstructorToView<typeof childrenMap>) => {
-  const { shape, title, src, iconSize } = props;
+  const { shape, title, src, iconSize }: any = props;
   const comp = useContext(EditorContext).getUICompByName(useContext(CompNameContext));
   const handleClickEvent = useCompClickEventHandler({onEvent: props.onEvent})
 

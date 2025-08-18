@@ -45,7 +45,7 @@ const SiderStyled = styled.div`
 const LoadingOutlinedMemo = React.memo(LoadingOutlined);
 
 export const EditorLoadingSpin = React.memo((props: { height?: string | number }) => {
-  const { height = "100vh" } = props;
+  const { height = "100vh" }: any = props;
   return (
     <div style={{ height: height }}>
       <StyledSpin size="large" indicator={<LoadingOutlinedMemo spin />}/>

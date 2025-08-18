@@ -1,4 +1,4 @@
-import { FormInput, messageInstance, PasswordInput } from "lowcoder-design";
+import { FormInput, messageInstance, PasswordInput } from "#lowcoder-design/index";
 import {
   AuthBottomView,
   ConfirmButton,

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { messageInstance, CloseEyeIcon } from "lowcoder-design";
+import { messageInstance, CloseEyeIcon } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import {
   FormStyled,
@@ -26,7 +26,7 @@ function GeneralOAuthForm(props: GeneralOAuthFormProp) {
     authType,
     onSave,
     onCancel,
-  } = props;
+  }: any = props;
   const [form1] = Form.useForm();
   const [saveLoading, setSaveLoading] = useState(false);
 

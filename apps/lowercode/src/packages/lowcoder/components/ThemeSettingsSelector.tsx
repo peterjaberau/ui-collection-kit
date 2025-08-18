@@ -100,7 +100,7 @@ export default function ThemeSettingsSelector(props: ColorConfigProps) {
     gridBgImageSize: defaultGridBgImageSize,
     gridBgImagePosition: defaultGridBgImagePosition,
     gridBgImageOrigin: defaultGridBgImageOrigin,
-  } = props;
+  }: any = props;
 
   const configChangeWithDebounce = _.debounce(configChange, 0);
   const [color, setColor] = useState(defaultColor);

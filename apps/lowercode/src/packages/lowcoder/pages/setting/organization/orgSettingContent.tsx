@@ -1,5 +1,5 @@
 import { Org } from "#lowcoder/constants/orgConstants";
-import { ArrowIcon, BlurFinishInput } from "lowcoder-design";
+import { ArrowIcon, BlurFinishInput } from "#lowcoder-design/index";
 import { useDispatch, useSelector } from "react-redux";
 import { updateOrgAction } from "#lowcoder/redux/reduxActions/orgActions";
 import styled from "styled-components";

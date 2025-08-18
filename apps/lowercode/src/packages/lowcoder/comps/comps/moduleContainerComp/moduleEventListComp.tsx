@@ -100,7 +100,7 @@ interface PropertyViewProps {
 }
 
 function PropertyView(props: PropertyViewProps) {
-  const { onDelete, onAdd, items } = props;
+  const { onDelete, onAdd, items }: any = props;
 
   return (
     <div>
@@ -133,7 +133,7 @@ interface EventItemProps {
 }
 
 function EventItem(props: EventItemProps) {
-  const { name, onDelete } = props;
+  const { name, onDelete }: any = props;
   const content = <>{name.propertyView({ label: trans("module.name") })}</>;
   return (
     <KeyValueItem

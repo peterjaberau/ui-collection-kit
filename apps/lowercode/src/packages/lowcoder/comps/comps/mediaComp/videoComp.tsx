@@ -105,7 +105,7 @@ const ContainerVideo = (props: RecordConstructorToView<typeof childrenMap>) => {
   )
 }
 
-const childrenMap = {
+const childrenMap: any = {
   src: withDefault(StringStateControl, trans("video.defaultSrcUrl")),
   poster: withDefault(StringStateControl, trans("video.defaultPosterUrl")),
   onEvent: eventHandlerControl(EventOptions),

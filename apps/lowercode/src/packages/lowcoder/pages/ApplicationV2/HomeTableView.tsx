@@ -50,7 +50,7 @@ const EditBtn = styled(TacoButton)`
 `;
 
 export const HomeTableView = (props: { resources: HomeRes[], setModify?: any, modify?: boolean, mode?: string }) => {
-  const {setModify, modify, resources, mode} = props
+  const {setModify, modify, resources, mode}: any = props
   const dispatch = useDispatch();
   const { folderId } = useParams<{ folderId: string }>();
 

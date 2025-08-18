@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DatasourceForm, FormInputItem, FormSection, FormSelectItem } from "lowcoder-design";
+import { DatasourceForm, FormInputItem, FormSection, FormSelectItem } from "#lowcoder-design/index";
 import { MongoConfig } from "../../../api/datasourceApi";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import { useHostCheck } from "./useHostCheck";
@@ -16,7 +16,7 @@ import {
 } from "../form";
 
 export const MongoDatasourceForm = (props: DatasourceFormProps) => {
-  const { form, datasource } = props;
+  const { form, datasource }: any = props;
   const datasourceConfig = datasource?.datasourceConfig as MongoConfig;
 
   const [usingUri, setUsingUri] = useState(datasourceConfig?.usingUri);

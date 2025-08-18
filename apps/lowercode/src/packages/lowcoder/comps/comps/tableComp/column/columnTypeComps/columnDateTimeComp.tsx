@@ -11,7 +11,7 @@ import { DATE_TIME_FORMAT } from "#lowcoder/util/dateTimeUtils";
 import { DateEdit, formatDate } from "./columnDateComp";
 import React, { useCallback, useEffect, useRef } from "react";
 
-const childrenMap = {
+const childrenMap: any = {
   text: StringControl,
   format: withDefault(StringControl, DATE_TIME_FORMAT),
   inputFormat: withDefault(StringControl, DATE_TIME_FORMAT),

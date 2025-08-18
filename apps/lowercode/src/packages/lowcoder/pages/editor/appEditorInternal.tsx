@@ -154,7 +154,7 @@ export const AppEditorInternalView = React.memo((props: AppEditorInternalViewPro
   const extraExternalEditorState = useSelector(getExternalEditorState);
   const isPublicApp = useSelector(isPublicApplication);
   const dispatch = useDispatch();
-  const { readOnly, blockEditing, appInfo, compInstance, fetchApplication } = props;
+  const { readOnly, blockEditing, appInfo, compInstance, fetchApplication }: any = props;
   const mountedRef = useRef(true);
 
   const [externalEditorState, setExternalEditorState] = useState<ExternalEditorContextState>({

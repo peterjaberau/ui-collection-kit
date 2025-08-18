@@ -46,7 +46,7 @@ const EVENT_OPTIONS = [
   },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   tabs: TabsOptionControl,
   selectedTabKey: stringExposingStateControl("key", "Tab1"),
   containers: withDefault(sameTypeMap(SimpleContainerComp), {
@@ -198,7 +198,7 @@ const TabbedContainer = (props: TabbedContainerProps) => {
     bodyStyle,
     horizontalGridCells,
     destroyInactiveTab,
-  } = props;
+  }: any = props;
 
   const visibleTabs = tabs.filter((tab) => !tab.hidden);
   const selectedTab = visibleTabs.find((tab) => tab.key === props.selectedTabKey.value);

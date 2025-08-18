@@ -10,7 +10,7 @@ import {
   FormSection,
   FormSelectItem,
   TacoButton,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { moveToFolder } from "../../redux/reduxActions/folderActions";
 import styled from "styled-components";
 import { trans } from "../../i18n";
@@ -41,7 +41,7 @@ const MoveModalFooter = styled.div`
 `;
 
 export const MoveToFolderModal = (props: { source?: HomeRes; onClose: () => void, setModify: any, modify: boolean }) => {
-  const {setModify, modify} = props;
+  const {setModify, modify}: any = props;
   const [form] = Form.useForm();
 
   const [loading, setLoading] = useState<boolean>(false);

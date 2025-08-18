@@ -196,7 +196,7 @@ export function isDirectionKey(e: React.KeyboardEvent) {
 }
 
 export function ShortcutsWrapper(props: HTMLAttributes<HTMLDivElement> & { disabled?: boolean }) {
-  const { disabled, ...rest } = props;
+  const { disabled, ...rest }: any = props;
   const divProps = disabled ? { children: props.children } : rest;
   return <div {...divProps} tabIndex={-1} />;
 }

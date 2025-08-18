@@ -319,7 +319,7 @@ export function useChangeExtension(
 }
 
 export function useCompletionSources(props: CodeEditorProps) {
-  const { language, codeType, exposingData, boostExposingData, enableMetaCompletion } = props;
+  const { language, codeType, exposingData, boostExposingData, enableMetaCompletion }: any = props;
   const context = useContext(QueryContext); // FIXME: temporarily handle, expect to delete after the backend supports eval
   // auto-completion for comp exposing
   const exposingSource = useMemo(() => new ExposingCompletionSource(), []);
@@ -470,7 +470,7 @@ function getLintExtension(
 const compartments: Compartment[] | any = [];
 
 export function useExtensions(props: CodeEditorProps) {
-  const { showLineNum, placeholder, language, codeType, indentWithTab, tooltipContainer } = props;
+  const { showLineNum, placeholder, language, codeType, indentWithTab, tooltipContainer }: any = props;
   // cache the frequently changed data into ref, avoiding reconfigure
   const exposingDataRef = useRef<Record<string, unknown>>({});
   exposingDataRef.current = props.exposingData ?? {};

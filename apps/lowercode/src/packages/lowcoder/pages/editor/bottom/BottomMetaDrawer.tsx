@@ -1,5 +1,5 @@
 import { DataNode } from "antd/es/tree";
-import { CopyTextButton, CustomTree, labelCss, PackUpIcon, Search } from "lowcoder-design";
+import { CopyTextButton, CustomTree, labelCss, PackUpIcon, Search } from "#lowcoder-design/index";
 import _ from "lodash";
 import { default as AntdDrawer } from "antd/es/drawer";
 import { CSSProperties, useEffect, useState } from "react";
@@ -139,7 +139,7 @@ export const DataSourceStructureTree = (props: {
   dataSourceId: string;
   datasourceType: string;
 }) => {
-  const { dataSourceId, datasourceType } = props;
+  const { dataSourceId, datasourceType }: any = props;
   const [expandedKeys, setExpandedKeys] = useState<Array<React.Key>>([]);
   const [searchValue, setSearchValue] = useState("");
   const [structure, setStructure] = useState<DataNode[]>([]);
@@ -241,7 +241,7 @@ interface BottomMetaDrawerProps {
 }
 
 export default function BottomMetaDrawer(props: BottomMetaDrawerProps) {
-  const { dataSourceId, queryType } = props;
+  const { dataSourceId, queryType }: any = props;
   const [visible, setVisible] = useState(false); // whether to strech the table structure
 
   const dispatch = useDispatch();

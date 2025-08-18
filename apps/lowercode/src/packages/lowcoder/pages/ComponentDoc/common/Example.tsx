@@ -3,7 +3,7 @@ import { evalAndReduceWithExposing } from "#lowcoder/comps/utils";
 import _ from "lodash";
 import React, { ReactNode, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import { ShowBorderIcon, EditIcon } from "lowcoder-design";
+import { ShowBorderIcon, EditIcon } from "#lowcoder-design/index";
 import propNames from "../propNameText";
 import valueTranslate from "../propValueText";
 import { AppTypeEnum } from "#lowcoder/constants/applicationConstants";
@@ -166,7 +166,7 @@ function Regex(value: ReactNode, reExpression: RegExp): Boolean {
   return false;
 }
 function SettingValue(props: { value: React.ReactNode }) {
-  const { value } = props;
+  const { value }: any = props;
 
   let content: ReactNode = value;
 
@@ -202,7 +202,7 @@ export default function Example(props: IProps) {
     hideSettings,
     nameMap,
     blackListConfig,
-  } = props;
+  }: any = props;
   const { name } = useContext(ExampleContext);
   const [view, setView] = useState<React.ReactNode>(null);
   const { isBorderShow, showBorder } = useContext(BorderContext);

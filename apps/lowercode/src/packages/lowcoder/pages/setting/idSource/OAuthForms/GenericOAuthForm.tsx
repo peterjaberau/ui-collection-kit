@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { messageInstance, CloseEyeIcon, CustomSelect } from "lowcoder-design";
+import { messageInstance, CloseEyeIcon, CustomSelect } from "#lowcoder-design/index";
 import { i18nObjs, trans } from "#lowcoder/i18n";
 import {
   FormStyled,
@@ -79,7 +79,7 @@ function GenericOAuthForm(props: GenericOAuthFormProp) {
     authType,
     onSave,
     onCancel
-  } = props;
+  }: any = props;
 
   const [form1] = Form.useForm<ConfigProvider>();
 

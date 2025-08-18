@@ -19,7 +19,7 @@ import {
   OptionType,
   QueryConfigItemWrapper,
   ValueFromOption,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { Fragment, ReactNode, useContext, useEffect, useState, useRef, useCallback } from "react";
 import { memo } from "#lowcoder/util/cacheUtils";
 import { EditorContext } from "../editorState";
@@ -41,7 +41,7 @@ interface SingleEventHandlerProperViewProps {
   eventConfigs: EventConfigsType;
 }
 
-const childrenMap = {
+const childrenMap: any = {
   name: dropdownControl<EventConfigsType>([], ""), // event name
   // FIXME: refactor the parameter config more properly
   handler: ActionSelectorControl,
@@ -72,7 +72,7 @@ class SingleEventHandlerControl<
   propertyView(props: SingleEventHandlerProperViewProps) {
     const name = this.children.name.getView();
     const children = this.children;
-    const { eventConfigs } = props;
+    const { eventConfigs }: any = props;
 
     const eventName = eventConfigs
       .find((x) => x.value === name)
@@ -159,7 +159,7 @@ const EventHandlerControlPropertyView = (props: {
     items,
     eventConfigs,
     type
-  } = props;
+  }: any = props;
 
   // Reset state on unmount
   useEffect(() => {

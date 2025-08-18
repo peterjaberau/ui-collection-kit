@@ -236,7 +236,7 @@ function TabBarView(
     navIconSize: string
   },
 ) {
-  const { canvasBg, tabStyle, tabItemStyle, tabItemHoverStyle, tabItemActiveStyle } = props
+  const { canvasBg, tabStyle, tabItemStyle, tabItemHoverStyle, tabItemActiveStyle }: any = props
   return (
     <Suspense fallback={<Skeleton />}>
       <TabBarWrapper
@@ -305,7 +305,7 @@ const TabOptionComp: any = (function () {
 })()
 
 let MobileTabLayoutTmp: any = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     onEvent: eventHandlerControl(EventOptions),
     dataOptionType: dropdownControl(DataOptionType, DataOption.Manual),
     jsonItems: jsonControl<JsonItemNode[]>(convertTreeData, mobileNavJsonMenuItems),

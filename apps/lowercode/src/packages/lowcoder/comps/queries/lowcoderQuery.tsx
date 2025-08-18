@@ -1,7 +1,7 @@
 import { withTypeAndChildrenAbstract } from "#lowcoder/comps/generators/withType";
 import { trans } from "#lowcoder/i18n";
 import { CompConstructor } from "#lowcoder-core/index";
-import { Dropdown, ValueFromOption } from "lowcoder-design";
+import { Dropdown, ValueFromOption } from "#lowcoder-design/index";
 import { buildQueryCommand, FunctionProperty, toQueryView } from "./queryCompUtils";
 
 const CommandOptions = [

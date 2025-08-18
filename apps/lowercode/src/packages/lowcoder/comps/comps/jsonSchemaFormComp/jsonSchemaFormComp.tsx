@@ -8,12 +8,12 @@ import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import { AnimationStyle, AnimationStyleType, JsonSchemaFormStyle, type JsonSchemaFormStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import { depsConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
-import type { ValueFromOption } from "lowcoder-design";
+import type { ValueFromOption } from "#lowcoder-design/index";
 import { i18nObjs, trans } from "#lowcoder/i18n";
 import type { JSONSchema7 } from "json-schema";
 import styled from "styled-components";
 import { toBoolean, toNumber, toString } from "#lowcoder/util/convertUtils";
-import { Section, sectionNames, ScrollBar } from "lowcoder-design";
+import { Section, sectionNames, ScrollBar } from "#lowcoder-design/index";
 import { jsonObjectControl } from "../../controls/codeControl";
 import { eventHandlerControl, submitEvent } from "../../controls/eventHandlerControl";
 import { UICompBuilder, withDefault } from "../../generators";
@@ -175,7 +175,7 @@ function transformErrors(errors: RJSFValidationError[]): RJSFValidationError[] {
 }
 
 const SearchableSelectWidget = (props : any) => {
-  const { options, value, required, disabled, readonly, autofocus, onChange } = props;
+  const { options, value, required, disabled, readonly, autofocus, onChange }: any = props;
   const { enumOptions } = options;
 
   return (
@@ -216,7 +216,7 @@ const formTypeOptions = [
 ] as const;
 
 let FormBasicComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     formType: dropdownControl(formTypeOptions, "rjsf"),
     resetAfterSubmit: BoolControl,
     schema: jsonObjectControl(i18nObjs.jsonForm.defaultSchema),

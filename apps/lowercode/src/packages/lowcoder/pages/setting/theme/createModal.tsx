@@ -1,10 +1,10 @@
 import { ThemeType } from "#lowcoder/api/commonSettingApi";
 import { useState } from "react";
 import { themeTemplateList } from "./themeConstant";
-import { RadioCheckedIcon } from "lowcoder-design";
-import { SwitchCheckedIcon } from "lowcoder-design";
-import { RequiredIcon } from "lowcoder-design";
-import { SuccessIcon } from "lowcoder-design";
+import { RadioCheckedIcon } from "#lowcoder-design/index";
+import { SwitchCheckedIcon } from "#lowcoder-design/index";
+import { RequiredIcon } from "#lowcoder-design/index";
+import { SuccessIcon } from "#lowcoder-design/index";
 import {
   CustomModalStyled,
   ModalNameDiv,
@@ -26,7 +26,7 @@ type CreateModalProp = {
 };
 
 function CreateModal(props: CreateModalProp) {
-  const { themeList, modalVisible, closeModal, createTheme } = props;
+  const { themeList, modalVisible, closeModal, createTheme }: any = props;
 
   const [name, setName] = useState("");
   const [exceedInput, setExceedInput] = useState(false);
@@ -50,7 +50,7 @@ function CreateModal(props: CreateModalProp) {
   }
 
   const ThemeBtnContainer = (props: { theme: ThemeType }) => {
-    const { theme } = props;
+    const { theme }: any = props;
     return (
       <ThemeBtn
         key={theme.id}

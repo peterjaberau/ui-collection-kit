@@ -22,7 +22,7 @@ export function getPageSize(
 }
 
 export const PaginationTmpControl = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     showQuickJumper: BoolControl,
     showSizeChanger: BoolControl,
     hideOnSinglePage: BoolControl,

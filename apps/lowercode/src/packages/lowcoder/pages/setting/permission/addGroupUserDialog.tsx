@@ -1,7 +1,7 @@
 import Column from "antd/es/table/Column";
 import OrgApi from "#lowcoder/api/orgApi";
 import { GroupUser, MEMBER_ROLE, OrgUser } from "#lowcoder/constants/orgConstants";
-import { CheckBox, CustomModal, Search } from "lowcoder-design";
+import { CheckBox, CustomModal, Search } from "#lowcoder-design/index";
 import { CSSProperties, ReactNode, useEffect, useRef, useState, useCallback } from "react";
 import { connect, useDispatch } from "react-redux";
 import { AppState } from "#lowcoder/redux/reducers";
@@ -14,7 +14,7 @@ import { StyledTable, UserTableCellWrapper } from "./styledComponents";
 import { formatTimestamp } from "#lowcoder/util/dateTimeUtils";
 import ProfileImage from "#lowcoder/pages/common/profileImage";
 import { isGroupAdmin } from "#lowcoder/util/permissionUtils";
-import { SuperUserIcon } from "lowcoder-design";
+import { SuperUserIcon } from "#lowcoder-design/index";
 import { EmptyContent } from "#lowcoder/pages/common/styledComponent";
 import { trans } from "#lowcoder/i18n";
 import { debounce } from "lodash";
@@ -38,7 +38,7 @@ function AddGroupUserDialog(props: {
   setModify?: any;
   modify?: boolean
 }) {
-  const { orgId, orgUsers, orgUsersFetching, groupUsers, groupId, setModify, modify } = props;
+  const { orgId, orgUsers, orgUsersFetching, groupUsers, groupId, setModify, modify }: any = props;
   const groupUserIdMap = new Map(groupUsers.map((gUser) => [gUser.userId, gUser]));
   const [dialogVisible, setDialogVisible] = useState(false);
   const addableUsers = orgUsers.filter((user) => !groupUserIdMap.has(user.userId));

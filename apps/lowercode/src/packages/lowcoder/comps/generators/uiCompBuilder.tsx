@@ -22,7 +22,7 @@ import {
   MethodConfigsType,
   withMethodExposing,
 } from "./withMethodExposing";
-import {Section, controlItem } from "lowcoder-design";
+import {Section, controlItem } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import { BoolControl } from "../controls/boolControl";
 import { valueComp, withDefault } from "./simpleGenerators";

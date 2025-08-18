@@ -34,7 +34,7 @@ type ThemeListProp = {
 };
 
 function ThemeList(props: ThemeListProp) {
-  const { themeList, defaultTheme, clickMenu, isAdmin, createTheme } = props;
+  const { themeList, defaultTheme, clickMenu, isAdmin, createTheme }: any = props;
   const tableRef = React.useRef(null);
   const [activeRow, setActiveRow] = useState("0");
   const [needRenameId, setNeedRenameId] = useState<string | undefined>(undefined);

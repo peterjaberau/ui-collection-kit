@@ -1,6 +1,6 @@
 import { Input } from "#lowcoder-design/components/Input";
 import { SimpleComp } from "#lowcoder-core/index";
-import { controlItem, ControlPropertyViewWrapper, SwitchWrapper } from "lowcoder-design";
+import { controlItem, ControlPropertyViewWrapper, SwitchWrapper } from "#lowcoder-design/index";
 import { ControlParams } from "./controlParams";
 import Slider from "antd/es/slider";
 

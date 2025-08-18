@@ -145,7 +145,7 @@ const TableSummaryCellView = memo(function TableSummaryCellView(props: {
     cellColor,
     cellTooltip,
     ...restProps
-  } = props;
+  }: any = props;
 
   const style = useMemo(() => ({
     background: cellColor || columnStyle.background,
@@ -199,7 +199,7 @@ export const TableSummary = memo(function TableSummary(props: {
     istoolbarPositionBelow,
     dynamicColumn,
     dynamicColumnConfig,
-  } = props;
+  }: any = props;
 
   const visibleColumns = useMemo(() => {
     let cols = columns.filter(col => !col.getView().hide);

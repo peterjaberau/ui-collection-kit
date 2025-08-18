@@ -2,8 +2,8 @@ import { EmptyContent } from "#lowcoder/components/EmptyContent";
 import type UIComp from "#lowcoder/comps/comps/uiComp";
 import { EditorContext } from "#lowcoder/comps/editorState";
 import { GridCompOperator } from "#lowcoder/comps/utils/gridCompOperator";
-import { SelectedComps } from "lowcoder-design";
-import { ScrollBar } from "lowcoder-design";
+import { SelectedComps } from "#lowcoder-design/index";
+import { ScrollBar } from "#lowcoder-design/index";
 import { ReactNode, useContext } from "react";
 import { trans } from "#lowcoder/i18n";
 
@@ -18,7 +18,7 @@ interface PropertyViewProps {
 }
 
 export default function PropertyView(props: PropertyViewProps) {
-  const { uiComp } = props;
+  const { uiComp }: any = props;
   const editorState = useContext(EditorContext);
   const selectedCompNames = editorState.selectedCompNames;
   const selectedComp = editorState.selectedComp();

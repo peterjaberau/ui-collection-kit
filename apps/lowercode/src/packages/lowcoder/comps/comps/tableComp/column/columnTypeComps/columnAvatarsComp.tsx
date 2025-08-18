@@ -189,7 +189,7 @@ const MemoizedAvatarGroup = React.memo(({
 MemoizedAvatarGroup.displayName = 'MemoizedAvatarGroup';
 
 export const ColumnAvatarsComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     style: styleControl(avatarGroupStyle),
     maxCount: withDefault(NumberControl, 3),
     avatarSize: withDefault(NumberControl, 40),

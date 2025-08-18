@@ -133,7 +133,7 @@ function validate(
   return { validateStatus: "success" }
 }
 
-const childrenMap = {
+const childrenMap: any = {
   defaultValue: stringExposingStateControl("defaultValue"),
   value: stringExposingStateControl("value"),
   userTimeZone: stringExposingStateControl("userTimeZone", Intl.DateTimeFormat().resolvedOptions().timeZone),
@@ -297,7 +297,7 @@ const TimePickerTmpCmp = new UICompBuilder(childrenMap, (props) => {
 export const timePickerControl = migrateOldData(TimePickerTmpCmp, fixOldInputCompData)
 
 const TimeRangeTmpCmp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     defaultStart: stringExposingStateControl("defaultStart"),
     start: stringExposingStateControl("start"),
     defaultEnd: stringExposingStateControl("defaultEnd"),

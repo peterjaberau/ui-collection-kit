@@ -114,7 +114,7 @@ function TestView(props: TestViewProps) {
   );
 }
 
-const childrenMap = {
+const childrenMap: any = {
   name: CompNameControl,
   description: CompNameControl,
   type: dropdownControl(typeOptions, InputTypeEnum.Data),

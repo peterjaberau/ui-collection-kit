@@ -3,7 +3,7 @@ import {
   ThirdPartyAuthGoal,
   ThirdPartyConfigType,
 } from "#lowcoder/constants/authConstants";
-import { WhiteLoading } from "lowcoder-design";
+import { WhiteLoading } from "#lowcoder-design/index";
 import history from "#lowcoder/util/history";
 import { LoginLogoStyle, LoginLabelStyle, StyledLoginButton, TermsAndPrivacyInfo } from "#lowcoder/pages/userAuth/authComponents";
 import { useSelector } from "react-redux";
@@ -42,7 +42,7 @@ function ThirdPartyLoginButton(props: {
   label: string;
   disabled?: boolean;
 }) {
-  const { config, label } = props;
+  const { config, label }: any = props;
   const loginRedirectUrl = useRedirectUrl();
   const redirectUrl = getRedirectUrl(config.authType);
   const onLoginClick = () => {

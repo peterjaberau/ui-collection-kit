@@ -11,7 +11,7 @@ import {
   SearchIcon,
   TacoButton,
   UnfoldIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { CSSProperties, useContext, useEffect, useState } from "react";
 import { EditorContext } from "#lowcoder/comps/editorState";
 import { useSelector } from "react-redux";
@@ -137,7 +137,7 @@ interface BottomSidebarProps {
 }
 
 export function BottomSidebar(props: BottomSidebarProps) {
-  const { items, refTreeComp, onOpenCreatePanel, onSelect, onCopy, onDelete } = props;
+  const { items, refTreeComp, onOpenCreatePanel, onSelect, onCopy, onDelete }: any = props;
   const readOnly = useSelector(showAppSnapshotSelector);
   const [isSearchShow, showSearch] = useState(false);
   const [search, setSearch] = useState("");
@@ -434,7 +434,7 @@ function BottomSidebarItem(props: BottomSidebarItemProps) {
     onCopy,
     onSelect,
     onToggleFold,
-  } = props;
+  }: any = props;
   const [error, setError] = useState<string | undefined>(undefined);
   const [editing, setEditing] = useState(false);
   const editorState = useContext(EditorContext);

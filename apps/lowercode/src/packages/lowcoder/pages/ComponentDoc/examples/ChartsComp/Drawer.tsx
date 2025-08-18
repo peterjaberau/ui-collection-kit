@@ -1,6 +1,6 @@
 import { DrawerComp } from "#lowcoder/comps/hooks/drawerComp";
 import { trans } from "#lowcoder/i18n";
-import { chartColorPalette } from "lowcoder-design";
+import { chartColorPalette } from "#lowcoder-design/index";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

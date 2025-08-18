@@ -1,7 +1,7 @@
 import { codeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
 import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
-import { BranchDiv } from "lowcoder-design";
+import { BranchDiv } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import { saveDataAsFile } from "#lowcoder/util/fileUtils";
 
@@ -16,7 +16,7 @@ export const DownloadAction = (function () {
     { label: "Base64", value: "base64" },
   ] as const;
 
-  const childrenMap = {
+  const childrenMap: any = {
     data: codeControl<any>((value) => value),
     filename: StringControl,
     filetype: dropdownControl(filetypeOptions, "txt"),

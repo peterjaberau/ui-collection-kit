@@ -97,7 +97,7 @@ function sendMessage(iframe: HTMLIFrameElement | null, data: any) {
 
 function InnerCustomComponent(props: IProps) {
   const hostIdRef = useRef(String(Date.now()));
-  const { model, code, onModelChange, dispatch } = props;
+  const { model, code, onModelChange, dispatch }: any = props;
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const modelRef = useRef<any>(model);
   const reloadFlagRef = useRef(false);
@@ -219,7 +219,7 @@ function InnerCustomComponent(props: IProps) {
   );
 }
 
-const childrenMap = {
+const childrenMap: any = {
   model: jsonObjectStateControl(defaultModel),
   code: withDefault(StringControl, defaultCode),
   style: styleControl(CustomStyle , 'style'),
@@ -227,7 +227,7 @@ const childrenMap = {
 };
 
 const CustomCompBase = new UICompBuilder(childrenMap, (props, dispatch) => {
-  const { code, model } = props;
+  const { code, model }: any = props;
   return (
     <InnerCustomComponent
       style={props.style}

@@ -3,7 +3,7 @@ import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import { QRCodeStyle, QRCodeStyleType, avatarGroupStyle, AvatarGroupStyleType, avatarContainerStyle, AvatarContainerStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
-import { AlignCenter, AlignLeft, AlignRight, Section, sectionNames } from "lowcoder-design";
+import { AlignCenter, AlignLeft, AlignRight, Section, sectionNames } from "#lowcoder-design/index";
 import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import { trans } from "#lowcoder/i18n";
 import { NumberControl, StringControl } from "#lowcoder/comps/controls/codeControl";
@@ -86,7 +86,7 @@ export const alignOptions = [
   { label: <AlignRight />, value: "flex-end" },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   avatar: styleControl(avatarGroupStyle , 'avatar'),
   style: styleControl(avatarContainerStyle , 'style'),
   maxCount: withDefault(NumberControl, 3),

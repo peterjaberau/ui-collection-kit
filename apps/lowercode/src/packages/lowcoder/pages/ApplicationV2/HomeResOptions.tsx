@@ -1,7 +1,7 @@
 import { HomeRes } from "./HomeLayout";
 import { HomeResTypeEnum } from "../../types/homeRes";
 import { exportApplicationAsJSONFile } from "./components/AppImport";
-import { CustomModal, EditPopover, EditPopoverItemType, PointIcon } from "lowcoder-design";
+import { CustomModal, EditPopover, EditPopoverItemType, PointIcon } from "#lowcoder-design/index";
 import { HomeResInfo } from "../../util/homeResUtils";
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
@@ -42,7 +42,7 @@ export const HomeResOptions = (props: {
   setModify: any;
   modify: boolean;
 }) => {
-  const { res, onDuplicate, onRename, onMove, setModify, modify } = props;
+  const { res, onDuplicate, onRename, onMove, setModify, modify }: any = props;
   const dispatch = useDispatch();
   const [showCopyModal, setShowCopyModal] = useState(false);
 

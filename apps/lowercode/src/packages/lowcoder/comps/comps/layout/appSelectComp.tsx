@@ -11,7 +11,7 @@ function AppSelectPropertyView(props: {
   onChange: (label: string, value: string) => void;
   appId: string;
 }) {
-  const { appId, onChange } = props;
+  const { appId, onChange }: any = props;
   const apps = useSelector(normalAppListSelector);
   const dispatch = useDispatch();
   useEffect(() => {

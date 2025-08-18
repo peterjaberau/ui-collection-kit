@@ -28,7 +28,7 @@ export const millisecondsControl = (props: MillisecondsControlProps) => {
     defaultValue,
     unit = "ms",
     toMilliseconds = defaultToMilliseconds,
-  } = props;
+  }: any = props;
 
   return codeControl(
     (value) => {

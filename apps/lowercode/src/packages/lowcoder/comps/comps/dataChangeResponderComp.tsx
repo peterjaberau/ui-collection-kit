@@ -14,7 +14,7 @@ import {
   QueryConfigWrapper,
   QueryPropertyViewWrapper,
   QuerySectionWrapper,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { BottomTabs } from "#lowcoder/pages/editor/bottom/BottomTabs";
 import { ReactNode } from "react";
 import { BottomResComp, BottomResCompResult, BottomResTypeEnum } from "#lowcoder/types/bottomRes";

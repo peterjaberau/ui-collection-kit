@@ -6,14 +6,14 @@ import { NameConfig, withExposingConfigs } from "#lowcoder/comps/generators/with
 import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
 import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
-import { DocLink } from "lowcoder-design";
+import { DocLink } from "#lowcoder-design/index";
 import { BottomTabs } from "#lowcoder/pages/editor/bottom/BottomTabs";
 import { ReactNode, useState } from "react";
 import { BottomResComp, BottomResCompResult, BottomResTypeEnum } from "#lowcoder/types/bottomRes";
 import { JSONObject } from "#lowcoder/util/jsonTypes";
 import { QueryTutorials } from "#lowcoder/util/tutorialUtils";
 import { SimpleNameComp } from "./simpleNameComp";
-import { markdownCompCss, TacoMarkDown } from "lowcoder-design";
+import { markdownCompCss, TacoMarkDown } from "#lowcoder-design/index";
 import SupaDemoDisplay from "#lowcoder/comps/utils/supademoDisplay";
 
 const TemporaryStateItemCompBase = new MultiCompBuilder(

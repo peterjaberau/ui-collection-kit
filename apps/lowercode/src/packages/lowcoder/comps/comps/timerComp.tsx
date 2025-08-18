@@ -3,7 +3,7 @@ import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import { AnimationStyle, AnimationStyleType, startButtonStyle, StartButtonStyleType, timerStyle, timerStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import { NewChildren, UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import { trans } from "#lowcoder/i18n";
 import { Button, Space } from "antd";
@@ -100,7 +100,7 @@ const timerTypeOptions = [
   { label: trans("timer.countdown"), value: "countdown" },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   style: styleControl(timerStyle),
   animationStyle: styleControl(AnimationStyle),
   startButtonStyle: styleControl(startButtonStyle),

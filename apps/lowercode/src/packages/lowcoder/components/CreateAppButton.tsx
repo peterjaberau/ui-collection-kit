@@ -93,7 +93,7 @@ interface IProps {
 }
 
 export default function CreateAppButton(props: IProps) {
-  const { type, onSuccess } = props;
+  const { type, onSuccess }: any = props;
   const [handleCreate, isCreating, typeDisplayName] = useCreateApp(type, onSuccess);
   return (
     <CreateSpan onClick={handleCreate}>

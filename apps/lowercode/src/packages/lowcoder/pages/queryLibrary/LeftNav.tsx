@@ -10,7 +10,7 @@ import {
   ScrollBar,
   Search,
   TacoButton,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { LibraryQuery } from "../../api/queryLibraryApi";
 import { timestampToHumanReadable } from "../../util/dateTimeUtils";
 import { useDispatch, useSelector } from "react-redux";
@@ -170,7 +170,7 @@ export const LeftNav = (props: {
   setModify?: any;
   modify?: boolean;
 }) => {
-  const {currentPage, setCurrentPage, pageSize, setPageSize, total , setSearchValues, searchValues, modify, setModify} = props
+  const {currentPage, setCurrentPage, pageSize, setPageSize, total , setSearchValues, searchValues, modify, setModify}: any = props
   const dispatch = useDispatch();
   const [searchValue, setSearchValue] = useState("");
   const datasourceTypes = useSelector(getDataSourceTypesMap);

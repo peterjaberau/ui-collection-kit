@@ -117,7 +117,7 @@ const multiTags = (function () {
     padding: 5px;
   `;
 
-  const childrenMap = {
+  const childrenMap: any = {
     options: TagsCompOptionsControl,
     style: styleControl(InputLikeStyle, 'style'),
     onEvent: ButtonEventHandlerControl,

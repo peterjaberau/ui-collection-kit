@@ -2,7 +2,7 @@ import { default as Progress } from "antd/es/progress";
 import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import { AnimationStyle, AnimationStyleType, CircleProgressStyle, CircleProgressType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
 import styled, { css } from "styled-components";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { numberExposingStateControl } from "../controls/codeStateControl";
 import { UICompBuilder } from "../generators";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "../generators/withExposing";
@@ -66,7 +66,7 @@ export const StyledProgressCircle = styled(Progress)<{
 `;
 
 let ProgressCircleTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     value: numberExposingStateControl("value", 60),
     // borderRadius property hidden as it's not valid for progress circle
     style: styleControl(CircleProgressStyle, 'style'),

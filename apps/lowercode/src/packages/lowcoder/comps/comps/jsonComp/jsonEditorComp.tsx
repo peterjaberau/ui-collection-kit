@@ -63,7 +63,7 @@ function fixOldDataSecond(oldData: any) {
   return oldData;
 }
 
-const childrenMap = {
+const childrenMap: any = {
   value: jsonValueExposingStateControl('value', defaultData),
   onEvent: ChangeEventHandlerControl,
   autoHeight: withDefault(AutoHeightControl,'auto'),
@@ -80,7 +80,7 @@ let JsonEditorTmpComp = (function () {
     const viewRef = useRef<EditorViewType | null>(null);
     const initializedRef = useRef(false);
     const stateRef = useRef<EditorState | null>(null);
-    const editContentRef = useRef<string>();
+    const editContentRef = useRef<string>(null);
     const mountedRef = useRef(true);
 
     const handleChange = useCallback((state: EditorState) => {

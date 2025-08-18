@@ -18,8 +18,8 @@ import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import { AnimationStyle, CheckboxStyle, CheckboxStyleType, InputFieldStyle, LabelStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import { RadioLayoutOptions, RadioPropertyView } from "./radioCompConstants";
 import { dropdownControl } from "../../controls/dropdownControl";
-import { ValueFromOption, lightenColor } from "lowcoder-design";
-import { EllipsisTextCss } from "lowcoder-design";
+import { ValueFromOption, lightenColor } from "#lowcoder-design/index";
+import { EllipsisTextCss } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import { RefControl } from "#lowcoder/comps/controls/refControl";
 import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
@@ -191,7 +191,7 @@ const MemoizedCheckboxGroup = memo(({
 MemoizedCheckboxGroup.displayName = 'MemoizedCheckboxGroup';
 
 let CheckboxBasicComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     defaultValue: arrayStringExposingStateControl("defaultValue"),
     value: arrayStringExposingStateControl("value"),
     label: LabelControl,

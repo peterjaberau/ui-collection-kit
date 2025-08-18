@@ -1,7 +1,7 @@
 import { DispatchType } from "#lowcoder-core/index";
 import { ControlPlacement } from "../../controls/controlParams";
 import React, { useContext, useState, useEffect } from "react";
-import { Dropdown, OptionsType } from "lowcoder-design";
+import { Dropdown, OptionsType } from "#lowcoder-design/index";
 import { isEmpty, values } from "lodash";
 import { useSelector } from "react-redux";
 import { getDataSourceStructures } from "../../../redux/selectors/datasourceSelectors";

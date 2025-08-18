@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { CloseIcon, ArchiveIcon, Tabs } from "lowcoder-design";
-import { AppSnapshotIcon } from "lowcoder-design";
+import { CloseIcon, ArchiveIcon, Tabs } from "#lowcoder-design/index";
+import { AppSnapshotIcon } from "#lowcoder-design/index";
 import {
   fetchSnapshotDslAction,
   fetchSnapshotsAction,
@@ -18,12 +18,12 @@ import {
   isAppSnapshotsFetching,
 } from "#lowcoder/redux/selectors/appSnapshotSelector";
 import { default as Skeleton } from "antd/es/skeleton";
-import { TacoPagination } from "lowcoder-design";
+import { TacoPagination } from "#lowcoder-design/index";
 import { AppSnapshotContext, AppSnapshotList } from "#lowcoder/constants/applicationConstants";
 import { ExtraActionType } from "#lowcoder-core/index";
 import { formatString } from "#lowcoder/util/stringUtils";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
-import { ScrollBar } from "lowcoder-design";
+import { ScrollBar } from "#lowcoder-design/index";
 import { RightPanelWrapper } from "#lowcoder/pages/common/styledComponent";
 import { Layers } from "#lowcoder/constants/Layers";
 import { useMount } from "react-use";
@@ -140,7 +140,7 @@ const CURRENT_ITEM_KEY = "current_key";
 const TIME_FORMAT = trans("history.timeFormat");
 
 export const AppSnapshot = React.memo((props: { currentAppInfo: AppSummaryInfo }) => {
-  const { currentAppInfo } = props;
+  const { currentAppInfo }: any = props;
   const currentDsl = currentAppInfo.dsl;
   const dispatch = useDispatch();
   const application = useSelector(currentApplication);

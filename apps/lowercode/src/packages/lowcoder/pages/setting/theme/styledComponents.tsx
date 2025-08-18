@@ -9,7 +9,7 @@ import {
   ScrollBar,
   TacoButton,
   TacoInput,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import styled, { css } from "styled-components";
 import { PopoverIcon } from "../permission/styledComponents";
 

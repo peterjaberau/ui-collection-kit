@@ -53,7 +53,7 @@ const floatOptions = [
 
 
 export const ContainerBaseComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     disabled: BoolCodeControl,
     text: stringExposingStateControl(
       "text", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat faucibus eleifend. Pellentesque eleifend, risus vel sagittis mattis, mauris ipsum tempor sapien, eu lobortis lacus libero a dui. Cras erat felis, rhoncus vestibulum consectetur et, ultrices ut purus. Sed a tortor orci. Vestibulum nec eleifend ante."

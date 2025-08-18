@@ -49,7 +49,7 @@ const PlaceHolderWrapper = styled.div<{
 `;
 
 export default function DroppablePlaceholder(props: IDroppablePlaceholderProps) {
-  const { path, disabled, targetListSize } = props;
+  const { path, disabled, targetListSize }: any = props;
   const data: IDropData = {
     targetPath: path,
     targetListSize,

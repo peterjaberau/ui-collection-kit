@@ -14,7 +14,7 @@ import { getAuditLogs, getEnvironmentsByIds, getMeta } from "#lowcoder/api/enter
 import { isEmpty } from "lodash";
 import { getEventColor, getEventLabel } from "./dashboard";
 import Tag from "antd/es/tag";
-import { ArrowIcon } from "lowcoder-design";
+import { ArrowIcon } from "#lowcoder-design/index";
 import history from "#lowcoder/util/history";
 import { AUDIT_LOG_DASHBOARD } from "#lowcoder/constants/routesURL";
 

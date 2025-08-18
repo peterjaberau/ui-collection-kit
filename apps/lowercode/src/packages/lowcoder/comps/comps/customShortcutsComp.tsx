@@ -2,7 +2,7 @@ import { ActionSelectorControl } from "#lowcoder/comps/controls/actionSelector/a
 import { MultiCompBuilder, valueComp } from "#lowcoder/comps/generators";
 import { KeyValueItem, KeyValueItemListWithNewCreateState } from "#lowcoder/components/KeyValueItemList";
 import { list } from "#lowcoder/comps/generators/list";
-import { StyledInput } from "lowcoder-design";
+import { StyledInput } from "#lowcoder-design/index";
 import { trans } from "#lowcoder/i18n";
 import {
   eventKeyString,
@@ -29,7 +29,7 @@ class ShortcutControl extends valueComp<string>("") {
   }
 }
 
-const childrenMap = {
+const childrenMap: any = {
   shortcut: ShortcutControl,
   action: ActionSelectorControl,
 };

@@ -32,7 +32,7 @@ interface IProps {
 }
 
 export default function SubSideBar(props: PropsWithChildren<IProps>) {
-  const { title, children } = props;
+  const { title, children }: any = props;
   return (
     <Wrapper>
       {title && <h2>{title}</h2>}

@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useMemo, useState } from "react";
 import { DataSourceTypeInfo } from "../../api/datasourceApi";
-import { AddIcon, DocIcon, ModalFooterWrapper, TacoButton } from "lowcoder-design";
+import { AddIcon, DocIcon, ModalFooterWrapper, TacoButton } from "#lowcoder-design/index";
 import styled from "styled-components";
 import { default as Button } from "antd/es/button";
 import { useDatasourceForm } from "./form/useDatasourceForm";
@@ -170,7 +170,7 @@ interface DatasourceModalFooterProps {
 }
 
 export function DatasourceModalFooter(props: DatasourceModalFooterProps) {
-  const { dataSourceType, dataSourceId, formManifest, onCreated, datasourceForm } = props;
+  const { dataSourceType, dataSourceId, formManifest, onCreated, datasourceForm }: any = props;
   const { testLoading, isReadyToSubmit, createLoading, genRequest, resolveTest, resolveCreate } =
     datasourceForm;
   if (!dataSourceType) {
@@ -323,7 +323,7 @@ interface CreateDataSourceModalProps extends Omit<StepModalProps, "steps"> {
 }
 
 export function CreateDataSourceModal(props: CreateDataSourceModalProps) {
-  const { dataSource, onCreated, ...otherProps } = props;
+  const { dataSource, onCreated, ...otherProps }: any = props;
   const steps = useDataSourceModalSteps({
     datasource: dataSource,
     onCreated,

@@ -59,7 +59,7 @@ interface RemoteCompViewProps {
 }
 
 const RemoteCompView = React.memo((props: React.PropsWithChildren<RemoteCompViewProps>) => {
-  const { loadComp, loadingElement, errorElement, isLowcoderComp, source } = props;
+  const { loadComp, loadingElement, errorElement, isLowcoderComp, source }: any = props;
   const [error, setError] = useState<any>("");
   const editorState = useContext(EditorContext);
   const compState = useContext(CompContext);

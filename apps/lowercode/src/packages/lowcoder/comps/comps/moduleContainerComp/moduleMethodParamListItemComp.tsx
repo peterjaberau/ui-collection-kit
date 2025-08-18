@@ -65,7 +65,7 @@ function TestView(props: TestViewProps) {
   return <Fragment>{itemComp.children.test.children.comp.propertyView({ label: name })}</Fragment>;
 }
 
-const childrenMap = {
+const childrenMap: any = {
   name: CompNameControl,
   description: StringControl,
   type: dropdownControl(typeOptions, "JSONValue"),

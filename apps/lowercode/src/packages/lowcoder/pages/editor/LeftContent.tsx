@@ -14,7 +14,7 @@ import {
   UnfoldIcon,
   UnShow,
   TacoButton,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import React, { ReactNode, useCallback, useContext, useMemo, useState } from "react";
 import { hookCompCategory } from "#lowcoder/comps/hooks/hookCompTypes";
 import _ from "lodash";
@@ -174,7 +174,7 @@ const CollapseView = React.memo(
     children?: React.ReactNode; // Accept children
     modal?: boolean;
   }) => {
-    const { data = {} } = props;
+    const { data = {} }: any = props;
     const onlyOne = Object.keys(data).length === 1;
     return (
       <Collapse
@@ -280,7 +280,7 @@ const LeftContentWrapper = styled.div`
 `;
 
 export const LeftContent = (props: LeftContentProps) => {
-  const { uiComp } = props;
+  const { uiComp }: any = props;
   const editorState = useContext(EditorContext);
   const [expandedKeys, setExpandedKeys] = useState<Array<React.Key>>([]);
   const [showData, setShowData] = useState<NodeInfo[]>([]);

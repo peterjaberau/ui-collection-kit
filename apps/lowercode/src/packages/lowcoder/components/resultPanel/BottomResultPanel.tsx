@@ -29,7 +29,7 @@ interface BottomResultPanelProps {
 }
 
 export const BottomResultPanel = (props: BottomResultPanelProps) => {
-  const { bottom } = props;
+  const { bottom }: any = props;
   const editorState = useContext(EditorContext);
   const showResultComp = editorState.showResultComp();
   const result = showResultComp?.result();

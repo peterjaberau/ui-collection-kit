@@ -3,7 +3,7 @@ import { InputTypeEnum } from "#lowcoder/comps/comps/moduleContainerComp/ioComp/
 import { SimpleNameComp } from "#lowcoder/comps/comps/simpleNameComp";
 import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
 import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
-import { BranchDiv, Dropdown } from "lowcoder-design";
+import { BranchDiv, Dropdown } from "#lowcoder-design/index";
 import { BottomResTypeEnum } from "#lowcoder/types/bottomRes";
 import { getPromiseAfterDispatch } from "#lowcoder/util/promiseUtils";
 import { trans } from "#lowcoder/i18n";
@@ -109,7 +109,7 @@ const ExecuteQueryPropertyView = ({
   );
 }
 const ExecuteQueryTmpAction = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     queryName: SimpleNameComp,
     queryVariables: withDefault(keyValueListControl(false, [], "variable"), [])
   };

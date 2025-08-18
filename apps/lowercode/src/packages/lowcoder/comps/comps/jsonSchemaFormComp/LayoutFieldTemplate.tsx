@@ -2,7 +2,7 @@ import React from "react";
 import ObjectFieldTemplate from "./ObjectFieldTemplate"; // Import the existing ObjectFieldTemplate
 
 export const LayoutFieldTemplate = (props: any) => {
-  const { schema, uiSchema, children, ...rest } = props; // Spread to include all props
+  const { schema, uiSchema, children, ...rest }: any = props; // Spread to include all props
 
   // Handle custom layouts
   switch (schema.type) {

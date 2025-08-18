@@ -17,7 +17,7 @@ import { ExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
 import { getReduceContext, WithParamsContext } from "#lowcoder/comps/utils/reduceContext";
 import { parseCompType } from "#lowcoder/comps/utils/remote";
 import { Comp, CompAction, ConstructorToDataType } from "#lowcoder-core/index";
-import { ScrollBar, SearchTextContext } from "lowcoder-design";
+import { ScrollBar, SearchTextContext } from "#lowcoder-design/index";
 import React, { Profiler, useContext, useEffect, useMemo, useState } from "react";
 import { profilerCallback } from "#lowcoder/util/cacheUtils";
 import { setFieldsNoTypeCheck, shallowEqual } from "#lowcoder/util/objectUtils";
@@ -29,7 +29,7 @@ export function defaultLayout(compType: UICompType): UICompLayoutInfo {
   return uiCompRegistry[compType]?.layoutInfo ?? { w: 5, h: 5 };
 }
 
-const childrenMap = {
+const childrenMap: any = {
   name: SimpleNameComp,
 };
 
@@ -85,7 +85,7 @@ const CachedPropertyView = React.memo((props: {
   withParamsContext: WithParamsContext;
 }) => {
   const prevHints = useContext(CompExposingContext);
-  const { withParamsContext } = props;
+  const { withParamsContext }: any = props;
   const hints = useMemo(
     () => ({
       ...prevHints,

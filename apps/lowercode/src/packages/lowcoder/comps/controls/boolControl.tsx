@@ -10,7 +10,7 @@ import {
   SimpleComp,
   ValueAndMsg,
 } from "#lowcoder-core/index";
-import { CheckBox, controlItem, Switch, SwitchJsIcon, SwitchWrapper } from "lowcoder-design";
+import { CheckBox, controlItem, Switch, SwitchJsIcon, SwitchWrapper } from "#lowcoder-design/index";
 import { ReactNode } from "react";
 import styled from "styled-components";
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";

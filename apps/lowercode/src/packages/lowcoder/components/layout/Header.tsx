@@ -43,7 +43,7 @@ export interface IHeaderProps {
 }
 
 export default function Header(props: IHeaderProps) {
-  const { headerStart, headerMiddle, headerEnd } = props;
+  const { headerStart, headerMiddle, headerEnd }: any = props;
   const regex = /\/edit|\/view|\/preview/;
   const isEditViewPreview = !!window.location.pathname.match(regex);
   return (

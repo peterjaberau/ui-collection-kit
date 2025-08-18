@@ -13,7 +13,7 @@ import {
 } from "#lowcoder-core/index";
 import { lastValueIfEqual } from "#lowcoder/util/objectUtils";
 
-const childrenMap = {
+const childrenMap: any = {
   name: CompNameControl,
   description: StringControl,
 };

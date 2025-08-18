@@ -2,7 +2,7 @@ import { StringControl } from "#lowcoder/comps/controls/codeControl";
 import { withDefault } from "#lowcoder/comps/generators";
 import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import { trans } from "#lowcoder/i18n";
-import { Section } from "lowcoder-design";
+import { Section } from "#lowcoder-design/index";
 import styled from "styled-components";
 
 const PaddingContainer = styled.div<{}>`
@@ -17,7 +17,7 @@ const PaddingContainer = styled.div<{}>`
   }
 `;
 export const PaddingControl = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     left: withDefault(StringControl, ""),
     right: withDefault(StringControl, ""),
     top: withDefault(StringControl, ""),

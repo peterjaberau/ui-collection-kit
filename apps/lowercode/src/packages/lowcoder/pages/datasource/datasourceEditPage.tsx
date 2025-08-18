@@ -3,7 +3,7 @@ import history from "../../util/history";
 import { default as Button } from "antd/es/button";
 import { Spin } from "antd";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { CopyTextButton, DocIcon, PackUpIcon, TacoButton } from "lowcoder-design";
+import { CopyTextButton, DocIcon, PackUpIcon, TacoButton } from "#lowcoder-design/index";
 import { useDatasourceForm } from "./form/useDatasourceForm";
 import { useParams } from "react-router-dom";
 import { DATASOURCE_URL } from "../../constants/routesURL";

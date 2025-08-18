@@ -10,7 +10,7 @@ interface CurlImportModalProps {
 }
 
 export function CurlImportModal(props: CurlImportModalProps) {
-  const { open, onCancel, onSuccess } = props;
+  const { open, onCancel, onSuccess }: any = props;
   const [curlCommand, setCurlCommand] = useState("");
   const [loading, setLoading] = useState(false);
 

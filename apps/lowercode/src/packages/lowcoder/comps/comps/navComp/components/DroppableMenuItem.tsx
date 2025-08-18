@@ -31,7 +31,7 @@ export default function DraggableMenuItem(props: IDraggableMenuItemProps) {
     dropInAsSub = true,
     onAddSubMenu,
     onDelete,
-  } = props;
+  }: any = props;
 
   const id = path.join("_");
   const items = item.getView().items;

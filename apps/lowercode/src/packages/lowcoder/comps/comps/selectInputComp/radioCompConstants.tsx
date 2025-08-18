@@ -5,7 +5,7 @@ import {
   arrayStringExposingStateControl,
   stringExposingStateControl,
 } from "../../controls/codeStateControl";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { SelectInputOptionControl } from "../../controls/optionsControl";
 import { ChangeEventHandlerControl } from "../../controls/eventHandlerControl";
 import {

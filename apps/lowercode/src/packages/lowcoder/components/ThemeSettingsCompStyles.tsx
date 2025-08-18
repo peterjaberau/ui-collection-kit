@@ -132,7 +132,7 @@ type CompStyleProps = {
 }
 
 export default function ThemeSettingsCompStyles(props: CompStyleProps) {
-  const { defaultStyle, styleOptions, configChange } = props
+  const { defaultStyle, styleOptions, configChange }: any = props
   const [compStyle, setCompStyle] = useState({ ...defaultStyle })
 
   const updateThemeWithDebounce = useMemo(() => {

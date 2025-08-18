@@ -14,7 +14,7 @@ import {
     PopupCard,
     UnfoldIcon,
     FileFolderIcon, messageInstance, CustomModal
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import {trans, transToNode} from "#lowcoder/i18n";
 import { draggingUtils } from "#lowcoder/draggingUtils";
 import React, { useContext, useEffect, useState} from "react";
@@ -184,7 +184,7 @@ function ModuleItem(props: ModuleItemProps) {
         resComp,
         id,
         $level,
-    } = props;
+    }: any = props;
     const dispatch = useDispatch();
     const type = resComp.isFolder;
     const name = resComp.name;
@@ -384,7 +384,7 @@ function ModuleSidebarItem(props: ModuleSidebarItemProps) {
         onCopy,
         onSelect,
         onToggleFold,
-    } = props;
+    }: any = props;
     const { onDrag } = useContext(RightContext);
     const [error, setError] = useState<string | undefined>(undefined);
     const [editing, setEditing] = useState(false);

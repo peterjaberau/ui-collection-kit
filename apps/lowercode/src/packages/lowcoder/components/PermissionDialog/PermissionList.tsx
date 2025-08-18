@@ -88,7 +88,7 @@ function PermissionLiItem(props: {
   updatePermission: (permissionId: string, role: string) => void;
   deletePermission: (permissionId: string) => void;
 }) {
-  const { permissionItem, isCreator } = props;
+  const { permissionItem, isCreator }: any = props;
   let SvgIcon: any;
   if (permissionItem.type === "GROUP") {
     SvgIcon = StyledGroupIcon;

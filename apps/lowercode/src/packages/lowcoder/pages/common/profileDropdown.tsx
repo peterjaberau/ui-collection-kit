@@ -5,7 +5,7 @@ import { getCurrentOrg } from "#lowcoder/redux/selectors/orgSelectors";
 import {
   CommonTextLabel,
   EditIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import ProfileSettingModal from "#lowcoder/pages/setting/profile";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -117,7 +117,7 @@ type DropDownProps = {
 
 // Simplified Main Component
 export default function ProfileDropdown(props: DropDownProps) {
-  const { avatarUrl, username, currentOrgId } = props.user;
+  const { avatarUrl, username, currentOrgId }: any = props.user;
   const currentOrgRoleId = props.user.orgRoleMap.get(currentOrgId);
   const currentOrg = useSelector(getCurrentOrg);
   const settingModalVisible = useSelector(isProfileSettingModalVisible);

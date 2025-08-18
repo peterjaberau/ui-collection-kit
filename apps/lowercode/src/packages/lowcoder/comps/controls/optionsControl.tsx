@@ -30,7 +30,7 @@ import {
   Option,
   WidthIcon,
   CloseEyeIcon,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import styled from "styled-components";
 import { lastValueIfEqual } from "#lowcoder/util/objectUtils";
 import { getNextEntityName } from "#lowcoder/util/stringUtils";

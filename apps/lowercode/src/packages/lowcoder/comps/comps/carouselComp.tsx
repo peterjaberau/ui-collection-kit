@@ -1,5 +1,5 @@
 import { default as Carousel } from "antd/es/carousel";
-import { Section, sectionNames } from "lowcoder-design";
+import { Section, sectionNames } from "#lowcoder-design/index";
 import { BoolControl } from "../controls/boolControl";
 import { UICompBuilder, withDefault } from "../generators";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "../generators/withExposing";
@@ -35,7 +35,7 @@ const Container = styled.div<{$bg: string; $animationStyle:AnimationStyleType}>`
 `;
 
 let CarouselBasicComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     autoPlay: withDefault(BoolControl, true),
     data: withDefault(
       ArrayStringControl,

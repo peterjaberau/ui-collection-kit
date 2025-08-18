@@ -1,7 +1,7 @@
 import { ControlParams } from "#lowcoder/comps/controls/controlParams";
 import { EditorContext } from "#lowcoder/comps/editorState";
 import { CompAction, SimpleComp } from "#lowcoder-core/index";
-import { ControlPropertyViewWrapper, PopupCard, Input } from "lowcoder-design";
+import { ControlPropertyViewWrapper, PopupCard, Input } from "#lowcoder-design/index";
 import { useContext, useEffect, useState } from "react";
 import { trans } from "#lowcoder/i18n";
 const SimpleVariableHeaderPropertyView = ({params, comp, isCheck}: any) => {

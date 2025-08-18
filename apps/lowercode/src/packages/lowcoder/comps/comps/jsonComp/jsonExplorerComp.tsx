@@ -51,7 +51,7 @@ const JsonExplorerContainer = styled.div<{
 `;
 
 let JsonExplorerTmpComp = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     value: withDefault(ArrayOrJSONObjectControl, JSON.stringify(defaultData, null, 2)),
     autoHeight: withDefault(AutoHeightControl, 'auto'),
     showVerticalScrollbar:BoolControl,

@@ -12,7 +12,7 @@ import {
   QueryConfigItemWrapper,
   QueryConfigLabel,
   QueryConfigWrapper,
-} from "lowcoder-design";
+} from "#lowcoder-design/index";
 import { BoolPureControl } from "../../controls/boolControl";
 import { dropdownControl } from "../../controls/dropdownControl";
 import { TableNameComp } from "./tableNameComp";
@@ -147,7 +147,7 @@ const CommandMap = {
     .build(),
 } as const;
 
-const childrenMap = {
+const childrenMap: any = {
   mode: dropdownControl(
     [
       { label: trans("sqlQuery.sqlMode"), value: "SQL" },
@@ -170,7 +170,7 @@ const SQLTmpQuery = withTypeAndChildrenAbstract(
 const regexp = new RegExp("(\\s|^)(update|insert|delete|drop)(\\s|$)", "i");
 
 const SQLQueryPropertyView = (props: { comp: InstanceType<typeof SQLQuery> }) => {
-  const { children } = props.comp;
+  const { children }: any = props.comp;
   const context = useContext(QueryContext);
 
   return (

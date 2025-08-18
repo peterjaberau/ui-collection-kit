@@ -49,7 +49,7 @@ export function getSelectedRowKeys(
 }
 
 export const SelectionControl = (function () {
-  const childrenMap = {
+  const childrenMap: any = {
     mode: dropdownControl(modeOptions, "single"),
     selectedRowKey: stateComp<string>("0"),
     selectedRowKeys: stateComp<Array<string>>([]),

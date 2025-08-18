@@ -1,6 +1,6 @@
 import Segmented from "#lowcoder/components/Segmented"
 import { featureSwitch } from "#lowcoder/constants/featureSwitch"
-import { ScrollBar, Search } from "lowcoder-design"
+import { ScrollBar, Search } from "#lowcoder-design/index"
 import { useState } from "react"
 import styled from "styled-components"
 import { RightContext } from "./rightContext"
@@ -45,7 +45,7 @@ interface InsertViewProps {
 }
 
 export default function InsertView(props: InsertViewProps) {
-  const { onCompDrag } = props
+  const { onCompDrag }: any = props
   const [searchValue, setSearchValue] = useState("")
   const [activeKey, setActiveKey] = useState<OptionValue>("ui")
 

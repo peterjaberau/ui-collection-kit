@@ -81,7 +81,7 @@ const ModeOptions = [
   { label: "Asset Library", value: "asset-library" },
 ] as const;
 
-const childrenMap = {
+const childrenMap: any = {
   style: styleControl(IconStyle,'style'),
   animationStyle: styleControl(AnimationStyle,'animationStyle'),
   sourceMode: dropdownControl(ModeOptions, "standard"),

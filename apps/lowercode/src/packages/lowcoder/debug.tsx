@@ -59,7 +59,7 @@ function compDataToString(comp: Comp) {
   return null;
 }
 
-const childrenMap = {
+const childrenMap: any = {
   input: InputComp,
   table: MockTableComp,
   button: ButtonComp,
