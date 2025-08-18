@@ -1,8 +1,8 @@
-import { RadiusControl, StringControl } from "comps/controls/codeControl";
-import { HorizontalAlignmentControl } from "comps/controls/dropdownControl";
-import { MultiCompBuilder, valueComp, withDefault } from "comps/generators";
-import { withSelectedMultiContext } from "comps/generators/withSelectedMultiContext";
-import { trans } from "i18n";
+import { RadiusControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { HorizontalAlignmentControl } from "#lowcoder/comps/controls/dropdownControl";
+import { MultiCompBuilder, valueComp, withDefault } from "#lowcoder/comps/generators";
+import { withSelectedMultiContext } from "#lowcoder/comps/generators/withSelectedMultiContext";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import {
   changeChildAction,
@@ -12,12 +12,12 @@ import {
   fromRecord,
   withFunction,
   wrapChildAction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { IconRadius, TextSizeIcon, FontFamilyIcon, TextWeightIcon, controlItem } from "#lowcoder-design/index";
 import { ColumnTypeComp } from "./columnTypeComp";
-import { ColorControl } from "comps/controls/colorControl";
+import { ColorControl } from "#lowcoder/comps/controls/colorControl";
 import styled from "styled-components";
-import { TextOverflowControl } from "comps/controls/textOverflowControl";
+import { TextOverflowControl } from "#lowcoder/comps/controls/textOverflowControl";
 import { default as Divider } from "antd/es/divider";
 export type Render = ReturnType<ConstructorToComp<typeof RenderComp>["getOriginalComp"]>;
 export const RenderComp = withSelectedMultiContext(ColumnTypeComp);

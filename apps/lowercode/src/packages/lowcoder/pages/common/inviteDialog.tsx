@@ -10,7 +10,7 @@ import { WhiteLoading } from "lowcoder-design";
 import { genInviteLink } from "#lowcoder/util/urlUtils";
 import { HelpText } from "#lowcoder/components/HelpText";
 import copyToClipboard from "copy-to-clipboard";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import Divider from "antd/es/divider";
 import Flex from "antd/es/flex";

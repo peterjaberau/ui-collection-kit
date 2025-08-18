@@ -1,23 +1,23 @@
 import { default as Layout } from "antd/es/layout";
 import { default as Menu } from "antd/es/menu";
-import { Comp } from "lowcoder-core";
-import { InputComp } from "comps/comps/textInputComp/inputComp";
-import { ButtonComp } from "comps/comps/buttonComp/buttonComp";
-import { NavLayout } from "comps/comps/layout/navLayout";
-import { MockTableComp } from "comps/comps/tableComp/mockTableComp";
-import { ModuleComp } from "comps/comps/moduleComp/moduleComp";
-import { StringControl } from "comps/controls/codeControl";
-import { simpleMultiComp, withDefault, withPropertyViewFn, withViewFn } from "comps/generators";
-import { hookToComp } from "comps/generators/hookToComp";
-import { QueryComp } from "comps/queries/queryComp";
-import { ExposingInfo } from "comps/utils/exposingTypes";
-import { useCompInstance } from "comps/utils/useCompInstance";
+import { Comp } from "#lowcoder-core/index";
+import { InputComp } from "#lowcoder/comps/comps/textInputComp/inputComp";
+import { ButtonComp } from "#lowcoder/comps/comps/buttonComp/buttonComp";
+import { NavLayout } from "#lowcoder/comps/comps/layout/navLayout";
+import { MockTableComp } from "#lowcoder/comps/comps/tableComp/mockTableComp";
+import { ModuleComp } from "#lowcoder/comps/comps/moduleComp/moduleComp";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { simpleMultiComp, withDefault, withPropertyViewFn, withViewFn } from "#lowcoder/comps/generators";
+import { hookToComp } from "#lowcoder/comps/generators/hookToComp";
+import { QueryComp } from "#lowcoder/comps/queries/queryComp";
+import { ExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
+import { useCompInstance } from "#lowcoder/comps/utils/useCompInstance";
 import React, { useMemo } from "react";
 import { useHistory, useParams } from "react-router";
 import { useInterval, useTitle, useWindowSize } from "react-use";
-import { DatePickerComp, DateRangeComp } from "comps/comps/dateComp/dateComp";
-import { TimePickerComp, TimeRangeComp } from "comps/comps/dateComp/timeComp";
-import { trans } from "i18n";
+import { DatePickerComp, DateRangeComp } from "#lowcoder/comps/comps/dateComp/dateComp";
+import { TimePickerComp, TimeRangeComp } from "#lowcoder/comps/comps/dateComp/timeComp";
+import { trans } from "#lowcoder/i18n";
 
 const WindowSizeComp = hookToComp(useWindowSize);
 

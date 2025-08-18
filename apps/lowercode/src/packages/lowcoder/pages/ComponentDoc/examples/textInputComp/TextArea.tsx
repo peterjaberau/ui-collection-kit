@@ -1,5 +1,5 @@
-import { TextAreaComp } from "comps/comps/textInputComp/textAreaComp";
-import { trans } from "i18n";
+import { TextAreaComp } from "#lowcoder/comps/comps/textInputComp/textAreaComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

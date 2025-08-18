@@ -5,18 +5,18 @@ import {
   DispatchType,
   CompAction,
   RecordConstructorToView,
-} from "lowcoder-core";
-import { trans } from "i18n";
+} from "#lowcoder-core/index";
+import { trans } from "#lowcoder/i18n";
 import { UICompBuilder, withDefault } from "../../generators";
 import { ScrollBar, Section, sectionNames } from "#lowcoder-design/index";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { BoolControl } from "comps/controls/boolControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { styleControl } from "comps/controls/styleControl";
-import { alignControl } from "comps/controls/alignControl";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
-import { jsonValueExposingStateControl } from "comps/controls/codeStateControl";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { alignControl } from "#lowcoder/comps/controls/alignControl";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { jsonValueExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
 import {
   ArrayStringControl,
   BoolCodeControl,
@@ -26,31 +26,31 @@ import {
   jsonValueControl,
   NumberControl,
   StringControl,
-} from "comps/controls/codeControl";
+} from "#lowcoder/comps/controls/codeControl";
 import {
   clickEvent,
   eventHandlerControl,
   doubleClickEvent,
-} from "comps/controls/eventHandlerControl";
+} from "#lowcoder/comps/controls/eventHandlerControl";
 import {
   TimeLineStyle,
   heightCalculator,
   widthCalculator,
   marginCalculator,
   TimeLineStyleType,
-} from "comps/controls/styleControlConstants";
-import { stateComp, valueComp } from "comps/generators/simpleGenerators";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { stateComp, valueComp } from "#lowcoder/comps/generators/simpleGenerators";
 import {
   NameConfig,
   NameConfigHidden,
   withExposingConfigs,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 import { timelineDate, timelineNode, TimelineDataTooltip } from "./timelineConstants";
 import { convertTimeLineData } from "./timelineUtils";
 import { default as Timeline } from "antd/es/timeline";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { styled } from "styled-components";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 const TimelineWrapper = styled.div<{
   $style: TimeLineStyleType

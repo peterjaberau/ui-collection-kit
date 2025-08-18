@@ -1,14 +1,14 @@
-import { changeChildAction, DispatchType, RecordConstructorToView } from "lowcoder-core";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
-import { NameConfig, withExposingConfigs } from "comps/generators/withExposing";
+import { changeChildAction, DispatchType, RecordConstructorToView } from "#lowcoder-core/index";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
+import { NameConfig, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames, ValueFromOption } from "#lowcoder-design/index";
 import { default as TreeSelect } from "antd/es/tree-select";
 import { useEffect } from "react";
 import styled from "styled-components";
-import { styleControl } from "comps/controls/styleControl";
-import {  InputFieldStyle, LabelStyle, TreeSelectStyle, TreeSelectStyleType } from "comps/controls/styleControlConstants";
-import { LabelControl } from "comps/controls/labelControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import {  InputFieldStyle, LabelStyle, TreeSelectStyle, TreeSelectStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { LabelControl } from "#lowcoder/comps/controls/labelControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 import {
   advancedSection,
   expandSection,
@@ -21,22 +21,22 @@ import {
 } from "./treeUtils";
 import { baseSelectRefMethods, getStyle } from "../selectInputComp/selectCompConstants";
 import { useSelectInputValidate, SelectInputValidationSection } from "../selectInputComp/selectInputConstants";
-import { StringControl } from "comps/controls/codeControl";
-import { SelectEventHandlerControl } from "comps/controls/eventHandlerControl";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { SelectEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
 import { selectInputValidate } from "../selectInputComp/selectInputConstants";
-import { BoolControl } from "comps/controls/boolControl";
-import { stateComp, withDefault } from "comps/generators/simpleGenerators";
-import { trans } from "i18n";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { stateComp, withDefault } from "#lowcoder/comps/generators/simpleGenerators";
+import { trans } from "#lowcoder/i18n";
 import {
   allowClearPropertyView,
   placeholderPropertyView,
   showDataLoadingIndicatorsPropertyView,
   showSearchPropertyView,
-} from "comps/utils/propertyUtils";
+} from "#lowcoder/comps/utils/propertyUtils";
 import { BaseSelectRef } from "rc-select";
-import { RefControl } from "comps/controls/refControl";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 const StyledTreeSelect = styled(TreeSelect)<{ $style: TreeSelectStyleType }>`
   width: 100%;

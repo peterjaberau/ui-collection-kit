@@ -1,12 +1,12 @@
 // import "comps/comps/layout/navLayout";
 // import "comps/comps/layout/mobileTabLayout";
 
-import { CompAction, CompActionTypes } from "lowcoder-core";
-import { EditorContext, EditorState } from "comps/editorState";
-import { simpleMultiComp } from "comps/generators";
-import { HookListComp } from "comps/hooks/hookListComp";
-import { QueryListComp } from "comps/queries/queryComp";
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
+import { CompAction, CompActionTypes } from "#lowcoder-core/index";
+import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { simpleMultiComp } from "#lowcoder/comps/generators";
+import { HookListComp } from "#lowcoder/comps/hooks/hookListComp";
+import { QueryListComp } from "#lowcoder/comps/queries/queryComp";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
 import { handlePromiseAndDispatch } from "#lowcoder/util/promiseUtils";
 import { HTMLAttributes, Suspense, lazy, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
@@ -15,13 +15,13 @@ import { PreloadComp } from "./preLoadComp";
 import { TemporaryStateListComp } from "./temporaryStateComp";
 import { TransformerListComp } from "./transformerListComp";
 import UIComp from "./uiComp";
-import { ThemeContext } from "comps/utils/themeContext";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
 import { ModuleLayoutCompName } from "#lowcoder/constants/compConstants";
 import { defaultTheme as localDefaultTheme } from "#lowcoder/constants/themeConstants";
 import { ModuleLoading } from "#lowcoder/components/ModuleLoading";
 import EditorSkeletonView from "#lowcoder/pages/editor/editorSkeletonView";
-import { getGlobalSettings } from "comps/utils/globalSettings";
-import { getCurrentTheme } from "comps/utils/themeUtil";
+import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
+import { getCurrentTheme } from "#lowcoder/comps/utils/themeUtil";
 import { DataChangeResponderListComp } from "./dataChangeResponderComp";
 import { FolderListComp } from "./folderListComp";
 import {
@@ -34,7 +34,7 @@ import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorCont
 import { useUserViewMode } from "#lowcoder/util/hooks";
 import React from "react";
 import { isEqual } from "lodash";
-import {LoadingBarHideTrigger} from "@lowcoder-ee/util/hideLoading";
+import {LoadingBarHideTrigger} from "#lowcoder/util/hideLoading";
 import clsx from "clsx";
 import { useUnmount } from "react-use";
 

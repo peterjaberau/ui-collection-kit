@@ -6,11 +6,11 @@ import {
   NumberControl,
   RangeControl,
   StringControl,
-} from "comps/controls/codeControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { LabelControl } from "comps/controls/labelControl";
-import { numberExposingStateControl, stringExposingStateControl } from "comps/controls/codeStateControl";
+} from "#lowcoder/comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { LabelControl } from "#lowcoder/comps/controls/labelControl";
+import { numberExposingStateControl, stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
 import NP from "number-precision";
 
 import {
@@ -19,28 +19,28 @@ import {
   NameConfigPlaceHolder,
   NameConfigRequired,
   withExposingConfigs,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames, ValueFromOption } from "lowcoder-design";
 import { ReactNode, useEffect, useRef, useState, useCallback } from "react";
 import styled, { css } from "styled-components";
-import { RecordConstructorToView } from "lowcoder-core";
+import { RecordConstructorToView } from "#lowcoder-core/index";
 import { InputEventHandlerControl } from "../../controls/eventHandlerControl";
 import { UICompBuilder, withDefault } from "../../generators";
 import { formDataChildren, FormDataPropertyView } from "../formComp/formDataConstants";
 import { withMethodExposing, refMethods } from "../../generators/withMethodExposing";
 import { RefControl } from "../../controls/refControl";
-import { styleControl } from "comps/controls/styleControl";
-import {  AnimationStyle, InputFieldStyle, InputLikeStyle, InputLikeStyleType, LabelStyle, DisabledInputStyle, DisabledInputStyleType, heightCalculator, widthCalculator } from "comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import {  AnimationStyle, InputFieldStyle, InputLikeStyle, InputLikeStyleType, LabelStyle, DisabledInputStyle, DisabledInputStyleType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
 import {
   disabledPropertyView,
   hiddenPropertyView,
   placeholderPropertyView,
   readOnlyPropertyView,
   requiredPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { IconControl } from "comps/controls/iconControl";
-import { hasIcon } from "comps/utils";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { hasIcon } from "#lowcoder/comps/utils";
 import {
   blurMethod,
   clickMethod,
@@ -48,11 +48,11 @@ import {
   selectMethod,
   setRangeTextMethod,
   setSelectionRangeMethod,
-} from "comps/utils/methodUtils";
+} from "#lowcoder/comps/utils/methodUtils";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import { migrateOldData } from "comps/generators/simpleGenerators";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
 import { fixOldInputCompData } from "../textInputComp/textInputConstants";
 
 const getStyle = (style: InputLikeStyleType) => {
@@ -291,7 +291,7 @@ const childrenMap = {
   allowNull: BoolControl,
   onEvent: InputEventHandlerControl,
   viewRef: RefControl<HTMLInputElement>,
-  style: styleControl(InputFieldStyle , 'style') , 
+  style: styleControl(InputFieldStyle , 'style') ,
   labelStyle: styleControl(LabelStyle , 'labelStyle'),
   prefixText : stringExposingStateControl("defaultValue"),
   animationStyle: styleControl(AnimationStyle , 'animationStyle'),

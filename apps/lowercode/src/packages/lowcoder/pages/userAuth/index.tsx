@@ -4,15 +4,15 @@ import React, { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectSystemConfig } from "#lowcoder/redux/selectors/configSelectors";
 import { AuthContext, clearAuthSearchParams } from "#lowcoder/pages/userAuth/authUtils";
-import { AuthRoutes } from "@lowcoder-ee/constants/authConstants";
+import { AuthRoutes } from "#lowcoder/constants/authConstants";
 import { AuthLocationState } from "#lowcoder/constants/authConstants";
 import { ProductLoading } from "#lowcoder/components/ProductLoading";
 import { fetchConfigAction } from "#lowcoder/redux/reduxActions/configActions";
 import { fetchUserAction } from "#lowcoder/redux/reduxActions/userActions";
 import LoginAdmin from "./loginAdmin";
 import _ from "lodash";
-import {LoadingBarHideTrigger} from "@lowcoder-ee/util/hideLoading";
-import { fetchBrandingSetting } from "@lowcoder-ee/redux/reduxActions/enterpriseActions";
+import {LoadingBarHideTrigger} from "#lowcoder/util/hideLoading";
+import { fetchBrandingSetting } from "#lowcoder/redux/reduxActions/enterpriseActions";
 export default function UserAuth() {
   const dispatch = useDispatch();
   const location = useLocation<AuthLocationState>();

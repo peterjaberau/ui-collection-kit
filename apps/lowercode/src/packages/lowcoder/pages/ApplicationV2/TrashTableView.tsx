@@ -8,7 +8,7 @@ import { HomeResTypeEnum } from "../../types/homeRes";
 import { HomeRes } from "./HomeLayout";
 import { trans, transToNode } from "../../i18n";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { BrandedIcon } from "@lowcoder-ee/components/BrandedIcon";
+import { BrandedIcon } from "#lowcoder/components/BrandedIcon";
 import ApplicationApi from "../../api/applicationApi";
 
 const OperationWrapper = styled.div`

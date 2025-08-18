@@ -2,7 +2,7 @@ import { useState } from "react";
 import { default as Menu } from "antd/es/menu";
 import { CompPlayground } from "./CompPlayground";
 import styled from "styled-components";
-import { UICompLayoutInfo } from "comps/uiCompRegistry";
+import { UICompLayoutInfo } from "#lowcoder/comps/uiCompRegistry";
 
 const Container = styled.div`
   display: flex;

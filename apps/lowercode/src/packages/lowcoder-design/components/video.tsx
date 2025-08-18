@@ -1,7 +1,7 @@
 // import ReactPlayer from "react-player";
 import { lazy } from 'react';
 import styled from "styled-components";
-import { VideoCompIcon } from "icons";
+import { VideoCompIcon } from "#lowcoder-design/icons";
 
 const ReactPlayer = lazy(() => import("react-player"));
 

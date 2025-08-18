@@ -1,12 +1,12 @@
-import { RefControl } from "comps/controls/refControl";
-import { ToInstanceType } from "comps/generators/multi";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
+import { ToInstanceType } from "#lowcoder/comps/generators/multi";
 import {
   ExposeMethodCompConstructor,
   MethodConfigInfo,
   refMethods,
-} from "comps/generators/withMethodExposing";
-import { trans } from "i18n";
-import { MultiBaseComp } from "lowcoder-core";
+} from "#lowcoder/comps/generators/withMethodExposing";
+import { trans } from "#lowcoder/i18n";
+import { MultiBaseComp } from "#lowcoder-core/index";
 import type ReactPlayer from "react-player";
 
 export const mediaCommonChildren = {

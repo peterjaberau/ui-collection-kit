@@ -1,4 +1,4 @@
-import { language } from "i18n/comps";
+import { language } from "#lowcoder/i18n";
 
 const echartsUrlLocale = language === "zh" ? "zh" : "en";
 export const optionUrl = `https://echarts.apache.org/${echartsUrlLocale}/option.html`;

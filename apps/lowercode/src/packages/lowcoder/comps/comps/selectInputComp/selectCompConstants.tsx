@@ -3,7 +3,7 @@ import {
   DispatchType,
   RecordConstructorToComp,
   RecordConstructorToView,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { BoolControl } from "../../controls/boolControl";
 import { LabelControl } from "../../controls/labelControl";
 import { BoolCodeControl, StringControl } from "../../controls/codeControl";
@@ -38,10 +38,10 @@ import {
   TreeSelectStyleType,
   widthCalculator,
   heightCalculator,
-  
+
   SelectStyle,
   ChildrenMultiSelectStyleType,
-} from "comps/controls/styleControlConstants";
+} from "#lowcoder/comps/controls/styleControlConstants";
 import { stateComp, withDefault } from "../../generators";
 import {
   allowClearPropertyView,
@@ -50,17 +50,17 @@ import {
   placeholderPropertyView,
   showDataLoadingIndicatorsPropertyView,
   showSearchPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { hasIcon } from "comps/utils";
-import { RefControl } from "comps/controls/refControl";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { hasIcon } from "#lowcoder/comps/utils";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 import { BaseSelectRef } from "rc-select";
-import { refMethods } from "comps/generators/withMethodExposing";
-import { blurMethod, focusMethod } from "comps/utils/methodUtils";
+import { refMethods } from "#lowcoder/comps/generators/withMethodExposing";
+import { blurMethod, focusMethod } from "#lowcoder/comps/utils/methodUtils";
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import { styleControl } from "comps/controls/styleControl";
-import SupaDemoDisplay from "comps/utils/supademoDisplay";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import SupaDemoDisplay from "#lowcoder/comps/utils/supademoDisplay";
 
 export const getStyle = (
   style:

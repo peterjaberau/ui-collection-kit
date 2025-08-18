@@ -1,5 +1,5 @@
-import { ImageComp } from "comps/comps/imageComp";
-import { trans } from "i18n";
+import { ImageComp } from "#lowcoder/comps/comps/imageComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

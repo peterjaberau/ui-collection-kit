@@ -31,8 +31,8 @@ import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { validateResponse } from "#lowcoder/api/apiUtils";
 import { User } from "#lowcoder/constants/userConstants";
 import { getUserSaga } from "#lowcoder/redux/sagas/userSagas";
-import { GetMyOrgsResponse } from "@lowcoder-ee/api/userApi";
-import UserApi from "@lowcoder-ee/api/userApi";
+import { GetMyOrgsResponse } from "#lowcoder/api/userApi";
+import UserApi from "#lowcoder/api/userApi";
 
 export function* updateGroupSaga(action: ReduxAction<UpdateGroupActionPayload>) {
   try {

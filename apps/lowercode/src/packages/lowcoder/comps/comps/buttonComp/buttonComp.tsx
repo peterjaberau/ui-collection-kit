@@ -1,17 +1,17 @@
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { ButtonEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { IconControl } from "comps/controls/iconControl";
-import { CompNameContext, EditorContext, EditorState } from "comps/editorState";
-import { withDefault } from "comps/generators";
-import { NewChildren, UICompBuilder } from "comps/generators/uiCompBuilder";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { ButtonEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { CompNameContext, EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { withDefault } from "#lowcoder/comps/generators";
+import { NewChildren, UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import {
   disabledPropertyView,
   hiddenPropertyView,
   loadingPropertyView,
-} from "comps/utils/propertyUtils";
+} from "#lowcoder/comps/utils/propertyUtils";
 import { CommonBlueLabel, controlItem, Dropdown, Section, sectionNames } from "#lowcoder-design/index";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import styled from "styled-components";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
 import { IForm } from "../formComp/formDataConstants";
@@ -23,14 +23,14 @@ import {
   ButtonStyleControl,
   DisabledButtonStyleControl,
 } from "./buttonCompConstants";
-import { RefControl } from "comps/controls/refControl";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 import { Tooltip } from "antd";
 import React, { useContext, useEffect, useCallback, useRef } from "react";
-import { AnimationStyle } from "@lowcoder-ee/comps/controls/styleControlConstants";
-import { styleControl } from "@lowcoder-ee/comps/controls/styleControl";
-import { RecordConstructorToComp } from "lowcoder-core";
-import { ToViewReturn } from "@lowcoder-ee/comps/generators/multi";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { AnimationStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
+import { ToViewReturn } from "#lowcoder/comps/generators/multi";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 const FormLabel = styled(CommonBlueLabel)`
   font-size: 13px;

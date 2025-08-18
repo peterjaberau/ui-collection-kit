@@ -1,6 +1,6 @@
-import { styleControl } from "comps/controls/styleControl";
-import {  ChildrenMultiSelectStyle, InputFieldStyle, LabelStyle, MultiSelectStyle } from "comps/controls/styleControlConstants";
-import { trans } from "i18n";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import {  ChildrenMultiSelectStyle, InputFieldStyle, LabelStyle, MultiSelectStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { trans } from "#lowcoder/i18n";
 import { arrayStringExposingStateControl } from "../../controls/codeStateControl";
 import { UICompBuilder } from "../../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
@@ -12,9 +12,9 @@ import {
 } from "./selectCompConstants";
 import { SelectInputInvalidConfig, useSelectInputValidate } from "./selectInputConstants";
 
-import { PaddingControl } from "../../controls/paddingControl";	
+import { PaddingControl } from "../../controls/paddingControl";
 import { MarginControl } from "../../controls/marginControl";
-import { migrateOldData } from "comps/generators/simpleGenerators";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
 import { fixOldInputCompData } from "../textInputComp/textInputConstants";
 
 let MultiSelectBasicComp = (function () {
@@ -26,7 +26,7 @@ let MultiSelectBasicComp = (function () {
     labelStyle: styleControl(LabelStyle , 'labelStyle'),
     inputFieldStyle: styleControl(MultiSelectStyle , 'inputFieldStyle'),
     childrenInputFieldStyle: styleControl(ChildrenMultiSelectStyle, 'childrenInputFieldStyle'),
-    margin: MarginControl,	
+    margin: MarginControl,
     padding: PaddingControl,
   };
   return new UICompBuilder(childrenMap, (props, dispatch) => {
@@ -39,7 +39,7 @@ let MultiSelectBasicComp = (function () {
     const removeIllegalEntries = () => {
       return props.value.value.filter?.((v) => valueSet.has(v))
     }
-    
+
     return props.label({
       required: props.required,
       style: props.style,

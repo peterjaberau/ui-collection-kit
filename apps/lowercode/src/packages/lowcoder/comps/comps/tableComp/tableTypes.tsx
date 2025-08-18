@@ -1,6 +1,6 @@
-import { ColumnListComp } from "comps/comps/tableComp/column/tableColumnListComp";
-import { TableToolbarComp } from "comps/comps/tableComp/tableToolbarComp";
-import { BoolControl, BoolPureControl } from "comps/controls/boolControl";
+import { ColumnListComp } from "#lowcoder/comps/comps/tableComp/column/tableColumnListComp";
+import { TableToolbarComp } from "#lowcoder/comps/comps/tableComp/tableToolbarComp";
+import { BoolControl, BoolPureControl } from "#lowcoder/comps/controls/boolControl";
 import {
   ArrayStringControl,
   BoolCodeControl,
@@ -9,11 +9,11 @@ import {
   JSONObjectArrayControl,
   RadiusControl,
   StringControl,
-} from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { styleControl } from "comps/controls/styleControl";
-import { TableColumnStyle, TableRowStyle, TableStyle, TableToolbarStyle, TableHeaderStyle, TableSummaryRowStyle } from "comps/controls/styleControlConstants";
+} from "#lowcoder/comps/controls/codeControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { TableColumnStyle, TableRowStyle, TableStyle, TableToolbarStyle, TableHeaderStyle, TableSummaryRowStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import {
   MultiCompBuilder,
   stateComp,
@@ -21,21 +21,21 @@ import {
   valueComp,
   withContext,
   withDefault,
-} from "comps/generators";
-import { uiChildren } from "comps/generators/uiCompBuilder";
-import { withIsLoadingMethod } from "comps/generators/withIsLoading";
-import { trans } from "i18n";
+} from "#lowcoder/comps/generators";
+import { uiChildren } from "#lowcoder/comps/generators/uiCompBuilder";
+import { withIsLoadingMethod } from "#lowcoder/comps/generators/withIsLoading";
+import { trans } from "#lowcoder/i18n";
 import {
   ConstructorToView,
   RecordConstructorToComp,
   RecordConstructorToView,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { controlItem } from "#lowcoder-design/index";
 import { JSONArray, JSONObject } from "#lowcoder/util/jsonTypes";
 import { ExpansionControl } from "./expansionControl";
 import { PaginationControl } from "./paginationControl";
 import { SelectionControl } from "./selectionControl";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
 
 const editModeClickOptions = [
   {

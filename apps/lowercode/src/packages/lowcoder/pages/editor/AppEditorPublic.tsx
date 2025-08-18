@@ -20,21 +20,21 @@ import {
   perfMark,
 } from "#lowcoder/util/perfUtils";
 import { useMount, useUnmount } from "react-use";
-import { clearGlobalSettings, setGlobalSettings } from "comps/utils/globalSettings";
+import { clearGlobalSettings, setGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
 import { fetchFolderElements } from "#lowcoder/redux/reduxActions/folderActions";
 import { registryDataSourcePlugin } from "#lowcoder/constants/queryConstants";
 import { useRootCompInstance } from "./useRootCompInstance";
 import EditorSkeletonView from "./editorSkeletonView";
 import {ErrorBoundary} from 'react-error-boundary';
-import { ALL_APPLICATIONS_URL } from "@lowcoder-ee/constants/routesURL";
+import { ALL_APPLICATIONS_URL } from "#lowcoder/constants/routesURL";
 import history from "#lowcoder/util/history";
 import Flex from "antd/es/flex";
 import React from "react";
-import { currentApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
-import { AppState } from "@lowcoder-ee/redux/reducers";
-import { resetIconDictionary } from "@lowcoder-ee/constants/iconConstants";
-import {fetchJsDSPaginationByApp} from "@lowcoder-ee/util/pagination/axios";
-import { PUBLIC_APP_ID, PUBLIC_APP_ORG_ID } from "@lowcoder-ee/constants/publicApp";
+import { currentApplication } from "#lowcoder/redux/selectors/applicationSelector";
+import { AppState } from "#lowcoder/redux/reducers";
+import { resetIconDictionary } from "#lowcoder/constants/iconConstants";
+import {fetchJsDSPaginationByApp} from "#lowcoder/util/pagination/axios";
+import { PUBLIC_APP_ID, PUBLIC_APP_ORG_ID } from "#lowcoder/constants/publicApp";
 
 const AppEditorInternalView = lazy(
   () => import("pages/editor/appEditorInternal")

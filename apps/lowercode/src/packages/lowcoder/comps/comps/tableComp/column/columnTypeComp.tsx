@@ -1,9 +1,9 @@
 import { CellProps } from "#lowcoder/components/table/EditableCell";
-import { DateTimeComp } from "comps/comps/tableComp/column/columnTypeComps/columnDateTimeComp";
+import { DateTimeComp } from "#lowcoder/comps/comps/tableComp/column/columnTypeComps/columnDateTimeComp";
 import { TimeComp } from "./columnTypeComps/columnTimeComp";
-import { ButtonComp } from "comps/comps/tableComp/column/simpleColumnTypeComps";
-import { withType } from "comps/generators";
-import { trans } from "i18n";
+import { ButtonComp } from "#lowcoder/comps/comps/tableComp/column/simpleColumnTypeComps";
+import { withType } from "#lowcoder/comps/generators";
+import { trans } from "#lowcoder/i18n";
 import { Dropdown } from "#lowcoder-design/components/Dropdown";
 import { BooleanComp } from "./columnTypeComps/columnBooleanComp";
 import { SwitchComp } from "./columnTypeComps/columnSwitchComp";

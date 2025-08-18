@@ -4,20 +4,20 @@ import {
   changeChildAction,
   CompAction,
   RecordConstructorToView,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 // Text internationalisation conversion api
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 // General frame of the right property bar
 import { UICompBuilder, withDefault } from "../../generators";
 // Right-side attribute subframe
 import { Section, sectionNames } from "#lowcoder-design/index";
 // Switch indicating whether the component is hidden or not
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 // Right property switch
-import { BoolControl } from "comps/controls/boolControl";
-import { styleControl } from "comps/controls/styleControl"; //样式输入框
-import { jsonValueExposingStateControl } from "comps/controls/codeStateControl";
-import { jsonControl, StringControl } from "comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl"; //样式输入框
+import { jsonValueExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { jsonControl, StringControl } from "#lowcoder/comps/controls/codeControl";
 // Event Control
 import {
   clickEvent,
@@ -26,8 +26,8 @@ import {
   deleteEvent,
   mentionEvent,
   doubleClickEvent,
-} from "comps/controls/eventHandlerControl";
-import { EditorContext } from "comps/editorState";
+} from "#lowcoder/comps/controls/eventHandlerControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 
 // Introducing styles
@@ -36,15 +36,15 @@ import {
   CommentStyle,
   heightCalculator,
   widthCalculator,
-} from "comps/controls/styleControlConstants";
+} from "#lowcoder/comps/controls/styleControlConstants";
 // Initialise exposed values
-import { stateComp, valueComp } from "comps/generators/simpleGenerators";
+import { stateComp, valueComp } from "#lowcoder/comps/generators/simpleGenerators";
 // The component's api for exposing properties externally
 import {
   NameConfig,
   NameConfigHidden,
   withExposingConfigs,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 
 import {
   commentDate,
@@ -67,7 +67,7 @@ import dayjs from "dayjs";
 // import "dayjs/locale/zh-cn";
 import { getInitialsAndColorCode } from "#lowcoder/util/stringUtils";
 import { default as CloseOutlined } from "@ant-design/icons/CloseOutlined";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 dayjs.extend(relativeTime);
 // dayjs.locale("zh-cn");

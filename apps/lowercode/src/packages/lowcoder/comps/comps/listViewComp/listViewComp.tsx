@@ -1,24 +1,24 @@
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
-import { BoolControl } from "comps/controls/boolControl";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import {
   NumberControl,
   NumberOrJSONObjectArrayControl,
   RadiusControl,
   StringControl,
-} from "comps/controls/codeControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, ListViewStyle } from "comps/controls/styleControlConstants";
-import { UICompBuilder, stateComp, valueComp, withDefault, withPropertyViewFn, withViewFn } from "comps/generators";
+} from "#lowcoder/comps/controls/codeControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, ListViewStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { UICompBuilder, stateComp, valueComp, withDefault, withPropertyViewFn, withViewFn } from "#lowcoder/comps/generators";
 import {
   CompDepsConfig,
   depsConfig,
   NameConfigHidden,
   withExposingConfigs,
-} from "comps/generators/withExposing";
-import { withIsLoadingMethod } from "comps/generators/withIsLoading";
-import { NameGenerator } from "comps/utils";
-import { reduceInContext } from "comps/utils/reduceContext";
-import { trans } from "i18n";
+} from "#lowcoder/comps/generators/withExposing";
+import { withIsLoadingMethod } from "#lowcoder/comps/generators/withIsLoading";
+import { NameGenerator } from "#lowcoder/comps/utils";
+import { reduceInContext } from "#lowcoder/comps/utils/reduceContext";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import {
   CompAction,
@@ -28,7 +28,7 @@ import {
   Node,
   withFunction,
   WrapContextNodeV2,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { JSONArray, JSONObject, JSONValue } from "#lowcoder/util/jsonTypes";
 import { depthEqual, lastValueIfEqual, shallowEqual } from "#lowcoder/util/objectUtils";
 import { CompTree, getAllCompItems, IContainer } from "../containerBase";
@@ -38,9 +38,9 @@ import { ContextContainerComp } from "./contextContainerComp";
 import { ListView } from "./listView";
 import { listPropertyView } from "./listViewPropertyView";
 import { getData } from "./listViewUtils";
-import { withMethodExposing } from "comps/generators/withMethodExposing";
-import { SliderControl } from "@lowcoder-ee/comps/controls/sliderControl";
-import { eventHandlerControl, sortChangeEvent } from "@lowcoder-ee/comps/controls/eventHandlerControl";
+import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
+import { SliderControl } from "#lowcoder/comps/controls/sliderControl";
+import { eventHandlerControl, sortChangeEvent } from "#lowcoder/comps/controls/eventHandlerControl";
 
 const childrenMap = {
   noOfRows: withIsLoadingMethod(NumberOrJSONObjectArrayControl), // FIXME: migrate "noOfRows" to "data"
@@ -66,10 +66,11 @@ const childrenMap = {
   onEvent: eventHandlerControl([sortChangeEvent] as const),
 };
 
-const ListViewTmpComp = new UICompBuilder(childrenMap, () => <></>)
+const ListViewTmpComp : any = new UICompBuilder(childrenMap, () => <></>)
   .setPropertyViewFn(() => <></>)
   .build();
 
+// @ts-ignore
 export class ListViewImplComp extends ListViewTmpComp implements IContainer {
   private getOriginalContainer() {
     return this.children.container.getSelectedComp().getComp();
@@ -89,10 +90,13 @@ export class ListViewImplComp extends ListViewTmpComp implements IContainer {
       container: this.getOriginalContainer().getPasteValue(nameGenerator),
     };
   }
-  override autoHeight(): boolean {
-    return this.children.autoHeight.getView();
+  // @ts-ignore
+  override autoHeight(): boolean | any {
+    return this.children.autoHeight.getView() as any;
   }
-  override reduce(action: CompAction): this {
+
+  // @ts-ignore
+  override reduce(action: CompAction | any): this | any {
     // console.info("listView reduce. action: ", action);
     let comp = reduceInContext({ inEventContext: true }, () => super.reduce(action));
 
@@ -113,10 +117,10 @@ export class ListViewImplComp extends ListViewTmpComp implements IContainer {
     }
 
     // console.info("listView reduce. action: ", action, "\nthis: ", this, "\ncomp: ", comp);
-    return comp;
+    return comp as any;
   }
   /** expose the data from inner comps */
-  itemsNode(): Node<Record<string, unknown>[]> {
+  itemsNode(): Node<Record<string, unknown>[]> | any {
     const { itemCount } = getData(this.children.noOfRows.getView());
     const itemIndexName = this.children.itemIndexName.getView();
     const itemDataName = this.children.itemDataName.getView();
@@ -126,7 +130,7 @@ export class ListViewImplComp extends ListViewTmpComp implements IContainer {
     const exposingRecord = _(_.range(0, itemCount))
       .toPairs()
       .fromPairs()
-      .mapValues((itemIdx) => {
+      .mapValues((itemIdx: any) => {
         let container =
           containerComp.getCachedComp(String(itemIdx)) ?? containerComp.getOriginalComp();
         // FIXME: replace allComps as non-list-view comps
@@ -137,7 +141,7 @@ export class ListViewImplComp extends ListViewTmpComp implements IContainer {
           .value();
         const paramsNodes = {
           [itemIndexName]: fromValue(itemIdx),
-          [itemDataName]: withFunction(dataExposingNode, (value) =>
+          [itemDataName]: withFunction(dataExposingNode, (value: any) =>
             typeof value === "number" ? {} : value[itemIdx]
           ),
         };
@@ -159,11 +163,11 @@ export class ListViewImplComp extends ListViewTmpComp implements IContainer {
 
     return lastValueIfEqual(this, "exposing_data", [exposings, exposingRecord] as const, (a, b) =>
       shallowEqual(a[1], b[1])
-    )[0];
+    )[0] as any;
   }
 }
 
-const ListViewRenderComp = withViewFn(ListViewImplComp, (comp) => <ListView comp={comp} />);
+const ListViewRenderComp = withViewFn(ListViewImplComp as any, (comp) => <ListView comp={comp} />);
 const ListPropertyView = listPropertyView("listView");
 let ListViewPropertyComp = withPropertyViewFn(ListViewRenderComp, (comp) => {
   return <ListPropertyView comp={comp} />;
@@ -172,24 +176,24 @@ let ListViewPropertyComp = withPropertyViewFn(ListViewRenderComp, (comp) => {
 ListViewPropertyComp = withExposingConfigs(ListViewPropertyComp, [
   new CompDepsConfig(
     "items",
-    (comp) => ({ data: comp.itemsNode() }),
+    (comp: any) => ({ data: comp.itemsNode() }),
     (input) => input.data,
     trans("listView.itemsDesc")
-  ),
+  ) as any,
   depsConfig({
     name: "data",
     desc: trans("listView.dataDesc"),
-    depKeys: ["noOfRows"],
-    func: (input) => {
+    depKeys: ["noOfRows"] as any,
+    func: (input: any) => {
       const { data } = getData(input.noOfRows);
       return data;
     },
-  }),
+  }) as any,
   depsConfig({
     name: "sortedData",
     desc: trans("listView.dataDesc"),
-    depKeys: ["listData"],
-    func: (input) => {
+    depKeys: ["listData"] as any,
+    func: (input: any) => {
       const { data } = getData(input.listData as JSONObject[]);
       return data;
     },
@@ -210,7 +214,7 @@ export const ListViewComp = withMethodExposing(ListViewPropertyComp, [
       description: "",
       params: [{ name: "page", type: "number" }],
     },
-    execute: (comp, values) => {
+    execute: (comp: any, values) => {
       const page = values[0] as number;
       if (page && page > 0) {
         comp.children.pagination.children.pageNo.dispatchChangeValueAction(page);

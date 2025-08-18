@@ -1,6 +1,6 @@
 // services/workspacesService.ts (or wherever makes sense in your structure)
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { getEnvironmentWorkspaces } from "./environments.service";
 import { getManagedObjects, ManagedObject, ManagedObjectType, transferManagedObject } from "./managed-objects.service";
 import { Workspace } from "../types/workspace.types";

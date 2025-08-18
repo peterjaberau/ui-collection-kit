@@ -1,6 +1,6 @@
-import { ThemeContext } from "comps/utils/themeContext";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
 import { BorderColor } from "#lowcoder/constants/style";
-import { HintPlaceHolder } from "lowcoder-design";
+import { HintPlaceHolder } from "#lowcoder-design/index";
 import _ from "lodash";
 import { useContext, useRef } from "react";
 import styled from "styled-components";
@@ -12,7 +12,7 @@ import {
   gridItemCompToGridItems,
   InnerGrid,
 } from "../containerComp/containerView";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
 
 const StyledInnerGrid = styled(InnerGrid)<ContainerBaseProps & { $bordered: boolean }>`
   border: ${(props) => (!props.$bordered ? "0px" : `1px solid ${BorderColor}`)};

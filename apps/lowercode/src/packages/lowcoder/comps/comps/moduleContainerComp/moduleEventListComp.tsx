@@ -1,51 +1,53 @@
+// #ts-nocheck
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
 import { KeyValueItem, KeyValueItemListWithNewCreateState } from "#lowcoder/components/KeyValueItemList";
-import { StringControl } from "comps/controls/codeControl";
-import CompNameControl from "comps/controls/compNameControl";
-import { simpleMultiComp, valueComp } from "comps/generators";
-import { list } from "comps/generators/list";
-import { NameGenerator } from "comps/utils";
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
-import { controlItem, Section, Switch, SwitchWrapper } from "lowcoder-design";
-import { trans } from "i18n";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { simpleMultiComp, valueComp } from "#lowcoder/comps/generators";
+import { list } from "#lowcoder/comps/generators/list";
+import { NameGenerator } from "#lowcoder/comps/utils";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
+import { controlItem, Section, Switch, SwitchWrapper } from "#lowcoder-design/index";
+import { trans } from "#lowcoder/i18n";
 import { ModuleEventListItemComp } from "./moduleEventListItemComp";
 import { ConfigViewSection } from "./styled";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { DocLink } from "lowcoder-design";
-import { markdownCompCss, TacoMarkDown } from "lowcoder-design";
+import { DocLink } from "#lowcoder-design/index";
+import { markdownCompCss, TacoMarkDown } from "#lowcoder-design/index";
 
-const ModuleEventListComp = list(ModuleEventListItemComp);
+const ModuleEventListComp: any = list(ModuleEventListItemComp);
 
+// @ts-ignore
 export class ModuleEventComp extends simpleMultiComp({
   list: ModuleEventListComp,
   enableEventTestMessage: valueComp<boolean>(true),
-}) {
+} as any) {
   nameGen = new NameGenerator();
 
   names() {
-    return this.children.list.getView().map((i) => i.children.name.getView());
+    return (this as any).children.list.getView().map((i: any) => i.children.name.getView()) as any;
   }
 
   trigger(name: string) {
-    if (this.children.enableEventTestMessage.getView()) {
+    if ((this as any).children.enableEventTestMessage.getView()) {
       messageInstance.success(trans("module.eventTriggered", { name: name }));
     }
   }
 
   handleAdd() {
-    const list = this.children.list;
+    const list: any = this.children.list;
     const name = this.nameGen.init(this.names()).genItemName("event");
     list.dispatch(list.pushAction({ name }));
   }
 
   handleDelete(idx: number) {
-    const list = this.children.list;
+    const list: any = this.children.list;
     list.dispatch(list.deleteAction(idx));
   }
 
   getTestView() {
-    const hasEvents = this.children.list.getView().length > 0;
-    const enableTestMessage = this.children.enableEventTestMessage.getView();
+    const hasEvents: any = (this as any).children.list.getView().length > 0;
+    const enableTestMessage = (this as any).children.enableEventTestMessage.getView();
     const label = trans("module.globalPromptWhenEventTriggered");
     return (
       <Section name={trans("moduleContainer.eventTest")}>
@@ -56,7 +58,7 @@ export class ModuleEventComp extends simpleMultiComp({
                 <Switch
                   value={enableTestMessage}
                   onChange={(value) => {
-                    this.children.enableEventTestMessage.dispatchChangeValueAction(value);
+                    (this as any).children.enableEventTestMessage.dispatchChangeValueAction(value);
                   }}
                 />
               </SwitchWrapper>
@@ -67,7 +69,7 @@ export class ModuleEventComp extends simpleMultiComp({
   }
 
   getPropertyView() {
-    const children = this.children.list.getView();
+    const children: any = (this as any).children.list.getView();
     return (
       <ConfigViewSection>
         <PropertyView
@@ -82,9 +84,9 @@ export class ModuleEventComp extends simpleMultiComp({
     );
   }
 
-  nameAndExposingInfo(): NameAndExposingInfo {
-    const result: NameAndExposingInfo = {};
-    this.children.list.getView().forEach((item) => {
+  nameAndExposingInfo(): NameAndExposingInfo | any {
+    const result: NameAndExposingInfo | any = {};
+    (this as any).children.list.getView().forEach((item: any) => {
       result[item.children.name.getView()] = item.exposingInfo();
     });
     return result;

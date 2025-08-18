@@ -8,12 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useCallback, useMemo } from "react";
 import { styled } from "styled-components";
 import { AddIcon, CustomModal, EditPopover, TacoButton, messageInstance } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { PopoverIcon } from "#lowcoder/pages/setting/permission/styledComponents";
 import CreateApiKeyModal from "./CreateApiKeyModal";
 import { fetchApiKeysAction } from "#lowcoder/redux/reduxActions/userActions";
-import UserApi from "@lowcoder-ee/api/userApi";
-import { validateResponse } from "@lowcoder-ee/api/apiUtils";
+import UserApi from "#lowcoder/api/userApi";
+import { validateResponse } from "#lowcoder/api/apiUtils";
 import Alert from "antd/es/alert";
 import { CopyOutlined } from "@ant-design/icons";
 

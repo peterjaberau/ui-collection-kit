@@ -1,5 +1,5 @@
-import { TreeSelectComp } from "comps/comps/treeComp/treeSelectComp";
-import { trans } from "i18n";
+import { TreeSelectComp } from "#lowcoder/comps/comps/treeComp/treeSelectComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

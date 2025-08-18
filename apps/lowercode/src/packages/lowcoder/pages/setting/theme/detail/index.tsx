@@ -34,7 +34,7 @@ import {
 
 } from "lowcoder-design";
 import PreviewApp from "../../../../components/PreviewApp";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Prompt } from "react-router";
 import { HeaderBack } from "#lowcoder/pages/setting/permission/styledComponents";
 import dsl from "./previewDsl";
@@ -43,7 +43,7 @@ import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import { Card, Divider, Flex, List, Tooltip } from 'antd';
 
 import { ThemeCompPanel } from "#lowcoder/pages/setting/theme/ThemeCompPanel";
-import { JSONObject } from "@lowcoder-ee/util/jsonTypes";
+import { JSONObject } from "#lowcoder/util/jsonTypes";
 
 const ThemeSettingsView = styled.div`
   font-size: 14px;

@@ -1,7 +1,7 @@
 // services/dataSources.service.ts
 import axios from 'axios';
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { DataSource, DataSourceWithMeta } from "../types/datasource.types";
 import { getManagedObjects, ManagedObject, ManagedObjectType  , transferManagedObject } from "./managed-objects.service";
 

@@ -1,16 +1,16 @@
 import { useLocation, useParams } from "react-router-dom";
 import { AuthSearchParams } from "#lowcoder/constants/authConstants";
 import { CommonTextLabel } from "#lowcoder-design/components/Label";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { ThirdPartyAuth } from "#lowcoder/pages/userAuth/thirdParty/thirdPartyAuth";
-import FormLogin from "@lowcoder-ee/pages/userAuth/formLoginAdmin";
+import FormLogin from "#lowcoder/pages/userAuth/formLoginAdmin";
 import { AuthContainer } from "#lowcoder/pages/userAuth/authComponents";
 import React, { useContext, useMemo } from "react";
 import { AuthContext, getLoginTitle } from "#lowcoder/pages/userAuth/authUtils";
 import styled from "styled-components";
 import { requiresUnAuth } from "#lowcoder/pages/userAuth/authHOC";
 import FormLoginSteps from "./formLoginSteps";
-import { useEnterpriseContext } from "@lowcoder-ee/util/context/EnterpriseContext";
+import { useEnterpriseContext } from "#lowcoder/util/context/EnterpriseContext";
 
 const ThirdAuthWrapper = styled.div`
   display: flex;

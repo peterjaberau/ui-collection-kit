@@ -1,5 +1,5 @@
-import { DateRangeComp } from "comps/comps/dateComp/dateComp";
-import { trans } from "i18n";
+import { DateRangeComp } from "#lowcoder/comps/comps/dateComp/dateComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

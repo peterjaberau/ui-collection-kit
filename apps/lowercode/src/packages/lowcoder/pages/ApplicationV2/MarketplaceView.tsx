@@ -3,10 +3,10 @@ import { HomeLayout } from "./HomeLayout";
 import { MARKETPLACE_URL } from "#lowcoder/constants/routesURL";
 import { trans } from "../../i18n";
 import axios, { AxiosResponse } from "axios";
-import ApplicationApi from "@lowcoder-ee/api/applicationApi";
-import { ApplicationMeta } from "@lowcoder-ee/constants/applicationConstants";
-import { GenericApiResponse } from "@lowcoder-ee/api/apiResponses";
-import { validateResponse } from "@lowcoder-ee/api/apiUtils";
+import ApplicationApi from "#lowcoder/api/applicationApi";
+import { ApplicationMeta } from "#lowcoder/constants/applicationConstants";
+import { GenericApiResponse } from "#lowcoder/api/apiResponses";
+import { validateResponse } from "#lowcoder/api/apiUtils";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import { Helmet } from "react-helmet";
 

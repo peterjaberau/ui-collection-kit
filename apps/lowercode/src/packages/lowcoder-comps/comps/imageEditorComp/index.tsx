@@ -18,7 +18,7 @@ import _ from "lodash";
 import { RecordConstructorToView } from "#lowcoder-core/index";
 import { Container, customTheme, EmbeddedButton, saveEvent } from "./imageEditorConstants";
 import { ImageEditor } from "./imageEditorClass";
-import { i18nObjs, trans } from "i18n/comps";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 
 const childrenMap = {
   src: withDefault(StringStateControl, trans("imageEditor.defaultSrc")),

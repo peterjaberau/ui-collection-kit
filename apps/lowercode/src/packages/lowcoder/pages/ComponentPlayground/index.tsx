@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import "comps";
-import { UICompType, UICompManifest, uiCompRegistry, UICompCategory, ExposingMultiCompConstructor } from "comps/uiCompRegistry";
+import { UICompType, UICompManifest, uiCompRegistry, UICompCategory, ExposingMultiCompConstructor } from "#lowcoder/comps/uiCompRegistry";
 import { CompPlayground } from "ide/CompPlayground";
-import { Comp } from "lowcoder-core";
-import { EditorContext, EditorState } from "comps/editorState";
-import { RootComp } from "comps/comps/rootComp";
+import { Comp } from "#lowcoder-core/index";
+import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { RootComp } from "#lowcoder/comps/comps/rootComp";
 import { useMemo } from "react";
-import { lazyLoadComp } from "@lowcoder-ee/comps/comps/lazyLoadComp/lazyLoadComp";
-import { LoadingBarHideTrigger } from "@lowcoder-ee/util/hideLoading";
+import { lazyLoadComp } from "#lowcoder/comps/comps/lazyLoadComp/lazyLoadComp";
+import { LoadingBarHideTrigger } from "#lowcoder/util/hideLoading";
 
 type CompInfo = UICompManifest & { key: string };
 const groups: Partial<Record<UICompCategory, CompInfo[]>> = {};

@@ -1,9 +1,9 @@
-import { sameTypeMap, valueComp } from "comps/generators";
-import { MultiCompBuilder } from "comps/generators/multi";
+import { sameTypeMap, valueComp } from "#lowcoder/comps/generators";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import { GridItemComp } from "../gridItemComp";
 import { IContainer, isContainer } from "./iContainer";
 import { CompTree, getCompTree } from "./utils";
-import { FlowLayout } from "layout/utils";
+import { FlowLayout } from "#lowcoder/utils";
 import _ from "lodash";
 import log from "loglevel";
 

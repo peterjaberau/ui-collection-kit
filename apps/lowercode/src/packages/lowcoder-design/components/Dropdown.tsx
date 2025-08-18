@@ -155,7 +155,7 @@ interface DropdownProps<T extends OptionsType> extends Omit<SelectProps, "placem
   className?: string;
 }
 
-export function Dropdown<T extends OptionsType>(props: DropdownProps<T>) {
+export function Dropdown<T extends OptionsType>(props: DropdownProps<T> | any) {
   const { placement = "right" } = props;
   const valueInfoMap = _.fromPairs(props.options.map((option) => [option.value, option]));
 

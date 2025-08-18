@@ -1,11 +1,11 @@
-import { StringControl, NumberControl } from "comps/controls/codeControl";
-import { BoolControl } from "comps/controls/boolControl";
+import { StringControl, NumberControl } from "#lowcoder/comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import { BoolCodeControl } from "../controls/codeControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
-import { ChangeEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { UICompBuilder, withDefault } from "comps/generators";
-import { NameConfig, NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { ChangeEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { UICompBuilder, withDefault } from "#lowcoder/comps/generators";
+import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "lowcoder-design";
 import React, { ChangeEvent, Suspense, useEffect, useRef, useState } from "react";
 import type ReactQuill from "react-quill-new";
@@ -18,15 +18,15 @@ import {
   placeholderPropertyView,
   readOnlyPropertyView,
   showDataLoadingIndicatorsPropertyView,
-} from "comps/utils/propertyUtils";
+} from "#lowcoder/comps/utils/propertyUtils";
 import _, { debounce } from "lodash";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { default as Skeleton } from "antd/es/skeleton";
-import { styleControl } from "comps/controls/styleControl";
-import { RichTextEditorStyle, RichTextEditorStyleType } from "comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { RichTextEditorStyle, RichTextEditorStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 const localizeStyle = css`
   & .ql-snow {

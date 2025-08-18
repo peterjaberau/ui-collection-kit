@@ -1,4 +1,4 @@
-import { fromValue, Node } from "lowcoder-core";
+import { fromValue, Node } from "#lowcoder-core/index";
 import _ from "lodash";
 import dayjs from "dayjs";
 import { useCurrentUser } from "#lowcoder/util/currentUser";

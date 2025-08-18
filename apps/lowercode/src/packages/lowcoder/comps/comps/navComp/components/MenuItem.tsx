@@ -4,8 +4,8 @@ import { PointIcon } from "#lowcoder-design/index";
 import React, { HTMLAttributes, useState } from "react";
 import styled from "styled-components";
 import DraggableItem from "./DraggableItem";
-import { NavCompType } from "comps/comps/navComp/components/types";
-import { trans } from "i18n";
+import { NavCompType } from "#lowcoder/comps/comps/navComp/components/types";
+import { trans } from "#lowcoder/i18n";
 
 export interface ICommonItemProps {
   path: number[];

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import _, { isEqual } from "lodash";
-import { UICompType } from "comps/uiCompRegistry";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import React, {
   DragEvent,
   ReactElement,
@@ -28,7 +28,7 @@ import {
   setTransform,
 } from "./utils";
 import styled from "styled-components";
-import { EditorContext } from "@lowcoder-ee/comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 type GridItemCallback<Data extends GridDragEvent | GridResizeEvent> = (
   i: string,
@@ -140,10 +140,10 @@ export const GridItem = React.memo((props: GridItemProps) => {
       // Clear any pending state
       setResizing(undefined);
       setDragging(undefined);
-      
+
       // Clear refs
       itemHeightRef.current = undefined;
-      
+
       // Clear any dragging data
       // draggingUtils.clearData();
     };
@@ -539,9 +539,9 @@ export const GridItem = React.memo((props: GridItemProps) => {
   ]);
 
   const { isDraggable, isResizable, layoutHide, children, isSelected, clickItem, zIndex } = props;
-  
+
   const pos = useMemo(calcPosition, [calcPosition]);
-  
+
   const transform = useMemo(() => {
     return setTransform(
       pos,

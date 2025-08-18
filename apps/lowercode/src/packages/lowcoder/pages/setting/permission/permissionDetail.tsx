@@ -4,9 +4,9 @@ import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import styled from "styled-components";
 import GroupPermission from "./groupUsersPermission";
 import { useParams } from "react-router-dom";
-import {fetchGroupUsrPagination, fetchOrgGroups } from "@lowcoder-ee/util/pagination/axios";
-import PaginationComp from "@lowcoder-ee/util/pagination/Pagination";
-import {OrgGroup} from "@lowcoder-ee/constants/orgConstants";
+import {fetchGroupUsrPagination, fetchOrgGroups } from "#lowcoder/util/pagination/axios";
+import PaginationComp from "#lowcoder/util/pagination/Pagination";
+import {OrgGroup} from "#lowcoder/constants/orgConstants";
 
 const PermissionContent = styled.div`
   display: flex;
@@ -63,7 +63,7 @@ export default function PermissionSetting(props: {currentPageProp: number, pageS
     if (selectKey && group) {
       setLoading(true);
       setError(null);
-      
+
       fetchGroupUsrPagination(
         {
           groupId: selectKey === GroupUserKey.USERS ? group.groupId : selectKey,
@@ -72,10 +72,10 @@ export default function PermissionSetting(props: {currentPageProp: number, pageS
         }
       ).then(result => {
         setLoading(false);
-        
+
         if (result.success) {
           setElements({
-            elements: result.data || [], 
+            elements: result.data || [],
             total: result.total || 0,
             role: result.visitorRole || ""
           });
@@ -86,7 +86,7 @@ export default function PermissionSetting(props: {currentPageProp: number, pageS
         setLoading(false);
         setError("Failed to load group users. Please try again.");
       });
-    } 
+    }
   }, [currentPage, pageSize, modify, selectKey, orgId, group]);
 
   if (!orgId) {
@@ -100,7 +100,7 @@ export default function PermissionSetting(props: {currentPageProp: number, pageS
             {error}
           </div>
         )}
-        {elements && 
+        {elements &&
             group && (
             <>
               <GroupPermission

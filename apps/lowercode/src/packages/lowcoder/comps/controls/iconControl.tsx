@@ -1,6 +1,6 @@
-import type { EditorState, EditorView } from "base/codeEditor/codeMirror";
-import { iconRegexp, iconWidgetClass } from "base/codeEditor/extensions/iconExtension";
-import { i18nObjs, trans } from "i18n";
+import type { EditorState, EditorView } from "#lowcoder/base/codeEditor/codeMirror";
+import { iconRegexp, iconWidgetClass } from "#lowcoder/base/codeEditor/extensions/iconExtension";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 import {
   AbstractComp,
   CompAction,
@@ -10,7 +10,7 @@ import {
   DispatchType,
   Node,
   ValueAndMsg,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import {
   BlockGrayLabel,
   controlItem,
@@ -31,7 +31,7 @@ import styled from "styled-components";
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
 import { StringControl } from "./codeControl";
 import { ControlParams } from "./controlParams";
-import { IconDictionary } from "@lowcoder-ee/constants/iconConstants";
+import { IconDictionary } from "#lowcoder/constants/iconConstants";
 
 const ButtonWrapper = styled.div`
   width: 100%;

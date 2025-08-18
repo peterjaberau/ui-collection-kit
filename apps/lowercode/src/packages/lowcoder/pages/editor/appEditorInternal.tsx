@@ -10,12 +10,12 @@ import { setEditorExternalStateAction } from "#lowcoder/redux/reduxActions/confi
 import { AppTypeEnum } from "#lowcoder/constants/applicationConstants";
 import EditorSkeletonView from "#lowcoder/pages/editor/editorSkeletonView";
 import { useThrottle, useUnmount } from "react-use";
-import { Comp } from "lowcoder-core";
+import { Comp } from "#lowcoder-core/index";
 import { localEnv } from "#lowcoder/util/envUtils";
 import { saveMainComp } from "#lowcoder/util/localStorageUtil";
-import { RootComp } from "comps/comps/rootComp";
+import { RootComp } from "#lowcoder/comps/comps/rootComp";
 import { useAppHistory } from "#lowcoder/util/editoryHistory";
-import { useCompInstance } from "comps/utils/useCompInstance";
+import { useCompInstance } from "#lowcoder/comps/utils/useCompInstance";
 import { MarkAppInitialized, perfMark } from "#lowcoder/util/perfUtils";
 import { default as ConfigProvider } from "antd/es/config-provider";
 import { default as message } from "antd/es/message";
@@ -26,7 +26,7 @@ import { RootCompInstanceType } from "./useRootCompInstance";
 import { getCurrentUser } from "#lowcoder/redux/selectors/usersSelectors";
 import React from "react";
 import { isEqual } from "lodash";
-import { isPublicApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
+import { isPublicApplication } from "#lowcoder/redux/selectors/applicationSelector";
 
 /**
  * FIXME: optimize the logic of saving comps

@@ -1,6 +1,6 @@
-import { AnimationStyleType, ContainerStyleType, heightCalculator, widthCalculator } from "comps/controls/styleControlConstants";
-import { EditorContext } from "comps/editorState";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
+import { AnimationStyleType, ContainerStyleType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
 import { HintPlaceHolder, ScrollBar } from "lowcoder-design";
 import { ReactNode, useContext, useEffect } from "react";
 import styled, { css } from "styled-components";
@@ -8,10 +8,10 @@ import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import { gridItemCompToGridItems, InnerGrid } from "../containerComp/containerView";
 import { LayoutViewProps } from "./pageLayoutCompBuilder";
 import { ConfigProvider, Layout } from 'antd';
-import { contrastBackground, contrastText } from "comps/controls/styleControlConstants";
+import { contrastBackground, contrastText } from "#lowcoder/comps/controls/styleControlConstants";
 import { useRef, useState } from "react";
 import { LowcoderAppView } from "appView/LowcoderAppView";
-import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
+import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
 
 const { Header, Content, Footer, Sider } = Layout;
 

@@ -3,8 +3,8 @@ import { NameGenerator } from "../../comps/utils";
 import { checkName } from "../../comps/utils/rename";
 import React from "react";
 import { setFields } from "../objectUtils";
-import { renameAction } from "lowcoder-core";
-import { trans } from "i18n";
+import { renameAction } from "#lowcoder-core/index";
+import { trans } from "#lowcoder/i18n";
 
 export class QueryLibraryState {
   readonly queryLibraryComp: QueryLibraryCompType;

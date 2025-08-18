@@ -18,7 +18,7 @@ import { beforeImgUpload, getBase64 } from "#lowcoder/util/fileUtils";
 import { updateUserAction, updateUserSuccess } from "#lowcoder/redux/reduxActions/userActions";
 import { default as Upload, UploadChangeParam } from "antd/es/upload";
 import { USER_HEAD_UPLOAD_URL } from "#lowcoder/constants/apiConstants";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
 const FormInputStyle = css`

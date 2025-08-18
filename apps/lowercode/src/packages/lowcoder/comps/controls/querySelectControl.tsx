@@ -1,5 +1,5 @@
-import { EditorContext } from "comps/editorState";
-import { MultiCompBuilder, valueComp } from "comps/generators";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { MultiCompBuilder, valueComp } from "#lowcoder/comps/generators";
 import { ControlPropertyViewWrapper } from "lowcoder-design";
 import { Dropdown } from "#lowcoder-design/components/Dropdown";
 import { useContext } from "react";

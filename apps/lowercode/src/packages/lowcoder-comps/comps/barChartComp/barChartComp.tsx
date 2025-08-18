@@ -27,7 +27,7 @@ import {
   dropdownControl,
   JSONObject,
 } from "lowcoder-sdk";
-import { getEchartsLocale, trans } from "i18n/comps";
+import { getEchartsLocale, trans } from "#lowcoder/i18n";
 import { ItemColorComp } from "#lowcoder-comps/comps/basicChartComp/chartConfigs/lineChartConfig";
 import {
   echartsConfigOmitChildren,

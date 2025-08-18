@@ -1,38 +1,30 @@
+import { CheckoutIcon, CloseIcon, CommonTextLabel, CustomSelect, Search, TacoButton } from "#lowcoder-design/index"
+import { useEffect, useRef, useState, useCallback } from "react"
+import styled from "styled-components"
+import { debounce } from "lodash"
+import ProfileImage from "#lowcoder/pages/common/profileImage"
+import { useSelector } from "react-redux"
 import {
-  CheckoutIcon,
-  CloseIcon,
-  CommonTextLabel,
-  CustomSelect,
-  Search,
-  TacoButton,
-} from "#lowcoder-design/index";
-import { useEffect, useRef, useState, useCallback } from "react";
-import styled from "styled-components";
-import { debounce } from "lodash";
-import ProfileImage from "#lowcoder/pages/common/profileImage";
-import { useSelector } from "react-redux";
-import { ApplicationPermissionType, ApplicationRoleType, GroupsMembersPermission } from "#lowcoder/constants/applicationConstants";
-import {
-  PermissionItemName,
-  RoleSelectOption,
-  StyledGroupIcon,
-  StyledRoleSelect,
-} from "./commonComponents";
-import { getInitialsAndColorCode } from "#lowcoder/util/stringUtils";
-import { CustomTagProps } from "rc-select/lib/BaseSelect";
-import { default as Tag } from "antd/es/tag";
-import { User } from "#lowcoder/constants/userConstants";
-import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
-import { EmptyContent } from "#lowcoder/pages/common/styledComponent";
-import { trans } from "i18n";
-import { PermissionItem } from "./PermissionList";
-import { currentApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
-import { fetchAvailableGroupsMembers } from "@lowcoder-ee/util/pagination/axios";
+  ApplicationPermissionType,
+  ApplicationRoleType,
+  GroupsMembersPermission,
+} from "#lowcoder/constants/applicationConstants"
+import { PermissionItemName, RoleSelectOption, StyledGroupIcon, StyledRoleSelect } from "./commonComponents"
+import { getInitialsAndColorCode } from "#lowcoder/util/stringUtils"
+import { CustomTagProps } from "rc-select/lib/BaseSelect"
+import { default as Tag } from "antd/es/tag"
+import { User } from "#lowcoder/constants/userConstants"
+import { getUser } from "#lowcoder/redux/selectors/usersSelectors"
+import { EmptyContent } from "#lowcoder/pages/common/styledComponent"
+import { trans } from "#lowcoder/i18n"
+import { PermissionItem } from "./PermissionList"
+import { currentApplication } from "#lowcoder/redux/selectors/applicationSelector"
+import { fetchAvailableGroupsMembers } from "#lowcoder/util/pagination/axios"
 
 const AddAppUserContent = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 const AddPermissionDropDown = styled.div`
   margin: 8px -16px 0 -8px;
@@ -61,7 +53,8 @@ const AddPermissionDropDown = styled.div`
     }
 
     .rc-virtual-list-holder {
-      overflow-y: overlay !important;
+      // @ts-ignore
+      overflow-y: auto !important;
 
       &::-webkit-scrollbar {
         width: 16px;
@@ -79,7 +72,7 @@ const AddPermissionDropDown = styled.div`
       }
     }
   }
-`;
+`
 
 const PermissionSelectWrapper = styled.div`
   display: flex;
@@ -109,7 +102,7 @@ const PermissionSelectWrapper = styled.div`
     display: flex;
     align-items: center;
   }
-`;
+`
 
 const AddPermissionsSelect = styled(CustomSelect)`
   width: 328px;
@@ -134,12 +127,12 @@ const AddPermissionsSelect = styled(CustomSelect)`
   .ant-select-selection-placeholder {
     color: #b8b9bf;
   }
-`;
+`
 const OptionViewWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 8px 0 8px 8px;
-`;
+`
 
 const BottomButton = styled.div`
   margin: 4px 0 0 auto;
@@ -149,7 +142,7 @@ const BottomButton = styled.div`
     width: 76px;
     height: 28px;
   }
-`;
+`
 
 const StyledTag = styled(Tag)`
   height: 24px;
@@ -169,14 +162,14 @@ const StyledTag = styled(Tag)`
       stroke: #222222;
     }
   }
-`;
+`
 
 const LabelProfileImage = styled(ProfileImage)`
   && > span {
     font-size: 1px;
     transform: scale(0.5, 0.5);
   }
-`;
+`
 
 const AddRoleSelect = styled(StyledRoleSelect)<{ $isVisible: boolean }>`
   .ant-select {
@@ -184,20 +177,20 @@ const AddRoleSelect = styled(StyledRoleSelect)<{ $isVisible: boolean }>`
   }
 
   display: ${(props) => (props.$isVisible ? "unset" : "none")};
-`;
+`
 
 type AddAppOptionView = {
-  type: ApplicationPermissionType;
-  id: string;
-  name: string;
-  avatarUrl?: string;
-};
+  type: ApplicationPermissionType
+  id: string
+  name: string
+  avatarUrl?: string
+}
 
 type PermissionAddEntity = {
-  id: string;
-  type: ApplicationPermissionType;
-  key: string;
-};
+  id: string
+  type: ApplicationPermissionType
+  key: string
+}
 
 function isGroup(data: GroupsMembersPermission) {
   return data?.type === "Group"
@@ -205,48 +198,40 @@ function isGroup(data: GroupsMembersPermission) {
 
 function getPermissionOptionView(
   groupsMembers: GroupsMembersPermission[],
-  filterItems: PermissionItem[]
+  filterItems: PermissionItem[],
 ): AddAppOptionView[] {
-
   let permissionsViews = groupsMembers?.map((user) => {
     return {
       type: user.type as ApplicationPermissionType,
       id: isGroup(user) ? user.data.groupId : user.data.userId,
       name: isGroup(user) ? user.data.groupName : user.data.name,
-      ...(isGroup(user) ? {} : { avatarUrl: user.data.avatarUrl })
+      ...(isGroup(user) ? {} : { avatarUrl: user.data.avatarUrl }),
     }
   })
 
-  permissionsViews = permissionsViews.filter((v) =>
-    !filterItems.find((i) => i.id === v.id && i.type === v.type)
-  );
+  permissionsViews = permissionsViews.filter((v) => !filterItems.find((i) => i.id === v.id && i.type === v.type))
 
-  return permissionsViews.filter((v) => v.id && v.name) as AddAppOptionView[];
+  return permissionsViews.filter((v) => v.id && v.name) as AddAppOptionView[]
 }
 
 function PermissionSelectorOption(props: { optionView: AddAppOptionView }) {
-  const { optionView } = props;
+  const { optionView } = props
   const groupIcon = optionView.type === "Group" && (
     <StyledGroupIcon $color={getInitialsAndColorCode(optionView.name)[1]} />
-  );
+  )
   return (
     <OptionViewWrapper>
-      <ProfileImage
-        userName={optionView.name}
-        side={32}
-        source={optionView.avatarUrl}
-        svg={groupIcon}
-      />
+      <ProfileImage userName={optionView.name} side={32} source={optionView.avatarUrl} svg={groupIcon} />
       <PermissionItemName title={optionView.name}>{optionView.name}</PermissionItemName>
     </OptionViewWrapper>
-  );
+  )
 }
 
 function PermissionSelectorLabel(props: { view: AddAppOptionView }) {
-  const { view } = props;
+  const { view } = props
   const groupIcon = view.type === "Group" && (
     <StyledGroupIcon $color={getInitialsAndColorCode(view.name)[1]} $side={9} />
-  );
+  )
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       <LabelProfileImage userName={view.name} side={18} source={view.avatarUrl} svg={groupIcon} />
@@ -263,11 +248,11 @@ function PermissionSelectorLabel(props: { view: AddAppOptionView }) {
         {view.name}
       </CommonTextLabel>
     </div>
-  );
+  )
 }
 
 function PermissionTagRender(props: CustomTagProps) {
-  const { label, value, closable, onClose } = props;
+  const { label, value, closable, onClose } = props
   return (
     <StyledTag
       closeIcon={<CloseIcon style={{ width: "12px", height: "12px" }} />}
@@ -278,7 +263,7 @@ function PermissionTagRender(props: CustomTagProps) {
     >
       {label}
     </StyledTag>
-  );
+  )
 }
 
 export enum PermissionRole {
@@ -288,66 +273,70 @@ export enum PermissionRole {
 }
 
 const PermissionSelector = (props: {
-  selectedItems: PermissionAddEntity[];
-  setSelectRole: (role: ApplicationRoleType) => void;
-  setSelectedItems: (items: PermissionAddEntity[]) => void;
-  user: User;
-  filterItems: PermissionItem[];
-  supportRoles: { label: string; value: PermissionRole }[];
+  selectedItems: PermissionAddEntity[]
+  setSelectRole: (role: ApplicationRoleType) => void
+  setSelectedItems: (items: PermissionAddEntity[]) => void
+  user: User
+  filterItems: PermissionItem[]
+  supportRoles: { label: string; value: PermissionRole }[]
 }) => {
-  const { selectedItems, setSelectRole, setSelectedItems, user } = props;
-  const [roleSelectVisible, setRoleSelectVisible] = useState(false);
-  const selectRef = useRef<HTMLDivElement>(null);
+  const { selectedItems, setSelectRole, setSelectedItems, user } = props
+  const [roleSelectVisible, setRoleSelectVisible] = useState(false)
+  const selectRef = useRef<HTMLDivElement>(null)
   const [optionViews, setOptionViews] = useState<AddAppOptionView[]>()
-  const [searchValue, setSearchValue] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [searchValue, setSearchValue] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
   const application = useSelector(currentApplication)
 
   const debouncedUserSearch = useCallback(
     debounce((searchTerm: string) => {
-      if (!application) return;
+      if (!application) return
 
-      setIsLoading(true);
-      fetchAvailableGroupsMembers(application.applicationId, searchTerm).then(res => {
-        if(res.success) {
-          setOptionViews(getPermissionOptionView(res.data, props.filterItems))
-        }
-        setIsLoading(false);
-      }).catch(() => {
-        setIsLoading(false);
-      });
+      setIsLoading(true)
+      fetchAvailableGroupsMembers(application.applicationId, searchTerm)
+        .then((res) => {
+          if (res.success) {
+            setOptionViews(getPermissionOptionView(res.data, props.filterItems))
+          }
+          setIsLoading(false)
+        })
+        .catch(() => {
+          setIsLoading(false)
+        })
     }, 500),
-    [application, props.filterItems]
-  );
+    [application, props.filterItems],
+  )
 
   useEffect(() => {
-    debouncedUserSearch(searchValue);
+    debouncedUserSearch(searchValue)
 
     return () => {
-      debouncedUserSearch.cancel();
-    };
-  }, [searchValue, debouncedUserSearch]);
-
-  useEffect(() => {
-    if (!application) return;
-
-    setIsLoading(true);
-    fetchAvailableGroupsMembers(application.applicationId, "").then(res => {
-      if(res.success) {
-        setOptionViews(getPermissionOptionView(res.data, props.filterItems))
-      }
-      setIsLoading(false);
-    }).catch(() => {
-      setIsLoading(false);
-    });
-  }, [application, props.filterItems]);
-
-  useEffect(() => {
-    setRoleSelectVisible(selectedItems.length > 0);
-    if (selectRef && selectRef.current) {
-      selectRef.current.scrollTop = selectRef.current.scrollHeight;
+      debouncedUserSearch.cancel()
     }
-  }, [selectedItems]);
+  }, [searchValue, debouncedUserSearch])
+
+  useEffect(() => {
+    if (!application) return
+
+    setIsLoading(true)
+    fetchAvailableGroupsMembers(application.applicationId, "")
+      .then((res) => {
+        if (res.success) {
+          setOptionViews(getPermissionOptionView(res.data, props.filterItems))
+        }
+        setIsLoading(false)
+      })
+      .catch(() => {
+        setIsLoading(false)
+      })
+  }, [application, props.filterItems])
+
+  useEffect(() => {
+    setRoleSelectVisible(selectedItems.length > 0)
+    if (selectRef && selectRef.current) {
+      selectRef.current.scrollTop = selectRef.current.scrollHeight
+    }
+  }, [selectedItems])
 
   return (
     <>
@@ -375,11 +364,11 @@ const PermissionSelector = (props: {
                 id: option.entityid,
                 type: option.type,
                 key: option.key,
-              })
-            );
+              }),
+            )
           }}
           onDeselect={(value: any, option: any) => {
-            setSelectedItems(selectedItems.filter((item) => item.key !== option.key));
+            setSelectedItems(selectedItems.filter((item) => item.key !== option.key))
           }}
         >
           {optionViews?.map((view) => {
@@ -393,14 +382,14 @@ const PermissionSelector = (props: {
               >
                 <PermissionSelectorOption optionView={view} />
               </CustomSelect.Option>
-            );
+            )
           })}
         </AddPermissionsSelect>
         <AddRoleSelect
           styles={{
             popup: {
-              root: { width: "fit-content" }
-            }
+              root: { width: "fit-content" },
+            },
           }}
           $isVisible={roleSelectVisible}
           variant="borderless"
@@ -417,25 +406,23 @@ const PermissionSelector = (props: {
       </PermissionSelectWrapper>
       <AddPermissionDropDown id="add-app-user-permission-dropdown" />
     </>
-  );
-};
+  )
+}
 
 export const Permission = (props: {
-  filterItems: PermissionItem[];
-  supportRoles: { label: string; value: PermissionRole }[];
-  onCancel: () => void;
-  addPermission: (userIds: string[], groupIds: string[], role: string) => void;
+  filterItems: PermissionItem[]
+  supportRoles: { label: string; value: PermissionRole }[]
+  onCancel: () => void
+  addPermission: (userIds: string[], groupIds: string[], role: string) => void
 }) => {
-  const { onCancel } = props;
-  const user = useSelector(getUser);
-  const [selectRole, setSelectRole] = useState<ApplicationRoleType>("viewer");
-  const [selectedItems, setSelectedItems] = useState<PermissionAddEntity[]>([]);
+  const { onCancel } = props
+  const user = useSelector(getUser)
+  const [selectRole, setSelectRole] = useState<ApplicationRoleType>("viewer")
+  const [selectedItems, setSelectedItems] = useState<PermissionAddEntity[]>([])
 
   return (
     <AddAppUserContent>
-      <CommonTextLabel style={{ marginTop: "16px" }}>
-        {trans("home.searchMemberOrGroup")}
-      </CommonTextLabel>
+      <CommonTextLabel style={{ marginTop: "16px" }}>{trans("home.searchMemberOrGroup")}</CommonTextLabel>
       <PermissionSelector
         selectedItems={selectedItems}
         setSelectRole={setSelectRole}
@@ -451,22 +438,18 @@ export const Permission = (props: {
         <TacoButton
           buttonType="primary"
           onClick={() => {
-            const uids = selectedItems
-              .filter((item) => item.type === "User")
-              .map((item) => item.id);
-            const gids = selectedItems
-              .filter((item) => item.type === "Group")
-              .map((item) => item.id);
+            const uids = selectedItems.filter((item) => item.type === "User").map((item) => item.id)
+            const gids = selectedItems.filter((item) => item.type === "Group").map((item) => item.id)
             if (uids.length === 0 && gids.length === 0) {
-              onCancel();
-              return;
+              onCancel()
+              return
             }
-            props.addPermission(uids, gids, selectRole);
+            props.addPermission(uids, gids, selectRole)
           }}
         >
           {trans("finish") + " "}
         </TacoButton>
       </BottomButton>
     </AddAppUserContent>
-  );
-};
+  )
+}

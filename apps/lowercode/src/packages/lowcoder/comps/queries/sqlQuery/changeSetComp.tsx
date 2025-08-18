@@ -1,4 +1,4 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { ControlPropertyViewWrapper, Dropdown, KeyValueList } from "lowcoder-design";
 import { ControlParams } from "../../controls/controlParams";
 import { ParamsJsonControl } from "../../controls/paramsControl";

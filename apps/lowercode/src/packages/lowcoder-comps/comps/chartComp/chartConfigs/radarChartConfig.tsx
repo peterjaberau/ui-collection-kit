@@ -4,7 +4,7 @@ import {
   showLabelPropertyView,
 } from "lowcoder-sdk";
 import { RadarSeriesOption } from "echarts";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 export const RadarChartConfig = (function () {
   return new MultiCompBuilder(

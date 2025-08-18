@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 
-import { SelectUIView } from "comps/comps/selectInputComp/selectCompConstants";
-import { StringControl, BoolCodeControl } from "comps/controls/codeControl";
-import { IconControl } from "comps/controls/iconControl";
-import { MultiCompBuilder } from "comps/generators";
-import { optionsControl } from "comps/controls/optionsControl";
-import { disabledPropertyView, hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { SelectUIView } from "#lowcoder/comps/comps/selectInputComp/selectCompConstants";
+import { StringControl, BoolCodeControl } from "#lowcoder/comps/controls/codeControl";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
+import { optionsControl } from "#lowcoder/comps/controls/optionsControl";
+import { disabledPropertyView, hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import { ColumnTypeCompBuilder, ColumnTypeViewFn } from "../columnTypeCompBuilder";
 import { ColumnValueTooltip } from "../simpleColumnTypeComps";
 import { styled } from "styled-components";
-import { clickEvent, eventHandlerControl, doubleClickEvent } from "comps/controls/eventHandlerControl";
+import { clickEvent, eventHandlerControl, doubleClickEvent } from "#lowcoder/comps/controls/eventHandlerControl";
 
 const Wrapper = styled.div`
   display: inline-flex;
@@ -145,13 +145,13 @@ const SelectEdit = React.memo((props: SelectEditProps) => {
     if (!mountedRef.current) return;
     props.onChange(val);
     setCurrentValue(val);
-    
+
     // Trigger the specific option's event handler
     const selectedOption = props.options.find(option => option.value === val);
     if (selectedOption?.onEvent) {
       selectedOption.onEvent("click");
     }
-    
+
     // Also trigger the main component's event handler
     if (props.onMainEvent) {
       props.onMainEvent("click");

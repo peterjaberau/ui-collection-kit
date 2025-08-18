@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { default as Button } from "antd/es/button";
 import { EventConfigType } from "lowcoder-sdk";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 export const saveEvent: EventConfigType = {
   label: trans("imageEditor.save"),

@@ -1,32 +1,29 @@
-import { MultiBaseComp } from "lowcoder-core";
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { valueComp } from "comps/generators";
-import { list } from "comps/generators/list";
-import {
-  parseChildrenFromValueAndChildrenMap,
-  ToInstanceType,
-  ToViewReturn,
-} from "comps/generators/multi";
-import _ from "lodash";
-import { ReactNode } from "react";
-import { IconControl } from "comps/controls/iconControl";
-import { hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { genRandomKey } from "comps/utils/idGenerator";
-import { LayoutActionComp } from "comps/comps/layout/layoutActionComp";
-import { migrateOldData } from "comps/generators/simpleGenerators";
+// @ts-nocheck
+import { MultiBaseComp } from "#lowcoder-core/index"
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl"
+import { valueComp } from "#lowcoder/comps/generators"
+import { list } from "#lowcoder/comps/generators/list"
+import { parseChildrenFromValueAndChildrenMap, ToInstanceType, ToViewReturn } from "#lowcoder/comps/generators/multi"
+import _ from "lodash"
+import { ReactNode } from "react"
+import { IconControl } from "#lowcoder/comps/controls/iconControl"
+import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils"
+import { trans } from "#lowcoder/i18n"
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator"
+import { LayoutActionComp } from "#lowcoder/comps/comps/layout/layoutActionComp"
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators"
 
-const childrenMap = {
+const childrenMap: any = {
   label: StringControl,
   hidden: BoolCodeControl,
   action: LayoutActionComp,
   itemKey: valueComp<string>(""),
   icon: IconControl,
-};
+}
 
 type ChildrenType = ToInstanceType<typeof childrenMap> & {
-  items: InstanceType<typeof LayoutMenuItemListComp>;
-};
+  items: InstanceType<typeof LayoutMenuItemListComp>
+}
 
 /**
  * copy from navItemComp,
@@ -34,15 +31,15 @@ type ChildrenType = ToInstanceType<typeof childrenMap> & {
  */
 export class LayoutMenuItemComp extends MultiBaseComp<ChildrenType> {
   override getView() {
-    return _.mapValues(this.children, (c) => c.getView()) as ToViewReturn<ChildrenType>;
+    return _.mapValues(this.children, (c) => c.getView()) as ToViewReturn<ChildrenType>
   }
 
   override getPropertyView(): ReactNode {
     return (
       <>
         {this.children.action.propertyView({
-          onAppChange: (label) => {
-            label && this.children.label.dispatchChangeValueAction(label);
+          onAppChange: (label: any) => {
+            label && this.children.label.dispatchChangeValueAction(label)
           },
         })}
         {this.children.label.propertyView({ label: trans("label") })}
@@ -50,36 +47,36 @@ export class LayoutMenuItemComp extends MultiBaseComp<ChildrenType> {
           label: trans("icon"),
           tooltip: trans("aggregation.iconTooltip"),
         })}
-        {hiddenPropertyView(this.children)}
+        {hiddenPropertyView((this as any).children)}
       </>
-    );
+    )
   }
 
   override parseChildrenFromValue(params: any) {
     return parseChildrenFromValueAndChildrenMap(params, {
       ...childrenMap,
       items: LayoutMenuItemListComp,
-    }) as unknown as ChildrenType;
+    }) as unknown as ChildrenType
   }
 
   protected override ignoreChildDefaultValue() {
-    return true;
+    return true
   }
 
   addSubItem(value: any) {
-    this.children.items.addItem(value);
+    this.children.items.addItem(value)
   }
 
   getItemKey() {
-    return this.children.itemKey.getView();
+    return this.children.itemKey.getView()
   }
 }
 
-const LayoutMenuItemCompMigrate = migrateOldData(LayoutMenuItemComp, (oldData: any) => {
+const LayoutMenuItemCompMigrate: any = migrateOldData(LayoutMenuItemComp, (oldData: any) => {
   if (oldData && oldData.hasOwnProperty("app")) {
-    const migrateKeys = ["app", "queryParam", "hashParam", "hideWhenNoPermission"];
-    const notChangeData = _.omit(oldData, migrateKeys);
-    const oldAppData = _.pick(oldData, migrateKeys);
+    const migrateKeys = ["app", "queryParam", "hashParam", "hideWhenNoPermission"]
+    const notChangeData = _.omit(oldData, migrateKeys)
+    const oldAppData = _.pick(oldData, migrateKeys)
     return {
       ...notChangeData,
       action: {
@@ -87,35 +84,37 @@ const LayoutMenuItemCompMigrate = migrateOldData(LayoutMenuItemComp, (oldData: a
         comp: oldAppData,
       },
       itemKey: oldData.app?.appId || genRandomKey(),
-    };
+    }
   } else {
-    return oldData;
+    return oldData
   }
-});
+}) as any
+
 
 export class LayoutMenuItemListComp extends list(LayoutMenuItemCompMigrate) {
   addItem(value?: any) {
-    const data = this.getView();
+    const data: any = this.getView()
 
     this.dispatch(
       this.pushAction(
         value
           ? {
-            ...value,
-            itemKey: value.itemKey || genRandomKey(),
-          } : {
-            label: trans("menuItem") + " " + (data.length + 1),
-            itemKey: genRandomKey(),
-          }
-      )
-    );
+              ...value,
+              itemKey: value.itemKey || genRandomKey(),
+            }
+          : {
+              label: trans("menuItem") + " " + (data.length + 1),
+              itemKey: genRandomKey(),
+            },
+      ),
+    )
   }
 
   deleteItem(index: number) {
-    this.dispatch(this.deleteAction(index));
+    this.dispatch(this.deleteAction(index))
   }
 
   moveItem(from: number, to: number) {
-    this.dispatch(this.arrayMoveAction(from, to));
+    this.dispatch(this.arrayMoveAction(from, to))
   }
 }

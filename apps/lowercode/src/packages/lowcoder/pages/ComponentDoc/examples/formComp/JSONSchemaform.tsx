@@ -1,5 +1,5 @@
-import { JsonSchemaFormComp } from "comps/comps/jsonSchemaFormComp/jsonSchemaFormComp";
-import { trans } from "i18n";
+import { JsonSchemaFormComp } from "#lowcoder/comps/comps/jsonSchemaFormComp/jsonSchemaFormComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -28,7 +28,7 @@ export default function jsonSchemaFormExample() {
           title="Reset after Form Submit - True"
           hideSettings={true}
           config={{
-            resetAfterSubmit: true, 
+            resetAfterSubmit: true,
           }}
           compFactory={JsonSchemaFormComp}
         />
@@ -36,7 +36,7 @@ export default function jsonSchemaFormExample() {
           title="Reset after Form Submit - False"
           hideSettings={true}
           config={{
-            resetAfterSubmit: false, 
+            resetAfterSubmit: false,
           }}
           compFactory={JsonSchemaFormComp}
         />

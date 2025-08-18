@@ -28,7 +28,7 @@ import {
   Right,
   TacoButton,
 } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import dayjs from "dayjs";
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -52,7 +52,7 @@ import history from "#lowcoder/util/history";
 import { useApplicationId } from "#lowcoder/util/hooks";
 import { canManageApp } from "#lowcoder/util/permissionUtils";
 import ProfileDropdown from "./profileDropdown";
-import { Logo, LogoHome, LogoWithName } from "@lowcoder-ee/assets/images";
+import { Logo, LogoHome, LogoWithName } from "#lowcoder/assets/images";
 import { HeaderStartDropdown } from "./headerStartDropdown";
 import { AppPermissionDialog } from "../../components/PermissionDialog/AppPermissionDialog";
 import { getBrandingConfig } from "../../redux/selectors/configSelectors";
@@ -61,12 +61,12 @@ import { EditorContext } from "../../comps/editorState";
 import Tooltip from "antd/es/tooltip";
 import { LockOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import Avatar from 'antd/es/avatar';
-import UserApi from "@lowcoder-ee/api/userApi";
-import { validateResponse } from "@lowcoder-ee/api/apiUtils";
+import UserApi from "#lowcoder/api/userApi";
+import { validateResponse } from "#lowcoder/api/apiUtils";
 import ProfileImage from "./profileImage";
 
-import { buildMaterialPreviewURL } from "@lowcoder-ee/util/materialUtils";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
+import { buildMaterialPreviewURL } from "#lowcoder/util/materialUtils";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 
 import GitHubButton from 'react-github-btn';
 import { Row, Col } from "antd";

@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ReactHotkeys from "#lowcoder/util/hotkeys";
 import { StyledLink } from "#lowcoder/pages/common/styledComponent";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { favicon } from "assets/images";
 import { Col, Row, Typography } from "antd";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 import { useSelector } from "react-redux";
-import { buildMaterialPreviewURL } from "@lowcoder-ee/util/materialUtils";
+import { buildMaterialPreviewURL } from "#lowcoder/util/materialUtils";
 import { isEmpty } from "lodash";
 
 const StyledBrandingColumn = styled(Col)<{$bgImage?: string | null}>`

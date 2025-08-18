@@ -1,20 +1,20 @@
-import { CompAction, RecordConstructorToComp, RecordConstructorToView, changeChildAction } from "lowcoder-core";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, startButtonStyle, StartButtonStyleType, timerStyle, timerStyleType } from "comps/controls/styleControlConstants";
-import { NewChildren, UICompBuilder } from "comps/generators/uiCompBuilder";
-import { NameConfig, NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
+import { CompAction, RecordConstructorToComp, RecordConstructorToView, changeChildAction } from "#lowcoder-core/index";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, startButtonStyle, StartButtonStyleType, timerStyle, timerStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { NewChildren, UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
+import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "lowcoder-design";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import { Button, Space } from "antd";
 import { countdownEvent, eventHandlerControl, pauseEvent, resetEvent, resumeEvent, startEvent } from "../controls/eventHandlerControl";
 import styled from "styled-components";
 import { useContext, useState, useEffect, useMemo } from "react";
 import { stateComp } from "../generators";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { dropdownControl } from "../controls/dropdownControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { BoolControl } from "comps/controls/boolControl";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import React from "react";
 
 const Container = styled.div<{

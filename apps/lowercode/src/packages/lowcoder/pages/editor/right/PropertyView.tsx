@@ -1,11 +1,11 @@
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
-import type UIComp from "comps/comps/uiComp";
-import { EditorContext } from "comps/editorState";
-import { GridCompOperator } from "comps/utils/gridCompOperator";
+import type UIComp from "#lowcoder/comps/comps/uiComp";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { GridCompOperator } from "#lowcoder/comps/utils/gridCompOperator";
 import { SelectedComps } from "lowcoder-design";
 import { ScrollBar } from "lowcoder-design";
 import { ReactNode, useContext } from "react";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const ScrollWrapper = (props: { children: ReactNode }) => (
   <ScrollBar>

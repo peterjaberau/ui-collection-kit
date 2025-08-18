@@ -1,5 +1,5 @@
-import { MentionComp } from "comps/comps/textInputComp/mentionComp";
-import { trans } from "i18n";
+import { MentionComp } from "#lowcoder/comps/comps/textInputComp/mentionComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

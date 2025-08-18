@@ -1,4 +1,4 @@
-import { CompInfo, EditorContext } from "comps/editorState";
+import { CompInfo, EditorContext } from "#lowcoder/comps/editorState";
 import {
   BaseSection,
   Collapse,
@@ -16,19 +16,19 @@ import {
   TacoButton,
 } from "lowcoder-design";
 import React, { ReactNode, useCallback, useContext, useMemo, useState } from "react";
-import { hookCompCategory } from "comps/hooks/hookCompTypes";
+import { hookCompCategory } from "#lowcoder/comps/hooks/hookCompTypes";
 import _ from "lodash";
 import styled from "styled-components";
 import { leftCompListClassName } from "#lowcoder/pages/tutorials/tutorialsConstant";
-import type UIComp from "comps/comps/uiComp";
+import type UIComp from "#lowcoder/comps/comps/uiComp";
 import { BottomResTypeEnum } from "#lowcoder/types/bottomRes";
 import { getParentNodeKeysByKey, getTreeNodeByKey, safeJSONStringify } from "#lowcoder/util/objectUtils";
 import { Tabs, TabTitle } from "#lowcoder/components/Tabs";
 import { BackgroundColor, TopHeaderHeight } from "#lowcoder/constants/style";
-import { trans } from "i18n";
-import { CompTree } from "comps/comps/containerBase";
+import { trans } from "#lowcoder/i18n";
+import { CompTree } from "#lowcoder/comps/comps/containerBase";
 import { CompStateIcon } from "./editorConstants";
-import type { UICompType } from "comps/uiCompRegistry";
+import type { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import { CollapseWrapper, DirectoryTreeStyle, Node } from "./styledComponents";
 import { DataNode, EventDataNode } from "antd/es/tree";
 import { isAggregationApp } from "#lowcoder/util/appUtils";

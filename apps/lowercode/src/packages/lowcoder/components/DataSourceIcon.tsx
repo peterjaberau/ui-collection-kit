@@ -1,4 +1,4 @@
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
+import { getBottomResIcon } from "#lowcoder/util/bottomResUtils";
 import { HttpMethod } from "#lowcoder/api/api";
 import { useSelector } from "react-redux";
 import { getDataSource } from "#lowcoder/redux/selectors/datasourceSelectors";

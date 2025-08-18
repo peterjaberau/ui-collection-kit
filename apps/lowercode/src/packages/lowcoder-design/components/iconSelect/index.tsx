@@ -19,7 +19,7 @@ import {
 import Draggable from "react-draggable";
 import { default as List, type ListRowProps } from "react-virtualized/dist/es/List";
 import styled from "styled-components";
-import { CloseIcon, SearchIcon } from "icons";
+import { CloseIcon, SearchIcon } from "#lowcoder-design/icons";
 import { ANTDICON } from "icons/antIcon";
 
 const PopupContainer = styled.div`

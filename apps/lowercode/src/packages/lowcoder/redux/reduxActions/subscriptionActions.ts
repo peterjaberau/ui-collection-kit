@@ -1,4 +1,4 @@
-import { Subscription } from "@lowcoder-ee/constants/subscriptionConstants";
+import { Subscription } from "#lowcoder/constants/subscriptionConstants";
 import { ReduxActionErrorTypes, ReduxActionTypes } from "#lowcoder/constants/reduxActionConstants";
 
 // Action Creators

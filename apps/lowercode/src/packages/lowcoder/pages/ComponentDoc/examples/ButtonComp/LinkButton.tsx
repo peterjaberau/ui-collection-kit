@@ -1,5 +1,5 @@
-import { LinkComp } from "comps/comps/buttonComp/linkComp";
-import { trans } from "i18n";
+import { LinkComp } from "#lowcoder/comps/comps/buttonComp/linkComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -32,7 +32,7 @@ export default function LinkExample() {
         />
       </ExampleGroup>
 
-      <ExampleGroup 
+      <ExampleGroup
         title="Layout Options"
         description="The Following Examples Show the Layout Options of the Link Component."
       >

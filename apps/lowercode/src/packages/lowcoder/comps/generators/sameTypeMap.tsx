@@ -1,9 +1,9 @@
 import { JSONValue } from "#lowcoder/util/jsonTypes";
-import { Comp, ConstructorToComp, ConstructorToDataType } from "lowcoder-core";
-import { ToType } from "comps/utils";
+import { Comp, ConstructorToComp, ConstructorToDataType } from "#lowcoder-core/index";
+import { ToType } from "#lowcoder/comps/utils";
 import React from "react";
-import { CompAction, CompActionTypes, customAction, CustomAction } from "lowcoder-core";
-import { CompConstructor, CompParams, MultiBaseComp, wrapDispatch } from "lowcoder-core";
+import { CompAction, CompActionTypes, customAction, CustomAction } from "#lowcoder-core/index";
+import { CompConstructor, CompParams, MultiBaseComp, wrapDispatch } from "#lowcoder-core/index";
 import _ from "lodash";
 
 type MapAction<ChildDataType extends JSONValue = JSONValue> =

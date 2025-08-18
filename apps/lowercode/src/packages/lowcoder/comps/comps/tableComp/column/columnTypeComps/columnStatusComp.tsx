@@ -2,9 +2,9 @@ import { default as Badge } from "antd/es/badge";
 import {
   ColumnTypeCompBuilder,
   ColumnTypeViewFn,
-} from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { trans } from "i18n";
-import { StringControl, stringUnionControl } from "comps/controls/codeControl";
+} from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { trans } from "#lowcoder/i18n";
+import { StringControl, stringUnionControl } from "#lowcoder/comps/controls/codeControl";
 import { DropdownStyled, Wrapper } from "./columnTagsComp";
 import React, { ReactNode, useContext, useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { StatusContext } from "#lowcoder/components/table/EditableCell";

@@ -2,7 +2,7 @@ import "comps/comps/layout/navLayout";
 import "comps/comps/layout/mobileTabLayout";
 
 import cnchar from "cnchar";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { remoteComp } from "./comps/remoteComp/remoteComp";
 import {
   registerComp,

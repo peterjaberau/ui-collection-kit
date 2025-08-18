@@ -1,6 +1,6 @@
-import { isContainer } from "comps/comps/containerBase";
-import type { RootComp as RootCompTmp } from "comps/comps/rootComp";
-import { PositionParams } from "layout";
+import { isContainer } from "#lowcoder/comps/comps/containerBase";
+import type { RootComp as RootCompTmp } from "#lowcoder/comps/comps/rootComp";
+import { PositionParams } from "#lowcoder/";
 import _ from "lodash";
 import React, { ReactNode } from "react";
 import {
@@ -9,13 +9,13 @@ import {
   BottomResTypeEnum,
 } from "#lowcoder/types/bottomRes";
 import { setFields } from "#lowcoder/util/objectUtils";
-import { OptionalComp, renameAction } from "lowcoder-core";
+import { OptionalComp, renameAction } from "#lowcoder-core/index";
 import { GridItemComp } from "./comps/gridItemComp";
 import { hookCompCategory, isHookComp } from "./hooks/hookCompTypes";
 import { NameGenerator } from "./utils";
 import { NameAndExposingInfo } from "./utils/exposingTypes";
 import { checkName } from "./utils/rename";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import type { UiLayoutType } from "./comps/uiComp";
 import { getEditorModeStatus, saveCollisionStatus } from "#lowcoder/util/localStorageUtil";
 
@@ -510,7 +510,7 @@ export class EditorState {
     //Check query variable name duplication
     const queryComInfoList:string[] = [].concat(...(this.getQueriesComp()
       .toJsonValue().map((item: any) => item.variables.map((v: any) =>  v.key))));
-    
+
     if (name !== oldName && queryComInfoList.includes(name)) {
       return trans("comp.nameExists", { name: name });
     }
@@ -536,7 +536,7 @@ export class EditorState {
     const { disableCollision } = this.getAppSettings();
     return disableCollision ?? false;
   }
-  
+
 }
 export const EditorContext = React.createContext<EditorState>(undefined as any);
 

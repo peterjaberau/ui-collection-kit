@@ -1,4 +1,4 @@
-import { RecordConstructorToComp } from "lowcoder-core";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
 import { BoolCodeControl, NumberControl } from "../../controls/codeControl";
 import { LabelControl } from "../../controls/labelControl";
 import {
@@ -13,16 +13,16 @@ import {
   SelectInputValidationSection,
 } from "./selectInputConstants";
 import { formDataChildren, FormDataPropertyView } from "../formComp/formDataConstants";
-import { styleControl } from "comps/controls/styleControl";
-import {  AnimationStyle, InputFieldStyle, LabelStyle, RadioStyle } from "comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import {  AnimationStyle, InputFieldStyle, LabelStyle, RadioStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import { dropdownControl } from "../../controls/dropdownControl";
-import { hiddenPropertyView, disabledPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { RefControl } from "comps/controls/refControl";
+import { hiddenPropertyView, disabledPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import { withDefault } from "@lowcoder-ee/comps/generators";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { withDefault } from "#lowcoder/comps/generators";
 
 export const RadioLayoutOptions = [
   { label: trans("radio.horizontal"), value: "horizontal" },
@@ -94,8 +94,8 @@ export const RadioPropertyView = (
       </Section>
     )}
 
-    {["layout", "both"].includes(useContext(EditorContext).editorModeStatus) && ( 
-      children.label.getPropertyView() 
+    {["layout", "both"].includes(useContext(EditorContext).editorModeStatus) && (
+      children.label.getPropertyView()
     )}
 
     {["layout", "both"].includes(useContext(EditorContext).editorModeStatus) && (

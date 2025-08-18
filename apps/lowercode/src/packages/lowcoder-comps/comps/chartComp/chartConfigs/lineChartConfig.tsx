@@ -8,7 +8,7 @@ import {
   StringControl,
   ColorOrBoolCodeControl,
 } from "lowcoder-sdk";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 const BarTypeOptions = [
   {

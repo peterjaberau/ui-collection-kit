@@ -1,4 +1,4 @@
-import { ContainerComp } from "comps/comps/containerComp/containerComp";
+import { ContainerComp } from "#lowcoder/comps/comps/containerComp/containerComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

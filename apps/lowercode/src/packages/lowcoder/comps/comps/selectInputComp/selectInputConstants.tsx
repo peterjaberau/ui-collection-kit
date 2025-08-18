@@ -3,18 +3,18 @@ import { ChildrenTypeToDepsKeys, depsConfig } from "../../generators/withExposin
 import { BoolControl } from "../../controls/boolControl";
 import { CustomRuleControl } from "../../controls/codeControl";
 import { isEmpty } from "lodash";
-import { ConstructorToComp, RecordConstructorToComp } from "lowcoder-core";
+import { ConstructorToComp, RecordConstructorToComp } from "#lowcoder-core/index";
 import {
   arrayStringExposingStateControl,
   jsonExposingStateControl,
   stringExposingStateControl,
 } from "../../controls/codeStateControl";
-import { requiredPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { requiredPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import { useEffect, useRef, useState } from "react";
 import { SelectInputOptionControl } from "../../controls/optionsControl";
-import { refMethods } from "comps/generators/withMethodExposing";
-import { blurMethod, focusWithOptions } from "comps/utils/methodUtils";
+import { refMethods } from "#lowcoder/comps/generators/withMethodExposing";
+import { blurMethod, focusWithOptions } from "#lowcoder/comps/utils/methodUtils";
 
 export const SelectInputValidationChildren = {
   required: BoolControl,

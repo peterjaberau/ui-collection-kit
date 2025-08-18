@@ -1,4 +1,4 @@
-import { UserConnectionSource } from "@lowcoder-ee/constants/userConstants";
+import { UserConnectionSource } from "#lowcoder/constants/userConstants";
 import { useSelector } from "react-redux";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import EmailCard from "#lowcoder/pages/setting/profile/emailCard";
@@ -9,7 +9,7 @@ import {
   ProfileInfoItem,
   ProfileModalCardProps,
 } from "#lowcoder/pages/setting/profile/profileComponets";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export function ProfileInfoCard(props: ProfileModalCardProps) {
   const user = useSelector(getUser);

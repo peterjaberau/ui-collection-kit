@@ -1,4 +1,4 @@
-import { SplitLayoutComp } from "comps/comps/splitLayout/splitLayout";
+import { SplitLayoutComp } from "#lowcoder/comps/comps/splitLayout/splitLayout";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -67,7 +67,7 @@ export default function SplitLayoutExample() {
             width={1000}
             config={{
                 bodyStyle: bodyStyle,
-                columnStyle: columnStyle, 
+                columnStyle: columnStyle,
             }}
             compFactory={SplitLayoutComp}
           />
@@ -77,7 +77,7 @@ export default function SplitLayoutExample() {
             width={1000}
             config={{
                 bodyStyle: bodyStyle,
-                columnStyle: columnStyle, 
+                columnStyle: columnStyle,
                 hidden: true,
             }}
             compFactory={SplitLayoutComp}
@@ -89,7 +89,7 @@ export default function SplitLayoutExample() {
             config={{
                 columns: columns,
                 bodyStyle: bodyStyle,
-                columnStyle: columnStyle, 
+                columnStyle: columnStyle,
             }}
             compFactory={SplitLayoutComp}
           />
@@ -139,7 +139,7 @@ export default function SplitLayoutExample() {
                     ]
                 },
                 bodyStyle: bodyStyle,
-                columnStyle: columnStyle, 
+                columnStyle: columnStyle,
             }}
             compFactory={SplitLayoutComp}
           />
@@ -150,7 +150,7 @@ export default function SplitLayoutExample() {
             config={{
                 columns: columns,
                 bodyStyle: bodyStyle,
-                columnStyle: columnStyle, 
+                columnStyle: columnStyle,
             }}
             compFactory={SplitLayoutComp}
           />
@@ -200,7 +200,7 @@ export default function SplitLayoutExample() {
                     "padding": "10px",
                     "borderRadius": "20px",
                     "margin": "5px",
-                    "borderStyle": "dashed",                   
+                    "borderStyle": "dashed",
                 },
                 columnStyle: columnStyle,
             }}
@@ -237,7 +237,7 @@ export default function SplitLayoutExample() {
             config={{
               bodyStyle: bodyStyle,
               columnStyle: columnStyle,
-                animationStyle: 
+                animationStyle:
                 {
                     "animation": "bounce",
                     "animationDelay": "1s",

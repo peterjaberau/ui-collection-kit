@@ -1,13 +1,13 @@
-import { checkCursorInBinding } from "base/codeEditor/codeEditorUtils";
-import { Completion, CompletionContext, CompletionResult } from "base/codeEditor/codeMirror";
-import { CompletionsQuery, Def, Server } from "tern";
-import ecma from "./defs/ecmascript.json";
-import { CompletionSource } from "./completion";
+import { checkCursorInBinding } from "#lowcoder/base/codeEditor/codeEditorUtils"
+import { Completion, CompletionContext, CompletionResult } from "#lowcoder/base/codeEditor/codeMirror"
+import { CompletionsQuery, Def, Server } from "tern"
+import ecma from "./defs/ecmascript.json"
+import { CompletionSource } from "./completion"
 
 const DEFS: Def[] = [
   // @ts-ignore
   ecma,
-];
+]
 
 export enum AutocompleteDataType {
   OBJECT = "Object",
@@ -20,35 +20,30 @@ export enum AutocompleteDataType {
 }
 
 export function getDataType(type: string): AutocompleteDataType {
-  if (type === "?") return AutocompleteDataType.UNKNOWN;
-  else if (type === "number") return AutocompleteDataType.NUMBER;
-  else if (type === "string") return AutocompleteDataType.STRING;
-  else if (type === "bool") return AutocompleteDataType.BOOLEAN;
-  else if (type === "array") return AutocompleteDataType.ARRAY;
-  else if (/^fn\(/.test(type)) return AutocompleteDataType.FUNCTION;
-  else if (/^\[/.test(type)) return AutocompleteDataType.ARRAY;
-  else return AutocompleteDataType.OBJECT;
+  if (type === "?") return AutocompleteDataType.UNKNOWN
+  else if (type === "number") return AutocompleteDataType.NUMBER
+  else if (type === "string") return AutocompleteDataType.STRING
+  else if (type === "bool") return AutocompleteDataType.BOOLEAN
+  else if (type === "array") return AutocompleteDataType.ARRAY
+  else if (/^fn\(/.test(type)) return AutocompleteDataType.FUNCTION
+  else if (/^\[/.test(type)) return AutocompleteDataType.ARRAY
+  else return AutocompleteDataType.OBJECT
 }
 
-const server = new Server({ defs: DEFS });
+const server = new Server({ defs: DEFS })
 
 export class TernServer extends CompletionSource {
-  completionSource(
-    context: CompletionContext
-  ): CompletionResult | Promise<CompletionResult | null> | null {
+  completionSource(context: CompletionContext): CompletionResult | Promise<CompletionResult | null> | null {
     // log.log("complete pos:", context.pos, "\nselection:", context.state);
-    const isCursorInBinding = checkCursorInBinding(context, this.isFunction);
+    const isCursorInBinding = checkCursorInBinding(context, this.isFunction)
     if (!isCursorInBinding) {
-      return null;
+      return null
     }
-    if (
-      context.matchBefore(/\w[\w\.]*/) === null &&
-      (this.isFunction || context.matchBefore(/\{\{\s*/) === null)
-    ) {
-      return null;
+    if (context.matchBefore(/\w[\w\.]*/) === null && (this.isFunction || context.matchBefore(/\{\{\s*/) === null)) {
+      return null
     }
-    const state = context.state;
-    const pos = context.pos;
+    const state = context.state
+    const pos = context.pos
     const query: CompletionsQuery = {
       type: "completions",
       types: true,
@@ -61,30 +56,30 @@ export class TernServer extends CompletionSource {
       includeKeywords: true,
       end: pos,
       file: "#0",
-    };
+    }
     const files = [
       {
         type: "full",
         name: "_temp",
         text: state.sliceDoc(),
       },
-    ];
+    ]
 
-    const request = { query, files };
-    let error;
-    let data: any;
+    const request = { query, files }
+    let error
+    let data: any
     server.request(request as any, (rError, rData) => {
-      error = rError;
-      data = rData;
-    });
+      error = rError
+      data = rData
+    })
     // log.log("ternComplete. error:", error, "\ndata: ", data);
     if (error || data.completions.length === 0) {
-      return null;
+      return null
     }
-    const options = [];
+    const options = []
     for (const completion of data.completions) {
       // log.log("completion: ", completion);
-      const dataType = getDataType(completion.type);
+      const dataType = getDataType(completion.type)
       const completionOption: Completion = {
         type: dataType, // icon
         label: completion.name,
@@ -95,7 +90,7 @@ export class TernServer extends CompletionSource {
           completion.doc === undefined
             ? undefined
             : (complete: Completion) => {
-                let dom = document.createElement("div");
+                let dom = document.createElement("div")
                 dom.innerHTML = `
                   <div class="hintDiv" onclick='javascript:window.open("${completion.url}")' >
                     <svg width="16px" height="16px" class="hintSvg" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -110,22 +105,22 @@ export class TernServer extends CompletionSource {
                   </div>
                   <span class="hintType">${completion.type}</span>
                   <span class="hintDoc">${completion.doc}</span>
-                  `;
-                return dom;
+                  `
+                return dom
               },
         boost: -1,
-      };
-      options.push(completionOption);
+      }
+      options.push(completionOption)
     }
 
     const completions = {
       from: data.start,
       validFor: /^\w*$/,
       options,
-    };
+    }
     // const token = context.state.sliceDoc(completions.from, context.pos);
     // const testFlag = completions.span.test(token)
     // log.log("Tern completeContext: ", context, "\ncompletionResult: ", completions, `\ntoken: ${token}, testFlag: ${testFlag}`);
-    return completions;
+    return completions
   }
 }

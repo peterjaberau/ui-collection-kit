@@ -3,10 +3,10 @@ import { DeployableItemConfig } from '../types/deployable-item.types';
 import { Query } from '../types/query.types';
 import { deployQuery } from '../services/query.service';
 import { Environment } from '../types/environment.types';
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const queryConfig: DeployableItemConfig = {
-  
+
   deploy: {
     singularLabel: trans("environments.config_singularLabels_query"),
     fields: [

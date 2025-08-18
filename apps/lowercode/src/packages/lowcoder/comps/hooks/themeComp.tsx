@@ -1,11 +1,11 @@
 import { ThemeType } from "#lowcoder/api/commonSettingApi";
-import { EditorContext } from "comps/editorState";
-import { simpleMultiComp, stateComp, withViewFn } from "comps/generators";
-import { withSimpleExposing } from "comps/generators/withExposing";
-import { withMethodExposing } from "comps/generators/withMethodExposing";
-import { getGlobalSettings } from "comps/utils/globalSettings";
-import { getCurrentTheme } from "comps/utils/themeUtil";
-import { trans } from "i18n";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { simpleMultiComp, stateComp, withViewFn } from "#lowcoder/comps/generators";
+import { withSimpleExposing } from "#lowcoder/comps/generators/withExposing";
+import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
+import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
+import { getCurrentTheme } from "#lowcoder/comps/utils/themeUtil";
+import { trans } from "#lowcoder/i18n";
 import { isEqual } from "lodash";
 import { useContext, useEffect, useMemo } from "react";
 import { getThemeList } from "#lowcoder/redux/selectors/commonSettingSelectors";
@@ -49,7 +49,7 @@ let ThemeTempComp = withViewFn(
     const appThemeId = editorState?.getAppSettings().themeId;
     const currentTheme = getCurrentTheme(themeList, appThemeId);
     const stateValue = useMemo(() => comp.children.stateValue.getView(), [comp.children.stateValue]);
-    
+
     const themeValue = useMemo(() => {
       if (
         currentTheme?.id !== stateValue.id

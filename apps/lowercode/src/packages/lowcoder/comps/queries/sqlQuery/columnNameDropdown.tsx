@@ -1,11 +1,11 @@
-import { DispatchType } from "lowcoder-core";
+import { DispatchType } from "#lowcoder-core/index";
 import { ControlPlacement } from "../../controls/controlParams";
 import React, { useContext, useState, useEffect } from "react";
 import { Dropdown, OptionsType } from "lowcoder-design";
 import { isEmpty, values } from "lodash";
 import { useSelector } from "react-redux";
 import { getDataSourceStructures } from "../../../redux/selectors/datasourceSelectors";
-import { changeValueAction } from "lowcoder-core";
+import { changeValueAction } from "#lowcoder-core/index";
 import { QueryContext } from "../../../util/context/QueryContext";
 
 const COLUMN_SORT_KEY = "lowcoder_column_sort";
@@ -20,7 +20,7 @@ export const ColumnNameDropdown = (props: {
 }) => {
   const context = useContext(QueryContext);
   const datasourceId = context?.datasourceId ?? "";
-  
+
   // Simple sort preference from localStorage
   const [sortColumns, setSortColumns] = useState(() => {
     return localStorage.getItem(COLUMN_SORT_KEY) === 'true';
@@ -37,7 +37,7 @@ export const ColumnNameDropdown = (props: {
       value: column.name,
     })) ?? [];
 
-  const columns: OptionsType = sortColumns 
+  const columns: OptionsType = sortColumns
     ? [...rawColumns].sort((a, b) => a.label.localeCompare(b.label))
     : rawColumns;
 

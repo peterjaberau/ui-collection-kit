@@ -1,9 +1,9 @@
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
-import { MultiCompBuilder, valueComp } from "comps/generators";
-import { bottomResListComp } from "comps/generators/bottomResList";
-import { NameGenerator } from "comps/utils";
-import { genRandomKey } from "comps/utils/idGenerator";
-import { trans } from "i18n";
+import { getBottomResIcon } from "#lowcoder/util/bottomResUtils";
+import { MultiCompBuilder, valueComp } from "#lowcoder/comps/generators";
+import { bottomResListComp } from "#lowcoder/comps/generators/bottomResList";
+import { NameGenerator } from "#lowcoder/comps/utils";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
+import { trans } from "#lowcoder/i18n";
 import { ReactNode } from "react";
 import { BottomResComp, BottomResCompResult, BottomResTypeEnum } from "#lowcoder/types/bottomRes";
 import { SimpleNameComp } from "./simpleNameComp";

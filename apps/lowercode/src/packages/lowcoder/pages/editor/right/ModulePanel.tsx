@@ -15,8 +15,8 @@ import {
     UnfoldIcon,
     FileFolderIcon, messageInstance, CustomModal
 } from "lowcoder-design";
-import {trans, transToNode} from "i18n";
-import { draggingUtils } from "layout/draggingUtils";
+import {trans, transToNode} from "#lowcoder/i18n";
+import { draggingUtils } from "#lowcoder/draggingUtils";
 import React, { useContext, useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {fetchAllModules, recycleApplication, updateAppMetaAction} from "#lowcoder/redux/reduxActions/applicationActions";
@@ -24,13 +24,13 @@ import styled from "styled-components";
 import CreateAppButton from "#lowcoder/components/CreateAppButton";
 import { TransparentImg } from "#lowcoder/util/commonUtils";
 import { ComListTitle } from "./styledComponent";
-import {folderElementsSelector} from "@lowcoder-ee/redux/selectors/folderSelector";
-import {DraggableTree} from "@lowcoder-ee/components/DraggableTree/DraggableTree";
-import { showAppSnapshotSelector} from "@lowcoder-ee/redux/selectors/appSnapshotSelector";
-import {DraggableTreeNode, DraggableTreeNodeItemRenderProps} from "@lowcoder-ee/components/DraggableTree/types";
+import {folderElementsSelector} from "#lowcoder/redux/selectors/folderSelector";
+import {DraggableTree} from "#lowcoder/components/DraggableTree/DraggableTree";
+import { showAppSnapshotSelector} from "#lowcoder/redux/selectors/appSnapshotSelector";
+import {DraggableTreeNode, DraggableTreeNodeItemRenderProps} from "#lowcoder/components/DraggableTree/types";
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
-import {deleteFolder, moveToFolder, updateFolder} from "@lowcoder-ee/redux/reduxActions/folderActions";
-import { isPublicApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
+import {deleteFolder, moveToFolder, updateFolder} from "#lowcoder/redux/reduxActions/folderActions";
+import { isPublicApplication } from "#lowcoder/redux/selectors/applicationSelector";
 const ItemWrapper = styled.div`
   display: flex;
   flex-direction: row;

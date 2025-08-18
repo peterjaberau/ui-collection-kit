@@ -24,7 +24,7 @@ import {
   type ListRowProps,
 } from "react-virtualized/dist/es/List";
 import styled from "styled-components";
-import { CloseIcon, SearchIcon } from "icons";
+import { CloseIcon, SearchIcon } from "#lowcoder-design/icons";
 import { ANTDICON } from "icons/antIcon";
 import { JSX } from "react/jsx-runtime";
 
@@ -382,7 +382,7 @@ const IconPopup = (props: {
           <StyledCloseIcon onClick={props.onClose} />
         </TitleDiv>
         {/* <SearchDiv>
-          <TacoInput 
+          <TacoInput
             style={{ width: "100%", paddingLeft: "40px" }}
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
@@ -404,7 +404,7 @@ const IconPopup = (props: {
                       }}
                     >
                       <Shape
-                        size={24} 
+                        size={24}
                         key={index}
                         onClick={() => {
                           onChangeIcon(index + "_" + shapeType);

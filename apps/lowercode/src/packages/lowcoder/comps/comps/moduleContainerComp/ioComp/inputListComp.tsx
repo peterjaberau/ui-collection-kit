@@ -1,17 +1,17 @@
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
 import { KeyValueItem, KeyValueItemListWithNewCreateState } from "#lowcoder/components/KeyValueItemList";
-import { StringControl } from "comps/controls/codeControl";
-import CompNameControl from "comps/controls/compNameControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { EditorContext } from "comps/editorState";
-import { list } from "comps/generators/list";
-import { trans } from "i18n";
-import { multiChangeAction } from "lowcoder-core";
-import { controlItem, Section } from "lowcoder-design";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { list } from "#lowcoder/comps/generators/list";
+import { trans } from "#lowcoder/i18n";
+import { multiChangeAction } from "#lowcoder-core/index";
+import { controlItem, Section } from "#lowcoder-design/index";
 import { useContext } from "react";
 import InputListItemComp, { getInputOptionLabel, InputTypeEnum } from "./inputListItemComp";
 
-const InputListCompBase = list(InputListItemComp);
+const InputListCompBase: any = list(InputListItemComp);
 
 class InputListComp extends InputListCompBase {
   handleAdd(name: string) {
@@ -52,7 +52,7 @@ class InputListComp extends InputListCompBase {
 
   getTestView() {
     const children = this.getView();
-    const fields = children.map((i) => i.getTestView());
+    const fields = children.map((i: any) => i.getTestView());
     return (
       <Section name={trans("moduleContainer.inputTest")}>
         {fields.length > 0

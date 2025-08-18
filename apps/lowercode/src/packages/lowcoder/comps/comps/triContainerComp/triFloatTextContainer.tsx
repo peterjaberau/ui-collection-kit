@@ -4,9 +4,9 @@ import {
   heightCalculator,
   widthCalculator,
   AnimationStyleType,
-} from "comps/controls/styleControlConstants";
-import { EditorContext } from "comps/editorState";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
 import { HintPlaceHolder, ScrollBar, TacoMarkDown } from "lowcoder-design";
 import { ReactNode, useContext } from "react";
 import styled, { css } from "styled-components";
@@ -16,7 +16,7 @@ import {
   InnerGrid,
 } from "../containerComp/containerView";
 import { TriContainerViewProps } from "../triContainerComp/triContainerCompBuilder";
-import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
+import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
 
 const getStyle = (style: TextContainerStyleType) => {
   return css`

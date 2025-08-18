@@ -1,17 +1,17 @@
 import { default as Tabs } from "antd/es/tabs";
 import { JSONObject, JSONValue } from "#lowcoder/util/jsonTypes";
-import { CompAction, CompActionTypes, deleteCompAction, wrapChildAction } from "lowcoder-core";
-import { DispatchType, RecordConstructorToView, wrapDispatch } from "lowcoder-core";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { TabsOptionControl } from "comps/controls/optionsControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, TabBodyStyleType, ContainerHeaderStyle, ContainerHeaderStyleType, TabBodyStyle, TabContainerStyle, TabContainerStyleType, heightCalculator, widthCalculator } from "comps/controls/styleControlConstants";
-import { sameTypeMap, UICompBuilder, withDefault } from "comps/generators";
-import { addMapChildAction } from "comps/generators/sameTypeMap";
-import { NameConfig, NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
-import { NameGenerator } from "comps/utils";
+import { CompAction, CompActionTypes, deleteCompAction, wrapChildAction } from "#lowcoder-core/index";
+import { DispatchType, RecordConstructorToView, wrapDispatch } from "#lowcoder-core/index";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { TabsOptionControl } from "#lowcoder/comps/controls/optionsControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, TabBodyStyleType, ContainerHeaderStyle, ContainerHeaderStyleType, TabBodyStyle, TabContainerStyle, TabContainerStyleType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
+import { sameTypeMap, UICompBuilder, withDefault } from "#lowcoder/comps/generators";
+import { addMapChildAction } from "#lowcoder/comps/generators/sameTypeMap";
+import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import { ScrollBar, Section, sectionNames } from "#lowcoder-design/index";
 import { HintPlaceHolder } from "#lowcoder-design/index";
 import _ from "lodash";
@@ -25,18 +25,18 @@ import {
   gridItemCompToGridItems,
   InnerGrid,
 } from "../containerComp/containerView";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
-import { disabledPropertyView, hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { BoolCodeControl, NumberControl } from "comps/controls/codeControl";
-import { DisabledContext } from "comps/generators/uiCompBuilder";
-import { EditorContext } from "comps/editorState";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
+import { disabledPropertyView, hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { BoolCodeControl, NumberControl } from "#lowcoder/comps/controls/codeControl";
+import { DisabledContext } from "#lowcoder/comps/generators/uiCompBuilder";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { BoolControl } from "comps/controls/boolControl";
-import { PositionControl } from "comps/controls/dropdownControl";
-import { SliderControl } from "@lowcoder-ee/comps/controls/sliderControl";
-import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { PositionControl } from "#lowcoder/comps/controls/dropdownControl";
+import { SliderControl } from "#lowcoder/comps/controls/sliderControl";
+import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
 
 const EVENT_OPTIONS = [
   {

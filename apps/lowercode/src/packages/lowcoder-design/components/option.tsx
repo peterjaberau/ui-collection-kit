@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { DragIcon, PointIcon } from "icons";
+import { DragIcon, PointIcon } from "#lowcoder-design/icons";
 import { EllipsisTextCss, labelCss } from "./Label";
 import { EditPopover, SimplePopover } from "./popover";
 import { ToolTipLabel } from "./toolTip";
@@ -7,7 +7,7 @@ import { AddLine } from "./eventHandler";
 import React, { useState } from "react";
 import { CSS } from "@dnd-kit/utilities";
 import { SortableContext, useSortable, verticalListSortingStrategy } from "@dnd-kit/sortable";
-import { ConstructorToComp, MultiCompConstructor } from "lowcoder-core";
+import { ConstructorToComp, MultiCompConstructor } from "#lowcoder-core/index";
 import { ReactComponent as WarnIcon } from "icons/v1/icon-warning-white.svg";
 import { DndContext } from "@dnd-kit/core";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";

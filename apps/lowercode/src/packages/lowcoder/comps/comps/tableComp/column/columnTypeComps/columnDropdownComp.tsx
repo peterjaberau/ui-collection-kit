@@ -1,22 +1,22 @@
 import React, { ReactNode, useCallback, useRef, useEffect, useMemo, ReactElement } from "react";
-import { DropdownOptionControl } from "comps/controls/optionsControl";
-import { StringControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
+import { DropdownOptionControl } from "#lowcoder/comps/controls/optionsControl";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
 import { ColumnTypeCompBuilder, ColumnTypeViewFn } from "../columnTypeCompBuilder";
 import Menu from "antd/es/menu";
 import Dropdown from "antd/es/dropdown";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { IconControl } from "comps/controls/iconControl";
-import { withDefault } from "comps/generators";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { withDefault } from "#lowcoder/comps/generators";
 import { IconWrapper } from "#lowcoder/util/bottomResUtils";
 import { ButtonTypeOptions } from "../simpleColumnTypeComps";
-import { useStyle } from "comps/controls/styleControl";
-import { ButtonStyle } from "comps/controls/styleControlConstants";
-import { Button100 } from "comps/comps/buttonComp/buttonCompConstants";
+import { useStyle } from "#lowcoder/comps/controls/styleControl";
+import { ButtonStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { Button100 } from "#lowcoder/comps/comps/buttonComp/buttonCompConstants";
 import styled from "styled-components";
 import { ButtonType } from "antd/es/button";
-import { clickEvent, eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { clickEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 const StyledButton = styled(Button100)`
   display: flex;

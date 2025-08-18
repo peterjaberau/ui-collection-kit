@@ -10,10 +10,10 @@ import { Environment } from "./types/environment.types";
 import EnvironmentsTable from "./components/EnvironmentsTable";
 import CreateEnvironmentModal from "./components/CreateEnvironmentModal";
 import StatsCard from "./components/StatsCard";
-import { buildEnvironmentId } from "@lowcoder-ee/constants/routesURL";
+import { buildEnvironmentId } from "#lowcoder/constants/routesURL";
 import { createEnvironment } from "./services/environments.service";
 import { getEnvironmentTagColor } from "./utils/environmentUtils";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import styled from "styled-components";
 
 const EnvironmentsWrapper = styled.div`

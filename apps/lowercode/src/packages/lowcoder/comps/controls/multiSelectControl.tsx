@@ -1,5 +1,5 @@
 import { DropdownContainer, OptionsType, ValueFromOption } from "#lowcoder-design/components/Dropdown";
-import { SimpleComp } from "lowcoder-core";
+import { SimpleComp } from "#lowcoder-core/index";
 import { ControlParams, ControlPlacement } from "./controlParams";
 import { ReactNode } from "react";
 import { Tooltip, ToolTipLabel } from "#lowcoder-design/components/toolTip";

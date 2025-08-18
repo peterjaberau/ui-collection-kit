@@ -1,6 +1,6 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
-export const timeZoneOptions = [
+export const timeZoneOptions: any = [
     { label: trans("timeZone.UserChoice"), value: "UserChoice" },
     { label: trans("timeZone.UTC-12:00"), value: "Pacific/Baker" },
     { label: trans("timeZone.UTC-11:00"), value: "Pacific/Niue" },
@@ -21,7 +21,7 @@ export const timeZoneOptions = [
     { label: trans("timeZone.UTC+04:00"), value: "Asia/Dubai" },
     { label: trans("timeZone.UTC+05:00"), value: "Asia/Karachi" },
     { label: trans("timeZone.UTC+05:30"), value: "Asia/Kolkata" },
-    { label: trans("timeZone.UTC+05:45"), value: "Asia/Kathmandu" }, 
+    { label: trans("timeZone.UTC+05:45"), value: "Asia/Kathmandu" },
     { label: trans("timeZone.UTC+06:00"), value: "Asia/Dhaka" },
     { label: trans("timeZone.UTC+06:30"), value: "Asia/Rangoon" },
     { label: trans("timeZone.UTC+07:00"), value: "Asia/Bangkok" },
@@ -29,7 +29,7 @@ export const timeZoneOptions = [
     { label: trans("timeZone.UTC+09:00"), value: "Asia/Tokyo" },
     { label: trans("timeZone.UTC+09:30"), value: "Australia/Darwin" },
     { label: trans("timeZone.UTC+10:00"), value: "Australia/Sydney" },
-    { label: trans("timeZone.UTC+11:00"), value: "Pacific/Guadalcanal" }, 
-    { label: trans("timeZone.UTC+12:00"), value: "Pacific/Auckland" }, 
-    { label: trans("timeZone.UTC+13:00"), value: "Pacific/Tongatapu" }, 
+    { label: trans("timeZone.UTC+11:00"), value: "Pacific/Guadalcanal" },
+    { label: trans("timeZone.UTC+12:00"), value: "Pacific/Auckland" },
+    { label: trans("timeZone.UTC+13:00"), value: "Pacific/Tongatapu" },
 ];

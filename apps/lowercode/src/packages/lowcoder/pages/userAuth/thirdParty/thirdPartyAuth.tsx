@@ -11,7 +11,7 @@ import { getSystemConfigFetching, selectSystemConfig } from "#lowcoder/redux/sel
 import React, { useMemo, useState } from "react";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import styled from "styled-components";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { geneAuthStateAndSaveParam, getAuthUrl, getRedirectUrl } from "#lowcoder/pages/userAuth/authUtils";
 import { default as Divider } from "antd/es/divider";
 import { default as Typography } from "antd/es/typography";
@@ -19,7 +19,7 @@ import { useRedirectUrl } from "#lowcoder/util/hooks";
 import { MultiIconDisplay } from "../../../comps/comps/multiIconDisplay";
 import Spin from "antd/es/spin";
 import { LoadingOutlined } from "@ant-design/icons";
-import { getServerSettings } from "@lowcoder-ee/redux/selectors/applicationSelector";
+import { getServerSettings } from "#lowcoder/redux/selectors/applicationSelector";
 
 const { Text } = Typography;
 

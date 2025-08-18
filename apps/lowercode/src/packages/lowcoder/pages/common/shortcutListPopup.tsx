@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { CloseIcon } from "lowcoder-design";
 import { allShortcutGroups } from "./shortcutConfigs";
 import { isMac } from "#lowcoder/util/commonUtils";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const Wrapper = styled.div`
   position: absolute;

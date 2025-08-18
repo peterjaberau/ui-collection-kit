@@ -1,5 +1,5 @@
 import { default as AntdRadioGroup } from "antd/es/radio/group";
-import { RadioStyleType } from "comps/controls/styleControlConstants";
+import { RadioStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import styled, { css } from "styled-components";
 import { UICompBuilder } from "../../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
@@ -10,9 +10,9 @@ import {
   useSelectInputValidate,
 } from "./selectInputConstants";
 import { EllipsisTextCss, ValueFromOption } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { fixOldInputCompData } from "../textInputComp/textInputConstants";
-import { migrateOldData } from "comps/generators/simpleGenerators";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
 import Tooltip from "antd/es/tooltip";
 import { useCallback, useRef, useEffect, memo } from "react";
 

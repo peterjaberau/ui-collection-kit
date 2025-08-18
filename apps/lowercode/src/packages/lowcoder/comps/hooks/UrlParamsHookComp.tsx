@@ -1,5 +1,5 @@
 import { JSONObject } from "#lowcoder/util/jsonTypes";
-import { hookToStateComp } from "comps/generators/hookToComp";
+import { hookToStateComp } from "#lowcoder/comps/generators/hookToComp";
 import { useEffect, useState } from "react";
 import history from "#lowcoder/util/history";
 

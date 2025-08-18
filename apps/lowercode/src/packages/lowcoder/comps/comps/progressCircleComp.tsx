@@ -1,16 +1,16 @@
 import { default as Progress } from "antd/es/progress";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, CircleProgressStyle, CircleProgressType, heightCalculator, widthCalculator } from "comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, CircleProgressStyle, CircleProgressType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
 import styled, { css } from "styled-components";
 import { Section, sectionNames } from "lowcoder-design";
 import { numberExposingStateControl } from "../controls/codeStateControl";
 import { UICompBuilder } from "../generators";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "../generators/withExposing";
-import { hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 // TODO: after Update of ANTd, introduce Size attribute to ProgressCircle
 

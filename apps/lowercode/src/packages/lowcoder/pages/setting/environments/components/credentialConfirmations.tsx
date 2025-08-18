@@ -1,6 +1,6 @@
 import { Modal, Alert } from 'antd';
 import { ExclamationCircleOutlined, WarningOutlined } from '@ant-design/icons';
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 interface ConfirmHandlers {
   onOk: () => void;

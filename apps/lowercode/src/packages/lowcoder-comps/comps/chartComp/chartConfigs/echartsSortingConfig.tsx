@@ -5,7 +5,7 @@ import {
   MultiCompBuilder,
 } from "lowcoder-sdk";
 import {FunnelSeriesOption, LegendComponentOption} from "echarts";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 const SortingOptions = [
   {

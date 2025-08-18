@@ -36,7 +36,7 @@ import { fetchHomeData } from "#lowcoder/redux/reduxActions/applicationActions";
 import { fetchSubscriptionsAction } from "#lowcoder/redux/reduxActions/subscriptionActions";
 import { getHomeOrg, normalAppListSelector } from "#lowcoder/redux/selectors/applicationSelector";
 import { DatasourceHome } from "../datasource";
-import { clearStyleEval, evalStyle } from "lowcoder-core";
+import { clearStyleEval, evalStyle } from "#lowcoder-core/index";
 import { QueryLibraryEditor } from "../queryLibrary/QueryLibraryEditor";
 import { ProductLoading } from "#lowcoder/components/ProductLoading";
 import { Layout } from "../../components/layout/Layout";
@@ -58,14 +58,14 @@ import { Subscription } from "#lowcoder/pages/setting/subscriptions"
 // import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import { getSubscriptions } from 'redux/selectors/subscriptionSelectors';
 import { SubscriptionProductsEnum } from '@lowcoder-ee/constants/subscriptionConstants';
-import { EnterpriseProvider } from "@lowcoder-ee/util/context/EnterpriseContext";
-import { SimpleSubscriptionContextProvider } from "@lowcoder-ee/util/context/SimpleSubscriptionContext";
+import { EnterpriseProvider } from "#lowcoder/util/context/EnterpriseContext";
+import { SimpleSubscriptionContextProvider } from "#lowcoder/util/context/SimpleSubscriptionContext";
 import { selectIsLicenseActive } from "#lowcoder/redux/selectors/enterpriseSelectors";
 
 
 // adding App Editor, so we can show Apps inside the Admin Area
 import AppEditor from "../editor/AppEditor";
-import {LoadingBarHideTrigger} from "@lowcoder-ee/util/hideLoading";
+import {LoadingBarHideTrigger} from "#lowcoder/util/hideLoading";
 
 const TabLabel = styled.div`
   font-weight: 500;

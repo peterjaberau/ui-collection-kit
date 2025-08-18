@@ -1,5 +1,5 @@
-import { ModalComp } from "comps/hooks/modalComp";
-import { trans } from "i18n";
+import { ModalComp } from "#lowcoder/comps/hooks/modalComp";
+import { trans } from "#lowcoder/i18n";
 import { chartColorPalette } from "lowcoder-design";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";

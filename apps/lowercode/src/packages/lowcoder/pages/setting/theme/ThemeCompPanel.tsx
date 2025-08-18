@@ -3,9 +3,9 @@ import {
   UICompCategory,
   UICompManifest,
   uiCompRegistry,
-} from "comps/uiCompRegistry";
+} from "#lowcoder/comps/uiCompRegistry";
 import { isEmpty } from "lodash";
-import { language } from "i18n";
+import { language } from "#lowcoder/i18n";
 import {
   CompIconDiv,
   EmptyCompContent,
@@ -22,16 +22,16 @@ import {
   sectionNames,
 } from "lowcoder-design";
 import { Card, Divider, Flex, Input, List } from "antd";
-import { genRandomKey } from "comps/utils/idGenerator";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
 import dsl from "./detail/previewDsl";
-import { NameGenerator } from "comps/utils";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import ThemeSettingsCompStyles from "#lowcoder/components/ThemeSettingsCompStyles";
 import { JSONObject } from "#lowcoder/util/jsonTypes";
 import PreviewApp from "#lowcoder/components/PreviewApp";
-import { parseCompType } from "comps/utils/remote";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
+import { parseCompType } from "#lowcoder/comps/utils/remote";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
 import { useSelector } from "react-redux";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 
 const CompDiv = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
-import { ProgressComp } from "comps/comps/progressComp";
-import { trans } from "i18n";
+import { ProgressComp } from "#lowcoder/comps/comps/progressComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

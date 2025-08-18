@@ -35,7 +35,7 @@ import { EchartsTitleVerticalConfig } from "../chartComp/chartConfigs/echartsTit
 import { EchartsTitleConfig } from "#lowcoder-comps/comps/chartComp/chartConfigs/echartsTitleConfig";
 import { SeriesListComp } from "../chartComp/seriesComp";
 import { EChartsOption } from "echarts";
-import { i18nObjs, trans } from "i18n/comps";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 import { GraphChartConfig } from "../chartComp/chartConfigs/graphChartConfig";
 
 export const ChartTypeOptions = [

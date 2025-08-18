@@ -15,8 +15,8 @@ import { THEME_DETAIL } from "#lowcoder/constants/routesURL";
 import { currentOrgAdmin } from "#lowcoder/util/permissionUtils";
 import { AddIcon } from "lowcoder-design";
 import { CreateButton, ThemeContent } from "./styledComponents";
-import { genQueryId } from "comps/utils/idGenerator";
-import { trans } from "i18n";
+import { genQueryId } from "#lowcoder/comps/utils/idGenerator";
+import { trans } from "#lowcoder/i18n";
 import { Level1SettingPageTitleWithBtn } from "../styled";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 

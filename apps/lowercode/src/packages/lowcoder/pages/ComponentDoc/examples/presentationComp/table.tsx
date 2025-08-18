@@ -1,5 +1,5 @@
-import { TableComp } from "comps/comps/tableComp";
-import { trans, i18nObjs } from "i18n";
+import { TableComp } from "#lowcoder/comps/comps/tableComp";
+import { trans, i18nObjs } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -614,13 +614,13 @@ export default function TableExample() {
           title="Single - Only single Row can be selected"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             rowStyle: rowStyle,
-            selection: 
-              { 
-                mode: "single", 
-              } 
+            selection:
+              {
+                mode: "single",
+              }
             }}
           blackListConfig={blackListConfig}
           compFactory={TableComp}
@@ -629,13 +629,13 @@ export default function TableExample() {
           title="Multiple - Multiple Rows can be selected"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
-            rowStyle: rowStyle, 
+            rowStyle: rowStyle,
             selection:
-              { 
-                mode: "multi", 
-              } 
+              {
+                mode: "multi",
+              }
             }}
           blackListConfig={blackListConfig}
           compFactory={TableComp}
@@ -645,12 +645,12 @@ export default function TableExample() {
           width={800}
           hideSettings={true}
           config={{
-            data: data, 
+            data: data,
             rowStyle: rowStyle,
             selection:
-              { 
-                mode: "close", 
-              } 
+              {
+                mode: "close",
+              }
             }}
           blackListConfig={blackListConfig}
           compFactory={TableComp}
@@ -659,10 +659,10 @@ export default function TableExample() {
           title="Showing Loading bars"
           width={800}
           hideSettings={true}
-          config={{ 
-            data: data, 
+          config={{
+            data: data,
             hideBordered: true,
-            loading: true, 
+            loading: true,
             }}
           blackListConfig={blackListConfig}
           compFactory={TableComp}
@@ -673,8 +673,8 @@ export default function TableExample() {
         <Example
           title="Edit Mode - Single Click"
           width={400}
-          config={{ 
-            data: data, 
+          config={{
+            data: data,
             columns: columns,
             editModeClicks: "single",
           }}
@@ -684,8 +684,8 @@ export default function TableExample() {
         <Example
           title="Edit Mode - Double Click"
           width={400}
-          config={{ 
-            data: data, 
+          config={{
+            data: data,
             columns: columns,
             editModeClicks: "double",
           }}
@@ -729,7 +729,7 @@ export default function TableExample() {
         <Example
           title="Bottom Position"
           width={400}
-          config={{ 
+          config={{
             data: data,
             toolbar:{position:"below", showFilter:true, showDownload:true,showRefresh:true,columnSetting:true},
           }}
@@ -739,7 +739,7 @@ export default function TableExample() {
         <Example
           title="Top Position"
           width={400}
-          config={{ 
+          config={{
             data: data,
             toolbar:{position:"above", showFilter:true, showDownload:true,showRefresh:true,columnSetting:true},
           }}
@@ -749,7 +749,7 @@ export default function TableExample() {
         <Example
           title="No Toolbar"
           width={400}
-          config={{ 
+          config={{
             data: data,
             toolbar:{position:"close"},
           }}
@@ -759,7 +759,7 @@ export default function TableExample() {
         <Example
           title="Hiding Filter icon"
           width={400}
-          config={{ 
+          config={{
             data: data,
             toolbar:{position:"below", showFilter:false, showDownload:true,showRefresh:true,columnSetting:true},
           }}
@@ -769,7 +769,7 @@ export default function TableExample() {
         <Example
           title="Hiding Download Icon"
           width={400}
-          config={{ 
+          config={{
             data: data,
             toolbar:{position:"below", showFilter:true, showDownload:false,showRefresh:true,columnSetting:true},
           }}
@@ -779,7 +779,7 @@ export default function TableExample() {
         <Example
           title="Hiding Refresh Icon"
           width={400}
-          config={{ 
+          config={{
             data: data,
             toolbar:{position:"below", showFilter:true, showDownload:true,showRefresh:false,columnSetting:true},
           }}
@@ -789,7 +789,7 @@ export default function TableExample() {
         <Example
           title="Hiding Column Visibility Icon"
           width={400}
-          config={{ 
+          config={{
             data: data,
             toolbar:{position:"below", showFilter:true, showDownload:true,showRefresh:true,columnSetting:false},
           }}
@@ -802,7 +802,7 @@ export default function TableExample() {
         <Example
           title="Summary Rows"
           width={400}
-          config={{ 
+          config={{
             data: data,
             showSummary: true,
             summaryRows: "2",
@@ -813,7 +813,7 @@ export default function TableExample() {
         <Example
           title="Add Inline Rows - Start writing into the last Row of this Table :"
           width={400}
-          config={{ 
+          config={{
             data: data,
             inlineAddNewRow: true,
           }}
@@ -826,7 +826,7 @@ export default function TableExample() {
         <Example
           title="Hiding Vertical Row Grid Borders"
           width={400}
-          config={{ 
+          config={{
             data: data,
             showRowGridBorder: false,
           }}
@@ -836,7 +836,7 @@ export default function TableExample() {
         <Example
           title="Hiding Horizontal Row Grid Borders"
           width={400}
-          config={{ 
+          config={{
             data: data,
             showHRowGridBorder: false,
           }}
@@ -850,7 +850,7 @@ export default function TableExample() {
           title="Expandable View"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             expansion: expansion,
           }}
@@ -864,7 +864,7 @@ export default function TableExample() {
           title="Table Styling"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             style: style,
             toolbar:{position:"below", showFilter:true, showDownload:true,showRefresh:true,columnSetting:true},
@@ -876,7 +876,7 @@ export default function TableExample() {
           title="Header Styling"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             headerStyle: headerStyle,
             toolbar:{position:"below", showFilter:true, showDownload:true,showRefresh:true,columnSetting:true},
@@ -888,7 +888,7 @@ export default function TableExample() {
           title="Toolbar Styling"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             toolbarStyle: toolbarStyle,
             toolbar:{position:"below", showFilter:true, showDownload:true,showRefresh:true,columnSetting:true},
@@ -900,7 +900,7 @@ export default function TableExample() {
           title="Row Styling"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             rowStyle: rowStyle,
             toolbar:{position:"below", showFilter:true, showDownload:true,showRefresh:true,columnSetting:true},
@@ -912,7 +912,7 @@ export default function TableExample() {
           title="Column Styling"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             columnsStyle: columnStyle,
             toolbar:{position:"below", showFilter:true, showDownload:true,showRefresh:true,columnSetting:true},
@@ -924,7 +924,7 @@ export default function TableExample() {
           title="Summary Rows Styling"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             showSummary: true,
             summaryRows: "2",
@@ -1950,7 +1950,7 @@ export default function TableExample() {
           title="Column Types : Avatar, Ratings, Image, Markdown, Boolean, Switch"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data2,
             columns: [
               {
@@ -3426,7 +3426,7 @@ export default function TableExample() {
           title="Fixed Column - Left side ( scroll to right to see the effect )"
           width={400}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             columns : [
                 {
@@ -3853,7 +3853,7 @@ export default function TableExample() {
           title="Fixed Column - Right side ( scroll to left to see the effect )"
           width={400}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             columns : [
                 {
@@ -4280,7 +4280,7 @@ export default function TableExample() {
           title="Sortable Columns"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             columns: [
                 {
@@ -4711,7 +4711,7 @@ export default function TableExample() {
           title="Individual Columns Styling"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             rowStyle: {
                 "selectedRowBackground": "#E68E50",
@@ -5143,7 +5143,7 @@ export default function TableExample() {
           title="Prefix Icons on Columns"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             columns: [
                 {
@@ -5573,7 +5573,7 @@ export default function TableExample() {
           title="Suffix Icons on Columns"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             columns: [
                 {
@@ -6003,7 +6003,7 @@ export default function TableExample() {
           title="Column Tooltip"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             columns: [
                 {
@@ -6434,7 +6434,7 @@ export default function TableExample() {
           title="Title Tooltip"
           width={800}
           hideSettings={true}
-          config={{ 
+          config={{
             data: data,
             columns: [
                 {

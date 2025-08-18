@@ -1,7 +1,7 @@
 import { default as Table, TableProps, ColumnType } from "antd/es/table";
-import { TableCellContext, TableRowContext } from "comps/comps/tableComp/tableContext";
-import { TableToolbar } from "comps/comps/tableComp/tableToolbarComp";
-import { RowColorViewType, RowHeightViewType, TableEventOptionValues } from "comps/comps/tableComp/tableTypes";
+import { TableCellContext, TableRowContext } from "#lowcoder/comps/comps/tableComp/tableContext";
+import { TableToolbar } from "#lowcoder/comps/comps/tableComp/tableToolbarComp";
+import { RowColorViewType, RowHeightViewType, TableEventOptionValues } from "#lowcoder/comps/comps/tableComp/tableTypes";
 import {
   COL_MIN_WIDTH,
   COLUMN_CHILDREN_KEY,
@@ -12,7 +12,7 @@ import {
   onTableChange,
   RecordType,
   supportChildrenTree,
-} from "comps/comps/tableComp/tableUtils";
+} from "#lowcoder/comps/comps/tableComp/tableUtils";
 import {
   handleToHoverRow,
   handleToSelectedRow,
@@ -23,11 +23,11 @@ import {
   TableStyleType,
   ThemeDetail,
   TableToolbarStyleType,
-} from "comps/controls/styleControlConstants";
-import { CompNameContext, EditorContext } from "comps/editorState";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { CompNameContext, EditorContext } from "#lowcoder/comps/editorState";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
 import { PrimaryColor } from "#lowcoder/constants/style";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import _, { isEqual } from "lodash";
 import { darkenColor, isDarkColor, isValidColor, ScrollBar } from "#lowcoder-design/index";
 import React, { Children, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
@@ -36,18 +36,18 @@ import styled, { css } from "styled-components";
 import { useMergeCompStyles, useUserViewMode } from "#lowcoder/util/hooks";
 import { TableImplComp } from "./tableComp";
 import { useResizeDetector } from "react-resize-detector";
-import { SlotConfigContext } from "comps/controls/slotControl";
+import { SlotConfigContext } from "#lowcoder/comps/controls/slotControl";
 import { EmptyContent } from "#lowcoder/pages/common/styledComponent";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { ReactRef, ResizeHandleAxis } from "layout/gridLayoutPropTypes";
+import { ReactRef, ResizeHandleAxis } from "#lowcoder/gridLayoutPropTypes";
 import { CellColorViewType } from "./column/tableColumnComp";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
-import { childrenToProps } from "@lowcoder-ee/comps/generators/multi";
-import { getVerticalMargin } from "@lowcoder-ee/util/cssUtil";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
+import { childrenToProps } from "#lowcoder/comps/generators/multi";
+import { getVerticalMargin } from "#lowcoder/util/cssUtil";
 import { TableSummary } from "./tableSummaryComp";
 import Skeleton from "antd/es/skeleton";
 import { SkeletonButtonProps } from "antd/es/skeleton/Button";
-import { ThemeContext } from "@lowcoder-ee/comps/utils/themeContext";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
 import { useUpdateEffect } from "react-use";
 
 export const EMPTY_ROW_KEY = 'empty_row';

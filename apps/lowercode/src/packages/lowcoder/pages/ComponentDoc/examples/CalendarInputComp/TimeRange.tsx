@@ -1,5 +1,5 @@
 import { TimeRangeComp } from "../../../../comps/comps/dateComp/timeComp";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

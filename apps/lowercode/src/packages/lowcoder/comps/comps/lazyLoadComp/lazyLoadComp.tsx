@@ -1,16 +1,16 @@
 import { default as Skeleton } from "antd/es/skeleton";
-import { simpleMultiComp, withIsLoading } from "comps/generators";
-import { withExposingConfigs } from "comps/generators/withExposing";
+import { simpleMultiComp, withIsLoading } from "#lowcoder/comps/generators";
+import { withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { GreyTextColor } from "#lowcoder/constants/style";
 import log from "loglevel";
-import { Comp, CompAction, CompConstructor, CompParams, customAction, isCustomAction } from "lowcoder-core";
+import { Comp, CompAction, CompConstructor, CompParams, customAction, isCustomAction } from "#lowcoder-core/index";
 import { WhiteLoading } from "#lowcoder-design/index";
 import { useContext, useState } from "react";
 import { useMount } from "react-use";
 import styled from "styled-components";
 import { RemoteCompInfo } from "#lowcoder/types/remoteComp";
-import { withErrorBoundary } from "comps/generators/withErrorBoundary";
-import { ThemeContext } from "@lowcoder-ee/comps/utils/themeContext";
+import { withErrorBoundary } from "#lowcoder/comps/generators/withErrorBoundary";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
 import React from "react";
 
 const ViewError = styled.div`
@@ -96,7 +96,7 @@ export function lazyLoadComp(
   loadingElement?: () => React.ReactNode,
   withoutLoading?: boolean,
   height?: number,
-) {
+): any {
   class LazyLoadComp extends simpleMultiComp({}) {
     compValue: any;
     compName = compName;
@@ -177,5 +177,5 @@ export function lazyLoadComp(
     }
   }
 
-  return withExposingConfigs(LazyLoadComp, []);
+  return withExposingConfigs(LazyLoadComp, []) as any;
 }

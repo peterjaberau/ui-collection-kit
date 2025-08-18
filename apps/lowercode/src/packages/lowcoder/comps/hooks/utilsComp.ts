@@ -5,10 +5,10 @@ import { isEmpty } from "lodash";
 import copy from "copy-to-clipboard";
 import { saveDataAsFile } from "../../util/fileUtils";
 import { openApp, recordToSearchStr } from "../../util/appUtils";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { logoutAction } from "#lowcoder/redux/reduxActions/userActions";
-import StoreRegistry from "@lowcoder-ee/redux/store/storeRegistry";
-import UserApi from "@lowcoder-ee/api/userApi";
+import StoreRegistry from "#lowcoder/redux/store/storeRegistry";
+import UserApi from "#lowcoder/api/userApi";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
 const UtilsCompBase = simpleMultiComp({});

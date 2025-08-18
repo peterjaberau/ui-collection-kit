@@ -7,22 +7,22 @@ import * as alasql from "alasql";
 import * as styledNameExports from "styled-components";
 import styledDefault from "styled-components";
 export * as styledm from "styled-components";
-export * from "comps/comps/containerBase/containerCompBuilder";
-export * from "comps/comps/containerBase/iContainer";
-export * from "comps/comps/containerBase/utils";
-export * from "comps/comps/containerBase/simpleContainerComp";
-export * from "comps/utils/backgroundColorContext";
-export { getData } from "comps/comps/listViewComp/listViewUtils";
-export { gridItemCompToGridItems, InnerGrid } from "comps/comps/containerComp/containerView";
-export type { ContainerBaseProps } from "comps/comps/containerComp/containerView";
+export * from "#lowcoder/comps/comps/containerBase/containerCompBuilder";
+export * from "#lowcoder/comps/comps/containerBase/iContainer";
+export * from "#lowcoder/comps/comps/containerBase/utils";
+export * from "#lowcoder/comps/comps/containerBase/simpleContainerComp";
+export * from "#lowcoder/comps/utils/backgroundColorContext";
+export { getData } from "#lowcoder/comps/comps/listViewComp/listViewUtils";
+export { gridItemCompToGridItems, InnerGrid } from "#lowcoder/comps/comps/containerComp/containerView";
+export type { ContainerBaseProps } from "#lowcoder/comps/comps/containerComp/containerView";
 
 export { Layers } from "#lowcoder/constants/Layers";
-export * from "comps/controls/eventHandlerControl";
-export * from "comps/utils/methodUtils";
+export * from "#lowcoder/comps/controls/eventHandlerControl";
+export * from "#lowcoder/comps/utils/methodUtils";
 // export * from Button
 
 export { useUserViewMode } from "#lowcoder/util/hooks";
-export * from "comps/editorState";
+export * from "#lowcoder/comps/editorState";
 export * from "#lowcoder/redux/store/store";
 
 // util
@@ -60,70 +60,70 @@ export * from "#lowcoder/util/context/ExternalEditorContext";
 export { CanvasContainerID } from "#lowcoder/constants/domLocators";
 
 // comps
-export * from "comps/index";
-export * from "comps/comps/rootComp";
+export * from "#lowcoder/comps/index";
+export * from "#lowcoder/comps/comps/rootComp";
 
 // comp utils
-export * from "comps/utils/useCompInstance";
-export * from "comps/utils/idGenerator";
-export * from "comps/utils/propertyUtils";
-export * from "comps/utils/globalSettings";
-export * from "comps/utils";
-export * from "comps/utils/themeContext";
+export * from "#lowcoder/comps/utils/useCompInstance";
+export * from "#lowcoder/comps/utils/idGenerator";
+export * from "#lowcoder/comps/utils/propertyUtils";
+export * from "#lowcoder/comps/utils/globalSettings";
+export * from "#lowcoder/comps/utils";
+export * from "#lowcoder/comps/utils/themeContext";
 
 // design
 export * from "lowcoder-design";
-export * from "lowcoder-core";
+export * from "#lowcoder-core/index";
 
 // controls
-export * from "comps/controls/alignControl";
-export * from "comps/controls/appSelectControl";
-export * from "comps/controls/autoHeightControl";
-export * from "comps/controls/boolControl";
-export * from "comps/controls/codeControl";
-export * from "comps/controls/codeStateControl";
-export * from "comps/controls/codeTextControl";
-export * from "comps/controls/colorControl";
-export * from "comps/controls/compNameControl";
-export * from "comps/controls/controlParams";
-export * from "comps/controls/dropdownControl";
-export * from "comps/controls/dropdownInputSimpleControl";
-export * from "comps/controls/eventHandlerControl";
-export * from "comps/controls/actionSelector/actionSelectorControl";
-export * from "comps/controls/iconControl";
-export * from "comps/controls/shapeControl";
-export * from "comps/controls/keyValueControl";
-export * from "comps/controls/keyValueListControl";
-export * from "comps/controls/labelControl";
-export * from "comps/controls/millisecondControl";
-export * from "comps/controls/optionsControl";
-export * from "comps/controls/paramsControl";
-export * from "comps/controls/querySelectControl";
-export * from "comps/controls/refControl";
-export * from "comps/controls/simpleStringControl";
-export * from "comps/controls/stringSimpleControl";
-export * from "comps/controls/styleControl";
-export * from "comps/controls/styleControlConstants";
-export * from "comps/controls/slotControl";
-export * from "comps/controls/sliderControl";
+export * from "#lowcoder/comps/controls/alignControl";
+export * from "#lowcoder/comps/controls/appSelectControl";
+export * from "#lowcoder/comps/controls/autoHeightControl";
+export * from "#lowcoder/comps/controls/boolControl";
+export * from "#lowcoder/comps/controls/codeControl";
+export * from "#lowcoder/comps/controls/codeStateControl";
+export * from "#lowcoder/comps/controls/codeTextControl";
+export * from "#lowcoder/comps/controls/colorControl";
+export * from "#lowcoder/comps/controls/compNameControl";
+export * from "#lowcoder/comps/controls/controlParams";
+export * from "#lowcoder/comps/controls/dropdownControl";
+export * from "#lowcoder/comps/controls/dropdownInputSimpleControl";
+export * from "#lowcoder/comps/controls/eventHandlerControl";
+export * from "#lowcoder/comps/controls/actionSelector/actionSelectorControl";
+export * from "#lowcoder/comps/controls/iconControl";
+export * from "#lowcoder/comps/controls/shapeControl";
+export * from "#lowcoder/comps/controls/keyValueControl";
+export * from "#lowcoder/comps/controls/keyValueListControl";
+export * from "#lowcoder/comps/controls/labelControl";
+export * from "#lowcoder/comps/controls/millisecondControl";
+export * from "#lowcoder/comps/controls/optionsControl";
+export * from "#lowcoder/comps/controls/paramsControl";
+export * from "#lowcoder/comps/controls/querySelectControl";
+export * from "#lowcoder/comps/controls/refControl";
+export * from "#lowcoder/comps/controls/simpleStringControl";
+export * from "#lowcoder/comps/controls/stringSimpleControl";
+export * from "#lowcoder/comps/controls/styleControl";
+export * from "#lowcoder/comps/controls/styleControlConstants";
+export * from "#lowcoder/comps/controls/slotControl";
+export * from "#lowcoder/comps/controls/sliderControl";
 
 // generators
-export * from "comps/generators/changeDataType";
-export * from "comps/generators/hookToComp";
-export * from "comps/generators/index";
-export * from "comps/generators/list";
-export * from "comps/generators/multi";
-export * from "comps/generators/sameTypeMap";
-export * from "comps/generators/simpleGenerators";
-export * from "comps/generators/uiCompBuilder";
-export * from "comps/generators/withContext";
-export * from "comps/generators/withDispatchHook";
-export * from "comps/generators/withErrorBoundary";
-export * from "comps/generators/withExposing";
-export * from "comps/generators/withIsLoading";
-export * from "comps/generators/withMethodExposing";
-export * from "comps/generators/withType";
-export * from "comps/generators/controlCompBuilder";
+export * from "#lowcoder/comps/generators/changeDataType";
+export * from "#lowcoder/comps/generators/hookToComp";
+export * from "#lowcoder/comps/generators/index";
+export * from "#lowcoder/comps/generators/list";
+export * from "#lowcoder/comps/generators/multi";
+export * from "#lowcoder/comps/generators/sameTypeMap";
+export * from "#lowcoder/comps/generators/simpleGenerators";
+export * from "#lowcoder/comps/generators/uiCompBuilder";
+export * from "#lowcoder/comps/generators/withContext";
+export * from "#lowcoder/comps/generators/withDispatchHook";
+export * from "#lowcoder/comps/generators/withErrorBoundary";
+export * from "#lowcoder/comps/generators/withExposing";
+export * from "#lowcoder/comps/generators/withIsLoading";
+export * from "#lowcoder/comps/generators/withMethodExposing";
+export * from "#lowcoder/comps/generators/withType";
+export * from "#lowcoder/comps/generators/controlCompBuilder";
 
 export * from "appView/bootstrapAt";
 export * from "appView/LowcoderAppView";

@@ -4,16 +4,16 @@ import {
   mergeExtra,
   MultiCompConstructor,
   RecordNodeToValue,
-} from "lowcoder-core";
-import { ExposingInfo, MethodInfo } from "comps/utils/exposingTypes";
-import { fromRecord, fromValue, Node, withFunction } from "lowcoder-core";
+} from "#lowcoder-core/index";
+import { ExposingInfo, MethodInfo } from "#lowcoder/comps/utils/exposingTypes";
+import { fromRecord, fromValue, Node, withFunction } from "#lowcoder-core/index";
 import { lastValueIfEqual, shallowEqual } from "#lowcoder/util/objectUtils";
-import { ExecuteAction, MethodConfig } from "comps/controls/actionSelector/executeCompTypes";
+import { ExecuteAction, MethodConfig } from "#lowcoder/comps/controls/actionSelector/executeCompTypes";
 import { ReactNode } from "react";
-import { isExposingMethodComp } from "comps/generators/withMethodExposing";
-import { CompAction, customAction, isMyCustomAction, ExtraNodeType } from "lowcoder-core";
+import { isExposingMethodComp } from "#lowcoder/comps/generators/withMethodExposing";
+import { CompAction, customAction, isMyCustomAction, ExtraNodeType } from "#lowcoder-core/index";
 import { getPromiseAfterDispatch } from "#lowcoder/util/promiseUtils";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import log from "loglevel";
 
 type CompCtor = MultiCompConstructor;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { RecordConstructorToView } from "lowcoder-core";
-import { styleControl } from "comps/controls/styleControl";
+import { RecordConstructorToView } from "#lowcoder-core/index";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import _ from "lodash";
 import {
   avatarContainerStyle,
@@ -9,19 +9,19 @@ import {
   AvatarLabelStyleType,
   AvatarStyle,
   AvatarStyleType,
-} from "comps/controls/styleControlConstants";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import { withDefault } from "../generators";
 import {
   NameConfig,
   NameConfigHidden,
   withExposingConfigs,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "#lowcoder-design/index";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { NumberControl } from "comps/controls/codeControl";
-import { IconControl } from "comps/controls/iconControl";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { NumberControl } from "#lowcoder/comps/controls/codeControl";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
 import {
   clickEvent,
   eventHandlerControl,
@@ -35,7 +35,7 @@ import { BadgeBasicSection, badgeChildren } from "./badgeComp/badgeConstants";
 import { DropdownOptionControl } from "../controls/optionsControl";
 import { ReactElement, useContext, useEffect } from "react";
 import { CompNameContext, EditorContext } from "../editorState";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 
 const AvatarWrapper = styled(Avatar) <AvatarProps & { $cursorPointer?: boolean, $style: AvatarStyleType }>`

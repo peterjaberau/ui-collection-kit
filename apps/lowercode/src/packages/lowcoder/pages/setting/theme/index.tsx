@@ -3,9 +3,9 @@ import ThemePage from "./themePage";
 import ThemeDetailPage from "./detail";
 import { THEME_DETAIL_URL, THEME_SETTING } from "#lowcoder/constants/routesURL";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "@lowcoder-ee/redux/selectors/usersSelectors";
+import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { useEffect } from "react";
-import { fetchCommonSettings } from "@lowcoder-ee/redux/reduxActions/commonSettingsActions";
+import { fetchCommonSettings } from "#lowcoder/redux/reduxActions/commonSettingsActions";
 
 export const ThemeHome = () => {
   const dispatch = useDispatch();

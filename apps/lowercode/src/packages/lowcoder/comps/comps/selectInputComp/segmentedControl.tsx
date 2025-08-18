@@ -1,11 +1,11 @@
 import { default as AntdSegmented } from "antd/es/segmented";
-import { BoolCodeControl } from "comps/controls/codeControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { ChangeEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { LabelControl } from "comps/controls/labelControl";
-import { SelectOptionControl } from "comps/controls/optionsControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, LabelStyle, SegmentStyle, SegmentStyleType } from "comps/controls/styleControlConstants";
+import { BoolCodeControl } from "#lowcoder/comps/controls/codeControl";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { ChangeEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { LabelControl } from "#lowcoder/comps/controls/labelControl";
+import { SelectOptionControl } from "#lowcoder/comps/controls/optionsControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, LabelStyle, SegmentStyle, SegmentStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import styled, { css } from "styled-components";
 import { UICompBuilder } from "../../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
@@ -18,14 +18,14 @@ import {
   useSelectInputValidate,
 } from "./selectInputConstants";
 import { Section, sectionNames } from "lowcoder-design";
-import { hiddenPropertyView, disabledPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { hasIcon } from "comps/utils";
-import { RefControl } from "comps/controls/refControl";
+import { hiddenPropertyView, disabledPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { hasIcon } from "#lowcoder/comps/utils";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 
 import { useContext, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
-import { migrateOldData, withDefault } from "comps/generators/simpleGenerators";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { migrateOldData, withDefault } from "#lowcoder/comps/generators/simpleGenerators";
 import { fixOldInputCompData } from "../textInputComp/textInputConstants";
 
 const getStyle = (style: SegmentStyleType) => {

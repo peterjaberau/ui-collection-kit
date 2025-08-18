@@ -11,7 +11,7 @@ import { getUser } from "../../redux/selectors/usersSelectors";
 import { normalAppListSelector } from "../../redux/selectors/applicationSelector";
 import { useLocation } from "react-router-dom";
 import history from "../../util/history";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 
 const defaultOnSelectedFn = (routePath: string, currentPath: string) => routePath === currentPath;
 

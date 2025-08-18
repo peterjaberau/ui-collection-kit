@@ -1,5 +1,5 @@
-import { TimeLineComp } from "comps/comps/timelineComp/timelineComp";
-import { trans } from "i18n";
+import { TimeLineComp } from "#lowcoder/comps/comps/timelineComp/timelineComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

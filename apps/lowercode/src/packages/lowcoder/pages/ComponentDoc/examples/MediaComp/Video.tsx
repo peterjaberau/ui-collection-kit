@@ -1,4 +1,4 @@
-import { VideoComp } from "comps/comps/mediaComp/videoComp";
+import { VideoComp } from "#lowcoder/comps/comps/mediaComp/videoComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -13,7 +13,7 @@ export default function VideoExample() {
             title="Default View"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
             }}
             compFactory={VideoComp}
@@ -22,7 +22,7 @@ export default function VideoExample() {
             title="Hiding the Video component"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 hidden: true,
             }}
@@ -38,7 +38,7 @@ export default function VideoExample() {
             title="Poster URL "
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 poster: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
             }}
@@ -48,7 +48,7 @@ export default function VideoExample() {
             title="Volume Control - 0"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 volume: "0",
             }}
@@ -58,7 +58,7 @@ export default function VideoExample() {
             title="Volume Control - 1"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 volume: "1",
             }}
@@ -68,7 +68,7 @@ export default function VideoExample() {
             title="Playback Rate - 1"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 playbackRate: "0.5",
             }}
@@ -78,7 +78,7 @@ export default function VideoExample() {
             title="Playback Rate - 2X"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 playbackRate: "2",
             }}
@@ -88,7 +88,7 @@ export default function VideoExample() {
             title="Auto Play - True"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 autoPlay: true,
             }}
@@ -98,7 +98,7 @@ export default function VideoExample() {
             title="Auto Play - False"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 autoPlay: false,
             }}
@@ -108,7 +108,7 @@ export default function VideoExample() {
             title="Video on Loop - True"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 loop: true,
             }}
@@ -118,7 +118,7 @@ export default function VideoExample() {
             title="Hide Controls - True"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 controls: true,
             }}
@@ -134,7 +134,7 @@ export default function VideoExample() {
             title="Margin & Padding"
             width={500}
             height={400}
-            config={{ 
+            config={{
                 src: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
                 style: {
                   margin: "5px",

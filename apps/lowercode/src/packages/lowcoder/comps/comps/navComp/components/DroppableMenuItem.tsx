@@ -1,12 +1,12 @@
 import { useDraggable, useDroppable } from "@dnd-kit/core";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Fragment, useEffect } from "react";
 import styled from "styled-components";
 import DroppablePlaceholder from "./DroppablePlaceHolder";
 import MenuItem, { ICommonItemProps } from "./MenuItem";
 import { IDragData, IDropData } from "./types";
-import { LayoutMenuItemComp } from "comps/comps/layout/layoutMenuItemComp";
-import { genRandomKey } from "comps/utils/idGenerator";
+import { LayoutMenuItemComp } from "#lowcoder/comps/comps/layout/layoutMenuItemComp";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
 
 const DraggableMenuItemWrapper = styled.div`
   position: relative;

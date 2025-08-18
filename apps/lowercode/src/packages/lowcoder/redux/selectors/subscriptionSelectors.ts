@@ -1,4 +1,4 @@
-import { Subscription } from "@lowcoder-ee/constants/subscriptionConstants";
+import { Subscription } from "#lowcoder/constants/subscriptionConstants";
 import { AppState } from "#lowcoder/redux/reducers";
 
 export const getSubscriptions = (state: AppState) : Subscription[] => {

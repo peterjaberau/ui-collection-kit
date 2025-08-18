@@ -1,14 +1,14 @@
 import { ViewDocIcon } from "assets/icons";
-import { ArrayControl, BoolCodeControl, NumberControl, RadiusControl, StringControl } from "comps/controls/codeControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { dropdownControl, LeftRightControl } from "comps/controls/dropdownControl";
-import { IconControl } from "comps/controls/iconControl";
-import { MultiCompBuilder, valueComp, withContext, withDefault } from "comps/generators";
-import { list } from "comps/generators/list";
-import { ToViewReturn } from "comps/generators/multi";
-import { genRandomKey } from "comps/utils/idGenerator";
-import { disabledPropertyView, hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { ArrayControl, BoolCodeControl, NumberControl, RadiusControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { dropdownControl, LeftRightControl } from "#lowcoder/comps/controls/dropdownControl";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { MultiCompBuilder, valueComp, withContext, withDefault } from "#lowcoder/comps/generators";
+import { list } from "#lowcoder/comps/generators/list";
+import { ToViewReturn } from "#lowcoder/comps/generators/multi";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
+import { disabledPropertyView, hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import _, { mapValues } from "lodash";
 import {
   Comp,
@@ -20,7 +20,7 @@ import {
   fromRecord,
   MultiBaseComp,
   withFunction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import {
   AutoArea,
   CompressIcon,
@@ -36,7 +36,7 @@ import { lastValueIfEqual } from "#lowcoder/util/objectUtils";
 import { getNextEntityName } from "#lowcoder/util/stringUtils";
 import { JSONObject, JSONValue } from "#lowcoder/util/jsonTypes";
 import { ButtonEventHandlerControl } from "./eventHandlerControl";
-import { ControlItemCompBuilder } from "comps/generators/controlCompBuilder";
+import { ControlItemCompBuilder } from "#lowcoder/comps/generators/controlCompBuilder";
 import { ColorControl } from "./colorControl";
 import { reduceInContext } from "../utils/reduceContext";
 import { BorderOuterOutlined } from "@ant-design/icons";
@@ -556,7 +556,7 @@ const TabsOption = new MultiCompBuilder(
     </>
   ))
   .build();
-  
+
 
 export const TabsOptionControl = manualOptionsControl(TabsOption, {
   initOptions: [
@@ -664,17 +664,17 @@ const ColumnOption = new MultiCompBuilder(
     })}
     {children.radius.propertyView({
       label: trans('style.borderRadius'),
-      preInputNode: <StyledIcon as={IconRadius} title="" />,	
+      preInputNode: <StyledIcon as={IconRadius} title="" />,
       placeholder: '3px',
     })}
     {children.margin.propertyView({
       label: trans('style.margin'),
-      preInputNode: <StyledIcon as={ExpandIcon} title="" />,	
+      preInputNode: <StyledIcon as={ExpandIcon} title="" />,
       placeholder: '3px',
     })}
     {children.padding.propertyView({
       label: trans('style.padding'),
-      preInputNode: <StyledIcon as={CompressIcon} title="" />,	
+      preInputNode: <StyledIcon as={CompressIcon} title="" />,
       placeholder: '3px',
     })}
     {children.hidden.propertyView({
@@ -816,11 +816,11 @@ TagsCompOptions = class extends TagsCompOptions implements OptionCompProperty {
       <>
         {this.children.label.propertyView({ label: trans("coloredTagOptionControl.tag") })}
         {this.children.icon.propertyView({ label: trans("coloredTagOptionControl.icon") })}
-        {this.children.colorType.propertyView({ 
+        {this.children.colorType.propertyView({
           label: trans("style.styleOptions")
         })}
-        {colorType === "preset" && this.children.presetColor.propertyView({ 
-          label: trans("style.presetColor") 
+        {colorType === "preset" && this.children.presetColor.propertyView({
+          label: trans("style.presetColor")
         })}
         {colorType === "custom" && (
           <>
@@ -841,22 +841,22 @@ TagsCompOptions = class extends TagsCompOptions implements OptionCompProperty {
         })}
         {this.children.radius.propertyView({
           label: trans('style.borderRadius'),
-          preInputNode: <StyledIcon as={IconRadius} title="" />,	
+          preInputNode: <StyledIcon as={IconRadius} title="" />,
           placeholder: '3px',
         })}
         {this.children.margin.propertyView({
           label: trans('style.margin'),
-          preInputNode: <StyledIcon as={ExpandIcon} title="" />,	
+          preInputNode: <StyledIcon as={ExpandIcon} title="" />,
           placeholder: '3px',
         })}
         {this.children.padding.propertyView({
           label: trans('style.padding'),
-          preInputNode: <StyledIcon as={CompressIcon} title="" />,	
+          preInputNode: <StyledIcon as={CompressIcon} title="" />,
           placeholder: '3px',
         })}
         {this.children.width.propertyView({
           label: trans('splitLayout.width'),
-          preInputNode: <StyledIcon as={WidthIcon} title="" />,	
+          preInputNode: <StyledIcon as={WidthIcon} title="" />,
           placeholder: '100px',
         })}
       </>
@@ -866,7 +866,7 @@ TagsCompOptions = class extends TagsCompOptions implements OptionCompProperty {
 
 export const TagsCompOptionsControl = optionsControl(TagsCompOptions, {
   initOptions: [
-    { label: "Option 1", colorType: "default"}, 
+    { label: "Option 1", colorType: "default"},
     { label: "Option 2", colorType: "default"}
   ],
   uniqField: "label",
@@ -899,12 +899,12 @@ ColoredTagOption = class extends ColoredTagOption implements OptionCompProperty 
       <>
         {this.children.label.propertyView({ label: trans("coloredTagOptionControl.tag") })}
         {this.children.icon.propertyView({ label: trans("coloredTagOptionControl.icon") })}
-        {this.children.colorType.propertyView({ 
-          label: trans("style.colorType"), 
-          radioButton: true 
+        {this.children.colorType.propertyView({
+          label: trans("style.colorType"),
+          radioButton: true
         })}
-        {colorType === "preset" && this.children.presetColor.propertyView({ 
-          label: trans("style.presetColor") 
+        {colorType === "preset" && this.children.presetColor.propertyView({
+          label: trans("style.presetColor")
         })}
         {colorType === "custom" && (
           <>
@@ -917,17 +917,17 @@ ColoredTagOption = class extends ColoredTagOption implements OptionCompProperty 
         })}
         {this.children.radius.propertyView({
           label: trans('style.borderRadius'),
-          preInputNode: <StyledIcon as={IconRadius} title="" />,	
+          preInputNode: <StyledIcon as={IconRadius} title="" />,
           placeholder: '3px',
         })}
         {this.children.margin.propertyView({
           label: trans('style.margin'),
-          preInputNode: <StyledIcon as={ExpandIcon} title="" />,	
+          preInputNode: <StyledIcon as={ExpandIcon} title="" />,
           placeholder: '3px',
         })}
         {this.children.padding.propertyView({
           label: trans('style.padding'),
-          preInputNode: <StyledIcon as={CompressIcon} title="" />,	
+          preInputNode: <StyledIcon as={CompressIcon} title="" />,
           placeholder: '3px',
         })}
         {this.children.onEvent.propertyView()}
@@ -938,7 +938,7 @@ ColoredTagOption = class extends ColoredTagOption implements OptionCompProperty 
 
 export const ColoredTagOptionControl = optionsControl(ColoredTagOption, {
   initOptions: [
-    { label: "Tag1", icon: "/icon:solid/tag", colorType: "preset", presetColor: "blue" }, 
+    { label: "Tag1", icon: "/icon:solid/tag", colorType: "preset", presetColor: "blue" },
     { label: "Tag2", icon: "/icon:solid/tag", colorType: "preset", presetColor: "green" }
   ],
   uniqField: "label",

@@ -1,9 +1,9 @@
 import { ThemeDetail } from "#lowcoder/api/commonSettingApi";
 import React, { CSSProperties, useContext, useEffect, useState } from "react";
-import { RootComp } from "comps/comps/rootComp";
-import { Comp } from "lowcoder-core";
-import { evalAndReduceWithExposing } from "comps/utils";
-import { ThemeContext } from "comps/utils/themeContext";
+import { RootComp } from "#lowcoder/comps/comps/rootComp";
+import { Comp } from "#lowcoder-core/index";
+import { evalAndReduceWithExposing } from "#lowcoder/comps/utils";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
 import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
 import styled from "styled-components";
 import { JSONObject } from "../util/jsonTypes";

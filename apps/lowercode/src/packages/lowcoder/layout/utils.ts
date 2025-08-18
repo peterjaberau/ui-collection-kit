@@ -1,4 +1,4 @@
-import { UICompType } from "comps/uiCompRegistry";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import _ from "lodash";
 import React, { ReactElement, SyntheticEvent, useContext } from "react";
 import { DraggableEvent } from "react-draggable";

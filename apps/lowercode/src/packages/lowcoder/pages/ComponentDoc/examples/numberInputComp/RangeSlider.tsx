@@ -1,5 +1,5 @@
-import { RangeSliderComp } from "comps/comps/numberInputComp/rangeSliderComp";
-import { trans } from "i18n";
+import { RangeSliderComp } from "#lowcoder/comps/comps/numberInputComp/rangeSliderComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -121,7 +121,7 @@ export default function RangeSliderExample() {
         />
       </ExampleGroup>
 
-      <ExampleGroup 
+      <ExampleGroup
         title="Layout Options"
         description="The Following Examples Show the Layout Options of the Slider Component."
       >

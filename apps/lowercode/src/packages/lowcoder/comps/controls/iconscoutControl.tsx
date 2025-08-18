@@ -1,7 +1,7 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import {
   SimpleComp,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import {
   BlockGrayLabel,
   ControlPropertyViewWrapper,
@@ -15,23 +15,23 @@ import {
 import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 import Popover from "antd/es/popover";
-import { CloseIcon, SearchIcon } from "icons";
+import { CloseIcon, SearchIcon } from "#lowcoder-design/icons";
 import Draggable from "react-draggable";
-import IconScoutApi from "@lowcoder-ee/api/iconscoutApi";
-import { searchAssets, getAssetLinks, SearchParams } from "@lowcoder-ee/api/iconFlowApi";
+import IconScoutApi from "#lowcoder/api/iconscoutApi";
+import { searchAssets, getAssetLinks, SearchParams } from "#lowcoder/api/iconFlowApi";
 import List, { ListRowProps } from "react-virtualized/dist/es/List";
 import { debounce } from "lodash";
 import Spin from "antd/es/spin";
 import { ControlParams } from "./controlParams";
-import { getBase64 } from "@lowcoder-ee/util/fileUtils";
+import { getBase64 } from "#lowcoder/util/fileUtils";
 import Flex from "antd/es/flex";
 import Typography from "antd/es/typography";
 import LoadingOutlined from "@ant-design/icons/LoadingOutlined";
 import Badge from "antd/es/badge";
 import { CrownFilled } from "@ant-design/icons";
-import { SUBSCRIPTION_SETTING } from "@lowcoder-ee/constants/routesURL";
-import { useSimpleSubscriptionContext } from "@lowcoder-ee/util/context/SimpleSubscriptionContext";
-import { SubscriptionProductsEnum } from "@lowcoder-ee/constants/subscriptionConstants";
+import { SUBSCRIPTION_SETTING } from "#lowcoder/constants/routesURL";
+import { useSimpleSubscriptionContext } from "#lowcoder/util/context/SimpleSubscriptionContext";
+import { SubscriptionProductsEnum } from "#lowcoder/constants/subscriptionConstants";
 
 const ButtonWrapper = styled.div`
   width: 100%;
@@ -235,13 +235,13 @@ export const IconPicker = (props: {
   const abortControllerRef = useRef<AbortController | null>(null);
   const { subscriptions } = useSimpleSubscriptionContext();
 
-  const mediaPackSubscription = useMemo(() => 
+  const mediaPackSubscription = useMemo(() =>
     subscriptions.find(
       sub => sub.product === SubscriptionProductsEnum.MEDIAPACKAGE && sub.status === 'active'
     ),
     [subscriptions]
   );
-  
+
   const onChangeRef = useRef(props.onChange);
   onChangeRef.current = props.onChange;
 
@@ -258,7 +258,7 @@ export const IconPicker = (props: {
     (key: string, value: string, url: string) => {
       onChangeRef.current(key, value, url);
       setVisible(false);
-    }, 
+    },
     []
   );
 
@@ -286,10 +286,10 @@ export const IconPicker = (props: {
           page: pageNum,
         })
       ]);
-  
+
       const combined = [...freeResult.data, ...premiumResult.data];
       const isLastPage = combined.length < IconScoutSearchParams.per_page * 2;
-    
+
       setSearchResults(prev =>
         pageNum === 1 ? combined : [...prev, ...combined]
       );
@@ -341,7 +341,7 @@ export const IconPicker = (props: {
   const handleChange = useCallback((e: { target: { value: any; }; }) => {
     const query = e.target.value;
     setSearchText(query); // Update search text immediately
-  
+
     if (query.length > 2) {
       debouncedFetchResults(query); // Trigger search only for >2 characters
     } else {
@@ -360,7 +360,7 @@ export const IconPicker = (props: {
   const rowRenderer = useCallback(
     ({ index, key, style }: ListRowProps) => {
       const icons = searchResults.slice(index * columnNum, (index + 1) * columnNum);
-  
+
       return (
         <IconRow key={key} style={style}>
           {icons.map((icon) => (
@@ -404,7 +404,7 @@ export const IconPicker = (props: {
                     });
                     return;
                   }
-  
+
                   fetchDownloadUrl(
                     icon.uuid,
                     props.assetType === AssetType.ICON ? icon.urls.png_64 : icon.urls.thumb,

@@ -20,19 +20,19 @@ import {
   MembersIcon,
 } from "lowcoder-design";
 import styled from "styled-components";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Table } from "#lowcoder/components/Table";
 import history from "#lowcoder/util/history";
 import { Level1SettingPageContentWithList, Level1SettingPageTitleWithBtn } from "../styled";
 import { currentOrgAdmin, isGroupAdmin } from "../../../util/permissionUtils";
 import { timestampToHumanReadable } from "../../../util/dateTimeUtils";
-import { usePermissionMenuItems } from "@lowcoder-ee/pages/setting/permission/permissionMenuItems";
+import { usePermissionMenuItems } from "#lowcoder/pages/setting/permission/permissionMenuItems";
 import { OrgGroup } from "#lowcoder/constants/orgConstants";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import InviteDialog from "#lowcoder/pages/common/inviteDialog";
 import { Flex } from "antd";
-import {fetchOrgGroups} from "@lowcoder-ee/util/pagination/axios";
-import PaginationComp from "@lowcoder-ee/util/pagination/Pagination";
+import {fetchOrgGroups} from "#lowcoder/util/pagination/axios";
+import PaginationComp from "#lowcoder/util/pagination/Pagination";
 
 const NEW_GROUP_PREFIX = trans("memberSettings.newGroupPrefix");
 

@@ -4,8 +4,8 @@ import examples from "../examples";
 import { Section, Title1 } from "./Styled";
 import styled from "styled-components";
 // import Extra from "./Extra";
-import { UICompType, UICompManifest } from "comps/uiCompRegistry";
-import { trans } from "i18n";
+import { UICompType, UICompManifest } from "#lowcoder/comps/uiCompRegistry";
+import { trans } from "#lowcoder/i18n";
 
 interface IProps {
   name: UICompType;

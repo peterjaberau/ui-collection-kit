@@ -1,4 +1,4 @@
-import { ShapeComp } from "comps/comps/shapeComp/shapeComp";
+import { ShapeComp } from "#lowcoder/comps/comps/shapeComp/shapeComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -11,13 +11,13 @@ export default function ShapeExample() {
         >
           <Example
             title="A Simple Shape component"
-            config={{ 
+            config={{
             }}
             compFactory={ShapeComp}
           />
           <Example
             title="Hiding the Shape Component"
-            config={{ 
+            config={{
               hidden: true,
               icon:"2_misc",
             }}
@@ -25,7 +25,7 @@ export default function ShapeExample() {
           />
            <Example
             title="Disabling the Shape Component"
-            config={{ 
+            config={{
               disabled: true,
               icon:"2_polygon",
             }}

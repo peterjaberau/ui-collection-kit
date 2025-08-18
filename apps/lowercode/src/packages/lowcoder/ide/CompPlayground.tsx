@@ -1,15 +1,15 @@
 import React, { useState, useMemo, ChangeEvent } from "react";
 import ReactJson from "react-json-view";
-import { UICompLayoutInfo } from "comps/uiCompRegistry";
-import { Comp, customAction } from "lowcoder-core";
+import { UICompLayoutInfo } from "#lowcoder/comps/uiCompRegistry";
+import { Comp, customAction } from "#lowcoder-core/index";
 import { default as Button } from "antd/es/button";
 import { default as Space } from "antd/es/space";
 import { default as Input } from "antd/es/input";
 import { default as Form } from "antd/es/form";
 import styled from "styled-components";
-import { useCompInstance, GetContainerParams } from "comps/utils/useCompInstance";
+import { useCompInstance, GetContainerParams } from "#lowcoder/comps/utils/useCompInstance";
 import { CanvasContainerID } from "#lowcoder/constants/domLocators";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const Container = styled.div`
   display: flex;

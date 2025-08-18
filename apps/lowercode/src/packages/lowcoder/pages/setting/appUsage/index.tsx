@@ -1,4 +1,4 @@
-import { APP_USAGE_DASHBOARD, APP_USAGE_DETAIL } from "@lowcoder-ee/constants/routesURL";
+import { APP_USAGE_DASHBOARD, APP_USAGE_DETAIL } from "#lowcoder/constants/routesURL";
 import { Route, Switch } from "react-router-dom";
 import { AppUsageDashboard } from "./dashboard";
 import { AppUsageDetail } from "./detail";
@@ -7,11 +7,11 @@ import { selectIsLicenseActive } from "#lowcoder/redux/selectors/enterpriseSelec
 import styled from "styled-components";
 import { Card, Row, Col, Typography, Divider } from "antd";
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../styled";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 import { Image } from 'antd';
-import { getUser } from "@lowcoder-ee/redux/selectors/usersSelectors";
-import { getDeploymentId } from "@lowcoder-ee/redux/selectors/configSelectors";
+import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
+import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
 import { getOrgApiUsage, getOrgLastMonthApiUsage } from "#lowcoder/redux/selectors/orgSelectors";
 import { fetchAPIUsageAction, fetchLastMonthAPIUsageAction } from "#lowcoder/redux/reduxActions/orgActions";
 import { HelpText } from "#lowcoder/components/HelpText";

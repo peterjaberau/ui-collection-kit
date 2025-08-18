@@ -3,14 +3,14 @@ import { default as Input } from "antd/es/input";
 import {
   ColumnTypeCompBuilder,
   ColumnTypeViewFn,
-} from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { StringControl, NumberControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
-import { withDefault } from "comps/generators";
+} from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { StringControl, NumberControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
+import { withDefault } from "#lowcoder/comps/generators";
 import { TacoImage } from "#lowcoder-design/index";
 import styled from "styled-components";
-import { DEFAULT_IMG_URL } from "@lowcoder-ee/util/stringUtils";
-import { clickEvent, eventHandlerControl } from "comps/controls/eventHandlerControl";
+import { DEFAULT_IMG_URL } from "#lowcoder/util/stringUtils";
+import { clickEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
 
 export const ColumnValueTooltip = trans("table.columnValueTooltip");
 

@@ -12,7 +12,7 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { MenuOutlined } from "@ant-design/icons";
 import { Drawer, Button } from "antd";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 
 type LayoutProps = {
   sections: SideBarSectionProps[];

@@ -7,9 +7,9 @@ import {ApplicationCategoriesEnum, ApplicationMeta, FolderMeta} from "../../cons
 import { buildFolderUrl } from "../../constants/routesURL";
 import { folderElementsSelector, foldersSelector } from "../../redux/selectors/folderSelector";
 import { Helmet } from "react-helmet";
-import { trans } from "i18n";
-import {ApplicationPaginationType} from "@lowcoder-ee/util/pagination/type";
-import {fetchFolderElements} from "@lowcoder-ee/util/pagination/axios";
+import { trans } from "#lowcoder/i18n";
+import {ApplicationPaginationType} from "#lowcoder/util/pagination/type";
+import {fetchFolderElements} from "#lowcoder/util/pagination/axios";
 import { fetchFolderElements as fetchFolderElementsRedux } from "../../redux/reduxActions/folderActions";
 import { getUser } from "../../redux/selectors/usersSelectors";
 

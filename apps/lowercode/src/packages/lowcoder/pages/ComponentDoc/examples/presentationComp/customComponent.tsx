@@ -1,5 +1,5 @@
-import { CustomComp } from "comps/comps/customComp/customComp";
-import { trans } from "i18n";
+import { CustomComp } from "#lowcoder/comps/comps/customComp/customComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

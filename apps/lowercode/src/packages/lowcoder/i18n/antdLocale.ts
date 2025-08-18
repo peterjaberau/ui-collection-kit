@@ -28,7 +28,7 @@ import sl_SI from "antd/es/locale/sl_SI";
 import mk_MK from "antd/es/locale/mk_MK";
 import pt_PT from "antd/es/locale/pt_PT";
 
-import { getValueByLocale } from "lowcoder-core";
+import { getValueByLocale } from "#lowcoder-core/index";
 
 export function getAntdLocale(language?: string) {
 

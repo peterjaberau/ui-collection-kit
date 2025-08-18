@@ -1,5 +1,5 @@
-import { CodeType } from "lowcoder-core";
-import { getDynamicStringSegments, isDynamicSegment } from "lowcoder-core";
+import { CodeType } from "#lowcoder-core/index";
+import { getDynamicStringSegments, isDynamicSegment } from "#lowcoder-core/index";
 import { useEffect } from "react";
 import { Decoration, DecorationSet, EditorView, StateEffect, StateField } from "./codeMirror";
 

@@ -12,11 +12,11 @@ import {
   NameConfigHidden,
   withExposingConfigs,
 } from "../generators/withExposing";
-import { RecordConstructorToView } from "lowcoder-core";
+import { RecordConstructorToView } from "#lowcoder-core/index";
 import { ReactElement, useEffect, useRef, useState } from "react";
 import _ from "lodash";
 import { useResizeDetector } from "react-resize-detector";
-import { styleControl } from "comps/controls/styleControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import {
   AnimationStyle,
   AnimationStyleType,
@@ -24,18 +24,18 @@ import {
   ImageStyleType,
   heightCalculator,
   widthCalculator,
-} from "comps/controls/styleControlConstants";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
-import { BoolControl } from "comps/controls/boolControl";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import { default as AntImage } from "antd/es/image";
 import { DEFAULT_IMG_URL } from "#lowcoder/util/stringUtils";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { StringControl } from "../controls/codeControl";
-import { PositionControl } from "comps/controls/dropdownControl";
+import { PositionControl } from "#lowcoder/comps/controls/dropdownControl";
 import { dropdownControl } from "../controls/dropdownControl";
 import { AssetType, IconscoutControl } from "../controls/iconscoutControl";
 import { useCompClickEventHandler } from "../utils/useCompClickEventHandler";

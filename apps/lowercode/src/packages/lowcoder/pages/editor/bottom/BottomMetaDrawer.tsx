@@ -11,8 +11,8 @@ import {
   getDataSourceTypesMap,
 } from "#lowcoder/redux/selectors/datasourceSelectors";
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
-import { trans } from "i18n";
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
+import { trans } from "#lowcoder/i18n";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
 
 const TreeTitle = styled.div`
   height: 23px;

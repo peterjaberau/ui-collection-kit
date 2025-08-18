@@ -1,4 +1,4 @@
-import { ResponsiveLayoutComp } from "comps/comps/responsiveLayout/responsiveLayout";
+import { ResponsiveLayoutComp } from "#lowcoder/comps/comps/responsiveLayout/responsiveLayout";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

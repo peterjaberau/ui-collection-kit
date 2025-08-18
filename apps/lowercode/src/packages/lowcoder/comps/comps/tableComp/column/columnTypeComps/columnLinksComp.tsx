@@ -1,18 +1,18 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { default as Menu } from "antd/es/menu";
-import { ColumnTypeCompBuilder } from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { manualOptionsControl } from "comps/controls/optionsControl";
-import { MultiCompBuilder } from "comps/generators";
-import { disabledPropertyView, hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { ColumnTypeCompBuilder } from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { manualOptionsControl } from "#lowcoder/comps/controls/optionsControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
+import { disabledPropertyView, hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import styled from "styled-components";
-import { ColumnLink } from "comps/comps/tableComp/column/columnTypeComps/columnLinkComp";
+import { ColumnLink } from "#lowcoder/comps/comps/tableComp/column/columnTypeComps/columnLinkComp";
 import { LightActiveTextColor, PrimaryColor } from "#lowcoder/constants/style";
-import { clickEvent, eventHandlerControl, doubleClickEvent } from "comps/controls/eventHandlerControl";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
-import { migrateOldData } from "@lowcoder-ee/comps/generators/simpleGenerators";
-import { fixOldActionData } from "comps/comps/tableComp/column/simpleColumnTypeComps";
+import { clickEvent, eventHandlerControl, doubleClickEvent } from "#lowcoder/comps/controls/eventHandlerControl";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { fixOldActionData } from "#lowcoder/comps/comps/tableComp/column/simpleColumnTypeComps";
 
 const MenuLinkWrapper = styled.div`
   > a {

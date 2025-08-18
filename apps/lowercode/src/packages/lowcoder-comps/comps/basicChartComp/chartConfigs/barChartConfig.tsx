@@ -13,7 +13,7 @@ import {
 } from "lowcoder-sdk";
 import { changeChildAction, CompAction } from "#lowcoder-core/index";
 import { BarSeriesOption } from "echarts";
-import { i18nObjs, trans } from "i18n/comps";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 
 const BarTypeOptions = [
   {

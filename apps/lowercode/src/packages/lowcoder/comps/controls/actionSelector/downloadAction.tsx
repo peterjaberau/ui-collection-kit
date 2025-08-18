@@ -1,8 +1,8 @@
-import { codeControl, StringControl } from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { MultiCompBuilder } from "comps/generators/multi";
+import { codeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import { BranchDiv } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { saveDataAsFile } from "#lowcoder/util/fileUtils";
 
 export const DownloadAction = (function () {

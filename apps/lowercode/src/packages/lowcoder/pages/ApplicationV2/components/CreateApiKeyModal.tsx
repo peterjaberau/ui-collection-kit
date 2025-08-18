@@ -6,7 +6,7 @@ import {
   CustomModal,
   UnderlineCss,
 } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { default as Form } from "antd/es/form";
 import { default as Input } from "antd/es/input";
 import { validateResponse } from "#lowcoder/api/apiUtils";

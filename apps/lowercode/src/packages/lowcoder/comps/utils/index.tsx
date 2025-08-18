@@ -1,8 +1,8 @@
-import { updateNodesV2Action } from "lowcoder-core";
-import { Node } from "lowcoder-core";
-import { EvalMethods } from "lowcoder-core";
+import { updateNodesV2Action } from "#lowcoder-core/index";
+import { Node } from "#lowcoder-core/index";
+import { EvalMethods } from "#lowcoder-core/index";
 import _ from "lodash";
-import { Comp } from "lowcoder-core";
+import { Comp } from "#lowcoder-core/index";
 import { exposingInfoToNodes, exposingMethods } from "./exposingTypes";
 import { ReactNode, ReactElement } from "react";
 export * from "./nameGenerator";

@@ -1,8 +1,8 @@
 // components/DeployItemModal.tsx
 import React, { useState, useEffect } from 'react';
 import { Modal, Form, Select, Checkbox, Button, Spin, Input, Tag, Space, Alert } from 'antd';
-import { messageInstance } from 'lowcoder-design/src/components/GlobalInstances';
-import { trans } from "i18n";
+import { messageInstance } from '#lowcoder-design/components/GlobalInstances';
+import { trans } from "#lowcoder/i18n";
 import { useSelector } from 'react-redux';
 import { selectLicensedEnvironments, selectEnvironmentsLoading } from 'redux/selectors/enterpriseSelectors';
 import { Environment } from '../types/environment.types';
@@ -33,19 +33,19 @@ function DeployItemModal({
   const isLoading = useSelector(selectEnvironmentsLoading);
   const [deploying, setDeploying] = useState(false);
   const [credentialConfirmationStep, setCredentialConfirmationStep] = useState(0); // 0: not started, 1: first confirmation, 2: confirmed
-  
+
   useEffect(() => {
     if (visible) {
       form.resetFields();
       setCredentialConfirmationStep(0);
     }
   }, [visible, form]);
-  
+
   // Filter out source environment from target list
   const targetEnvironments = licensedEnvironments.filter(
     (env: Environment) => env.environmentId !== sourceEnvironment.environmentId
   );
-  
+
   // Handle credential checkbox change with double confirmation
   const handleCredentialCheckboxChange = (checked: boolean, fieldName: string) => {
     if (!checked) {
@@ -82,11 +82,11 @@ function DeployItemModal({
 
   const handleDeploy = async () => {
       if (!config.deploy || !item) return;
-    
+
     try {
       const values = await form.validateFields();
       const targetEnv = licensedEnvironments.find(env => env.environmentId === values.targetEnvId);
-      
+
       if (!targetEnv) {
         messageInstance.error(trans("environments.deployModal_targetEnvironmentNotFound"));
         return;
@@ -97,15 +97,15 @@ function DeployItemModal({
         messageInstance.error(trans("environments.deployModal_confirmCredentialOverwrite"));
         return;
       }
-      
+
       setDeploying(true);
-      
+
       // Prepare parameters based on item type
       const params = config.deploy.prepareParams(item, values, sourceEnvironment, targetEnv);
-      
+
       // Execute deployment
       await config.deploy.execute(params);
-      
+
       messageInstance.success(trans("environments.deployModal_deploySuccess", { name: item.name }));
       if (onSuccess) onSuccess();
       onClose();
@@ -116,12 +116,12 @@ function DeployItemModal({
       setDeploying(false);
     }
   };
-  
+
   return (
     <Modal
-      title={trans("environments.deployModal_deployTitle", { 
-        singularLabel: config.deploy.singularLabel, 
-        name: item?.name || '' 
+      title={trans("environments.deployModal_deployTitle", {
+        singularLabel: config.deploy.singularLabel,
+        name: item?.name || ''
       })}
       open={visible}
       onCancel={onClose}
@@ -169,7 +169,7 @@ function DeployItemModal({
               ))}
             </Select>
           </Form.Item>
-          
+
           {/* Render dynamic fields based on config */}
           {config.deploy?.fields.map(field => {
             switch (field.type) {
@@ -195,8 +195,8 @@ function DeployItemModal({
                     >
                       {field.label}
                       {isCredentialField && credentialConfirmationStep === 2 && (
-                        <Tag 
-                          color="red" 
+                        <Tag
+                          color="red"
                           style={{ marginLeft: 8 }}
                           icon={<ExclamationCircleOutlined />}
                         >
@@ -240,7 +240,7 @@ function DeployItemModal({
                 return null;
             }
           })}
-           
+
           <Form.Item>
             <Button type="default" onClick={onClose} style={{ marginRight: 8 }}>
               {trans("environments.deployModal_cancel")}

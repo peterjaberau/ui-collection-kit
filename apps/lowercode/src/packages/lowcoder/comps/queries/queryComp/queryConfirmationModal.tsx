@@ -4,7 +4,7 @@ import { StringControl } from "../../controls/codeControl";
 import { CustomModal } from "lowcoder-design";
 import { isEmpty } from "lodash";
 import { QueryResult } from "../queryComp";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const QueryConfirmationModal = new MultiCompBuilder(
   {

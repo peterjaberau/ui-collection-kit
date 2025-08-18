@@ -3,13 +3,13 @@ import { default as Input } from "antd/es/input";
 import {
   ColumnTypeCompBuilder,
   ColumnTypeViewFn,
-} from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { ColumnValueTooltip } from "comps/comps/tableComp/column/simpleColumnTypeComps";
-import { StringControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
+} from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { ColumnValueTooltip } from "#lowcoder/comps/comps/tableComp/column/simpleColumnTypeComps";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
 import { markdownCompCss, TacoMarkDown } from "#lowcoder-design/index";
 import styled from "styled-components";
-import { clickEvent, eventHandlerControl } from "comps/controls/eventHandlerControl";
+import { clickEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
 
 const Wrapper = styled.div`
   ${markdownCompCss};

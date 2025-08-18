@@ -1,15 +1,15 @@
-import { BoolCodeControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
+import { BoolCodeControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
 import { ColumnTypeCompBuilder, ColumnTypeViewFn } from "../columnTypeCompBuilder";
 import { ColumnValueTooltip } from "../simpleColumnTypeComps";
-import { InputFieldStyle } from "comps/controls/styleControlConstants";
+import { InputFieldStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import styled from "styled-components";
 import { default as Switch } from "antd/es/switch";
-import { styleControl } from "comps/controls/styleControl";
-import { RefControl } from "comps/controls/refControl";
-import { booleanExposingStateControl } from "comps/controls/codeStateControl";
-import { changeEvent, eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { disabledPropertyView } from "comps/utils/propertyUtils";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
+import { booleanExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { changeEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { disabledPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import React, { useCallback, useRef, useEffect } from "react";
 
 const EventOptions = [
@@ -65,7 +65,7 @@ const SwitchView = React.memo(({ value, disabled, onEvent, valueControl }: {
   }, [valueControl, onEvent]);
 
   return (
-    <Switch 
+    <Switch
       checked={value}
       disabled={disabled || true}
       // ref={viewRef}
@@ -160,7 +160,7 @@ export const SwitchComp = (function () {
           })}
           {children.onEvent.propertyView()}
           {disabledPropertyView(children)}
-          
+
         </>
       );
     })

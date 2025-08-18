@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ReactComponent as Bin } from "icons/v1/icon-recycle-bin.svg";
 import { TacoButton } from "./button";
 import { ReactNode } from "react";
-import { BluePlusIcon } from "icons";
+import { BluePlusIcon } from "#lowcoder-design/icons";
 import { trans } from "i18n/design";
 import { BranchDiv } from "./Trees";
 

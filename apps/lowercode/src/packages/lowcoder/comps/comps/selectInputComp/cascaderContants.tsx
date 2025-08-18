@@ -1,12 +1,12 @@
 import { SelectEventHandlerControl } from "../../controls/eventHandlerControl";
 import { Section, sectionNames } from "lowcoder-design";
-import { RecordConstructorToComp } from "lowcoder-core";
-import { BoolCodeControl, JSONObjectArrayControl, StringControl } from "comps/controls/codeControl";
-import { arrayStringExposingStateControl } from "comps/controls/codeStateControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { LabelControl } from "comps/controls/labelControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, CascaderStyle, ChildrenMultiSelectStyle, InputFieldStyle, LabelStyle } from "comps/controls/styleControlConstants";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
+import { BoolCodeControl, JSONObjectArrayControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { arrayStringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { LabelControl } from "#lowcoder/comps/controls/labelControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, CascaderStyle, ChildrenMultiSelectStyle, InputFieldStyle, LabelStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import {
   allowClearPropertyView,
   disabledPropertyView,
@@ -14,16 +14,16 @@ import {
   placeholderPropertyView,
   showDataLoadingIndicatorsPropertyView,
   showSearchPropertyView,
-} from "comps/utils/propertyUtils";
-import { i18nObjs, trans } from "i18n";
-import { RefControl } from "comps/controls/refControl";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { i18nObjs, trans } from "#lowcoder/i18n";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 import { CascaderRef } from "antd/es/cascader";
 
 import { MarginControl } from "../../controls/marginControl";
 import { PaddingControl } from "../../controls/paddingControl";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 export const defaultDataSource = JSON.stringify(i18nObjs.cascader, null, " ");
 

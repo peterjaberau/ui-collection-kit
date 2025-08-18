@@ -27,7 +27,7 @@ import {
   getPromiseAfterDispatch,
   dropdownControl,
 } from "lowcoder-sdk";
-import { getEchartsLocale, i18nObjs, trans } from "i18n/comps";
+import { getEchartsLocale, i18nObjs, trans } from "#lowcoder/i18n";
 import {
   echartsConfigOmitChildren,
   getEchartsConfig,

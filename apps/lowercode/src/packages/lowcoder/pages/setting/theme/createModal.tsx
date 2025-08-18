@@ -15,8 +15,8 @@ import {
   ThemeBtn,
   TacoInputStyled,
 } from "./styledComponents";
-import { genQueryId } from "comps/utils/idGenerator";
-import { trans } from "i18n";
+import { genQueryId } from "#lowcoder/comps/utils/idGenerator";
+import { trans } from "#lowcoder/i18n";
 
 type CreateModalProp = {
   themeList: ThemeType[] | undefined | null;

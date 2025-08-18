@@ -1,5 +1,5 @@
-import type { CodeEditorControlParams } from "base/codeEditor/codeEditorTypes";
-import { Comp } from "lowcoder-core";
+import type { CodeEditorControlParams } from "#lowcoder/base/codeEditor/codeEditorTypes";
+import { Comp } from "#lowcoder-core/index";
 import { CSSProperties, ReactNode } from "react";
 
 export type ControlLayout = "horizontal" | "vertical"; // set propertyView's layout, default horizontal;

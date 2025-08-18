@@ -6,7 +6,7 @@ import { Layers } from "#lowcoder/constants/Layers";
 import _ from "lodash";
 import { useResizeDetector } from "react-resize-detector";
 import { EditorContainerPadding, TopHeaderHeight } from "#lowcoder/constants/style";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
 export const Height100Div = styled.div`

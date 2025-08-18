@@ -3,17 +3,17 @@ import { LabelControl } from "../../controls/labelControl";
 import { withDefault } from "../../generators";
 import { ChangeEventHandlerControl } from "../../controls/eventHandlerControl";
 import { Section, lightenColor, sectionNames } from "lowcoder-design";
-import { RecordConstructorToComp } from "lowcoder-core";
-import { styleControl } from "comps/controls/styleControl";
-import {  AnimationStyle, InputFieldStyle, LabelStyle, SliderStyle, SliderStyleType, DisabledSliderStyle, DisabledSliderStyleType, heightCalculator, widthCalculator  } from "comps/controls/styleControlConstants";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import {  AnimationStyle, InputFieldStyle, LabelStyle, SliderStyle, SliderStyleType, DisabledSliderStyle, DisabledSliderStyleType, heightCalculator, widthCalculator  } from "#lowcoder/comps/controls/styleControlConstants";
 import styled, { css } from "styled-components";
 import { default as Slider } from "antd/es/slider";
 import { darkenColor, fadeColor } from "lowcoder-design";
-import { disabledPropertyView, hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { IconControl } from "comps/controls/iconControl";
-import { trans } from "i18n";
+import { disabledPropertyView, hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { trans } from "#lowcoder/i18n";
 import { memo, useCallback, useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 const getStyle = (style: SliderStyleType, vertical: boolean, disabledStyle?: DisabledSliderStyleType) => {
   return css`
@@ -74,10 +74,10 @@ const getStyle = (style: SliderStyleType, vertical: boolean, disabledStyle?: Dis
   `;
 };
 
-export const SliderStyled = styled(Slider)<{ 
-  $style: SliderStyleType, 
+export const SliderStyled = styled(Slider)<{
+  $style: SliderStyleType,
   $vertical: boolean,
-  $disabledStyle?: DisabledSliderStyleType 
+  $disabledStyle?: DisabledSliderStyleType
 }>`
   ${(props) => props.$style && getStyle(props.$style, props.$vertical, props.$disabledStyle)}
 `;
@@ -99,7 +99,7 @@ export const SliderChildren = {
   label: LabelControl,
   disabled: BoolCodeControl,
   onEvent: ChangeEventHandlerControl,
-  style: styleControl(InputFieldStyle, 'style'), 
+  style: styleControl(InputFieldStyle, 'style'),
   labelStyle: styleControl(
     LabelStyle.filter((style)=> ['accent','validate'].includes(style.name) === false),
     'labelStyle',
@@ -113,7 +113,7 @@ export const SliderChildren = {
 
 const InteractionSection = memo(({ children }: { children: RecordConstructorToComp<typeof SliderChildren & { hidden: typeof BoolCodeControl }> }) => {
   const editorModeStatus = useContext(EditorContext).editorModeStatus;
-  
+
   if (!["logic", "both"].includes(editorModeStatus)) {
     return null;
   }
@@ -131,7 +131,7 @@ const InteractionSection = memo(({ children }: { children: RecordConstructorToCo
 
 const LayoutSection = memo(({ children }: { children: RecordConstructorToComp<typeof SliderChildren & { hidden: typeof BoolCodeControl }> }) => {
   const editorModeStatus = useContext(EditorContext).editorModeStatus;
-  
+
   if (!["layout", "both"].includes(editorModeStatus)) {
     return null;
   }

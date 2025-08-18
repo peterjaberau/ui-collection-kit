@@ -1,5 +1,5 @@
-import { MultiCompBuilder, valueComp } from "comps/generators";
-import { list, ListDataType } from "comps/generators/list";
+import { MultiCompBuilder, valueComp } from "#lowcoder/comps/generators";
+import { list, ListDataType } from "#lowcoder/comps/generators/list";
 import {
   CompAction,
   CompActionTypes,
@@ -8,7 +8,7 @@ import {
   MultiCompConstructor,
   RenameAction,
   wrapChildAction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 
 const treeItemComp = (childComp: MultiCompConstructor) => {
   class TreeItemListComp extends list(childComp) {

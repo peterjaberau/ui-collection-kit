@@ -2,13 +2,13 @@ import {
   BoolCodeControl,
   NumberControl,
   StringControl,
-} from "@lowcoder-ee/comps/controls/codeControl";
+} from "#lowcoder/comps/controls/codeControl";
 import { Section, sectionNames } from "#lowcoder-design/index";
-import { numberExposingStateControl } from "@lowcoder-ee/comps/controls/codeStateControl";
-import { withDefault } from "comps/generators";
-import { RecordConstructorToComp } from "lowcoder-core";
-import { trans } from "i18n";
-import { dropdownControl } from "comps/controls/dropdownControl";
+import { numberExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { withDefault } from "#lowcoder/comps/generators";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
+import { trans } from "#lowcoder/i18n";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 
 const badgeSizeOptions = [
   {
@@ -32,7 +32,7 @@ const badgeTypeOptions = [
   },
 ] as const;
 
-export const badgeChildren = {
+export const badgeChildren: any = {
   badgeType: dropdownControl(badgeTypeOptions, "number"),
   badgeCount: withDefault(numberExposingStateControl("badgeCount"), "0"),
   badgeSize: dropdownControl(badgeSizeOptions, "default"),
@@ -43,7 +43,7 @@ export const badgeChildren = {
 
 type badgeComp = RecordConstructorToComp<typeof badgeChildren>;
 
-export const BadgeBasicSection = (children: badgeComp) => (
+export const BadgeBasicSection = (children: badgeComp | any) => (
   <Section name={sectionNames.advanced}>
     {children.badgeType.propertyView({
       label: trans("badge.Type"),

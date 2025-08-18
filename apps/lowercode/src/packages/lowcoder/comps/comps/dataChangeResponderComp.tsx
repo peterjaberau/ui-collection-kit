@@ -1,12 +1,12 @@
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
-import { JSONValueControl } from "comps/controls/codeControl";
-import { EventConfigType, eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { MultiCompBuilder, valueComp } from "comps/generators";
-import { bottomResListComp } from "comps/generators/bottomResList";
-import { NameConfig, withExposingConfigs } from "comps/generators/withExposing";
-import { trans } from "i18n";
+import { getBottomResIcon } from "#lowcoder/util/bottomResUtils";
+import { JSONValueControl } from "#lowcoder/comps/controls/codeControl";
+import { EventConfigType, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { MultiCompBuilder, valueComp } from "#lowcoder/comps/generators";
+import { bottomResListComp } from "#lowcoder/comps/generators/bottomResList";
+import { NameConfig, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
-import { CompAction, CompActionTypes } from "lowcoder-core";
+import { CompAction, CompActionTypes } from "#lowcoder-core/index";
 import {
   TacoMarkDown,
   DocLink,
@@ -21,7 +21,7 @@ import { BottomResComp, BottomResCompResult, BottomResTypeEnum } from "#lowcoder
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
 import { QueryTutorials } from "#lowcoder/util/tutorialUtils";
 import { SimpleNameComp } from "./simpleNameComp";
-import SupaDemoDisplay from "comps/utils/supademoDisplay";
+import SupaDemoDisplay from "#lowcoder/comps/utils/supademoDisplay";
 
 const dataChangeEvent: EventConfigType = {
   label: "onDataChange",

@@ -1,5 +1,5 @@
 import { default as Tag } from "antd/es/tag";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import _, { includes, isEmpty, pick } from "lodash";
 import {
   changeValueAction,
@@ -7,7 +7,7 @@ import {
   DispatchType,
   MultiBaseComp,
   multiChangeAction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import {
   Dropdown,
   EllipsisTextCss,

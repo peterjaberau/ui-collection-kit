@@ -1,4 +1,4 @@
-import { HookComp } from "comps/hooks/hookComp";
+import { HookComp } from "#lowcoder/comps/hooks/hookComp";
 import _ from "lodash";
 import { GridItemComp } from "../gridItemComp";
 

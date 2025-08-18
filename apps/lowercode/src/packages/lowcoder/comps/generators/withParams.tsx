@@ -1,4 +1,4 @@
-import { getReduceContext, reduceInContext } from "comps/utils/reduceContext";
+import { getReduceContext, reduceInContext } from "#lowcoder/comps/utils/reduceContext";
 import _ from "lodash";
 import {
   Comp,
@@ -22,7 +22,7 @@ import {
   WrapContextFn,
   WrapContextNodeV2,
   wrapDispatch,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { ReactNode } from "react";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 import { depthEqual, lastValueIfEqual, setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";

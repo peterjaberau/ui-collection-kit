@@ -3,7 +3,7 @@ import {
   NameConfigPlaceHolder,
   NameConfigRequired,
   withExposingConfigs,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import { BoolControl } from "../../controls/boolControl";
 import { AutoHeightControl } from "../../controls/autoHeightControl";
@@ -20,24 +20,24 @@ import {
   useTextInputProps,
 } from "./textInputConstants";
 import { withMethodExposing, refMethods } from "../../generators/withMethodExposing";
-import { styleControl } from "comps/controls/styleControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import styled from "styled-components";
-import {  AnimationStyle, InputFieldStyle, InputLikeStyle, InputLikeStyleType, LabelStyle, DisabledInputStyle, DisabledInputStyleType } from "comps/controls/styleControlConstants";
+import {  AnimationStyle, InputFieldStyle, InputLikeStyle, InputLikeStyleType, LabelStyle, DisabledInputStyle, DisabledInputStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import { TextArea } from "#lowcoder/components/TextArea";
 import {
   allowClearPropertyView,
   hiddenPropertyView,
   readOnlyPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { RefControl } from "comps/controls/refControl";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 import { TextAreaRef } from "antd/es/input/TextArea";
-import { blurMethod, focusWithOptions } from "comps/utils/methodUtils";
-import { NumberControl } from "comps/controls/codeControl";
+import { blurMethod, focusWithOptions } from "#lowcoder/comps/utils/methodUtils";
+import { NumberControl } from "#lowcoder/comps/controls/codeControl";
 
 import React, { useContext, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
-import { migrateOldData } from "comps/generators/simpleGenerators";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
 
 const TextAreaStyled = styled(TextArea)<{
   $style: InputLikeStyleType;

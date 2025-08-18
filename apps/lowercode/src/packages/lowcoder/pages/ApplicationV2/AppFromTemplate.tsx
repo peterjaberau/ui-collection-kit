@@ -7,7 +7,7 @@ import { WhiteLoading } from "lowcoder-design";
 import React, { useEffect } from "react";
 import { CommonTextLabel } from "lowcoder-design";
 import styled from "styled-components";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { ERROR_CODES } from "#lowcoder/constants/apiConstants";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 

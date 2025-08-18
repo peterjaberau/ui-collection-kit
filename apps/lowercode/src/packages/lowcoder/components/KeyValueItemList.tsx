@@ -13,7 +13,7 @@ import {
   PointIcon,
   SimplePopover,
 } from "#lowcoder-design/index";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Children, PropsWithChildren, ReactNode, useState } from "react";
 import styled from "styled-components";
 import EmptyItem from "./EmptyItem";

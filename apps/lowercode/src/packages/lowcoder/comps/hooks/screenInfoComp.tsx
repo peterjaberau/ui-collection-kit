@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { hookToStateComp } from "../generators/hookToComp";
-import { CanvasContainerID } from "@lowcoder-ee/constants/domLocators";
+import { CanvasContainerID } from "#lowcoder/constants/domLocators";
 
 enum ScreenTypes {
   Mobile = 'mobile',
@@ -50,7 +50,7 @@ export function useScreenInfo() {
     const { innerWidth, innerHeight } = window;
     const deviceType = getDeviceType(canvasWidth || window.innerWidth);
     const flags = getFlagsByDeviceType(deviceType);
-    
+
     return {
       width: innerWidth,
       height: innerHeight,
@@ -61,7 +61,7 @@ export function useScreenInfo() {
   }, [canvasWidth])
 
   const [screenInfo, setScreenInfo] = useState<ScreenInfo>({});
-  
+
   const updateScreenInfo = useCallback(() => {
     setScreenInfo(getScreenInfo());
   }, [getScreenInfo])

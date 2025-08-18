@@ -1,8 +1,8 @@
 import { ThemeDetail } from "#lowcoder/api/commonSettingApi";
-import { ColumnComp } from "comps/comps/tableComp/column/tableColumnComp";
-import { TableColumnLinkStyleType, TableColumnStyleType, TableSummaryRowStyleType } from "comps/controls/styleControlConstants";
+import { ColumnComp } from "#lowcoder/comps/comps/tableComp/column/tableColumnComp";
+import { TableColumnLinkStyleType, TableColumnStyleType, TableSummaryRowStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import styled from "styled-components";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
 import Table from "antd/es/table";
 import { ReactNode, useMemo, memo, useCallback } from "react";
 import Tooltip from "antd/es/tooltip";

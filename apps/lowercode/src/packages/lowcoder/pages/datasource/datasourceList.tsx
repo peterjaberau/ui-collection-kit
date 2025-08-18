@@ -18,10 +18,10 @@ import { DatasourcePermissionDialog } from "../../components/PermissionDialog/Da
 import DataSourceIcon from "#lowcoder/components/DataSourceIcon";
 import { Helmet } from "react-helmet";
 import LoadingOutlined from "@ant-design/icons/LoadingOutlined";
-import PaginationComp from "@lowcoder-ee/util/pagination/Pagination";
-import {DatasourceInfo} from "@lowcoder-ee/api/datasourceApi";
-import {fetchDatasourcePagination} from "@lowcoder-ee/util/pagination/axios";
-import {getUser} from "@lowcoder-ee/redux/selectors/usersSelectors";
+import PaginationComp from "#lowcoder/util/pagination/Pagination";
+import {DatasourceInfo} from "#lowcoder/api/datasourceApi";
+import {fetchDatasourcePagination} from "#lowcoder/util/pagination/axios";
+import {getUser} from "#lowcoder/redux/selectors/usersSelectors";
 
 const DatasourceWrapper = styled.div`
   display: flex;

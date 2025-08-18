@@ -1,9 +1,9 @@
-import type { EditorState, EditorView } from "base/codeEditor/codeMirror";
+import type { EditorState, EditorView } from "#lowcoder/base/codeEditor/codeMirror";
 import {
   iconRegexp,
   iconWidgetClass,
-} from "base/codeEditor/extensions/iconExtension";
-import { i18nObjs, trans } from "i18n";
+} from "#lowcoder/base/codeEditor/extensions/iconExtension";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 import { Coolshape } from "coolshapes-react";
 import {
   AbstractComp,
@@ -14,7 +14,7 @@ import {
   DispatchType,
   Node,
   ValueAndMsg,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import {
   BlockGrayLabel,
   controlItem,

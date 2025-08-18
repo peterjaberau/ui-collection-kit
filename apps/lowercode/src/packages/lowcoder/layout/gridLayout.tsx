@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { colord } from "colord";
-import type { UICompType } from "comps/uiCompRegistry";
+import type { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import { ModulePrimaryColor, PrimaryColor } from "#lowcoder/constants/style";
 import _, { isEqual } from "lodash";
 import log from "loglevel";
@@ -52,8 +52,8 @@ import {
   synchronizeLayoutWithChildren,
   updateInCanvasCount,
 } from "./utils";
-import { CompTypeContext } from "@lowcoder-ee/comps/utils/compTypeContext";
-import { CompContext } from "@lowcoder-ee/comps/utils/compContext";
+import { CompTypeContext } from "#lowcoder/comps/utils/compTypeContext";
+import { CompContext } from "#lowcoder/comps/utils/compContext";
 
 type GridLayoutState = {
   layout: Layout;

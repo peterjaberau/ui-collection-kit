@@ -1,6 +1,6 @@
-import { withSelectedMultiContext } from "comps/generators/withSelectedMultiContext";
+import { withSelectedMultiContext } from "#lowcoder/comps/generators/withSelectedMultiContext";
 import { SimpleContainerComp } from "../containerBase/simpleContainerComp";
 
-const ContextContainerTmpComp = withSelectedMultiContext(SimpleContainerComp);
+const ContextContainerTmpComp: any = withSelectedMultiContext(SimpleContainerComp as any);
 
 export class ContextContainerComp extends ContextContainerTmpComp {}

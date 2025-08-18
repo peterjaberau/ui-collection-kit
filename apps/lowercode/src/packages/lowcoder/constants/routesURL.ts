@@ -1,7 +1,7 @@
 import { AppViewMode, MarketplaceType } from "#lowcoder/constants/applicationConstants";
 import { LocationDescriptor } from "history";
 import { UserGuideLocationState } from "#lowcoder/pages/tutorials/tutorialsConstant";
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
 
 export const BASE_URL = "/";
 export const ADMIN_AUTH_URL = "/admin/login";

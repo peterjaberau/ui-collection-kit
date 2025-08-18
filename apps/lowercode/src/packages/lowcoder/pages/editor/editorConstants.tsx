@@ -1,4 +1,4 @@
-import { UICompType } from "comps/uiCompRegistry";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import { memo } from "react";
 import {
   LeftCommon,

@@ -1,7 +1,7 @@
 import { JSONValue } from "#lowcoder/util/jsonTypes";
-import { CompAction, CompActionTypes, isBroadcastAction, RenameAction } from "lowcoder-core";
-import { Comp } from "lowcoder-core";
-import { CompContainer } from "comps/utils/useCompInstance";
+import { CompAction, CompActionTypes, isBroadcastAction, RenameAction } from "#lowcoder-core/index";
+import { Comp } from "#lowcoder-core/index";
+import { CompContainer } from "#lowcoder/comps/utils/useCompInstance";
 import { AppSnapshotContext } from "#lowcoder/constants/applicationConstants";
 import _ from "lodash";
 import { Dispatch, useMemo } from "react";

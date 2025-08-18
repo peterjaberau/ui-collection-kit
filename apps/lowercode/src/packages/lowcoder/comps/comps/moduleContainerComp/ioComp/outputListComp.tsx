@@ -1,29 +1,29 @@
-import { KeyValueItem, KeyValueItemListWithNewCreateState } from "#lowcoder-design/components/KeyValueItemList";
-import { JSONValueControl, StringControl } from "comps/controls/codeControl";
-import CompNameControl from "comps/controls/compNameControl";
-import { MultiCompBuilder } from "comps/generators";
-import { list } from "comps/generators/list";
-import { NameGenerator } from "comps/utils/nameGenerator";
-import { checkName } from "comps/utils/rename";
-import { trans } from "i18n";
+import { KeyValueItem, KeyValueItemListWithNewCreateState } from "#lowcoder/components/KeyValueItemList";
+import { JSONValueControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
+import { list } from "#lowcoder/comps/generators/list";
+import { NameGenerator } from "#lowcoder/comps/utils/nameGenerator";
+import { checkName } from "#lowcoder/comps/utils/rename";
+import { trans } from "#lowcoder/i18n";
 
-const childrenMap = {
+const childrenMap: any = {
   description: StringControl,
   value: JSONValueControl,
   name: CompNameControl,
 };
 
-const RootInputComp = new MultiCompBuilder(childrenMap, (props) => {
+const RootInputComp: any = new MultiCompBuilder(childrenMap, (props: any) => {
   return props;
 }).build();
 
-const RootOutputListCompBase = list(RootInputComp);
+const RootOutputListCompBase: any = list(RootInputComp);
 
 class OutputListComp extends RootOutputListCompBase {
   nameGen = new NameGenerator();
 
   names() {
-    return this.getView().map((i) => i.children.name.getView());
+    return this.getView().map((i: any) => i.children.name.getView());
   }
 
   handleAdd() {
@@ -50,7 +50,7 @@ class OutputListComp extends RootOutputListCompBase {
       return err;
     }
 
-    if (this.getView().find((i) => i.getView().name === name)) {
+    if (this.getView().find((i: any) => i.getView().name === name)) {
       return trans("module.nameExists", { name: name });
     }
 

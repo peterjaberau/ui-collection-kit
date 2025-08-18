@@ -1,5 +1,5 @@
-import { trans } from "i18n";
-import FormLogin from "@lowcoder-ee/pages/userAuth/formLoginAdmin";
+import { trans } from "#lowcoder/i18n";
+import FormLogin from "#lowcoder/pages/userAuth/formLoginAdmin";
 import { AuthContainer } from "#lowcoder/pages/userAuth/authComponents";
 import { requiresUnAuth } from "#lowcoder/pages/userAuth/authHOC";
 

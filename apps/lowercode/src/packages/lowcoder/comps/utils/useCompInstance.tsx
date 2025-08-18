@@ -1,4 +1,4 @@
-import { evalAndReduceWithExposing } from "comps/utils"
+import { evalAndReduceWithExposing } from "#lowcoder/comps/utils"
 import {
   CALM_DOWN_TIMEOUT,
   CLEAR_ACTION_QUEUE_TIMEOUT,
@@ -7,7 +7,7 @@ import {
 } from "#lowcoder/constants/perf"
 import { debounce } from "lodash"
 import log from "loglevel"
-import { CompAction, CompActionTypes, CompConstructor } from "lowcoder-core"
+import { CompAction, CompActionTypes, CompConstructor } from "#lowcoder-core/index"
 import { useEffect, useMemo, useState } from "react"
 import { PriorityQueue, Queue } from "typescript-collections"
 import { JSONValue } from "#lowcoder/util/jsonTypes"

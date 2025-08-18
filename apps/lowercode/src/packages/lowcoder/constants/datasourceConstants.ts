@@ -1,7 +1,7 @@
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
 import { DatasourceConfigType } from "#lowcoder/api/datasourceApi";
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
-import { trans } from "i18n";
+import { getBottomResIcon } from "#lowcoder/util/bottomResUtils";
+import { trans } from "#lowcoder/i18n";
 import { DataSourcePluginMeta } from "lowcoder-sdk/dataSource";
 
 export const databasePlugins: Partial<DatasourceType>[] = [

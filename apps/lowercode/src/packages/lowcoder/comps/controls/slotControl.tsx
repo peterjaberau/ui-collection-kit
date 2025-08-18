@@ -1,20 +1,20 @@
 import { default as Modal } from "antd/es/modal";
-import { SimpleContainerComp } from "comps/comps/containerBase/simpleContainerComp";
+import { SimpleContainerComp } from "#lowcoder/comps/comps/containerBase/simpleContainerComp";
 import {
   ContainerBaseProps,
   gridItemCompToGridItems,
   InnerGrid,
-} from "comps/comps/containerComp/containerView";
-import { MultiCompBuilder, stateComp } from "comps/generators";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
+} from "#lowcoder/comps/comps/containerComp/containerView";
+import { MultiCompBuilder, stateComp } from "#lowcoder/comps/generators";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
 import { CanvasContainerID } from "#lowcoder/constants/domLocators";
 import { Layers } from "#lowcoder/constants/Layers";
-import { trans } from "i18n";
-import { changeChildAction, CompActionTypes, ConstructorToView } from "lowcoder-core";
+import { trans } from "#lowcoder/i18n";
+import { changeChildAction, CompActionTypes, ConstructorToView } from "#lowcoder-core/index";
 import { HintPlaceHolder, TacoButton } from "lowcoder-design";
 import { createContext, useContext } from "react";
 import styled from "styled-components";
-import { NameGenerator } from "comps/utils";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 import React from "react";
 import { isEqual } from "lodash";

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { ManagedOrg } from "../types/enterprise.types";
 import { Query } from "../types/query.types";
 

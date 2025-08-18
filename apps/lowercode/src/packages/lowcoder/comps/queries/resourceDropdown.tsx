@@ -9,9 +9,9 @@ import { DatasourceModal } from "#lowcoder/pages/datasource/datasourceModal";
 import { InputStatus } from "antd/es/_util/statusUtils";
 import { getDataSource, getDataSourceTypes } from "#lowcoder/redux/selectors/datasourceSelectors";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
-import { trans } from "i18n";
-import { DatasourceType, ResourceType } from "@lowcoder-ee/constants/queryConstants";
+import { getBottomResIcon } from "#lowcoder/util/bottomResUtils";
+import { trans } from "#lowcoder/i18n";
+import { DatasourceType, ResourceType } from "#lowcoder/constants/queryConstants";
 import {
   QUICK_GRAPHQL_ID,
   QUICK_REST_API_ID,
@@ -20,7 +20,7 @@ import {
 import {
   apiPluginsForQueryLibrary,
   databasePlugins,
-} from "@lowcoder-ee/constants/datasourceConstants";
+} from "#lowcoder/constants/datasourceConstants";
 import { QueryContext } from "#lowcoder/util/context/QueryContext";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 

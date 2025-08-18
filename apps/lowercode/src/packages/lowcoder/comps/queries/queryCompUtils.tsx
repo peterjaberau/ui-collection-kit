@@ -1,15 +1,15 @@
 import _, { isObject } from "lodash";
 import { QueryApi, QueryExecuteRequest } from "../../api/queryApi";
 import { QueryResult, TriggerType } from "./queryComp";
-import { Comp } from "lowcoder-core";
+import { Comp } from "#lowcoder-core/index";
 import { MultiCompBuilder, ToConstructor } from "../generators/multi";
 import { Fragment } from "react";
 import { ParamsControlType, ValueFunction } from "../controls/paramsControl";
-import { getGlobalSettings } from "comps/utils/globalSettings";
-import { ResourceType } from "@lowcoder-ee/constants/queryConstants";
-import { evalFunc } from "lowcoder-core";
+import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
+import { ResourceType } from "#lowcoder/constants/queryConstants";
+import { evalFunc } from "#lowcoder-core/index";
 import { QUERY_EXECUTION_ERROR, QUERY_EXECUTION_OK } from "../../constants/queryConstants";
-import type { SandBoxOption } from "lowcoder-core/src/eval/utils/evalScript";
+import type { SandBoxOption } from "#lowcoder-core/index/src/eval/utils/evalScript";
 
 export type FunctionProperty = {
   key: string;

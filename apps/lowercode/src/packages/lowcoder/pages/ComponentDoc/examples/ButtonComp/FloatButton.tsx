@@ -1,5 +1,5 @@
-import { FloatButtonComp } from "comps/comps/buttonComp/floatButtonComp"
-import { trans } from "i18n";
+import { FloatButtonComp } from "#lowcoder/comps/comps/buttonComp/floatButtonComp"
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -32,7 +32,7 @@ export default function FloatButtonExample() {
         <Example
           title="A Simple Float Button"
           height={150}
-          config={{ 
+          config={{
             buttons: buttons,
         }}
           compFactory={FloatButtonComp}
@@ -40,7 +40,7 @@ export default function FloatButtonExample() {
         <Example
           title="Hiding the Float Button"
           height={150}
-          config={{ 
+          config={{
             buttons: buttons,
             hidden: true,
         }}
@@ -49,7 +49,7 @@ export default function FloatButtonExample() {
         <Example
           title="Different Icon on Float Button"
           height={150}
-          config={{ 
+          config={{
             buttons: buttons,
             icon: "/icon:solid/align-justify",
         }}
@@ -58,7 +58,7 @@ export default function FloatButtonExample() {
         <Example
           title="Button Theme - Default"
           height={150}
-          config={{ 
+          config={{
             buttons: buttons,
             buttonTheme: "default",
             icon: "/icon:solid/align-justify",
@@ -71,7 +71,7 @@ export default function FloatButtonExample() {
         <Example
           title="Button Shape - Square"
           height={150}
-          config={{ 
+          config={{
             buttons: buttons,
             shape: "square",
         }}
@@ -80,7 +80,7 @@ export default function FloatButtonExample() {
         <Example
           title="Show Badge - True"
           height={150}
-          config={{ 
+          config={{
             buttons: buttons,
             dot: true,
         }}
@@ -89,7 +89,7 @@ export default function FloatButtonExample() {
         <Example
           title="Show Badge - False"
           height={150}
-          config={{ 
+          config={{
             buttons: buttons,
         }}
           compFactory={FloatButtonComp}
@@ -103,7 +103,7 @@ export default function FloatButtonExample() {
         <Example
           title="Badge Color"
           height={150}
-          config={{ 
+          config={{
             buttons: buttons,
             dot: true,
             badgeStyle: {
@@ -115,7 +115,7 @@ export default function FloatButtonExample() {
         <Example
           title="Styling properties"
           height={150}
-          config={{ 
+          config={{
             buttons: buttons,
             style: {
               "background": "linear-gradient(90deg, #fa709a 0%, #fee140 100%)",
@@ -172,7 +172,7 @@ export default function FloatButtonExample() {
           compFactory={FloatButtonComp}
         />
       </ExampleGroup>
-      
+
     </>
   );
 }

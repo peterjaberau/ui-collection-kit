@@ -13,7 +13,7 @@ import styled from "styled-components";
 import ProfileImage from "#lowcoder/pages/common/profileImage";
 import { isProfileSettingModalVisible } from "#lowcoder/redux/selectors/usersSelectors";
 import { logoutAction, profileSettingModalVisible } from "#lowcoder/redux/reduxActions/userActions";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import WorkspaceSectionComponent from "./WorkspaceSection";
 

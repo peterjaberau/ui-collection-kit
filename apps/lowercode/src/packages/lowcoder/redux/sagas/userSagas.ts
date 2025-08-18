@@ -24,7 +24,7 @@ import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
 import { AuthSearchParams } from "#lowcoder/constants/authConstants";
 import { saveAuthSearchParams } from "#lowcoder/pages/userAuth/authUtils";
-import { initTranslator } from "i18n";
+import { initTranslator } from "#lowcoder/i18n";
 import { fetchWorkspacesAction } from "../reduxActions/orgActions";
 
 function validResponseData(response: AxiosResponse<ApiResponse>) {

@@ -1,10 +1,10 @@
-import { BoolControl } from "comps/controls/boolControl";
-import { ColorOrBoolCodeControl, NumberControl, RadiusControl, StringControl } from "comps/controls/codeControl";
-import { dropdownControl, HorizontalAlignmentControl } from "comps/controls/dropdownControl";
-import { MultiCompBuilder, stateComp, valueComp, withContext, withDefault } from "comps/generators";
-import { withSelectedMultiContext } from "comps/generators/withSelectedMultiContext";
-import { genRandomKey } from "comps/utils/idGenerator";
-import { trans } from "i18n";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { ColorOrBoolCodeControl, NumberControl, RadiusControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { dropdownControl, HorizontalAlignmentControl } from "#lowcoder/comps/controls/dropdownControl";
+import { MultiCompBuilder, stateComp, valueComp, withContext, withDefault } from "#lowcoder/comps/generators";
+import { withSelectedMultiContext } from "#lowcoder/comps/generators/withSelectedMultiContext";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import {
   changeChildAction,
@@ -20,17 +20,17 @@ import {
   multiChangeAction,
   withFunction,
   wrapChildAction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { AlignClose, AlignLeft, AlignRight, IconRadius, BorderWidthIcon, TextSizeIcon, FontFamilyIcon, TextWeightIcon, ImageCompIcon, controlItem, Dropdown, OptionType } from "#lowcoder-design/index";
 import { ColumnTypeComp, ColumnTypeCompMap } from "./columnTypeComp";
-import { ColorControl } from "comps/controls/colorControl";
+import { ColorControl } from "#lowcoder/comps/controls/colorControl";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 import styled from "styled-components";
-import { TextOverflowControl } from "comps/controls/textOverflowControl";
+import { TextOverflowControl } from "#lowcoder/comps/controls/textOverflowControl";
 import { default as Divider } from "antd/es/divider";
 import { ColumnValueTooltip } from "./simpleColumnTypeComps";
 import { SummaryColumnComp } from "./tableSummaryColumnComp";
-import { list } from "@lowcoder-ee/comps/generators/list";
+import { list } from "#lowcoder/comps/generators/list";
 import { EMPTY_ROW_KEY } from "../tableCompView";
 import React, { useCallback, useMemo } from "react";
 

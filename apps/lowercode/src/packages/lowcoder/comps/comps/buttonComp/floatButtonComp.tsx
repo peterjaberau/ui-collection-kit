@@ -1,23 +1,23 @@
 import React from "react";
-import { RecordConstructorToView } from "lowcoder-core";
-import { BoolControl } from "comps/controls/boolControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, BadgeStyle, BadgeStyleType, FloatButtonStyle, FloatButtonStyleType } from "comps/controls/styleControlConstants";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
-import { NameConfig, NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
+import { RecordConstructorToView } from "#lowcoder-core/index";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, BadgeStyle, BadgeStyleType, FloatButtonStyle, FloatButtonStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
+import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "#lowcoder-design/index";
-import { hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { StringControl, NumberControl } from "comps/controls/codeControl";
+import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { StringControl, NumberControl } from "#lowcoder/comps/controls/codeControl";
 import { FloatButton } from 'antd';
 import { withDefault, MultiCompBuilder, valueComp } from "../../generators";
-import { IconControl } from "comps/controls/iconControl";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
 import styled from "styled-components";
-import { ButtonEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { manualOptionsControl } from "comps/controls/optionsControl";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { ButtonEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { manualOptionsControl } from "#lowcoder/comps/controls/optionsControl";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 const StyledFloatButton = styled(FloatButton)<{
   $animationStyle: AnimationStyleType;

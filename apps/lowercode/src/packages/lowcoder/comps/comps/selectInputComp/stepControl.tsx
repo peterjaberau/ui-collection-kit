@@ -1,25 +1,25 @@
 import { ConfigProvider, Steps} from "antd";
-import { BoolCodeControl, RadiusControl } from "comps/controls/codeControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { stringExposingStateControl, numberExposingStateControl } from "comps/controls/codeStateControl";
-import { ChangeEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { StepOptionControl } from "comps/controls/optionsControl";
-import { styleControl } from "comps/controls/styleControl";
-import { StepsStyle, StepsStyleType, heightCalculator, widthCalculator, marginCalculator, AnimationStyle, AnimationStyleType, DisabledStepStyle, DisabledStepStyleType } from "comps/controls/styleControlConstants";
+import { BoolCodeControl, RadiusControl } from "#lowcoder/comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { stringExposingStateControl, numberExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { ChangeEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { StepOptionControl } from "#lowcoder/comps/controls/optionsControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { StepsStyle, StepsStyleType, heightCalculator, widthCalculator, marginCalculator, AnimationStyle, AnimationStyleType, DisabledStepStyle, DisabledStepStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import styled, { css } from "styled-components";
 import { UICompBuilder, withDefault } from "../../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
 import { selectDivRefMethods, } from "./selectInputConstants";
 import { ScrollBar, Section, sectionNames } from "lowcoder-design";
-import { hiddenPropertyView, disabledPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { hasIcon } from "comps/utils";
-import { RefControl } from "comps/controls/refControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
+import { hiddenPropertyView, disabledPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { hasIcon } from "#lowcoder/comps/utils";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 import { useContext, useState, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
-import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
-import { AutoHeightControl } from "@lowcoder-ee/comps/controls/autoHeightControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
 
 const sizeOptions = [
   {
@@ -189,7 +189,7 @@ let StepControlBasicComp = (function () {
     return (
         <ConfigProvider
             theme={{
-              token: { 
+              token: {
                 colorPrimary: props.style.activeBackground,
                 colorText: props.style.titleText,
                 colorTextDescription: props.style.text,
@@ -207,7 +207,7 @@ let StepControlBasicComp = (function () {
             }}
             overflow="scroll"
             hideScrollbar={!props.showScrollBars}>
-            <Steps 
+            <Steps
               initial={props.initialValue.value -1}
               current={current}
               onChange={onChange}
@@ -220,7 +220,7 @@ let StepControlBasicComp = (function () {
               direction={props.direction}
             >
               {props.options.map((option, index) => (
-                <Steps.Step 
+                <Steps.Step
                   style={{minWidth:props.minHorizontalWidth || 'auto'}}
                   key={index}
                   title={option.label}
@@ -272,7 +272,7 @@ let StepControlBasicComp = (function () {
               label: trans("step.direction"),
               radioButton: true,
             })}
-            { children.direction.getView() == "horizontal" && 
+            { children.direction.getView() == "horizontal" &&
               children.labelPlacement.propertyView({
                 label: trans("step.labelPlacement"),
                 radioButton: true,

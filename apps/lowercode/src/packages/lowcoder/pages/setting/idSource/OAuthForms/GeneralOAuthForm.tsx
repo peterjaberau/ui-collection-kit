@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { messageInstance, CloseEyeIcon } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import {
   FormStyled,
   PasswordLabel

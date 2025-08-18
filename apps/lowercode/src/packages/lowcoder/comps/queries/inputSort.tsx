@@ -10,7 +10,7 @@ import {
   QueryConfigLabel,
   QueryConfigWrapper,
 } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const SingleSort = class extends buildQueryCommand({
   field: ParamsStringControl,

@@ -1,6 +1,6 @@
-import { styleControl } from "comps/controls/styleControl";
-import {  ChildrenMultiSelectStyle, InputFieldStyle, LabelStyle, SelectStyle } from "comps/controls/styleControlConstants";
-import { trans } from "i18n";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import {  ChildrenMultiSelectStyle, InputFieldStyle, LabelStyle, SelectStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { trans } from "#lowcoder/i18n";
 import { stringExposingStateControl } from "../../controls/codeStateControl";
 import { UICompBuilder } from "../../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
@@ -16,9 +16,9 @@ import {
   useSelectInputValidate,
 } from "./selectInputConstants";
 import { useContext, useEffect, useRef } from "react";
-import { RecordConstructorToView } from "lowcoder-core";
+import { RecordConstructorToView } from "#lowcoder-core/index";
 import { fixOldInputCompData } from "../textInputComp/textInputConstants";
-import { migrateOldData, withDefault } from "comps/generators/simpleGenerators";
+import { migrateOldData, withDefault } from "#lowcoder/comps/generators/simpleGenerators";
 
 let SelectBasicComp = (function () {
   const childrenMap = {

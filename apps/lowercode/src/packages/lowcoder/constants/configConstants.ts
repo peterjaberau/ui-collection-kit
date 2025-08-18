@@ -1,12 +1,12 @@
 import { ThirdPartyConfigType } from "#lowcoder/constants/authConstants";
 import { QR_CODE_OAUTH_URL } from "#lowcoder/constants/routesURL";
-import { UserConnectionSource } from "@lowcoder-ee/constants/userConstants";
+import { UserConnectionSource } from "#lowcoder/constants/userConstants";
 import { GeneralLoginIcon } from "assets/icons";
 import {
   isRouteLink,
   ServerAuthType,
   ServerAuthTypeInfo,
-} from "@lowcoder-ee/constants/authConstants";
+} from "#lowcoder/constants/authConstants";
 
 interface FeatureFlag {
   enableCustomBranding: boolean;

@@ -1,4 +1,4 @@
-import { SignatureComp } from "comps/comps/signatureComp";
+import { SignatureComp } from "#lowcoder/comps/comps/signatureComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

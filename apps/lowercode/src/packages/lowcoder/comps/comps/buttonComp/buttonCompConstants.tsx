@@ -1,11 +1,11 @@
 import { default as Button } from "antd/es/button";
-import { styleControl } from "comps/controls/styleControl";
-import { ButtonStyleType, ButtonStyle, DisabledButtonStyle, DisabledButtonStyleType } from "comps/controls/styleControlConstants";
-import { migrateOldData } from "comps/generators/simpleGenerators";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { ButtonStyleType, ButtonStyle, DisabledButtonStyle, DisabledButtonStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
 import styled, { css } from "styled-components";
 import { genActiveColor, genHoverColor } from "#lowcoder-design/index";
-import { refMethods } from "comps/generators/withMethodExposing";
-import { blurMethod, clickMethod, focusWithOptions } from "comps/utils/methodUtils";
+import { refMethods } from "#lowcoder/comps/generators/withMethodExposing";
+import { blurMethod, clickMethod, focusWithOptions } from "#lowcoder/comps/utils/methodUtils";
 
 export function getButtonStyle(buttonStyle: ButtonStyleType, disabledStyle: DisabledButtonStyleType = {} as any) {
   const hoverColor = buttonStyle.background && genHoverColor(buttonStyle.background);

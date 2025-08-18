@@ -5,11 +5,11 @@ import {
   ButtonCompWrapper,
   buttonRefMethods,
   ButtonStyleControl,
-} from "comps/comps/buttonComp/buttonCompConstants";
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { ScannerEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { withDefault } from "comps/generators";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
+} from "#lowcoder/comps/comps/buttonComp/buttonCompConstants";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { ScannerEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { withDefault } from "#lowcoder/comps/generators";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import { CustomModal, Section, sectionNames } from "#lowcoder-design/index";
 import styled, { keyframes } from "styled-components";
 import {
@@ -21,8 +21,8 @@ import {
   hiddenPropertyView,
   disabledPropertyView,
   showDataLoadingIndicatorsPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import React, {
   Suspense,
   useEffect,
@@ -30,10 +30,10 @@ import React, {
   useState,
   useContext,
 } from "react";
-import { arrayStringExposingStateControl } from "comps/controls/codeStateControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { RefControl } from "comps/controls/refControl";
-import { EditorContext } from "comps/editorState";
+import { arrayStringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 const Error = styled.div`
   color: #f5222d;

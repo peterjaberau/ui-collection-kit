@@ -7,16 +7,16 @@ import {
   ConstructorToView,
   MultiBaseComp,
   wrapDispatch,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import {
   parseChildrenFromValueAndChildrenMap,
   ToConstructor,
   ToDataType,
   ToInstanceType,
   ToNodeType,
-} from "comps/generators/multi";
+} from "#lowcoder/comps/generators/multi";
 import { stateComp, valueComp } from "./simpleGenerators";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import log from "loglevel";
 
 type Keys<T> = Extract<keyof T, string>;

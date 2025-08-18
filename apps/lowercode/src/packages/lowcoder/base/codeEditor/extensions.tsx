@@ -29,9 +29,9 @@ import {
 } from "@codemirror/language";
 import { defaultKeymap, history, historyKeymap, indentWithTab } from "@codemirror/commands";
 import { highlightSelectionMatches, searchKeymap } from "@codemirror/search";
-import { Diagnostic, linter, lintKeymap } from "@codemirror/lint";
+import { Diagnostic, linter, lintKeymap } from "@codemirror/lint"
 import { type EditorState, Prec } from "@codemirror/state";
-import { TernServer } from "base/codeEditor/completion/ternServer";
+import { TernServer } from "#lowcoder/base/codeEditor/completion/ternServer";
 import {
   MutableRefObject,
   useCallback,
@@ -54,14 +54,14 @@ import {
 import { ExposingCompletionSource } from "./completion/exposingCompletionSource";
 import { SQLCompletionSource } from "./completion/sqlCompletionSource";
 import { getFormatter } from "./autoFormat";
-import { CodeType } from "lowcoder-core";
+import { CodeType } from "#lowcoder-core/index";
 import { CompletionSource } from "./completion/completion";
 import { CodeEditorTooltipContainer } from "./codeEditor";
 import { libNames } from "#lowcoder/constants/libConstants";
 import { QueryContext } from "../../util/context/QueryContext";
 import { getIconExtension } from "./extensions/iconExtension";
 import { highlightJsTheme, useHighlightJsExtension } from "./extensions/highlightJsExtension";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import log from "loglevel";
 import { highlightSyntaxExtension } from "./extensions/highlightSyntax";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
@@ -261,7 +261,7 @@ const keyMapExtensions = Prec.highest(
 
 export function useFocusExtension(onFocus?: (focused: boolean) => void): [Extension, boolean] {
   const [isFocus, setFocus] = useState(false);
-  const onFocusRef = useRef<(focused: boolean) => void>();
+  const onFocusRef: any = useRef<(focused: boolean) => void>(null);
   onFocusRef.current = onFocus;
   const ext = useMemo(
     () =>
@@ -300,7 +300,7 @@ export function useChangeExtension(
   onChange?: (state: EditorState) => void,
   extraOnChange?: (state: EditorState) => void
 ): Extension {
-  const onChangeRef = useRef<(state: EditorState) => void>();
+  const onChangeRef: any = useRef<(state: EditorState) => void>(null);
   onChangeRef.current = extraOnChange
     ? (state: EditorState) => {
         onChange?.(state);
@@ -467,7 +467,7 @@ function getLintExtension(
   return [linter(esLintSource, { markerFilter })];
 }
 
-const compartments: Compartment[] = [];
+const compartments: Compartment[] | any = [];
 
 export function useExtensions(props: CodeEditorProps) {
   const { showLineNum, placeholder, language, codeType, indentWithTab, tooltipContainer } = props;

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { GreyTextColor } from "#lowcoder/constants/style";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { HeaderBack } from "../permission/styledComponents";
 import history from "#lowcoder/util/history";
 import { SUBSCRIPTION_SETTING } from "#lowcoder/constants/routesURL";
@@ -45,7 +45,7 @@ export function SubscriptionCancel() {
   useEffect(() => {
     window.location.replace(SUBSCRIPTION_SETTING);
   }, []);
-  
+
   return (
     <Wrapper>
       <HeaderBack>

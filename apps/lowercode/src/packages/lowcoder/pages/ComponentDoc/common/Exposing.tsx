@@ -1,14 +1,14 @@
 import { default as Table } from "antd/es/table";
-import { Comp } from "lowcoder-core";
-import { UICompType } from "comps/uiCompRegistry";
-import { EventConfigsType } from "comps/controls/eventHandlerControl";
-import { evalAndReduceWithExposing } from "comps/utils";
-import { ExposingInfo } from "comps/utils/exposingTypes";
+import { Comp } from "#lowcoder-core/index";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
+import { EventConfigsType } from "#lowcoder/comps/controls/eventHandlerControl";
+import { evalAndReduceWithExposing } from "#lowcoder/comps/utils";
+import { ExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
 import { ReactNode, useEffect, useState } from "react";
 import styled from "styled-components";
 import extraExposeInfo from "../extraPropExposeInfo";
 import { Desc, Section, Title1 } from "./Styled";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 interface IProps {
   compName: UICompType;

@@ -1,5 +1,5 @@
-import { ScannerComp } from "comps/comps/buttonComp/scannerComp";
-import { trans } from "i18n";
+import { ScannerComp } from "#lowcoder/comps/comps/buttonComp/scannerComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

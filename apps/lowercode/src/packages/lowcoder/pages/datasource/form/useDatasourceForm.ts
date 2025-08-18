@@ -5,10 +5,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../../../redux/selectors/usersSelectors";
 import { createDatasource, updateDatasource } from "../../../redux/reduxActions/datasourceActions";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { registryDataSourcePlugin } from "#lowcoder/constants/queryConstants";
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
-import { Datasource } from "@lowcoder-ee/constants/datasourceConstants";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
+import { Datasource } from "#lowcoder/constants/datasourceConstants";
 import { getSnowflakeFormParams } from "#lowcoder/pages/datasource/form/snowflakeDatasourceForm";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 

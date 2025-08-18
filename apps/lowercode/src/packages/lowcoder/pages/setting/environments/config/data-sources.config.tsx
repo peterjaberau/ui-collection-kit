@@ -4,7 +4,7 @@ import { DeployableItemConfig } from '../types/deployable-item.types';
 import { DataSource} from '../types/datasource.types';
 import { Environment } from '../types/environment.types';
 import { deployDataSource, DataSourceStats } from '../services/datasources.service';
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const dataSourcesConfig: DeployableItemConfig = {
   deploy: {

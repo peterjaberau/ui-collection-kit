@@ -1,5 +1,5 @@
-import { ToggleButtonComp } from "comps/comps/buttonComp/toggleButtonComp"
-import { trans } from "i18n";
+import { ToggleButtonComp } from "#lowcoder/comps/comps/buttonComp/toggleButtonComp"
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -13,17 +13,17 @@ export default function ToggleButtonExample() {
         <Example
           title={trans("componentDoc.default")}
           width={120}
-          config={{ 
-            text: trans("componentDoc.submit") 
+          config={{
+            text: trans("componentDoc.submit")
         }}
           compFactory={ToggleButtonComp}
         />
         <Example
           title={trans("componentDoc.loading")}
           width={120}
-          config={{ 
-            text: trans("componentDoc.submit"), 
-            loading: true 
+          config={{
+            text: trans("componentDoc.submit"),
+            loading: true
         }}
           compFactory={ToggleButtonComp}
         />
@@ -31,8 +31,8 @@ export default function ToggleButtonExample() {
           title={trans("componentDoc.disabled")}
           width={120}
           config={{
-            text: trans("componentDoc.submit"), 
-            disabled: true 
+            text: trans("componentDoc.submit"),
+            disabled: true
         }}
           compFactory={ToggleButtonComp}
         />
@@ -40,13 +40,13 @@ export default function ToggleButtonExample() {
           title="Hiding the Toggle Button"
           width={120}
           config={{
-            text: trans("componentDoc.submit"), 
-            hidden: true 
+            text: trans("componentDoc.submit"),
+            hidden: true
         }}
           compFactory={ToggleButtonComp}
         />
       </ExampleGroup>
-      
+
       <ExampleGroup title="Advanced Usage">
         <Example
           title="Hide Text"

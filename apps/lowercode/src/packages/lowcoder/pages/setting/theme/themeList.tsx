@@ -20,7 +20,7 @@ import {
   TagDesc,
 } from "./styledComponents";
 import { ThemeType } from "#lowcoder/api/commonSettingApi";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
 const { Column } = Table;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import {
   Level1SettingPageContentWithList,
   Level1SettingPageTitleWithBtn,
@@ -13,7 +13,7 @@ import {
   AuthType,
   authTypeDisabled,
   IdSource,
-} from "@lowcoder-ee/pages/setting/idSource/idSourceConstants";
+} from "#lowcoder/pages/setting/idSource/idSourceConstants";
 import {
   SpanStyled,
   StatusSpan,
@@ -27,14 +27,14 @@ import { selectSystemConfig } from "#lowcoder/redux/selectors/configSelectors";
 import { isEnterpriseMode, isSelfDomain } from "#lowcoder/util/envUtils";
 import { default as Badge } from "antd/es/badge";
 import { validateResponse } from "#lowcoder/api/apiUtils";
-import { ServerAuthTypeInfo } from "@lowcoder-ee/constants/authConstants";
+import { ServerAuthTypeInfo } from "#lowcoder/constants/authConstants";
 import { GeneralLoginIcon } from "assets/icons";
 import { FreeTypes } from "#lowcoder/pages/setting/idSource/idSourceConstants";
 import { messageInstance, AddIcon } from "lowcoder-design";
 import { currentOrgAdmin } from "../../../util/permissionUtils";
 import CreateModal from "./createModal";
 import { HelpText } from "#lowcoder/components/HelpText";
-import { IconControlView } from "@lowcoder-ee/comps/controls/iconControl";
+import { IconControlView } from "#lowcoder/comps/controls/iconControl";
 
 export const IdSourceList = (props: any) => {
   const user = useSelector(getUser);

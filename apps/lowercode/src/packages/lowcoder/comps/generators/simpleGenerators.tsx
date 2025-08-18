@@ -1,5 +1,5 @@
-import { ControlParams } from "comps/controls/controlParams";
-import { getReduceContext } from "comps/utils/reduceContext";
+import { ControlParams } from "#lowcoder/comps/controls/controlParams";
+import { getReduceContext } from "#lowcoder/comps/utils/reduceContext";
 import {
   changeValueAction,
   ChangeValueAction,
@@ -9,7 +9,7 @@ import {
   CompParams,
   ConstructorToDataType,
   SimpleComp,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { ControlPropertyViewWrapper } from "lowcoder-design";
 import { ReactNode } from "react";
 import { JSONValue } from "#lowcoder/util/jsonTypes";

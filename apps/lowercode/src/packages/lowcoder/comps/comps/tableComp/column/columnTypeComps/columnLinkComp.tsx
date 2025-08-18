@@ -3,17 +3,17 @@ import { default as Input } from "antd/es/input";
 import {
   ColumnTypeCompBuilder,
   ColumnTypeViewFn,
-} from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
-import { disabledPropertyView } from "comps/utils/propertyUtils";
+} from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
+import { disabledPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import styled, { css } from "styled-components";
-import { styleControl } from "comps/controls/styleControl";
-import { TableColumnLinkStyle } from "comps/controls/styleControlConstants";
-import { clickEvent, eventHandlerControl, doubleClickEvent } from "comps/controls/eventHandlerControl";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
-import { migrateOldData } from "@lowcoder-ee/comps/generators/simpleGenerators";
-import { fixOldActionData } from "comps/comps/tableComp/column/simpleColumnTypeComps";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { TableColumnLinkStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { clickEvent, eventHandlerControl, doubleClickEvent } from "#lowcoder/comps/controls/eventHandlerControl";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { fixOldActionData } from "#lowcoder/comps/comps/tableComp/column/simpleColumnTypeComps";
 
 export const ColumnValueTooltip = trans("table.columnValueTooltip");
 

@@ -4,7 +4,7 @@ import { DeployableItemConfig } from '../types/deployable-item.types';
 import { Environment } from '../types/environment.types';
 import { deployWorkspace } from '../services/workspace.service';
 import { Workspace } from '../types/workspace.types';
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const workspaceConfig: DeployableItemConfig = {
   

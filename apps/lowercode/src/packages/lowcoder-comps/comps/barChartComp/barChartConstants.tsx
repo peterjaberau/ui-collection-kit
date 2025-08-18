@@ -31,7 +31,7 @@ import { PieChartConfig } from "../basicChartComp/chartConfigs/pieChartConfig";
 import { ScatterChartConfig } from "../basicChartComp/chartConfigs/scatterChartConfig";
 import { SeriesListComp } from "./seriesComp";
 import { EChartsOption } from "echarts";
-import { i18nObjs, trans } from "i18n/comps";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 import { GaugeChartConfig } from "../basicChartComp/chartConfigs/gaugeChartConfig";
 import { FunnelChartConfig } from "../basicChartComp/chartConfigs/funnelChartConfig";
 import {EchartsTitleVerticalConfig} from "../chartComp/chartConfigs/echartsTitleVerticalConfig";

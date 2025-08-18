@@ -1,4 +1,4 @@
-import { BoolCodeControl, jsonControl } from "comps/controls/codeControl";
+import { BoolCodeControl, jsonControl } from "#lowcoder/comps/controls/codeControl";
 import { check } from "#lowcoder/util/convertUtils";
 import {timelineNode} from './timelineConstants'
 

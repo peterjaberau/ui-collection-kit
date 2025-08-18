@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { TacoButtonType, TacoButton } from "components/button";
 import Draggable from "react-draggable";
 import { DarkActiveTextColor, GreyTextColor } from "constants/style";
-import { CloseIcon, ErrorIcon, SuccessIcon, WarningIcon, WarningWhiteIcon } from "icons";
+import { CloseIcon, ErrorIcon, SuccessIcon, WarningIcon, WarningWhiteIcon } from "#lowcoder-design/icons";
 import { trans } from "i18n/design";
 import { modalInstance } from "components/GlobalInstances";
 
@@ -226,7 +226,7 @@ function CustomModalRender(props: Omit<CustomModalProps & ModalFuncProps, "width
   return (
     <Draggable handle=".handle" disabled={!props.draggable} nodeRef={draggableRef}>
       <ModalWrapper
-        ref={draggableRef} 
+        ref={draggableRef}
         $width={props.width}
         $customStyles={props?.customStyles}
       >

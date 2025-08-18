@@ -1,9 +1,9 @@
-import { ControlParams } from "comps/controls/controlParams";
-import { EditorContext } from "comps/editorState";
-import { CompAction, SimpleComp } from "lowcoder-core";
+import { ControlParams } from "#lowcoder/comps/controls/controlParams";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { CompAction, SimpleComp } from "#lowcoder-core/index";
 import { ControlPropertyViewWrapper, PopupCard, Input } from "lowcoder-design";
 import { useContext, useEffect, useState } from "react";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 const SimpleVariableHeaderPropertyView = ({params, comp, isCheck}: any) => {
   const [error, setError] = useState<string | undefined>();
   const [value, setValue] = useState(comp.value);

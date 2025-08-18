@@ -1,14 +1,14 @@
 import { JSONValue } from "#lowcoder/util/jsonTypes";
-import { Comp, CompParams } from "lowcoder-core";
-import { UICompBuilder } from "comps/generators";
+import { Comp, CompParams } from "#lowcoder-core/index";
+import { UICompBuilder } from "#lowcoder/comps/generators";
 import {
   PropertyViewFnTypeForComp,
   ToConstructor,
   ToDataType,
   ViewFnTypeForComp,
-} from "comps/generators/multi";
-import { NewChildren as UiChildren } from "comps/generators/uiCompBuilder";
-import { NameGenerator } from "comps/utils";
+} from "#lowcoder/comps/generators/multi";
+import { NewChildren as UiChildren } from "#lowcoder/comps/generators/uiCompBuilder";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import { IContainer } from "./iContainer";
 import { SimpleContainerComp } from "./simpleContainerComp";
 import { CompTree, oldContainerParamsToNew } from "./utils";
@@ -87,6 +87,6 @@ export class ContainerCompBuilder<
         return super.parseChildrenFromValue(newParams);
       }
     }
-    return Container;
+    return Container as any;
   }
 }

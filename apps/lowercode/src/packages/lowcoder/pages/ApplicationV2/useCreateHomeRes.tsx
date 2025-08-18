@@ -17,7 +17,7 @@ import {
 import history from "../../util/history";
 import { buildAppRouteWithState } from "../../constants/routesURL";
 import { useCreateFolder } from "./useCreateFolder";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { HomeResInfo } from "#lowcoder/util/homeResUtils";
 import { toLower } from "lodash";
 

@@ -1,5 +1,5 @@
 import { JSONObject } from "#lowcoder/util/jsonTypes";
-import { UICompType } from "comps/uiCompRegistry";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
 
 export type CompConfig = {
   // comp type

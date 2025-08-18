@@ -1,8 +1,8 @@
 import { ThemeType } from "#lowcoder/api/commonSettingApi";
 import { getLocalThemeId } from "#lowcoder/util/localStorageUtil";
 import { getGlobalSettings } from "./globalSettings";
-import { CompAction, multiChangeAction, changeValueAction, deferAction } from "lowcoder-core";
-import { JSONObject, JSONValue } from "@lowcoder-ee/util/jsonTypes";
+import { CompAction, multiChangeAction, changeValueAction, deferAction } from "#lowcoder-core/index";
+import { JSONObject, JSONValue } from "#lowcoder/util/jsonTypes";
 
 export const DEFAULT_THEMEID = "default";
 

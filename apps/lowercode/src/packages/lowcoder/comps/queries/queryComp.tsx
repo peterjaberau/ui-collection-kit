@@ -2,27 +2,27 @@ import {
   manualTriggerResource,
   QueryMap,
   ResourceType,
-} from "@lowcoder-ee/constants/queryConstants";
+} from "#lowcoder/constants/queryConstants";
 import axios from "axios";
 import DataSourceIcon from "#lowcoder/components/DataSourceIcon";
-import { SimpleNameComp } from "comps/comps/simpleNameComp";
-import { StringControl } from "comps/controls/codeControl";
-import { eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { EditorState } from "comps/editorState";
+import { SimpleNameComp } from "#lowcoder/comps/comps/simpleNameComp";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { EditorState } from "#lowcoder/comps/editorState";
 import {
   stateComp,
   valueComp,
   withDefault,
   withTypeAndChildren,
   withViewFn,
-} from "comps/generators";
-import { list } from "comps/generators/list";
-import { ToInstanceType } from "comps/generators/multi";
-import { withMethodExposing } from "comps/generators/withMethodExposing";
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
-import { genQueryId, genRandomKey } from "comps/utils/idGenerator";
-import { getReduceContext } from "comps/utils/reduceContext";
-import { trans } from "i18n";
+} from "#lowcoder/comps/generators";
+import { list } from "#lowcoder/comps/generators/list";
+import { ToInstanceType } from "#lowcoder/comps/generators/multi";
+import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
+import { genQueryId, genRandomKey } from "#lowcoder/comps/utils/idGenerator";
+import { getReduceContext } from "#lowcoder/comps/utils/reduceContext";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import {
   ChangeValueAction,
@@ -41,7 +41,7 @@ import {
   MultiBaseComp,
   multiChangeAction,
   wrapActionExtraInfo,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { ValueFromOption } from "lowcoder-design";
 import { ReactNode, useEffect } from "react";
 import {
@@ -76,7 +76,7 @@ import { QueryNotificationControl } from "./queryComp/queryNotificationControl";
 import { QueryPropertyView } from "./queryComp/queryPropertyView";
 import { getTriggerType, onlyManualTrigger } from "./queryCompUtils";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import {VariablesComp} from "@lowcoder-ee/comps/queries/queryComp/variablesComp";
+import {VariablesComp} from "#lowcoder/comps/queries/queryComp/variablesComp";
 import { migrateOldData } from "../generators/simpleGenerators";
 
 const latestExecution: Record<string, string> = {};

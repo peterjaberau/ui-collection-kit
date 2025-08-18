@@ -1,24 +1,24 @@
-import { RecordConstructorToComp } from "lowcoder-core";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
 import { BoolControl } from "../../controls/boolControl";
 import { ArrowControl, BoolCodeControl, MaskControl } from "../../controls/codeControl";
 import { Section } from "#lowcoder-design/index";
 
-import { TourStepControl } from "@lowcoder-ee/comps/controls/tourStepControl";
-import { booleanExposingStateControl } from "comps/controls/codeStateControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
+import { TourStepControl } from "#lowcoder/comps/controls/tourStepControl";
+import { booleanExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 
 // Falk TODO: Check Imports
-// import { TourStepControl } from "comps/controls/tourStepControl";
-// import { booleanExposingStateControl } from "comps/controls/codeStateControl";
-// import {  dropdownControl } from "comps/controls/dropdownControl";
+// import { TourStepControl } from "#lowcoder/comps/controls/tourStepControl";
+// import { booleanExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+// import {  dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { PlacementOptions, TypeOptions } from "./tourControlConstants";
 import {
   TourArrowTooltip,
   TourMaskTooltip,
   TourPlacementTooltip
-} from "@lowcoder-ee/comps/comps/tourComp/tourTooltips";
+} from "#lowcoder/comps/comps/tourComp/tourTooltips";
 
 export const TourChildrenMap = {
   open: booleanExposingStateControl("open"),

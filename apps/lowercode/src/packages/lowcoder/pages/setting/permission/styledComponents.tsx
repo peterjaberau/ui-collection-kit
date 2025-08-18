@@ -14,7 +14,7 @@ import {
 } from "lowcoder-design";
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
-import { i18nObjs, trans } from "i18n";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 import { Table } from "#lowcoder-design/components/Table";
 import UserApi from "#lowcoder/api/userApi";
 import { validateResponse } from "#lowcoder/api/apiUtils";

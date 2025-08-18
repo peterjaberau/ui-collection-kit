@@ -10,7 +10,7 @@ import {
   SSLFormCheckboxItem,
   UserNameFormInputItem,
 } from "../form";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const OracleDatasourceForm = (props: DatasourceFormProps) => {
   const { form, datasource } = props;

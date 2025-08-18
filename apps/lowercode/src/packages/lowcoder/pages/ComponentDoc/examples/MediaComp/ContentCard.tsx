@@ -1,4 +1,4 @@
-import { CardComp } from "comps/comps/containerComp/cardComp";
+import { CardComp } from "#lowcoder/comps/comps/containerComp/cardComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -11,35 +11,35 @@ export default function ContentCardExample() {
         >
           <Example
             title="Hiding the Card Component"
-            config={{ 
+            config={{
                 hidden: true,
             }}
             compFactory={CardComp}
           />
           <Example
             title="Hiding the Title"
-            config={{ 
+            config={{
                 showTitle: false,
             }}
             compFactory={CardComp}
           />
           <Example
             title="Hiding the Content Title & Description"
-            config={{ 
+            config={{
                 showMeta: false,
             }}
             compFactory={CardComp}
           />
           <Example
             title="Hiding the Action Items"
-            config={{ 
+            config={{
                 showActionIcon: false,
             }}
             compFactory={CardComp}
           />
           <Example
             title="Custom text on Title and Description"
-            config={{ 
+            config={{
                 title: "Jennifer Holmes",
                 metaTitle: "Head Cook",
                 metaDesc: "Responsible for the daily preparation of food for participants, including the cooking of meals, and maintaining high standards of food quality, food production and portion control using the standardized menu. ",
@@ -77,7 +77,7 @@ export default function ContentCardExample() {
             config={{
               title: "Jennifer Holmes",
               metaTitle: "Head Cook",
-              metaDesc: "Responsible for the daily preparation of food for participants, including the cooking of meals, and maintaining high standards of food quality, food production and portion control using the standardized menu. ",           
+              metaDesc: "Responsible for the daily preparation of food for participants, including the cooking of meals, and maintaining high standards of food quality, food production and portion control using the standardized menu. ",
               style: {
                 "background": "linear-gradient(135deg, #72afd3 0%, #96e6a1 100%)",
                 "IconColor": "#FF0101",
@@ -199,7 +199,7 @@ export default function ContentCardExample() {
             title="Bounce Animation"
             hideSettings={true}
             config={{
-                animationStyle: 
+                animationStyle:
                 {
                     "animation": "bounce",
                     "animationDelay": "1s",

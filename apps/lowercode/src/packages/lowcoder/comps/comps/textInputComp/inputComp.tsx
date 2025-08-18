@@ -1,12 +1,12 @@
 import { Input, Section, sectionNames } from "#lowcoder-design/index";
-import { BoolControl } from "comps/controls/boolControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, InputFieldStyle, InputLikeStyle, InputLikeStyleType, LabelStyle, LabelStyleType, DisabledInputStyle, DisabledInputStyleType } from "comps/controls/styleControlConstants";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, InputFieldStyle, InputLikeStyle, InputLikeStyleType, LabelStyle, LabelStyleType, DisabledInputStyle, DisabledInputStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import {
   NameConfig,
   NameConfigPlaceHolder,
   NameConfigRequired,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 import styled from "styled-components";
 import { UICompBuilder } from "../../generators";
 import { FormDataPropertyView } from "../formComp/formDataConstants";
@@ -25,18 +25,18 @@ import {
   allowClearPropertyView,
   hiddenPropertyView,
   readOnlyPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { IconControl } from "comps/controls/iconControl";
-import { hasIcon } from "comps/utils";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { hasIcon } from "#lowcoder/comps/utils";
 import { InputRef } from "antd/es/input";
-import { RefControl } from "comps/controls/refControl";
-import { migrateOldData, withDefault } from "comps/generators/simpleGenerators";
-import { numberSimpleControl } from "comps/controls/numberSimpleControl";
-import { NumberControl } from "comps/controls/codeControl";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
+import { migrateOldData, withDefault } from "#lowcoder/comps/generators/simpleGenerators";
+import { numberSimpleControl } from "#lowcoder/comps/controls/numberSimpleControl";
+import { NumberControl } from "#lowcoder/comps/controls/codeControl";
 
 import React, { useContext, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 /**
  * Input Comp

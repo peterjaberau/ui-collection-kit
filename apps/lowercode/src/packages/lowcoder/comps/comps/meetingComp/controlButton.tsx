@@ -1,47 +1,30 @@
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { ButtonEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { IconControl } from "comps/controls/iconControl";
-import { CompNameContext, EditorContext, EditorState } from "comps/editorState";
-import { withDefault } from "comps/generators";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
-import _ from "lodash";
-import {
-  disabledPropertyView,
-  hiddenPropertyView,
-  loadingPropertyView,
-} from "comps/utils/propertyUtils";
-import {
-  CommonBlueLabel,
-  controlItem,
-  Dropdown,
-  Section,
-  sectionNames,
-} from "#lowcoder-design/index";
-import { trans } from "i18n";
-import styled, { css } from "styled-components";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl"
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl"
+import { ButtonEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl"
+import { IconControl } from "#lowcoder/comps/controls/iconControl"
+import { CompNameContext, EditorContext, EditorState } from "#lowcoder/comps/editorState"
+import { withDefault } from "#lowcoder/comps/generators"
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder"
+import _ from "lodash"
+import { disabledPropertyView, hiddenPropertyView, loadingPropertyView } from "#lowcoder/comps/utils/propertyUtils"
+import { CommonBlueLabel, controlItem, Dropdown, Section, sectionNames } from "#lowcoder-design/index"
+import { trans } from "#lowcoder/i18n"
+import styled, { css } from "styled-components"
 
-import {
-  CommonNameConfig,
-  NameConfig,
-  withExposingConfigs,
-} from "../../generators/withExposing";
-import { IForm } from "../formComp/formDataConstants";
-import { SimpleNameComp } from "../simpleNameComp";
-import { Button100, ButtonStyleControl, DisabledButtonStyleControl } from "./videobuttonCompConstants";
-import { RefControl } from "comps/controls/refControl";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
-import {
-  heightCalculator,
-  widthCalculator,
-} from "comps/controls/styleControlConstants";
-import { useEffect, useRef, useState } from "react";
-import { useResizeDetector } from "react-resize-detector";
+import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing"
+import { IForm } from "../formComp/formDataConstants"
+import { SimpleNameComp } from "../simpleNameComp"
+import { Button100, ButtonStyleControl, DisabledButtonStyleControl } from "./videobuttonCompConstants"
+import { RefControl } from "#lowcoder/comps/controls/refControl"
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl"
+import { heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants"
+import { useEffect, useRef, useState } from "react"
+import { useResizeDetector } from "react-resize-detector"
 
-import { useContext } from "react";
-import { Tooltip } from "antd";
-import { AssetType, IconscoutControl } from "@lowcoder-ee/comps/controls/iconscoutControl";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { useContext } from "react"
+import { Tooltip } from "antd"
+import { AssetType, IconscoutControl } from "#lowcoder/comps/controls/iconscoutControl"
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler"
 
 const Container = styled.div<{ $style: any }>`
   height: 100%;
@@ -50,7 +33,7 @@ const Container = styled.div<{ $style: any }>`
   align-items: center;
   justify-content: center;
   ${(props) => props.$style && getStyle(props.$style)}
-`;
+`
 
 const getStyle = (style: any) => {
   return css`
@@ -63,33 +46,34 @@ const getStyle = (style: any) => {
       max-width: ${widthCalculator(style.margin)};
       max-height: ${heightCalculator(style.margin)};
     }
-  `;
-};
+  `
+}
 
 const FormLabel = styled(CommonBlueLabel)`
   font-size: 13px;
   margin-right: 4px;
-`;
+`
 
 const IconWrapper = styled.div<{ $style: any }>`
   display: flex;
 
   ${(props) => props.$style && getStyleIcon(props.$style)}
-`;
+`
 
 const IconScoutWrapper = styled.div<{ $style: any }>`
   display: flex;
 
   ${(props) => props.$style && getStyleIcon(props.$style)}
-`;
+`
 
 function getStyleIcon(style: any) {
   return css`
-    svg, img {
+    svg,
+    img {
       width: ${style.size} !important;
       height: ${style.size} !important;
     }
-  `;
+  `
 }
 
 function getFormOptions(editorState: EditorState) {
@@ -99,48 +83,38 @@ function getFormOptions(editorState: EditorState) {
     .map((info) => ({
       label: info.name,
       value: info.name,
-    }));
+    }))
 }
 
 function getForm(editorState: EditorState, formName: string) {
-  const comp = editorState?.getUICompByName(formName);
+  const comp: any = editorState?.getUICompByName(formName)
   if (comp && comp.children.compType.getView() === "form") {
-    return comp.children.comp as unknown as IForm;
+    return comp.children.comp as unknown as IForm
   }
 }
 
-function getFormEventHandlerPropertyView(
-  editorState: EditorState,
-  formName: string
-) {
-  const form = getForm(editorState, formName);
+function getFormEventHandlerPropertyView(editorState: EditorState, formName: string) {
+  const form = getForm(editorState, formName)
   if (!form) {
-    return undefined;
+    return undefined
   }
   return (
     <CompNameContext.Provider value={formName}>
       {form.onEventPropertyView(
         <>
-          <FormLabel
-            onClick={() =>
-              editorState.setSelectedCompNames(
-                new Set([formName]),
-                "rightPanel"
-              )
-            }
-          >
+          <FormLabel onClick={() => editorState.setSelectedCompNames(new Set([formName]), "rightPanel")}>
             {formName}
           </FormLabel>
           {trans("button.formButtonEvent")}
-        </>
+        </>,
       )}
     </CompNameContext.Provider>
-  );
+  )
 }
 
 class SelectFormControl extends SimpleNameComp {
   override getPropertyView() {
-    const label = trans("button.formToSubmit");
+    const label = trans("button.formToSubmit")
     return controlItem(
       { filterText: label },
       <EditorContext.Consumer>
@@ -150,14 +124,14 @@ class SelectFormControl extends SimpleNameComp {
               label={label}
               value={this.value}
               options={getFormOptions(editorState)}
-              onChange={(value) => this.dispatchChangeValueAction(value)}
+              onChange={(value: any) => this.dispatchChangeValueAction(value)}
               allowClear={true}
             />
             {getFormEventHandlerPropertyView(editorState, this.value)}
           </>
         )}
-      </EditorContext.Consumer>
-    );
+      </EditorContext.Consumer>,
+    )
   }
 }
 
@@ -170,21 +144,21 @@ const typeOptions = [
     label: trans("button.submit"),
     value: "submit",
   },
-] as const;
+] as const
 
 const ModeOptions = [
   { label: "Standard", value: "standard" },
   { label: "Asset Library", value: "asset-library" },
-] as const;
+] as const
 
 function isDefault(type?: string) {
-  return !type;
+  return !type
 }
 
 function submitForm(editorState: EditorState, formName: string) {
-  const form = getForm(editorState, formName);
+  const form = getForm(editorState, formName)
   if (form) {
-    form.submit();
+    form.submit()
   }
 }
 
@@ -203,68 +177,56 @@ const childrenMap = {
   iconScoutAsset: IconscoutControl(AssetType.ICON),
   style: ButtonStyleControl,
   viewRef: RefControl<HTMLElement>,
-  restrictPaddingOnRotation:withDefault(StringControl, 'controlButton'),
-  tooltip: StringControl
-};
+  restrictPaddingOnRotation: withDefault(StringControl, "controlButton"),
+  tooltip: StringControl,
+}
 
 let ButtonTmpComp = (function () {
   return new UICompBuilder(childrenMap, (props) => {
-    const [width, setWidth] = useState(120);
-    const [height, setHeight] = useState(0);
+    const [width, setWidth] = useState(120)
+    const [height, setHeight] = useState(0)
 
-    const imgRef = useRef<HTMLDivElement>(null);
-    const conRef = useRef<HTMLDivElement>(null);
+    const imgRef = useRef<HTMLDivElement>(null)
+    const conRef = useRef<HTMLDivElement>(null)
 
-    const handleClickEvent = useCompClickEventHandler({onEvent: props.onEvent})
+    const handleClickEvent = useCompClickEventHandler({ onEvent: props.onEvent })
 
     useEffect(() => {
       if (height && width) {
-        onResize();
+        onResize()
       }
-    }, [height, width]);
+    }, [height, width])
 
     const setStyle = (height: string, width: string) => {
-      const img = imgRef.current;
+      const img = imgRef.current
 
-      const imgDiv = img?.getElementsByTagName("button")[0];
-      img!.style.height = height;
-      img!.style.width = width;
-      imgDiv!.style.height = height;
-      imgDiv!.style.width = width;
-    };
+      const imgDiv = img?.getElementsByTagName("button")[0]
+      img!.style.height = height
+      img!.style.width = width
+      imgDiv!.style.height = height
+      imgDiv!.style.width = width
+    }
 
     const onResize = () => {
-      const img = imgRef.current;
-      const container = conRef.current;
-      if (
-        !img?.clientWidth ||
-        !img?.clientHeight ||
-        props.autoHeight ||
-        !width
-      ) {
-        return;
+      const img = imgRef.current
+      const container = conRef.current
+      if (!img?.clientWidth || !img?.clientHeight || props.autoHeight || !width) {
+        return
       }
 
-      setStyle(container?.clientHeight + "px", container?.clientWidth + "px");
-    };
+      setStyle(container?.clientHeight + "px", container?.clientWidth + "px")
+    }
 
     useResizeDetector({
       targetRef: conRef,
       onResize,
-    });
+    })
 
     return (
       <EditorContext.Consumer>
         {(editorState) => (
           <Container ref={conRef} $style={props.style}>
-            <div
-              ref={imgRef}
-              style={
-                props.autoHeight
-                  ? { width: "100%", height: "100%" }
-                  : undefined
-              }
-            >
+            <div ref={imgRef} style={props.autoHeight ? { width: "100%", height: "100%" } : undefined}>
               <Tooltip title={props.tooltip}>
                 <Button100
                   ref={props.viewRef}
@@ -274,38 +236,26 @@ let ButtonTmpComp = (function () {
                   style={
                     props.autoHeight
                       ? {
-                        width: "100%",
-                        height: "100%",
-                        aspectRatio: props.aspectRatio,
-                        borderRadius: props.style.radius,
-                      }
+                          width: "100%",
+                          height: "100%",
+                          aspectRatio: props.aspectRatio,
+                          borderRadius: props.style.radius,
+                        }
                       : {
-                        aspectRatio: props.aspectRatio,
-                        borderRadius: props.style.radius,
-                      }
+                          aspectRatio: props.aspectRatio,
+                          borderRadius: props.style.radius,
+                        }
                   }
                   disabled={
-                    props.disabled ||
-                    (!isDefault(props.type) &&
-                      getForm(editorState, props.form)?.disableSubmit())
+                    props.disabled || (!isDefault(props.type) && getForm(editorState, props.form)?.disableSubmit())
                   }
-                  onClick={() =>
-                    isDefault(props.type)
-                      ? handleClickEvent()
-                      : submitForm(editorState, props.form)
-                  }
+                  onClick={() => (isDefault(props.type) ? handleClickEvent() : submitForm(editorState, props.form))}
                 >
-                  {props.sourceMode === 'standard' && props.prefixIcon && (
-                    <IconWrapper
-                      $style={{ ...props.style, size: props.iconSize }}
-                    >
-                      {props.prefixIcon}
-                    </IconWrapper>
+                  {props.sourceMode === "standard" && props.prefixIcon && (
+                    <IconWrapper $style={{ ...props.style, size: props.iconSize }}>{props.prefixIcon}</IconWrapper>
                   )}
-                  {props.sourceMode === 'asset-library' && props.iconScoutAsset && (
-                    <IconScoutWrapper
-                      $style={{ ...props.style, size: props.iconSize }}
-                    >
+                  {props.sourceMode === "asset-library" && props.iconScoutAsset && (
+                    <IconScoutWrapper $style={{ ...props.style, size: props.iconSize }}>
                       {Boolean(props.iconScoutAsset.value) && <img src={props.iconScoutAsset.value} />}
                     </IconScoutWrapper>
                   )}
@@ -315,21 +265,23 @@ let ButtonTmpComp = (function () {
           </Container>
         )}
       </EditorContext.Consumer>
-    );
+    )
   })
     .setPropertyViewFn((children) => (
       <>
         <Section name={sectionNames.basic}>
-          { children.sourceMode.propertyView({
+          {children.sourceMode.propertyView({
             label: "",
-            radioButton: true
+            radioButton: true,
           })}
-          {children.sourceMode.getView() === 'standard' && children.prefixIcon.propertyView({
-            label: trans("button.icon"),
-          })}
-          {children.sourceMode.getView() === 'asset-library' &&children.iconScoutAsset.propertyView({
-            label: trans("button.icon"),
-          })}
+          {children.sourceMode.getView() === "standard" &&
+            children.prefixIcon.propertyView({
+              label: trans("button.icon"),
+            })}
+          {children.sourceMode.getView() === "asset-library" &&
+            children.iconScoutAsset.propertyView({
+              label: trans("button.icon"),
+            })}
           {children.tooltip.propertyView({
             label: trans("labelProp.tooltip"),
           })}
@@ -357,24 +309,20 @@ let ButtonTmpComp = (function () {
                 label: trans("style.aspectRatio"),
               })}
             </Section>
-            <Section name={sectionNames.style}>
-              {children.style.getPropertyView()}
-            </Section>
-            <Section name={trans("prop.disabledStyle")}>
-              {children.disabledStyle.getPropertyView()}
-            </Section>
+            <Section name={sectionNames.style}>{children.style.getPropertyView()}</Section>
+            <Section name={trans("prop.disabledStyle")}>{children.disabledStyle.getPropertyView()}</Section>
           </>
         )}
       </>
     ))
-    .build();
-})();
+    .build()
+})()
 ButtonTmpComp = class extends ButtonTmpComp {
   override autoHeight(): boolean {
-    return this.children.autoHeight.getView();
+    return this.children.autoHeight.getView()
   }
-};
-export const ControlButton = withExposingConfigs(ButtonTmpComp, [
+}
+export const ControlButton: any = withExposingConfigs(ButtonTmpComp, [
   new NameConfig("loading", trans("button.loadingDesc")),
   ...CommonNameConfig,
-]);
+])

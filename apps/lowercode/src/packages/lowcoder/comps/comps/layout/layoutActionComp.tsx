@@ -1,24 +1,22 @@
-import { MultiCompBuilder, withDefault, withType } from "comps/generators";
-import { Dropdown } from "#lowcoder-design/components/Dropdown";
-import { StringControl } from "comps/controls/codeControl";
-import { BranchDiv, Treediv } from "#lowcoder-design/components/Trees";
-import { AppSelectComp } from "comps/comps/layout/appSelectComp";
-import { keyValueListControl } from "comps/controls/keyValueListControl";
-import { trans } from "i18n";
-import { KeyValue } from "#lowcoder/types/common";
-import { keyValueListToSearchStr } from "#lowcoder/util/appUtils";
-import { BoolControl, BoolPureControl } from "comps/controls/boolControl";
-import history from "#lowcoder/util/history";
+import { MultiCompBuilder, withDefault, withType } from "#lowcoder/comps/generators"
+import { Dropdown } from "#lowcoder-design/components/Dropdown"
+import { StringControl } from "#lowcoder/comps/controls/codeControl"
+import { BranchDiv, Treediv } from "#lowcoder-design/components/Trees"
+import { AppSelectComp } from "#lowcoder/comps/comps/layout/appSelectComp"
+import { keyValueListControl } from "#lowcoder/comps/controls/keyValueListControl"
+import { trans } from "#lowcoder/i18n"
+import { KeyValue } from "#lowcoder/types/common"
+import { keyValueListToSearchStr } from "#lowcoder/util/appUtils"
+import { BoolControl, BoolPureControl } from "#lowcoder/comps/controls/boolControl"
+import history from "#lowcoder/util/history"
 
 type PropertyViewParam = {
-  onAppChange?: (label: string) => void;
-};
+  onAppChange?: (label: string) => void
+}
 
-const QueryHashList = withDefault(keyValueListControl(false, [], "string"), [
-  { key: "", value: "" },
-]);
+const QueryHashList = withDefault(keyValueListControl(false, [], "string"), [{ key: "", value: "" }])
 
-const OpenAppInitAction = (function () {
+const OpenAppInitAction: any = (function () {
   return new MultiCompBuilder(
     {
       app: AppSelectComp,
@@ -26,20 +24,21 @@ const OpenAppInitAction = (function () {
       hashParam: QueryHashList,
       hideWhenNoPermission: withDefault(BoolPureControl, true),
     },
-    (props) => null as any
+    (props) => null as any,
   )
     .setPropertyViewFn((children) => {
-      return <></>;
+      return <></>
     })
-    .build();
-})();
+    .build()
+})()
 
 class OpenAppAction extends OpenAppInitAction {
+  // @ts-ignore
   override getView() {
     if (!this.children.app.children.appId.getView()) {
-      return null;
+      return null as any
     }
-    return this.children.app.getView();
+    return this.children.app.getView() as any
   }
 
   propertyView(param: PropertyViewParam) {
@@ -64,7 +63,7 @@ class OpenAppAction extends OpenAppInitAction {
           })}
         </BranchDiv>
       </>
-    );
+    )
   }
 }
 
@@ -76,7 +75,7 @@ const OpenURLAction = (function () {
     },
     (props) => {
       if (!props.url) {
-        return null;
+        return null
       }
       return (
         <iframe
@@ -86,8 +85,8 @@ const OpenURLAction = (function () {
           height="100%"
           style={{ border: "none", marginBottom: "-6px" }}
         />
-      );
-    }
+      )
+    },
   )
     .setPropertyViewFn((children) => {
       return (
@@ -99,15 +98,15 @@ const OpenURLAction = (function () {
             })}
           </BranchDiv>
         </>
-      );
+      )
     })
-    .build();
-})();
+    .build()
+})()
 
-const ActionMap = {
+const ActionMap: any = {
   openApp: OpenAppAction,
   openURL: OpenURLAction,
-};
+}
 const ActionOptions: { label: string; value: keyof typeof ActionMap }[] = [
   {
     label: trans("eventHandler.goToApp"),
@@ -117,47 +116,47 @@ const ActionOptions: { label: string; value: keyof typeof ActionMap }[] = [
     label: trans("eventHandler.goToURL"),
     value: "openURL",
   },
-];
+]
 
-const TypedLayoutActionComp = withType(ActionMap, "openApp");
+const TypedLayoutActionComp: any = withType(ActionMap, "openApp")
 
 export class LayoutActionComp extends TypedLayoutActionComp {
   getView() {
-    return this.children.comp.getView();
+    return this.children.comp.getView()
   }
 
   act(url: string) {
-    const compType = this.children.compType.getView();
+    const compType = this.children.compType.getView()
     if (compType === "openURL") {
-      const childComp = this.children.comp as InstanceType<typeof OpenURLAction>;
+      const childComp = this.children.comp as InstanceType<typeof OpenURLAction>
       if (childComp.children.newTab.getView()) {
-        window.open(childComp.children.url.getView(), "_blank");
-        return;
+        window.open(childComp.children.url.getView(), "_blank")
+        return
       }
     }
-    const urlWithParam = url + this.getUrlParam();
-    history.push(urlWithParam);
+    const urlWithParam = url + this.getUrlParam()
+    history.push(urlWithParam)
   }
 
   private getUrlParam() {
     if (this.children.compType.getView() !== "openApp") {
-      return "";
+      return ""
     }
-    const childComp = this.children.comp as InstanceType<typeof OpenAppAction>;
+    const childComp = this.children.comp as InstanceType<typeof OpenAppAction>
     const queryParam = keyValueListToSearchStr(
-      childComp.children.queryParam.getView().map((i) => i.getView() as KeyValue)
-    );
+      childComp.children.queryParam.getView().map((i: any) => i.getView() as KeyValue),
+    )
     const hashParam = keyValueListToSearchStr(
-      childComp.children.hashParam.getView().map((i) => i.getView() as KeyValue)
-    );
-    let param = "";
+      childComp.children.hashParam.getView().map((i: any) => i.getView() as KeyValue),
+    )
+    let param = ""
     if (queryParam) {
-      param += `?${queryParam}`;
+      param += `?${queryParam}`
     }
     if (hashParam) {
-      param += `#${hashParam}`;
+      param += `#${hashParam}`
     }
-    return param;
+    return param
   }
 
   propertyView(param: PropertyViewParam) {
@@ -166,12 +165,12 @@ export class LayoutActionComp extends TypedLayoutActionComp {
         <Dropdown
           lineHeight={300}
           value={this.children.compType.getView()}
-          options={ActionOptions}
+          options={ActionOptions as any}
           label={trans("eventHandler.action")}
-          onChange={(value) => {
+          onChange={(value: any) => {
             this.dispatchChangeValueAction({
               compType: value,
-            });
+            })
           }}
         />
         <Treediv>
@@ -180,6 +179,6 @@ export class LayoutActionComp extends TypedLayoutActionComp {
             : this.children.comp.getPropertyView()}
         </Treediv>
       </>
-    );
+    )
   }
 }

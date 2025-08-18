@@ -1,5 +1,5 @@
-import { FileViewerComp } from "comps/comps/fileViewerComp";
-import { trans } from "i18n";
+import { FileViewerComp } from "#lowcoder/comps/comps/fileViewerComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -34,7 +34,7 @@ export default function FileViewerExample() {
           }}
           compFactory={FileViewerComp}
         />
-        
+
       </ExampleGroup>
 
       <ExampleGroup

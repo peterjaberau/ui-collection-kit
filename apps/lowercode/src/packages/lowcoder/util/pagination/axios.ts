@@ -1,5 +1,5 @@
-import { FolderApi } from "@lowcoder-ee/api/folderApi";
-import ApplicationApi from "@lowcoder-ee/api/applicationApi";
+import { FolderApi } from "#lowcoder/api/folderApi";
+import ApplicationApi from "#lowcoder/api/applicationApi";
 import {
     fetchAppRequestType, fetchDataSourcePaginationRequestType,
     fetchDBRequestType,
@@ -8,12 +8,12 @@ import {
     fetchOrgUserRequestType, fetchQueryLibraryPaginationRequestType,
     GenericApiPaginationResponse,
     orgGroupRequestType
-} from "@lowcoder-ee/util/pagination/type";
-import OrgApi from "@lowcoder-ee/api/orgApi";
-import { DatasourceApi, NodePluginDatasourceInfo } from "@lowcoder-ee/api/datasourceApi";
-import {QueryLibraryApi} from "@lowcoder-ee/api/queryLibraryApi";
+} from "#lowcoder/util/pagination/type";
+import OrgApi from "#lowcoder/api/orgApi";
+import { DatasourceApi, NodePluginDatasourceInfo } from "#lowcoder/api/datasourceApi";
+import {QueryLibraryApi} from "#lowcoder/api/queryLibraryApi";
 import { AxiosResponse } from "axios";
-import { PUBLIC_APP_ID, publicAppJSDatasourceResponse } from "@lowcoder-ee/constants/publicApp";
+import { PUBLIC_APP_ID, publicAppJSDatasourceResponse } from "#lowcoder/constants/publicApp";
 
 export const fetchFolderElements = async (request: fetchFolderRequestType) => {
     try {

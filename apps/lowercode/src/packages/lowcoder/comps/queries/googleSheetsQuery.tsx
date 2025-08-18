@@ -1,7 +1,7 @@
-import { withTypeAndChildrenAbstract } from "comps/generators/withType";
-import { trans } from "i18n";
+import { withTypeAndChildrenAbstract } from "#lowcoder/comps/generators/withType";
+import { trans } from "#lowcoder/i18n";
 import _, { includes } from "lodash";
-import { CompAction } from "lowcoder-core";
+import { CompAction } from "#lowcoder-core/index";
 import {
   Dropdown,
   QueryConfigWrapper,

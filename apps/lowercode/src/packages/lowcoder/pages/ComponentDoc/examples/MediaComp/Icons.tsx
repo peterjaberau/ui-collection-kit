@@ -1,4 +1,4 @@
-import { IconComp } from "comps/comps/iconComp";
+import { IconComp } from "#lowcoder/comps/comps/iconComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -123,7 +123,7 @@ export default function IconExample() {
               },
             }}
             compFactory={IconComp}
-          /> 
+          />
           <Example
             title="Rotation - 135 Deg"
             width={120}
@@ -136,7 +136,7 @@ export default function IconExample() {
               },
             }}
             compFactory={IconComp}
-          />              
+          />
         </ExampleGroup>
 
         <ExampleGroup

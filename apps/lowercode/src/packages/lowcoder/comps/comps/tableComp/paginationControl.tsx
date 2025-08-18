@@ -1,10 +1,10 @@
-import { BoolControl } from "comps/controls/boolControl";
-import { ArrayNumberControl, NumberControl } from "comps/controls/codeControl";
-import { stateComp, valueComp, withDefault } from "comps/generators";
-import { ControlNodeCompBuilder } from "comps/generators/controlCompBuilder";
-import { migrateOldData } from "comps/generators/simpleGenerators";
-import { trans } from "i18n";
-import { changeChildAction, ConstructorToNodeType } from "lowcoder-core";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { ArrayNumberControl, NumberControl } from "#lowcoder/comps/controls/codeControl";
+import { stateComp, valueComp, withDefault } from "#lowcoder/comps/generators";
+import { ControlNodeCompBuilder } from "#lowcoder/comps/generators/controlCompBuilder";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { trans } from "#lowcoder/i18n";
+import { changeChildAction, ConstructorToNodeType } from "#lowcoder-core/index";
 
 const DEFAULT_PAGE_SIZE = 5;
 

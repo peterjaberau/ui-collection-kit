@@ -12,7 +12,7 @@ import {
 } from "../form";
 import { FormInstance } from "antd/es/form";
 import { fromPairs, omit, pick, toPairs } from "lodash";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const OUTSIDE_EXT_FIELDS = ["schema", "warehouse", "role"];
 

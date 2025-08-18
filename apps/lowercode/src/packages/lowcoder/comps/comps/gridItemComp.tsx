@@ -2,21 +2,21 @@
  * The current file cannot import "comps", will cause circular dependencies
  */
 import { CompName } from "#lowcoder/components/CompName";
-import { CompNameContext } from "comps/editorState";
-import { withIsLoading, withTypeAndChildren } from "comps/generators";
-import { ToInstanceType } from "comps/generators/multi";
-import { CompExposingContext } from "comps/generators/withContext";
-import { withErrorBoundary } from "comps/generators/withErrorBoundary";
+import { CompNameContext } from "#lowcoder/comps/editorState";
+import { withIsLoading, withTypeAndChildren } from "#lowcoder/comps/generators";
+import { ToInstanceType } from "#lowcoder/comps/generators/multi";
+import { CompExposingContext } from "#lowcoder/comps/generators/withContext";
+import { withErrorBoundary } from "#lowcoder/comps/generators/withErrorBoundary";
 import {
   ExposingMultiCompConstructor,
   UICompLayoutInfo,
   uiCompRegistry,
   UICompType,
-} from "comps/uiCompRegistry";
-import { ExposingInfo } from "comps/utils/exposingTypes";
-import { getReduceContext, WithParamsContext } from "comps/utils/reduceContext";
-import { parseCompType } from "comps/utils/remote";
-import { Comp, CompAction, ConstructorToDataType } from "lowcoder-core";
+} from "#lowcoder/comps/uiCompRegistry";
+import { ExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
+import { getReduceContext, WithParamsContext } from "#lowcoder/comps/utils/reduceContext";
+import { parseCompType } from "#lowcoder/comps/utils/remote";
+import { Comp, CompAction, ConstructorToDataType } from "#lowcoder-core/index";
 import { ScrollBar, SearchTextContext } from "lowcoder-design";
 import React, { Profiler, useContext, useEffect, useMemo, useState } from "react";
 import { profilerCallback } from "#lowcoder/util/cacheUtils";

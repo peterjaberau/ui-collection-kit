@@ -8,7 +8,7 @@ import { AppState } from "#lowcoder/redux/reducers";
 import { createApplication } from "#lowcoder/redux/reduxActions/applicationActions";
 import styled from "styled-components";
 import { getNextEntityName } from "#lowcoder/util/stringUtils";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { normalAppListSelector } from "../redux/selectors/applicationSelector";
 import { HomeResInfo } from "#lowcoder/util/homeResUtils";
 import { newAppPrefix } from "#lowcoder/pages/ApplicationV2/useCreateHomeRes";

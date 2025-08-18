@@ -12,8 +12,8 @@ import history from "#lowcoder/util/history";
 import { useApplicationId } from "#lowcoder/util/hooks";
 import { canEditApp, canManageApp } from "#lowcoder/util/permissionUtils";
 import ProfileDropdown from "./profileDropdown";
-import { trans } from "i18n";
-import { Logo } from "@lowcoder-ee/assets/images";
+import { trans } from "#lowcoder/i18n";
+import { Logo } from "#lowcoder/assets/images";
 import { AppPermissionDialog } from "../../components/PermissionDialog/AppPermissionDialog";
 import { useContext, useMemo, useState } from "react";
 import { getBrandingConfig } from "../../redux/selectors/configSelectors";
@@ -25,9 +25,9 @@ import Segmented from "antd/es/segmented";
 import MobileOutlined from "@ant-design/icons/MobileOutlined";
 import TabletOutlined from "@ant-design/icons/TabletOutlined";
 import DesktopOutlined from "@ant-design/icons/DesktopOutlined";
-import { DeviceOrientation, DeviceType, EditorContext } from "@lowcoder-ee/comps/editorState";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
-import { buildMaterialPreviewURL } from "@lowcoder-ee/util/materialUtils";
+import { DeviceOrientation, DeviceType, EditorContext } from "#lowcoder/comps/editorState";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
+import { buildMaterialPreviewURL } from "#lowcoder/util/materialUtils";
 
 const HeaderFont = styled.div<{ $bgColor: string }>`
   font-weight: 500;

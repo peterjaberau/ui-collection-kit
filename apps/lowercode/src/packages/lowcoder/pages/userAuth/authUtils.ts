@@ -10,7 +10,7 @@ import { doValidResponse } from "#lowcoder/api/apiUtils";
 import { SERVER_ERROR_CODES } from "#lowcoder/constants/apiConstants";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { createContext, useState } from "react";
 import { SystemConfig } from "#lowcoder/constants/configConstants";
 import {

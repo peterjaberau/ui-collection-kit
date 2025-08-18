@@ -42,14 +42,14 @@ export default function DraggableMenuItem(props: IDraggableMenuItemProps) {
     // onAddSubMenu,
     onDelete,
     renderContent,
-  } = props;
+  }: any = props;
 
   const id = item.id ?? path.join("_");
   const items = item.items;
   const context = useContext(DraggableTreeContext);
   const isFold = (forceFold || context.foldedStatus[id]) && !context.unfoldAll;
 
-  const dragData: IDragData = {
+  const dragData: IDragData | any = {
     path,
     node: item,
   };
@@ -120,7 +120,7 @@ export default function DraggableMenuItem(props: IDraggableMenuItemProps) {
       </DraggableMenuItemWrapper>
       {items.length > 0 && !isFold && (
         <div className="sub-menu-list">
-          {items.map((subItem, i) => (
+          {items.map((subItem: any, i: any) => (
             <Fragment key={i}>
               <DraggableMenuItem
                 path={[...path, i]}

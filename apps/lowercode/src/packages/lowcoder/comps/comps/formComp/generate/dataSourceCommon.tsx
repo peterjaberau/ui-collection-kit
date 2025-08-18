@@ -1,7 +1,7 @@
-import { ConstructorToDataType } from "lowcoder-core";
-import { QueryComp } from "comps/queries/queryComp";
+import { ConstructorToDataType } from "#lowcoder-core/index";
+import { QueryComp } from "#lowcoder/comps/queries/queryComp";
 import { CompConfig, CompSelection, generateWrapJs } from "./comp";
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
 
 export type TableColumn = {
   // The type of column, different data sources have different definitions

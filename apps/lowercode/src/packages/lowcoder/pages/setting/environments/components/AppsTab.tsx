@@ -9,8 +9,8 @@ import { Switch, Spin, Empty, Avatar } from 'antd';
 import { ManagedObjectType, setManagedObject, unsetManagedObject } from '../services/managed-objects.service';
 import { useDeployModal } from '../context/DeployModalContext';
 import { appsConfig } from '../config/apps.config';
-import history from "@lowcoder-ee/util/history";
-import { messageInstance } from 'lowcoder-design/src/components/GlobalInstances';
+import history from "#lowcoder/util/history";
+import { messageInstance } from '#lowcoder-design/components/GlobalInstances';
 import { trans } from 'i18n';
 
 const { Search } = Input;
@@ -38,10 +38,10 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
   // Fetch apps
   const fetchApps = async () => {
     if (!workspaceId || !environment) return;
-    
+
     setLoading(true);
     setError(null);
-    
+
     try {
       const result = await getMergedWorkspaceApps(
         workspaceId,
@@ -49,14 +49,14 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
         environment.environmentApikey,
         environment.environmentApiServiceUrl!
       );
-      
+
       setApps(result.apps);
-      
+
       // Calculate stats
       const total = result.apps.length;
       const published = result.apps.filter(app => app.published).length;
       const managed = result.apps.filter(app => app.managed).length;
-      
+
       setStats({
         total,
         published,
@@ -90,7 +90,7 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
           app.applicationGid,
           environment.environmentId,
           ManagedObjectType.APP,
-          
+
         );
       } else {
         await unsetManagedObject(
@@ -99,7 +99,7 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
           ManagedObjectType.APP
         );
       }
-      
+
       // Update the app in state
       const updatedApps = apps.map(item => {
         if (item.applicationId === app.applicationId) {
@@ -107,9 +107,9 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
         }
         return item;
       });
-      
+
       setApps(updatedApps);
-      
+
       // Update stats
       const managed = updatedApps.filter(app => app.managed).length;
       setStats(prev => ({
@@ -117,7 +117,7 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
         managed,
         unmanaged: prev.total - managed
       }));
-      
+
       messageInstance.success(trans(checked ? "environments.apps_managedSuccess" : "environments.apps_unmanagedSuccess", { name: app.name }));
       return true;
     } catch (error) {
@@ -130,8 +130,8 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
 
   // Filter apps based on search
   const filteredApps = searchText
-    ? apps.filter(app => 
-        app.name.toLowerCase().includes(searchText.toLowerCase()) || 
+    ? apps.filter(app =>
+        app.name.toLowerCase().includes(searchText.toLowerCase()) ||
         app.applicationId.toLowerCase().includes(searchText.toLowerCase()))
     : apps;
 
@@ -146,8 +146,8 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
       key: 'app',
       render: (app: App) => (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Avatar 
-            style={{ 
+          <Avatar
+            style={{
               backgroundColor: stringToColor(app.name),
               marginRight: 12
             }}
@@ -160,11 +160,11 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
               <span style={{ fontWeight: 500 }}>{app.name}</span>
               {app.applicationStatus === 'RECYCLED' && (
                 <Tooltip title={trans("environments.apps_appRecycled")}>
-                  <DeleteOutlined 
-                    style={{ 
-                      color: '#faad14', 
-                      fontSize: '14px' 
-                    }} 
+                  <DeleteOutlined
+                    style={{
+                      color: '#faad14',
+                      fontSize: '14px'
+                    }}
                   />
                 </Tooltip>
               )}
@@ -184,8 +184,8 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
           <Tag color={app.published ? 'success' : 'default'} style={{ borderRadius: '4px' }}>
             {app.published ? <CheckCircleFilled /> : null} {app.published ? trans("environments.apps_published") : trans("environments.apps_draft")}
           </Tag>
-          <Tag 
-            color={app.managed ? 'processing' : 'default'} 
+          <Tag
+            color={app.managed ? 'processing' : 'default'}
             style={{ marginTop: 8, borderRadius: '4px' }}
           >
             {app.managed ? <CloudServerOutlined /> : <DisconnectOutlined />} {app.managed ? trans("environments.apps_managed") : trans("environments.apps_unmanaged")}
@@ -209,7 +209,7 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
       key: 'actions',
       render: (_: any, app: App) => (
         <Space onClick={(e) => e.stopPropagation()}>
-         
+
           <Tooltip title={!app.managed ? trans("environments.apps_appMustBeManagedToDeploy") : trans("environments.apps_deployThisApp")}>
             <Button
               type="primary"
@@ -243,16 +243,16 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
     for (let i = 0; i < str.length; i++) {
       hash = str.charCodeAt(i) + ((hash << 5) - hash);
     }
-    
+
     const hue = Math.abs(hash % 360);
     return `hsl(${hue}, 70%, 50%)`;
   };
 
   // Stat card component
   const StatCard = ({ title, value, icon }: { title: string; value: number; icon: React.ReactNode }) => (
-    <Card 
-      style={{ 
-        height: '100%', 
+    <Card
+      style={{
+        height: '100%',
         borderRadius: '4px',
         border: '1px solid #f0f0f0'
       }}
@@ -262,9 +262,9 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
           <div style={{ fontSize: '13px', color: '#8c8c8c', marginBottom: '8px' }}>{title}</div>
           <div style={{ fontSize: '20px', fontWeight: 500 }}>{value}</div>
         </div>
-        <div style={{ 
-          fontSize: '24px', 
-          opacity: 0.8, 
+        <div style={{
+          fontSize: '24px',
+          opacity: 0.8,
           color: '#1890ff',
           padding: '8px',
           backgroundColor: 'rgba(24, 144, 255, 0.1)',
@@ -282,10 +282,10 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
   return (
     <div style={{ padding: '16px' }}>
       {/* Header */}
-      <div style={{ 
-        display: "flex", 
-        justifyContent: "space-between", 
-        alignItems: "center", 
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
         marginBottom: "20px"
       }}>
         <div>
@@ -296,8 +296,8 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
             {trans("environments.apps_subtitle")}
           </p>
         </div>
-        <Button 
-          icon={<SyncOutlined spin={refreshing} />} 
+        <Button
+          icon={<SyncOutlined spin={refreshing} />}
           onClick={handleRefresh}
           loading={loading}
         >
@@ -330,38 +330,38 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
       {/* Stats display */}
       <Row gutter={[16, 16]} style={{ marginBottom: '20px' }}>
         <Col xs={12} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.apps_totalApps")} 
-            value={stats.total} 
-            icon={<AppstoreOutlined />} 
+          <StatCard
+            title={trans("environments.apps_totalApps")}
+            value={stats.total}
+            icon={<AppstoreOutlined />}
           />
         </Col>
         <Col xs={12} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.apps_publishedApps")} 
-            value={stats.published} 
-            icon={<CheckCircleFilled />} 
+          <StatCard
+            title={trans("environments.apps_publishedApps")}
+            value={stats.published}
+            icon={<CheckCircleFilled />}
           />
         </Col>
         <Col xs={12} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.apps_managedApps")} 
-            value={stats.managed} 
-            icon={<CloudServerOutlined />} 
+          <StatCard
+            title={trans("environments.apps_managedApps")}
+            value={stats.managed}
+            icon={<CloudServerOutlined />}
           />
         </Col>
         <Col xs={12} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.apps_unmanagedApps")} 
-            value={stats.unmanaged} 
-            icon={<DisconnectOutlined />} 
+          <StatCard
+            title={trans("environments.apps_unmanagedApps")}
+            value={stats.unmanaged}
+            icon={<DisconnectOutlined />}
           />
         </Col>
       </Row>
 
       {/* Content */}
-      <Card 
-        style={{ 
+      <Card
+        style={{
           borderRadius: '4px',
           border: '1px solid #f0f0f0'
         }}
@@ -386,7 +386,7 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
                 onChange={e => setSearchText(e.target.value)}
                 style={{ width: 300 }}
               />
-              <Button 
+              <Button
                 onClick={() => setShowManagedOnly(!showManagedOnly)}
                 type={showManagedOnly ? "primary" : "default"}
                 icon={<FilterOutlined />}
@@ -395,18 +395,18 @@ const AppsTab: React.FC<AppsTabProps> = ({ environment, workspaceId }) => {
                 {showManagedOnly ? trans("environments.apps_showAll") : trans("environments.apps_managedOnly")}
               </Button>
             </div>
-            
+
             {searchText && displayedApps.length !== apps.length && (
               <div style={{ marginBottom: 16, color: '#8c8c8c', fontSize: '13px' }}>
                 {trans("environments.apps_showingResults", { count: displayedApps.length, total: apps.length })}
               </div>
             )}
-            
+
             <Table
               columns={columns}
               dataSource={displayedApps}
               rowKey="applicationId"
-              pagination={{ 
+              pagination={{
                 pageSize: 10,
                 showTotal: (total, range) => trans("environments.apps_paginationTotal", { start: range[0], end: range[1], total }),
                 size: 'small'

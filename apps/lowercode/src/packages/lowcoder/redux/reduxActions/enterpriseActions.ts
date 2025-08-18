@@ -1,4 +1,4 @@
-import { EnterpriseLicenseResponse, FetchBrandingSettingPayload } from "@lowcoder-ee/api/enterpriseApi";
+import { EnterpriseLicenseResponse, FetchBrandingSettingPayload } from "#lowcoder/api/enterpriseApi";
 import { ReduxActionTypes } from "#lowcoder/constants/reduxActionConstants";
 import { Environment } from "#lowcoder/pages/setting/environments/types/environment.types";
 

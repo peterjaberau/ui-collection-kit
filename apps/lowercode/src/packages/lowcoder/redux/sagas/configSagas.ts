@@ -8,7 +8,7 @@ import { AxiosResponse } from "axios";
 import { validateResponse } from "#lowcoder/api/apiUtils";
 import log from "loglevel";
 import ConfigApi, { ConfigResponse } from "#lowcoder/api/configApi";
-import { transToSystemConfig } from "@lowcoder-ee/constants/configConstants";
+import { transToSystemConfig } from "#lowcoder/constants/configConstants";
 import { FetchConfigActionPayload } from "#lowcoder/redux/reduxActions/configActions";
 
 export function* fetchConfigSaga(action: ReduxAction<FetchConfigActionPayload>) {

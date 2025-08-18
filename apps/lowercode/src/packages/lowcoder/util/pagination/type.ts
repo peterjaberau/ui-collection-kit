@@ -1,4 +1,4 @@
-import {GroupUser, OrgUser} from "@lowcoder-ee/constants/orgConstants";
+import {GroupUser, OrgUser} from "#lowcoder/constants/orgConstants";
 
 type ApplicationType = {
     [key: number]: string; // This allows numeric indexing

@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
-import { NumberControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
+import { NumberControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
 import { default as InputNumber } from "antd/es/input-number";
 import { ColumnTypeCompBuilder, ColumnTypeViewFn } from "../columnTypeCompBuilder";
 import { ColumnValueTooltip } from "../simpleColumnTypeComps";
-import { ProgressStyle } from "comps/controls/styleControlConstants";
-import { useStyle } from "comps/controls/styleControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { ProgressStyled as Progress } from "comps/comps/progressComp";
+import { ProgressStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { useStyle } from "#lowcoder/comps/controls/styleControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { ProgressStyled as Progress } from "#lowcoder/comps/comps/progressComp";
 import { TableMinusIcon, TablePlusIcon } from "#lowcoder-design/index";
 import styled from "styled-components";
 

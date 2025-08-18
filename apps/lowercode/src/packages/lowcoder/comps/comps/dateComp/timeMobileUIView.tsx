@@ -4,11 +4,11 @@ import dayjs from "dayjs";
 import { TIME_12_FORMAT, TIME_FORMAT, TimeParser } from "#lowcoder/util/dateTimeUtils";
 import { range } from "lodash";
 import styled from "styled-components";
-import { DateTimeStyleType } from "comps/controls/styleControlConstants";
-import { getMobileStyle } from "comps/comps/dateComp/dateCompUtil";
-import { trans } from "i18n";
-import type { TimeUIViewProps } from "comps/comps/dateComp/timeUIView";
-import { TimeRangeUIViewProps } from "comps/comps/dateComp/timeRangeUIView";
+import { DateTimeStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { getMobileStyle } from "#lowcoder/comps/comps/dateComp/dateCompUtil";
+import { trans } from "#lowcoder/i18n";
+import type { TimeUIViewProps } from "#lowcoder/comps/comps/dateComp/timeUIView";
+import { TimeRangeUIViewProps } from "#lowcoder/comps/comps/dateComp/timeRangeUIView";
 import { default as SwapRightOutlined } from "@ant-design/icons/SwapRightOutlined";
 import React from "react";
 

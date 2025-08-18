@@ -1,11 +1,11 @@
 import { Tabs } from "lowcoder-design";
 import PropertyView from "./PropertyView";
 import InsertView from "./InsertView";
-import type UIComp from "comps/comps/uiComp";
-import type { UiLayoutType } from "comps/comps/uiComp";
+import type UIComp from "#lowcoder/comps/comps/uiComp";
+import type { UiLayoutType } from "#lowcoder/comps/comps/uiComp";
 import { useEffect, useState } from "react";
 import { LuSquarePlus, LuPencilRuler } from "react-icons/lu";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { isAggregationApp } from "#lowcoder/util/appUtils";
 import React from "react";
 import { Stack } from "@chakra-ui/react"

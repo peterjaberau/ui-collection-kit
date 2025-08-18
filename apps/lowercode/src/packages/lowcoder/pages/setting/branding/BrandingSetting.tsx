@@ -4,7 +4,7 @@ import { TacoButton, CustomSelect, messageInstance, Dropdown, ResetIcon, CustomM
 import React, { useEffect, useMemo, useState, useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { default as ColorPicker } from "antd/es/color-picker";
 import {
     DetailContainer,
@@ -14,14 +14,14 @@ import {
 import { HeaderBack } from "#lowcoder/pages/setting/permission/styledComponents";
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import type { UploadChangeParam, RcFile } from "antd/es/upload/interface";
-import MaterialApi, { MaterialUploadTypeEnum } from "@lowcoder-ee/api/materialApi";
-import { validateResponse } from "@lowcoder-ee/api/apiUtils";
-import { buildMaterialPreviewURL } from "@lowcoder-ee/util/materialUtils";
-import { getUser } from "@lowcoder-ee/redux/selectors/usersSelectors";
-import { Org } from "@lowcoder-ee/constants/orgConstants";
-import { BrandingConfig, BrandingSettings, createBranding, getBranding } from "@lowcoder-ee/api/enterpriseApi";
+import MaterialApi, { MaterialUploadTypeEnum } from "#lowcoder/api/materialApi";
+import { validateResponse } from "#lowcoder/api/apiUtils";
+import { buildMaterialPreviewURL } from "#lowcoder/util/materialUtils";
+import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
+import { Org } from "#lowcoder/constants/orgConstants";
+import { BrandingConfig, BrandingSettings, createBranding, getBranding } from "#lowcoder/api/enterpriseApi";
 import Flex from "antd/es/flex";
-import { fetchBrandingSetting } from "@lowcoder-ee/redux/reduxActions/enterpriseActions";
+import { fetchBrandingSetting } from "#lowcoder/redux/reduxActions/enterpriseActions";
 import { Level1SettingPageTitle } from "../styled";
 import Title from "antd/es/typography/Title";
 import Paragraph from "antd/es/typography/Paragraph";

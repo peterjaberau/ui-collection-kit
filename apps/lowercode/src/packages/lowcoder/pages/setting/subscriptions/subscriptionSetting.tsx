@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { GreyTextColor } from "#lowcoder/constants/style";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../styled";
 import { Flex, Card, Button, message } from 'antd';
 import { ProductCard } from "./productCard";
 import { getCustomerPortalSession }  from '@lowcoder-ee/api/subscriptionApi';
-import { useSubscriptionContext } from "@lowcoder-ee/util/context/SubscriptionContext";
+import { useSubscriptionContext } from "#lowcoder/util/context/SubscriptionContext";
 
 const SubscriptionSettingContent = styled.div`
 

@@ -12,7 +12,7 @@ import {
   SSLFormCheckboxItem,
   UserNameFormInputItem,
 } from "../form";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const sqlDatasourceForm =
   (config: {

@@ -1,4 +1,4 @@
-import { SimpleAbstractComp } from "lowcoder-core";
+import { SimpleAbstractComp } from "#lowcoder-core/index";
 import {
   AlignBottom,
   AlignCenter,

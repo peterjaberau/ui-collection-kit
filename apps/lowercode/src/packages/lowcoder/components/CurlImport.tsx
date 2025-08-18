@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Input, Button, message } from "antd";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import parseCurl from "@bany/curl-to-json";
 const { TextArea } = Input;
 interface CurlImportModalProps {
@@ -25,18 +25,18 @@ export function CurlImportModal(props: CurlImportModalProps) {
       // Parse the cURL command using the correct import
       const parsedData = parseCurl(curlCommand);
 
-      
-      
+
+
       // Log the result for now as requested
     //   console.log("Parsed cURL data:", parsedData);
-      
+
       // Call success callback with parsed data
       onSuccess(parsedData);
-      
+
       // Reset form and close modal
       setCurlCommand("");
       onCancel();
-      
+
       message.success("cURL command imported successfully!");
     } catch (error: any) {
       console.error("Error parsing cURL command:", error);
@@ -94,4 +94,4 @@ export function CurlImportModal(props: CurlImportModalProps) {
       </div>
     </Modal>
   );
-} 
+}

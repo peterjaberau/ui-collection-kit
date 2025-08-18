@@ -1,5 +1,5 @@
-import { RichTextEditorComp } from "comps/comps/richTextEditorComp";
-import { trans } from "i18n";
+import { RichTextEditorComp } from "#lowcoder/comps/comps/richTextEditorComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -10,14 +10,14 @@ export default function InputExample() {
         title={trans("componentDoc.basicUsage")}
         description="The Following Examples Show the Basic Usage of the Rich Text Editor Component."
       >
-        <Example 
+        <Example
          title={trans("componentDoc.placeholder")}
          width={500}
          height={400}
          config={{
            placeholder: "Let us know about yourself!",
          }}
-         compFactory={RichTextEditorComp} 
+         compFactory={RichTextEditorComp}
        />
        <Example
          title="Default Value"
@@ -27,12 +27,12 @@ export default function InputExample() {
           placeholder: "Let us know about yourself!",
           value: "I am an Experienced FullStack Web Developer ...",
          }}
-         compFactory={RichTextEditorComp} 
+         compFactory={RichTextEditorComp}
        />
       </ExampleGroup>
 
-      <ExampleGroup 
-      title="Layout Options" 
+      <ExampleGroup
+      title="Layout Options"
       description="The Following Examples Show the different Layout options of the Rich Text Edito Component.">
         <Example
           title={trans("componentDoc.fixed")}
@@ -70,7 +70,7 @@ export default function InputExample() {
         title="Styling Properties"
         description="The Following Examples Show the different Styling properties of the Rich Text Editor Component."
       >
-        <Example 
+        <Example
          title="Different Styling Properties"
          width={500}
          height={400}
@@ -83,7 +83,7 @@ export default function InputExample() {
             "borderWidth": "2px"
           },
          }}
-         compFactory={RichTextEditorComp} 
+         compFactory={RichTextEditorComp}
        />
       </ExampleGroup>
     </>

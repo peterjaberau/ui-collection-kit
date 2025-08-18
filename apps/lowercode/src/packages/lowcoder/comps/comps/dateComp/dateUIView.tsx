@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import type { DateCompViewProps } from "./dateComp";
-import { disabledDate, getStyle, StyledPickerPanel } from "comps/comps/dateComp/dateCompUtil";
+import { disabledDate, getStyle, StyledPickerPanel } from "#lowcoder/comps/comps/dateComp/dateCompUtil";
 import { useUIView } from "../../utils/useUIView";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import React, { useContext } from "react";
@@ -10,12 +10,12 @@ import { EditorContext } from "../../editorState";
 import { default as DatePicker } from "antd/es/date-picker";
 import type { DatePickerProps } from "antd/es/date-picker";
 import type { Dayjs } from 'dayjs';
-import { DateParser } from "@lowcoder-ee/util/dateTimeUtils";
+import { DateParser } from "#lowcoder/util/dateTimeUtils";
 import { timeZoneOptions } from "./timeZone";
 import { default as AntdSelect } from "antd/es/select";
 import { omit } from "lodash";
 
-const DatePickerStyled = styled(DatePicker<Dayjs>)<{ $style: DateTimeStyleType; $disabledStyle?: DisabledInputStyleType; }>`
+const DatePickerStyled: any = styled(DatePicker<Dayjs>)<{ $style: DateTimeStyleType; $disabledStyle?: DisabledInputStyleType; }>`
   width: 100%;
   box-shadow: ${props=>`${props.$style.boxShadow} ${props.$style.boxShadowColor}`};
   ${(props) => props.$style && getStyle(props.$style)}
@@ -65,7 +65,7 @@ const DateMobileUIView = React.lazy(() =>
   import("./dateMobileUIView").then((m) => ({ default: m.DateMobileUIView }))
 );
 
-export const DateUIView = (props: DataUIViewProps) => {
+export const DateUIView = (props: DataUIViewProps | any) => {
   const editorState = useContext(EditorContext);
 
   const placeholder = Array.isArray(props.placeholder) ? props.placeholder[0] : props.placeholder;
@@ -82,11 +82,11 @@ export const DateUIView = (props: DataUIViewProps) => {
       hourStep={props.hourStep as any}
       minuteStep={props.minuteStep as any}
       secondStep={props.secondStep as any}
-      disabledDate={(current) => disabledDate(current, props.minDate, props.maxDate)}
+      disabledDate={(current: any) => disabledDate(current, props.minDate, props.maxDate)}
       picker={props.pickerMode as any}
       inputReadOnly={checkIsMobile(editorState?.getAppSettings().maxWidth)}
       placeholder={placeholder}
-      panelRender={(panelNode) => (
+      panelRender={(panelNode: any) => (
         <StyledPickerPanel
           $style={props.$childrenInputFieldStyle as ChildrenMultiSelectStyleType}
         >

@@ -1,7 +1,7 @@
 import Api from "#lowcoder/api/api";
 import { AxiosPromise } from "axios";
 import { ApiResponse } from "#lowcoder/api/apiResponses";
-import { AuthType } from "@lowcoder-ee/pages/setting/idSource/idSourceConstants";
+import { AuthType } from "#lowcoder/pages/setting/idSource/idSourceConstants";
 
 export interface ConfigItem {
   id: string;

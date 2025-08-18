@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { trans, transToNode } from "i18n";
+import { trans, transToNode } from "#lowcoder/i18n";
 import IdSourceApi, { ConfigItem } from "#lowcoder/api/idSourceApi";
 import { DetailContainer } from "#lowcoder/pages/setting/theme/styledComponents";
 import { HeaderBack } from "#lowcoder/pages/setting/permission/styledComponents";
@@ -17,7 +17,7 @@ import {
   authConfig,
   AuthType,
   ManualSyncTypes,
-} from "@lowcoder-ee/pages/setting/idSource/idSourceConstants";
+} from "#lowcoder/pages/setting/idSource/idSourceConstants";
 import { Manual } from "#lowcoder/pages/setting/idSource/detail/manual";
 import { DeleteConfig } from "#lowcoder/pages/setting/idSource/detail/deleteConfig";
 import { default as Divider } from "antd/es/divider";
@@ -37,7 +37,7 @@ import { validateResponse } from "#lowcoder/api/apiUtils";
 import { ItemType } from "#lowcoder/pages/setting/idSource/idSourceConstants";
 import _ from "lodash";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { IconPicker } from "@lowcoder-ee/comps/controls/iconControl";
+import { IconPicker } from "#lowcoder/comps/controls/iconControl";
 import Switch from "antd/es/switch";
 import Title from "antd/es/typography/Title";
 import { sourceMappingKeys } from "../OAuthForms/GenericOAuthForm";

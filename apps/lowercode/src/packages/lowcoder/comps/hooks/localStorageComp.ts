@@ -5,7 +5,7 @@ import { NameConfig, withExposingConfigs } from "../generators/withExposing";
 import { JSONObject } from "../../util/jsonTypes";
 import { useEffect, useMemo, useCallback } from "react";
 import isEqual from "fast-deep-equal";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import log from "loglevel";
 
 const APP_STORE_NAMESPACE = "lowcoder_app_local_storage";

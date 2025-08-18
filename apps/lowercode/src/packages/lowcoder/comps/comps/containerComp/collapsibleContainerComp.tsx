@@ -1,10 +1,10 @@
-import { ToDataType } from "comps/generators/multi";
-import { NameGenerator } from "comps/utils/nameGenerator";
+import { ToDataType } from "#lowcoder/comps/generators/multi";
+import { NameGenerator } from "#lowcoder/comps/utils/nameGenerator";
 import { toSimpleContainerData } from "../containerBase/simpleContainerComp";
 import {
   ContainerChildren,
 } from "../triContainerComp/triContainerCompBuilder";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 type ContainerDataType = ToDataType<ContainerChildren<{}>>;
 

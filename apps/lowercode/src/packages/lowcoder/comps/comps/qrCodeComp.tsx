@@ -1,19 +1,19 @@
-import { RecordConstructorToView } from "lowcoder-core";
-import { BoolControl } from "comps/controls/boolControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, QRCodeStyle, heightCalculator,	widthCalculator } from "comps/controls/styleControlConstants";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
-import { NameConfig, NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
+import { RecordConstructorToView } from "#lowcoder-core/index";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, QRCodeStyle, heightCalculator,	widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
+import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "lowcoder-design";
 import { QRCodeSVG } from "qrcode.react";
-import { hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { StringControl } from "comps/controls/codeControl";
+import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
 
 import { useContext, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { withDefault } from "../generators";
 
 // TODO: add styling for image (size)

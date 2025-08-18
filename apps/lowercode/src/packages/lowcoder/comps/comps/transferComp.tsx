@@ -1,14 +1,14 @@
-import { CompAction, RecordConstructorToComp, RecordConstructorToView, changeChildAction } from "lowcoder-core";
-import { BoolControl } from "comps/controls/boolControl";
-import { arrayObjectExposingStateControl, arrayStringExposingStateControl } from "comps/controls/codeStateControl";
-import { styleControl } from "comps/controls/styleControl";
-import { TransferStyle, TransferStyleType, heightCalculator, widthCalculator } from "comps/controls/styleControlConstants";
-import { NewChildren, UICompBuilder } from "comps/generators/uiCompBuilder";
-import { NameConfig, NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
+import { CompAction, RecordConstructorToComp, RecordConstructorToView, changeChildAction } from "#lowcoder-core/index";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { arrayObjectExposingStateControl, arrayStringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { TransferStyle, TransferStyleType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
+import { NewChildren, UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
+import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "lowcoder-design";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { NumberControl, StringControl } from "comps/controls/codeControl";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { NumberControl, StringControl } from "#lowcoder/comps/controls/codeControl";
 import { default as Transfer } from "antd/es/transfer";
 import type { TransferKey } from "antd/es/transfer/interface";
 import { useResizeDetector } from "react-resize-detector";
@@ -110,7 +110,7 @@ const TransferView = React.memo((props: RecordConstructorToView<typeof childrenM
     setWidth(container?.clientWidth ?? 0);
     setHeight(container?.clientHeight ?? 0);
   };
-  
+
   useResizeDetector({
     targetRef: conRef,
     onResize,

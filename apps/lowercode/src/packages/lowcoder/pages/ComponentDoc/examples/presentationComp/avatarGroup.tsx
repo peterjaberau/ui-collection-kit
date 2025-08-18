@@ -1,4 +1,4 @@
-import { AvatarGroupComp } from "comps/comps/avatarGroup";
+import { AvatarGroupComp } from "#lowcoder/comps/comps/avatarGroup";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 import { trans } from "i18n/design";

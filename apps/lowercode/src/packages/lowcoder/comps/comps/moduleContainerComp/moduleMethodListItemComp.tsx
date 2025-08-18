@@ -1,8 +1,8 @@
-import { ActionSelectorControl } from "comps/controls/actionSelector/actionSelectorControl";
-import CompNameControl from "comps/controls/compNameControl";
-import { MultiCompBuilder } from "comps/generators";
-import { withParams } from "comps/generators/withParams";
-import { CompAction, customAction, isCustomAction } from "lowcoder-core";
+import { ActionSelectorControl } from "#lowcoder/comps/controls/actionSelector/actionSelectorControl";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
+import { withParams } from "#lowcoder/comps/generators/withParams";
+import { CompAction, customAction, isCustomAction } from "#lowcoder-core/index";
 import { getPromiseAfterDispatch } from "#lowcoder/util/promiseUtils";
 import ModuleMethodParamListComp from "./moduleMethodParamListComp";
 

@@ -4,12 +4,12 @@ import { BrandingSetting } from "./BrandingSetting";
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../styled";
 import styled from "styled-components";
 import { Card, Typography, Row, Col, Divider, Image, Button } from "antd";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useState } from "react";
 
 import { HelpText } from "#lowcoder/components/HelpText";
-import { getUser } from "@lowcoder-ee/redux/selectors/usersSelectors";
-import { getDeploymentId } from "@lowcoder-ee/redux/selectors/configSelectors";
+import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
+import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
 import { getOrgApiUsage, getOrgLastMonthApiUsage } from "#lowcoder/redux/selectors/orgSelectors";
 import { fetchAPIUsageAction, fetchLastMonthAPIUsageAction } from "#lowcoder/redux/reduxActions/orgActions";
 import { useEffect } from "react";

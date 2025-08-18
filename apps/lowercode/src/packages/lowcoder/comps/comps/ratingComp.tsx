@@ -9,14 +9,14 @@ import { numberExposingStateControl } from "../controls/codeStateControl";
 import { UICompBuilder, withDefault } from "../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../generators/withExposing";
 import { formDataChildren, FormDataPropertyView } from "./formComp/formDataConstants";
-import { styleControl } from "comps/controls/styleControl";
-import {  AnimationStyle, InputFieldStyle, LabelStyle, RatingStyle, RatingStyleType } from "comps/controls/styleControlConstants";
-import { migrateOldData } from "comps/generators/simpleGenerators";
-import { disabledPropertyView, hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import {  AnimationStyle, InputFieldStyle, LabelStyle, RatingStyle, RatingStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { disabledPropertyView, hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 
 import { useContext, useEffect, useRef } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 const EventOptions = [changeEvent] as const;
 
@@ -43,7 +43,7 @@ const RatingBasicComp = (function () {
     allowHalf: BoolControl,
     disabled: BoolCodeControl,
     onEvent: eventHandlerControl(EventOptions),
-    style: styleControl(InputFieldStyle, 'style') , 
+    style: styleControl(InputFieldStyle, 'style') ,
     animationStyle: styleControl(AnimationStyle, 'animationStyle'),
     labelStyle: styleControl(
       LabelStyle.filter(

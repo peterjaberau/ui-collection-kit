@@ -1,4 +1,4 @@
-import { CompConstructor, CompParams, DispatchType } from "lowcoder-core";
+import { CompConstructor, CompParams, DispatchType } from "#lowcoder-core/index";
 
 /**
  * Hijack the dispatch method.

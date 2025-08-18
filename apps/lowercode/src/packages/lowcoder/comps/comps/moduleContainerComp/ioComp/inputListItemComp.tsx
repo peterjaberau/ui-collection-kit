@@ -7,8 +7,8 @@ import {
   isCustomAction,
   isMyCustomAction,
   CustomAction,
-} from "lowcoder-core";
-import { MethodConfig, ExecuteAction } from "comps/controls/actionSelector/executeCompTypes";
+} from "#lowcoder-core/index";
+import { MethodConfig, ExecuteAction } from "#lowcoder/comps/controls/actionSelector/executeCompTypes";
 import {
   JSONValueControl,
   StringControl,
@@ -16,20 +16,20 @@ import {
   NumberControl,
   BoolCodeControl,
   codeControl,
-} from "comps/controls/codeControl";
-import CompNameControl from "comps/controls/compNameControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import QuerySelectControl from "comps/controls/querySelectControl";
-import { withType, MultiCompBuilder } from "comps/generators";
-import { simpleValueComp } from "comps/generators/hookToComp";
-import { withExposingRaw } from "comps/generators/withExposing";
-import { getReduceContext } from "comps/utils/reduceContext";
-import { FunctionNode, CodeNode, fromRecord, Node } from "lowcoder-core";
+} from "#lowcoder/comps/controls/codeControl";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import QuerySelectControl from "#lowcoder/comps/controls/querySelectControl";
+import { withType, MultiCompBuilder } from "#lowcoder/comps/generators";
+import { simpleValueComp } from "#lowcoder/comps/generators/hookToComp";
+import { withExposingRaw } from "#lowcoder/comps/generators/withExposing";
+import { getReduceContext } from "#lowcoder/comps/utils/reduceContext";
+import { FunctionNode, CodeNode, fromRecord, Node } from "#lowcoder-core/index";
 import { Fragment, useEffect } from "react";
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
 import { handlePromiseAndDispatch } from "#lowcoder/util/promiseUtils";
-import { trans } from "i18n";
-import { controlItem } from "lowcoder-design";
+import { trans } from "#lowcoder/i18n";
+import { controlItem } from "#lowcoder-design/index";
 
 export enum InputTypeEnum {
   Data = "data",
@@ -40,7 +40,7 @@ export enum InputTypeEnum {
   Query = "query",
 }
 
-export const inputControls = {
+export const inputControls: any = {
   [InputTypeEnum.Data]: JSONValueControl,
   [InputTypeEnum.String]: StringControl,
   [InputTypeEnum.Array]: ArrayControl,
@@ -49,12 +49,12 @@ export const inputControls = {
   [InputTypeEnum.Query]: QuerySelectControl,
 };
 
-export const defaultValueControls = {
+export const defaultValueControls: any = {
   ...inputControls,
   [InputTypeEnum.Query]: simpleValueComp({ data: null }),
 };
 
-export const testControls = {
+export const testControls: any = {
   ...inputControls,
 };
 
@@ -90,7 +90,7 @@ interface TestViewProps {
 }
 
 function TestView(props: TestViewProps) {
-  const { itemComp } = props;
+  const { itemComp } : any = props;
   const { name, type, description } = itemComp.getView();
   const testType = itemComp.children.test.children.compType.getView();
   const defaultType = itemComp.children.defaultValue.children.compType.getView();
@@ -122,7 +122,7 @@ const childrenMap = {
   test: withType(testControls, InputTypeEnum.Data),
 };
 
-const InputCompBase = new MultiCompBuilder(childrenMap, (props) => {
+const InputCompBase: any = new MultiCompBuilder(childrenMap, (props) => {
   return props;
 }).build();
 
@@ -218,7 +218,8 @@ class InputCompWithMethods extends InputCompBase {
   }
 }
 
-const InputListItemComp = withExposingRaw(InputCompWithMethods, {}, (comp) => {
+// @ts-ignore
+const InputListItemComp: any = withExposingRaw(InputCompWithMethods, {}, (comp: any) => {
   const { type } = comp.getView();
   const testControl = comp.children.test.children.comp as unknown;
   const defaultNode = comp.children.defaultValue.children.comp.exposingNode();
@@ -235,13 +236,13 @@ const InputListItemComp = withExposingRaw(InputCompWithMethods, {}, (comp) => {
   const testCodeControlComp = testControl as InstanceType<ReturnType<typeof codeControl>>;
   const testNode = testCodeControlComp.exposingNode();
 
-  let valueNode: Node<any> | undefined = defaultNode;
+  let valueNode: Node<any> | any = defaultNode;
   if (!comp.readOnly && testCodeControlComp.unevaledValue) {
     valueNode = testNode;
   }
   return fromRecord({
     value: valueNode,
-  });
+  } as any);
 });
 
 export const getInputOptionLabel = (value: InputTypeEnum) => {

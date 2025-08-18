@@ -1,4 +1,4 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { ReactNode } from "react";
 
 const valueTranslate: Record<string, Record<string, ReactNode>> = {

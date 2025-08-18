@@ -1,4 +1,4 @@
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 import { ReactNode } from "react";
 import { useSelector } from "react-redux";
 import { styled } from "styled-components";

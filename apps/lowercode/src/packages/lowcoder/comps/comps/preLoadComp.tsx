@@ -8,18 +8,18 @@ import {
   evalFunc,
   evalStyle,
   RecordConstructorToComp,
-} from "lowcoder-core";
-import { CodeTextControl } from "comps/controls/codeTextControl";
-import SimpleStringControl from "comps/controls/simpleStringControl";
-import { MultiCompBuilder, withPropertyViewFn } from "comps/generators";
-import { list } from "comps/generators/list";
+} from "#lowcoder-core/index";
+import { CodeTextControl } from "#lowcoder/comps/controls/codeTextControl";
+import SimpleStringControl from "#lowcoder/comps/controls/simpleStringControl";
+import { MultiCompBuilder, withPropertyViewFn } from "#lowcoder/comps/generators";
+import { list } from "#lowcoder/comps/generators/list";
 import { BaseSection, CustomModal, PlusIcon, ScrollBar } from "lowcoder-design";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
 import { runScriptInHost } from "#lowcoder/util/commonUtils";
-import { getGlobalSettings } from "comps/utils/globalSettings";
-import { trans } from "i18n";
+import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
+import { trans } from "#lowcoder/i18n";
 import log from "loglevel";
 import { JSLibraryModal } from "#lowcoder/components/JSLibraryModal";
 import { JSLibraryTree } from "#lowcoder/components/JSLibraryTree";

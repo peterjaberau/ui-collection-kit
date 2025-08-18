@@ -3,22 +3,22 @@ import { default as LayoutSider } from "antd/es/layout/Sider";
 import { default as AntdMenu, MenuProps } from "antd/es/menu";
 import { default as Segmented } from "antd/es/segmented";
 import MainContent from "#lowcoder/components/layout/MainContent";
-import { LayoutMenuItemComp, LayoutMenuItemListComp } from "comps/comps/layout/layoutMenuItemComp";
-import { menuPropertyView } from "comps/comps/navComp/components/MenuItemList";
-import { registerLayoutMap } from "comps/comps/uiComp";
-import { MultiCompBuilder, withDefault, withViewFn } from "comps/generators";
-import { withDispatchHook } from "comps/generators/withDispatchHook";
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
+import { LayoutMenuItemComp, LayoutMenuItemListComp } from "#lowcoder/comps/comps/layout/layoutMenuItemComp";
+import { menuPropertyView } from "#lowcoder/comps/comps/navComp/components/MenuItemList";
+import { registerLayoutMap } from "#lowcoder/comps/comps/uiComp";
+import { MultiCompBuilder, withDefault, withViewFn } from "#lowcoder/comps/generators";
+import { withDispatchHook } from "#lowcoder/comps/generators/withDispatchHook";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
 import { ALL_APPLICATIONS_URL } from "#lowcoder/constants/routesURL";
 import { TopHeaderHeight } from "#lowcoder/constants/style";
 import { Section, controlItem, sectionNames } from "#lowcoder-design/index";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { EditorContainer, EmptyContent }  from "#lowcoder/pages/common/styledComponent";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { isUserViewMode, useAppPathParam } from "#lowcoder/util/hooks";
-import { BoolCodeControl, StringControl, jsonControl } from "comps/controls/codeControl";
-import { styleControl } from "comps/controls/styleControl";
+import { BoolCodeControl, StringControl, jsonControl } from "#lowcoder/comps/controls/codeControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import {
   NavLayoutStyle,
   NavLayoutItemStyle,
@@ -27,11 +27,11 @@ import {
   NavLayoutItemHoverStyleType,
   NavLayoutItemActiveStyle,
   NavLayoutItemActiveStyleType,
-} from "comps/controls/styleControlConstants";
-import { dropdownControl } from "comps/controls/dropdownControl";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 import _ from "lodash";
 import { check } from "#lowcoder/util/convertUtils";
-import { genRandomKey } from "comps/utils/idGenerator";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
 import history from "#lowcoder/util/history";
 import {
   DataOption,
@@ -40,8 +40,8 @@ import {
   jsonMenuItems,
   menuItemStyleOptions
 } from "./navLayoutConstants";
-import { clickEvent, eventHandlerControl } from "@lowcoder-ee/comps/controls/eventHandlerControl";
-import { childrenToProps } from "@lowcoder-ee/comps/generators/multi";
+import { clickEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { childrenToProps } from "#lowcoder/comps/generators/multi";
 
 const { Header } = Layout;
 
@@ -278,7 +278,7 @@ NavTmpLayout = withViewFn(NavTmpLayout, (comp) => {
   const pathParam = useAppPathParam();
   const isViewMode = isUserViewMode(pathParam);
   const [selectedKey, setSelectedKey] = useState("");
-  const items = comp.children.items.getView();
+  const items: any = comp.children.items.getView();
   const navWidth = comp.children.width.getView();
   const navMode = comp.children.mode.getView();
   const navCollapse = comp.children.collapse.getView();
@@ -301,7 +301,7 @@ NavTmpLayout = withViewFn(NavTmpLayout, (comp) => {
       const result: Record<string, LayoutMenuItemComp | MenuItemNode> = {};
       if(dataOptionType === DataOption.Manual) {
         (items as LayoutMenuItemComp[])?.forEach((item) => {
-          const subItems = item.children.items.getView();
+          const subItems: any = item.children.items.getView();
           if (subItems.length > 0) {
             Object.assign(result, generateItemKeyRecord(subItems))
           }
@@ -377,7 +377,7 @@ NavTmpLayout = withViewFn(NavTmpLayout, (comp) => {
     (itemComps: LayoutMenuItemComp[]): MenuProps["items"] => {
       return itemComps.filter(filterItem).map((item) => {
         const label = item.children.label.getView();
-        const subItems = item.children.items.getView();
+        const subItems: any = item.children.items.getView();
         return {
           label: label,
           title: label,
@@ -402,7 +402,7 @@ NavTmpLayout = withViewFn(NavTmpLayout, (comp) => {
   const findItemPathByKey = useCallback(
     (itemComps: LayoutMenuItemComp[], itemKey: string): string[] => {
       for (let item of itemComps) {
-        const subItems = item.children.items.getView();
+        const subItems: any = item.children.items.getView();
         if (subItems.length > 0) {
           // have subMenus
           const childPath = findItemPathByKey(subItems, itemKey);
@@ -425,7 +425,7 @@ NavTmpLayout = withViewFn(NavTmpLayout, (comp) => {
     (itemComps: LayoutMenuItemComp[]): string[] => {
       for (let item of itemComps) {
         if (filterItem(item)) {
-          const subItems = item.children.items.getView();
+          const subItems: any = item.children.items.getView();
           if (subItems.length > 0) {
             // have subMenus
             const childPath = findFirstItemPath(subItems);
@@ -637,7 +637,7 @@ NavTmpLayout = withDispatchHook(NavTmpLayout, (dispatch) => (action) => {
   });
 });
 
-export const NavLayout = class extends NavTmpLayout {
+export const NavLayout: any = class extends NavTmpLayout {
   getAllCompItems() {
     return {};
   }

@@ -3,7 +3,7 @@ import { simpleMultiComp } from "../generators";
 import { withExposingConfigs } from "../generators/withExposing";
 import { EvalParamType, ParamsConfig } from "../controls/actionSelector/executeCompTypes";
 import { JSONObject } from "../../util/jsonTypes";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { notificationInstance } from "lowcoder-design";
 import type { ArgsProps, NotificationPlacement } from "antd/es/notification/interface";
 
@@ -13,7 +13,7 @@ const params: ParamsConfig = [
 ];
 
 const showNotification = (
-  params: EvalParamType[], 
+  params: EvalParamType[],
   level: "open" | "info" | "success" | "warning" | "error"
 ) => {
   const text = params?.[0] as string;
@@ -44,7 +44,7 @@ const destroy = (
 ) => {
   // Extract the id from the params
   const id = params[0] as React.Key;
-  
+
   // Call notificationInstance.destroy with the provided id
   notificationInstance.destroy(id);
 };

@@ -32,7 +32,7 @@ import { PieChartConfig } from "../chartComp/chartConfigs/pieChartConfig";
 import { ScatterChartConfig } from "../chartComp/chartConfigs/scatterChartConfig";
 import { SeriesListComp } from "../chartComp/seriesComp";
 import { EChartsOption } from "echarts";
-import { i18nObjs, trans } from "i18n/comps";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 import { FunnelChartConfig} from "../chartComp/chartConfigs/funnelChartConfig";
 import { EchartsTitleConfig } from "#lowcoder-comps/comps/chartComp/chartConfigs/echartsTitleConfig";
 import { EchartsSortingConfig } from "../chartComp/chartConfigs/echartsSortingConfig";

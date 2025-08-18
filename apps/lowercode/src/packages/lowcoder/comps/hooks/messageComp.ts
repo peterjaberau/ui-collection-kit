@@ -3,7 +3,7 @@ import { simpleMultiComp } from "../generators";
 import { withExposingConfigs } from "../generators/withExposing";
 import { EvalParamType, ParamsConfig } from "../controls/actionSelector/executeCompTypes";
 import { JSONObject } from "../../util/jsonTypes";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
 const params: ParamsConfig = [

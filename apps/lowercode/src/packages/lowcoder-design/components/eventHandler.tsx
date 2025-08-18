@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BluePlusIcon } from "icons";
+import { BluePlusIcon } from "#lowcoder-design/icons";
 import { EllipsisTextCss, labelCss } from "./Label";
 import { LinkButton } from "./button";
 import { ReactNode } from "react";

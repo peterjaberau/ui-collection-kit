@@ -7,7 +7,7 @@ import {
 import { LibraryQuery, LibraryQueryPublishRequest } from "../../api/queryLibraryApi";
 import { AxiosResponse } from "axios";
 import { GenericApiResponse } from "../../api/apiResponses";
-import { Datasource } from "@lowcoder-ee/constants/datasourceConstants";
+import { Datasource } from "#lowcoder/constants/datasourceConstants";
 
 export const fetchQueryLibrary = (): ReduxActionWithoutPayload => {
   return {

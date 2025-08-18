@@ -1,5 +1,5 @@
-import { DropdownComp } from "comps/comps/buttonComp/dropdownComp";
-import { trans } from "i18n";
+import { DropdownComp } from "#lowcoder/comps/comps/buttonComp/dropdownComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

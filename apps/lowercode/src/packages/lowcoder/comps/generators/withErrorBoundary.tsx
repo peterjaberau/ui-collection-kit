@@ -1,5 +1,5 @@
-import { trans } from "i18n";
-import { CompConstructor } from "lowcoder-core";
+import { trans } from "#lowcoder/i18n";
+import { CompConstructor } from "#lowcoder-core/index";
 import React, { ErrorInfo } from "react";
 import styled from "styled-components";
 

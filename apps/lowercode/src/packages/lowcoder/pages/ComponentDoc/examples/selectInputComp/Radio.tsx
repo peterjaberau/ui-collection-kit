@@ -1,5 +1,5 @@
-import { RadioComp } from "comps/comps/selectInputComp/radioComp";
-import { trans } from "i18n";
+import { RadioComp } from "#lowcoder/comps/comps/selectInputComp/radioComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

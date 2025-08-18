@@ -1,20 +1,20 @@
 import React, { useContext, useEffect, useState, useCallback, useMemo } from "react";
 import styled from "styled-components";
 import { PointIcon, SearchOutlinedIcon } from "#lowcoder-design/icons";
-import type { EditPopoverItemType } from 'lowcoder-design/src/components/popover';
-import { Search } from 'lowcoder-design/src/components/Search';
+import type { EditPopoverItemType } from '#lowcoder-design/components/popover';
+import { Search } from '#lowcoder-design/components/Search';
 import { EditPopover } from "#lowcoder-design/index";
-import { EditorContext } from "comps/editorState";
-import { GridCompOperator } from "comps/utils/gridCompOperator";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { GridCompOperator } from "#lowcoder/comps/utils/gridCompOperator";
 import { PopupCard } from "#lowcoder-design/components/popupCard";
 import { EditText } from "#lowcoder-design/components/edit";
 import { values } from "lodash";
 import { GreyTextColor } from "#lowcoder/constants/style";
-import { UICompType } from "comps/uiCompRegistry";
-import { trans } from "i18n";
-import { getComponentDocUrl } from "comps/utils/compDocUtil";
-import { getComponentPlaygroundUrl } from "comps/utils/compDocUtil";
-import { parseCompType } from "comps/utils/remote";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
+import { trans } from "#lowcoder/i18n";
+import { getComponentDocUrl } from "#lowcoder/comps/utils/compDocUtil";
+import { getComponentPlaygroundUrl } from "#lowcoder/comps/utils/compDocUtil";
+import { parseCompType } from "#lowcoder/comps/utils/remote";
 
 const CompDiv = styled.div<{ $width?: number; $hasSearch?: boolean; $showSearch?: boolean }>`
   width: ${(props) => (props.$width ? props.$width : 312)}px;
@@ -79,7 +79,7 @@ export const CompName = React.memo((props: Iprops) => {
   const [showSearch, setShowSearch] = useState<boolean>(false);
 
   const editorState = useContext(EditorContext);
-  const selectedComp = useMemo(() => values(editorState.selectedComps())[0], [editorState]);
+  const selectedComp: any = useMemo(() => values(editorState.selectedComps())[0], [editorState]);
   const compType = useMemo(() => selectedComp.children.compType.getView() as UICompType, [selectedComp]);
   const compInfo : any = useMemo(() => parseCompType(compType), [compType]);
   const docUrl = useMemo(() => getComponentDocUrl(compType), [compType]);

@@ -1,9 +1,9 @@
 import React, { useCallback, useContext, useRef, useEffect } from "react";
-import { EditorContext, EditorState } from "comps/editorState";
-import { GridCompOperator } from "comps/utils/gridCompOperator";
+import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { GridCompOperator } from "#lowcoder/comps/utils/gridCompOperator";
 import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
 import { EditorHistory } from "#lowcoder/util/editoryHistory";
-import { executeQueryAction } from "lowcoder-core";
+import { executeQueryAction } from "#lowcoder-core/index";
 import {
   GlobalShortcutsWrapper,
   modKeyPressed,
@@ -11,7 +11,7 @@ import {
   ShortcutsWrapper,
 } from "#lowcoder/util/keyUtils";
 import { PanelStatus, TogglePanel } from "#lowcoder/pages/common/header";
-import { clickCompNameClass } from "base/codeEditor/clickCompName";
+import { clickCompNameClass } from "#lowcoder/base/codeEditor/clickCompName";
 import { getShortcutAction } from "#lowcoder/pages/common/shortcutConfigs";
 import { preview } from "#lowcoder/constants/routesURL";
 import { useApplicationId } from "#lowcoder/util/hooks";

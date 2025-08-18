@@ -1,4 +1,4 @@
-import { TabbedContainerComp } from "comps/comps/tabs/tabbedContainerComp";
+import { TabbedContainerComp } from "#lowcoder/comps/comps/tabs/tabbedContainerComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -263,7 +263,7 @@ export default function TabbedContainerExample() {
           <Example
             title="Hiding the Tabbed Container Component"
             hideSettings={true}
-            config={{ 
+            config={{
               containers: container,
               tabs: tab,
               hidden: true,
@@ -289,7 +289,7 @@ export default function TabbedContainerExample() {
           <Example
             title="Multiple Tabs & Setting a default Tab"
             hideSettings={true}
-            config={{ 
+            config={{
               containers: container,
               tabs: tab,
               selectedTabKey: "Tab3",
@@ -335,7 +335,7 @@ export default function TabbedContainerExample() {
           <Example
             title="Tabs Placement - Left"
             hideSettings={true}
-            config={{ 
+            config={{
               containers: container,
               tabs: tab,
               placement:"left",
@@ -345,7 +345,7 @@ export default function TabbedContainerExample() {
           <Example
             title="Tabs Placement - Top"
             hideSettings={true}
-            config={{ 
+            config={{
               containers: container,
               tabs: tab,
               placement:"top",
@@ -357,7 +357,7 @@ export default function TabbedContainerExample() {
             hideSettings={true}
             config={{
               containers: container,
-              tabs: tab, 
+              tabs: tab,
               tabsCentered: true,
             }}
             compFactory={TabbedContainerComp}
@@ -367,7 +367,7 @@ export default function TabbedContainerExample() {
             hideSettings={true}
             config={{
               containers: container,
-              tabs: tab, 
+              tabs: tab,
               tabsGutter: 100,
             }}
             compFactory={TabbedContainerComp}
@@ -381,7 +381,7 @@ export default function TabbedContainerExample() {
           <Example
             title="Overall Component Styling"
             hideSettings={true}
-            config={{ 
+            config={{
               containers: container,
               tabs: tab,
               style: {
@@ -407,7 +407,7 @@ export default function TabbedContainerExample() {
           <Example
             title="Header Styling"
             hideSettings={true}
-            config={{ 
+            config={{
               containers: container,
               tabs: tab,
               style: {
@@ -437,7 +437,7 @@ export default function TabbedContainerExample() {
           <Example
             title="Body Styling"
             hideSettings={true}
-            config={{ 
+            config={{
               containers: container,
               tabs: tab,
               style: {
@@ -505,7 +505,7 @@ export default function TabbedContainerExample() {
                   "containerBodyPadding": "20px",
                   "background": "#E1825A",
                 },
-                animationStyle: 
+                animationStyle:
                 {
                     "animation": "bounce",
                     "animationDelay": "1s",

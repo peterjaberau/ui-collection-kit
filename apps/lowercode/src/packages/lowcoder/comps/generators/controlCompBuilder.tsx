@@ -1,4 +1,4 @@
-import { Comp, DispatchType } from "lowcoder-core";
+import { Comp, DispatchType } from "#lowcoder-core/index";
 import { controlItem, ControlItemData, ControlNode } from "lowcoder-design";
 import { MultiCompBuilder } from "./multi";
 

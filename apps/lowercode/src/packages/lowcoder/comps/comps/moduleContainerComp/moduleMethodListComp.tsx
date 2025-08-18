@@ -1,10 +1,10 @@
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
 import { KeyValueItem, KeyValueItemListWithNewCreateState } from "#lowcoder/components/KeyValueItemList";
-import CompNameControl from "comps/controls/compNameControl";
-import { list } from "comps/generators/list";
-import { NameGenerator } from "comps/utils";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { list } from "#lowcoder/comps/generators/list";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import { GreyTextColor } from "#lowcoder/constants/style";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { controlItem, Section, TacoButton } from "lowcoder-design";
 import styled from "styled-components";
 import { ModuleMethodListItemComp, WithParamsActionControl } from "./moduleMethodListItemComp";

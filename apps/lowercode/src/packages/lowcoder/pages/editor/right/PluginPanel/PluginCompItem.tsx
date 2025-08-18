@@ -4,14 +4,14 @@ import {
   BorderColor,
   GreyTextColor,
 } from "#lowcoder/constants/style";
-import { draggingUtils } from "layout";
+import { draggingUtils } from "#lowcoder/";
 import styled from "styled-components";
-import { getRemoteCompType } from "comps/utils/remote";
+import { getRemoteCompType } from "#lowcoder/comps/utils/remote";
 import { LowcoderCompMeta } from "#lowcoder/types/remoteComp";
 import { TransparentImg } from "#lowcoder/util/commonUtils";
 import { ModuleIcon } from "lowcoder-design";
 import { NPM_PLUGIN_ASSETS_BASE_URL } from "#lowcoder/constants/npmPlugins";
-import { useApplicationId } from "@lowcoder-ee/util/hooks";
+import { useApplicationId } from "#lowcoder/util/hooks";
 
 const ItemWrapper = styled.div`
   display: flex;

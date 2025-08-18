@@ -1,22 +1,22 @@
 import { Section, sectionNames } from "#lowcoder-design/index";
-import { BoolControl } from "comps/controls/boolControl";
-import { styleControl } from "comps/controls/styleControl";
-import { ColorPickerStyle, ColorPickerStyleType } from "comps/controls/styleControlConstants";
-import { NameConfig } from "comps/generators/withExposing";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { ColorPickerStyle, ColorPickerStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { NameConfig } from "#lowcoder/comps/generators/withExposing";
 import styled, { css } from "styled-components";
 import { UICompBuilder, withDefault } from "../../generators";
 import { FormDataPropertyView } from "../formComp/formDataConstants";
 import { textInputChildren } from "../textInputComp/textInputConstants";
-import { disabledPropertyView, hiddenPropertyView, showDataLoadingIndicatorsPropertyView, } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { disabledPropertyView, hiddenPropertyView, showDataLoadingIndicatorsPropertyView, } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import { ColorPicker } from 'antd';
 import { presets } from "./colorPickerConstants";
 import _ from "lodash"
-import { changeEvent, eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { jsonObjectExposingStateControl, stringExposingStateControl } from "comps/controls/codeStateControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { ArrayOrJSONObjectControl } from "comps/controls/codeControl";
-import { JSONObject } from "@lowcoder-ee/util/jsonTypes";
+import { changeEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { jsonObjectExposingStateControl, stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { ArrayOrJSONObjectControl } from "#lowcoder/comps/controls/codeControl";
+import { JSONObject } from "#lowcoder/util/jsonTypes";
 
 export function getStyle(style: ColorPickerStyleType) {
   return css`

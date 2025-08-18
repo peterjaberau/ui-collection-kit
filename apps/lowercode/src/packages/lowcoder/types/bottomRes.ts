@@ -1,5 +1,5 @@
-import { Comp } from "lowcoder-core";
-import { EditorState } from "comps/editorState";
+import { Comp } from "#lowcoder-core/index";
+import { EditorState } from "#lowcoder/comps/editorState";
 import { ReactNode } from "react";
 
 export enum BottomResTypeEnum {

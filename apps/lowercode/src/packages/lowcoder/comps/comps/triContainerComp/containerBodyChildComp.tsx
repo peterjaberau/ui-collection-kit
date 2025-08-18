@@ -1,4 +1,4 @@
-import { MultiCompBuilder } from "comps/generators";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
 import { SimpleContainerComp } from "../containerBase/simpleContainerComp";
 
 const children = {

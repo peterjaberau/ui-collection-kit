@@ -1,4 +1,4 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import styled from "styled-components";
 
 const TagStyled = styled.span`

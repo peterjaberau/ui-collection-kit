@@ -10,7 +10,7 @@ import {
   customerService,
   showCustomerServicePanel,
   showHelpDropdown,
-} from "@lowcoder-ee/pages/common/customerService";
+} from "#lowcoder/pages/common/customerService";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createApplication } from "#lowcoder/redux/reduxActions/applicationActions";
@@ -25,10 +25,10 @@ import { markUserStatus } from "#lowcoder/redux/reduxActions/userActions";
 import { AppTypeEnum } from "#lowcoder/constants/applicationConstants";
 import { ShortcutListPopup } from "./shortcutListPopup";
 import { QuestionIcon, UpgradeIcon } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { localEnv } from "#lowcoder/util/envUtils";
-import { isPublicApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
+import { isPublicApplication } from "#lowcoder/redux/selectors/applicationSelector";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 
 const StyledMenu = styled(DropdownMenu)<{ $edit: boolean | string }>`
   ${(props) =>

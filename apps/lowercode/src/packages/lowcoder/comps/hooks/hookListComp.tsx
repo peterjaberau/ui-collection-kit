@@ -1,15 +1,15 @@
-import { withDefault } from "comps/generators";
-import { list, ListDataType } from "comps/generators/list";
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
+import { withDefault } from "#lowcoder/comps/generators";
+import { list, ListDataType } from "#lowcoder/comps/generators/list";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
 import {
   CompTree,
   findParentContainer,
   getAllCompItems,
   getCompTree,
-} from "comps/comps/containerBase/utils";
+} from "#lowcoder/comps/comps/containerBase/utils";
 import { HookComp } from "./hookComp";
 import { hookCompCategory } from "./hookCompTypes";
-import { CompParams } from "lowcoder-core";
+import { CompParams } from "#lowcoder-core/index";
 
 const defaultHookListValue = [
   // { compType: "title", name: "title" },

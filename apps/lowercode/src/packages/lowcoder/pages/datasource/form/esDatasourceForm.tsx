@@ -8,7 +8,7 @@ import {
   PasswordFormInputItem,
   UserNameFormInputItem,
 } from "../form";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const EsDatasourceForm = (props: DatasourceFormProps) => {
   const { form, datasource } = props;

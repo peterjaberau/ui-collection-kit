@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { ReactNode, lazy, useEffect, useState } from "react";
 import { CustomModal } from "#lowcoder-design/components/CustomModal";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { DocLink } from "#lowcoder-design/components/ExternalLink";
 import { Input } from "#lowcoder-design/components/Input";
 import { TacoButton } from "#lowcoder-design/components/button";
@@ -16,14 +16,14 @@ import {
   DownloadBoldIcon,
   DownloadedIcon,
   ErrorIcon,
-} from "icons";
+} from "#lowcoder-design/icons";
 import { ActiveTextColor, GreyTextColor } from "#lowcoder/constants/style";
 import { default as LoadingOutlined } from "@ant-design/icons/LoadingOutlined";
 import { RecommendedJSLibraryMeta } from "#lowcoder/api/jsLibraryApi";
 import log from "loglevel";
 import { TacoMarkDown } from "#lowcoder-design/components/markdown";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { isPublicApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
+import { isPublicApplication } from "#lowcoder/redux/selectors/applicationSelector";
 
 const ModalLabel = styled.div`
   display: flex;

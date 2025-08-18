@@ -1,4 +1,4 @@
-import { ColorPickerComp } from "comps/comps/mediaComp/colorPickerComp";
+import { ColorPickerComp } from "#lowcoder/comps/comps/mediaComp/colorPickerComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -11,7 +11,7 @@ export default function ColorPickerExample() {
         >
           <Example
             title="Setting Default value"
-            config={{ 
+            config={{
                 value:"#abc",
 
             }}
@@ -19,14 +19,14 @@ export default function ColorPickerExample() {
           />
           <Example
             title="Disabling the Component"
-            config={{                
+            config={{
                 disabled: true,
             }}
             compFactory={ColorPickerComp}
           />
           <Example
             title="Hiding the Component"
-            config={{ 
+            config={{
                 hidden: true,
             }}
             compFactory={ColorPickerComp}
@@ -39,7 +39,7 @@ export default function ColorPickerExample() {
         >
           <Example
             title="Setting Label Text and ToolTip"
-            config={{ 
+            config={{
                 label:{
                     text: "Pick Color",
                     tooltip: "This is a ToolTip on ColorPicker Component, which should get dispalyed when User hovers over it",
@@ -49,17 +49,17 @@ export default function ColorPickerExample() {
           />
           <Example
             title="Setting Width of the Label"
-            config={{                
+            config={{
                 label:{
                     text: "Pick Color",
                     width: "15",
-                }  
+                }
             }}
             compFactory={ColorPickerComp}
           />
           <Example
             title="Label Position - TOP"
-            config={{ 
+            config={{
                 label:{
                     position: "column",
                 }
@@ -68,7 +68,7 @@ export default function ColorPickerExample() {
           />
           <Example
             title="Label Position - ROW"
-            config={{ 
+            config={{
                 label:{
                     position: "row",
                 }
@@ -77,7 +77,7 @@ export default function ColorPickerExample() {
           />
           <Example
             title="Label Alignment - RIGHT"
-            config={{ 
+            config={{
                 label:{
                     position: "column",
                     align: "right",
@@ -87,7 +87,7 @@ export default function ColorPickerExample() {
           />
           <Example
             title="Label Alignment - LEFT"
-            config={{ 
+            config={{
                 label:{
                     position: "column",
                     align: "left",
@@ -103,28 +103,28 @@ export default function ColorPickerExample() {
         >
           <Example
             title="Triggers Event - Click"
-            config={{ 
+            config={{
                 trigger: "click",
             }}
             compFactory={ColorPickerComp}
           />
           <Example
             title="Triggers Event - Hover"
-            config={{ 
+            config={{
                 trigger: "hover",
             }}
             compFactory={ColorPickerComp}
           />
           <Example
             title="Disabling the Alpha Section"
-            config={{                
+            config={{
                 disabledAlpha: true,
             }}
             compFactory={ColorPickerComp}
           />
           <Example
             title="Show Color Presets"
-            config={{ 
+            config={{
                 showPresets: true,
             }}
             compFactory={ColorPickerComp}

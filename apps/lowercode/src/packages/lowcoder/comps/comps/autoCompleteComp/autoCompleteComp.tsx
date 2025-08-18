@@ -1,7 +1,7 @@
-import { ReactNode, useEffect, useState, useCallback } from "react";
-import { Input, Section, sectionNames } from "lowcoder-design";
-import { BoolControl } from "comps/controls/boolControl";
-import { styleControl } from "comps/controls/styleControl";
+import { ReactNode, useEffect, useState, useCallback } from "react"
+import { Input, Section, sectionNames } from "#lowcoder-design/index"
+import { BoolControl } from "#lowcoder/comps/controls/boolControl"
+import { styleControl } from "#lowcoder/comps/controls/styleControl"
 import {
   AnimationStyle,
   ChildrenMultiSelectStyle,
@@ -10,18 +10,18 @@ import {
   InputLikeStyle,
   InputLikeStyleType,
   LabelStyle,
-} from "comps/controls/styleControlConstants";
+} from "#lowcoder/comps/controls/styleControlConstants"
 import {
   NameConfig,
   NameConfigPlaceHolder,
   NameConfigRequired,
   withExposingConfigs,
-} from "comps/generators/withExposing";
-import styled, { css } from "styled-components";
-import { UICompBuilder } from "../../generators";
-import { FormDataPropertyView } from "../formComp/formDataConstants";
-import { jsonControl, NumberControl } from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
+} from "#lowcoder/comps/generators/withExposing"
+import styled, { css } from "styled-components"
+import { UICompBuilder } from "../../generators"
+import { FormDataPropertyView } from "../formComp/formDataConstants"
+import { jsonControl, NumberControl } from "#lowcoder/comps/controls/codeControl"
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl"
 import {
   getStyle,
   TextInputBasicSection,
@@ -30,23 +30,17 @@ import {
   TextInputInteractionSection,
   textInputValidate,
   TextInputValidationSection,
-} from "../textInputComp/textInputConstants";
-import {
-  allowClearPropertyView,
-  hiddenPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { IconControl } from "comps/controls/iconControl";
-import { hasIcon } from "comps/utils";
-import { InputRef } from "antd/es/input";
-import { default as AutoComplete } from "antd/es/auto-complete";
-import { RefControl } from "comps/controls/refControl";
-import {
-  booleanExposingStateControl,
-  jsonValueExposingStateControl,
-} from "comps/controls/codeStateControl";
+} from "../textInputComp/textInputConstants"
+import { allowClearPropertyView, hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils"
+import { trans } from "#lowcoder/i18n"
+import { IconControl } from "#lowcoder/comps/controls/iconControl"
+import { hasIcon } from "#lowcoder/comps/utils"
+import { InputRef } from "antd/es/input"
+import { default as AutoComplete } from "antd/es/auto-complete"
+import { RefControl } from "#lowcoder/comps/controls/refControl"
+import { booleanExposingStateControl, jsonValueExposingStateControl } from "#lowcoder/comps/controls/codeStateControl"
 
-import { getDayJSLocale } from "i18n/dayjsLocale";
+import { getDayJSLocale } from "#lowcoder/i18n/dayjsLocale"
 import {
   autoCompleteDate,
   itemsDataTooltip,
@@ -56,11 +50,11 @@ import {
   autoCompleteType,
   autocompleteIconColor,
   componentSize,
-} from "./autoCompleteConstants";
-import { DropdownStyled } from "../selectInputComp/selectCompConstants";
+} from "./autoCompleteConstants"
+import { DropdownStyled } from "../selectInputComp/selectCompConstants"
 
-const InputStyle = styled(Input) <{ $style: InputLikeStyleType }>`
-box-shadow: ${props=>`${props.$style?.boxShadow} ${props.$style?.boxShadowColor}`};
+const InputStyle = styled(Input)<{ $style: InputLikeStyleType }>`
+  box-shadow: ${(props) => `${props.$style?.boxShadow} ${props.$style?.boxShadowColor}`};
   ${(props) => css`
     ${getStyle(props.$style)}
     input {
@@ -70,7 +64,7 @@ box-shadow: ${props=>`${props.$style?.boxShadow} ${props.$style?.boxShadowColor}
       width: 100% !important;
     }
   `}
-`;
+`
 
 const childrenMap = {
   ...textInputChildren,
@@ -90,22 +84,18 @@ const childrenMap = {
   componentSize: dropdownControl(componentSize, "small"),
   valueInItems: booleanExposingStateControl("valueInItems"),
   selectedOption: jsonValueExposingStateControl("selectedOption", {}),
-  style: styleControl(InputFieldStyle , 'style'),
-  labelStyle: styleControl(LabelStyle , 'labelStyle'),
-  inputFieldStyle: styleControl(InputLikeStyle , 'inputFieldStyle'),
-  childrenInputFieldStyle: styleControl(ChildrenMultiSelectStyle, 'childrenInputFieldStyle'),
-  animationStyle: styleControl(AnimationStyle , 'animationStyle'),
+  style: styleControl(InputFieldStyle, "style"),
+  labelStyle: styleControl(LabelStyle, "labelStyle"),
+  inputFieldStyle: styleControl(InputLikeStyle, "inputFieldStyle"),
+  childrenInputFieldStyle: styleControl(ChildrenMultiSelectStyle, "childrenInputFieldStyle"),
+  animationStyle: styleControl(AnimationStyle, "animationStyle"),
   tabIndex: NumberControl,
-};
+}
 
 const getValidate = (value: any): "" | "warning" | "error" | undefined => {
-  if (
-    value.hasOwnProperty("validateStatus") &&
-    value["validateStatus"] === "error"
-  )
-    return "error";
-  return "";
-};
+  if (value.hasOwnProperty("validateStatus") && value["validateStatus"] === "error") return "error"
+  return ""
+}
 
 let AutoCompleteCompBase = (function () {
   return new UICompBuilder(childrenMap, (props) => {
@@ -122,8 +112,7 @@ let AutoCompleteCompBase = (function () {
       autocompleteIconColor,
       componentSize,
       filterOptionsByInput,
-    } = props;
-    
+    } = props
 
     const getTextInputValidate = useCallback(() => {
       return {
@@ -134,7 +123,7 @@ let AutoCompleteCompBase = (function () {
         validationType: props.validationType,
         regex: props.regex,
         customRule: props.customRule,
-      };
+      }
     }, [
       props.value.value,
       props.required,
@@ -143,19 +132,18 @@ let AutoCompleteCompBase = (function () {
       props.validationType,
       props.regex,
       props.customRule,
-    ]);
+    ])
 
-    const [activationFlag, setActivationFlag] = useState(false);
-    const [searchtext, setsearchtext] = useState<string>(props.value.value);
-    const [validateState, setvalidateState] = useState({});
+    const [activationFlag, setActivationFlag] = useState(false)
+    const [searchtext, setsearchtext] = useState<string>(props.value.value)
+    const [validateState, setvalidateState] = useState({})
 
     //   是否中文环境
-    const [chineseEnv, setChineseEnv] = useState(getDayJSLocale() === "zh-cn");
+    const [chineseEnv, setChineseEnv] = useState(getDayJSLocale() === "zh-cn")
 
     useEffect(() => {
-      setsearchtext(props.value.value);
-      activationFlag &&
-        setvalidateState(textInputValidate(getTextInputValidate()));
+      setsearchtext(props.value.value)
+      activationFlag && setvalidateState(textInputValidate(getTextInputValidate()))
     }, [
       props.value.value,
       props.required,
@@ -164,127 +152,106 @@ let AutoCompleteCompBase = (function () {
       props.validationType,
       props.regex,
       props.customRule,
-    ]);
+    ])
 
-    const handleFilterOptions = useCallback((inputValue: string, option: any) => {
-      if (ignoreCase) {
-        if (
-          option?.label &&
-          option?.label
-            .toUpperCase()
-            .indexOf(inputValue.toUpperCase()) !== -1
-        )
-          return true;
-      } else {
-        if (option?.label && option?.label.indexOf(inputValue) !== -1)
-          return true;
-      }
-      if (
-        chineseEnv &&
-        searchFirstPY &&
-        option?.label &&
-        option.label
-          .spell("first")
-          .toString()
-          .toLowerCase()
-          .indexOf(inputValue.toLowerCase()) >= 0
-      )
-        return true;
-      if (
-        chineseEnv &&
-        searchCompletePY &&
-        option?.label &&
-        option.label
-          .spell()
-          .toString()
-          .toLowerCase()
-          .indexOf(inputValue.toLowerCase()) >= 0
-      )
-        return true;
-      if (!searchLabelOnly) {
+    const handleFilterOptions = useCallback(
+      (inputValue: string, option: any) => {
         if (ignoreCase) {
-          if (
-            option?.value &&
-            option?.value
-              .toUpperCase()
-              .indexOf(inputValue.toUpperCase()) !== -1
-          )
-            return true;
+          if (option?.label && option?.label.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1) return true
         } else {
-          if (
-            option?.value &&
-            option?.value.indexOf(inputValue) !== -1
-          )
-            return true;
+          if (option?.label && option?.label.indexOf(inputValue) !== -1) return true
         }
         if (
           chineseEnv &&
           searchFirstPY &&
-          option?.value &&
-          option.value
-            .spell("first")
-            .toString()
-            .toLowerCase()
-            .indexOf(inputValue.toLowerCase()) >= 0
+          option?.label &&
+          option.label.spell("first").toString().toLowerCase().indexOf(inputValue.toLowerCase()) >= 0
         )
-          return true;
+          return true
         if (
           chineseEnv &&
           searchCompletePY &&
-          option?.value &&
-          option.value
-            .spell()
-            .toString()
-            .toLowerCase()
-            .indexOf(inputValue.toLowerCase()) >= 0
+          option?.label &&
+          option.label.spell().toString().toLowerCase().indexOf(inputValue.toLowerCase()) >= 0
         )
-          return true;
-      }
-      return false;
-    }, [filterOptionsByInput, ignoreCase, chineseEnv, searchFirstPY, searchCompletePY, searchLabelOnly]);
+          return true
+        if (!searchLabelOnly) {
+          if (ignoreCase) {
+            if (option?.value && option?.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1) return true
+          } else {
+            if (option?.value && option?.value.indexOf(inputValue) !== -1) return true
+          }
+          if (
+            chineseEnv &&
+            searchFirstPY &&
+            option?.value &&
+            option.value.spell("first").toString().toLowerCase().indexOf(inputValue.toLowerCase()) >= 0
+          )
+            return true
+          if (
+            chineseEnv &&
+            searchCompletePY &&
+            option?.value &&
+            option.value.spell().toString().toLowerCase().indexOf(inputValue.toLowerCase()) >= 0
+          )
+            return true
+        }
+        return false
+      },
+      [filterOptionsByInput, ignoreCase, chineseEnv, searchFirstPY, searchCompletePY, searchLabelOnly],
+    )
 
-    const handleChange = useCallback((value: string) => {
-      props.valueInItems.onChange(false);
-      setvalidateState(textInputValidate(getTextInputValidate()));
-      setsearchtext(value);
-      props.value.onChange(value);
-      props.onEvent("change");
-      if(!Boolean(value)) {
-        props.selectedOption.onChange({});
-      }
-    }, [props.valueInItems, getTextInputValidate, props.value, props.onEvent, props.selectedOption]);
+    const handleChange = useCallback(
+      (value: string) => {
+        props.valueInItems.onChange(false)
+        setvalidateState(textInputValidate(getTextInputValidate()))
+        setsearchtext(value)
+        props.value.onChange(value)
+        props.onEvent("change")
+        if (!Boolean(value)) {
+          props.selectedOption.onChange({})
+        }
+      },
+      [props.valueInItems, getTextInputValidate, props.value, props.onEvent, props.selectedOption],
+    )
 
-    const handleSelect = useCallback((data: string, option: any) => {
-      setsearchtext(option[valueOrLabel]);
-      props.valueInItems.onChange(true);
-      props.value.onChange(option[valueOrLabel]);
-      props.selectedOption.onChange(option);
-      props.onEvent("submit");
-    }, [valueOrLabel, props.valueInItems, props.value, props.onEvent, props.selectedOption]);
+    const handleSelect = useCallback(
+      (data: string, option: any) => {
+        setsearchtext(option[valueOrLabel])
+        props.valueInItems.onChange(true)
+        props.value.onChange(option[valueOrLabel])
+        props.selectedOption.onChange(option)
+        props.onEvent("submit")
+      },
+      [valueOrLabel, props.valueInItems, props.value, props.onEvent, props.selectedOption],
+    )
 
     const handleFocus = useCallback(() => {
-      setActivationFlag(true);
-      props.onEvent("focus");
-    }, [props.onEvent]);
+      setActivationFlag(true)
+      props.onEvent("focus")
+    }, [props.onEvent])
 
     const handleBlur = useCallback(() => {
-      props.onEvent("blur");
-    }, [props.onEvent]);
+      props.onEvent("blur")
+    }, [props.onEvent])
 
-    const popupRender = useCallback((originNode: ReactNode) => (
-      <DropdownStyled $style={props.childrenInputFieldStyle as ChildrenMultiSelectStyleType}>
-        {originNode}
-      </DropdownStyled>
-    ), [props.childrenInputFieldStyle]);
+    const popupRender = useCallback(
+      (originNode: ReactNode) => (
+        <DropdownStyled $style={props.childrenInputFieldStyle as ChildrenMultiSelectStyleType}>
+          {originNode}
+        </DropdownStyled>
+      ),
+      [props.childrenInputFieldStyle],
+    )
 
     return props.label({
       required: props.required,
       children: (
         <>
-          <AutoComplete 
+          <AutoComplete
             disabled={props.disabled}
             value={searchtext}
-            options={items} 
+            options={items}
             style={{ width: "100%" }}
             onChange={handleChange}
             onFocus={handleFocus}
@@ -302,7 +269,7 @@ let AutoCompleteCompBase = (function () {
               suffix={hasIcon(props.suffixIcon) && props.suffixIcon}
               status={getValidate(validateState)}
               onPressEnter={undefined}
-              tabIndex={typeof props.tabIndex === 'number' ? props.tabIndex : undefined}
+              tabIndex={typeof props.tabIndex === "number" ? props.tabIndex : undefined}
             />
           </AutoComplete>
         </>
@@ -314,41 +281,41 @@ let AutoCompleteCompBase = (function () {
       animationStyle: props.animationStyle,
       showValidationWhenEmpty: props.showValidationWhenEmpty,
       ...validateState,
-    });
+    })
   })
     .setPropertyViewFn((children) => {
       return (
         <>
           <TextInputBasicSection {...children} />
-          <Section name={trans('autoComplete.SectionDataName')}>
+          <Section name={trans("autoComplete.SectionDataName")}>
             {children.items.propertyView({
-              label: trans('autoComplete.value'),
+              label: trans("autoComplete.value"),
               tooltip: itemsDataTooltip,
-              placeholder: '[]',
+              placeholder: "[]",
             })}
             {children.filterOptionsByInput.propertyView({
-              label: trans('autoComplete.filterOptionsByInput'),
+              label: trans("autoComplete.filterOptionsByInput"),
             })}
-            {children.filterOptionsByInput.getView() && getDayJSLocale() === 'zh-cn' && (
+            {children.filterOptionsByInput.getView() &&
+              getDayJSLocale() === "zh-cn" &&
               children.searchFirstPY.propertyView({
-                label: trans('autoComplete.searchFirstPY'),
-              })
-            )}
-            {children.filterOptionsByInput.getView() && getDayJSLocale() === 'zh-cn' && (
+                label: trans("autoComplete.searchFirstPY"),
+              })}
+            {children.filterOptionsByInput.getView() &&
+              getDayJSLocale() === "zh-cn" &&
               children.searchCompletePY.propertyView({
-                label: trans('autoComplete.searchCompletePY'),
-              })
-            )}
-            {children.filterOptionsByInput.getView() && children.searchLabelOnly.propertyView({
-              label: trans('autoComplete.searchLabelOnly'),
-            })}
-            {children.filterOptionsByInput.getView() && (
+                label: trans("autoComplete.searchCompletePY"),
+              })}
+            {children.filterOptionsByInput.getView() &&
+              children.searchLabelOnly.propertyView({
+                label: trans("autoComplete.searchLabelOnly"),
+              })}
+            {children.filterOptionsByInput.getView() &&
               children.ignoreCase.propertyView({
-                label: trans('autoComplete.ignoreCase'),
-              })
-            )}
+                label: trans("autoComplete.ignoreCase"),
+              })}
             {children.valueOrLabel.propertyView({
-              label: trans('autoComplete.checkedValueFrom'),
+              label: trans("autoComplete.checkedValueFrom"),
               radioButton: true,
             })}
           </Section>
@@ -358,45 +325,33 @@ let AutoCompleteCompBase = (function () {
 
           <TextInputInteractionSection {...children} />
 
+          <Section name={sectionNames.layout}>{hiddenPropertyView(children)}</Section>
 
-          <Section name={sectionNames.layout}>
-            {hiddenPropertyView(children)}
-          </Section>
-          
           <Section name={sectionNames.advanced}>
-            {children.autoCompleteType.getView() === 'normal' &&
+            {children.autoCompleteType.getView() === "normal" &&
               children.prefixIcon.propertyView({
-                label: trans('button.prefixIcon'),
+                label: trans("button.prefixIcon"),
               })}
-            {children.autoCompleteType.getView() === 'normal' &&
+            {children.autoCompleteType.getView() === "normal" &&
               children.suffixIcon.propertyView({
-                label: trans('button.suffixIcon'),
+                label: trans("button.suffixIcon"),
               })}
             {allowClearPropertyView(children)}
           </Section>
 
           {<TextInputValidationSection {...children} />}
 
-          <Section name={sectionNames.style}>
-            {children.style.getPropertyView()}
-          </Section>
-          <Section name={sectionNames.labelStyle}>
-            {children.labelStyle.getPropertyView()}
-          </Section>
-          <Section name={sectionNames.inputFieldStyle}>
-            {children.inputFieldStyle.getPropertyView()}
-          </Section>
+          <Section name={sectionNames.style}>{children.style.getPropertyView()}</Section>
+          <Section name={sectionNames.labelStyle}>{children.labelStyle.getPropertyView()}</Section>
+          <Section name={sectionNames.inputFieldStyle}>{children.inputFieldStyle.getPropertyView()}</Section>
           <Section name={sectionNames.childrenInputFieldStyle}>
             {children.childrenInputFieldStyle.getPropertyView()}
           </Section>
-          <Section
-            name={sectionNames.animationStyle}
-            hasTooltip={true}
-          >
+          <Section name={sectionNames.animationStyle} hasTooltip={true}>
             {children.animationStyle.getPropertyView()}
           </Section>
         </>
-      );
+      )
     })
     .setExposeMethodConfigs(autoCompleteRefMethods)
     .setExposeStateConfigs([
@@ -406,20 +361,20 @@ let AutoCompleteCompBase = (function () {
       NameConfigRequired,
       ...TextInputConfigs,
     ])
-    .build();
-})();
+    .build()
+})()
 
 AutoCompleteCompBase = class extends AutoCompleteCompBase {
   override autoHeight(): boolean {
-    return true;
+    return true
   }
-};
+}
 
-export const AutoCompleteComp = withExposingConfigs(AutoCompleteCompBase, [
+export const AutoCompleteComp: any = withExposingConfigs(AutoCompleteCompBase, [
   new NameConfig("value", trans("export.inputValueDesc")),
   new NameConfig("valueInItems", trans("autoComplete.valueInItems")),
   new NameConfig("selectedOption", trans("autoComplete.selectedOption")),
   NameConfigPlaceHolder,
-  NameConfigRequired, 
+  NameConfigRequired,
   ...TextInputConfigs,
-]);
+])

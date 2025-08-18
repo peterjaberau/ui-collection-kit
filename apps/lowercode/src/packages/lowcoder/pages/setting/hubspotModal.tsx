@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Modal, Typography, Card, Space, Divider } from "antd";
 import styled from "styled-components";
 import Title from "antd/es/typography/Title";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const { Paragraph, Text } = Typography;
 
@@ -99,8 +99,8 @@ export function HubspotModal({ open, onClose, orgId, deploymentIds }: Props) {
             </Paragraph>
             <Paragraph copyable>{orgId}</Paragraph>
 
-            
-            { !isLowCoderDomain && 
+
+            { !isLowCoderDomain &&
             <>
               <Paragraph strong>
                 <Text>Deployment IDs:</Text>

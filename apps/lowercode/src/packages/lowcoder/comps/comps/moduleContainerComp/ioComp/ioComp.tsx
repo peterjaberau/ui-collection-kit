@@ -1,12 +1,12 @@
-import { MultiCompBuilder } from "comps/generators";
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
 import { ConfigViewSection } from "../styled";
 import InputListComp from "./inputListComp";
 import OutputListComp from "./outputListComp";
 
 interface PropertyViewProps {
-  inputs: InstanceType<typeof InputListComp>;
-  outputs: InstanceType<typeof OutputListComp>;
+  inputs: InstanceType<typeof InputListComp> | any;
+  outputs: InstanceType<typeof OutputListComp> | any;
 }
 
 function PropertyView(props: PropertyViewProps) {
@@ -18,12 +18,12 @@ function PropertyView(props: PropertyViewProps) {
   );
 }
 
-const childrenMap = {
+const childrenMap: any = {
   inputs: InputListComp,
   outputs: OutputListComp,
 };
 
-const IOCompBase = new MultiCompBuilder(childrenMap, (props) => {
+const IOCompBase: any = new MultiCompBuilder(childrenMap, (props) => {
   return props;
 })
   .setPropertyViewFn((children) => {
@@ -38,7 +38,7 @@ class IOComp extends IOCompBase {
 
   nameAndExposingInfo(): NameAndExposingInfo {
     const result: NameAndExposingInfo = {};
-    this.children.inputs.getView().forEach((item) => {
+    this.children.inputs.getView().forEach((item: any) => {
       result[item.children.name.getView()] = item.exposingInfo();
     });
     return result;

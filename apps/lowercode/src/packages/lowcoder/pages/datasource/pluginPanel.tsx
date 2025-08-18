@@ -2,19 +2,19 @@ import styled from "styled-components";
 import { default as AntdButton } from "antd/es/button";
 import { useSelector } from "react-redux";
 import { getDataSourceTypes } from "../../redux/selectors/datasourceSelectors";
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
+import { getBottomResIcon } from "#lowcoder/util/bottomResUtils";
 import { DataSourceTypeInfo } from "../../api/datasourceApi";
 import { useCurrentPage } from "../../util/hooks";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import {
   apiPlugins,
   apiPluginsForQueryLibrary,
   databasePlugins,
-} from "@lowcoder-ee/constants/datasourceConstants";
+} from "#lowcoder/constants/datasourceConstants";
 import { Search } from "#lowcoder-design/components/Search";
-import { CreateDropdown } from "@lowcoder-ee/pages/ApplicationV2/CreateDropdown";
+import { CreateDropdown } from "#lowcoder/pages/ApplicationV2/CreateDropdown";
 import React, { useState } from "react";
-import { isPublicApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
+import { isPublicApplication } from "#lowcoder/redux/selectors/applicationSelector";
 import Alert from "antd/es/alert";
 import Flex from "antd/es/flex";
 import { Link } from "react-router-dom";

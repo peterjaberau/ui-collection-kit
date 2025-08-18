@@ -9,15 +9,15 @@ import {
   jsonValueControl,
   NumberControl,
   StringControl,
-} from "comps/controls/codeControl";
-import { ControlParams } from "comps/controls/controlParams";
-import { MultiCompBuilder, stateComp, stateInstance, withDefault } from "comps/generators";
-import { changeDataType } from "comps/generators/changeDataType";
+} from "#lowcoder/comps/controls/codeControl";
+import { ControlParams } from "#lowcoder/comps/controls/controlParams";
+import { MultiCompBuilder, stateComp, stateInstance, withDefault } from "#lowcoder/comps/generators";
+import { changeDataType } from "#lowcoder/comps/generators/changeDataType";
 import {
   ExposeMethodCompConstructor,
   withMethodExposingBase,
-} from "comps/generators/withMethodExposing";
-import { trans } from "i18n";
+} from "#lowcoder/comps/generators/withMethodExposing";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import {
   AbstractComp,
@@ -27,7 +27,7 @@ import {
   ConstructorToView,
   evalNodeOrMinor,
   updateNodesV2Action,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { memo } from "#lowcoder/util/cacheUtils";
 import {
   toBoolean,

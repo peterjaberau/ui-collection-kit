@@ -1,5 +1,5 @@
-import { ControlButton } from "comps/comps/meetingComp/controlButton";
-import { trans } from "i18n";
+import { ControlButton } from "#lowcoder/comps/comps/meetingComp/controlButton";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -13,7 +13,7 @@ export default function IconButtonExample() {
         <Example
           title="A Simple Icon button"
           width={120}
-          config={{ 
+          config={{
             prefixIcon: "/icon:solid/align-justify",
         }}
           compFactory={ControlButton}
@@ -23,7 +23,7 @@ export default function IconButtonExample() {
           width={120}
           config={{
             prefixIcon: "/icon:solid/align-justify",
-            loading: true, 
+            loading: true,
           }}
           compFactory={ControlButton}
         />
@@ -46,8 +46,8 @@ export default function IconButtonExample() {
           compFactory={ControlButton}
         />
       </ExampleGroup>
-      
-      <ExampleGroup 
+
+      <ExampleGroup
         title="Layout & Style"
         description="The Following Examples Show the Layout & Style options on Float Button Component."
       >
@@ -56,9 +56,9 @@ export default function IconButtonExample() {
           width={120}
           config={{
             prefixIcon: "/icon:solid/ellipsis-vertical",
-            style: { 
-              backgroundColor: "#CD574C", 
-              borderColor: "#AC3A32", 
+            style: {
+              backgroundColor: "#CD574C",
+              borderColor: "#AC3A32",
               color: "#E0ECF6" },
           }}
           compFactory={ControlButton}
@@ -68,9 +68,9 @@ export default function IconButtonExample() {
           width={120}
           config={{
             prefixIcon: "/icon:solid/square-caret-right",
-            style: { 
-              backgroundColor: "#F4A125", 
-              borderColor: "#DA7D16", 
+            style: {
+              backgroundColor: "#F4A125",
+              borderColor: "#DA7D16",
               color: "#000000" },
           }}
           compFactory={ControlButton}
@@ -80,9 +80,9 @@ export default function IconButtonExample() {
           width={120}
           config={{
             prefixIcon: "/icon:antd/audiofilled",
-            style: { 
-              backgroundColor: "#5E8D6E", 
-              borderColor: "#40694E", 
+            style: {
+              backgroundColor: "#5E8D6E",
+              borderColor: "#40694E",
               color: "#E0ECF6" },
           }}
           compFactory={ControlButton}
@@ -94,9 +94,9 @@ export default function IconButtonExample() {
           config={{
             prefixIcon: "/icon:antd/audiofilled",
             iconSize: "30px",
-            style: { 
-              backgroundColor: "#5E8D6E", 
-              borderColor: "#40694E", 
+            style: {
+              backgroundColor: "#5E8D6E",
+              borderColor: "#40694E",
               color: "#E0ECF6" },
           }}
           compFactory={ControlButton}
@@ -108,9 +108,9 @@ export default function IconButtonExample() {
           config={{
             prefixIcon: "/icon:antd/audiofilled",
             iconSize: "40px",
-            style: { 
-              backgroundColor: "#5E8D6E", 
-              borderColor: "#40694E", 
+            style: {
+              backgroundColor: "#5E8D6E",
+              borderColor: "#40694E",
               color: "#E0ECF6" },
           }}
           compFactory={ControlButton}

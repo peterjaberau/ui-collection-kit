@@ -1,4 +1,4 @@
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { EditorContainer } from "#lowcoder/pages/common/styledComponent";
 import React, { Profiler, useContext, useMemo, useRef, useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
@@ -14,15 +14,15 @@ import { useMaxWidth } from "#lowcoder/util/hooks";
 import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
 import { AppTypeEnum } from "#lowcoder/constants/applicationConstants";
 import { EditorContainerPadding, TopHeaderHeight } from "#lowcoder/constants/style";
-import { ThemeContext } from "comps/utils/themeContext";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import { CanvasContainerID } from "#lowcoder/constants/domLocators";
 import { CNRootContainer } from "#lowcoder/constants/styleSelectors";
 import { isValidColor, isValidGradient, ScrollBar } from "lowcoder-design";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
 import { isEqual } from "lodash";
-import { DEFAULT_GRID_COLUMNS, DEFAULT_ROW_COUNT, DEFAULT_ROW_HEIGHT } from "@lowcoder-ee/layout/calculateUtils";
-import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
+import { DEFAULT_GRID_COLUMNS, DEFAULT_ROW_COUNT, DEFAULT_ROW_HEIGHT } from "#lowcoder/layout/calculateUtils";
+import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
 
 const UICompContainer = styled.div<{
   $maxWidth?: number;

@@ -10,11 +10,11 @@ import {
   uiCompRegistry,
   uiCompCategoryNames,
   UICompCategory,
-} from "comps/uiCompRegistry";
+} from "#lowcoder/comps/uiCompRegistry";
 import { ExampleContext } from "./ExampleContext";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Helmet } from "react-helmet";
-import { LoadingBarHideTrigger } from "@lowcoder-ee/util/hideLoading";
+import { LoadingBarHideTrigger } from "#lowcoder/util/hideLoading";
 
 type CompInfo = UICompManifest & { key: string };
 const groups: Partial<Record<UICompCategory, CompInfo[]>> = {};
@@ -95,7 +95,7 @@ export default function ComponentDoc() {
       {
         type: "component-change",
         componentName: params.name,
-      }, 
+      },
       "*"
     );
   }, [params.name]);
@@ -130,7 +130,7 @@ export default function ComponentDoc() {
               return (
                 <div className="nav-group" key={key}>
                   <div className="nav-group-title">
-                    {uiCompCategoryNames[key as UICompCategory]} 
+                    {uiCompCategoryNames[key as UICompCategory]}
                   </div>
                   <div>
                     {children.map((n) => (

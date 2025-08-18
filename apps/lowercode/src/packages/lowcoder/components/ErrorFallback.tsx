@@ -1,7 +1,7 @@
 import { ExclamationCircleFilled, WarningFilled } from "@ant-design/icons";
-import { ALL_APPLICATIONS_URL } from "@lowcoder-ee/constants/routesURL";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
-import { buildMaterialPreviewURL } from "@lowcoder-ee/util/materialUtils";
+import { ALL_APPLICATIONS_URL } from "#lowcoder/constants/routesURL";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
+import { buildMaterialPreviewURL } from "#lowcoder/util/materialUtils";
 import Button from "antd/es/button";
 import Flex from "antd/es/flex";
 import { useMemo } from "react";
@@ -44,7 +44,7 @@ const ErrorFallback = (props: {
     if (brandingSettings?.config_set?.errorPageText) return brandingSettings?.config_set?.errorPageText;
     return DefaultErrorMessage;
   }, [props.errorMessage, brandingSettings?.config_set?.errorPageText]);
-  
+
   const errorImage = useMemo(() => {
     const imageUrl = brandingSettings?.config_set?.errorPageImage || '';
     // if (Boolean(brandingSettings?.orgId)) {

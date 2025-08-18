@@ -1,6 +1,6 @@
-import { MultiCompBuilder } from "comps/generators/multi";
-import { getGlobalSettings } from "comps/utils/globalSettings";
-import { trans } from "i18n";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
+import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
+import { trans } from "#lowcoder/i18n";
 import { BranchDiv } from "lowcoder-design";
 import { FunctionControl } from "../codeControl";
 

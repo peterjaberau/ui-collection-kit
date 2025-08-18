@@ -3,12 +3,12 @@ import {
   StringControl,
   NumberControl,
   BoolCodeControl,
-} from "comps/controls/codeControl";
-import CompNameControl from "comps/controls/compNameControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { withType, MultiCompBuilder } from "comps/generators";
+} from "#lowcoder/comps/controls/codeControl";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { withType, MultiCompBuilder } from "#lowcoder/comps/generators";
 import { Fragment, useEffect } from "react";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const paramControls = {
   JSONValue: JSONValueControl,

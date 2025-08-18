@@ -1,5 +1,5 @@
-import { JsonExplorerComp } from "comps/comps/jsonComp/jsonExplorerComp";
-import { trans } from "i18n";
+import { JsonExplorerComp } from "#lowcoder/comps/comps/jsonComp/jsonExplorerComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

@@ -1,5 +1,5 @@
-import { SelectComp } from "comps/comps/selectInputComp/selectComp";
-import { trans } from "i18n";
+import { SelectComp } from "#lowcoder/comps/comps/selectInputComp/selectComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

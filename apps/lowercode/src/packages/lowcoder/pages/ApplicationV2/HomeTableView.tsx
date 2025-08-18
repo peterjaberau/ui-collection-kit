@@ -22,8 +22,8 @@ import { MoveToFolderModal } from "./MoveToFolderModal";
 import { trans } from "../../i18n";
 import { useParams } from "react-router-dom";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { BrandedIcon } from "@lowcoder-ee/components/BrandedIcon";
-import { MultiIconDisplay } from "@lowcoder-ee/comps/comps/multiIconDisplay";
+import { BrandedIcon } from "#lowcoder/components/BrandedIcon";
+import { MultiIconDisplay } from "#lowcoder/comps/comps/multiIconDisplay";
 import { StyledTypographyText, UpdateAppModal } from "./HomeResCard";
 
 const OperationWrapper = styled.div`

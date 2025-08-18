@@ -1,7 +1,7 @@
-import { EditorState } from "comps/editorState";
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
-import { trans } from "i18n";
-import { CompParams, MultiBaseComp, wrapActionExtraInfo } from "lowcoder-core";
+import { EditorState } from "#lowcoder/comps/editorState";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
+import { trans } from "#lowcoder/i18n";
+import { CompParams, MultiBaseComp, wrapActionExtraInfo } from "#lowcoder-core/index";
 import { BottomResComp, BottomResListComp, BottomResTypeEnum } from "#lowcoder/types/bottomRes";
 import { undoKey } from "#lowcoder/util/keyUtils";
 import { list } from "./list";

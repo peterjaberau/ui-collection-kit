@@ -5,7 +5,7 @@ import { Buffer } from "buffer";
 import mime from "mime";
 import { saveAs } from "file-saver";
 import { isArray, isObject } from "lodash";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export function getBase64(img: any, callback: (imageUrl: any) => void) {
   const reader = new FileReader();

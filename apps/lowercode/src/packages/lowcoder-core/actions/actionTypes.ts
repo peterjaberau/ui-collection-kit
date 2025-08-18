@@ -51,7 +51,7 @@ export type ExtraActionType =
 export type ActionExtraInfo = {
   compInfos?: {
     compName: string;
-    compType: string;
+    compType: string | any;
     type: ExtraActionType;
   }[];
 };

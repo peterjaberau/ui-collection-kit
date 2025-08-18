@@ -1,9 +1,9 @@
-import { BoolCodeControl } from "comps/controls/codeControl";
-import { EditorContext } from "comps/editorState";
-import { withTypeAndChildren } from "comps/generators";
-import { MultiCompBuilder } from "comps/generators/multi";
-import { getReduceContext } from "comps/utils/reduceContext";
-import { trans } from "i18n";
+import { BoolCodeControl } from "#lowcoder/comps/controls/codeControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { withTypeAndChildren } from "#lowcoder/comps/generators";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
+import { getReduceContext } from "#lowcoder/comps/utils/reduceContext";
+import { trans } from "#lowcoder/i18n";
 import { omit } from "lodash";
 import {
   ActionContextType,
@@ -16,7 +16,7 @@ import {
   isCustomAction,
   isMyCustomAction,
   UpdateActionContextAction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { Dropdown, HighContainer, Treediv } from "lowcoder-design";
 import { useContext } from "react";
 import { limitExecutor, setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";

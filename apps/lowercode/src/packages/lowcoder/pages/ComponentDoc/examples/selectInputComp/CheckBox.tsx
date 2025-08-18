@@ -1,5 +1,5 @@
-import { CheckboxComp } from "comps/comps/selectInputComp/checkboxComp";
-import { trans } from "i18n";
+import { CheckboxComp } from "#lowcoder/comps/comps/selectInputComp/checkboxComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -114,8 +114,8 @@ export default function CheckboxExample() {
         />
       </ExampleGroup>
 
-      <ExampleGroup 
-      title={trans("componentDoc.labelText")} 
+      <ExampleGroup
+      title={trans("componentDoc.labelText")}
       description="The Following Examples Show the differnet alignment positions on the Checkbox Component."
       >
         <Example

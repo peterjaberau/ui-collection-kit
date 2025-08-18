@@ -1,13 +1,13 @@
-// import { CodeEditor } from "base/codeEditor/codeEditor";
-import { CompParams } from "lowcoder-core";
-import { EditorContext } from "comps/editorState";
-import { valueComp } from "comps/generators";
-import { CompExposingContext } from "comps/generators/withContext";
-import { exposingDataForAutoComplete } from "comps/utils/exposingTypes";
+// import { CodeEditor } from "#lowcoder/base/codeEditor/codeEditor";
+import { CompParams } from "#lowcoder-core/index";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { valueComp } from "#lowcoder/comps/generators";
+import { CompExposingContext } from "#lowcoder/comps/generators/withContext";
+import { exposingDataForAutoComplete } from "#lowcoder/comps/utils/exposingTypes";
 import { ControlPropertyViewWrapper } from "lowcoder-design";
 import { debounce } from "lodash";
 import { ReactNode, Suspense, lazy, useContext, useMemo } from "react";
-import type { CodeEditorProps } from "base/codeEditor/codeEditorTypes";
+import type { CodeEditorProps } from "#lowcoder/base/codeEditor/codeEditorTypes";
 
 const CodeEditor = lazy(
   () => import("base/codeEditor/codeEditor")

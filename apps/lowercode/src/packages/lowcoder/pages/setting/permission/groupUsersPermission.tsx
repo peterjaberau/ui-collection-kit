@@ -1,7 +1,7 @@
 import { GroupRoleInfo, GroupUser, OrgGroup, TacoRoles, RoleIdType } from "#lowcoder/constants/orgConstants";
 import { User } from "#lowcoder/constants/userConstants";
 import { AddIcon, ArrowIcon, CustomSelect, Dropdown, PackUpIcon, Search, SuperUserIcon } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import ProfileImage from "#lowcoder/pages/common/profileImage";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -31,7 +31,7 @@ import history from "#lowcoder/util/history";
 import { PERMISSION_SETTING } from "#lowcoder/constants/routesURL";
 import Column from "antd/es/table/Column";
 import { debounce } from "lodash";
-import { fetchGroupUsrPagination } from "@lowcoder-ee/util/pagination/axios";
+import { fetchGroupUsrPagination } from "#lowcoder/util/pagination/axios";
 
 const StyledAddIcon = styled(AddIcon)`
   g path {

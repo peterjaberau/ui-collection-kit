@@ -1,6 +1,6 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { isEmpty } from "lodash";
-import { changeValueAction, DispatchType } from "lowcoder-core";
+import { changeValueAction, DispatchType } from "#lowcoder-core/index";
 import { Dropdown, OptionsType } from "lowcoder-design";
 import { useContext } from "react";
 import { useSelector } from "react-redux";

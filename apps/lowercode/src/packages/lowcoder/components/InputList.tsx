@@ -8,7 +8,7 @@ import LinkPlusButton from "./LinkPlusButton";
 import { BluePlusIcon } from "#lowcoder-design/icons";
 import { useEffect } from "react";
 import { useForm } from "antd/es/form/Form";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const StyledItem = styled(FormItem)`
   margin-bottom: 8px;

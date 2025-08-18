@@ -2,14 +2,14 @@
 import { DeployableItemConfig } from '../types/deployable-item.types';
 import { Environment } from '../types/environment.types';
 import { deployApp } from '../services/apps.service';
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { App } from '../types/app.types';
 
 // Define AppStats interface if not already defined
 
 
 export const appsConfig: DeployableItemConfig = {
- 
+
 
   deploy: {
     singularLabel: trans("environments.config_singularLabels_app"),

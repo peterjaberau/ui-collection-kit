@@ -17,7 +17,7 @@ import ApplicationApi, { ApplicationResp } from "#lowcoder/api/applicationApi";
 import { ApiResponse } from "#lowcoder/api/apiResponses";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export function* createAppSnapshotSaga(action: ReduxAction<CreateSnapshotPayload>) {
   try {

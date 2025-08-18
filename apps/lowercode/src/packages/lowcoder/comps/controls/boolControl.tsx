@@ -1,4 +1,4 @@
-import { withDefault } from "comps/generators";
+import { withDefault } from "#lowcoder/comps/generators";
 import {
   AbstractComp,
   CompAction,
@@ -9,7 +9,7 @@ import {
   Node,
   SimpleComp,
   ValueAndMsg,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { CheckBox, controlItem, Switch, SwitchJsIcon, SwitchWrapper } from "lowcoder-design";
 import { ReactNode } from "react";
 import styled from "styled-components";

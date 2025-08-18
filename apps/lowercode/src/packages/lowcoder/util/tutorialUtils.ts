@@ -1,5 +1,5 @@
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
-import { trans } from "i18n";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
+import { trans } from "#lowcoder/i18n";
 
 const DatasourceTutorials: Partial<Record<DatasourceType, string>> = {
   mysql: trans("datasourceTutorial.mysql"),

@@ -1,10 +1,10 @@
 import { default as Button } from "antd/es/button";
 import { ManualWapper } from "#lowcoder/pages/setting/idSource/styledComponents";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { SyncManualIcon } from "lowcoder-design";
 import { useState } from "react";
 import { validateResponse } from "#lowcoder/api/apiUtils";
-import { AuthType } from "@lowcoder-ee/pages/setting/idSource/idSourceConstants";
+import { AuthType } from "#lowcoder/pages/setting/idSource/idSourceConstants";
 import IdSourceApi from "#lowcoder/api/idSourceApi";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 

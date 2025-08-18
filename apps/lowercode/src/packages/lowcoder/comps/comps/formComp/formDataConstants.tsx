@@ -1,9 +1,9 @@
-import { RecordConstructorToComp } from "lowcoder-core";
-import { StringControl } from "comps/controls/codeControl";
-import { CompNameContext, EditorContext } from "comps/editorState";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { CompNameContext, EditorContext } from "#lowcoder/comps/editorState";
 import { Section } from "#lowcoder-design/index";
 import { ReactNode, useContext, useMemo } from "react";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export interface IForm {
   onEventPropertyView(title: ReactNode): ReactNode;

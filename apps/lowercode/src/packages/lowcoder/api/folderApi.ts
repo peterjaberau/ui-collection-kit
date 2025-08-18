@@ -12,7 +12,7 @@ import { ApplicationMeta, FolderMeta } from "../constants/applicationConstants";
 import {
   fetchFolderRequestType,
   GenericApiPaginationResponse
-} from "@lowcoder-ee/util/pagination/type";
+} from "#lowcoder/util/pagination/type";
 
 export class FolderApi extends Api {
   static url = "/folders";

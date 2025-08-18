@@ -4,13 +4,13 @@ import {
   EditViewFn,
   TABLE_EDITABLE_SWITCH_ON,
 } from "#lowcoder/components/table/EditableCell";
-import { stateComp } from "comps/generators";
+import { stateComp } from "#lowcoder/comps/generators";
 import {
   MultiCompBuilder,
   PropertyViewFnTypeForComp,
   ToConstructor,
   ViewFnTypeForComp,
-} from "comps/generators/multi";
+} from "#lowcoder/comps/generators/multi";
 import _ from "lodash";
 import {
   CompConstructor,
@@ -19,7 +19,7 @@ import {
   NodeToValue,
   RecordConstructorToComp,
   withFunction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { ReactNode } from "react";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 

@@ -11,7 +11,7 @@ import Draggable from "react-draggable";
 import { getPanelStyle, savePanelStyle } from "../../util/localStorageUtil";
 import { CompNameContext } from "../../comps/editorState";
 import { isEmpty } from "lodash";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useUnmount } from "react-use";
 
 const Wrapper = styled.div`

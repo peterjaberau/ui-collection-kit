@@ -13,7 +13,7 @@ import {
 import styled, { css } from "styled-components";
 import { useCallback, useRef, useState, useEffect, useMemo, } from "react";
 import { throttle } from "lodash";
-import { changeValueAction } from "lowcoder-core";
+import { changeValueAction } from "#lowcoder-core/index";
 
 interface ColorSelectProps {
   color: string;

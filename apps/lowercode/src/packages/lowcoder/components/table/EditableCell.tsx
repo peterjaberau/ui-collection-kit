@@ -1,11 +1,11 @@
 import { PresetStatusColorType } from "antd/es/_util/colors";
 import _ from "lodash";
-import { changeChildAction, DispatchType } from "lowcoder-core";
+import { changeChildAction, DispatchType } from "#lowcoder-core/index";
 import React, { ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 import ColumnTypeView from "./columnTypeView";
-import { TableCellContext } from "comps/comps/tableComp/tableContext";
+import { TableCellContext } from "#lowcoder/comps/comps/tableComp/tableContext";
 import Tooltip from "antd/es/tooltip";
 
 type StatusType = PresetStatusColorType | "none";

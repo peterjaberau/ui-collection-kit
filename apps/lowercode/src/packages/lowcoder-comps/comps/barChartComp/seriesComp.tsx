@@ -10,7 +10,7 @@ import {
   MultiCompBuilder,
   valueComp,
 } from "lowcoder-sdk";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 import { ConstructorToComp, ConstructorToDataType, ConstructorToView } from "#lowcoder-core/index";
 import { CompAction, CustomAction, customAction, isMyCustomAction } from "#lowcoder-core/index";

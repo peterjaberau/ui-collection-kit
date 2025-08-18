@@ -1,6 +1,6 @@
-import { Node } from "lowcoder-core";
+import { Node } from "#lowcoder-core/index";
 import { mapValues } from "lodash";
-import { ParamsConfig } from "comps/controls/actionSelector/executeCompTypes";
+import { ParamsConfig } from "#lowcoder/comps/controls/actionSelector/executeCompTypes";
 import { ReactNode } from "react";
 
 export type MethodInfo = {

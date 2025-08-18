@@ -1,4 +1,4 @@
-import { AudioComp } from "comps/comps/mediaComp/audioComp";
+import { AudioComp } from "#lowcoder/comps/comps/mediaComp/audioComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -11,7 +11,7 @@ export default function AudioExample() {
         >
           <Example
             title="Default Audio Component"
-            config={{ 
+            config={{
                 src: "https://cdn.pixabay.com/audio/2023/07/06/audio_e12e5bea9d.mp3",
 
             }}
@@ -19,7 +19,7 @@ export default function AudioExample() {
           />
           <Example
             title="Auto Play - True"
-            config={{ 
+            config={{
                 src: "https://cdn.pixabay.com/audio/2023/07/06/audio_e12e5bea9d.mp3",
                 autoPlay: true,
 
@@ -28,7 +28,7 @@ export default function AudioExample() {
           />
           <Example
             title="Audio on Loop - True"
-            config={{ 
+            config={{
                 src: "https://cdn.pixabay.com/audio/2023/07/06/audio_e12e5bea9d.mp3",
                 loop: true,
             }}
@@ -42,7 +42,7 @@ export default function AudioExample() {
         >
           <Example
             title="Margin & Padding"
-            config={{ 
+            config={{
                 src: "https://cdn.pixabay.com/audio/2023/07/06/audio_e12e5bea9d.mp3",
                 style: {
                   margin: "5px",
@@ -53,7 +53,7 @@ export default function AudioExample() {
           />
           <Example
             title="Rotation - 45 Deg"
-            config={{ 
+            config={{
                 src: "https://cdn.pixabay.com/audio/2023/07/06/audio_e12e5bea9d.mp3",
                 style: {
                   rotation: "45deg",
@@ -63,7 +63,7 @@ export default function AudioExample() {
           />
           <Example
             title="Rotation - 135 Deg"
-            config={{ 
+            config={{
                 src: "https://cdn.pixabay.com/audio/2023/07/06/audio_e12e5bea9d.mp3",
                 style: {
                   rotation: "135deg",

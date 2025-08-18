@@ -3,10 +3,10 @@ import { CustomModal } from "lowcoder-design";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserAction, profileSettingModalVisible } from "#lowcoder/redux/reduxActions/userActions";
-import { ProfileInfoCard } from "@lowcoder-ee/pages/setting/profile/profileInfoCard";
+import { ProfileInfoCard } from "#lowcoder/pages/setting/profile/profileInfoCard";
 import { WindowMessageTypes } from "#lowcoder/constants/messages";
 import { isProfileSettingModalVisible } from "#lowcoder/redux/selectors/usersSelectors";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
 export default function ProfileSettingModal() {

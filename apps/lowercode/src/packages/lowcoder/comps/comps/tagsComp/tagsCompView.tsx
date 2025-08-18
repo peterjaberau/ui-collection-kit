@@ -1,20 +1,20 @@
 import styled from "styled-components";
 import React, { useContext } from "react";
 import { Tag } from "antd";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { PresetStatusColorTypes } from "antd/es/_util/colors";
 import { hashToNum } from "#lowcoder/util/stringUtils";
-import { TagsCompOptionsControl } from "comps/controls/optionsControl";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
-import { styleControl } from "@lowcoder-ee/comps/controls/styleControl";
-import { ButtonEventHandlerControl } from "@lowcoder-ee/comps/controls/eventHandlerControl";
-import { InputLikeStyle } from "@lowcoder-ee/comps/controls/styleControlConstants";
-import { BoolCodeControl } from "@lowcoder-ee/comps/controls/codeControl";
-import { UICompBuilder } from "@lowcoder-ee/comps/generators/uiCompBuilder";
+import { TagsCompOptionsControl } from "#lowcoder/comps/controls/optionsControl";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { ButtonEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { InputLikeStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { BoolCodeControl } from "#lowcoder/comps/controls/codeControl";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import { Section, sectionNames } from "#lowcoder-design/index";
-import { NameConfig } from "@lowcoder-ee/comps/generators/withExposing";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "@lowcoder-ee/comps/utils/propertyUtils";
-import { withExposingConfigs } from "@lowcoder-ee/comps/generators/withExposing";
+import { NameConfig } from "#lowcoder/comps/generators/withExposing";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 
 const colors = PresetStatusColorTypes;
 

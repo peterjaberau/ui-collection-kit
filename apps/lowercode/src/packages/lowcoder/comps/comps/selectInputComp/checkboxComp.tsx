@@ -1,5 +1,5 @@
 import { default as AntdCheckboxGroup } from "antd/es/checkbox/Group";
-import { SelectInputOptionControl } from "comps/controls/optionsControl";
+import { SelectInputOptionControl } from "#lowcoder/comps/controls/optionsControl";
 import { BoolCodeControl, NumberControl } from "../../controls/codeControl";
 import { arrayStringExposingStateControl } from "../../controls/codeStateControl";
 import { LabelControl } from "../../controls/labelControl";
@@ -14,15 +14,15 @@ import {
   useSelectInputValidate,
 } from "./selectInputConstants";
 import { formDataChildren } from "../formComp/formDataConstants";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, CheckboxStyle, CheckboxStyleType, InputFieldStyle, LabelStyle } from "comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, CheckboxStyle, CheckboxStyleType, InputFieldStyle, LabelStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import { RadioLayoutOptions, RadioPropertyView } from "./radioCompConstants";
 import { dropdownControl } from "../../controls/dropdownControl";
 import { ValueFromOption, lightenColor } from "lowcoder-design";
 import { EllipsisTextCss } from "lowcoder-design";
-import { trans } from "i18n";
-import { RefControl } from "comps/controls/refControl";
-import { migrateOldData } from "comps/generators/simpleGenerators";
+import { trans } from "#lowcoder/i18n";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
 import { fixOldInputCompData } from "../textInputComp/textInputConstants";
 import Tooltip from "antd/es/tooltip";
 import { useCallback, useRef, useEffect, memo } from "react";
@@ -142,16 +142,16 @@ const CheckboxGroup = styled(AntdCheckboxGroup) <{
   }}
 `;
 
-const MemoizedCheckboxGroup = memo(({ 
-  value, 
-  disabled, 
-  style, 
-  layout, 
-  options, 
-  onChange, 
+const MemoizedCheckboxGroup = memo(({
+  value,
+  disabled,
+  style,
+  layout,
+  options,
+  onChange,
   viewRef,
   tabIndex
-}: { 
+}: {
   value: string[];
   disabled: boolean;
   style: CheckboxStyleType;

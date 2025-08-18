@@ -7,7 +7,7 @@ import {
   MultiCompConstructor,
   wrapChildAction,
   wrapDispatch,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { ReactNode } from "react";
 import { lastValueIfEqual, setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
 import { COMP_KEY, MAP_KEY, withMultiContext } from "./withMultiContext";

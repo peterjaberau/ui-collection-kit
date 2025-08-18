@@ -1,5 +1,5 @@
-import { SegmentedControlComp } from "comps/comps/selectInputComp/segmentedControl";
-import { trans } from "i18n";
+import { SegmentedControlComp } from "#lowcoder/comps/comps/selectInputComp/segmentedControl";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -81,8 +81,8 @@ export default function SegmentedControlExample() {
         />
       </ExampleGroup>
 
-      <ExampleGroup 
-        title={trans("componentDoc.labelText")} 
+      <ExampleGroup
+        title={trans("componentDoc.labelText")}
         description="The Following Examples Show the different Label alignment of the Segmented Control Component.">
         <Example
           title={trans("componentDoc.leftLeftAlign")}

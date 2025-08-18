@@ -1,5 +1,5 @@
-import { ListViewComp } from "comps/comps/listViewComp/listViewComp";
-import { trans } from "i18n";
+import { ListViewComp } from "#lowcoder/comps/comps/listViewComp/listViewComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -173,7 +173,7 @@ export default function ListViewExample() {
               pageSize:"2",
               showQuickJumper: true,
             },
-            noOfRows: rows,          
+            noOfRows: rows,
           }}
           blackListConfig={blackListConfig}
           compFactory={ListViewComp}
@@ -296,7 +296,7 @@ export default function ListViewExample() {
           hideSettings={true}
           config={{
             noOfRows: rows,
-            container: container, 
+            container: container,
             animationStyle: {
             "animation": "bounce",
             "animationDelay": "1s",
@@ -311,7 +311,7 @@ export default function ListViewExample() {
           hideSettings={true}
           config={{
             noOfRows: rows,
-            container: container, 
+            container: container,
             animationStyle: {
             "animation": "swing",
             "animationDelay": "1s",
@@ -326,7 +326,7 @@ export default function ListViewExample() {
           hideSettings={true}
           config={{
             noOfRows: rows,
-            container: container, 
+            container: container,
             animationStyle: {
             "animation": "tada",
             "animationDelay": "1s",

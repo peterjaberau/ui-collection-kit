@@ -7,9 +7,9 @@ import {
   MultiCompConstructor,
   CompAction,
   CompActionTypes,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import styled from "styled-components";
-import { codeControl } from "comps/controls/codeControl";
+import { codeControl } from "#lowcoder/comps/controls/codeControl";
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
 import Skeleton from "antd/es/skeleton";
 import { ReactNode, useContext, useMemo } from "react";

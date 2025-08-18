@@ -1,4 +1,4 @@
-import { loadComps } from "comps";
+import { loadComps } from "#lowcoder/comps";
 import type { AppViewInstanceOptions } from "./AppViewInstance";
 import { createRoot } from "react-dom/client";
 

@@ -1,4 +1,4 @@
-import { CodeType } from "lowcoder-core";
+import { CodeType } from "#lowcoder-core/index";
 import React, { ReactNode } from "react";
 import { EditorState, EditorView } from "./codeMirror";
 

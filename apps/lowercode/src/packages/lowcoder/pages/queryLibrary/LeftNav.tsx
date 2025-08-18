@@ -18,11 +18,11 @@ import { getDataSourceTypesMap } from "../../redux/selectors/datasourceSelectors
 import { deleteQueryLibrary } from "../../redux/reduxActions/queryLibraryActions";
 import { EmptyContent } from "../../components/EmptyContent";
 import { ReadOnlyMask } from "../common/styledComponent";
-import { trans } from "i18n";
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
+import { trans } from "#lowcoder/i18n";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
 import { saveAs } from "file-saver";
 import DataSourceIcon from "#lowcoder/components/DataSourceIcon";
-import PaginationComp from "@lowcoder-ee/util/pagination/Pagination";
+import PaginationComp from "#lowcoder/util/pagination/Pagination";
 
 const Wrapper = styled.div<{ $readOnly?: boolean }>`
   display: flex;

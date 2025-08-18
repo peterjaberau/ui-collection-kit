@@ -1,8 +1,8 @@
-import { styleControl } from "@lowcoder-ee/comps/controls/styleControl";
-import { ButtonStyle, DisabledButtonStyle } from "@lowcoder-ee/comps/controls/styleControlConstants";
-import { migrateOldData } from "@lowcoder-ee/comps/generators/simpleGenerators";
-import { refMethods } from "@lowcoder-ee/comps/generators/withMethodExposing";
-import { blurMethod, clickMethod, focusWithOptions } from "@lowcoder-ee/comps/utils/methodUtils";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { ButtonStyle, DisabledButtonStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { refMethods } from "#lowcoder/comps/generators/withMethodExposing";
+import { blurMethod, clickMethod, focusWithOptions } from "#lowcoder/comps/utils/methodUtils";
 import { default as Button } from "antd/es/button";
 import { genActiveColor, genHoverColor } from "#lowcoder-design/components/colorSelect/colorUtils";
 import styled, { css } from "styled-components";
@@ -101,12 +101,12 @@ function fixOldData(oldData: any) {
   return oldData;
 }
 const ButtonTmpStyleControl = styleControl(ButtonStyle);
-export const ButtonStyleControl = migrateOldData(
+export const ButtonStyleControl: any = migrateOldData(
   ButtonTmpStyleControl,
   fixOldData
 );
 
-export const DisabledButtonTmpStyleControl = styleControl(DisabledButtonStyle);
+export const DisabledButtonTmpStyleControl: any = styleControl(DisabledButtonStyle);
 export const DisabledButtonStyleControl = migrateOldData(
   DisabledButtonTmpStyleControl,
   fixOldData

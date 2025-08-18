@@ -1,6 +1,6 @@
 import { ArrowIcon } from "lowcoder-design";
 import styled from "styled-components";
-import { trans } from "i18n"; // Assuming this is how you get the user's language
+import { trans } from "#lowcoder/i18n"; // Assuming this is how you get the user's language
 import { useParams } from "react-router-dom";
 import { HeaderBack } from "../permission/styledComponents";
 import history from "#lowcoder/util/history";
@@ -12,8 +12,8 @@ import { CheckCircleOutlined } from '@ant-design/icons';
 import { Level1SettingPageContent } from "../styled";
 import { TacoMarkDown } from "lowcoder-design";
 import ProductDescriptions, {Translations} from "./ProductDescriptions";
-import { SubscriptionProductsEnum } from "@lowcoder-ee/constants/subscriptionConstants";
-import { useSubscriptionContext } from "@lowcoder-ee/util/context/SubscriptionContext";
+import { SubscriptionProductsEnum } from "#lowcoder/constants/subscriptionConstants";
+import { useSubscriptionContext } from "#lowcoder/util/context/SubscriptionContext";
 
 const { Meta } = Card;
 

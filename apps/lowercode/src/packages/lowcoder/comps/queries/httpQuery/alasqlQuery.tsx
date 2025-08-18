@@ -1,13 +1,13 @@
 import { QueryConfigItemWrapper, QueryConfigLabel, QueryConfigWrapper } from "#lowcoder-design/components/query";
-import { simpleMultiComp } from "comps/generators/multi";
+import { simpleMultiComp } from "#lowcoder/comps/generators/multi";
 import { JSONValue } from "../../../util/jsonTypes";
 import { ParamsStringControl } from "../../controls/paramsControl";
-import { dropdownControl } from "@lowcoder-ee/comps/controls/dropdownControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 import { QueryResult } from "../queryComp";
-import { QUERY_EXECUTION_ERROR, QUERY_EXECUTION_OK } from "@lowcoder-ee/constants/queryConstants";
-import { getDynamicStringSegments, isDynamicSegment } from "lowcoder-core";
+import { QUERY_EXECUTION_ERROR, QUERY_EXECUTION_OK } from "#lowcoder/constants/queryConstants";
+import { getDynamicStringSegments, isDynamicSegment } from "#lowcoder-core/index";
 import alasql from "alasql";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const childrenMap = {
   databaseType: dropdownControl(

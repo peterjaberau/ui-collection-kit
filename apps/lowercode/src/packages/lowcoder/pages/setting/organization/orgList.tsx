@@ -3,7 +3,7 @@ import { AddIcon, CustomModal, DangerIcon, EditPopover, SearchIcon, CheckoutIcon
 import { useDispatch, useSelector } from "react-redux";
 import { createOrgAction, deleteOrgAction, switchOrg } from "#lowcoder/redux/reduxActions/orgActions";
 import styled from "styled-components";
-import { trans, transToNode } from "i18n";
+import { trans, transToNode } from "#lowcoder/i18n";
 import { buildOrgId } from "#lowcoder/constants/routesURL";
 import {
   CreateButton,

@@ -1,5 +1,5 @@
-import { SliderComp } from "comps/comps/numberInputComp/sliderComp";
-import { trans } from "i18n";
+import { SliderComp } from "#lowcoder/comps/comps/numberInputComp/sliderComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -55,8 +55,8 @@ export default function SliderExample() {
         />
       </ExampleGroup>
 
-      <ExampleGroup 
-        title={trans("componentDoc.labelText")} 
+      <ExampleGroup
+        title={trans("componentDoc.labelText")}
         description="The Following Examples Show the Basic Usage of the Slider Component.">
         <Example
           title={trans("componentDoc.leftLeftAlign")}
@@ -114,7 +114,7 @@ export default function SliderExample() {
         />
       </ExampleGroup>
 
-      <ExampleGroup 
+      <ExampleGroup
         title="Layout Options"
         description="The Following Examples Show the Layout Options of the Slider Component."
       >

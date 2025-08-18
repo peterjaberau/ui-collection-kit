@@ -1,5 +1,5 @@
-import { NavComp } from "comps/comps/navComp/navComp";
-import { trans } from "i18n";
+import { NavComp } from "#lowcoder/comps/comps/navComp/navComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../common/Example";
 import ExampleGroup from "../common/ExampleGroup";
 
@@ -1243,7 +1243,7 @@ export default function NavigationExample() {
         />
       </ExampleGroup>
 
-      <ExampleGroup 
+      <ExampleGroup
         title="Styling Properties & Animation"
         description="The Following Examples Show the different Styling properties of the Navigation Component."
       >

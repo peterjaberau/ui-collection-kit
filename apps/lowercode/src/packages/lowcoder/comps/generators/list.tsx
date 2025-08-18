@@ -1,4 +1,4 @@
-import { arrayMove, ToType } from "comps/utils";
+import { arrayMove, ToType } from "#lowcoder/comps/utils";
 import _ from "lodash";
 import {
   CompAction,
@@ -14,7 +14,7 @@ import {
   Node,
   withFunction,
   wrapDispatch,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { ReactNode } from "react";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 import { lastValueIfEqual, setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";

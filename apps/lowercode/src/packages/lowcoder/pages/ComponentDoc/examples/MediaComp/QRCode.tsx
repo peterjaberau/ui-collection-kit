@@ -1,4 +1,4 @@
-import { QRCodeComp } from "comps/comps/qrCodeComp";
+import { QRCodeComp } from "#lowcoder/comps/comps/qrCodeComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

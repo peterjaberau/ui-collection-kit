@@ -3,25 +3,25 @@ import { UICompBuilder } from "../../generators";
 import { NameConfigHidden, NameConfig, withExposingConfigs } from "../../generators/withExposing";
 import { defaultData } from "./jsonConstants";
 import styled from "styled-components";
-import { jsonValueExposingStateControl } from "comps/controls/codeStateControl";
-import { ChangeEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { LabelControl } from "comps/controls/labelControl";
+import { jsonValueExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { ChangeEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { LabelControl } from "#lowcoder/comps/controls/labelControl";
 import { formDataChildren, FormDataPropertyView } from "../formComp/formDataConstants";
-import { AnimationStyle, JsonEditorStyle } from "comps/controls/styleControlConstants";
-import { styleControl } from "comps/controls/styleControl";
-import { migrateOldData, withDefault } from "comps/generators/simpleGenerators";
+import { AnimationStyle, JsonEditorStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { migrateOldData, withDefault } from "#lowcoder/comps/generators/simpleGenerators";
 import { useRef, useEffect, useContext, useCallback, useMemo } from "react";
 import {
   EditorState,
   EditorView,
   type EditorView as EditorViewType,
-} from "base/codeEditor/codeMirror";
-import { useExtensions } from "base/codeEditor/extensions";
-import { EditorContext } from "comps/editorState";
-import { AutoHeightControl } from "@lowcoder-ee/comps/controls/autoHeightControl";
-import { BoolControl } from "@lowcoder-ee/comps/controls/boolControl";
+} from "#lowcoder/base/codeEditor/codeMirror";
+import { useExtensions } from "#lowcoder/base/codeEditor/extensions";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 
 /**
  * JsonEditor Comp

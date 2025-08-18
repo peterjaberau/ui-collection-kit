@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { GreyTextColor } from "#lowcoder/constants/style";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../styled";
 import { Flex } from 'antd';
 import { ProductCard } from "./productCard";
@@ -26,13 +26,13 @@ const SubscriptionErrorContent = styled.div`
 `;
 
 export function SubscriptionError() {
-  
+
   return (
     <Level1SettingPageContent>
       <Level1SettingPageTitle>
         {trans("settings.subscription")} | ERROR
       </Level1SettingPageTitle>
-      
+
     </Level1SettingPageContent>
   );
 }

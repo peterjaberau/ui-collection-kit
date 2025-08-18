@@ -1,5 +1,5 @@
 import { DefaultOptionType } from "antd/es/select";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export enum AuthType {
   Form = "FORM",

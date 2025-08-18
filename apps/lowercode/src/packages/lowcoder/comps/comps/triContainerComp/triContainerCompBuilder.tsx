@@ -1,14 +1,14 @@
 import { JSONValue } from "#lowcoder/util/jsonTypes";
-import { Comp } from "lowcoder-core";
-import { UICompBuilder } from "comps/generators";
+import { Comp } from "#lowcoder-core/index";
+import { UICompBuilder } from "#lowcoder/comps/generators";
 import {
   PropertyViewFnTypeForComp,
   ToConstructor,
   ToViewReturn,
   ViewFnTypeForComp,
-} from "comps/generators/multi";
-import { NewChildren as UiChildren } from "comps/generators/uiCompBuilder";
-import { NameGenerator } from "comps/utils";
+} from "#lowcoder/comps/generators/multi";
+import { NewChildren as UiChildren } from "#lowcoder/comps/generators/uiCompBuilder";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import { CompTree, IContainer } from "../containerBase";
 import { SimpleContainerComp } from "../containerBase/simpleContainerComp";
 import { TriContainerComp } from "./triContainerComp";

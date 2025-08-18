@@ -1,9 +1,9 @@
 import { default as LoadingOutlined } from "@ant-design/icons/LoadingOutlined";
 import { default as Spin } from "antd/es/spin";
 import DataSourceIcon from "#lowcoder/components/DataSourceIcon";
-import { ContextControlType, ContextJsonControl } from "comps/controls/contextCodeControl";
-import { FunctionControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
+import { ContextControlType, ContextJsonControl } from "#lowcoder/comps/controls/contextCodeControl";
+import { FunctionControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
 import {
   CompAction,
   CompParams,
@@ -15,7 +15,7 @@ import {
   changeValueAction,
   multiChangeAction,
   isDynamicSegment,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import {
   Dropdown,
   QueryConfigLabel,
@@ -39,12 +39,12 @@ import {
   ToInstanceType,
 } from "../generators/multi";
 import { toQueryView } from "./queryCompUtils";
-import { getGlobalSettings } from "comps/utils/globalSettings";
+import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
 import { QUERY_EXECUTION_ERROR, QUERY_EXECUTION_OK } from "../../constants/queryConstants";
-import type { SandBoxOption } from "lowcoder-core/src/eval/utils/evalScript";
-import { QueryLibraryApi } from "@lowcoder-ee/api/queryLibraryApi";
-import { validateResponse } from "@lowcoder-ee/api/apiUtils";
-import { JSONValue } from "@lowcoder-ee/util/jsonTypes";
+import type { SandBoxOption } from "#lowcoder-core/index/src/eval/utils/evalScript";
+import { QueryLibraryApi } from "#lowcoder/api/queryLibraryApi";
+import { validateResponse } from "#lowcoder/api/apiUtils";
+import { JSONValue } from "#lowcoder/util/jsonTypes";
 
 const NoInputsWrapper = styled.div`
   color: ${GreyTextColor};

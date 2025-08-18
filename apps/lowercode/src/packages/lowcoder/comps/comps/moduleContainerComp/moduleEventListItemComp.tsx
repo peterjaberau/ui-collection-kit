@@ -1,7 +1,7 @@
-import { StringControl } from "comps/controls/codeControl";
-import CompNameControl from "comps/controls/compNameControl";
-import { MultiCompBuilder } from "comps/generators";
-import { withExposingRaw } from "comps/generators/withExposing";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
+import { withExposingRaw } from "#lowcoder/comps/generators/withExposing";
 import { ModuleLayoutCompName } from "#lowcoder/constants/compConstants";
 import {
   fromRecord,
@@ -10,7 +10,7 @@ import {
   Node,
   routeByNameAction,
   triggerModuleEventAction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { lastValueIfEqual } from "#lowcoder/util/objectUtils";
 
 const childrenMap = {

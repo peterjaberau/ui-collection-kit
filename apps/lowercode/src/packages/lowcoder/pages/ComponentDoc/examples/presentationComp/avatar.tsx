@@ -1,4 +1,4 @@
-import { AvatarComp } from "comps/comps/avatar";
+import { AvatarComp } from "#lowcoder/comps/comps/avatar";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 import { trans } from "i18n/design";
@@ -15,66 +15,66 @@ export default function AvatarExample(){
           <ExampleGroup
             title={"Basic Usage"}
           >
-          <Example 
-            title="Circle Shaped Icon Avatar" 
+          <Example
+            title="Circle Shaped Icon Avatar"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 icon: "/icon:solid/user-secret",
                 shape:"circle",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Square Shaped Avatar with Title" 
+          <Example
+            title="Square Shaped Avatar with Title"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 icon: "/icon:solid/user-secret",
                 shape:"square",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Hiding the Avatar component" 
+          <Example
+            title="Hiding the Avatar component"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 icon: "/icon:solid/user-secret",
                 hidden: true,
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Avatar with Image" 
+          <Example
+            title="Avatar with Image"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 src: "https://i.pravatar.cc/300?u=a029026704a",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Avatar with Title" 
+          <Example
+            title="Avatar with Title"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 title: "John",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Large size Avatar" 
+          <Example
+            title="Large size Avatar"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 src: "https://i.pravatar.cc/300?u=a029026704a",
                 iconSize: "60",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Avatar with Dropdown" 
+          <Example
+            title="Avatar with Dropdown"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -82,73 +82,73 @@ export default function AvatarExample(){
                 shape:"circle",
                 enableDropdownMenu: true,
                 options: {
-                    optionType: "manual", 
+                    optionType: "manual",
                     manual: {
                         manual: [
-                            {label: "Option 1"}, 
+                            {label: "Option 1"},
                             {label: "Option 2"}
                         ]
                     }
                 }
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
           </ExampleGroup>
 
           <ExampleGroup
             title={"Label Position & Alignment"}
           >
-          <Example 
-            title="Avatar with Left Position" 
+          <Example
+            title="Avatar with Left Position"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 icon: "/icon:solid/user-secret",
                 shape:"circle",
                 labelPosition: "left",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Avatar with Righ Position" 
+          <Example
+            title="Avatar with Righ Position"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 icon: "/icon:solid/user-secret",
                 shape:"circle",
                 labelPosition: "right",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Left Alignment" 
+          <Example
+            title="Left Alignment"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 icon: "/icon:solid/user-secret",
                 shape:"circle",
                 alignmentPosition: "left",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Right Alignment" 
+          <Example
+            title="Right Alignment"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
                 icon: "/icon:solid/user-secret",
                 shape:"circle",
                 alignmentPosition: "right",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
           </ExampleGroup>
 
           <ExampleGroup
             title={"Advanced Usage"}
           >
-          <Example 
-            title="Badge type : Dot" 
+          <Example
+            title="Badge type : Dot"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -156,11 +156,11 @@ export default function AvatarExample(){
                 shape:"circle",
                 badgeType: "dot",
                 badgeCount:"3",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Badge type : Number" 
+          <Example
+            title="Badge type : Number"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -169,11 +169,11 @@ export default function AvatarExample(){
                 badgeType: "number",
                 badgeCount:"3",
                 overflowCount: "10",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Badge with Overflow Count" 
+          <Example
+            title="Badge with Overflow Count"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -182,16 +182,16 @@ export default function AvatarExample(){
                 badgeType: "number",
                 badgeCount:"110",
                 overflowCount: "99",
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
           </ExampleGroup>
 
           <ExampleGroup
             title={"Styling Properties"}
           >
-          <Example 
-            title="Different Styling properties on the Avatar component" 
+          <Example
+            title="Different Styling properties on the Avatar component"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -206,11 +206,11 @@ export default function AvatarExample(){
                   "radius": "10px",
                   "borderWidth": "2px"
               },
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Opacity - 0.25" 
+          <Example
+            title="Opacity - 0.25"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -226,11 +226,11 @@ export default function AvatarExample(){
                   "borderWidth": "2px",
                   "opacity": "0.25",
               },
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Opacity - 0.5" 
+          <Example
+            title="Opacity - 0.5"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -246,11 +246,11 @@ export default function AvatarExample(){
                   "borderWidth": "2px",
                   "opacity": "0.5",
               },
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Opacity - 0.8" 
+          <Example
+            title="Opacity - 0.8"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -266,11 +266,11 @@ export default function AvatarExample(){
                   "borderWidth": "2px",
                   "opacity": "0.8",
               },
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Avatar Styling" 
+          <Example
+            title="Avatar Styling"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -279,11 +279,11 @@ export default function AvatarExample(){
                   "background": "#FA0101",
                   "fill": "#36B389"
                 },
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Label Styling" 
+          <Example
+            title="Label Styling"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -302,11 +302,11 @@ export default function AvatarExample(){
                   "radius": "10px",
                   "borderWidth": "2px",
                 },
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Caption Styling" 
+          <Example
+            title="Caption Styling"
             config={{
                 avatarCatption: "user@email.com",
                 avatarLabel: "User",
@@ -325,11 +325,11 @@ export default function AvatarExample(){
                   "radius": "10px",
                   "borderWidth": "2px",
                 },
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
-          <Example 
-            title="Complete Styling of the Avatar component" 
+          <Example
+            title="Complete Styling of the Avatar component"
             hideSettings={true}
             config={{
                 avatarCatption: "user@email.com",
@@ -377,8 +377,8 @@ export default function AvatarExample(){
                   "radius": "10px",
                   "borderWidth": "2px",
                 },
-            }} 
-            compFactory={AvatarComp} 
+            }}
+            compFactory={AvatarComp}
           />
           </ExampleGroup>
         </>

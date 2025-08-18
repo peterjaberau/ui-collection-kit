@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { NewsLayout } from "./NewsLayout";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export function NewsView() {
 

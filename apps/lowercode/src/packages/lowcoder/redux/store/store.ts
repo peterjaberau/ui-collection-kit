@@ -1,10 +1,10 @@
 import { reduxBatch } from "@manaflair/redux-batch";
 import { TypedUseSelectorHook, useSelector as useReduxSelector } from "react-redux";
-import { appReducer, AppState } from "@lowcoder-ee/redux/reducers";
+import { appReducer, AppState } from "#lowcoder/redux/reducers";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
 import createSagaMiddleware from "redux-saga";
-import { rootSaga } from "@lowcoder-ee/redux/sagas";
+import { rootSaga } from "#lowcoder/redux/sagas";
 import StoreRegistry from "#lowcoder/redux/store/storeRegistry";
 
 const sagaMiddleware = createSagaMiddleware();

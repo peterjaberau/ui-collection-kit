@@ -1,15 +1,15 @@
-import { simpleMultiComp } from "comps/generators/multi";
-import {  ParamsStringControl } from "comps/controls/paramsControl";
+import { simpleMultiComp } from "#lowcoder/comps/generators/multi";
+import {  ParamsStringControl } from "#lowcoder/comps/controls/paramsControl";
 import {
   HttpPathPropertyView,
 } from "./httpQueryConstants";
 import { QueryResult } from "../queryComp";
 import { QUERY_EXECUTION_ERROR, QUERY_EXECUTION_OK } from "#lowcoder/constants/queryConstants";
-import { FunctionControl } from "comps/controls/codeControl";
+import { FunctionControl } from "#lowcoder/comps/controls/codeControl";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
-import { withMethodExposing } from "comps/generators/withMethodExposing";
-import { stateComp } from "comps/generators";
-import { multiChangeAction } from "lowcoder-core";
+import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
+import { stateComp } from "#lowcoder/comps/generators";
+import { multiChangeAction } from "#lowcoder-core/index";
 
 const socketConnection = async (socket: WebSocket, timeout = 10000) => {
   const isOpened = () => (socket.readyState === WebSocket.OPEN)

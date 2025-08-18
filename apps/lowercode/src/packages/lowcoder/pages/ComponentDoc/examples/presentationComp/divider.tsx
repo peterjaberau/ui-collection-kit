@@ -1,5 +1,5 @@
-import { DividerComp } from "comps/comps/dividerComp";
-import { trans } from "i18n";
+import { DividerComp } from "#lowcoder/comps/comps/dividerComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -16,8 +16,8 @@ export default function DividerExample() {
         title={trans("componentDoc.basicUsage")}
         description={trans("componentDoc.basicDemoDescription")}
       >
-      <Example 
-        title="Default Divider component" 
+      <Example
+        title="Default Divider component"
         config={{
           style: {
             borderStyle: "solid",
@@ -25,19 +25,19 @@ export default function DividerExample() {
             borderWidth: "2px"
           },
         }}
-        compFactory={DividerComp} 
+        compFactory={DividerComp}
       />
-      <Example 
-        title="Hiding Divider component" 
+      <Example
+        title="Hiding Divider component"
         config={{
           style: {
-            borderStyle: "solid", 
+            borderStyle: "solid",
             border: "#000",
             borderWidth: "2px",
             hidden: "true",
           },
         }}
-        compFactory={DividerComp} 
+        compFactory={DividerComp}
       />
       </ExampleGroup>
 

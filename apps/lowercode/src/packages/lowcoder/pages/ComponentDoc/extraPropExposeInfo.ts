@@ -1,4 +1,4 @@
-import { UICompType } from "comps/uiCompRegistry";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import { IProperty } from "./common/Exposing";
 
 const TypeObject = "Object";

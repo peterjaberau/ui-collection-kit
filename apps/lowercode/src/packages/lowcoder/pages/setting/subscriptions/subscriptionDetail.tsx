@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { ArrowIcon } from "lowcoder-design";
 import styled from "styled-components";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useParams } from "react-router-dom";
 import { HeaderBack } from "../permission/styledComponents";
 import history from "#lowcoder/util/history";
 import { SUBSCRIPTION_SETTING } from "#lowcoder/constants/routesURL";
 import { getProduct, getSubscriptionDetails, getInvoices } from "#lowcoder/api/subscriptionApi";
 import { Skeleton, Timeline, Card, Descriptions, Table, Typography, Button } from "antd";
-import { useSubscriptionContext } from "@lowcoder-ee/util/context/SubscriptionContext";
+import { useSubscriptionContext } from "#lowcoder/util/context/SubscriptionContext";
 
 const { Text } = Typography;
 

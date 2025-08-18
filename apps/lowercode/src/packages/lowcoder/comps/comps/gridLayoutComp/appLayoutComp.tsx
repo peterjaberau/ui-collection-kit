@@ -1,4 +1,4 @@
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
 import { SimpleContainerComp } from "../containerBase/simpleContainerComp";
 import { getAllCompItems } from "../containerBase/utils";
 import { gridItemCompToGridItems } from "../containerComp/containerView";

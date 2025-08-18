@@ -1,12 +1,12 @@
-import { MultiCompBuilder } from "comps/generators/multi";
-import { withDefault } from "comps/generators/simpleGenerators";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
+import { withDefault } from "#lowcoder/comps/generators/simpleGenerators";
 import { BranchDiv } from "lowcoder-design";
 import { KeyValue } from "#lowcoder/types/common";
 import ApplicationSelectControl from "../appSelectControl";
 import { BoolControl } from "../boolControl";
 import { keyValueListControl } from "../keyValueListControl";
 import { keyValueListToSearchStr, openApp } from "../../../util/appUtils";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const childrenMap = {
   applicationId: ApplicationSelectControl,

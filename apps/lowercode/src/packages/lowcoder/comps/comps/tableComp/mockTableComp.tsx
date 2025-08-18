@@ -1,12 +1,12 @@
-import { withDefault } from "comps/generators";
+import { withDefault } from "#lowcoder/comps/generators";
 import { TableComp } from ".";
-import { newPrimaryColumn } from "comps/comps/tableComp/column/tableColumnComp";
+import { newPrimaryColumn } from "#lowcoder/comps/comps/tableComp/column/tableColumnComp";
 import { NameGenerator } from "../../utils";
-import { ConstructorToDataType } from "lowcoder-core";
+import { ConstructorToDataType } from "#lowcoder-core/index";
 import { EditorState } from "../../editorState";
 import { isArrayLikeObject } from "lodash";
-import { i18nObjs } from "i18n";
-import { calcColumnWidth } from "comps/comps/tableComp/tableUtils";
+import { i18nObjs } from "#lowcoder/i18n";
+import { calcColumnWidth } from "#lowcoder/comps/comps/tableComp/tableUtils";
 // for test only
 const dataSource = [
   {

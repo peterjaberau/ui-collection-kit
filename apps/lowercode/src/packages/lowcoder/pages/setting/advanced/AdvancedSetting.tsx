@@ -14,19 +14,19 @@ import { useShallowEqualSelector } from "#lowcoder/util/hooks";
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../styled";
 import { fetchAllApplications } from "#lowcoder/redux/reduxActions/applicationActions";
 import { normalAppListSelector } from "#lowcoder/redux/selectors/applicationSelector";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Prompt } from "react-router";
 import history from "#lowcoder/util/history";
 import { Location } from "history";
-import { useExtraAdvanceSettings } from "@lowcoder-ee/pages/setting/advanced/extraAdvancedSetting";
+import { useExtraAdvanceSettings } from "#lowcoder/pages/setting/advanced/extraAdvancedSetting";
 import { JSLibraryModal } from "#lowcoder/components/JSLibraryModal";
 import { JSLibraryTree } from "#lowcoder/components/JSLibraryTree";
-import { getGlobalSettings } from "comps/utils/globalSettings";
+import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
 import { fetchJSLibrary } from "#lowcoder/util/jsLibraryUtils";
-import { evalFunc } from "lowcoder-core";
+import { evalFunc } from "#lowcoder-core/index";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { NpmRegistryConfig } from "@lowcoder-ee/components/NpmRegistryConfig";
-import { NpmRegistryConfigEntry } from "@lowcoder-ee/redux/reducers/uiReducers/commonSettingsReducer";
+import { NpmRegistryConfig } from "#lowcoder/components/NpmRegistryConfig";
+import { NpmRegistryConfigEntry } from "#lowcoder/redux/reducers/uiReducers/commonSettingsReducer";
 import { default as Switch } from "antd/es/switch";
 
 const CodeEditor = lazy(

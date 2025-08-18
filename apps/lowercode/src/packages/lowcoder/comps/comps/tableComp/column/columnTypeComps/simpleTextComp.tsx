@@ -1,15 +1,15 @@
 import { default as Input } from "antd/es/input";
-import { StringOrNumberControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
+import { StringOrNumberControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
 import { ColumnTypeCompBuilder, ColumnTypeViewFn } from "../columnTypeCompBuilder";
 import { ColumnValueTooltip } from "../simpleColumnTypeComps";
-import { IconControl } from "comps/controls/iconControl";
-import { hasIcon } from "comps/utils";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { hasIcon } from "#lowcoder/comps/utils";
 import React, { useCallback, useMemo } from "react";
-import { RecordConstructorToComp } from "lowcoder-core";
-import { clickEvent, doubleClickEvent, eventHandlerControl } from "comps/controls/eventHandlerControl";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
+import { clickEvent, doubleClickEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
 import styled from "styled-components";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 const TextEventOptions = [clickEvent, doubleClickEvent] as const;
 

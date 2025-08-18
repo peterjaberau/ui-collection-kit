@@ -3,8 +3,8 @@ import { ColorSelect, controlItem, ControlPropertyViewWrapper, IconDep } from "l
 import styled from "styled-components";
 import React, { useContext, useEffect, useState } from "react";
 import { ControlParams } from "./controlParams";
-import { trans } from "i18n";
-import { useThemeColors } from "@lowcoder-ee/util/hooks";
+import { trans } from "#lowcoder/i18n";
+import { useThemeColors } from "#lowcoder/util/hooks";
 
 const ColorContainer = styled.div`
   display: inline-flex;
@@ -95,7 +95,7 @@ function ColorItem(props: {
   const [focus, setFocus] = useState(false);
   const inputRef = React.createRef<HTMLDivElement>();
   const containerRef = React.createRef<HTMLDivElement>();
-  
+
   const currentThemeColors = useThemeColors(param.allowGradient);
 
   const input = propertyView.call(controlThis, {

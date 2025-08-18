@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import UserApi from "#lowcoder/api/userApi";
 import { validateResponse } from "#lowcoder/api/apiUtils";
 import { fetchUserAction } from "#lowcoder/redux/reduxActions/userActions";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { checkPassWithMsg } from "#lowcoder/pages/userAuth/authUtils";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 

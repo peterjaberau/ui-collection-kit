@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { ArrowIcon } from "lowcoder-design";
 import styled from "styled-components";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useParams } from "react-router-dom";
 import { Descriptions, Tag, Avatar, Skeleton, Button, Typography, List, Table, Progress, Input, Upload, message } from "antd";
 import { UploadOutlined } from '@ant-design/icons';
@@ -12,7 +12,7 @@ import { HeaderBack } from "../setting/permission/styledComponents";
 import { SUPPORT_URL } from "#lowcoder/constants/routesURL";
 import { TacoMarkDown } from "lowcoder-design";
 import remarkGfm from 'remark-gfm';
-import { contrastColor } from "comps/controls/styleControlConstants";
+import { contrastColor } from "#lowcoder/comps/controls/styleControlConstants";
 import 'react-quill-new/dist/quill.snow.css';
 import { useCurrentUser } from "#lowcoder/util/currentUser";
 import React from "react";

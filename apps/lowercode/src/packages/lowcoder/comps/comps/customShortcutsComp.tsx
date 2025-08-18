@@ -1,9 +1,9 @@
-import { ActionSelectorControl } from "comps/controls/actionSelector/actionSelectorControl";
-import { MultiCompBuilder, valueComp } from "comps/generators";
+import { ActionSelectorControl } from "#lowcoder/comps/controls/actionSelector/actionSelectorControl";
+import { MultiCompBuilder, valueComp } from "#lowcoder/comps/generators";
 import { KeyValueItem, KeyValueItemListWithNewCreateState } from "#lowcoder/components/KeyValueItemList";
-import { list } from "comps/generators/list";
+import { list } from "#lowcoder/comps/generators/list";
 import { StyledInput } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import {
   eventKeyString,
   eventToShortcut,

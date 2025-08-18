@@ -8,13 +8,13 @@ import { PluginPanel } from "./pluginPanel";
 import { DatasourceFormManifest } from "./form/datasourceFormRegistry";
 import StepModal, { StepItem, StepModalProps } from "#lowcoder/components/StepModal";
 import { GreyTextColor } from "#lowcoder/constants/style";
-import { trans } from "i18n";
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
-import { getDatasourceTutorial } from "@lowcoder-ee/util/tutorialUtils";
+import { trans } from "#lowcoder/i18n";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
+import { getDatasourceTutorial } from "#lowcoder/util/tutorialUtils";
 import { useSelector } from "react-redux";
 import { getDataSourceTypesMap } from "../../redux/selectors/datasourceSelectors";
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
-import { Datasource } from "@lowcoder-ee/constants/datasourceConstants";
+import { getBottomResIcon } from "#lowcoder/util/bottomResUtils";
+import { Datasource } from "#lowcoder/constants/datasourceConstants";
 import { getDataSourceFormManifest } from "./getDataSourceFormManifest";
 
 const EditButton = styled(Button)`

@@ -1,6 +1,6 @@
 import { JSONValue } from "#lowcoder/util/jsonTypes";
-import { Comp } from "lowcoder-core";
-import { NameGenerator } from "comps/utils";
+import { Comp } from "#lowcoder-core/index";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import { SimpleContainerComp } from "./simpleContainerComp";
 import { CompTree } from "./utils";
 import { SimpleFlowContainerComp } from "./simpleFlowContainerComp";

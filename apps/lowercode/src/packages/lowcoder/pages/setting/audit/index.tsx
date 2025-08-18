@@ -1,4 +1,4 @@
-import { AUDIT_LOG_DASHBOARD, AUDIT_LOG_DETAIL } from "@lowcoder-ee/constants/routesURL";
+import { AUDIT_LOG_DASHBOARD, AUDIT_LOG_DETAIL } from "#lowcoder/constants/routesURL";
 import { Route, Switch } from "react-router-dom";
 import { AuditLogDashboard } from "./dashboard";
 import { AuditLogDetail } from "./detail";
@@ -7,11 +7,11 @@ import styled from "styled-components";
 import { Card, Divider, Typography, Row, Col, Image } from "antd";
 import { HelpText } from "#lowcoder/components/HelpText";
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../styled";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { selectIsLicenseActive } from "#lowcoder/redux/selectors/enterpriseSelectors";
 
-import { getUser } from "@lowcoder-ee/redux/selectors/usersSelectors";
-import { getDeploymentId } from "@lowcoder-ee/redux/selectors/configSelectors";
+import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
+import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
 import { getOrgApiUsage, getOrgLastMonthApiUsage } from "#lowcoder/redux/selectors/orgSelectors";
 import { fetchAPIUsageAction, fetchLastMonthAPIUsageAction } from "#lowcoder/redux/reduxActions/orgActions";
 import { useEffect } from "react";

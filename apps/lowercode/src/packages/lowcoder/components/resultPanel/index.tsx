@@ -1,14 +1,14 @@
-import styled from "styled-components";
-import { BottomResCompResult } from "../../types/bottomRes";
-import * as React from "react";
-import { useEffect, useMemo, useState } from "react";
-import { isArray, isObject, isObjectLike, isPlainObject } from "lodash";
-import ReactJson from "react-json-view";
-import { trans } from "../../i18n";
-import { DarkActiveTextColor, GreyTextColor } from "../../constants/style";
-import { default as AntdTable } from "antd/es/table";
-import { Switch } from "#lowcoder-design/components/Switch";
-import { CloseIcon, ErrorIcon, SuccessIcon } from "icons";
+import styled from "styled-components"
+import { BottomResCompResult } from "../../types/bottomRes"
+import * as React from "react"
+import { useEffect, useMemo, useState } from "react"
+import { isArray, isObject, isObjectLike, isPlainObject } from "lodash"
+import ReactJson from "react-json-view"
+import { trans } from "../../i18n"
+import { DarkActiveTextColor, GreyTextColor } from "../../constants/style"
+import { default as AntdTable } from "antd/es/table"
+import { Switch } from "#lowcoder-design/components/Switch"
+import { CloseIcon, ErrorIcon, SuccessIcon } from "#lowcoder-design/icons"
 
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ export const HeaderWrapper = styled.div`
   cursor: move;
   background-color: #ffffff;
   border-radius: inherit;
-`;
+`
 const IconWrapper = styled.div`
   margin-right: 8px;
   height: 16px;
@@ -26,7 +26,7 @@ const IconWrapper = styled.div`
     width: 16px;
     height: 16px;
   }
-`;
+`
 const HeaderTitle = styled.div`
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ const HeaderTitle = styled.div`
   border-radius: 4px;
   border: none;
   word-break: break-all;
-`;
+`
 const SwitchWrapper = styled.div`
   display: flex;
   flex-shrink: 0;
@@ -48,7 +48,7 @@ const SwitchWrapper = styled.div`
   color: #8b8fa3;
   line-height: 13px;
   margin-left: auto;
-`;
+`
 const CloseIconWrapper = styled.div`
   margin-left: auto;
   width: 16px;
@@ -60,7 +60,7 @@ const CloseIconWrapper = styled.div`
   &:hover {
     color: ${DarkActiveTextColor};
   }
-`;
+`
 const BodyWrapper = styled.div`
   height: 100%;
   overflow-x: hidden;
@@ -84,7 +84,7 @@ const BodyWrapper = styled.div`
   &::-webkit-scrollbar-thumb:hover {
     background-color: rgba(139, 143, 163, 0.36);
   }
-`;
+`
 const Table = styled(AntdTable)`
   .ant-table {
     font-size: 13px;
@@ -130,38 +130,38 @@ const Table = styled(AntdTable)`
   .ant-table-ping-right:not(.ant-table-has-fix-right) .ant-table-container::after {
     box-shadow: none;
   }
-`;
+`
 const TextResult = styled.pre`
   word-break: break-word;
   white-space: pre-wrap;
-`;
+`
 const TimeLabel = styled.span`
   color: #b8b9bf;
   margin-left: 8px;
-`;
-const TypeLabel = TimeLabel;
+`
+const TypeLabel = TimeLabel
 
 export function useResultPanel(params: BottomResCompResult & { onClose: () => void }) {
-  const { success, errorMessage, dataType, data, title, runTime } = params;
+  const { success, errorMessage, dataType, data, title, runTime } = params
 
-  const [toJson, setToJson] = useState(false);
+  const [toJson, setToJson] = useState(false)
 
-  useEffect(() => setToJson(false), [params.data]);
+  useEffect(() => setToJson(false), [params.data])
 
   const [isObjectArray, columns] = useMemo(() => {
     if (dataType !== "default") {
-      return [false, []];
+      return [false, []]
     }
     if (Array.isArray(data)) {
-      let isObjectArray = true;
+      let isObjectArray = true
       const keys = data.reduce((set, value) => {
         if (value && isPlainObject(value)) {
-          Object.keys(value).forEach((key) => set.add(key));
+          Object.keys(value).forEach((key) => set.add(key))
         } else {
-          isObjectArray = false;
+          isObjectArray = false
         }
-        return set;
-      }, new Set<string>());
+        return set
+      }, new Set<string>())
 
       if (isObjectArray) {
         return [
@@ -176,31 +176,31 @@ export function useResultPanel(params: BottomResCompResult & { onClose: () => vo
                 render: (text: any) => (typeof text === "string" ? text : JSON.stringify(text)),
               },
             ],
-            []
+            [],
           ),
-        ];
+        ]
       }
     }
-    return [false, []];
-  }, [data, dataType]);
+    return [false, []]
+  }, [data, dataType])
 
   const result = useMemo(() => {
     if (errorMessage) {
-      return errorMessage;
+      return errorMessage
     }
 
     if (toJson) {
-      return <ReactJson name={false} src={data} />;
+      return <ReactJson name={false} src={data} />
     }
 
     switch (dataType) {
       case "function":
-        return <TextResult>{trans("resultPanel.returnFunction")}</TextResult>;
+        return <TextResult>{trans("resultPanel.returnFunction")}</TextResult>
       case "json":
         if (isObjectLike(data)) {
-          return <ReactJson name={false} src={data} />;
+          return <ReactJson name={false} src={data} />
         }
-        return <TextResult>{String(data)}</TextResult>;
+        return <TextResult>{String(data)}</TextResult>
       default:
         if (isObjectArray) {
           return (
@@ -211,23 +211,23 @@ export function useResultPanel(params: BottomResCompResult & { onClose: () => vo
               dataSource={data.map((d: Object, i: number) => ({ ...d, key: i }))}
               pagination={false}
             />
-          );
+          )
         } else if (isObjectLike(data)) {
-          return <ReactJson name={false} src={data} />;
+          return <ReactJson name={false} src={data} />
         } else {
-          return <TextResult>{data}</TextResult>;
+          return <TextResult>{data}</TextResult>
         }
     }
-  }, [params, toJson]);
+  }, [params, toJson])
 
-  let showType = null;
+  let showType = null
   if (dataType !== "function") {
     if (isArray(data)) {
-      showType = `Array(${data.length})`;
+      showType = `Array(${data.length})`
     } else if (isObject(data)) {
-      showType = `Object(${Object.keys(data).length} keys)`;
+      showType = `Object(${Object.keys(data).length} keys)`
     } else {
-      showType = typeof data;
+      showType = typeof data
     }
   }
 
@@ -258,17 +258,17 @@ export function useResultPanel(params: BottomResCompResult & { onClose: () => vo
       </>
     ),
     body: <BodyWrapper>{result}</BodyWrapper>,
-  };
+  }
 }
 
 function millisecondsToHumanReadable(value: number) {
-  let num = value;
-  const units = ["ms", "s", "min", "h"];
-  const intervals = [1, 1000, 60, 60];
+  let num = value
+  const units: any = ["ms", "s", "min", "h"]
+  const intervals: any = [1, 1000, 60, 60]
   for (let i = 0; i < 4; i++) {
     if (num / intervals[i] < 1) {
-      return num + units[i - 1];
+      return num + units[i - 1]
     }
-    num /= intervals[i];
+    num /= intervals[i]
   }
 }

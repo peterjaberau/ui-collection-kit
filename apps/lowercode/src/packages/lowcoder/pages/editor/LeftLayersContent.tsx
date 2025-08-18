@@ -1,4 +1,4 @@
-import { CompInfo, EditorContext } from "comps/editorState";
+import { CompInfo, EditorContext } from "#lowcoder/comps/editorState";
 import {
   BaseSection,
   CollapseLabel as Label,
@@ -13,13 +13,13 @@ import React, { useCallback, useContext, useMemo, useState, useEffect, useRef } 
 import _, { get, set } from "lodash";
 import styled from "styled-components";
 import { leftCompListClassName } from "#lowcoder/pages/tutorials/tutorialsConstant";
-import type UIComp from "comps/comps/uiComp";
+import type UIComp from "#lowcoder/comps/comps/uiComp";
 import { getTreeNodeByKey } from "#lowcoder/util/objectUtils";
 import { TopHeaderHeight } from "#lowcoder/constants/style";
-import { trans } from "i18n";
-import { CompTree } from "comps/comps/containerBase";
+import { trans } from "#lowcoder/i18n";
+import { CompTree } from "#lowcoder/comps/comps/containerBase";
 import { CompStateIcon } from "./editorConstants";
-import type { UICompType } from "comps/uiCompRegistry";
+import type { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import { DirectoryTreeStyle, Node } from "./styledComponents";
 import { isAggregationApp } from "#lowcoder/util/appUtils";
 import cloneDeep from 'lodash/cloneDeep';

@@ -21,7 +21,7 @@ import { BottomResTypeEnum } from "../../types/bottomRes";
 import { useCompInstance } from "../../comps/utils/useCompInstance";
 import { QueryLibraryComp } from "../../comps/comps/queryLibrary/queryLibraryComp";
 import { useSearchParam, useThrottle } from "react-use";
-import { Comp } from "lowcoder-core";
+import { Comp } from "#lowcoder-core/index";
 import {LibraryQuery} from "../../api/queryLibraryApi";
 import { NameGenerator } from "../../comps/utils";
 import { QueryLibraryHistoryView } from "./QueryLibraryHistoryView";
@@ -35,18 +35,18 @@ import {
   TacoButton,
 } from "lowcoder-design";
 import { CheckboxOptionType } from "antd/es/checkbox/Group";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { getDataSource } from "../../redux/selectors/datasourceSelectors";
 import {
   apiPluginsForQueryLibrary,
   databasePlugins,
   Datasource,
-} from "@lowcoder-ee/constants/datasourceConstants";
+} from "#lowcoder/constants/datasourceConstants";
 import { importQueryLibrary } from "./importQueryLibrary";
 import { registryDataSourcePlugin } from "#lowcoder/constants/queryConstants";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import { Helmet } from "react-helmet";
-import {fetchQLPaginationByOrg} from "@lowcoder-ee/util/pagination/axios";
+import {fetchQLPaginationByOrg} from "#lowcoder/util/pagination/axios";
 import { isEmpty } from "lodash";
 import { processCurlData } from "../../util/curlUtils";
 

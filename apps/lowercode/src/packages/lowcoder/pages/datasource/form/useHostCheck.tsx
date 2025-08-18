@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectSystemConfig } from "../../../redux/selectors/configSelectors";
 import { RuleObject, StoreValue } from "rc-field-form/lib/interface";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export function useHostCheck() {
   const systemConfig = useSelector(selectSystemConfig);

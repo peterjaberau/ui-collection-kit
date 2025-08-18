@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo, ReactNode } from "react";
 import { default as InputNumber } from "antd/es/input-number";
-import { NumberControl, RangeControl, StringControl } from "comps/controls/codeControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { trans } from "i18n";
+import { NumberControl, RangeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { trans } from "#lowcoder/i18n";
 import { ColumnTypeCompBuilder, ColumnTypeViewFn } from "../columnTypeCompBuilder";
 import { ColumnValueTooltip } from "../simpleColumnTypeComps";
-import { withDefault } from "comps/generators";
+import { withDefault } from "#lowcoder/comps/generators";
 import styled from "styled-components";
-import { IconControl } from "comps/controls/iconControl";
-import { hasIcon } from "comps/utils";
-import { clickEvent, eventHandlerControl, doubleClickEvent } from "comps/controls/eventHandlerControl";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { hasIcon } from "#lowcoder/comps/utils";
+import { clickEvent, eventHandlerControl, doubleClickEvent } from "#lowcoder/comps/controls/eventHandlerControl";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 const InputNumberWrapper = styled.div`
   .ant-input-number  {
@@ -72,7 +72,7 @@ type NumberEditProps = {
 
 const ColumnNumberView = React.memo((props: NumberViewProps) => {
   const handleClickEvent = useCompClickEventHandler({onEvent: props.onEvent ?? (() => {})})
-  
+
   const formattedValue = useMemo(() => {
     let result = !props.float ? Math.floor(props.value) : props.value;
     if (props.float) {

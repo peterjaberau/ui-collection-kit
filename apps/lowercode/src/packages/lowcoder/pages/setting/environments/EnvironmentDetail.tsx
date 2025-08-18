@@ -36,7 +36,7 @@ import { useSingleEnvironmentContext } from "./context/SingleEnvironmentContext"
 import EditEnvironmentModal from "./components/EditEnvironmentModal";
 import UnlicensedEnvironmentView from "./components/UnlicensedEnvironmentView";
 import { Environment } from "./types/environment.types";
-import history from "@lowcoder-ee/util/history";
+import history from "#lowcoder/util/history";
 import WorkspacesTab from "./components/WorkspacesTab";
 import UserGroupsTab from "./components/UserGroupsTab";
 import EnvironmentHeader from "./components/EnvironmentHeader";
@@ -46,7 +46,7 @@ import { getEnvironmentTagColor } from "./utils/environmentUtils";
 import { formatAPICalls, getAPICallsStatusColor } from "./services/license.service";
 import ErrorComponent from './components/ErrorComponent';
 import { Level1SettingPageContent } from "../styled";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 /**
  * Environment Detail Page Component

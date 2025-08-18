@@ -1,12 +1,12 @@
 import { default as Button } from "antd/es/button";
-import { ButtonCompWrapper, buttonRefMethods } from "comps/comps/buttonComp/buttonCompConstants";
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { ButtonEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, LinkStyle, LinkStyleType } from "comps/controls/styleControlConstants";
-import { withDefault } from "comps/generators";
-import { migrateOldData } from "comps/generators/simpleGenerators";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
+import { ButtonCompWrapper, buttonRefMethods } from "#lowcoder/comps/comps/buttonComp/buttonCompConstants";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { ButtonEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, LinkStyle, LinkStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { withDefault } from "#lowcoder/comps/generators";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import styled from "styled-components";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
@@ -15,13 +15,13 @@ import {
   disabledPropertyView,
   loadingPropertyView,
   showDataLoadingIndicatorsPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { IconControl } from "comps/controls/iconControl";
-import { hasIcon } from "comps/utils";
-import { RefControl } from "comps/controls/refControl";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { hasIcon } from "#lowcoder/comps/utils";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import React, { useContext, useEffect } from "react";
 
 const Link = styled(Button)<{

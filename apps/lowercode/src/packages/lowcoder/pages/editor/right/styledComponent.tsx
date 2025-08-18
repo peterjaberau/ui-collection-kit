@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { StyledLink } from "#lowcoder/pages/common/styledComponent";
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { labelCss } from "#lowcoder-design/components/Label";
 
 const NoShake = css`

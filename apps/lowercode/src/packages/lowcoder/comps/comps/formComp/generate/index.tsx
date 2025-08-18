@@ -3,7 +3,7 @@ import { msSqlConfig } from "./mssql";
 import { mysqlConfig } from "./mysql";
 import { oracleSqlConfig } from "./oracle";
 import { postgreSqlConfig } from "./postgresql";
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
 
 export function getDataSourceTypeConfig(
   dataSourceType?: DatasourceType

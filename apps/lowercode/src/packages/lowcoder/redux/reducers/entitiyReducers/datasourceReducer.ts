@@ -1,7 +1,7 @@
 import { createReducer } from "#lowcoder/util/reducerUtils";
 import { ReduxAction, ReduxActionErrorTypes, ReduxActionTypes } from "#lowcoder/constants/reduxActionConstants";
 import { DatasourceInfo, DatasourceStructure } from "#lowcoder/api/datasourceApi";
-import { Datasource } from "@lowcoder-ee/constants/datasourceConstants";
+import { Datasource } from "#lowcoder/constants/datasourceConstants";
 import { DatasourcePermissionInfo } from "../../../api/datasourcePermissionApi";
 import {
   DeleteDatasourcePermissionPayload,

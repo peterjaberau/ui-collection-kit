@@ -3,7 +3,7 @@ import { default as Skeleton } from "antd/es/skeleton";
 import MainContent from "#lowcoder/components/layout/MainContent";
 import SideBar from "#lowcoder/components/layout/SideBar";
 import Header from "./layout/Header";
-import { Logo, LogoWithName, LogoHome } from "@lowcoder-ee/assets/images";
+import { Logo, LogoWithName, LogoHome } from "#lowcoder/assets/images";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { getBrandingConfig, getSystemConfigFetching } from "../redux/selectors/configSelectors";

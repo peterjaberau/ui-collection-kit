@@ -11,7 +11,7 @@ import {
   SuperUserIcon,
   TacoButton,
 } from "lowcoder-design";
-import { trans, transToNode } from "i18n";
+import { trans, transToNode } from "#lowcoder/i18n";
 import InviteDialog from "#lowcoder/pages/common/inviteDialog";
 import ProfileImage from "#lowcoder/pages/common/profileImage";
 import React, { useMemo } from "react";

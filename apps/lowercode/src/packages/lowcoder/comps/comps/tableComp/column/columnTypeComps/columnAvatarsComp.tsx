@@ -1,23 +1,23 @@
-import { ColumnTypeCompBuilder } from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { StringControl } from "comps/controls/codeControl";
-import { MultiCompBuilder, stateComp, withDefault } from "comps/generators";
-import { trans } from "i18n";
+import { ColumnTypeCompBuilder } from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { MultiCompBuilder, stateComp, withDefault } from "#lowcoder/comps/generators";
+import { trans } from "#lowcoder/i18n";
 import styled from "styled-components";
 import { LightActiveTextColor, PrimaryColor } from "#lowcoder/constants/style";
-import { styleControl } from "comps/controls/styleControl";
-import { avatarGroupStyle, AvatarGroupStyleType } from "comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { avatarGroupStyle, AvatarGroupStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import { AlignCenter, AlignLeft, AlignRight } from "#lowcoder-design/index";
-import { NumberControl } from "comps/controls/codeControl";
+import { NumberControl } from "#lowcoder/comps/controls/codeControl";
 import { Avatar, Tooltip } from "antd";
-import { clickEvent, eventHandlerControl, refreshEvent, doubleClickEvent } from "comps/controls/eventHandlerControl";
+import { clickEvent, eventHandlerControl, refreshEvent, doubleClickEvent } from "#lowcoder/comps/controls/eventHandlerControl";
 import React, { ReactElement, useCallback, useEffect, useRef } from "react";
-import { IconControl } from "comps/controls/iconControl";
-import { ColorControl } from "comps/controls/colorControl";
-import { optionsControl } from "comps/controls/optionsControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { ColorControl } from "#lowcoder/comps/controls/colorControl";
+import { optionsControl } from "#lowcoder/comps/controls/optionsControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 import { JSONObject } from "#lowcoder/util/jsonTypes";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 const MacaroneList = [
   '#fde68a',

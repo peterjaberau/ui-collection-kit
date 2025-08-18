@@ -16,7 +16,7 @@ import { validateResponse } from "#lowcoder/api/apiUtils";
 import log from "loglevel";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
-import { Datasource } from "@lowcoder-ee/constants/datasourceConstants";
+import { Datasource } from "#lowcoder/constants/datasourceConstants";
 
 export function* fetchDatasourceSaga(action: EvaluationReduxAction<FetchDatasourcePayload>) {
   const { organizationId, onSuccess } = action.payload;

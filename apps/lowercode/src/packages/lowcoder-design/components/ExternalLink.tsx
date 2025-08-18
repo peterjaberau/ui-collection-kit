@@ -1,5 +1,5 @@
 import { ActiveTextColor, GreyTextColor } from "constants/style";
-import { DocIcon } from "icons";
+import { DocIcon } from "#lowcoder-design/icons";
 import styled from "styled-components";
 
 export const ExternalLink = styled.a`

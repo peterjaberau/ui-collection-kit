@@ -1,12 +1,12 @@
 import {
   ColumnTypeCompBuilder,
   ColumnTypeViewFn,
-} from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { ColumnValueTooltip } from "comps/comps/tableComp/column/simpleColumnTypeComps";
-import { StringControl } from "comps/controls/codeControl";
-import { withDefault } from "comps/generators";
-import { formatPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+} from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { ColumnValueTooltip } from "#lowcoder/comps/comps/tableComp/column/simpleColumnTypeComps";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { withDefault } from "#lowcoder/comps/generators";
+import { formatPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import { DATE_TIME_FORMAT } from "#lowcoder/util/dateTimeUtils";
 import { DateEdit, formatDate } from "./columnDateComp";
 import React, { useCallback, useEffect, useRef } from "react";

@@ -1,6 +1,6 @@
 import { JSONObject } from "#lowcoder/util/jsonTypes";
-import { simpleMultiComp, stateComp, valueComp, withViewFn } from "comps/generators";
-import { withSimpleExposing } from "comps/generators/withExposing";
+import { simpleMultiComp, stateComp, valueComp, withViewFn } from "#lowcoder/comps/generators";
+import { withSimpleExposing } from "#lowcoder/comps/generators/withExposing";
 import { useEffect, useMemo } from "react";
 import { isEqual } from "lodash";
 

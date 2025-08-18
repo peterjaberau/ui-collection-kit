@@ -31,7 +31,7 @@ import {
   DataSourceExtraConfig,
 } from "lowcoder-sdk/dataSource";
 import styled from "styled-components";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Datasource } from "#lowcoder/constants/datasourceConstants";
 import { DatasourceApi } from "#lowcoder/api/datasourceApi";
 import { FieldData } from "rc-field-form/es/interface";
@@ -40,7 +40,7 @@ import { default as Form } from "antd/es/form";
 import { default as Input } from "antd/es/input";
 import { AuthType, AuthTypeOptions } from "./httpDatasourceForm";
 import { useSelector } from "react-redux";
-import { getUser } from "@lowcoder-ee/redux/selectors/usersSelectors";
+import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 
 const TooltipWrapper = styled.div`
   .markdown-body {
@@ -133,12 +133,12 @@ export const PluginDataSourceForm = (props: DatasourceFormProps) => {
   const [extraParamConfigs, setExtraParamConfigs] = useState<DataSourceParamConfig[]>([]);
   const [isExtraParamsRefreshing, setExtraParamRefreshing] = useState(false);
   const [isExtraParamsRefreshError, setExtraParamRefreshError] = useState(false);
-  
+
   const pluginDef = dataSourceTypeInfo?.definition || datasource.pluginDefinition;
   const pluginName = dataSourceTypeInfo?.id || datasource.pluginDefinition?.id;
   const isEditing = !!datasource;
   const hasDynamicConfig = !!pluginDef?.dataSourceConfig?.extra;
-  
+
   const [authType, setAuthType] = useState(pluginDef?.dataSourceConfig?.authConfig?.type);
   const [authId, setAuthId] = useState(pluginDef?.dataSourceConfig?.authConfig?.authId);
 

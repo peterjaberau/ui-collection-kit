@@ -1,27 +1,27 @@
 import { useResizeDetector } from "react-resize-detector";
-import { NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
+import { NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import { TriContainer } from "../triContainerComp/triContainer";
 import {
   ContainerCompBuilder,
 } from "../triContainerComp/triContainerCompBuilder";
-import { disabledPropertyView, hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { BoolControl } from "comps/controls/boolControl";
+import { disabledPropertyView, hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import { useContext, useEffect, useRef, useState } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { Card } from "antd";
 import styled from "styled-components";
-import { AnimationStyle, AnimationStyleType, CardHeaderStyle, CardHeaderStyleType, CardStyle, CardStyleType } from "comps/controls/styleControlConstants";
-import { MultiCompBuilder, withDefault } from "comps/generators";
-import { IconControl } from "comps/controls/iconControl";
-import { ButtonEventHandlerControl, CardEventHandlerControl, clickEvent, refreshEvent } from "comps/controls/eventHandlerControl";
-import { optionsControl } from "comps/controls/optionsControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { styleControl } from "comps/controls/styleControl";
-import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { AnimationStyle, AnimationStyleType, CardHeaderStyle, CardHeaderStyleType, CardStyle, CardStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { MultiCompBuilder, withDefault } from "#lowcoder/comps/generators";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { ButtonEventHandlerControl, CardEventHandlerControl, clickEvent, refreshEvent } from "#lowcoder/comps/controls/eventHandlerControl";
+import { optionsControl } from "#lowcoder/comps/controls/optionsControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 
 const { Meta } = Card;
 

@@ -1,7 +1,7 @@
-import { CompConstructor, CompParams } from "lowcoder-core";
-import { withType, withViewFn } from "comps/generators";
-import { COMP_DATA_TYPE } from "comps/generators/withType";
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
+import { CompConstructor, CompParams } from "#lowcoder-core/index";
+import { withType, withViewFn } from "#lowcoder/comps/generators";
+import { COMP_DATA_TYPE } from "#lowcoder/comps/generators/withType";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
 import { findParentContainer } from "./containerBase/utils";
 import { AppLayoutComp } from "./gridLayoutComp";
 import { ModuleLayoutComp } from "./moduleContainerComp/moduleLayoutComp";

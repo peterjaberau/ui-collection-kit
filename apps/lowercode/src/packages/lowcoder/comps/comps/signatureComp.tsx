@@ -1,10 +1,10 @@
 import { default as DeleteOutlined } from "@ant-design/icons/DeleteOutlined";
 import { default as Skeleton } from "antd/es/skeleton";
-import { BoolControl } from "comps/controls/boolControl";
-import { StringControl } from "comps/controls/codeControl";
-import { ChangeEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { LabelControl } from "comps/controls/labelControl";
-import { styleControl } from "comps/controls/styleControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { ChangeEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { LabelControl } from "#lowcoder/comps/controls/labelControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import {
   contrastColor,
   SignatureStyle,
@@ -13,11 +13,11 @@ import {
   widthCalculator,
   heightCalculator,
   SignatureContainerStyle
-} from "comps/controls/styleControlConstants";
-import { stateComp, withDefault } from "comps/generators/simpleGenerators";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { changeValueAction, multiChangeAction } from "lowcoder-core";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { stateComp, withDefault } from "#lowcoder/comps/generators/simpleGenerators";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { changeValueAction, multiChangeAction } from "#lowcoder-core/index";
 import { Section, sectionNames, UndoIcon } from "lowcoder-design";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { ResizePayload, useResizeDetector } from "react-resize-detector";
@@ -28,7 +28,7 @@ import { NameConfig, NameConfigHidden, withExposingConfigs } from "../generators
 import { formDataChildren, FormDataPropertyView } from "./formComp/formDataConstants";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 const Wrapper = styled.div<{ $style: SignatureStyleType; $isEmpty: boolean }>`
   height: 100%;
@@ -119,7 +119,7 @@ let SignatureTmpComp = (function () {
 
     const updateValue = (isClear: boolean = false) => {
       if (!canvasRef.current) return;
-      
+
       const clear = isClear || canvasRef.current.toData().length === 0;
       if (clear) {
         canvasRef.current.clear();

@@ -12,7 +12,7 @@ import { checkEmailValid } from "#lowcoder/util/stringUtils";
 import styled from "styled-components";
 import { requiresUnAuth } from "./authHOC";
 import { useLocation } from "react-router-dom";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { checkPassWithMsg } from "#lowcoder/pages/userAuth/authUtils";
 import { useParams } from "react-router-dom";
 import { Divider } from "antd";

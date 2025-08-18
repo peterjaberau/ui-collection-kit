@@ -52,7 +52,7 @@ function completeKeywords(
   upperCase?: boolean,
   metaData?: Record<string, string>
 ) {
-  let completions = Object.keys(keywords).map((keyword) => ({
+  let completions: any = Object.keys(keywords).map((keyword) => ({
     label: upperCase ? keyword.toUpperCase() : keyword,
     detail:
       keywords[keyword] === Token.TYPE

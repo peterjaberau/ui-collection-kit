@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { OrgLayout } from "./OrgLayout";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export function OrgView() {
 

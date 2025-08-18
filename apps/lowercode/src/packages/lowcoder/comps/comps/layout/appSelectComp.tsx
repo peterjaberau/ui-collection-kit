@@ -4,8 +4,8 @@ import { useEffect, useMemo } from "react";
 import { fetchAllApplications } from "#lowcoder/redux/reduxActions/applicationActions";
 import { AppTypeEnum } from "#lowcoder/constants/applicationConstants";
 import { Dropdown } from "#lowcoder-design/components/Dropdown";
-import { trans } from "i18n";
-import { ModuleComp } from "comps/comps/moduleComp/moduleComp";
+import { trans } from "#lowcoder/i18n";
+import { ModuleComp } from "#lowcoder/comps/comps/moduleComp/moduleComp";
 
 function AppSelectPropertyView(props: {
   onChange: (label: string, value: string) => void;

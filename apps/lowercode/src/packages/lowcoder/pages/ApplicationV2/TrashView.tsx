@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useDebouncedValue } from "#lowcoder/util/hooks";
 import { trans } from "../../i18n";
 import { Helmet } from "react-helmet";
-import {fetchApplicationElements} from "@lowcoder-ee/util/pagination/axios";
+import {fetchApplicationElements} from "#lowcoder/util/pagination/axios";
 
 interface ElementsState {
     elements: any;

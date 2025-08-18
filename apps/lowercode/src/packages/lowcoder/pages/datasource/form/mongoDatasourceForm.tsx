@@ -3,7 +3,7 @@ import { DatasourceForm, FormInputItem, FormSection, FormSelectItem } from "lowc
 import { MongoConfig } from "../../../api/datasourceApi";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import { useHostCheck } from "./useHostCheck";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import {
   DatabaseFormInputItem,
   DatasourceNameFormInputItem,

@@ -1,22 +1,22 @@
 import { default as Divider, DividerProps } from "antd/es/divider";
-import { StringControl } from "comps/controls/codeControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { alignControl } from "comps/controls/alignControl";
-import { UICompBuilder, withDefault } from "comps/generators";
-import { NameConfig, NameConfigHidden } from "comps/generators/withExposing";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { alignControl } from "#lowcoder/comps/controls/alignControl";
+import { UICompBuilder, withDefault } from "#lowcoder/comps/generators";
+import { NameConfig, NameConfigHidden } from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "lowcoder-design";
 import _ from "lodash";
 import styled from "styled-components";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, DividerStyle, DividerStyleType, heightCalculator, widthCalculator } from "comps/controls/styleControlConstants";
-import { migrateOldData } from "comps/generators/simpleGenerators";
-import { hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, DividerStyle, DividerStyleType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
 
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 type IProps = DividerProps & {
   $style: DividerStyleType;
@@ -109,8 +109,8 @@ function fixOldStyleData(oldData: any) {
 
 // Compatible with historical style data 2022-8-26
 const DividerTempComp = migrateOldData(
-  new UICompBuilder(childrenMap, (props) => {   
-    const dividerType = props.type ? 'vertical' : 'horizontal'; 
+  new UICompBuilder(childrenMap, (props) => {
+    const dividerType = props.type ? 'vertical' : 'horizontal';
 
     return (
       <StyledDivider
@@ -119,18 +119,18 @@ const DividerTempComp = migrateOldData(
         $style={props.style}
         $animationStyle={props.animationStyle}
       >
-      {dividerType === 'horizontal' && props.title} 
+      {dividerType === 'horizontal' && props.title}
       </StyledDivider>
     );
   })
     .setPropertyViewFn((children) => {
       return (
         <>
-        {!children?.type?.getView() && 
+        {!children?.type?.getView() &&
          <Section name={sectionNames.basic}>
          {children.title.propertyView({ label: trans("divider.title") })}
          </Section>}
-        
+
           {["logic", "both"].includes(useContext(EditorContext).editorModeStatus) && (
             <Section name={sectionNames.interaction}>
               {hiddenPropertyView(children)}

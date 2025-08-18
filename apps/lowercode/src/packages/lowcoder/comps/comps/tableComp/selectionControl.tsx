@@ -1,11 +1,11 @@
 import { TableRowSelection } from "antd/es/table/interface";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { stateComp } from "comps/generators";
-import { trans } from "i18n";
-import { changeChildAction, ConstructorToComp } from "lowcoder-core";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { stateComp } from "#lowcoder/comps/generators";
+import { trans } from "#lowcoder/i18n";
+import { changeChildAction, ConstructorToComp } from "#lowcoder-core/index";
 import { TableOnEventView } from "./tableTypes";
-import { OB_ROW_ORI_INDEX, RecordType } from "comps/comps/tableComp/tableUtils";
-import { ControlNodeCompBuilder } from "comps/generators/controlCompBuilder";
+import { OB_ROW_ORI_INDEX, RecordType } from "#lowcoder/comps/comps/tableComp/tableUtils";
+import { ControlNodeCompBuilder } from "#lowcoder/comps/generators/controlCompBuilder";
 
 // double-click detection constants
 const DOUBLE_CLICK_THRESHOLD = 300; // ms

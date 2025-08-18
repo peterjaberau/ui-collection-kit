@@ -9,7 +9,7 @@ import UserApi from "#lowcoder/api/userApi";
 import { validateResponse } from "#lowcoder/api/apiUtils";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserAction } from "#lowcoder/redux/reduxActions/userActions";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { selectSystemConfig } from "#lowcoder/redux/selectors/configSelectors";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 

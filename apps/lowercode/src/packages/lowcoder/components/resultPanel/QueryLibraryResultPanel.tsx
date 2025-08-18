@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { ResizableBox, ResizeCallbackData } from "react-resizable";
-import { Layers } from "../../constants/Layers";
-import { BottomResComp } from "../../types/bottomRes";
-import * as React from "react";
-import { useState } from "react";
-import { HeaderWrapper, useResultPanel } from "./index";
+import styled from "styled-components"
+import { ResizableBox, ResizeCallbackData } from "react-resizable"
+import { Layers } from "../../constants/Layers"
+import { BottomResComp } from "../../types/bottomRes"
+import * as React from "react"
+import { useState } from "react"
+import { HeaderWrapper, useResultPanel } from "./index"
 
 const StyledResizableBox = styled(ResizableBox)`
   position: absolute;
@@ -25,7 +25,7 @@ const StyledResizableBox = styled(ResizableBox)`
     top: 0;
     cursor: row-resize;
   }
-`;
+`
 const QueryLibraryResultWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,34 +33,34 @@ const QueryLibraryResultWrapper = styled.div`
   width: 100%;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-`;
+`
 const preventDefault = (e: any) => {
-  e.preventDefault();
-};
+  e.preventDefault()
+}
 const addListener = () => {
-  window.addEventListener("mousedown", preventDefault);
-};
+  window.addEventListener("mousedown", preventDefault)
+}
 const removeListener = () => {
-  window.removeEventListener("mousedown", preventDefault);
-};
+  window.removeEventListener("mousedown", preventDefault)
+}
 export const QueryLibraryResultPanel = (props: { comp: BottomResComp; onClose: () => void }) => {
-  const result = props.comp?.result();
-  const [bottomHeight, setBottomHeight] = useState(360);
+  const result = props.comp?.result()
+  const [bottomHeight, setBottomHeight] = useState(360)
 
   const { header, body } = useResultPanel({
     ...(result ?? { data: "", dataType: "default", success: true }),
     onClose: props.onClose,
-  });
+  })
 
   if (!result) {
-    return null;
+    return null
   }
 
-  const clientHeight = document.documentElement.clientHeight;
+  const clientHeight = document.documentElement.clientHeight
   const resizeStop = (e: React.SyntheticEvent, data: ResizeCallbackData) => {
-    setBottomHeight(data.size.height);
-    removeListener();
-  };
+    setBottomHeight(data.size.height)
+    removeListener()
+  }
 
   return (
     <StyledResizableBox
@@ -77,5 +77,5 @@ export const QueryLibraryResultPanel = (props: { comp: BottomResComp; onClose: (
         {body}
       </QueryLibraryResultWrapper>
     </StyledResizableBox>
-  );
-};
+  )
+}

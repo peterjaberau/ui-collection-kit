@@ -7,8 +7,8 @@ import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import UserApi from "#lowcoder/api/userApi";
 import { checkEmailValid, checkPhoneValid } from "#lowcoder/util/stringUtils";
-import { UserConnectionSource } from "@lowcoder-ee/constants/userConstants";
-import { trans } from "i18n";
+import { UserConnectionSource } from "#lowcoder/constants/userConstants";
+import { trans } from "#lowcoder/i18n";
 import { AuthContext, useAuthSubmit } from "#lowcoder/pages/userAuth/authUtils";
 
 export const AccountLoginWrapper = styled(FormWrapperMobile)`

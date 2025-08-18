@@ -1,6 +1,6 @@
 import log, { LogLevelDesc } from "loglevel";
 import dayjs from "dayjs";
-import { getDayJSLocale } from "i18n/dayjsLocale";
+import { getDayJSLocale } from "#lowcoder/i18n/dayjsLocale";
 import { isNil } from "lodash";
 
 // https://github.com/vitejs/vite/discussions/7492#discussioncomment-2449310

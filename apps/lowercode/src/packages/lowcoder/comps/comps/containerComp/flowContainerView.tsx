@@ -1,13 +1,13 @@
-import { DispatchType } from "lowcoder-core";
-import { GridItemsType } from "comps/comps/containerComp/containerView";
+import { DispatchType } from "#lowcoder-core/index";
+import { GridItemsType } from "#lowcoder/comps/comps/containerComp/containerView";
 import _ from "lodash";
-import { FlowLayout } from "layout/utils";
-import { CompSelectionWrapper } from "layout/compSelectionWrapper";
+import { FlowLayout } from "#lowcoder/utils";
+import { CompSelectionWrapper } from "#lowcoder/compSelectionWrapper";
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import { ThemeContext } from "comps/utils/themeContext";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
 import styled from "styled-components";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
 
 const FlowContainerWrapper = styled.div<{ $bgColor: string; $maxWidth?: number; $minHeight: string }>`
   background-color: ${(props) => props.$bgColor};

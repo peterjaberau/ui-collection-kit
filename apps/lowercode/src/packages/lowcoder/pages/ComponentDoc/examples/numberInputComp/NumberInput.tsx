@@ -1,5 +1,5 @@
-import { NumberInputComp } from "comps/comps/numberInputComp/numberInputComp";
-import { trans } from "i18n";
+import { NumberInputComp } from "#lowcoder/comps/comps/numberInputComp/numberInputComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -79,7 +79,7 @@ export default function NumberInputExample() {
           />
       </ExampleGroup>
 
-      <ExampleGroup 
+      <ExampleGroup
         title= "Advance Usage"
         description="The Following Examples Show the Advance Usage of the Number Input Component.">
         <Example

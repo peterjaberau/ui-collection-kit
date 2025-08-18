@@ -2,7 +2,7 @@ import { AddIcon, CloseIcon, ImportIconV2 } from "#lowcoder-design/icons";
 import type { CustomModalProps } from "#lowcoder-design/components/CustomModal";
 import { ScrollBar } from "#lowcoder-design/components/ScrollBar";
 import { BottomShadow, GreyTextColor, TabActiveColor } from "#lowcoder/constants/style";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import _, { noop } from "lodash";
 import { CreateDataSourceModal } from "#lowcoder/pages/datasource/datasourceModal";
 import { DataSourceButton } from "#lowcoder/pages/datasource/pluginPanel";
@@ -24,8 +24,8 @@ import { default as Upload } from "antd/es/upload";
 import { useSelector } from "react-redux";
 import { getUser } from "../redux/selectors/usersSelectors";
 import DataSourceIcon from "./DataSourceIcon";
-import { genRandomKey } from "comps/utils/idGenerator";
-import { isPublicApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
+import { isPublicApplication } from "#lowcoder/redux/selectors/applicationSelector";
 import { CurlImportModal } from "./CurlImport";
 
 const Wrapper = styled.div<{ $placement: PageType }>`

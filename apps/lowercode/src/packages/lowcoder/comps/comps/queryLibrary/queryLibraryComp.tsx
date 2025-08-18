@@ -4,7 +4,7 @@ import { exposingDataForAutoComplete, NameAndExposingInfo } from "../../utils/ex
 import { useEffect, useState } from "react";
 import { QueryGeneralPropertyView } from "../../queries/queryComp/queryPropertyView";
 import { InputListComp } from "./inputListComp";
-import { CompExposingContext } from "comps/generators/withContext";
+import { CompExposingContext } from "#lowcoder/comps/generators/withContext";
 import { QueryContext } from "#lowcoder/util/context/QueryContext";
 import { QueryLibraryEditorView } from "#lowcoder/pages/queryLibrary/queryLibraryEditorView";
 import {
@@ -18,15 +18,15 @@ import {
   UnfoldWhiteIcon,
 } from "#lowcoder-design/index";
 import ReactHotkeys from "../../../util/hotkeys";
-import { executeQueryAction, renameAction } from "lowcoder-core";
+import { executeQueryAction, renameAction } from "#lowcoder-core/index";
 import { deleteQueryLibrary } from "#lowcoder/redux/reduxActions/queryLibraryActions";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { DataSourceStructureTree } from "#lowcoder/pages/editor/bottom/BottomMetaDrawer";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { QueryLibraryResultPanel } from "#lowcoder/components/resultPanel/QueryLibraryResultPanel";
 import { DatasourceStructure } from "#lowcoder/api/datasourceApi";
-import { MetaDataContext } from "base/codeEditor/codeEditorTypes";
+import { MetaDataContext } from "#lowcoder/base/codeEditor/codeEditorTypes";
 import { useMetaData } from "#lowcoder/util/hooks";
 
 const children = {

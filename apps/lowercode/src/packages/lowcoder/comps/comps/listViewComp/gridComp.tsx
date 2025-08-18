@@ -1,5 +1,5 @@
-import { withPropertyViewFn } from "comps/generators";
-import { NameGenerator } from "comps/utils";
+import { withPropertyViewFn } from "#lowcoder/comps/generators";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import { toSimpleContainerData } from "../containerBase/simpleContainerComp";
 import { ListViewComp } from "./listViewComp";
 import { listPropertyView } from "./listViewPropertyView";

@@ -1,16 +1,16 @@
-import { OLD_LOWCODER_DATASOURCE } from "@lowcoder-ee/constants/datasourceConstants";
-import { manualTriggerResource, ResourceType } from "@lowcoder-ee/constants/queryConstants";
+import { OLD_LOWCODER_DATASOURCE } from "#lowcoder/constants/datasourceConstants";
+import { manualTriggerResource, ResourceType } from "#lowcoder/constants/queryConstants";
 import { PreparedStatementConfig } from "#lowcoder/api/datasourceApi";
-import { isCompWithPropertyView } from "comps/utils/propertyUtils";
+import { isCompWithPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import {
   QUICK_GRAPHQL_ID,
   QUICK_REST_API_ID,
   JS_CODE_ID
 } from "#lowcoder/constants/datasourceConstants";
 import { PageType } from "#lowcoder/constants/pageConstants";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { includes, mapValues } from "lodash";
-import { deferAction, executeQueryAction, wrapActionExtraInfo } from "lowcoder-core";
+import { deferAction, executeQueryAction, wrapActionExtraInfo } from "#lowcoder-core/index";
 import {
   CustomModal,
   Dropdown,
@@ -37,8 +37,8 @@ import React from "react";
 import styled from "styled-components";
 import { DataSourceButton } from "#lowcoder/pages/datasource/pluginPanel";
 import { Tooltip, Divider } from "antd";
-import { uiCompRegistry } from "comps/uiCompRegistry";
-import { InputTypeEnum } from "@lowcoder-ee/comps/comps/moduleContainerComp/ioComp/inputListItemComp";
+import { uiCompRegistry } from "#lowcoder/comps/uiCompRegistry";
+import { InputTypeEnum } from "#lowcoder/comps/comps/moduleContainerComp/ioComp/inputListItemComp";
 
 const Wrapper = styled.div`
   width: 100%;

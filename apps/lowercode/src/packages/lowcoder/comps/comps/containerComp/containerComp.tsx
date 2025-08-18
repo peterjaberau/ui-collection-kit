@@ -1,7 +1,7 @@
-import { CompParams } from "lowcoder-core";
-import { ToDataType } from "comps/generators/multi";
-import { NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
-import { NameGenerator } from "comps/utils/nameGenerator";
+import { CompParams } from "#lowcoder-core/index";
+import { ToDataType } from "#lowcoder/comps/generators/multi";
+import { NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
+import { NameGenerator } from "#lowcoder/comps/utils/nameGenerator";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import { oldContainerParamsToNew } from "../containerBase";
 import { toSimpleContainerData } from "../containerBase/simpleContainerComp";
@@ -10,14 +10,14 @@ import {
   ContainerChildren,
   ContainerCompBuilder,
 } from "../triContainerComp/triContainerCompBuilder";
-import { disabledPropertyView, hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { BoolCodeControl } from "comps/controls/codeControl";
-import { DisabledContext } from "comps/generators/uiCompBuilder";
+import { disabledPropertyView, hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { BoolCodeControl } from "#lowcoder/comps/controls/codeControl";
+import { DisabledContext } from "#lowcoder/comps/generators/uiCompBuilder";
 import React, { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import { AnimationStyle } from "@lowcoder-ee/comps/controls/styleControlConstants";
-import { styleControl } from "@lowcoder-ee/comps/controls/styleControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { AnimationStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 
 export const ContainerBaseComp = (function () {
   const childrenMap = {

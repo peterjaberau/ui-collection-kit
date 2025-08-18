@@ -1,5 +1,5 @@
-import { PasswordComp } from "comps/comps/textInputComp/passwordComp";
-import { trans } from "i18n";
+import { PasswordComp } from "#lowcoder/comps/comps/textInputComp/passwordComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

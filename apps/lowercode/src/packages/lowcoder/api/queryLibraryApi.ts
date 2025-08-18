@@ -1,8 +1,8 @@
 import Api from "./api";
 import { AxiosPromise } from "axios";
 import { GenericApiResponse } from "./apiResponses";
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
-import {fetchQueryLibraryPaginationRequestType, GenericApiPaginationResponse} from "@lowcoder-ee/util/pagination/type";
+import { DatasourceType } from "#lowcoder/constants/queryConstants";
+import {fetchQueryLibraryPaginationRequestType, GenericApiPaginationResponse} from "#lowcoder/util/pagination/type";
 
 export interface LibraryQuery {
   id: string;

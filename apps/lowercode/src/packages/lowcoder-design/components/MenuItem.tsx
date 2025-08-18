@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { PointIcon, DragIcon, PencilIcon } from "icons";
+import { PointIcon, DragIcon, PencilIcon } from "#lowcoder-design/icons";
 import { labelCss } from "./Label";
 
 interface IItem {

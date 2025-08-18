@@ -9,7 +9,7 @@ import PermissionSetting from "./permission";
 import { ThemeHome } from "./theme";
 import { AdvancedSetting } from "./advanced/AdvancedSetting";
 import { currentOrgAdmin } from "#lowcoder/util/permissionUtils";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { TwoColumnSettingPageContent } from "./styled";
 import SubSideBar from "#lowcoder/components/layout/SubSideBar";
 import {
@@ -26,16 +26,16 @@ import {
   BrandingIcon,
 } from "lowcoder-design";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
-import { getDeploymentId } from "@lowcoder-ee/redux/selectors/configSelectors";
+import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
 import { selectSystemConfig } from "#lowcoder/redux/selectors/configSelectors";
 import { selectIsLicenseActive } from "#lowcoder/redux/selectors/enterpriseSelectors";
 
 import FreeLimitTag from "#lowcoder/pages/common/freeLimitTag";
-import { Branding } from "@lowcoder-ee/pages/setting/branding";
-import { Environments}  from "@lowcoder-ee/pages/setting/environments";
-import { AppUsage } from "@lowcoder-ee/pages/setting/appUsage";
-import { AuditLog } from "@lowcoder-ee/pages/setting/audit";
-import { IdSourceHome } from "@lowcoder-ee/pages/setting/idSource";
+import { Branding } from "#lowcoder/pages/setting/branding";
+import { Environments}  from "#lowcoder/pages/setting/environments";
+import { AppUsage } from "#lowcoder/pages/setting/appUsage";
+import { AuditLog } from "#lowcoder/pages/setting/audit";
+import { IdSourceHome } from "#lowcoder/pages/setting/idSource";
 import { Subscription } from "./subscriptions";
 import history from "#lowcoder/util/history";
 import { HubspotModal } from "./hubspotModal";

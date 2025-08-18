@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { AdminIcon, CustomSelect, GroupIcon, WhiteLoading } from "#lowcoder-design/index";
-import React from "react";
+import styled from "styled-components"
+import { AdminIcon, CustomSelect, GroupIcon, WhiteLoading } from "#lowcoder-design/index"
+import React from "react"
 
-export const StyledRoleSelect = styled(CustomSelect)`
+export const StyledRoleSelect: any = styled(CustomSelect)`
   margin-left: auto;
 
   .ant-select-arrow {
@@ -31,7 +31,7 @@ export const StyledRoleSelect = styled(CustomSelect)`
     text-align: right;
     line-height: 15px;
   }
-`;
+`
 
 export const RoleSelectOptionWrapper = styled.div`
   display: flex;
@@ -39,11 +39,11 @@ export const RoleSelectOptionWrapper = styled.div`
   font-size: 13px;
   line-height: 15px;
   height: fit-content;
-`;
+`
 
 export const StyledGroupIcon = styled(GroupIcon)<{
-  $color: string;
-  $side?: number;
+  $color: string | any
+  $side?: number | any
 }>`
   width: ${(props) => props.$side ?? 16}px;
   height: ${(props) => props.$side ?? 16}px;
@@ -51,7 +51,7 @@ export const StyledGroupIcon = styled(GroupIcon)<{
   g g {
     fill: ${(props) => props.$color};
   }
-`;
+`
 
 export const StyledAdminIcon = styled(AdminIcon)<{ $color: string }>`
   width: 16px;
@@ -60,7 +60,7 @@ export const StyledAdminIcon = styled(AdminIcon)<{ $color: string }>`
   g path {
     fill: ${(props) => props.$color};
   }
-`;
+`
 
 export const PermissionItemName = styled.div`
   font-weight: 500;
@@ -72,17 +72,17 @@ export const PermissionItemName = styled.div`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-`;
+`
 
 export function RoleSelectOption(props: { role: string }) {
   return (
     <RoleSelectOptionWrapper>
       <div>{props.role}</div>
     </RoleSelectOptionWrapper>
-  );
+  )
 }
 
 export const StyledLoading = styled(WhiteLoading)`
   height: 353px;
   width: 100%;
-`;
+`

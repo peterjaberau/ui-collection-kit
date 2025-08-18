@@ -1,6 +1,6 @@
 import { APPLICATION_VIEW_URL } from "#lowcoder/constants/routesURL";
 import { CustomModal, CustomSelect, TacoInput } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";

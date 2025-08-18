@@ -1,13 +1,13 @@
-import { BoolControl } from "comps/controls/boolControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import {
   BoolCodeControl,
   NumberControl,
   RangeControl,
   RegexControl,
   StringControl,
-} from "comps/controls/codeControl";
-import { language, trans } from "i18n";
-import { Comp } from "lowcoder-core";
+} from "#lowcoder/comps/controls/codeControl";
+import { language, trans } from "#lowcoder/i18n";
+import { Comp } from "#lowcoder-core/index";
 import { ReactNode } from "react";
 
 export function isCompWithPropertyView<C extends Comp<any> = Comp<any>>(

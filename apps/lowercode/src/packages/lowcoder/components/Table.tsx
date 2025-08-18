@@ -1,7 +1,7 @@
 import { default as AntdTable } from "antd/es/table";
 import styled from "styled-components";
 
-export const Table = styled(AntdTable)`
+export const Table: any = styled(AntdTable)`
   .ant-table {
     font-size: 13px;
     border: none;
@@ -20,7 +20,6 @@ export const Table = styled(AntdTable)`
   .ant-table-thead > tr > th {
     color: #8b8fa3;
     background: #ffffff;
-    padding-bottom: 9px;
     border: none;
     //border-bottom: 1px solid #8b8fa3; // divider line for the table header
     padding: 3px 12px;

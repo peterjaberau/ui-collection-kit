@@ -2,20 +2,20 @@ import {
   ContainerBaseProps,
   gridItemCompToGridItems,
   InnerGrid,
-} from "comps/comps/containerComp/containerView";
-import { BoolControl } from "comps/controls/boolControl";
-import { SlotControl } from "comps/controls/slotControl";
-import { withSelectedMultiContext } from "comps/generators";
-import { ControlItemCompBuilder } from "comps/generators/controlCompBuilder";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
-import { trans } from "i18n";
+} from "#lowcoder/comps/comps/containerComp/containerView";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { SlotControl } from "#lowcoder/comps/controls/slotControl";
+import { withSelectedMultiContext } from "#lowcoder/comps/generators";
+import { ControlItemCompBuilder } from "#lowcoder/comps/generators/controlCompBuilder";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
-import { ConstructorToView, wrapChildAction } from "lowcoder-core";
+import { ConstructorToView, wrapChildAction } from "#lowcoder-core/index";
 import { createContext, useContext, useCallback } from "react";
 import { tryToNumber } from "#lowcoder/util/convertUtils";
 import { SimpleContainerComp } from "../containerBase/simpleContainerComp";
 import { OB_ROW_ORI_INDEX, RecordType } from "./tableUtils";
-import { NameGenerator } from "comps/utils";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 
 const ContextSlotControl = withSelectedMultiContext(SlotControl);

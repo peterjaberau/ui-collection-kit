@@ -1,5 +1,5 @@
-import { MethodConfig } from "comps/controls/actionSelector/executeCompTypes";
-import { trans } from "i18n";
+import { MethodConfig } from "#lowcoder/comps/controls/actionSelector/executeCompTypes";
+import { trans } from "#lowcoder/i18n";
 
 export const focusMethod: MethodConfig<"focus"> = {
   name: "focus",

@@ -1,4 +1,4 @@
-import { TourComp } from "comps/comps/tourComp/tourComp";
+import { TourComp } from "#lowcoder/comps/comps/tourComp/tourComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -10,7 +10,7 @@ export default function TourExample() {
         >
           <Example
             title="Default Audio Component"
-            config={{ 
+            config={{
             }}
             compFactory={TourComp}
           />

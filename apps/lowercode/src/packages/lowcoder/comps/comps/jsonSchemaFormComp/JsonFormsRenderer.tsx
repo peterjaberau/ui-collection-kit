@@ -18,10 +18,10 @@ import styled from "styled-components";
 import type { JSONSchema7 } from "json-schema";
 import { debounce } from "lodash";
 import dayjs from "dayjs";
-import { trans } from "i18n";
-import type { 
-  FieldUiSchema, 
-  Layout, 
+import { trans } from "#lowcoder/i18n";
+import type {
+  FieldUiSchema,
+  Layout,
   Categorization,
   ValidationState,
   JsonFormsRendererProps,
@@ -112,7 +112,7 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
 
   const getFieldUiSchema = (path: string): FieldUiSchema | undefined => {
     if (!uiSchema) return undefined;
-    
+
     // For JSONForms UI schema, we need to find the Control element that matches the path
     if (Array.isArray(uiSchema.elements)) {
       const control = uiSchema.elements.find((element: any) => {
@@ -126,7 +126,7 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
       });
       return control;
     }
-    
+
     // Fallback to the old path-based lookup for backward compatibility
     const pathParts = path.split('.');
     let current: any = uiSchema;
@@ -142,15 +142,15 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
 
   const evaluateRule = (rule: any, data: any): boolean => {
     if (!rule) return true;
-    
+
     const { scope, schema: ruleSchema } = rule.condition;
     const path = scope.replace("#/properties/", "").split("/");
     let value = data;
-    
+
     for (const part of path) {
       value = value?.[part];
     }
-    
+
     return value === ruleSchema.const;
   };
 
@@ -183,7 +183,7 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
     const path = scopePath.split(".");
     let fieldSchema: JSONSchema7 | undefined = schema as JSONSchema7;
     let value = data;
-    
+
     // Navigate through the schema to find the correct field schema
     for (const part of path) {
       if (fieldSchema?.properties) {
@@ -227,10 +227,10 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
       </div>
     );
   };
-  // Add validation function  
+  // Add validation function
   const validateField = useCallback((path: string, value: any, fieldSchema: any) => {
     const errors: string[] = [];
-    
+
     // Required field validation - check if field name is in schema.required array
     const fieldName = path.split('.').pop() || '';
     if (schema.required?.includes(fieldName) && (value === undefined || value === null || value === '')) {
@@ -373,7 +373,7 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
       });
     };
 
-    // Modify Form.Item to include validation    
+    // Modify Form.Item to include validation
     const formItemProps = {
       key: fullPath,
       label: label,
@@ -547,8 +547,8 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
         return (
           <Form.Item {...formItemProps} valuePropName="checked">
             <div onFocus={handleFocus} onBlur={handleBlur}>
-              <Switch 
-                checked={value} 
+              <Switch
+                checked={value}
                 onChange={createSwitchHandler(key, path)}
               />
             </div>
@@ -572,7 +572,7 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
   };
   const handleSubmit = () => {
     setIsSubmitted(true);
-    
+
     // Check if there are any validation errors
     const hasErrors = Object.values(validationState).some((state: ValidationState[string]) => state.errors.length);
     if (!hasErrors && onSubmit) {
@@ -610,8 +610,8 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
             current={currentStep}
             items={visibleCategories.map((category) => ({
               title: category.i18n ? trans(category.i18n) : (category.label || ''),
-              description: category.elements.length > 0 ? 
-                `${category.elements.length} field${category.elements.length > 1 ? 's' : ''}` : 
+              description: category.elements.length > 0 ?
+                `${category.elements.length} field${category.elements.length > 1 ? 's' : ''}` :
                 undefined
             }))}
           />
@@ -619,21 +619,21 @@ const JsonFormsRenderer: React.FC<JsonFormsRendererProps> = ({
             {renderCategory(visibleCategories[currentStep])}
           </div>
           <div className="stepper-navigation">
-            <Button 
+            <Button
               onClick={handlePrev}
               disabled={currentStep === 0}
             >
               {trans("previous")}
             </Button>
             {isLastStep ? (
-              <Button 
+              <Button
                 type="primary"
                 onClick={handleSubmit}
               >
                 {trans("submit")}
               </Button>
             ) : (
-              <Button 
+              <Button
                 type="primary"
                 onClick={handleNext}
               >
@@ -698,7 +698,7 @@ const calculateColSpan = (uiSchema: any, containerWidth: number) => {
   if (containerWidth > 992 && colSpan.lg) return { span: colSpan.lg };
   if (containerWidth > 768 && colSpan.md) return { span: colSpan.md };
   if (containerWidth > 576 && colSpan.sm) return { span: colSpan.sm };
-  return { span: 24 }; 
+  return { span: 24 };
 };
 
 export default React.memo(JsonFormsRenderer);

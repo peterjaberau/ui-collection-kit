@@ -1,15 +1,15 @@
 // Intro guide
 import Joyride, { ACTIONS, CallBackProps, EVENTS, STATUS, Step } from "react-joyride";
 import { useContext, useEffect, useState } from "react";
-import { EditorContext, EditorState } from "comps/editorState";
+import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
 import {
   changeChildAction,
   executeQueryAction,
   multiChangeAction,
   wrapActionExtraInfo,
-} from "lowcoder-core";
-import { addMapChildAction } from "comps/generators/sameTypeMap";
-import { genQueryId, genRandomKey } from "comps/utils/idGenerator";
+} from "#lowcoder-core/index";
+import { addMapChildAction } from "#lowcoder/comps/generators/sameTypeMap";
+import { genQueryId, genRandomKey } from "#lowcoder/comps/utils/idGenerator";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "#lowcoder/redux/reducers";
 import {
@@ -25,10 +25,10 @@ import {
 import { TooltipCodeBlock, TooltipLink, TutorialsTooltip } from "lowcoder-design";
 import { markUserStatus } from "#lowcoder/redux/reduxActions/userActions";
 import { useHistory } from "react-router";
-import { defaultLayout, GridItemDataType } from "comps/comps/gridItemComp";
-import { uiCompRegistry, UICompType } from "comps/uiCompRegistry";
+import { defaultLayout, GridItemDataType } from "#lowcoder/comps/comps/gridItemComp";
+import { uiCompRegistry, UICompType } from "#lowcoder/comps/uiCompRegistry";
 import { BottomResTypeEnum } from "#lowcoder/types/bottomRes";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { i18nObjs } from "../../i18n/index";
 import { DatasourceInfo, HttpConfig } from "#lowcoder/api/datasourceApi";
 import { enObj } from "i18n/locales";

@@ -1,14 +1,14 @@
 import { default as Divider } from "antd/es/divider";
 import { default as Menu } from "antd/es/menu";
 import { default as Sider} from "antd/es/layout/Sider";
-import { PreloadComp } from "comps/comps/preLoadComp";
-import UIComp from "comps/comps/uiComp";
-import { EditorContext } from "comps/editorState";
+import { PreloadComp } from "#lowcoder/comps/comps/preLoadComp";
+import UIComp from "#lowcoder/comps/comps/uiComp";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { AppPathParams, AppUILayoutType } from "#lowcoder/constants/applicationConstants";
 import { Layers } from "#lowcoder/constants/Layers";
 import { TopHeaderHeight } from "#lowcoder/constants/style";
-import { trans } from "i18n";
-import { draggingUtils } from "layout";
+import { trans } from "#lowcoder/i18n";
+import { draggingUtils } from "#lowcoder/";
 import {
   LeftPreloadIcon,
   LeftSettingIcon,
@@ -59,10 +59,10 @@ import { isAggregationApp } from "#lowcoder/util/appUtils";
 import EditorSkeletonView from "./editorSkeletonView";
 import {
   getCommonSettings
-} from "@lowcoder-ee/redux/selectors/commonSettingSelectors";
+} from "#lowcoder/redux/selectors/commonSettingSelectors";
 import { isEqual, noop } from "lodash";
-import { AppSettingContext, AppSettingType } from "@lowcoder-ee/comps/utils/appSettingContext";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
+import { AppSettingContext, AppSettingType } from "#lowcoder/comps/utils/appSettingContext";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 import Flex from "antd/es/flex";
 // import { BottomSkeleton } from "./bottom/BottomContent";
 

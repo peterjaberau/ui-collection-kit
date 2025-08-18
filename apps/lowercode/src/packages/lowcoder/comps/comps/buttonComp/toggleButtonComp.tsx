@@ -1,31 +1,31 @@
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { withDefault } from "comps/generators";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { withDefault } from "#lowcoder/comps/generators";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import {
   disabledPropertyView,
   hiddenPropertyView,
   loadingPropertyView,
   showDataLoadingIndicatorsPropertyView,
-} from "comps/utils/propertyUtils";
+} from "#lowcoder/comps/utils/propertyUtils";
 import { Section, sectionNames } from "#lowcoder-design/index";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import styled from "styled-components";
 import { ChangeEventHandlerControl } from "../../controls/eventHandlerControl";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
 import { Button100, ButtonCompWrapper, buttonRefMethods, DisabledButtonStyleControl } from "./buttonCompConstants";
-import { IconControl } from "comps/controls/iconControl";
-import { AlignWithStretchControl, LeftRightControl } from "comps/controls/dropdownControl";
-import { booleanExposingStateControl } from "comps/controls/codeStateControl";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { AlignWithStretchControl, LeftRightControl } from "#lowcoder/comps/controls/dropdownControl";
+import { booleanExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
 import {
   AnimationStyle,
   AnimationStyleType,
   ToggleButtonStyle,
-} from "comps/controls/styleControlConstants";
-import { styleControl } from "comps/controls/styleControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { RefControl } from "comps/controls/refControl";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 import React, { useContext, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { Tooltip } from "antd";
 
 const IconWrapper = styled.div`

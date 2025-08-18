@@ -9,7 +9,7 @@ import {
   FormSelectItem,
   ValueFromOption,
 } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import React, { useState } from "react";
 import {
   AdvancedSettingFormSectionLabel,
@@ -27,7 +27,7 @@ import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 const AuthTypeOptions = [
   { label: "None", value: "NO_AUTH" },
   { label: "Basic", value: "BASIC_AUTH" },
-  { label: "Digest", value: "DIGEST_AUTH" }, 
+  { label: "Digest", value: "DIGEST_AUTH" },
   { label: "OAuth 2.0 (Inherit from login)", value: "OAUTH2_INHERIT_FROM_LOGIN" },
 ] as const;
 

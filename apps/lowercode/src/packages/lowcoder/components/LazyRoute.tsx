@@ -2,7 +2,7 @@ import { default as Skeleton } from "antd/es/skeleton";
 import { ComponentType, lazy, Suspense, useRef } from "react";
 import { Route, RouteProps } from "react-router";
 import PageSkeleton from "./PageSkeleton";
-import EditorSkeletonView from "@lowcoder-ee/pages/editor/editorSkeletonView";
+import EditorSkeletonView from "#lowcoder/pages/editor/editorSkeletonView";
 import { ProductLoading } from "./ProductLoading";
 
 interface IProps extends RouteProps {

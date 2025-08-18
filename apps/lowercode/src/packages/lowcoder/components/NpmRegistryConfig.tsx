@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { HelpText } from "./HelpText";
 import { FormInputItem, FormSelectItem, TacoSwitch } from "#lowcoder-design/index";
 import { Form } from "antd";
-import { trans } from "i18n";
-import { FormStyled } from "@lowcoder-ee/pages/setting/idSource/styledComponents";
-import { SaveButton } from "@lowcoder-ee/pages/setting/styled";
-import { NpmRegistryConfigEntry } from "@lowcoder-ee/redux/reducers/uiReducers/commonSettingsReducer";
+import { trans } from "#lowcoder/i18n";
+import { FormStyled } from "#lowcoder/pages/setting/idSource/styledComponents";
+import { SaveButton } from "#lowcoder/pages/setting/styled";
+import { NpmRegistryConfigEntry } from "#lowcoder/redux/reducers/uiReducers/commonSettingsReducer";
 
 type NpmRegistryConfigEntryInput = {
   url: string;

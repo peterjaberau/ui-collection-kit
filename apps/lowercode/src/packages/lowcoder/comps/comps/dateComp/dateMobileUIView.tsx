@@ -1,38 +1,37 @@
-import styled from "styled-components";
-import { DateTimeStyleType } from "comps/controls/styleControlConstants";
-import { getMobileStyle } from "comps/comps/dateComp/dateCompUtil";
-import dayjs from "dayjs";
-import { DATE_FORMAT, DATE_TIME_FORMAT, DateParser } from "#lowcoder/util/dateTimeUtils";
-import { CanvasContainerID } from "#lowcoder/constants/domLocators";
-import { trans } from "i18n";
-import React from "react";
-import { DataUIViewProps } from "comps/comps/dateComp/dateUIView";
+import styled from "styled-components"
+import { DateTimeStyleType } from "#lowcoder/comps/controls/styleControlConstants"
+import { getMobileStyle } from "#lowcoder/comps/comps/dateComp/dateCompUtil"
+import dayjs from "dayjs"
+import { DATE_FORMAT, DATE_TIME_FORMAT, DateParser } from "#lowcoder/util/dateTimeUtils"
+import { CanvasContainerID } from "#lowcoder/constants/domLocators"
+import { trans } from "#lowcoder/i18n"
+import React from "react"
+import { DataUIViewProps } from "#lowcoder/comps/comps/dateComp/dateUIView"
 import { default as SwapRightOutlined } from "@ant-design/icons/SwapRightOutlined"
-import { DateRangeUIViewProps } from "comps/comps/dateComp/dateRangeUIView";
-import { DateCompViewProps } from "comps/comps/dateComp/dateComp";
-import type { DatePickerProps } from "antd/es/date-picker";
-import type { Dayjs } from "dayjs";
+import { DateRangeUIViewProps } from "#lowcoder/comps/comps/dateComp/dateRangeUIView"
+import { DateCompViewProps } from "#lowcoder/comps/comps/dateComp/dateComp"
+import type { DatePickerProps } from "antd/es/date-picker"
+import type { Dayjs } from "dayjs"
 
-interface DateMobileUIViewProps extends Omit<DataUIViewProps, 'onChange'> {
-  onChange: (value: dayjs.Dayjs | null) => void;
+interface DateMobileUIViewProps extends Omit<DataUIViewProps, "onChange"> {
+  onChange: (value: dayjs.Dayjs | null) => void
 }
 
 const handleClick = async (
-  params: Pick<
-    DateCompViewProps,
-    "showTime" | "minDate" | "maxDate" | "disabledTime" | "onFocus" | "onBlur"
-  > & {
-    value?: dayjs.Dayjs | null;
-    // onChange: (value: dayjs.Dayjs | null) => void;
-    onChange: DatePickerProps<Dayjs>['onChange'];
-  }
+  params:
+    | (Pick<DateCompViewProps, "showTime" | "minDate" | "maxDate" | "disabledTime" | "onFocus" | "onBlur"> & {
+        value?: dayjs.Dayjs | null
+        // onChange: (value: dayjs.Dayjs | null) => void;
+        onChange: DatePickerProps<Dayjs>["onChange"]
+      })
+    | any,
 ) => {
-  const MobileDatePicker = (await import("antd-mobile/es/components/date-picker")).default;
+  const MobileDatePicker = (await import("antd-mobile/es/components/date-picker")).default
 
-  const min = dayjs(params.minDate, DateParser);
-  const max = dayjs(params.maxDate, DateParser);
+  const min = dayjs(params.minDate, DateParser)
+  const max = dayjs(params.maxDate, DateParser)
 
-  const { disabledHours, disabledMinutes, disabledSeconds } = params.disabledTime();
+  const { disabledHours, disabledMinutes, disabledSeconds } = params.disabledTime()
 
   MobileDatePicker.prompt({
     getContainer: () => document.querySelector(`#${CanvasContainerID}`) || document.body,
@@ -51,18 +50,18 @@ const handleClick = async (
       second: (val, { date }) => !disabledSeconds(date.getHours(), date.getMinutes()).includes(val),
     },
     onConfirm: (value) => {
-      const time = dayjs(value);
-      const timeString = time.format(params.showTime ? DATE_TIME_FORMAT : DATE_FORMAT);
-      params.onChange?.(time, timeString);
+      const time = dayjs(value)
+      const timeString = time.format(params.showTime ? DATE_TIME_FORMAT : DATE_FORMAT)
+      params.onChange?.(time, timeString)
     },
     onClose: params.onBlur,
-  });
+  })
 
-  params.onFocus();
-};
+  params.onFocus()
+}
 
 const MobileView = styled.div<{
-  $style: DateTimeStyleType;
+  $style: DateTimeStyleType
 }>`
   height: 32px;
   display: flex;
@@ -74,7 +73,7 @@ const MobileView = styled.div<{
   border-radius: 4px;
   border: 1px solid #d7d9e0;
   ${(props) => props.$style && getMobileStyle(props.$style)}
-`;
+`
 
 const DateItem = styled.div`
   overflow: hidden;
@@ -82,9 +81,9 @@ const DateItem = styled.div`
   flex-grow: 1;
   display: flex;
   justify-content: center;
-`;
+`
 
-export const DateMobileUIView = (props: DataUIViewProps) => (
+export const DateMobileUIView = (props: DataUIViewProps | any) => (
   <MobileView ref={props.viewRef} $style={props.$style} onClick={() => handleClick(props)}>
     <DateItem>
       {props.value
@@ -93,16 +92,16 @@ export const DateMobileUIView = (props: DataUIViewProps) => (
     </DateItem>
     {props.suffixIcon}
   </MobileView>
-);
+)
 
-export const DateRangeMobileUIView = (props: DateRangeUIViewProps) => (
+export const DateRangeMobileUIView = (props: DateRangeUIViewProps | any) => (
   <MobileView ref={props.viewRef} $style={props.$style}>
     <DateItem
       onClick={() =>
         handleClick({
           ...props,
           value: props.start,
-          onChange: (value) => props.onChange(value, props.end),
+          onChange: (value: any) => props.onChange(value, props.end),
         })
       }
     >
@@ -116,7 +115,7 @@ export const DateRangeMobileUIView = (props: DateRangeUIViewProps) => (
         handleClick({
           ...props,
           value: props.end,
-          onChange: (value) => props.onChange(props.start, value),
+          onChange: (value: any) => props.onChange(props.start, value),
         })
       }
     >
@@ -126,4 +125,4 @@ export const DateRangeMobileUIView = (props: DateRangeUIViewProps) => (
     </DateItem>
     {props.suffixIcon}
   </MobileView>
-);
+)

@@ -4,7 +4,7 @@ import {
   showLabelPropertyView,
 } from "lowcoder-sdk";
 import { SunburstSeriesOption } from "echarts";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 export const SunburstChartConfig = (function () {
   return new MultiCompBuilder(

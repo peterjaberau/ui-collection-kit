@@ -6,11 +6,11 @@ import {
 } from "../controls/paramsControl";
 import { withTypeAndChildrenAbstract } from "../generators/withType";
 import { withPropertyViewFn } from "../generators";
-import { DispatchType, MultiBaseComp } from "lowcoder-core";
+import { DispatchType, MultiBaseComp } from "#lowcoder-core/index";
 import { isObject } from "lodash";
 import { FunctionProperty, toQueryView } from "./queryCompUtils";
 import { Property } from "../../types/entities/common";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 // const PropertyView = (props: { value: string[]; dispatch: DispatchType }) => {
 //   const editorState = useContext(EditorContext);

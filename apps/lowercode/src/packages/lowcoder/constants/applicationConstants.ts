@@ -1,8 +1,8 @@
 import type { JSONValue } from "#lowcoder/util/jsonTypes";
-import type { ExtraActionType } from "lowcoder-core";
+import type { ExtraActionType } from "#lowcoder-core/index";
 import type { CommonSettingResponseData } from "#lowcoder/api/commonSettingApi";
 import type { PermissionItem } from "../components/PermissionDialog/PermissionList";
-import type { UiLayoutType } from "comps/comps/uiComp";
+import type { UiLayoutType } from "#lowcoder/comps/comps/uiComp";
 
 // To be same with HomeResTypeEnum
 export enum AppTypeEnum {

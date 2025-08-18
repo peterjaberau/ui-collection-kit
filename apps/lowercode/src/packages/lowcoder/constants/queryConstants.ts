@@ -10,10 +10,10 @@ import { LibraryQuery } from "../comps/queries/libraryQuery";
 import { ViewQuery } from "../comps/queries/viewQuery";
 import { GoogleSheetsQuery } from "../comps/queries/googleSheetsQuery";
 import { GraphqlQuery } from "../comps/queries/httpQuery/graphqlQuery";
-import { toPluginQuery } from "comps/queries/pluginQuery/pluginQuery";
-import { MultiCompConstructor } from "lowcoder-core";
+import { toPluginQuery } from "#lowcoder/comps/queries/pluginQuery/pluginQuery";
+import { MultiCompConstructor } from "#lowcoder-core/index";
 import { DataSourcePluginMeta } from "lowcoder-sdk/dataSource";
-import { AlaSqlQuery } from "@lowcoder-ee/comps/queries/httpQuery/alasqlQuery";
+import { AlaSqlQuery } from "#lowcoder/comps/queries/httpQuery/alasqlQuery";
 
 export type DatasourceType =
   | "mysql"

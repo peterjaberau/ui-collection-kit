@@ -2,7 +2,7 @@ import React, { useMemo, useRef } from "react";
 import ReactECharts from "echarts-for-react";
 import dayjs from "dayjs";
 import { debounce } from "lodash";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 interface Props {
   data: Array<any>;
@@ -23,7 +23,7 @@ const DeviceOSBreakdownChart = ({ data}: Props) => {
 
   // Get unique device types
   const deviceTypeSet = [...new Set(data.map((log: any) => log.deviceClass || 'Unkown'))];
-  
+
   // Get unique os types
   const osTypeSet = [...new Set(data.map((log: any) => log.operatingSystemName || 'Unkown'))];
 
@@ -34,7 +34,7 @@ const DeviceOSBreakdownChart = ({ data}: Props) => {
     stack: "total",
     data: Object.keys(deviceOs).map((deviceType: string) => deviceOs[deviceType][osType]),
   }));
-  
+
   return (
     <ReactECharts
       ref={chartRef}

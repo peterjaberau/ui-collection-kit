@@ -1,5 +1,5 @@
-import { FileComp } from "comps/comps/fileComp/fileComp";
-import { trans } from "i18n";
+import { FileComp } from "#lowcoder/comps/comps/fileComp/fileComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

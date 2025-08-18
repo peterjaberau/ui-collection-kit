@@ -5,7 +5,7 @@ import {
   Section,
   sectionNames,
 } from "lowcoder-sdk";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 import { examplesUrl,optionUrl } from "../chartComp/chartConfigs/chartUrls";
 
 export function themeriverChartPropertyView(

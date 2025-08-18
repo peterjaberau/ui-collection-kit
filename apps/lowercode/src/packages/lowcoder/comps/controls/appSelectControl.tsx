@@ -1,8 +1,8 @@
 import ApplicationSelect from "#lowcoder/components/ApplicationSelect";
-import { StringControl } from "comps/controls/codeControl";
-import { MultiCompBuilder } from "comps/generators/multi";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import { ControlPropertyViewWrapper } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const childrenMap = {
   applicationId: StringControl,

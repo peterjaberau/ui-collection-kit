@@ -1,5 +1,5 @@
-import { ThemeDetail } from "@lowcoder-ee/api/commonSettingApi";
-import { DEFAULT_GRID_COLUMNS, DEFAULT_ROW_COUNT, DEFAULT_ROW_HEIGHT } from "@lowcoder-ee/layout/calculateUtils";
+import { ThemeDetail } from "#lowcoder/api/commonSettingApi";
+import { DEFAULT_GRID_COLUMNS, DEFAULT_ROW_COUNT, DEFAULT_ROW_HEIGHT } from "#lowcoder/layout/calculateUtils";
 
 const theme = {
   primary: "#3377FF",

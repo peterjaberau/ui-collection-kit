@@ -1,12 +1,12 @@
 import { default as Cascader } from "antd/es/cascader";
-import { CascaderStyleType, ChildrenMultiSelectStyleType } from "comps/controls/styleControlConstants";
-import { blurMethod, focusMethod } from "comps/utils/methodUtils";
-import { trans } from "i18n";
+import { CascaderStyleType, ChildrenMultiSelectStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { blurMethod, focusMethod } from "#lowcoder/comps/utils/methodUtils";
+import { trans } from "#lowcoder/i18n";
 import styled from "styled-components";
 import { UICompBuilder, withDefault } from "../../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
 import { CascaderChildren, CascaderPropertyView, defaultDataSource } from "./cascaderContants";
-import { refMethods } from "comps/generators/withMethodExposing";
+import { refMethods } from "#lowcoder/comps/generators/withMethodExposing";
 
 const CascaderStyle = styled(Cascader)<{ $style: CascaderStyleType,$childrenInputFieldStyle:ChildrenMultiSelectStyleType }>`
   width: 100%;

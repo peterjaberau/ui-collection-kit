@@ -1,8 +1,8 @@
-import { PUBLIC_APP_ID } from "@lowcoder-ee/constants/publicApp";
-import { sdkConfig } from "@lowcoder-ee/constants/sdkConfig";
+import { PUBLIC_APP_ID } from "#lowcoder/constants/publicApp";
+import { sdkConfig } from "#lowcoder/constants/sdkConfig";
 import { ASSETS_BASE_URL, NPM_PLUGIN_ASSETS_BASE_URL } from "#lowcoder/constants/npmPlugins";
-import { trans } from "i18n";
-import { CompConstructor } from "lowcoder-core";
+import { trans } from "#lowcoder/i18n";
+import { CompConstructor } from "#lowcoder-core/index";
 import {
   RemoteCompInfo,
   RemoteCompLoader,

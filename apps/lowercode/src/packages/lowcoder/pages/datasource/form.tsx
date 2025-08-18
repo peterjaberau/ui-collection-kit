@@ -6,10 +6,10 @@ import {
   FormSelectItem,
   FormTextAreaItem,
 } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { toNumber } from "lodash";
 import { useHostCheck } from "./form/useHostCheck";
-import { Datasource } from "@lowcoder-ee/constants/datasourceConstants";
+import { Datasource } from "#lowcoder/constants/datasourceConstants";
 import React, { ReactNode, useState } from "react";
 import { HttpConfig, SSLCertVerificationEnum } from "../../api/datasourceApi";
 

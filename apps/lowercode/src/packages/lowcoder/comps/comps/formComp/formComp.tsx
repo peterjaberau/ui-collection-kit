@@ -3,11 +3,11 @@ import {
   depsConfig,
   NameConfig,
   withExposingConfigs,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "#lowcoder-design/index";
-import { genQueryId } from "comps/utils/idGenerator";
-import { CompNameContext, EditorContext, EditorState } from "comps/editorState";
-import { withMethodExposing } from "comps/generators/withMethodExposing";
+import { genQueryId } from "#lowcoder/comps/utils/idGenerator";
+import { CompNameContext, EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
 import { ContainerPlaceholder } from "#lowcoder-design/index";
 import {
   CompAction,
@@ -20,15 +20,15 @@ import {
   RecordConstructorToView,
   ValueAndMsg,
   wrapChildAction,
-} from "lowcoder-core";
-import { NameGenerator } from "comps/utils";
+} from "#lowcoder-core/index";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import _ from "lodash";
 import { CreateData, CreateForm } from "./createForm";
 import { defaultLayout, GridItemComp } from "../gridItemComp";
 import { ReactNode, useContext } from "react";
-import { pushAction } from "comps/generators/list";
+import { pushAction } from "#lowcoder/comps/generators/list";
 import { FullColumnInfo } from "./generate/dataSourceCommon";
-import { eventHandlerControl, submitEvent } from "comps/controls/eventHandlerControl";
+import { eventHandlerControl, submitEvent } from "#lowcoder/comps/controls/eventHandlerControl";
 import {
   simpleContainerAddAction,
   toSimpleContainerData,
@@ -41,26 +41,26 @@ import { TriContainer } from "../triContainerComp/triContainer";
 import { traverseCompTree } from "../containerBase/utils";
 import { IForm } from "./formDataConstants";
 import { default as Spin } from "antd/lib/spin";
-import { BoolControl } from "comps/controls/boolControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import { BottomResTypeEnum } from "#lowcoder/types/bottomRes";
-import { BoolCodeControl, JSONObjectControl } from "comps/controls/codeControl";
+import { BoolCodeControl, JSONObjectControl } from "#lowcoder/comps/controls/codeControl";
 import { JSONObject } from "#lowcoder/util/jsonTypes";
-import { EvalParamType } from "comps/controls/actionSelector/executeCompTypes";
-import { LayoutItem } from "layout/utils";
+import { EvalParamType } from "#lowcoder/comps/controls/actionSelector/executeCompTypes";
+import { LayoutItem } from "#lowcoder/utils";
 import {
   disabledPropertyView,
   hiddenPropertyView,
   loadingPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import log from "loglevel";
-import { DisabledContext } from "comps/generators/uiCompBuilder";
+import { DisabledContext } from "#lowcoder/comps/generators/uiCompBuilder";
 import { default as LoadingOutlined } from "@ant-design/icons/LoadingOutlined";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import { styled } from "styled-components";
-import { styleControl } from "@lowcoder-ee/comps/controls/styleControl";
-import { AnimationStyle } from "@lowcoder-ee/comps/controls/styleControlConstants";
-import { StringControl } from "comps/controls/codeControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
 
 const FormWrapper = styled.div`
   height: 100%;

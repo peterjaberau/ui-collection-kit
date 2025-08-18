@@ -10,15 +10,15 @@ import {
   WrapNode,
   CompParams,
   DispatchType,
-} from "lowcoder-core";
-import { RootComp } from "comps/comps/rootComp";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
-import { valueComp, withDefault, withViewFn } from "comps/generators";
-import { ToDataType, ToInstanceType } from "comps/generators/multi";
-import { HidableView, UICompBuilder } from "comps/generators/uiCompBuilder";
-import { withExposingRaw } from "comps/generators/withExposing";
-import { exposingInfoToNodes, exposingMethods } from "comps/utils/exposingTypes";
-import { getReduceContext, PartialReduceContext, reduceInContext } from "comps/utils/reduceContext";
+} from "#lowcoder-core/index";
+import { RootComp } from "#lowcoder/comps/comps/rootComp";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { valueComp, withDefault, withViewFn } from "#lowcoder/comps/generators";
+import { ToDataType, ToInstanceType } from "#lowcoder/comps/generators/multi";
+import { HidableView, UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
+import { withExposingRaw } from "#lowcoder/comps/generators/withExposing";
+import { exposingInfoToNodes, exposingMethods } from "#lowcoder/comps/utils/exposingTypes";
+import { getReduceContext, PartialReduceContext, reduceInContext } from "#lowcoder/comps/utils/reduceContext";
 import { API_STATUS_CODES } from "#lowcoder/constants/apiConstants";
 import { AppTypeEnum } from "#lowcoder/constants/applicationConstants";
 import { GreyTextColor } from "#lowcoder/constants/style";
@@ -32,13 +32,13 @@ import {
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
 import { wrapWithPromiseHandling } from "#lowcoder/util/promiseUtils";
 import ModuleInputComp from "./moduleInputComp";
-import { MethodConfigInfo, withMethodExposing } from "comps/generators/withMethodExposing";
-import { eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
+import { MethodConfigInfo, withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
+import { eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import { ModuleLoading } from "#lowcoder/components/ModuleLoading";
-import { trans } from "i18n";
-import { ParamsConfig, ParamType } from "comps/controls/actionSelector/executeCompTypes";
-import { BoolControl } from "comps/controls/boolControl";
+import { trans } from "#lowcoder/i18n";
+import { ParamsConfig, ParamType } from "#lowcoder/comps/controls/actionSelector/executeCompTypes";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -153,7 +153,7 @@ class ModuleTmpComp extends ModuleCompBase {
     if (!this.moduleRootComp) {
       return false;
     }
-    const moduleLayoutComp = this.moduleRootComp.children.ui.getModuleLayoutComp();
+    const moduleLayoutComp: any = this.moduleRootComp.children.ui.getModuleLayoutComp();
     return moduleLayoutComp?.children.autoScaleCompHeight.getView();
   }
 
@@ -333,7 +333,7 @@ class ModuleTmpComp extends ModuleCompBase {
 
       const moduleLayoutComp = moduleRootComp.children.ui.getModuleLayoutComp();
       if (moduleLayoutComp) {
-        const inputs = moduleLayoutComp.getInputs().map((i) => i.getView());
+        const inputs = moduleLayoutComp.getInputs().map((i: any) => i.getView());
         const inputChild = this.children.inputs.setInputs(inputs);
         updateFields = {
           ...updateFields,
@@ -380,7 +380,7 @@ class ModuleTmpComp extends ModuleCompBase {
   getEventItems() {
     const moduleLayoutComp = this.moduleRootComp?.children.ui.getModuleLayoutComp();
     if (moduleLayoutComp) {
-      return moduleLayoutComp.getEvents().map((i) => ({
+      return moduleLayoutComp.getEvents().map((i: any) => ({
         label: i.children.name.getView(),
         value: i.children.name.getView(),
         description: i.children.description.getView(),
@@ -400,15 +400,15 @@ class ModuleTmpComp extends ModuleCompBase {
   }
 
   getModuleMethodConfigInfo(): MethodConfigInfo<typeof ModuleTmpComp>[] {
-    const moduleLayoutComp = this.moduleRootComp?.children.ui.getModuleLayoutComp();
+    const moduleLayoutComp: any = this.moduleRootComp?.children.ui.getModuleLayoutComp();
     if (!moduleLayoutComp) {
       return [];
     }
 
-    return moduleLayoutComp.children.methods.getView().map((i) => {
+    return moduleLayoutComp.children.methods.getView().map((i: any) => {
       const name = i.children.name.getView();
       const params: ParamsConfig = [];
-      i.children.params.getView().forEach((param) => {
+      i.children.params.getView().forEach((param: any) => {
         params.push({
           name: param.children.name.getView(),
           type: param.children.type.getView() as ParamType,
@@ -421,7 +421,7 @@ class ModuleTmpComp extends ModuleCompBase {
           params,
           description: "",
         },
-        execute: (comp, params) => {
+        execute: (comp: any, params: any) => {
           const mlc = comp.moduleRootComp?.children.ui.getModuleLayoutComp();
           if (!mlc) {
             return;
@@ -467,7 +467,7 @@ class ModuleTmpComp extends ModuleCompBase {
     const outputsRecord: Record<string, Node<unknown>> = {};
 
     const moduleExposingInfo = moduleRootComp.nameAndExposingInfo();
-    outputs.forEach((i) => {
+    outputs.forEach((i: any) => {
       outputsRecord[i.children.name.getView()] = new WrapNode(
         i.children.value.exposingNode(),
         exposingInfoToNodes(moduleExposingInfo),
@@ -557,7 +557,7 @@ const ModuleCompWithExposingMethods = withMethodExposing(ModuleCompWithView, (co
 
 const emptyExposing = fromRecord({});
 
-export const ModuleComp = withExposingRaw(
+export const ModuleComp: any = withExposingRaw(
   ModuleCompWithExposingMethods,
   (comp) => comp.getOutputDesc(),
   (comp) => {

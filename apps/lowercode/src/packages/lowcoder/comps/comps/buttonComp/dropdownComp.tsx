@@ -1,16 +1,16 @@
 import { default as Menu } from "antd/es/menu";
 import { default as Dropdown } from "antd/es/dropdown";
 import { default as DropdownButton } from "antd/es/dropdown/dropdown-button";
-import { BoolControl } from "comps/controls/boolControl";
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { DropdownStyle, DropdownStyleType } from "comps/controls/styleControlConstants";
-import { withDefault } from "comps/generators";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
-import { disabledPropertyView, hiddenPropertyView } from "comps/utils/propertyUtils";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { DropdownStyle, DropdownStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { withDefault } from "#lowcoder/comps/generators";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
+import { disabledPropertyView, hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import { Section, sectionNames } from "#lowcoder-design/index";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import React, { ReactElement, useContext, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import styled from "styled-components";
 import { ButtonEventHandlerControl } from "../../controls/eventHandlerControl";
 import { DropdownOptionControl } from "../../controls/optionsControl";
@@ -21,8 +21,8 @@ import {
   ButtonStyleControl,
   getButtonStyle,
 } from "./buttonCompConstants";
-import { styleControl } from "@lowcoder-ee/comps/controls/styleControl";
-import { dropdownControl } from "@lowcoder-ee/comps/controls/dropdownControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 
 const StyledDropdownButton = styled(DropdownButton)`
   width: 100%;

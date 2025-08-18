@@ -1,12 +1,12 @@
 import { KeyValueItem, KeyValueItemListWithNewCreateState } from "#lowcoder/components/KeyValueItemList";
-import { StringControl } from "comps/controls/codeControl";
-import CompNameControl from "comps/controls/compNameControl";
-import { ControlParams } from "comps/controls/controlParams";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { list } from "comps/generators/list";
-import { NameGenerator } from "comps/utils/nameGenerator";
-import { trans } from "i18n";
-import { multiChangeAction } from "lowcoder-core";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { ControlParams } from "#lowcoder/comps/controls/controlParams";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { list } from "#lowcoder/comps/generators/list";
+import { NameGenerator } from "#lowcoder/comps/utils/nameGenerator";
+import { trans } from "#lowcoder/i18n";
+import { multiChangeAction } from "#lowcoder-core/index";
 import { ControlPropertyViewWrapper } from "lowcoder-design";
 import { useEffect } from "react";
 import ParamListItemComp, {

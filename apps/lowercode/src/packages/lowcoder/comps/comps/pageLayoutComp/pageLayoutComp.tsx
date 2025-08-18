@@ -1,19 +1,19 @@
 import { JSONValue } from "#lowcoder/util/jsonTypes";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { styleControl } from "comps/controls/styleControl";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import {
   ContainerStyle,
   ContainerHeaderStyle,
   ContainerBodyStyle,
   ContainerSiderStyle,
   ContainerFooterStyle,
-} from "comps/controls/styleControlConstants";
-import { MultiCompBuilder, sameTypeMap, withDefault } from "comps/generators";
-import { migrateOldData, valueComp } from "comps/generators/simpleGenerators";
-import { NameGenerator } from "comps/utils";
-import { fromRecord, Node } from "lowcoder-core";
-import { nodeIsRecord } from "lowcoder-core";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { MultiCompBuilder, sameTypeMap, withDefault } from "#lowcoder/comps/generators";
+import { migrateOldData, valueComp } from "#lowcoder/comps/generators/simpleGenerators";
+import { NameGenerator } from "#lowcoder/comps/utils";
+import { fromRecord, Node } from "#lowcoder-core/index";
+import { nodeIsRecord } from "#lowcoder-core/index";
 import _ from "lodash";
 import { lastValueIfEqual } from "#lowcoder/util/objectUtils";
 import {
@@ -25,11 +25,11 @@ import {
 } from "../containerBase";
 import { SimpleContainerComp } from "../containerBase/simpleContainerComp";
 import { ContainerBodyChildComp } from "./containerBodyChildComp";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { ControlNode } from "lowcoder-design";
-import { StringControl } from "comps/controls/codeControl";
-import { SliderControl } from "@lowcoder-ee/comps/controls/sliderControl";
-import { useMergeCompStyles } from "@lowcoder-ee/util/hooks";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { SliderControl } from "#lowcoder/comps/controls/sliderControl";
+import { useMergeCompStyles } from "#lowcoder/util/hooks";
 
 const childrenMap = {
   header: SimpleContainerComp,

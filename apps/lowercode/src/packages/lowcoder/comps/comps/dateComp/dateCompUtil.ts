@@ -5,8 +5,8 @@ import { ChildrenMultiSelectStyleType, DateTimeStyleType } from "../../controls/
 import styled, { css } from "styled-components";
 import { fadeColor, isDarkColor, lightenColor } from "#lowcoder-design/components/colorSelect/colorUtils";
 // import { CommonPickerMethods } from "antd/es/date-picker/generatePicker/interface";
-import { blurMethod, focusMethod } from "comps/utils/methodUtils";
-import { refMethods } from "comps/generators/withMethodExposing";
+import { blurMethod, focusMethod } from "#lowcoder/comps/utils/methodUtils";
+import { refMethods } from "#lowcoder/comps/generators/withMethodExposing";
 
 export interface CommonPickerMethods {
   focus: (options?: FocusOptions) => void;

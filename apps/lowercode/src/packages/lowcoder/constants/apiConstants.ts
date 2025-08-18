@@ -1,5 +1,5 @@
 import { RawAxiosRequestHeaders } from "axios";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const DEFAULT_VERIFY_CODE_INTERVAL_SECONDS = 10;
 export const REQUEST_TIMEOUT_MS = 20000;
@@ -9,7 +9,7 @@ export const DEFAULT_TEST_DATA_SOURCE_TIMEOUT_MS = 30000;
 export const SHARE_TITLE = trans("share.title");
 
 export enum API_STATUS_CODES {
-  SUCCESS = 200, 
+  SUCCESS = 200,
   REQUEST_NOT_AUTHORISED = 401,
   SERVER_FORBIDDEN = 403,
   RESOURCE_NOT_FOUND = 404,

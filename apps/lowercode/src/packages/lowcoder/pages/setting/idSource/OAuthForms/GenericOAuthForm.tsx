@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { messageInstance, CloseEyeIcon, CustomSelect } from "lowcoder-design";
-import { i18nObjs, trans } from "i18n";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 import {
   FormStyled,
   PasswordLabel,
@@ -16,14 +16,14 @@ import _ from "lodash";
 import Flex from "antd/es/flex";
 import Button from "antd/es/button";
 import axios from "axios";
-import { IconPicker } from "@lowcoder-ee/comps/controls/iconControl";
+import { IconPicker } from "#lowcoder/comps/controls/iconControl";
 import Switch from "antd/es/switch";
 
 export const sourceMappingKeys = [
   'uid',
   'email',
   'username',
-  'avatar', 
+  'avatar',
 ];
 
 const steps = [
@@ -196,7 +196,7 @@ function GenericOAuthForm(props: GenericOAuthFormProp) {
         style={{marginBottom: '16px'}}
         onChange={(current) => setCurrentStep(current)}
       />
-      
+
       <FormStyled
         form={form1 as unknown as FormInstance<unknown>}
         name="generic"

@@ -14,7 +14,7 @@ import {
   MultiCompBuilder,
   valueComp,
 } from "lowcoder-sdk";
-import { i18nObjs, trans } from "i18n/comps";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 
 import { ConstructorToComp, ConstructorToDataType, ConstructorToView } from "#lowcoder-core/index";
 import { CompAction, CustomAction, customAction, isMyCustomAction } from "#lowcoder-core/index";

@@ -1,22 +1,22 @@
 import { default as Skeleton } from "antd/es/skeleton";
-import { simpleMultiComp } from "comps/generators";
-import { withExposingConfigs } from "comps/generators/withExposing";
+import { simpleMultiComp } from "#lowcoder/comps/generators";
+import { withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { GreyTextColor } from "#lowcoder/constants/style";
 import log from "loglevel";
-import { Comp, CompAction, CompParams, customAction, isCustomAction } from "lowcoder-core";
+import { Comp, CompAction, CompParams, customAction, isCustomAction } from "#lowcoder-core/index";
 import { WhiteLoading } from "#lowcoder-design/index";
 import { useContext, useState } from "react";
 import { useMount } from "react-use";
 import styled from "styled-components";
 import { RemoteCompInfo, RemoteCompLoader, RemoteCompSource } from "#lowcoder/types/remoteComp";
 import { loaders } from "./loaders";
-import { withErrorBoundary } from "comps/generators/withErrorBoundary";
-import { EditorContext } from "@lowcoder-ee/comps/editorState";
-import { CompContext } from "@lowcoder-ee/comps/utils/compContext";
+import { withErrorBoundary } from "#lowcoder/comps/generators/withErrorBoundary";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { CompContext } from "#lowcoder/comps/utils/compContext";
 import React from "react";
-import type { AppState } from "@lowcoder-ee/redux/reducers";
+import type { AppState } from "#lowcoder/redux/reducers";
 import { useSelector } from "react-redux";
-import { ExternalEditorContext } from "@lowcoder-ee/util/context/ExternalEditorContext";
+import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
 
 const ViewError = styled.div`
   display: flex;

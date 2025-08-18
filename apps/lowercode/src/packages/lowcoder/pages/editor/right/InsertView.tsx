@@ -5,7 +5,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import { RightContext } from "./rightContext"
 import { UICompPanel } from "./uiCompPanel"
-import { trans } from "i18n"
+import { trans } from "#lowcoder/i18n"
 import ExtensionPanel from "./ExtensionPanel"
 
 type OptionValue = "ui" | "extension"

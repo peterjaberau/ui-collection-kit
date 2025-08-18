@@ -1,11 +1,11 @@
 import type { EditorState } from "@codemirror/state";
 import { isThemeColorKey } from "#lowcoder/api/commonSettingApi";
-import type { Language } from "base/codeEditor/codeEditorTypes";
-import { EditorContext } from "comps/editorState";
-import { withDefault } from "comps/generators/simpleGenerators";
-import { CompExposingContext } from "comps/generators/withContext";
-import { exposingDataForAutoComplete } from "comps/utils/exposingTypes";
-import { trans } from "i18n";
+import type { Language } from "#lowcoder/base/codeEditor/codeEditorTypes";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { withDefault } from "#lowcoder/comps/generators/simpleGenerators";
+import { CompExposingContext } from "#lowcoder/comps/generators/withContext";
+import { exposingDataForAutoComplete } from "#lowcoder/comps/utils/exposingTypes";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import { debounce, trimStart } from "lodash";
 import {
@@ -24,7 +24,7 @@ import {
   transformWrapper,
   ValueAndMsg,
   withFunction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import {
   ControlPropertyViewWrapper,
   isValidColor,

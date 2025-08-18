@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import history from "@lowcoder-ee/util/history";
+import history from "#lowcoder/util/history";
 import {
   Spin,
   Typography,

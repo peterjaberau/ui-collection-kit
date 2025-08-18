@@ -16,7 +16,7 @@ import ProfileImage from "#lowcoder/pages/common/profileImage";
 import { isGroupAdmin } from "#lowcoder/util/permissionUtils";
 import { SuperUserIcon } from "lowcoder-design";
 import { EmptyContent } from "#lowcoder/pages/common/styledComponent";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { debounce } from "lodash";
 
 const TableWrapper = styled.div`

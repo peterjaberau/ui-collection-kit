@@ -1,17 +1,17 @@
 import { MultiCompBuilder, simpleMultiComp } from "../../generators";
-import { SimpleNameComp } from "@lowcoder-ee/comps/comps/simpleNameComp";
-import { StringControl } from "@lowcoder-ee/comps/controls/codeControl";
-import { list } from "@lowcoder-ee/comps/generators/list";
+import { SimpleNameComp } from "#lowcoder/comps/comps/simpleNameComp";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { list } from "#lowcoder/comps/generators/list";
 import { Input } from "#lowcoder-design/components/Input";
 import { ControlPropertyViewWrapper } from "#lowcoder-design/components/control";
 import { ReactNode, useContext, useState } from "react";
 import { KeyValueList } from "#lowcoder-design/components/keyValueList";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { PopupCard } from "#lowcoder-design/components/popupCard";
-import { EditorContext, EditorState } from "@lowcoder-ee/comps/editorState";
-import { withExposingRaw } from "@lowcoder-ee/comps/generators/withExposing";
-import { NameAndExposingInfo } from "@lowcoder-ee/comps/utils/exposingTypes";
-import { fromRecord } from "lowcoder-core";
+import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { withExposingRaw } from "#lowcoder/comps/generators/withExposing";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
+import { fromRecord } from "#lowcoder-core/index";
 
 interface VariablesParams {
   // variables: string[]; todo support parse variables

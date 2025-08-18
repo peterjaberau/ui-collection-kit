@@ -5,9 +5,9 @@ import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import { AUTH_LOGIN_URL, AUTH_REGISTER_URL, BASE_URL } from "#lowcoder/constants/routesURL";
 import history from "#lowcoder/util/history";
 import PageSkeleton from "#lowcoder/components/PageSkeleton";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useContext, useEffect, useState } from "react";
-import { getAuthenticator } from "@lowcoder-ee/pages/userAuth/thirdParty/authenticator";
+import { getAuthenticator } from "#lowcoder/pages/userAuth/thirdParty/authenticator";
 import { AuthRedirectUrlParams } from "#lowcoder/pages/userAuth/thirdParty/authenticator";
 import { AuthContext, loadAuthParams } from "#lowcoder/pages/userAuth/authUtils";
 

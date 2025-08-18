@@ -1,8 +1,8 @@
-import { StringControl } from "comps/controls/codeControl";
-import { MultiCompBuilder } from "comps/generators/multi";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import copy from "copy-to-clipboard";
 import { BranchDiv } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const CopyToClipboardAction = (function () {
   const childrenMap = {

@@ -9,8 +9,8 @@ import {
   updateNodesV2Action,
   wrapContext,
   WrapContextFn,
-} from "lowcoder-core";
-import { ConstructorToNodeType, ConstructorToView, MultiCompConstructor } from "lowcoder-core";
+} from "#lowcoder-core/index";
+import { ConstructorToNodeType, ConstructorToView, MultiCompConstructor } from "#lowcoder-core/index";
 import React from "react";
 import { lastValueIfEqual, setFieldsNoTypeCheck, shallowEqual } from "#lowcoder/util/objectUtils";
 import _ from "lodash";

@@ -1,17 +1,17 @@
 import React, { useCallback, useRef, useEffect, useMemo } from "react";
-import { BoolCodeControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
+import { BoolCodeControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
 import { default as Checkbox, CheckboxChangeEvent } from "antd/es/checkbox";
 import { ColumnTypeCompBuilder, ColumnTypeViewFn } from "../columnTypeCompBuilder";
 import { ColumnValueTooltip } from "../simpleColumnTypeComps";
-import { getStyle } from "comps/comps/selectInputComp/checkboxComp";
+import { getStyle } from "#lowcoder/comps/comps/selectInputComp/checkboxComp";
 import styled from "styled-components";
-import { CheckboxStyle, CheckboxStyleType } from "comps/controls/styleControlConstants";
-import { useStyle } from "comps/controls/styleControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
+import { CheckboxStyle, CheckboxStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { useStyle } from "#lowcoder/comps/controls/styleControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
 import { TableCheckedIcon, TableUnCheckedIcon } from "#lowcoder-design/index";
-import { IconControl } from "comps/controls/iconControl";
-import { hasIcon } from "comps/utils";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { hasIcon } from "#lowcoder/comps/utils";
 
 const CheckboxStyled = styled(Checkbox)<{ $style: CheckboxStyleType }>`
   ${(props) => props.$style && getStyle(props.$style)}

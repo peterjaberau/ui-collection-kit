@@ -22,7 +22,7 @@ import {
 } from "#lowcoder/util/perfUtils";
 import { useMount, useUnmount } from "react-use";
 import { fetchQueryLibraryDropdown } from "../../redux/reduxActions/queryLibraryActions";
-import { clearGlobalSettings, setGlobalSettings } from "comps/utils/globalSettings";
+import { clearGlobalSettings, setGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
 import { fetchFolderElements } from "#lowcoder/redux/reduxActions/folderActions";
 import { registryDataSourcePlugin } from "#lowcoder/constants/queryConstants";
 import { DatasourceApi } from "#lowcoder/api/datasourceApi";
@@ -31,12 +31,12 @@ import EditorSkeletonView from "./editorSkeletonView";
 import {ErrorBoundary, FallbackProps} from 'react-error-boundary';
 import React from "react";
 import dayjs from "dayjs";
-import { currentApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
+import { currentApplication } from "#lowcoder/redux/selectors/applicationSelector";
 import { notificationInstance } from "#lowcoder-design/components/GlobalInstances";
-import { AppState } from "@lowcoder-ee/redux/reducers";
-import { resetIconDictionary } from "@lowcoder-ee/constants/iconConstants";
-import {fetchJsDSPaginationByApp} from "@lowcoder-ee/util/pagination/axios";
-import PaginationComp from "@lowcoder-ee/util/pagination/Pagination";
+import { AppState } from "#lowcoder/redux/reducers";
+import { resetIconDictionary } from "#lowcoder/constants/iconConstants";
+import {fetchJsDSPaginationByApp} from "#lowcoder/util/pagination/axios";
+import PaginationComp from "#lowcoder/util/pagination/Pagination";
 
 const AppSnapshot = lazy(() => {
   return import("pages/editor/appSnapshot")

@@ -2,18 +2,18 @@ import { default as TimePicker } from "antd/es/time-picker";
 import {
   ColumnTypeCompBuilder,
   ColumnTypeViewFn,
-} from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { ColumnValueTooltip } from "comps/comps/tableComp/column/simpleColumnTypeComps";
-import { StringControl } from "comps/controls/codeControl";
-import { withDefault } from "comps/generators";
-import { formatPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+} from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { ColumnValueTooltip } from "#lowcoder/comps/comps/tableComp/column/simpleColumnTypeComps";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { withDefault } from "#lowcoder/comps/generators";
+import { formatPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import dayjs from "dayjs";
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import styled from "styled-components";
 import { TIME_FORMAT } from "#lowcoder/util/dateTimeUtils";
-import { hasIcon } from "comps/utils";
-import { IconControl } from "comps/controls/iconControl";
+import { hasIcon } from "#lowcoder/comps/utils";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
 
 const TimePickerStyled = styled(TimePicker)<{ $open: boolean }>`
   width: 100%;
@@ -105,7 +105,7 @@ export const TimeEdit = React.memo((props: TimeEditProps) => {
   // Update tempValue when props.value changes
   useEffect(() => {
     if (!mountedRef.current) return;
-    
+
     const newValue = props.value ? dayjs(props.value, TIME_FORMAT) : null;
     if (newValue?.isValid()) {
       setTempValue(newValue);

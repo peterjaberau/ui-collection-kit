@@ -1,4 +1,4 @@
-import { transferComp } from "comps/comps/transferComp";
+import { transferComp } from "#lowcoder/comps/comps/transferComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

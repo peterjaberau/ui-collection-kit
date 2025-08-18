@@ -1,10 +1,10 @@
-import { CompAction, CustomAction, isMyCustomAction } from "lowcoder-core";
-import { AbstractComp, Comp, ConstructorToComp, MultiBaseComp } from "lowcoder-core";
+import { CompAction, CustomAction, isMyCustomAction } from "#lowcoder-core/index";
+import { AbstractComp, Comp, ConstructorToComp, MultiBaseComp } from "#lowcoder-core/index";
 import {
   EvalParamType,
   ExecuteAction,
   MethodConfig,
-} from "comps/controls/actionSelector/executeCompTypes";
+} from "#lowcoder/comps/controls/actionSelector/executeCompTypes";
 import { handlePromiseAfterResult } from "#lowcoder/util/promiseUtils";
 import { RefControl } from "../controls/refControl";
 

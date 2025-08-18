@@ -1,7 +1,7 @@
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
 import React, { ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
-import { Comp, CompParams, MultiBaseComp } from "lowcoder-core";
+import { Comp, CompParams, MultiBaseComp } from "#lowcoder-core/index";
 import {
   childrenToProps,
   parseChildrenFromValueAndChildrenMap,
@@ -23,17 +23,17 @@ import {
   withMethodExposing,
 } from "./withMethodExposing";
 import {Section, controlItem } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { BoolControl } from "../controls/boolControl";
 import { valueComp, withDefault } from "./simpleGenerators";
-import { getPromiseAfterDispatch } from "@lowcoder-ee/util/promiseUtils";
+import { getPromiseAfterDispatch } from "#lowcoder/util/promiseUtils";
 import { EditorContext } from "../editorState";
 import { isEqual, values } from "lodash";
 import { UICompType, uiCompRegistry } from "../uiCompRegistry";
 import { getNpmPackageMeta } from "../utils/remote";
 import { compPluginsList } from "#lowcoder/constants/compPluginConstants";
 import Select from "antd/es/select";
-import { useMergeCompStyles } from "@lowcoder-ee/util/hooks";
+import { useMergeCompStyles } from "#lowcoder/util/hooks";
 
 export type NewChildren<ChildrenCompMap extends Record<string, Comp<unknown>>> =
   ChildrenCompMap & {

@@ -1,4 +1,4 @@
-import { JsonLottieComp } from "comps/comps/jsonComp/jsonLottieComp";
+import { JsonLottieComp } from "#lowcoder/comps/comps/jsonComp/jsonLottieComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

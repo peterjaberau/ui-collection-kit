@@ -1,11 +1,11 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { green, red, yellow } from "@ant-design/colors/es";
 import { FormItemProps } from "antd/es/form/FormItem";
-import { BoolControl } from "comps/controls/boolControl";
-import { NumberControl, StringControl } from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { withDefault } from "comps/generators";
-import { MultiCompBuilder } from "comps/generators/multi";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { NumberControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { withDefault } from "#lowcoder/comps/generators";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import { labelCss, Section, Tooltip, UnderlineCss } from "lowcoder-design";
 import { ValueFromOption } from "lowcoder-design";
 import { isEmpty } from "lodash";
@@ -177,7 +177,7 @@ export const LabelControl = (function () {
     align: dropdownControl(AlignOptions, "left"),
   };
 
-  return new MultiCompBuilder(childrenMap, (props) => (args: LabelViewProps) => 
+  return new MultiCompBuilder(childrenMap, (props) => (args: LabelViewProps) =>
   {
     const inputValue = (
       ((args.children as ReactElement)?.props?.children as ReactElement)?.props?.value // text area comp
@@ -197,7 +197,7 @@ export const LabelControl = (function () {
           $hasLabel={!!props.text}
           style={{
             margin: args && args.inputFieldStyle ? args?.inputFieldStyle?.margin : 0,
-            // padding: args && args.inputFieldStyle ? args?.inputFieldStyle?.padding : 0,	
+            // padding: args && args.inputFieldStyle ? args?.inputFieldStyle?.padding : 0,
             width: widthCalculator(
               args && args.inputFieldStyle ? args?.inputFieldStyle?.margin : "0px"
             ),

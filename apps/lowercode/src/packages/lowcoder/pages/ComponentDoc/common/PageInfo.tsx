@@ -1,4 +1,4 @@
-import { UICompManifest } from "comps/uiCompRegistry";
+import { UICompManifest } from "#lowcoder/comps/uiCompRegistry";
 import styled from "styled-components";
 
 interface IProps {

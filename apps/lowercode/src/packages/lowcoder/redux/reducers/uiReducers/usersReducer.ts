@@ -1,4 +1,4 @@
-import { Org } from "@lowcoder-ee/constants/orgConstants";
+import { Org } from "#lowcoder/constants/orgConstants";
 import {
   ReduxAction,
   ReduxActionErrorTypes,

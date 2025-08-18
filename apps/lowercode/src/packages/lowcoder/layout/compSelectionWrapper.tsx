@@ -1,5 +1,5 @@
-import { EditorContext } from "comps/editorState";
-import { UICompType } from "comps/uiCompRegistry";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import { Layers } from "#lowcoder/constants/Layers";
 import { ModulePrimaryColor, PrimaryColor } from "#lowcoder/constants/style";
 import { fadeColor } from "lowcoder-design";

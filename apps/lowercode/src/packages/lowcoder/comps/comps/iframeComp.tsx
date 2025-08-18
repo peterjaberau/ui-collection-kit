@@ -4,14 +4,14 @@ import { StringControl } from "../controls/codeControl";
 import { BoolControl } from "../controls/boolControl";
 import styled from "styled-components";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "../generators/withExposing";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, IframeStyle, IframeStyleType } from "comps/controls/styleControlConstants";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, IframeStyle, IframeStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import log from "loglevel";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 const Wrapper = styled.div<{$style: IframeStyleType; $animationStyle:AnimationStyleType}>`
   width: 100%;

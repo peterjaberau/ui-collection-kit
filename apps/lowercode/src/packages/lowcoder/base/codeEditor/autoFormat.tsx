@@ -1,6 +1,6 @@
-import type { CodeType } from "lowcoder-core";
-import { relaxedJSONToJSON } from "lowcoder-core";
-import { getDynamicStringSegments, isDynamicSegment } from "lowcoder-core";
+import type { CodeType } from "#lowcoder-core/index";
+import { relaxedJSONToJSON } from "#lowcoder-core/index";
+import { getDynamicStringSegments, isDynamicSegment } from "#lowcoder-core/index";
 import { format as formatSQL } from "sql-formatter";
 import estree from "prettier/plugins/estree";
 import type { Language } from "./codeEditorTypes";

@@ -1,11 +1,11 @@
-import { ArrowControl, BoolCodeControl, MaskControl, StringControl } from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { MultiCompBuilder, withDefault } from "comps/generators";
-import { list } from "comps/generators/list";
-import { ToViewReturn } from "comps/generators/multi";
-import { genRandomKey } from "comps/utils/idGenerator";
-import { hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+import { ArrowControl, BoolCodeControl, MaskControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { MultiCompBuilder, withDefault } from "#lowcoder/comps/generators";
+import { list } from "#lowcoder/comps/generators/list";
+import { ToViewReturn } from "#lowcoder/comps/generators/multi";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
+import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import { mapValues } from "lodash";
 import {
   Comp,
@@ -16,18 +16,18 @@ import {
   MultiBaseComp,
   SimpleAbstractComp,
   withFunction
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { controlItem, Dropdown, Option, OptionsType, ValueFromOption } from "lowcoder-design";
 import { getNextEntityName } from "#lowcoder/util/stringUtils";
-import { ControlParams } from "comps/controls/controlParams";
+import { ControlParams } from "#lowcoder/comps/controls/controlParams";
 import { ReactNode, useContext, useEffect, useState } from "react";
-import { EditorContext, EditorState } from "@lowcoder-ee/comps/editorState";
-import { PlacementOptions, TypeOptions } from "@lowcoder-ee/comps/comps/tourComp/tourControlConstants";
+import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { PlacementOptions, TypeOptions } from "#lowcoder/comps/comps/tourComp/tourControlConstants";
 import {
   TourPlacementTooltip,
   TourStepArrowTooltip,
   TourStepMaskTooltip
-} from "@lowcoder-ee/comps/comps/tourComp/tourTooltips";
+} from "#lowcoder/comps/comps/tourComp/tourTooltips";
 
 // All options must contain label
 type OptionChildType = { label: InstanceType<typeof StringControl> };

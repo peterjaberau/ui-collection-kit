@@ -1,9 +1,9 @@
-import { isContainer } from "comps/comps/containerBase";
-import { SimpleContainerComp } from "comps/comps/containerBase/simpleContainerComp";
-import { GridItemComp } from "comps/comps/gridItemComp";
-import { remoteComp } from "comps/comps/remoteComp/remoteComp";
-import { EditorState } from "comps/editorState";
-import { trans } from "i18n";
+import { isContainer } from "#lowcoder/comps/comps/containerBase";
+import { SimpleContainerComp } from "#lowcoder/comps/comps/containerBase/simpleContainerComp";
+import { GridItemComp } from "#lowcoder/comps/comps/gridItemComp";
+import { remoteComp } from "#lowcoder/comps/comps/remoteComp/remoteComp";
+import { EditorState } from "#lowcoder/comps/editorState";
+import { trans } from "#lowcoder/i18n";
 import {
   calcPasteBaseXY,
   Layout,
@@ -11,7 +11,7 @@ import {
   moveToZero,
   PositionParams,
   switchLayoutWH,
-} from "layout";
+} from "#lowcoder/";
 import _ from "lodash";
 import {
   ActionExtraInfo,
@@ -22,12 +22,12 @@ import {
   multiChangeAction,
   replaceCompAction,
   wrapActionExtraInfo,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { CustomModal, messageInstance } from "lowcoder-design";
 import { pasteKey, undoKey } from "#lowcoder/util/keyUtils";
 import { genRandomKey } from "./idGenerator";
 import { getLatestVersion, getRemoteCompType, parseCompType } from "./remote";
-import { APPLICATION_VIEW_URL } from "@lowcoder-ee/constants/routesURL";
+import { APPLICATION_VIEW_URL } from "#lowcoder/constants/routesURL";
 
 export type CopyCompType = {
   layout: LayoutItem;

@@ -5,7 +5,7 @@ import {
   NameConfigPlaceHolder,
   NameConfigRequired,
   withExposingConfigs,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import { BoolControl } from "../../controls/boolControl";
 import { dropdownControl } from "../../controls/dropdownControl";
@@ -24,9 +24,9 @@ import {
   useTextInputProps,
 } from "./textInputConstants";
 import { withMethodExposing } from "../../generators/withMethodExposing";
-import { styleControl } from "comps/controls/styleControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import styled from "styled-components";
-import {  AnimationStyle, InputFieldStyle, InputLikeStyle, InputLikeStyleType, LabelStyle, DisabledInputStyle, DisabledInputStyleType } from "comps/controls/styleControlConstants";
+import {  AnimationStyle, InputFieldStyle, InputLikeStyle, InputLikeStyleType, LabelStyle, DisabledInputStyle, DisabledInputStyleType } from "#lowcoder/comps/controls/styleControlConstants";
 import {
   hiddenPropertyView,
   minLengthPropertyView,
@@ -34,15 +34,15 @@ import {
   requiredPropertyView,
   regexPropertyView,
   maxLengthPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { IconControl } from "comps/controls/iconControl";
-import { hasIcon } from "comps/utils";
-import { RefControl } from "comps/controls/refControl";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { hasIcon } from "#lowcoder/comps/utils";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 import React, { useContext, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
-import { migrateOldData } from "comps/generators/simpleGenerators";
-import { NumberControl } from "comps/controls/codeControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { NumberControl } from "#lowcoder/comps/controls/codeControl";
 
 const PasswordStyle = styled(InputPassword)<{
   $style: InputLikeStyleType;

@@ -1,5 +1,5 @@
-import { MultiSelectComp } from "comps/comps/selectInputComp/multiSelectComp";
-import { trans } from "i18n";
+import { MultiSelectComp } from "#lowcoder/comps/comps/selectInputComp/multiSelectComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

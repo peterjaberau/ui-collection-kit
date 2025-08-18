@@ -1,5 +1,5 @@
-import { ButtonComp } from "comps/comps/buttonComp/buttonComp";
-import { trans } from "i18n";
+import { ButtonComp } from "#lowcoder/comps/comps/buttonComp/buttonComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -47,7 +47,7 @@ export default function ButtonExample() {
           compFactory={ButtonComp}
         />
       </ExampleGroup>
-      
+
       <ExampleGroup title={trans("componentDoc.style")}>
         <Example
           title={trans("componentDoc.danger")}

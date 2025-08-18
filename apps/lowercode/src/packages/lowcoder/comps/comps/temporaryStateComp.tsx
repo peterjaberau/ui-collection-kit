@@ -1,10 +1,10 @@
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
-import { jsonValueStateControl } from "comps/controls/codeStateControl";
-import { MultiCompBuilder } from "comps/generators";
-import { bottomResListComp } from "comps/generators/bottomResList";
-import { NameConfig, withExposingConfigs } from "comps/generators/withExposing";
-import { withMethodExposing } from "comps/generators/withMethodExposing";
-import { trans } from "i18n";
+import { getBottomResIcon } from "#lowcoder/util/bottomResUtils";
+import { jsonValueStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
+import { bottomResListComp } from "#lowcoder/comps/generators/bottomResList";
+import { NameConfig, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
+import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import { DocLink } from "lowcoder-design";
 import { BottomTabs } from "#lowcoder/pages/editor/bottom/BottomTabs";
@@ -14,7 +14,7 @@ import { JSONObject } from "#lowcoder/util/jsonTypes";
 import { QueryTutorials } from "#lowcoder/util/tutorialUtils";
 import { SimpleNameComp } from "./simpleNameComp";
 import { markdownCompCss, TacoMarkDown } from "lowcoder-design";
-import SupaDemoDisplay from "comps/utils/supademoDisplay";
+import SupaDemoDisplay from "#lowcoder/comps/utils/supademoDisplay";
 
 const TemporaryStateItemCompBase = new MultiCompBuilder(
     {

@@ -1,6 +1,6 @@
 import { AppState } from "#lowcoder/redux/reducers";
 import { ApplicationMeta, AppPermissionInfo } from "#lowcoder/constants/applicationConstants";
-import { PUBLIC_APP_ID } from "@lowcoder-ee/constants/publicApp";
+import { PUBLIC_APP_ID } from "#lowcoder/constants/publicApp";
 
 export const normalAppListSelector = (state: AppState): ApplicationMeta[] =>
   state.ui.application.applicationList.filter((app) => app.applicationStatus === "NORMAL");

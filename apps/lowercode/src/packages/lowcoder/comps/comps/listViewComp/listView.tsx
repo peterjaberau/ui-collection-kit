@@ -1,8 +1,8 @@
 import { default as Pagination } from "antd/es/pagination";
-import { EditorContext } from "comps/editorState";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
 import _, { findIndex } from "lodash";
-import { ConstructorToView, deferAction } from "lowcoder-core";
+import { ConstructorToView, deferAction } from "#lowcoder-core/index";
 import { DragIcon, HintPlaceHolder, ScrollBar, pageItemRender } from "#lowcoder-design/index";
 import { RefObject, useContext, createContext, useMemo, useRef, useEffect } from "react";
 import { ResizePayload, useResizeDetector } from "react-resize-detector";
@@ -18,14 +18,14 @@ import {
 import { ContextContainerComp } from "./contextContainerComp";
 import { ListViewImplComp } from "./listViewComp";
 import { getCurrentItemParams, getData } from "./listViewUtils";
-import { useMergeCompStyles } from "@lowcoder-ee/util/hooks";
-import { childrenToProps } from "@lowcoder-ee/comps/generators/multi";
-import { AnimationStyleType } from "@lowcoder-ee/comps/controls/styleControlConstants";
-import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
+import { useMergeCompStyles } from "#lowcoder/util/hooks";
+import { childrenToProps } from "#lowcoder/comps/generators/multi";
+import { AnimationStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
 import { DndContext } from "@dnd-kit/core";
 import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { JSONObject } from "@lowcoder-ee/util/jsonTypes";
+import { JSONObject } from "#lowcoder/util/jsonTypes";
 
 const ListViewWrapper = styled.div<{ $style: any; $paddingWidth: string,$animationStyle:AnimationStyleType }>`
   height: 100%;
@@ -163,7 +163,7 @@ function ListItem({
   minHorizontalWidth,
   horizontalWidth,
   ...props
-}: ListItemProps) {
+}: ListItemProps | any) {
   const {
     itemIdx,
     offset,
@@ -173,7 +173,7 @@ function ListItem({
     minHeight,
     horizontalGridCells,
     enableSorting,
-  } = props;
+  }: any = props;
 
   // disable the unmount function to save user's state with pagination
   // useEffect(() => {
@@ -227,7 +227,7 @@ type Props = {
 export function ListView(props: Props) {
   const { comp } = props;
   const children = comp.children;
-  const ref = useRef(null);
+  const ref: any = useRef(null);
   const editorState = useContext(EditorContext);
   const isDragging = editorState.isDragging;
   const [listHeight, setListHeight] = useDelayState(0, isDragging);
@@ -309,13 +309,13 @@ export function ListView(props: Props) {
             ) {
               return <div key={itemIdx} style={{ flex: "auto" }}></div>;
             }
-            const containerProps = containerFn(
+            const containerProps: any = containerFn(
               {
                 [itemIndexName]: itemIdx,
                 [itemDataName]: getCurrentItemParams(listData as JSONObject[], itemIdx)
               },
               String(itemIdx)
-            ).getView();
+            ).getView() as any;
             const unMountFn = () => {
               comp.children.container.dispatch(
                 deferAction(ContextContainerComp.batchDeleteAction([String(itemIdx)]))
@@ -327,7 +327,7 @@ export function ListView(props: Props) {
                 key={itemIdx}
                 itemIdx={itemIdx}
                 offset={pageInfo.offset}
-                containerProps={containerProps}
+                containerProps={containerProps as any}
                 horizontalGridCells={horizontalGridCells}
                 autoHeight={isDragging || dynamicHeight}
                 scrollContainerRef={ref}
@@ -365,7 +365,7 @@ export function ListView(props: Props) {
     }
 
     const newData = [...listData];
-    const [movedItem] = newData.splice(fromIndex, 1);
+    const [movedItem]: any = newData.splice(fromIndex, 1);
     newData.splice(toIndex, 0, movedItem);
 
     children.listData.dispatchChangeValueAction(newData);

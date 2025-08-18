@@ -1,16 +1,16 @@
-import { RecordConstructorToView } from "lowcoder-core";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
-import { withExposingConfigs } from "comps/generators/withExposing";
+import { RecordConstructorToView } from "#lowcoder-core/index";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
+import { withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { ScrollBar, Section, sectionNames } from "#lowcoder-design/index";
 import { default as Tree } from "antd/es/tree";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { StyleConfigType, styleControl } from "comps/controls/styleControl";
-import {  InputFieldStyle, LabelStyle, TreeStyle } from "comps/controls/styleControlConstants";
-import { LabelControl } from "comps/controls/labelControl";
-import { withDefault } from "comps/generators";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { BoolControl } from "comps/controls/boolControl";
+import { StyleConfigType, styleControl } from "#lowcoder/comps/controls/styleControl";
+import {  InputFieldStyle, LabelStyle, TreeStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { LabelControl } from "#lowcoder/comps/controls/labelControl";
+import { withDefault } from "#lowcoder/comps/generators";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import {
   formSection,
   // intersectSection,
@@ -24,12 +24,12 @@ import {
   SelectInputValidationSection,
 } from "../selectInputComp/selectInputConstants";
 import { selectInputValidate } from "../selectInputComp/selectInputConstants";
-import { SelectEventHandlerControl } from "comps/controls/eventHandlerControl";
-import { trans } from "i18n";
+import { SelectEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { trans } from "#lowcoder/i18n";
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import { AutoHeightControl } from "@lowcoder-ee/comps/controls/autoHeightControl";
-import { showDataLoadingIndicatorsPropertyView } from "@lowcoder-ee/comps/utils/propertyUtils";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 
 type TreeStyleType = StyleConfigType<typeof TreeStyle>;
 

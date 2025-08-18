@@ -1,5 +1,5 @@
 import { NavItemComp, navListComp } from "../navItemComp";
-import { LayoutMenuItemComp, LayoutMenuItemListComp } from "comps/comps/layout/layoutMenuItemComp";
+import { LayoutMenuItemComp, LayoutMenuItemListComp } from "#lowcoder/comps/comps/layout/layoutMenuItemComp";
 
 export type NavCompType = NavItemComp | LayoutMenuItemComp;
 

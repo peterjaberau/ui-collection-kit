@@ -13,9 +13,9 @@ import {
   ParamsBooleanControl,
   ParamsJsonControl,
   ParamsStringJsonControl,
-} from "comps/controls/paramsControl";
-import { MultiCompBuilder, valueComp, withDefault } from "comps/generators";
-import { withTypeAndChildrenAbstract } from "comps/generators/withType";
+} from "#lowcoder/comps/controls/paramsControl";
+import { MultiCompBuilder, valueComp, withDefault } from "#lowcoder/comps/generators";
+import { withTypeAndChildrenAbstract } from "#lowcoder/comps/generators/withType";
 import {
   Dropdown,
   DropdownOptionLabelWithDesc,
@@ -25,12 +25,12 @@ import {
 } from "lowcoder-design";
 import React, { ReactNode, useEffect, useState } from "react";
 import { FunctionProperty, toQueryView } from "../queryCompUtils";
-import { CompConstructor } from "lowcoder-core";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { ControlParams, ControlType } from "comps/controls/controlParams";
-import MarkdownTooltip from "lowcoder-design/src/components/MarkdownTooltip";
-import { KeyValueControlParams } from "comps/controls/keyValueControl";
-import { keyValueListControl } from "comps/controls/keyValueListControl";
+import { CompConstructor } from "#lowcoder-core/index";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { ControlParams, ControlType } from "#lowcoder/comps/controls/controlParams";
+import MarkdownTooltip from "#lowcoder-design/components/MarkdownTooltip";
+import { KeyValueControlParams } from "#lowcoder/comps/controls/keyValueControl";
+import { keyValueListControl } from "#lowcoder/comps/controls/keyValueListControl";
 import { VariablesControl } from "../httpQuery/graphqlQuery";
 import { HttpHeaderPropertyView } from "../httpQuery/httpQueryConstants";
 

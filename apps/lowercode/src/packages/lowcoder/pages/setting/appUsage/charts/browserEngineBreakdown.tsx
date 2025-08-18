@@ -2,7 +2,7 @@ import React, { useMemo, useRef } from "react";
 import ReactECharts from "echarts-for-react";
 import dayjs from "dayjs";
 import { debounce } from "lodash";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 interface Props {
   data: Array<any>;
@@ -23,7 +23,7 @@ const BrowserEngineBreakdownChart = ({ data}: Props) => {
 
   // Get unique browser types
   const browserTypeSet = [...new Set(data.map((log: any) => log.agentName || 'Unkown'))];
-  
+
   // Get unique engine types
   const engineTypeSet = [...new Set(data.map((log: any) => log.layoutEngineName || 'Unkown'))];
 
@@ -34,13 +34,13 @@ const BrowserEngineBreakdownChart = ({ data}: Props) => {
     stack: "total",
     data: Object.keys(browserEngine).map((browserType: string) => browserEngine[browserType][engineType]),
   }));
-  
+
   return (
     <ReactECharts
       ref={chartRef}
       option={{
         tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
-        legend: { left: "left", orient: "vertical", top: "12%" }, 
+        legend: { left: "left", orient: "vertical", top: "12%" },
         grid: { left: "20%", right: "4%", bottom: "3%", containLabel: true },
         xAxis: {
           type: "value",

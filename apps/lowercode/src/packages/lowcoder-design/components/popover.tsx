@@ -4,7 +4,7 @@ import { Children, cloneElement, MouseEvent, ReactNode, useState } from "react";
 import styled from "styled-components";
 import { ActiveTextColor, GreyTextColor } from "constants/style";
 import { trans } from "i18n/design";
-import { PointIcon } from "icons";
+import { PointIcon } from "#lowcoder-design/icons";
 
 const Wedge = styled.div`
   height: 8px;

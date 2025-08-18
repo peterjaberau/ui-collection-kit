@@ -1,14 +1,14 @@
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import {
   ArrayOrJSONObjectControl,
   NumberControl,
   StringControl,
-} from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { BoolControl } from "comps/controls/boolControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, LottieStyle } from "comps/controls/styleControlConstants";
-import { trans } from "i18n";
+} from "#lowcoder/comps/controls/codeControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, LottieStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { trans } from "#lowcoder/i18n";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import { useContext, lazy, useEffect, useState } from "react";
 import { stateComp, UICompBuilder, withDefault } from "../../generators";
@@ -18,14 +18,14 @@ import {
   withExposingConfigs,
 } from "../../generators/withExposing";
 import { defaultLottie } from "./jsonConstants";
-import { EditorContext } from "comps/editorState";
-import { AssetType, IconscoutControl } from "@lowcoder-ee/comps/controls/iconscoutControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { AssetType, IconscoutControl } from "#lowcoder/comps/controls/iconscoutControl";
 import { DotLottie } from "@lottiefiles/dotlottie-react";
-import { AutoHeightControl } from "@lowcoder-ee/comps/controls/autoHeightControl";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
 import { useResizeDetector } from "react-resize-detector";
-import { eventHandlerControl } from "@lowcoder-ee/comps/controls/eventHandlerControl";
-import { withMethodExposing } from "@lowcoder-ee/comps/generators/withMethodExposing";
-import { changeChildAction } from "lowcoder-core";
+import { eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
+import { changeChildAction } from "#lowcoder-core/index";
 
 // const Player = lazy(
 //   () => import('@lottiefiles/react-lottie-player')

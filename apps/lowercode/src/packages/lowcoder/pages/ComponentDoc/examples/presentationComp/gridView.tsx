@@ -1,5 +1,5 @@
-import { GridComp } from "comps/comps/listViewComp/gridComp";
-import { trans } from "i18n";
+import { GridComp } from "#lowcoder/comps/comps/listViewComp/gridComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -303,7 +303,7 @@ export default function GridViewExample() {
           hideSettings={true}
           config={{
             noOfRows: rows,
-            container: container, 
+            container: container,
             animationStyle: {
             "animation": "bounce",
             "animationDelay": "1s",
@@ -318,7 +318,7 @@ export default function GridViewExample() {
           hideSettings={true}
           config={{
             noOfRows: rows,
-            container: container, 
+            container: container,
             animationStyle: {
             "animation": "swing",
             "animationDelay": "1s",
@@ -333,7 +333,7 @@ export default function GridViewExample() {
           hideSettings={true}
           config={{
             noOfRows: rows,
-            container: container, 
+            container: container,
             animationStyle: {
             "animation": "tada",
             "animationDelay": "1s",

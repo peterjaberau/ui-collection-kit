@@ -1,4 +1,4 @@
-import { CompAction, CompActionTypes, isBroadcastAction, RenameAction } from "lowcoder-core";
+import { CompAction, CompActionTypes, isBroadcastAction, RenameAction } from "#lowcoder-core/index";
 import { valueComp } from "../generators";
 
 const ValueComp = valueComp<string>("");

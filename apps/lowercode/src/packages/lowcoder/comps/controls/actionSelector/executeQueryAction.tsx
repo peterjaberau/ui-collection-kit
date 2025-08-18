@@ -1,14 +1,14 @@
-import { executeQueryAction, routeByNameAction } from "lowcoder-core";
-import { InputTypeEnum } from "comps/comps/moduleContainerComp/ioComp/inputListItemComp";
-import { SimpleNameComp } from "comps/comps/simpleNameComp";
-import { EditorContext, EditorState } from "comps/editorState";
-import { MultiCompBuilder } from "comps/generators/multi";
+import { executeQueryAction, routeByNameAction } from "#lowcoder-core/index";
+import { InputTypeEnum } from "#lowcoder/comps/comps/moduleContainerComp/ioComp/inputListItemComp";
+import { SimpleNameComp } from "#lowcoder/comps/comps/simpleNameComp";
+import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
 import { BranchDiv, Dropdown } from "lowcoder-design";
 import { BottomResTypeEnum } from "#lowcoder/types/bottomRes";
 import { getPromiseAfterDispatch } from "#lowcoder/util/promiseUtils";
-import { trans } from "i18n";
-import { withDefault } from "comps/generators";
-import { keyValueListControl} from "comps/controls/keyValueListControl";
+import { trans } from "#lowcoder/i18n";
+import { withDefault } from "#lowcoder/comps/generators";
+import { keyValueListControl} from "#lowcoder/comps/controls/keyValueListControl";
 import { useCallback, useEffect } from "react";
 
 const ExecuteQueryPropertyView = ({

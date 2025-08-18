@@ -1,4 +1,4 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { ChartGreenTheme, ChartTheme, ChartYellowTheme } from "./chartThemeConstant";
 
 export enum MENU_TYPE {

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { DetailContainer, DetailContent, Header } from "../theme/styledComponents";
 import { HeaderBack } from "../permission/styledComponents";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import Card from "antd/es/card";
 import { styled } from "styled-components";
 import Descriptions from "antd/es/descriptions";
@@ -10,13 +10,13 @@ import { Map, Marker } from "pigeon-maps"
 import Tree from "antd/es/tree";
 import Empty from "antd/es/empty";
 import { ReactNode, useEffect, useMemo, useState } from "react";
-import { getAuditLogs, getEnvironmentsByIds, getMeta } from "@lowcoder-ee/api/enterpriseApi";
+import { getAuditLogs, getEnvironmentsByIds, getMeta } from "#lowcoder/api/enterpriseApi";
 import { isEmpty } from "lodash";
 import { getEventColor, getEventLabel } from "./dashboard";
 import Tag from "antd/es/tag";
 import { ArrowIcon } from "lowcoder-design";
 import history from "#lowcoder/util/history";
-import { AUDIT_LOG_DASHBOARD } from "@lowcoder-ee/constants/routesURL";
+import { AUDIT_LOG_DASHBOARD } from "#lowcoder/constants/routesURL";
 
 const StyleThemeSettingsCover = styled.div`
   display: flex;
@@ -119,7 +119,7 @@ export function AuditLogDetail() {
 
   const fetchEventMeta = async () => {
     if (isEmpty(event)) return;
-  
+
     const response = await getMeta({
       orgIds: [event.orgId],
       userIds: [event.userId],
@@ -135,7 +135,7 @@ export function AuditLogDetail() {
 
   const fetchEnvironmentData = async () => {
     if (isEmpty(event)) return;
-  
+
     const response = await getEnvironmentsByIds([event.environmentId]);
     setEnvironment(response.data?.[0] || {});
   }
@@ -177,7 +177,7 @@ export function AuditLogDetail() {
       ),
       key: "0-0-0-0-0",
     }
-    
+
     let eventData = [];
     if (Boolean(resourceName)) {
       if (resourceName !== "User") {

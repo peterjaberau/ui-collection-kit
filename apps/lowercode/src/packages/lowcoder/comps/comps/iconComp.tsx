@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import styled, { css } from "styled-components";
-import { RecordConstructorToView } from "lowcoder-core";
-import { styleControl } from "comps/controls/styleControl";
+import { RecordConstructorToView } from "#lowcoder-core/index";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import _ from "lodash";
 import {
   AnimationStyle,
@@ -10,18 +10,18 @@ import {
   IconStyleType,
   heightCalculator,
   widthCalculator,
-} from "comps/controls/styleControlConstants";
-import { UICompBuilder } from "comps/generators/uiCompBuilder";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { UICompBuilder } from "#lowcoder/comps/generators/uiCompBuilder";
 import { withDefault } from "../generators";
 import {
   NameConfigHidden,
   withExposingConfigs,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "#lowcoder-design/index";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { NumberControl } from "comps/controls/codeControl";
-import { IconControl } from "comps/controls/iconControl";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { NumberControl } from "#lowcoder/comps/controls/codeControl";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
 import { useResizeDetector } from "react-resize-detector";
 import { AutoHeightControl } from "../controls/autoHeightControl";
 import {
@@ -30,8 +30,8 @@ import {
   doubleClickEvent,
 } from "../controls/eventHandlerControl";
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import { AssetType, IconscoutControl } from "@lowcoder-ee/comps/controls/iconscoutControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { AssetType, IconscoutControl } from "#lowcoder/comps/controls/iconscoutControl";
 import { dropdownControl } from "../controls/dropdownControl";
 import { useCompClickEventHandler } from "../utils/useCompClickEventHandler";
 

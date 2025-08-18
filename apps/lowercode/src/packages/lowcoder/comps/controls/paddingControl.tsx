@@ -1,7 +1,7 @@
-import { StringControl } from "comps/controls/codeControl";
-import { withDefault } from "comps/generators";
-import { MultiCompBuilder } from "comps/generators/multi";
-import { trans } from "i18n";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { withDefault } from "#lowcoder/comps/generators";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
+import { trans } from "#lowcoder/i18n";
 import { Section } from "lowcoder-design";
 import styled from "styled-components";
 

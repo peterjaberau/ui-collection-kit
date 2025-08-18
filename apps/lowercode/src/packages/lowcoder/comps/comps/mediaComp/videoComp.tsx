@@ -1,36 +1,32 @@
-import { Section, sectionNames } from "#lowcoder-design/index";
-import { eventHandlerControl } from "../../controls/eventHandlerControl";
-import { StringStateControl, numberExposingStateControl } from "../../controls/codeStateControl";
-import { UICompBuilder } from "../../generators";
-import { NameConfig, NameConfigHidden, withExposingConfigs } from "../../generators/withExposing";
-import { RecordConstructorToView } from "lowcoder-core";
-import { useEffect, useRef, useState } from "react";
-import { styleControl } from "comps/controls/styleControl";
-import {
-  AnimationStyle,
-  AnimationStyleType,
-  VideoStyle,
-} from 'comps/controls/styleControlConstants';
-import { BoolControl } from "comps/controls/boolControl";
-import { withDefault } from "../../generators/simpleGenerators";
-import { playIcon } from "#lowcoder-design/index";
-import { RangeControl } from "../../controls/codeControl";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { Video } from "#lowcoder-design/index";
-import type ReactPlayer from "react-player";
-import { mediaCommonChildren, mediaMethods } from "./mediaUtils";
+import { Section, sectionNames } from "#lowcoder-design/index"
+import { eventHandlerControl } from "../../controls/eventHandlerControl"
+import { StringStateControl, numberExposingStateControl } from "../../controls/codeStateControl"
+import { UICompBuilder } from "../../generators"
+import { NameConfig, NameConfigHidden, withExposingConfigs } from "../../generators/withExposing"
+import { RecordConstructorToView } from "#lowcoder-core/index"
+import { useEffect, useRef, useState } from "react"
+import { styleControl } from "#lowcoder/comps/controls/styleControl"
+import { AnimationStyle, AnimationStyleType, VideoStyle } from "#lowcoder/comps/controls/styleControlConstants"
+import { BoolControl } from "#lowcoder/comps/controls/boolControl"
+import { withDefault } from "../../generators/simpleGenerators"
+import { playIcon } from "#lowcoder-design/index"
+import { RangeControl } from "../../controls/codeControl"
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils"
+import { trans } from "#lowcoder/i18n"
+import { Video } from "#lowcoder-design/index"
+import type ReactPlayer from "react-player"
+import { mediaCommonChildren, mediaMethods } from "./mediaUtils"
 
-import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import styled, { css } from "styled-components";
+import { useContext } from "react"
+import { EditorContext } from "#lowcoder/comps/editorState"
+import styled, { css } from "styled-components"
 
 const EventOptions = [
   { label: trans("video.play"), value: "play", description: trans("video.playDesc") },
   { label: trans("video.pause"), value: "pause", description: trans("video.pauseDesc") },
   { label: trans("video.load"), value: "load", description: trans("video.loadDesc") },
   { label: trans("video.ended"), value: "ended", description: trans("video.endedDesc") },
-] as const;
+] as const
 
 /* const StyledContainer = styled.div.attrs(props => ({
   style: props.style ? getStyle(props.style) : {}
@@ -45,9 +41,9 @@ const getStyle = (style: ImageStyleType) => {
   };
 }; */
 const Container = styled.div<{ $style: any; $animationStyle: AnimationStyleType }>`
-${props => props.$style};
-rotate:${props => props.$style.rotation};
-${props=>props.$animationStyle};
+  ${(props) => props.$style};
+  rotate: ${(props) => props.$style.rotation};
+  ${(props) => props.$animationStyle};
   height: 100%;
   width: 100%;
   display: flex;
@@ -63,13 +59,12 @@ ${props=>props.$animationStyle};
       outline: 0px;
     }
   }
-`;
+`
 const ContainerVideo = (props: RecordConstructorToView<typeof childrenMap>) => {
-  const videoRef = useRef<ReactPlayer | null>(null);
-  let [posterClicked, setPosterClicked] = useState(false);
+  const videoRef = useRef<ReactPlayer | null>(null)
+  let [posterClicked, setPosterClicked] = useState(false)
   return (
-    <Container ref={props.containerRef} $style={props.style}
-      $animationStyle={props.animationStyle}>
+    <Container ref={props.containerRef} $style={props.style} $animationStyle={props.animationStyle}>
       <Video
         config={{
           file: {
@@ -78,16 +73,16 @@ const ContainerVideo = (props: RecordConstructorToView<typeof childrenMap>) => {
         }}
         light={props.autoPlay ? "" : props.poster.value}
         ref={(t: ReactPlayer | null) => {
-          props.viewRef(t);
-          videoRef.current = t;
+          props.viewRef(t)
+          videoRef.current = t
         }}
         url={props.src.value}
         onPlay={() => props.onEvent("play")}
         onReady={() => {
           if (videoRef.current != null) {
-            props.duration.onChange(videoRef.current.getDuration());
+            props.duration.onChange(videoRef.current.getDuration())
           }
-          props.onEvent("load");
+          props.onEvent("load")
         }}
         onPause={() => props.onEvent("pause")}
         onEnded={() => props.onEvent("ended")}
@@ -97,39 +92,38 @@ const ContainerVideo = (props: RecordConstructorToView<typeof childrenMap>) => {
         style={props.style}
         playbackRate={props.playbackRate}
         onClickPreview={() => {
-          setPosterClicked(true);
+          setPosterClicked(true)
         }}
         draggable={false}
         playIcon={playIcon()}
         playing={props.autoPlay || posterClicked}
         onProgress={() => {
-          if (videoRef.current != null)
-            props.currentTimeStamp.onChange(videoRef.current.getCurrentTime());
+          if (videoRef.current != null) props.currentTimeStamp.onChange(videoRef.current.getCurrentTime())
         }}
       />
     </Container>
-  );
-};
+  )
+}
 
 const childrenMap = {
-  src: withDefault(StringStateControl, trans('video.defaultSrcUrl')),
-  poster: withDefault(StringStateControl, trans('video.defaultPosterUrl')),
+  src: withDefault(StringStateControl, trans("video.defaultSrcUrl")),
+  poster: withDefault(StringStateControl, trans("video.defaultPosterUrl")),
   onEvent: eventHandlerControl(EventOptions),
-  style: styleControl(VideoStyle , 'style'),
-  animationStyle: styleControl(AnimationStyle , 'animationStyle'),
+  style: styleControl(VideoStyle, "style"),
+  animationStyle: styleControl(AnimationStyle, "animationStyle"),
   autoPlay: BoolControl,
   loop: BoolControl,
   controls: BoolControl,
   volume: RangeControl.closed(0, 1, 1),
   playbackRate: RangeControl.closed(1, 2, 1),
-  currentTimeStamp: numberExposingStateControl('currentTimeStamp', 0),
-  duration: numberExposingStateControl('duration'),
+  currentTimeStamp: numberExposingStateControl("currentTimeStamp", 0),
+  duration: numberExposingStateControl("duration"),
   ...mediaCommonChildren,
-};
+}
 
 let VideoBasicComp = (function () {
   return new UICompBuilder(childrenMap, (props) => {
-    return <ContainerVideo {...props} />;
+    return <ContainerVideo {...props} />
   })
     .setPropertyViewFn((children) => {
       return (
@@ -141,9 +135,10 @@ let VideoBasicComp = (function () {
             })}
           </Section>
 
-          {(useContext(EditorContext).editorModeStatus === "logic" || useContext(EditorContext).editorModeStatus === "both") && (
-
-            <><Section name={sectionNames.interaction}>
+          {(useContext(EditorContext).editorModeStatus === "logic" ||
+            useContext(EditorContext).editorModeStatus === "both") && (
+            <>
+              <Section name={sectionNames.interaction}>
                 {children.onEvent.getPropertyView()}
                 {hiddenPropertyView(children)}
                 {showDataLoadingIndicatorsPropertyView(children)}
@@ -172,32 +167,29 @@ let VideoBasicComp = (function () {
                   label: trans("video.controls"),
                   tooltip: trans("video.controlsTooltip"),
                 })}
-
               </Section>
-              <Section name={sectionNames.style}>
-                {children.style.getPropertyView()}
-              </Section>
+              <Section name={sectionNames.style}>{children.style.getPropertyView()}</Section>
               {/* <Section name={sectionNames.animationStyle} hasTooltip={true}>
                 {children.animationStyle.getPropertyView()}
               </Section> */}
             </>
           )}
         </>
-      );
+      )
     })
     .setExposeMethodConfigs(mediaMethods())
-    .build();
-})();
+    .build()
+})()
 
 VideoBasicComp = class extends VideoBasicComp {
   override autoHeight(): boolean {
-    return false;
+    return false
   }
-};
+}
 
-export const VideoComp = withExposingConfigs(VideoBasicComp, [
+export const VideoComp: any = withExposingConfigs(VideoBasicComp, [
   new NameConfig("src", trans("video.srcDesc")),
   new NameConfig("currentTimeStamp", trans("video.currentTimeStamp")),
   new NameConfig("duration", trans("video.duration")),
   NameConfigHidden,
-]);
+])

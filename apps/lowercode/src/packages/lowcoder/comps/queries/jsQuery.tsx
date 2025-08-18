@@ -1,10 +1,10 @@
-import { FunctionControl } from "comps/controls/codeControl";
-import { MultiCompBuilder } from "comps/generators";
+import { FunctionControl } from "#lowcoder/comps/controls/codeControl";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
 import { QueryResult } from "./queryComp";
 import { QueryTutorials } from "#lowcoder/util/tutorialUtils";
 import { DocLink } from "lowcoder-design";
-import { getGlobalSettings } from "comps/utils/globalSettings";
-import { trans } from "i18n";
+import { getGlobalSettings } from "#lowcoder/comps/utils/globalSettings";
+import { trans } from "#lowcoder/i18n";
 import { QUERY_EXECUTION_ERROR, QUERY_EXECUTION_OK } from "../../constants/queryConstants";
 
 export const JSQuery = (function () {

@@ -1,6 +1,6 @@
 // services/appService.ts
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { getWorkspaceApps } from "./environments.service";
 import { getManagedApps } from "./enterprise.service";
 import { App, AppStats } from "../types/app.types";

@@ -1,4 +1,4 @@
-import { PageLayoutComp } from "comps/comps/containerComp/pageLayoutComp";
+import { PageLayoutComp } from "#lowcoder/comps/comps/containerComp/pageLayoutComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

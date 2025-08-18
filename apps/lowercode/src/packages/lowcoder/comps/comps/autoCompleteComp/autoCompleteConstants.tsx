@@ -1,6 +1,6 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { check } from "#lowcoder/util/convertUtils";
-import { refMethods } from "comps/generators/withMethodExposing";
+import { refMethods } from "#lowcoder/comps/generators/withMethodExposing";
 import { InputRef } from "antd/es/input";
 
 
@@ -9,7 +9,7 @@ import {
   focusWithOptions,
   selectMethod,
   setSelectionRangeMethod,
-} from "comps/utils/methodUtils";
+} from "#lowcoder/comps/utils/methodUtils";
 
 export const autoCompleteRefMethods = [
   ...refMethods<InputRef>([focusWithOptions, blurMethod, selectMethod, setSelectionRangeMethod]),

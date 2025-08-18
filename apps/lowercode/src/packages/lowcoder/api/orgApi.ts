@@ -18,7 +18,7 @@ import {
   GenericApiPaginationResponse,
   GroupUsersPaginationResponse,
   orgGroupRequestType, OrgUsersPaginationResponse
-} from "@lowcoder-ee/util/pagination/type";
+} from "#lowcoder/util/pagination/type";
 
 export interface GroupUsersResponse extends ApiResponse {
   data: {

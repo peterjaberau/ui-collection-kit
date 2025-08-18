@@ -1,4 +1,4 @@
-import { withExposingRaw } from "comps/generators/withExposing";
+import { withExposingRaw } from "#lowcoder/comps/generators/withExposing";
 
 const AllHookComp = [
   "modal",

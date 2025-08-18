@@ -34,8 +34,8 @@ import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 import { SERVER_ERROR_CODES } from "#lowcoder/constants/apiConstants";
 import history from "#lowcoder/util/history";
 import { ApplicationMeta, AppTypeEnum } from "#lowcoder/constants/applicationConstants";
-import { trans } from "i18n";
-import { PUBLIC_APP_ID, publicAppResponse } from "@lowcoder-ee/constants/publicApp";
+import { trans } from "#lowcoder/i18n";
+import { PUBLIC_APP_ID, publicAppResponse } from "#lowcoder/constants/publicApp";
 
 export function* fetchHomeDataSaga(action: ReduxAction<HomeDataPayload>) {
   try {

@@ -1,11 +1,11 @@
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
-import { codeControl, TransformerCodeControl } from "comps/controls/codeControl";
-import { EditorContext } from "comps/editorState";
-import { MultiCompBuilder } from "comps/generators";
-import { bottomResListComp } from "comps/generators/bottomResList";
-import { withExposingRaw } from "comps/generators/withExposing";
-import { trans } from "i18n";
-import { fromRecord } from "lowcoder-core";
+import { getBottomResIcon } from "#lowcoder/util/bottomResUtils";
+import { codeControl, TransformerCodeControl } from "#lowcoder/comps/controls/codeControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { MultiCompBuilder } from "#lowcoder/comps/generators";
+import { bottomResListComp } from "#lowcoder/comps/generators/bottomResList";
+import { withExposingRaw } from "#lowcoder/comps/generators/withExposing";
+import { trans } from "#lowcoder/i18n";
+import { fromRecord } from "#lowcoder-core/index";
 import { DocLink } from "lowcoder-design";
 import { BottomTabs } from "#lowcoder/pages/editor/bottom/BottomTabs";
 import { ReactNode } from "react";
@@ -13,7 +13,7 @@ import { BottomResComp, BottomResCompResult, BottomResTypeEnum } from "#lowcoder
 import { QueryTutorials } from "#lowcoder/util/tutorialUtils";
 import { SimpleNameComp } from "./simpleNameComp";
 import { markdownCompCss, TacoMarkDown } from "lowcoder-design";
-import SupaDemoDisplay from "comps/utils/supademoDisplay";
+import SupaDemoDisplay from "#lowcoder/comps/utils/supademoDisplay";
 
 const TransformerItemCompBase = new MultiCompBuilder(
   {

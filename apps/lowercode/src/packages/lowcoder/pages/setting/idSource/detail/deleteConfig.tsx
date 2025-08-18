@@ -1,6 +1,6 @@
 import { default as Button } from "antd/es/button";
 import { DeleteWrapper } from "#lowcoder/pages/setting/idSource/styledComponents";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useState } from "react";
 import { validateResponse } from "#lowcoder/api/apiUtils";
 import IdSourceApi from "#lowcoder/api/idSourceApi";

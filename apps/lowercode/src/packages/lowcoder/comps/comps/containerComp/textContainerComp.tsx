@@ -1,14 +1,14 @@
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { ToDataType } from "comps/generators/multi";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { ToDataType } from "#lowcoder/comps/generators/multi";
 import {
   NameConfigHidden,
   withExposingConfigs,
-} from "comps/generators/withExposing";
-import { NameGenerator } from "comps/utils/nameGenerator";
-import { hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { CompParams } from "lowcoder-core";
+} from "#lowcoder/comps/generators/withExposing";
+import { NameGenerator } from "#lowcoder/comps/utils/nameGenerator";
+import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { CompParams } from "#lowcoder-core/index";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import { oldContainerParamsToNew } from "../containerBase";
 import { toSimpleContainerData } from "../containerBase/simpleContainerComp";
@@ -17,13 +17,13 @@ import {
   ContainerCompBuilder,
 } from "../triContainerComp/triContainerCompBuilder";
 import { TriContainer } from "../triContainerComp/triFloatTextContainer";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { withDefault } from "comps/generators/simpleGenerators";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, TextContainerStyle } from "comps/controls/styleControlConstants";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { withDefault } from "#lowcoder/comps/generators/simpleGenerators";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, TextContainerStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import { alignWithJustifyControl } from "comps/controls/alignControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { alignWithJustifyControl } from "#lowcoder/comps/controls/alignControl";
 
 const typeOptions = [
   {

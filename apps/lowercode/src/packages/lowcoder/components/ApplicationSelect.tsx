@@ -1,6 +1,6 @@
 import { AppTypeEnum } from "#lowcoder/constants/applicationConstants";
 import { Dropdown } from "#lowcoder-design/components/Dropdown";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { ReactNode, useEffect } from "react";
 import { useApplicationId } from "#lowcoder/util/hooks";
 import { useDispatch, useSelector } from "react-redux";

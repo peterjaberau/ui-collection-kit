@@ -1,4 +1,4 @@
-import { language } from "i18n";
+import { language } from "#lowcoder/i18n";
 
 export function getDayJSLocale() {
   switch (language) {

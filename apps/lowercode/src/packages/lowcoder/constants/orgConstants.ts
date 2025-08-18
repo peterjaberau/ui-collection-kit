@@ -1,5 +1,5 @@
 import { CommonSettingResponseData } from "#lowcoder/api/commonSettingApi";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const ADMIN_ROLE = "admin";
 export const SUPER_ADMIN_ROLE = "super_admin";

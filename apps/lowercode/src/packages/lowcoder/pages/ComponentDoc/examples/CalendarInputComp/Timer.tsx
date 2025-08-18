@@ -1,4 +1,4 @@
-import { TimerComp } from "comps/comps/timerComp";
+import { TimerComp } from "#lowcoder/comps/comps/timerComp";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

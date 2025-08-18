@@ -13,7 +13,7 @@ import {
   Node,
   NodeToValue,
   wrapDispatch,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { ReactNode } from "react";
 import { memo } from "#lowcoder/util/cacheUtils";
 

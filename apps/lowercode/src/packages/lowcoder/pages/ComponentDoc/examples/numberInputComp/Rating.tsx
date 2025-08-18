@@ -1,5 +1,5 @@
-import { RatingComp } from "comps/comps/ratingComp";
-import { trans } from "i18n";
+import { RatingComp } from "#lowcoder/comps/comps/ratingComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

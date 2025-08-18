@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import ReactECharts from "echarts-for-react";
 import dayjs from "dayjs";
 import { debounce } from "lodash";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 interface Props {
   data: Array<any>;
@@ -57,18 +57,18 @@ const UserActivityByTimeChart = ({ data, setDateRange }: Props) => {
     if (params.start !== undefined && params.end !== undefined) {
       const startIndex = Math.floor((params.start / 100) * (fullDateRange.length - 1));
       const endIndex = Math.floor((params.end / 100) * (fullDateRange.length - 1));
-  
+
       const fromDate = new Date(fullDateRange[startIndex] || fullDateRange[0]); // Keep start of day
       const toDate = new Date(fullDateRange[endIndex] || fullDateRange[fullDateRange.length - 1]);
 
       toDate.setHours(23, 59, 59, 999);
-  
+
       const fromTimestamp = fromDate.toISOString();
       const toTimestamp = toDate.toISOString();
       debouncedSetDateRange(fromTimestamp, toTimestamp);
     }
   };
-  
+
   return (
     <ReactECharts
       ref={chartRef}
@@ -88,16 +88,16 @@ const UserActivityByTimeChart = ({ data, setDateRange }: Props) => {
           {
             type: "slider",
             xAxisIndex: 0,
-            filterMode: "weakFilter", 
+            filterMode: "weakFilter",
             show: true,
             start: 0,
             end: 100,
-            realtime: false, 
+            realtime: false,
           },
           {
             type: "inside",
             xAxisIndex: 0,
-            realtime: false, 
+            realtime: false,
           },
         ],
         series,

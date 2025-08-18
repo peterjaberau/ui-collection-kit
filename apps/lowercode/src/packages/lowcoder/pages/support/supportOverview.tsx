@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { trans } from "i18n";
-import { searchCustomerTickets, createTicket } from "@lowcoder-ee/api/supportApi";
+import { trans } from "#lowcoder/i18n";
+import { searchCustomerTickets, createTicket } from "#lowcoder/api/supportApi";
 import { useState, useEffect, useMemo } from 'react';
 import { Helmet } from "react-helmet";
 import { useUserDetails } from "./useUserDetails";
@@ -14,9 +14,9 @@ import { Input } from "antd";
 import 'react-quill-new/dist/quill.snow.css';
 import { Spin } from "antd";
 import LoadingOutlined from "@ant-design/icons/LoadingOutlined";
-import { useSimpleSubscriptionContext } from "@lowcoder-ee/util/context/SimpleSubscriptionContext";
+import { useSimpleSubscriptionContext } from "#lowcoder/util/context/SimpleSubscriptionContext";
 import { SubscriptionProductsEnum } from '@lowcoder-ee/constants/subscriptionConstants';
-import { getDeploymentId } from "@lowcoder-ee/redux/selectors/configSelectors";
+import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
 import { useSelector } from "react-redux";
 import React from "react";
 

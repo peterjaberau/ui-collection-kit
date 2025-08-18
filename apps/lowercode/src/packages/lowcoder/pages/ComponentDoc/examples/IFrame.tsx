@@ -1,5 +1,5 @@
-import { IFrameComp } from "comps/comps/iframeComp";
-import { trans } from "i18n";
+import { IFrameComp } from "#lowcoder/comps/comps/iframeComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../common/Example";
 import ExampleGroup from "../common/ExampleGroup";
 

@@ -1,4 +1,4 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const ModeOptions = [
   { label: trans("navLayout.modeInline"), value: "inline" },

@@ -2,14 +2,14 @@ import { Card, Form, Select, Input, Button, message, Divider, Skeleton, Table, F
 import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import {
     DetailContainer,
     DetailContent,
     Header,
   } from "../theme/styledComponents";
 import { HeaderBack } from "#lowcoder/pages/setting/permission/styledComponents";
-import { getUser } from "@lowcoder-ee/redux/selectors/usersSelectors";
+import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { getAuditLogs, getAuditLogStatistics, getEnvironmentsByIds, getMeta } from "#lowcoder/api/enterpriseApi";
 import EventTypeTimeChart from "./charts/eventTypesTime";
 import { debounce, uniqBy } from "lodash";
@@ -17,7 +17,7 @@ import { DatePicker } from "antd";
 import dayjs, { Dayjs } from "dayjs";
 import { Link, useLocation } from "react-router-dom";
 import history from "#lowcoder/util/history";
-import { SETTING_URL } from "@lowcoder-ee/constants/routesURL";
+import { SETTING_URL } from "#lowcoder/constants/routesURL";
 import { EyeOutlined } from "@ant-design/icons";
 import { AuditLog, AuditLogStat, eventTypes } from "./auditContants";
 import Statistics from "./components/statistics";

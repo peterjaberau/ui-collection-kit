@@ -1,8 +1,8 @@
 import Api from "./api";
 import { AxiosPromise } from "axios";
 import { ApiResponse, GenericApiResponse } from "./apiResponses";
-import { trans } from "i18n";
-import { JSONObject } from "@lowcoder-ee/util/jsonTypes";
+import { trans } from "#lowcoder/i18n";
+import { JSONObject } from "#lowcoder/util/jsonTypes";
 
 export type FetchCommonSettingPayload = {
   orgId: string;
@@ -99,7 +99,7 @@ export function getThemeDetailName(key: keyof ThemeDetail) {
     case "padding":	return trans("style.padding");
     case "gridColumns": return trans("themeDetail.gridColumns");
     case "textSize": return trans("style.textSize");
-    case "lineHeight": return trans("themeDetail.lineHeight"); 
+    case "lineHeight": return trans("themeDetail.lineHeight");
   }
   return "";
 }

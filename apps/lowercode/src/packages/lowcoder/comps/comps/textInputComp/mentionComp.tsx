@@ -4,7 +4,7 @@ import {
   NameConfigPlaceHolder,
   NameConfigRequired,
   withExposingConfigs,
-} from "comps/generators/withExposing";
+} from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import { BoolControl } from "../../controls/boolControl";
 import { AutoHeightControl } from "../../controls/autoHeightControl";
@@ -19,13 +19,13 @@ import {
   withMethodExposing,
   refMethods,
 } from "../../generators/withMethodExposing";
-import { styleControl } from "comps/controls/styleControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import styled from "styled-components";
 import {
   AnimationStyle,
   InputLikeStyle,
   InputLikeStyleType,
-} from "comps/controls/styleControlConstants";
+} from "#lowcoder/comps/controls/styleControlConstants";
 import {
   disabledPropertyView,
   hiddenPropertyView,
@@ -33,18 +33,18 @@ import {
   minLengthPropertyView,
   readOnlyPropertyView,
   requiredPropertyView,
-} from "comps/utils/propertyUtils";
-import { booleanExposingStateControl } from "comps/controls/codeStateControl";
-import { trans } from "i18n";
-import { RefControl } from "comps/controls/refControl";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { booleanExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { trans } from "#lowcoder/i18n";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
 import { TextAreaRef } from "antd/es/input/TextArea";
 import { default as ConfigProvider } from "antd/es/config-provider";
 import { default as Mentions, type MentionsOptionProps } from "antd/es/mentions";
-import { blurMethod, focusWithOptions } from "comps/utils/methodUtils";
+import { blurMethod, focusWithOptions } from "#lowcoder/comps/utils/methodUtils";
 import {
   textInputValidate,
 } from "../textInputComp/textInputConstants";
-import { jsonControl } from "comps/controls/codeControl";
+import { jsonControl } from "#lowcoder/comps/controls/codeControl";
 import {
   submitEvent,
   eventHandlerControl,
@@ -52,11 +52,11 @@ import {
   focusEvent,
   blurEvent,
   changeEvent
-} from "comps/controls/eventHandlerControl";
+} from "#lowcoder/comps/controls/eventHandlerControl";
 
 import React, { useContext } from "react";
-import { EditorContext } from "comps/editorState";
-import { migrateOldData } from "comps/generators/simpleGenerators";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
 
 const Wrapper = styled.div<{
   $style: InputLikeStyleType;

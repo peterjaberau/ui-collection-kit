@@ -1,9 +1,9 @@
 import { Collapse } from "#lowcoder-design/components/Collapase";
 import React, { useEffect, useMemo } from "react";
 import { EditPopover } from "#lowcoder-design/components/popover";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import styled, { css } from "styled-components";
-import { PointIcon } from "icons";
+import { PointIcon } from "#lowcoder-design/icons";
 import { EllipsisTextCss } from "#lowcoder-design/components/Label";
 import { useDispatch, useSelector } from "react-redux";
 import { parseJSLibraryURL } from "#lowcoder/util/jsLibraryUtils";
@@ -54,7 +54,7 @@ export const JSLibraryInfo = (props: { exportedAs?: string; description?: string
   );
 };
 
-export const JSLibraryLabel = (props: { name: string; version: string }) => (
+export const JSLibraryLabel = (props: { name: string; version: string } | any) => (
   <div style={{ display: "flex", minWidth: 0, fontSize: "13px" }}>
     <div style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
       {props.name}

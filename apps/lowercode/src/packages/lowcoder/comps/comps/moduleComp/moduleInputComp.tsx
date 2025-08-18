@@ -1,10 +1,10 @@
-import { routeByNameAction, executeQueryAction } from "lowcoder-core";
-import { CompAction, CompActionTypes, RouteByNameAction } from "lowcoder-core";
-import { CompParams } from "lowcoder-core";
-import { codeControl } from "comps/controls/codeControl";
-import QuerySelectControl from "comps/controls/querySelectControl";
-import { MultiCompBuilder, parseChildrenFromValueAndChildrenMap } from "comps/generators/multi";
-import { Node } from "lowcoder-core";
+import { routeByNameAction, executeQueryAction } from "#lowcoder-core/index";
+import { CompAction, CompActionTypes, RouteByNameAction } from "#lowcoder-core/index";
+import { CompParams } from "#lowcoder-core/index";
+import { codeControl } from "#lowcoder/comps/controls/codeControl";
+import QuerySelectControl from "#lowcoder/comps/controls/querySelectControl";
+import { MultiCompBuilder, parseChildrenFromValueAndChildrenMap } from "#lowcoder/comps/generators/multi";
+import { Node } from "#lowcoder-core/index";
 import { Fragment, ReactNode } from "react";
 import { setFieldsNoTypeCheck } from "#lowcoder/util/objectUtils";
 import { inputControls, InputTypeEnum } from "../moduleContainerComp/ioComp/inputListItemComp";
@@ -16,7 +16,7 @@ interface InputItem {
   description: string;
 }
 
-const ModuleInputsCompBase = new MultiCompBuilder({}, (props) => props).build();
+const ModuleInputsCompBase: any = new MultiCompBuilder({}, (props) => props).build();
 
 export default class ModuleInputsComp extends ModuleInputsCompBase {
   params: any = {};

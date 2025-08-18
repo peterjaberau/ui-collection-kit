@@ -6,7 +6,7 @@ import {
   MultiCompBuilder,
 } from "lowcoder-sdk";
 import { LegendComponentOption } from "echarts";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 const FunnelLegnedAlignOptions = [
   {

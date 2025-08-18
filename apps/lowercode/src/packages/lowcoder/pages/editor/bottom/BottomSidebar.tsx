@@ -13,17 +13,17 @@ import {
   UnfoldIcon,
 } from "lowcoder-design";
 import { CSSProperties, useContext, useEffect, useState } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { useSelector } from "react-redux";
 import { showAppSnapshotSelector } from "#lowcoder/redux/selectors/appSnapshotSelector";
 import { BottomResComp, BottomResTypeEnum } from "#lowcoder/types/bottomRes";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { DraggableTree } from "#lowcoder/components/DraggableTree/DraggableTree";
 import {
   DraggableTreeNode,
   DraggableTreeNodeItemRenderProps,
 } from "#lowcoder/components/DraggableTree/types";
-import RefTreeComp from "comps/comps/refTreeComp";
+import RefTreeComp from "#lowcoder/comps/comps/refTreeComp";
 import { ActiveTextColor, BorderActiveColor, NormalMenuIconColor } from "#lowcoder/constants/style";
 
 const Contain = styled.div`

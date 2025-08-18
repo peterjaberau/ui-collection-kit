@@ -1,9 +1,9 @@
 import EmptyItem from "#lowcoder/components/EmptyItem";
-import { CustomListAction, list } from "comps/generators/list";
-import { simpleMultiComp } from "comps/generators/multi";
-import { trans } from "i18n";
+import { CustomListAction, list } from "#lowcoder/comps/generators/list";
+import { simpleMultiComp } from "#lowcoder/comps/generators/multi";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
-import { DispatchType } from "lowcoder-core";
+import { DispatchType } from "#lowcoder-core/index";
 import {
   AddEventIcon,
   AddLine,

@@ -1,27 +1,27 @@
-import { NameConfig, NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
-import { UICompBuilder, withDefault } from "comps/generators";
+import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
+import { UICompBuilder, withDefault } from "#lowcoder/comps/generators";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import styled from "styled-components";
-import { clickEvent, eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { StringControl } from "comps/controls/codeControl";
-import { alignWithJustifyControl } from "comps/controls/alignControl";
+import { clickEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { alignWithJustifyControl } from "#lowcoder/comps/controls/alignControl";
 import { navListComp } from "./navItemComp";
 import { menuPropertyView } from "./components/MenuItemList";
 import { default as DownOutlined } from "@ant-design/icons/DownOutlined";
 import { default as Dropdown } from "antd/es/dropdown";
 import { default as Menu, MenuProps } from "antd/es/menu";
-import { migrateOldData } from "comps/generators/simpleGenerators";
-import { styleControl } from "comps/controls/styleControl";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import {
   AnimationStyle,
   AnimationStyleType,
   NavigationStyle,
-} from "comps/controls/styleControlConstants";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 type IProps = {
   $justify: boolean;

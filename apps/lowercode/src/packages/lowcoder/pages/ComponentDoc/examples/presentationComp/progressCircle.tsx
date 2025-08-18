@@ -1,5 +1,5 @@
-import { ProgressCircleComp } from "comps/comps/progressCircleComp";
-import { trans } from "i18n";
+import { ProgressCircleComp } from "#lowcoder/comps/comps/progressCircleComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

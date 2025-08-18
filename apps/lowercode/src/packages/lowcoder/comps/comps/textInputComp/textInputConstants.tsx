@@ -1,4 +1,4 @@
-import { BoolControl } from "comps/controls/boolControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import { check } from "#lowcoder/util/convertUtils";
 import {
   BoolCodeControl,
@@ -6,15 +6,15 @@ import {
   NumberControl,
   RegexControl,
   StringControl,
-} from "comps/controls/codeControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { LabelControl } from "comps/controls/labelControl";
-import { InputLikeStyleType, LabelStyleType, heightCalculator, widthCalculator } from "comps/controls/styleControlConstants";
+} from "#lowcoder/comps/controls/codeControl";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { LabelControl } from "#lowcoder/comps/controls/labelControl";
+import { InputLikeStyleType, LabelStyleType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
 import { Section, sectionNames, ValueFromOption } from "#lowcoder-design/index";
 import { debounce, fromPairs } from "lodash";
 import { css } from "styled-components";
 import { EMAIL_PATTERN, URL_PATTERN } from "#lowcoder/util/stringUtils";
-import { MultiBaseComp, RecordConstructorToComp, RecordConstructorToView } from "lowcoder-core";
+import { MultiBaseComp, RecordConstructorToComp, RecordConstructorToView } from "#lowcoder-core/index";
 import { dropdownControl } from "../../controls/dropdownControl";
 import { InputEventHandlerControl } from "../../controls/eventHandlerControl";
 import {
@@ -31,10 +31,10 @@ import {
   regexPropertyView,
   requiredPropertyView,
   showDataLoadingIndicatorsPropertyView,
-} from "comps/utils/propertyUtils";
-import { trans } from "i18n";
+} from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
-import { refMethods } from "comps/generators/withMethodExposing";
+import { refMethods } from "#lowcoder/comps/generators/withMethodExposing";
 import { InputRef } from "antd/es/input";
 import {
   blurMethod,
@@ -43,9 +43,9 @@ import {
   selectMethod,
   setRangeTextMethod,
   setSelectionRangeMethod,
-} from "comps/utils/methodUtils";
-import { RefControl } from "comps/controls/refControl";
-import { EvalParamType } from "comps/controls/actionSelector/executeCompTypes";
+} from "#lowcoder/comps/utils/methodUtils";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
+import { EvalParamType } from "#lowcoder/comps/controls/actionSelector/executeCompTypes";
 
 export const TextInputValidationOptions : any = [
   {

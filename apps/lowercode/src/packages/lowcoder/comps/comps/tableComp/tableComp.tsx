@@ -1,7 +1,7 @@
-import { tableDataRowExample } from "comps/comps/tableComp/column/tableColumnListComp";
-import { getPageSize } from "comps/comps/tableComp/paginationControl";
-import { EMPTY_ROW_KEY, TableCompView } from "comps/comps/tableComp/tableCompView";
-import { TableFilter } from "comps/comps/tableComp/tableToolbarComp";
+import { tableDataRowExample } from "#lowcoder/comps/comps/tableComp/column/tableColumnListComp";
+import { getPageSize } from "#lowcoder/comps/comps/tableComp/paginationControl";
+import { EMPTY_ROW_KEY, TableCompView } from "#lowcoder/comps/comps/tableComp/tableCompView";
+import { TableFilter } from "#lowcoder/comps/comps/tableComp/tableToolbarComp";
 import {
   columnHide,
   ColumnsAggrData,
@@ -15,23 +15,23 @@ import {
   sortData,
   transformDispalyData,
   tranToTableRecord,
-} from "comps/comps/tableComp/tableUtils";
-import { isTriggerAction } from "comps/controls/actionSelector/actionSelectorControl";
-import { withPropertyViewFn, withViewFn } from "comps/generators";
-import { childrenToProps } from "comps/generators/multi";
-import { HidableView } from "comps/generators/uiCompBuilder";
-import { withDispatchHook } from "comps/generators/withDispatchHook";
+} from "#lowcoder/comps/comps/tableComp/tableUtils";
+import { isTriggerAction } from "#lowcoder/comps/controls/actionSelector/actionSelectorControl";
+import { withPropertyViewFn, withViewFn } from "#lowcoder/comps/generators";
+import { childrenToProps } from "#lowcoder/comps/generators/multi";
+import { HidableView } from "#lowcoder/comps/generators/uiCompBuilder";
+import { withDispatchHook } from "#lowcoder/comps/generators/withDispatchHook";
 import {
   CompDepsConfig,
   depsConfig,
   DepsConfig,
   NameConfig,
   withExposingConfigs,
-} from "comps/generators/withExposing";
-import { withMethodExposing } from "comps/generators/withMethodExposing";
-import { MAP_KEY } from "comps/generators/withMultiContext";
-import { NameGenerator } from "comps/utils";
-import { trans } from "i18n";
+} from "#lowcoder/comps/generators/withExposing";
+import { withMethodExposing } from "#lowcoder/comps/generators/withMethodExposing";
+import { MAP_KEY } from "#lowcoder/comps/generators/withMultiContext";
+import { NameGenerator } from "#lowcoder/comps/utils";
+import { trans } from "#lowcoder/i18n";
 import _, { isArray } from "lodash";
 import {
   changeChildAction,
@@ -49,7 +49,7 @@ import {
   ValueAndMsg,
   withFunction,
   wrapChildAction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { saveDataAsFile } from "#lowcoder/util/fileUtils";
 import { JSONObject, JSONValue } from "#lowcoder/util/jsonTypes";
 import { lastValueIfEqual, shallowEqual } from "#lowcoder/util/objectUtils";
@@ -59,7 +59,7 @@ import { compTablePropertyView } from "./tablePropertyView";
 import { RowColorComp, RowHeightComp, SortValue, TableChildrenView, TableInitComp } from "./tableTypes";
 
 import { useContext, useState } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 export class TableImplComp extends TableInitComp implements IContainer {
   private prevUnevaledValue?: string;
@@ -73,7 +73,7 @@ export class TableImplComp extends TableInitComp implements IContainer {
   getTableAutoHeight() {
     return this.children.autoHeight.getView();
   }
-  
+
   private getSlotContainer() {
     return this.children.expansion.children.slot.getSelectedComp().getComp().children.container;
   }
@@ -703,7 +703,7 @@ TableTmpComp = withMethodExposing(TableTmpComp, [
       comp.children.selection.children.selectedRowKey.dispatchChangeValueAction(allKeys[0] || "0");
       comp.children.selection.children.selectedRowKeys.dispatchChangeValueAction(allKeys);
     },
-  },  
+  },
   {
     method: {
       name: "cancelChanges",

@@ -6,11 +6,11 @@ import { APPLICATION_VIEW_URL } from "#lowcoder/constants/routesURL";
 import history from "#lowcoder/util/history";
 import styled from "styled-components";
 import { AppTypeEnum } from "#lowcoder/constants/applicationConstants";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useParams } from "react-router-dom";
 import { put } from "redux-saga/effects";
 import { ReduxActionTypes } from "../../../constants/reduxActionConstants";
-import type { UiLayoutType } from "comps/comps/uiComp";
+import type { UiLayoutType } from "#lowcoder/comps/comps/uiComp";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
 const Upload = styled(AntUpload)`

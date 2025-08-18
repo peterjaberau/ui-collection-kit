@@ -1,5 +1,5 @@
-import { UICompType } from "comps/uiCompRegistry";
-import { trans } from "i18n";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
+import { trans } from "#lowcoder/i18n";
 
 export function getComponentDocUrl(compType: UICompType) {
   if (!compType) {

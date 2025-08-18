@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { NpmPackageMeta } from "#lowcoder/types/remoteComp";
 import { PluginCompItem } from "./PluginCompItem";
 import { NPM_REGISTRY_URL } from "#lowcoder/constants/npmPlugins";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { RightContext } from "../rightContext";
 
 const PluginViewWrapper = styled.div`

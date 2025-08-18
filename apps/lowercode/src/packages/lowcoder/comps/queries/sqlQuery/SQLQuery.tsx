@@ -1,4 +1,4 @@
-import { MultiCompBuilder, valueComp, withPropertyViewFn } from "comps/generators";
+import { MultiCompBuilder, valueComp, withPropertyViewFn } from "#lowcoder/comps/generators";
 import {
   ParamsJsonControl,
   ParamsStringControl,
@@ -6,7 +6,7 @@ import {
 } from "../../controls/paramsControl";
 import { toQueryView } from "../queryCompUtils";
 import { withTypeAndChildrenAbstract } from "../../generators/withType";
-import { CompAction } from "lowcoder-core";
+import { CompAction } from "#lowcoder-core/index";
 import {
   Dropdown,
   QueryConfigItemWrapper,
@@ -18,11 +18,11 @@ import { dropdownControl } from "../../controls/dropdownControl";
 import { TableNameComp } from "./tableNameComp";
 import { ChangeSetComp } from "./changeSetComp";
 import { FilterComp } from "./FilterComp";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { ColumnNameDropdown } from "./columnNameDropdown";
 import React, { useContext } from "react";
 import { QueryContext } from "#lowcoder/util/context/QueryContext";
-import SupaDemoDisplay from "comps/utils/supademoDisplay";
+import SupaDemoDisplay from "#lowcoder/comps/utils/supademoDisplay";
 
 const AllowMultiModifyComp = withPropertyViewFn(BoolPureControl, (comp) =>
   comp.propertyView({
@@ -178,7 +178,7 @@ const SQLQueryPropertyView = (props: { comp: InstanceType<typeof SQLQuery> }) =>
       {children.mode.getView() === "SQL" ? (
         children.sql.propertyView({
           placement: "bottom",
-          placeholder: "SELECT * FROM users WHERE user_id = {{userId}}::uuid", 
+          placeholder: "SELECT * FROM users WHERE user_id = {{userId}}::uuid",
           styleName: "medium",
           language: "sql",
           enableMetaCompletion: true,
@@ -214,7 +214,7 @@ const SQLQueryPropertyView = (props: { comp: InstanceType<typeof SQLQuery> }) =>
               });
             }}
           />
-          
+
           {children.command.getPropertyView()}
         </>
       )}

@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import type { DateCompViewProps } from "./dateComp";
-import { disabledDate, getStyle, StyledPickerPanel } from "comps/comps/dateComp/dateCompUtil";
+import { disabledDate, getStyle, StyledPickerPanel } from "#lowcoder/comps/comps/dateComp/dateCompUtil";
 import { useUIView } from "../../utils/useUIView";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import React, { useContext } from "react";
@@ -8,15 +8,15 @@ import styled from "styled-components";
 import type { ChildrenMultiSelectStyleType, DateTimeStyleType, DisabledInputStyleType } from "../../controls/styleControlConstants";
 import { EditorContext } from "../../editorState";
 import { default as DatePicker } from "antd/es/date-picker";
-import { hasIcon } from "comps/utils";
+import { hasIcon } from "#lowcoder/comps/utils";
 import { omit } from "lodash";
-import { DateParser } from "@lowcoder-ee/util/dateTimeUtils";
+import { DateParser } from "#lowcoder/util/dateTimeUtils";
 import { default as AntdSelect } from "antd/es/select";
 import { timeZoneOptions } from "./timeZone";
 
 const { RangePicker } = DatePicker;
 
-const RangePickerStyled = styled(RangePicker)<{$style: DateTimeStyleType; $disabledStyle?: DisabledInputStyleType}>`
+const RangePickerStyled: any = styled(RangePicker)<{$style: DateTimeStyleType; $disabledStyle?: DisabledInputStyleType}>`
   width: 100%;
   box-shadow: ${(props) =>
     `${props.$style.boxShadow} ${props.$style.boxShadowColor}`};
@@ -66,7 +66,7 @@ export interface DateRangeUIViewProps extends DateCompViewProps {
   $disabledStyle?: DisabledInputStyleType;
 }
 
-export const DateRangeUIView = (props: DateRangeUIViewProps) => {
+export const DateRangeUIView = (props: DateRangeUIViewProps | any) => {
   const editorState = useContext(EditorContext);
 
   // Extract or compute the placeholder values
@@ -97,7 +97,7 @@ export const DateRangeUIView = (props: DateRangeUIViewProps) => {
       hourStep={props.hourStep as any}
       minuteStep={props.minuteStep as any}
       secondStep={props.secondStep as any}
-      panelRender={(panelNode) => (
+      panelRender={(panelNode: any) => (
         <StyledPickerPanel
           $style={props.$childrenInputFieldStyle as ChildrenMultiSelectStyleType}
         >
@@ -107,9 +107,9 @@ export const DateRangeUIView = (props: DateRangeUIViewProps) => {
       renderExtraFooter={() => (
         props.timeZone === "UserChoice" && (
           <StyledDiv>
-            <StyledAntdSelect 
+            <StyledAntdSelect
               options={timeZoneOptions.filter(option => option.value !== 'UserChoice')}
-              placeholder="Select Time Zone" 
+              placeholder="Select Time Zone"
               defaultValue={Intl.DateTimeFormat().resolvedOptions().timeZone}
               onChange={props?.onClickDateRangeTimeZone}
               />

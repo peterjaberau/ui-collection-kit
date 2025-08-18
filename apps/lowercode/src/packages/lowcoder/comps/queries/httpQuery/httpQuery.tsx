@@ -1,9 +1,9 @@
 import { Dropdown, ValueFromOption } from "#lowcoder-design/components/Dropdown";
 import { QueryConfigItemWrapper, QueryConfigLabel, QueryConfigWrapper } from "#lowcoder-design/components/query";
-import { valueComp, withDefault } from "comps/generators";
-import { trans } from "i18n";
+import { valueComp, withDefault } from "#lowcoder/comps/generators";
+import { trans } from "#lowcoder/i18n";
 import { includes } from "lodash";
-import { CompAction, MultiBaseComp } from "lowcoder-core";
+import { CompAction, MultiBaseComp } from "#lowcoder-core/index";
 import { keyValueListControl } from "../../controls/keyValueListControl";
 import { ParamsJsonControl, ParamsStringControl } from "../../controls/paramsControl";
 import { withTypeAndChildrenAbstract } from "../../generators/withType";

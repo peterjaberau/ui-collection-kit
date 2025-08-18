@@ -1,5 +1,5 @@
 import { default as Button } from "antd/es/button";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import React from "react";
 
 export default class ErrorBoundary extends React.Component<any, { errorMessage?: string }> {

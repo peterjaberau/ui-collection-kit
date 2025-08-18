@@ -1,21 +1,21 @@
-import { ColumnTypeCompBuilder } from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { ActionSelectorControlInContext } from "comps/controls/actionSelector/actionSelectorControl";
-import { BoolCodeControl, StringControl } from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { disabledPropertyView, loadingPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { useStyle } from "comps/controls/styleControl";
-import { ButtonStyle } from "comps/controls/styleControlConstants";
-import { Button100 } from "comps/comps/buttonComp/buttonCompConstants";
-import { IconControl } from "comps/controls/iconControl";
-import { hasIcon } from "comps/utils";
+import { ColumnTypeCompBuilder } from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { ActionSelectorControlInContext } from "#lowcoder/comps/controls/actionSelector/actionSelectorControl";
+import { BoolCodeControl, StringControl } from "#lowcoder/comps/controls/codeControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { disabledPropertyView, loadingPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { useStyle } from "#lowcoder/comps/controls/styleControl";
+import { ButtonStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { Button100 } from "#lowcoder/comps/comps/buttonComp/buttonCompConstants";
+import { IconControl } from "#lowcoder/comps/controls/iconControl";
+import { hasIcon } from "#lowcoder/comps/utils";
 import React, { useCallback, useEffect, useMemo } from "react";
 import { CSSProperties } from "react";
-import { RecordConstructorToComp } from "lowcoder-core";
-import { ToViewReturn } from "@lowcoder-ee/comps/generators/multi";
-import { clickEvent, eventHandlerControl, doubleClickEvent } from "comps/controls/eventHandlerControl";
-import { migrateOldData } from "@lowcoder-ee/comps/generators/simpleGenerators";
-import { useCompClickEventHandler } from "@lowcoder-ee/comps/utils/useCompClickEventHandler";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
+import { ToViewReturn } from "#lowcoder/comps/generators/multi";
+import { clickEvent, eventHandlerControl, doubleClickEvent } from "#lowcoder/comps/controls/eventHandlerControl";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
+import { useCompClickEventHandler } from "#lowcoder/comps/utils/useCompClickEventHandler";
 import { isArray } from "lodash";
 
 export const fixOldActionData = (oldData: any) => {

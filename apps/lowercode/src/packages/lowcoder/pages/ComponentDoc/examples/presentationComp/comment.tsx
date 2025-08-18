@@ -1,5 +1,5 @@
-import { CommentComp } from "comps/comps/commentComp/commentComp";
-import { trans } from "i18n";
+import { CommentComp } from "#lowcoder/comps/comps/commentComp/commentComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

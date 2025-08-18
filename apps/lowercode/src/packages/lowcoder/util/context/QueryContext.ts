@@ -1,5 +1,5 @@
 import React from "react";
-import { ResourceType } from "@lowcoder-ee/constants/queryConstants";
+import { ResourceType } from "#lowcoder/constants/queryConstants";
 
 class Query {
   readonly datasourceId?: string;

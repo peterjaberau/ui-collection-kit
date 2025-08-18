@@ -1,4 +1,4 @@
-import { ColumnLayoutComp } from "comps/comps/columnLayout/columnLayout";
+import { ColumnLayoutComp } from "#lowcoder/comps/comps/columnLayout/columnLayout";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

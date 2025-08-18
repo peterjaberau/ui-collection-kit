@@ -27,7 +27,7 @@ import { LegendConfig } from "../basicChartComp/chartConfigs/legendConfig";
 import { EchartsLegendConfig } from "../basicChartComp/chartConfigs/echartsLegendConfig";
 import { EchartsLabelConfig } from "../basicChartComp/chartConfigs/echartsLabelConfig";
 import { EChartsOption } from "echarts";
-import { i18nObjs, trans } from "i18n/comps";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 import {EchartsTitleVerticalConfig} from "../chartComp/chartConfigs/echartsTitleVerticalConfig";
 import {EchartsTitleConfig} from "../basicChartComp/chartConfigs/echartsTitleConfig";
 

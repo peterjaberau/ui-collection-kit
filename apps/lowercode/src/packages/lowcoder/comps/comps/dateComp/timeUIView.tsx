@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { default as TimePicker } from "antd/es/time-picker";
 import { ChildrenMultiSelectStyleType, DateTimeStyleType } from "../../controls/styleControlConstants";
-import { getStyle, StyledPickerPanel } from "comps/comps/dateComp/dateCompUtil";
+import { getStyle, StyledPickerPanel } from "#lowcoder/comps/comps/dateComp/dateCompUtil";
 import { useUIView } from "../../utils/useUIView";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import React, { useContext } from "react";

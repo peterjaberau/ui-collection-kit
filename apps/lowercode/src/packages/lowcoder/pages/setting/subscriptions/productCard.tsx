@@ -5,7 +5,7 @@ import { Card, Button } from 'antd';
 import { SettingOutlined, CheckCircleOutlined, LoadingOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { buildSubscriptionSettingsLink, buildSubscriptionInfoLink } from "#lowcoder/constants/routesURL";
 import history from "#lowcoder/util/history";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const ProductCardContainer = styled(Card)`
   width: 300px;

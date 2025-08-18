@@ -4,17 +4,17 @@ import { eventHandlerControl } from "../../controls/eventHandlerControl";
 import { StringStateControl } from "../../controls/codeStateControl";
 import { UICompBuilder } from "../../generators";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "../../generators/withExposing";
-import { RecordConstructorToView } from "lowcoder-core";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, AudioStyle, ImageStyle } from "comps/controls/styleControlConstants";
+import { RecordConstructorToView } from "#lowcoder-core/index";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, AudioStyle, ImageStyle } from "#lowcoder/comps/controls/styleControlConstants";
 import { TacoAudio } from "#lowcoder-design/index";
-import { BoolControl } from "comps/controls/boolControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import { withDefault } from "../../generators/simpleGenerators";
-import { trans } from "i18n";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
 import { mediaCommonChildren, mediaMethods } from "./mediaUtils";
 import { useContext, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 const Container = styled.div<{ $style: any; $animationStyle: AnimationStyleType }>`
 ${props => props.$style};

@@ -10,7 +10,7 @@ import {
   UserNameFormInputItem,
   encryptedPlaceholder,
 } from "../form";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { PasswordFormInputItem } from "../form";
 
 export const RedisDatasourceForm = (props: DatasourceFormProps) => {

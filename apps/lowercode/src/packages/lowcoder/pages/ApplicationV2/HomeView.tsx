@@ -2,12 +2,12 @@ import { useSelector } from "react-redux";
 import { HomeLayout } from "./HomeLayout";
 import { getUser } from "../../redux/selectors/usersSelectors";
 import { Helmet } from "react-helmet";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useState, useEffect } from "react";
 import { useDebouncedValue } from "#lowcoder/util/hooks";
-import {fetchFolderElements} from "@lowcoder-ee/util/pagination/axios";
-import {ApplicationCategoriesEnum, ApplicationMeta, FolderMeta} from "@lowcoder-ee/constants/applicationConstants";
-import {ApplicationPaginationType} from "@lowcoder-ee/util/pagination/type";
+import {fetchFolderElements} from "#lowcoder/util/pagination/axios";
+import {ApplicationCategoriesEnum, ApplicationMeta, FolderMeta} from "#lowcoder/constants/applicationConstants";
+import {ApplicationPaginationType} from "#lowcoder/util/pagination/type";
 
 interface ElementsState {
     elements: (ApplicationMeta | FolderMeta)[];

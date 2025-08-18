@@ -62,15 +62,15 @@ function MenuItemList(props: IMenuItemListProps) {
         _.isEqual(sourcePath.slice(0, -1), targetPath.slice(0, -1))
       ) {
         // same level move
-        const from = sourcePath[sourcePath.length - 1];
-        let to = targetPath[targetPath.length - 1];
+        const from: any = sourcePath[sourcePath.length - 1];
+        let to: any = targetPath[targetPath.length - 1];
         if (from < to) {
           to -= 1;
         }
         onMoveItem(targetPath, from, to);
       } else {
         // cross level move
-        let targetIndex = targetPath[targetPath.length - 1];
+        let targetIndex: any = targetPath[targetPath.length - 1];
         let targetListPath = targetPath;
         let size = 0;
 
@@ -153,17 +153,17 @@ export function DraggableTree<T = any>(props: DraggableTreeProps<T>) {
   const { node, renderItemContent, ...otherProps } = props;
   const [foldedStatus, setFoldedState] = useState<Record<string, boolean>>({});
 
-  const getItemByPath = (path: number[], scope?: DraggableTreeNode[]): DraggableTreeNode => {
+  const getItemByPath = (path: number[] | any, scope?: DraggableTreeNode[] | any): DraggableTreeNode => {
     if (!scope) {
       scope = node.items;
     }
     if (path.length === 1) {
-      return scope[path[0]];
+      return scope[path[0]] as any;
     }
     return getItemByPath(path.slice(1), scope[path[0]].items);
   };
 
-  const getItemListByPath = (path: number[], root?: DraggableTreeNode): DraggableTreeNode => {
+  const getItemListByPath = (path: number[] | any, root?: DraggableTreeNode): DraggableTreeNode => {
     if (!root) {
       root = props.node;
     }
@@ -201,7 +201,7 @@ export function DraggableTree<T = any>(props: DraggableTreeProps<T>) {
           treeNode.addItem(value);
           return treeNode.items.length;
         }}
-        onDeleteItem={(path: number[]) => {
+        onDeleteItem={(path: number[] | any) => {
           getItemListByPath(path).deleteItem(path[path.length - 1]);
         }}
         onAddSubItem={(path: number[], value: any) => {

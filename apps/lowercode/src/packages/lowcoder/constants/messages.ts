@@ -1,4 +1,4 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export function createMessage(format: (...strArgs: any[]) => string, ...args: any[]) {
   return format(...args);

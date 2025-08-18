@@ -1,5 +1,5 @@
-import { JsonEditorComp } from "comps/comps/jsonComp/jsonEditorComp";
-import { trans } from "i18n";
+import { JsonEditorComp } from "#lowcoder/comps/comps/jsonComp/jsonEditorComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -165,7 +165,7 @@ export default function JsonEditorExample() {
       }}
       compFactory={JsonEditorComp}
       />
-      </ExampleGroup> 
+      </ExampleGroup>
     </>
   );
 }

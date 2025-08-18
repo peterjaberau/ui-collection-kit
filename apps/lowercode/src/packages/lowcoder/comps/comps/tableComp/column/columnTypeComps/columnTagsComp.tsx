@@ -4,10 +4,10 @@ import { TagsContext } from "#lowcoder/components/table/EditableCell";
 import {
   ColumnTypeCompBuilder,
   ColumnTypeViewFn,
-} from "comps/comps/tableComp/column/columnTypeCompBuilder";
-import { ColumnValueTooltip } from "comps/comps/tableComp/column/simpleColumnTypeComps";
-import { codeControl } from "comps/controls/codeControl";
-import { trans } from "i18n";
+} from "#lowcoder/comps/comps/tableComp/column/columnTypeCompBuilder";
+import { ColumnValueTooltip } from "#lowcoder/comps/comps/tableComp/column/simpleColumnTypeComps";
+import { codeControl } from "#lowcoder/comps/controls/codeControl";
+import { trans } from "#lowcoder/i18n";
 import styled from "styled-components";
 import _ from "lodash";
 import React, { ReactNode, useContext, useState, useRef, useEffect, useCallback, useMemo } from "react";
@@ -15,8 +15,8 @@ import { toJson } from "really-relaxed-json";
 import { hashToNum } from "#lowcoder/util/stringUtils";
 import { CustomSelect, PackUpIcon } from "#lowcoder-design/index";
 import { ScrollBar } from "#lowcoder-design/index";
-import { ColoredTagOptionControl } from "comps/controls/optionsControl";
-import { clickEvent, eventHandlerControl } from "comps/controls/eventHandlerControl";
+import { ColoredTagOptionControl } from "#lowcoder/comps/controls/optionsControl";
+import { clickEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
 
 const colors = PresetStatusColorTypes;
 

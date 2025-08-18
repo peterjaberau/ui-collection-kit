@@ -22,13 +22,13 @@ import history from "#lowcoder/util/history";
 import { APPLICATION_VIEW_URL } from "#lowcoder/constants/routesURL";
 import { TypographyText } from "../../components/TypographyText";
 import { useParams } from "react-router-dom";
-import {FolderIcon} from "icons";
-import { BrandedIcon } from "@lowcoder-ee/components/BrandedIcon";
+import {FolderIcon} from "#lowcoder-design/icons";
+import { BrandedIcon } from "#lowcoder/components/BrandedIcon";
 import { Typography } from "antd";
 import { default as Form } from "antd/es/form";
 import { default as Input } from "antd/es/input";
 import { default as AntdTypographyText } from "antd/es/typography/Text";
-import { MultiIconDisplay } from "@lowcoder-ee/comps/comps/multiIconDisplay";
+import { MultiIconDisplay } from "#lowcoder/comps/comps/multiIconDisplay";
 import { FormStyled } from "../setting/idSource/styledComponents";
 
 const ExecButton = styled(TacoButton)`
@@ -194,7 +194,7 @@ export function UpdateAppModal({ visible, onCancel, onOk, res, folderId }: Updat
         style={{ maxWidth: '100%' }}
         autoComplete="off"
       >
-        {res.title && 
+        {res.title &&
           <Alert label={trans("home.titleUpdateWarning")} type="warning" />}
         <br/>
 
@@ -249,7 +249,7 @@ export function HomeResCard(props: { res: HomeRes; onMove: (res: HomeRes) => voi
     dispatch(
       updateAppMetaAction({ applicationId: res.id, name: values.appName || res.name, folderId: folderId })
     );
-    
+
     setDialogVisible(false);
     setTimeout(() => {
       setModify(!modify);
@@ -268,24 +268,24 @@ export function HomeResCard(props: { res: HomeRes; onMove: (res: HomeRes) => voi
 
       <Wrapper>
         <Card>
-          {res.icon ? 
-            <MultiIconDisplay 
-            identifier={res.icon && typeof res.icon === 'string' ? res.icon : '/icon:antd/appstoreoutlined'} 
-            width="30px" 
-            height="30px" 
-            style={{ 
-              marginRight: "6px", 
-              flexShrink: 0, 
-              color: "#b766db" 
-              }} 
+          {res.icon ?
+            <MultiIconDisplay
+            identifier={res.icon && typeof res.icon === 'string' ? res.icon : '/icon:antd/appstoreoutlined'}
+            width="30px"
+            height="30px"
+            style={{
+              marginRight: "6px",
+              flexShrink: 0,
+              color: "#b766db"
+              }}
             /> :
             Icon && (
               <BrandedIcon>
                 <Icon width={"42px"} height={"42px"} style={
-                  { 
+                  {
                     color: iconColor,
-                    marginRight: "10px", 
-                    flexShrink: 0 
+                    marginRight: "10px",
+                    flexShrink: 0
                   }
                 } />
               </BrandedIcon>
@@ -308,13 +308,13 @@ export function HomeResCard(props: { res: HomeRes; onMove: (res: HomeRes) => voi
               }
             }}
           >
-            <StyledTypographyText> 
+            <StyledTypographyText>
               {res.title || res.name}
             </StyledTypographyText>
 
-            {res?.description 
-              && <Typography.Text 
-                  type="secondary" 
+            {res?.description
+              && <Typography.Text
+                  type="secondary"
                   style={{ fontSize: 12, textWrap: "wrap"}}
                   >
                 {res.description.length > 150 ? res.description.substring(0, 150) + '...' : res.description}

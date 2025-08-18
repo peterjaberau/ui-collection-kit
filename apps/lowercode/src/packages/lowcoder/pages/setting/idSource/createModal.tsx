@@ -2,7 +2,7 @@ import { CustomSelect } from "lowcoder-design";
 import {
   CustomModalStyled,
 } from "../styled";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import {
   FormStyled,
   SpanStyled,

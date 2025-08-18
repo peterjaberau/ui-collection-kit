@@ -1,12 +1,12 @@
-import { MultiCompBuilder } from "comps/generators/multi";
-import { withDefault } from "comps/generators/simpleGenerators";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
+import { withDefault } from "#lowcoder/comps/generators/simpleGenerators";
 import { BranchDiv } from "lowcoder-design";
 import { KeyValue } from "#lowcoder/types/common";
-import { BoolControl } from "comps/controls/boolControl";
-import { StringControl } from "comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
 import { keyValueListControl } from "../keyValueListControl";
 import { keyValueListToSearchStr } from "../../../util/appUtils";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const childrenMap = {
   url: StringControl,
@@ -20,7 +20,7 @@ const childrenMap = {
 };
 
 export const GoToURLAction = new MultiCompBuilder(childrenMap, (props) => {
-  return () => {  
+  return () => {
     const queryParams = keyValueListToSearchStr(
       props.query.map((i) => i.getView() as KeyValue)
     );

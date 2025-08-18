@@ -6,7 +6,7 @@ import {
   WrapContextFn,
   wrapChildAction,
   wrapContext,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { ReactNode } from "react";
 import { lastValueIfEqual } from "#lowcoder/util/objectUtils";
 import { CodeControlType, JSONValueControl } from "./codeControl";

@@ -1,14 +1,14 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectIsLicenseActive } from "#lowcoder/redux/selectors/enterpriseSelectors";
-import EnvironmentsSettings from "@lowcoder-ee/pages/setting/environments/Environments";
+import EnvironmentsSettings from "#lowcoder/pages/setting/environments/Environments";
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../styled";
 import styled from "styled-components";
 import { Card, Typography, Row, Col, Divider, Button } from "antd";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useEffect, useState } from "react";
-import { getUser } from "@lowcoder-ee/redux/selectors/usersSelectors";
+import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { HubspotModal } from "../hubspotModal";
-import { getDeploymentId } from "@lowcoder-ee/redux/selectors/configSelectors";
+import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
 import { Image } from 'antd';
 import { getOrgApiUsage, getOrgLastMonthApiUsage } from "#lowcoder/redux/selectors/orgSelectors";
 import { fetchAPIUsageAction, fetchLastMonthAPIUsageAction } from "#lowcoder/redux/reduxActions/orgActions";

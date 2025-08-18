@@ -4,19 +4,19 @@ import { BoolControl } from "../controls/boolControl";
 import { UICompBuilder, withDefault } from "../generators";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "../generators/withExposing";
 import styled from "styled-components";
-import { hiddenPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { ChangeEventHandlerControl } from "comps/controls/eventHandlerControl";
+import { hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { ChangeEventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
 import { formDataChildren, FormDataPropertyView } from "./formComp/formDataConstants";
-import { PositionControl } from "comps/controls/dropdownControl";
+import { PositionControl } from "#lowcoder/comps/controls/dropdownControl";
 import { useEffect, useRef, useState } from "react";
 import  { useResizeDetector } from "react-resize-detector";
-import { ArrayStringControl } from "comps/controls/codeControl";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, CarouselStyle } from "comps/controls/styleControlConstants";
+import { ArrayStringControl } from "#lowcoder/comps/controls/codeControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, CarouselStyle } from "#lowcoder/comps/controls/styleControlConstants";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 // TODO: dots at top position needs proper margin (should be the same as bottom position)
 

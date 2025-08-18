@@ -1,12 +1,12 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { Section, sectionNames } from "lowcoder-design";
 import { numberExposingStateControl } from "../../controls/codeStateControl";
 import { UICompBuilder } from "../../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../../generators/withExposing";
 import { SliderChildren, SliderPropertyView, SliderStyled, SliderWrapper } from "./sliderCompConstants";
-import { hasIcon } from "comps/utils";
-import { BoolControl } from "comps/controls/boolControl";
-import { NumberControl } from "comps/controls/codeControl";
+import { hasIcon } from "#lowcoder/comps/utils";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { NumberControl } from "#lowcoder/comps/controls/codeControl";
 import { useCallback, useRef, useEffect } from "react";
 
 const RangeSliderBasicComp = (function () {

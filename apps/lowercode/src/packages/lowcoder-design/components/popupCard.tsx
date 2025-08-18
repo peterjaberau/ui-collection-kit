@@ -3,7 +3,7 @@ import { default as Card } from "antd/es/card";
 import { CopyTextButton } from "./copyTextButton";
 import { CSSProperties, ReactNode, useState } from "react";
 import styled from "styled-components";
-import { ErrorIcon, SuccessIcon } from "icons";
+import { ErrorIcon, SuccessIcon } from "#lowcoder-design/icons";
 
 const StyledCard = styled(Card)<{ $backcolor: string }>`
   z-index: 3;

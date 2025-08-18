@@ -1,4 +1,4 @@
-import { StepComp } from "comps/comps/selectInputComp/stepControl";
+import { StepComp } from "#lowcoder/comps/comps/selectInputComp/stepControl";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 
@@ -141,7 +141,7 @@ export default function StepControlExample() {
             }}
             compFactory={StepComp}
           />
-        </ExampleGroup> 
+        </ExampleGroup>
 
         <ExampleGroup
           title="Styling Properties"
@@ -201,7 +201,7 @@ export default function StepControlExample() {
             compFactory={StepComp}
           />
         </ExampleGroup>
-  
+
         <ExampleGroup
           title="Animation Style"
           description="The Following Examples Show different animations on the Step Control Component."
@@ -245,7 +245,7 @@ export default function StepControlExample() {
           }}
           compFactory={StepComp}
         />
-        </ExampleGroup>     
+        </ExampleGroup>
       </>
     );
   }

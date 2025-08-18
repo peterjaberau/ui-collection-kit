@@ -1,5 +1,5 @@
-import { CompInfo } from "comps/editorState";
-import { getDynamicStringSegments } from "lowcoder-core";
+import { CompInfo } from "#lowcoder/comps/editorState";
+import { getDynamicStringSegments } from "#lowcoder-core/eval";
 import _ from "lodash";
 import { CompletionContext } from "./codeMirror";
 

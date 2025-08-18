@@ -3,7 +3,7 @@
 import "comps/comps/layout/navLayout";
 import "comps/comps/layout/mobileTabLayout";
 import cnchar from "cnchar";
-import { ModalComp } from "comps/hooks/modalComp";
+import { ModalComp } from "#lowcoder/comps/hooks/modalComp";
 import { ButtonComp } from "./comps/buttonComp/buttonComp";
 import { DropdownComp } from "./comps/buttonComp/dropdownComp";
 import { LinkComp } from "./comps/buttonComp/linkComp";
@@ -56,7 +56,7 @@ import { JsonExplorerComp } from "./comps/jsonComp/jsonExplorerComp";
 import { JsonEditorComp } from "./comps/jsonComp/jsonEditorComp";
 import { TreeComp } from "./comps/treeComp/treeComp";
 import { TreeSelectComp } from "./comps/treeComp/treeSelectComp";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { remoteComp } from "./comps/remoteComp/remoteComp";
 import { AudioComp } from "./comps/mediaComp/audioComp";
 import { VideoComp } from "./comps/mediaComp/videoComp";

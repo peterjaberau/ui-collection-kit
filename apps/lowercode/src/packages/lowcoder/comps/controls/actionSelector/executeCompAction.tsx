@@ -1,12 +1,12 @@
-import { CompParams, ConstructorToDataType, customAction, routeByNameAction } from "lowcoder-core";
-import { GridItemComp } from "comps/comps/gridItemComp";
-import { SimpleNameComp } from "comps/comps/simpleNameComp";
-import { TemporaryStateItemComp } from "comps/comps/temporaryStateComp";
-import { CompNameContext, EditorContext, EditorState } from "comps/editorState";
-import { valueComp, withTypeAndChildren } from "comps/generators";
-import { list } from "comps/generators/list";
-import { MultiCompBuilder } from "comps/generators/multi";
-import { HookComp } from "comps/hooks/hookComp";
+import { CompParams, ConstructorToDataType, customAction, routeByNameAction } from "#lowcoder-core/index";
+import { GridItemComp } from "#lowcoder/comps/comps/gridItemComp";
+import { SimpleNameComp } from "#lowcoder/comps/comps/simpleNameComp";
+import { TemporaryStateItemComp } from "#lowcoder/comps/comps/temporaryStateComp";
+import { CompNameContext, EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { valueComp, withTypeAndChildren } from "#lowcoder/comps/generators";
+import { list } from "#lowcoder/comps/generators/list";
+import { MultiCompBuilder } from "#lowcoder/comps/generators/multi";
+import { HookComp } from "#lowcoder/comps/hooks/hookComp";
 import { BranchDiv, Dropdown } from "lowcoder-design";
 import { mapValues } from "lodash";
 import { Fragment, ReactNode } from "react";
@@ -24,7 +24,7 @@ import {
   StringControl,
 } from "../codeControl";
 import { ExecuteAction, ParamsConfig, ParamType } from "./executeCompTypes";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const ParamsCompMap: Record<ParamType, CodeControlType> = {
   number: NumberControl,

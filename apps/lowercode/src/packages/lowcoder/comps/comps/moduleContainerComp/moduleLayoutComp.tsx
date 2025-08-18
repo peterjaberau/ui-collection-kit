@@ -1,13 +1,13 @@
-import { BoolControl } from "comps/controls/boolControl";
-import { stateComp, UICompBuilder, valueComp, withDefault } from "comps/generators";
-import { NameGenerator } from "comps/utils";
-import { NameAndExposingInfo } from "comps/utils/exposingTypes";
-import { trans } from "i18n";
-import { DEFAULT_POSITION_PARAMS, PositionParams } from "layout";
-import { ResizeHandleAxis } from "layout/gridLayoutPropTypes";
-import { Layout } from "layout/utils";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { stateComp, UICompBuilder, valueComp, withDefault } from "#lowcoder/comps/generators";
+import { NameGenerator } from "#lowcoder/comps/utils";
+import { NameAndExposingInfo } from "#lowcoder/comps/utils/exposingTypes";
+import { trans } from "#lowcoder/i18n";
+import { DEFAULT_POSITION_PARAMS, PositionParams } from "#lowcoder/";
+import { ResizeHandleAxis } from "#lowcoder/gridLayoutPropTypes";
+import { Layout } from "#lowcoder/utils";
 import _ from "lodash";
-import { CompAction, CompActionTypes } from "lowcoder-core";
+import { CompAction, CompActionTypes } from "#lowcoder-core/index";
 import { ReactElement, useContext } from "react";
 import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
@@ -23,7 +23,7 @@ import ModuleMethodListComp from "./moduleMethodListComp";
 import { ConfigViewWrapper } from "./styled";
 import { CNRootContainer } from "#lowcoder/constants/styleSelectors";
 import styled from "styled-components";
-import { ThemeContext } from "comps/utils/themeContext";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
 
 export const MODULE_LAYOUT_COMP = "@moduleLayoutComp";
 

@@ -1,4 +1,4 @@
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useMemo, useState } from "react";
 import { PluginItem } from "./PluginItem";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,11 +7,11 @@ import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { BluePlusIcon, CustomModal, DocLink, TacoButton, TacoInput } from "lowcoder-design";
 import { getCommonSettings } from "#lowcoder/redux/selectors/commonSettingSelectors";
 import styled from "styled-components";
-import { getNpmPackageMeta, normalizeNpmPackage, validateNpmPackage } from "comps/utils/remote";
+import { getNpmPackageMeta, normalizeNpmPackage, validateNpmPackage } from "#lowcoder/comps/utils/remote";
 import { ComListTitle, ExtensionContentWrapper } from "../styledComponent";
 import { EmptyContent } from "#lowcoder/components/EmptyContent";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { isPublicApplication } from "@lowcoder-ee/redux/selectors/applicationSelector";
+import { isPublicApplication } from "#lowcoder/redux/selectors/applicationSelector";
 
 const Footer = styled.div`
   display: flex;

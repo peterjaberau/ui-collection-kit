@@ -1,6 +1,6 @@
 import ReactECharts from 'echarts-for-react';
 import { styled } from 'styled-components';
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export const StyledReactECharts = styled(ReactECharts)`
   width: 100%;

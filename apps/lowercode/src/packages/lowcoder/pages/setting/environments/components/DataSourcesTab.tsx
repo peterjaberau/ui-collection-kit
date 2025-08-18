@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Divider, Alert, Table, Tag, Input, Space, Tooltip, Row, Col, Avatar } from 'antd';
-import { messageInstance } from 'lowcoder-design/src/components/GlobalInstances';
-import { 
-  SyncOutlined, 
-  CloudUploadOutlined, 
-  DatabaseOutlined, 
+import { messageInstance } from '#lowcoder-design/components/GlobalInstances';
+import {
+  SyncOutlined,
+  CloudUploadOutlined,
+  DatabaseOutlined,
   AuditOutlined,
   ApiOutlined,
   CheckCircleFilled,
@@ -20,7 +20,7 @@ import { Switch, Spin, Empty } from 'antd';
 import { ManagedObjectType, setManagedObject, unsetManagedObject } from '../services/managed-objects.service';
 import { useDeployModal } from '../context/DeployModalContext';
 import { dataSourcesConfig } from '../config/data-sources.config';
-import history from "@lowcoder-ee/util/history";
+import history from "#lowcoder/util/history";
 import { trans } from 'i18n';
 
 const { Search } = Input;
@@ -48,10 +48,10 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
   // Fetch data sources
   const fetchDataSources = async () => {
     if (!workspaceId || !environment) return;
-    
+
     setLoading(true);
     setError(null);
-    
+
     try {
       const result = await getMergedWorkspaceDataSources(
         workspaceId,
@@ -59,7 +59,7 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
         environment.environmentApikey,
         environment.environmentApiServiceUrl!
       );
-      
+
       setDataSources(result.dataSources);
       setStats(result.stats);
     } catch (err) {
@@ -97,7 +97,7 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
           ManagedObjectType.DATASOURCE
         );
       }
-      
+
       // Update the data source in state
       const updatedDataSources = dataSources.map(item => {
         if (item.id === dataSource.id) {
@@ -105,9 +105,9 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
         }
         return item;
       });
-      
+
       setDataSources(updatedDataSources);
-      
+
       // Update stats
       const managed = updatedDataSources.filter(ds => ds.managed).length;
       setStats(prev => ({
@@ -115,7 +115,7 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
         managed,
         unmanaged: prev.total - managed
       }));
-      
+
       messageInstance.success(trans(checked ? "environments.dataSources_managedSuccess" : "environments.dataSources_unmanagedSuccess", { name: dataSource.name }));
       return true;
     } catch (error) {
@@ -128,8 +128,8 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
 
   // Filter data sources based on managed status and search
   const filteredDataSources = searchText
-    ? dataSources.filter(ds => 
-        ds.name.toLowerCase().includes(searchText.toLowerCase()) || 
+    ? dataSources.filter(ds =>
+        ds.name.toLowerCase().includes(searchText.toLowerCase()) ||
         ds.id.toString().toLowerCase().includes(searchText.toLowerCase()))
     : dataSources;
 
@@ -144,8 +144,8 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
       key: 'datasource',
       render: (dataSource: DataSource) => (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Avatar 
-            style={{ 
+          <Avatar
+            style={{
               backgroundColor: getDataSourceColor(dataSource.type),
               marginRight: 12
             }}
@@ -175,8 +175,8 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
       title: trans("environments.dataSources_status"),
       key: 'status',
       render: (dataSource: DataSource) => (
-        <Tag 
-          color={dataSource.managed ? 'processing' : 'default'} 
+        <Tag
+          color={dataSource.managed ? 'processing' : 'default'}
           style={{ borderRadius: '4px' }}
         >
           {dataSource.managed ? <CloudServerOutlined /> : <DisconnectOutlined />} {dataSource.managed ? trans("environments.dataSources_managed") : trans("environments.dataSources_unmanaged")}
@@ -199,7 +199,7 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
       key: 'actions',
       render: (_: any, dataSource: DataSource) => (
         <Space onClick={(e) => e.stopPropagation()}>
-       
+
           <Tooltip title={!dataSource.managed ? trans("environments.dataSources_dataSourceMustBeManagedToDeploy") : trans("environments.dataSources_deployThisDataSource")}>
             <Button
               type="primary"
@@ -241,15 +241,15 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
       'mssql': '#CC2927',
       'snowflake': '#29B5E8'
     };
-    
+
     return colorMap[type.toLowerCase()] || '#1890ff';
   };
 
   // Stat card component
   const StatCard = ({ title, value, icon }: { title: string; value: number; icon: React.ReactNode }) => (
-    <Card 
-      style={{ 
-        height: '100%', 
+    <Card
+      style={{
+        height: '100%',
         borderRadius: '4px',
         border: '1px solid #f0f0f0'
       }}
@@ -259,9 +259,9 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
           <div style={{ fontSize: '13px', color: '#8c8c8c', marginBottom: '8px' }}>{title}</div>
           <div style={{ fontSize: '20px', fontWeight: 500 }}>{value}</div>
         </div>
-        <div style={{ 
-          fontSize: '24px', 
-          opacity: 0.8, 
+        <div style={{
+          fontSize: '24px',
+          opacity: 0.8,
           color: '#52c41a',
           padding: '8px',
           backgroundColor: 'rgba(82, 196, 26, 0.1)',
@@ -279,10 +279,10 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
   return (
     <div style={{ padding: '16px' }}>
       {/* Header */}
-      <div style={{ 
-        display: "flex", 
-        justifyContent: "space-between", 
-        alignItems: "center", 
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
         marginBottom: "20px"
       }}>
         <div>
@@ -293,8 +293,8 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
             {trans("environments.dataSources_subtitle")}
           </p>
         </div>
-        <Button 
-          icon={<SyncOutlined spin={refreshing} />} 
+        <Button
+          icon={<SyncOutlined spin={refreshing} />}
           onClick={handleRefresh}
           loading={loading}
         >
@@ -327,38 +327,38 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
       {/* Stats display */}
       <Row gutter={[16, 16]} style={{ marginBottom: '20px' }}>
         <Col xs={12} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.dataSources_totalDataSources")} 
-            value={stats.total} 
-            icon={<DatabaseOutlined />} 
+          <StatCard
+            title={trans("environments.dataSources_totalDataSources")}
+            value={stats.total}
+            icon={<DatabaseOutlined />}
           />
         </Col>
         <Col xs={12} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.dataSources_availableTypes")} 
-            value={stats.types} 
-            icon={<ApiOutlined />} 
+          <StatCard
+            title={trans("environments.dataSources_availableTypes")}
+            value={stats.types}
+            icon={<ApiOutlined />}
           />
         </Col>
         <Col xs={12} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.dataSources_managed")} 
-            value={stats.managed} 
-            icon={<CloudServerOutlined />} 
+          <StatCard
+            title={trans("environments.dataSources_managed")}
+            value={stats.managed}
+            icon={<CloudServerOutlined />}
           />
         </Col>
         <Col xs={12} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.dataSources_unmanaged")} 
-            value={stats.unmanaged} 
-            icon={<DisconnectOutlined />} 
+          <StatCard
+            title={trans("environments.dataSources_unmanaged")}
+            value={stats.unmanaged}
+            icon={<DisconnectOutlined />}
           />
         </Col>
       </Row>
 
       {/* Content */}
-      <Card 
-        style={{ 
+      <Card
+        style={{
           borderRadius: '4px',
           border: '1px solid #f0f0f0'
         }}
@@ -383,7 +383,7 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
                 onChange={e => setSearchText(e.target.value)}
                 style={{ width: 300 }}
               />
-              <Button 
+              <Button
                 onClick={() => setShowManagedOnly(!showManagedOnly)}
                 type={showManagedOnly ? "primary" : "default"}
                 icon={<FilterOutlined />}
@@ -392,18 +392,18 @@ const DataSourcesTab: React.FC<DataSourcesTabProps> = ({ environment, workspaceI
                 {showManagedOnly ? trans("environments.dataSources_showAll") : trans("environments.dataSources_managedOnly")}
               </Button>
             </div>
-            
+
             {searchText &&  displayedDataSources.length !== dataSources.length && (
               <div style={{ marginBottom: 16, color: '#8c8c8c', fontSize: '13px' }}>
                 {trans("environments.dataSources_showingResults", { count: displayedDataSources.length, total: dataSources.length })}
               </div>
             )}
-            
+
             <Table
               columns={columns}
               dataSource={displayedDataSources}
               rowKey="id"
-              pagination={{ 
+              pagination={{
                 pageSize: 10,
                 showTotal: (total, range) => trans("environments.dataSources_paginationTotal", { start: range[0], end: range[1], total }),
                 size: 'small'

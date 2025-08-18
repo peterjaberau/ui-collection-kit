@@ -7,7 +7,7 @@ import {
   withDefault,
  } from "lowcoder-sdk";
 import { ConstructorToView } from "#lowcoder-core/index";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 const BarTypeOptions = [
   {

@@ -9,7 +9,7 @@ import {
   TextWrapper,
   ModuleIcon,
 } from "lowcoder-design";
-import { trans, transToNode } from "i18n";
+import { trans, transToNode } from "#lowcoder/i18n";
 import { exportApplicationAsJSONFile } from "#lowcoder/pages/ApplicationV2/components/AppImport";
 import { useContext, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

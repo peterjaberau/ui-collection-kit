@@ -14,7 +14,7 @@ import {
   NodeToValue,
   RecordConstructorToComp,
   wrapDispatch,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { ReactNode } from "react";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 import { map } from "./map";

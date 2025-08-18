@@ -1,5 +1,5 @@
-import { BrandingConfig, BrandingSettingResponse, EnterpriseLicenseResponse } from "@lowcoder-ee/api/enterpriseApi";
-import { createReducer } from "@lowcoder-ee/util/reducerUtils";
+import { BrandingConfig, BrandingSettingResponse, EnterpriseLicenseResponse } from "#lowcoder/api/enterpriseApi";
+import { createReducer } from "#lowcoder/util/reducerUtils";
 import { ReduxAction, ReduxActionTypes } from "#lowcoder/constants/reduxActionConstants";
 import { Environment } from "#lowcoder/pages/setting/environments/types/environment.types";
 export interface EnterpriseReduxState {

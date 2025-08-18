@@ -1,8 +1,8 @@
-import { JSONValueControl } from "comps/controls/codeControl";
-import CompNameControl from "comps/controls/compNameControl";
-import { simpleMultiComp, valueComp, withPropertyViewFn } from "comps/generators";
-import { withExposingRaw } from "comps/generators/withExposing";
-import { trans } from "i18n";
+import { JSONValueControl } from "#lowcoder/comps/controls/codeControl";
+import CompNameControl from "#lowcoder/comps/controls/compNameControl";
+import { simpleMultiComp, valueComp, withPropertyViewFn } from "#lowcoder/comps/generators";
+import { withExposingRaw } from "#lowcoder/comps/generators/withExposing";
+import { trans } from "#lowcoder/i18n";
 import {
   ControlPropertyViewWrapper,
   EditPopover,

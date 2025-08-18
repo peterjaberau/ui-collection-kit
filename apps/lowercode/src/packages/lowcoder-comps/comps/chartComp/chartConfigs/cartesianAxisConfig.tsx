@@ -10,7 +10,7 @@ import {
   JSONValue,
   isNumeric,
 } from "lowcoder-sdk";
-import { i18nObjs, trans } from "i18n/comps";
+import { i18nObjs, trans } from "#lowcoder/i18n";
 import _, { isNil } from "lodash";
 import { xAxisTypeUrl } from "./chartUrls";
 

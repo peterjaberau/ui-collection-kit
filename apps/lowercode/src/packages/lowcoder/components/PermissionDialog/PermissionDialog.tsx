@@ -3,7 +3,7 @@ import { PermissionItemsType, PermissionList } from "./PermissionList";
 import StepModal from "../StepModal";
 import { trans } from "../../i18n";
 import { TacoButton } from "#lowcoder-design/components/button";
-import { AddIcon } from "icons";
+import { AddIcon } from "#lowcoder-design/icons";
 import { GreyTextColor } from "#lowcoder/constants/style";
 import { Permission, PermissionRole } from "./Permission";
 import styled from "styled-components";

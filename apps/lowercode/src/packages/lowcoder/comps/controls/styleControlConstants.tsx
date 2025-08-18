@@ -1,8 +1,8 @@
 import {ThemeDetail} from "#lowcoder/api/commonSettingApi";
 import {darkenColor, isDarkColor, lightenColor, toHex} from "lowcoder-design";
-import {trans} from "i18n";
+import {trans} from "#lowcoder/i18n";
 import {StyleConfigType} from "./styleControl";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
 
 type SupportPlatform = "pc" | "mobile";
 

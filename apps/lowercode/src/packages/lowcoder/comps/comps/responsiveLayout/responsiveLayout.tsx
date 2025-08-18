@@ -1,11 +1,11 @@
 import { default as Row } from "antd/es/row";
 import { default as Col } from "antd/es/col";
 import { JSONObject, JSONValue } from "#lowcoder/util/jsonTypes";
-import { CompAction, CompActionTypes, deleteCompAction, wrapChildAction } from "lowcoder-core";
-import { DispatchType, RecordConstructorToView, wrapDispatch } from "lowcoder-core";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
-import { ColumnOptionControl } from "comps/controls/optionsControl";
-import { styleControl } from "comps/controls/styleControl";
+import { CompAction, CompActionTypes, deleteCompAction, wrapChildAction } from "#lowcoder-core/index";
+import { DispatchType, RecordConstructorToView, wrapDispatch } from "#lowcoder-core/index";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
+import { ColumnOptionControl } from "#lowcoder/comps/controls/optionsControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 import {
   ResponsiveLayoutRowStyle,
   ResponsiveLayoutRowStyleType,
@@ -13,11 +13,11 @@ import {
   ResponsiveLayoutColStyleType,
   AnimationStyle,
   AnimationStyleType
-} from "comps/controls/styleControlConstants";
-import { sameTypeMap, UICompBuilder, withDefault } from "comps/generators";
-import { addMapChildAction } from "comps/generators/sameTypeMap";
-import { NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
-import { NameGenerator } from "comps/utils";
+} from "#lowcoder/comps/controls/styleControlConstants";
+import { sameTypeMap, UICompBuilder, withDefault } from "#lowcoder/comps/generators";
+import { addMapChildAction } from "#lowcoder/comps/generators/sameTypeMap";
+import { NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
+import { NameGenerator } from "#lowcoder/comps/utils";
 import { Section, controlItem, sectionNames } from "lowcoder-design";
 import { HintPlaceHolder } from "lowcoder-design";
 import _ from "lodash";
@@ -31,19 +31,19 @@ import {
   gridItemCompToGridItems,
   InnerGrid,
 } from "../containerComp/containerView";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
-import { trans } from "i18n";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
+import { trans } from "#lowcoder/i18n";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { BoolControl } from "comps/controls/boolControl";
-import { BoolCodeControl, NumberControl } from "comps/controls/codeControl";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { BoolCodeControl, NumberControl } from "#lowcoder/comps/controls/codeControl";
 
 import { useContext } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
-import { disabledPropertyView, hiddenPropertyView } from "comps/utils/propertyUtils";
-import { DisabledContext } from "comps/generators/uiCompBuilder";
-import { SliderControl } from "@lowcoder-ee/comps/controls/sliderControl";
-import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
+import { disabledPropertyView, hiddenPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { DisabledContext } from "#lowcoder/comps/generators/uiCompBuilder";
+import { SliderControl } from "#lowcoder/comps/controls/sliderControl";
+import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
 import { useScreenInfo } from "../../hooks/screenInfoComp";
 
 

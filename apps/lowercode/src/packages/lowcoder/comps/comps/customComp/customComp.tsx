@@ -1,19 +1,19 @@
-import { routeByNameAction, executeQueryAction } from "lowcoder-core";
-import { CompAction } from "lowcoder-core";
-import { StringControl } from "comps/controls/codeControl";
-import { jsonObjectStateControl } from "comps/controls/codeStateControl";
-import { UICompBuilder, withDefault } from "comps/generators";
-import { NameConfig, NameConfigHidden, withExposingConfigs } from "comps/generators/withExposing";
+import { routeByNameAction, executeQueryAction } from "#lowcoder-core/index";
+import { CompAction } from "#lowcoder-core/index";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { jsonObjectStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { UICompBuilder, withDefault } from "#lowcoder/comps/generators";
+import { NameConfig, NameConfigHidden, withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { Section, sectionNames } from "#lowcoder-design/index";
 import { useEffect, useRef, useContext } from "react";
 import styled from "styled-components";
 import { getPromiseAfterDispatch } from "#lowcoder/util/promiseUtils";
 import { EventData, EventTypeEnum } from "./types";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { EditorContext } from "comps/editorState";
-import { AnimationStyle, AnimationStyleType, CustomStyle, CustomStyleType } from "@lowcoder-ee/comps/controls/styleControlConstants";
-import { styleControl } from "@lowcoder-ee/comps/controls/styleControl";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { AnimationStyle, AnimationStyleType, CustomStyle, CustomStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
 // TODO: eventually to embedd in container so we have styling?
 // TODO: support different starter templates for different frameworks (react, ANT, Flutter, Angular, etc)
 

@@ -16,7 +16,7 @@ import { timestampToHumanReadable } from "../../util/dateTimeUtils";
 import { ScrollBar } from "lowcoder-design";
 import QueryLibrarySkeletonView from "./QueryLibrarySkeletonView";
 import { ReadonlyTag } from "../common/freeLimitTag";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const RevertButton = styled(TacoButton)`
   padding: 0 11px;

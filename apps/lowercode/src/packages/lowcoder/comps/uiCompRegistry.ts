@@ -1,9 +1,9 @@
 import { FunctionComponent, ReactNode } from "react";
-import { withExposingConfigs } from "comps/generators/withExposing";
+import { withExposingConfigs } from "#lowcoder/comps/generators/withExposing";
 import { NameGenerator } from "./utils/nameGenerator";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
 import { EditorState } from "./editorState";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 export type ExposingMultiCompConstructor = ReturnType<
   typeof withExposingConfigs
@@ -165,7 +165,7 @@ export type UICompType =
   | "treeChart"
   | "treemapChart"
   | "sunburstChart"
-  | "themeriverChart" 
+  | "themeriverChart"
   | "basicChart"
   | "columnLayout"
   | "ganttChart"

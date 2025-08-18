@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Card, Space, Typography, Row, Col } from 'antd';
-import { 
-  CustomerServiceOutlined, 
-  EditOutlined, 
+import {
+  CustomerServiceOutlined,
+  EditOutlined,
   ArrowLeftOutlined,
   CloseCircleOutlined,
   ExclamationCircleOutlined,
@@ -15,7 +15,7 @@ import ModernBreadcrumbs from './ModernBreadcrumbs';
 import EnvironmentHeader from './EnvironmentHeader';
 import StatsCard from './StatsCard';
 import { Level1SettingPageContent } from "../../styled";
-import history from "@lowcoder-ee/util/history";
+import history from "#lowcoder/util/history";
 import { trans } from 'i18n';
 
 const { Title, Text } = Typography;
@@ -52,7 +52,7 @@ const UnlicensedEnvironmentView: React.FC<UnlicensedEnvironmentViewProps> = ({
 
 
   const getLicenseDescription = () => {
-    
+
     switch (environment.licenseStatus) {
       case 'unlicensed':
         return trans("environments.unlicensed_unlicensedDescription");
@@ -95,11 +95,11 @@ const UnlicensedEnvironmentView: React.FC<UnlicensedEnvironmentViewProps> = ({
     <Level1SettingPageContent style={{ minWidth: "1000px" }}>
 
       {/* Breadcrumbs */}
-       <ModernBreadcrumbs 
+       <ModernBreadcrumbs
         items={[
           {
             key: 'environments',
-            title: trans("environments.title"),  
+            title: trans("environments.title"),
             onClick: () => history.push('/setting/environments')
           },
           {
@@ -110,9 +110,9 @@ const UnlicensedEnvironmentView: React.FC<UnlicensedEnvironmentViewProps> = ({
       />
 
       {/* Environment Header Component */}
-      <EnvironmentHeader 
-        environment={environment} 
-        onEditClick={onEditClick} 
+      <EnvironmentHeader
+        environment={environment}
+        onEditClick={onEditClick}
       />
 
       {/* Stats Cards Row */}
@@ -129,7 +129,7 @@ const UnlicensedEnvironmentView: React.FC<UnlicensedEnvironmentViewProps> = ({
         ))}
       </Row>
 
-     
+
 
       {/* License Issue Card */}
       <Card
@@ -143,9 +143,9 @@ const UnlicensedEnvironmentView: React.FC<UnlicensedEnvironmentViewProps> = ({
       >
         <Row justify="center">
           <Col xs={24} sm={20} md={16} lg={12}>
-            <div style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               textAlign: 'center'
             }}>
@@ -158,8 +158,8 @@ const UnlicensedEnvironmentView: React.FC<UnlicensedEnvironmentViewProps> = ({
               <Title level={2} style={{ marginBottom: '12px', color: '#262626' }}>
                 {getLicenseTitle()}
               </Title>
-              <Text style={{ 
-                fontSize: '16px', 
+              <Text style={{
+                fontSize: '16px',
                 color: '#595959',
                 marginBottom: '24px',
                 lineHeight: '1.6',
@@ -229,7 +229,7 @@ const UnlicensedEnvironmentView: React.FC<UnlicensedEnvironmentViewProps> = ({
         }}
         styles={{ body: { padding: '16px' } }}
       >
-        <Text style={{ 
+        <Text style={{
           color: '#8c8c8c',
           fontSize: '14px',
           textAlign: 'center',
@@ -250,4 +250,4 @@ const UnlicensedEnvironmentView: React.FC<UnlicensedEnvironmentViewProps> = ({
   );
 };
 
-export default UnlicensedEnvironmentView; 
+export default UnlicensedEnvironmentView;

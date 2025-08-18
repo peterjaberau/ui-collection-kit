@@ -1,5 +1,5 @@
-import { Comp } from "lowcoder-core";
-import { evalAndReduceWithExposing } from "comps/utils";
+import { Comp } from "#lowcoder-core/index";
+import { evalAndReduceWithExposing } from "#lowcoder/comps/utils";
 import _ from "lodash";
 import React, { ReactNode, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
@@ -13,9 +13,9 @@ import {
 } from "#lowcoder/util/context/ExternalEditorContext";
 import { BorderContext } from "./BorderContext";
 import { ExampleContext } from "../ExampleContext";
-import { trans } from "i18n";
-import { EditorContext, EditorState } from "comps/editorState";
-import { RootComp } from "comps/comps/rootComp";
+import { trans } from "#lowcoder/i18n";
+import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { RootComp } from "#lowcoder/comps/comps/rootComp";
 
 const Wrapper = styled.div`
   border: 1px solid #d7d9e0;

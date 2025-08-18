@@ -40,7 +40,7 @@ export default function StepModal(props: StepModalProps) {
     if (currentStepIndex <= 0) {
       return;
     }
-    const targetKey = steps[currentStepIndex - 1]?.key;
+    const targetKey: any = steps[currentStepIndex - 1]?.key;
     handleChangeStep(targetKey);
   };
 
@@ -48,7 +48,7 @@ export default function StepModal(props: StepModalProps) {
     if (currentStepIndex >= steps.length - 1) {
       return;
     }
-    const targetKey = steps[currentStepIndex + 1]?.key;
+    const targetKey: any = steps[currentStepIndex + 1]?.key;
     handleChangeStep(targetKey);
   };
 

@@ -20,7 +20,7 @@ import {
 import { default as Skeleton } from "antd/es/skeleton";
 import { TacoPagination } from "lowcoder-design";
 import { AppSnapshotContext, AppSnapshotList } from "#lowcoder/constants/applicationConstants";
-import { ExtraActionType } from "lowcoder-core";
+import { ExtraActionType } from "#lowcoder-core/index";
 import { formatString } from "#lowcoder/util/stringUtils";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { ScrollBar } from "lowcoder-design";
@@ -34,7 +34,7 @@ import { AppSummaryInfo } from "#lowcoder/redux/reduxActions/applicationActions"
 import { useRootCompInstance } from "./useRootCompInstance";
 import { TopHeaderHeight } from "#lowcoder/constants/style";
 import { SnapshotItemProps, SnapshotList } from "../../components/SnapshotList";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import EditorSkeletonView from "./editorSkeletonView";
 import React from "react";
 

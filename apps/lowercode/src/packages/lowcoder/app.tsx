@@ -44,10 +44,10 @@ import { reduxStore } from "#lowcoder/redux/store/store";
 import { developEnv } from "#lowcoder/util/envUtils";
 import history from "#lowcoder/util/history";
 import LazyRoute from "#lowcoder/components/LazyRoute";
-import { getAntdLocale } from "i18n/antdLocale";
+import { getAntdLocale } from "#lowcoder/i18n/antdLocale";
 import { ProductLoading } from "#lowcoder/components/ProductLoading";
-import { trans } from "i18n"; // language
-import { loadComps } from "comps";
+import { trans } from "#lowcoder/i18n"; // language
+import { loadComps } from "#lowcoder/comps";
 import { initApp } from "#lowcoder/util/commonUtils";
 import { favicon } from "assets/images";
 import { hasQueryParam } from "#lowcoder/util/urlUtils";
@@ -56,7 +56,7 @@ import { getIsCommonSettingFetched } from "#lowcoder/redux/selectors/commonSetti
 import { SystemWarning } from "./components/SystemWarning";
 import { getBrandingConfig, getDeploymentId } from "./redux/selectors/configSelectors";
 import { buildMaterialPreviewURL } from "./util/materialUtils";
-import GlobalInstances from 'components/GlobalInstances';
+import GlobalInstances from '#lowcoder-design/components/GlobalInstances';
 // import posthog from 'posthog-js'
 import { fetchHomeData, fetchServerSettingsAction } from "./redux/reduxActions/applicationActions";
 import { getNpmPackageMeta } from "./comps/utils/remote";

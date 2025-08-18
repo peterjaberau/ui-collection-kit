@@ -16,7 +16,7 @@ import {
 import ProfileImage from "#lowcoder/pages/common/profileImage";
 import styled from "styled-components";
 import { getInitialsAndColorCode } from "#lowcoder/util/stringUtils";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { PermissionRole } from "./Permission";
 
 const PermissionLi = styled.li`
@@ -34,7 +34,7 @@ const PermissionLi = styled.li`
 const UserPermissionUl = styled.ul<{ $height: number }>`
   padding: 0;
   height: ${(props) => props.$height}px;
-  overflow-y: overlay !important;
+  overflow-y: auto !important;
   overflow-x: hidden;
   margin: 0 -16px 0 -8px;
 
@@ -89,7 +89,7 @@ function PermissionLiItem(props: {
   deletePermission: (permissionId: string) => void;
 }) {
   const { permissionItem, isCreator } = props;
-  let SvgIcon;
+  let SvgIcon: any;
   if (permissionItem.type === "GROUP") {
     SvgIcon = StyledGroupIcon;
   } else if (permissionItem.type === "ORG_ADMIN") {

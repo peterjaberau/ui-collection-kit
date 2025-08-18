@@ -1,8 +1,8 @@
-import { createCustomer, getProducts, searchCustomer } from "@lowcoder-ee/api/subscriptionApi";
-import { StripeCustomer, SubscriptionProduct, InitSubscriptionProducts, LowcoderSearchCustomer, LowcoderNewCustomer, Subscription } from "@lowcoder-ee/constants/subscriptionConstants";
-import { getDeploymentId } from "@lowcoder-ee/redux/selectors/configSelectors";
-import { getFetchSubscriptionsFinished, getSubscriptions, getSubscriptionsError } from "@lowcoder-ee/redux/selectors/subscriptionSelectors";
-import { getCurrentUser, getUser } from "@lowcoder-ee/redux/selectors/usersSelectors";
+import { createCustomer, getProducts, searchCustomer } from "#lowcoder/api/subscriptionApi";
+import { StripeCustomer, SubscriptionProduct, InitSubscriptionProducts, LowcoderSearchCustomer, LowcoderNewCustomer, Subscription } from "#lowcoder/constants/subscriptionConstants";
+import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
+import { getFetchSubscriptionsFinished, getSubscriptions, getSubscriptionsError } from "#lowcoder/redux/selectors/subscriptionSelectors";
+import { getCurrentUser, getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 

@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { default as TimePicker } from "antd/es/time-picker";
 import { ChildrenMultiSelectStyleType, DateTimeStyleType } from "../../controls/styleControlConstants";
-import { getStyle, StyledPickerPanel } from "comps/comps/dateComp/dateCompUtil";
+import { getStyle, StyledPickerPanel } from "#lowcoder/comps/comps/dateComp/dateCompUtil";
 import { useUIView } from "../../utils/useUIView";
 import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import React, { ReactNode, useContext } from "react";
 import type { TimeCompViewProps } from "./timeComp";
 import { EditorContext } from "../../editorState";
 import dayjs from "dayjs";
-import { hasIcon } from "comps/utils";
+import { hasIcon } from "#lowcoder/comps/utils";
 import { omit } from "lodash";
 import { timeZoneOptions } from "./timeZone";
 import { default as AntdSelect } from "antd/es/select";

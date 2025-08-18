@@ -1,9 +1,9 @@
 import { AppSummaryInfo } from "#lowcoder/redux/reduxActions/applicationActions";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useUnmount } from "react-use";
-import { RootComp } from "comps/comps/rootComp";
+import { RootComp } from "#lowcoder/comps/comps/rootComp";
 import { useAppHistory } from "#lowcoder/util/editoryHistory";
-import { useCompInstance, GetContainerParams } from "comps/utils/useCompInstance";
+import { useCompInstance, GetContainerParams } from "#lowcoder/comps/utils/useCompInstance";
 import { MarkAppInitialized, perfMark } from "#lowcoder/util/perfUtils";
 import { QueryApi } from "#lowcoder/api/queryApi";
 

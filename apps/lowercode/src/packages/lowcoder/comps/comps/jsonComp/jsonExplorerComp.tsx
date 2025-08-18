@@ -4,16 +4,16 @@ import { NameConfigHidden, NameConfig, withExposingConfigs } from "../../generat
 import ReactJson, { type ThemeKeys } from "react-json-view";
 import { defaultData } from "./jsonConstants";
 import styled from "styled-components";
-import { BoolControl } from "comps/controls/boolControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { ArrayOrJSONObjectControl, NumberControl } from "comps/controls/codeControl";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { EditorContext } from "comps/editorState";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { ArrayOrJSONObjectControl, NumberControl } from "#lowcoder/comps/controls/codeControl";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { useContext, useEffect } from "react";
-import { AnimationStyle, AnimationStyleType } from "@lowcoder-ee/comps/controls/styleControlConstants";
-import { styleControl } from "@lowcoder-ee/comps/controls/styleControl";
-import { AutoHeightControl } from "@lowcoder-ee/comps/controls/autoHeightControl";
+import { AnimationStyle, AnimationStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
 
 /**
  * JsonExplorer Comp

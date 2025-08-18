@@ -1,11 +1,11 @@
-import { ColumnComp, newPrimaryColumn } from "comps/comps/tableComp/column/tableColumnComp";
+import { ColumnComp, newPrimaryColumn } from "#lowcoder/comps/comps/tableComp/column/tableColumnComp";
 import {
   calcColumnWidth,
   COLUMN_CHILDREN_KEY,
   supportChildrenTree,
-} from "comps/comps/tableComp/tableUtils";
-import { list } from "comps/generators/list";
-import { getReduceContext } from "comps/utils/reduceContext";
+} from "#lowcoder/comps/comps/tableComp/tableUtils";
+import { list } from "#lowcoder/comps/generators/list";
+import { getReduceContext } from "#lowcoder/comps/utils/reduceContext";
 import _ from "lodash";
 import {
   CompAction,
@@ -13,7 +13,7 @@ import {
   fromRecord,
   isMyCustomAction,
   RecordNode,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import { shallowEqual } from "react-redux";
 import { JSONObject, JSONValue } from "#lowcoder/util/jsonTypes";
 import { lastValueIfEqual } from "#lowcoder/util/objectUtils";
@@ -40,7 +40,7 @@ export function tableDataRowExample(data: Array<JSONObject>) {
   if (!data?.length) {
     return undefined;
   }
-  
+
   if (typeof data[0] === "string") {
     // do not parse arrays in string format
     return undefined;

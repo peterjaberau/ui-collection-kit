@@ -1,4 +1,4 @@
-import { UICompType } from "comps/uiCompRegistry";
+import { UICompType } from "#lowcoder/comps/uiCompRegistry";
 import ButtonExample from "./ButtonComp/Button";
 import IconButtonExample from "./ButtonComp/IconButton";
 import ToggleButtonExample from "./ButtonComp/ToggleButton";

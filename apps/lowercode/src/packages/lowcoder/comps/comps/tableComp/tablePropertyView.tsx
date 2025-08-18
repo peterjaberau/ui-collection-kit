@@ -2,10 +2,10 @@ import {
   ColumnCompType,
   newCustomColumn,
   RawColumnType,
-} from "comps/comps/tableComp/column/tableColumnComp";
-import { hiddenPropertyView, loadingPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { changeValueAction, deferAction, MultiBaseComp, wrapChildAction } from "lowcoder-core";
+} from "#lowcoder/comps/comps/tableComp/column/tableColumnComp";
+import { hiddenPropertyView, loadingPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { changeValueAction, deferAction, MultiBaseComp, wrapChildAction } from "#lowcoder-core/index";
 import {
   BluePlusIcon,
   CheckBox,
@@ -31,8 +31,8 @@ import { getSelectedRowKeys } from "./selectionControl";
 import { TableChildrenType } from "./tableTypes";
 import React, { useMemo, useState, useCallback } from "react";
 import { GreyTextColor } from "#lowcoder/constants/style";
-import { alignOptions } from "comps/controls/dropdownControl";
-import { ColumnTypeCompMap } from "comps/comps/tableComp/column/columnTypeComp";
+import { alignOptions } from "#lowcoder/comps/controls/dropdownControl";
+import { ColumnTypeCompMap } from "#lowcoder/comps/comps/tableComp/column/columnTypeComp";
 import Segmented from "antd/es/segmented";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 

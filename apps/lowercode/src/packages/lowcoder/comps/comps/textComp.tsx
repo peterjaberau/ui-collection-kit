@@ -1,6 +1,6 @@
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { stringExposingStateControl } from "comps/controls/codeStateControl";
-import { AutoHeightControl } from "comps/controls/autoHeightControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { stringExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { AutoHeightControl } from "#lowcoder/comps/controls/autoHeightControl";
 import { ScrollBar, Section, sectionNames } from "#lowcoder-design/index";
 import styled, { css } from "styled-components";
 import { AlignCenter } from "#lowcoder-design/index";
@@ -9,20 +9,20 @@ import { AlignRight } from "#lowcoder-design/index";
 import { UICompBuilder, withDefault } from "../generators";
 import { NameConfig, NameConfigHidden, withExposingConfigs } from "../generators/withExposing";
 import { markdownCompCss, TacoMarkDown } from "#lowcoder-design/index";
-import { styleControl } from "comps/controls/styleControl";
-import { AnimationStyle, AnimationStyleType, TextStyle, TextStyleType, heightCalculator, widthCalculator } from "comps/controls/styleControlConstants";
-import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { alignWithJustifyControl } from "comps/controls/alignControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { AnimationStyle, AnimationStyleType, TextStyle, TextStyleType, heightCalculator, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
+import { hiddenPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { alignWithJustifyControl } from "#lowcoder/comps/controls/alignControl";
 
 import { MarginControl } from "../controls/marginControl";
 import { PaddingControl } from "../controls/paddingControl";
 
 import React, { useContext, useEffect, useRef, useMemo } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { clickEvent, doubleClickEvent, eventHandlerControl } from "../controls/eventHandlerControl";
 import { NewChildren } from "../generators/uiCompBuilder";
-import { RecordConstructorToComp } from "lowcoder-core";
+import { RecordConstructorToComp } from "#lowcoder-core/index";
 import { ToViewReturn } from "../generators/multi";
 import { BoolControl } from "../controls/boolControl";
 import { useCompClickEventHandler } from "../utils/useCompClickEventHandler";

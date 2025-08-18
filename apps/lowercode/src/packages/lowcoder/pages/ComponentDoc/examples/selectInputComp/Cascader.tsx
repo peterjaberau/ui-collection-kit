@@ -1,5 +1,5 @@
-import { CascaderWithDefault } from "comps/comps/selectInputComp/cascaderComp";
-import { trans, i18nObjs } from "i18n";
+import { CascaderWithDefault } from "#lowcoder/comps/comps/selectInputComp/cascaderComp";
+import { trans, i18nObjs } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

@@ -1,10 +1,10 @@
 import { default as Tooltip } from "antd/es/tooltip";
 import { getThemeDetailName, isThemeColorKey, ThemeDetail } from "#lowcoder/api/commonSettingApi";
-import { ControlItemCompBuilder } from "comps/generators/controlCompBuilder";
-import { childrenToProps, ToConstructor } from "comps/generators/multi";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
-import { ThemeContext } from "comps/utils/themeContext";
-import { trans } from "i18n";
+import { ControlItemCompBuilder } from "#lowcoder/comps/generators/controlCompBuilder";
+import { childrenToProps, ToConstructor } from "#lowcoder/comps/generators/multi";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
+import { trans } from "#lowcoder/i18n";
 import _, { omit, values } from "lodash";
 import {
   controlItem,
@@ -97,12 +97,12 @@ import {
 } from "./styleControlConstants";
 import { faTextWidth } from "@fortawesome/free-solid-svg-icons";
 import appSelectControl from "./appSelectControl";
-import { JSONObject, JSONValue } from "@lowcoder-ee/util/jsonTypes";
+import { JSONObject, JSONValue } from "#lowcoder/util/jsonTypes";
 import { CompTypeContext } from "../utils/compTypeContext";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
 import { CompContext } from "../utils/compContext";
 import { EditorContext } from "../editorState";
-import { inputFieldComps } from "@lowcoder-ee/constants/compConstants";
+import { inputFieldComps } from "#lowcoder/constants/compConstants";
 
 function isSimpleColorConfig(config: SingleColorConfig): config is SimpleColorConfig {
   return config.hasOwnProperty("color");

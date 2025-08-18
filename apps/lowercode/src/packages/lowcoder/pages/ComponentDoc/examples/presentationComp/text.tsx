@@ -1,8 +1,8 @@
-import { TextComp } from "comps/comps/textComp";
-import { trans } from "i18n";
+import { TextComp } from "#lowcoder/comps/comps/textComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
-import { Left } from "icons";
+import { Left } from "#lowcoder-design/icons";
 
 export default function TextExample() {
   const nameMap: Record<string, string> = {
@@ -167,7 +167,7 @@ export default function TextExample() {
           },
         }}
         compFactory={TextComp}
-      /> 
+      />
       </ExampleGroup>
 
       <ExampleGroup

@@ -1,5 +1,5 @@
-import { ModuleComp } from "comps/comps/moduleComp/moduleComp";
-import { useCompInstance } from "comps/utils/useCompInstance";
+import { ModuleComp } from "#lowcoder/comps/comps/moduleComp/moduleComp";
+import { useCompInstance } from "#lowcoder/comps/utils/useCompInstance";
 
 // const Comp = RootComp;
 // const Comp = ViewComp;

@@ -1,7 +1,7 @@
 import { DndContext, DragEndEvent, DragOverlay, DragStartEvent } from "@dnd-kit/core";
 import LinkPlusButton from "#lowcoder/components/LinkPlusButton";
 import { BluePlusIcon, controlItem } from "#lowcoder-design/index";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import { useState } from "react";
 import styled from "styled-components";

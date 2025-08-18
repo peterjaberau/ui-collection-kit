@@ -11,7 +11,7 @@ import {
   sectionNames,
   controlItem,
 } from "lowcoder-sdk";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 export function barChartPropertyView(
   children: ChartCompChildrenType,

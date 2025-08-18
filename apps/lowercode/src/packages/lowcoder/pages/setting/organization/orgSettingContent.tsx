@@ -3,7 +3,7 @@ import { ArrowIcon, BlurFinishInput } from "lowcoder-design";
 import { useDispatch, useSelector } from "react-redux";
 import { updateOrgAction } from "#lowcoder/redux/reduxActions/orgActions";
 import styled from "styled-components";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { useParams } from "react-router";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { HeaderBack } from "../permission/styledComponents";

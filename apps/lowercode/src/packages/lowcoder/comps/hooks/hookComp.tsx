@@ -1,8 +1,8 @@
 import { CompName } from "#lowcoder/components/CompName";
-import { getAllCompItems } from "comps/comps/containerBase/utils";
-import { SimpleNameComp } from "comps/comps/simpleNameComp";
-import { StringControl } from "comps/controls/codeControl";
-import { EditorContext } from "comps/editorState";
+import { getAllCompItems } from "#lowcoder/comps/comps/containerBase/utils";
+import { SimpleNameComp } from "#lowcoder/comps/comps/simpleNameComp";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { EditorContext } from "#lowcoder/comps/editorState";
 import { RemoteCompInfo } from "#lowcoder/types/remoteComp";
 import {
   simpleMultiComp,
@@ -10,22 +10,22 @@ import {
   withPropertyViewFn,
   withTypeAndChildren,
   withViewFn,
-} from "comps/generators";
-import { hookToStateComp, simpleValueComp } from "comps/generators/hookToComp";
-import { withSimpleExposing } from "comps/generators/withExposing";
-import { DrawerComp } from "comps/hooks/drawerComp";
-import { remoteComp } from "comps/comps/remoteComp/remoteComp";
+} from "#lowcoder/comps/generators";
+import { hookToStateComp, simpleValueComp } from "#lowcoder/comps/generators/hookToComp";
+import { withSimpleExposing } from "#lowcoder/comps/generators/withExposing";
+import { DrawerComp } from "#lowcoder/comps/hooks/drawerComp";
+import { remoteComp } from "#lowcoder/comps/comps/remoteComp/remoteComp";
 
 import {
   HookCompConstructor,
   HookCompMapRawType,
   HookCompType,
-} from "comps/hooks/hookCompTypes";
-import { ModalComp } from "comps/hooks/modalComp";
-import { trans } from "i18n";
+} from "#lowcoder/comps/hooks/hookCompTypes";
+import { ModalComp } from "#lowcoder/comps/hooks/modalComp";
+import { trans } from "#lowcoder/i18n";
 import _ from "lodash";
 import dayjs from "dayjs";
-import { ConstructorToComp } from "lowcoder-core";
+import { ConstructorToComp } from "#lowcoder-core/index";
 import { ScrollBar, Section, sectionNames } from "lowcoder-design";
 import React, { useContext, useEffect, useMemo, useCallback } from "react";
 import { useInterval, useTitle, useWindowSize } from "react-use";

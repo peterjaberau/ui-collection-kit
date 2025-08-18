@@ -1,5 +1,5 @@
-import { uiCompRegistry } from "comps/uiCompRegistry";
-import { trans } from "i18n";
+import { uiCompRegistry } from "#lowcoder/comps/uiCompRegistry";
+import { trans } from "#lowcoder/i18n";
 import { chartColorPalette } from "lowcoder-design";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
@@ -235,7 +235,7 @@ export default function ThemeRiverChartExample() {
             legendStyle: legendStyle,
           }}
           compFactory={ChartCompWithDefault}
-        />        
+        />
       </ExampleGroup>
     </>
   );

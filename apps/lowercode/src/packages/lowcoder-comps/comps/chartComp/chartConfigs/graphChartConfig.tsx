@@ -4,7 +4,7 @@ import {
   showLabelPropertyView,
 } from "#lowcoder-sdk/index";
 import { GraphSeriesOption } from "echarts";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 
 export const GraphChartConfig = (function () {
   return new MultiCompBuilder(

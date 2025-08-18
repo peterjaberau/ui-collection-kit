@@ -2,7 +2,7 @@ import React from "react";
 import { GoogleSheetsConfig } from "../../../api/datasourceApi";
 import { DatasourceFormProps } from "./datasourceFormRegistry";
 import { DatasourceNameFormInputItem, GeneralSettingFormSectionLabel } from "../form";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { DatasourceForm, FormSection, FormTextAreaItem } from "lowcoder-design";
 
 /**

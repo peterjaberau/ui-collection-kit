@@ -1,5 +1,5 @@
-import { AutoCompleteComp } from "comps/comps/autoCompleteComp/autoCompleteComp";
-import { trans } from "i18n";
+import { AutoCompleteComp } from "#lowcoder/comps/comps/autoCompleteComp/autoCompleteComp";
+import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
 

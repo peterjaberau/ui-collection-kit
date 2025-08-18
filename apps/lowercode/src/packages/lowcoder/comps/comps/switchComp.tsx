@@ -1,25 +1,25 @@
 import { default as Switch } from "antd/es/switch";
-import { BoolCodeControl, NumberControl } from "comps/controls/codeControl";
-import { booleanExposingStateControl } from "comps/controls/codeStateControl";
-import { changeEvent, eventHandlerControl } from "comps/controls/eventHandlerControl";
-import { LabelControl } from "comps/controls/labelControl";
-import { styleControl } from "comps/controls/styleControl";
-import { SwitchStyle, SwitchStyleType, LabelStyle,  InputFieldStyle, AnimationStyle } from "comps/controls/styleControlConstants";
-import { migrateOldData } from "comps/generators/simpleGenerators";
+import { BoolCodeControl, NumberControl } from "#lowcoder/comps/controls/codeControl";
+import { booleanExposingStateControl } from "#lowcoder/comps/controls/codeStateControl";
+import { changeEvent, eventHandlerControl } from "#lowcoder/comps/controls/eventHandlerControl";
+import { LabelControl } from "#lowcoder/comps/controls/labelControl";
+import { styleControl } from "#lowcoder/comps/controls/styleControl";
+import { SwitchStyle, SwitchStyleType, LabelStyle,  InputFieldStyle, AnimationStyle } from "#lowcoder/comps/controls/styleControlConstants";
+import { migrateOldData } from "#lowcoder/comps/generators/simpleGenerators";
 import { Section, lightenColor, sectionNames } from "lowcoder-design";
 import styled, { css } from "styled-components";
 import { UICompBuilder } from "../generators";
 import { CommonNameConfig, NameConfig, withExposingConfigs } from "../generators/withExposing";
 import { formDataChildren, FormDataPropertyView } from "./formComp/formDataConstants";
-import { hiddenPropertyView, disabledPropertyView, showDataLoadingIndicatorsPropertyView } from "comps/utils/propertyUtils";
-import { trans } from "i18n";
-import { RefControl } from "comps/controls/refControl";
-import { refMethods } from "comps/generators/withMethodExposing";
-import { blurMethod, clickMethod, focusWithOptions } from "comps/utils/methodUtils";
+import { hiddenPropertyView, disabledPropertyView, showDataLoadingIndicatorsPropertyView } from "#lowcoder/comps/utils/propertyUtils";
+import { trans } from "#lowcoder/i18n";
+import { RefControl } from "#lowcoder/comps/controls/refControl";
+import { refMethods } from "#lowcoder/comps/generators/withMethodExposing";
+import { blurMethod, clickMethod, focusWithOptions } from "#lowcoder/comps/utils/methodUtils";
 import { fixOldInputCompData } from "./textInputComp/textInputConstants";
 
 import { useCallback, useContext, useEffect } from "react";
-import { EditorContext } from "comps/editorState";
+import { EditorContext } from "#lowcoder/comps/editorState";
 
 const EventOptions = [
   changeEvent,

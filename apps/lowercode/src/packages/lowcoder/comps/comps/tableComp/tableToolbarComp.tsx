@@ -2,18 +2,18 @@ import { default as Button } from "antd/es/button";
 import { default as Pagination, PaginationProps } from "antd/es/pagination";
 import { default as Popover } from "antd/es/popover";
 import { ThemeDetail } from "#lowcoder/api/commonSettingApi";
-import { ColumnCompType } from "comps/comps/tableComp/column/tableColumnComp";
-import { TableOnEventView } from "comps/comps/tableComp/tableTypes";
-import { BoolControl } from "comps/controls/boolControl";
-import { StringControl } from "comps/controls/codeControl";
-import { dropdownControl } from "comps/controls/dropdownControl";
-import { TableToolbarStyleType } from "comps/controls/styleControlConstants";
-import { stateComp, withDefault } from "comps/generators";
-import { genRandomKey } from "comps/utils/idGenerator";
-import { ThemeContext } from "comps/utils/themeContext";
-import { trans } from "i18n";
+import { ColumnCompType } from "#lowcoder/comps/comps/tableComp/column/tableColumnComp";
+import { TableOnEventView } from "#lowcoder/comps/comps/tableComp/tableTypes";
+import { BoolControl } from "#lowcoder/comps/controls/boolControl";
+import { StringControl } from "#lowcoder/comps/controls/codeControl";
+import { dropdownControl } from "#lowcoder/comps/controls/dropdownControl";
+import { TableToolbarStyleType } from "#lowcoder/comps/controls/styleControlConstants";
+import { stateComp, withDefault } from "#lowcoder/comps/generators";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
+import { trans } from "#lowcoder/i18n";
 import _, { isNil } from "lodash";
-import { changeChildAction, ConstructorToView } from "lowcoder-core";
+import { changeChildAction, ConstructorToView } from "#lowcoder-core/index";
 import {
   AlignBottom,
   AlignClose,
@@ -37,8 +37,8 @@ import {
 import React, { useContext, useEffect, useMemo, useRef, useState, memo, useCallback } from "react";
 import styled, { css } from "styled-components";
 import { JSONValue } from "#lowcoder/util/jsonTypes";
-import { ControlNodeCompBuilder } from "comps/generators/controlCompBuilder";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
+import { ControlNodeCompBuilder } from "#lowcoder/comps/generators/controlCompBuilder";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 
 type ToolbarRowType = ConstructorToView<typeof TableToolbarComp>;

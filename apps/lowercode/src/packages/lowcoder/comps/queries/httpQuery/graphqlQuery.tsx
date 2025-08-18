@@ -2,7 +2,7 @@ import { ControlPropertyViewWrapper } from "#lowcoder-design/components/control"
 import { Input } from "#lowcoder-design/components/Input";
 import { KeyValueList } from "#lowcoder-design/components/keyValueList";
 import { QueryConfigItemWrapper, QueryConfigLabel, QueryConfigWrapper } from "#lowcoder-design/components/query";
-import { simpleMultiComp } from "comps/generators/multi";
+import { simpleMultiComp } from "#lowcoder/comps/generators/multi";
 import { ReactNode } from "react";
 import { JSONValue } from "../../../util/jsonTypes";
 import { keyValueListControl } from "../../controls/keyValueListControl";
@@ -15,7 +15,7 @@ import {
   HttpParametersPropertyView,
   HttpPathPropertyView,
 } from "./httpQueryConstants";
-import { SimpleNameComp } from "@lowcoder-ee/comps/comps/simpleNameComp";
+import { SimpleNameComp } from "#lowcoder/comps/comps/simpleNameComp";
 
 interface VariablesControlParams {
   // variables: string[]; todo support parse variables

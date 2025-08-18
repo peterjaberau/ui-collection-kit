@@ -9,7 +9,7 @@ import {
   FormSelectItem,
   ValueFromOption,
 } from "lowcoder-design";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import React, { useState } from "react";
 import {
   AdvancedSettingFormSectionLabel,
@@ -61,7 +61,7 @@ export const HttpDatasourceForm = (props: DatasourceFormProps) => {
 
   const [authType, setAuthType] = useState(datasourceConfig?.authConfig?.type);
   const [authId, setAuthId] = useState(datasourceConfig?.authConfig?.authId);
-  
+
   // const [grantType, setGrantType] = useState(oauthConfig?.grantType ?? "authorization_code");
 
   const hostRule = useHostCheck();

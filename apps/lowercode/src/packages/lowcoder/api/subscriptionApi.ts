@@ -5,7 +5,7 @@ import type {
   LowcoderNewCustomer,
   LowcoderSearchCustomer,
   StripeCustomer,
-} from "@lowcoder-ee/constants/subscriptionConstants";
+} from "#lowcoder/constants/subscriptionConstants";
 
 export type ResponseType = {
   response: any;
@@ -227,15 +227,15 @@ export const getProducts = async () => {
 
 export const createCheckoutLink = async (customer: StripeCustomer, priceId: string, quantity: number, discount?: number) => {
   const domain = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
-  
+
   const apiBody = {
     path: "webhook/secure/create-checkout-link",
-    data: { 
-      "customerId": customer.id, 
-      "priceId": priceId, 
-      "quantity": quantity, 
-      "discount": discount, 
-      baseUrl: domain 
+    data: {
+      "customerId": customer.id,
+      "priceId": priceId,
+      "quantity": quantity,
+      "discount": discount,
+      baseUrl: domain
     },
     method: "post",
     headers: lcHeaders
@@ -267,7 +267,7 @@ export const getSubscriptionDetails = async (subscriptionId: string) => {
 };
 
 // Function to get invoice documents from Stripe
-export const getInvoices = async (subscriptionId: string) => { 
+export const getInvoices = async (subscriptionId: string) => {
   const apiBody = {
     path: "webhook/secure/get-subscription-invoices",
     method: "post",
@@ -284,7 +284,7 @@ export const getInvoices = async (subscriptionId: string) => {
 };
 
 // Function to get a customer Portal Session from Stripe
-export const getCustomerPortalSession = async (customerId: string) => { 
+export const getCustomerPortalSession = async (customerId: string) => {
   const apiBody = {
     path: "webhook/secure/create-customer-portal-session",
     method: "post",

@@ -3,10 +3,10 @@ import {
   UICompCategory,
   UICompManifest,
   uiCompRegistry,
-} from "comps/uiCompRegistry";
-import { draggingUtils } from "layout";
+} from "#lowcoder/comps/uiCompRegistry";
+import { draggingUtils } from "#lowcoder/";
 import { isEmpty } from "lodash";
-import { language } from "i18n";
+import { language } from "#lowcoder/i18n";
 import {
   CompIconDiv,
   EmptyCompContent,
@@ -25,7 +25,7 @@ import {
 import { TransparentImg } from "../../../util/commonUtils";
 import { RightContext } from "./rightContext";
 import { useSelector } from "react-redux";
-import { getBrandingSetting } from "@lowcoder-ee/redux/selectors/enterpriseSelectors";
+import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 
 const CompDiv = styled.div`
   display: flex;

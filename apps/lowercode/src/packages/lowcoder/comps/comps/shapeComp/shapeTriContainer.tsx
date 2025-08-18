@@ -1,6 +1,6 @@
-import { ContainerStyleType, widthCalculator } from "comps/controls/styleControlConstants";
-import { EditorContext } from "comps/editorState";
-import { BackgroundColorContext } from "comps/utils/backgroundColorContext";
+import { ContainerStyleType, widthCalculator } from "#lowcoder/comps/controls/styleControlConstants";
+import { EditorContext } from "#lowcoder/comps/editorState";
+import { BackgroundColorContext } from "#lowcoder/comps/utils/backgroundColorContext";
 import { HintPlaceHolder, ScrollBar } from "#lowcoder-design/index";
 import { ReactNode, useContext, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
@@ -11,7 +11,7 @@ import {
 } from "../containerComp/containerView";
 import { TriContainerViewProps } from "../triContainerComp/triContainerCompBuilder";
 import { Coolshape } from "coolshapes-react";
-import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
+import { getBackgroundStyle } from "#lowcoder/util/styleUtils";
 
 const getStyle = (style: ContainerStyleType) => {
   return css`

@@ -1,10 +1,10 @@
-import { EditorContext, EditorState } from "comps/editorState";
-import { sameTypeMap, stateComp, valueComp } from "comps/generators";
-import { addMapChildAction, addMapCompChildAction } from "comps/generators/sameTypeMap";
-import { hookCompCategory, HookCompType } from "comps/hooks/hookCompTypes";
-import { UICompLayoutInfo, uiCompRegistry, UICompType } from "comps/uiCompRegistry";
-import { genRandomKey } from "comps/utils/idGenerator";
-import { parseCompType } from "comps/utils/remote";
+import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
+import { sameTypeMap, stateComp, valueComp } from "#lowcoder/comps/generators";
+import { addMapChildAction, addMapCompChildAction } from "#lowcoder/comps/generators/sameTypeMap";
+import { hookCompCategory, HookCompType } from "#lowcoder/comps/hooks/hookCompTypes";
+import { UICompLayoutInfo, uiCompRegistry, UICompType } from "#lowcoder/comps/uiCompRegistry";
+import { genRandomKey } from "#lowcoder/comps/utils/idGenerator";
+import { parseCompType } from "#lowcoder/comps/utils/remote";
 import { ScrollBar } from "#lowcoder-design/index";
 import {
   DEFAULT_POSITION_PARAMS,
@@ -17,14 +17,14 @@ import {
   LayoutItem,
   PositionParams,
   ReactGridLayout,
-} from "layout";
+} from "#lowcoder/layout";
 import {
   calcRowCount,
   calcRowHeight,
   DEFAULT_GRID_COLUMNS,
   DEFAULT_ROW_COUNT,
   DEFAULT_ROW_HEIGHT,
-} from "layout/calculateUtils";
+} from "#lowcoder/layout/calculateUtils";
 import _, { isEqual } from "lodash";
 import {
   ActionExtraInfo,
@@ -39,7 +39,7 @@ import {
   RecordConstructorToView,
   wrapActionExtraInfo,
   wrapChildAction,
-} from "lowcoder-core";
+} from "#lowcoder-core/index";
 import React, {
   DragEvent,
   HTMLAttributes,
@@ -60,18 +60,18 @@ import { checkIsMobile } from "#lowcoder/util/commonUtils";
 import { ExternalEditorContext } from "#lowcoder/util/context/ExternalEditorContext";
 import { selectCompModifierKeyPressed } from "#lowcoder/util/keyUtils";
 import { defaultLayout, GridItemComp, GridItemDataType } from "../gridItemComp";
-import { ThemeContext } from "comps/utils/themeContext";
-import { defaultTheme } from "@lowcoder-ee/constants/themeConstants";
+import { ThemeContext } from "#lowcoder/comps/utils/themeContext";
+import { defaultTheme } from "#lowcoder/constants/themeConstants";
 import { ExpandViewContext } from "../tableComp/expansionControl";
 
-const childrenMap = {
+const childrenMap: any = {
   layout: valueComp<Layout>({}),
   items: sameTypeMap(GridItemComp),
   positionParams: stateComp<PositionParams>(DEFAULT_POSITION_PARAMS),
 };
 
-export function gridItemCompToGridItems(items: ViewPropsType["items"]) {
-  const gridItems: GridItemsType = _.mapValues(items, (i) => ({
+export function gridItemCompToGridItems(items: ViewPropsType["items"] | any) {
+  const gridItems: GridItemsType | any = _.mapValues(items, (i: any) => ({
     comp: i,
     view: i.getView(),
     autoHeight: i.autoHeight(),
@@ -164,7 +164,7 @@ const onLayoutChange = (
     ) {
       const name = items[key]?.name;
       const type = items[key]?.compType;
-      name && compInfos.push({ compName: name, compType: type, type: "layout" });
+      name && compInfos.push({ compName: name, compType: type, type: "layout" } as any);
     }
   });
   onLayoutChange?.(newLayout);
@@ -232,7 +232,7 @@ const onDrop = async (
       const {
         defaultDataFnName,
         defaultDataFnPath,
-      } = uiCompRegistry[compType as UICompType];
+      }: any = uiCompRegistry[compType as UICompType];
 
       if(defaultDataFnName && defaultDataFnPath) {
         const module = await import(`../../${defaultDataFnPath}.tsx`);
@@ -288,14 +288,14 @@ const onDrop = async (
 
 const getExtraLayout = (
   items: GridItemsType,
-  layout: GridLayoutType,
+  layout: GridLayoutType | any,
   selectedCompNames: Set<string>,
   dragSelectedNames?: Set<string>
-): ExtraLayout => {
-  const validLayout = _.pickBy(layout, (layoutItem) => items.hasOwnProperty(layoutItem.i));
+): ExtraLayout | any => {
+  const validLayout = _.pickBy(layout, (layoutItem: any) => items.hasOwnProperty(layoutItem.i));
   return _.mapValues(validLayout, (layoutItem: LayoutItem) => {
     const key = layoutItem.i;
-    const item = items[key];
+    const item: any = items[key];
     const autoHeight = item.autoHeight;
     const name = item.name;
     const compType = item.compType;
@@ -383,8 +383,8 @@ export const InnerGrid = React.memo((props: ViewPropsWithSelect) => {
   useEffect(() => {
     const selectedNames = new Set<string>(
       Object.values(extraLayout)
-        .filter((info) => info.isSelected)
-        .map((info) => info.name)
+        .filter((info: any) => info.isSelected)
+        .map((info: any) => info.name)
     );
     if (!_.isEqual(selectedNames, containerSelectNames)) {
       setContainerSelectNames(selectedNames);
@@ -485,7 +485,7 @@ export const InnerGrid = React.memo((props: ViewPropsWithSelect) => {
 
   const itemViewRef = useRef<GirdItemViewRecord>({});
   const itemViews = useMemo(() => {
-    const newView: GirdItemViewRecord = {};
+    const newView: GirdItemViewRecord | any = {};
     Object.entries(props.items).forEach(([key, item]) => {
       const refItem = itemViewRef.current[key];
       if (!refItem || !refItem.comp || refItem.comp !== item.comp) {
@@ -498,7 +498,7 @@ export const InnerGrid = React.memo((props: ViewPropsWithSelect) => {
       }
     });
     itemViewRef.current = newView;
-    return Object.values(newView).map((r) => r.view);
+    return Object.values(newView).map((r: any) => r.view);
   }, [props.items]);
 
   const clickItem = useCallback(

@@ -15,7 +15,7 @@ import { ReadOnlyMask } from "#lowcoder/pages/common/styledComponent";
 import { useSelector } from "react-redux";
 import { showAppSnapshotSelector } from "#lowcoder/redux/selectors/appSnapshotSelector";
 import { BottomResTypeEnum } from "#lowcoder/types/bottomRes";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 
 const Span = styled.span<{ $border: boolean }>`
   ${labelCss};
@@ -291,7 +291,7 @@ export function BottomTabs<T extends TabsConfigType>(props: {
           <RunButtonWrapper />
         )}
         {isSocketConnected && onRunBtnClick && disconnectSocket &&  (
-          <DisconnectButtonWrapper /> 
+          <DisconnectButtonWrapper />
         )}
       </TabContainer>
 

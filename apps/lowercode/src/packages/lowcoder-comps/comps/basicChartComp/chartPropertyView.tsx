@@ -11,7 +11,7 @@ import {
   sectionNames,
   controlItem,
 } from "lowcoder-sdk";
-import { trans } from "i18n/comps";
+import { trans } from "#lowcoder/i18n";
 import { examplesUrl, mapExamplesUrl, mapOptionUrl, optionUrl } from "./chartConfigs/chartUrls";
 import {LegendConfig} from "./chartConfigs/legendConfig";
 

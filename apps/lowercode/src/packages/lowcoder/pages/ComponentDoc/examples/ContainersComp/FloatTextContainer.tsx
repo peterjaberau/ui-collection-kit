@@ -1,5 +1,5 @@
-import { ContainerComp } from "comps/comps/containerComp/containerComp";
-import { trans } from "i18n";
+import { ContainerComp } from "#lowcoder/comps/comps/containerComp/containerComp";
+import { trans } from "#lowcoder/i18n";
 import { chartColorPalette } from "lowcoder-design";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";

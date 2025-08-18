@@ -9,7 +9,7 @@ import { AppState } from "#lowcoder/redux/reducers";
 import history from "#lowcoder/util/history";
 import { isFetchUserFinished } from "#lowcoder/redux/selectors/usersSelectors";
 import { fetchConfigAction } from "#lowcoder/redux/reduxActions/configActions";
-import { trans } from "i18n";
+import { trans } from "#lowcoder/i18n";
 import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
 
 type InviteLandingProp = RouteComponentProps<{ invitationId: string }, StaticContext, any> & {
