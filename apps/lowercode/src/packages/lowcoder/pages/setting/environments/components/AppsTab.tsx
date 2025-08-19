@@ -11,7 +11,7 @@ import { useDeployModal } from '../context/DeployModalContext';
 import { appsConfig } from '../config/apps.config';
 import history from "#lowcoder/util/history";
 import { messageInstance } from '#lowcoder-design/components/GlobalInstances';
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 
 const { Search } = Input;
 

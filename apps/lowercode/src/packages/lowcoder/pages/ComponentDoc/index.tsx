@@ -17,9 +17,9 @@ import { Helmet } from "react-helmet";
 import { LoadingBarHideTrigger } from "#lowcoder/util/hideLoading";
 
 type CompInfo = UICompManifest & { key: string };
-const groups: Partial<Record<UICompCategory, CompInfo[]>> = {};
+const groups: Partial<Record<UICompCategory, CompInfo[]>> | any = {};
 
-Object.entries(uiCompRegistry).forEach(([key, comp]) => {
+Object.entries(uiCompRegistry).forEach(([key, comp]: any) => {
   const cat = comp.categories[0];
   if (cat === undefined) {
     return;
@@ -120,8 +120,8 @@ export default function ComponentDoc() {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            {Object.entries(groups).map(([key, value]) => {
-              const children = value.filter((c) =>
+            {Object.entries(groups).map(([key, value]: any) => {
+              const children = value.filter((c: any) =>
                 c.keywords.toLowerCase().includes(search.toLowerCase())
               );
               if (children.length === 0) {
@@ -133,7 +133,7 @@ export default function ComponentDoc() {
                     {uiCompCategoryNames[key as UICompCategory]}
                   </div>
                   <div>
-                    {children.map((n) => (
+                    {children.map((n: any) => (
                       <Link
                         key={n.name}
                         to={`/components/${n.key}`}

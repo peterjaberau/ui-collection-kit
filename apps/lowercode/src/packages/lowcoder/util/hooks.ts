@@ -150,7 +150,7 @@ export function useCurrentPage(): PageType {
 }
 
 export function useIsMobile() {
-  const editorState = useContext(EditorContext);
+  const editorState: any = useContext(EditorContext);
   return checkIsMobile(editorState?.getAppSettings().maxWidth);
 }
 
@@ -185,7 +185,7 @@ export function useMergeCompStyles(
   const compType = useContext(CompTypeContext);
   const compTheme = theme?.theme?.components?.[compType];
   const themeId = theme?.themeId;
-  const appSettingsComp = editorState?.getAppSettingsComp();
+  const appSettingsComp: any = editorState?.getAppSettingsComp();
   const preventAppStylesOverwriting = appSettingsComp?.getView()?.preventAppStylesOverwriting;
   const { preventStyleOverwriting, appliedThemeId }: any = props;
 

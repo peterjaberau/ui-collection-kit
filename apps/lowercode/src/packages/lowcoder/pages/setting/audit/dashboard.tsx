@@ -59,7 +59,7 @@ export function AuditLogDashboard() {
   const currentUser = useSelector(getUser);
   const location = useLocation();
 
-  const [allLogs, setAllLogs] = useState<AuditLog[]>([]); 
+  const [allLogs, setAllLogs] = useState<AuditLog[]>([]);
   const [currentPageLogs, setCurrentPageLogs] = useState<AuditLog[]>([]);
   const [statistics, setStatistics] = useState<AuditLogStat[]>([]);
   const [dataMap, setDataMap] = useState<Record<string, any>>({});
@@ -73,7 +73,7 @@ export function AuditLogDashboard() {
   const getQueryParams = () => {
     const params = new URLSearchParams(location.search);
     let queryObject: Record<string, any> = {};
-  
+
     // Convert search params into a JavaScript object
     params.forEach((value, key) => {
       if (key !== 'fromTimestamp' && key !== 'toTimestamp') {
@@ -89,11 +89,11 @@ export function AuditLogDashboard() {
     if (params.get('toTimestamp')) {
       dateRange[1] = dayjs(params.get('toTimestamp'));
     }
-    
+
     queryObject['dateRange'] = dateRange;
     return queryObject;
   };
-  
+
   useEffect(() => {
     form.setFieldsValue(getQueryParams());
   }, []);
@@ -139,7 +139,7 @@ export function AuditLogDashboard() {
 
   const getCleanedParams = (newPage?: number, newPageSize?: number) => {
     const formValues = form.getFieldsValue();
-  
+
     let cleanedParams = Object.fromEntries(
       Object.entries({
         ...formValues,
@@ -157,7 +157,7 @@ export function AuditLogDashboard() {
 
     return cleanedParams;
   }
-  
+
   const handleQueryParams = (queryParams: Record<string, string>) => {
     const params = new URLSearchParams();
     Object.keys(queryParams).map((key) => {
@@ -170,7 +170,7 @@ export function AuditLogDashboard() {
     })
     history.push({ search: params.toString() })
   }
-  
+
   const fetchStatistics = async () => {
     const cleanedParams = getCleanedParams();
 
@@ -205,7 +205,7 @@ export function AuditLogDashboard() {
       } else {
         setAllLogs((prevLogs) => [...prevLogs, ...(data?.data || [])]);
       }
-  
+
       setTotal(data.totalCount);
     } catch (error) {
       message.error("Failed to fetch audit logs.");
@@ -217,7 +217,7 @@ export function AuditLogDashboard() {
   // Handle chart zoom
   const handleChartZoom = ({ fromTimestamp, toTimestamp }: { fromTimestamp: string; toTimestamp: string }) => {
     console.log("Zoom applied:", fromTimestamp, toTimestamp);
-  
+
     const startDate = dayjs(fromTimestamp);
     const endDate = dayjs(toTimestamp);
     form.setFieldsValue({ dateRange: [startDate, endDate] });
@@ -227,27 +227,27 @@ export function AuditLogDashboard() {
     setCurrentPageLogs([]);
     fetchLogs(1, total, true);
   };
-  
+
   // Debounce handler for input fields
   const handleInputChange = useCallback(
     debounce(() => {
       setPagination({ pageSize: 25, current: 1 });
-      setAllLogs([]); 
-      setCurrentPageLogs([]); 
+      setAllLogs([]);
+      setCurrentPageLogs([]);
       fetchLogs(1, LOG_PAGE_SIZE, true);
     }, 300),
     []
   );
-  
+
   const handleClickFilter = (field: any, value: any) => {
     form.setFieldsValue({ [field]: value });
-    
+
     setPagination({ pageSize: 25, current: 1 });
     setAllLogs([]);
     setCurrentPageLogs([]);
     fetchLogs(1, LOG_PAGE_SIZE, true);
   };
-  
+
   const handleDateChange = (dates: any) => {
     if (dates?.[0] && dates?.[1]) {
       form.setFieldsValue({
@@ -257,16 +257,16 @@ export function AuditLogDashboard() {
     } else {
       form.resetFields(["fromTimestamp", "toTimestamp"]);
     }
-  
+
     // Reset pagination and clear logs BEFORE calling fetchLogs
     setPagination({ pageSize: 25, current: 1 });
     setAllLogs([]);
     setCurrentPageLogs([]);
-  
+
     // Ensure fetchLogs is called only ONCE
     fetchLogs(1, LOG_PAGE_SIZE, true);
   };
-  
+
   // Handle page change
   const handleTableChange: TableProps<any>["onChange"] = (newPagination) => {
     const newPage = newPagination.current ?? 1;
@@ -299,7 +299,7 @@ export function AuditLogDashboard() {
 
     setPagination({ pageSize, current: newPage });
   };
-  
+
   useEffect(() => {
     if (allLogs.length > 0) {
       const startIndex = (pagination.current - 1) * pagination.pageSize;
@@ -309,13 +309,13 @@ export function AuditLogDashboard() {
       setCurrentPageLogs(allLogs.slice(startIndex, endIndex));
     }
   }, [pagination, allLogs]);
-  
-  
+
+
   // Initial Fetch on Mount
   useEffect(() => {
     fetchLogs(1);
   }, [currentUser.currentOrgId]);
-  
+
   const columns = [
     {
       title: "",
@@ -414,7 +414,7 @@ export function AuditLogDashboard() {
               form={form}
               layout="inline"
               onValuesChange={(changedValue) => {
-                const key = Object.keys(changedValue)[0];
+                const key: any = Object.keys(changedValue)[0];
                 if (key === "dateRange") {
                   handleDateChange(changedValue.dateRange);
                 } else if (["environmentId", "orgId", "userId", "appId"].includes(key)) {
@@ -428,9 +428,9 @@ export function AuditLogDashboard() {
               <Flex gap="middle" vertical>
                 <Flex>
                   <Form.Item name="dateRange">
-                    <RangePicker 
-                      showTime 
-                      format="YYYY-MM-DD 00:00:00" 
+                    <RangePicker
+                      showTime
+                      format="YYYY-MM-DD 00:00:00"
                       value={form.getFieldValue("dateRange")}/>
                   </Form.Item>
                   <Form.Item name="eventType">
@@ -443,7 +443,7 @@ export function AuditLogDashboard() {
                     />
                   </Form.Item>
                 </Flex>
-                
+
                 <Flex>
                   <Form.Item name="environmentId">
                     <Input placeholder="Environment ID" allowClear />
@@ -469,11 +469,11 @@ export function AuditLogDashboard() {
               <Skeleton active paragraph={{ rows: 5 }} />
             ) : currentPageLogs.length > 0 ? (
               <>
-                <EventTypeTimeChart 
-                  data={allLogs} 
-                  eventTypeLabels={eventTypeLabels} 
+                <EventTypeTimeChart
+                  data={allLogs}
+                  eventTypeLabels={eventTypeLabels}
                   eventTypes={eventTypes}
-                  setDateRange={handleChartZoom} 
+                  setDateRange={handleChartZoom}
                 />
                 <Divider />
                 <div style={{ overflowX: "auto", width: "100%" }}>
@@ -485,7 +485,7 @@ export function AuditLogDashboard() {
                   pagination={{
                     pageSize: pagination.pageSize,
                     current: pagination.current,
-                    total: total, 
+                    total: total,
                   }}
                   style={{ width: "95%", whiteSpace: "nowrap" }} // Fixed width, prevent line break
                   onChange={handleTableChange} // Handle pagination

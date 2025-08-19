@@ -54,7 +54,7 @@ export const TrashTableView = (props: { resources: HomeRes[] , setModify: any, m
             }
             return a.name > b.name ? 1 : -1;
           },
-          render: (_, record) => {
+          render: (_: any, record: any) => {
             const item = record as HomeRes;
             const Icon = HomeResInfo[item.type].icon;
             return (
@@ -84,7 +84,7 @@ export const TrashTableView = (props: { resources: HomeRes[] , setModify: any, m
             }
             return a.type > b.type ? 1 : -1;
           },
-          render: (_, record) => HomeResInfo[(record as any).type as HomeResTypeEnum].name,
+          render: (_: any, record: any) => HomeResInfo[(record as any).type as HomeResTypeEnum].name,
         },
         {
           title: trans("home.creator"),
@@ -108,13 +108,13 @@ export const TrashTableView = (props: { resources: HomeRes[] , setModify: any, m
             }
             return a.lastModifyTime > b.lastModifyTime ? 1 : -1;
           },
-          render: (text) => timestampToHumanReadable(text, 30 * 24 * 60 * 60 * 1000),
+          render: (text: any) => timestampToHumanReadable(text, 30 * 24 * 60 * 60 * 1000),
         },
         {
           title: " ",
           dataIndex: "operation",
           width: "298px",
-          render: (text, record) => {
+          render: (text: any, record: any) => {
             const item = record as HomeRes;
             return (
               <OperationWrapper>

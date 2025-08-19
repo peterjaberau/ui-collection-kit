@@ -395,7 +395,7 @@ export const GridItem = React.memo((props: GridItemProps) => {
     if (!width) {
       width = position.width;
     }
-    const padding = getGridItemPadding(props.compType);
+    const padding: any = getGridItemPadding(props.compType);
     const { h } = calcWH(props, width + padding[0] * 2, height + padding[1] * 2, {
       w: true,
       h: true,
@@ -583,13 +583,13 @@ export const GridItem = React.memo((props: GridItemProps) => {
         "react-draggable": isDraggable,
         "react-draggable-dragging": Boolean(dragging),
         cssTransforms: true,
-      }),
+      } as any),
       style: {
         ...transform,
         opacity: layoutHide ? 0 : undefined,
         pointerEvents: layoutHide ? "none" : "auto",
       },
-    });
+    } as any);
     // Resizable support. This is usually on but the user can toggle it off.
     newChild = mixinResizable(newChild, pos, isResizable, zIndex);
     // Draggable support. This is always on, except for with placeholders.

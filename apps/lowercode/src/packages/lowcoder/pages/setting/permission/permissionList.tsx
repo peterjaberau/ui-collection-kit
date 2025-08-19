@@ -186,7 +186,7 @@ export default function PermissionSetting(props: PermissionSettingProps) {
           tableLayout={"auto"}
           scroll={{ x: "100%" }}
           pagination={false}
-          onRow={(record) => ({
+          onRow={(record: any) => ({
             onClick: () => history.push(buildGroupId((record as DataItemInfo).key)),
           })}
           columns={[
@@ -194,7 +194,7 @@ export default function PermissionSetting(props: PermissionSettingProps) {
               title: trans("memberSettings.groupName"),
               dataIndex: "groupName",
               ellipsis: true,
-              render: (_, record: any) => {
+              render: (_: any, record: any) => {
                 return (
                   <Typography.Text
                     title={record.groupName}
@@ -237,7 +237,7 @@ export default function PermissionSetting(props: PermissionSettingProps) {
               title: trans("memberSettings.createTime"),
               dataIndex: "createTime",
               ellipsis: true,
-              render: (value) => (
+              render: (value: any) => (
                 <span style={{ color: "#8B8FA3" }}>{timestampToHumanReadable(value)}</span>
               ),
             },

@@ -86,7 +86,7 @@ const DebugComp = withViewFn(simpleMultiComp(childrenMap), (debugComp) => {
   const history = useHistory();
   const params = useParams<{ name: string }>();
   const selectedKey = params.name;
-  const comp = (debugComp.children as Record<string, Comp<unknown>>)[selectedKey];
+  const comp: any = (debugComp.children as Record<string, Comp<unknown>>)[selectedKey];
   return (
     <Layout style={{ justifyContent: "space-between" }}>
       <Layout.Sider theme="light">

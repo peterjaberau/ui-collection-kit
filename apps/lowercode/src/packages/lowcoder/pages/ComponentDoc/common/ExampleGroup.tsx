@@ -36,7 +36,7 @@ const Wrapper = styled.div`
 `;
 export default function ExampleGroup(props: React.PropsWithChildren<IProps>) {
   const { title, description, children }: any = props;
-  const tabs = React.Children.map(children as ReactElement, (child: ReactElement) => {
+  const tabs = React.Children.map(children as ReactElement, (child: ReactElement | any) => {
     return {
       title: child.props.title,
       child,
@@ -48,7 +48,7 @@ export default function ExampleGroup(props: React.PropsWithChildren<IProps>) {
       <Title2>{title}</Title2>
       <Desc>{description}</Desc>
       <div>
-        {tabs.map((i) => (
+        {tabs.map((i: any) => (
           <div key={i.title}>
             <div style={{ marginBottom: 8, marginTop: 16 }}>{i.title}</div>
             <BorderContext.Provider value={{ isBorderShow, showBorder }}>

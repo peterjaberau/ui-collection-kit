@@ -254,7 +254,7 @@ function OrganizationSetting() {
               tableLayout={"auto"}
               scroll={{ x: "100%" }}
               pagination={false}
-              onRow={(record) => ({
+              onRow={(record: any) => ({
                 onClick: () => history.push(buildOrgId((record as DataItemInfo).id)),
               })}
               columns={[
@@ -262,7 +262,7 @@ function OrganizationSetting() {
                   title: trans("orgSettings.orgName"),
                   dataIndex: "orgName",
                   ellipsis: true,
-                  render: (_, record: any) => {
+                  render: (_: any, record: any) => {
                     const isActiveOrg = record.isCurrentOrg;
                     return (
                       <OrgName>

@@ -6,7 +6,7 @@ import { AppSummaryInfo, fetchApplicationInfo } from "#lowcoder/redux/reduxActio
 import { fetchDataSourceTypes } from "#lowcoder/redux/reduxActions/datasourceActions";
 import { getUser } from "#lowcoder/redux/selectors/usersSelectors";
 import { useUserViewMode } from "#lowcoder/util/hooks";
-import "comps/uiCompRegistry";
+import "#lowcoder/comps/uiCompRegistry";
 import { showAppSnapshotSelector } from "#lowcoder/redux/selectors/appSnapshotSelector";
 import { setShowAppSnapshot } from "#lowcoder/redux/reduxActions/appSnapshotActions";
 import { fetchGroupsAction } from "#lowcoder/redux/reduxActions/orgActions";
@@ -37,7 +37,7 @@ import {fetchJsDSPaginationByApp} from "#lowcoder/util/pagination/axios";
 import { PUBLIC_APP_ID, PUBLIC_APP_ORG_ID } from "#lowcoder/constants/publicApp";
 
 const AppEditorInternalView = lazy(
-  () => import("pages/editor/appEditorInternal")
+  () => import("#lowcoder/pages/editor/appEditorInternal")
     .then(moduleExports => ({default: moduleExports.AppEditorInternalView}))
 );
 

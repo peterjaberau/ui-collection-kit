@@ -39,16 +39,16 @@ import {fetchJsDSPaginationByApp} from "#lowcoder/util/pagination/axios";
 import PaginationComp from "#lowcoder/util/pagination/Pagination";
 
 const AppSnapshot = lazy(() => {
-  return import("pages/editor/appSnapshot")
+  return import("#lowcoder/pages/editor/appSnapshot")
     .then(moduleExports => ({default: moduleExports.AppSnapshot}));
 });
 
 const AppEditorInternalView = lazy(
-  () => import("pages/editor/appEditorInternal")
+  () => import("#lowcoder/pages/editor/appEditorInternal")
     .then(moduleExports => ({default: moduleExports.AppEditorInternalView}))
 );
 
-const ErrorFallback = lazy(() => import("components/ErrorFallback"));
+const ErrorFallback = lazy(() => import("#lowcoder/components/ErrorFallback"));
 
 const AppEditor = React.memo(() => {
   const dispatch = useDispatch();

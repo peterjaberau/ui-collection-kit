@@ -113,7 +113,7 @@ export const QueryLibraryHistoryView = (props: {
     return <QueryLibrarySkeletonView />;
   }
 
-  let snapshotItems = Object.values(selectedRecord).map((record) => ({
+  let snapshotItems: any = Object.values(selectedRecord).map((record) => ({
     selected: selectedRecordId === record.id,
     title: record.tag,
     timeInfo: timestampToHumanReadable(record.createTime),

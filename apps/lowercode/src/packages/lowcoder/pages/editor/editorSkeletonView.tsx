@@ -18,10 +18,10 @@ import { ProductLoading } from "#lowcoder/components/ProductLoading";
 import { default as LoadingOutlined } from "@ant-design/icons/LoadingOutlined";
 import { useUnmount } from "react-use";
 
-const BottomSkeleton = lazy(() => import("pages/editor/bottom/BottomContent").then(module => ({default: module.BottomSkeleton})));
-const RightPanel = lazy(() => import('pages/editor/right/RightPanel'));
-const LeftPanel = lazy(() => import("pages/common/styledComponent").then(module =>({default: module.LeftPanel})));
-const MiddlePanel = lazy(() => import("pages/common/styledComponent").then(module =>({default: module.MiddlePanel})));
+const BottomSkeleton = lazy(() => import("#lowcoder/pages/editor/bottom/BottomContent").then(module => ({default: module.BottomSkeleton})));
+const RightPanel = lazy(() => import('#lowcoder/pages/editor/right/RightPanel'));
+const LeftPanel = lazy(() => import("#lowcoder/pages/common/styledComponent").then(module =>({default: module.LeftPanel})));
+const MiddlePanel = lazy(() => import("#lowcoder/pages/common/styledComponent").then(module =>({default: module.MiddlePanel})));
 
 const StyledSkeleton = styled(Skeleton)`
   padding: 16px;

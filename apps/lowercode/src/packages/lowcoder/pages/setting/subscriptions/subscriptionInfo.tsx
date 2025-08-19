@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { HeaderBack } from "../permission/styledComponents";
 import history from "#lowcoder/util/history";
 import { SUBSCRIPTION_SETTING } from "#lowcoder/constants/routesURL";
-import { getProduct } from '@lowcoder-ee/api/subscriptionApi';
+import { getProduct } from '#lowcoder/api/subscriptionApi';
 import { useState, useEffect } from 'react';
 import { Card, Tag, List } from 'antd';
 import { CheckCircleOutlined } from '@ant-design/icons';
@@ -71,7 +71,7 @@ const useMarkdown = (productId: string | null, userLanguage: string) => {
   useEffect(() => {
     if (productId && userLanguage) {
 
-      let descriptionContent : Translations | false;
+      let descriptionContent : Translations | false | any;
 
       switch (productId) {
         case SubscriptionProductsEnum.SUPPORT:

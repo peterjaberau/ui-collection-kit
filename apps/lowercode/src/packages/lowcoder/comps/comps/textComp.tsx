@@ -152,7 +152,8 @@ const childrenMap: any = {
   padding: PaddingControl,
 };
 
-type ChildrenType = NewChildren<RecordConstructorToComp<typeof childrenMap>>;
+// @ts-ignore
+type ChildrenType = NewChildren<RecordConstructorToComp<typeof childrenMap | any>> | any;
 
 const TextPropertyView = React.memo((props: {
   children: ChildrenType
@@ -223,7 +224,7 @@ const TextPropertyView = React.memo((props: {
   );
 });
 
-const TextView = React.memo((props: ToViewReturn<ChildrenType>) => {
+const TextView = React.memo((props: ToViewReturn<ChildrenType> | any) => {
   const value = props.text.value;
   const handleClickEvent = useCompClickEventHandler({onEvent: props.onEvent})
 
@@ -277,11 +278,11 @@ let TextTmpComp = (function () {
 
 TextTmpComp = class extends TextTmpComp {
   override autoHeight(): boolean {
-    return this.children.autoHeight.getView();
+    return (this as any).children.autoHeight.getView();
   }
 };
 
-export const TextComp = withExposingConfigs(TextTmpComp, [
+export const TextComp: any = withExposingConfigs(TextTmpComp, [
   new NameConfig("text", trans("textShow.textDesc")),
   NameConfigHidden,
 ]);

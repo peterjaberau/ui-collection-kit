@@ -4,7 +4,7 @@ import {
   BorderColor,
   GreyTextColor,
 } from "#lowcoder/constants/style";
-import { draggingUtils } from "#lowcoder/";
+import { draggingUtils } from "#lowcoder/layout";
 import styled from "styled-components";
 import { getRemoteCompType } from "#lowcoder/comps/utils/remote";
 import { LowcoderCompMeta } from "#lowcoder/types/remoteComp";

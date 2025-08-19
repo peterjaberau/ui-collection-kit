@@ -11,7 +11,7 @@ import { default as Form } from "antd/es/form";
 import { default as Select } from "antd/es/select";
 import { authConfig, AuthType } from "./idSourceConstants";
 import { ServerAuthTypeInfo } from "#lowcoder/constants/authConstants";
-import { GeneralLoginIcon } from "assets/icons";
+import { GeneralLoginIcon } from "#lowcoder/assets/icons/index";
 import _ from "lodash";
 import GenericOAuthForm from "./OAuthForms/GenericOAuthForm";
 import GeneralOAuthForm from "./OAuthForms/GeneralOAuthForm";
@@ -42,11 +42,11 @@ function CreateModal(props: CreateModalProp) {
   }
 
   const authConfigOptions = Object.values(authConfig)
-    .filter(config => {
+    .filter((config: any) => {
       return !(oauthProvidersList.indexOf(config.sourceValue) > -1)
         || config.sourceValue === AuthType.Generic
     })
-    .map(config => ({
+    .map((config: any) => ({
       label: config.sourceName,
       value: config.sourceValue,
     }));

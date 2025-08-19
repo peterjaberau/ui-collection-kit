@@ -17,7 +17,6 @@ export const Title2 = styled.div`
 
 export const Desc = styled.div`
   font-size: 16px;
-  line-height: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
 `;

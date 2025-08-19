@@ -39,9 +39,9 @@ function AddGroupUserDialog(props: {
   modify?: boolean
 }) {
   const { orgId, orgUsers, orgUsersFetching, groupUsers, groupId, setModify, modify }: any = props;
-  const groupUserIdMap = new Map(groupUsers.map((gUser) => [gUser.userId, gUser]));
+  const groupUserIdMap = new Map(groupUsers.map((gUser: any) => [gUser.userId, gUser]));
   const [dialogVisible, setDialogVisible] = useState(false);
-  const addableUsers = orgUsers.filter((user) => !groupUserIdMap.has(user.userId));
+  const addableUsers = orgUsers.filter((user: any) => !groupUserIdMap.has(user.userId));
   const toAddUserIdRecord = useRef<Record<string, boolean>>({});
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [searchValue, setSearchValue] = useState("")

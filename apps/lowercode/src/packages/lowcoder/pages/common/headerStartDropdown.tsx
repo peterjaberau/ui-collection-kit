@@ -62,7 +62,7 @@ const Prefix = styled.div`
   }
 `;
 
-export const TypeName = {
+export const TypeName: any = {
   [AppTypeEnum.Application]: trans("home.app"),
   [AppTypeEnum.Module]: trans("home.module"),
   [AppTypeEnum.NavLayout]: trans("home.navLayout"),

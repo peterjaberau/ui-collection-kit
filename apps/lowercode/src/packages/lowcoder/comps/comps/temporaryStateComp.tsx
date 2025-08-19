@@ -16,14 +16,15 @@ import { SimpleNameComp } from "./simpleNameComp";
 import { markdownCompCss, TacoMarkDown } from "#lowcoder-design/index";
 import SupaDemoDisplay from "#lowcoder/comps/utils/supademoDisplay";
 
-const TemporaryStateItemCompBase = new MultiCompBuilder(
+const TemporaryStateItemCompBase: any = new MultiCompBuilder(
     {
-      name: SimpleNameComp,
+      // @ts-ignore
+      name: SimpleNameComp | any,
       value: jsonValueStateControl(null),
-    },
+    } as any,
     () => null as any
   )
-  .setPropertyViewFn((children) => {
+  .setPropertyViewFn((children: any) => {
     return (
         <BottomTabs
           type={BottomResTypeEnum.TempState}
@@ -57,6 +58,7 @@ const TemporaryStateItemCompBase = new MultiCompBuilder(
   })
   .build();
 
+// @ts-ignore
 class TemporaryStateAsBottomRes extends TemporaryStateItemCompBase implements BottomResComp {
   result(): BottomResCompResult | null {
     return null;
@@ -75,6 +77,7 @@ class TemporaryStateAsBottomRes extends TemporaryStateItemCompBase implements Bo
   }
 }
 
+// @ts-ignore
 const TemporaryStateItemCompWithMethodExpose = withMethodExposing(TemporaryStateAsBottomRes, [
   {
     method: {
@@ -87,7 +90,7 @@ const TemporaryStateItemCompWithMethodExpose = withMethodExposing(TemporaryState
       ],
       description: "",
     },
-    execute: async (comp, params) => {
+    execute: async (comp: any, params: any) => {
       return new Promise(async (resolve) => {
         await comp.children.value.change(params?.[0]);
         resolve(params?.[0])
@@ -109,9 +112,9 @@ const TemporaryStateItemCompWithMethodExpose = withMethodExposing(TemporaryState
       ],
       description: "",
     },
-    execute: async (comp, params) => {
+    execute: async (comp: any, params: any) => {
       return new Promise(async (resolve) => {
-        const { value: prev, onChange } = comp.children.value.getView();
+        const { value: prev, onChange }: any = comp.children.value.getView();
         const [path, value] = params;
         if (
           !Array.isArray(path) ||
@@ -139,8 +142,8 @@ export const TemporaryStateItemComp = withExposingConfigs(TemporaryStateItemComp
   new NameConfig("value", trans("temporaryState.valueDesc")),
 ]);
 
-export const TemporaryStateListComp = bottomResListComp(
-  TemporaryStateItemComp,
+export const TemporaryStateListComp: any = bottomResListComp(
+  TemporaryStateItemComp as any,
   BottomResTypeEnum.TempState,
   { value: "null" },
   "state"

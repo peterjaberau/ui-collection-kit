@@ -16,7 +16,7 @@ import {
     FileFolderIcon, messageInstance, CustomModal
 } from "#lowcoder-design/index";
 import {trans, transToNode} from "#lowcoder/i18n";
-import { draggingUtils } from "#lowcoder/draggingUtils";
+import { draggingUtils } from "#lowcoder/layout";
 import React, { useContext, useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {fetchAllModules, recycleApplication, updateAppMetaAction} from "#lowcoder/redux/reduxActions/applicationActions";
@@ -79,7 +79,7 @@ type NodeType = {
 
 function buildTree(elementRecord: Record<string, Array<ApplicationMeta | FolderMeta>>): NodeType {
     const elements : any = elementRecord[""] || [];
-    const elementMap: Record<string, NodeType> = {};
+    const elementMap: Record<string, NodeType> | any = {};
     let rootNode: NodeType = {
         name: "root",
         id: "",
@@ -97,8 +97,8 @@ function buildTree(elementRecord: Record<string, Array<ApplicationMeta | FolderM
                 id: element.folderId,
                 isFolder: true,
                 children: [],
-                rename: val => elementMap[element.folderId].name = val,
-                checkName: val => val
+                rename: (val: any) => elementMap[element.folderId].name = val,
+                checkName: (val: any) => val
             };
 
             // Process subapplications inside the folder
@@ -126,8 +126,8 @@ function buildTree(elementRecord: Record<string, Array<ApplicationMeta | FolderM
                     isFolder: false,
                     children: [],
                     module: element,
-                    rename: val => elementMap[element.applicationId].name = val,
-                    checkName: val => val
+                    rename: (val: any) => elementMap[element.applicationId].name = val,
+                    checkName: (val: any) => val
                 };
             }
         }
@@ -553,16 +553,16 @@ export default function ModulePanel() {
         const childrenItems = treeNode.children
             .map((i) => convertRefTree(i as NodeType))
             .filter((i): i is DraggableTreeNode<NodeType> => !!i);
-        const node: DraggableTreeNode<NodeType> = {
+        const node: DraggableTreeNode<NodeType> | any = {
             id: moduleResComp?.id,
-            canDropBefore: (source) => {
+            canDropBefore: (source: any) => {
                 if (currentNodeType) {
                     return source?.isFolder!;
                 }
 
                 return !source?.isFolder;
             },
-            canDropAfter: (source) => {
+            canDropAfter: (source: any) => {
                 if (
                     !currentNodeType &&
                     source?.isFolder
@@ -571,7 +571,7 @@ export default function ModulePanel() {
                 }
                 return true;
             },
-            canDropIn: (source) => {
+            canDropIn: (source: any) => {
                 if (!currentNodeType) {
                     return false;
                 }
@@ -585,20 +585,20 @@ export default function ModulePanel() {
             },
             items: childrenItems,
             data: moduleResComp,
-            addSubItem(value) {
+            addSubItem(value: any) {
                 folderId = node.id!;
                 moveModule();
             },
-            deleteItem(index) {
+            deleteItem(index: any) {
                 sourceFolderId = node.id!;
                 sourceId = node.items[index].id!;
 
             },
-            addItem(value) {
+            addItem(value: any) {
                 folderId = node.id!;
                 moveModule();
             },
-            moveItem(from, to) {
+            moveItem(from: any, to: any) {
             },
         };
 

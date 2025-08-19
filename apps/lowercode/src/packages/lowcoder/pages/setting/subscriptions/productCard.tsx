@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GreyTextColor } from 'constants/style';
+import { GreyTextColor } from '#lowcoder/constants/style';
 import { Card, Button } from 'antd';
 import { SettingOutlined, CheckCircleOutlined, LoadingOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { buildSubscriptionSettingsLink, buildSubscriptionInfoLink } from "#lowcoder/constants/routesURL";

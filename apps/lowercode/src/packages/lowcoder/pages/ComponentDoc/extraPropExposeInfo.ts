@@ -9,7 +9,7 @@ type IExtraPropExposeInfo = {
   };
 };
 
-const extraExposeInfo: IExtraPropExposeInfo = {
+const extraExposeInfo: IExtraPropExposeInfo | any = {
   table: {
     properties: {
       selectedRow: {

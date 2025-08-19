@@ -19,7 +19,7 @@ const fallbacks = {
   outAppLayout: <PageSkeleton logoWithName />,
 };
 
-export default function LazyRoute(props: IProps) {
+export default function LazyRoute(props: IProps | any) {
   const { fallback = "normal", ...routeProps }: any = props;
   return (
     <Suspense fallback={fallbacks[fallback]}>

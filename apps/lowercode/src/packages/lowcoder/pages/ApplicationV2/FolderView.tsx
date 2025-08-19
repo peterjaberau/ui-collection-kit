@@ -15,12 +15,12 @@ import { getUser } from "../../redux/selectors/usersSelectors";
 
 function getBreadcrumbs(
   folder: FolderMeta,
-  allFolders: FolderMeta[],
+  allFolders: FolderMeta[] | any,
   breadcrumb: HomeBreadcrumbType[]
-): HomeBreadcrumbType[] {
+): HomeBreadcrumbType[] | any {
   if (folder.parentFolderId) {
     return getBreadcrumbs(
-      allFolders.filter((f) => f.folderId === folder.parentFolderId)[0],
+      allFolders.filter((f: any) => f.folderId === folder.parentFolderId)[0],
       allFolders,
       [
         {

@@ -83,7 +83,7 @@ const rehypePlugins: Pluggable[] = [
   [rehypeSanitize, sanitizeSchema] as Pluggable,
 ];
 
-export const TacoMarkDown = memo((props: TacoMarkDownProps) => {
+export const TacoMarkDown = memo((props: TacoMarkDownProps | any) => {
   const { children, ...otherProps } = props;
 
   // Memoize the remark plugins array with proper typing

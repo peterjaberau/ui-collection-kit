@@ -153,7 +153,7 @@ export const SaveButton = styled(Button)`
   }
 `;
 
-export const FormStyled = styled(Form)`
+export const FormStyled: any = styled(Form)`
   .ant-form-item-control-input-content > input,
   .ant-input-password {
     &:hover {
@@ -312,7 +312,7 @@ export const CreateButton = styled(Button)`
   }
 `;
 
-export const StyledSteps = styled(Steps)`
+export const StyledSteps: any = styled(Steps)`
   .ant-steps-item-icon {
     width: 25px;
     height: 25px;

@@ -1,6 +1,6 @@
 import { DatasourceType } from "#lowcoder/constants/queryConstants";
 import { DatasourceFormRegistry } from "#lowcoder/pages/datasource/form/datasourceFormRegistry";
-import { DataSourcePluginMeta } from "lowcoder-sdk/dataSource";
+import { DataSourcePluginMeta } from "#lowcoder-sdk/dataSource";
 import { DatasourceFormManifest } from "./form/datasourceFormRegistry";
 import { PluginDataSourceForm } from "./form/pluginDataSourceForm";
 

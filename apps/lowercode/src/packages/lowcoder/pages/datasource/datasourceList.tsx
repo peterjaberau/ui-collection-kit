@@ -232,7 +232,7 @@ export const DatasourceList = () => {
                   }
                   return a.type > b.type ? 1 : -1;
                 },
-                render: (text) => <SubColumnCell>{text}</SubColumnCell>,
+                render: (text: any) => <SubColumnCell>{text}</SubColumnCell>,
               },
               {
                 title: trans("home.databaseName"),
@@ -244,7 +244,7 @@ export const DatasourceList = () => {
                   }
                   return a.database > b.database ? 1 : -1;
                 },
-                render: (text) => (
+                render: (text: any) => (
                   <SubColumnCell>
                     {isEmpty(text) ? <span style={{ color: "#8B8FA3" }}>--</span> : text}
                   </SubColumnCell>
@@ -261,7 +261,7 @@ export const DatasourceList = () => {
                   }
                   return a.type > b.type ? 1 : -1;
                 },
-                render: (text) => <SubColumnCell>{text}</SubColumnCell>,
+                render: (text: any) => <SubColumnCell>{text}</SubColumnCell>,
               },
               {
                 title: trans("home.createTime"),
@@ -274,7 +274,7 @@ export const DatasourceList = () => {
                   }
                   return a.createTime > b.createTime ? 1 : -1;
                 },
-                render: (text) => (
+                render: (text: any) => (
                   <SubColumnCell>
                     {timestampToHumanReadable(text, 30 * 24 * 60 * 60 * 1000)}
                   </SubColumnCell>
@@ -284,7 +284,7 @@ export const DatasourceList = () => {
                 title: " ",
                 dataIndex: "operation",
                 width: "152px",
-                render: (_, record: any) => (
+                render: (_: any, record: any) => (
                   <>
                     {record.edit && (
                       <OperationWrapper>

@@ -30,7 +30,7 @@ import { NpmRegistryConfigEntry } from "#lowcoder/redux/reducers/uiReducers/comm
 import { default as Switch } from "antd/es/switch";
 
 const CodeEditor = lazy(
-  () => import("base/codeEditor/codeEditor")
+  () => import("#lowcoder/base/codeEditor/codeEditor")
     .then(module => ({default: module.CodeEditor}))
 )
 
@@ -149,7 +149,7 @@ export function AdvancedSetting() {
   return (
     <Level1SettingPageContent>
       <Prompt
-        message={(location) => {
+        message={(location: any) => {
           locationInfo = location;
 
           if (!canLeave && isNotChange) {

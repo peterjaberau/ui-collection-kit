@@ -39,7 +39,7 @@ export type ExtraItem = {
   isSelected?: boolean;
   hidden?: boolean;
 };
-export type Layout = Record<string, LayoutItem>;
+export type Layout = Record<string, LayoutItem> | any;
 export type ExtraLayout = Record<string, ExtraItem>;
 export type Position = {
   left: number;
@@ -102,7 +102,7 @@ const isProduction = process.env.NODE_ENV === "production";
  * @return {Number}       Bottom coordinate.
  */
 export function bottom(layout: Layout): number {
-  const res = _.max(Object.values(layout).map((item) => item.y + item.h)) ?? 0;
+  const res = _.max(Object.values(layout).map((item: any) => item.y + item.h)) ?? 0;
   return _.max([res, 0]) ?? 0;
 }
 
@@ -184,7 +184,7 @@ export function collides(l1: LayoutItem, l2: LayoutItem): boolean {
  * @param  {Number} bounds Number of columns.
  */
 export function correctBounds(layout: Layout, cols: number): Layout {
-  for (const l of Object.values(layout)) {
+  for (const l of Object.values(layout) as any) {
     if (l.w > cols) l.w = cols;
     if (l.x + l.w > cols) l.x = cols - l.w;
   }
@@ -380,7 +380,7 @@ function insertWithOrders(items: LayoutItem[], newItem: LayoutItem) {
   items.push(newItem);
   let idx;
   for (idx = items.length - 1; idx > 0; idx--) {
-    const item = items[idx - 1];
+    const item: any = items[idx - 1];
     if (newItem.y < item.y || (newItem.y === item.y && newItem.x < item.x)) {
       items[idx] = item;
     } else {
@@ -466,16 +466,16 @@ export function canResizeBottom(item: LayoutItem, extraItem?: ExtraItem) {
  * build adjcent list if there're adjcent items below every item
  */
 export function getStickyItemMap(layout: Layout): Record<string, Set<string>> {
-  const pairs = Object.values(layout).map((item) => {
+  const pairs = Object.values(layout).map((item: any) => {
     const stickyItems = Object.values(layout)
       .filter(
-        (stickyItem) =>
+        (stickyItem: any) =>
           item.y + item.h === stickyItem.y &&
           item.x < stickyItem.x + stickyItem.w &&
           stickyItem.x < item.x + item.w &&
           item.i !== stickyItem.i
       )
-      .map((stickyItem) => stickyItem.i);
+      .map((stickyItem: any) => stickyItem.i);
     return [item.i, new Set<string>(stickyItems)];
   });
   return _.fromPairs(pairs);
@@ -484,7 +484,7 @@ export function getStickyItemMap(layout: Layout): Record<string, Set<string>> {
 export function changeStickyItem(
   layout: Layout,
   changeItem: LayoutItem,
-  stickyItemMap?: Record<string, Set<string>>
+  stickyItemMap?: Record<string, Set<string>> | any
 ): Layout {
   layout = { ...layout, [changeItem.i]: changeItem };
   if (!stickyItemMap) {
@@ -495,7 +495,7 @@ export function changeStickyItem(
     const key = queue.shift() as string;
     const item = layout[key];
     if (stickyItemMap.hasOwnProperty(key)) {
-      stickyItemMap[key].forEach((stickyKey) => {
+      stickyItemMap[key].forEach((stickyKey: any) => {
         const stickyItem = layout[stickyKey];
         if (stickyItem && !isOutOfBox(stickyItem)) {
           // sticky operation can't chagne the up-down relation, implement this by calculating the minimum sticky coordinate
@@ -518,7 +518,7 @@ function calcStickyMinY(layout: Layout, key: string) {
   if (!stickyItem) return 0;
   // log.debug("calcStickyMinY. layout: ", layout, " key: ", key);
   return Object.values(layout)
-    .filter((item) => {
+    .filter((item: any) => {
       // check item is on top of stickyItem
       return (
         item.x < stickyItem.x + stickyItem.w &&
@@ -526,7 +526,7 @@ function calcStickyMinY(layout: Layout, key: string) {
         item.y + item.h <= stickyItem.y
       );
     })
-    .map((item) => {
+    .map((item: any) => {
       // log.debug("top items: ", item, " y: ", item.y + item.h);
       return item.y + item.h;
     })
@@ -534,8 +534,8 @@ function calcStickyMinY(layout: Layout, key: string) {
 }
 
 export function moveToZero(layout: Layout): Layout {
-  const minX = _.min(Object.values(layout).map((item) => item.x)) as number;
-  const minY = _.min(Object.values(layout).map((item) => item.y)) as number;
+  const minX = _.min(Object.values(layout).map((item: any) => item.x)) as number;
+  const minY = _.min(Object.values(layout).map((item: any) => item.y)) as number;
   return _.mapValues(layout, (item) => ({
     ...item,
     x: item.x - minX,
@@ -562,7 +562,7 @@ export function calcPasteBaseXY(layout: Layout, keys?: string[]): { x: number; y
 export function calcLeftAdjacentItems(layout: Layout): Record<string, string[]> {
   return _.mapValues(layout, (item) => {
     return Object.values(layout)
-      .filter((leftItem) => {
+      .filter((leftItem: any) => {
         return (
           leftItem.i !== item.i &&
           leftItem.x + leftItem.w === item.x &&
@@ -570,7 +570,7 @@ export function calcLeftAdjacentItems(layout: Layout): Record<string, string[]> 
           item.y + item.h > leftItem.y
         );
       })
-      .map((leftItem) => leftItem.i);
+      .map((leftItem: any) => leftItem.i);
   });
 }
 

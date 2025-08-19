@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from '#lowcoder/redux-saga/effects';
 import { ReduxAction, ReduxActionTypes } from "#lowcoder/constants/reduxActionConstants";
 import { setEnterpriseLicense, fetchEnvironmentsSuccess, fetchEnvironmentsFailure } from "#lowcoder/redux/reduxActions/enterpriseActions";
 import { BrandingSettingResponse, EnterpriseLicenseResponse, FetchBrandingSettingPayload, getBranding, getEnterpriseLicense } from "#lowcoder/api/enterpriseApi";

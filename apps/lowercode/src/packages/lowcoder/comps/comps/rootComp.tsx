@@ -39,7 +39,7 @@ import clsx from "clsx";
 import { useUnmount } from "react-use";
 
 const EditorView = lazy(
-  () => import("pages/editor/editorView"),
+  () => import("#lowcoder/pages/editor/editorView"),
 );
 
 interface RootViewProps extends HTMLAttributes<HTMLDivElement> {
@@ -68,7 +68,7 @@ const RootView = React.memo((props: RootViewProps) => {
   const { readOnly } = useContext(ExternalEditorContext);
   const isUserViewMode = useUserViewMode();
   const mountedRef = useRef(true);
-  const editorStateRef = useRef<EditorState>();
+  const editorStateRef: any = useRef<EditorState>(null);
   const prevCompRef = useRef(comp);
 
   const appThemeId = comp.children.settings.getView().themeId;
@@ -136,7 +136,7 @@ const RootView = React.memo((props: RootViewProps) => {
     [theme, themeId]
   );
 
-  const propertySectionContextValue = useMemo<PropertySectionContextType>(() => {
+  const propertySectionContextValue: any = useMemo<PropertySectionContextType | any>(() => {
     const compName = Object.keys(editorState?.selectedComps() || {})[0];
     return {
       compName,
@@ -193,7 +193,7 @@ const RootView = React.memo((props: RootViewProps) => {
 /**
  * Root Comp
  */
-const RootCompBase = simpleMultiComp(childrenMap);
+const RootCompBase: any = simpleMultiComp(childrenMap);
 
 export class RootComp extends RootCompBase {
   preloaded = false;
@@ -247,15 +247,15 @@ export class RootComp extends RootCompBase {
 
     // ui comp
     const compMap = this.children.ui.getAllCompItems();
-    const uiComp = Object.values(compMap).find((item) => item.children.name.getView() === name);
+    const uiComp: any = Object.values(compMap).find((item: any) => item.children.name.getView() === name);
     if (uiComp) {
       return uiComp.children.comp;
     }
 
     // hooks comp
-    const hooksCompMap = this.children.hooks.getAllCompItems();
-    const hooksComp = Object.values(hooksCompMap).find(
-      (item) => item.children.name.getView() === name
+    const hooksCompMap: any = this.children.hooks.getAllCompItems();
+    const hooksComp: any = Object.values(hooksCompMap).find(
+      (item: any) => item.children.name.getView() === name
     );
     if (hooksComp) {
       return hooksComp.children.comp;
@@ -271,7 +271,7 @@ export class RootComp extends RootCompBase {
 
     // temp state comp
     const allTempStateComp = this.children.tempStates.getView();
-    for (let comp of Object.values(allTempStateComp)) {
+    for (let comp of Object.values(allTempStateComp) as any) {
       if (comp.children.name.getView() === name) {
         return comp;
       }
@@ -279,7 +279,7 @@ export class RootComp extends RootCompBase {
 
     // transformer comp
     const allTransformerStateComp = this.children.transformers.getView();
-    for (let comp of Object.values(allTransformerStateComp)) {
+    for (let comp of Object.values(allTransformerStateComp) as any) {
       if (comp.children.name.getView() === name) {
         return comp;
       }
@@ -302,7 +302,8 @@ export class RootComp extends RootCompBase {
     }
   }
 
-  override reduce(action: CompAction): this {
+  // @ts-ignore
+  override reduce(action: CompAction): this | any {
     if (action.type === CompActionTypes.ROUTE_BY_NAME) {
       const comp = this.findCompByName(action.name);
       if (comp) {

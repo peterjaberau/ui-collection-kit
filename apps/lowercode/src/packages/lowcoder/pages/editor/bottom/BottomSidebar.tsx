@@ -136,12 +136,12 @@ interface BottomSidebarProps {
   onOpenCreatePanel: () => void;
 }
 
-export function BottomSidebar(props: BottomSidebarProps) {
+export function BottomSidebar(props: BottomSidebarProps | any) {
   const { items, refTreeComp, onOpenCreatePanel, onSelect, onCopy, onDelete }: any = props;
   const readOnly = useSelector(showAppSnapshotSelector);
   const [isSearchShow, showSearch] = useState(false);
   const [search, setSearch] = useState("");
-  const getById = (id: string) => items.find((i) => i.id() === id);
+  const getById = (id: string) => items.find((i: any) => i.id() === id);
 
   const convertRefTree = (refTreeComp: InstanceType<typeof RefTreeComp>) => {
     const bottomResComp = getById(refTreeComp.children.value.getView());
@@ -213,11 +213,11 @@ export function BottomSidebar(props: BottomSidebarProps) {
 
   const node = convertRefTree(refTreeComp);
   const idsInTree = refTreeComp.getAllValuesInTree();
-  const itemsNotInTree = items.filter((i) => !idsInTree.includes(i.id())).map((i) => i.id());
+  const itemsNotInTree = items.filter((i: any) => !idsInTree.includes(i.id())).map((i: any) => i.id());
 
   useEffect(() => {
     if (itemsNotInTree.length > 0) {
-      itemsNotInTree.forEach((i) => {
+      itemsNotInTree.forEach((i: any) => {
         const pushAction = refTreeComp.children.items.pushAction({
           value: i,
           items: [],

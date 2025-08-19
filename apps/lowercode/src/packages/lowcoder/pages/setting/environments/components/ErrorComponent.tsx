@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, Button, Typography } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
-import history from '@lowcoder-ee/util/history';
-import { trans } from 'i18n';
+import history from '#lowcoder/util/history';
+import { trans } from '#lowcoder/i18n';
 
 const { Title, Text } = Typography;
 
@@ -23,7 +23,7 @@ const ErrorComponent: React.FC<ErrorComponentProps> = ({ errorMessage, returnPat
           <Text type="secondary" style={{ display: 'block', margin: '16px 0' }}>
             {trans("environments.error_itemNotFound")}
           </Text>
-          <Button 
+          <Button
             type="primary"
             onClick={() => history.push(returnPath)}
             style={{ marginTop: '16px' }}

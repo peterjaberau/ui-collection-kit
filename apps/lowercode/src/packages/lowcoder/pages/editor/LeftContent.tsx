@@ -281,12 +281,12 @@ const LeftContentWrapper = styled.div`
 
 export const LeftContent = (props: LeftContentProps) => {
   const { uiComp }: any = props;
-  const editorState = useContext(EditorContext);
-  const [expandedKeys, setExpandedKeys] = useState<Array<React.Key>>([]);
+  const editorState: any = useContext(EditorContext);
+  const [expandedKeys, setExpandedKeys]: any = useState<Array<React.Key>>([]);
   const [showData, setShowData] = useState<NodeInfo[]>([]);
 
   const getTree = (tree: CompTree, result: NodeItem[], key?: string) => {
-    const { items, children } = tree;
+    const { items, children }: any = tree;
     if (Object.keys(items).length) {
       for (const i in items) {
         const info: any = {
@@ -484,7 +484,7 @@ export const LeftContent = (props: LeftContentProps) => {
     const explorerData: NodeItem[] = getTree(tree, []);
     let selectedKeys = [];
     if (editorState.selectedCompNames.size === 1) {
-      const key = Object.keys(editorState.selectedComps())[0];
+      const key: any = Object.keys(editorState.selectedComps())[0];
       const parentKeys = getParentNodeKeysByKey(explorerData, key);
       if (parentKeys && parentKeys.length) {
         let needSet = false;
@@ -512,10 +512,10 @@ export const LeftContent = (props: LeftContentProps) => {
           props.expanded ? <FoldedIcon /> : <UnfoldIcon />
         }
         expandedKeys={expandedKeys}
-        onExpand={(keys) => setExpandedKeys(keys)}
-        onClick={(e, node) => handleNodeClick(e, node, uiCompInfos)}
+        onExpand={(keys: any) => setExpandedKeys(keys)}
+        onClick={(e: any, node: any) => handleNodeClick(e, node, uiCompInfos)}
         selectedKeys={selectedKeys}
-        titleRender={(nodeData) => getTreeNode(nodeData as NodeItem, uiCompInfos)}
+        titleRender={(nodeData: any) => getTreeNode(nodeData as NodeItem, uiCompInfos)}
       />
     );
   };
@@ -537,7 +537,7 @@ export const LeftContent = (props: LeftContentProps) => {
   const bottomResCollapse = useMemo(() => {
     return editorState
       .bottomResComInfoList()
-      .map((item) => (
+      .map((item: any) => (
         <CollapseView
           key={item.name}
           name={item.name}
@@ -551,7 +551,7 @@ export const LeftContent = (props: LeftContentProps) => {
 
   const hookCompsCollapse = useMemo(() => {
     return _.sortBy(
-      editorState.hooksCompInfoList().filter((info) => hookCompCategory(info.type) === "hook"),
+      editorState.hooksCompInfoList().filter((info: any) => hookCompCategory(info.type) === "hook"),
       [(x) => x.name]
     ).map((item) => (
       <CollapseView

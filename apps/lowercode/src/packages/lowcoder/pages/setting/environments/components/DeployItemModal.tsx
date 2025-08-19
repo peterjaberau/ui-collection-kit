@@ -4,7 +4,7 @@ import { Modal, Form, Select, Checkbox, Button, Spin, Input, Tag, Space, Alert }
 import { messageInstance } from '#lowcoder-design/components/GlobalInstances';
 import { trans } from "#lowcoder/i18n";
 import { useSelector } from 'react-redux';
-import { selectLicensedEnvironments, selectEnvironmentsLoading } from 'redux/selectors/enterpriseSelectors';
+import { selectLicensedEnvironments, selectEnvironmentsLoading } from '#lowcoder/redux/selectors/enterpriseSelectors';
 import { Environment } from '../types/environment.types';
 import { DeployableItemConfig } from '../types/deployable-item.types';
 import { getEnvironmentTagColor, formatEnvironmentType } from '../utils/environmentUtils';

@@ -6,7 +6,7 @@ import { Environment } from '../types/environment.types';
 import { UserGroup, UserGroupsTabStats } from '../types/userGroup.types';
 import { getEnvironmentUserGroups } from '../services/environments.service';
 import { Spin, Empty } from 'antd';
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 
 const { Search } = Input;
 
@@ -30,10 +30,10 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
   // Fetch user groups
   const fetchUserGroups = async () => {
     if (!environment) return;
-    
+
     setLoading(true);
     setError(null);
-    
+
     try {
       // Check for required environment properties
       if (!environment.environmentApikey || !environment.environmentApiServiceUrl) {
@@ -41,24 +41,24 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
         setLoading(false);
         return;
       }
-      
+
       const response = await getEnvironmentUserGroups(
         environment.environmentId,
         environment.environmentApikey,
         environment.environmentApiServiceUrl
       );
-      
+
       // Extract the groups from the data array in the response
       const groups = response|| [];
-      
+
       setUserGroups(groups);
-      
+
       // Calculate stats
       const total = groups.length;
       const allUsers = groups.filter((group: UserGroup) => group.allUsersGroup).length;
       const developers = groups.filter((group: UserGroup) => group.devGroup).length;
       const custom = total - (allUsers + developers);
-      
+
       setStats({
         total,
         allUsers,
@@ -85,8 +85,8 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
 
   // Filter user groups based on search
   const filteredUserGroups = searchText
-    ? userGroups.filter(group => 
-        group.groupName.toLowerCase().includes(searchText.toLowerCase()) || 
+    ? userGroups.filter(group =>
+        group.groupName.toLowerCase().includes(searchText.toLowerCase()) ||
         group.groupId.toLowerCase().includes(searchText.toLowerCase()))
     : userGroups;
 
@@ -96,16 +96,16 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
     for (let i = 0; i < str.length; i++) {
       hash = str.charCodeAt(i) + ((hash << 5) - hash);
     }
-    
+
     const hue = Math.abs(hash % 360);
     return `hsl(${hue}, 70%, 50%)`;
   };
 
   // Stat card component
   const StatCard = ({ title, value, icon }: { title: string; value: number; icon: React.ReactNode }) => (
-    <Card 
-      style={{ 
-        height: '100%', 
+    <Card
+      style={{
+        height: '100%',
         borderRadius: '4px',
         border: '1px solid #f0f0f0'
       }}
@@ -115,9 +115,9 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
           <div style={{ fontSize: '13px', color: '#8c8c8c', marginBottom: '8px' }}>{title}</div>
           <div style={{ fontSize: '20px', fontWeight: 500 }}>{value}</div>
         </div>
-        <div style={{ 
-          fontSize: '24px', 
-          opacity: 0.8, 
+        <div style={{
+          fontSize: '24px',
+          opacity: 0.8,
           color: '#722ed1',
           padding: '8px',
           backgroundColor: 'rgba(114, 46, 209, 0.1)',
@@ -139,8 +139,8 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
       key: 'group',
       render: (group: UserGroup) => (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Avatar 
-            style={{ 
+          <Avatar
+            style={{
               backgroundColor: stringToColor(group.groupName),
               marginRight: 12
             }}
@@ -216,10 +216,10 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
   return (
     <div style={{ padding: '16px' }}>
       {/* Header */}
-      <div style={{ 
-        display: "flex", 
-        justifyContent: "space-between", 
-        alignItems: "center", 
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
         marginBottom: "20px"
       }}>
         <div>
@@ -230,8 +230,8 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
             {trans("environments.userGroups_subtitle")}
           </p>
         </div>
-        <Button 
-          icon={<SyncOutlined spin={refreshing} />} 
+        <Button
+          icon={<SyncOutlined spin={refreshing} />}
           onClick={handleRefresh}
           loading={loading}
         >
@@ -264,38 +264,38 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
       {/* Stats display */}
       <Row gutter={[16, 16]} style={{ marginBottom: '20px' }}>
         <Col xs={24} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.userGroups_totalGroups")} 
-            value={stats.total} 
-            icon={<TeamOutlined />} 
+          <StatCard
+            title={trans("environments.userGroups_totalGroups")}
+            value={stats.total}
+            icon={<TeamOutlined />}
           />
         </Col>
         <Col xs={24} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.userGroups_allUsersGroups")} 
-            value={stats.allUsers} 
-            icon={<UserOutlined />} 
+          <StatCard
+            title={trans("environments.userGroups_allUsersGroups")}
+            value={stats.allUsers}
+            icon={<UserOutlined />}
           />
         </Col>
         <Col xs={24} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.userGroups_developerGroups")} 
-            value={stats.developers} 
-            icon={<CodeOutlined />} 
+          <StatCard
+            title={trans("environments.userGroups_developerGroups")}
+            value={stats.developers}
+            icon={<CodeOutlined />}
           />
         </Col>
         <Col xs={24} sm={12} md={6}>
-          <StatCard 
-            title={trans("environments.userGroups_customGroups")} 
-            value={stats.custom} 
-            icon={<SettingOutlined />} 
+          <StatCard
+            title={trans("environments.userGroups_customGroups")}
+            value={stats.custom}
+            icon={<SettingOutlined />}
           />
         </Col>
       </Row>
 
       {/* Content */}
-      <Card 
-        style={{ 
+      <Card
+        style={{
           borderRadius: '4px',
           border: '1px solid #f0f0f0'
         }}
@@ -326,12 +326,12 @@ const UserGroupsTab: React.FC<UserGroupsTabProps> = ({ environment }) => {
                 </div>
               )}
             </div>
-            
+
             <Table
               columns={columns}
               dataSource={filteredUserGroups}
               rowKey="groupId"
-              pagination={{ 
+              pagination={{
                 pageSize: 10,
                 showTotal: (total, range) => trans("environments.userGroups_paginationTotal", { start: range[0], end: range[1], total }),
                 size: 'small'

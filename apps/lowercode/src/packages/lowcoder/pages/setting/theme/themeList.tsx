@@ -49,7 +49,7 @@ function ThemeList(props: ThemeListProp) {
       rowKey="id"
       pagination={false}
       dataSource={themeList || []}
-      rowClassName={(record) => ((record as ThemeType).id === activeRow ? "row-hover" : "")}
+      rowClassName={(record: any) => ((record as ThemeType).id === activeRow ? "row-hover" : "")}
       locale={{
         emptyText: (
           <Empty
@@ -69,8 +69,8 @@ function ThemeList(props: ThemeListProp) {
           />
         ),
       }}
-      onRow={(theme) => ({
-        onClick: (event) => {
+      onRow={(theme: any) => ({
+        onClick: (event: any) => {
           if (needRenameId === (theme as ThemeType).id) {
             return;
           }
@@ -111,7 +111,7 @@ function ThemeList(props: ThemeListProp) {
                       return;
                     }
                     // check duplicate names
-                    const isExist = themeList?.find((theme) => theme.name === value);
+                    const isExist = themeList?.find((theme: any) => theme.name === value);
                     if (isExist && value !== theme.name) {
                       messageInstance.error(trans("theme.checkDuplicateNames"));
                       return;

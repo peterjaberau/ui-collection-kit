@@ -1,4 +1,4 @@
-import { TimePickerComp } from "../../../../comps/comps/dateComp/timeComp";
+import { TimePickerComp } from "#lowcoder/comps/comps/dateComp/timeComp";
 import { trans } from "#lowcoder/i18n";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";

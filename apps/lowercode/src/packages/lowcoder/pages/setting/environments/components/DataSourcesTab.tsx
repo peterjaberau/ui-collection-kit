@@ -21,7 +21,7 @@ import { ManagedObjectType, setManagedObject, unsetManagedObject } from '../serv
 import { useDeployModal } from '../context/DeployModalContext';
 import { dataSourcesConfig } from '../config/data-sources.config';
 import history from "#lowcoder/util/history";
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 
 const { Search } = Input;
 

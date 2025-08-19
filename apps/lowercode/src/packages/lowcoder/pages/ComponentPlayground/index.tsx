@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import "comps";
 import { UICompType, UICompManifest, uiCompRegistry, UICompCategory, ExposingMultiCompConstructor } from "#lowcoder/comps/uiCompRegistry";
-import { CompPlayground } from "ide/CompPlayground";
+import { CompPlayground } from "#lowcoder/ide/CompPlayground";
 import { Comp } from "#lowcoder-core/index";
 import { EditorContext, EditorState } from "#lowcoder/comps/editorState";
 import { RootComp } from "#lowcoder/comps/comps/rootComp";
@@ -11,10 +11,10 @@ import { lazyLoadComp } from "#lowcoder/comps/comps/lazyLoadComp/lazyLoadComp";
 import { LoadingBarHideTrigger } from "#lowcoder/util/hideLoading";
 
 type CompInfo = UICompManifest & { key: string };
-const groups: Partial<Record<UICompCategory, CompInfo[]>> = {};
+const groups: Partial<Record<UICompCategory, CompInfo[]>> | any = {};
 
-Object.entries(uiCompRegistry).forEach(([key, comp]) => {
-  const cat = comp.categories.find((c) => c !== "dashboards");
+Object.entries(uiCompRegistry).forEach(([key, comp]: any) => {
+  const cat = comp.categories.find((c: any) => c !== "dashboards");
   if (cat === undefined) {
     return;
   }
@@ -57,7 +57,7 @@ export default function ComponentPlayground() {
 
   const params = useParams<{ name: UICompType; dsl: string }>();
   const dsl = JSON.parse(decodeURIComponent(params.dsl || ""));
-  const compManifest = uiCompRegistry[params.name];
+  const compManifest: any = uiCompRegistry[params.name];
 
   const comp = useMemo(() => {
     if (!compManifest.lazyLoad) {

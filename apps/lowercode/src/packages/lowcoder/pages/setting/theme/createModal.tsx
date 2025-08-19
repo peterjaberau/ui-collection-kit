@@ -37,8 +37,8 @@ function CreateModal(props: CreateModalProp) {
       name,
       id: genQueryId(),
       updateTime: new Date().getTime(),
-      theme: (themeList?.find((theme) => theme.id === selectId)?.theme ||
-        themeTemplateList.find((template) => template.id === selectId)?.theme)!,
+      theme: (themeList?.find((theme: any) => theme.id === selectId)?.theme ||
+        themeTemplateList.find((template: any) => template.id === selectId)?.theme)!,
     };
     createTheme(params);
   }
@@ -128,7 +128,7 @@ function CreateModal(props: CreateModalProp) {
       >
         <SelectTitle>{trans("theme.defaultThemeTip")}</SelectTitle>
         <SelectContainer>
-          {themeTemplateList.map((theme) => (
+          {themeTemplateList.map((theme: any) => (
             <ThemeBtnContainer theme={theme} key={theme.id} />
           ))}
         </SelectContainer>
@@ -136,7 +136,7 @@ function CreateModal(props: CreateModalProp) {
           <>
             <SelectTitleTheme>{trans("theme.createdThemeTip")}</SelectTitleTheme>
             <SelectContainer>
-              {themeList.map((theme) => (
+              {themeList.map((theme: any) => (
                 <ThemeBtnContainer theme={theme} key={theme.id} />
               ))}
             </SelectContainer>

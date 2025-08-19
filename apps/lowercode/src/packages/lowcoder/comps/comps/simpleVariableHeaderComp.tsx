@@ -39,7 +39,7 @@ const SimpleVariableHeaderPropertyView = ({params, comp, isCheck}: any) => {
     </ControlPropertyViewWrapper>
   );
 }
-export const SimpleVariableHeaderComp = (isCheck: boolean = false) => {
+export const SimpleVariableHeaderComp: any = (isCheck: boolean = false) => {
     return class SimpleVariableHeaderComp extends SimpleComp<string> {
     override reduce(action: CompAction): this {
       // if (isBroadcastAction<RenameAction>(action, CompActionTypes.RENAME)) {

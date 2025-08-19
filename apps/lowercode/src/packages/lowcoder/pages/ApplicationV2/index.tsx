@@ -56,8 +56,8 @@ import { Support } from "#lowcoder/pages/support";
 import { Subscription } from "#lowcoder/pages/setting/subscriptions"
 // import { TypographyText } from "../../components/TypographyText";
 // import { messageInstance } from "#lowcoder-design/components/GlobalInstances";
-import { getSubscriptions } from 'redux/selectors/subscriptionSelectors';
-import { SubscriptionProductsEnum } from '@lowcoder-ee/constants/subscriptionConstants';
+import { getSubscriptions } from '#lowcoder/redux/selectors/subscriptionSelectors';
+import { SubscriptionProductsEnum } from '#lowcoder/constants/subscriptionConstants';
 import { EnterpriseProvider } from "#lowcoder/util/context/EnterpriseContext";
 import { SimpleSubscriptionContextProvider } from "#lowcoder/util/context/SimpleSubscriptionContext";
 import { selectIsLicenseActive } from "#lowcoder/redux/selectors/enterpriseSelectors";

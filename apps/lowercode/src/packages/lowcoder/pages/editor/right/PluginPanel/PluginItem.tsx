@@ -61,10 +61,10 @@ export function PluginItem(props: PluginViewProps) {
   const packageMeta = useShallowEqualSelector(
     (state: AppState) => state.npmPlugin.packageMeta[name]
   );
-  const currentVersion = useSelector((state: AppState) => state.npmPlugin.packageVersion[name]);
-  const versions = useMemo(() => packageMeta?.versions || {}, [packageMeta?.versions]);
-  const comps = versions[currentVersion]?.lowcoder?.comps || {};
-  const compNames = Object.keys(comps);
+  const currentVersion: any = useSelector((state: AppState) => state.npmPlugin.packageVersion[name]);
+  const versions: any = useMemo(() => packageMeta?.versions || {}, [packageMeta?.versions]);
+  const comps: any = versions[currentVersion]?.lowcoder?.comps || {};
+  const compNames: any = Object.keys(comps);
 
   useEffect(() => {
     setLoading(true);
@@ -78,7 +78,7 @@ export function PluginItem(props: PluginViewProps) {
   }, [dispatch, name]);
 
   const filteredCompNames = compNames.filter(
-    (i) => !searchValue || i.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1
+    (i: any) => !searchValue || i.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1
   );
   const hasComps = filteredCompNames.length > 0;
 
@@ -95,7 +95,7 @@ export function PluginItem(props: PluginViewProps) {
       <PluginViewContent>
         {!hasComps && <EmptyContent text={loading ? "Loading..." : "No components found."} />}
         {hasComps &&
-          filteredCompNames.map((compName) => (
+          filteredCompNames.map((compName: any) => (
             <PluginCompItem
               onDrag={onDrag}
               key={compName}

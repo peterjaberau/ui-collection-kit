@@ -111,7 +111,7 @@ const childrenMap: any = {
 const SignatureCanvas = React.lazy(() => import("react-signature-canvas"));
 
 let SignatureTmpComp = (function () {
-  return new UICompBuilder(childrenMap, (props, dispatch) => {
+  return new UICompBuilder(childrenMap, (props: any, dispatch: any) => {
     const canvasRef = useRef<SignatureCanvasType | null>(null);
     const [isBegin, setIsBegin] = useState(false);
     const [canvasSize, setCanvasSize] = useState([0, 0]);
@@ -226,7 +226,7 @@ let SignatureTmpComp = (function () {
       ),
     });
   })
-    .setPropertyViewFn((children) => {
+    .setPropertyViewFn((children: any) => {
       return (
         <>
           <Section name={sectionNames.basic}>
@@ -274,7 +274,7 @@ SignatureTmpComp = class extends SignatureTmpComp {
   }
 };
 
-export const SignatureComp = withExposingConfigs(SignatureTmpComp, [
+export const SignatureComp: any = withExposingConfigs(SignatureTmpComp, [
   new NameConfig("value", trans("value")),
   NameConfigHidden,
 ]);

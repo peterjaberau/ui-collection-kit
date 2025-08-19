@@ -98,7 +98,7 @@ import CollapsibleContainerExample from "./ContainersComp/CollapsibleContainer";
 import FloatTextContainerExample from "./ContainersComp/FloatTextContainer";
 import SplitLayoutExample from "./ContainersComp/SplitLayout";
 
-const examples: { [key in UICompType]?: React.FunctionComponent } = {
+const examples: { [key in UICompType]?: React.FunctionComponent } | any = {
   button: ButtonExample,
   controlButton: IconButtonExample,
   toggleButton: ToggleButtonExample,

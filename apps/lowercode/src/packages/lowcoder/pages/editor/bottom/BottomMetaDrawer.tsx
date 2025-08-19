@@ -148,7 +148,7 @@ export const DataSourceStructureTree = (props: {
   const datasourceStructure = useSelector(getDataSourceStructures);
   const datasourceTypeMap = useSelector(getDataSourceTypesMap);
 
-  const originStructure = datasourceStructure[dataSourceId]?.map((item) => ({
+  const originStructure: any = datasourceStructure[dataSourceId]?.map((item) => ({
     title: <EveryRow name={item.name} />,
     key: item.name,
     children: item.columns.map((column) => ({
@@ -201,9 +201,9 @@ export const DataSourceStructureTree = (props: {
             const value = e.target.value.toLowerCase();
             if (value.length > 0) {
               const newStructure = originStructure
-                .map((item) => {
+                .map((item: any) => {
                   const children = item.children?.filter(
-                    (child) => child.key.toString().toLowerCase().indexOf(value) !== -1
+                    (child: any) => child.key.toString().toLowerCase().indexOf(value) !== -1
                   );
                   return item.key.toString().toLowerCase().indexOf(value) !== -1 ||
                     !_.isEmpty(children)
@@ -213,7 +213,7 @@ export const DataSourceStructureTree = (props: {
                       }
                     : null;
                 })
-                .filter((item) => item !== null) as DataNode[];
+                .filter((item: any) => item !== null) as DataNode[];
 
               setStructure(newStructure);
               setExpandedKeys(newStructure.map((item) => item.key));

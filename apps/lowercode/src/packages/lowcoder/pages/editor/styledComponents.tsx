@@ -1,7 +1,7 @@
 import DirectoryTree from "antd/es/tree/DirectoryTree";
 import styled from "styled-components";
 
-export const DirectoryTreeStyle = styled(DirectoryTree)`
+export const DirectoryTreeStyle: any = styled(DirectoryTree)`
   font-size: 13px;
   color: #333;
   .ant-tree-treenode {
@@ -135,7 +135,7 @@ export const CollapseWrapper = styled.div<{ $clientX?: number }>`
   background: #fff;
   padding: 0px;
   position: relative;
-  margin: 4px 0px 4px 0};
+  margin: 4px 0px 4px 0px;
   .simplebar-content > div {
     > .ant-collapse > .ant-collapse-item {
       > .ant-collapse-header {

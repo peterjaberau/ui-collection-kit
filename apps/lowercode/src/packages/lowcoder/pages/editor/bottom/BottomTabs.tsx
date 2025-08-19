@@ -223,7 +223,7 @@ export function BottomTabs<T extends TabsConfigType>(props: {
   const editorState = useContext(EditorContext);
   const readOnly = useSelector(showAppSnapshotSelector);
 
-  const valueInfoMap = _.fromPairs(tabsConfig.map((c) => [c.key, c]));
+  const valueInfoMap: any = _.fromPairs(tabsConfig.map((c: any) => [c.key, c]));
 
   useEffect(() => setKey("general"), [editorState.selectedBottomResName]);
 
@@ -256,7 +256,7 @@ export function BottomTabs<T extends TabsConfigType>(props: {
     <>
       <TabContainer>
         {tabsConfig &&
-          tabsConfig.map((item, index) => (
+          tabsConfig.map((item: any, index: any) => (
             <React.Fragment key={index}>
               <TabDiv onClick={() => setKey(item.key)} $cursor={item.key}>
                 <Span key={item.key} $border={key === item.key}>

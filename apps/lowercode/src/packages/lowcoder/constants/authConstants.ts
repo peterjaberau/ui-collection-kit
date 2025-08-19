@@ -21,7 +21,7 @@ import {
   OryLoginIcon,
   KeyCloakLoginIcon,
   EmailLoginIcon
-} from "assets/icons";
+} from "#lowcoder/assets/icons/index";
 import ForgotPassword from "#lowcoder/pages/userAuth/forgotPassword";
 import ResetPassword from "#lowcoder/pages/userAuth/resetPassword";
 
@@ -104,7 +104,7 @@ export const AuthRoutes: Array<{ path: string; component: React.ComponentType<an
 export type ServerAuthType = "GOOGLE" | "GITHUB" | "FORM" | "KEYCLOAK" | "ORY" | "GENERIC";
 
 export type ServerAuthTypeInfoValueType = { logo?: string; sourceIcon?: string; isOAuth2?: boolean };
-export const ServerAuthTypeInfo: { [key in ServerAuthType]?: ServerAuthTypeInfoValueType } = {
+export const ServerAuthTypeInfo: { [key in ServerAuthType]?: ServerAuthTypeInfoValueType } | any = {
   GOOGLE: {
     logo: GoogleLoginIcon,
     isOAuth2: true,

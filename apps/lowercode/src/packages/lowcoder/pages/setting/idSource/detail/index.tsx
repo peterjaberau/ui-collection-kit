@@ -128,8 +128,8 @@ export const IdSourceDetail = (props: IdSourceDetailProps) => {
         ifChange = true;
       }
     }
-    const requiredValues = {} as { [key: string]: string };
-    Object.entries(authConfig[configDetail.authType].form).forEach(([key, value]) => {
+    const requiredValues: any = {} as { [key: string]: string };
+    Object.entries(authConfig[configDetail.authType].form).forEach(([key, value]: any) => {
       if (typeof value === "string" || value.isRequire !== false) {
         key in allValues && (requiredValues[key] = allValues[key]);
       }

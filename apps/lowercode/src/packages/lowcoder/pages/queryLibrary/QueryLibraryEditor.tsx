@@ -325,14 +325,15 @@ const PublishModal = (props: {
   visible: boolean;
   onClose: () => void;
   latestVersion: string;
-}) => {
+  [key: string]: any;
+} | any) => {
   const [form] = Form.useForm();
 
   const [loading, setLoading] = useState<boolean>(false);
 
   const dispatch = useDispatch();
 
-  const versionOptions = getVersionOptions(props.latestVersion);
+  const versionOptions: any = getVersionOptions(props.latestVersion);
 
   return (
     <CustomModal

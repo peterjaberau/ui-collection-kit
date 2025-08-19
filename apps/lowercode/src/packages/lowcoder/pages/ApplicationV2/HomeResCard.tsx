@@ -143,7 +143,6 @@ export const StyledTypographyText = styled(AntdTypographyText)`
   &:hover {
   color: #315efb;
   }
-  }
 `;
 
 const MONTH_MILLIS = 30 * 24 * 60 * 60 * 1000;

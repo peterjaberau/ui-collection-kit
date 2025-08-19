@@ -1,7 +1,7 @@
 import { ThirdPartyConfigType } from "#lowcoder/constants/authConstants";
 import { QR_CODE_OAUTH_URL } from "#lowcoder/constants/routesURL";
 import { UserConnectionSource } from "#lowcoder/constants/userConstants";
-import { GeneralLoginIcon } from "assets/icons";
+import { GeneralLoginIcon } from "#lowcoder/assets/icons/index";
 import {
   isRouteLink,
   ServerAuthType,

@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 import { EnvironmentLicense, DetailedLicenseInfo } from '../types/environment.types';
 
 /**
  * Check license and fetch detailed license information for an environment
- * @param apiServiceUrl - API service URL for the environment  
+ * @param apiServiceUrl - API service URL for the environment
  * @param apiKey - API key for the environment
  * @returns Promise with license information including detailed data
  */
@@ -29,7 +29,7 @@ export async function checkEnvironmentLicense(
     // Fetch detailed license information
     const response = await axios.get(
       `${apiServiceUrl}/api/plugins/enterprise/license`,
-      { 
+      {
         headers,
         timeout: 1500 // Very short timeout for immediate failure when endpoint doesn't exist
       }
@@ -37,14 +37,14 @@ export async function checkEnvironmentLicense(
 
     // Parse the license response
     const licenseData = response.data;
-    
+
     // Calculate total API calls limit and usage percentage
     const totalAPICallsLimit = licenseData.eeLicenses?.reduce(
-      (sum: number, license: any) => sum + (license.apiCallsLimit || 0), 
+      (sum: number, license: any) => sum + (license.apiCallsLimit || 0),
       0
     ) || 0;
-    
-    const apiCallsUsage = totalAPICallsLimit > 0 
+
+    const apiCallsUsage = totalAPICallsLimit > 0
       ? Math.round(((totalAPICallsLimit - licenseData.remainingAPICalls) / totalAPICallsLimit) * 100)
       : 0;
 
@@ -67,7 +67,7 @@ export async function checkEnvironmentLicense(
   } catch (error) {
     // Determine the specific error type
     let errorMessage = trans('environments.services_license_licenseInformationUnavailable');
-    
+
     if (axios.isAxiosError(error)) {
       if (error.code === 'ECONNABORTED') {
         errorMessage = trans('environments.services_license_licenseCheckTookTooLong');
@@ -96,7 +96,7 @@ export async function checkEnvironmentLicense(
 export function formatAPICalls(remaining: number, total: number): string {
   const used = total - remaining;
   const percentage = total > 0 ? Math.round((used / total) * 100) : 0;
-  
+
   return trans('environments.services_license_remainingAPICalls', {
     remaining: remaining.toLocaleString(),
     used: used.toLocaleString(),
@@ -113,11 +113,11 @@ export function formatAPICalls(remaining: number, total: number): string {
  */
 export function getAPICallsStatusColor(remainingCalls: number, totalCalls: number): string {
   if (totalCalls === 0) return '#d9d9d9'; // Unknown
-  
+
   const usagePercentage = ((totalCalls - remainingCalls) / totalCalls) * 100;
-  
+
   if (usagePercentage >= 90) return '#ff7875'; // Soft red - High usage
-  if (usagePercentage >= 75) return '#ffc53d'; // Soft orange - Moderate usage  
+  if (usagePercentage >= 75) return '#ffc53d'; // Soft orange - Moderate usage
   if (usagePercentage >= 50) return '#40a9ff'; // Soft blue - Normal usage
   return '#73d13d'; // Soft green - Low usage
-} 
+}

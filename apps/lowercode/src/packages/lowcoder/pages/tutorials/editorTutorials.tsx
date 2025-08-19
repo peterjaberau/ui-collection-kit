@@ -31,7 +31,7 @@ import { BottomResTypeEnum } from "#lowcoder/types/bottomRes";
 import { trans } from "#lowcoder/i18n";
 import { i18nObjs } from "../../i18n/index";
 import { DatasourceInfo, HttpConfig } from "#lowcoder/api/datasourceApi";
-import { enObj } from "i18n/locales";
+import { enObj } from "#lowcoder/i18n/locales";
 import { QUICK_REST_API_ID } from "#lowcoder/constants/datasourceConstants";
 import React from "react";
 
@@ -112,7 +112,7 @@ const tourSteps: Step[] = [
   },
 ];
 
-async function addTable(editorState: EditorState) {
+async function addTable(editorState: EditorState | any) {
   const tableCompName = "table1";
   const compType = "table";
   if (editorState.getUICompByName(tableCompName)) {
@@ -122,7 +122,7 @@ async function addTable(editorState: EditorState) {
   const {
     defaultDataFnName,
     defaultDataFnPath,
-  } = uiCompRegistry[compType as UICompType];
+  }: any = uiCompRegistry[compType as UICompType];
 
   let defaultDataFn = undefined;
   if(defaultDataFnName && defaultDataFnPath) {
@@ -158,13 +158,13 @@ async function addTable(editorState: EditorState) {
   );
 }
 
-function addQuery(editorState: EditorState, datasourceInfos: DatasourceInfo[]) {
+function addQuery(editorState: EditorState | any, datasourceInfos: DatasourceInfo[]) {
   const queryName = "query1";
   if (
     editorState
       .getQueriesComp()
       .getView()
-      .find((q) => q.children.name.getView() === queryName)
+      .find((q: any) => q.children.name.getView() === queryName)
   ) {
     editorState.setSelectedBottomRes(queryName, BottomResTypeEnum.Query);
     return;
@@ -207,7 +207,7 @@ function addQuery(editorState: EditorState, datasourceInfos: DatasourceInfo[]) {
 function EditorTutorials() {
   const [run, setRun] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
-  const editorState = useContext(EditorContext);
+  const editorState: any = useContext(EditorContext);
   const dispatch = useDispatch();
   const history = useHistory<UserGuideLocationState>();
   const datasourceInfos = useSelector((state: AppState) => state.entities.datasource.data);
@@ -223,7 +223,7 @@ function EditorTutorials() {
       .getQueriesComp()
       .getView()
       .find(
-        (q) =>
+        (q: any) =>
           q.children.name.getView() === editorState.selectedBottomResName &&
           editorState.selectedBottomResType === BottomResTypeEnum.Query
       );

@@ -19,7 +19,7 @@ import { useCompInstance } from "#lowcoder/comps/utils/useCompInstance";
 import { MarkAppInitialized, perfMark } from "#lowcoder/util/perfUtils";
 import { default as ConfigProvider } from "antd/es/config-provider";
 import { default as message } from "antd/es/message";
-import { getAntdLocale } from "i18n/antdLocale";
+import { getAntdLocale } from "#lowcoder/i18n/antdLocale";
 import { useUserViewMode } from "../../util/hooks";
 import { QueryApi } from "#lowcoder/api/queryApi";
 import { RootCompInstanceType } from "./useRootCompInstance";

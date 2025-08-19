@@ -25,7 +25,7 @@ export const initTranslator = (lang?: string) => {
 
 export const i18nObjs = getI18nObjects<I18nObjects>(localeData, REACT_APP_LANGUAGES);
 
-export const languageList = Object.keys(languagesMetadata).map(code => ({
+export const languageList: any = Object.keys(languagesMetadata).map(code => ({
   languageCode: code,
   languageName: languagesMetadata[code].languageName,
   flag: languagesMetadata[code].flag

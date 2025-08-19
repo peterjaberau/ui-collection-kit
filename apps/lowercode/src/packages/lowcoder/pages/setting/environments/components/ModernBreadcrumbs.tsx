@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { default as AntdBreadcrumb } from 'antd/es/breadcrumb';
 import { BreadcrumbProps } from 'antd/lib/breadcrumb';
 import styled from 'styled-components';
-import { ArrowIcon } from 'lowcoder-design';
+import { ArrowIcon } from '#lowcoder-design/index';
 
 interface ModernBreadcrumbsProps extends Omit<BreadcrumbProps, 'items'> {
   /**
@@ -64,4 +64,4 @@ const ModernBreadcrumbs: React.FC<ModernBreadcrumbsProps> = ({ items = [], ...pr
   );
 };
 
-export default ModernBreadcrumbs; 
+export default ModernBreadcrumbs;

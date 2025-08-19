@@ -28,7 +28,7 @@ import { isEnterpriseMode, isSelfDomain } from "#lowcoder/util/envUtils";
 import { default as Badge } from "antd/es/badge";
 import { validateResponse } from "#lowcoder/api/apiUtils";
 import { ServerAuthTypeInfo } from "#lowcoder/constants/authConstants";
-import { GeneralLoginIcon } from "assets/icons";
+import { GeneralLoginIcon } from "#lowcoder/assets/icons/index";
 import { FreeTypes } from "#lowcoder/pages/setting/idSource/idSourceConstants";
 import { messageInstance, AddIcon } from "#lowcoder-design/index";
 import { currentOrgAdmin } from "../../../util/permissionUtils";

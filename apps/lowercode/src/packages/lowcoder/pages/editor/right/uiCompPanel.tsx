@@ -4,7 +4,7 @@ import {
   UICompManifest,
   uiCompRegistry,
 } from "#lowcoder/comps/uiCompRegistry";
-import { draggingUtils } from "#lowcoder/";
+import { draggingUtils } from "#lowcoder/layout";
 import { isEmpty } from "lodash";
 import { language } from "#lowcoder/i18n";
 import {
@@ -94,7 +94,7 @@ const SectionWrapper = styled.div`
 `;
 
 const stateCompName = 'UICompSections';
-const initialState: PropertySectionState = { [stateCompName]: {}};
+const initialState: PropertySectionState | any = { [stateCompName]: {}};
 Object.keys(uiCompCategoryNames).forEach((cat) => {
   const key = uiCompCategoryNames[cat as UICompCategory];
   initialState[stateCompName][key] = key === uiCompCategoryNames.dashboards

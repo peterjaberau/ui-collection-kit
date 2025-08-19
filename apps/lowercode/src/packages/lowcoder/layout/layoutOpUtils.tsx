@@ -69,10 +69,10 @@ export namespace layoutOpUtils {
       return [op];
     }
 
-    let newOps: LayoutOps = [];
+    let newOps: LayoutOps | any = [];
     // check whether to reduce in the reversed order
     for (let i = ops.length - 1; i >= 0; --i) {
-      const prevOp = ops[i];
+      const prevOp: any = ops[i];
       const newOp = mergeOp(prevOp, op);
       // can be merged or not
       if (newOp) {

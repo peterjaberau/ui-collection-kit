@@ -6,7 +6,7 @@ import { debounce } from "lodash";
 interface Props {
   data: Array<any>;
   eventTypeLabels: any;
-  eventTypes: Array<{ value: string; color: string }>; 
+  eventTypes: Array<{ value: string; color: string }>;
   setDateRange: (range: { fromTimestamp: string; toTimestamp: string }) => void;
 }
 
@@ -25,7 +25,7 @@ const EventTypeTimeChart = ({ data, eventTypeLabels, eventTypes, setDateRange }:
   const maxDate = allDates.length ? dayjs(Math.max(...allDates.map((d) => new Date(d).getTime()))) : dayjs();
 
   // Generate full date range including missing days
-  const fullDateRange: string[] = [];
+  const fullDateRange: string[] | any = [];
   let currentDate = minDate;
   while (currentDate.isBefore(maxDate) || currentDate.isSame(maxDate, "day")) {
     fullDateRange.push(currentDate.format("YYYY-MM-DD"));
@@ -33,8 +33,8 @@ const EventTypeTimeChart = ({ data, eventTypeLabels, eventTypes, setDateRange }:
   }
 
   // Group data by date and eventType
-  const groupedData = data.reduce((acc: any, log: any) => {
-    const eventTime = log.eventTime ? new Date(log.eventTime) : null;
+  const groupedData: any = data.reduce((acc: any, log: any) => {
+    const eventTime: any = log.eventTime ? new Date(log.eventTime) : null;
     if (eventTime && !isNaN(eventTime.getTime())) {
       const date = eventTime.toISOString().split("T")[0]; // Extract date part
       if (!acc[date]) acc[date] = {};
@@ -55,7 +55,7 @@ const EventTypeTimeChart = ({ data, eventTypeLabels, eventTypes, setDateRange }:
     name: eventTypeLabels[eventType] || eventType,
     type: "bar",
     stack: "total",
-    data: fullDateRange.map((date) => groupedData[date]?.[eventType] || 0), // Fill gaps with 0
+    data: fullDateRange.map((date: any) => groupedData[date]?.[eventType] || 0), // Fill gaps with 0
     itemStyle: {
       color: colorMap[eventType] || "#8c8c8c", // Use predefined color or fallback
     },
@@ -72,18 +72,18 @@ const EventTypeTimeChart = ({ data, eventTypeLabels, eventTypes, setDateRange }:
       // debugger;
       const startIndex = Math.floor((start / 100) * (fullDateRange.length - 1));
       const endIndex = Math.floor((end / 100) * (fullDateRange.length - 1));
-  
+
       const fromDate = new Date(fullDateRange[startIndex] || fullDateRange[0]); // Keep start of day
       const toDate = new Date(fullDateRange[endIndex] || fullDateRange[fullDateRange.length - 1]);
 
       toDate.setHours(23, 59, 59, 999);
-  
+
       const fromTimestamp = fromDate.toISOString();
       const toTimestamp = toDate.toISOString();
       debouncedSetDateRange(fromTimestamp, toTimestamp);
     }
   };
-  
+
   return (
     <ReactECharts
       ref={chartRef}
@@ -104,16 +104,16 @@ const EventTypeTimeChart = ({ data, eventTypeLabels, eventTypes, setDateRange }:
           {
             type: "slider",
             xAxisIndex: 0,
-            filterMode: "weakFilter", 
+            filterMode: "weakFilter",
             show: true,
             start: 0,
             end: 100,
-            realtime: false, 
+            realtime: false,
           },
           {
             type: "inside",
             xAxisIndex: 0,
-            realtime: false, 
+            realtime: false,
           },
         ],
         series,

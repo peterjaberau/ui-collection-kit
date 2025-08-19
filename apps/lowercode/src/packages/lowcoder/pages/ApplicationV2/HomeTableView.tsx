@@ -110,8 +110,8 @@ export const HomeTableView = (props: { resources: HomeRes[], setModify?: any, mo
         tableLayout={"auto"}
         scroll={{ x: "100%" }}
         pagination={false}
-        onRow={(record) => ({
-          onClick: (e) => {
+        onRow={(record: any) => ({
+          onClick: (e: any) => {
             if (mode === "folder" && (record as HomeRes).type === 4){
               backFolderViewClick()
             } else{
@@ -140,7 +140,7 @@ export const HomeTableView = (props: { resources: HomeRes[], setModify?: any, mo
               }
               return a.name > b.name ? 1 : -1;
             },
-            render: (_, record) => {
+            render: (_: any, record: any) => {
               const item = record as HomeRes;
               const Icon = HomeResInfo[item.type].icon;
               return (
@@ -182,7 +182,7 @@ export const HomeTableView = (props: { resources: HomeRes[], setModify?: any, mo
               }
               return a.type > b.type ? 1 : -1;
             },
-            render: (_, record) => (
+            render: (_: any, record: any) => (
               <SubColumnCell>
                 { mode === "folder" && (record as HomeRes).type === 4  ?  "" : HomeResInfo[(record as any).type as HomeResTypeEnum].name }
               </SubColumnCell>
@@ -198,7 +198,7 @@ export const HomeTableView = (props: { resources: HomeRes[], setModify?: any, mo
               }
               return a.type > b.type ? 1 : -1;
             },
-            render: (text) => <SubColumnCell>{text}</SubColumnCell>,
+            render: (text: any) => <SubColumnCell>{text}</SubColumnCell>,
           },
           {
             title: trans("home.desc"),
@@ -211,7 +211,7 @@ export const HomeTableView = (props: { resources: HomeRes[], setModify?: any, mo
               }
               return a.type > b.type ? 1 : -1;
             },
-            render: (text) => <SubColumnCell>{text}</SubColumnCell>,
+            render: (text: any) => <SubColumnCell>{text}</SubColumnCell>,
           },
           {
             title: trans("home.lastModified"),
@@ -224,7 +224,7 @@ export const HomeTableView = (props: { resources: HomeRes[], setModify?: any, mo
               }
               return a.lastModifyTime > b.lastModifyTime ? 1 : -1;
             },
-            render: (text) => (
+            render: (text: any) => (
               <SubColumnCell>
                 {timestampToHumanReadable(text, 30 * 24 * 60 * 60 * 1000)}
               </SubColumnCell>
@@ -234,7 +234,7 @@ export const HomeTableView = (props: { resources: HomeRes[], setModify?: any, mo
             title: " ",
             dataIndex: "operation",
             width: "298px",
-            render: (text, record) => {
+            render: (text: any, record: any) => {
               const item = record as HomeRes;
               return (
                 <OperationWrapper>

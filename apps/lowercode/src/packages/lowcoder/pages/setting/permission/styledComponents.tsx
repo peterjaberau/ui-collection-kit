@@ -15,7 +15,7 @@ import {
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
 import { i18nObjs, trans } from "#lowcoder/i18n";
-import { Table } from "#lowcoder-design/components/Table";
+import { Table } from "#lowcoder/components/Table";
 import UserApi from "#lowcoder/api/userApi";
 import { validateResponse } from "#lowcoder/api/apiUtils";
 import ReactJson from "react-json-view";
@@ -24,7 +24,7 @@ import _ from "lodash";
 import { Avatar, Card, List } from "antd";
 import { fullAvatarUrl } from "#lowcoder/util/urlUtils";
 
-export const StyledTable = styled(AntdTable)`
+export const StyledTable: any = styled(AntdTable)`
   .ant-table-cell {
     padding: 0;
     border-bottom: unset;

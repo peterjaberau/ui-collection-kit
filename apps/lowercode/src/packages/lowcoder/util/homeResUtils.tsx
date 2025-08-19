@@ -20,7 +20,7 @@ import { FunctionComponent } from "react";
 export const HomeResInfo: Record<
   HomeResTypeEnum,
   { name: string; icon: FunctionComponent<any>; desc?: string }
-> = {
+> | any = {
   [HomeResTypeEnum.All]: {
     name: trans("home.all"),
     icon: AllTypesIcon,

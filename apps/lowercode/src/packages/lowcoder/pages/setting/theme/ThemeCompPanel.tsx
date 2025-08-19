@@ -109,7 +109,7 @@ const SectionWrapper = styled.div`
 `;
 
 const stateCompName = 'UICompSections';
-const initialState: PropertySectionState = { [stateCompName]: {}};
+const initialState: PropertySectionState | any = { [stateCompName]: {}};
 Object.keys(uiCompCategoryNames).forEach((cat) => {
   const key = uiCompCategoryNames[cat as UICompCategory];
   initialState[stateCompName][key] = key === uiCompCategoryNames.dashboards
@@ -125,7 +125,7 @@ export const ThemeCompPanel = (props: any) => {
   const [appDsl, setAppDSL] = useState<JSONObject>();
 
   const categories = useMemo(() => {
-    const cats: Record<string, [string, UICompManifest][]> = Object.fromEntries(
+    const cats: Record<string, [string, UICompManifest][]> | any = Object.fromEntries(
       Object.keys(uiCompCategoryNames).map((cat) => [cat, []] as any)
     );
     Object.entries(uiCompRegistry).forEach(([name, manifest]) => {
@@ -250,10 +250,10 @@ export const ThemeCompPanel = (props: any) => {
     () =>
       Object.entries(categories)
         .map(([key, value], index) => {
-          let infos = value;
+          let infos: any = value;
           if (!isEmpty(searchValue)) {
             const searchString = searchValue.trim().toLocaleLowerCase();
-            infos = infos.filter((info) =>
+            infos = infos.filter((info: any) =>
               info[1].keywords.toLowerCase().includes(searchString.toLowerCase())
             );
           }
@@ -271,7 +271,7 @@ export const ThemeCompPanel = (props: any) => {
                 name={uiCompCategoryNames[key as UICompCategory]}
               >
                 <InsertContain>
-                  {infos.map((info) => (
+                  {infos.map((info: any) => (
                     <CompDiv key={info[0]} onClick={() => onCompSelect(info)}>
                       <HovDiv className={info[0] === selectedComp ? 'selected' : ''}>
                         <IconContain isSelected={info[0] === selectedComp} Icon={info[1].icon}></IconContain>

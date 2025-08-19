@@ -8,7 +8,7 @@ import { AppPathParams, AppUILayoutType } from "#lowcoder/constants/applicationC
 import { Layers } from "#lowcoder/constants/Layers";
 import { TopHeaderHeight } from "#lowcoder/constants/style";
 import { trans } from "#lowcoder/i18n";
-import { draggingUtils } from "#lowcoder/";
+import { draggingUtils } from "#lowcoder/layout";
 import {
   LeftPreloadIcon,
   LeftSettingIcon,
@@ -67,14 +67,13 @@ import Flex from "antd/es/flex";
 // import { BottomSkeleton } from "./bottom/BottomContent";
 
 const Header = lazy(
-    () => import("pages/common/header")
+    () => import("#lowcoder/pages/common/header")
         .then(module => ({default: module.default}))
 );
 
-const BottomSkeleton = lazy(
-    () => import("pages/editor/bottom/BottomContent")
-        .then(module => ({default: module.BottomSkeleton}))
-);
+const BottomSkeleton = lazy(() =>
+  import("#lowcoder/pages/editor/bottom/BottomContent").then((module) => ({ default: module.BottomSkeleton })),
+)
 
 const LeftContent = lazy(
   () => import('./LeftContent')
@@ -84,51 +83,51 @@ const LeftLayersContent = lazy(
   () => import('./LeftLayersContent')
     .then(module => ({default: module.LeftLayersContent}))
 );
-const RightPanel = lazy(() => import('pages/editor/right/RightPanel'));
-const EditorTutorials = lazy(() => import('pages/tutorials/editorTutorials'));
+const RightPanel = lazy(() => import('#lowcoder/pages/editor/right/RightPanel'));
+const EditorTutorials = lazy(() => import('#lowcoder/pages/tutorials/editorTutorials'));
 const Bottom = lazy(() => import('./bottom/BottomPanel'));
 const CustomShortcutWrapper = lazy(
-  () => import('pages/editor/editorHotKeys')
+  () => import('#lowcoder/pages/editor/editorHotKeys')
     .then(module => ({default: module.CustomShortcutWrapper}))
 );
 const EditorGlobalHotKeys = lazy(
-  () => import('pages/editor/editorHotKeys')
+  () => import('#lowcoder/pages/editor/editorHotKeys')
     .then(module => ({default: module.EditorGlobalHotKeys}))
 );
 const EditorHotKeys = lazy(
-  () => import('pages/editor/editorHotKeys')
+  () => import('#lowcoder/pages/editor/editorHotKeys')
     .then(module => ({default: module.EditorHotKeys}))
 );
 const Body = lazy(
-  () => import('pages/common/styledComponent')
+  () => import('#lowcoder/pages/common/styledComponent')
     .then(module => ({default: module.Body}))
 );
 const EditorContainer = lazy(
-  () => import('pages/common/styledComponent')
+  () => import('#lowcoder/pages/common/styledComponent')
     .then(module => ({default: module.EditorContainer}))
 );
 const EditorContainerWithViewMode = lazy(
-  () => import('pages/common/styledComponent')
+  () => import('#lowcoder/pages/common/styledComponent')
     .then(module => ({default: module.EditorContainerWithViewMode}))
 );
 const Height100Div = lazy(
-  () => import('pages/common/styledComponent')
+  () => import('#lowcoder/pages/common/styledComponent')
     .then(module => ({default: module.Height100Div}))
 );
 const LeftPanel = lazy(
-  () => import('pages/common/styledComponent')
+  () => import('#lowcoder/pages/common/styledComponent')
     .then(module => ({default: module.LeftPanel}))
 );
 const MiddlePanel = lazy(
-  () => import('pages/common/styledComponent')
+  () => import('#lowcoder/pages/common/styledComponent')
     .then(module => ({default: module.MiddlePanel}))
 );
 const HelpDropdown = lazy(
-  () => import('pages/common/help')
+  () => import('#lowcoder/pages/common/help')
     .then(module => ({default: module.HelpDropdown}))
 );
 const PreviewHeader = lazy(
-  () => import('pages/common/previewHeader')
+  () => import('#lowcoder/pages/common/previewHeader')
     .then(module => ({default: module.PreviewHeader}))
 );
 
@@ -406,7 +405,7 @@ const DeviceWrapper = ({
 function EditorView(props: EditorViewProps) {
   const { uiComp }: any = props;
   const params = useParams<AppPathParams>();
-  const editorState = useContext(EditorContext);
+  const editorState: any = useContext(EditorContext);
   const { readOnly, hideHeader } = useContext(ExternalEditorContext);
   const application = useSelector(currentApplication);
   const isPublicApp = useSelector(isPublicApplication);
@@ -434,7 +433,7 @@ function EditorView(props: EditorViewProps) {
   const isViewMode = params.viewMode === 'view';
 
   const appSettingsComp = editorState.getAppSettingsComp();
-  const { showHeaderInPublic } = appSettingsComp.getView();
+  const { showHeaderInPublic }: any = appSettingsComp.getView();
 
   const togglePanel: TogglePanel = useCallback(
     (key) => {

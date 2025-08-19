@@ -65,7 +65,7 @@ type UsersPermissionProp = {
 function OrgUsersPermission(props: UsersPermissionProp) {
   const { orgId, orgUsers, currentUser, setModify, modify, loading }: any = props;
   const adminCount = orgUsers.filter(
-    (user) => user.role === ADMIN_ROLE || user.role === SUPER_ADMIN_ROLE,
+    (user: any) => user.role === ADMIN_ROLE || user.role === SUPER_ADMIN_ROLE,
   ).length;
   const sysConfig = useSelector(selectSystemConfig);
   const dispatch = useDispatch();

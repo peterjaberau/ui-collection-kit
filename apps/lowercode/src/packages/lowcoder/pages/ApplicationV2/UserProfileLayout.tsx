@@ -219,7 +219,7 @@ export function UserProfileLayout(props: UserProfileLayoutProps) {
       onClick: () =>
         currentPath !== ALL_APPLICATIONS_URL && history.push(ALL_APPLICATIONS_URL),
     },
-    ...breadcrumb.map((b, i) => ({
+    ...breadcrumb.map((b: any, i: any) => ({
       key: i+1,
       title: b.text,
       onClick: () => currentPath !== b.path && history.push(b.path)

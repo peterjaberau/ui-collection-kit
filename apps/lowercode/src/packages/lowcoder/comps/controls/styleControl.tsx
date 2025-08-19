@@ -30,7 +30,7 @@ import {
   ShadowIcon,
   OpacityIcon,
   LineHeightIcon
-} from 'lowcoder-design';
+} from '#lowcoder-design/index';
 import { useContext } from "react";
 import styled from "styled-components";
 import { useIsMobile } from "#lowcoder/util/hooks";

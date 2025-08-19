@@ -24,7 +24,7 @@ const UserActivityByTimeChart = ({ data, setDateRange }: Props) => {
   const maxDate = allDates.length ? dayjs(Math.max(...allDates.map((d) => new Date(d).getTime()))) : dayjs();
 
   // Generate full date range including missing days
-  const fullDateRange: string[] = [];
+  const fullDateRange: string[] | any = [];
   let currentDate = minDate;
   while (currentDate.isBefore(maxDate) || currentDate.isSame(maxDate, "day")) {
     fullDateRange.push(currentDate.format("YYYY-MM-DD"));
@@ -35,7 +35,7 @@ const UserActivityByTimeChart = ({ data, setDateRange }: Props) => {
   const timeSeriesData = data.reduce((acc: any, log: any) => {
     const eventTime = log.eventTime ? new Date(log.eventTime) : null;
     if (eventTime && !isNaN(eventTime.getTime())) {
-      const date = eventTime.toISOString().split("T")[0]; // Extract date part
+      const date: any = eventTime.toISOString().split("T")[0]; // Extract date part
       if (!acc[date]) acc[date] = 0;
       acc[date] = acc[date] + 1;
     }
@@ -47,7 +47,7 @@ const UserActivityByTimeChart = ({ data, setDateRange }: Props) => {
     name: "App Views",
     type: "line",
     stack: "total",
-    data: fullDateRange.map((date) => timeSeriesData[date] || 0), // Fill gaps with 0
+    data: fullDateRange.map((date: any) => timeSeriesData[date] || 0), // Fill gaps with 0
     itemStyle: {
       color: "#1890ff",
     },

@@ -4,7 +4,7 @@ import { trans } from "#lowcoder/i18n";
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../styled";
 import { Flex, Card, Button, message } from 'antd';
 import { ProductCard } from "./productCard";
-import { getCustomerPortalSession }  from '@lowcoder-ee/api/subscriptionApi';
+import { getCustomerPortalSession }  from '#lowcoder/api/subscriptionApi';
 import { useSubscriptionContext } from "#lowcoder/util/context/SubscriptionContext";
 
 const SubscriptionSettingContent = styled.div`
@@ -83,7 +83,7 @@ export function SubscriptionSetting() {
           <Flex wrap='wrap' gap="large" style={{marginTop: "40px", width : "100%"}}>
             {products
             .filter((product) => {
-              if (product.type === "org") { 
+              if (product.type === "org") {
                 return admin === "admin";
               }
               return true;
@@ -119,13 +119,13 @@ export function SubscriptionSetting() {
         <div>Loading...</div>
       )}
       {isCreatingCustomer && <div><br/>Checking your customer account, please wait...</div>}
-      {customerDataError && 
+      {customerDataError &&
         <h3>There was an error retrieving your customer data.</h3>
       }
-      {subscriptionDataError && 
+      {subscriptionDataError &&
         <h3>There was an error retrieving your subscription data.</h3>
       }
-      {checkoutLinkDataError && 
+      {checkoutLinkDataError &&
         <h3>There was an error generating checkout links.</h3>
       }
     </Level1SettingPageContent>

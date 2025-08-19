@@ -29,7 +29,7 @@ import { Layers } from "#lowcoder/constants/Layers";
 import { useMount } from "react-use";
 import { timestampToHumanReadable } from "#lowcoder/util/dateTimeUtils";
 import { AppSnapshotDslInfo } from "#lowcoder/api/appSnapshotApi";
-import { EmptyContent } from "#lowcoder-design/components/EmptyContent";
+import { EmptyContent } from "#lowcoder/components/EmptyContent";
 import { AppSummaryInfo } from "#lowcoder/redux/reduxActions/applicationActions";
 import { useRootCompInstance } from "./useRootCompInstance";
 import { TopHeaderHeight } from "#lowcoder/constants/style";
@@ -39,7 +39,7 @@ import EditorSkeletonView from "./editorSkeletonView";
 import React from "react";
 
 const AppEditorInternalView = lazy(
-  () => import("pages/editor/appEditorInternal")
+  () => import("#lowcoder/pages/editor/appEditorInternal")
     .then((moduleExports) => ({default: moduleExports.AppEditorInternalView}))
 );
 
@@ -178,7 +178,7 @@ export const AppSnapshot = React.memo((props: { currentAppInfo: AppSummaryInfo }
     if (!application) {
       return;
     }
-    fetchSnapshotList(1, (snapshots) => {
+    fetchSnapshotList(1, (snapshots: any) => {
       if (!snapshots.list || snapshots.list.length === 0) {
         return;
       }

@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { fetchBrandingSetting, fetchEnterpriseLicense, fetchEnvironments } from 'redux/reduxActions/enterpriseActions';
-import { selectEnterpriseEditionStatus } from '@lowcoder-ee/redux/selectors/enterpriseSelectors';
+import { fetchBrandingSetting, fetchEnterpriseLicense, fetchEnvironments } from '#lowcoder/redux/reduxActions/enterpriseActions';
+import { selectEnterpriseEditionStatus } from '#lowcoder/redux/selectors/enterpriseSelectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { isEEEnvironment } from "#lowcoder/util/envUtils";
-import { getUser } from '@lowcoder-ee/redux/selectors/usersSelectors';
+import { getUser } from '#lowcoder/redux/selectors/usersSelectors';
 
 interface EnterpriseContextValue {
     isEnterpriseActive: boolean;

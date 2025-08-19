@@ -6,7 +6,7 @@ import styled from "styled-components";
 import ReactHotkeys from "#lowcoder/util/hotkeys";
 import { StyledLink } from "#lowcoder/pages/common/styledComponent";
 import { trans } from "#lowcoder/i18n";
-import { favicon } from "assets/images";
+import { favicon } from "#lowcoder/assets/images";
 import { Col, Row, Typography } from "antd";
 import { getBrandingSetting } from "#lowcoder/redux/selectors/enterpriseSelectors";
 import { useSelector } from "react-redux";

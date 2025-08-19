@@ -1,13 +1,13 @@
 // index.tsx for routes
 import { Route, Switch } from 'react-router-dom';
-import { SUBSCRIPTION_SETTING, SUBSCRIPTION_DETAIL, SUBSCRIPTION_INFO, SUBSCRIPTION_SUCCESS, SUBSCRIPTION_CANCEL, SUBSCRIPTION_ERROR } from 'constants/routesURL';
+import { SUBSCRIPTION_SETTING, SUBSCRIPTION_DETAIL, SUBSCRIPTION_INFO, SUBSCRIPTION_SUCCESS, SUBSCRIPTION_CANCEL, SUBSCRIPTION_ERROR } from '#lowcoder/constants/routesURL';
 import { SubscriptionSetting } from './subscriptionSetting';
 import SubscriptionSuccess from './subscriptionSuccess';
 import SubscriptionCancel from './subscriptionCancel';
 import SubscriptionError from './subscriptionError';
 import SubscriptionDetail from './subscriptionDetail';
 import SubscriptionInfo from './subscriptionInfo';
-import { SubscriptionContextProvider } from '@lowcoder-ee/util/context/SubscriptionContext';
+import { SubscriptionContextProvider } from '#lowcoder/util/context/SubscriptionContext';
 
 export const Subscription = () => {
   return (

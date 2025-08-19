@@ -65,7 +65,7 @@ background: linear-gradient(34deg, rgba(2,0,36,1) 0%, rgba(102,9,121,1) 35%, rgb
 `;
 
 const CodeEditor = lazy(
-  () => import("base/codeEditor/codeEditor")
+  () => import("#lowcoder/base/codeEditor/codeEditor")
     .then(module => ({default: module.CodeEditor}))
 )
 
@@ -99,7 +99,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
   themeDefault?: ThemeDetail;
   readonly id: string;
   // readonly type: string;
-  readonly inputRef: React.RefObject<InputRef>;
+  readonly inputRef: React.RefObject<InputRef> | any;
   footerRef = React.createRef<HTMLDivElement>();
 
   constructor(props: ThemeDetailPageProps) {
@@ -110,7 +110,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
       canLeave: false,
       compDsl: undefined,
     };
-    this.inputRef = React.createRef();
+    (this as any).inputRef = React.createRef();
   }
 
   findCurrentTheme() {
@@ -435,7 +435,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
     return (
       <>
         <Prompt
-          message={(location) => {
+          message={(location: any) => {
             if (!this.state.canLeave && this.isThemeNotChange()) {
               this.setState({
                 canLeave: true,

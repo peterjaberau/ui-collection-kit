@@ -172,7 +172,7 @@ export function getShortcutAction(
   const map = shortcutTargetKeyMap[shortcutTarget];
   const keyString = eventKeyString(e);
   if (map.hasOwnProperty(keyString)) {
-    const [action, keyConfig] = map[keyString];
+    const [action, keyConfig]: any = map[keyString];
     if (keyConfig.notFilterInput || !isFilterInputTarget(e)) {
       return action as ShortcutAction;
     }

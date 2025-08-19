@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { getUser, getCurrentUser } from "#lowcoder/redux/selectors/usersSelectors";
-import { getSubscriptions } from 'redux/selectors/subscriptionSelectors';
+import { getSubscriptions } from '#lowcoder/redux/selectors/subscriptionSelectors';
 
 export const useUserDetails = () => {
   const user = useSelector(getUser);

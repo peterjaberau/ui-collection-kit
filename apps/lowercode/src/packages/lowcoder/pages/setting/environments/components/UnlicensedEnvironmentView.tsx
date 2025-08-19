@@ -16,7 +16,7 @@ import EnvironmentHeader from './EnvironmentHeader';
 import StatsCard from './StatsCard';
 import { Level1SettingPageContent } from "../../styled";
 import history from "#lowcoder/util/history";
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 
 const { Title, Text } = Typography;
 

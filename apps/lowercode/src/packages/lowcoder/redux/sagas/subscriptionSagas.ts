@@ -1,12 +1,12 @@
-import { call, put, select, takeLatest, all, take } from 'redux-saga/effects';
-import { fetchSubscriptionsAction } from 'redux/reduxActions/subscriptionActions';
-import { searchCustomersSubscriptions } from 'api/subscriptionApi';
-import { fetchSubscriptionsSuccess, fetchSubscriptionsError } from 'redux/reduxActions/subscriptionActions';
-import { getUser, getCurrentUser } from 'redux/selectors/usersSelectors';
+import { call, put, select, takeLatest, all, take } from '#lowcoder/redux-saga/effects';
+import { fetchSubscriptionsAction } from '#lowcoder/redux/reduxActions/subscriptionActions';
+import { searchCustomersSubscriptions } from '#lowcoder/api/subscriptionApi';
+import { fetchSubscriptionsSuccess, fetchSubscriptionsError } from '#lowcoder/redux/reduxActions/subscriptionActions';
+import { getUser, getCurrentUser } from '#lowcoder/redux/selectors/usersSelectors';
 import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
-import { CurrentUser, User } from '@lowcoder-ee/constants/userConstants';
-import { ReduxActionTypes } from '@lowcoder-ee/constants/reduxActionConstants';
-import { Subscription, LowcoderSearchCustomer } from '@lowcoder-ee/constants/subscriptionConstants';
+import { CurrentUser, User } from '#lowcoder/constants/userConstants';
+import { ReduxActionTypes } from '#lowcoder/constants/reduxActionConstants';
+import { Subscription, LowcoderSearchCustomer } from '#lowcoder/constants/subscriptionConstants';
 
 function* fetchSubscriptionsSaga(action: ReturnType<typeof fetchSubscriptionsAction>) {
   try {
@@ -21,7 +21,7 @@ function* fetchSubscriptionsSaga(action: ReturnType<typeof fetchSubscriptionsAct
     };
 
     const subscriptions: Subscription[] = yield call(searchCustomersSubscriptions, subscriptionSearchCustomer);
-    
+
     yield put(fetchSubscriptionsSuccess(subscriptions));
   } catch (error) {
     // Handle the error and dispatch a failure action

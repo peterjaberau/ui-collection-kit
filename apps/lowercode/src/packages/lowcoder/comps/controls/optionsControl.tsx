@@ -1,4 +1,4 @@
-import { ViewDocIcon } from "assets/icons";
+import { ViewDocIcon } from "#lowcoder/assets/icons/index";
 import { ArrayControl, BoolCodeControl, NumberControl, RadiusControl, StringControl } from "#lowcoder/comps/controls/codeControl";
 import { BoolControl } from "#lowcoder/comps/controls/boolControl";
 import { dropdownControl, LeftRightControl } from "#lowcoder/comps/controls/dropdownControl";

@@ -16,7 +16,7 @@ export enum DETAIL_TYPE {
   COPY = "copy",
 }
 
-export const themeTemplateList = [
+export const themeTemplateList: any = [
   {
     name: trans("theme.defaultTheme"),
     id: "1",

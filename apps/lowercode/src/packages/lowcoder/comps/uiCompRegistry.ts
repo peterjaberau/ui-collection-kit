@@ -173,7 +173,7 @@ export type UICompType =
   ;
 
 
-export const uiCompRegistry = {} as Record<UICompType | string, UICompManifest>;
+export const uiCompRegistry = {} as Record<UICompType | string, UICompManifest> | any;
 
 export function registerComp(
   compType: UICompType | string,

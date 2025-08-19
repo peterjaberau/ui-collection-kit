@@ -60,10 +60,10 @@ export function BottomSkeleton() {
 }
 
 export const BottomContent = () => {
-  const editorState = useContext(EditorContext);
-  const datasourceInfos = useSelector(getDataSource);
-  const selectedComp = editorState.selectedBottomResComp();
-  const [isCreatePanelShow, showCreatePanel] = useState(false);
+  const editorState: any = useContext(EditorContext);
+  const datasourceInfos: any = useSelector(getDataSource);
+  const selectedComp: any = editorState.selectedBottomResComp();
+  const [isCreatePanelShow, showCreatePanel]: any = useState(false);
 
   const queryItems = editorState.getQueriesComp().getView();
   const tempStateItems = editorState.getTempStatesComp().getView();
@@ -84,7 +84,7 @@ export const BottomContent = () => {
   const recentlyUsed = bottomResItems.reverse().map((i) => {
     if (i.type() === BottomResTypeEnum.Query) {
       const dsi = datasourceInfos.find(
-        (info) => info.datasource.id === (i as any).children.datasourceId?.getView()
+        (info: any) => info.datasource.id === (i as any).children.datasourceId?.getView()
       );
       return dsi?.datasource || (i as any).children.compType?.getView();
     }
@@ -161,8 +161,8 @@ export const BottomContent = () => {
             <ResCreatePanel
               recentlyUsed={recentlyUsed}
               datasource={datasourceInfos
-                .map((i) => i.datasource)
-                .filter((d) => d.creationSource !== 2)}
+                .map((i: any) => i.datasource)
+                .filter((d: any) => d.creationSource !== 2)}
               onSelect={handleAdd}
               onClose={() => showCreatePanel(false)}
             />

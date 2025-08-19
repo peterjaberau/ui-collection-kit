@@ -26,10 +26,14 @@ import { AdvancedSettingFormSectionLabel, CertValidationFormItem, DatasourceName
 import {
   DataSourceParamConfig,
   ParamOption,
-  DataSourceParamType,
   DataSourcePluginMeta,
+} from "#lowcoder-sdk/dataSource";
+
+import {
+  DataSourceParamType,
   DataSourceExtraConfig,
-} from "lowcoder-sdk/dataSource";
+} from "#lowcoder-sdk/dataSource";
+
 import styled from "styled-components";
 import { trans } from "#lowcoder/i18n";
 import { Datasource } from "#lowcoder/constants/datasourceConstants";
@@ -195,7 +199,7 @@ export const PluginDataSourceForm = (props: DatasourceFormProps) => {
     // only no-extra fields change can trigger extra params refresh
     const shouldRefresh = changedFields.some((i) => {
       const name = Array.isArray(i.name) ? i.name[0] : i.name;
-      return pluginDef.dataSourceConfig.params.find((j) => j.key === name);
+      return pluginDef.dataSourceConfig.params.find((j: any) => j.key === name);
     });
     if (!shouldRefresh) {
       return;
@@ -294,7 +298,7 @@ export const PluginDataSourceForm = (props: DatasourceFormProps) => {
 
       <FormSection $size={props.size}>
         {hasGeneralSettings && <GeneralSettingFormSectionLabel />}
-        {(dataSourceConfig.params || []).map((field) => {
+        {(dataSourceConfig.params || []).map((field: any) => {
           return (
             <React.Fragment key={field.key}>
               {getFieldWidget(field, isEditing, false)}

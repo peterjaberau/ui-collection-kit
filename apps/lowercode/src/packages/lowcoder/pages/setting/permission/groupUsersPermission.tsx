@@ -87,7 +87,7 @@ const GroupUsersPermission: React.FC<GroupPermissionProp> = (props) => {
   const [roleFilter, setRoleFilter] = useState<RoleIdType | "">("")
   const dispatch = useDispatch();
 
-  const adminCount = groupUsers.filter((user) => isGroupAdmin(user.role)).length;
+  const adminCount = groupUsers.filter((user: any) => isGroupAdmin(user.role)).length;
   const sortedGroupUsers = useMemo(() => {
     return [...groupUsers].sort((a, b) => {
       if (isGroupAdmin(a.role)) {
@@ -152,7 +152,7 @@ const GroupUsersPermission: React.FC<GroupPermissionProp> = (props) => {
             <Dropdown
               options={roleFilterOptions}
               value={roleFilter || ""}
-              onChange={(value) => {
+              onChange={(value: any) => {
                 setRoleFilter(value);
               }}
               style={{

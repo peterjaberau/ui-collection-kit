@@ -68,7 +68,7 @@ export default function Exposing(props: IProps) {
       const eventNames: EventConfigsType = ins.children.onEvent?.getEventNames() || [];
       const properties = Object.entries(ei.propertyDesc).map(([name, desc]) => {
         const value = ev[name];
-        let type = "";
+        let type: any = "";
         if (value !== undefined && value !== null) {
           const typeStr = Object.prototype.toString.call(value);
           const m = typeStr.match(/\[object (.+?)\]/);

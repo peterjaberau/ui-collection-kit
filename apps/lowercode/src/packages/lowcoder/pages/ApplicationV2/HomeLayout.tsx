@@ -402,7 +402,7 @@ export function HomeLayout(props: HomeLayoutProps) {
   const currentPath = useLocation().pathname;
 
   const displayElements = useMemo(() => {
-    const sorted = elements.sort((a, b) => {
+    const sorted = elements.sort((a: any, b: any) => {
       if (a.folder && !b.folder) {
         return -1;
       } else if (!a.folder && b.folder) {
@@ -413,9 +413,9 @@ export function HomeLayout(props: HomeLayoutProps) {
     });
 
     if (mode === "marketplace") {
-      const markedLocalApps = localMarketplaceApps.map(app => ({ ...app, isLocalMarketplace: true }));
+      const markedLocalApps = localMarketplaceApps.map((app: any) => ({ ...app, isLocalMarketplace: true }));
       if (isSelfHost) {
-        const markedGlobalApps = globalMarketplaceApps.map(app => ({ ...app, isLocalMarketplace: false }));
+        const markedGlobalApps = globalMarketplaceApps.map((app: any) => ({ ...app, isLocalMarketplace: false }));
         return [...markedLocalApps, ...markedGlobalApps];
       }
       return [...markedLocalApps];
@@ -425,7 +425,7 @@ export function HomeLayout(props: HomeLayoutProps) {
 
   const resList = useMemo(() => {
     return displayElements
-      .filter((e) => {
+      .filter((e: any) => {
         if (!visibility) {
           if (searchValue) {
             const lowerCaseSearchValue = searchValue.toLocaleLowerCase();
@@ -504,7 +504,7 @@ export function HomeLayout(props: HomeLayoutProps) {
       onClick: () =>
         currentPath !== ALL_APPLICATIONS_URL && history.push(ALL_APPLICATIONS_URL),
     },
-    ...breadcrumb.map((b, i) => ({
+    ...breadcrumb.map((b: any, i: any) => ({
       key: i+1,
       title: b.text,
       onClick: () => currentPath !== b.path && history.push(b.path)
@@ -520,11 +520,11 @@ export function HomeLayout(props: HomeLayoutProps) {
   ], [mode, getFilterMenuItem]);
 
   const localMarketplaceAppsList = useMemo(() => {
-    return resList.filter(app => app.isLocalMarketplace)
+    return resList.filter((app: any) => app.isLocalMarketplace)
   }, [resList]);
 
   const globalMarketplaceAppsList = useMemo(() => {
-    return resList.filter(app => !app.isLocalMarketplace)
+    return resList.filter((app: any) => !app.isLocalMarketplace)
   }, [resList]);
 
   const categoryOptions = [

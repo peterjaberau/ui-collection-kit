@@ -1,29 +1,22 @@
-import { default as Button } from "antd/es/button";
-import { default as Divider } from "antd/es/divider";
-import { default as Table } from "antd/es/table";
-import { ThemeDetail } from "#lowcoder/api/commonSettingApi";
-import {
-  CustomModal,
-  darkenColor,
-  isDarkColor,
-  ScrollBar,
-  TacoButton,
-  TacoInput,
-} from "#lowcoder-design/index";
-import styled, { css } from "styled-components";
-import { PopoverIcon } from "../permission/styledComponents";
+import { default as Button } from "antd/es/button"
+import { default as Divider } from "antd/es/divider"
+import { default as Table } from "antd/es/table"
+import { ThemeDetail } from "#lowcoder/api/commonSettingApi"
+import { CustomModal, darkenColor, isDarkColor, ScrollBar, TacoButton, TacoInput } from "#lowcoder-design/index"
+import styled, { css } from "styled-components"
+import { PopoverIcon } from "../permission/styledComponents"
 
 export const ThemeContent = styled.div`
   padding: 32px 24px 0 12px;
   min-width: 600px;
   width: 100%;
-`;
+`
 
 export const DetailContainer = styled.div`
   padding-top: 32px;
   width: 100%;
   overflow: auto;
-`;
+`
 
 export const CreateButton = styled(Button)`
   background-color: #4965f2;
@@ -50,22 +43,22 @@ export const CreateButton = styled(Button)`
     width: 12px;
     height: 12px;
   }
-`;
+`
 
 export const SaveButton = styled(CreateButton)`
   min-width: 84px;
   height: 32px;
-`;
+`
 
 export const FlexAlignCenter = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 export const InlineFlexAlignCenter = styled.div`
   display: inline-flex;
   align-items: center;
-`;
+`
 
 export const ColumnName = styled(InlineFlexAlignCenter)`
   overflow: hidden;
@@ -79,7 +72,7 @@ export const ColumnName = styled(InlineFlexAlignCenter)`
     text-overflow: ellipsis;
     word-break: keep-all;
   }
-`;
+`
 
 export const DetailContent = styled.div`
   max-width: 95%;
@@ -93,7 +86,7 @@ export const DetailContent = styled.div`
   .chart {
     margin: 29px 0 0 0;
   }
-`;
+`
 
 export const ChartDesc = styled.div`
   font-size: 13px;
@@ -106,7 +99,7 @@ export const ChartDesc = styled.div`
       color: #315efb;
     }
   }
-`;
+`
 
 export const ChartInput = styled.div`
   .cm-editor {
@@ -117,7 +110,7 @@ export const ChartInput = styled.div`
       min-height: 74px;
     }
   }
-`;
+`
 
 export const Footer = styled.div`
   display: flex;
@@ -131,20 +124,20 @@ export const Footer = styled.div`
   &.no-bottom {
     box-shadow: 0 -6px 10px -6px rgba(0, 0, 0, 0.1);
   }
-`;
+`
 
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 24px 37px 24px;
-`;
+`
 
 export const DetailTitle = styled.div`
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
-`;
+`
 
 export const BackBtn = styled.div`
   display: flex;
@@ -169,7 +162,7 @@ export const BackBtn = styled.div`
   &:hover svg g path {
     fill: #4965f2;
   }
-`;
+`
 
 export const ResetButton = styled(Button)`
   display: inline-flex;
@@ -196,7 +189,7 @@ export const ResetButton = styled(Button)`
       opacity: 0.3;
     }
   }
-`;
+`
 
 export const ModalNameDiv = styled(FlexAlignCenter)`
   display: flex;
@@ -205,7 +198,7 @@ export const ModalNameDiv = styled(FlexAlignCenter)`
   svg {
     margin-right: 4px;
   }
-`;
+`
 
 export const TacoInputStyled = styled(TacoInput)`
   margin-bottom: 5px;
@@ -219,7 +212,7 @@ export const TacoInputStyled = styled(TacoInput)`
   &.exceed .input-length {
     color: #f73131;
   }
-`;
+`
 
 export const ThemeBtn = styled.div<{ $theme: ThemeDetail }>`
   width: 180px;
@@ -232,8 +225,7 @@ export const ThemeBtn = styled.div<{ $theme: ThemeDetail }>`
   font-size: 12px;
   position: relative;
   cursor: pointer;
-  color: ${(props) =>
-    isDarkColor(props.$theme.primarySurface) ? props.$theme.textLight : props.$theme.textDark};
+  color: ${(props) => (isDarkColor(props.$theme.primarySurface) ? props.$theme.textLight : props.$theme.textDark)};
   .name {
     font-size: 13px;
     font-weight: 600;
@@ -333,8 +325,7 @@ export const ThemeBtn = styled.div<{ $theme: ThemeDetail }>`
         align-items: center;
         justify-content: center;
         background-color: ${(props) => props.$theme.primary};
-        color: ${(props) =>
-          isDarkColor(props.$theme.primary) ? props.$theme.textLight : props.$theme.textDark};
+        color: ${(props) => (isDarkColor(props.$theme.primary) ? props.$theme.textLight : props.$theme.textDark)};
       }
     }
   }
@@ -356,15 +347,15 @@ export const ThemeBtn = styled.div<{ $theme: ThemeDetail }>`
       display: inline-block;
     }
   }
-`;
+`
 
 export const SelectContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4px 12px;
-`;
+`
 
-export const ScrollBarStyled = styled(ScrollBar)`
+export const ScrollBarStyled: any = styled(ScrollBar)`
   > div {
     margin: 0 -4px;
     padding: 0 4px;
@@ -372,18 +363,18 @@ export const ScrollBarStyled = styled(ScrollBar)`
   .simplebar-track {
     right: -16px;
   }
-`;
+`
 
 export const SelectTitle = styled.div`
   font-size: 13px;
   color: #8b8fa3;
   line-height: 13px;
   margin: 11px 0 8px 0;
-`;
+`
 
 export const SelectTitleTheme = styled(SelectTitle)`
   margin-top: 12px;
-`;
+`
 
 export const ConfigItem = styled.div`
   display: flex;
@@ -438,7 +429,7 @@ export const ConfigItem = styled.div`
       }
     }
   }
-`;
+`
 
 export const Radius = styled.div<{ $radius: string }>`
   width: 24px;
@@ -457,14 +448,14 @@ export const Radius = styled.div<{ $radius: string }>`
       border-radius: ${(props) => props.$radius};
     }
   }
-`;
+`
 
 export const ControlCol = styled(FlexAlignCenter)`
   justify-content: end;
   height: 100%;
-`;
+`
 
-export const TableStyled = styled(Table)`
+export const TableStyled : any = styled(Table)`
   .ant-table {
     tbody {
       &::before {
@@ -563,7 +554,7 @@ export const TableStyled = styled(Table)`
       }
     }
   }
-`;
+`
 
 export const EditButton = styled(TacoButton)`
   width: 52px;
@@ -571,7 +562,7 @@ export const EditButton = styled(TacoButton)`
   padding: 5px 12px;
   margin-left: 8px;
   opacity: 0;
-`;
+`
 
 export const StyledMoreActionIcon = styled(PopoverIcon)`
   cursor: pointer;
@@ -590,16 +581,16 @@ export const StyledMoreActionIcon = styled(PopoverIcon)`
       fill: #3377ff;
     }
   }
-`;
+`
 
 export const ListDropdown = styled(FlexAlignCenter)`
   height: 100%;
-`;
+`
 
 export const MoreIconDiv = styled(FlexAlignCenter)`
   padding-left: 52px;
   height: 100%;
-`;
+`
 
 const getTagStyle = (theme: ThemeDetail) => {
   return css`
@@ -618,8 +609,8 @@ const getTagStyle = (theme: ThemeDetail) => {
       background-color: ${theme.primarySurface};
       border-radius: 0 4px 4px 0;
     }
-  `;
-};
+  `
+}
 
 export const TagDesc = styled.span<{ $theme: ThemeDetail }>`
   display: inline-flex;
@@ -629,7 +620,7 @@ export const TagDesc = styled.span<{ $theme: ThemeDetail }>`
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   ${(props) => getTagStyle(props.$theme)}
-`;
+`
 
 export const EmptySpan = styled.span`
   > span {
@@ -644,20 +635,20 @@ export const EmptySpan = styled.span`
       }
     }
   }
-`;
+`
 
 export const EllipsisSpan = styled.span`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   word-break: keep-all;
-`;
+`
 
 export const CustomModalStyled = styled(CustomModal)`
   button {
     margin-top: 20px;
   }
-`;
+`
 
 export const Margin = styled.div<{ $margin: string }>`	
 > div {	
@@ -666,9 +657,8 @@ export const Margin = styled.div<{ $margin: string }>`
     > svg {	
       fill: currentColor;	
     }	
-  }	
-}	
-`;	
+  }
+`
 export const Padding = styled.div<{ $padding: string }>`	
 > div {	
   margin: 3px;	
@@ -677,7 +667,7 @@ export const Padding = styled.div<{ $padding: string }>`
       fill: currentColor;	
     }	
   }	
-}`
+`
 // Added By Aqib Mirza
 export const GridColumns = styled.div<{ $gridColumns: string }>` 
   > div {
@@ -687,8 +677,7 @@ export const GridColumns = styled.div<{ $gridColumns: string }>`
         fill: currentColor;
       }
     }
-  }
-`;
+`
 
 export const BorderStyle = styled.div<{ $borderStyle: string }>` 
   > div {
@@ -698,8 +687,7 @@ export const BorderStyle = styled.div<{ $borderStyle: string }>`
         fill: currentColor;
       }
     }
-  }
-`;
+`
 
 export const BorderWidth = styled.div<{ $borderWidth: string }>`
   > div {
@@ -709,6 +697,4 @@ export const BorderWidth = styled.div<{ $borderWidth: string }>`
         fill: currentColor;
       }
     }
-  }
-`;
-
+`

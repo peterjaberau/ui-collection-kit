@@ -15,7 +15,7 @@ import 'react-quill-new/dist/quill.snow.css';
 import { Spin } from "antd";
 import LoadingOutlined from "@ant-design/icons/LoadingOutlined";
 import { useSimpleSubscriptionContext } from "#lowcoder/util/context/SimpleSubscriptionContext";
-import { SubscriptionProductsEnum } from '@lowcoder-ee/constants/subscriptionConstants';
+import { SubscriptionProductsEnum } from '#lowcoder/constants/subscriptionConstants';
 import { getDeploymentId } from "#lowcoder/redux/selectors/configSelectors";
 import { useSelector } from "react-redux";
 import React from "react";
@@ -149,7 +149,7 @@ export function SupportOverview() {
   const { subscriptions } = useSimpleSubscriptionContext();
   const deploymentId = useSelector(getDeploymentId);
 
-  const SupportSubscription = subscriptions.filter(
+  const SupportSubscription: any = subscriptions.filter(
     sub => sub.product === SubscriptionProductsEnum.SUPPORT && sub.status === 'active'
   );
 

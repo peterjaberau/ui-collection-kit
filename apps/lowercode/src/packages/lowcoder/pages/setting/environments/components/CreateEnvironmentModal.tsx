@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Modal, Form, Input, Select, Switch, Button, Alert, Tooltip } from 'antd';
 import { useSelector } from 'react-redux';
-import { selectMasterEnvironment, selectHasMasterEnvironment } from 'redux/selectors/enterpriseSelectors';
+import { selectMasterEnvironment, selectHasMasterEnvironment } from '#lowcoder/redux/selectors/enterpriseSelectors';
 import { Environment } from '../types/environment.types';
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 
 const { Option } = Select;
 
@@ -40,12 +40,12 @@ const CreateEnvironmentModal: React.FC<CreateEnvironmentModalProps> = ({
     try {
       const values = await form.validateFields();
       setSubmitLoading(true);
-      
+
       const submitData = {
         ...values,
         isMaster
       };
-      
+
       await onSave(submitData);
       form.resetFields();
       setIsMaster(false); // Reset master state
@@ -76,10 +76,10 @@ const CreateEnvironmentModal: React.FC<CreateEnvironmentModalProps> = ({
         <Button key="back" onClick={handleCancel}>
           {trans("environments.modal_cancel")}
         </Button>,
-        <Button 
-          key="submit" 
-          type="primary" 
-          loading={loading || submitLoading} 
+        <Button
+          key="submit"
+          type="primary"
+          loading={loading || submitLoading}
           onClick={handleSubmit}
         >
           {trans("environments.modal_createEnvironment")}
@@ -109,8 +109,8 @@ const CreateEnvironmentModal: React.FC<CreateEnvironmentModalProps> = ({
           name="environmentDescription"
           label={trans("environments.modal_description")}
         >
-          <Input.TextArea 
-            placeholder={trans("environments.modal_enterDescription")} 
+          <Input.TextArea
+            placeholder={trans("environments.modal_enterDescription")}
             rows={3}
           />
         </Form.Item>
@@ -162,26 +162,26 @@ const CreateEnvironmentModal: React.FC<CreateEnvironmentModalProps> = ({
           name="environmentApikey"
           label={trans("environments.modal_apiKey")}
         >
-          <Input.TextArea 
-            placeholder={trans("environments.modal_enterApiKey")} 
+          <Input.TextArea
+            placeholder={trans("environments.modal_enterApiKey")}
             rows={2}
           />
         </Form.Item>
 
         <Form.Item label={trans("environments.modal_masterEnvironment")}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Tooltip 
+            <Tooltip
               title={
-                hasMasterEnvironment 
+                hasMasterEnvironment
                   ? trans("environments.modal_alreadyMasterEnvironment", { name: masterEnvironment?.environmentName })
                   : ''
               }
             >
-              <Switch 
+              <Switch
                 checked={isMaster}
                 onChange={handleMasterChange}
                 disabled={hasMasterEnvironment}
-               
+
               />
             </Tooltip>
             {isMaster && (
@@ -204,4 +204,4 @@ const CreateEnvironmentModal: React.FC<CreateEnvironmentModalProps> = ({
   );
 };
 
-export default CreateEnvironmentModal; 
+export default CreateEnvironmentModal;

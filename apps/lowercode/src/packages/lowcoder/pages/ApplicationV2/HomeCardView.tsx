@@ -8,7 +8,7 @@ import { MoveToFolderModal } from "./MoveToFolderModal";
 const ApplicationCardsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(408px, 1fr));
-  grid-template-rows: repeat(auto-fill, min(auto, 100%));
+  grid-template-rows: auto;
   grid-column-gap: 112px;
   grid-row-gap: 20px;
   margin: 48px 26px 80px;

@@ -107,9 +107,9 @@ let SwitchTmpComp = (function () {
     tabIndex: NumberControl,
     ...formDataChildren,
   };
-  return new UICompBuilder(childrenMap, (props) => {
-    const defaultValue = { ...props.defaultValue }.value;
-    const value = { ...props.value }.value;
+  return new UICompBuilder(childrenMap, (props: any) => {
+    const defaultValue: any = { ...props.defaultValue }.value;
+    const value: any = { ...props.value }.value;
 
     useEffect(() => {
       props.value.onChange(defaultValue);
@@ -139,7 +139,7 @@ let SwitchTmpComp = (function () {
       ),
     });
   })
-    .setPropertyViewFn((children) => {
+    .setPropertyViewFn((children: any) => {
       const editorModeStatus = useContext(EditorContext).editorModeStatus;
       const isLogicMode = ["logic", "both"].includes(editorModeStatus);
       const isLayoutMode = ["layout", "both"].includes(editorModeStatus);
@@ -191,7 +191,7 @@ let SwitchTmpComp = (function () {
 
 SwitchTmpComp = migrateOldData(SwitchTmpComp, fixOldInputCompData);
 
-export const SwitchComp = withExposingConfigs(SwitchTmpComp, [
+export const SwitchComp: any = withExposingConfigs(SwitchTmpComp, [
   new NameConfig("value", trans("switchComp.valueDesc")),
   ...CommonNameConfig,
 ]);

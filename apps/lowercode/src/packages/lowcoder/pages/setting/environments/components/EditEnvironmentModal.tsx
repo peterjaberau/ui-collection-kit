@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Form, Input, Select, Switch, Button, Alert, Tooltip } from 'antd';
 import { useSelector } from 'react-redux';
-import { selectMasterEnvironment, selectHasMasterEnvironment } from 'redux/selectors/enterpriseSelectors';
+import { selectMasterEnvironment, selectHasMasterEnvironment } from '#lowcoder/redux/selectors/enterpriseSelectors';
 import { Environment } from '../types/environment.types';
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 
 const { Option } = Select;
 
@@ -59,16 +59,16 @@ const EditEnvironmentModal: React.FC<EditEnvironmentModalProps> = ({
 
   const handleSubmit = async () => {
     if (!environment) return;
-    
+
     try {
       const values = await form.validateFields();
       setSubmitLoading(true);
-      
+
       const submitData = {
         ...values,
         isMaster
       };
-      
+
       await onSave(submitData);
       onClose();
     } catch (error) {
@@ -91,10 +91,10 @@ const EditEnvironmentModal: React.FC<EditEnvironmentModalProps> = ({
         <Button key="back" onClick={onClose}>
           {trans("environments.modal_cancel")}
         </Button>,
-        <Button 
-          key="submit" 
-          type="primary" 
-          loading={loading || submitLoading} 
+        <Button
+          key="submit"
+          type="primary"
+          loading={loading || submitLoading}
           onClick={handleSubmit}
         >
           {trans("environments.modal_saveChanges")}
@@ -118,8 +118,8 @@ const EditEnvironmentModal: React.FC<EditEnvironmentModalProps> = ({
           name="environmentDescription"
           label={trans("environments.modal_description")}
         >
-          <Input.TextArea 
-            placeholder={trans("environments.modal_enterDescription")} 
+          <Input.TextArea
+            placeholder={trans("environments.modal_enterDescription")}
             rows={3}
           />
         </Form.Item>
@@ -162,26 +162,26 @@ const EditEnvironmentModal: React.FC<EditEnvironmentModalProps> = ({
           name="environmentApikey"
           label={trans("environments.modal_apiKey")}
         >
-          <Input.TextArea 
-            placeholder={trans("environments.modal_enterApiKey")} 
+          <Input.TextArea
+            placeholder={trans("environments.modal_enterApiKey")}
             rows={2}
           />
         </Form.Item>
 
         <Form.Item label={trans("environments.modal_masterEnvironment")}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Tooltip 
+            <Tooltip
               title={
-                hasOtherMaster && !isMaster 
+                hasOtherMaster && !isMaster
                   ? trans("environments.modal_alreadyMasterEnvironment", { name: masterEnvironment?.environmentName })
                   : ''
               }
             >
-              <Switch 
+              <Switch
                 checked={isMaster}
                 onChange={handleMasterChange}
                 disabled={hasOtherMaster && !isMaster}
-                
+
               />
             </Tooltip>
             {isMaster && (

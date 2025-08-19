@@ -50,7 +50,7 @@ export const clientIdandSecretConfig = {
   },
 };
 
-export const authConfig = {
+export const authConfig: any = {
   [AuthType.Form]: {
     sourceName: trans("idSource.form"),
     sourceValue: AuthType.Form,

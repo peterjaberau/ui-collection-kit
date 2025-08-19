@@ -2,7 +2,7 @@
  * Get merged queries (both regular and managed) for a workspace
  */
 import axios from 'axios';
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 import { getManagedObjects, ManagedObjectType, transferManagedObject } from './managed-objects.service';
 import { getWorkspaceQueries } from './environments.service';
 import { Query, QueryStats } from '../types/query.types';
@@ -18,8 +18,8 @@ export interface MergedQueriesResult {
     queryGid: string;
     deployCredential: boolean;
   }
-  
-  
+
+
   export async function getMergedWorkspaceQueries(
     workspaceId: string,
     environmentId: string,
@@ -28,28 +28,28 @@ export interface MergedQueriesResult {
   ): Promise<MergedQueriesResult> {
     try {
       // Fetch regular queries
-      
+
       const regularQueries = await getWorkspaceQueries(workspaceId, apiKey, apiServiceUrl);
-      
+
       const managedObjects = await getManagedObjects(environmentId, ManagedObjectType.QUERY);
-      
+
       // Create a set of managed query GIDs for quick lookup
       const managedQueryGids = new Set(managedObjects.map(obj => obj.objGid));
-      
+
       // Mark regular queries as managed if they exist in managed queries
       const mergedQueries = regularQueries.queries.map((query: Query) => {
         const isManaged = managedQueryGids.has(query.gid);
-        
+
         return {
           ...query,
           managed: isManaged
         };
       });
-      
+
       // Calculate stats
       const total = mergedQueries.length;
       const managed = mergedQueries.filter(query => query.managed).length;
-      
+
       return {
         queries: mergedQueries,
         stats: {
@@ -58,7 +58,7 @@ export interface MergedQueriesResult {
           unmanaged: total - managed
         }
       };
-      
+
     } catch (error) {
       console.error("Error in getMergedWorkspaceQueries:", error);
       throw error;

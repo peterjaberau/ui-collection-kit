@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Card, Row, Col, Typography, Divider, Spin, Alert } from 'antd';
 import { CustomerServiceOutlined, CloudServerOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 import { Environment } from '../types/environment.types';
 import { getEnvironmentDeploymentId } from '../services/environments.service';
 import { HubspotModal } from '../../hubspotModal';
-import { getUser } from 'redux/selectors/usersSelectors';
+import { getUser } from '#lowcoder/redux/selectors/usersSelectors';
 
 const { Title, Text } = Typography;
 
@@ -42,7 +42,7 @@ const ContactLowcoderModal: React.FC<ContactLowcoderModalProps> = ({
 
       setIsLoading(true);
       setError(null);
-      
+
       try {
         const id = await getEnvironmentDeploymentId(
           environment.environmentApiServiceUrl,
@@ -140,10 +140,10 @@ const ContactLowcoderModal: React.FC<ContactLowcoderModalProps> = ({
       {/* Loading, Error, or Success State */}
       <div style={{ minHeight: '200px', padding: '20px 0' }}>
         {isLoading && (
-          <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
             justifyContent: 'center',
             minHeight: '200px'
           }}>
@@ -179,4 +179,4 @@ const ContactLowcoderModal: React.FC<ContactLowcoderModalProps> = ({
   );
 };
 
-export default ContactLowcoderModal; 
+export default ContactLowcoderModal;

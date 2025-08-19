@@ -21,7 +21,7 @@ export interface LanguageMeta {
   }
 
   // Example metadata object
-  export const languagesMetadata: LanguagesMetadata = {
+  export const languagesMetadata: LanguagesMetadata | any = {
     en: {
       languageName: "English",
       flag: Flag_gb

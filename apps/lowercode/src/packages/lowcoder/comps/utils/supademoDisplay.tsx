@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, Tooltip } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
-import { trans } from 'i18n'; // Adjust this import according to your project's structure
+import { trans } from '#lowcoder/i18n'; // Adjust this import according to your project's structure
 
 interface SupaDemoDisplayProps {
   url: string;

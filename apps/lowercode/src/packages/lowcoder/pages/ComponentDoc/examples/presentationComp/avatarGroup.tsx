@@ -1,7 +1,7 @@
 import { AvatarGroupComp } from "#lowcoder/comps/comps/avatarGroup";
 import Example from "../../common/Example";
 import ExampleGroup from "../../common/ExampleGroup";
-import { trans } from "i18n/design";
+import { trans } from "#lowcoder/i18n";
 
 const avatars = {
   "optionType": "manual",
@@ -44,41 +44,41 @@ export default function AvatarGroupExample(){
           <ExampleGroup
             title={"Basic Usage"}
           >
-          <Example 
-            title="Maximum Count on AvatarGoup" 
+          <Example
+            title="Maximum Count on AvatarGoup"
             config={{
                 maxCount: "2",
-            }} 
-            compFactory={AvatarGroupComp} 
+            }}
+            compFactory={AvatarGroupComp}
           />
           <Example
             title=""
             config={{
                 maxCount: "3",
-            }} 
-            compFactory={AvatarGroupComp} 
+            }}
+            compFactory={AvatarGroupComp}
           />
           <Example
             title="Avatar Group component with custom images"
             config={{
                 avatarSize: "60",
                 avatars: avatars,
-            }} 
-            compFactory={AvatarGroupComp} 
+            }}
+            compFactory={AvatarGroupComp}
           />
           <Example
             title="Avatar Size"
             config={{
                 avatarSize: "60",
-            }} 
-            compFactory={AvatarGroupComp} 
+            }}
+            compFactory={AvatarGroupComp}
           />
           <Example
             title="Hiding Avatar Group component"
             config={{
                 hidden: true,
-            }} 
-            compFactory={AvatarGroupComp} 
+            }}
+            compFactory={AvatarGroupComp}
           />
           </ExampleGroup>
 
@@ -89,22 +89,22 @@ export default function AvatarGroupExample(){
             title="Left"
             config={{
                 alignment: "left",
-            }} 
-            compFactory={AvatarGroupComp} 
+            }}
+            compFactory={AvatarGroupComp}
           />
           <Example
             title="Right"
             config={{
                 alignment: "right",
-            }} 
-            compFactory={AvatarGroupComp} 
+            }}
+            compFactory={AvatarGroupComp}
           />
           <Example
             title="Center"
             config={{
                 alignment: "center",
-            }} 
-            compFactory={AvatarGroupComp} 
+            }}
+            compFactory={AvatarGroupComp}
           />
           </ExampleGroup>
 
@@ -119,8 +119,8 @@ export default function AvatarGroupExample(){
                         fill: "#fff",
                         background: "#F401AE",
                     }
-                }} 
-            compFactory={AvatarGroupComp} 
+                }}
+            compFactory={AvatarGroupComp}
           />
           <Example
               title="Avatar Group component styling"
@@ -134,8 +134,8 @@ export default function AvatarGroupExample(){
                   "radius": "10px",
                   "borderWidth": "2px"
                 },
-              }} 
-            compFactory={AvatarGroupComp} 
+              }}
+            compFactory={AvatarGroupComp}
           />
           </ExampleGroup>
         </>

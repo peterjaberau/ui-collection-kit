@@ -5,7 +5,7 @@ import { MultiCompBuilder } from "#lowcoder/comps/generators";
 import { bottomResListComp } from "#lowcoder/comps/generators/bottomResList";
 import { withExposingRaw } from "#lowcoder/comps/generators/withExposing";
 import { trans } from "#lowcoder/i18n";
-import { fromRecord } from "#lowcoder-core/index";
+import { fromRecord } from "#lowcoder-core/eval";
 import { DocLink } from "#lowcoder-design/index";
 import { BottomTabs } from "#lowcoder/pages/editor/bottom/BottomTabs";
 import { ReactNode } from "react";

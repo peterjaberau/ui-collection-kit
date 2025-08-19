@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { Descriptions, Tag, Avatar, Skeleton, Button, Typography, List, Table, Progress, Input, Upload, message } from "antd";
 import { UploadOutlined } from '@ant-design/icons';
 import history from "#lowcoder/util/history";
-import { getTicket, updateTicketDescription, addComment, uploadAttachment } from '@lowcoder-ee/api/supportApi';
+import { getTicket, updateTicketDescription, addComment, uploadAttachment } from '#lowcoder/api/supportApi';
 import { Level1SettingPageContent, Level1SettingPageTitle } from "../setting/styled";
 import { HeaderBack } from "../setting/permission/styledComponents";
 import { SUPPORT_URL } from "#lowcoder/constants/routesURL";
@@ -173,11 +173,13 @@ const convertJiraToHtml = (content : any) => {
   html = html.replace(/<em>(.*?)<\/em>/g, '_$1_');
 
   // Convert ordered list items to Jira syntax
+   // @ts-ignore
   html = html.replace(/<ol>(.*?)<\/ol>/gs, (match: any, inner: string) => {
     return inner.replace(/<li>(.*?)<\/li>/g, '# $1\n');
   });
 
   // Convert unordered list items to Jira syntax
+  // @ts-ignore
   html = html.replace(/<ul>(.*?)<\/ul>/gs, (match: any, inner: string) => {
     return inner.replace(/<li>(.*?)<\/li>/g, '* $1\n');
   });

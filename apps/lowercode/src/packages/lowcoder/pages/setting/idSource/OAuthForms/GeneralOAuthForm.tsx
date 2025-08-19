@@ -77,7 +77,7 @@ function GeneralOAuthForm(props: GeneralOAuthFormProp) {
       {Object.entries(authConfigForm).map(([key, value]) => {
         const valueObject = _.isObject(value) ? (value as ItemType) : false;
         const required = true;
-        const label = valueObject ? valueObject.label : value;
+        const label : any = valueObject ? valueObject.label : value;
         const tip = valueObject && valueObject.tip;
         const isPassword = valueObject && valueObject.isPassword;
         return (

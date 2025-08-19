@@ -55,14 +55,14 @@ export interface CompMeta {
 
 export interface CompIDEProps {
   compMap: Record<string, any>;
-  compMeta: Record<string, CompMeta>;
+  compMeta: Record<string, CompMeta> | any;
   packageName: string;
   packageVersion: string;
 }
 
 export function CompIDE(props: CompIDEProps) {
   const { compMap, compMeta, packageName, packageVersion }: any = props;
-  const [currentCompName, setCurrentCompName] = useState<string>(Object.keys(compMeta)[0]);
+  const [currentCompName, setCurrentCompName] : any = useState<string | any>(Object.keys(compMeta)[0]);
   const layoutInfo = compMeta[currentCompName]?.layoutInfo || { w: 5, h: 5 };
 
   const items = Object.keys(compMeta).map((i) => ({

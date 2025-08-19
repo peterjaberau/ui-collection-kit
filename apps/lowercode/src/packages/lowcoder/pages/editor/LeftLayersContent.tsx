@@ -151,7 +151,7 @@ const CustomDropdown = styled(Dropdown)`
 
 export const LeftLayersContent = (props: LeftLayersContentProps) => {
   const { uiComp }: any = props;
-  const editorState = useContext(EditorContext);
+  const editorState: any = useContext(EditorContext);
   const [expandedKeys, setExpandedKeys] = useState<Array<React.Key>>([]);
   const dispatch = useDispatch();
   const applicationId = useApplicationId();
@@ -183,7 +183,7 @@ export const LeftLayersContent = (props: LeftLayersContentProps) => {
   }
 
   const getTree = (tree: CompTree, result: NodeItem[], key?: string) => {
-    const { items, children } = tree;
+    const { items, children }: any = tree;
     if (Object.keys(items).length) {
       for (const i in items) {
         const info: NodeItem = {
@@ -295,7 +295,7 @@ export const LeftLayersContent = (props: LeftLayersContentProps) => {
         if (parentNode && parentNode.children) {
           const draggedNodeIndex = parentNode.children.findIndex(node => node.key === info.dragNode.key);
           if (draggedNodeIndex !== -1) {
-            const [draggedNode] = parentNode.children.splice(draggedNodeIndex, 1);
+            const [draggedNode]: any = parentNode.children.splice(draggedNodeIndex, 1);
             parentNode.children.splice(dropIndex > dragIndex ? dropIndex - 1 : dropIndex, 0, draggedNode);
           }
         }
@@ -333,8 +333,8 @@ export const LeftLayersContent = (props: LeftLayersContentProps) => {
   };
 
   const findNodeByPos = (nodes: NodeItem[], pos: string): { children: NodeItem[] } => {
-    const posArr = pos.split('-').map(p => Number(p));
-    let currentNode = { children: nodes };
+    const posArr: any = pos.split('-').map(p => Number(p));
+    let currentNode: any = { children: nodes };
     for (let i = 0; i < posArr.length; i++) {
       currentNode = currentNode.children[posArr[i]];
     }
@@ -396,7 +396,7 @@ export const LeftLayersContent = (props: LeftLayersContentProps) => {
       if(comp) {
         const { children } = comp.children.comp;
         const compType = comp.children.compType.getView();
-        const types = actionType.split('.');
+        const types: any = actionType.split('.');
         if(types.length === 1) { // e.g hidden, disabled
           children[types[0]]?.dispatchChangeValueAction(color);
         }
@@ -467,7 +467,7 @@ export const LeftLayersContent = (props: LeftLayersContentProps) => {
       if(comp) {
         const { children } = comp.children.comp;
         const compType = comp.children.compType.getView();
-        const types = actionType.split('.');
+        const types: any = actionType.split('.');
         if(types.length === 1) { // e.g hidden, disabled
           children[types[0]]?.dispatchChangeValueAction(value);
         }
@@ -522,7 +522,7 @@ export const LeftLayersContent = (props: LeftLayersContentProps) => {
           checkedKeys={checkedKeys}
           draggable={isDraggable}
           onDragEnter={handleDragEnter}
-          onDrop={(info) => handleDrop(info)}
+          onDrop={(info: any) => handleDrop(info)}
           treeData={componentTreeData}
           icon={(props: any) => props.type && (
             <div style={{ margin: '16px 5px 0 -3px'}}>
@@ -531,8 +531,8 @@ export const LeftLayersContent = (props: LeftLayersContentProps) => {
           )}
           switcherIcon={(props: any) => props.expanded ? <FoldedIcon /> : <UnfoldIcon />}
           expandedKeys={expandedKeys}
-          onExpand={(keys) => setExpandedKeys(keys)}
-          titleRender={(nodeData) => getTreeNode(nodeData as NodeItem, uiCompInfos)}
+          onExpand={(keys: any) => setExpandedKeys(keys)}
+          titleRender={(nodeData: any) => getTreeNode(nodeData as NodeItem, uiCompInfos)}
         />
 
         <div style={{margin:"10px 0px"}}>

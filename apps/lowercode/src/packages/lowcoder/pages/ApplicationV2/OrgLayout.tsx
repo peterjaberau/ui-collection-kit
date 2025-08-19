@@ -12,7 +12,7 @@ import { default as AntdBreadcrumb } from "antd/es/breadcrumb";
 import { ArrowIcon } from "#lowcoder-design/index";
 import { Avatar, Button, Card, Col, Row, Space, Typography, Select, Tooltip } from "antd";
 import { useRef } from "react";
-import { LowcoderAppView } from "appView/LowcoderAppView";
+import { LowcoderAppView } from "#lowcoder/appView/LowcoderAppView";
 import CountUp from 'react-countup';
 import {
   ApplicationDocIcon,
@@ -144,7 +144,7 @@ export function OrgLayout(props: OrgLayoutLayoutProps) {
       onClick: () =>
         currentPath !== ORG_HOME_URL && history.push(ORG_HOME_URL),
     },
-    ...breadcrumb.map((b, i) => ({
+    ...breadcrumb.map((b: any, i: any) => ({
       key: i+1,
       title: b.text,
       onClick: () => currentPath !== b.path && history.push(b.path)
@@ -154,7 +154,7 @@ export function OrgLayout(props: OrgLayoutLayoutProps) {
   const user = useSelector(getUser);
   const apps = useSelector(normalAppListSelector);
   const currentOrg = useSelector(getHomeOrg);
-  const appRef = useRef();
+  const appRef = useRef(null);
   const baseURL = sdkConfig.baseURL || SERVER_HOST;
   const defaultHomePage =  currentOrg?.commonSettings.defaultHomePage;
 

@@ -3,7 +3,7 @@ import { Button, Tag, Typography, Row, Col } from 'antd';
 import { EditOutlined, CloudServerOutlined } from '@ant-design/icons';
 import { Environment } from '../types/environment.types';
 import { getEnvironmentTagColor } from '../utils/environmentUtils';
-import { trans } from 'i18n';
+import { trans } from '#lowcoder/i18n';
 
 const { Title, Text } = Typography;
 
@@ -16,9 +16,9 @@ interface EnvironmentHeaderProps {
  * Header component for environment details
  * Displays environment name, ID, type, and controls
  */
-const EnvironmentHeader: React.FC<EnvironmentHeaderProps> = ({ 
-  environment, 
-  onEditClick 
+const EnvironmentHeader: React.FC<EnvironmentHeaderProps> = ({
+  environment,
+  onEditClick
 }) => {
   return (
     <div
@@ -53,17 +53,17 @@ const EnvironmentHeader: React.FC<EnvironmentHeaderProps> = ({
                 {environment.environmentName || trans("environments.unnamedEnvironment")}
               </Title>
               <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-                <Text style={{ 
-                  color: '#8b8fa3', 
+                <Text style={{
+                  color: '#8b8fa3',
                   fontSize: '14px',
                   fontFamily: 'monospace'
                 }}>
                   {trans("environments.id")}: {environment.environmentId}
                 </Text>
-                <Tag 
+                <Tag
                   color={getEnvironmentTagColor(environment.environmentType)}
-                  style={{ 
-                    marginLeft: 0, 
+                  style={{
+                    marginLeft: 0,
                     borderRadius: '4px',
                     fontSize: '12px'
                   }}

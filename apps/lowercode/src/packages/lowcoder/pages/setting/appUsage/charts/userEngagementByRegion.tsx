@@ -129,12 +129,12 @@ const UserEngagementByRegionChart = ({ data }: Props) => {
 
   const clusters = useMemo(() => {
     if (!bounds?.ne || !bounds?.sw) return [];
-  
+
     const westLng = bounds.sw[1];
     const southLat = bounds.sw[0];
     const eastLng = bounds.ne[1];
     const northLat = bounds.ne[0];
-  
+
     return cluster.getClusters([westLng, southLat, eastLng, northLat], zoom);
   }, [cluster, bounds, zoom]);
 
@@ -160,9 +160,9 @@ const UserEngagementByRegionChart = ({ data }: Props) => {
         onBoundsChanged={handleBoundsChanged}
       >
         {clusters.map((c, i) => {
-          const [lng, lat] = c.geometry.coordinates;
+          const [lng, lat]: any = c.geometry.coordinates;
           const isCluster = !!c.properties.cluster;
-          
+
           if (isCluster) {
             const count = c.properties.count;
             const size = getClusterSize(count);
@@ -193,7 +193,7 @@ const UserEngagementByRegionChart = ({ data }: Props) => {
             />
           );
         })}
-        
+
         {tooltip && (
           <Overlay anchor={[tooltip.lat, tooltip.lng]} offset={[0, -40]}>
             <TooltipContainer>

@@ -13,8 +13,8 @@ type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
   ? I
   : never;
 
-type CommonParamType = "textInput" | "numberInput" | "select" | "keyValueInput";
-type DataSourceParamType = CommonParamType | "password" | "checkbox" | "groupTitle" | ParamType<DataSourceParamConfig>;
+export type CommonParamType = "textInput" | "numberInput" | "select" | "keyValueInput";
+export type DataSourceParamType = CommonParamType | "password" | "checkbox" | "groupTitle" | ParamType<DataSourceParamConfig>;
 type ActionParamType =
   | CommonParamType
   | "booleanInput"
@@ -140,7 +140,7 @@ interface DataSourceConfigBasicInfo {
   params: readonly DataSourceParamConfig[];
 }
 
-interface DataSourceExtraConfig {
+export interface DataSourceExtraConfig {
   data?: any;
   extraParams?: DataSourceParamConfig[];
 }

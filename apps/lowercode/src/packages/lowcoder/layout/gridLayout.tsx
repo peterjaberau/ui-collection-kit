@@ -73,7 +73,7 @@ const DELAY_HIGHER_MS = 5;
 export const FLY_START_INFO = "flyStartInfo";
 export const FLY_OVER_INFO = "flyOverInfo";
 
-const DragPlaceHolder = styled.div<{ $compType: UICompType }>`
+const DragPlaceHolder: any = styled.div<{ $compType: UICompType }>`
   height: 100%;
   background-color: ${(props) =>
     props.$compType === "module" ? ModulePrimaryColor : PrimaryColor} !important;
@@ -263,7 +263,7 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
         return extraItem;
       });
     }
-    let layout = this.getUILayout();
+    let layout: any = this.getUILayout();
     let draggingLayout = _.pick(layout, keys);
     this.props.onFlyStart?.(layout, draggingLayout);
 
@@ -321,10 +321,10 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
      */
     if (isFlyStart) {
       const keys = flyStartInfo.flyItemKeys;
-      const layout = flyStartInfo.flyStartLayout;
+      const layout: any = flyStartInfo.flyStartLayout;
       const { droppingItem } = this.props;
       const droppingKey = droppingItem?.i as string;
-      const item = layout[droppingKey];
+      const item: any = layout[droppingKey];
 
       const startOps = _.flattenDeep<LayoutOp>([
         changeItemOp(i, {
@@ -430,7 +430,7 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
     childrenMap: _.Dictionary<React.ReactElement>
   ): React.ReactElement | undefined {
     const draggingExtraLayout = draggingUtils.getData<FlyStartInfo>(FLY_START_INFO)?.flyExtraLayout;
-    const extraItem = this.props.extraLayout?.[item.i] ?? draggingExtraLayout?.[item.i];
+    const extraItem : any = this.props.extraLayout?.[item.i] ?? draggingExtraLayout?.[item.i];
     const child = item.placeholder ? (
       <DragPlaceHolder $compType={extraItem?.compType} className="react-grid-placeholder" />
     ) : (
@@ -573,7 +573,7 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
     // log.debug("layout: getFinalDraggingItem. positinParams: ", positionParams, " colWidth: ", calcGridColWidth(positionParams));
     // calculate according to the stable logic
     const calcedItems = keys.map((key) => {
-      const item = originalLayout[key];
+      const item: any = originalLayout[key];
       const sourcePosition = calcGridItemPosition(
         sourcePositionParams,
         item.x,
@@ -609,7 +609,7 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
 
     // comps will finally have a bit change in size. we should special handle this to remain their neighbor relation.
     const flyLeftAdjItems = flyStartInfo.flyLeftAdjItems;
-    const adjOKItemMap: Layout = {};
+    const adjOKItemMap: Layout | any = {};
     calcedItems.forEach((item) => {
       const x = _.max(
         flyLeftAdjItems[item.i]
@@ -672,7 +672,7 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
         flyOverInfo.startOps
       );
       const bottomY = Math.max(
-        ...Object.values(layout).map((item) => item.y + item.h),
+        ...Object.values(layout).map((item: any) => item.y + item.h),
         emptyRows ?? -Infinity
       );
       const itemsTopY = Math.min(...items.map((item) => item.y));
@@ -689,7 +689,7 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
     const flyOverInfo = draggingUtils.getData<FlyOverInfo>(FLY_OVER_INFO);
     const checkFlyStart = !!flyStartInfo && !flyOverInfo;
     if (!isFlyStart && checkFlyStart) return; // wait for the grand onDragStart, aka. the trick in the onDrag function
-    const newFlyOverInfo = this.getFlyOverInfo(startOps);
+    const newFlyOverInfo: any = (this as any).getFlyOverInfo(startOps);
     // log.debug("mayDelayOver. isFlyStart: ", isFlyStart, " checkFlyStart: ", checkFlyStart, " newFlyOverInfo: ", newFlyOverInfo);
 
     items = this.restrictHeight(items);
@@ -763,8 +763,8 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
     // the keys of all the unchanged comps with 'delayCollision' layout property
     const standingDelayKeys = _.difference(
       Object.values(originalLayout)
-        .filter((item) => item.delayCollision)
-        .map((item) => item.i),
+        .filter((item: any) => item.delayCollision)
+        .map((item: any) => item.i),
       [...items.map((item) => item.i), flyStartInfo?.flyItemI, ...movedItemKeys]
     );
     if (standingDelayKeys.some((key) => !_.isEqual(originalLayout[key], nextLayout[key]))) {
@@ -1046,7 +1046,7 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
 
     // log.debug("GridLayout render. layout: ", layout, " oriLayout: ", this.state.layout, " extraLayout: ", this.props.extraLayout);
     const layouts = Object.values(layout);
-    const maxLayoutPos = Math.max(...layouts.map(l => l.pos || 0))
+    const maxLayoutPos = Math.max(...layouts.map((l: any) => l.pos || 0))
 
     return (
       <LayoutContainer
@@ -1074,7 +1074,7 @@ class GridLayout extends React.Component<GridLayoutProps, GridLayoutState> {
           <div style={contentStyle}>
             {showGridLines && this.gridLines()}
             {mounted &&
-              layouts.map((item) => {
+              layouts.map((item: any) => {
                 const zIndex = item.pos !== undefined
                   ? (maxLayoutPos - item.pos) + 1
                   : 1;
@@ -1113,11 +1113,11 @@ const LayoutContainer = styled.div<{
   }`}
 `;
 
-const ResizeWrapper = (props: {
+const ResizeWrapper: any = (props: {
   targetRef: React.RefObject<HTMLDivElement>;
   children: JSX.Element | React.ReactNode;
   onResize: (width?: number, height?: number) => void;
-}) => {
+} | any) => {
   const { width, height } = useResizeDetector({
     targetRef: props.targetRef,
     onResize: ({ width, height }: ResizePayload) => {
@@ -1156,7 +1156,7 @@ function moveOrResize(
     newOps.push(changeItemOp(key, newItem));
   }
   const otherKeys = Object.keys(layout).filter((k) => !newSelectLayout[k]);
-  for (const newItem of Object.values(newSelectLayout)) {
+  for (const newItem of Object.values(newSelectLayout) as any) {
     if (otherKeys.some((k) => collides(newItem, layout[k]))) {
       return;
     }

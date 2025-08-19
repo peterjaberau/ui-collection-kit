@@ -8,7 +8,7 @@ import { DatasourceForm, FormSection, FormTextAreaItem } from "#lowcoder-design/
 /**
  * todo check service account
  */
-export const GoogleSheetsDatasourceForm = (props: DatasourceFormProps) => {
+export const GoogleSheetsDatasourceForm: any = (props: DatasourceFormProps) => {
   const { form, datasource }: any = props;
   const datasourceConfig = datasource?.datasourceConfig as GoogleSheetsConfig;
 

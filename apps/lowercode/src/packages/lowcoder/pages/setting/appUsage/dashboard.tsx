@@ -399,7 +399,7 @@ export function AppUsageDashboard() {
               form={form}
               layout="inline"
               onValuesChange={(changedValue) => {
-                const key = Object.keys(changedValue)[0];
+                const key: any = Object.keys(changedValue)[0];
                 if (key === "dateRange") {
                   handleDateChange(changedValue.dateRange);
                 } else if (["environmentId", "orgId", "userId", "appId", "appAuthor", "appAuthorOrgId"].includes(key)) {

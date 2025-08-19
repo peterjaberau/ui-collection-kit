@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Layers } from "#lowcoder/constants/Layers";
 import { HelpIcon, LeftHelpIcon, HelpGithubIcon, HelpDiscordIcon } from "#lowcoder-design/index";
-import { VideoIcon, ChatIcon, DocIcon, TutorialIcon, ShortcutIcon } from "assets/icons";
-import TutorialVideoPic from "assets/images/tutorialVideoThumbnail.png";
+import { VideoIcon, ChatIcon, DocIcon, TutorialIcon, ShortcutIcon } from "#lowcoder/assets/icons/index";
+import TutorialVideoPic from "#lowcoder/assets/images/tutorialVideoThumbnail.png";
 import { default as Dropdown } from "antd/es/dropdown";
 import { default as Popover } from "antd/es/popover";
 import { default as Tooltip } from "antd/es/tooltip";
@@ -166,7 +166,7 @@ const WatchVideoItem = () => {
         <VideoIcon />
         <span>{trans("help.videoText")}</span>
       </ItemWrapper>
-      <img src={TutorialVideoPic} alt="" />
+      <img src={TutorialVideoPic as any} alt="" />
     </WatchVideoItemWrapper>
   );
 };

@@ -78,7 +78,7 @@ function getLineStyle(
 ) {
   const isModule = compType === "module";
   const primaryColor = isModule ? ModulePrimaryColor : PrimaryColor;
-  const padding = getGridItemPadding(compType);
+  const padding: any = getGridItemPadding(compType);
 
   let borderColor = "transparent";
   let borderStyle = "solid";
