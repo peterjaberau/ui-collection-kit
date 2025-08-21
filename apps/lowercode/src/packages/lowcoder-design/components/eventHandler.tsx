@@ -3,7 +3,7 @@ import { BluePlusIcon } from "#lowcoder-design/icons";
 import { EllipsisTextCss, labelCss } from "./Label";
 import { LinkButton } from "./button";
 import { ReactNode } from "react";
-import { trans } from "i18n/design";
+import { trans } from "#lowcoder/i18n";
 
 const InlineEventFormWrapper = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import { default as AntdSegmented } from "antd/es/segmented";
 import { SelectProps } from "antd/es/select";
-import { GreyTextColor } from "constants/style";
+import { GreyTextColor } from "#lowcoder-design/constants/style";
 import _ from "lodash";
 import { ReactNode } from "react";
 import styled from "styled-components";
@@ -157,12 +157,12 @@ interface DropdownProps<T extends OptionsType> extends Omit<SelectProps, "placem
 
 export function Dropdown<T extends OptionsType>(props: DropdownProps<T> | any) {
   const { placement = "right" } = props;
-  const valueInfoMap = _.fromPairs(props.options.map((option) => [option.value, option]));
+  const valueInfoMap: any = _.fromPairs(props.options.map((option: any) => [option.value, option]));
 
   useEffect(() => {
     const dropdownElems = document.querySelectorAll<HTMLElement>("div.ant-dropdown ul.ant-dropdown-menu");
     for (let index = 0; index < dropdownElems.length; index++) {
-      const element = dropdownElems[index];
+      const element: any = dropdownElems[index];
       element.style.maxHeight = "300px";
       element.style.overflowY = "scroll";
       element.style.minWidth = "150px";
@@ -227,7 +227,7 @@ export function Dropdown<T extends OptionsType>(props: DropdownProps<T> | any) {
                 )
               }
             >
-              {props.options.map((item) => {
+              {props.options.map((item: any) => {
                 const { value, label, ...others } = item;
                 return (
                   <CustomSelect.Option key={value} value={value} {...others}>

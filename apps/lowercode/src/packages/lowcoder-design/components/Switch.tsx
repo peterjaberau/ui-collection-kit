@@ -1,9 +1,9 @@
 import * as React from "react";
 import { ReactNode } from "react";
 import styled, { css } from "styled-components";
-import { ReactComponent as jsIcon } from "icons/v1/icon-Js-colors.svg";
-import { ReactComponent as jsIconGray } from "icons/v1/icon-Js-Gray.svg";
-import { ToolTipLabel } from "components/toolTip";
+import { ReactComponent as jsIcon } from "#lowcoder-design/icons/v1/icon-Js-colors.svg";
+import { ReactComponent as jsIconGray } from "#lowcoder-design/icons/v1/icon-Js-Gray.svg";
+import { ToolTipLabel } from "#lowcoder-design/components/toolTip";
 
 type ControlPlacement = "bottom" | "right" | "modal";
 

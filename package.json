@@ -11,6 +11,11 @@
     "lowercode": "pnpm --filter \"./apps/lowercode\"",
     "start-lowercode": "pnpm lowercode dev",
 
+
+    "illa": "pnpm --filter \"./apps/illa\"",
+    "start-illa": "pnpm illa dev",
+
+
     "app-pro": "pnpm --filter \"./apps/app-pro\"",
     "start-app-pro": "pnpm app-pro dev",
     "demo-formily": "pnpm --filter \"./demos/demo-formily\"",
@@ -65,6 +70,7 @@
     "xstate": "^5.19.2"
   },
   "devDependencies": {
+    "vite-tsconfig-paths": "^5.1.4",
     "@storybook/addon-a11y": "^9.0.18",
     "@storybook/addon-docs": "^9.0.18",
     "@storybook/addon-themes": "^9.0.18",

@@ -1,11 +1,30 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { PointIcon, DragIcon, PencilIcon } from "#lowcoder-design/icons";
-import { labelCss } from "./Label";
+import React from "react"
+import styled, { css } from "styled-components"
+import { PointIcon, DragIcon, PencilIcon } from "#lowcoder-design/icons"
+import { labelCss } from "./Label"
+import { Icon } from "@chakra-ui/react"
+
+const StyledPointIcon = () => (
+  <Icon size="sm">
+    <PointIcon />
+  </Icon>
+)
+
+const StyledDragIcon = () => (
+  <Icon size="sm">
+    <DragIcon />
+  </Icon>
+)
+
+const StyledPencilIcon = () => (
+  <Icon size="sm">
+    <PencilIcon />
+  </Icon>
+)
 
 interface IItem {
-  $width?: number;
-  $colorChange?: number;
+  $width?: number
+  $colorChange?: number
 }
 const Item = styled.div<IItem>`
   width: ${(props) => (props.$width ? props.$width : 280)}px;
@@ -17,7 +36,7 @@ const Item = styled.div<IItem>`
   margin-right: 16px;
   margin-top: 2px;
   margin-bottom: 2px;
-`;
+`
 const IconCss = css`
   height: 16px;
   width: 16px;
@@ -25,36 +44,36 @@ const IconCss = css`
   &:hover {
     cursor: pointer;
   }
-`;
-const StyledDragIcon = styled(DragIcon)`
-  ${IconCss}
-  margin-left: 12px;
-  margin-top: 8px;
-`;
+`
+// const StyledDragIcon = styled(DragIcon)`
+//   ${IconCss}
+//   margin-left: 12px;
+//   margin-top: 8px;
+// `;
 const TextCss = css`
   ${labelCss}
   line-height: 32px;
   display: inline-block;
   vertical-align: top;
-`;
+`
 const Text = styled.span`
   ${TextCss}
   color: #333333;
-`;
+`
 interface IMenuItem {
-  label: string;
-  width?: number;
-  colorChange?: number;
+  label: string
+  width?: number
+  colorChange?: number
 }
 export const MenuItem = (props: IMenuItem) => {
-  const { label, width, colorChange } = props;
+  const { label, width, colorChange } = props
   return (
     <Item $width={width} $colorChange={colorChange}>
       <StyledDragIcon />
       <Text>{label}</Text>
     </Item>
-  );
-};
+  )
+}
 const FormContain = styled.div`
   width: 280px;
   background-color: #ffffff;
@@ -63,43 +82,43 @@ const FormContain = styled.div`
   margin-bottom: 4px;
   border-radius: 6px;
   overflow: hidden;
-`;
+`
 const FormItemContain = styled.div`
   width: 280px;
   height: 32px;
   background-color: #ffffff;
-`;
+`
 const FormText = styled.span`
   ${TextCss}
   color: #333333;
   margin-left: 12px;
-`;
+`
 const GrayText = styled.span`
   ${TextCss}
   color: #8b8fa3;
   margin-left: 8px;
-`;
-const StyledPencilIcon = styled(PencilIcon)`
-  ${IconCss}
-  margin-top: 8px;
-  float: right;
-`;
-const StyledPointIcon = styled(PointIcon)`
-  ${IconCss}
-  margin-left: 16px;
-  margin-top: 8px;
-  float: right;
-  margin-right: 16px;
-`;
+`
+// const StyledPencilIcon = styled(PencilIcon)`
+//   ${IconCss}
+//   margin-top: 8px;
+//   float: right;
+// `;
+// const StyledPointIcon = styled(PointIcon)`
+//   ${IconCss}
+//   margin-left: 16px;
+//   margin-top: 8px;
+//   float: right;
+//   margin-right: 16px;
+// `;
 interface Iformconfig {
-  title: string;
-  label: string;
+  title: string
+  label: string
 }
 interface Iform {
-  config: Array<Iformconfig>;
+  config: Array<Iformconfig>
 }
 export const FormItem = (props: Iform) => {
-  const { config } = props;
+  const { config } = props
   return (
     <FormContain>
       {config.map((item, index) => {
@@ -112,8 +131,8 @@ export const FormItem = (props: Iform) => {
               <StyledPencilIcon />
             </FormItemContain>
           </React.Fragment>
-        );
+        )
       })}
     </FormContain>
-  );
-};
+  )
+}

@@ -1,7 +1,10 @@
+'use client'
 import { default as AntdCollapse, CollapseProps } from "antd/es/collapse";
-import { ReactComponent as UnFold } from "icons/v1/icon-unfold.svg";
-import { ReactComponent as Folded } from "icons/v1/icon-folded.svg";
-import { ReactComponent as Omit } from "icons/v1/icon-omit.svg";
+import { HiChevronRight as UnFold, HiChevronDown as Folded } from "react-icons/hi";
+import { Icon } from "@chakra-ui/react";
+
+
+import { ReactComponent as Omit } from "../icons/v1/icon-omit.svg";
 import styled, { css } from "styled-components";
 import React, { ReactNode } from "react";
 
@@ -46,17 +49,17 @@ const Container = styled.div<{ $optColor?: boolean; $simple?: boolean }>`
   }
 `;
 
-const IconCss = css`
-  height: 23px;
-  width: 12px;
-  cursor: pointer;
-`;
-const UnFoldIcon = styled(UnFold)`
-  ${IconCss}
-`;
-const FoldedIcon = styled(Folded)`
-  ${IconCss}
-`;
+const FoldedIcon = () => (
+  <Icon size='sm'>
+    <Folded />
+  </Icon>
+)
+
+const UnFoldIcon = () => (
+  <Icon size='sm'>
+    <UnFold />
+  </Icon>
+)
 
 interface IpanelConfig {
   title: JSX.Element | ReactNode | string;
@@ -88,7 +91,7 @@ const getExpandIcon = ({ isActive }: any) => {
  * - when importing them with prefix "Collapse" in label, shorten the code with "as"
  * - commonly used colors: #AF26FF #009D51 #FF9816 #FF3A31 #8B8FA3
  */
-export const Collapse = (props: Iprops) => {
+export const Collapse = (props: Iprops | any) => {
   const { config, onChange } = props;
   // const [Color, setColor] = useState("");
   // const handlechange = (e: string | string[]) => {
@@ -96,7 +99,7 @@ export const Collapse = (props: Iprops) => {
   //   setColor(keys.length ? "#F2F7FC" : "");
   //   onChange && onChange(keys);
   // };
-  const collapseItems:CollapseProps['items'] = config.map((item) => ({
+  const collapseItems:CollapseProps['items'] = config.map((item: any) => ({
       key: item.key,
       label: item.title,
       children: item.data,

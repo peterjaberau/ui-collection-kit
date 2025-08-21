@@ -1,6 +1,6 @@
 import { colord, extend } from "colord";
 import namesPlugin from "colord/plugins/names";
-import { generate } from "@ant-design/colors/es";
+import { generate } from "@ant-design/colors/es"
 
 extend([namesPlugin]);
 
@@ -18,7 +18,7 @@ export const gradientColors = [
   "linear-gradient(90deg, #fa709a 0%, #fee140 100%)",
   "linear-gradient(45deg, #d53369 0%, #daae51 100%)",
   "linear-gradient(0deg, #f43b47 0%, #453a94 100%)",
-  
+
   "linear-gradient(135deg, #00d2ff 0%, #3a47d5 100%)",
   "linear-gradient(0deg, #f8ff00 0%, #3ad59f 100%)",
   "linear-gradient(45deg, #fcff9e 0%, #c67700 100%)",
@@ -66,7 +66,7 @@ const isValidGradient = (color?: string) => {
 
   const linearGradientRegex = /^linear-gradient\((\d+deg|to\s+(top|right|bottom|left)(\s+(top|right|bottom|left))?)\s*,\s*((#[0-9a-fA-F]{3,6}|rgba?\(\d+,\s*\d+,\s*\d+(,\s*\d+(\.\d+)?)?\)|[a-zA-Z]+)(\s+\d+%?)?,?\s*)+\)$/i;
   const radialGradientRegex = /^radial-gradient\(\s*(circle|ellipse)?\s*,\s*((#[0-9a-fA-F]{3,6}|rgba?\(\d+,\s*\d+,\s*\d+(,\s*\d+(\.\d+)?)?\)|[a-zA-Z]+)(\s+\d+%?)?,?\s*)+\)$/i;
-  
+
   return linearGradientRegex.test(color) || radialGradientRegex.test(color);
 }
 

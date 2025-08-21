@@ -11,7 +11,7 @@ export class SimpleNode<T> extends AbstractNode<T> {
   constructor(readonly value: T) {
     super();
   }
-  @memoized()
+  // @memoized()
   override filterNodes(exposingNodes: Record<string, Node<unknown>>) {
     return evalPerfUtil.perf(this, "filterNodes", () => {
       return new Map<Node<unknown>, Set<string>>();

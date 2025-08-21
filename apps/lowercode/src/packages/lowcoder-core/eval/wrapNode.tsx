@@ -38,7 +38,7 @@ export class WrapNode<T> extends AbstractNode<T> {
     };
   }
 
-  @memoized()
+  // @memoized()
   override filterNodes(exposingNodes: Record<string, Node<unknown>>) {
     return this.delegate.filterNodes(this.wrap(exposingNodes, {}));
   }
@@ -47,7 +47,7 @@ export class WrapNode<T> extends AbstractNode<T> {
     return this.delegate.evaluate(this.wrap(exposingNodes, methods), this.moduleExposingMethods);
   }
 
-  @memoized()
+  // @memoized()
   override fetchInfo(exposingNodes: Record<string, Node<unknown>>) {
     return this.delegate.fetchInfo(this.wrap(exposingNodes, {}));
   }

@@ -1,7 +1,15 @@
+import React, { CSSProperties } from "react";
 import styled from "styled-components";
 import { default as Input, InputProps } from "antd/es/input";
-import { ReactComponent as Icon } from "icons/v1/icon-Search.svg";
-import React, { CSSProperties } from "react";
+import { HiSearch } from "react-icons/hi"
+import { Icon } from "@chakra-ui/react";
+
+const SearchIcon = () => (
+  <Icon size='sm'>
+    <HiSearch />
+  </Icon>
+)
+
 
 const SearchInput = styled(Input)`
   margin: 0;
@@ -52,10 +60,12 @@ const SearchDiv = styled.div<{ error?: boolean }>`
     border-color: #8b8fa3;
   }
 `;
-const SearchIcon = styled(Icon)`
-  color: #9195a3;
-  margin: 6px 0 6px 8px;
-`;
+// const SearchIcon = styled(Icon)`
+//   color: #9195a3;
+//   margin: 6px 0 6px 8px;
+// `;
+
+
 
 interface ISearch {
   style?: CSSProperties;

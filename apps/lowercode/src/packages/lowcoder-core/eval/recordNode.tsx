@@ -19,7 +19,7 @@ export class RecordNode<T extends Record<string, Node<unknown>>> extends Abstrac
     super();
   }
 
-  @memoized()
+  // @memoized()
   override filterNodes(exposingNodes: Record<string, Node<unknown>>) {
     return evalPerfUtil.perf(this, `filterNodes`, () => {
       const result = new Map<Node<unknown>, Set<string>>();
@@ -57,7 +57,7 @@ export class RecordNode<T extends Record<string, Node<unknown>>> extends Abstrac
     return ret;
   }
 
-  @memoized()
+  // @memoized()
   override fetchInfo(exposingNodes: Record<string, Node<unknown>>, options?: FetchInfoOptions) {
     let isFetching = false;
     let ready = true;

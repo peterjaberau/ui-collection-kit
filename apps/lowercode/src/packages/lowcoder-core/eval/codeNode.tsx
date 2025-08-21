@@ -51,7 +51,7 @@ export class CodeNode extends AbstractNode<ValueAndMsg<unknown>> {
     return this.unevaledValue;
   }
 
-  @memoized()
+  // @memoized()
   override filterNodes(exposingNodes: Record<string, Node<unknown>>) {
     if (!!this.evalCache.inFilterNodes) {
       return new Map<Node<unknown>, Set<string>>();
@@ -89,7 +89,7 @@ export class CodeNode extends AbstractNode<ValueAndMsg<unknown>> {
   }
 
   // only includes direct depends, exlucdes depends of dependencies
-  @memoized()
+  // @memoized()
   private filterDirectDepends(exposingNodes: Record<string, Node<unknown>>) {
     return filterDepends(this.convertedValue(), exposingNodes);
   }
@@ -145,7 +145,7 @@ export class CodeNode extends AbstractNode<ValueAndMsg<unknown>> {
     return ret;
   }
 
-  @memoized()
+  // @memoized()
   override fetchInfo(
     exposingNodes: Record<string, Node<unknown>>,
     options?: FetchInfoOptions

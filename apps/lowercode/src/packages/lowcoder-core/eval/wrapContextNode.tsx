@@ -10,7 +10,7 @@ class WrapContextNode<T> extends AbstractNode<WrapContextFn<T>> {
   constructor(readonly child: Node<T>) {
     super()
   }
-  @memoized()
+  // @memoized()
   override filterNodes(exposingNodes: Record<string, Node<unknown>>) {
     return this.child.filterNodes(exposingNodes)
   }

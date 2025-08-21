@@ -1,9 +1,9 @@
 import { default as AntdInput, InputRef } from "antd/es/input";
-import { ReactComponent as MustFillStar } from "icons/v1/icon-must-fill-star.svg";
-import { trans } from "i18n/design";
+import { ReactComponent as MustFillStar } from "#lowcoder-design/icons/v1/icon-must-fill-star.svg";
+import { trans } from "#lowcoder/i18n";
 import { CSSProperties, Ref, useEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
-import { checkOtpValid, checkPhoneValid } from "util/stringUtils";
+import { checkOtpValid, checkPhoneValid } from "#lowcoder-design/util/stringUtils";
 import { CustomSelect } from "./customSelect";
 import { CommonErrorLabel, CommonTextLabel } from "./Label";
 

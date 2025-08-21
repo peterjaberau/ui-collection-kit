@@ -88,7 +88,7 @@ const childrenMap: any = {
   loadModuleInDomWhenHide: withDefault(BoolControl, true),
 };
 
-type DataType = ToDataType<ToInstanceType<typeof childrenMap>>;
+export type DataType = ToDataType<ToInstanceType<typeof childrenMap>>;
 
 const ModuleCompBase = new UICompBuilder(childrenMap, () => null)
   .setPropertyViewFn(() => null)

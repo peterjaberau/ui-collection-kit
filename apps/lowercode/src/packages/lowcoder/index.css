@@ -1,20 +1,9 @@
-@import "antd/dist/reset.css";
-// @import "antd/dist/antd.less";
-@import "react-grid-layout/css/styles.css";
-@import "simplebar-react/dist/simplebar.min.css";
-@import "#lowcoder-design/index.less";
-
-// fixme: move into comps
-@import "github-markdown-css/github-markdown-light.css";
-@import "react-quill-new/dist/quill.snow.css";
-@import "tui-image-editor/dist/tui-image-editor.css";
-@import "tui-color-picker/dist/tui-color-picker.min.css";
 
 .cssTransforms {
   transition: none !important;
 }
 
-.lowcoder-app-root, // used for app run in shadow dom, don't delete!
+.lowcoder-app-root,
 body {
   margin: 0;
   padding: 0;
@@ -71,7 +60,7 @@ code {
 /* message border radius */
 .ant-message .ant-message-notice .ant-message-notice-content {
   border-radius: 6px;
-  max-width: calc(~'100vw - 700px');
+  max-width: calc(100vw - 700px);
   word-break: break-word;
   white-space: pre-line;
   text-align: left;

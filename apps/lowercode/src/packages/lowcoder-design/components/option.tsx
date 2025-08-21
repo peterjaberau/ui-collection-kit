@@ -8,11 +8,11 @@ import React, { useState } from "react";
 import { CSS } from "@dnd-kit/utilities";
 import { SortableContext, useSortable, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { ConstructorToComp, MultiCompConstructor } from "#lowcoder-core/index";
-import { ReactComponent as WarnIcon } from "icons/v1/icon-warning-white.svg";
+import { ReactComponent as WarnIcon } from "#lowcoder-design/icons/v1/icon-warning-white.svg";
 import { DndContext } from "@dnd-kit/core";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
-import { ActiveTextColor, GreyTextColor } from "constants/style";
-import { trans } from "i18n/design";
+import { ActiveTextColor, GreyTextColor } from "#lowcoder-design/constants/style";
+import { trans } from "#lowcoder/i18n";
 
 const OptionDiv = styled.div`
   width: 100%;
@@ -208,9 +208,9 @@ function Option<T extends ConstructorToComp<MultiCompConstructor>>(props: {
   itemExtra?: (comp: T) => React.ReactNode;
   scrollable?: boolean;
 }) {
-  const { items, uniqVal, headerItem, optionToolbar, itemExtra } = props;
+  const { items, uniqVal, headerItem, optionToolbar, itemExtra } : any = props;
   const itemsDistinctValCount = uniqVal
-    ? items.reduce((prev, cur) => {
+    ? items.reduce((prev: any, cur: any) => {
         const val = uniqVal(cur);
         return prev.set(val, prev.get(val) ? prev.get(val)! + 1 : 1);
         // stat empyt string with Map
@@ -250,9 +250,9 @@ function Option<T extends ConstructorToComp<MultiCompConstructor>>(props: {
           <DndContext modifiers={[restrictToVerticalAxis]} onDragEnd={handleDragEnd}>
             <SortableContext
               strategy={verticalListSortingStrategy}
-              items={items.map((item, index) => props.dataIndex(item))}
+              items={items.map((item: any, index: any) => props.dataIndex(item))}
             >
-              {items.map((item, index: number) => {
+              {items.map((item: any, index: number | any) => {
                 const dataIndex = props.dataIndex(item);
                 const value = uniqVal && uniqVal(item);
                 const errorMsg =

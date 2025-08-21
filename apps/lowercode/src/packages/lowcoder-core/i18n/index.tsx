@@ -1,3 +1,4 @@
+'use client';
 import * as localeData from "./locales";
 import IntlMessageFormat from "intl-messageformat";
 import log from "loglevel";
@@ -11,7 +12,10 @@ const defaultLocale = "en";
 let locales = [defaultLocale];
 
 // Falk - Adapted the central translator to check if a localStorage key is existing.
-const uiLanguage = localStorage.getItem('lowcoder_uiLanguage');
+let uiLanguage: string | null = null;
+if (typeof window !== "undefined" && window.localStorage) {
+  uiLanguage = window.localStorage.getItem('lowcoder_uiLanguage');
+}
 if (globalThis.navigator) {
   if (uiLanguage) {
     locales = [uiLanguage];

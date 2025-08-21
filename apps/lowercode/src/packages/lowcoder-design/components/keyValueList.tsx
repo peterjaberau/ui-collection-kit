@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { ReactComponent as Bin } from "icons/v1/icon-recycle-bin.svg";
+import { ReactComponent as Bin } from "#lowcoder-design/icons/v1/icon-recycle-bin.svg";
 import { TacoButton } from "./button";
 import { ReactNode } from "react";
 import { BluePlusIcon } from "#lowcoder-design/icons";
-import { trans } from "i18n/design";
+import { trans } from "#lowcoder/i18n";
 import { BranchDiv } from "./Trees";
 
 const KeyValueListItem = styled.div`

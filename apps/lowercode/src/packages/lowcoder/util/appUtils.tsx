@@ -1,5 +1,7 @@
 import { KeyValue } from "../types/common";
-import { matchPath } from "react-router";
+import { useAppPathMatch } from "#lowcoder/hooks/useAppPathMatch"
+import { useParams } from "next/navigation";
+// import { matchPath } from "react-router";
 import { AppPathParams } from "../constants/applicationConstants";
 import { APP_EDITOR_URL, APPLICATION_VIEW_URL } from "../constants/routesURL";
 import history from "./history";
@@ -30,10 +32,12 @@ export function openApp(props: {
   applicationId: string;
   queryParams?: string;
   hashParams?: string;
-  newTab?: boolean;
 }) {
-  console.log(props.queryParams)
-  const m = matchPath<AppPathParams>(window.location.pathname, APP_EDITOR_URL);
+
+  // const m = useAppPathMatch(APP_EDITOR_URL);
+  // const m: any = useParams();
+
+  const m: any = matchPath<AppPathParams>(window.location.pathname, APP_EDITOR_URL);
   if (!m || !props.applicationId) {
     return;
   }

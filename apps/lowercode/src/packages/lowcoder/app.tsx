@@ -1,3 +1,5 @@
+import dynamic from 'next/dynamic';
+
 import { Provider as ChakraProvider } from "./provider"
 import { default as App } from "antd/es/app"
 import { default as ConfigProvider } from "antd/es/config-provider"
@@ -66,16 +68,17 @@ import { SimpleSubscriptionContextProvider } from "./util/context/SimpleSubscrip
 import { getBrandingSetting } from "./redux/selectors/enterpriseSelectors"
 import { fetchSubscriptionsAction } from "./redux/reduxActions/subscriptionActions"
 
-const LazyUserAuthComp = React.lazy(() => import("#lowcoder/pages/userAuth/index"))
-const LazyInviteLanding = React.lazy(() => import("#lowcoder/pages/common/inviteLanding"))
-const LazyComponentDoc = React.lazy(() => import("#lowcoder/pages/ComponentDoc/index"))
-const LazyComponentPlayground = React.lazy(() => import("#lowcoder/pages/ComponentPlayground/index"))
-const LazyAppEditor = React.lazy(() => import("#lowcoder/pages/editor/AppEditor"))
-const LazyPublicAppEditor = React.lazy(() => import("#lowcoder/pages/editor/AppEditorPublic"))
-const LazyAppFromTemplate = React.lazy(() => import("#lowcoder/pages/ApplicationV2/AppFromTemplate"))
-const LazyApplicationHome = React.lazy(() => import("#lowcoder/pages/ApplicationV2/index"))
-const LazyDebugComp = React.lazy(() => import("./debug"))
-const LazyDebugNewComp = React.lazy(() => import("./debugNew"))
+const LazyUserAuthComp = dynamic(() => import("#lowcoder/pages/userAuth/index"));
+const LazyInviteLanding = dynamic(() => import("#lowcoder/pages/common/inviteLanding"));
+const LazyComponentDoc = dynamic(() => import("#lowcoder/pages/ComponentDoc/index"));
+const LazyComponentPlayground = dynamic(() => import("#lowcoder/pages/ComponentPlayground/index"));
+const LazyAppEditor = dynamic(() => import("#lowcoder/pages/editor/AppEditor"));
+const LazyPublicAppEditor = dynamic(() => import("#lowcoder/pages/editor/AppEditorPublic"));
+const LazyAppFromTemplate = dynamic(() => import("#lowcoder/pages/ApplicationV2/AppFromTemplate"));
+const LazyApplicationHome = dynamic(() => import("#lowcoder/pages/ApplicationV2/index"));
+const LazyDebugComp = dynamic(() => import("./debug"));
+const LazyDebugNewComp = dynamic(() => import("./debugNew"));
+
 
 const Wrapper = React.memo((props: { children: React.ReactNode; language: string; fontFamily?: string }) => {
   const deploymentId = useSelector(getDeploymentId)

@@ -1,10 +1,13 @@
 import type { StorybookConfig } from "@storybook/react-vite"
 import { mergeConfig } from "vite"
+import tsconfigPaths from "vite-tsconfig-paths"
+import path from "path";
 
 const config: StorybookConfig = {
   stories: [
     "../packages/ui-kit/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../apps/stories/src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../apps/illa/src/packages/design/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../demos/demo-formily/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../demos/demo-designer/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
@@ -30,6 +33,16 @@ const config: StorybookConfig = {
   viteFinal: async (config, { configType }) => {
     return mergeConfig(config, {
       optimizeDeps: {
+        plugins: [
+          tsconfigPaths({
+            projects: [
+              path.resolve(__dirname, "../apps/illa/tsconfig.json"),
+              "apps/illa/tsconfig.json"
+            ],
+            loose: true
+          })
+
+        ],
         include: [
           "@emotion/react",
           "@emotion/styled",

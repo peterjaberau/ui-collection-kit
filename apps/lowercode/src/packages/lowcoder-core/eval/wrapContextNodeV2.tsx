@@ -10,7 +10,7 @@ export class WrapContextNodeV2<T> extends AbstractNode<T> {
   constructor(readonly child: Node<T>, readonly paramNodes: Record<string, Node<unknown>>) {
     super();
   }
-  @memoized()
+  // @memoized()
   override filterNodes(exposingNodes: Record<string, Node<unknown>>) {
     return this.child.filterNodes(exposingNodes);
   }
@@ -26,7 +26,7 @@ export class WrapContextNodeV2<T> extends AbstractNode<T> {
   override fetchInfo(exposingNodes: Record<string, Node<unknown>>) {
     return this.child.fetchInfo(this.wrap(exposingNodes));
   }
-  @memoized()
+  // @memoized()
   private wrap(exposingNodes: Record<string, Node<unknown>>) {
     return { ...exposingNodes, ...this.paramNodes };
   }

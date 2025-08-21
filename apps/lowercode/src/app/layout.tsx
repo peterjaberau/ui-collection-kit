@@ -1,26 +1,21 @@
-import { Provider as ChakraProvider } from './provider';
-import { Suspense } from 'react';
-
+import { Provider as ChakraProvider } from "./provider"
+import { Suspense } from "react"
+import { Bootstrap } from "#lowcoder/bootstrap"
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html
-      lang='en'
-      suppressHydrationWarning
-    >
-      <body
-        suppressHydrationWarning
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <Suspense>
-          <ChakraProvider>
-            {children}
-          </ChakraProvider>
+          <Bootstrap>
+            <ChakraProvider>{children}</ChakraProvider>
+          </Bootstrap>
         </Suspense>
       </body>
     </html>
-  );
+  )
 }

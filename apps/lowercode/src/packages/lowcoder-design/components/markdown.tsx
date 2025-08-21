@@ -4,7 +4,7 @@ import { lazy, Suspense, memo, useMemo } from "react";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
-import type { Options as ReactMarkdownOptions, Components } from "react-markdown/lib";
+import type { Options as ReactMarkdownOptions, Components } from "react-markdown";
 import type { Pluggable } from "unified";
 
 const ReactMarkdown = lazy(() => import('react-markdown'));

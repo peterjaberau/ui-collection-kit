@@ -9,13 +9,13 @@ import "dayjs/locale/zh-cn";
 
 export function initApp() {
   dayjs.locale(getDayJSLocale());
-  const logLevel = getEnvLogLevel();
-  log.setLevel(logLevel);
+  // const logLevel = getEnvLogLevel();
+  // log.setLevel(logLevel);
 }
 
 function getEnvLogLevel(): LogLevelDesc {
-  if (REACT_APP_LOG_LEVEL) {
-    return REACT_APP_LOG_LEVEL as LogLevelDesc;
+  if (process.env.REACT_APP_LOG_LEVEL) {
+    return process.env.REACT_APP_LOG_LEVEL as LogLevelDesc;
   }
   return "error";
 }
@@ -33,9 +33,11 @@ export const isBase64String = (data: any) => {
 };
 
 // minimum transparant base64 image
-export const TransparentImg = new Image(0, 0);
-TransparentImg.src =
-  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+// export const TransparentImg = new Image(0, 0);
+// TransparentImg.src =
+//   "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+export const TransparentImg = null;
 
 export function runScriptInHost(code: string) {
   const script = document.createElement("script");

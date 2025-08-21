@@ -1,14 +1,14 @@
 import { ButtonProps } from "antd/es/button";
 import { default as AntdModal, ModalFuncProps, ModalProps as AntdModalProps } from "antd/es/modal";
-import { ReactComponent as PackUpIcon } from "icons/v1/icon-Pack-up.svg";
+import { ReactComponent as PackUpIcon } from "#lowcoder-design/icons/v1/icon-Pack-up.svg";
 import React, { ReactNode, useRef, useState } from "react";
 import styled from "styled-components";
-import { TacoButtonType, TacoButton } from "components/button";
+import { TacoButtonType, TacoButton } from "#lowcoder-design/components/button";
 import Draggable from "react-draggable";
-import { DarkActiveTextColor, GreyTextColor } from "constants/style";
+import { DarkActiveTextColor, GreyTextColor } from "#lowcoder-design/constants/style";
 import { CloseIcon, ErrorIcon, SuccessIcon, WarningIcon, WarningWhiteIcon } from "#lowcoder-design/icons";
-import { trans } from "i18n/design";
-import { modalInstance } from "components/GlobalInstances";
+import { trans } from "#lowcoder/i18n";
+import { modalInstance } from "#lowcoder-design/components/GlobalInstances";
 
 type ModalWrapperProps = {
   $width?: string | number;

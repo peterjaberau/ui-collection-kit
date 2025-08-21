@@ -2,8 +2,8 @@ import { SuspensionBox } from "./SuspensionBox";
 import { default as Popover, PopoverProps } from "antd/es/popover";
 import { Children, cloneElement, MouseEvent, ReactNode, useState } from "react";
 import styled from "styled-components";
-import { ActiveTextColor, GreyTextColor } from "constants/style";
-import { trans } from "i18n/design";
+import { ActiveTextColor, GreyTextColor } from "#lowcoder-design/constants/style";
+import { trans } from "#lowcoder/i18n";
 import { PointIcon } from "#lowcoder-design/icons";
 
 const Wedge = styled.div`

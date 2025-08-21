@@ -167,7 +167,7 @@ export abstract class MultiBaseComp<
             [cacheKey]: value,
             ...extraFields,
           },
-          { keepCacheKeys: ["node"] }
+          { keepCacheKeys: ["_nodeCache"] }
         );
       }
       case CompActionTypes.CHANGE_VALUE: {
@@ -243,7 +243,7 @@ export abstract class MultiBaseComp<
     const newChildren = _.mapValues(this.children, (comp, childName) => {
       return comp.changeDispatch(wrapDispatch(dispatch, childName));
     });
-    return super.changeDispatch(dispatch).setChildren(newChildren, { keepCacheKeys: ["node"] });
+    return super.changeDispatch(dispatch).setChildren(newChildren, { keepCacheKeys: ["_nodeCache"] });
   }
 
   protected ignoreChildDefaultValue() {

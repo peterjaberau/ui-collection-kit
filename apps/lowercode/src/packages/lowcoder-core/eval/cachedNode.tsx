@@ -10,33 +10,30 @@ interface CachedValue<T> {
 }
 
 export class CachedNode<T> extends AbstractNode<CachedValue<T>> {
-  type: string = "cached";
-  child: AbstractNode<T>;
+  type: string = "cached"
+  child: AbstractNode<T>
   constructor(child: AbstractNode<T>) {
-    super();
-    this.child = withEvalCache(child);
+    super()
+    this.child = withEvalCache(child)
   }
-  @memoized()
+  // @memoized()
   override filterNodes(exposingNodes: Record<string, Node<unknown>>) {
-    return this.child.filterNodes(exposingNodes);
+    return this.child.filterNodes(exposingNodes)
   }
-  override justEval(
-    exposingNodes: Record<string, Node<unknown>>,
-    methods?: EvalMethods
-  ): CachedValue<T> {
-    const isCached = this.child.isHitEvalCache(exposingNodes); // isCached must be set before evaluate() call
-    const value = this.child.evaluate(exposingNodes, methods);
-    return { value, isCached };
+  override justEval(exposingNodes: Record<string, Node<unknown>>, methods?: EvalMethods): CachedValue<T> {
+    const isCached = this.child.isHitEvalCache(exposingNodes) // isCached must be set before evaluate() call
+    const value = this.child.evaluate(exposingNodes, methods)
+    return { value, isCached }
   }
 
   override getChildren(): Node<unknown>[] {
-    return [this.child];
+    return [this.child]
   }
   override dependValues(): Record<string, unknown> {
-    return this.child.dependValues();
+    return this.child.dependValues()
   }
   override fetchInfo(exposingNodes: Record<string, Node<unknown>>) {
-    return this.child.fetchInfo(exposingNodes);
+    return this.child.fetchInfo(exposingNodes)
   }
 }
 

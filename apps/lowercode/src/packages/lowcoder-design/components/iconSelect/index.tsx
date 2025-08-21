@@ -2,10 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IconDefinition } from "@fortawesome/free-regular-svg-icons";
 // import type { IconDefinition as IconDefinitionBrands } from "@fortawesome/free-brands-svg-icons";
 import { default as Popover } from "antd/lib/popover";
-import type { ActionType } from "@rc-component/trigger/lib/interface";
-import { TacoInput } from "components/tacoInput";
-import { Tooltip } from "components/toolTip";
-import { trans } from "i18n/design";
+import type { ActionType } from "@rc-component/trigger/lib/interface"
+import { TacoInput } from "#lowcoder-design/components/tacoInput";
+import { Tooltip } from "#lowcoder-design/components/toolTip";
+import { trans } from "#lowcoder/i18n";
 import { upperFirst, sortBy } from "lodash";
 import {
   ReactNode,
@@ -20,7 +20,7 @@ import Draggable from "react-draggable";
 import { default as List, type ListRowProps } from "react-virtualized/dist/es/List";
 import styled from "styled-components";
 import { CloseIcon, SearchIcon } from "#lowcoder-design/icons";
-import { ANTDICON } from "icons/antIcon";
+import { ANTDICON } from "#lowcoder-design/icons/antIcon";
 
 const PopupContainer = styled.div`
   width: 580px;
@@ -139,7 +139,7 @@ const IconKeyDisplay = styled.div`
 
 class Icon {
   readonly title: string;
-  constructor(readonly def: IconDefinition | any, readonly names: string[]) {
+  constructor(readonly def: IconDefinition | any, readonly names: string[] | any) {
     if (def?.iconName) {
       this.title = def.iconName.split("-").map(upperFirst).join(" ");
     } else {
@@ -171,7 +171,7 @@ async function getAllIcons() {
     import("@fortawesome/free-solid-svg-icons"),
     // import("@fontawesome/free-brands-svg-icons"),
   ]);
-  const ret: Record<string, Icon> = {};
+  const ret: Record<string, Icon> | any = {};
   for (const [type, pack] of Object.entries({ solid: fas, regular: far })) {
     const list = Object.entries(pack);
     for (const [k, def] of list) {
@@ -240,8 +240,8 @@ function search(
       if (IconType === "OnlyAntd" && !key.startsWith("antd/")) return false;
       if (IconType === "default" && key.startsWith("antd/")) return false;
       let text = icon.names
-        .flatMap((name) => [name, searchKeywords?.[name]])
-        .filter((t) => t)
+        .flatMap((name: any) => [name, searchKeywords?.[name]])
+        .filter((t: any) => t)
         .join(" ");
       text = (icon.title + " " + text).toLowerCase();
       return tokens.every((t) => text.includes(t));

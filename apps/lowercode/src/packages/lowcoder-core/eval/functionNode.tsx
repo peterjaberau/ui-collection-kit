@@ -13,7 +13,7 @@ export class FunctionNode<T, OutputType> extends AbstractNode<OutputType> {
     super();
   }
 
-  @memoized()
+  // @memoized()
   override filterNodes(exposingNodes: Record<string, Node<unknown>>) {
     return evalPerfUtil.perf(this, "filterNodes", () => {
       return this.child.filterNodes(exposingNodes);
@@ -35,7 +35,7 @@ export class FunctionNode<T, OutputType> extends AbstractNode<OutputType> {
     return this.child.dependValues();
   }
 
-  @memoized()
+  // @memoized()
   override fetchInfo(exposingNodes: Record<string, Node<unknown>>, options?: FetchInfoOptions) {
     return this.child.fetchInfo(exposingNodes, options);
   }

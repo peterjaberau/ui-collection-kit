@@ -1,4 +1,4 @@
-import { DEFAULT_IMG_URL } from "util/stringUtils";
+import { DEFAULT_IMG_URL } from "#lowcoder-design/util/stringUtils";
 import { CSSProperties, RefObject } from "react";
 import styled, { css } from "styled-components";
 

@@ -1,7 +1,7 @@
-import { trans } from "i18n/design";
+import { trans } from "#lowcoder/i18n";
 import { ReactNode, useMemo } from "react";
 import styled from "styled-components";
-import { ReactComponent as ContainerDrag } from "icons/v1/icon-container-drag.svg";
+import { ReactComponent as ContainerDrag } from "#lowcoder-design/icons/v1/icon-container-drag.svg";
 import React from "react";
 
 type ContainerPlaceholderProps = {

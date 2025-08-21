@@ -10,6 +10,29 @@ const nextConfig = {
     optimizePackageImports: ["@chakra-ui/react", "@ark-ui/react"],
     externalDir: true,
   },
+
+  compiler: {
+    styledComponents: true
+  },
+
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              icon: true,
+            },
+          },
+        ],
+        as: '*.js',
+      },
+
+
+    },
+  },
+
 }
 
 export default nextConfig

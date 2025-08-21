@@ -3,7 +3,7 @@ import { default as Alert } from "antd/es/alert";
 import { ReactNode } from "react";
 import { AlertProps } from "antd/es/alert";
 import { ToolTipLabel } from "./toolTip";
-import { DocLink } from "components/ExternalLink";
+import { DocLink } from "#lowcoder-design/components/ExternalLink";
 
 export const QueryPropertyViewWrapper = styled.div`
   display: flex;

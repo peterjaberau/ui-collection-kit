@@ -19,7 +19,7 @@ const preview: Preview = {
     options: {
       storySort: {
         method: "alphabetical",
-        order: ["Formily", "Chakra"],
+        order: ["Illa", "Formily", "Chakra"],
       },
     },
     layout: "padded",

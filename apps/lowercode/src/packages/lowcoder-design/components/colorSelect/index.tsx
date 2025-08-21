@@ -9,7 +9,7 @@ import {
   isValidColor,
   isValidGradient,
   gradientColors,
-} from "components/colorSelect/colorUtils";
+} from "#lowcoder-design/components/colorSelect/colorUtils";
 import styled, { css } from "styled-components";
 import { useCallback, useRef, useState, useEffect, useMemo, } from "react";
 import { throttle } from "lodash";
@@ -55,7 +55,7 @@ export const ColorSelect = (props: ColorSelectProps) => {
       throttleChange(selectedColor);
     }
   }, [selectedColor])
-  
+
   return (
     <Popover
       trigger={trigger}

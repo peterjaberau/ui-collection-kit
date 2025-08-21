@@ -1,4 +1,4 @@
-import { trans } from "i18n/design";
+import { trans } from "#lowcoder/i18n";
 import styled from "styled-components";
 import { BigButtonStyle } from "./button";
 

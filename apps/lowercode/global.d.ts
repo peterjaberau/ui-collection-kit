@@ -1,5 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as React from "react"
+interface Window {
+  customDomain?: string
+}
 
 declare module "react" {
   interface CSSProperties {

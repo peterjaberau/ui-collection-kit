@@ -2,10 +2,10 @@ import { default as Button } from "antd/es/button";
 import { default as AntdTooltip, TooltipProps } from "antd/es/tooltip";
 import { CSSProperties, ReactNode } from "react";
 import styled, { css } from "styled-components";
-import { labelCss } from "components/Label";
-import { ReactComponent as CloseIcon } from "icons/v1/icon-close.svg";
+import { labelCss } from "#lowcoder-design/components/Label";
+import { ReactComponent as CloseIcon } from "#lowcoder-design/icons/v1/icon-close.svg";
 import { TooltipRenderProps } from "react-joyride";
-import { trans } from "i18n/design";
+import { trans } from "#lowcoder/i18n";
 
 const overlayInnerCss: CSSProperties = {
   borderRadius: "4px",
