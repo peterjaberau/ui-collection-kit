@@ -1,4 +1,4 @@
-import { GCS_OBJECT_TYPE } from "@illa-public/public-types"
+import { GCS_OBJECT_TYPE } from "@/public/public-types"
 
 export const IMAGE_FILE_TYPE_RULES = ["image/"]
 export const EXCEL_FILE_TYPE_RULES = [

@@ -1,1 +1,0 @@
-export { ColumnLayoutComp } from "./columnLayout";

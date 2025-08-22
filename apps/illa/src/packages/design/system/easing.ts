@@ -55,7 +55,7 @@ const bounceIn: Easing = (t) => 1 - bounceOut(1 - t)
 const bounceInOut: Easing = (t) =>
   t < 0.5 ? bounceIn(t * 2) * 0.5 : bounceOut(t * 2 - 1) * 0.5 + 0.5
 
-export const easingMethod: EasingMethod | any = {
+export const easingMethod: EasingMethod = {
   linear,
 
   quadIn,

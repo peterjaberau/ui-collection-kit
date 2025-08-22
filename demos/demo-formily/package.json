@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+
     "shiki": "^3.9.1",
     "@chakra-ui/react": "^3.24.0",
     "@ark-ui/react": "^5.18.3",

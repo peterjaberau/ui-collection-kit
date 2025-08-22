@@ -1,1 +1,0 @@
-export { TableComp } from "./tableComp";

@@ -1,3 +1,4 @@
+// thx arco.design
 import React, { useState, useEffect, useRef } from "react"
 import { isUndefined } from "./is"
 import { usePrevious } from "./use-previous"
@@ -6,7 +7,7 @@ export function useMergeValue<T>(
   defaultStateValue: T,
   props?: {
     defaultValue?: T
-    value?: T
+    value?: any
   },
 ): [T, React.Dispatch<React.SetStateAction<T>>, T] {
   const { defaultValue, value } = props || {}

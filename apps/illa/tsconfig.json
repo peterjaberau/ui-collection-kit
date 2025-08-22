@@ -38,7 +38,22 @@
       "#app/*": ["./app/*"],
       "#components/*": ["./components/*"],
       "#blocks/*": ["./blocks/*"],
-      "#utils/*": ["./utils/*"]
+      "#utils/*": ["./utils/*"],
+
+      "@/redux/*": ["./src/redux/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/store": ["./src/store"],
+      "@/api/*": ["./src/api/*"],
+      "@/config/*": ["./src/config/*"],
+      "@/middleware/*": ["./src/middleware/*"],
+      "@/constants/*": ["./src/constants/*"],
+      "@/public/*": ["./src/packages/public/*"],
+      "@/design/*": ["./src/packages/design/*"],
+      "@/page/*": ["./src/page/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/i18n/*": ["./src/i18n/*"],
+      "@/widgetLibrary/*": ["./src/widgetLibrary/*"],
+      "@/assets/*": ["./src/assets/*"],
     }
   },
   "include": [

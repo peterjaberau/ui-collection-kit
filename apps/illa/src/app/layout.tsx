@@ -1,4 +1,4 @@
-import { Providers } from "#providers"
+import { Provider } from "./provider"
 import { Suspense } from "react"
 
 export default function RootLayout({
@@ -10,7 +10,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <Suspense>
-          <Providers>{children}</Providers>
+          <Provider>{children}</Provider>
         </Suspense>
       </body>
     </html>

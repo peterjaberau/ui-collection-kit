@@ -134,7 +134,7 @@ const makeFormatParts = (timestamp: number, timezone: string) => {
 
 const tzOffset = (timestamp: number, timezone: string) => {
   const formatResult = makeFormatParts(timestamp, timezone)
-  const filled = []
+  const filled: any = []
   for (let i = 0; i < formatResult.length; i += 1) {
     const { type, value } = formatResult[i]
     // @ts-ignore
@@ -195,7 +195,7 @@ export function toTimezone(
     return time
   }
   const localOffset = -time.toDate().getTimezoneOffset()
-  const uOffset = isUndefined(utcOffset)
+  const uOffset: any = isUndefined(utcOffset)
     ? !timezone
       ? localOffset
       : timezoneToOffset(time.valueOf(), timezone)
