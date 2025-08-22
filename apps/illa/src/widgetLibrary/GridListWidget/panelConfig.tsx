@@ -1,6 +1,4 @@
-import RadioIcon from "@/assets/radius-icon.svg?react"
-import ColumnAutoIcon from "@/assets/rightPagePanel/gridList/columnAuto.svg?react"
-import ColumnFixedIcon from "@/assets/rightPagePanel/gridList/columnFixed.svg?react"
+import { LuCode } from "react-icons/lu"
 import i18n from "@/i18n/config"
 import { PanelConfig } from "@/page/App/components/InspectPanel/interface"
 import { LIST_ITEM_MARGIN_TOP } from "@/page/App/components/ScaleSquare/constant/widget"
@@ -210,7 +208,7 @@ export const GRID_LIST_PANEL_CONFIG: PanelConfig[] = [
           {
             label: (
               <span css={radioButtonOptionItemStyle}>
-                <ColumnFixedIcon />
+                <LuCode />
                 <span>
                   {i18n.t(
                     "editor.inspect.setter_option.grid_list.column_adaptation.fixed",
@@ -223,7 +221,7 @@ export const GRID_LIST_PANEL_CONFIG: PanelConfig[] = [
           {
             label: (
               <span css={radioButtonOptionItemStyle}>
-                <ColumnAutoIcon />
+                <LuCode />
                 <span>
                   {i18n.t(
                     "editor.inspect.setter_option.grid_list.column_adaptation.dynamic",
@@ -326,7 +324,7 @@ export const GRID_LIST_PANEL_CONFIG: PanelConfig[] = [
             attrName: "itemBorderRadius",
             setterType: "MEASURE_CHECK_INPUT_SETTER",
             useCustomLayout: true,
-            icon: <RadioIcon />,
+            icon: <LuCode />,
             defaultValue: "4px",
           },
           {

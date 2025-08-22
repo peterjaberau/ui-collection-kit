@@ -6,7 +6,7 @@ export const RANGE_SLIDER_WIDGET_CONFIG: WidgetConfig = {
   type: "RANGE_SLIDER_WIDGET",
   displayName: "rangeSlider",
   widgetName: i18n.t("widget.range_slider.name"),
-  icon: <RangeSliderWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Range Slider", "范围滑动输入条"],
   sessionType: "INPUTS",
   w: 10,

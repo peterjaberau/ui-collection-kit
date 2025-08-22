@@ -14,7 +14,7 @@ export const GRID_LIST_WIDGET_CONFIG: WidgetConfig = {
   displayName: "gridList",
   widgetName: i18n.t("widget.grid_list.name"),
   keywords: ["gridList", "网格列表"],
-  icon: <GridListWidgetIcon />,
+  icon: <LuCode />,
   sessionType: "CONTAINER",
   w: 20,
   h: 55,

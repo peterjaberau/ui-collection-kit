@@ -1,12 +1,4 @@
-import {
-  HorizontalCenterIcon,
-  HorizontalEndIcon,
-  HorizontalStartIcon,
-  VerticalCenterIcon,
-  VerticalEndIcon,
-  VerticalStartIcon,
-} from "@illa-design/react"
-import TextSizeIcon from "@/assets/text-size-icon.svg?react"
+import { LuCode } from "react-icons/lu"
 import i18n from "@/i18n/config"
 import { PanelConfig } from "@/page/App/components/InspectPanel/interface"
 import { VALIDATION_TYPES } from "@/utils/validationFactory"
@@ -85,15 +77,15 @@ export const TEXT_PANEL_CONFIG: PanelConfig[] = [
         isSetterSingleRow: true,
         options: [
           {
-            label: <VerticalStartIcon />,
+            label: <LuCode />,
             value: "start",
           },
           {
-            label: <VerticalCenterIcon />,
+            label: <LuCode />,
             value: "center",
           },
           {
-            label: <VerticalEndIcon />,
+            label: <LuCode />,
             value: "end",
           },
         ],
@@ -106,15 +98,15 @@ export const TEXT_PANEL_CONFIG: PanelConfig[] = [
         isSetterSingleRow: true,
         options: [
           {
-            label: <HorizontalStartIcon />,
+            label: <LuCode />,
             value: "start",
           },
           {
-            label: <HorizontalCenterIcon />,
+            label: <LuCode />,
             value: "center",
           },
           {
-            label: <HorizontalEndIcon />,
+            label: <LuCode />,
             value: "end",
           },
         ],
@@ -168,7 +160,7 @@ export const TEXT_PANEL_CONFIG: PanelConfig[] = [
             setterType: "MEASURE_CHECK_INPUT_SETTER",
             useCustomLayout: true,
             attrName: "fs",
-            icon: <TextSizeIcon />,
+            icon: <LuCode />,
             defaultValue: "14px",
             expectedType: VALIDATION_TYPES.STRING,
           },

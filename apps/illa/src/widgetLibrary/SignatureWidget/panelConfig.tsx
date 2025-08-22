@@ -1,5 +1,4 @@
-import { HorizontalEndIcon, HorizontalStartIcon } from "@illa-design/react"
-import RadioIcon from "@/assets/radius-icon.svg?react"
+import { LuCode } from "react-icons/lu"
 import i18n from "@/i18n/config"
 import { PanelConfig } from "@/page/App/components/InspectPanel/interface"
 import { VALIDATION_TYPES } from "@/utils/validationFactory"
@@ -67,11 +66,11 @@ export const SIGNATURE_PANEL_CONFIG: PanelConfig[] = [
         shown: (value) => !value,
         options: [
           {
-            label: <HorizontalStartIcon />,
+            label: <LuCode />,
             value: "left",
           },
           {
-            label: <HorizontalEndIcon />,
+            label: <LuCode />,
             value: "right",
           },
         ],
@@ -209,7 +208,7 @@ export const SIGNATURE_PANEL_CONFIG: PanelConfig[] = [
             attrName: "radius",
             setterType: "MEASURE_CHECK_INPUT_SETTER",
             useCustomLayout: true,
-            icon: <RadioIcon />,
+            icon: <LuCode />,
             defaultValue: "4px",
           },
           {

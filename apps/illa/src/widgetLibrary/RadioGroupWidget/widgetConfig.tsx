@@ -7,7 +7,7 @@ export const RADIO_GROUP_WIDGET_CONFIG: WidgetConfig = {
   displayName: "radioGroup",
   type: "RADIO_GROUP_WIDGET",
   widgetName: i18n.t("widget.radio_group.name"),
-  icon: <RadioGroupWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Radio Group", "单选框组"],
   sessionType: "SELECT",
   w: 13,

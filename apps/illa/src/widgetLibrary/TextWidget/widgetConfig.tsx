@@ -8,7 +8,7 @@ export const TEXT_WIDGET_CONFIG: WidgetConfig = {
   h: 5,
   w: 6,
   type: "TEXT_WIDGET",
-  icon: <TextWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Text", "文本"],
   sessionType: "PRESENTATION",
   resizeDirection: RESIZE_DIRECTION.HORIZONTAL,

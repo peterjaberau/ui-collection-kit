@@ -1,4 +1,4 @@
-import { HorizontalEndIcon, HorizontalStartIcon } from "@illa-design/react"
+import { LuCode } from "react-icons/lu"
 import i18n from "@/i18n/config"
 import { PanelConfig } from "@/page/App/components/InspectPanel/interface"
 import { VALIDATION_TYPES } from "@/utils/validationFactory"
@@ -104,11 +104,11 @@ export const SLIDER_PANEL_CONFIG: PanelConfig[] = [
         shown: (value) => !value,
         options: [
           {
-            label: <HorizontalStartIcon />,
+            label: <LuCode />,
             value: "left",
           },
           {
-            label: <HorizontalEndIcon />,
+            label: <LuCode />,
             value: "right",
           },
         ],

@@ -6,7 +6,7 @@ export const ICON_WIDGET_CONFIG: WidgetConfig = {
   type: "ICON_WIDGET",
   displayName: "icon",
   widgetName: i18n.t("widget.icon.name"),
-  icon: <IconsWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Icon", "图标"],
   sessionType: "PRESENTATION",
   w: 1,

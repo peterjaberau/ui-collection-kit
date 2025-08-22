@@ -5,7 +5,7 @@ export const PDF_WIDGET_CONFIG: WidgetConfig = {
   type: "PDF_WIDGET",
   displayName: "pdf",
   widgetName: "PDF",
-  icon: <PdfWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["PDF", "pdf"],
   sessionType: "PRESENTATION",
   w: 10,

@@ -6,7 +6,7 @@ export const SLIDER_WIDGET_CONFIG: WidgetConfig = {
   type: "SLIDER_WIDGET",
   displayName: "slider",
   widgetName: i18n.t("widget.slider.name"),
-  icon: <SliderWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Slider", "滑动输入条"],
   sessionType: "INPUTS",
   w: 10,

@@ -6,7 +6,7 @@ export const INPUT_WIDGET_CONFIG: WidgetConfig = {
   type: "INPUT_WIDGET",
   displayName: "input",
   widgetName: i18n.t("widget.input.name"),
-  icon: <TextInputWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Input", "文本输入框"],
   sessionType: "INPUTS",
   w: 6,

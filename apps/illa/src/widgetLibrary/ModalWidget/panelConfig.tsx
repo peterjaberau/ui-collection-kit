@@ -1,4 +1,4 @@
-import RadioIcon from "@/assets/radius-icon.svg?react"
+import { LuCode } from "react-icons/lu"
 import i18n from "@/i18n/config"
 import { PanelConfig } from "@/page/App/components/InspectPanel/interface"
 import { MODAL_EVENT_HANDLER_CONFIG } from "@/widgetLibrary/ModalWidget/eventHandlerConfig"
@@ -88,7 +88,7 @@ export const MODAL_PANEL_CONFIG: PanelConfig[] = [
             attrName: "radius",
             setterType: "MEASURE_CHECK_INPUT_SETTER",
             useCustomLayout: true,
-            icon: <RadioIcon />,
+            icon: <LuCode />,
             defaultValue: "4px",
           },
         ],

@@ -6,7 +6,7 @@ export const RATE_WIDGET_CONFIG: WidgetConfig = {
   type: "RATE_WIDGET",
   displayName: "rate",
   widgetName: i18n.t("widget.rate.name"),
-  icon: <RateWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Rate", "评分"],
   sessionType: "PRESENTATION",
   w: 6,

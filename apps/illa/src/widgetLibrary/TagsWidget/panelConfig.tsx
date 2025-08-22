@@ -1,8 +1,4 @@
-import {
-  HorizontalCenterIcon,
-  HorizontalEndIcon,
-  HorizontalStartIcon,
-} from "@illa-design/react"
+import { LuCode } from "react-icons/lu"
 import i18n from "@/i18n/config"
 import { PanelConfig } from "@/page/App/components/InspectPanel/interface"
 import { VALIDATION_TYPES } from "@/utils/validationFactory"
@@ -81,15 +77,15 @@ export const TAGS_PANEL_CONFIG: PanelConfig[] = [
         attrName: "alignment",
         options: [
           {
-            label: <HorizontalStartIcon />,
+            label: <LuCode />,
             value: "flex-start",
           },
           {
-            label: <HorizontalCenterIcon />,
+            label: <LuCode />,
             value: "center",
           },
           {
-            label: <HorizontalEndIcon />,
+            label: <LuCode />,
             value: "flex-end",
           },
         ],

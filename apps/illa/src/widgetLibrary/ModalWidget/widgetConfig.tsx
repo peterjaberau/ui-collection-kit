@@ -11,7 +11,7 @@ export const MODAL_WIDGET_CONFIG: WidgetConfig = {
   displayName: "modal",
   widgetName: i18n.t("widget.modal.name"),
   keywords: ["modal", "对话框"],
-  icon: <ModalWidgetIcon />,
+  icon: <LuCode />,
   sessionType: "CONTAINER",
   w: 16,
   h: 40,

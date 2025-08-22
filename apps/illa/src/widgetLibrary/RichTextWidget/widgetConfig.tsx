@@ -7,7 +7,7 @@ export const RICH_TEXT_WIDGET_CONFIG: WidgetConfig = {
   type: "RICH_TEXT_WIDGET",
   displayName: "richText",
   widgetName: i18n.t("widget.rich_text_editor.name"),
-  icon: <RichTextWidgetIcon />,
+  icon: <LuCode />,
   resizeDirection: RESIZE_DIRECTION.ALL,
   keywords: ["Rich Text", "富文本"],
   sessionType: "INPUTS",

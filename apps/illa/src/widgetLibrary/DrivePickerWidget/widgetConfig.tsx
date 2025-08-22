@@ -6,7 +6,7 @@ export const DRIVE_PICKER_WIDGET_CONFIG: WidgetConfig = {
   type: "DRIVE_PICKER_WIDGET",
   displayName: "drivePicker",
   widgetName: i18n.t("widget.drive_picker.name"),
-  icon: <DrivePickerWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["drivePicker", "文件选择器"],
   sessionType: "ILLA_DRIVE",
   w: 6,

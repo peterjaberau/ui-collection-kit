@@ -1,10 +1,4 @@
-import {
-  HorizontalCenterIcon,
-  HorizontalEndIcon,
-  HorizontalStartIcon,
-  VerticalEndIcon,
-  VerticalStartIcon,
-} from "@illa-design/react"
+import { LuCode } from "react-icons/lu"
 import i18n from "@/i18n/config"
 import { PanelConfig } from "@/page/App/components/InspectPanel/interface"
 import { VALIDATION_TYPES } from "@/utils/validationFactory"
@@ -164,19 +158,19 @@ export const TABS_PANEL_CONFIG: PanelConfig[] = [
         attrName: "tabPosition",
         options: [
           {
-            label: <HorizontalStartIcon />,
+            label: <LuCode />,
             value: "left",
           },
           {
-            label: <VerticalStartIcon />,
+            label: <LuCode />,
             value: "top",
           },
           {
-            label: <HorizontalEndIcon />,
+            label: <LuCode />,
             value: "right",
           },
           {
-            label: <VerticalEndIcon />,
+            label: <LuCode />,
             value: "bottom",
           },
         ],
@@ -191,15 +185,15 @@ export const TABS_PANEL_CONFIG: PanelConfig[] = [
           tabPosition === "top" || tabPosition === "bottom",
         options: [
           {
-            label: <HorizontalStartIcon />,
+            label: <LuCode />,
             value: "flex-start",
           },
           {
-            label: <HorizontalCenterIcon />,
+            label: <LuCode />,
             value: "center",
           },
           {
-            label: <HorizontalEndIcon />,
+            label: <LuCode />,
             value: "flex-end",
           },
         ],

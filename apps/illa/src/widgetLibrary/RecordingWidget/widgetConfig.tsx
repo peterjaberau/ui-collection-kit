@@ -11,7 +11,7 @@ export const RECORDING_WIDGET_CONFIG: WidgetConfig = {
   type: "RECORDING_WIDGET",
   displayName: "recording",
   widgetName: i18n.t("widget.recording.name"),
-  icon: <RecordingWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Recording", "录音"],
   sessionType: "INPUTS",
   w: 10,

@@ -7,7 +7,7 @@ export const SWITCH_GROUP_WIDGET_CONFIG: WidgetConfig = {
   type: "SWITCH_GROUP_WIDGET",
   displayName: "switchGroup",
   widgetName: i18n.t("widget.switch_group.name"),
-  icon: <SwitchGroupWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["switchGroup", "开关组"],
   sessionType: "SELECT",
   w: 10,

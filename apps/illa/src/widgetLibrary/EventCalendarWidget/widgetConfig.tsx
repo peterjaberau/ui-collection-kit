@@ -28,7 +28,7 @@ export const EVENT_CALENDAR_WIDGET_CONFIG: WidgetConfig = {
   h: 70,
   w: 30,
   type: "EVENT_CALENDAR_WIDGET",
-  icon: <EventCalendarWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["EventCalendar", "活动日历"],
   sessionType: "CALENDAR",
   resizeDirection: RESIZE_DIRECTION.ALL,

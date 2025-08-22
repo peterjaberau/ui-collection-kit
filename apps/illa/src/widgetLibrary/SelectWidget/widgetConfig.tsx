@@ -7,7 +7,7 @@ export const SELECT_WIDGET_CONFIG: WidgetConfig = {
   type: "SELECT_WIDGET",
   displayName: "select",
   widgetName: i18n.t("widget.select.name"),
-  icon: <SelectWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Select", "选择器"],
   sessionType: "SELECT",
   w: 6,

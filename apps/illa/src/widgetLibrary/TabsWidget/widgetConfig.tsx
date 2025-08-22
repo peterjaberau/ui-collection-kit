@@ -15,7 +15,7 @@ export const TABS_WIDGET_CONFIG: WidgetConfig = {
   h: 6,
   w: 6,
   type: "TABS_WIDGET",
-  icon: <TabsWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Tabs", "选项卡"],
   sessionType: "NAVIGATION",
   resizeDirection: RESIZE_DIRECTION.HORIZONTAL,

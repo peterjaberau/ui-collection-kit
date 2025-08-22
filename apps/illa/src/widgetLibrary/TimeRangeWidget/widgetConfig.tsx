@@ -7,7 +7,7 @@ export const TIME_RANGE_WIDGET_CONFIG: WidgetConfig = {
   displayName: "rangeTime",
   widgetName: i18n.t("widget.time_range.name"),
   keywords: ["Range Time", "时间范围选择器"],
-  icon: <RangeTimePickerWidgetIcon />,
+  icon: <LuCode />,
   sessionType: "CALENDAR",
   w: 10,
   h: 5,

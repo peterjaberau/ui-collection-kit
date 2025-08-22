@@ -1,13 +1,12 @@
 import { LuCode } from "react-icons/lu"
 import i18n from "@/i18n/config"
-import { LuCode } from "react-icons/lu"
 import { DefaultCenter, DefaultMarkers } from "./content"
 
-export const MAP_WIDGET_CONFIG: WidgetConfig = {
+export const MAP_WIDGET_CONFIG: any = {
   type: "MAP_WIDGET",
   displayName: "map",
   widgetName: i18n.t("widget.map.name"),
-  icon: <MapWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["MAP", "地图"],
   sessionType: "PRESENTATION",
   w: 20,

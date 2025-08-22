@@ -51,7 +51,7 @@ export const MENU_WIDGET_CONFIG: WidgetConfig = {
   h: 7,
   w: 15,
   type: "MENU_WIDGET",
-  icon: <MenuWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Menu", "菜单"],
   sessionType: "NAVIGATION",
   resizeDirection: RESIZE_DIRECTION.HORIZONTAL,

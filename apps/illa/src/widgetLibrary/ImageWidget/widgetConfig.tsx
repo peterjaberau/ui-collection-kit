@@ -6,7 +6,7 @@ export const IMAGE_WIDGET_CONFIG: WidgetConfig = {
   type: "IMAGE_WIDGET",
   displayName: "image",
   widgetName: i18n.t("widget.image.name"),
-  icon: <ImageWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Image", "图片"],
   sessionType: "PRESENTATION",
   h: 16,

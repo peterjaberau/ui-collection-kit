@@ -6,7 +6,7 @@ export const JSON_EDITOR_WIDGET_CONFIG: WidgetConfig = {
   type: "JSON_EDITOR_WIDGET",
   displayName: "jsonEditor",
   widgetName: i18n.t("widget.jsonEditor.name"),
-  icon: <JsonEditorWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["JSON Editor", "JSON编辑器"],
   sessionType: "INPUTS",
   w: 10,

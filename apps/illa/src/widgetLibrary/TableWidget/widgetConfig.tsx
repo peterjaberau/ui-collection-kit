@@ -32,7 +32,7 @@ export const TABLE_WIDGET_CONFIG: WidgetConfig = {
   h: 40,
   w: 16,
   type: "TABLE_WIDGET",
-  icon: <TableWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Table", "表格"],
   sessionType: "DATA",
   version: 0,

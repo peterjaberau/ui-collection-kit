@@ -6,7 +6,7 @@ export const TEXTAREA_WIDGET_CONFIG: WidgetConfig = {
   type: "TEXTAREA_INPUT_WIDGET",
   displayName: "textarea",
   widgetName: i18n.t("widget.textarea.name"),
-  icon: <TextAreaWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Textarea Input", "长文本输入框"],
   sessionType: "INPUTS",
   w: 7,

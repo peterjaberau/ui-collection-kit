@@ -6,7 +6,7 @@ export const EDITABLE_TEXT_WIDGET_CONFIG: WidgetConfig = {
   type: "EDITABLE_TEXT_WIDGET",
   displayName: "editable_text",
   widgetName: i18n.t("widget.editable_text.name"),
-  icon: <EditableTextWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Editable Text", "可编辑文本"],
   sessionType: "INPUTS",
   resizeDirection: RESIZE_DIRECTION.HORIZONTAL,

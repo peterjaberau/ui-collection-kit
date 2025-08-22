@@ -9,7 +9,7 @@ export const QR_CODE_WIDGET_CONFIG: WidgetConfig = {
   w: 8,
   h: 32,
   resizeDirection: RESIZE_DIRECTION.HORIZONTAL,
-  icon: <QrCodeWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["QR code", "二维码生成器"],
   sessionType: "PRESENTATION",
   version: 0,

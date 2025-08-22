@@ -8,7 +8,7 @@ export const SIGNATURE_WIDGET_CONFIG: WidgetConfig = {
   displayName: "signature",
   widgetName: i18n.t("widget.signature.name"),
   keywords: ["Signature", "签名"],
-  icon: <SignatureWidgetIcon />,
+  icon: <LuCode />,
   sessionType: "INPUTS",
   w: 12,
   h: 30,

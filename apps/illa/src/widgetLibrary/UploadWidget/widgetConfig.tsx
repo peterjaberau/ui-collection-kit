@@ -8,7 +8,7 @@ export const UPLOAD_WIDGET_CONFIG: WidgetConfig = {
   h: 5,
   w: 6,
   type: "UPLOAD_WIDGET",
-  icon: <UploadWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Upload Input", "上传"],
   sessionType: "INPUTS",
   resizeDirection: RESIZE_DIRECTION.HORIZONTAL,

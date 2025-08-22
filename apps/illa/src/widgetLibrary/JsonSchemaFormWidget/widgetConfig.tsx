@@ -6,7 +6,7 @@ export const JSON_SCHEMA_FORM_WIDGET_CONFIG: WidgetConfig = {
   type: "JSON_SCHEMA_FORM_WIDGET",
   displayName: "jsonSchemaForm",
   widgetName: i18n.t("widget.jsonSchemaForm.name"),
-  icon: <JsonSchemaFormWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["jsonSchemaForm", "动态表单"],
   sessionType: "INPUTS",
   w: 16,

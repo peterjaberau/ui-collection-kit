@@ -1,9 +1,4 @@
-import {
-  HorizontalCenterIcon,
-  HorizontalEndIcon,
-  HorizontalStartIcon,
-} from "@illa-design/react"
-import TextSizeIcon from "@/assets/text-size-icon.svg?react"
+import { LuCode } from "react-icons/lu"
 import i18n from "@/i18n/config"
 import { PanelConfig } from "@/page/App/components/InspectPanel/interface"
 import { VALIDATION_TYPES } from "@/utils/validationFactory"
@@ -28,15 +23,15 @@ export const DIVIDER_PANEL_CONFIG: PanelConfig[] = [
         setterType: "RADIO_GROUP_SETTER",
         options: [
           {
-            label: <HorizontalStartIcon />,
+            label: <LuCode />,
             value: "start",
           },
           {
-            label: <HorizontalCenterIcon />,
+            label: <LuCode />,
             value: "center",
           },
           {
-            label: <HorizontalEndIcon />,
+            label: <LuCode />,
             value: "end",
           },
         ],
@@ -76,7 +71,7 @@ export const DIVIDER_PANEL_CONFIG: PanelConfig[] = [
             setterType: "MEASURE_CHECK_INPUT_SETTER",
             useCustomLayout: true,
             attrName: "fs",
-            icon: <TextSizeIcon />,
+            icon: <LuCode />,
             defaultValue: "14px",
             expectedType: VALIDATION_TYPES.STRING,
           },

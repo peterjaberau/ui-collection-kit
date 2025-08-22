@@ -7,7 +7,7 @@ export const MULTISELECT_WIDGET_CONFIG: WidgetConfig = {
   type: "MULTISELECT_WIDGET",
   displayName: "multiselect",
   widgetName: i18n.t("widget.multiselect.name"),
-  icon: <MultiselectWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Multiselect", "多项选择"],
   sessionType: "SELECT",
   w: 7,

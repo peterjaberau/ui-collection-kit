@@ -9,7 +9,7 @@ export const RADIO_BUTTON_WIDGET_CONFIG: WidgetConfig = {
   displayName: "radioButton",
   w: 9,
   h: 5,
-  icon: <RadioButtonWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Radio Button", "按钮单选"],
   sessionType: "SELECT",
   resizeDirection: RESIZE_DIRECTION.HORIZONTAL,

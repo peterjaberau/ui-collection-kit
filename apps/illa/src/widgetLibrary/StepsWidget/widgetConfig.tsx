@@ -14,7 +14,7 @@ export const STEPS_WIDGET_CONFIG: WidgetConfig = {
   type: "STEPS_WIDGET",
   displayName: "steps",
   widgetName: i18n.t("widget.step.name"),
-  icon: <StepsWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Steps", "步骤"],
   sessionType: "NAVIGATION",
   w: 18,

@@ -6,7 +6,7 @@ export const STATISTICS_WIDGET_CONFIG: WidgetConfig = {
   type: "STATISTIC_WIDGET",
   displayName: "statistic",
   widgetName: i18n.t("widget.statistics.name"),
-  icon: <StatisticWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Statistic", "数值"],
   sessionType: "PRESENTATION",
   w: 6,

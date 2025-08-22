@@ -8,7 +8,7 @@ export const IFRAME_WIDGET_CONFIG: WidgetConfig = {
   h: 40,
   w: 16,
   type: "IFRAME_WIDGET",
-  icon: <IFrameWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["iframe", "內联框架"],
   sessionType: "PRESENTATION",
   resizeDirection: RESIZE_DIRECTION.ALL,

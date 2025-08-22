@@ -8,7 +8,7 @@ export const SWITCH_WIDGET_CONFIG: WidgetConfig = {
   h: 3,
   w: 5,
   type: "SWITCH_WIDGET",
-  icon: <SwitchWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Switch", "开关"],
   sessionType: "SELECT",
   resizeDirection: RESIZE_DIRECTION.HORIZONTAL,

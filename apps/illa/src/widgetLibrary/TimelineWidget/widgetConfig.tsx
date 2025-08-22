@@ -6,7 +6,7 @@ export const TIMELINE_WIDGET_CONFIG: WidgetConfig = {
   type: "TIMELINE_WIDGET",
   widgetName: i18n.t("widget.timeline.name"),
   displayName: "timeline",
-  icon: <TimelineWidgetIcon />,
+  icon: <LuCode />,
   keywords: ["Timeline", "时间线"],
   sessionType: "PRESENTATION",
   w: 6,

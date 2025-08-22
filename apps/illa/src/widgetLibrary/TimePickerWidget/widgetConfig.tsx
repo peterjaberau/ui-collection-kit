@@ -7,7 +7,7 @@ export const TIME_PICKER_WIDGET_CONFIG: WidgetConfig = {
   displayName: "timePicker",
   widgetName: i18n.t("widget.time_picker.name"),
   keywords: ["Time Picker", "时间选择器"],
-  icon: <TimePickerWidgetIcon />,
+  icon: <LuCode />,
   sessionType: "CALENDAR",
   w: 6,
   h: 5,
