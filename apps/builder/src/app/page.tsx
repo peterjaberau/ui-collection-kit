@@ -13,15 +13,16 @@ import { useUiActor } from "#actors/hooks/useUiActor"
 import { useRef } from "react"
 
 export default function Page() {
-  const { entitiesActorState, currentPageName, widgetsStructure, isPageHasWidgets } = useEntitiesActor()
+  const { entitiesContext, currentPageName, entitiesWidgetsStructure, entitiesCanvasWidgets, isPageHasWidgets } =
+    useEntitiesActor()
 
-  const { gitActorState } = useGitActor()
-  const { formActorState } = useFormActor()
-  const { evaluationsActorState } = useEvaluationsActor()
-  const { lintingActorState } = useLintingActor()
-  const { organizationActorState } = useOrganizationActor()
-  const { settingsActorState } = useSettingsActor()
-  const { uiActorState, currentApplication } = useUiActor()
+  const { gitContext } = useGitActor()
+  const { formContext } = useFormActor()
+  const { evaluationsContext } = useEvaluationsActor()
+  const { lintingContext } = useLintingActor()
+  const { orgContext } = useOrganizationActor()
+  const { settingsContext } = useSettingsActor()
+  const { uiContext, currentApplication, isPreviewMode } = useUiActor()
 
   return (
     <>
@@ -35,14 +36,14 @@ export default function Page() {
               <Card.Body maxH={"500px"} overflowY={"auto"}>
                 <JsonView
                   src={{
-                    entities: entitiesActorState.context,
-                    git: gitActorState.context,
-                    form: formActorState.context,
-                    evaluations: evaluationsActorState.context,
-                    linting: lintingActorState.context,
-                    organization: organizationActorState.context,
-                    settings: settingsActorState.context,
-                    ui: uiActorState.context,
+                    entities: entitiesContext,
+                    git: gitContext,
+                    form: formContext,
+                    evaluations: evaluationsContext,
+                    linting: lintingContext,
+                    organization: orgContext,
+                    settings: settingsContext,
+                    ui: uiContext,
                   }}
                   collapsed={1}
                   theme="github"
@@ -62,12 +63,11 @@ export default function Page() {
               <Card.Body maxH={"500px"} overflowY={"auto"}>
                 <JsonView
                   src={{
+                    widgetsStructure: entitiesWidgetsStructure,
                     currentPageName: currentPageName,
-                    widgetsStructure: widgetsStructure,
                     currentApplication: currentApplication,
-                    isPreviewMode: uiActorState.context.editor.isPreviewMode,
-                    canvasWidget: entitiesActorState.context.canvasWidgets,
-
+                    isPreviewMode: isPreviewMode,
+                    canvasWidget: entitiesCanvasWidgets,
 
                     isPageHasWidgets: isPageHasWidgets,
                   }}
@@ -87,7 +87,7 @@ export default function Page() {
 }
 
 const RenderView = () => {
-  const { entitiesActorState, currentPageName, widgetsStructure, isPageHasWidgets } = useEntitiesActor()
+  const { currentPageName, entitiesWidgetsStructure, isPageHasWidgets } = useEntitiesActor()
 
   const pageViewWrapperRef = useRef<HTMLDivElement>(null)
 }

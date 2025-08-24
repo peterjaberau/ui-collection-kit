@@ -5,13 +5,35 @@ export function useOrganizationActor() {
   const { rootActorRef } = useRootActor();
 
   const organizationActorRef = rootActorRef.system.get('organization');
-  const organizationActorState: any = useSelector(organizationActorRef, (state) => state);
-  const sendToOrganizationActor = organizationActorRef.send;
+  const sendToOrganization = organizationActorRef.send;
+
+  const orgState: any = useSelector(organizationActorRef, (state) => state);
+  const orgContext = orgState.context;
+
+  const orgUserPermissions = orgContext.userPermissions;
+  const orgConfiguration = orgContext.organizationConfiguration;
+  const orgNew = orgContext.new;
+  const orgIsLoading = orgContext.isLoading;
+  const orgInstanceId = orgContext.instanceId;
+  const orgTenantId = orgContext.tenantId;
+  const orgMyOrganizations = orgContext.myOrganizations;
+  const orgIsFetchingMyOrganizations = orgContext.isFetchingMyOrganizations;
 
   return {
     organizationActorRef,
-    organizationActorState,
-    sendToOrganizationActor,
+    sendToOrganization,
+
+    orgState,
+    orgContext,
+
+    orgUserPermissions,
+    orgConfiguration,
+    orgNew,
+    orgIsLoading,
+    orgInstanceId,
+    orgTenantId,
+    orgMyOrganizations,
+    orgIsFetchingMyOrganizations,
 
   };
 }

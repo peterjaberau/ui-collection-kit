@@ -5,9 +5,10 @@ export function useEvaluationsActor() {
   const { rootActorRef } = useRootActor()
 
   const evaluationsActorRef = rootActorRef.system.get("evaluations")
-  const evaluationsActorState: any = useSelector(evaluationsActorRef, (state) => state)
-  const evaluationsContext = evaluationsActorState.context
-  const sendToEvaluationsActor = evaluationsActorRef.send
+  const sendToEvaluations = evaluationsActorRef.send
+
+  const evaluationsState: any = useSelector(evaluationsActorRef, (state) => state)
+  const evaluationsContext = evaluationsState.context
 
   const evaluationsTree = evaluationsContext.tree
   const evaluationsDependencies = evaluationsContext.dependencies
@@ -17,12 +18,12 @@ export function useEvaluationsActor() {
   const evaluationsFirstEvaluation = evaluationsContext.firstEvaluation
 
 
-
   return {
     evaluationsActorRef,
-    evaluationsActorState,
+    sendToEvaluations,
+
+    evaluationsState,
     evaluationsContext,
-    sendToEvaluationsActor,
 
     evaluationsTree,
     evaluationsDependencies,

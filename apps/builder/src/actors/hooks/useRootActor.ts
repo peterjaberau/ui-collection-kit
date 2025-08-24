@@ -3,12 +3,16 @@ import { RootActorContext } from "../rootActor.provider"
 
 export function useRootActor() {
   const rootActorRef = RootActorContext.useActorRef()
-  const rootActorState: any = useSelector(rootActorRef, (state) => state)
-  const sendToRootActor = rootActorRef.send
+  const sendToRoot = rootActorRef.send
+
+  const rootState: any = useSelector(rootActorRef, (state) => state)
+  const rootContext = rootState.context
 
   return {
     rootActorRef,
-    rootActorState,
-    sendToRootActor,
+    sendToRoot,
+
+    rootState,
+    rootContext,
   }
 }

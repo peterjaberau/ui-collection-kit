@@ -5,13 +5,21 @@ export function useLintingActor() {
   const { rootActorRef } = useRootActor();
 
   const lintingActorRef = rootActorRef.system.get('linting');
-  const lintingActorState: any = useSelector(lintingActorRef, (state) => state);
-  const sendToLintingActor = lintingActorRef.send;
+  const sendToLinting = lintingActorRef.send;
+
+  const lintingState: any = useSelector(lintingActorRef, (state) => state);
+  const lintingContext = lintingState.context;
+
+  const lintingErrors = lintingContext.errors;
 
   return {
     lintingActorRef,
-    lintingActorState,
-    sendToLintingActor,
+    sendToLinting,
+
+    lintingState,
+    lintingContext,
+
+    lintingErrors,
 
   };
 }

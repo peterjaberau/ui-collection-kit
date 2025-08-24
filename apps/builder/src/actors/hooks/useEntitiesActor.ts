@@ -6,11 +6,10 @@ export function useEntitiesActor() {
   const { rootActorRef } = useRootActor();
 
   const entitiesActorRef = rootActorRef.system.get('entities');
-  const entitiesActorState: any = useSelector(entitiesActorRef, (state) => state);
-  const entitiesContext = entitiesActorState.context;
-  const sendToEntitiesActor = entitiesActorRef.send;
+  const sendToEntities = entitiesActorRef.send;
 
-
+  const entitiesState: any = useSelector(entitiesActorRef, (state) => state);
+  const entitiesContext = entitiesState.context;
 
   const entitiesWidgetsStructure = entitiesContext.canvasWidgetsStructure;
   const entitiesCanvasWidgets = entitiesContext.canvasWidgets;
@@ -27,29 +26,20 @@ export function useEntitiesActor() {
   const entitiesLayoutElementPositions = entitiesContext.layoutElementPositions;
   const entitiesModuleInstanceEntities = entitiesContext.moduleInstanceEntities;
 
-  // pageList
-  const pageList = entitiesPageList;
-  const app = entitiesApp;
-
+  // selectors
   const currentPageId = entitiesPageList.currentPageId;
   const currentPageName = entitiesPageList.pages.find((page: any) => page.pageId === currentPageId)?.pageName
 
-
-  // canvasWidgetsStructure
-  const widgetsStructure = entitiesActorState.context.canvasWidgetsStructure;
-
-
-
-
   // guards
-  const isPageHasWidgets = widgetsStructure.children && widgetsStructure.children.length > 0;
+  const isPageHasWidgets = entitiesWidgetsStructure.children && entitiesWidgetsStructure.children.length > 0;
 
   return {
     entitiesActorRef,
-    entitiesActorState,
-    sendToEntitiesActor,
+    sendToEntities,
 
+    entitiesState,
     entitiesContext,
+
     entitiesWidgetsStructure,
     entitiesCanvasWidgets,
     entitiesMetaWidgets,
@@ -64,18 +54,11 @@ export function useEntitiesActor() {
     entitiesLayoutElementPositions,
     entitiesModuleInstanceEntities,
 
-
-
-    pageList,
+    // selectors
     currentPageId,
     currentPageName,
 
-    app,
-
-
-    widgetsStructure,
-
-    //guards
+    // guards
     isPageHasWidgets
 
   };
