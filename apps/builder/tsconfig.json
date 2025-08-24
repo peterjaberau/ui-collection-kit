@@ -23,16 +23,19 @@
       }
     ],
     "paths": {
+      "#actors/*": ["./src/actors/*"],
+      "#actors-hook/*": ["./src/actors/hooks"],
+
       "@/*": ["./*"],
       "~/*": ["./public/*"],
       "@/components/*": ["./components/*"],
       "@/components": ["./components"],
-      "#actors/*": ["./src/actors/*"],
+
       "#actor-hooks/*": ["./actors/hooks*"],
       "#app/*": ["./app/*"],
       "#components/*": ["./components/*"],
       "#blocks/*": ["./blocks/*"],
-      "#utils/*": ["./utils/*"],
+      "#utils/*": ["./utils/*"]
     }
   },
   "include": [

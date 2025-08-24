@@ -7,13 +7,8 @@
     "build-storybook": "storybook build",
     "demo-designer": "pnpm --filter \"./demos/demo-designer\"",
     "start-demo-designer": "pnpm demo-designer dev",
-
-    "lowercode": "pnpm --filter \"./apps/lowercode\"",
-    "start-lowercode": "pnpm lowercode dev",
-
-
-    "illa": "pnpm --filter \"./apps/illa\"",
-    "start-illa": "pnpm illa dev",
+    "builder": "pnpm --filter \"./apps/builder\"",
+    "start-builder": "pnpm builder dev",
 
 
     "app-pro": "pnpm --filter \"./apps/app-pro\"",
