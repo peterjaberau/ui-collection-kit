@@ -17,6 +17,11 @@ export function useEvaluationsActor() {
   const evaluationsTriggers = evaluationsContext.triggers
   const evaluationsFirstEvaluation = evaluationsContext.firstEvaluation
 
+  // selectors
+  const renderPage = evaluationsContext.firstEvaluation?.renderPage ?? false
+
+  // guards
+  const isFirstPageLoad = evaluationsContext.firstEvaluation?.isFirstPageLoad ?? false
 
   return {
     evaluationsActorRef,
@@ -31,5 +36,11 @@ export function useEvaluationsActor() {
     evaluationsFormEvaluation,
     evaluationsTriggers,
     evaluationsFirstEvaluation,
+
+    // selectors
+    renderPage,
+
+    // guards
+    isFirstPageLoad,
   }
 }

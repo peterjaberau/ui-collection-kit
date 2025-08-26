@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "uuid": "^11.1.0",
     "shiki": "^3.9.1",
     "@chakra-ui/react": "^3.24.0",
     "@ark-ui/react": "^5.18.3",
@@ -78,6 +79,7 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@types/uuid": "^10.0.0",
     "@types/set-value": "4.0.3",
     "@types/lodash": "^4.17.19",
     "@types/react": "^19.0.10",

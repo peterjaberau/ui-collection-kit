@@ -29,6 +29,7 @@ export function useEntitiesActor() {
   // selectors
   const currentPageId = entitiesPageList.currentPageId;
   const currentPageName = entitiesPageList.pages.find((page: any) => page.pageId === currentPageId)?.pageName
+  const rendererMode = entitiesApp.mode === "EDIT" ? "CANVAS" : "PAGE";
 
   // guards
   const isPageHasWidgets = entitiesWidgetsStructure.children && entitiesWidgetsStructure.children.length > 0;
@@ -48,6 +49,7 @@ export function useEntitiesActor() {
     entitiesPageList,
     entitiesPlugins,
     entitiesMeta,
+    entitiesApp,
     entitiesJsActions,
     entitiesAutoHeightLayoutTree,
     entitiesCanvasLevels,
@@ -57,6 +59,7 @@ export function useEntitiesActor() {
     // selectors
     currentPageId,
     currentPageName,
+    rendererMode,
 
     // guards
     isPageHasWidgets

@@ -11,18 +11,31 @@ import { useOrganizationActor } from "#actors/hooks/useOrganizationActor"
 import { useSettingsActor } from "#actors/hooks/useSettingsActor"
 import { useUiActor } from "#actors/hooks/useUiActor"
 import { useRef } from "react"
+import { AppBuilder } from "#components/app"
+import { AppIDE } from "#components/app/ide/AppIDE"
+import { WidgetEditor } from "#components/app/editor/WidgetsEditor"
+import { WidgetEditorContent } from "#components/app/editor/WidgetEditorContent"
+import { Canvas } from "#components/app/editor/Canvas"
+import { WrappedPropsComponent } from "#components/app/editor/WrappedPropsComponent"
+import { FixedLayoutEditorCanvas } from "#components/app/editor/FixedLayoutEditorCanvas"
+import { ContainerComponentWrapper } from "#components/app/editor/ContainerComponentWrapper"
+import { AnalyticsWrapper } from "#components/app/layout/AnalyticsWrapper"
+import { PropsComponentRenderer } from "#components/app/PropsComponentRenderer"
+import { FixedLayoutRenderer } from "#components/app/FixedLayoutRenderer"
+import { TextWidget } from "#components/app/widgets/TextWidget"
+import { DividerWidget } from "#components/app/widgets/DividerWidget"
 
 export default function Page() {
-  const { entitiesContext, currentPageName, entitiesWidgetsStructure, entitiesCanvasWidgets, isPageHasWidgets } =
+  const { entitiesPageList, entitiesContext, currentPageName, currentPageId, entitiesWidgetsStructure, entitiesCanvasWidgets, isPageHasWidgets } =
     useEntitiesActor()
 
   const { gitContext } = useGitActor()
   const { formContext } = useFormActor()
-  const { evaluationsContext } = useEvaluationsActor()
+  const { evaluationsContext, renderPage, isFirstPageLoad } = useEvaluationsActor()
   const { lintingContext } = useLintingActor()
-  const { orgContext } = useOrganizationActor()
+  const { orgContext, orgConfiguration, orgMyOrganizations } = useOrganizationActor()
   const { settingsContext } = useSettingsActor()
-  const { uiContext, currentApplication, isPreviewMode } = useUiActor()
+  const { uiContext, uiAppView, uiAppTheming, uiTheme,  currentApplication, isPreviewMode } = useUiActor()
 
   return (
     <>
@@ -55,28 +68,38 @@ export default function Page() {
             </Card.Root>
           </GridItem>
 
-          <GridItem colSpan={1}>
+          <GridItem colSpan={2}>
             <Card.Root height={"100%"}>
               <Card.Header>
-                <Card.Title>View Selectors</Card.Title>
+                <Card.Title>Canvas</Card.Title>
               </Card.Header>
-              <Card.Body maxH={"500px"} overflowY={"auto"}>
-                <JsonView
-                  src={{
-                    widgetsStructure: entitiesWidgetsStructure,
-                    currentPageName: currentPageName,
-                    currentApplication: currentApplication,
-                    isPreviewMode: isPreviewMode,
-                    canvasWidget: entitiesCanvasWidgets,
-
-                    isPageHasWidgets: isPageHasWidgets,
-                  }}
-                  collapsed={1}
-                  theme="github"
-                  displaySize
-                  displayArrayIndex
-                  style={{ fontSize: 13, fontWeight: "bold" }}
-                />
+              <Card.Body maxH={"2000px"}  overflowY={"auto"}>
+                <AppBuilder>
+                  <AppIDE>
+                    <WidgetEditor>
+                      <WidgetEditorContent>
+                        <Canvas>
+                          <WrappedPropsComponent>
+                            <FixedLayoutEditorCanvas>
+                              <ContainerComponentWrapper>
+                                <AnalyticsWrapper>
+                                  <PropsComponentRenderer>
+                                    <FixedLayoutRenderer>
+                                      <Stack>
+                                        <TextWidget />
+                                        <DividerWidget />
+                                      </Stack>
+                                    </FixedLayoutRenderer>
+                                  </PropsComponentRenderer>
+                                </AnalyticsWrapper>
+                              </ContainerComponentWrapper>
+                            </FixedLayoutEditorCanvas>
+                          </WrappedPropsComponent>
+                        </Canvas>
+                      </WidgetEditorContent>
+                    </WidgetEditor>
+                  </AppIDE>
+                </AppBuilder>
               </Card.Body>
             </Card.Root>
           </GridItem>

@@ -33,6 +33,7 @@ export function useUiActor() {
   const uiExplorer = uiContext.explorer;
   const uiPageCanvasStructure = uiContext.pageCanvasStructure;
   const uiPageWidgets = uiContext.pageWidgets;
+  const uiTheme = uiContext.theme;
   const uiModalAction = uiContext.modalAction;
   const uiOnBoarding = uiContext.onBoarding;
   const uiGlobalSearch = uiContext.globalSearch;
@@ -95,6 +96,7 @@ export function useUiActor() {
     uiExplorer,
     uiPageCanvasStructure,
     uiPageWidgets,
+    uiTheme,
     uiModalAction,
     uiOnBoarding,
     uiGlobalSearch,
