@@ -13,7 +13,7 @@ export const getDefaults = {
   version: 1,
 }
 
-export const TextWidget: any = (props: any) => {
+const TextWidget: any = (props: any) => {
   return (
     <DevLayer tagName="TextWidget" variant="surface" type='widget'>
       <Text {...getDefaults} {...props}>
@@ -23,3 +23,4 @@ export const TextWidget: any = (props: any) => {
   )
 }
 
+export default TextWidget

@@ -5,6 +5,7 @@ import { DevLayer } from "../../DevLayer"
 
 export const getProfile = {
   widgetName: "Divider",
+  version: 1,
 }
 
 
@@ -16,7 +17,7 @@ export const getDefaults = {
 
 }
 
-export const DividerWidget: any = (props: any) => {
+const DividerWidget: any = (props: any) => {
   return (
     <DevLayer tagName="DividerWidget" variant="surface" type='widget'>
       <Separator {...getDefaults} {...props} />
@@ -24,3 +25,4 @@ export const DividerWidget: any = (props: any) => {
   )
 }
 
+export default DividerWidget

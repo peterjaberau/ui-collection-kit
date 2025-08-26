@@ -22,12 +22,18 @@ import { ContainerComponentWrapper } from "#components/app/editor/ContainerCompo
 import { AnalyticsWrapper } from "#components/app/layout/AnalyticsWrapper"
 import { PropsComponentRenderer } from "#components/app/PropsComponentRenderer"
 import { FixedLayoutRenderer } from "#components/app/FixedLayoutRenderer"
-import { TextWidget } from "#components/app/widgets/TextWidget"
-import { DividerWidget } from "#components/app/widgets/DividerWidget"
+import { loadWidget } from "#components/app/widgets"
 
 export default function Page() {
-  const { entitiesPageList, entitiesContext, currentPageName, currentPageId, entitiesWidgetsStructure, entitiesCanvasWidgets, isPageHasWidgets } =
-    useEntitiesActor()
+  const {
+    entitiesPageList,
+    entitiesContext,
+    currentPageName,
+    currentPageId,
+    entitiesWidgetsStructure,
+    entitiesCanvasWidgets,
+    isPageHasWidgets,
+  } = useEntitiesActor()
 
   const { gitContext } = useGitActor()
   const { formContext } = useFormActor()
@@ -35,7 +41,12 @@ export default function Page() {
   const { lintingContext } = useLintingActor()
   const { orgContext, orgConfiguration, orgMyOrganizations } = useOrganizationActor()
   const { settingsContext } = useSettingsActor()
-  const { uiContext, uiAppView, uiAppTheming, uiTheme,  currentApplication, isPreviewMode } = useUiActor()
+  const { uiContext, uiAppView, uiAppTheming, uiTheme, currentApplication, isPreviewMode } = useUiActor()
+
+  const RenderWidgetFromRegistry = ({ widgetName }: { widgetName: string }) => {
+    const WidgetComponent = loadWidget(widgetName)
+    return <WidgetComponent />
+  }
 
   return (
     <>
@@ -73,7 +84,7 @@ export default function Page() {
               <Card.Header>
                 <Card.Title>Canvas</Card.Title>
               </Card.Header>
-              <Card.Body maxH={"2000px"}  overflowY={"auto"}>
+              <Card.Body maxH={"2000px"} overflowY={"auto"}>
                 <AppBuilder>
                   <AppIDE>
                     <WidgetEditor>
@@ -86,8 +97,9 @@ export default function Page() {
                                   <PropsComponentRenderer>
                                     <FixedLayoutRenderer>
                                       <Stack>
-                                        <TextWidget />
-                                        <DividerWidget />
+                                        <RenderWidgetFromRegistry widgetName={"TEXT_WIDGET"} />
+                                        <RenderWidgetFromRegistry widgetName={"DIVIDER_WIDGET"} />
+                                        <RenderWidgetFromRegistry widgetName={"BUTTON_WIDGET"} />
                                       </Stack>
                                     </FixedLayoutRenderer>
                                   </PropsComponentRenderer>
