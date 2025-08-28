@@ -8,6 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "yjs": "^13.5.12",
+    "moment": "2.29.4",
+    "moment-timezone": "^0.5.35",
+    "codemirror": "^5.65.13",
+    "codemirror-graphql": "^1.2.14",
+    "fast-deep-equal": "^3.1.3",
+    "loglevel": "^1.7.1",
+    "klona": "^2.0.5",
+    "@sentry/utils": "^7.120.3",
+    "deep-diff": "^1.0.2",
+    "tern": "^0.21.0",
     "uuid": "^11.1.0",
     "shiki": "^3.9.1",
     "@chakra-ui/react": "^3.24.0",
@@ -79,6 +90,11 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@types/moment-timezone": "^0.5.10",
+    "@types/codemirror": "^0.0.96",
+    "@blueprintjs/icons": "3.22.0",
+    "@types/deep-diff": "^1.0.0",
+    "@types/tern": "0.22.0",
     "@types/uuid": "^10.0.0",
     "@types/set-value": "4.0.3",
     "@types/lodash": "^4.17.19",

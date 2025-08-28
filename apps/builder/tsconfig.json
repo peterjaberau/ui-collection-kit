@@ -36,7 +36,24 @@
       "#app/*": ["./app/*"],
 
       "#blocks/*": ["./blocks/*"],
-      "#utils/*": ["./utils/*"]
+      "#utils/*": ["./utils/*"],
+
+      "actions/*": ["./src/appsmith/actions/*"],
+      "api/*": ["./src/appsmith/api/*"],
+      "ce/*": ["./src/appsmith/ce/*"],
+      "constants/*": ["./src/appsmith/constants/*"],
+      "entities/*": ["./src/appsmith/entities/*"],
+      "pages/*": ["./src/appsmith/pages/*"]
+      "plugins/*": ["./src/appsmith/plugins/*"],
+      "polyfills/*": ["./src/appsmith/polyfills/*"],
+      "utils/*": ["./src/appsmith/utils/*"],
+      "workers/*": ["./src/appsmith/workers/*"],
+      "sagas/*": ["./src/appsmith/sagas/*"],
+      "selectors/*": ["./src/appsmith/selectors/*"],
+      "reducers/*": ["./src/appsmith/reducers/*"],
+      "components/*": ["./src/appsmith/components/*"],
+      "@shared/*": ["./src/appsmith/shared/*"],
+      "PluginActionEditor/*": ["./src/appsmith/PluginActionEditor/*"]
     }
   },
   "include": [

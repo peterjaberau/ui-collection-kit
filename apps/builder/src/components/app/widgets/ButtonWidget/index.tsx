@@ -19,7 +19,7 @@ export const getDefaults = {
 
 const ButtonWidget: any = (props: any) => {
   return (
-    <DevLayer tagName="TextWidget" variant="surface" type='widget'>
+    <DevLayer tagName="TextWidget" variant="surface" type="widget">
       <Button {...getDefaults} {...props}>
         {props.text || getDefaults.text}
       </Button>
