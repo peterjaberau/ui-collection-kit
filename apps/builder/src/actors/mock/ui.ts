@@ -1,7 +1,7 @@
 export default {
   analytics: {
     telemetry: {
-      segmentState: 'INIT_SUCCESS'
+      segmentState: 'INIT_UNCERTAIN'
     }
   },
   editor: {
@@ -31,13 +31,13 @@ export default {
     zoomLevel: 1,
     onLoadActionExecution: true,
     currentPageName: 'Page1',
-    currentLayoutId: '68ad34afd8deff53ee072776',
+    currentLayoutId: '68b44443eb513e051addbe4a',
     pageWidgetId: '0',
-    currentApplicationId: '68ad34afd8deff53ee072775',
-    currentPageId: '68ad34afd8deff53ee072777',
+    currentApplicationId: '68b44443eb513e051addbe49',
+    currentPageId: '68b44443eb513e051addbe4b',
     pageActions: [],
     layoutOnLoadActionErrors: [],
-    lastUpdatedTime: 1756184955
+    lastUpdatedTime: 1756646871
   },
   errors: {
     safeCrash: false,
@@ -51,7 +51,8 @@ export default {
     isVisible: false,
     isNew: false,
     width: 288,
-    selectedPropertyPanel: {}
+    selectedPropertyPanel: {},
+    focusedProperty: ''
   },
   tableFilterPane: {
     isVisible: false
@@ -113,7 +114,7 @@ export default {
           appMaxWidth: 'LARGE'
         }
       },
-      id: '68ad34afd8deff53ee072775',
+      id: '68b44443eb513e051addbe49',
       modifiedBy: 'peterjaberau@gmail.com',
       userPermissions: [
         'export:applications',
@@ -130,32 +131,30 @@ export default {
         'delete:applications',
         'makePublic:applications'
       ],
-      name: 'auto-layout',
+      name: 'widget-dev',
       workspaceId: '68a9b81bde8cf11f80e4a8a0',
       isPublic: false,
       appIsExample: false,
       unreadCommentThreads: 0,
-      color: '#EAEDFB',
-      icon: 'snowy-weather',
-      slug: 'auto-layout',
+      color: '#CCCCCC',
+      icon: 'rocket',
+      slug: 'widget-dev',
       unpublishedCustomJSLibs: [],
       publishedCustomJSLibs: [],
+      lastDeployedAt: '2025-08-31T13:28:03.541Z',
       evaluationVersion: 2,
       applicationVersion: 2,
       collapseInvisibleWidgets: true,
       isManualUpdate: true,
-      baseId: '68ad34afd8deff53ee072775',
+      baseId: '68b44443eb513e051addbe49',
       unpublishedThemeId: '68a9b7e9de8cf11f80e4a888',
       publishedThemeId: '68a9b7e9de8cf11f80e4a888',
       artifactType: 'APPLICATION',
-      appLayout: {
-        type: 'FLUID'
-      },
-      modifiedAt: '2025-08-26T05:09:15.162Z',
+      modifiedAt: '2025-08-31T13:27:51.418Z',
       pages: [
         {
-          id: '68ad34afd8deff53ee072777',
-          baseId: '68ad34afd8deff53ee072777',
+          id: '68b44443eb513e051addbe4b',
+          baseId: '68b44443eb513e051addbe4b',
           name: 'Page1',
           slug: 'page1',
           isDefault: true,
@@ -2328,133 +2327,133 @@ export default {
       userPermissions: [],
       sortPriority: '1000',
       widgets: [
-        'AUDIO_RECORDER_WIDGET',
-        'FILE_PICKER_WIDGET_V2',
-        'TABS_WIDGET',
-        'LIST_WIDGET',
-        'CONTAINER_WIDGET',
-        'DOCUMENT_VIEWER_WIDGET',
-        'CHART_WIDGET',
-        'JSON_FORM_WIDGET',
-        'IFRAME_WIDGET',
-        'CURRENCY_INPUT_WIDGET',
-        'MULTI_SELECT_TREE_WIDGET',
-        'SINGLE_SELECT_TREE_WIDGET',
-        'RATE_WIDGET',
-        'VIDEO_WIDGET',
-        'TEXT_WIDGET',
-        'BUTTON_WIDGET',
-        'IMAGE_WIDGET',
-        'CIRCULAR_PROGRESS_WIDGET',
-        'SELECT_WIDGET',
-        'MODAL_WIDGET',
-        'SWITCH_GROUP_WIDGET',
-        'JSON_FORM_WIDGGET',
-        'CHECKBOX_GROUP_WIDGET',
-        'LIST_WIDGET_V2',
-        'PHONE_INPUT_WIDGET',
-        'INPUT_WIDGET_V2',
-        'TABLE_WIDGET',
-        'CAMERA_WIDGET',
-        'MAP_CHART_WIDGET',
-        'STATBOX_WIDGET',
-        'RADIO_GROUP_WIDGET',
-        'MENU_BUTTON_WIDGET',
-        'SWITCH_WIDGET',
-        'CHECKBOX_WIDGET',
-        'BUTTON_GROUP_WIDGET',
         'DATE_PICKER_WIDGET2',
-        'TABLE_WIDGET_V2',
+        'TABLE_WIDGET',
+        'MENU_BUTTON_WIDGET',
+        'BUTTON_GROUP_WIDGET',
         'DIVIDER_WIDGET',
+        'CONTAINER_WIDGET',
+        'AUDIO_RECORDER_WIDGET',
+        'JSON_FORM_WIDGGET',
+        'JSON_FORM_WIDGET',
+        'TABLE_WIDGET_V2',
+        'BUTTON_WIDGET',
+        'RATE_WIDGET',
+        'IFRAME_WIDGET',
+        'LIST_WIDGET',
+        'MULTI_SELECT_TREE_WIDGET',
+        'RICH_TEXT_EDITOR_WIDGET',
+        'SINGLE_SELECT_TREE_WIDGET',
+        'TABS_WIDGET',
+        'CHECKBOX_WIDGET',
+        'LIST_WIDGET_V2',
+        'CIRCULAR_PROGRESS_WIDGET',
+        'SWITCH_GROUP_WIDGET',
+        'TEXT_WIDGET',
         'FORM_WIDGET',
+        'PHONE_INPUT_WIDGET',
+        'FILE_PICKER_WIDGET_V2',
+        'SWITCH_WIDGET',
+        'MODAL_WIDGET',
+        'CURRENCY_INPUT_WIDGET',
+        'DOCUMENT_VIEWER_WIDGET',
+        'MAP_CHART_WIDGET',
+        'CHART_WIDGET',
+        'RADIO_GROUP_WIDGET',
+        'STATBOX_WIDGET',
+        'PROGRESSBAR_WIDGET',
         'AUDIO_WIDGET',
+        'CAMERA_WIDGET',
+        'CHECKBOX_GROUP_WIDGET',
+        'SELECT_WIDGET',
+        'VIDEO_WIDGET',
+        'IMAGE_WIDGET',
         'MULTI_SELECT_WIDGET_V2',
         'ICON_BUTTON_WIDGET',
-        'RICH_TEXT_EDITOR_WIDGET',
-        'PROGRESSBAR_WIDGET',
+        'INPUT_WIDGET_V2',
         'MAP_WIDGET'
       ],
       functions: [
-        'Server Side Pagination',
-        'Communication Services',
-        'Technology',
-        'Sample apps',
-        'Consumer goods',
-        'Human Resources (HR)',
-        'WhatsApp',
-        'Utilities',
-        'Real Estate',
         'Slack',
-        'E-Commerce',
-        'Operations',
-        'Building Blocks',
-        'Services',
-        'textile',
-        'Health Care',
-        'Client Side Filtering',
-        'Building Block',
-        'Customer Support',
-        'Financials',
-        'Consumer Discretionary',
-        'Sales',
-        'Materials',
-        'Start-up',
-        'Other',
-        'Industrials',
-        'Agriculture',
-        'Businesses',
-        'Marketing',
         'Google Maps',
+        'textile',
+        'Sales',
+        'Health Care',
+        'Customer Support',
+        'Services',
+        'Operations',
+        'Human Resources (HR)',
+        'Materials',
+        'Agriculture',
+        'Marketing',
+        'Real Estate',
+        'Building Blocks',
+        'Utilities',
+        'WhatsApp',
+        'Consumer goods',
+        'E-Commerce',
+        'Technology',
+        'Client Side Filtering',
+        'Start-up',
+        'Server Side Pagination',
+        'Building Block',
+        'Sample apps',
+        'Other',
+        'Communication Services',
+        'Financials',
+        'Businesses',
+        'Industrials',
         'All',
-        'Energy'
+        'Energy',
+        'Consumer Discretionary'
       ],
       useCases: [
-        'Legal',
-        'Human Resources (HR)',
-        'Product, design, and UX',
-        'Order Management',
-        'Productivity',
-        'Compliance',
-        'Tracking tool',
-        'Sales',
-        'Support',
-        'Finance',
-        'Public Relations (PR)',
-        'Workflow Automation',
-        'Solutions',
-        'Service Desk',
-        'Personal',
         'Software Development',
-        'Remote work',
-        'Information Technology (IT)',
-        'Project Management',
-        'B2C',
-        'Database GUI',
-        'Communications',
-        'Marketing',
         'Approval App',
-        'Dashboard'
+        'Sales',
+        'Workflow Automation',
+        'Service Desk',
+        'B2C',
+        'Compliance',
+        'Communications',
+        'Tracking tool',
+        'Order Management',
+        'Dashboard',
+        'Support',
+        'Remote work',
+        'Productivity',
+        'Human Resources (HR)',
+        'Project Management',
+        'Solutions',
+        'Marketing',
+        'Finance',
+        'Personal',
+        'Legal',
+        'Information Technology (IT)',
+        'Database GUI',
+        'Product, design, and UX',
+        'Public Relations (PR)'
       ],
       datasources: [
         'amazons3-plugin',
         'mysql-plugin',
-        'twilio',
-        'elasticsearch-plugin',
-        'js-plugin',
-        'arangodb-plugin',
-        'mssql-plugin',
         'redis-plugin',
+        'saas-plugin',
+        'postgres-plugin',
+        'firestore-plugin',
+        'elasticsearch-plugin',
+        'smtp-plugin',
+        'restapi-plugin',
+        'twilio',
+        'arangodb-plugin',
+        'js-plugin',
         'mongo-plugin',
         'google-sheets-plugin',
-        'firestore-plugin',
-        'snowflake-plugin',
-        'saas-plugin',
-        'dynamo-plugin',
-        'restapi-plugin',
-        'rapidapi-plugin',
-        'postgres-plugin',
         'redshift-plugin',
-        'smtp-plugin'
+        'dynamo-plugin',
+        'mssql-plugin',
+        'rapidapi-plugin',
+        'snowflake-plugin'
       ],
       templateGridRowSize: 0,
       templateGridColumnSize: 0
@@ -2849,7 +2848,7 @@ export default {
     productAlert: {
       config: {
         dismissed: false,
-        snoozeTill: '2025-08-26T05:58:03.835Z'
+        snoozeTill: '2025-08-31T13:29:35.319Z'
       }
     }
   },
@@ -2858,10 +2857,17 @@ export default {
     dragDetails: {},
     autoLayoutDragDetails: {},
     isResizing: false,
-    lastSelectedWidget: '0',
-    selectedWidgets: [],
+    lastSelectedWidget: 'ydlupoo8k2',
+    selectedWidgets: [
+      'ydlupoo8k2'
+    ],
     selectedWidgetAncestry: [],
-    entityExplorerAncestry: [],
+    entityExplorerAncestry: [
+      'ydlupoo8k2',
+      '71mrzuu4q7',
+      'nsadyy1bzy',
+      '0'
+    ],
     isAutoCanvasResizing: false,
     anvil: {
       spaceDistribution: {
@@ -2889,7 +2895,7 @@ export default {
     viewMode: true,
     collapsibleState: {},
     defaultKeyValueArrayConfig: [],
-    responseTabHeight: 419.65,
+    responseTabHeight: 439.25,
     selectedTableName: ''
   },
   datasourceName: {
@@ -2911,54 +2917,100 @@ export default {
     width: 256,
     active: true,
     entityInfo: {
-      show: false,
-      entityId: ''
+      show: false
     }
   },
   pageCanvasStructure: {
-    '68ad34afd8deff53ee072777': {
+    '68b44443eb513e051addbe4b': {
       widgetId: '0',
       widgetName: 'MainContainer',
       type: 'CANVAS_WIDGET',
       children: [
         {
-          widgetId: '9e839onva6',
-          widgetName: 'containerRoot',
+          widgetId: 'nsadyy1bzy',
+          widgetName: 'containerToolbar',
           type: 'CONTAINER_WIDGET',
           children: [
             {
-              widgetId: '0j3cs5153j',
-              widgetName: 'containerPlayground',
-              type: 'CONTAINER_WIDGET',
-              children: [
-                {
-                  widgetId: '9nft85pms1',
-                  widgetName: 'Input1',
-                  type: 'INPUT_WIDGET_V2'
-                },
-                {
-                  widgetId: 'kwdcw234sl',
-                  widgetName: 'Text1',
-                  type: 'TEXT_WIDGET'
-                }
-              ]
+              widgetId: 'bvqcrxkaum',
+              widgetName: 'btn_left_left',
+              type: 'BUTTON_WIDGET'
             },
             {
-              widgetId: 'dgev9742e2',
-              widgetName: 'containerActions',
-              type: 'CONTAINER_WIDGET',
-              children: [
-                {
-                  widgetId: 'tl8xbeqhua',
-                  widgetName: 'btnCalculate',
-                  type: 'BUTTON_WIDGET'
-                },
-                {
-                  widgetId: 'od1swmzxxq',
-                  widgetName: 'calculatedTxt',
-                  type: 'TEXT_WIDGET'
-                }
-              ]
+              widgetId: 'v68er04mr2',
+              widgetName: 'btn_left_reset',
+              type: 'BUTTON_WIDGET'
+            },
+            {
+              widgetId: '250dog341d',
+              widgetName: 'btn_right_reset',
+              type: 'BUTTON_WIDGET'
+            },
+            {
+              widgetId: '5trspcxhy2',
+              widgetName: 'btn_right_right',
+              type: 'BUTTON_WIDGET'
+            },
+            {
+              widgetId: 'ydlupoo8k2',
+              widgetName: 'btn_left_right',
+              type: 'BUTTON_WIDGET'
+            },
+            {
+              widgetId: 'ltfsabiaq1',
+              widgetName: 'btn_right_left',
+              type: 'BUTTON_WIDGET'
+            }
+          ]
+        },
+        {
+          widgetId: 'cd1xlchbgb',
+          widgetName: 'containerSectionLeft',
+          type: 'CONTAINER_WIDGET',
+          children: [
+            {
+              widgetId: 'ujgcje0omy',
+              widgetName: 'txt_static_left',
+              type: 'TEXT_WIDGET'
+            },
+            {
+              widgetId: 'is0fwucchq',
+              widgetName: 'txt_dynamic_left',
+              type: 'TEXT_WIDGET'
+            }
+          ]
+        },
+        {
+          widgetId: 'uw6hr9rju8',
+          widgetName: 'containerSectionRight',
+          type: 'CONTAINER_WIDGET',
+          children: [
+            {
+              widgetId: 'weq4w5wk5m',
+              widgetName: 'txt_dynamic_right',
+              type: 'TEXT_WIDGET'
+            },
+            {
+              widgetId: 'k1j5882wmt',
+              widgetName: 'txt_static_right',
+              type: 'TEXT_WIDGET'
+            }
+          ]
+        },
+        {
+          widgetId: 'gaswdfeyvz',
+          widgetName: 'containerLogs',
+          type: 'CONTAINER_WIDGET',
+          children: [
+            {
+              widgetId: 'y3s2g1c5zz',
+              widgetName: 'txt_log_left',
+              type: 'TEXT_WIDGET'
+            },
+            {
+              widgetId: '5m3vf11p5u',
+              widgetName: 'txt_log_right',
+              type: 'TEXT_WIDGET'
             }
           ]
         }
@@ -2966,7 +3018,7 @@ export default {
     }
   },
   pageWidgets: {
-    '68ad34afd8deff53ee072777': {
+    '68b44443eb513e051addbe4b': {
       dsl: {
         '0': {
           widgetName: 'MainContainer',
@@ -2976,7 +3028,7 @@ export default {
           detachFromLayout: true,
           widgetId: '0',
           topRow: 0,
-          bottomRow: 630,
+          bottomRow: 700,
           containerStyle: 'none',
           snapRows: 124,
           parentRowSpace: 1,
@@ -2989,75 +3041,478 @@ export default {
           dynamicBindingPathList: [],
           leftColumn: 0,
           children: [
-            '9e839onva6'
+            'nsadyy1bzy',
+            'cd1xlchbgb',
+            'uw6hr9rju8',
+            'gaswdfeyvz'
           ]
         },
-        '9nft85pms1': {
+        bvqcrxkaum: {
+          resetFormOnClick: false,
           needsErrorInfo: false,
           boxShadow: 'none',
-          mobileBottomRow: 10,
-          widgetName: 'Input1',
-          topRow: 1,
-          bottomRow: 8,
+          mobileBottomRow: 7,
+          widgetName: 'btn_left_left',
+          onClick: '{{storeValue(\'var_left\', \'Dynamic Left: \' + txt_static_left.text);}}',
+          buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+          topRow: 2,
+          bottomRow: 6,
           parentRowSpace: 10,
-          labelWidth: 5,
-          autoFocus: false,
-          type: 'INPUT_WIDGET_V2',
-          mobileRightColumn: 35,
+          type: 'BUTTON_WIDGET',
+          mobileRightColumn: 17,
           animateLoading: true,
-          parentColumnSpace: 6.541259765625,
-          resetOnSubmit: true,
-          leftColumn: 1,
+          parentColumnSpace: 11.90625,
+          dynamicTriggerPathList: [
+            {
+              key: 'onClick'
+            }
+          ],
+          leftColumn: 0,
           dynamicBindingPathList: [
             {
-              key: 'accentColor'
+              key: 'buttonColor'
             },
             {
               key: 'borderRadius'
             }
           ],
-          labelPosition: 'Top',
-          labelStyle: '',
-          inputType: 'TEXT',
+          text: 'Left from Left',
           isDisabled: false,
-          key: 'z6mkd60niu',
-          labelTextSize: '0.875rem',
-          isRequired: false,
-          rightColumn: 60,
-          dynamicHeight: 'FIXED',
-          widgetId: '9nft85pms1',
-          accentColor: '{{appsmith.theme.colors.primaryColor}}',
-          showStepArrows: false,
-          minWidth: 450,
+          key: 'shywogacyl',
+          rightColumn: 13,
+          isDefaultClickDisabled: true,
+          widgetId: 'bvqcrxkaum',
+          minWidth: 120,
           isVisible: true,
-          label: 'Label',
-          version: 2,
-          parentId: '256n68mv3w',
-          labelAlignment: 'left',
+          recaptchaType: 'V3',
+          version: 1,
+          parentId: '71mrzuu4q7',
           renderMode: 'CANVAS',
           isLoading: false,
           mobileTopRow: 3,
+          responsiveBehavior: 'hug',
+          disabledWhenInvalid: false,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 1,
+          buttonVariant: 'PRIMARY',
+          placement: 'CENTER'
+        },
+        v68er04mr2: {
+          resetFormOnClick: false,
+          needsErrorInfo: false,
+          boxShadow: 'none',
+          mobileBottomRow: 7,
+          widgetName: 'btn_left_reset',
+          onClick: '{{storeValue(\'var_left\', \'Dynamic Left: -\');}}',
+          buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+          topRow: 7,
+          bottomRow: 11,
+          parentRowSpace: 10,
+          type: 'BUTTON_WIDGET',
+          mobileRightColumn: 17,
+          animateLoading: true,
+          parentColumnSpace: 11.90625,
+          dynamicTriggerPathList: [
+            {
+              key: 'onClick'
+            }
+          ],
+          leftColumn: 14,
+          dynamicBindingPathList: [
+            {
+              key: 'buttonColor'
+            },
+            {
+              key: 'borderRadius'
+            }
+          ],
+          text: 'Left reset',
+          isDisabled: false,
+          key: 'shywogacyl',
+          rightColumn: 24,
+          isDefaultClickDisabled: true,
+          widgetId: 'v68er04mr2',
+          minWidth: 120,
+          isVisible: true,
+          recaptchaType: 'V3',
+          version: 1,
+          parentId: '71mrzuu4q7',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 3,
+          responsiveBehavior: 'hug',
+          disabledWhenInvalid: false,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 1,
+          buttonVariant: 'PRIMARY',
+          placement: 'CENTER'
+        },
+        '250dog341d': {
+          resetFormOnClick: false,
+          needsErrorInfo: false,
+          boxShadow: 'none',
+          mobileBottomRow: 7,
+          widgetName: 'btn_right_reset',
+          onClick: '{{storeValue(\'var_right\', \'Dynamic Right: -\');}}',
+          buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+          topRow: 7,
+          bottomRow: 11,
+          parentRowSpace: 10,
+          type: 'BUTTON_WIDGET',
+          mobileRightColumn: 17,
+          animateLoading: true,
+          parentColumnSpace: 11.90625,
+          dynamicTriggerPathList: [
+            {
+              key: 'onClick'
+            }
+          ],
+          leftColumn: 52,
+          dynamicBindingPathList: [
+            {
+              key: 'buttonColor'
+            },
+            {
+              key: 'borderRadius'
+            }
+          ],
+          text: 'Right reset',
+          isDisabled: false,
+          key: 'shywogacyl',
+          rightColumn: 62,
+          isDefaultClickDisabled: true,
+          widgetId: '250dog341d',
+          minWidth: 120,
+          isVisible: true,
+          recaptchaType: 'V3',
+          version: 1,
+          parentId: '71mrzuu4q7',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 3,
+          responsiveBehavior: 'hug',
+          disabledWhenInvalid: false,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 1,
+          buttonVariant: 'PRIMARY',
+          placement: 'CENTER'
+        },
+        '5trspcxhy2': {
+          resetFormOnClick: false,
+          needsErrorInfo: false,
+          boxShadow: 'none',
+          mobileBottomRow: 7,
+          widgetName: 'btn_right_right',
+          onClick: '{{storeValue(\'var_right\', \'Dynamic Right: \' + txt_static_right.text);}}',
+          buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+          topRow: 2,
+          bottomRow: 6,
+          parentRowSpace: 10,
+          type: 'BUTTON_WIDGET',
+          mobileRightColumn: 17,
+          animateLoading: true,
+          parentColumnSpace: 11.90625,
+          dynamicTriggerPathList: [
+            {
+              key: 'onClick'
+            }
+          ],
+          leftColumn: 37,
+          dynamicBindingPathList: [
+            {
+              key: 'buttonColor'
+            },
+            {
+              key: 'borderRadius'
+            }
+          ],
+          text: 'Right from Right',
+          isDisabled: false,
+          key: 'shywogacyl',
+          rightColumn: 51,
+          isDefaultClickDisabled: true,
+          widgetId: '5trspcxhy2',
+          minWidth: 120,
+          isVisible: true,
+          recaptchaType: 'V3',
+          version: 1,
+          parentId: '71mrzuu4q7',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 3,
+          responsiveBehavior: 'hug',
+          disabledWhenInvalid: false,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 1,
+          buttonVariant: 'PRIMARY',
+          placement: 'CENTER'
+        },
+        ydlupoo8k2: {
+          resetFormOnClick: false,
+          needsErrorInfo: false,
+          boxShadow: 'none',
+          mobileBottomRow: 7,
+          widgetName: 'btn_left_right',
+          onClick: '{{storeValue(\'var_left\', \'Dynamic Left: \' + txt_static_right.text);}}',
+          buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+          dynamicPropertyPathList: [],
+          topRow: 2,
+          bottomRow: 6,
+          parentRowSpace: 10,
+          type: 'BUTTON_WIDGET',
+          mobileRightColumn: 17,
+          animateLoading: true,
+          parentColumnSpace: 11.90625,
+          dynamicTriggerPathList: [
+            {
+              key: 'onClick'
+            }
+          ],
+          leftColumn: 14,
+          dynamicBindingPathList: [
+            {
+              key: 'buttonColor'
+            },
+            {
+              key: 'borderRadius'
+            }
+          ],
+          text: 'Left from Right',
+          isDisabled: false,
+          key: 'shywogacyl',
+          rightColumn: 24,
+          isDefaultClickDisabled: true,
+          widgetId: 'ydlupoo8k2',
+          minWidth: 120,
+          isVisible: true,
+          recaptchaType: 'V3',
+          version: 1,
+          parentId: '71mrzuu4q7',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 3,
+          responsiveBehavior: 'hug',
+          disabledWhenInvalid: false,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 1,
+          buttonVariant: 'PRIMARY',
+          placement: 'CENTER'
+        },
+        ltfsabiaq1: {
+          resetFormOnClick: false,
+          needsErrorInfo: false,
+          boxShadow: 'none',
+          mobileBottomRow: 7,
+          widgetName: 'btn_right_left',
+          onClick: '{{storeValue(\'var_right\', \'Dynamic Right: \' + txt_static_left.text);}}',
+          buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+          dynamicPropertyPathList: [],
+          topRow: 2,
+          bottomRow: 6,
+          parentRowSpace: 10,
+          type: 'BUTTON_WIDGET',
+          mobileRightColumn: 17,
+          animateLoading: true,
+          parentColumnSpace: 11.90625,
+          dynamicTriggerPathList: [
+            {
+              key: 'onClick'
+            }
+          ],
+          leftColumn: 52,
+          dynamicBindingPathList: [
+            {
+              key: 'buttonColor'
+            },
+            {
+              key: 'borderRadius'
+            }
+          ],
+          text: 'Right from Left',
+          isDisabled: false,
+          key: 'shywogacyl',
+          rightColumn: 63,
+          isDefaultClickDisabled: true,
+          widgetId: 'ltfsabiaq1',
+          minWidth: 120,
+          isVisible: true,
+          recaptchaType: 'V3',
+          version: 1,
+          parentId: '71mrzuu4q7',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 3,
+          responsiveBehavior: 'hug',
+          disabledWhenInvalid: false,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 1,
+          buttonVariant: 'PRIMARY',
+          placement: 'CENTER'
+        },
+        '71mrzuu4q7': {
+          needsErrorInfo: false,
+          boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
+          mobileBottomRow: 100,
+          widgetName: 'Canvas1',
+          topRow: 0,
+          bottomRow: 150,
+          parentRowSpace: 1,
+          type: 'CANVAS_WIDGET',
+          canExtend: false,
+          minHeight: 100,
+          mobileRightColumn: 255,
+          parentColumnSpace: 1,
+          leftColumn: 0,
+          dynamicBindingPathList: [
+            {
+              key: 'borderRadius'
+            },
+            {
+              key: 'boxShadow'
+            }
+          ],
+          children: [
+            'bvqcrxkaum',
+            'v68er04mr2',
+            '250dog341d',
+            '5trspcxhy2',
+            'ydlupoo8k2',
+            'ltfsabiaq1'
+          ],
+          key: 'isxwoxpkra',
+          rightColumn: 255,
+          detachFromLayout: true,
+          dynamicHeight: 'AUTO_HEIGHT',
+          widgetId: '71mrzuu4q7',
+          containerStyle: 'none',
+          minWidth: 450,
+          isVisible: true,
+          version: 1,
+          parentId: 'nsadyy1bzy',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 0,
           responsiveBehavior: 'fill',
           borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-          mobileLeftColumn: 15,
+          mobileLeftColumn: 0,
           maxDynamicHeight: 9000,
-          iconAlign: 'left',
-          defaultText: '',
-          minDynamicHeight: 4
+          minDynamicHeight: 4,
+          flexLayers: []
         },
-        kwdcw234sl: {
+        nsadyy1bzy: {
           needsErrorInfo: false,
-          mobileBottomRow: 15,
-          widgetName: 'Text1',
-          topRow: 11,
-          bottomRow: 15,
+          boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
+          mobileBottomRow: 37,
+          widgetName: 'containerToolbar',
+          borderColor: '#E0DEDE',
+          isCanvas: true,
+          topRow: 6,
+          bottomRow: 22,
+          parentRowSpace: 10,
+          type: 'CONTAINER_WIDGET',
+          shouldScrollContents: true,
+          mobileRightColumn: 15,
+          animateLoading: true,
+          parentColumnSpace: 17,
+          dynamicTriggerPathList: [],
+          leftColumn: 12,
+          dynamicBindingPathList: [
+            {
+              key: 'borderRadius'
+            },
+            {
+              key: 'boxShadow'
+            }
+          ],
+          children: [
+            '71mrzuu4q7'
+          ],
+          borderWidth: '1',
+          flexVerticalAlignment: 'stretch',
+          key: 'xqvebn6ivt',
+          backgroundColor: '#FFFFFF',
+          rightColumn: 58,
+          dynamicHeight: 'FIXED',
+          widgetId: 'nsadyy1bzy',
+          containerStyle: 'card',
+          minWidth: 450,
+          isVisible: true,
+          version: 1,
+          parentId: '0',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 27,
+          responsiveBehavior: 'fill',
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 0,
+          maxDynamicHeight: 9000,
+          minDynamicHeight: 10
+        },
+        ujgcje0omy: {
+          needsErrorInfo: false,
+          mobileBottomRow: 5,
+          widgetName: 'txt_static_left',
+          topRow: 1,
+          bottomRow: 5,
           parentRowSpace: 10,
           type: 'TEXT_WIDGET',
-          mobileRightColumn: 35,
+          mobileRightColumn: 24,
           animateLoading: true,
           overflow: 'NONE',
           fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
-          parentColumnSpace: 6.541259765625,
+          parentColumnSpace: 7.65625,
+          dynamicTriggerPathList: [],
+          leftColumn: 2,
+          dynamicBindingPathList: [
+            {
+              key: 'truncateButtonColor'
+            },
+            {
+              key: 'fontFamily'
+            },
+            {
+              key: 'borderRadius'
+            }
+          ],
+          shouldTruncate: false,
+          truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
+          text: 'STATIC text from Left Container',
+          key: 'g4kizrfvnz',
+          rightColumn: 62,
+          textAlign: 'LEFT',
+          dynamicHeight: 'AUTO_HEIGHT',
+          widgetId: 'ujgcje0omy',
+          minWidth: 450,
+          isVisible: true,
+          fontStyle: 'BOLD',
+          textColor: '#231F20',
+          version: 1,
+          parentId: 'an70evwb09',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 1,
+          responsiveBehavior: 'fill',
+          originalTopRow: 1,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 8,
+          maxDynamicHeight: 9000,
+          originalBottomRow: 6,
+          fontSize: '1rem',
+          minDynamicHeight: 4
+        },
+        is0fwucchq: {
+          needsErrorInfo: false,
+          mobileBottomRow: 5,
+          widgetName: 'txt_dynamic_left',
+          topRow: 5,
+          bottomRow: 9,
+          parentRowSpace: 10,
+          type: 'TEXT_WIDGET',
+          mobileRightColumn: 24,
+          animateLoading: true,
+          overflow: 'NONE',
+          fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
+          parentColumnSpace: 7.65625,
           dynamicTriggerPathList: [],
           leftColumn: 2,
           dynamicBindingPathList: [
@@ -3076,42 +3531,42 @@ export default {
           ],
           shouldTruncate: false,
           truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
-          text: 'current value is: {{Input1.text ? Input1.text : "-"}}',
-          key: 'lgxpzfcx4b',
-          rightColumn: 59,
+          text: '{{appsmith.store.var_left}}',
+          key: 'g4kizrfvnz',
+          rightColumn: 62,
           textAlign: 'LEFT',
           dynamicHeight: 'AUTO_HEIGHT',
-          widgetId: 'kwdcw234sl',
+          widgetId: 'is0fwucchq',
           minWidth: 450,
           isVisible: true,
           fontStyle: 'BOLD',
           textColor: '#231F20',
           version: 1,
-          parentId: '256n68mv3w',
+          parentId: 'an70evwb09',
           renderMode: 'CANVAS',
           isLoading: false,
-          mobileTopRow: 11,
+          mobileTopRow: 1,
           responsiveBehavior: 'fill',
-          originalTopRow: 11,
+          originalTopRow: 5,
           borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-          mobileLeftColumn: 19,
+          mobileLeftColumn: 8,
           maxDynamicHeight: 9000,
-          originalBottomRow: 16,
+          originalBottomRow: 9,
           fontSize: '1rem',
           minDynamicHeight: 4
         },
-        '256n68mv3w': {
+        an70evwb09: {
           needsErrorInfo: false,
           boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
           mobileBottomRow: 100,
-          widgetName: 'Canvas2',
+          widgetName: 'Canvas1Copy',
           topRow: 0,
-          bottomRow: 290,
+          bottomRow: 170,
           parentRowSpace: 1,
           type: 'CANVAS_WIDGET',
           canExtend: false,
           minHeight: 100,
-          mobileRightColumn: 328.98046875,
+          mobileRightColumn: 255,
           parentColumnSpace: 1,
           leftColumn: 0,
           dynamicBindingPathList: [
@@ -3123,19 +3578,19 @@ export default {
             }
           ],
           children: [
-            '9nft85pms1',
-            'kwdcw234sl'
+            'ujgcje0omy',
+            'is0fwucchq'
           ],
-          key: 'izcc32bkjr',
-          rightColumn: 328.98046875,
+          key: 'isxwoxpkra',
+          rightColumn: 255,
           detachFromLayout: true,
           dynamicHeight: 'AUTO_HEIGHT',
-          widgetId: '256n68mv3w',
+          widgetId: 'an70evwb09',
           containerStyle: 'none',
           minWidth: 450,
           isVisible: true,
           version: 1,
-          parentId: '0j3cs5153j',
+          parentId: 'cd1xlchbgb',
           renderMode: 'CANVAS',
           isLoading: false,
           mobileTopRow: 0,
@@ -3146,23 +3601,23 @@ export default {
           minDynamicHeight: 4,
           flexLayers: []
         },
-        '0j3cs5153j': {
+        cd1xlchbgb: {
           needsErrorInfo: false,
           boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
-          mobileBottomRow: 21,
-          widgetName: 'containerPlayground',
+          mobileBottomRow: 37,
+          widgetName: 'containerSectionLeft',
           borderColor: '#E0DEDE',
           isCanvas: true,
-          topRow: 1,
-          bottomRow: 30,
+          topRow: 30,
+          bottomRow: 47,
           parentRowSpace: 10,
           type: 'CONTAINER_WIDGET',
           shouldScrollContents: true,
-          mobileRightColumn: 25,
+          mobileRightColumn: 15,
           animateLoading: true,
-          parentColumnSpace: 13.70751953125,
+          parentColumnSpace: 17,
           dynamicTriggerPathList: [],
-          leftColumn: 0,
+          leftColumn: 2,
           dynamicBindingPathList: [
             {
               key: 'borderRadius'
@@ -3172,94 +3627,44 @@ export default {
             }
           ],
           children: [
-            '256n68mv3w'
+            'an70evwb09'
           ],
           borderWidth: '1',
           flexVerticalAlignment: 'stretch',
-          key: 'bv1axpkzaj',
+          key: 'xqvebn6ivt',
           backgroundColor: '#FFFFFF',
           rightColumn: 32,
           dynamicHeight: 'FIXED',
-          widgetId: '0j3cs5153j',
+          widgetId: 'cd1xlchbgb',
           containerStyle: 'card',
           minWidth: 450,
           isVisible: true,
           version: 1,
-          parentId: 'k1ojmo3iid',
+          parentId: '0',
           renderMode: 'CANVAS',
           isLoading: false,
-          mobileTopRow: 11,
+          mobileTopRow: 27,
           responsiveBehavior: 'fill',
           borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-          mobileLeftColumn: 1,
-          maxDynamicHeight: 12,
+          mobileLeftColumn: 0,
+          maxDynamicHeight: 9000,
           minDynamicHeight: 10
         },
-        tl8xbeqhua: {
-          resetFormOnClick: false,
+        weq4w5wk5m: {
           needsErrorInfo: false,
-          boxShadow: 'none',
-          mobileBottomRow: 11,
-          widgetName: 'btnCalculate',
-          onClick: '{{storeValue(\'localCalculatedVar\', calculatedTxt.setText(Input1.text));}}',
-          buttonColor: '{{appsmith.theme.colors.primaryColor}}',
-          topRow: 4,
-          bottomRow: 9,
-          parentRowSpace: 10,
-          type: 'BUTTON_WIDGET',
-          mobileRightColumn: 25,
-          animateLoading: true,
-          parentColumnSpace: 9.216796875,
-          dynamicTriggerPathList: [
-            {
-              key: 'onClick'
-            }
-          ],
-          leftColumn: 5,
-          dynamicBindingPathList: [
-            {
-              key: 'buttonColor'
-            },
-            {
-              key: 'borderRadius'
-            }
-          ],
-          text: 'Calculate',
-          isDisabled: false,
-          key: 'c32rx365fx',
-          rightColumn: 57,
-          isDefaultClickDisabled: true,
-          widgetId: 'tl8xbeqhua',
-          minWidth: 120,
-          isVisible: true,
-          recaptchaType: 'V3',
-          version: 1,
-          parentId: 'cl2ynw6igw',
-          renderMode: 'CANVAS',
-          isLoading: false,
-          mobileTopRow: 7,
-          responsiveBehavior: 'hug',
-          disabledWhenInvalid: false,
-          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-          mobileLeftColumn: 9,
-          buttonVariant: 'PRIMARY',
-          placement: 'CENTER'
-        },
-        od1swmzxxq: {
-          needsErrorInfo: false,
-          mobileBottomRow: 15,
-          widgetName: 'calculatedTxt',
-          topRow: 11,
-          bottomRow: 15,
+          mobileBottomRow: 5,
+          widgetName: 'txt_dynamic_right',
+          topRow: 6,
+          bottomRow: 11,
           parentRowSpace: 10,
           type: 'TEXT_WIDGET',
-          mobileRightColumn: 35,
+          mobileRightColumn: 24,
           animateLoading: true,
           overflow: 'NONE',
           fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
-          parentColumnSpace: 6.541259765625,
+          parentColumnSpace: 7.65625,
           dynamicTriggerPathList: [],
-          leftColumn: 3,
+          leftColumn: 1,
           dynamicBindingPathList: [
             {
               key: 'truncateButtonColor'
@@ -3276,137 +3681,94 @@ export default {
           ],
           shouldTruncate: false,
           truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
-          text: '{{localVariables.varCalculated}}',
-          key: 'lgxpzfcx4b',
-          rightColumn: 60,
+          text: '{{appsmith.store.var_right}}',
+          key: 'g4kizrfvnz',
+          rightColumn: 61,
           textAlign: 'LEFT',
           dynamicHeight: 'AUTO_HEIGHT',
-          widgetId: 'od1swmzxxq',
+          widgetId: 'weq4w5wk5m',
           minWidth: 450,
           isVisible: true,
           fontStyle: 'BOLD',
           textColor: '#231F20',
           version: 1,
-          parentId: 'cl2ynw6igw',
-          renderMode: 'CANVAS',
-          isLoading: false,
-          mobileTopRow: 11,
-          responsiveBehavior: 'fill',
-          originalTopRow: 11,
-          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-          mobileLeftColumn: 19,
-          maxDynamicHeight: 9000,
-          originalBottomRow: 16,
-          fontSize: '1rem',
-          minDynamicHeight: 4
-        },
-        cl2ynw6igw: {
-          needsErrorInfo: false,
-          boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
-          mobileBottomRow: 100,
-          widgetName: 'Canvas3',
-          topRow: 0,
-          bottomRow: 290,
-          parentRowSpace: 1,
-          type: 'CANVAS_WIDGET',
-          canExtend: false,
-          minHeight: 100,
-          mobileRightColumn: 328.98046875,
-          parentColumnSpace: 1,
-          leftColumn: 0,
-          dynamicBindingPathList: [
-            {
-              key: 'borderRadius'
-            },
-            {
-              key: 'boxShadow'
-            }
-          ],
-          children: [
-            'tl8xbeqhua',
-            'od1swmzxxq'
-          ],
-          key: 'izcc32bkjr',
-          rightColumn: 328.98046875,
-          detachFromLayout: true,
-          dynamicHeight: 'AUTO_HEIGHT',
-          widgetId: 'cl2ynw6igw',
-          containerStyle: 'none',
-          minWidth: 450,
-          isVisible: true,
-          version: 1,
-          parentId: 'dgev9742e2',
-          renderMode: 'CANVAS',
-          isLoading: false,
-          mobileTopRow: 0,
-          responsiveBehavior: 'fill',
-          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-          mobileLeftColumn: 0,
-          maxDynamicHeight: 9000,
-          minDynamicHeight: 4,
-          flexLayers: []
-        },
-        dgev9742e2: {
-          needsErrorInfo: false,
-          boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
-          mobileBottomRow: 11,
-          widgetName: 'containerActions',
-          borderColor: '#E0DEDE',
-          isCanvas: true,
-          topRow: 1,
-          bottomRow: 30,
-          parentRowSpace: 10,
-          type: 'CONTAINER_WIDGET',
-          shouldScrollContents: true,
-          mobileRightColumn: 63,
-          animateLoading: true,
-          parentColumnSpace: 13.70751953125,
-          dynamicTriggerPathList: [],
-          leftColumn: 32,
-          dynamicBindingPathList: [
-            {
-              key: 'borderRadius'
-            },
-            {
-              key: 'boxShadow'
-            }
-          ],
-          children: [
-            'cl2ynw6igw'
-          ],
-          borderWidth: '1',
-          flexVerticalAlignment: 'stretch',
-          key: 'bv1axpkzaj',
-          backgroundColor: '#FFFFFF',
-          rightColumn: 63,
-          dynamicHeight: 'FIXED',
-          widgetId: 'dgev9742e2',
-          containerStyle: 'card',
-          minWidth: 450,
-          isVisible: true,
-          version: 1,
-          parentId: 'k1ojmo3iid',
+          parentId: 'orlqu2v4v5',
           renderMode: 'CANVAS',
           isLoading: false,
           mobileTopRow: 1,
           responsiveBehavior: 'fill',
+          originalTopRow: 6,
           borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-          mobileLeftColumn: 39,
+          mobileLeftColumn: 8,
           maxDynamicHeight: 9000,
-          minDynamicHeight: 10
+          originalBottomRow: 11,
+          fontSize: '1rem',
+          minDynamicHeight: 4
         },
-        k1ojmo3iid: {
+        k1j5882wmt: {
+          needsErrorInfo: false,
+          mobileBottomRow: 5,
+          widgetName: 'txt_static_right',
+          topRow: 1,
+          bottomRow: 5,
+          parentRowSpace: 10,
+          type: 'TEXT_WIDGET',
+          mobileRightColumn: 24,
+          animateLoading: true,
+          overflow: 'NONE',
+          fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
+          parentColumnSpace: 7.65625,
+          dynamicTriggerPathList: [],
+          leftColumn: 2,
+          dynamicBindingPathList: [
+            {
+              key: 'truncateButtonColor'
+            },
+            {
+              key: 'fontFamily'
+            },
+            {
+              key: 'borderRadius'
+            }
+          ],
+          shouldTruncate: false,
+          truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
+          text: 'STATIC text from Right Container',
+          key: 'g4kizrfvnz',
+          rightColumn: 62,
+          textAlign: 'LEFT',
+          dynamicHeight: 'AUTO_HEIGHT',
+          widgetId: 'k1j5882wmt',
+          minWidth: 450,
+          isVisible: true,
+          fontStyle: 'BOLD',
+          textColor: '#231F20',
+          version: 1,
+          parentId: 'orlqu2v4v5',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 1,
+          responsiveBehavior: 'fill',
+          originalTopRow: 1,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 8,
+          maxDynamicHeight: 9000,
+          originalBottomRow: 6,
+          fontSize: '1rem',
+          minDynamicHeight: 4
+        },
+        orlqu2v4v5: {
           needsErrorInfo: false,
           boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
           mobileBottomRow: 100,
-          widgetName: 'Canvas1',
+          widgetName: 'Canvas1CopyCopy',
           topRow: 0,
-          bottomRow: 410,
+          bottomRow: 170,
           parentRowSpace: 1,
           type: 'CANVAS_WIDGET',
           canExtend: false,
           minHeight: 100,
-          mobileRightColumn: 430.5,
+          mobileRightColumn: 255,
           parentColumnSpace: 1,
           leftColumn: 0,
           dynamicBindingPathList: [
@@ -3418,19 +3780,19 @@ export default {
             }
           ],
           children: [
-            '0j3cs5153j',
-            'dgev9742e2'
+            'weq4w5wk5m',
+            'k1j5882wmt'
           ],
-          key: 'wl4jb57gwi',
-          rightColumn: 430.5,
+          key: 'isxwoxpkra',
+          rightColumn: 255,
           detachFromLayout: true,
           dynamicHeight: 'AUTO_HEIGHT',
-          widgetId: 'k1ojmo3iid',
+          widgetId: 'orlqu2v4v5',
           containerStyle: 'none',
           minWidth: 450,
           isVisible: true,
           version: 1,
-          parentId: '9e839onva6',
+          parentId: 'uw6hr9rju8',
           renderMode: 'CANVAS',
           isLoading: false,
           mobileTopRow: 0,
@@ -3441,23 +3803,23 @@ export default {
           minDynamicHeight: 4,
           flexLayers: []
         },
-        '9e839onva6': {
+        uw6hr9rju8: {
           needsErrorInfo: false,
           boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
-          mobileBottomRow: 32,
-          widgetName: 'containerRoot',
+          mobileBottomRow: 37,
+          widgetName: 'containerSectionRight',
           borderColor: '#E0DEDE',
           isCanvas: true,
-          topRow: 22,
-          bottomRow: 63,
+          topRow: 30,
+          bottomRow: 47,
           parentRowSpace: 10,
           type: 'CONTAINER_WIDGET',
           shouldScrollContents: true,
-          mobileRightColumn: 36,
+          mobileRightColumn: 15,
           animateLoading: true,
-          parentColumnSpace: 17.9375,
+          parentColumnSpace: 17,
           dynamicTriggerPathList: [],
-          leftColumn: 12,
+          leftColumn: 33,
           dynamicBindingPathList: [
             {
               key: 'borderRadius'
@@ -3467,15 +3829,15 @@ export default {
             }
           ],
           children: [
-            'k1ojmo3iid'
+            'orlqu2v4v5'
           ],
           borderWidth: '1',
           flexVerticalAlignment: 'stretch',
-          key: '1456ozhxit',
+          key: 'xqvebn6ivt',
           backgroundColor: '#FFFFFF',
-          rightColumn: 46,
+          rightColumn: 63,
           dynamicHeight: 'FIXED',
-          widgetId: '9e839onva6',
+          widgetId: 'uw6hr9rju8',
           containerStyle: 'card',
           minWidth: 450,
           isVisible: true,
@@ -3483,15 +3845,222 @@ export default {
           parentId: '0',
           renderMode: 'CANVAS',
           isLoading: false,
-          mobileTopRow: 22,
+          mobileTopRow: 27,
           responsiveBehavior: 'fill',
           borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-          mobileLeftColumn: 12,
+          mobileLeftColumn: 0,
           maxDynamicHeight: 9000,
+          minDynamicHeight: 10
+        },
+        y3s2g1c5zz: {
+          needsErrorInfo: false,
+          mobileBottomRow: 5,
+          widgetName: 'txt_log_left',
+          topRow: 1,
+          bottomRow: 10,
+          parentRowSpace: 10,
+          type: 'TEXT_WIDGET',
+          mobileRightColumn: 24,
+          animateLoading: true,
+          overflow: 'NONE',
+          fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
+          parentColumnSpace: 7.65625,
+          dynamicTriggerPathList: [],
+          leftColumn: 1,
+          dynamicBindingPathList: [
+            {
+              key: 'truncateButtonColor'
+            },
+            {
+              key: 'fontFamily'
+            },
+            {
+              key: 'borderRadius'
+            },
+            {
+              key: 'text'
+            }
+          ],
+          shouldTruncate: false,
+          truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
+          text: 'Left text is:\n{{txt_static_left.text}}\n{{txt_dynamic_left.text}}',
+          key: 'g4kizrfvnz',
+          rightColumn: 18,
+          textAlign: 'LEFT',
+          dynamicHeight: 'AUTO_HEIGHT',
+          widgetId: 'y3s2g1c5zz',
+          minWidth: 450,
+          isVisible: true,
+          fontStyle: 'BOLD',
+          textColor: '#231F20',
+          version: 1,
+          parentId: 'pbhfl6v7u8',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 1,
+          responsiveBehavior: 'fill',
+          originalTopRow: 1,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 8,
+          maxDynamicHeight: 9000,
+          originalBottomRow: 10,
+          fontSize: '1rem',
+          minDynamicHeight: 4
+        },
+        '5m3vf11p5u': {
+          needsErrorInfo: false,
+          mobileBottomRow: 5,
+          widgetName: 'txt_log_right',
+          topRow: 1,
+          bottomRow: 10,
+          parentRowSpace: 10,
+          type: 'TEXT_WIDGET',
+          mobileRightColumn: 24,
+          animateLoading: true,
+          overflow: 'NONE',
+          fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
+          parentColumnSpace: 7.65625,
+          dynamicTriggerPathList: [],
+          leftColumn: 34,
+          dynamicBindingPathList: [
+            {
+              key: 'truncateButtonColor'
+            },
+            {
+              key: 'fontFamily'
+            },
+            {
+              key: 'borderRadius'
+            },
+            {
+              key: 'text'
+            }
+          ],
+          shouldTruncate: false,
+          truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
+          text: 'Right text is:\n{{txt_static_right.text}}\n{{txt_dynamic_right.text}}\n',
+          key: 'g4kizrfvnz',
+          rightColumn: 59,
+          textAlign: 'LEFT',
+          dynamicHeight: 'AUTO_HEIGHT',
+          widgetId: '5m3vf11p5u',
+          minWidth: 450,
+          isVisible: true,
+          fontStyle: 'BOLD',
+          textColor: '#231F20',
+          version: 1,
+          parentId: 'pbhfl6v7u8',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 1,
+          responsiveBehavior: 'fill',
+          originalTopRow: 1,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 8,
+          maxDynamicHeight: 9000,
+          originalBottomRow: 8,
+          fontSize: '1rem',
+          minDynamicHeight: 4
+        },
+        pbhfl6v7u8: {
+          needsErrorInfo: false,
+          boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
+          mobileBottomRow: 100,
+          widgetName: 'Canvas2',
+          topRow: 0,
+          bottomRow: 210,
+          parentRowSpace: 1,
+          type: 'CANVAS_WIDGET',
+          canExtend: false,
+          minHeight: 100,
+          mobileRightColumn: 408,
+          parentColumnSpace: 1,
+          leftColumn: 0,
+          dynamicBindingPathList: [
+            {
+              key: 'borderRadius'
+            },
+            {
+              key: 'boxShadow'
+            }
+          ],
+          children: [
+            'y3s2g1c5zz',
+            '5m3vf11p5u'
+          ],
+          key: 'isxwoxpkra',
+          rightColumn: 408,
+          detachFromLayout: true,
+          dynamicHeight: 'AUTO_HEIGHT',
+          widgetId: 'pbhfl6v7u8',
+          containerStyle: 'none',
+          minWidth: 450,
+          isVisible: true,
+          version: 1,
+          parentId: 'gaswdfeyvz',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 0,
+          responsiveBehavior: 'fill',
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 0,
+          maxDynamicHeight: 9000,
+          minDynamicHeight: 4,
+          flexLayers: []
+        },
+        gaswdfeyvz: {
+          needsErrorInfo: false,
+          boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
+          mobileBottomRow: 49,
+          widgetName: 'containerLogs',
+          borderColor: '#E0DEDE',
+          isCanvas: true,
+          topRow: 49,
+          bottomRow: 70,
+          parentRowSpace: 10,
+          type: 'CONTAINER_WIDGET',
+          shouldScrollContents: true,
+          mobileRightColumn: 26,
+          animateLoading: true,
+          parentColumnSpace: 17,
+          dynamicTriggerPathList: [],
+          leftColumn: 2,
+          dynamicBindingPathList: [
+            {
+              key: 'borderRadius'
+            },
+            {
+              key: 'boxShadow'
+            }
+          ],
+          children: [
+            'pbhfl6v7u8'
+          ],
+          borderWidth: '1',
+          flexVerticalAlignment: 'stretch',
+          key: 'xqvebn6ivt',
+          backgroundColor: '#FFFFFF',
+          rightColumn: 63,
+          dynamicHeight: 'FIXED',
+          widgetId: 'gaswdfeyvz',
+          containerStyle: 'card',
+          minWidth: 450,
+          isVisible: true,
+          version: 1,
+          parentId: '0',
+          renderMode: 'CANVAS',
+          isLoading: false,
+          mobileTopRow: 39,
+          responsiveBehavior: 'fill',
+          originalTopRow: 52,
+          borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+          mobileLeftColumn: 2,
+          maxDynamicHeight: 9000,
+          originalBottomRow: 89,
           minDynamicHeight: 10
         }
       },
-      layoutId: '68ad34afd8deff53ee072776'
+      layoutId: '68b44443eb513e051addbe4a'
     }
   },
   theme: {
@@ -4778,34 +5347,34 @@ export default {
     modalOpen: false,
     recentEntities: [
       {
+        type: 'WIDGET',
+        id: 'ydlupoo8k2',
+        pageId: '68b44443eb513e051addbe4b'
+      },
+      {
+        type: 'WIDGET',
+        id: 'ltfsabiaq1',
+        pageId: '68b44443eb513e051addbe4b'
+      },
+      {
+        type: 'WIDGET',
+        id: '5trspcxhy2',
+        pageId: '68b44443eb513e051addbe4b'
+      },
+      {
+        type: 'WIDGET',
+        id: 'bvqcrxkaum',
+        pageId: '68b44443eb513e051addbe4b'
+      },
+      {
+        type: 'WIDGET',
+        id: 'v68er04mr2',
+        pageId: '68b44443eb513e051addbe4b'
+      },
+      {
         type: 'CANVAS',
         id: '',
-        pageId: '68ad34afd8deff53ee072777'
-      },
-      {
-        type: 'WIDGET',
-        id: 'tl8xbeqhua',
-        pageId: '68ad34afd8deff53ee072777'
-      },
-      {
-        type: 'WIDGET',
-        id: 'od1swmzxxq',
-        pageId: '68ad34afd8deff53ee072777'
-      },
-      {
-        type: 'JS_OBJECT',
-        id: '68ad40c7d8deff53ee07277d',
-        pageId: '68ad34afd8deff53ee072777'
-      },
-      {
-        type: 'DATASOURCE',
-        id: '68a9b8c0de8cf11f80e4a8b3',
-        pageId: '68ad34afd8deff53ee072777'
-      },
-      {
-        type: 'WIDGET',
-        id: 'kwdcw234sl',
-        pageId: '68ad34afd8deff53ee072777'
+        pageId: '68b44443eb513e051addbe4b'
       }
     ],
     recentEntitiesRestored: true,
@@ -4824,12 +5393,12 @@ export default {
       {
         text: 'Datasource structure retrieved',
         source: {
-          id: '68a9b823de8cf11f80e4a8a8',
-          name: 'movies',
+          id: '68a9b831de8cf11f80e4a8ad',
+          name: 'users',
           type: 'DATASOURCE'
         },
         severity: 'info',
-        timestamp: '1756187885502',
+        timestamp: '1756646980846',
         category: 'PLATFORM_GENERATED',
         occurrenceCount: 1,
         isExpanded: false
@@ -4837,12 +5406,12 @@ export default {
       {
         text: 'Datasource structure retrieved',
         source: {
-          id: '68a9b831de8cf11f80e4a8ad',
-          name: 'users',
+          id: '68a9b823de8cf11f80e4a8a8',
+          name: 'movies',
           type: 'DATASOURCE'
         },
         severity: 'info',
-        timestamp: '1756187887839',
+        timestamp: '1756646980937',
         category: 'PLATFORM_GENERATED',
         occurrenceCount: 1,
         isExpanded: false
@@ -4855,9 +5424,134 @@ export default {
           type: 'DATASOURCE'
         },
         severity: 'info',
-        timestamp: '1756187888107',
+        timestamp: '1756646981185',
         category: 'PLATFORM_GENERATED',
         occurrenceCount: 1,
+        isExpanded: false
+      },
+      {
+        text: 'Event onClick fired',
+        source: {
+          type: 'WIDGET',
+          id: 'v68er04mr2',
+          name: 'btn_left_reset'
+        },
+        severity: 'info',
+        timestamp: '1756646983584',
+        category: 'PLATFORM_GENERATED',
+        occurrenceCount: 1,
+        isExpanded: false
+      },
+      {
+        text: 'storeValue triggered',
+        state: {
+          key: 'var_left',
+          value: 'Dynamic Left: -',
+          persist: true
+        },
+        severity: 'info',
+        category: 'PLATFORM_GENERATED',
+        timestamp: '1756646984158',
+        isExpanded: false
+      },
+      {
+        text: 'Event onClick fired',
+        source: {
+          type: 'WIDGET',
+          id: 'bvqcrxkaum',
+          name: 'btn_left_left'
+        },
+        severity: 'info',
+        timestamp: '1756646993613',
+        category: 'PLATFORM_GENERATED',
+        occurrenceCount: 1,
+        isExpanded: false
+      },
+      {
+        text: 'storeValue triggered',
+        state: {
+          key: 'var_left',
+          value: 'Dynamic Left: STATIC text from Left Container',
+          persist: true
+        },
+        severity: 'info',
+        category: 'PLATFORM_GENERATED',
+        timestamp: '1756646993658',
+        isExpanded: false
+      },
+      {
+        text: 'Event onClick fired',
+        source: {
+          type: 'WIDGET',
+          id: '5trspcxhy2',
+          name: 'btn_right_right'
+        },
+        severity: 'info',
+        timestamp: '1756646996744',
+        category: 'PLATFORM_GENERATED',
+        occurrenceCount: 1,
+        isExpanded: false
+      },
+      {
+        text: 'storeValue triggered',
+        state: {
+          key: 'var_right',
+          value: 'Dynamic Right: STATIC text from Right Container',
+          persist: true
+        },
+        severity: 'info',
+        category: 'PLATFORM_GENERATED',
+        timestamp: '1756646996792',
+        isExpanded: false
+      },
+      {
+        text: 'Event onClick fired',
+        source: {
+          type: 'WIDGET',
+          id: 'ltfsabiaq1',
+          name: 'btn_right_left'
+        },
+        severity: 'info',
+        timestamp: '1756646999960',
+        category: 'PLATFORM_GENERATED',
+        occurrenceCount: 1,
+        isExpanded: false
+      },
+      {
+        text: 'storeValue triggered',
+        state: {
+          key: 'var_right',
+          value: 'Dynamic Right: STATIC text from Left Container',
+          persist: true
+        },
+        severity: 'info',
+        category: 'PLATFORM_GENERATED',
+        timestamp: '1756647000004',
+        isExpanded: false
+      },
+      {
+        text: 'Event onClick fired',
+        source: {
+          type: 'WIDGET',
+          id: 'ydlupoo8k2',
+          name: 'btn_left_right'
+        },
+        severity: 'info',
+        timestamp: '1756647004317',
+        category: 'PLATFORM_GENERATED',
+        occurrenceCount: 1,
+        isExpanded: false
+      },
+      {
+        text: 'storeValue triggered',
+        state: {
+          key: 'var_left',
+          value: 'Dynamic Left: STATIC text from Right Container',
+          persist: true
+        },
+        severity: 'info',
+        category: 'PLATFORM_GENERATED',
+        timestamp: '1756647004354',
         isExpanded: false
       }
     ],
@@ -4868,7 +5562,7 @@ export default {
     context: {
       scrollPosition: 0,
       selectedDebuggerTab: '',
-      responseTabHeight: 419.65,
+      responseTabHeight: 439.25,
       errorCount: 0,
       selectedDebuggerFilter: ''
     },
@@ -4887,7 +5581,7 @@ export default {
     selectedConfigTab: 'CODE',
     'debugger': {
       open: false,
-      responseTabHeight: 419.65
+      responseTabHeight: 439.25
     },
     isFetching: false
   },
@@ -9076,7 +9770,7 @@ export default {
   },
   mainCanvas: {
     initialized: true,
-    width: 1701,
+    width: 1100,
     height: 1292,
     isMobile: false
   },
@@ -9087,7 +9781,117 @@ export default {
     }
   },
   focusHistory: {
-    history: {}
+    history: {
+      'PAGE.68b44443eb513e051addbe4b': {
+        entityInfo: {
+          id: 'PAGE.68b44443eb513e051addbe4b',
+          appState: 'EDITOR',
+          entity: 'PAGE',
+          params: {}
+        },
+        state: {
+          CodeEditorHistory: {}
+        }
+      },
+      '/app/widget-dev/page1-68b44443eb513e051addbe4b/edit/widgets#null': {
+        entityInfo: {
+          entity: 'WIDGET_LIST',
+          id: '',
+          appState: 'EDITOR',
+          params: {
+            applicationSlug: 'widget-dev',
+            pageSlug: 'page1-',
+            basePageId: '68b44443eb513e051addbe4b',
+            widgetIds: 'ltfsabiaq1'
+          }
+        },
+        state: {
+          SelectedWidgets: [
+            'ltfsabiaq1'
+          ]
+        }
+      },
+      '/app/widget-dev/page1-68b44443eb513e051addbe4b/edit/widgets/v68er04mr2#null': {
+        entityInfo: {
+          entity: 'WIDGET',
+          id: 'v68er04mr2',
+          appState: 'EDITOR',
+          params: {
+            applicationSlug: 'widget-dev',
+            pageSlug: 'page1-',
+            basePageId: '68b44443eb513e051addbe4b',
+            widgetIds: 'v68er04mr2'
+          }
+        },
+        state: {
+          PropertyPanelContext: {},
+          PropertySections: {},
+          SelectedPropertyPanel: {},
+          PropertyTabs: 0,
+          PropertyField: ''
+        }
+      },
+      '/app/widget-dev/page1-68b44443eb513e051addbe4b/edit/widgets/bvqcrxkaum#null': {
+        entityInfo: {
+          entity: 'WIDGET',
+          id: 'bvqcrxkaum',
+          appState: 'EDITOR',
+          params: {
+            applicationSlug: 'widget-dev',
+            pageSlug: 'page1-',
+            basePageId: '68b44443eb513e051addbe4b',
+            widgetIds: 'bvqcrxkaum'
+          }
+        },
+        state: {
+          PropertyPanelContext: {},
+          PropertySections: {},
+          SelectedPropertyPanel: {},
+          PropertyTabs: 0,
+          PropertyField: ''
+        }
+      },
+      '/app/widget-dev/page1-68b44443eb513e051addbe4b/edit/widgets/5trspcxhy2#null': {
+        entityInfo: {
+          entity: 'WIDGET',
+          id: '5trspcxhy2',
+          appState: 'EDITOR',
+          params: {
+            applicationSlug: 'widget-dev',
+            pageSlug: 'page1-',
+            basePageId: '68b44443eb513e051addbe4b',
+            widgetIds: '5trspcxhy2'
+          }
+        },
+        state: {
+          PropertyPanelContext: {},
+          PropertySections: {},
+          SelectedPropertyPanel: {},
+          PropertyTabs: 0,
+          PropertyField: ''
+        }
+      },
+      '/app/widget-dev/page1-68b44443eb513e051addbe4b/edit/widgets/ltfsabiaq1#null': {
+        entityInfo: {
+          entity: 'WIDGET',
+          id: 'ltfsabiaq1',
+          appState: 'EDITOR',
+          params: {
+            applicationSlug: 'widget-dev',
+            pageSlug: 'page1-',
+            basePageId: '68b44443eb513e051addbe4b',
+            widgetIds: 'ltfsabiaq1'
+          }
+        },
+        state: {
+          PropertyPanelContext: {},
+          PropertySections: {},
+          SelectedPropertyPanel: {},
+          PropertyTabs: 0,
+          PropertyField: ''
+        }
+      }
+    }
   },
   editorContext: {
     codeEditorHistory: {},
@@ -9170,7 +9974,7 @@ export default {
     runErrorMessage: {},
     'debugger': {
       open: false,
-      responseTabHeight: 419.65
+      responseTabHeight: 439.25
     },
     settingsOpen: false
   }

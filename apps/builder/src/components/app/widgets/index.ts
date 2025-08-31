@@ -1,9 +1,11 @@
+'use client'
 import dynamic from "next/dynamic"
 
 // Create widget loader map using next/dynamic
 const WidgetLoaders = new Map<string, any>([
   ["BUTTON_WIDGET", dynamic(() => import("./ButtonWidget"))],
   ["TEXT_WIDGET", dynamic(() => import("./TextWidget"))],
+  ["INPUT_WIDGET", dynamic(() => import("./InputWidget"))],
   ["DIVIDER_WIDGET", dynamic(() => import("./DividerWidget"))],
 ])
 

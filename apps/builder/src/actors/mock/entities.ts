@@ -9,7 +9,7 @@ export default {
       detachFromLayout: true,
       widgetId: '0',
       topRow: 0,
-      bottomRow: 630,
+      bottomRow: 1292,
       containerStyle: 'none',
       snapRows: 124,
       parentRowSpace: 1,
@@ -22,75 +22,478 @@ export default {
       dynamicBindingPathList: [],
       leftColumn: 0,
       children: [
-        '9e839onva6'
+        'nsadyy1bzy',
+        'cd1xlchbgb',
+        'uw6hr9rju8',
+        'gaswdfeyvz'
       ]
     },
-    '9nft85pms1': {
+    bvqcrxkaum: {
+      resetFormOnClick: false,
       needsErrorInfo: false,
       boxShadow: 'none',
-      mobileBottomRow: 10,
-      widgetName: 'Input1',
-      topRow: 1,
-      bottomRow: 8,
+      mobileBottomRow: 7,
+      widgetName: 'btn_left_left',
+      onClick: '{{storeValue(\'var_left\', \'Dynamic Left: \' + txt_static_left.text);}}',
+      buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+      topRow: 2,
+      bottomRow: 6,
       parentRowSpace: 10,
-      labelWidth: 5,
-      autoFocus: false,
-      type: 'INPUT_WIDGET_V2',
-      mobileRightColumn: 35,
+      type: 'BUTTON_WIDGET',
+      mobileRightColumn: 17,
       animateLoading: true,
-      parentColumnSpace: 6.541259765625,
-      resetOnSubmit: true,
-      leftColumn: 1,
+      parentColumnSpace: 11.90625,
+      dynamicTriggerPathList: [
+        {
+          key: 'onClick'
+        }
+      ],
+      leftColumn: 0,
       dynamicBindingPathList: [
         {
-          key: 'accentColor'
+          key: 'buttonColor'
         },
         {
           key: 'borderRadius'
         }
       ],
-      labelPosition: 'Top',
-      labelStyle: '',
-      inputType: 'TEXT',
+      text: 'Left from Left',
       isDisabled: false,
-      key: 'z6mkd60niu',
-      labelTextSize: '0.875rem',
-      isRequired: false,
-      rightColumn: 60,
-      dynamicHeight: 'FIXED',
-      widgetId: '9nft85pms1',
-      accentColor: '{{appsmith.theme.colors.primaryColor}}',
-      showStepArrows: false,
-      minWidth: 450,
+      key: 'shywogacyl',
+      rightColumn: 13,
+      isDefaultClickDisabled: true,
+      widgetId: 'bvqcrxkaum',
+      minWidth: 120,
       isVisible: true,
-      label: 'Label',
-      version: 2,
-      parentId: '256n68mv3w',
-      labelAlignment: 'left',
+      recaptchaType: 'V3',
+      version: 1,
+      parentId: '71mrzuu4q7',
       renderMode: 'CANVAS',
       isLoading: false,
       mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER'
+    },
+    v68er04mr2: {
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_left_reset',
+      onClick: '{{storeValue(\'var_left\', \'Dynamic Left: -\');}}',
+      buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+      topRow: 7,
+      bottomRow: 11,
+      parentRowSpace: 10,
+      type: 'BUTTON_WIDGET',
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      dynamicTriggerPathList: [
+        {
+          key: 'onClick'
+        }
+      ],
+      leftColumn: 14,
+      dynamicBindingPathList: [
+        {
+          key: 'buttonColor'
+        },
+        {
+          key: 'borderRadius'
+        }
+      ],
+      text: 'Left reset',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 24,
+      isDefaultClickDisabled: true,
+      widgetId: 'v68er04mr2',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      version: 1,
+      parentId: '71mrzuu4q7',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER'
+    },
+    '250dog341d': {
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_right_reset',
+      onClick: '{{storeValue(\'var_right\', \'Dynamic Right: -\');}}',
+      buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+      topRow: 7,
+      bottomRow: 11,
+      parentRowSpace: 10,
+      type: 'BUTTON_WIDGET',
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      dynamicTriggerPathList: [
+        {
+          key: 'onClick'
+        }
+      ],
+      leftColumn: 52,
+      dynamicBindingPathList: [
+        {
+          key: 'buttonColor'
+        },
+        {
+          key: 'borderRadius'
+        }
+      ],
+      text: 'Right reset',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 62,
+      isDefaultClickDisabled: true,
+      widgetId: '250dog341d',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      version: 1,
+      parentId: '71mrzuu4q7',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER'
+    },
+    '5trspcxhy2': {
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_right_right',
+      onClick: '{{storeValue(\'var_right\', \'Dynamic Right: \' + txt_static_right.text);}}',
+      buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+      topRow: 2,
+      bottomRow: 6,
+      parentRowSpace: 10,
+      type: 'BUTTON_WIDGET',
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      dynamicTriggerPathList: [
+        {
+          key: 'onClick'
+        }
+      ],
+      leftColumn: 37,
+      dynamicBindingPathList: [
+        {
+          key: 'buttonColor'
+        },
+        {
+          key: 'borderRadius'
+        }
+      ],
+      text: 'Right from Right',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 51,
+      isDefaultClickDisabled: true,
+      widgetId: '5trspcxhy2',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      version: 1,
+      parentId: '71mrzuu4q7',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER'
+    },
+    ydlupoo8k2: {
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_left_right',
+      onClick: '{{storeValue(\'var_left\', \'Dynamic Left: \' + txt_static_right.text);}}',
+      buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+      dynamicPropertyPathList: [],
+      topRow: 2,
+      bottomRow: 6,
+      parentRowSpace: 10,
+      type: 'BUTTON_WIDGET',
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      dynamicTriggerPathList: [
+        {
+          key: 'onClick'
+        }
+      ],
+      leftColumn: 14,
+      dynamicBindingPathList: [
+        {
+          key: 'buttonColor'
+        },
+        {
+          key: 'borderRadius'
+        }
+      ],
+      text: 'Left from Right',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 24,
+      isDefaultClickDisabled: true,
+      widgetId: 'ydlupoo8k2',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      version: 1,
+      parentId: '71mrzuu4q7',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER'
+    },
+    ltfsabiaq1: {
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_right_left',
+      onClick: '{{storeValue(\'var_right\', \'Dynamic Right: \' + txt_static_left.text);}}',
+      buttonColor: '{{appsmith.theme.colors.primaryColor}}',
+      dynamicPropertyPathList: [],
+      topRow: 2,
+      bottomRow: 6,
+      parentRowSpace: 10,
+      type: 'BUTTON_WIDGET',
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      dynamicTriggerPathList: [
+        {
+          key: 'onClick'
+        }
+      ],
+      leftColumn: 52,
+      dynamicBindingPathList: [
+        {
+          key: 'buttonColor'
+        },
+        {
+          key: 'borderRadius'
+        }
+      ],
+      text: 'Right from Left',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 63,
+      isDefaultClickDisabled: true,
+      widgetId: 'ltfsabiaq1',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      version: 1,
+      parentId: '71mrzuu4q7',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER'
+    },
+    '71mrzuu4q7': {
+      needsErrorInfo: false,
+      boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
+      mobileBottomRow: 100,
+      widgetName: 'Canvas1',
+      topRow: 0,
+      bottomRow: 160,
+      parentRowSpace: 1,
+      type: 'CANVAS_WIDGET',
+      canExtend: false,
+      minHeight: 100,
+      mobileRightColumn: 255,
+      parentColumnSpace: 1,
+      leftColumn: 0,
+      dynamicBindingPathList: [
+        {
+          key: 'borderRadius'
+        },
+        {
+          key: 'boxShadow'
+        }
+      ],
+      children: [
+        'bvqcrxkaum',
+        'v68er04mr2',
+        '250dog341d',
+        '5trspcxhy2',
+        'ydlupoo8k2',
+        'ltfsabiaq1'
+      ],
+      key: 'isxwoxpkra',
+      rightColumn: 255,
+      detachFromLayout: true,
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: '71mrzuu4q7',
+      containerStyle: 'none',
+      minWidth: 450,
+      isVisible: true,
+      version: 1,
+      parentId: 'nsadyy1bzy',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 0,
       responsiveBehavior: 'fill',
       borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-      mobileLeftColumn: 15,
+      mobileLeftColumn: 0,
       maxDynamicHeight: 9000,
-      iconAlign: 'left',
-      defaultText: '',
-      minDynamicHeight: 4
+      minDynamicHeight: 4,
+      flexLayers: []
     },
-    kwdcw234sl: {
+    nsadyy1bzy: {
       needsErrorInfo: false,
-      mobileBottomRow: 15,
-      widgetName: 'Text1',
-      topRow: 11,
-      bottomRow: 15,
+      boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
+      mobileBottomRow: 37,
+      widgetName: 'containerToolbar',
+      borderColor: '#E0DEDE',
+      isCanvas: true,
+      topRow: 6,
+      bottomRow: 22,
+      parentRowSpace: 10,
+      type: 'CONTAINER_WIDGET',
+      shouldScrollContents: true,
+      mobileRightColumn: 15,
+      animateLoading: true,
+      parentColumnSpace: 17,
+      dynamicTriggerPathList: [],
+      leftColumn: 12,
+      dynamicBindingPathList: [
+        {
+          key: 'borderRadius'
+        },
+        {
+          key: 'boxShadow'
+        }
+      ],
+      children: [
+        '71mrzuu4q7'
+      ],
+      borderWidth: '1',
+      flexVerticalAlignment: 'stretch',
+      key: 'xqvebn6ivt',
+      backgroundColor: '#FFFFFF',
+      rightColumn: 58,
+      dynamicHeight: 'FIXED',
+      widgetId: 'nsadyy1bzy',
+      containerStyle: 'card',
+      minWidth: 450,
+      isVisible: true,
+      version: 1,
+      parentId: '0',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 27,
+      responsiveBehavior: 'fill',
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 0,
+      maxDynamicHeight: 9000,
+      minDynamicHeight: 10
+    },
+    ujgcje0omy: {
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_static_left',
+      topRow: 1,
+      bottomRow: 5,
       parentRowSpace: 10,
       type: 'TEXT_WIDGET',
-      mobileRightColumn: 35,
+      mobileRightColumn: 24,
       animateLoading: true,
       overflow: 'NONE',
       fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
-      parentColumnSpace: 6.541259765625,
+      parentColumnSpace: 7.65625,
+      dynamicTriggerPathList: [],
+      leftColumn: 2,
+      dynamicBindingPathList: [
+        {
+          key: 'truncateButtonColor'
+        },
+        {
+          key: 'fontFamily'
+        },
+        {
+          key: 'borderRadius'
+        }
+      ],
+      shouldTruncate: false,
+      truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
+      text: 'STATIC text from Left Container',
+      key: 'g4kizrfvnz',
+      rightColumn: 62,
+      textAlign: 'LEFT',
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'ujgcje0omy',
+      minWidth: 450,
+      isVisible: true,
+      fontStyle: 'BOLD',
+      textColor: '#231F20',
+      version: 1,
+      parentId: 'an70evwb09',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 1,
+      responsiveBehavior: 'fill',
+      originalTopRow: 1,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 8,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 5,
+      fontSize: '1rem',
+      minDynamicHeight: 4
+    },
+    is0fwucchq: {
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_dynamic_left',
+      topRow: 5,
+      bottomRow: 9,
+      parentRowSpace: 10,
+      type: 'TEXT_WIDGET',
+      mobileRightColumn: 24,
+      animateLoading: true,
+      overflow: 'NONE',
+      fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
+      parentColumnSpace: 7.65625,
       dynamicTriggerPathList: [],
       leftColumn: 2,
       dynamicBindingPathList: [
@@ -109,42 +512,42 @@ export default {
       ],
       shouldTruncate: false,
       truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
-      text: 'current value is: {{Input1.text ? Input1.text : "-"}}',
-      key: 'lgxpzfcx4b',
-      rightColumn: 59,
+      text: '{{appsmith.store.var_left}}',
+      key: 'g4kizrfvnz',
+      rightColumn: 62,
       textAlign: 'LEFT',
       dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: 'kwdcw234sl',
+      widgetId: 'is0fwucchq',
       minWidth: 450,
       isVisible: true,
       fontStyle: 'BOLD',
       textColor: '#231F20',
       version: 1,
-      parentId: '256n68mv3w',
+      parentId: 'an70evwb09',
       renderMode: 'CANVAS',
       isLoading: false,
-      mobileTopRow: 11,
+      mobileTopRow: 1,
       responsiveBehavior: 'fill',
-      originalTopRow: 11,
+      originalTopRow: 5,
       borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-      mobileLeftColumn: 19,
+      mobileLeftColumn: 8,
       maxDynamicHeight: 9000,
-      originalBottomRow: 16,
+      originalBottomRow: 9,
       fontSize: '1rem',
       minDynamicHeight: 4
     },
-    '256n68mv3w': {
+    an70evwb09: {
       needsErrorInfo: false,
       boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
       mobileBottomRow: 100,
-      widgetName: 'Canvas2',
+      widgetName: 'Canvas1Copy',
       topRow: 0,
-      bottomRow: 290,
+      bottomRow: 170,
       parentRowSpace: 1,
       type: 'CANVAS_WIDGET',
       canExtend: false,
       minHeight: 100,
-      mobileRightColumn: 328.98046875,
+      mobileRightColumn: 255,
       parentColumnSpace: 1,
       leftColumn: 0,
       dynamicBindingPathList: [
@@ -156,19 +559,19 @@ export default {
         }
       ],
       children: [
-        '9nft85pms1',
-        'kwdcw234sl'
+        'ujgcje0omy',
+        'is0fwucchq'
       ],
-      key: 'izcc32bkjr',
-      rightColumn: 328.98046875,
+      key: 'isxwoxpkra',
+      rightColumn: 255,
       detachFromLayout: true,
       dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: '256n68mv3w',
+      widgetId: 'an70evwb09',
       containerStyle: 'none',
       minWidth: 450,
       isVisible: true,
       version: 1,
-      parentId: '0j3cs5153j',
+      parentId: 'cd1xlchbgb',
       renderMode: 'CANVAS',
       isLoading: false,
       mobileTopRow: 0,
@@ -179,23 +582,23 @@ export default {
       minDynamicHeight: 4,
       flexLayers: []
     },
-    '0j3cs5153j': {
+    cd1xlchbgb: {
       needsErrorInfo: false,
       boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
-      mobileBottomRow: 21,
-      widgetName: 'containerPlayground',
+      mobileBottomRow: 37,
+      widgetName: 'containerSectionLeft',
       borderColor: '#E0DEDE',
       isCanvas: true,
-      topRow: 1,
-      bottomRow: 30,
+      topRow: 30,
+      bottomRow: 47,
       parentRowSpace: 10,
       type: 'CONTAINER_WIDGET',
       shouldScrollContents: true,
-      mobileRightColumn: 25,
+      mobileRightColumn: 15,
       animateLoading: true,
-      parentColumnSpace: 13.70751953125,
+      parentColumnSpace: 17,
       dynamicTriggerPathList: [],
-      leftColumn: 0,
+      leftColumn: 2,
       dynamicBindingPathList: [
         {
           key: 'borderRadius'
@@ -205,94 +608,44 @@ export default {
         }
       ],
       children: [
-        '256n68mv3w'
+        'an70evwb09'
       ],
       borderWidth: '1',
       flexVerticalAlignment: 'stretch',
-      key: 'bv1axpkzaj',
+      key: 'xqvebn6ivt',
       backgroundColor: '#FFFFFF',
       rightColumn: 32,
       dynamicHeight: 'FIXED',
-      widgetId: '0j3cs5153j',
+      widgetId: 'cd1xlchbgb',
       containerStyle: 'card',
       minWidth: 450,
       isVisible: true,
       version: 1,
-      parentId: 'k1ojmo3iid',
+      parentId: '0',
       renderMode: 'CANVAS',
       isLoading: false,
-      mobileTopRow: 11,
+      mobileTopRow: 27,
       responsiveBehavior: 'fill',
       borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-      mobileLeftColumn: 1,
-      maxDynamicHeight: 12,
+      mobileLeftColumn: 0,
+      maxDynamicHeight: 9000,
       minDynamicHeight: 10
     },
-    tl8xbeqhua: {
-      resetFormOnClick: false,
+    weq4w5wk5m: {
       needsErrorInfo: false,
-      boxShadow: 'none',
-      mobileBottomRow: 11,
-      widgetName: 'btnCalculate',
-      onClick: '{{storeValue(\'localCalculatedVar\', calculatedTxt.setText(Input1.text));}}',
-      buttonColor: '{{appsmith.theme.colors.primaryColor}}',
-      topRow: 4,
-      bottomRow: 9,
-      parentRowSpace: 10,
-      type: 'BUTTON_WIDGET',
-      mobileRightColumn: 25,
-      animateLoading: true,
-      parentColumnSpace: 9.216796875,
-      dynamicTriggerPathList: [
-        {
-          key: 'onClick'
-        }
-      ],
-      leftColumn: 5,
-      dynamicBindingPathList: [
-        {
-          key: 'buttonColor'
-        },
-        {
-          key: 'borderRadius'
-        }
-      ],
-      text: 'Calculate',
-      isDisabled: false,
-      key: 'c32rx365fx',
-      rightColumn: 57,
-      isDefaultClickDisabled: true,
-      widgetId: 'tl8xbeqhua',
-      minWidth: 120,
-      isVisible: true,
-      recaptchaType: 'V3',
-      version: 1,
-      parentId: 'cl2ynw6igw',
-      renderMode: 'CANVAS',
-      isLoading: false,
-      mobileTopRow: 7,
-      responsiveBehavior: 'hug',
-      disabledWhenInvalid: false,
-      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-      mobileLeftColumn: 9,
-      buttonVariant: 'PRIMARY',
-      placement: 'CENTER'
-    },
-    od1swmzxxq: {
-      needsErrorInfo: false,
-      mobileBottomRow: 15,
-      widgetName: 'calculatedTxt',
-      topRow: 11,
-      bottomRow: 15,
+      mobileBottomRow: 5,
+      widgetName: 'txt_dynamic_right',
+      topRow: 6,
+      bottomRow: 10,
       parentRowSpace: 10,
       type: 'TEXT_WIDGET',
-      mobileRightColumn: 35,
+      mobileRightColumn: 24,
       animateLoading: true,
       overflow: 'NONE',
       fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
-      parentColumnSpace: 6.541259765625,
+      parentColumnSpace: 7.65625,
       dynamicTriggerPathList: [],
-      leftColumn: 3,
+      leftColumn: 1,
       dynamicBindingPathList: [
         {
           key: 'truncateButtonColor'
@@ -309,137 +662,94 @@ export default {
       ],
       shouldTruncate: false,
       truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
-      text: '{{localVariables.varCalculated}}',
-      key: 'lgxpzfcx4b',
-      rightColumn: 60,
+      text: '{{appsmith.store.var_right}}',
+      key: 'g4kizrfvnz',
+      rightColumn: 61,
       textAlign: 'LEFT',
       dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: 'od1swmzxxq',
+      widgetId: 'weq4w5wk5m',
       minWidth: 450,
       isVisible: true,
       fontStyle: 'BOLD',
       textColor: '#231F20',
       version: 1,
-      parentId: 'cl2ynw6igw',
-      renderMode: 'CANVAS',
-      isLoading: false,
-      mobileTopRow: 11,
-      responsiveBehavior: 'fill',
-      originalTopRow: 11,
-      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-      mobileLeftColumn: 19,
-      maxDynamicHeight: 9000,
-      originalBottomRow: 16,
-      fontSize: '1rem',
-      minDynamicHeight: 4
-    },
-    cl2ynw6igw: {
-      needsErrorInfo: false,
-      boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
-      mobileBottomRow: 100,
-      widgetName: 'Canvas3',
-      topRow: 0,
-      bottomRow: 290,
-      parentRowSpace: 1,
-      type: 'CANVAS_WIDGET',
-      canExtend: false,
-      minHeight: 100,
-      mobileRightColumn: 328.98046875,
-      parentColumnSpace: 1,
-      leftColumn: 0,
-      dynamicBindingPathList: [
-        {
-          key: 'borderRadius'
-        },
-        {
-          key: 'boxShadow'
-        }
-      ],
-      children: [
-        'tl8xbeqhua',
-        'od1swmzxxq'
-      ],
-      key: 'izcc32bkjr',
-      rightColumn: 328.98046875,
-      detachFromLayout: true,
-      dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: 'cl2ynw6igw',
-      containerStyle: 'none',
-      minWidth: 450,
-      isVisible: true,
-      version: 1,
-      parentId: 'dgev9742e2',
-      renderMode: 'CANVAS',
-      isLoading: false,
-      mobileTopRow: 0,
-      responsiveBehavior: 'fill',
-      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-      mobileLeftColumn: 0,
-      maxDynamicHeight: 9000,
-      minDynamicHeight: 4,
-      flexLayers: []
-    },
-    dgev9742e2: {
-      needsErrorInfo: false,
-      boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
-      mobileBottomRow: 11,
-      widgetName: 'containerActions',
-      borderColor: '#E0DEDE',
-      isCanvas: true,
-      topRow: 1,
-      bottomRow: 30,
-      parentRowSpace: 10,
-      type: 'CONTAINER_WIDGET',
-      shouldScrollContents: true,
-      mobileRightColumn: 63,
-      animateLoading: true,
-      parentColumnSpace: 13.70751953125,
-      dynamicTriggerPathList: [],
-      leftColumn: 32,
-      dynamicBindingPathList: [
-        {
-          key: 'borderRadius'
-        },
-        {
-          key: 'boxShadow'
-        }
-      ],
-      children: [
-        'cl2ynw6igw'
-      ],
-      borderWidth: '1',
-      flexVerticalAlignment: 'stretch',
-      key: 'bv1axpkzaj',
-      backgroundColor: '#FFFFFF',
-      rightColumn: 63,
-      dynamicHeight: 'FIXED',
-      widgetId: 'dgev9742e2',
-      containerStyle: 'card',
-      minWidth: 450,
-      isVisible: true,
-      version: 1,
-      parentId: 'k1ojmo3iid',
+      parentId: 'orlqu2v4v5',
       renderMode: 'CANVAS',
       isLoading: false,
       mobileTopRow: 1,
       responsiveBehavior: 'fill',
+      originalTopRow: 6,
       borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-      mobileLeftColumn: 39,
+      mobileLeftColumn: 8,
       maxDynamicHeight: 9000,
-      minDynamicHeight: 10
+      originalBottomRow: 11,
+      fontSize: '1rem',
+      minDynamicHeight: 4
     },
-    k1ojmo3iid: {
+    k1j5882wmt: {
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_static_right',
+      topRow: 1,
+      bottomRow: 5,
+      parentRowSpace: 10,
+      type: 'TEXT_WIDGET',
+      mobileRightColumn: 24,
+      animateLoading: true,
+      overflow: 'NONE',
+      fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
+      parentColumnSpace: 7.65625,
+      dynamicTriggerPathList: [],
+      leftColumn: 2,
+      dynamicBindingPathList: [
+        {
+          key: 'truncateButtonColor'
+        },
+        {
+          key: 'fontFamily'
+        },
+        {
+          key: 'borderRadius'
+        }
+      ],
+      shouldTruncate: false,
+      truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
+      text: 'STATIC text from Right Container',
+      key: 'g4kizrfvnz',
+      rightColumn: 62,
+      textAlign: 'LEFT',
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'k1j5882wmt',
+      minWidth: 450,
+      isVisible: true,
+      fontStyle: 'BOLD',
+      textColor: '#231F20',
+      version: 1,
+      parentId: 'orlqu2v4v5',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 1,
+      responsiveBehavior: 'fill',
+      originalTopRow: 1,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 8,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 5,
+      fontSize: '1rem',
+      minDynamicHeight: 4
+    },
+    orlqu2v4v5: {
       needsErrorInfo: false,
       boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
       mobileBottomRow: 100,
-      widgetName: 'Canvas1',
+      widgetName: 'Canvas1CopyCopy',
       topRow: 0,
-      bottomRow: 410,
+      bottomRow: 170,
       parentRowSpace: 1,
       type: 'CANVAS_WIDGET',
       canExtend: false,
       minHeight: 100,
-      mobileRightColumn: 430.5,
+      mobileRightColumn: 255,
       parentColumnSpace: 1,
       leftColumn: 0,
       dynamicBindingPathList: [
@@ -451,19 +761,19 @@ export default {
         }
       ],
       children: [
-        '0j3cs5153j',
-        'dgev9742e2'
+        'weq4w5wk5m',
+        'k1j5882wmt'
       ],
-      key: 'wl4jb57gwi',
-      rightColumn: 430.5,
+      key: 'isxwoxpkra',
+      rightColumn: 255,
       detachFromLayout: true,
       dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: 'k1ojmo3iid',
+      widgetId: 'orlqu2v4v5',
       containerStyle: 'none',
       minWidth: 450,
       isVisible: true,
       version: 1,
-      parentId: '9e839onva6',
+      parentId: 'uw6hr9rju8',
       renderMode: 'CANVAS',
       isLoading: false,
       mobileTopRow: 0,
@@ -474,23 +784,23 @@ export default {
       minDynamicHeight: 4,
       flexLayers: []
     },
-    '9e839onva6': {
+    uw6hr9rju8: {
       needsErrorInfo: false,
       boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
-      mobileBottomRow: 32,
-      widgetName: 'containerRoot',
+      mobileBottomRow: 37,
+      widgetName: 'containerSectionRight',
       borderColor: '#E0DEDE',
       isCanvas: true,
-      topRow: 22,
-      bottomRow: 63,
+      topRow: 30,
+      bottomRow: 47,
       parentRowSpace: 10,
       type: 'CONTAINER_WIDGET',
       shouldScrollContents: true,
-      mobileRightColumn: 36,
+      mobileRightColumn: 15,
       animateLoading: true,
-      parentColumnSpace: 17.9375,
+      parentColumnSpace: 17,
       dynamicTriggerPathList: [],
-      leftColumn: 12,
+      leftColumn: 33,
       dynamicBindingPathList: [
         {
           key: 'borderRadius'
@@ -500,15 +810,15 @@ export default {
         }
       ],
       children: [
-        'k1ojmo3iid'
+        'orlqu2v4v5'
       ],
       borderWidth: '1',
       flexVerticalAlignment: 'stretch',
-      key: '1456ozhxit',
+      key: 'xqvebn6ivt',
       backgroundColor: '#FFFFFF',
-      rightColumn: 46,
+      rightColumn: 63,
       dynamicHeight: 'FIXED',
-      widgetId: '9e839onva6',
+      widgetId: 'uw6hr9rju8',
       containerStyle: 'card',
       minWidth: 450,
       isVisible: true,
@@ -516,102 +826,391 @@ export default {
       parentId: '0',
       renderMode: 'CANVAS',
       isLoading: false,
-      mobileTopRow: 22,
+      mobileTopRow: 27,
       responsiveBehavior: 'fill',
       borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
-      mobileLeftColumn: 12,
+      mobileLeftColumn: 0,
       maxDynamicHeight: 9000,
+      minDynamicHeight: 10
+    },
+    y3s2g1c5zz: {
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_log_left',
+      topRow: 1,
+      bottomRow: 10,
+      parentRowSpace: 10,
+      type: 'TEXT_WIDGET',
+      mobileRightColumn: 24,
+      animateLoading: true,
+      overflow: 'NONE',
+      fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
+      parentColumnSpace: 7.65625,
+      dynamicTriggerPathList: [],
+      leftColumn: 1,
+      dynamicBindingPathList: [
+        {
+          key: 'truncateButtonColor'
+        },
+        {
+          key: 'fontFamily'
+        },
+        {
+          key: 'borderRadius'
+        },
+        {
+          key: 'text'
+        }
+      ],
+      shouldTruncate: false,
+      truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
+      text: 'Left text is:\n{{txt_static_left.text}}\n{{txt_dynamic_left.text}}',
+      key: 'g4kizrfvnz',
+      rightColumn: 18,
+      textAlign: 'LEFT',
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'y3s2g1c5zz',
+      minWidth: 450,
+      isVisible: true,
+      fontStyle: 'BOLD',
+      textColor: '#231F20',
+      version: 1,
+      parentId: 'pbhfl6v7u8',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 1,
+      responsiveBehavior: 'fill',
+      originalTopRow: 1,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 8,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 10,
+      fontSize: '1rem',
+      minDynamicHeight: 4
+    },
+    '5m3vf11p5u': {
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_log_right',
+      topRow: 1,
+      bottomRow: 8,
+      parentRowSpace: 10,
+      type: 'TEXT_WIDGET',
+      mobileRightColumn: 24,
+      animateLoading: true,
+      overflow: 'NONE',
+      fontFamily: '{{appsmith.theme.fontFamily.appFont}}',
+      parentColumnSpace: 7.65625,
+      dynamicTriggerPathList: [],
+      leftColumn: 34,
+      dynamicBindingPathList: [
+        {
+          key: 'truncateButtonColor'
+        },
+        {
+          key: 'fontFamily'
+        },
+        {
+          key: 'borderRadius'
+        },
+        {
+          key: 'text'
+        }
+      ],
+      shouldTruncate: false,
+      truncateButtonColor: '{{appsmith.theme.colors.primaryColor}}',
+      text: 'Right text is:\n{{txt_static_right.text}}\n{{txt_dynamic_right.text}}\n',
+      key: 'g4kizrfvnz',
+      rightColumn: 59,
+      textAlign: 'LEFT',
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: '5m3vf11p5u',
+      minWidth: 450,
+      isVisible: true,
+      fontStyle: 'BOLD',
+      textColor: '#231F20',
+      version: 1,
+      parentId: 'pbhfl6v7u8',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 1,
+      responsiveBehavior: 'fill',
+      originalTopRow: 1,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 8,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 10,
+      fontSize: '1rem',
+      minDynamicHeight: 4
+    },
+    pbhfl6v7u8: {
+      needsErrorInfo: false,
+      boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
+      mobileBottomRow: 100,
+      widgetName: 'Canvas2',
+      topRow: 0,
+      bottomRow: 210,
+      parentRowSpace: 1,
+      type: 'CANVAS_WIDGET',
+      canExtend: false,
+      minHeight: 100,
+      mobileRightColumn: 408,
+      parentColumnSpace: 1,
+      leftColumn: 0,
+      dynamicBindingPathList: [
+        {
+          key: 'borderRadius'
+        },
+        {
+          key: 'boxShadow'
+        }
+      ],
+      children: [
+        'y3s2g1c5zz',
+        '5m3vf11p5u'
+      ],
+      key: 'isxwoxpkra',
+      rightColumn: 408,
+      detachFromLayout: true,
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'pbhfl6v7u8',
+      containerStyle: 'none',
+      minWidth: 450,
+      isVisible: true,
+      version: 1,
+      parentId: 'gaswdfeyvz',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 0,
+      responsiveBehavior: 'fill',
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 0,
+      maxDynamicHeight: 9000,
+      minDynamicHeight: 4,
+      flexLayers: []
+    },
+    gaswdfeyvz: {
+      needsErrorInfo: false,
+      boxShadow: '{{appsmith.theme.boxShadow.appBoxShadow}}',
+      mobileBottomRow: 49,
+      widgetName: 'containerLogs',
+      borderColor: '#E0DEDE',
+      isCanvas: true,
+      topRow: 49,
+      bottomRow: 70,
+      parentRowSpace: 10,
+      type: 'CONTAINER_WIDGET',
+      shouldScrollContents: true,
+      mobileRightColumn: 26,
+      animateLoading: true,
+      parentColumnSpace: 17,
+      dynamicTriggerPathList: [],
+      leftColumn: 2,
+      dynamicBindingPathList: [
+        {
+          key: 'borderRadius'
+        },
+        {
+          key: 'boxShadow'
+        }
+      ],
+      children: [
+        'pbhfl6v7u8'
+      ],
+      borderWidth: '1',
+      flexVerticalAlignment: 'stretch',
+      key: 'xqvebn6ivt',
+      backgroundColor: '#FFFFFF',
+      rightColumn: 63,
+      dynamicHeight: 'FIXED',
+      widgetId: 'gaswdfeyvz',
+      containerStyle: 'card',
+      minWidth: 450,
+      isVisible: true,
+      version: 1,
+      parentId: '0',
+      renderMode: 'CANVAS',
+      isLoading: false,
+      mobileTopRow: 39,
+      responsiveBehavior: 'fill',
+      originalTopRow: 52,
+      borderRadius: '{{appsmith.theme.borderRadius.appBorderRadius}}',
+      mobileLeftColumn: 2,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 89,
       minDynamicHeight: 10
     }
   },
   canvasWidgetsStructure: {
-    bottomRow: 630,
+    bottomRow: 700,
     children: [
       {
-        bottomRow: 63,
+        bottomRow: 22,
         children: [
           {
-            bottomRow: 410,
+            bottomRow: 160,
             children: [
               {
-                bottomRow: 30,
-                children: [
-                  {
-                    bottomRow: 290,
-                    children: [
-                      {
-                        bottomRow: 8,
-                        parentId: '256n68mv3w',
-                        topRow: 1,
-                        type: 'INPUT_WIDGET_V2',
-                        widgetId: '9nft85pms1',
-                        children: []
-                      },
-                      {
-                        bottomRow: 15,
-                        parentId: '256n68mv3w',
-                        topRow: 11,
-                        type: 'TEXT_WIDGET',
-                        widgetId: 'kwdcw234sl',
-                        children: []
-                      }
-                    ],
-                    parentId: '0j3cs5153j',
-                    topRow: 0,
-                    type: 'CANVAS_WIDGET',
-                    widgetId: '256n68mv3w'
-                  }
-                ],
-                parentId: 'k1ojmo3iid',
-                topRow: 1,
-                type: 'CONTAINER_WIDGET',
-                widgetId: '0j3cs5153j'
+                bottomRow: 6,
+                parentId: '71mrzuu4q7',
+                topRow: 2,
+                type: 'BUTTON_WIDGET',
+                widgetId: 'bvqcrxkaum',
+                children: []
               },
               {
-                bottomRow: 30,
-                children: [
-                  {
-                    bottomRow: 290,
-                    children: [
-                      {
-                        bottomRow: 9,
-                        parentId: 'cl2ynw6igw',
-                        topRow: 4,
-                        type: 'BUTTON_WIDGET',
-                        widgetId: 'tl8xbeqhua',
-                        children: []
-                      },
-                      {
-                        bottomRow: 15,
-                        parentId: 'cl2ynw6igw',
-                        topRow: 11,
-                        type: 'TEXT_WIDGET',
-                        widgetId: 'od1swmzxxq',
-                        children: []
-                      }
-                    ],
-                    parentId: 'dgev9742e2',
-                    topRow: 0,
-                    type: 'CANVAS_WIDGET',
-                    widgetId: 'cl2ynw6igw'
-                  }
-                ],
-                parentId: 'k1ojmo3iid',
-                topRow: 1,
-                type: 'CONTAINER_WIDGET',
-                widgetId: 'dgev9742e2'
+                bottomRow: 11,
+                parentId: '71mrzuu4q7',
+                topRow: 7,
+                type: 'BUTTON_WIDGET',
+                widgetId: 'v68er04mr2',
+                children: []
+              },
+              {
+                bottomRow: 11,
+                parentId: '71mrzuu4q7',
+                topRow: 7,
+                type: 'BUTTON_WIDGET',
+                widgetId: '250dog341d',
+                children: []
+              },
+              {
+                bottomRow: 6,
+                parentId: '71mrzuu4q7',
+                topRow: 2,
+                type: 'BUTTON_WIDGET',
+                widgetId: '5trspcxhy2',
+                children: []
+              },
+              {
+                bottomRow: 6,
+                parentId: '71mrzuu4q7',
+                topRow: 2,
+                type: 'BUTTON_WIDGET',
+                widgetId: 'ydlupoo8k2',
+                children: []
+              },
+              {
+                bottomRow: 6,
+                parentId: '71mrzuu4q7',
+                topRow: 2,
+                type: 'BUTTON_WIDGET',
+                widgetId: 'ltfsabiaq1',
+                children: []
               }
             ],
-            parentId: '9e839onva6',
+            parentId: 'nsadyy1bzy',
             topRow: 0,
             type: 'CANVAS_WIDGET',
-            widgetId: 'k1ojmo3iid'
+            widgetId: '71mrzuu4q7'
           }
         ],
         parentId: '0',
-        topRow: 22,
+        topRow: 6,
         type: 'CONTAINER_WIDGET',
-        widgetId: '9e839onva6'
+        widgetId: 'nsadyy1bzy'
+      },
+      {
+        bottomRow: 47,
+        children: [
+          {
+            bottomRow: 170,
+            children: [
+              {
+                bottomRow: 5,
+                parentId: 'an70evwb09',
+                topRow: 1,
+                type: 'TEXT_WIDGET',
+                widgetId: 'ujgcje0omy',
+                children: []
+              },
+              {
+                bottomRow: 9,
+                parentId: 'an70evwb09',
+                topRow: 5,
+                type: 'TEXT_WIDGET',
+                widgetId: 'is0fwucchq',
+                children: []
+              }
+            ],
+            parentId: 'cd1xlchbgb',
+            topRow: 0,
+            type: 'CANVAS_WIDGET',
+            widgetId: 'an70evwb09'
+          }
+        ],
+        parentId: '0',
+        topRow: 30,
+        type: 'CONTAINER_WIDGET',
+        widgetId: 'cd1xlchbgb'
+      },
+      {
+        bottomRow: 47,
+        children: [
+          {
+            bottomRow: 170,
+            children: [
+              {
+                bottomRow: 11,
+                parentId: 'orlqu2v4v5',
+                topRow: 6,
+                type: 'TEXT_WIDGET',
+                widgetId: 'weq4w5wk5m',
+                children: []
+              },
+              {
+                bottomRow: 5,
+                parentId: 'orlqu2v4v5',
+                topRow: 1,
+                type: 'TEXT_WIDGET',
+                widgetId: 'k1j5882wmt',
+                children: []
+              }
+            ],
+            parentId: 'uw6hr9rju8',
+            topRow: 0,
+            type: 'CANVAS_WIDGET',
+            widgetId: 'orlqu2v4v5'
+          }
+        ],
+        parentId: '0',
+        topRow: 30,
+        type: 'CONTAINER_WIDGET',
+        widgetId: 'uw6hr9rju8'
+      },
+      {
+        bottomRow: 70,
+        children: [
+          {
+            bottomRow: 210,
+            children: [
+              {
+                bottomRow: 10,
+                parentId: 'pbhfl6v7u8',
+                topRow: 1,
+                type: 'TEXT_WIDGET',
+                widgetId: 'y3s2g1c5zz',
+                children: []
+              },
+              {
+                bottomRow: 10,
+                parentId: 'pbhfl6v7u8',
+                topRow: 1,
+                type: 'TEXT_WIDGET',
+                widgetId: '5m3vf11p5u',
+                children: []
+              }
+            ],
+            parentId: 'gaswdfeyvz',
+            topRow: 0,
+            type: 'CANVAS_WIDGET',
+            widgetId: 'pbhfl6v7u8'
+          }
+        ],
+        parentId: '0',
+        topRow: 49,
+        type: 'CONTAINER_WIDGET',
+        widgetId: 'gaswdfeyvz'
       }
     ],
     topRow: 0,
@@ -622,59 +1221,6 @@ export default {
   actions: [],
   datasources: {
     list: [
-      {
-        id: '68a9b823de8cf11f80e4a8a8',
-        userPermissions: [
-          'execute:datasources',
-          'delete:datasources',
-          'manage:datasources',
-          'read:datasources'
-        ],
-        name: 'movies',
-        pluginId: '68a9b7e7de8cf11f80e4a871',
-        workspaceId: '68a9b81bde8cf11f80e4a8a0',
-        datasourceStorages: {
-          unused_env: {
-            id: '68a9b823de8cf11f80e4a8a9',
-            datasourceId: '68a9b823de8cf11f80e4a8a8',
-            environmentId: 'unused_env',
-            datasourceConfiguration: {
-              connection: {
-                mode: 'READ_WRITE',
-                type: 'DIRECT',
-                ssl: {
-                  authType: 'DEFAULT'
-                }
-              },
-              authentication: {
-                authenticationType: 'dbAuth',
-                authType: 'SCRAM_SHA_1',
-                username: 'mockdb-admin',
-                databaseName: 'movies'
-              },
-              properties: [
-                {
-                  key: 'Use mongo connection string URI',
-                  value: 'Yes'
-                },
-                {
-                  key: 'Connection string URI',
-                  value: 'mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=false&w=majority&socketTimeoutMS=3000&authsource=admin&minpoolsize=0'
-                }
-              ]
-            },
-            isConfigured: true,
-            invalids: [],
-            messages: [],
-            isValid: true
-          }
-        },
-        invalids: [],
-        messages: [],
-        isRecentlyCreated: true,
-        isMock: true,
-        isValid: true
-      },
       {
         id: '68a9b8c0de8cf11f80e4a8b3',
         userPermissions: [
@@ -767,6 +1313,59 @@ export default {
         isRecentlyCreated: true,
         isMock: true,
         isValid: true
+      },
+      {
+        id: '68a9b823de8cf11f80e4a8a8',
+        userPermissions: [
+          'execute:datasources',
+          'delete:datasources',
+          'manage:datasources',
+          'read:datasources'
+        ],
+        name: 'movies',
+        pluginId: '68a9b7e7de8cf11f80e4a871',
+        workspaceId: '68a9b81bde8cf11f80e4a8a0',
+        datasourceStorages: {
+          unused_env: {
+            id: '68a9b823de8cf11f80e4a8a9',
+            datasourceId: '68a9b823de8cf11f80e4a8a8',
+            environmentId: 'unused_env',
+            datasourceConfiguration: {
+              connection: {
+                mode: 'READ_WRITE',
+                type: 'DIRECT',
+                ssl: {
+                  authType: 'DEFAULT'
+                }
+              },
+              authentication: {
+                authenticationType: 'dbAuth',
+                authType: 'SCRAM_SHA_1',
+                username: 'mockdb-admin',
+                databaseName: 'movies'
+              },
+              properties: [
+                {
+                  key: 'Use mongo connection string URI',
+                  value: 'Yes'
+                },
+                {
+                  key: 'Connection string URI',
+                  value: 'mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=false&w=majority&socketTimeoutMS=3000&authsource=admin&minpoolsize=0'
+                }
+              ]
+            },
+            isConfigured: true,
+            invalids: [],
+            messages: [],
+            isValid: true
+          }
+        },
+        invalids: [],
+        messages: [],
+        isRecentlyCreated: true,
+        isMock: true,
+        isValid: true
       }
     ],
     loading: false,
@@ -774,289 +1373,11 @@ export default {
     isTesting: false,
     isListing: false,
     fetchingDatasourceStructure: {
+      '68a9b823de8cf11f80e4a8a8': false,
       '68a9b831de8cf11f80e4a8ad': false,
-      '68a9b8c0de8cf11f80e4a8b3': false,
-      '68a9b823de8cf11f80e4a8a8': false
+      '68a9b8c0de8cf11f80e4a8b3': false
     },
     structure: {
-      '68a9b823de8cf11f80e4a8a8': {
-        tables: [
-          {
-            type: 'COLLECTION',
-            name: 'movies',
-            columns: [
-              {
-                name: '_id',
-                type: 'ObjectId',
-                isAutogenerated: true
-              },
-              {
-                name: 'genres',
-                type: 'Array',
-                isAutogenerated: false
-              },
-              {
-                name: 'homepage',
-                type: 'String',
-                isAutogenerated: false
-              },
-              {
-                name: 'imdb_id',
-                type: 'String',
-                isAutogenerated: false
-              },
-              {
-                name: 'poster_path',
-                type: 'String',
-                isAutogenerated: false
-              },
-              {
-                name: 'release_date',
-                type: 'String',
-                isAutogenerated: false
-              },
-              {
-                name: 'revenue',
-                type: 'Integer',
-                isAutogenerated: false
-              },
-              {
-                name: 'status',
-                type: 'String',
-                isAutogenerated: false
-              },
-              {
-                name: 'tagline',
-                type: 'String',
-                isAutogenerated: false
-              },
-              {
-                name: 'title',
-                type: 'String',
-                isAutogenerated: false
-              },
-              {
-                name: 'vote_average',
-                type: 'Double',
-                isAutogenerated: false
-              },
-              {
-                name: 'vote_count',
-                type: 'Integer',
-                isAutogenerated: false
-              }
-            ],
-            keys: [],
-            templates: [
-              {
-                title: 'Find',
-                configuration: {
-                  find: {
-                    query: {
-                      data: '{ "homepage": "https://movies.disney.com/cruella"}'
-                    },
-                    limit: {
-                      data: '10'
-                    },
-                    sort: {
-                      data: '{"_id": 1}'
-                    }
-                  },
-                  collection: {
-                    data: 'movies'
-                  },
-                  body: {
-                    data: '{\n  "find": "movies",\n  "filter": {\n    "homepage": "https://movies.disney.com/cruella"\n  },\n  "sort": {\n    "_id": 1\n  },\n  "limit": 10\n}\n'
-                  },
-                  command: {
-                    data: 'FIND'
-                  },
-                  smartSubstitution: {
-                    data: true
-                  }
-                },
-                suggested: true
-              },
-              {
-                title: 'Find by ID',
-                configuration: {
-                  find: {
-                    query: {
-                      data: '{"_id": ObjectId("id_to_query_with")}'
-                    }
-                  },
-                  collection: {
-                    data: 'movies'
-                  },
-                  body: {
-                    data: '{\n  "find": "movies",\n  "filter": {\n    "_id": ObjectId("id_to_query_with")\n  }\n}\n'
-                  },
-                  command: {
-                    data: 'FIND'
-                  },
-                  smartSubstitution: {
-                    data: true
-                  }
-                },
-                suggested: false
-              },
-              {
-                title: 'Insert',
-                configuration: {
-                  insert: {
-                    documents: {
-                      data: '[{      "_id": ObjectId("a_valid_object_id_hex"),\n      "genres": [1, 2, 3],\n      "homepage": "new value",\n      "imdb_id": "new value",\n      "poster_path": "new value",\n      "release_date": "new value",\n      "revenue": 1,\n      "status": "new value",\n      "tagline": "new value",\n      "title": "new value",\n      "vote_average": 1,\n      "vote_count": 1,\n}]'
-                    }
-                  },
-                  collection: {
-                    data: 'movies'
-                  },
-                  body: {
-                    data: '{\n  "insert": "movies",\n  "documents": [\n    {\n      "_id": ObjectId("a_valid_object_id_hex"),\n      "genres": [1, 2, 3],\n      "homepage": "new value",\n      "imdb_id": "new value",\n      "poster_path": "new value",\n      "release_date": "new value",\n      "revenue": 1,\n      "status": "new value",\n      "tagline": "new value",\n      "title": "new value",\n      "vote_average": 1,\n      "vote_count": 1,\n    }\n  ]\n}\n'
-                  },
-                  command: {
-                    data: 'INSERT'
-                  },
-                  smartSubstitution: {
-                    data: true
-                  }
-                },
-                suggested: false
-              },
-              {
-                title: 'Update',
-                configuration: {
-                  updateMany: {
-                    query: {
-                      data: '{ "_id": ObjectId("id_of_document_to_update") }'
-                    },
-                    limit: {
-                      data: 'ALL'
-                    },
-                    update: {
-                      data: '{ "$set": { "homepage": "new value" } }'
-                    }
-                  },
-                  collection: {
-                    data: 'movies'
-                  },
-                  body: {
-                    data: '{\n  "update": "movies",\n  "updates": [\n    {\n      "q": {\n        "_id": ObjectId("id_of_document_to_update")\n      },\n      "u": { "$set": { "homepage": "new value" } }\n    }\n  ]\n}\n'
-                  },
-                  command: {
-                    data: 'UPDATE'
-                  },
-                  smartSubstitution: {
-                    data: true
-                  }
-                },
-                suggested: false
-              },
-              {
-                title: 'Delete',
-                configuration: {
-                  collection: {
-                    data: 'movies'
-                  },
-                  body: {
-                    data: '{\n  "delete": "movies",\n  "deletes": [\n    {\n      "q": {\n        "_id": "id_of_document_to_delete"\n      },\n      "limit": 1\n    }\n  ]\n}\n'
-                  },
-                  'delete': {
-                    query: {
-                      data: '{ "_id": ObjectId("id_of_document_to_delete") }'
-                    },
-                    limit: {
-                      data: 'SINGLE'
-                    }
-                  },
-                  command: {
-                    data: 'DELETE'
-                  },
-                  smartSubstitution: {
-                    data: true
-                  }
-                },
-                suggested: false
-              },
-              {
-                title: 'Count',
-                configuration: {
-                  count: {
-                    query: {
-                      data: '{"_id": {"$exists": true}}'
-                    }
-                  },
-                  collection: {
-                    data: 'movies'
-                  },
-                  body: {
-                    data: '{\n  "count": "movies",\n  "query": {"_id": {"$exists": true}} \n}\n'
-                  },
-                  command: {
-                    data: 'COUNT'
-                  },
-                  smartSubstitution: {
-                    data: true
-                  }
-                },
-                suggested: false
-              },
-              {
-                title: 'Distinct',
-                configuration: {
-                  distinct: {
-                    query: {
-                      data: '{ "_id": ObjectId("id_of_document_to_distinct") }'
-                    },
-                    key: {
-                      data: '_id'
-                    }
-                  },
-                  collection: {
-                    data: 'movies'
-                  },
-                  body: {
-                    data: '{\n  "distinct": "movies",\n  "query": { "_id": ObjectId("id_of_document_to_distinct") },  "key": "_id",}\n'
-                  },
-                  command: {
-                    data: 'DISTINCT'
-                  },
-                  smartSubstitution: {
-                    data: true
-                  }
-                },
-                suggested: false
-              },
-              {
-                title: 'Aggregate',
-                configuration: {
-                  collection: {
-                    data: 'movies'
-                  },
-                  body: {
-                    data: '{\n  "aggregate": "movies",\n  "pipeline": [ {"$sort" : {"_id": 1} } ],\n  "limit": 10,\n  "explain": "true"\n}\n'
-                  },
-                  command: {
-                    data: 'AGGREGATE'
-                  },
-                  smartSubstitution: {
-                    data: true
-                  },
-                  aggregate: {
-                    arrayPipelines: {
-                      data: '[ {"$sort" : {"_id": 1} } ]'
-                    },
-                    limit: {
-                      data: '10'
-                    }
-                  }
-                },
-                suggested: false
-              }
-            ]
-          }
-        ]
-      },
       '68a9b831de8cf11f80e4a8ad': {
         tables: [
           {
@@ -3022,6 +3343,284 @@ export default {
               {
                 title: 'DELETE',
                 body: 'DELETE FROM public."users"\n  WHERE 1 = 0; -- Specify a valid condition here. Removing the condition may delete everything in the table!',
+                suggested: false
+              }
+            ]
+          }
+        ]
+      },
+      '68a9b823de8cf11f80e4a8a8': {
+        tables: [
+          {
+            type: 'COLLECTION',
+            name: 'movies',
+            columns: [
+              {
+                name: '_id',
+                type: 'ObjectId',
+                isAutogenerated: true
+              },
+              {
+                name: 'genres',
+                type: 'Array',
+                isAutogenerated: false
+              },
+              {
+                name: 'homepage',
+                type: 'String',
+                isAutogenerated: false
+              },
+              {
+                name: 'imdb_id',
+                type: 'String',
+                isAutogenerated: false
+              },
+              {
+                name: 'poster_path',
+                type: 'String',
+                isAutogenerated: false
+              },
+              {
+                name: 'release_date',
+                type: 'String',
+                isAutogenerated: false
+              },
+              {
+                name: 'revenue',
+                type: 'Integer',
+                isAutogenerated: false
+              },
+              {
+                name: 'status',
+                type: 'String',
+                isAutogenerated: false
+              },
+              {
+                name: 'tagline',
+                type: 'String',
+                isAutogenerated: false
+              },
+              {
+                name: 'title',
+                type: 'String',
+                isAutogenerated: false
+              },
+              {
+                name: 'vote_average',
+                type: 'Double',
+                isAutogenerated: false
+              },
+              {
+                name: 'vote_count',
+                type: 'Integer',
+                isAutogenerated: false
+              }
+            ],
+            keys: [],
+            templates: [
+              {
+                title: 'Find',
+                configuration: {
+                  find: {
+                    query: {
+                      data: '{ "homepage": "https://movies.disney.com/cruella"}'
+                    },
+                    limit: {
+                      data: '10'
+                    },
+                    sort: {
+                      data: '{"_id": 1}'
+                    }
+                  },
+                  collection: {
+                    data: 'movies'
+                  },
+                  body: {
+                    data: '{\n  "find": "movies",\n  "filter": {\n    "homepage": "https://movies.disney.com/cruella"\n  },\n  "sort": {\n    "_id": 1\n  },\n  "limit": 10\n}\n'
+                  },
+                  command: {
+                    data: 'FIND'
+                  },
+                  smartSubstitution: {
+                    data: true
+                  }
+                },
+                suggested: true
+              },
+              {
+                title: 'Find by ID',
+                configuration: {
+                  find: {
+                    query: {
+                      data: '{"_id": ObjectId("id_to_query_with")}'
+                    }
+                  },
+                  collection: {
+                    data: 'movies'
+                  },
+                  body: {
+                    data: '{\n  "find": "movies",\n  "filter": {\n    "_id": ObjectId("id_to_query_with")\n  }\n}\n'
+                  },
+                  command: {
+                    data: 'FIND'
+                  },
+                  smartSubstitution: {
+                    data: true
+                  }
+                },
+                suggested: false
+              },
+              {
+                title: 'Insert',
+                configuration: {
+                  insert: {
+                    documents: {
+                      data: '[{      "_id": ObjectId("a_valid_object_id_hex"),\n      "genres": [1, 2, 3],\n      "homepage": "new value",\n      "imdb_id": "new value",\n      "poster_path": "new value",\n      "release_date": "new value",\n      "revenue": 1,\n      "status": "new value",\n      "tagline": "new value",\n      "title": "new value",\n      "vote_average": 1,\n      "vote_count": 1,\n}]'
+                    }
+                  },
+                  collection: {
+                    data: 'movies'
+                  },
+                  body: {
+                    data: '{\n  "insert": "movies",\n  "documents": [\n    {\n      "_id": ObjectId("a_valid_object_id_hex"),\n      "genres": [1, 2, 3],\n      "homepage": "new value",\n      "imdb_id": "new value",\n      "poster_path": "new value",\n      "release_date": "new value",\n      "revenue": 1,\n      "status": "new value",\n      "tagline": "new value",\n      "title": "new value",\n      "vote_average": 1,\n      "vote_count": 1,\n    }\n  ]\n}\n'
+                  },
+                  command: {
+                    data: 'INSERT'
+                  },
+                  smartSubstitution: {
+                    data: true
+                  }
+                },
+                suggested: false
+              },
+              {
+                title: 'Update',
+                configuration: {
+                  updateMany: {
+                    query: {
+                      data: '{ "_id": ObjectId("id_of_document_to_update") }'
+                    },
+                    limit: {
+                      data: 'ALL'
+                    },
+                    update: {
+                      data: '{ "$set": { "homepage": "new value" } }'
+                    }
+                  },
+                  collection: {
+                    data: 'movies'
+                  },
+                  body: {
+                    data: '{\n  "update": "movies",\n  "updates": [\n    {\n      "q": {\n        "_id": ObjectId("id_of_document_to_update")\n      },\n      "u": { "$set": { "homepage": "new value" } }\n    }\n  ]\n}\n'
+                  },
+                  command: {
+                    data: 'UPDATE'
+                  },
+                  smartSubstitution: {
+                    data: true
+                  }
+                },
+                suggested: false
+              },
+              {
+                title: 'Delete',
+                configuration: {
+                  collection: {
+                    data: 'movies'
+                  },
+                  body: {
+                    data: '{\n  "delete": "movies",\n  "deletes": [\n    {\n      "q": {\n        "_id": "id_of_document_to_delete"\n      },\n      "limit": 1\n    }\n  ]\n}\n'
+                  },
+                  'delete': {
+                    query: {
+                      data: '{ "_id": ObjectId("id_of_document_to_delete") }'
+                    },
+                    limit: {
+                      data: 'SINGLE'
+                    }
+                  },
+                  command: {
+                    data: 'DELETE'
+                  },
+                  smartSubstitution: {
+                    data: true
+                  }
+                },
+                suggested: false
+              },
+              {
+                title: 'Count',
+                configuration: {
+                  count: {
+                    query: {
+                      data: '{"_id": {"$exists": true}}'
+                    }
+                  },
+                  collection: {
+                    data: 'movies'
+                  },
+                  body: {
+                    data: '{\n  "count": "movies",\n  "query": {"_id": {"$exists": true}} \n}\n'
+                  },
+                  command: {
+                    data: 'COUNT'
+                  },
+                  smartSubstitution: {
+                    data: true
+                  }
+                },
+                suggested: false
+              },
+              {
+                title: 'Distinct',
+                configuration: {
+                  distinct: {
+                    query: {
+                      data: '{ "_id": ObjectId("id_of_document_to_distinct") }'
+                    },
+                    key: {
+                      data: '_id'
+                    }
+                  },
+                  collection: {
+                    data: 'movies'
+                  },
+                  body: {
+                    data: '{\n  "distinct": "movies",\n  "query": { "_id": ObjectId("id_of_document_to_distinct") },  "key": "_id",}\n'
+                  },
+                  command: {
+                    data: 'DISTINCT'
+                  },
+                  smartSubstitution: {
+                    data: true
+                  }
+                },
+                suggested: false
+              },
+              {
+                title: 'Aggregate',
+                configuration: {
+                  collection: {
+                    data: 'movies'
+                  },
+                  body: {
+                    data: '{\n  "aggregate": "movies",\n  "pipeline": [ {"$sort" : {"_id": 1} } ],\n  "limit": 10,\n  "explain": "true"\n}\n'
+                  },
+                  command: {
+                    data: 'AGGREGATE'
+                  },
+                  smartSubstitution: {
+                    data: true
+                  },
+                  aggregate: {
+                    arrayPipelines: {
+                      data: '[ {"$sort" : {"_id": 1} } ]'
+                    },
+                    limit: {
+                      data: '10'
+                    }
+                  }
+                },
                 suggested: false
               }
             ]
@@ -9488,8 +10087,8 @@ export default {
     pages: [
       {
         pageName: 'Page1',
-        pageId: '68ad34afd8deff53ee072777',
-        basePageId: '68ad34afd8deff53ee072777',
+        pageId: '68b44443eb513e051addbe4b',
+        basePageId: '68b44443eb513e051addbe4b',
         isDefault: true,
         isHidden: false,
         slug: 'page1',
@@ -9506,12 +10105,12 @@ export default {
       modalOpen: false,
       params: {}
     },
-    baseApplicationId: '68ad34afd8deff53ee072775',
-    applicationId: '68ad34afd8deff53ee072775',
-    currentBasePageId: '68ad34afd8deff53ee072777',
-    currentPageId: '68ad34afd8deff53ee072777',
-    defaultBasePageId: '68ad34afd8deff53ee072777',
-    defaultPageId: '68ad34afd8deff53ee072777',
+    baseApplicationId: '68b44443eb513e051addbe49',
+    applicationId: '68b44443eb513e051addbe49',
+    currentBasePageId: '68b44443eb513e051addbe4b',
+    currentPageId: '68b44443eb513e051addbe4b',
+    defaultBasePageId: '68b44443eb513e051addbe4b',
+    defaultPageId: '68b44443eb513e051addbe4b',
     loading: {}
   },
   plugins: {
@@ -9576,6 +10175,22 @@ export default {
         remotePlugin: false
       },
       {
+        id: '68a9b7e8de8cf11f80e4a875',
+        userPermissions: [],
+        name: 'Elasticsearch',
+        type: 'DB',
+        packageName: 'elasticsearch-plugin',
+        iconLocation: 'https://assets.appsmith.com/logo/elastic.svg',
+        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-elasticsearch#querying-elasticsearch',
+        responseType: 'JSON',
+        uiComponent: 'DbEditorForm',
+        datasourceComponent: 'AutoForm',
+        allowUserDatasources: true,
+        isRemotePlugin: false,
+        templates: {},
+        remotePlugin: false
+      },
+      {
         id: '68a9b7e8de8cf11f80e4a872',
         userPermissions: [],
         name: 'MySQL',
@@ -9598,30 +10213,14 @@ export default {
         remotePlugin: false
       },
       {
-        id: '68a9b7e8de8cf11f80e4a876',
+        id: '68a9b7e8de8cf11f80e4a877',
         userPermissions: [],
-        name: 'DynamoDB',
+        name: 'Redis',
         type: 'DB',
-        packageName: 'dynamo-plugin',
-        iconLocation: 'https://assets.appsmith.com/logo/aws-dynamodb.svg',
-        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-dynamodb#create-queries',
-        responseType: 'JSON',
-        uiComponent: 'DbEditorForm',
-        datasourceComponent: 'AutoForm',
-        allowUserDatasources: true,
-        isRemotePlugin: false,
-        templates: {},
-        remotePlugin: false
-      },
-      {
-        id: '68a9b7e8de8cf11f80e4a875',
-        userPermissions: [],
-        name: 'Elasticsearch',
-        type: 'DB',
-        packageName: 'elasticsearch-plugin',
-        iconLocation: 'https://assets.appsmith.com/logo/elastic.svg',
-        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-elasticsearch#querying-elasticsearch',
-        responseType: 'JSON',
+        packageName: 'redis-plugin',
+        iconLocation: 'https://assets.appsmith.com/logo/redis.svg',
+        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-redis#querying-redis',
+        responseType: 'TABLE',
         uiComponent: 'DbEditorForm',
         datasourceComponent: 'AutoForm',
         allowUserDatasources: true,
@@ -9652,22 +10251,6 @@ export default {
         remotePlugin: false
       },
       {
-        id: '68a9b7e8de8cf11f80e4a877',
-        userPermissions: [],
-        name: 'Redis',
-        type: 'DB',
-        packageName: 'redis-plugin',
-        iconLocation: 'https://assets.appsmith.com/logo/redis.svg',
-        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-redis#querying-redis',
-        responseType: 'TABLE',
-        uiComponent: 'DbEditorForm',
-        datasourceComponent: 'AutoForm',
-        allowUserDatasources: true,
-        isRemotePlugin: false,
-        templates: {},
-        remotePlugin: false
-      },
-      {
         id: '68a9b7e8de8cf11f80e4a879',
         userPermissions: [],
         name: 'Firestore',
@@ -9677,6 +10260,22 @@ export default {
         documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-firestore#understanding-commands',
         responseType: 'JSON',
         uiComponent: 'UQIDbEditorForm',
+        datasourceComponent: 'AutoForm',
+        allowUserDatasources: true,
+        isRemotePlugin: false,
+        templates: {},
+        remotePlugin: false
+      },
+      {
+        id: '68a9b7e8de8cf11f80e4a876',
+        userPermissions: [],
+        name: 'DynamoDB',
+        type: 'DB',
+        packageName: 'dynamo-plugin',
+        iconLocation: 'https://assets.appsmith.com/logo/aws-dynamodb.svg',
+        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-dynamodb#create-queries',
+        responseType: 'JSON',
+        uiComponent: 'DbEditorForm',
         datasourceComponent: 'AutoForm',
         allowUserDatasources: true,
         isRemotePlugin: false,
@@ -9695,6 +10294,74 @@ export default {
         uiComponent: 'DbEditorForm',
         datasourceComponent: 'AutoForm',
         generateCRUDPageComponent: 'SQL',
+        allowUserDatasources: true,
+        isRemotePlugin: false,
+        templates: {},
+        remotePlugin: false
+      },
+      {
+        id: '68a9b7e8de8cf11f80e4a880',
+        userPermissions: [],
+        name: 'JS Functions',
+        type: 'JS',
+        packageName: 'js-plugin',
+        iconLocation: 'https://assets.appsmith.com/js-yellow.svg',
+        documentationLink: 'https://docs.appsmith.com/v/v1.2.1/js-reference/using-js',
+        responseType: 'JSON',
+        uiComponent: 'JsEditorForm',
+        allowUserDatasources: true,
+        isRemotePlugin: false,
+        templates: {},
+        remotePlugin: false
+      },
+      {
+        id: '68a9b7e8de8cf11f80e4a87f',
+        userPermissions: [],
+        name: 'ArangoDB',
+        type: 'DB',
+        packageName: 'arangodb-plugin',
+        iconLocation: 'https://assets.appsmith.com/logo/arangodb.svg',
+        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-arango-db#using-queries-in-applications',
+        responseType: 'TABLE',
+        uiComponent: 'DbEditorForm',
+        datasourceComponent: 'AutoForm',
+        allowUserDatasources: true,
+        isRemotePlugin: false,
+        templates: {
+          CREATE: 'INSERT {\n    name: "{{ nameInput.text }}",\n    gender: "{{ genderDropdown.selectedOptionValue }}",\n    email: "{{ emailInput.text }}"\n} INTO users\n\n// nameInput and genderDropdown are example widgets, replace them with your widget names. To understand more please\n// check out: https://docs.appsmith.com/core-concepts/capturing-data-write\n// Read more at https://www.arangodb.com/docs/stable/aql/',
+          SELECT: 'FOR user IN users\nFILTER user.role == "Admin"\nSORT user.id ASC\nLIMIT 10\nRETURN user\n\n// Use widget data in a query using {{ widgetName.property }}. To understand more, please check out:\n// https://docs.appsmith.com/core-concepts/capturing-data-write\n// Read more at https://www.arangodb.com/docs/stable/aql/',
+          UPDATE: 'UPDATE\n"{{ usersTable.selectedRow.id }}"\nWITH\n{\n    status: "APPROVED"\n}\nIN users\n\n// usersTable is an example table widget from where the id is being read. Replace it with your own Table widget or a\n// static value. To understand more please check out: https://docs.appsmith.com/core-concepts/capturing-data-write\n// Read more at https://www.arangodb.com/docs/stable/aql/',
+          DELETE: 'REMOVE "1" IN users\n\n// Use widget data in a query by replacing static values with {{ widgetName.property }}. To understand more please\n// check out https://docs.appsmith.com/core-concepts/capturing-data-write\n// Read more at https://www.arangodb.com/docs/stable/aql/'
+        },
+        remotePlugin: false
+      },
+      {
+        id: '68a9b7e9de8cf11f80e4a881',
+        userPermissions: [],
+        name: 'SMTP',
+        type: 'DB',
+        packageName: 'smtp-plugin',
+        iconLocation: 'https://assets.appsmith.com/smtp-icon.svg',
+        documentationLink: 'https://docs.appsmith.com/reference/datasources/using-smtp',
+        responseType: 'JSON',
+        uiComponent: 'UQIDbEditorForm',
+        datasourceComponent: 'AutoForm',
+        allowUserDatasources: true,
+        isRemotePlugin: false,
+        templates: {},
+        remotePlugin: false
+      },
+      {
+        id: '68a9b7e9de8cf11f80e4a891',
+        userPermissions: [],
+        name: 'Authenticated GraphQL API',
+        type: 'API',
+        packageName: 'graphql-plugin',
+        iconLocation: 'https://s3.us-east-2.amazonaws.com/assets.appsmith.com/logo/graphql.svg',
+        documentationLink: 'https://docs.appsmith.com/reference/datasources/graphql#create-queries',
+        responseType: 'JSON',
+        uiComponent: 'GraphQLEditorForm',
+        datasourceComponent: 'RestAPIDatasourceForm',
         allowUserDatasources: true,
         isRemotePlugin: false,
         templates: {},
@@ -9736,6 +10403,43 @@ export default {
         remotePlugin: false
       },
       {
+        id: '68a9b7e9de8cf11f80e4a892',
+        userPermissions: [],
+        name: 'Oracle',
+        type: 'DB',
+        packageName: 'oracle-plugin',
+        iconLocation: 'https://s3.us-east-2.amazonaws.com/assets.appsmith.com/oracle.svg',
+        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-oracle#create-queries',
+        responseType: 'TABLE',
+        uiComponent: 'DbEditorForm',
+        allowUserDatasources: true,
+        isRemotePlugin: false,
+        templates: {
+          SELECT: 'SELECT* FROM <<your_table_name>> WHERE ROWNUM < 10;\n\n-- Please enter a valid table name and hit RUN\n',
+          INSERT: 'INSERT INTO users\n\t(name, gender, email)\nVALUES\n\t(\n\t\t{{ nameInput.text }},\n\t\t{{ genderDropdown.selectedOptionValue }},\n\t\t{{ emailInput.text }}\n\t)\n',
+          UPDATE: 'UPDATE users SET status = \'APPROVED\' WHERE id = {{ usersTable.selectedRow.id }}\n',
+          DELETE: 'DELETE FROM users WHERE id = {{idInput.text}}\n'
+        },
+        remotePlugin: false
+      },
+      {
+        id: '68a9b7edde8cf11f80e4a894',
+        userPermissions: [],
+        name: 'Open AI',
+        type: 'AI',
+        packageName: 'openai-plugin',
+        pluginName: 'Open AI',
+        iconLocation: 'https://assets.appsmith.com/logo/open-ai.svg',
+        documentationLink: 'https://docs.appsmith.com/connect-data/reference/open-ai',
+        responseType: 'JSON',
+        uiComponent: 'UQIDbEditorForm',
+        datasourceComponent: 'DbEditorForm',
+        allowUserDatasources: true,
+        isRemotePlugin: false,
+        templates: {},
+        remotePlugin: false
+      },
+      {
         id: '68a9b7e8de8cf11f80e4a87e',
         userPermissions: [],
         name: 'Snowflake',
@@ -9758,94 +10462,6 @@ export default {
         remotePlugin: false
       },
       {
-        id: '68a9b7e8de8cf11f80e4a87f',
-        userPermissions: [],
-        name: 'ArangoDB',
-        type: 'DB',
-        packageName: 'arangodb-plugin',
-        iconLocation: 'https://assets.appsmith.com/logo/arangodb.svg',
-        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-arango-db#using-queries-in-applications',
-        responseType: 'TABLE',
-        uiComponent: 'DbEditorForm',
-        datasourceComponent: 'AutoForm',
-        allowUserDatasources: true,
-        isRemotePlugin: false,
-        templates: {
-          CREATE: 'INSERT {\n    name: "{{ nameInput.text }}",\n    gender: "{{ genderDropdown.selectedOptionValue }}",\n    email: "{{ emailInput.text }}"\n} INTO users\n\n// nameInput and genderDropdown are example widgets, replace them with your widget names. To understand more please\n// check out: https://docs.appsmith.com/core-concepts/capturing-data-write\n// Read more at https://www.arangodb.com/docs/stable/aql/',
-          SELECT: 'FOR user IN users\nFILTER user.role == "Admin"\nSORT user.id ASC\nLIMIT 10\nRETURN user\n\n// Use widget data in a query using {{ widgetName.property }}. To understand more, please check out:\n// https://docs.appsmith.com/core-concepts/capturing-data-write\n// Read more at https://www.arangodb.com/docs/stable/aql/',
-          UPDATE: 'UPDATE\n"{{ usersTable.selectedRow.id }}"\nWITH\n{\n    status: "APPROVED"\n}\nIN users\n\n// usersTable is an example table widget from where the id is being read. Replace it with your own Table widget or a\n// static value. To understand more please check out: https://docs.appsmith.com/core-concepts/capturing-data-write\n// Read more at https://www.arangodb.com/docs/stable/aql/',
-          DELETE: 'REMOVE "1" IN users\n\n// Use widget data in a query by replacing static values with {{ widgetName.property }}. To understand more please\n// check out https://docs.appsmith.com/core-concepts/capturing-data-write\n// Read more at https://www.arangodb.com/docs/stable/aql/'
-        },
-        remotePlugin: false
-      },
-      {
-        id: '68a9b7e8de8cf11f80e4a880',
-        userPermissions: [],
-        name: 'JS Functions',
-        type: 'JS',
-        packageName: 'js-plugin',
-        iconLocation: 'https://assets.appsmith.com/js-yellow.svg',
-        documentationLink: 'https://docs.appsmith.com/v/v1.2.1/js-reference/using-js',
-        responseType: 'JSON',
-        uiComponent: 'JsEditorForm',
-        allowUserDatasources: true,
-        isRemotePlugin: false,
-        templates: {},
-        remotePlugin: false
-      },
-      {
-        id: '68a9b7e9de8cf11f80e4a891',
-        userPermissions: [],
-        name: 'Authenticated GraphQL API',
-        type: 'API',
-        packageName: 'graphql-plugin',
-        iconLocation: 'https://s3.us-east-2.amazonaws.com/assets.appsmith.com/logo/graphql.svg',
-        documentationLink: 'https://docs.appsmith.com/reference/datasources/graphql#create-queries',
-        responseType: 'JSON',
-        uiComponent: 'GraphQLEditorForm',
-        datasourceComponent: 'RestAPIDatasourceForm',
-        allowUserDatasources: true,
-        isRemotePlugin: false,
-        templates: {},
-        remotePlugin: false
-      },
-      {
-        id: '68a9b7e9de8cf11f80e4a881',
-        userPermissions: [],
-        name: 'SMTP',
-        type: 'DB',
-        packageName: 'smtp-plugin',
-        iconLocation: 'https://assets.appsmith.com/smtp-icon.svg',
-        documentationLink: 'https://docs.appsmith.com/reference/datasources/using-smtp',
-        responseType: 'JSON',
-        uiComponent: 'UQIDbEditorForm',
-        datasourceComponent: 'AutoForm',
-        allowUserDatasources: true,
-        isRemotePlugin: false,
-        templates: {},
-        remotePlugin: false
-      },
-      {
-        id: '68a9b7e9de8cf11f80e4a892',
-        userPermissions: [],
-        name: 'Oracle',
-        type: 'DB',
-        packageName: 'oracle-plugin',
-        iconLocation: 'https://s3.us-east-2.amazonaws.com/assets.appsmith.com/oracle.svg',
-        documentationLink: 'https://docs.appsmith.com/reference/datasources/querying-oracle#create-queries',
-        responseType: 'TABLE',
-        uiComponent: 'DbEditorForm',
-        allowUserDatasources: true,
-        isRemotePlugin: false,
-        templates: {
-          SELECT: 'SELECT* FROM <<your_table_name>> WHERE ROWNUM < 10;\n\n-- Please enter a valid table name and hit RUN\n',
-          INSERT: 'INSERT INTO users\n\t(name, gender, email)\nVALUES\n\t(\n\t\t{{ nameInput.text }},\n\t\t{{ genderDropdown.selectedOptionValue }},\n\t\t{{ emailInput.text }}\n\t)\n',
-          UPDATE: 'UPDATE users SET status = \'APPROVED\' WHERE id = {{ usersTable.selectedRow.id }}\n',
-          DELETE: 'DELETE FROM users WHERE id = {{idInput.text}}\n'
-        },
-        remotePlugin: false
-      },
-      {
         id: '68a9b7edde8cf11f80e4a895',
         userPermissions: [],
         name: 'Anthropic',
@@ -9863,14 +10479,14 @@ export default {
         remotePlugin: false
       },
       {
-        id: '68a9b7edde8cf11f80e4a894',
+        id: '68a9b7eede8cf11f80e4a897',
         userPermissions: [],
-        name: 'Open AI',
-        type: 'AI',
-        packageName: 'openai-plugin',
-        pluginName: 'Open AI',
-        iconLocation: 'https://assets.appsmith.com/logo/open-ai.svg',
-        documentationLink: 'https://docs.appsmith.com/connect-data/reference/open-ai',
+        name: 'Databricks',
+        type: 'DB',
+        packageName: 'databricks-plugin',
+        pluginName: 'Databricks',
+        iconLocation: 'https://assets.appsmith.com/databricks-logo.svg',
+        documentationLink: 'https://docs.appsmith.com/connect-data/reference/databricks',
         responseType: 'JSON',
         uiComponent: 'UQIDbEditorForm',
         datasourceComponent: 'DbEditorForm',
@@ -9888,23 +10504,6 @@ export default {
         pluginName: 'Google AI',
         iconLocation: 'https://assets.appsmith.com/google-ai.svg',
         documentationLink: 'https://docs.appsmith.com/connect-data/reference/google-ai',
-        responseType: 'JSON',
-        uiComponent: 'UQIDbEditorForm',
-        datasourceComponent: 'DbEditorForm',
-        allowUserDatasources: true,
-        isRemotePlugin: false,
-        templates: {},
-        remotePlugin: false
-      },
-      {
-        id: '68a9b7eede8cf11f80e4a897',
-        userPermissions: [],
-        name: 'Databricks',
-        type: 'DB',
-        packageName: 'databricks-plugin',
-        pluginName: 'Databricks',
-        iconLocation: 'https://assets.appsmith.com/databricks-logo.svg',
-        documentationLink: 'https://docs.appsmith.com/connect-data/reference/databricks',
         responseType: 'JSON',
         uiComponent: 'UQIDbEditorForm',
         datasourceComponent: 'DbEditorForm',
@@ -10662,37 +11261,6 @@ export default {
               }
             },
             {
-              identifier: 'GET_TABLE_ROW',
-              controlType: 'SECTION',
-              children: [
-                {
-                  configProperty: 'actionConfiguration.formData.tableIdOrName',
-                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
-                  identifier: 'tableIdOrName',
-                  label: 'Table ID or name',
-                  subtitle: 'ID or name of the table. ',
-                  tooltipText: 'Identifier that was used when the table was created. If you do not remember it, you can use get published table to find the table ID or the name.',
-                  isRequired: true,
-                  requiresEncoding: true,
-                  placeholderText: 'test_table'
-                },
-                {
-                  configProperty: 'actionConfiguration.formData.rowId',
-                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
-                  identifier: 'rowId',
-                  label: 'Row ID',
-                  subtitle: 'Row ID.',
-                  tooltipText: 'The ID of the row.',
-                  isRequired: true,
-                  placeholderText: '5378084'
-                }
-              ],
-              name: 'Get table Row',
-              conditionals: {
-                show: '{{actionConfiguration.formData.command === \'GET_TABLE_ROW\'}}'
-              }
-            },
-            {
               identifier: 'ADD_USER',
               controlType: 'SECTION',
               children: [
@@ -10751,6 +11319,37 @@ export default {
               name: 'Add User',
               conditionals: {
                 show: '{{actionConfiguration.formData.command === \'ADD_USER\'}}'
+              }
+            },
+            {
+              identifier: 'GET_TABLE_ROW',
+              controlType: 'SECTION',
+              children: [
+                {
+                  configProperty: 'actionConfiguration.formData.tableIdOrName',
+                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
+                  identifier: 'tableIdOrName',
+                  label: 'Table ID or name',
+                  subtitle: 'ID or name of the table. ',
+                  tooltipText: 'Identifier that was used when the table was created. If you do not remember it, you can use get published table to find the table ID or the name.',
+                  isRequired: true,
+                  requiresEncoding: true,
+                  placeholderText: 'test_table'
+                },
+                {
+                  configProperty: 'actionConfiguration.formData.rowId',
+                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
+                  identifier: 'rowId',
+                  label: 'Row ID',
+                  subtitle: 'Row ID.',
+                  tooltipText: 'The ID of the row.',
+                  isRequired: true,
+                  placeholderText: '5378084'
+                }
+              ],
+              name: 'Get table Row',
+              conditionals: {
+                show: '{{actionConfiguration.formData.command === \'GET_TABLE_ROW\'}}'
               }
             },
             {
@@ -12184,35 +12783,45 @@ export default {
               }
             },
             {
-              identifier: 'PERMANENTLY_DELETE_ROWS',
+              identifier: 'UPDATE_OBJECT',
               controlType: 'SECTION',
               children: [
                 {
-                  identifier: 'tableIdOrName',
-                  isRequired: true,
-                  requiresEncoding: false,
+                  identifier: 'objectType',
                   controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
-                  tooltipText: 'Identifier that was used when the table was created. If you do not remember it, you can use get published table to find the table ID or the name.',
-                  subtitle: 'Table ID or name.',
-                  placeholderText: 'test_table',
-                  label: 'Table ID or name',
-                  configProperty: 'actionConfiguration.formData.tableIdOrName'
+                  configProperty: 'actionConfiguration.formData.objectType',
+                  label: 'Object type',
+                  placeholderText: 'contacts ',
+                  subtitle: 'Valid object type for the CRM.',
+                  tooltipText: 'Valid object type for the CRM (contacts, companies, deals, tickets, etc.)',
+                  isRequired: true,
+                  requiresEncoding: true
                 },
                 {
-                  identifier: 'inputs',
-                  isRequired: true,
+                  configProperty: 'actionConfiguration.formData.objectId',
                   controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
-                  tooltipText: 'ID rows that want to get. type: array.',
-                  subtitle: 'Row ID. ',
-                  placeholderText: '[”5378084”,”71003521”]',
-                  label: 'Inputs',
-                  configProperty: 'actionConfiguration.formData.inputs',
-                  requiresEncoding: false
+                  identifier: 'objectId',
+                  isRequired: true,
+                  label: 'Object ID',
+                  placeholderText: '201',
+                  subtitle: 'Identifier of the object.',
+                  tooltipText: 'Identifier that was used when the object was created. If you do not remember it, you can use list objects to find the id.'
+                },
+                {
+                  configProperty: 'actionConfiguration.formData.properties',
+                  controlType: 'QUERY_DYNAMIC_TEXT',
+                  identifier: 'properties',
+                  isRequired: true,
+                  label: 'Properties',
+                  placeholderText: '{ "company": "Elv",    "email": "test@elv.net",    "firstname": "Test",         "lastname": "Cooper", "phone": "(877)112-05252", "website": "biglytics.net"}',
+                  requiresEncoding: false,
+                  subtitle: 'Json format the properties.',
+                  tooltipText: 'A properties object for the specific objecType.'
                 }
               ],
-              name: 'Permanently Delete rows',
+              name: 'Update object',
               conditionals: {
-                show: '{{actionConfiguration.formData.command === \'PERMANENTLY_DELETE_ROWS\'}}'
+                show: '{{actionConfiguration.formData.command === \'UPDATE_OBJECT\'}}'
               }
             },
             {
@@ -12270,45 +12879,35 @@ export default {
               }
             },
             {
-              identifier: 'UPDATE_OBJECT',
+              identifier: 'PERMANENTLY_DELETE_ROWS',
               controlType: 'SECTION',
               children: [
                 {
-                  identifier: 'objectType',
-                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
-                  configProperty: 'actionConfiguration.formData.objectType',
-                  label: 'Object type',
-                  placeholderText: 'contacts ',
-                  subtitle: 'Valid object type for the CRM.',
-                  tooltipText: 'Valid object type for the CRM (contacts, companies, deals, tickets, etc.)',
+                  identifier: 'tableIdOrName',
                   isRequired: true,
-                  requiresEncoding: true
-                },
-                {
-                  configProperty: 'actionConfiguration.formData.objectId',
-                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
-                  identifier: 'objectId',
-                  isRequired: true,
-                  label: 'Object ID',
-                  placeholderText: '201',
-                  subtitle: 'Identifier of the object.',
-                  tooltipText: 'Identifier that was used when the object was created. If you do not remember it, you can use list objects to find the id.'
-                },
-                {
-                  configProperty: 'actionConfiguration.formData.properties',
-                  controlType: 'QUERY_DYNAMIC_TEXT',
-                  identifier: 'properties',
-                  isRequired: true,
-                  label: 'Properties',
-                  placeholderText: '{ "company": "Elv",    "email": "test@elv.net",    "firstname": "Test",         "lastname": "Cooper", "phone": "(877)112-05252", "website": "biglytics.net"}',
                   requiresEncoding: false,
-                  subtitle: 'Json format the properties.',
-                  tooltipText: 'A properties object for the specific objecType.'
+                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
+                  tooltipText: 'Identifier that was used when the table was created. If you do not remember it, you can use get published table to find the table ID or the name.',
+                  subtitle: 'Table ID or name.',
+                  placeholderText: 'test_table',
+                  label: 'Table ID or name',
+                  configProperty: 'actionConfiguration.formData.tableIdOrName'
+                },
+                {
+                  identifier: 'inputs',
+                  isRequired: true,
+                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
+                  tooltipText: 'ID rows that want to get. type: array.',
+                  subtitle: 'Row ID. ',
+                  placeholderText: '[”5378084”,”71003521”]',
+                  label: 'Inputs',
+                  configProperty: 'actionConfiguration.formData.inputs',
+                  requiresEncoding: false
                 }
               ],
-              name: 'Update object',
+              name: 'Permanently Delete rows',
               conditionals: {
-                show: '{{actionConfiguration.formData.command === \'UPDATE_OBJECT\'}}'
+                show: '{{actionConfiguration.formData.command === \'PERMANENTLY_DELETE_ROWS\'}}'
               }
             },
             {
@@ -12926,37 +13525,6 @@ export default {
               }
             },
             {
-              identifier: 'GET_SINGLE_DOMAINS',
-              controlType: 'SECTION',
-              children: [
-                {
-                  identifier: 'archived',
-                  requiresEncoding: true,
-                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
-                  tooltipText: 'Specifies whether to return archived tables. Defaults to false. ',
-                  subtitle: 'Whether to return only archived results.',
-                  label: 'Archived',
-                  configProperty: 'actionConfiguration.formData.archived',
-                  placeholderText: 'false',
-                  initialValue: 'false'
-                },
-                {
-                  identifier: 'Id',
-                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
-                  tooltipText: 'The unique ID of the domain. ',
-                  subtitle: 'The ID or name of the domain.',
-                  label: 'ID',
-                  configProperty: 'actionConfiguration.formData.Id',
-                  requiresEncoding: true,
-                  placeholderText: '789442651352'
-                }
-              ],
-              name: 'Get Single Domains',
-              conditionals: {
-                show: '{{actionConfiguration.formData.command === \'GET_SINGLE_DOMAINS\'}}'
-              }
-            },
-            {
               identifier: 'MODIFY_USER',
               controlType: 'SECTION',
               children: [
@@ -13012,6 +13580,37 @@ export default {
               name: 'Modify User',
               conditionals: {
                 show: '{{actionConfiguration.formData.command === \'MODIFY_USER\'}}'
+              }
+            },
+            {
+              identifier: 'GET_SINGLE_DOMAINS',
+              controlType: 'SECTION',
+              children: [
+                {
+                  identifier: 'archived',
+                  requiresEncoding: true,
+                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
+                  tooltipText: 'Specifies whether to return archived tables. Defaults to false. ',
+                  subtitle: 'Whether to return only archived results.',
+                  label: 'Archived',
+                  configProperty: 'actionConfiguration.formData.archived',
+                  placeholderText: 'false',
+                  initialValue: 'false'
+                },
+                {
+                  identifier: 'Id',
+                  controlType: 'QUERY_DYNAMIC_INPUT_TEXT',
+                  tooltipText: 'The unique ID of the domain. ',
+                  subtitle: 'The ID or name of the domain.',
+                  label: 'ID',
+                  configProperty: 'actionConfiguration.formData.Id',
+                  requiresEncoding: true,
+                  placeholderText: '789442651352'
+                }
+              ],
+              name: 'Get Single Domains',
+              conditionals: {
+                show: '{{actionConfiguration.formData.command === \'GET_SINGLE_DOMAINS\'}}'
               }
             }
           ]
@@ -14087,224 +14686,6 @@ export default {
     ],
     loading: false,
     formConfigs: {
-      '68a9b7e7de8cf11f80e4a871': [
-        {
-          sectionName: 'Connection',
-          children: [
-            {
-              label: 'Use mongo connection string URI key',
-              configProperty: 'datasourceConfiguration.properties[0].key',
-              controlType: 'INPUT_TEXT',
-              initialValue: 'Use mongo connection string URI',
-              hidden: true
-            },
-            {
-              label: 'Use mongo connection string URI',
-              configProperty: 'datasourceConfiguration.properties[0].value',
-              controlType: 'DROP_DOWN',
-              initialValue: 'No',
-              options: [
-                {
-                  label: 'Yes',
-                  value: 'Yes'
-                },
-                {
-                  label: 'No',
-                  value: 'No'
-                }
-              ]
-            },
-            {
-              label: 'Connection string URI key',
-              configProperty: 'datasourceConfiguration.properties[1].key',
-              controlType: 'INPUT_TEXT',
-              initialValue: 'Connection string URI',
-              hidden: true
-            },
-            {
-              label: 'Connection string URI',
-              placeholderText: 'mongodb+srv://<username>:<password>@test-db.swrsq.mongodb.net/myDatabase',
-              configProperty: 'datasourceConfiguration.properties[1].value',
-              controlType: 'INPUT_TEXT',
-              hidden: {
-                path: 'datasourceConfiguration.properties[0].value',
-                comparison: 'NOT_EQUALS',
-                value: 'Yes'
-              }
-            },
-            {
-              label: 'Connection mode',
-              configProperty: 'datasourceConfiguration.connection.mode',
-              controlType: 'SEGMENTED_CONTROL',
-              initialValue: 'READ_WRITE',
-              options: [
-                {
-                  label: 'Read / Write',
-                  value: 'READ_WRITE'
-                },
-                {
-                  label: 'Read only',
-                  value: 'READ_ONLY'
-                }
-              ],
-              hidden: {
-                path: 'datasourceConfiguration.properties[0].value',
-                comparison: 'EQUALS',
-                value: 'Yes'
-              }
-            },
-            {
-              label: 'Connection type',
-              configProperty: 'datasourceConfiguration.connection.type',
-              initialValue: 'DIRECT',
-              controlType: 'DROP_DOWN',
-              options: [
-                {
-                  label: 'Direct connection',
-                  value: 'DIRECT'
-                },
-                {
-                  label: 'Replica set',
-                  value: 'REPLICA_SET'
-                }
-              ],
-              hidden: {
-                path: 'datasourceConfiguration.properties[0].value',
-                comparison: 'EQUALS',
-                value: 'Yes'
-              }
-            },
-            {
-              children: [
-                {
-                  label: 'Host address',
-                  configProperty: 'datasourceConfiguration.endpoints[*].host',
-                  controlType: 'KEYVALUE_ARRAY',
-                  validationMessage: 'Please enter a valid host',
-                  validationRegex: '^((?![/:]).)*$',
-                  placeholderText: 'myapp.abcde.mongodb.net',
-                  hidden: {
-                    path: 'datasourceConfiguration.properties[0].value',
-                    comparison: 'EQUALS',
-                    value: 'Yes'
-                  }
-                },
-                {
-                  label: 'Port',
-                  configProperty: 'datasourceConfiguration.endpoints[*].port',
-                  dataType: 'NUMBER',
-                  controlType: 'KEYVALUE_ARRAY',
-                  initialValue: [
-                    '27017'
-                  ],
-                  hidden: {
-                    path: 'datasourceConfiguration.properties[0].value',
-                    comparison: 'EQUALS',
-                    value: 'Yes'
-                  },
-                  placeholderText: '27017'
-                }
-              ]
-            },
-            {
-              label: 'Default database name',
-              placeholderText: '(optional)',
-              configProperty: 'datasourceConfiguration.connection.defaultDatabaseName',
-              controlType: 'INPUT_TEXT',
-              hidden: {
-                path: 'datasourceConfiguration.properties[0].value',
-                comparison: 'EQUALS',
-                value: 'Yes'
-              }
-            }
-          ]
-        },
-        {
-          sectionName: 'Authentication',
-          hidden: {
-            path: 'datasourceConfiguration.properties[0].value',
-            comparison: 'EQUALS',
-            value: 'Yes'
-          },
-          children: [
-            {
-              label: 'Database name',
-              configProperty: 'datasourceConfiguration.authentication.databaseName',
-              controlType: 'INPUT_TEXT',
-              placeholderText: 'Database name',
-              initialValue: 'admin'
-            },
-            {
-              label: 'Authentication type',
-              configProperty: 'datasourceConfiguration.authentication.authType',
-              controlType: 'DROP_DOWN',
-              initialValue: 'SCRAM_SHA_1',
-              options: [
-                {
-                  label: 'SCRAM-SHA-1',
-                  value: 'SCRAM_SHA_1'
-                },
-                {
-                  label: 'SCRAM-SHA-256',
-                  value: 'SCRAM_SHA_256'
-                },
-                {
-                  label: 'MONGODB-CR',
-                  value: 'MONGODB_CR'
-                }
-              ]
-            },
-            {
-              children: [
-                {
-                  label: 'Username',
-                  configProperty: 'datasourceConfiguration.authentication.username',
-                  controlType: 'INPUT_TEXT',
-                  placeholderText: 'Username'
-                },
-                {
-                  label: 'Password',
-                  configProperty: 'datasourceConfiguration.authentication.password',
-                  dataType: 'PASSWORD',
-                  controlType: 'INPUT_TEXT',
-                  placeholderText: 'Password',
-                  encrypted: true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          sectionName: 'SSL (optional)',
-          hidden: {
-            path: 'datasourceConfiguration.properties[0].value',
-            comparison: 'EQUALS',
-            value: 'Yes'
-          },
-          children: [
-            {
-              label: 'SSL mode',
-              configProperty: 'datasourceConfiguration.connection.ssl.authType',
-              controlType: 'DROP_DOWN',
-              initialValue: 'DEFAULT',
-              options: [
-                {
-                  label: 'Default',
-                  value: 'DEFAULT'
-                },
-                {
-                  label: 'Enabled',
-                  value: 'ENABLED'
-                },
-                {
-                  label: 'Disabled',
-                  value: 'DISABLED'
-                }
-              ]
-            }
-          ]
-        }
-      ],
       '68a9b7e7de8cf11f80e4a86f': [
         {
           sectionName: 'Connection',
@@ -14654,6 +15035,224 @@ export default {
                   }
                 ]
               }
+            }
+          ]
+        }
+      ],
+      '68a9b7e7de8cf11f80e4a871': [
+        {
+          sectionName: 'Connection',
+          children: [
+            {
+              label: 'Use mongo connection string URI key',
+              configProperty: 'datasourceConfiguration.properties[0].key',
+              controlType: 'INPUT_TEXT',
+              initialValue: 'Use mongo connection string URI',
+              hidden: true
+            },
+            {
+              label: 'Use mongo connection string URI',
+              configProperty: 'datasourceConfiguration.properties[0].value',
+              controlType: 'DROP_DOWN',
+              initialValue: 'No',
+              options: [
+                {
+                  label: 'Yes',
+                  value: 'Yes'
+                },
+                {
+                  label: 'No',
+                  value: 'No'
+                }
+              ]
+            },
+            {
+              label: 'Connection string URI key',
+              configProperty: 'datasourceConfiguration.properties[1].key',
+              controlType: 'INPUT_TEXT',
+              initialValue: 'Connection string URI',
+              hidden: true
+            },
+            {
+              label: 'Connection string URI',
+              placeholderText: 'mongodb+srv://<username>:<password>@test-db.swrsq.mongodb.net/myDatabase',
+              configProperty: 'datasourceConfiguration.properties[1].value',
+              controlType: 'INPUT_TEXT',
+              hidden: {
+                path: 'datasourceConfiguration.properties[0].value',
+                comparison: 'NOT_EQUALS',
+                value: 'Yes'
+              }
+            },
+            {
+              label: 'Connection mode',
+              configProperty: 'datasourceConfiguration.connection.mode',
+              controlType: 'SEGMENTED_CONTROL',
+              initialValue: 'READ_WRITE',
+              options: [
+                {
+                  label: 'Read / Write',
+                  value: 'READ_WRITE'
+                },
+                {
+                  label: 'Read only',
+                  value: 'READ_ONLY'
+                }
+              ],
+              hidden: {
+                path: 'datasourceConfiguration.properties[0].value',
+                comparison: 'EQUALS',
+                value: 'Yes'
+              }
+            },
+            {
+              label: 'Connection type',
+              configProperty: 'datasourceConfiguration.connection.type',
+              initialValue: 'DIRECT',
+              controlType: 'DROP_DOWN',
+              options: [
+                {
+                  label: 'Direct connection',
+                  value: 'DIRECT'
+                },
+                {
+                  label: 'Replica set',
+                  value: 'REPLICA_SET'
+                }
+              ],
+              hidden: {
+                path: 'datasourceConfiguration.properties[0].value',
+                comparison: 'EQUALS',
+                value: 'Yes'
+              }
+            },
+            {
+              children: [
+                {
+                  label: 'Host address',
+                  configProperty: 'datasourceConfiguration.endpoints[*].host',
+                  controlType: 'KEYVALUE_ARRAY',
+                  validationMessage: 'Please enter a valid host',
+                  validationRegex: '^((?![/:]).)*$',
+                  placeholderText: 'myapp.abcde.mongodb.net',
+                  hidden: {
+                    path: 'datasourceConfiguration.properties[0].value',
+                    comparison: 'EQUALS',
+                    value: 'Yes'
+                  }
+                },
+                {
+                  label: 'Port',
+                  configProperty: 'datasourceConfiguration.endpoints[*].port',
+                  dataType: 'NUMBER',
+                  controlType: 'KEYVALUE_ARRAY',
+                  initialValue: [
+                    '27017'
+                  ],
+                  hidden: {
+                    path: 'datasourceConfiguration.properties[0].value',
+                    comparison: 'EQUALS',
+                    value: 'Yes'
+                  },
+                  placeholderText: '27017'
+                }
+              ]
+            },
+            {
+              label: 'Default database name',
+              placeholderText: '(optional)',
+              configProperty: 'datasourceConfiguration.connection.defaultDatabaseName',
+              controlType: 'INPUT_TEXT',
+              hidden: {
+                path: 'datasourceConfiguration.properties[0].value',
+                comparison: 'EQUALS',
+                value: 'Yes'
+              }
+            }
+          ]
+        },
+        {
+          sectionName: 'Authentication',
+          hidden: {
+            path: 'datasourceConfiguration.properties[0].value',
+            comparison: 'EQUALS',
+            value: 'Yes'
+          },
+          children: [
+            {
+              label: 'Database name',
+              configProperty: 'datasourceConfiguration.authentication.databaseName',
+              controlType: 'INPUT_TEXT',
+              placeholderText: 'Database name',
+              initialValue: 'admin'
+            },
+            {
+              label: 'Authentication type',
+              configProperty: 'datasourceConfiguration.authentication.authType',
+              controlType: 'DROP_DOWN',
+              initialValue: 'SCRAM_SHA_1',
+              options: [
+                {
+                  label: 'SCRAM-SHA-1',
+                  value: 'SCRAM_SHA_1'
+                },
+                {
+                  label: 'SCRAM-SHA-256',
+                  value: 'SCRAM_SHA_256'
+                },
+                {
+                  label: 'MONGODB-CR',
+                  value: 'MONGODB_CR'
+                }
+              ]
+            },
+            {
+              children: [
+                {
+                  label: 'Username',
+                  configProperty: 'datasourceConfiguration.authentication.username',
+                  controlType: 'INPUT_TEXT',
+                  placeholderText: 'Username'
+                },
+                {
+                  label: 'Password',
+                  configProperty: 'datasourceConfiguration.authentication.password',
+                  dataType: 'PASSWORD',
+                  controlType: 'INPUT_TEXT',
+                  placeholderText: 'Password',
+                  encrypted: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          sectionName: 'SSL (optional)',
+          hidden: {
+            path: 'datasourceConfiguration.properties[0].value',
+            comparison: 'EQUALS',
+            value: 'Yes'
+          },
+          children: [
+            {
+              label: 'SSL mode',
+              configProperty: 'datasourceConfiguration.connection.ssl.authType',
+              controlType: 'DROP_DOWN',
+              initialValue: 'DEFAULT',
+              options: [
+                {
+                  label: 'Default',
+                  value: 'DEFAULT'
+                },
+                {
+                  label: 'Enabled',
+                  value: 'ENABLED'
+                },
+                {
+                  label: 'Disabled',
+                  value: 'DISABLED'
+                }
+              ]
             }
           ]
         }
@@ -15628,6 +16227,47 @@ export default {
       '68a9b7e8de8cf11f80e4a880': []
     },
     editorConfigs: {
+      '68a9b7e7de8cf11f80e4a86f': [
+        {
+          controlType: 'SECTION_V2',
+          identifier: 'SECTION-ONE',
+          isFullWidth: true,
+          children: [
+            {
+              controlType: 'SINGLE_COLUMN_ZONE',
+              identifier: 'SO-Z1',
+              children: [
+                {
+                  label: '',
+                  internalLabel: 'Query',
+                  propertyName: 'postgres_query_non_prepared',
+                  configProperty: 'actionConfiguration.body',
+                  controlType: 'QUERY_DYNAMIC_TEXT',
+                  evaluationSubstitutionType: 'PARAMETER',
+                  hidden: {
+                    path: 'actionConfiguration.pluginSpecifiedTemplates[0].value',
+                    comparison: 'EQUALS',
+                    value: false
+                  }
+                },
+                {
+                  label: '',
+                  internalLabel: 'Query',
+                  propertyName: 'postgres_query_prepared',
+                  configProperty: 'actionConfiguration.body',
+                  controlType: 'QUERY_DYNAMIC_TEXT',
+                  evaluationSubstitutionType: 'TEMPLATE',
+                  hidden: {
+                    path: 'actionConfiguration.pluginSpecifiedTemplates[0].value',
+                    comparison: 'EQUALS',
+                    value: true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
       '68a9b7e7de8cf11f80e4a871': [
         {
           controlType: 'SECTION_V2',
@@ -16210,47 +16850,6 @@ export default {
                       }
                     }
                   ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      '68a9b7e7de8cf11f80e4a86f': [
-        {
-          controlType: 'SECTION_V2',
-          identifier: 'SECTION-ONE',
-          isFullWidth: true,
-          children: [
-            {
-              controlType: 'SINGLE_COLUMN_ZONE',
-              identifier: 'SO-Z1',
-              children: [
-                {
-                  label: '',
-                  internalLabel: 'Query',
-                  propertyName: 'postgres_query_non_prepared',
-                  configProperty: 'actionConfiguration.body',
-                  controlType: 'QUERY_DYNAMIC_TEXT',
-                  evaluationSubstitutionType: 'PARAMETER',
-                  hidden: {
-                    path: 'actionConfiguration.pluginSpecifiedTemplates[0].value',
-                    comparison: 'EQUALS',
-                    value: false
-                  }
-                },
-                {
-                  label: '',
-                  internalLabel: 'Query',
-                  propertyName: 'postgres_query_prepared',
-                  configProperty: 'actionConfiguration.body',
-                  controlType: 'QUERY_DYNAMIC_TEXT',
-                  evaluationSubstitutionType: 'TEMPLATE',
-                  hidden: {
-                    path: 'actionConfiguration.pluginSpecifiedTemplates[0].value',
-                    comparison: 'EQUALS',
-                    value: true
-                  }
                 }
               ]
             }
@@ -17085,57 +17684,6 @@ export default {
       '68a9b7e8de8cf11f80e4a880': []
     },
     settingConfigs: {
-      '68a9b7e7de8cf11f80e4a871': [
-        {
-          sectionName: '',
-          id: 1,
-          children: [
-            {
-              label: 'Run behavior',
-              configProperty: 'runBehaviour',
-              controlType: 'DROP_DOWN',
-              initialValue: 'MANUAL',
-              options: [
-                {
-                  label: 'Automatic',
-                  subText: 'Query runs on page load or when a variable it depends on changes',
-                  value: 'AUTOMATIC'
-                },
-                {
-                  label: 'On page load',
-                  subText: 'Query runs when the page loads or when manually triggered',
-                  value: 'ON_PAGE_LOAD'
-                },
-                {
-                  label: 'Manual',
-                  subText: 'Query only runs when called in an event or JS with .run()',
-                  value: 'MANUAL'
-                }
-              ]
-            },
-            {
-              label: 'Request confirmation before running this query',
-              configProperty: 'confirmBeforeExecute',
-              controlType: 'SWITCH',
-              tooltipText: 'Ask confirmation from the user each time before refreshing data'
-            },
-            {
-              label: 'Smart BSON substitution',
-              tooltipText: 'Turning on this property fixes the BSON substitution of bindings in the Mongo BSON document by adding/removing quotes intelligently and reduces developer errors',
-              configProperty: 'actionConfiguration.formData.smartSubstitution.data',
-              controlType: 'SWITCH',
-              initialValue: true
-            },
-            {
-              label: 'Query timeout (in milliseconds)',
-              subtitle: 'Maximum time after which the query will return',
-              configProperty: 'actionConfiguration.timeoutInMillisecond',
-              controlType: 'INPUT_TEXT',
-              dataType: 'NUMBER'
-            }
-          ]
-        }
-      ],
       '68a9b7e7de8cf11f80e4a86f': [
         {
           sectionName: '',
@@ -17174,6 +17722,57 @@ export default {
               label: 'Use prepared statements',
               tooltipText: 'Prepared statements prevent SQL injections on your queries but do not support dynamic bindings outside values in your SQL',
               configProperty: 'actionConfiguration.pluginSpecifiedTemplates[0].value',
+              controlType: 'SWITCH',
+              initialValue: true
+            },
+            {
+              label: 'Query timeout (in milliseconds)',
+              subtitle: 'Maximum time after which the query will return',
+              configProperty: 'actionConfiguration.timeoutInMillisecond',
+              controlType: 'INPUT_TEXT',
+              dataType: 'NUMBER'
+            }
+          ]
+        }
+      ],
+      '68a9b7e7de8cf11f80e4a871': [
+        {
+          sectionName: '',
+          id: 1,
+          children: [
+            {
+              label: 'Run behavior',
+              configProperty: 'runBehaviour',
+              controlType: 'DROP_DOWN',
+              initialValue: 'MANUAL',
+              options: [
+                {
+                  label: 'Automatic',
+                  subText: 'Query runs on page load or when a variable it depends on changes',
+                  value: 'AUTOMATIC'
+                },
+                {
+                  label: 'On page load',
+                  subText: 'Query runs when the page loads or when manually triggered',
+                  value: 'ON_PAGE_LOAD'
+                },
+                {
+                  label: 'Manual',
+                  subText: 'Query only runs when called in an event or JS with .run()',
+                  value: 'MANUAL'
+                }
+              ]
+            },
+            {
+              label: 'Request confirmation before running this query',
+              configProperty: 'confirmBeforeExecute',
+              controlType: 'SWITCH',
+              tooltipText: 'Ask confirmation from the user each time before refreshing data'
+            },
+            {
+              label: 'Smart BSON substitution',
+              tooltipText: 'Turning on this property fixes the BSON substitution of bindings in the Mongo BSON document by adding/removing quotes intelligently and reduces developer errors',
+              configProperty: 'actionConfiguration.formData.smartSubstitution.data',
               controlType: 'SWITCH',
               initialValue: true
             },
@@ -17399,12 +17998,12 @@ export default {
       '68a9b7e8de8cf11f80e4a880': []
     },
     datasourceFormButtonConfigs: {
-      '68a9b7e7de8cf11f80e4a871': [
+      '68a9b7e7de8cf11f80e4a86f': [
         'TEST',
         'CANCEL',
         'SAVE'
       ],
-      '68a9b7e7de8cf11f80e4a86f': [
+      '68a9b7e7de8cf11f80e4a871': [
         'TEST',
         'CANCEL',
         'SAVE'
@@ -17423,14 +18022,14 @@ export default {
       ]
     },
     dependencies: {
-      '68a9b7e7de8cf11f80e4a871': {
-        'actionConfiguration.formData.body.data': [
-          'actionConfiguration.formData.smartSubstitution.data'
-        ]
-      },
       '68a9b7e7de8cf11f80e4a86f': {
         'actionConfiguration.body': [
           'actionConfiguration.pluginSpecifiedTemplates[0].value'
+        ]
+      },
+      '68a9b7e7de8cf11f80e4a871': {
+        'actionConfiguration.formData.body.data': [
+          'actionConfiguration.formData.smartSubstitution.data'
         ]
       },
       '68a9b7e7de8cf11f80e4a870': {
@@ -17556,16 +18155,21 @@ export default {
       isIntercomConsentGiven: false
     },
     URL: {
-      fullPath: 'https://dev.appsmith.com/app/auto-layout/page1-68ad34afd8deff53ee072777/edit',
+      fullPath: 'https://dev.appsmith.com/app/widget-dev/page1-68b44443eb513e051addbe4b/edit',
       host: 'dev.appsmith.com',
       hostname: 'dev.appsmith.com',
       queryParams: {},
       protocol: 'https:',
-      pathname: '/app/auto-layout/page1-68ad34afd8deff53ee072777/edit',
+      pathname: '/app/widget-dev/page1-68b44443eb513e051addbe4b/edit',
       port: '',
       hash: ''
     },
-    store: {},
+    store: {
+      '{{}}': '',
+      '': '',
+      var_left: 'Dynamic Left: STATIC text from Right Container',
+      var_right: 'Dynamic Right: STATIC text from Left Container'
+    },
     geolocation: {
       canBeRequested: true,
       currentPosition: {}
@@ -17573,114 +18177,191 @@ export default {
     workflows: {},
     mode: 'EDIT'
   },
-  jsActions: [
-    {
-      isLoading: false,
-      config: {
-        id: '68ad40c7d8deff53ee07277d',
-        baseId: '68ad40c7d8deff53ee07277d',
-        applicationId: '68ad34afd8deff53ee072775',
-        workspaceId: '68a9b81bde8cf11f80e4a8a0',
-        name: 'localVariables',
-        pageId: '68ad34afd8deff53ee072777',
-        pluginId: '68a9b7e8de8cf11f80e4a880',
-        pluginType: 'JS',
-        actions: [],
-        archivedActions: [],
-        body: 'export default {\n\tvarCalculated: \'\',\n}',
-        variables: [
-          {
-            name: 'varCalculated',
-            value: '\'\''
-          }
-        ],
-        userPermissions: [
-          'read:actions',
-          'delete:actions',
-          'execute:actions',
-          'manage:actions'
-        ]
-      }
-    }
-  ],
+  jsActions: [],
   autoHeightLayoutTree: {
-    '9e839onva6': {
-      aboves: [],
-      belows: [],
-      topRow: 22,
-      bottomRow: 63,
-      originalTopRow: 22,
-      originalBottomRow: 63,
-      distanceToNearestAbove: 0
-    },
-    '9nft85pms1': {
+    nsadyy1bzy: {
       aboves: [],
       belows: [
-        'kwdcw234sl'
+        'cd1xlchbgb',
+        'uw6hr9rju8',
+        'gaswdfeyvz'
+      ],
+      topRow: 6,
+      bottomRow: 22,
+      originalTopRow: 6,
+      originalBottomRow: 22,
+      distanceToNearestAbove: 0
+    },
+    cd1xlchbgb: {
+      aboves: [
+        'nsadyy1bzy'
+      ],
+      belows: [
+        'gaswdfeyvz'
+      ],
+      topRow: 30,
+      bottomRow: 47,
+      originalTopRow: 30,
+      originalBottomRow: 47,
+      distanceToNearestAbove: 8
+    },
+    uw6hr9rju8: {
+      aboves: [
+        'nsadyy1bzy'
+      ],
+      belows: [
+        'gaswdfeyvz'
+      ],
+      topRow: 30,
+      bottomRow: 47,
+      originalTopRow: 30,
+      originalBottomRow: 47,
+      distanceToNearestAbove: 8
+    },
+    gaswdfeyvz: {
+      aboves: [
+        'nsadyy1bzy',
+        'cd1xlchbgb',
+        'uw6hr9rju8'
+      ],
+      belows: [],
+      topRow: 49,
+      bottomRow: 70,
+      originalTopRow: 49,
+      originalBottomRow: 70,
+      distanceToNearestAbove: 2
+    },
+    bvqcrxkaum: {
+      aboves: [],
+      belows: [],
+      topRow: 2,
+      bottomRow: 6,
+      originalTopRow: 2,
+      originalBottomRow: 6,
+      distanceToNearestAbove: 0
+    },
+    '5trspcxhy2': {
+      aboves: [],
+      belows: [],
+      topRow: 2,
+      bottomRow: 6,
+      originalTopRow: 2,
+      originalBottomRow: 6,
+      distanceToNearestAbove: 0
+    },
+    ydlupoo8k2: {
+      aboves: [],
+      belows: [
+        'v68er04mr2'
+      ],
+      topRow: 2,
+      bottomRow: 6,
+      originalTopRow: 2,
+      originalBottomRow: 6,
+      distanceToNearestAbove: 0
+    },
+    ltfsabiaq1: {
+      aboves: [],
+      belows: [
+        '250dog341d'
+      ],
+      topRow: 2,
+      bottomRow: 6,
+      originalTopRow: 2,
+      originalBottomRow: 6,
+      distanceToNearestAbove: 0
+    },
+    v68er04mr2: {
+      aboves: [
+        'ydlupoo8k2'
+      ],
+      belows: [],
+      topRow: 7,
+      bottomRow: 11,
+      originalTopRow: 7,
+      originalBottomRow: 11,
+      distanceToNearestAbove: 1
+    },
+    '250dog341d': {
+      aboves: [
+        'ltfsabiaq1'
+      ],
+      belows: [],
+      topRow: 7,
+      bottomRow: 11,
+      originalTopRow: 7,
+      originalBottomRow: 11,
+      distanceToNearestAbove: 1
+    },
+    ujgcje0omy: {
+      aboves: [],
+      belows: [
+        'is0fwucchq'
       ],
       topRow: 1,
-      bottomRow: 8,
+      bottomRow: 5,
       originalTopRow: 1,
-      originalBottomRow: 8,
+      originalBottomRow: 5,
       distanceToNearestAbove: 0
     },
-    kwdcw234sl: {
+    is0fwucchq: {
       aboves: [
-        '9nft85pms1'
+        'ujgcje0omy'
       ],
       belows: [],
-      topRow: 11,
-      bottomRow: 15,
-      originalTopRow: 11,
-      originalBottomRow: 15,
-      distanceToNearestAbove: 3
-    },
-    tl8xbeqhua: {
-      aboves: [],
-      belows: [
-        'od1swmzxxq'
-      ],
-      topRow: 4,
+      topRow: 5,
       bottomRow: 9,
-      originalTopRow: 4,
+      originalTopRow: 5,
       originalBottomRow: 9,
       distanceToNearestAbove: 0
     },
-    od1swmzxxq: {
-      aboves: [
-        'tl8xbeqhua'
-      ],
-      belows: [],
-      topRow: 11,
-      bottomRow: 15,
-      originalTopRow: 11,
-      originalBottomRow: 15,
-      distanceToNearestAbove: 2
-    },
-    '0j3cs5153j': {
+    k1j5882wmt: {
       aboves: [],
-      belows: [],
+      belows: [
+        'weq4w5wk5m'
+      ],
       topRow: 1,
-      bottomRow: 30,
+      bottomRow: 5,
       originalTopRow: 1,
-      originalBottomRow: 30,
+      originalBottomRow: 5,
       distanceToNearestAbove: 0
     },
-    dgev9742e2: {
+    weq4w5wk5m: {
+      aboves: [
+        'k1j5882wmt'
+      ],
+      belows: [],
+      topRow: 6,
+      bottomRow: 10,
+      originalTopRow: 6,
+      originalBottomRow: 11,
+      distanceToNearestAbove: 1
+    },
+    y3s2g1c5zz: {
       aboves: [],
       belows: [],
       topRow: 1,
-      bottomRow: 30,
+      bottomRow: 10,
       originalTopRow: 1,
-      originalBottomRow: 30,
+      originalBottomRow: 10,
+      distanceToNearestAbove: 0
+    },
+    '5m3vf11p5u': {
+      aboves: [],
+      belows: [],
+      topRow: 1,
+      bottomRow: 8,
+      originalTopRow: 1,
+      originalBottomRow: 10,
       distanceToNearestAbove: 0
     }
   },
   canvasLevels: {
     '0': 0,
-    '256n68mv3w': 2,
-    cl2ynw6igw: 2,
-    k1ojmo3iid: 1
+    '71mrzuu4q7': 1,
+    an70evwb09: 1,
+    orlqu2v4v5: 1,
+    pbhfl6v7u8: 1
   },
   layoutElementPositions: {},
   moduleInstanceEntities: {}

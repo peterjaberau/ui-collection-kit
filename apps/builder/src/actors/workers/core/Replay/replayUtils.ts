@@ -1,0 +1,75 @@
+import type { Diff } from "deep-diff";
+import { get, isArray, isEmpty, set } from "lodash";
+export const UPDATES = "propertyUpdates";
+export const REPLAY_DELAY = 300;
+export const REPLAY_FOCUS_DELAY = 100;
+export const TOASTS = "toasts";
+export const FOCUSES = "needsFocus";
+export const WIDGETS = "widgets";
+
+export function setPropertyUpdate(replay: any, path: string[], value: string[]) {
+  const existingPathValue = get(replay, path);
+
+  if (!existingPathValue || existingPathValue.length > 2) {
+    set(replay, path, value);
+    set(replay, UPDATES, true);
+  }
+}
+
+export function addToArray(obj: any, key: string, value: any) {
+  if (!obj) return;
+
+  if (obj[key] && Array.isArray(obj[key])) {
+    obj[key].push(value);
+  } else {
+    obj[key] = [value];
+  }
+}
+
+export function getPathsFromDiff(diffs: any) {
+  const paths = [];
+
+  for (const diff of diffs) {
+    if (!diff.path || !Array.isArray(diff.path)) continue;
+
+    paths.push(diff.path.join("."));
+  }
+
+  return paths;
+}
+
+
+export function pathArrayToString(path?: string[] | any) {
+  let stringPath: any = "";
+
+  if (!path || path.length === 0) return stringPath;
+
+  stringPath = path[0];
+
+  for (let i = 1; i < path.length; i++) {
+    stringPath += isNaN(parseInt(path[i])) ? `.${path[i]}` : `[${path[i]}]`;
+  }
+
+  return stringPath;
+}
+
+
+export function findFieldInfo(config: Array<any>, field: string, parentSection = "") {
+  let result = {};
+
+  if (!config || !isArray(config)) return result;
+
+  for (const conf of config) {
+    if (conf.configProperty === field) {
+      result = { conf, parentSection };
+      break;
+    } else if (conf.children) {
+      parentSection = conf.sectionName || parentSection;
+      result = findFieldInfo(conf.children, field, parentSection);
+
+      if (!isEmpty(result)) break;
+    }
+  }
+
+  return result;
+}

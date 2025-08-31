@@ -1,3 +1,4 @@
+'use client'
 import React, { RefObject, useRef } from "react"
 import { Container } from "@chakra-ui/react"
 import { DevLayer } from "#components/app/DevLayer"

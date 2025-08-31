@@ -1,17 +1,5 @@
 export default {
   tree: {
-    localVariables: {
-      varCalculated: '',
-      body: 'export default {\n\tvarCalculated: \'\',\n}',
-      ENTITY_TYPE: 'JSACTION',
-      actionId: '68ad40c7d8deff53ee07277d',
-      __evaluation__: {
-        errors: {
-          varCalculated: [],
-          body: []
-        }
-      }
-    },
     MainContainer: {
       ENTITY_TYPE: 'WIDGET',
       widgetName: 'MainContainer',
@@ -20,7 +8,7 @@ export default {
       snapColumns: 64,
       widgetId: '0',
       topRow: 0,
-      bottomRow: 630,
+      bottomRow: 1292,
       containerStyle: 'none',
       snapRows: 124,
       parentRowSpace: 1,
@@ -30,7 +18,7 @@ export default {
       leftColumn: 0,
       meta: {},
       isLoading: false,
-      componentHeight: 630,
+      componentHeight: 1292,
       componentWidth: 4896,
       type: 'CANVAS_WIDGET',
       borderColor: '',
@@ -48,141 +36,1015 @@ export default {
         }
       }
     },
-    Input1: {
+    btn_left_left: {
       ENTITY_TYPE: 'WIDGET',
+      resetFormOnClick: false,
       needsErrorInfo: false,
       boxShadow: 'none',
-      mobileBottomRow: 10,
-      widgetName: 'Input1',
-      topRow: 1,
-      bottomRow: 8,
+      mobileBottomRow: 7,
+      widgetName: 'btn_left_left',
+      onClick: '{{storeValue(\'var_left\', \'Dynamic Left: \' + txt_static_left.text);}}',
+      buttonColor: '#553DE9',
+      topRow: 2,
+      bottomRow: 6,
       parentRowSpace: 10,
-      labelWidth: 5,
-      autoFocus: false,
-      mobileRightColumn: 35,
+      mobileRightColumn: 17,
       animateLoading: true,
-      parentColumnSpace: 6.541259765625,
-      resetOnSubmit: true,
-      leftColumn: 1,
-      labelPosition: 'Top',
-      labelStyle: '',
-      inputType: 'TEXT',
+      parentColumnSpace: 11.90625,
+      leftColumn: 0,
+      text: 'Left from Left',
       isDisabled: false,
-      key: 'z6mkd60niu',
-      labelTextSize: '0.875rem',
-      isRequired: false,
-      rightColumn: 60,
-      dynamicHeight: 'FIXED',
-      widgetId: '9nft85pms1',
-      accentColor: '#553DE9',
-      showStepArrows: false,
-      minWidth: 450,
+      key: 'shywogacyl',
+      rightColumn: 13,
+      isDefaultClickDisabled: true,
+      widgetId: 'bvqcrxkaum',
+      minWidth: 120,
       isVisible: true,
-      label: 'Label',
-      labelAlignment: 'left',
+      recaptchaType: 'V3',
       isLoading: false,
       mobileTopRow: 3,
-      responsiveBehavior: 'fill',
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
       borderRadius: '0.375rem',
-      mobileLeftColumn: 15,
-      maxDynamicHeight: 9000,
-      iconAlign: 'left',
-      defaultText: '',
-      minDynamicHeight: 4,
-      value: '',
-      isValid: true,
-      text: '',
-      isDirty: false,
-      inputText: '',
-      meta: {
-        text: '',
-        inputText: ''
-      },
-      componentHeight: 70,
-      componentWidth: 385.934326171875,
-      type: 'INPUT_WIDGET_V2',
-      regex: '',
-      validation: true,
-      errorMessage: '',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER',
+      meta: {},
+      componentHeight: 40,
+      componentWidth: 154.78125,
+      type: 'BUTTON_WIDGET',
       tooltip: '',
-      placeholderText: '',
+      googleRecaptchaKey: '',
       iconName: '',
-      labelTextColor: '',
       __evaluation__: {
         errors: {
-          defaultText: [],
-          'meta.text': [],
-          text: [],
-          'meta.inputText': [],
-          meta: [],
-          isRequired: [],
-          inputType: [],
-          inputText: [],
-          isValid: [],
-          value: [],
           borderRadius: [],
-          accentColor: [],
-          label: [],
-          maxChars: [],
-          regex: [],
-          validation: [],
-          errorMessage: [],
-          isSpellCheck: [],
+          buttonColor: [],
+          onClick: [],
+          text: [],
           tooltip: [],
-          placeholderText: [],
           isVisible: [],
           isDisabled: [],
           animateLoading: [],
-          autoFocus: [],
-          resetOnSubmit: [],
+          googleRecaptchaKey: [],
+          recaptchaType: [],
+          disabledWhenInvalid: [],
+          resetFormOnClick: [],
+          buttonVariant: [],
           iconName: [],
-          labelTextColor: [],
-          labelTextSize: [],
-          labelStyle: [],
+          placement: [],
           boxShadow: []
         }
       }
     },
-    Text1: {
+    btn_left_reset: {
+      ENTITY_TYPE: 'WIDGET',
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_left_reset',
+      onClick: '{{storeValue(\'var_left\', \'Dynamic Left: -\');}}',
+      buttonColor: '#553DE9',
+      topRow: 7,
+      bottomRow: 11,
+      parentRowSpace: 10,
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      leftColumn: 14,
+      text: 'Left reset',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 24,
+      isDefaultClickDisabled: true,
+      widgetId: 'v68er04mr2',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER',
+      meta: {},
+      componentHeight: 40,
+      componentWidth: 119.0625,
+      type: 'BUTTON_WIDGET',
+      tooltip: '',
+      googleRecaptchaKey: '',
+      iconName: '',
+      __evaluation__: {
+        errors: {
+          borderRadius: [],
+          buttonColor: [],
+          onClick: [],
+          text: [],
+          tooltip: [],
+          isVisible: [],
+          isDisabled: [],
+          animateLoading: [],
+          googleRecaptchaKey: [],
+          recaptchaType: [],
+          disabledWhenInvalid: [],
+          resetFormOnClick: [],
+          buttonVariant: [],
+          iconName: [],
+          placement: [],
+          boxShadow: []
+        }
+      }
+    },
+    btn_right_reset: {
+      ENTITY_TYPE: 'WIDGET',
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_right_reset',
+      onClick: '{{storeValue(\'var_right\', \'Dynamic Right: -\');}}',
+      buttonColor: '#553DE9',
+      topRow: 7,
+      bottomRow: 11,
+      parentRowSpace: 10,
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      leftColumn: 52,
+      text: 'Right reset',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 62,
+      isDefaultClickDisabled: true,
+      widgetId: '250dog341d',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER',
+      meta: {},
+      componentHeight: 40,
+      componentWidth: 119.0625,
+      type: 'BUTTON_WIDGET',
+      tooltip: '',
+      googleRecaptchaKey: '',
+      iconName: '',
+      __evaluation__: {
+        errors: {
+          borderRadius: [],
+          buttonColor: [],
+          onClick: [],
+          text: [],
+          tooltip: [],
+          isVisible: [],
+          isDisabled: [],
+          animateLoading: [],
+          googleRecaptchaKey: [],
+          recaptchaType: [],
+          disabledWhenInvalid: [],
+          resetFormOnClick: [],
+          buttonVariant: [],
+          iconName: [],
+          placement: [],
+          boxShadow: []
+        }
+      }
+    },
+    btn_right_right: {
+      ENTITY_TYPE: 'WIDGET',
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_right_right',
+      onClick: '{{storeValue(\'var_right\', \'Dynamic Right: \' + txt_static_right.text);}}',
+      buttonColor: '#553DE9',
+      topRow: 2,
+      bottomRow: 6,
+      parentRowSpace: 10,
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      leftColumn: 37,
+      text: 'Right from Right',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 51,
+      isDefaultClickDisabled: true,
+      widgetId: '5trspcxhy2',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER',
+      meta: {},
+      componentHeight: 40,
+      componentWidth: 166.6875,
+      type: 'BUTTON_WIDGET',
+      tooltip: '',
+      googleRecaptchaKey: '',
+      iconName: '',
+      __evaluation__: {
+        errors: {
+          borderRadius: [],
+          buttonColor: [],
+          onClick: [],
+          text: [],
+          tooltip: [],
+          isVisible: [],
+          isDisabled: [],
+          animateLoading: [],
+          googleRecaptchaKey: [],
+          recaptchaType: [],
+          disabledWhenInvalid: [],
+          resetFormOnClick: [],
+          buttonVariant: [],
+          iconName: [],
+          placement: [],
+          boxShadow: []
+        }
+      }
+    },
+    btn_left_right: {
+      ENTITY_TYPE: 'WIDGET',
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_left_right',
+      onClick: '{{storeValue(\'var_left\', \'Dynamic Left: \' + txt_static_right.text);}}',
+      buttonColor: '#553DE9',
+      topRow: 2,
+      bottomRow: 6,
+      parentRowSpace: 10,
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      leftColumn: 14,
+      text: 'Left from Right',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 24,
+      isDefaultClickDisabled: true,
+      widgetId: 'ydlupoo8k2',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER',
+      meta: {},
+      componentHeight: 40,
+      componentWidth: 119.0625,
+      type: 'BUTTON_WIDGET',
+      tooltip: '',
+      googleRecaptchaKey: '',
+      iconName: '',
+      __evaluation__: {
+        errors: {
+          borderRadius: [],
+          buttonColor: [],
+          onClick: [],
+          text: [],
+          tooltip: [],
+          isVisible: [],
+          isDisabled: [],
+          animateLoading: [],
+          googleRecaptchaKey: [],
+          recaptchaType: [],
+          disabledWhenInvalid: [],
+          resetFormOnClick: [],
+          buttonVariant: [],
+          iconName: [],
+          placement: [],
+          boxShadow: []
+        }
+      }
+    },
+    btn_right_left: {
+      ENTITY_TYPE: 'WIDGET',
+      resetFormOnClick: false,
+      needsErrorInfo: false,
+      boxShadow: 'none',
+      mobileBottomRow: 7,
+      widgetName: 'btn_right_left',
+      onClick: '{{storeValue(\'var_right\', \'Dynamic Right: \' + txt_static_left.text);}}',
+      buttonColor: '#553DE9',
+      topRow: 2,
+      bottomRow: 6,
+      parentRowSpace: 10,
+      mobileRightColumn: 17,
+      animateLoading: true,
+      parentColumnSpace: 11.90625,
+      leftColumn: 52,
+      text: 'Right from Left',
+      isDisabled: false,
+      key: 'shywogacyl',
+      rightColumn: 63,
+      isDefaultClickDisabled: true,
+      widgetId: 'ltfsabiaq1',
+      minWidth: 120,
+      isVisible: true,
+      recaptchaType: 'V3',
+      isLoading: false,
+      mobileTopRow: 3,
+      responsiveBehavior: 'hug',
+      disabledWhenInvalid: false,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 1,
+      buttonVariant: 'PRIMARY',
+      placement: 'CENTER',
+      meta: {},
+      componentHeight: 40,
+      componentWidth: 130.96875,
+      type: 'BUTTON_WIDGET',
+      tooltip: '',
+      googleRecaptchaKey: '',
+      iconName: '',
+      __evaluation__: {
+        errors: {
+          borderRadius: [],
+          buttonColor: [],
+          onClick: [],
+          text: [],
+          tooltip: [],
+          isVisible: [],
+          isDisabled: [],
+          animateLoading: [],
+          googleRecaptchaKey: [],
+          recaptchaType: [],
+          disabledWhenInvalid: [],
+          resetFormOnClick: [],
+          buttonVariant: [],
+          iconName: [],
+          placement: [],
+          boxShadow: []
+        }
+      }
+    },
+    Canvas1: {
       ENTITY_TYPE: 'WIDGET',
       needsErrorInfo: false,
-      mobileBottomRow: 15,
-      widgetName: 'Text1',
-      topRow: 11,
-      bottomRow: 15,
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      mobileBottomRow: 100,
+      widgetName: 'Canvas1',
+      topRow: 0,
+      bottomRow: 160,
+      parentRowSpace: 1,
+      canExtend: false,
+      minHeight: 100,
+      mobileRightColumn: 255,
+      parentColumnSpace: 1,
+      leftColumn: 0,
+      key: 'isxwoxpkra',
+      rightColumn: 255,
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: '71mrzuu4q7',
+      containerStyle: 'none',
+      minWidth: 450,
+      isVisible: true,
+      isLoading: false,
+      mobileTopRow: 0,
+      responsiveBehavior: 'fill',
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 0,
+      maxDynamicHeight: 9000,
+      minDynamicHeight: 4,
+      flexLayers: [],
+      meta: {},
+      componentHeight: 160,
+      componentWidth: 255,
+      type: 'CANVAS_WIDGET',
+      backgroundColor: '',
+      borderColor: '',
+      __evaluation__: {
+        errors: {
+          boxShadow: [],
+          borderRadius: [],
+          isVisible: [],
+          animateLoading: [],
+          backgroundColor: [],
+          borderColor: [],
+          borderWidth: []
+        }
+      }
+    },
+    containerToolbar: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      mobileBottomRow: 37,
+      widgetName: 'containerToolbar',
+      borderColor: '#E0DEDE',
+      isCanvas: true,
+      topRow: 6,
+      bottomRow: 22,
       parentRowSpace: 10,
-      mobileRightColumn: 35,
+      shouldScrollContents: true,
+      mobileRightColumn: 15,
+      animateLoading: true,
+      parentColumnSpace: 17,
+      leftColumn: 12,
+      borderWidth: 1,
+      flexVerticalAlignment: 'stretch',
+      key: 'xqvebn6ivt',
+      backgroundColor: '#FFFFFF',
+      rightColumn: 58,
+      dynamicHeight: 'FIXED',
+      widgetId: 'nsadyy1bzy',
+      containerStyle: 'card',
+      minWidth: 450,
+      isVisible: true,
+      isLoading: false,
+      mobileTopRow: 27,
+      responsiveBehavior: 'fill',
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 0,
+      maxDynamicHeight: 9000,
+      minDynamicHeight: 10,
+      meta: {},
+      componentHeight: 160,
+      componentWidth: 782,
+      type: 'CONTAINER_WIDGET',
+      __evaluation__: {
+        errors: {
+          boxShadow: [],
+          borderRadius: [],
+          isVisible: [],
+          animateLoading: [],
+          backgroundColor: [],
+          borderColor: [],
+          borderWidth: []
+        }
+      }
+    },
+    txt_static_left: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_static_left',
+      topRow: 1,
+      bottomRow: 5,
+      parentRowSpace: 10,
+      mobileRightColumn: 24,
       animateLoading: true,
       overflow: 'NONE',
       fontFamily: 'System Default',
-      parentColumnSpace: 6.541259765625,
+      parentColumnSpace: 7.65625,
       leftColumn: 2,
       shouldTruncate: false,
       truncateButtonColor: '#553DE9',
-      text: 'current value is: -',
-      key: 'lgxpzfcx4b',
-      rightColumn: 59,
+      text: 'STATIC text from Left Container',
+      key: 'g4kizrfvnz',
+      rightColumn: 62,
       textAlign: 'LEFT',
       dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: 'kwdcw234sl',
+      widgetId: 'ujgcje0omy',
       minWidth: 450,
       isVisible: true,
       fontStyle: 'BOLD',
       textColor: '#231F20',
       isLoading: false,
-      mobileTopRow: 11,
+      mobileTopRow: 1,
       responsiveBehavior: 'fill',
-      originalTopRow: 11,
+      originalTopRow: 1,
       borderRadius: '0.375rem',
-      mobileLeftColumn: 19,
+      mobileLeftColumn: 8,
       maxDynamicHeight: 9000,
-      originalBottomRow: 16,
+      originalBottomRow: 5,
       fontSize: '1rem',
       minDynamicHeight: 4,
-      value: 'current value is: -',
+      value: 'STATIC text from Left Container',
       meta: {},
       componentHeight: 40,
-      componentWidth: 372.851806640625,
+      componentWidth: 459.375,
+      type: 'TEXT_WIDGET',
+      backgroundColor: '',
+      borderColor: '',
+      __evaluation__: {
+        errors: {
+          text: [],
+          value: [],
+          borderRadius: [],
+          fontFamily: [],
+          truncateButtonColor: [],
+          isVisible: [],
+          animateLoading: [],
+          disableLink: [],
+          fontSize: [],
+          textColor: [],
+          backgroundColor: [],
+          borderColor: [],
+          textAlign: [],
+          fontStyle: [],
+          borderWidth: []
+        }
+      }
+    },
+    txt_dynamic_left: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_dynamic_left',
+      topRow: 5,
+      bottomRow: 9,
+      parentRowSpace: 10,
+      mobileRightColumn: 24,
+      animateLoading: true,
+      overflow: 'NONE',
+      fontFamily: 'System Default',
+      parentColumnSpace: 7.65625,
+      leftColumn: 2,
+      shouldTruncate: false,
+      truncateButtonColor: '#553DE9',
+      text: 'Dynamic Left: STATIC text from Right Container',
+      key: 'g4kizrfvnz',
+      rightColumn: 62,
+      textAlign: 'LEFT',
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'is0fwucchq',
+      minWidth: 450,
+      isVisible: true,
+      fontStyle: 'BOLD',
+      textColor: '#231F20',
+      isLoading: false,
+      mobileTopRow: 1,
+      responsiveBehavior: 'fill',
+      originalTopRow: 5,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 8,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 9,
+      fontSize: '1rem',
+      minDynamicHeight: 4,
+      value: 'Dynamic Left: STATIC text from Right Container',
+      meta: {},
+      componentHeight: 40,
+      componentWidth: 459.375,
+      type: 'TEXT_WIDGET',
+      backgroundColor: '',
+      borderColor: '',
+      __evaluation__: {
+        errors: {
+          text: [],
+          value: [],
+          borderRadius: [],
+          fontFamily: [],
+          truncateButtonColor: [],
+          isVisible: [],
+          animateLoading: [],
+          disableLink: [],
+          fontSize: [],
+          textColor: [],
+          backgroundColor: [],
+          borderColor: [],
+          textAlign: [],
+          fontStyle: [],
+          borderWidth: []
+        }
+      }
+    },
+    Canvas1Copy: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      mobileBottomRow: 100,
+      widgetName: 'Canvas1Copy',
+      topRow: 0,
+      bottomRow: 170,
+      parentRowSpace: 1,
+      canExtend: false,
+      minHeight: 100,
+      mobileRightColumn: 255,
+      parentColumnSpace: 1,
+      leftColumn: 0,
+      key: 'isxwoxpkra',
+      rightColumn: 255,
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'an70evwb09',
+      containerStyle: 'none',
+      minWidth: 450,
+      isVisible: true,
+      isLoading: false,
+      mobileTopRow: 0,
+      responsiveBehavior: 'fill',
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 0,
+      maxDynamicHeight: 9000,
+      minDynamicHeight: 4,
+      flexLayers: [],
+      meta: {},
+      componentHeight: 170,
+      componentWidth: 255,
+      type: 'CANVAS_WIDGET',
+      backgroundColor: '',
+      borderColor: '',
+      __evaluation__: {
+        errors: {
+          boxShadow: [],
+          borderRadius: [],
+          isVisible: [],
+          animateLoading: [],
+          backgroundColor: [],
+          borderColor: [],
+          borderWidth: []
+        }
+      }
+    },
+    containerSectionLeft: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      mobileBottomRow: 37,
+      widgetName: 'containerSectionLeft',
+      borderColor: '#E0DEDE',
+      isCanvas: true,
+      topRow: 30,
+      bottomRow: 47,
+      parentRowSpace: 10,
+      shouldScrollContents: true,
+      mobileRightColumn: 15,
+      animateLoading: true,
+      parentColumnSpace: 17,
+      leftColumn: 2,
+      borderWidth: 1,
+      flexVerticalAlignment: 'stretch',
+      key: 'xqvebn6ivt',
+      backgroundColor: '#FFFFFF',
+      rightColumn: 32,
+      dynamicHeight: 'FIXED',
+      widgetId: 'cd1xlchbgb',
+      containerStyle: 'card',
+      minWidth: 450,
+      isVisible: true,
+      isLoading: false,
+      mobileTopRow: 27,
+      responsiveBehavior: 'fill',
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 0,
+      maxDynamicHeight: 9000,
+      minDynamicHeight: 10,
+      meta: {},
+      componentHeight: 170,
+      componentWidth: 510,
+      type: 'CONTAINER_WIDGET',
+      __evaluation__: {
+        errors: {
+          boxShadow: [],
+          borderRadius: [],
+          isVisible: [],
+          animateLoading: [],
+          backgroundColor: [],
+          borderColor: [],
+          borderWidth: []
+        }
+      }
+    },
+    txt_dynamic_right: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_dynamic_right',
+      topRow: 6,
+      bottomRow: 10,
+      parentRowSpace: 10,
+      mobileRightColumn: 24,
+      animateLoading: true,
+      overflow: 'NONE',
+      fontFamily: 'System Default',
+      parentColumnSpace: 7.65625,
+      leftColumn: 1,
+      shouldTruncate: false,
+      truncateButtonColor: '#553DE9',
+      text: 'Dynamic Right: STATIC text from Left Container',
+      key: 'g4kizrfvnz',
+      rightColumn: 61,
+      textAlign: 'LEFT',
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'weq4w5wk5m',
+      minWidth: 450,
+      isVisible: true,
+      fontStyle: 'BOLD',
+      textColor: '#231F20',
+      isLoading: false,
+      mobileTopRow: 1,
+      responsiveBehavior: 'fill',
+      originalTopRow: 6,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 8,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 11,
+      fontSize: '1rem',
+      minDynamicHeight: 4,
+      value: 'Dynamic Right: STATIC text from Left Container',
+      meta: {},
+      componentHeight: 40,
+      componentWidth: 459.375,
+      type: 'TEXT_WIDGET',
+      backgroundColor: '',
+      borderColor: '',
+      __evaluation__: {
+        errors: {
+          text: [],
+          value: [],
+          borderRadius: [],
+          fontFamily: [],
+          truncateButtonColor: [],
+          isVisible: [],
+          animateLoading: [],
+          disableLink: [],
+          fontSize: [],
+          textColor: [],
+          backgroundColor: [],
+          borderColor: [],
+          textAlign: [],
+          fontStyle: [],
+          borderWidth: []
+        }
+      }
+    },
+    txt_static_right: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_static_right',
+      topRow: 1,
+      bottomRow: 5,
+      parentRowSpace: 10,
+      mobileRightColumn: 24,
+      animateLoading: true,
+      overflow: 'NONE',
+      fontFamily: 'System Default',
+      parentColumnSpace: 7.65625,
+      leftColumn: 2,
+      shouldTruncate: false,
+      truncateButtonColor: '#553DE9',
+      text: 'STATIC text from Right Container',
+      key: 'g4kizrfvnz',
+      rightColumn: 62,
+      textAlign: 'LEFT',
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'k1j5882wmt',
+      minWidth: 450,
+      isVisible: true,
+      fontStyle: 'BOLD',
+      textColor: '#231F20',
+      isLoading: false,
+      mobileTopRow: 1,
+      responsiveBehavior: 'fill',
+      originalTopRow: 1,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 8,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 5,
+      fontSize: '1rem',
+      minDynamicHeight: 4,
+      value: 'STATIC text from Right Container',
+      meta: {},
+      componentHeight: 40,
+      componentWidth: 459.375,
+      type: 'TEXT_WIDGET',
+      backgroundColor: '',
+      borderColor: '',
+      __evaluation__: {
+        errors: {
+          text: [],
+          value: [],
+          borderRadius: [],
+          fontFamily: [],
+          truncateButtonColor: [],
+          isVisible: [],
+          animateLoading: [],
+          disableLink: [],
+          fontSize: [],
+          textColor: [],
+          backgroundColor: [],
+          borderColor: [],
+          textAlign: [],
+          fontStyle: [],
+          borderWidth: []
+        }
+      }
+    },
+    Canvas1CopyCopy: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      mobileBottomRow: 100,
+      widgetName: 'Canvas1CopyCopy',
+      topRow: 0,
+      bottomRow: 170,
+      parentRowSpace: 1,
+      canExtend: false,
+      minHeight: 100,
+      mobileRightColumn: 255,
+      parentColumnSpace: 1,
+      leftColumn: 0,
+      key: 'isxwoxpkra',
+      rightColumn: 255,
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'orlqu2v4v5',
+      containerStyle: 'none',
+      minWidth: 450,
+      isVisible: true,
+      isLoading: false,
+      mobileTopRow: 0,
+      responsiveBehavior: 'fill',
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 0,
+      maxDynamicHeight: 9000,
+      minDynamicHeight: 4,
+      flexLayers: [],
+      meta: {},
+      componentHeight: 170,
+      componentWidth: 255,
+      type: 'CANVAS_WIDGET',
+      backgroundColor: '',
+      borderColor: '',
+      __evaluation__: {
+        errors: {
+          boxShadow: [],
+          borderRadius: [],
+          isVisible: [],
+          animateLoading: [],
+          backgroundColor: [],
+          borderColor: [],
+          borderWidth: []
+        }
+      }
+    },
+    containerSectionRight: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      mobileBottomRow: 37,
+      widgetName: 'containerSectionRight',
+      borderColor: '#E0DEDE',
+      isCanvas: true,
+      topRow: 30,
+      bottomRow: 47,
+      parentRowSpace: 10,
+      shouldScrollContents: true,
+      mobileRightColumn: 15,
+      animateLoading: true,
+      parentColumnSpace: 17,
+      leftColumn: 33,
+      borderWidth: 1,
+      flexVerticalAlignment: 'stretch',
+      key: 'xqvebn6ivt',
+      backgroundColor: '#FFFFFF',
+      rightColumn: 63,
+      dynamicHeight: 'FIXED',
+      widgetId: 'uw6hr9rju8',
+      containerStyle: 'card',
+      minWidth: 450,
+      isVisible: true,
+      isLoading: false,
+      mobileTopRow: 27,
+      responsiveBehavior: 'fill',
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 0,
+      maxDynamicHeight: 9000,
+      minDynamicHeight: 10,
+      meta: {},
+      componentHeight: 170,
+      componentWidth: 510,
+      type: 'CONTAINER_WIDGET',
+      __evaluation__: {
+        errors: {
+          boxShadow: [],
+          borderRadius: [],
+          isVisible: [],
+          animateLoading: [],
+          backgroundColor: [],
+          borderColor: [],
+          borderWidth: []
+        }
+      }
+    },
+    txt_log_left: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_log_left',
+      topRow: 1,
+      bottomRow: 10,
+      parentRowSpace: 10,
+      mobileRightColumn: 24,
+      animateLoading: true,
+      overflow: 'NONE',
+      fontFamily: 'System Default',
+      parentColumnSpace: 7.65625,
+      leftColumn: 1,
+      shouldTruncate: false,
+      truncateButtonColor: '#553DE9',
+      text: 'Left text is:\nSTATIC text from Left Container\nDynamic Left: STATIC text from Right Container',
+      key: 'g4kizrfvnz',
+      rightColumn: 18,
+      textAlign: 'LEFT',
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: 'y3s2g1c5zz',
+      minWidth: 450,
+      isVisible: true,
+      fontStyle: 'BOLD',
+      textColor: '#231F20',
+      isLoading: false,
+      mobileTopRow: 1,
+      responsiveBehavior: 'fill',
+      originalTopRow: 1,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 8,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 10,
+      fontSize: '1rem',
+      minDynamicHeight: 4,
+      value: 'Left text is:\nSTATIC text from Left Container\nDynamic Left: STATIC text from Right Container',
+      meta: {},
+      componentHeight: 90,
+      componentWidth: 130.15625,
+      type: 'TEXT_WIDGET',
+      backgroundColor: '',
+      borderColor: '',
+      __evaluation__: {
+        errors: {
+          text: [],
+          value: [],
+          borderRadius: [],
+          fontFamily: [],
+          truncateButtonColor: [],
+          isVisible: [],
+          animateLoading: [],
+          disableLink: [],
+          fontSize: [],
+          textColor: [],
+          backgroundColor: [],
+          borderColor: [],
+          textAlign: [],
+          fontStyle: [],
+          borderWidth: []
+        }
+      }
+    },
+    txt_log_right: {
+      ENTITY_TYPE: 'WIDGET',
+      needsErrorInfo: false,
+      mobileBottomRow: 5,
+      widgetName: 'txt_log_right',
+      topRow: 1,
+      bottomRow: 8,
+      parentRowSpace: 10,
+      mobileRightColumn: 24,
+      animateLoading: true,
+      overflow: 'NONE',
+      fontFamily: 'System Default',
+      parentColumnSpace: 7.65625,
+      leftColumn: 34,
+      shouldTruncate: false,
+      truncateButtonColor: '#553DE9',
+      text: 'Right text is:\nSTATIC text from Right Container\nDynamic Right: STATIC text from Left Container\n',
+      key: 'g4kizrfvnz',
+      rightColumn: 59,
+      textAlign: 'LEFT',
+      dynamicHeight: 'AUTO_HEIGHT',
+      widgetId: '5m3vf11p5u',
+      minWidth: 450,
+      isVisible: true,
+      fontStyle: 'BOLD',
+      textColor: '#231F20',
+      isLoading: false,
+      mobileTopRow: 1,
+      responsiveBehavior: 'fill',
+      originalTopRow: 1,
+      borderRadius: '0.375rem',
+      mobileLeftColumn: 8,
+      maxDynamicHeight: 9000,
+      originalBottomRow: 10,
+      fontSize: '1rem',
+      minDynamicHeight: 4,
+      value: 'Right text is:\nSTATIC text from Right Container\nDynamic Right: STATIC text from Left Container\n',
+      meta: {},
+      componentHeight: 70,
+      componentWidth: 191.40625,
       type: 'TEXT_WIDGET',
       backgroundColor: '',
       borderColor: '',
@@ -213,17 +1075,17 @@ export default {
       mobileBottomRow: 100,
       widgetName: 'Canvas2',
       topRow: 0,
-      bottomRow: 290,
+      bottomRow: 210,
       parentRowSpace: 1,
       canExtend: false,
       minHeight: 100,
-      mobileRightColumn: 328.98046875,
+      mobileRightColumn: 408,
       parentColumnSpace: 1,
       leftColumn: 0,
-      key: 'izcc32bkjr',
-      rightColumn: 328.98046875,
+      key: 'isxwoxpkra',
+      rightColumn: 408,
       dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: '256n68mv3w',
+      widgetId: 'pbhfl6v7u8',
       containerStyle: 'none',
       minWidth: 450,
       isVisible: true,
@@ -236,8 +1098,8 @@ export default {
       minDynamicHeight: 4,
       flexLayers: [],
       meta: {},
-      componentHeight: 290,
-      componentWidth: 328.98046875,
+      componentHeight: 210,
+      componentWidth: 408,
       type: 'CANVAS_WIDGET',
       backgroundColor: '',
       borderColor: '',
@@ -253,358 +1115,44 @@ export default {
         }
       }
     },
-    containerPlayground: {
+    containerLogs: {
       ENTITY_TYPE: 'WIDGET',
       needsErrorInfo: false,
       boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      mobileBottomRow: 21,
-      widgetName: 'containerPlayground',
+      mobileBottomRow: 49,
+      widgetName: 'containerLogs',
       borderColor: '#E0DEDE',
       isCanvas: true,
-      topRow: 1,
-      bottomRow: 30,
+      topRow: 49,
+      bottomRow: 70,
       parentRowSpace: 10,
       shouldScrollContents: true,
-      mobileRightColumn: 25,
+      mobileRightColumn: 26,
       animateLoading: true,
-      parentColumnSpace: 13.70751953125,
-      leftColumn: 0,
+      parentColumnSpace: 17,
+      leftColumn: 2,
       borderWidth: 1,
       flexVerticalAlignment: 'stretch',
-      key: 'bv1axpkzaj',
-      backgroundColor: '#FFFFFF',
-      rightColumn: 32,
-      dynamicHeight: 'FIXED',
-      widgetId: '0j3cs5153j',
-      containerStyle: 'card',
-      minWidth: 450,
-      isVisible: true,
-      isLoading: false,
-      mobileTopRow: 11,
-      responsiveBehavior: 'fill',
-      borderRadius: '0.375rem',
-      mobileLeftColumn: 1,
-      maxDynamicHeight: 12,
-      minDynamicHeight: 10,
-      meta: {},
-      componentHeight: 290,
-      componentWidth: 438.640625,
-      type: 'CONTAINER_WIDGET',
-      __evaluation__: {
-        errors: {
-          boxShadow: [],
-          borderRadius: [],
-          isVisible: [],
-          animateLoading: [],
-          backgroundColor: [],
-          borderColor: [],
-          borderWidth: []
-        }
-      }
-    },
-    btnCalculate: {
-      ENTITY_TYPE: 'WIDGET',
-      resetFormOnClick: false,
-      needsErrorInfo: false,
-      boxShadow: 'none',
-      mobileBottomRow: 11,
-      widgetName: 'btnCalculate',
-      onClick: '{{storeValue(\'localCalculatedVar\', calculatedTxt.setText(Input1.text));}}',
-      buttonColor: '#553DE9',
-      topRow: 4,
-      bottomRow: 9,
-      parentRowSpace: 10,
-      mobileRightColumn: 25,
-      animateLoading: true,
-      parentColumnSpace: 9.216796875,
-      leftColumn: 5,
-      text: 'Calculate',
-      isDisabled: false,
-      key: 'c32rx365fx',
-      rightColumn: 57,
-      isDefaultClickDisabled: true,
-      widgetId: 'tl8xbeqhua',
-      minWidth: 120,
-      isVisible: true,
-      recaptchaType: 'V3',
-      isLoading: false,
-      mobileTopRow: 7,
-      responsiveBehavior: 'hug',
-      disabledWhenInvalid: false,
-      borderRadius: '0.375rem',
-      mobileLeftColumn: 9,
-      buttonVariant: 'PRIMARY',
-      placement: 'CENTER',
-      meta: {},
-      componentHeight: 50,
-      componentWidth: 479.2734375,
-      type: 'BUTTON_WIDGET',
-      tooltip: '',
-      googleRecaptchaKey: '',
-      iconName: '',
-      __evaluation__: {
-        errors: {
-          borderRadius: [],
-          buttonColor: [],
-          onClick: [],
-          text: [],
-          tooltip: [],
-          isVisible: [],
-          isDisabled: [],
-          animateLoading: [],
-          googleRecaptchaKey: [],
-          recaptchaType: [],
-          disabledWhenInvalid: [],
-          resetFormOnClick: [],
-          buttonVariant: [],
-          iconName: [],
-          placement: [],
-          boxShadow: []
-        }
-      }
-    },
-    calculatedTxt: {
-      ENTITY_TYPE: 'WIDGET',
-      needsErrorInfo: false,
-      mobileBottomRow: 15,
-      widgetName: 'calculatedTxt',
-      topRow: 11,
-      bottomRow: 15,
-      parentRowSpace: 10,
-      mobileRightColumn: 35,
-      animateLoading: true,
-      overflow: 'NONE',
-      fontFamily: 'System Default',
-      parentColumnSpace: 6.541259765625,
-      leftColumn: 3,
-      shouldTruncate: false,
-      truncateButtonColor: '#553DE9',
-      text: '',
-      key: 'lgxpzfcx4b',
-      rightColumn: 60,
-      textAlign: 'LEFT',
-      dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: 'od1swmzxxq',
-      minWidth: 450,
-      isVisible: true,
-      fontStyle: 'BOLD',
-      textColor: '#231F20',
-      isLoading: false,
-      mobileTopRow: 11,
-      responsiveBehavior: 'fill',
-      originalTopRow: 11,
-      borderRadius: '0.375rem',
-      mobileLeftColumn: 19,
-      maxDynamicHeight: 9000,
-      originalBottomRow: 16,
-      fontSize: '1rem',
-      minDynamicHeight: 4,
-      value: '',
-      meta: {},
-      componentHeight: 40,
-      componentWidth: 372.851806640625,
-      type: 'TEXT_WIDGET',
-      backgroundColor: '',
-      borderColor: '',
-      __evaluation__: {
-        errors: {
-          text: [],
-          value: [],
-          borderRadius: [],
-          fontFamily: [],
-          truncateButtonColor: [],
-          isVisible: [],
-          animateLoading: [],
-          disableLink: [],
-          fontSize: [],
-          textColor: [],
-          backgroundColor: [],
-          borderColor: [],
-          textAlign: [],
-          fontStyle: [],
-          borderWidth: []
-        }
-      }
-    },
-    Canvas3: {
-      ENTITY_TYPE: 'WIDGET',
-      needsErrorInfo: false,
-      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      mobileBottomRow: 100,
-      widgetName: 'Canvas3',
-      topRow: 0,
-      bottomRow: 290,
-      parentRowSpace: 1,
-      canExtend: false,
-      minHeight: 100,
-      mobileRightColumn: 328.98046875,
-      parentColumnSpace: 1,
-      leftColumn: 0,
-      key: 'izcc32bkjr',
-      rightColumn: 328.98046875,
-      dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: 'cl2ynw6igw',
-      containerStyle: 'none',
-      minWidth: 450,
-      isVisible: true,
-      isLoading: false,
-      mobileTopRow: 0,
-      responsiveBehavior: 'fill',
-      borderRadius: '0.375rem',
-      mobileLeftColumn: 0,
-      maxDynamicHeight: 9000,
-      minDynamicHeight: 4,
-      flexLayers: [],
-      meta: {},
-      componentHeight: 290,
-      componentWidth: 328.98046875,
-      type: 'CANVAS_WIDGET',
-      backgroundColor: '',
-      borderColor: '',
-      __evaluation__: {
-        errors: {
-          boxShadow: [],
-          borderRadius: [],
-          isVisible: [],
-          animateLoading: [],
-          backgroundColor: [],
-          borderColor: [],
-          borderWidth: []
-        }
-      }
-    },
-    containerActions: {
-      ENTITY_TYPE: 'WIDGET',
-      needsErrorInfo: false,
-      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      mobileBottomRow: 11,
-      widgetName: 'containerActions',
-      borderColor: '#E0DEDE',
-      isCanvas: true,
-      topRow: 1,
-      bottomRow: 30,
-      parentRowSpace: 10,
-      shouldScrollContents: true,
-      mobileRightColumn: 63,
-      animateLoading: true,
-      parentColumnSpace: 13.70751953125,
-      leftColumn: 32,
-      borderWidth: 1,
-      flexVerticalAlignment: 'stretch',
-      key: 'bv1axpkzaj',
+      key: 'xqvebn6ivt',
       backgroundColor: '#FFFFFF',
       rightColumn: 63,
       dynamicHeight: 'FIXED',
-      widgetId: 'dgev9742e2',
+      widgetId: 'gaswdfeyvz',
       containerStyle: 'card',
       minWidth: 450,
       isVisible: true,
       isLoading: false,
-      mobileTopRow: 1,
+      mobileTopRow: 39,
       responsiveBehavior: 'fill',
+      originalTopRow: 52,
       borderRadius: '0.375rem',
-      mobileLeftColumn: 39,
+      mobileLeftColumn: 2,
       maxDynamicHeight: 9000,
+      originalBottomRow: 89,
       minDynamicHeight: 10,
       meta: {},
-      componentHeight: 290,
-      componentWidth: 424.93310546875,
-      type: 'CONTAINER_WIDGET',
-      __evaluation__: {
-        errors: {
-          boxShadow: [],
-          borderRadius: [],
-          isVisible: [],
-          animateLoading: [],
-          backgroundColor: [],
-          borderColor: [],
-          borderWidth: []
-        }
-      }
-    },
-    Canvas1: {
-      ENTITY_TYPE: 'WIDGET',
-      needsErrorInfo: false,
-      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      mobileBottomRow: 100,
-      widgetName: 'Canvas1',
-      topRow: 0,
-      bottomRow: 410,
-      parentRowSpace: 1,
-      canExtend: false,
-      minHeight: 100,
-      mobileRightColumn: 430.5,
-      parentColumnSpace: 1,
-      leftColumn: 0,
-      key: 'wl4jb57gwi',
-      rightColumn: 430.5,
-      dynamicHeight: 'AUTO_HEIGHT',
-      widgetId: 'k1ojmo3iid',
-      containerStyle: 'none',
-      minWidth: 450,
-      isVisible: true,
-      isLoading: false,
-      mobileTopRow: 0,
-      responsiveBehavior: 'fill',
-      borderRadius: '0.375rem',
-      mobileLeftColumn: 0,
-      maxDynamicHeight: 9000,
-      minDynamicHeight: 4,
-      flexLayers: [],
-      meta: {},
-      componentHeight: 410,
-      componentWidth: 430.5,
-      type: 'CANVAS_WIDGET',
-      backgroundColor: '',
-      borderColor: '',
-      __evaluation__: {
-        errors: {
-          boxShadow: [],
-          borderRadius: [],
-          isVisible: [],
-          animateLoading: [],
-          backgroundColor: [],
-          borderColor: [],
-          borderWidth: []
-        }
-      }
-    },
-    containerRoot: {
-      ENTITY_TYPE: 'WIDGET',
-      needsErrorInfo: false,
-      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      mobileBottomRow: 32,
-      widgetName: 'containerRoot',
-      borderColor: '#E0DEDE',
-      isCanvas: true,
-      topRow: 22,
-      bottomRow: 63,
-      parentRowSpace: 10,
-      shouldScrollContents: true,
-      mobileRightColumn: 36,
-      animateLoading: true,
-      parentColumnSpace: 17.9375,
-      leftColumn: 12,
-      borderWidth: 1,
-      flexVerticalAlignment: 'stretch',
-      key: '1456ozhxit',
-      backgroundColor: '#FFFFFF',
-      rightColumn: 46,
-      dynamicHeight: 'FIXED',
-      widgetId: '9e839onva6',
-      containerStyle: 'card',
-      minWidth: 450,
-      isVisible: true,
-      isLoading: false,
-      mobileTopRow: 22,
-      responsiveBehavior: 'fill',
-      borderRadius: '0.375rem',
-      mobileLeftColumn: 12,
-      maxDynamicHeight: 9000,
-      minDynamicHeight: 10,
-      meta: {},
-      componentHeight: 410,
-      componentWidth: 609.875,
+      componentHeight: 210,
+      componentWidth: 1037,
       type: 'CONTAINER_WIDGET',
       __evaluation__: {
         errors: {
@@ -643,16 +1191,21 @@ export default {
         isIntercomConsentGiven: false
       },
       URL: {
-        fullPath: 'https://dev.appsmith.com/app/auto-layout/page1-68ad34afd8deff53ee072777/edit',
+        fullPath: 'https://dev.appsmith.com/app/widget-dev/page1-68b44443eb513e051addbe4b/edit',
         host: 'dev.appsmith.com',
         hostname: 'dev.appsmith.com',
         queryParams: {},
         protocol: 'https:',
-        pathname: '/app/auto-layout/page1-68ad34afd8deff53ee072777/edit',
+        pathname: '/app/widget-dev/page1-68b44443eb513e051addbe4b/edit',
         port: '',
         hash: ''
       },
-      store: {},
+      store: {
+        '{{}}': '',
+        '': '',
+        var_left: 'Dynamic Left: STATIC text from Right Container',
+        var_right: 'Dynamic Right: STATIC text from Left Container'
+      },
       geolocation: {
         canBeRequested: true,
         currentPosition: {}
@@ -675,98 +1228,113 @@ export default {
         }
       },
       currentPageName: 'Page1',
-      workspaceName: '',
-      appName: 'auto-layout',
+      workspaceName: 'Peter\'s apps',
+      appName: 'widget-dev',
       currentEnvironmentName: '',
       ENTITY_TYPE: 'APPSMITH'
     }
   },
   dependencies: {
     inverseDependencyMap: {
-      'Input1.meta.inputText': [
-        'Input1.inputText',
-        'Input1.meta'
-      ],
-      'Input1.defaultText': [
-        'Input1.inputText',
-        'Input1.text',
-        'Input1'
-      ],
-      'Input1.meta.text': [
-        'Input1.text',
-        'Input1.meta'
-      ],
       'appsmith.theme.colors.primaryColor': [
-        'Input1.accentColor',
-        'Text1.truncateButtonColor',
-        'btnCalculate.buttonColor',
-        'calculatedTxt.truncateButtonColor',
+        'btn_left_left.buttonColor',
+        'btn_left_reset.buttonColor',
+        'btn_right_reset.buttonColor',
+        'btn_right_right.buttonColor',
+        'btn_left_right.buttonColor',
+        'btn_right_left.buttonColor',
+        'txt_static_left.truncateButtonColor',
+        'txt_dynamic_left.truncateButtonColor',
+        'txt_dynamic_right.truncateButtonColor',
+        'txt_static_right.truncateButtonColor',
+        'txt_log_left.truncateButtonColor',
+        'txt_log_right.truncateButtonColor',
         'appsmith.theme.colors'
       ],
       'appsmith.theme.borderRadius.appBorderRadius': [
-        'Input1.borderRadius',
-        'Text1.borderRadius',
-        'Canvas2.borderRadius',
-        'containerPlayground.borderRadius',
-        'btnCalculate.borderRadius',
-        'calculatedTxt.borderRadius',
-        'Canvas3.borderRadius',
-        'containerActions.borderRadius',
+        'btn_left_left.borderRadius',
+        'btn_left_reset.borderRadius',
+        'btn_right_reset.borderRadius',
+        'btn_right_right.borderRadius',
+        'btn_left_right.borderRadius',
+        'btn_right_left.borderRadius',
         'Canvas1.borderRadius',
-        'containerRoot.borderRadius',
+        'containerToolbar.borderRadius',
+        'txt_static_left.borderRadius',
+        'txt_dynamic_left.borderRadius',
+        'Canvas1Copy.borderRadius',
+        'containerSectionLeft.borderRadius',
+        'txt_dynamic_right.borderRadius',
+        'txt_static_right.borderRadius',
+        'Canvas1CopyCopy.borderRadius',
+        'containerSectionRight.borderRadius',
+        'txt_log_left.borderRadius',
+        'txt_log_right.borderRadius',
+        'Canvas2.borderRadius',
+        'containerLogs.borderRadius',
         'appsmith.theme.borderRadius'
       ],
-      'Input1.text': [
-        'Input1.value',
-        'Text1.text',
-        'Input1'
-      ],
-      'Input1.inputType': [
-        'Input1.isValid',
-        'Input1'
-      ],
-      'Input1.inputText': [
-        'Input1.isValid',
-        'Input1'
-      ],
-      'Input1.isRequired': [
-        'Input1.isValid',
-        'Input1'
-      ],
-      'appsmith.theme.fontFamily.appFont': [
-        'Text1.fontFamily',
-        'calculatedTxt.fontFamily',
-        'appsmith.theme.fontFamily'
-      ],
-      'Text1.text': [
-        'Text1.value',
-        'Text1'
-      ],
       'appsmith.theme.boxShadow.appBoxShadow': [
-        'Canvas2.boxShadow',
-        'containerPlayground.boxShadow',
-        'Canvas3.boxShadow',
-        'containerActions.boxShadow',
         'Canvas1.boxShadow',
-        'containerRoot.boxShadow',
+        'containerToolbar.boxShadow',
+        'Canvas1Copy.boxShadow',
+        'containerSectionLeft.boxShadow',
+        'Canvas1CopyCopy.boxShadow',
+        'containerSectionRight.boxShadow',
+        'Canvas2.boxShadow',
+        'containerLogs.boxShadow',
         'appsmith.theme.boxShadow'
       ],
-      'localVariables.varCalculated': [
-        'calculatedTxt.text',
-        'localVariables'
+      'appsmith.theme.fontFamily.appFont': [
+        'txt_static_left.fontFamily',
+        'txt_dynamic_left.fontFamily',
+        'txt_dynamic_right.fontFamily',
+        'txt_static_right.fontFamily',
+        'txt_log_left.fontFamily',
+        'txt_log_right.fontFamily',
+        'appsmith.theme.fontFamily'
       ],
-      'calculatedTxt.text': [
-        'calculatedTxt.value',
-        'calculatedTxt'
+      'txt_static_left.text': [
+        'txt_static_left.value',
+        'txt_log_left.text',
+        'txt_static_left'
       ],
-      'localVariables.body': [
-        'localVariables'
+      'appsmith.store.var_left': [
+        'txt_dynamic_left.text',
+        'appsmith.store'
       ],
-      'Input1.meta': [
-        'Input1'
+      'txt_dynamic_left.text': [
+        'txt_dynamic_left.value',
+        'txt_log_left.text',
+        'txt_dynamic_left'
       ],
-      'Input1.accentColor': [
-        'Input1'
+      'appsmith.store.var_right': [
+        'txt_dynamic_right.text',
+        'appsmith.store'
+      ],
+      'txt_dynamic_right.text': [
+        'txt_dynamic_right.value',
+        'txt_log_right.text',
+        'txt_dynamic_right'
+      ],
+      'txt_static_right.text': [
+        'txt_static_right.value',
+        'txt_log_right.text',
+        'txt_static_right'
+      ],
+      'txt_log_left.text': [
+        'txt_log_left.value',
+        'txt_log_left'
+      ],
+      'txt_log_right.text': [
+        'txt_log_right.value',
+        'txt_log_right'
+      ],
+      'btn_left_left.onClick': [
+        'btn_left_left'
+      ],
+      'btn_left_left.buttonColor': [
+        'btn_left_left'
       ],
       'appsmith.theme.colors': [
         'appsmith.theme'
@@ -774,80 +1342,56 @@ export default {
       'appsmith.theme': [
         'appsmith'
       ],
-      'Input1.borderRadius': [
-        'Input1'
+      'btn_left_left.borderRadius': [
+        'btn_left_left'
       ],
       'appsmith.theme.borderRadius': [
         'appsmith.theme'
       ],
-      'Input1.value': [
-        'Input1'
+      'btn_left_reset.onClick': [
+        'btn_left_reset'
       ],
-      'Input1.isValid': [
-        'Input1'
+      'btn_left_reset.buttonColor': [
+        'btn_left_reset'
       ],
-      'Text1.truncateButtonColor': [
-        'Text1'
+      'btn_left_reset.borderRadius': [
+        'btn_left_reset'
       ],
-      'Text1.fontFamily': [
-        'Text1'
+      'btn_right_reset.onClick': [
+        'btn_right_reset'
       ],
-      'appsmith.theme.fontFamily': [
-        'appsmith.theme'
+      'btn_right_reset.buttonColor': [
+        'btn_right_reset'
       ],
-      'Text1.borderRadius': [
-        'Text1'
+      'btn_right_reset.borderRadius': [
+        'btn_right_reset'
       ],
-      'Text1.value': [
-        'Text1'
+      'btn_right_right.onClick': [
+        'btn_right_right'
       ],
-      'Canvas2.borderRadius': [
-        'Canvas2'
+      'btn_right_right.buttonColor': [
+        'btn_right_right'
       ],
-      'Canvas2.boxShadow': [
-        'Canvas2'
+      'btn_right_right.borderRadius': [
+        'btn_right_right'
       ],
-      'appsmith.theme.boxShadow': [
-        'appsmith.theme'
+      'btn_left_right.onClick': [
+        'btn_left_right'
       ],
-      'containerPlayground.borderRadius': [
-        'containerPlayground'
+      'btn_left_right.buttonColor': [
+        'btn_left_right'
       ],
-      'containerPlayground.boxShadow': [
-        'containerPlayground'
+      'btn_left_right.borderRadius': [
+        'btn_left_right'
       ],
-      'btnCalculate.onClick': [
-        'btnCalculate'
+      'btn_right_left.onClick': [
+        'btn_right_left'
       ],
-      'btnCalculate.buttonColor': [
-        'btnCalculate'
+      'btn_right_left.buttonColor': [
+        'btn_right_left'
       ],
-      'btnCalculate.borderRadius': [
-        'btnCalculate'
-      ],
-      'calculatedTxt.truncateButtonColor': [
-        'calculatedTxt'
-      ],
-      'calculatedTxt.fontFamily': [
-        'calculatedTxt'
-      ],
-      'calculatedTxt.borderRadius': [
-        'calculatedTxt'
-      ],
-      'calculatedTxt.value': [
-        'calculatedTxt'
-      ],
-      'Canvas3.borderRadius': [
-        'Canvas3'
-      ],
-      'Canvas3.boxShadow': [
-        'Canvas3'
-      ],
-      'containerActions.borderRadius': [
-        'containerActions'
-      ],
-      'containerActions.boxShadow': [
-        'containerActions'
+      'btn_right_left.borderRadius': [
+        'btn_right_left'
       ],
       'Canvas1.borderRadius': [
         'Canvas1'
@@ -855,11 +1399,128 @@ export default {
       'Canvas1.boxShadow': [
         'Canvas1'
       ],
-      'containerRoot.borderRadius': [
-        'containerRoot'
+      'appsmith.theme.boxShadow': [
+        'appsmith.theme'
       ],
-      'containerRoot.boxShadow': [
-        'containerRoot'
+      'containerToolbar.borderRadius': [
+        'containerToolbar'
+      ],
+      'containerToolbar.boxShadow': [
+        'containerToolbar'
+      ],
+      'txt_static_left.truncateButtonColor': [
+        'txt_static_left'
+      ],
+      'txt_static_left.fontFamily': [
+        'txt_static_left'
+      ],
+      'appsmith.theme.fontFamily': [
+        'appsmith.theme'
+      ],
+      'txt_static_left.borderRadius': [
+        'txt_static_left'
+      ],
+      'txt_static_left.value': [
+        'txt_static_left'
+      ],
+      'txt_dynamic_left.truncateButtonColor': [
+        'txt_dynamic_left'
+      ],
+      'txt_dynamic_left.fontFamily': [
+        'txt_dynamic_left'
+      ],
+      'txt_dynamic_left.borderRadius': [
+        'txt_dynamic_left'
+      ],
+      'appsmith.store': [
+        'appsmith'
+      ],
+      'txt_dynamic_left.value': [
+        'txt_dynamic_left'
+      ],
+      'Canvas1Copy.borderRadius': [
+        'Canvas1Copy'
+      ],
+      'Canvas1Copy.boxShadow': [
+        'Canvas1Copy'
+      ],
+      'containerSectionLeft.borderRadius': [
+        'containerSectionLeft'
+      ],
+      'containerSectionLeft.boxShadow': [
+        'containerSectionLeft'
+      ],
+      'txt_dynamic_right.truncateButtonColor': [
+        'txt_dynamic_right'
+      ],
+      'txt_dynamic_right.fontFamily': [
+        'txt_dynamic_right'
+      ],
+      'txt_dynamic_right.borderRadius': [
+        'txt_dynamic_right'
+      ],
+      'txt_dynamic_right.value': [
+        'txt_dynamic_right'
+      ],
+      'txt_static_right.truncateButtonColor': [
+        'txt_static_right'
+      ],
+      'txt_static_right.fontFamily': [
+        'txt_static_right'
+      ],
+      'txt_static_right.borderRadius': [
+        'txt_static_right'
+      ],
+      'txt_static_right.value': [
+        'txt_static_right'
+      ],
+      'Canvas1CopyCopy.borderRadius': [
+        'Canvas1CopyCopy'
+      ],
+      'Canvas1CopyCopy.boxShadow': [
+        'Canvas1CopyCopy'
+      ],
+      'containerSectionRight.borderRadius': [
+        'containerSectionRight'
+      ],
+      'containerSectionRight.boxShadow': [
+        'containerSectionRight'
+      ],
+      'txt_log_left.truncateButtonColor': [
+        'txt_log_left'
+      ],
+      'txt_log_left.fontFamily': [
+        'txt_log_left'
+      ],
+      'txt_log_left.borderRadius': [
+        'txt_log_left'
+      ],
+      'txt_log_left.value': [
+        'txt_log_left'
+      ],
+      'txt_log_right.truncateButtonColor': [
+        'txt_log_right'
+      ],
+      'txt_log_right.fontFamily': [
+        'txt_log_right'
+      ],
+      'txt_log_right.borderRadius': [
+        'txt_log_right'
+      ],
+      'txt_log_right.value': [
+        'txt_log_right'
+      ],
+      'Canvas2.borderRadius': [
+        'Canvas2'
+      ],
+      'Canvas2.boxShadow': [
+        'Canvas2'
+      ],
+      'containerLogs.borderRadius': [
+        'containerLogs'
+      ],
+      'containerLogs.boxShadow': [
+        'containerLogs'
       ]
     }
   },

@@ -34,6 +34,10 @@ export function useEntitiesActor() {
   // guards
   const isPageHasWidgets = entitiesWidgetsStructure.children && entitiesWidgetsStructure.children.length > 0;
 
+
+  // selectors
+
+
   return {
     entitiesActorRef,
     sendToEntities,

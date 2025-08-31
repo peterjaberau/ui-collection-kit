@@ -18,9 +18,26 @@ export const getDefaults = {
 }
 
 const ButtonWidget: any = (props: any) => {
+
+  const executeAction = (e: any) => {}
+  const handleActionComplete = () => {}
+
   return (
     <DevLayer tagName="TextWidget" variant="surface" type="widget">
-      <Button {...getDefaults} {...props}>
+      <Button
+        {...getDefaults}
+        {...props}
+        onClick={() => {
+         executeAction({
+           triggerPropertyName: "onClick",
+           dynamicString: 'this.props.onClick',
+           event: {
+             type: 'EventType.ON_CLICK',
+             callback: 'this.handleActionComplete'
+           }
+         })
+        }}
+      >
         {props.text || getDefaults.text}
       </Button>
     </DevLayer>

@@ -8,6 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "acorn": "8.14.0",
+    "acorn-walk": "8.3.4",
+    "astravel": "^0.6.1",
+    "astring": "^1.7.5",
+    "escodegen": "^2.0.0",
+    "unescape-js": "^1.1.4",
     "yjs": "^13.5.12",
     "moment": "2.29.4",
     "moment-timezone": "^0.5.35",
@@ -103,6 +109,7 @@
     "typescript": "^5.8.3",
     "@types/node": "^20.0.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "@types/escodegen": "^0.0.7"
   }
 }

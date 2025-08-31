@@ -1,7 +1,7 @@
 export default {
   artifacts: {
     applications: {
-      '68ad34afd8deff53ee072775': {
+      '68b44443eb513e051addbe49': {
         ui: {
           initializing: false,
           initialized: true,

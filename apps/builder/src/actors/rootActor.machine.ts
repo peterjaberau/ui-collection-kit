@@ -7,11 +7,12 @@ import { lintingMachine } from "./machines/linting.machine"
 import { organizationMachine } from "./machines/organization.machine"
 import { settingsMachine } from "./machines/settings.machine"
 import { uiMachine } from "./machines/ui.machine"
-
+import { devToolsMachine } from "./machines/modules/machine.devTools"
 
 
 export const rootActorMachine = createMachine({
   entry: [
+    spawnChild(devToolsMachine, { systemId: "dev-tools" }),
     spawnChild(entitiesMachine, { systemId: "entities" }),
     spawnChild(evaluationsMachine, { systemId: "evaluations" }),
     spawnChild(formMachine, { systemId: "form" }),

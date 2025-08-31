@@ -1,3 +1,4 @@
+'use client'
 import React from "react"
 import { Stack } from "@chakra-ui/react"
 import { DevLayer } from "../DevLayer"

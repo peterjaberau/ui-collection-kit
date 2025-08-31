@@ -23,8 +23,27 @@
       }
     ],
     "paths": {
+      "#actors": ["./src/actors"],
       "#actors/*": ["./src/actors/*"],
-      "#actors-hook/*": ["./src/actors/hooks"],
+
+      "#actor-workers": ["./src/actors/workers"],
+      "#actor-workers/*": ["./src/actors/workers/*"],
+
+      "#actor-constants": ["./src/actors/lib/constants"],
+      "#actor-constants/*": ["./src/actors/lib/constants/*"],
+
+      "#actor-types": ["./src/actors/lib/types"],
+      "#actor-types/*": ["./src/actors/lib/types/*"],
+
+      "#actor-utils":  ["./src/actors/lib/utils"],
+      "#actor-utils/*":  ["./src/actors/lib/utils/*"],
+
+      "#actor-lib":  ["./src/actors/lib"],
+      "#actor-lib/*":  ["./src/actors/lib/*"],
+
+      "#actors-hook": ["./src/actors/hooks"],
+      "#actors-hook/*": ["./src/actors/hooks/*"],
+
       "#components/*": ["./src/components/*"],
 
       "@/*": ["./*"],
@@ -43,7 +62,7 @@
       "ce/*": ["./src/appsmith/ce/*"],
       "constants/*": ["./src/appsmith/constants/*"],
       "entities/*": ["./src/appsmith/entities/*"],
-      "pages/*": ["./src/appsmith/pages/*"]
+      "pages/*": ["./src/appsmith/pages/*"],
       "plugins/*": ["./src/appsmith/plugins/*"],
       "polyfills/*": ["./src/appsmith/polyfills/*"],
       "utils/*": ["./src/appsmith/utils/*"],

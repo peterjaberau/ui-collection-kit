@@ -23,6 +23,22 @@ import { AnalyticsWrapper } from "#components/app/layout/AnalyticsWrapper"
 import { PropsComponentRenderer } from "#components/app/PropsComponentRenderer"
 import { FixedLayoutRenderer } from "#components/app/FixedLayoutRenderer"
 import { loadWidget } from "#components/app/widgets"
+import { useWidgets } from "#actors-hook/widgets/useWidgets"
+
+const renderWidgetIds = [
+  { widgetId: "bvqcrxkaum", type: "BUTTON_WIDGET", widgetName: "btn_left_left"},
+  { widgetId: "v68er04mr2", type: "BUTTON_WIDGET", widgetName: "btn_left_reset"},
+  { widgetId: "250dog341d", type: "BUTTON_WIDGET", widgetName: "btn_right_reset"},
+  { widgetId: "5trspcxhy2", type: "BUTTON_WIDGET", widgetName: "btn_right_right"},
+  { widgetId: "ydlupoo8k2", type: "BUTTON_WIDGET", widgetName: "btn_left_right"},
+  { widgetId: "ltfsabiaq1", type: "BUTTON_WIDGET", widgetName: "btn_right_left"},
+  { widgetId: "ujgcje0omy", type: "TEXT_WIDGET", widgetName: "txt_static_left"},
+  { widgetId: "is0fwucchq", type: "TEXT_WIDGET", widgetName: "txt_dynamic_left"},
+  { widgetId: "weq4w5wk5m", type: "TEXT_WIDGET", widgetName: "txt_dynamic_right"},
+  { widgetId: "k1j5882wmt", type: "BUTTON_WIDGET", widgetName: "txt_static_right"},
+  { widgetId: "y3s2g1c5zz", type: "BUTTON_WIDGET", widgetName: "txt_log_left"},
+  { widgetId: "5m3vf11p5u", type: "BUTTON_WIDGET", widgetName: "txt_log_right"},
+]
 
 export default function Page() {
   const {
@@ -35,6 +51,9 @@ export default function Page() {
     isPageHasWidgets,
   } = useEntitiesActor()
 
+  const { getWidgets, getWidget, getDataTreeForActionCreator } = useWidgets()
+
+
   const { gitContext } = useGitActor()
   const { formContext } = useFormActor()
   const { evaluationsContext, renderPage, isFirstPageLoad } = useEvaluationsActor()
@@ -43,21 +62,23 @@ export default function Page() {
   const { settingsContext } = useSettingsActor()
   const { uiContext, uiAppView, uiAppTheming, uiTheme, currentApplication, isPreviewMode } = useUiActor()
 
-  const RenderWidgetFromRegistry = ({ widgetName }: { widgetName: string }) => {
+  const RenderWidgetFromRegistry = (
+    { widgetName }: { widgetName: string }
+  ) => {
     const WidgetComponent = loadWidget(widgetName)
     return <WidgetComponent />
   }
 
   return (
     <>
-      <Container>
-        <SimpleGrid columns={3} gap={4}>
+      <Container fluid>
+        <SimpleGrid columns={4} gap={4}>
           <GridItem colSpan={1}>
             <Card.Root>
               <Card.Header>
                 <Card.Title>Actors</Card.Title>
               </Card.Header>
-              <Card.Body maxH={"500px"} overflowY={"auto"}>
+              <Card.Body minH={"500px"} maxH={"calc(100vh - 100px"} overflowY={"auto"}>
                 <JsonView
                   src={{
                     entities: entitiesContext,
@@ -97,9 +118,18 @@ export default function Page() {
                                   <PropsComponentRenderer>
                                     <FixedLayoutRenderer>
                                       <Stack>
-                                        <RenderWidgetFromRegistry widgetName={"TEXT_WIDGET"} />
-                                        <RenderWidgetFromRegistry widgetName={"DIVIDER_WIDGET"} />
-                                        <RenderWidgetFromRegistry widgetName={"BUTTON_WIDGET"} />
+                                        <RenderWidgetFromRegistry
+                                          widgetName={"TEXT_WIDGET"}
+                                        />
+                                        <RenderWidgetFromRegistry
+                                          widgetName={"DIVIDER_WIDGET"}
+                                        />
+                                        <RenderWidgetFromRegistry
+                                          widgetName={"BUTTON_WIDGET"}
+                                        />
+                                        <RenderWidgetFromRegistry
+                                          widgetName={"INPUT_WIDGET"}
+                                        />
                                       </Stack>
                                     </FixedLayoutRenderer>
                                   </PropsComponentRenderer>
@@ -115,6 +145,30 @@ export default function Page() {
               </Card.Body>
             </Card.Root>
           </GridItem>
+
+          <GridItem colSpan={1}>
+            <Card.Root>
+              <Card.Header>
+                <Card.Title>Actors</Card.Title>
+              </Card.Header>
+              <Card.Body minH={"500px"} maxH={"calc(100vh - 100px)"}  overflowY={"auto"}>
+                <JsonView
+                  src={{
+                    getWidgets: getWidgets,
+                    getWidget_tl8xbeqhua: getWidget("tl8xbeqhua"),
+                    getWidget_od1swmzxxq: getWidget("od1swmzxxq")
+
+                  }}
+                  collapsed={1}
+                  theme="github"
+                  displaySize
+                  displayArrayIndex
+                  style={{ fontSize: 13, fontWeight: "bold" }}
+                />
+              </Card.Body>
+            </Card.Root>
+          </GridItem>
+
         </SimpleGrid>
       </Container>
     </>
