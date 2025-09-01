@@ -5,11 +5,14 @@ import { Portal, useSlotRecipe } from "@chakra-ui/react"
 import { LuArrowDownLeft, LuBug, LuGripVertical, LuMaximize2, LuMinus, LuX } from "react-icons/lu"
 import { HStack, Button, IconButton, Icon, defineSlotRecipe } from "@chakra-ui/react"
 import { useDevToolsActor } from "#actors-hook/useDevToolsActor"
+import { useActionsActor } from "#actors-hook/actions/useActionsActor"
+
 import JsonView from "react18-json-view"
 const axes = ["n", "s", "e", "w", "ne", "nw", "se", "sw"] as const
 
 export const DevTools = () => {
   const { devToolsContext } = useDevToolsActor()
+  const { actionsContext } = useActionsActor()
 
   return (
     <FloatingPanel.Root
@@ -69,7 +72,10 @@ export const DevTools = () => {
              </FloatingPanel.DragTrigger>
              <FloatingPanel.Body >
                <JsonView
-                 src={devToolsContext.payload}
+                 src={{
+                   ...devToolsContext.payload,
+                   actions: actionsContext
+                 }}
                  collapsed={1}
                  theme="github"
                  displaySize

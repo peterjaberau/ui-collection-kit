@@ -20,10 +20,16 @@ const TextWidget: any = (props: any) => {
 
   return (
     <DevLayer
-      path={propWidgetId} payload={{
-      compareEvaluated: compareEvaluated(['text']), widget, widgetEvaluated
-    }}
-      tagName={`TextWidget ${propWidgetId}`} variant="surface" type='widget'>
+      path={propWidgetId}
+      payload={{
+        compareEvaluated: compareEvaluated(["text"]),
+        widget,
+        widgetEvaluated,
+      }}
+      tagName={`TextWidget ${propWidgetId}`}
+      variant="surface"
+      type="widget"
+    >
       <Text {...getDefaults} {...props}>
         {widget.text || getDefaults.text}
         {/*{props.text || getDefaults.text}*/}

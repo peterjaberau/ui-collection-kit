@@ -20,35 +20,73 @@ export const getDefaults = {
 
 const ButtonWidget: any = (props: any) => {
   const { widgetId: propWidgetId } = props
-  const { compareEvaluated, widget, widgetEvaluated } = useWidget({ widgetId: propWidgetId})
+  const { compareEvaluated, widget, widgetEvaluated, executeAction, actionsContext } = useWidget({ widgetId: propWidgetId })
 
-
-  const executeAction = (e: any) => {}
+  // const executeAction = (e: any) => {
+  //   console.log("Execute Action", e)
+  // }
   const handleActionComplete = () => {}
 
   return (
     <DevLayer
-      path={propWidgetId} payload={{
-      compareEvaluated: compareEvaluated(['text']), widget, widgetEvaluated}}
-      tagName={`Button  Widget ${propWidgetId}`} variant="surface" type="widget">
+      path={propWidgetId}
+      payload={{
+        compareEvaluated: compareEvaluated(["onClick"]),
+        widget,
+        widgetEvaluated,
+      }}
+      tagName={`Button  Widget ${propWidgetId}`}
+      variant="surface"
+      type="widget"
+    >
       <Button
         {...getDefaults}
         {...props}
-        onClick={() => {
-          executeAction({
-            triggerPropertyName: "onClick",
-            dynamicString: 'this.props.onClick',
-            event: {
-              type: 'EventType.ON_CLICK',
-              callback: 'this.handleActionComplete'
-            }
-          })
-        }}
+        onClick={() => executeAction({
+          triggerPropertyName: "onClick",
+          dynamicString: widget.onClick,
+          event: {
+            type: "ON_CLICK",
+          },
+          source: {
+            id: widget.widgetId,
+            name: widget.widgetName,
+            entityType: "WIDGET",
+          },
+          widgetId: widget.widgetId,
+        })}
       >
         {widget.text || getDefaults.text}
       </Button>
     </DevLayer>
   )
 }
+
+/*
+
+
+executeAction(actionPayload: ExecuteTriggerPayload): void {
+    const { executeAction } = this.context;
+
+    executeAction &&
+      executeAction({
+        ...actionPayload,
+        source: {
+          id: this.props.widgetId,
+          name: this.props.widgetName,
+        },
+      });
+
+    actionPayload.triggerPropertyName &&
+      AppsmithConsole.info({
+        text: `Event ${actionPayload.triggerPropertyName} fired`,
+        source: {
+          type: ENTITY_TYPE.WIDGET,
+          id: this.props.widgetId,
+          name: this.props.widgetName,
+        },
+      });
+  }
+ */
 
 export default ButtonWidget

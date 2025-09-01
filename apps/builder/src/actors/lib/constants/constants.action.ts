@@ -74,26 +74,21 @@ export enum EventType {
   CUSTOM_WIDGET_EVENT = "CUSTOM_WIDGET_EVENT",
 }
 
-export const DATASOURCE_URL_EXACT_MATCH_REGEX =
-  /^(https?:\/{2}\S+?)(\/[\s\S]*?)?(\?(?![^{]*})[\s\S]*)?$/;
+export const DATASOURCE_URL_EXACT_MATCH_REGEX = /^(https?:\/{2}\S+?)(\/[\s\S]*?)?(\?(?![^{]*})[\s\S]*)?$/
 
+export const EXECUTION_PARAM_KEY = "executionParams"
+export const EXECUTION_PARAM_REFERENCE_REGEX = /this.params|this\?.params/g
+export const THIS_DOT_PARAMS_KEY = "$params"
 
-
-export const EXECUTION_PARAM_KEY = "executionParams";
-export const EXECUTION_PARAM_REFERENCE_REGEX = /this.params|this\?.params/g;
-export const THIS_DOT_PARAMS_KEY = "$params";
-
-export const RESP_HEADER_DATATYPE = "X-APPSMITH-DATATYPE";
+export const RESP_HEADER_DATATYPE = "X-APPSMITH-DATATYPE"
 export const API_REQUEST_HEADERS: any = {
   "Content-Type": "application/json",
-};
-export const POSTMAN = "POSTMAN";
-export const CURL = "CURL";
-export const Swagger = "Swagger";
-
-export const defaultActionSettings = {
-
 }
+export const POSTMAN = "POSTMAN"
+export const CURL = "CURL"
+export const Swagger = "Swagger"
+
+export const defaultActionSettings = {}
 
 export enum ExecutionType {
   PROMISE = "PROMISE",
@@ -102,4 +97,4 @@ export enum ExecutionType {
 
 export const ActionParentEntityType = {
   PAGE: "PAGE",
-} as const;
+} as const

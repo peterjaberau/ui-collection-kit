@@ -1,9 +1,11 @@
 import { useEntitiesActor } from "../useEntitiesActor"
 import { useEvaluationsActor } from "../useEvaluationsActor"
+import { useActionsActor } from "../actions/useActionsActor"
 
 export function useWidget({ widgetId }: { widgetId: string }) {
   const { entitiesCanvasWidgets } = useEntitiesActor()
   const { evaluationsTree } = useEvaluationsActor()
+  const { executeAction } = useActionsActor()
 
   const widget = entitiesCanvasWidgets[widgetId]
   const widgetName = widget?.widgetName
@@ -21,11 +23,16 @@ export function useWidget({ widgetId }: { widgetId: string }) {
     return comparedKeys
   }
 
+  // const executeTrigger = (payload: any) => {
+  //
+  // }
+
 
 
   return {
     widget,
     widgetEvaluated,
-    compareEvaluated
+    compareEvaluated,
+    executeAction,
   }
 }

@@ -8,10 +8,12 @@ import { organizationMachine } from "./machines/organization.machine"
 import { settingsMachine } from "./machines/settings.machine"
 import { uiMachine } from "./machines/ui.machine"
 import { devToolsMachine } from "./machines/modules/machine.devTools"
+import { actionsMachine } from "./machines/actions/machine.actions"
 
 
 export const rootActorMachine = createMachine({
   entry: [
+    spawnChild(actionsMachine, { systemId: "actions" }),
     spawnChild(devToolsMachine, { systemId: "dev-tools" }),
     spawnChild(entitiesMachine, { systemId: "entities" }),
     spawnChild(evaluationsMachine, { systemId: "evaluations" }),
