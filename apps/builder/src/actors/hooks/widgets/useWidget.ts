@@ -1,11 +1,11 @@
 import { useEntitiesActor } from "../useEntitiesActor"
 import { useEvaluationsActor } from "../useEvaluationsActor"
-import { useActionsActor } from "../actions/useActionsActor"
+import { useTriggerActor } from "../modules/useTriggerActor"
 
 export function useWidget({ widgetId }: { widgetId: string }) {
   const { entitiesCanvasWidgets } = useEntitiesActor()
   const { evaluationsTree } = useEvaluationsActor()
-  const { executeAction } = useActionsActor()
+  const { trigger } = useTriggerActor()
 
   const widget = entitiesCanvasWidgets[widgetId]
   const widgetName = widget?.widgetName
@@ -33,6 +33,6 @@ export function useWidget({ widgetId }: { widgetId: string }) {
     widget,
     widgetEvaluated,
     compareEvaluated,
-    executeAction,
+    trigger,
   }
 }

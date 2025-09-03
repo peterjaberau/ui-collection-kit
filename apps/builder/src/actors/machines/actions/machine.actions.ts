@@ -1,6 +1,5 @@
 import { createMachine, setup, assign, spawnChild, enqueueActions, fromPromise } from "xstate"
-import { Ok, Result } from 'ts-results';
-
+import { Ok, Result } from "ts-results"
 
 export const actionsMachine = setup({
   types: {} as any,
@@ -18,13 +17,10 @@ export const actionsMachine = setup({
         triggerPropertyName,
       } = event.payload
 
-
-        if (!dynamicString || typeof dynamicString !== "string") {
-          console.log("Attempted to execute action with invalid dynamicString: ", event.payload)
-        }
-        return
-
-
+      if (!dynamicString || typeof dynamicString !== "string") {
+        console.log("Attempted to execute action with invalid dynamicString: ", event.payload)
+      }
+      return
     }),
     evaluateAndExecuteDynamicTrigger: assign(({ context, event }) => {
       const {
@@ -34,21 +30,17 @@ export const actionsMachine = setup({
         triggerPropertyName,
       } = event.payload
 
-
       if (!dynamicString || typeof dynamicString !== "string") {
         console.log("Attempted to execute action with invalid dynamicString: ", event.payload)
       }
       return
-
-
     }),
     updateContext: assign(({ context, event }) => {
       context.lastEvent = event
       context.payload = event.payload || {}
     }),
 
-    getWidget: assign(({ context, event }) => {
-    }),
+    getWidget: assign(({ context, event }) => {}),
     getUsedWidgetTypes: assign(({ context, event }) => {
       context.lastEvent = event
       context.payload = event.payload || {}
@@ -57,50 +49,42 @@ export const actionsMachine = setup({
       context.lastEvent = event
       context.payload = event.payload || {}
     }),
-    getAppMode: assign(({ context, event }) => {
-    }),
-    getRegisteredWidgetsCount: assign(({ context, event }) => {
-    }),
-    incrementWidgetConfigsVersion: assign(({ context, event }) => {
-    }),
+    getAppMode: assign(({ context, event }) => {}),
+    getRegisteredWidgetsCount: assign(({ context, event }) => {}),
+    incrementWidgetConfigsVersion: assign(({ context, event }) => {}),
   },
   actors: {
     loadWidget: fromPromise(async ({ input }: any) => {
-      await new Promise((resolve: any) => setTimeout(resolve, 1_00));
-      return new Ok({});
+      await new Promise((resolve: any) => setTimeout(resolve, 1_00))
+      return new Ok({})
     }),
     loadAllWidgets: fromPromise(async ({ input }: any) => {
-      await new Promise((resolve: any) => setTimeout(resolve, 1_00));
-      return new Ok({});
+      await new Promise((resolve: any) => setTimeout(resolve, 1_00))
+      return new Ok({})
     }),
-
-
-
-
 
     executeAppActionFn: fromPromise(async ({ input }: any) => {
-      await new Promise((resolve: any) => setTimeout(resolve, 1_00));
-      return new Ok({});
+      await new Promise((resolve: any) => setTimeout(resolve, 1_00))
+      return new Ok({})
     }),
 
-
     getAppDetails: fromPromise(async ({ input }: any) => {
-      await new Promise((resolve: any) => setTimeout(resolve, 1_00));
-      return new Ok({});
+      await new Promise((resolve: any) => setTimeout(resolve, 1_00))
+      return new Ok({})
     }),
 
     clearAllWidgetFactoryCache: fromPromise(async ({ input }: any) => {
-      await new Promise((resolve: any) => setTimeout(resolve, 1_00));
-      return new Ok({});
+      await new Promise((resolve: any) => setTimeout(resolve, 1_00))
+      return new Ok({})
     }),
 
     withBaseWidgetHOC: fromPromise(async ({ input }: any) => {
-      await new Promise((resolve: any) => setTimeout(resolve, 1_00));
-      return new Ok({});
+      await new Promise((resolve: any) => setTimeout(resolve, 1_00))
+      return new Ok({})
     }),
     widgetFactoryInitializer: fromPromise(async ({ input }: any) => {
-      await new Promise((resolve: any) => setTimeout(resolve, 1_00));
-      return new Ok({});
+      await new Promise((resolve: any) => setTimeout(resolve, 1_00))
+      return new Ok({})
     }),
   },
   guards: {
@@ -125,104 +109,96 @@ export const actionsMachine = setup({
     idle: {
       on: {
         EXECUTE_TRIGGER_REQUEST: {
-          actions: ['updateContext'],
-          target: 'initiatingActionTriggerExecution'
+          actions: ["updateContext"],
+          target: "initiatingActionTriggerExecution",
         },
       },
     },
     initiatingActionTriggerExecution: {
       entry: [
         {
-          actions: ['initiateActionTriggerExecution'],
-          target: "executingAppAction"
+          actions: ["initiateActionTriggerExecution"],
+          target: "executingAppAction",
         },
-      ]
+      ],
     },
     executingAppAction: {
       entry: [
         {
           guard: "isDynamicString",
-          actions: ['executeAppAction'],
-          target: "evaluatingAndExecutingDynamicTrigger"
+          actions: ["executeAppAction"],
+          target: "evaluatingAndExecutingDynamicTrigger",
         },
         {
           target: "idle",
         },
-      ]
+      ],
     },
-
-
 
     initiateActionTriggerExecutionState: {
       entry: [
         {
           guard: "isDynamicString",
-          target: "executeAppActionState"
+          target: "executeAppActionState",
         },
         {
           target: "idle",
         },
-      ]
+      ],
     },
     executeAppActionState: {
-      invoke: 'executeAppActionFn',
+      invoke: "executeAppActionFn",
       onDone: {
-        target: 'evaluatingAndExecutingDynamicTrigger',
+        target: "evaluatingAndExecutingDynamicTrigger",
       },
       onError: {
-        target: 'idle',
+        target: "idle",
       },
     },
 
     evaluatingAndExecutingDynamicTrigger: {
       entry: [
         {
-          target: "gettingUnevalTreeWithWidgetsRegistered"
+          target: "gettingUnevalTreeWithWidgetsRegistered",
         },
-      ]
+      ],
     },
 
     gettingUnevalTreeWithWidgetsRegistered: {
       entry: [
         {
-          target: "loadingAndRegisteringOnlyCanvasWidgets"
+          target: "loadingAndRegisteringOnlyCanvasWidgets",
         },
-      ]
+      ],
     },
 
     loadingAndRegisteringOnlyCanvasWidgets: {
       entry: enqueueActions(({ context, event, enqueue }) => {
-        enqueue('getUsedWidgetTypes')
-        enqueue('getAllUniqueWidgetTypesInUiModules')
+        enqueue("getUsedWidgetTypes")
+        enqueue("getAllUniqueWidgetTypesInUiModules")
       }),
       always: {
-        target: 'loadingWidget'
-      }
+        target: "loadingWidget",
+      },
     },
 
     loadingWidget: {
-      entry: [
-
-      ]
-
+      entry: [],
     },
-
-
-
 
     widgetsRegistrationInitiated: {
       entry: [
         {
-          actions: ['getRegisteredWidgetsCount'],
-          target: "widgetsRegistrationProcessing"
-        }
-      ]
+          actions: ["getRegisteredWidgetsCount"],
+          target: "widgetsRegistrationProcessing",
+        },
+      ],
     },
     widgetsRegistrationProcessing: {
       entry: [
         {
           guard: "hasWidgetsToRegister",
-          target: "widgetRegistration"
+          target: "widgetRegistration",
         },
         {
           target: "idle",
@@ -231,19 +207,16 @@ export const actionsMachine = setup({
     },
     widgetRegistration: {
       entry: enqueueActions(({ context, event, enqueue, check }) => {
-        if (check({ type: 'hasWidgetsToRegister' })) {
-          enqueue('withBaseWidgetHOC')
-          enqueue('widgetFactoryInitializer')
-          enqueue('incrementWidgetConfigsVersion')
+        if (check({ type: "hasWidgetsToRegister" })) {
+          enqueue("withBaseWidgetHOC")
+          enqueue("widgetFactoryInitializer")
+          enqueue("incrementWidgetConfigsVersion")
         }
       }),
       always: {
-        target: 'widgetsRegistrationProcessing'
-      }
+        target: "widgetsRegistrationProcessing",
+      },
     },
-
-
-
   },
 })
 

@@ -20,7 +20,7 @@ export const getDefaults = {
 
 const ButtonWidget: any = (props: any) => {
   const { widgetId: propWidgetId } = props
-  const { compareEvaluated, widget, widgetEvaluated, executeAction, actionsContext } = useWidget({ widgetId: propWidgetId })
+  const { compareEvaluated, widget, widgetEvaluated, trigger } = useWidget({ widgetId: propWidgetId })
 
   // const executeAction = (e: any) => {
   //   console.log("Execute Action", e)
@@ -42,7 +42,7 @@ const ButtonWidget: any = (props: any) => {
       <Button
         {...getDefaults}
         {...props}
-        onClick={() => executeAction({
+        onClick={() => trigger({
           triggerPropertyName: "onClick",
           dynamicString: widget.onClick,
           event: {
