@@ -359,6 +359,3221 @@ const consoleData = [
   },
 
   {
+    dataTreeSelectors: [
+      {
+        getUnevaluatedDataTree: {
+          "unEvalTree": {
+            "MainContainer": {
+              "ENTITY_TYPE": "WIDGET",
+              "widgetName": "MainContainer",
+              "backgroundColor": "none",
+              "rightColumn": 4896,
+              "snapColumns": 64,
+              "widgetId": "0",
+              "topRow": 0,
+              "bottomRow": 1292,
+              "containerStyle": "none",
+              "snapRows": 124,
+              "parentRowSpace": 1,
+              "canExtend": true,
+              "minHeight": 1292,
+              "parentColumnSpace": 1,
+              "leftColumn": 0,
+              "meta": {},
+              "isLoading": false,
+              "componentHeight": 1292,
+              "componentWidth": 4896,
+              "type": "CANVAS_WIDGET"
+            },
+            "btn_left_left": {
+              "ENTITY_TYPE": "WIDGET",
+              "resetFormOnClick": false,
+              "needsErrorInfo": false,
+              "boxShadow": "none",
+              "mobileBottomRow": 7,
+              "widgetName": "btn_left_left",
+              "onClick": "{{storeValue('var_left', 'Dynamic Left: ' + txt_static_left.text);}}",
+              "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "topRow": 2,
+              "bottomRow": 6,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 17,
+              "animateLoading": true,
+              "parentColumnSpace": 11.90625,
+              "leftColumn": 0,
+              "text": "Left from Left",
+              "isDisabled": false,
+              "key": "shywogacyl",
+              "rightColumn": 13,
+              "isDefaultClickDisabled": true,
+              "widgetId": "bvqcrxkaum",
+              "minWidth": 120,
+              "isVisible": true,
+              "recaptchaType": "V3",
+              "isLoading": false,
+              "mobileTopRow": 3,
+              "responsiveBehavior": "hug",
+              "disabledWhenInvalid": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 1,
+              "buttonVariant": "PRIMARY",
+              "placement": "CENTER",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 154.78125,
+              "type": "BUTTON_WIDGET"
+            },
+            "btn_left_reset": {
+              "ENTITY_TYPE": "WIDGET",
+              "resetFormOnClick": false,
+              "needsErrorInfo": false,
+              "boxShadow": "none",
+              "mobileBottomRow": 7,
+              "widgetName": "btn_left_reset",
+              "onClick": "{{storeValue('var_left', 'Dynamic Left: -');}}",
+              "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "topRow": 7,
+              "bottomRow": 11,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 17,
+              "animateLoading": true,
+              "parentColumnSpace": 11.90625,
+              "leftColumn": 14,
+              "text": "Left reset",
+              "isDisabled": false,
+              "key": "shywogacyl",
+              "rightColumn": 24,
+              "isDefaultClickDisabled": true,
+              "widgetId": "v68er04mr2",
+              "minWidth": 120,
+              "isVisible": true,
+              "recaptchaType": "V3",
+              "isLoading": false,
+              "mobileTopRow": 3,
+              "responsiveBehavior": "hug",
+              "disabledWhenInvalid": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 1,
+              "buttonVariant": "PRIMARY",
+              "placement": "CENTER",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 119.0625,
+              "type": "BUTTON_WIDGET"
+            },
+            "btn_right_reset": {
+              "ENTITY_TYPE": "WIDGET",
+              "resetFormOnClick": false,
+              "needsErrorInfo": false,
+              "boxShadow": "none",
+              "mobileBottomRow": 7,
+              "widgetName": "btn_right_reset",
+              "onClick": "{{storeValue('var_right', 'Dynamic Right: -');}}",
+              "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "topRow": 7,
+              "bottomRow": 11,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 17,
+              "animateLoading": true,
+              "parentColumnSpace": 11.90625,
+              "leftColumn": 52,
+              "text": "Right reset",
+              "isDisabled": false,
+              "key": "shywogacyl",
+              "rightColumn": 62,
+              "isDefaultClickDisabled": true,
+              "widgetId": "250dog341d",
+              "minWidth": 120,
+              "isVisible": true,
+              "recaptchaType": "V3",
+              "isLoading": false,
+              "mobileTopRow": 3,
+              "responsiveBehavior": "hug",
+              "disabledWhenInvalid": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 1,
+              "buttonVariant": "PRIMARY",
+              "placement": "CENTER",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 119.0625,
+              "type": "BUTTON_WIDGET"
+            },
+            "btn_right_right": {
+              "ENTITY_TYPE": "WIDGET",
+              "resetFormOnClick": false,
+              "needsErrorInfo": false,
+              "boxShadow": "none",
+              "mobileBottomRow": 7,
+              "widgetName": "btn_right_right",
+              "onClick": "{{storeValue('var_right', 'Dynamic Right: ' + txt_static_right.text);}}",
+              "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "topRow": 2,
+              "bottomRow": 6,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 17,
+              "animateLoading": true,
+              "parentColumnSpace": 11.90625,
+              "leftColumn": 37,
+              "text": "Right from Right",
+              "isDisabled": false,
+              "key": "shywogacyl",
+              "rightColumn": 51,
+              "isDefaultClickDisabled": true,
+              "widgetId": "5trspcxhy2",
+              "minWidth": 120,
+              "isVisible": true,
+              "recaptchaType": "V3",
+              "isLoading": false,
+              "mobileTopRow": 3,
+              "responsiveBehavior": "hug",
+              "disabledWhenInvalid": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 1,
+              "buttonVariant": "PRIMARY",
+              "placement": "CENTER",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 166.6875,
+              "type": "BUTTON_WIDGET"
+            },
+            "btn_left_right": {
+              "ENTITY_TYPE": "WIDGET",
+              "resetFormOnClick": false,
+              "needsErrorInfo": false,
+              "boxShadow": "none",
+              "mobileBottomRow": 7,
+              "widgetName": "btn_left_right",
+              "onClick": "{{storeValue('var_left', 'Dynamic Left: ' + txt_static_right.text);}}",
+              "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "topRow": 2,
+              "bottomRow": 6,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 17,
+              "animateLoading": true,
+              "parentColumnSpace": 11.90625,
+              "leftColumn": 14,
+              "text": "Left from Right",
+              "isDisabled": false,
+              "key": "shywogacyl",
+              "rightColumn": 24,
+              "isDefaultClickDisabled": true,
+              "widgetId": "ydlupoo8k2",
+              "minWidth": 120,
+              "isVisible": true,
+              "recaptchaType": "V3",
+              "isLoading": false,
+              "mobileTopRow": 3,
+              "responsiveBehavior": "hug",
+              "disabledWhenInvalid": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 1,
+              "buttonVariant": "PRIMARY",
+              "placement": "CENTER",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 119.0625,
+              "type": "BUTTON_WIDGET"
+            },
+            "btn_right_left": {
+              "ENTITY_TYPE": "WIDGET",
+              "resetFormOnClick": false,
+              "needsErrorInfo": false,
+              "boxShadow": "none",
+              "mobileBottomRow": 7,
+              "widgetName": "btn_right_left",
+              "onClick": "{{storeValue('var_right', 'Dynamic Right: ' + txt_static_left.text);}}",
+              "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "topRow": 2,
+              "bottomRow": 6,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 17,
+              "animateLoading": true,
+              "parentColumnSpace": 11.90625,
+              "leftColumn": 52,
+              "text": "Right from Left",
+              "isDisabled": false,
+              "key": "shywogacyl",
+              "rightColumn": 63,
+              "isDefaultClickDisabled": true,
+              "widgetId": "ltfsabiaq1",
+              "minWidth": 120,
+              "isVisible": true,
+              "recaptchaType": "V3",
+              "isLoading": false,
+              "mobileTopRow": 3,
+              "responsiveBehavior": "hug",
+              "disabledWhenInvalid": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 1,
+              "buttonVariant": "PRIMARY",
+              "placement": "CENTER",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 130.96875,
+              "type": "BUTTON_WIDGET"
+            },
+            "Canvas1": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "mobileBottomRow": 100,
+              "widgetName": "Canvas1",
+              "topRow": 0,
+              "bottomRow": 160,
+              "parentRowSpace": 1,
+              "canExtend": false,
+              "minHeight": 100,
+              "mobileRightColumn": 255,
+              "parentColumnSpace": 1,
+              "leftColumn": 0,
+              "key": "isxwoxpkra",
+              "rightColumn": 255,
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "71mrzuu4q7",
+              "containerStyle": "none",
+              "minWidth": 450,
+              "isVisible": true,
+              "isLoading": false,
+              "mobileTopRow": 0,
+              "responsiveBehavior": "fill",
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 0,
+              "maxDynamicHeight": 9000,
+              "minDynamicHeight": 4,
+              "flexLayers": [],
+              "meta": {},
+              "componentHeight": 160,
+              "componentWidth": 255,
+              "type": "CANVAS_WIDGET"
+            },
+            "containerToolbar": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "mobileBottomRow": 37,
+              "widgetName": "containerToolbar",
+              "borderColor": "#E0DEDE",
+              "isCanvas": true,
+              "topRow": 6,
+              "bottomRow": 22,
+              "parentRowSpace": 10,
+              "shouldScrollContents": true,
+              "mobileRightColumn": 15,
+              "animateLoading": true,
+              "parentColumnSpace": 17,
+              "leftColumn": 12,
+              "borderWidth": "1",
+              "flexVerticalAlignment": "stretch",
+              "key": "xqvebn6ivt",
+              "backgroundColor": "#FFFFFF",
+              "rightColumn": 58,
+              "dynamicHeight": "FIXED",
+              "widgetId": "nsadyy1bzy",
+              "containerStyle": "card",
+              "minWidth": 450,
+              "isVisible": true,
+              "isLoading": false,
+              "mobileTopRow": 27,
+              "responsiveBehavior": "fill",
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 0,
+              "maxDynamicHeight": 9000,
+              "minDynamicHeight": 10,
+              "meta": {},
+              "componentHeight": 160,
+              "componentWidth": 782,
+              "type": "CONTAINER_WIDGET"
+            },
+            "txt_static_left": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "mobileBottomRow": 5,
+              "widgetName": "txt_static_left",
+              "topRow": 1,
+              "bottomRow": 5,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 24,
+              "animateLoading": true,
+              "overflow": "NONE",
+              "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+              "parentColumnSpace": 7.65625,
+              "leftColumn": 2,
+              "shouldTruncate": false,
+              "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "text": "STATIC text from Left Container",
+              "key": "g4kizrfvnz",
+              "rightColumn": 62,
+              "textAlign": "LEFT",
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "ujgcje0omy",
+              "minWidth": 450,
+              "isVisible": true,
+              "fontStyle": "BOLD",
+              "textColor": "#231F20",
+              "isLoading": false,
+              "mobileTopRow": 1,
+              "responsiveBehavior": "fill",
+              "originalTopRow": 1,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 8,
+              "maxDynamicHeight": 9000,
+              "originalBottomRow": 5,
+              "fontSize": "1rem",
+              "minDynamicHeight": 4,
+              "value": "{{ txt_static_left.text }}",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 459.375,
+              "type": "TEXT_WIDGET"
+            },
+            "txt_dynamic_left": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "mobileBottomRow": 5,
+              "widgetName": "txt_dynamic_left",
+              "topRow": 5,
+              "bottomRow": 9,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 24,
+              "animateLoading": true,
+              "overflow": "NONE",
+              "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+              "parentColumnSpace": 7.65625,
+              "leftColumn": 2,
+              "shouldTruncate": false,
+              "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "text": "{{appsmith.store.var_left}}",
+              "key": "g4kizrfvnz",
+              "rightColumn": 62,
+              "textAlign": "LEFT",
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "is0fwucchq",
+              "minWidth": 450,
+              "isVisible": true,
+              "fontStyle": "BOLD",
+              "textColor": "#231F20",
+              "isLoading": false,
+              "mobileTopRow": 1,
+              "responsiveBehavior": "fill",
+              "originalTopRow": 5,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 8,
+              "maxDynamicHeight": 9000,
+              "originalBottomRow": 9,
+              "fontSize": "1rem",
+              "minDynamicHeight": 4,
+              "value": "{{ txt_dynamic_left.text }}",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 459.375,
+              "type": "TEXT_WIDGET"
+            },
+            "Canvas1Copy": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "mobileBottomRow": 100,
+              "widgetName": "Canvas1Copy",
+              "topRow": 0,
+              "bottomRow": 170,
+              "parentRowSpace": 1,
+              "canExtend": false,
+              "minHeight": 100,
+              "mobileRightColumn": 255,
+              "parentColumnSpace": 1,
+              "leftColumn": 0,
+              "key": "isxwoxpkra",
+              "rightColumn": 255,
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "an70evwb09",
+              "containerStyle": "none",
+              "minWidth": 450,
+              "isVisible": true,
+              "isLoading": false,
+              "mobileTopRow": 0,
+              "responsiveBehavior": "fill",
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 0,
+              "maxDynamicHeight": 9000,
+              "minDynamicHeight": 4,
+              "flexLayers": [],
+              "meta": {},
+              "componentHeight": 170,
+              "componentWidth": 255,
+              "type": "CANVAS_WIDGET"
+            },
+            "containerSectionLeft": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "mobileBottomRow": 37,
+              "widgetName": "containerSectionLeft",
+              "borderColor": "#E0DEDE",
+              "isCanvas": true,
+              "topRow": 30,
+              "bottomRow": 47,
+              "parentRowSpace": 10,
+              "shouldScrollContents": true,
+              "mobileRightColumn": 15,
+              "animateLoading": true,
+              "parentColumnSpace": 17,
+              "leftColumn": 2,
+              "borderWidth": "1",
+              "flexVerticalAlignment": "stretch",
+              "key": "xqvebn6ivt",
+              "backgroundColor": "#FFFFFF",
+              "rightColumn": 32,
+              "dynamicHeight": "FIXED",
+              "widgetId": "cd1xlchbgb",
+              "containerStyle": "card",
+              "minWidth": 450,
+              "isVisible": true,
+              "isLoading": false,
+              "mobileTopRow": 27,
+              "responsiveBehavior": "fill",
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 0,
+              "maxDynamicHeight": 9000,
+              "minDynamicHeight": 10,
+              "meta": {},
+              "componentHeight": 170,
+              "componentWidth": 510,
+              "type": "CONTAINER_WIDGET"
+            },
+            "txt_dynamic_right": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "mobileBottomRow": 5,
+              "widgetName": "txt_dynamic_right",
+              "topRow": 6,
+              "bottomRow": 10,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 24,
+              "animateLoading": true,
+              "overflow": "NONE",
+              "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+              "parentColumnSpace": 7.65625,
+              "leftColumn": 1,
+              "shouldTruncate": false,
+              "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "text": "{{appsmith.store.var_right}}",
+              "key": "g4kizrfvnz",
+              "rightColumn": 61,
+              "textAlign": "LEFT",
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "weq4w5wk5m",
+              "minWidth": 450,
+              "isVisible": true,
+              "fontStyle": "BOLD",
+              "textColor": "#231F20",
+              "isLoading": false,
+              "mobileTopRow": 1,
+              "responsiveBehavior": "fill",
+              "originalTopRow": 6,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 8,
+              "maxDynamicHeight": 9000,
+              "originalBottomRow": 11,
+              "fontSize": "1rem",
+              "minDynamicHeight": 4,
+              "value": "{{ txt_dynamic_right.text }}",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 459.375,
+              "type": "TEXT_WIDGET"
+            },
+            "txt_static_right": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "mobileBottomRow": 5,
+              "widgetName": "txt_static_right",
+              "topRow": 1,
+              "bottomRow": 5,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 24,
+              "animateLoading": true,
+              "overflow": "NONE",
+              "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+              "parentColumnSpace": 7.65625,
+              "leftColumn": 2,
+              "shouldTruncate": false,
+              "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "text": "STATIC text from Right Container",
+              "key": "g4kizrfvnz",
+              "rightColumn": 62,
+              "textAlign": "LEFT",
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "k1j5882wmt",
+              "minWidth": 450,
+              "isVisible": true,
+              "fontStyle": "BOLD",
+              "textColor": "#231F20",
+              "isLoading": false,
+              "mobileTopRow": 1,
+              "responsiveBehavior": "fill",
+              "originalTopRow": 1,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 8,
+              "maxDynamicHeight": 9000,
+              "originalBottomRow": 5,
+              "fontSize": "1rem",
+              "minDynamicHeight": 4,
+              "value": "{{ txt_static_right.text }}",
+              "meta": {},
+              "componentHeight": 40,
+              "componentWidth": 459.375,
+              "type": "TEXT_WIDGET"
+            },
+            "Canvas1CopyCopy": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "mobileBottomRow": 100,
+              "widgetName": "Canvas1CopyCopy",
+              "topRow": 0,
+              "bottomRow": 170,
+              "parentRowSpace": 1,
+              "canExtend": false,
+              "minHeight": 100,
+              "mobileRightColumn": 255,
+              "parentColumnSpace": 1,
+              "leftColumn": 0,
+              "key": "isxwoxpkra",
+              "rightColumn": 255,
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "orlqu2v4v5",
+              "containerStyle": "none",
+              "minWidth": 450,
+              "isVisible": true,
+              "isLoading": false,
+              "mobileTopRow": 0,
+              "responsiveBehavior": "fill",
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 0,
+              "maxDynamicHeight": 9000,
+              "minDynamicHeight": 4,
+              "flexLayers": [],
+              "meta": {},
+              "componentHeight": 170,
+              "componentWidth": 255,
+              "type": "CANVAS_WIDGET"
+            },
+            "containerSectionRight": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "mobileBottomRow": 37,
+              "widgetName": "containerSectionRight",
+              "borderColor": "#E0DEDE",
+              "isCanvas": true,
+              "topRow": 30,
+              "bottomRow": 47,
+              "parentRowSpace": 10,
+              "shouldScrollContents": true,
+              "mobileRightColumn": 15,
+              "animateLoading": true,
+              "parentColumnSpace": 17,
+              "leftColumn": 33,
+              "borderWidth": "1",
+              "flexVerticalAlignment": "stretch",
+              "key": "xqvebn6ivt",
+              "backgroundColor": "#FFFFFF",
+              "rightColumn": 63,
+              "dynamicHeight": "FIXED",
+              "widgetId": "uw6hr9rju8",
+              "containerStyle": "card",
+              "minWidth": 450,
+              "isVisible": true,
+              "isLoading": false,
+              "mobileTopRow": 27,
+              "responsiveBehavior": "fill",
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 0,
+              "maxDynamicHeight": 9000,
+              "minDynamicHeight": 10,
+              "meta": {},
+              "componentHeight": 170,
+              "componentWidth": 510,
+              "type": "CONTAINER_WIDGET"
+            },
+            "txt_log_left": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "mobileBottomRow": 5,
+              "widgetName": "txt_log_left",
+              "topRow": 1,
+              "bottomRow": 10,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 24,
+              "animateLoading": true,
+              "overflow": "NONE",
+              "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+              "parentColumnSpace": 7.65625,
+              "leftColumn": 1,
+              "shouldTruncate": false,
+              "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "text": "Left text is:\n{{txt_static_left.text}}\n{{txt_dynamic_left.text}}",
+              "key": "g4kizrfvnz",
+              "rightColumn": 18,
+              "textAlign": "LEFT",
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "y3s2g1c5zz",
+              "minWidth": 450,
+              "isVisible": true,
+              "fontStyle": "BOLD",
+              "textColor": "#231F20",
+              "isLoading": false,
+              "mobileTopRow": 1,
+              "responsiveBehavior": "fill",
+              "originalTopRow": 1,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 8,
+              "maxDynamicHeight": 9000,
+              "originalBottomRow": 10,
+              "fontSize": "1rem",
+              "minDynamicHeight": 4,
+              "value": "{{ txt_log_left.text }}",
+              "meta": {},
+              "componentHeight": 90,
+              "componentWidth": 130.15625,
+              "type": "TEXT_WIDGET"
+            },
+            "txt_log_leftCopy": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "mobileBottomRow": 5,
+              "widgetName": "txt_log_leftCopy",
+              "topRow": 1,
+              "bottomRow": 8,
+              "parentRowSpace": 10,
+              "mobileRightColumn": 24,
+              "animateLoading": true,
+              "overflow": "NONE",
+              "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+              "parentColumnSpace": 7.65625,
+              "leftColumn": 34,
+              "shouldTruncate": false,
+              "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "text": "Right text is:\n{{txt_static_right.text}}\n{{txt_dynamic_right.text}}\n",
+              "key": "g4kizrfvnz",
+              "rightColumn": 59,
+              "textAlign": "LEFT",
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "5m3vf11p5u",
+              "minWidth": 450,
+              "isVisible": true,
+              "fontStyle": "BOLD",
+              "textColor": "#231F20",
+              "isLoading": false,
+              "mobileTopRow": 1,
+              "responsiveBehavior": "fill",
+              "originalTopRow": 1,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 8,
+              "maxDynamicHeight": 9000,
+              "originalBottomRow": 10,
+              "fontSize": "1rem",
+              "minDynamicHeight": 4,
+              "value": "{{ txt_log_leftCopy.text }}",
+              "meta": {},
+              "componentHeight": 70,
+              "componentWidth": 191.40625,
+              "type": "TEXT_WIDGET"
+            },
+            "Canvas2": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "mobileBottomRow": 100,
+              "widgetName": "Canvas2",
+              "topRow": 0,
+              "bottomRow": 210,
+              "parentRowSpace": 1,
+              "canExtend": false,
+              "minHeight": 100,
+              "mobileRightColumn": 408,
+              "parentColumnSpace": 1,
+              "leftColumn": 0,
+              "key": "isxwoxpkra",
+              "rightColumn": 408,
+              "dynamicHeight": "AUTO_HEIGHT",
+              "widgetId": "pbhfl6v7u8",
+              "containerStyle": "none",
+              "minWidth": 450,
+              "isVisible": true,
+              "isLoading": false,
+              "mobileTopRow": 0,
+              "responsiveBehavior": "fill",
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 0,
+              "maxDynamicHeight": 9000,
+              "minDynamicHeight": 4,
+              "flexLayers": [],
+              "meta": {},
+              "componentHeight": 210,
+              "componentWidth": 408,
+              "type": "CANVAS_WIDGET"
+            },
+            "containerLogs": {
+              "ENTITY_TYPE": "WIDGET",
+              "needsErrorInfo": false,
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "mobileBottomRow": 49,
+              "widgetName": "containerLogs",
+              "borderColor": "#E0DEDE",
+              "isCanvas": true,
+              "topRow": 49,
+              "bottomRow": 70,
+              "parentRowSpace": 10,
+              "shouldScrollContents": true,
+              "mobileRightColumn": 26,
+              "animateLoading": true,
+              "parentColumnSpace": 17,
+              "leftColumn": 2,
+              "borderWidth": "1",
+              "flexVerticalAlignment": "stretch",
+              "key": "xqvebn6ivt",
+              "backgroundColor": "#FFFFFF",
+              "rightColumn": 63,
+              "dynamicHeight": "FIXED",
+              "widgetId": "gaswdfeyvz",
+              "containerStyle": "card",
+              "minWidth": 450,
+              "isVisible": true,
+              "isLoading": false,
+              "mobileTopRow": 39,
+              "responsiveBehavior": "fill",
+              "originalTopRow": 52,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "mobileLeftColumn": 2,
+              "maxDynamicHeight": 9000,
+              "originalBottomRow": 89,
+              "minDynamicHeight": 10,
+              "meta": {},
+              "componentHeight": 210,
+              "componentWidth": 1037,
+              "type": "CONTAINER_WIDGET"
+            },
+            "appsmith": {
+              "user": {
+                "email": "peterjaberau@gmail.com",
+                "username": "peterjaberau@gmail.com",
+                "name": "Peter Jaber",
+                "useCase": "personal project",
+                "enableTelemetry": true,
+                "roles": [
+                  "Upgrade to business plan to access roles and groups for conditional business logic"
+                ],
+                "groups": [
+                  "Upgrade to business plan to access roles and groups for conditional business logic"
+                ],
+                "accountNonExpired": true,
+                "accountNonLocked": true,
+                "credentialsNonExpired": true,
+                "emptyInstance": false,
+                "isAnonymous": false,
+                "isEnabled": true,
+                "isSuperUser": true,
+                "isConfigurable": true,
+                "adminSettingsVisible": false,
+                "isIntercomConsentGiven": false
+              },
+              "URL": {
+                "fullPath": "https://dev.appsmith.com/app/widget-dev/page1-68b44443eb513e051addbe4b/edit/widgets/bvqcrxkaum",
+                "host": "dev.appsmith.com",
+                "hostname": "dev.appsmith.com",
+                "queryParams": {},
+                "protocol": "https:",
+                "pathname": "/app/widget-dev/page1-68b44443eb513e051addbe4b/edit/widgets/bvqcrxkaum",
+                "port": "",
+                "hash": ""
+              },
+              "store": {
+                "{{}}": "",
+                "": "",
+                "var_left": "Dynamic Left: STATIC text from Right Container",
+                "var_right": "Dynamic Right: STATIC text from Left Container"
+              },
+              "geolocation": {
+                "canBeRequested": true,
+                "currentPosition": {}
+              },
+              "workflows": {},
+              "mode": "EDIT",
+              "theme": {
+                "colors": {
+                  "primaryColor": "#553DE9",
+                  "backgroundColor": "#F8FAFC"
+                },
+                "borderRadius": {
+                  "appBorderRadius": "0.375rem"
+                },
+                "boxShadow": {
+                  "appBoxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
+                },
+                "fontFamily": {
+                  "appFont": "System Default"
+                }
+              },
+              "currentPageName": "Page1",
+              "workspaceName": "Peter's apps",
+              "appName": "widget-dev",
+              "currentEnvironmentName": "",
+              "ENTITY_TYPE": "APPSMITH"
+            }
+          },
+          "configTree": {
+            "MainContainer": {
+              "widgetId": "0",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [],
+              "logBlackList": {},
+              "bindingPaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "backgroundColor": {
+                  "type": "TEXT"
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "CANVAS_WIDGET",
+              "dynamicTriggerPathList": [],
+              "isMetaPropDirty": false
+            },
+            "btn_left_left": {
+              "widgetId": "bvqcrxkaum",
+              "defaultProps": {},
+              "defaultMetaProps": [
+                "recaptchaToken"
+              ],
+              "dynamicBindingPathList": [
+                {
+                  "key": "buttonColor"
+                },
+                {
+                  "key": "borderRadius"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "recaptchaToken": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "triggerPaths": {
+                "onClick": true
+              },
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT"
+                },
+                "tooltip": {
+                  "type": "TEXT"
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "isDisabled": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "googleRecaptchaKey": {
+                  "type": "TEXT"
+                },
+                "recaptchaType": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "V3",
+                      "V2"
+                    ],
+                    "default": "V3"
+                  }
+                },
+                "disabledWhenInvalid": {
+                  "type": "BOOLEAN"
+                },
+                "resetFormOnClick": {
+                  "type": "BOOLEAN"
+                },
+                "buttonVariant": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "PRIMARY",
+                      "SECONDARY",
+                      "TERTIARY"
+                    ],
+                    "default": "PRIMARY"
+                  }
+                },
+                "iconName": {
+                  "type": "TEXT"
+                },
+                "placement": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "START",
+                      "BETWEEN",
+                      "CENTER"
+                    ],
+                    "default": "CENTER"
+                  }
+                },
+                "buttonColor": {
+                  "type": "TEXT"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "BUTTON_WIDGET",
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
+              "__setters": {
+                "setVisibility": {
+                  "path": "btn_left_left.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "btn_left_left.isDisabled",
+                  "type": "boolean"
+                },
+                "setLabel": {
+                  "path": "btn_left_left.text",
+                  "type": "string"
+                },
+                "setColor": {
+                  "path": "btn_left_left.buttonColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "btn_left_reset": {
+              "widgetId": "v68er04mr2",
+              "defaultProps": {},
+              "defaultMetaProps": [
+                "recaptchaToken"
+              ],
+              "dynamicBindingPathList": [
+                {
+                  "key": "buttonColor"
+                },
+                {
+                  "key": "borderRadius"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "recaptchaToken": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "triggerPaths": {
+                "onClick": true
+              },
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT"
+                },
+                "tooltip": {
+                  "type": "TEXT"
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "isDisabled": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "googleRecaptchaKey": {
+                  "type": "TEXT"
+                },
+                "recaptchaType": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "V3",
+                      "V2"
+                    ],
+                    "default": "V3"
+                  }
+                },
+                "disabledWhenInvalid": {
+                  "type": "BOOLEAN"
+                },
+                "resetFormOnClick": {
+                  "type": "BOOLEAN"
+                },
+                "buttonVariant": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "PRIMARY",
+                      "SECONDARY",
+                      "TERTIARY"
+                    ],
+                    "default": "PRIMARY"
+                  }
+                },
+                "iconName": {
+                  "type": "TEXT"
+                },
+                "placement": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "START",
+                      "BETWEEN",
+                      "CENTER"
+                    ],
+                    "default": "CENTER"
+                  }
+                },
+                "buttonColor": {
+                  "type": "TEXT"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "BUTTON_WIDGET",
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
+              "__setters": {
+                "setVisibility": {
+                  "path": "btn_left_reset.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "btn_left_reset.isDisabled",
+                  "type": "boolean"
+                },
+                "setLabel": {
+                  "path": "btn_left_reset.text",
+                  "type": "string"
+                },
+                "setColor": {
+                  "path": "btn_left_reset.buttonColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "btn_right_reset": {
+              "widgetId": "250dog341d",
+              "defaultProps": {},
+              "defaultMetaProps": [
+                "recaptchaToken"
+              ],
+              "dynamicBindingPathList": [
+                {
+                  "key": "buttonColor"
+                },
+                {
+                  "key": "borderRadius"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "recaptchaToken": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "triggerPaths": {
+                "onClick": true
+              },
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT"
+                },
+                "tooltip": {
+                  "type": "TEXT"
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "isDisabled": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "googleRecaptchaKey": {
+                  "type": "TEXT"
+                },
+                "recaptchaType": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "V3",
+                      "V2"
+                    ],
+                    "default": "V3"
+                  }
+                },
+                "disabledWhenInvalid": {
+                  "type": "BOOLEAN"
+                },
+                "resetFormOnClick": {
+                  "type": "BOOLEAN"
+                },
+                "buttonVariant": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "PRIMARY",
+                      "SECONDARY",
+                      "TERTIARY"
+                    ],
+                    "default": "PRIMARY"
+                  }
+                },
+                "iconName": {
+                  "type": "TEXT"
+                },
+                "placement": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "START",
+                      "BETWEEN",
+                      "CENTER"
+                    ],
+                    "default": "CENTER"
+                  }
+                },
+                "buttonColor": {
+                  "type": "TEXT"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "BUTTON_WIDGET",
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
+              "__setters": {
+                "setVisibility": {
+                  "path": "btn_right_reset.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "btn_right_reset.isDisabled",
+                  "type": "boolean"
+                },
+                "setLabel": {
+                  "path": "btn_right_reset.text",
+                  "type": "string"
+                },
+                "setColor": {
+                  "path": "btn_right_reset.buttonColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "btn_right_right": {
+              "widgetId": "5trspcxhy2",
+              "defaultProps": {},
+              "defaultMetaProps": [
+                "recaptchaToken"
+              ],
+              "dynamicBindingPathList": [
+                {
+                  "key": "buttonColor"
+                },
+                {
+                  "key": "borderRadius"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "recaptchaToken": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "triggerPaths": {
+                "onClick": true
+              },
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT"
+                },
+                "tooltip": {
+                  "type": "TEXT"
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "isDisabled": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "googleRecaptchaKey": {
+                  "type": "TEXT"
+                },
+                "recaptchaType": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "V3",
+                      "V2"
+                    ],
+                    "default": "V3"
+                  }
+                },
+                "disabledWhenInvalid": {
+                  "type": "BOOLEAN"
+                },
+                "resetFormOnClick": {
+                  "type": "BOOLEAN"
+                },
+                "buttonVariant": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "PRIMARY",
+                      "SECONDARY",
+                      "TERTIARY"
+                    ],
+                    "default": "PRIMARY"
+                  }
+                },
+                "iconName": {
+                  "type": "TEXT"
+                },
+                "placement": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "START",
+                      "BETWEEN",
+                      "CENTER"
+                    ],
+                    "default": "CENTER"
+                  }
+                },
+                "buttonColor": {
+                  "type": "TEXT"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "BUTTON_WIDGET",
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
+              "__setters": {
+                "setVisibility": {
+                  "path": "btn_right_right.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "btn_right_right.isDisabled",
+                  "type": "boolean"
+                },
+                "setLabel": {
+                  "path": "btn_right_right.text",
+                  "type": "string"
+                },
+                "setColor": {
+                  "path": "btn_right_right.buttonColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "btn_left_right": {
+              "widgetId": "ydlupoo8k2",
+              "defaultProps": {},
+              "defaultMetaProps": [
+                "recaptchaToken"
+              ],
+              "dynamicBindingPathList": [
+                {
+                  "key": "buttonColor"
+                },
+                {
+                  "key": "borderRadius"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "recaptchaToken": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "triggerPaths": {
+                "onClick": true
+              },
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT"
+                },
+                "tooltip": {
+                  "type": "TEXT"
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "isDisabled": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "googleRecaptchaKey": {
+                  "type": "TEXT"
+                },
+                "recaptchaType": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "V3",
+                      "V2"
+                    ],
+                    "default": "V3"
+                  }
+                },
+                "disabledWhenInvalid": {
+                  "type": "BOOLEAN"
+                },
+                "resetFormOnClick": {
+                  "type": "BOOLEAN"
+                },
+                "buttonVariant": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "PRIMARY",
+                      "SECONDARY",
+                      "TERTIARY"
+                    ],
+                    "default": "PRIMARY"
+                  }
+                },
+                "iconName": {
+                  "type": "TEXT"
+                },
+                "placement": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "START",
+                      "BETWEEN",
+                      "CENTER"
+                    ],
+                    "default": "CENTER"
+                  }
+                },
+                "buttonColor": {
+                  "type": "TEXT"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "BUTTON_WIDGET",
+              "dynamicPropertyPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
+              "__setters": {
+                "setVisibility": {
+                  "path": "btn_left_right.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "btn_left_right.isDisabled",
+                  "type": "boolean"
+                },
+                "setLabel": {
+                  "path": "btn_left_right.text",
+                  "type": "string"
+                },
+                "setColor": {
+                  "path": "btn_left_right.buttonColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "btn_right_left": {
+              "widgetId": "ltfsabiaq1",
+              "defaultProps": {},
+              "defaultMetaProps": [
+                "recaptchaToken"
+              ],
+              "dynamicBindingPathList": [
+                {
+                  "key": "buttonColor"
+                },
+                {
+                  "key": "borderRadius"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "recaptchaToken": "TEMPLATE",
+                "buttonColor": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "tooltip": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "isDisabled": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "googleRecaptchaKey": "TEMPLATE",
+                "recaptchaType": "TEMPLATE",
+                "disabledWhenInvalid": "TEMPLATE",
+                "resetFormOnClick": "TEMPLATE",
+                "buttonVariant": "TEMPLATE",
+                "iconName": "TEMPLATE",
+                "placement": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "triggerPaths": {
+                "onClick": true
+              },
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT"
+                },
+                "tooltip": {
+                  "type": "TEXT"
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "isDisabled": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "googleRecaptchaKey": {
+                  "type": "TEXT"
+                },
+                "recaptchaType": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "V3",
+                      "V2"
+                    ],
+                    "default": "V3"
+                  }
+                },
+                "disabledWhenInvalid": {
+                  "type": "BOOLEAN"
+                },
+                "resetFormOnClick": {
+                  "type": "BOOLEAN"
+                },
+                "buttonVariant": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "PRIMARY",
+                      "SECONDARY",
+                      "TERTIARY"
+                    ],
+                    "default": "PRIMARY"
+                  }
+                },
+                "iconName": {
+                  "type": "TEXT"
+                },
+                "placement": {
+                  "type": "TEXT",
+                  "params": {
+                    "allowedValues": [
+                      "START",
+                      "BETWEEN",
+                      "CENTER"
+                    ],
+                    "default": "CENTER"
+                  }
+                },
+                "buttonColor": {
+                  "type": "TEXT"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "BUTTON_WIDGET",
+              "dynamicPropertyPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
+              "__setters": {
+                "setVisibility": {
+                  "path": "btn_right_left.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "btn_right_left.isDisabled",
+                  "type": "boolean"
+                },
+                "setLabel": {
+                  "path": "btn_right_left.text",
+                  "type": "string"
+                },
+                "setColor": {
+                  "path": "btn_right_left.buttonColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "Canvas1": {
+              "widgetId": "71mrzuu4q7",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "backgroundColor": {
+                  "type": "TEXT"
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "CANVAS_WIDGET",
+              "isMetaPropDirty": false
+            },
+            "containerToolbar": {
+              "widgetId": "nsadyy1bzy",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "backgroundColor": {
+                  "type": "TEXT"
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "CONTAINER_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "containerToolbar.isVisible",
+                  "type": "boolean"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "txt_static_left": {
+              "widgetId": "ujgcje0omy",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "truncateButtonColor"
+                },
+                {
+                  "key": "fontFamily"
+                },
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "value"
+                }
+              ],
+              "logBlackList": {
+                "value": true
+              },
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "value": "TEMPLATE",
+                "truncateButtonColor": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT",
+                  "params": {
+                    "limitLineBreaks": true
+                  }
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "disableLink": {
+                  "type": "BOOLEAN"
+                },
+                "fontFamily": {
+                  "type": "TEXT"
+                },
+                "fontSize": {
+                  "type": "TEXT"
+                },
+                "textColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {}
+                  }
+                },
+                "backgroundColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {},
+                    "expected": {
+                      "type": "string (HTML color name or HEX value)",
+                      "example": "red | #9C0D38",
+                      "autocompleteDataType": "STRING"
+                    }
+                  }
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "textAlign": {
+                  "type": "TEXT"
+                },
+                "fontStyle": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "TEXT_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "txt_static_left.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "txt_static_left.isDisabled",
+                  "type": "boolean"
+                },
+                "setRequired": {
+                  "path": "txt_static_left.isRequired",
+                  "type": "boolean"
+                },
+                "setText": {
+                  "path": "txt_static_left.text",
+                  "type": "string"
+                },
+                "setTextColor": {
+                  "path": "txt_static_left.textColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "txt_dynamic_left": {
+              "widgetId": "is0fwucchq",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "truncateButtonColor"
+                },
+                {
+                  "key": "fontFamily"
+                },
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "text"
+                },
+                {
+                  "key": "value"
+                }
+              ],
+              "logBlackList": {
+                "value": true
+              },
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "value": "TEMPLATE",
+                "truncateButtonColor": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT",
+                  "params": {
+                    "limitLineBreaks": true
+                  }
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "disableLink": {
+                  "type": "BOOLEAN"
+                },
+                "fontFamily": {
+                  "type": "TEXT"
+                },
+                "fontSize": {
+                  "type": "TEXT"
+                },
+                "textColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {}
+                  }
+                },
+                "backgroundColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {},
+                    "expected": {
+                      "type": "string (HTML color name or HEX value)",
+                      "example": "red | #9C0D38",
+                      "autocompleteDataType": "STRING"
+                    }
+                  }
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "textAlign": {
+                  "type": "TEXT"
+                },
+                "fontStyle": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "TEXT_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "txt_dynamic_left.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "txt_dynamic_left.isDisabled",
+                  "type": "boolean"
+                },
+                "setRequired": {
+                  "path": "txt_dynamic_left.isRequired",
+                  "type": "boolean"
+                },
+                "setText": {
+                  "path": "txt_dynamic_left.text",
+                  "type": "string"
+                },
+                "setTextColor": {
+                  "path": "txt_dynamic_left.textColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "Canvas1Copy": {
+              "widgetId": "an70evwb09",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "backgroundColor": {
+                  "type": "TEXT"
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "CANVAS_WIDGET",
+              "isMetaPropDirty": false
+            },
+            "containerSectionLeft": {
+              "widgetId": "cd1xlchbgb",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "backgroundColor": {
+                  "type": "TEXT"
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "CONTAINER_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "containerSectionLeft.isVisible",
+                  "type": "boolean"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "txt_dynamic_right": {
+              "widgetId": "weq4w5wk5m",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "truncateButtonColor"
+                },
+                {
+                  "key": "fontFamily"
+                },
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "text"
+                },
+                {
+                  "key": "value"
+                }
+              ],
+              "logBlackList": {
+                "value": true
+              },
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "value": "TEMPLATE",
+                "truncateButtonColor": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT",
+                  "params": {
+                    "limitLineBreaks": true
+                  }
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "disableLink": {
+                  "type": "BOOLEAN"
+                },
+                "fontFamily": {
+                  "type": "TEXT"
+                },
+                "fontSize": {
+                  "type": "TEXT"
+                },
+                "textColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {}
+                  }
+                },
+                "backgroundColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {},
+                    "expected": {
+                      "type": "string (HTML color name or HEX value)",
+                      "example": "red | #9C0D38",
+                      "autocompleteDataType": "STRING"
+                    }
+                  }
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "textAlign": {
+                  "type": "TEXT"
+                },
+                "fontStyle": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "TEXT_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "txt_dynamic_right.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "txt_dynamic_right.isDisabled",
+                  "type": "boolean"
+                },
+                "setRequired": {
+                  "path": "txt_dynamic_right.isRequired",
+                  "type": "boolean"
+                },
+                "setText": {
+                  "path": "txt_dynamic_right.text",
+                  "type": "string"
+                },
+                "setTextColor": {
+                  "path": "txt_dynamic_right.textColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "txt_static_right": {
+              "widgetId": "k1j5882wmt",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "truncateButtonColor"
+                },
+                {
+                  "key": "fontFamily"
+                },
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "value"
+                }
+              ],
+              "logBlackList": {
+                "value": true
+              },
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "value": "TEMPLATE",
+                "truncateButtonColor": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT",
+                  "params": {
+                    "limitLineBreaks": true
+                  }
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "disableLink": {
+                  "type": "BOOLEAN"
+                },
+                "fontFamily": {
+                  "type": "TEXT"
+                },
+                "fontSize": {
+                  "type": "TEXT"
+                },
+                "textColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {}
+                  }
+                },
+                "backgroundColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {},
+                    "expected": {
+                      "type": "string (HTML color name or HEX value)",
+                      "example": "red | #9C0D38",
+                      "autocompleteDataType": "STRING"
+                    }
+                  }
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "textAlign": {
+                  "type": "TEXT"
+                },
+                "fontStyle": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "TEXT_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "txt_static_right.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "txt_static_right.isDisabled",
+                  "type": "boolean"
+                },
+                "setRequired": {
+                  "path": "txt_static_right.isRequired",
+                  "type": "boolean"
+                },
+                "setText": {
+                  "path": "txt_static_right.text",
+                  "type": "string"
+                },
+                "setTextColor": {
+                  "path": "txt_static_right.textColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "Canvas1CopyCopy": {
+              "widgetId": "orlqu2v4v5",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "backgroundColor": {
+                  "type": "TEXT"
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "CANVAS_WIDGET",
+              "isMetaPropDirty": false
+            },
+            "containerSectionRight": {
+              "widgetId": "uw6hr9rju8",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "backgroundColor": {
+                  "type": "TEXT"
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "CONTAINER_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "containerSectionRight.isVisible",
+                  "type": "boolean"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "txt_log_left": {
+              "widgetId": "y3s2g1c5zz",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "truncateButtonColor"
+                },
+                {
+                  "key": "fontFamily"
+                },
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "text"
+                },
+                {
+                  "key": "value"
+                }
+              ],
+              "logBlackList": {
+                "value": true
+              },
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "value": "TEMPLATE",
+                "truncateButtonColor": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT",
+                  "params": {
+                    "limitLineBreaks": true
+                  }
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "disableLink": {
+                  "type": "BOOLEAN"
+                },
+                "fontFamily": {
+                  "type": "TEXT"
+                },
+                "fontSize": {
+                  "type": "TEXT"
+                },
+                "textColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {}
+                  }
+                },
+                "backgroundColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {},
+                    "expected": {
+                      "type": "string (HTML color name or HEX value)",
+                      "example": "red | #9C0D38",
+                      "autocompleteDataType": "STRING"
+                    }
+                  }
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "textAlign": {
+                  "type": "TEXT"
+                },
+                "fontStyle": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "TEXT_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "txt_log_left.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "txt_log_left.isDisabled",
+                  "type": "boolean"
+                },
+                "setRequired": {
+                  "path": "txt_log_left.isRequired",
+                  "type": "boolean"
+                },
+                "setText": {
+                  "path": "txt_log_left.text",
+                  "type": "string"
+                },
+                "setTextColor": {
+                  "path": "txt_log_left.textColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "txt_log_leftCopy": {
+              "widgetId": "5m3vf11p5u",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "truncateButtonColor"
+                },
+                {
+                  "key": "fontFamily"
+                },
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "text"
+                },
+                {
+                  "key": "value"
+                }
+              ],
+              "logBlackList": {
+                "value": true
+              },
+              "bindingPaths": {
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "value": "TEMPLATE",
+                "truncateButtonColor": "TEMPLATE",
+                "fontFamily": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "text": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "disableLink": "TEMPLATE",
+                "fontSize": "TEMPLATE",
+                "textColor": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "textAlign": "TEMPLATE",
+                "fontStyle": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "text": {
+                  "type": "TEXT",
+                  "params": {
+                    "limitLineBreaks": true
+                  }
+                },
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "disableLink": {
+                  "type": "BOOLEAN"
+                },
+                "fontFamily": {
+                  "type": "TEXT"
+                },
+                "fontSize": {
+                  "type": "TEXT"
+                },
+                "textColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {}
+                  }
+                },
+                "backgroundColor": {
+                  "type": "TEXT",
+                  "params": {
+                    "regex": {},
+                    "expected": {
+                      "type": "string (HTML color name or HEX value)",
+                      "example": "red | #9C0D38",
+                      "autocompleteDataType": "STRING"
+                    }
+                  }
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "textAlign": {
+                  "type": "TEXT"
+                },
+                "fontStyle": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "TEXT_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "txt_log_leftCopy.isVisible",
+                  "type": "boolean"
+                },
+                "setDisabled": {
+                  "path": "txt_log_leftCopy.isDisabled",
+                  "type": "boolean"
+                },
+                "setRequired": {
+                  "path": "txt_log_leftCopy.isRequired",
+                  "type": "boolean"
+                },
+                "setText": {
+                  "path": "txt_log_leftCopy.text",
+                  "type": "string"
+                },
+                "setTextColor": {
+                  "path": "txt_log_leftCopy.textColor",
+                  "type": "string"
+                }
+              },
+              "isMetaPropDirty": false
+            },
+            "Canvas2": {
+              "widgetId": "pbhfl6v7u8",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "backgroundColor": {
+                  "type": "TEXT"
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "CANVAS_WIDGET",
+              "isMetaPropDirty": false
+            },
+            "containerLogs": {
+              "widgetId": "gaswdfeyvz",
+              "defaultProps": {},
+              "defaultMetaProps": [],
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "logBlackList": {},
+              "bindingPaths": {
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE",
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE"
+              },
+              "reactivePaths": {
+                "borderRadius": "TEMPLATE",
+                "boxShadow": "TEMPLATE",
+                "isVisible": "TEMPLATE",
+                "animateLoading": "TEMPLATE",
+                "backgroundColor": "TEMPLATE",
+                "borderColor": "TEMPLATE",
+                "borderWidth": "TEMPLATE"
+              },
+              "triggerPaths": {},
+              "validationPaths": {
+                "isVisible": {
+                  "type": "BOOLEAN"
+                },
+                "animateLoading": {
+                  "type": "BOOLEAN"
+                },
+                "backgroundColor": {
+                  "type": "TEXT"
+                },
+                "borderColor": {
+                  "type": "TEXT"
+                },
+                "borderWidth": {
+                  "type": "NUMBER"
+                },
+                "borderRadius": {
+                  "type": "TEXT"
+                },
+                "boxShadow": {
+                  "type": "TEXT"
+                }
+              },
+              "dependencyMap": {},
+              "ENTITY_TYPE": "WIDGET",
+              "privateWidgets": {},
+              "propertyOverrideDependency": {},
+              "overridingPropertyPaths": {},
+              "type": "CONTAINER_WIDGET",
+              "dynamicTriggerPathList": [],
+              "__setters": {
+                "setVisibility": {
+                  "path": "containerLogs.isVisible",
+                  "type": "boolean"
+                }
+              },
+              "isMetaPropDirty": false
+            }
+          }
+        }
+      }
+    ]
+  },
+
+  {
     EvaluationsSaga: [
       {
         evaluateAndExecuteDynamicTrigger: {
@@ -12033,3 +15248,16 @@ const workers = [
     },
   },
 ]
+
+
+
+
+// dataTreeSelectors
+const getUnevaluatedDataTree = {
+  getActionsFromUnevaluatedDataTree: {
+    actions: {
+      "dataTree": {},
+      "configTree": {}
+    }
+  }
+}
