@@ -23,6 +23,12 @@
       }
     ],
     "paths": {
+      "#illa": ["./src/illa"],
+      "#illa/*": ["./src/illa/*"],
+
+      "@/public": ["./src/illa/packages/public"],
+      "@/public/*": ["./src/illa/packages/public/*"],
+
       "#actors": ["./src/actors"],
       "#actors/*": ["./src/actors/*"],
 
