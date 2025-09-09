@@ -1,1 +1,0 @@
-export { getScrollbarWidth } from "./getScrollbarWidth";

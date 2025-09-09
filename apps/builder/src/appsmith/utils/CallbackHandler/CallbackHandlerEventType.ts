@@ -1,6 +1,0 @@
-export enum CallbackHandlerEventType {
-  MAX_HEIGHT_LIMIT_FOCUS,
-  MAX_HEIGHT_LIMIT_BLUR,
-  MIN_HEIGHT_LIMIT_FOCUS,
-  MIN_HEIGHT_LIMIT_BLUR,
-}

@@ -1,4 +1,4 @@
-import { createMachine, setup, assign, spawnChild } from "xstate"
+import { createMachine, setup, assign, spawnChild, fromPromise } from "xstate"
 
 export const moveHelperMachine = setup({
   types: {} as any,
@@ -10,3 +10,4 @@ export const moveHelperMachine = setup({
     return {}
   },
 })
+

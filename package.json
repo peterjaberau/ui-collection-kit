@@ -10,6 +10,12 @@
     "builder": "pnpm --filter \"./apps/builder\"",
     "start-builder": "pnpm builder dev",
 
+    "interactive-doc": "pnpm --filter \"./apps/interactive-doc\"",
+    "start-interactive-doc": "pnpm interactive-doc dev",
+
+
+
+
 
     "app-pro": "pnpm --filter \"./apps/app-pro\"",
     "start-app-pro": "pnpm app-pro dev",

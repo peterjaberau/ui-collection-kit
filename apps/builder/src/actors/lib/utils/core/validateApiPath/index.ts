@@ -1,1 +1,0 @@
-export { validateApiPath } from "./validateApiPath";
