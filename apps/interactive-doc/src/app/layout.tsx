@@ -8,9 +8,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning style={{ display: 'flex', minHeight: '100dvh', position: 'relative'}}>
         <Suspense>
-            <ChakraProvider>{children}</ChakraProvider>
+            <ChakraProvider>
+              <div style={{ width: '100%' }}>{children}</div>
+            </ChakraProvider>
         </Suspense>
       </body>
     </html>

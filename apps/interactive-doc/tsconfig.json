@@ -23,6 +23,12 @@
       }
     ],
     "paths": {
+      "#dockview/*": ["./src/modules/dockview/view/*"],
+      "#dockview": ["./src/modules/dockview/view"],
+
+      "#demos/*": ["./src/demos/*"],
+      "#demos": ["./src/demos"],
+
       "#core/*": ["./src/core/*"],
       "#core": ["./src/core"],
       "#core-utils/*": ["./src/core/utils/*"],
