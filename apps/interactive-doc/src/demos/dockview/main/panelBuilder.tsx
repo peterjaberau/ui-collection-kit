@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { DockviewApi } from "#dockview"
 import * as React from "react"
 import { nextId } from "./defaultLayout"

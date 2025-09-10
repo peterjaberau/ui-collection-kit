@@ -4,3 +4,4 @@ coverage
 .next
 build
 *.hbs
+/apps/interactive-doc/src/demos/dockview/main/controls.tsx
