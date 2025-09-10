@@ -23,6 +23,10 @@
       }
     ],
     "paths": {
+      "#modules/*": ["./src/modules/*"],
+      "#modules": ["./src/modules"],
+
+
       "#dockview/*": ["./src/modules/dockview/view/*"],
       "#dockview": ["./src/modules/dockview/view"],
 
@@ -40,8 +44,6 @@
       "#common/*": ["./src/common/*"],
       "#common": ["./src/common"],
 
-      "#modules/*": ["./src/modules/*"],
-      "#modules": ["./src/modules"],
 
       "@/*": ["./*"],
       "~/*": ["./public/*"],
