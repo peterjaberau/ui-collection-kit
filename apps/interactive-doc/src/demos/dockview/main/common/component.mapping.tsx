@@ -7,7 +7,7 @@ import { FaLayerGroup } from "react-icons/fa6"
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa"
 import { FiMaximize, FiMinimize } from "react-icons/fi"
 
-import { IconButton } from "@chakra-ui/react"
+import { Button, IconButton } from "@chakra-ui/react"
 import * as React from "react"
 
 export const iconMapping: any = {
@@ -46,5 +46,24 @@ export const IconButtonRender = (props: IconButtonRenderProps) => {
     <IconButton size={props.size || "sm"} variant={props.variant || "ghost"} {...props}>
       <IconRender name={props.name} />
     </IconButton>
+  )
+}
+
+
+
+export type ActionButtonRenderProps = {
+  text: string
+  onClick?: () => void
+  variant?: string | any
+  size?: string | any
+  [key: string]: any
+}
+
+export const ActionButtonRender = (props: ActionButtonRenderProps) => {
+
+  return (
+    <Button size={props.size || "sm"} variant={props.variant || "outline"} {...props}>
+      {props.text}
+    </Button>
   )
 }

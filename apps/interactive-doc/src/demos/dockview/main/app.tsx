@@ -92,19 +92,14 @@ const headerComponents = {
 }
 
 const DockViewApp = (props: { theme?: string }) => {
-  const { resolvedTheme } = useTheme()
-  const theme = useMemo(() => (resolvedTheme === "dark" ? themeDark : themeReplit), [resolvedTheme])
 
   const { sendToDockviewApi, dockviewApiContext } = useDockviewApi()
-
-
   const { api, panels, groups, activePanel, activeGroup, logLines } = dockviewApiContext
 
   const onReady = (event: DockviewReadyEvent) => {
     sendToDockviewApi({ type: "onReady", api: event.api })
   }
 
-  const [watermark, setWatermark] = React.useState<boolean>(false)
   const [showLogs, setShowLogs] = React.useState<boolean>(false)
   const [debug, setDebug] = React.useState<boolean>(false)
 
@@ -197,10 +192,7 @@ const DockViewApp = (props: { theme?: string }) => {
             borderRadius: "sm",
           }}
         >
-          <GridActions
-            toggleCustomWatermark={() => setWatermark(!watermark)}
-            hasCustomWatermark={watermark}
-          />
+          <GridActions/>
           {api && <PanelActions api={api} panels={panels} activePanel={activePanel} />}
           {api && <GroupActions api={api} groups={groups} activeGroup={activeGroup} />}
           <HStack w="full" justifyContent="flex-end">
@@ -254,7 +246,7 @@ const DockViewApp = (props: { theme?: string }) => {
                 leftHeaderActionsComponent={LeftControls}
                 prefixHeaderActionsComponent={PrefixHeaderControls}
                 onReady={onReady}
-                theme={theme}
+                theme={themeReplit}
               />
             </DebugContext.Provider>
           </Flex>

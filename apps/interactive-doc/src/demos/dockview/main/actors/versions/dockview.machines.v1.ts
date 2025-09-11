@@ -128,18 +128,6 @@ export const dockviewApiMachine = setup({
         }
       }
     },
-    apiAddPanel: ({ context, event }: any) => {
-      context.api?.addPanel({
-        id: `id_${Date.now().toString()}`,
-        component: event.payload?.nested ? "nested" : "default",
-        title: `Tab ${nextId()}`,
-        renderer: "always",
-
-      })
-    },
-    apiAddGroup: ({ context }) => {
-      context.api?.addGroup()
-    },
   },
   actors: {
     dockviewApiEvents,

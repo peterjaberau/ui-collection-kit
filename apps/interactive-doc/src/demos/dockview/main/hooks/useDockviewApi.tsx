@@ -1,3 +1,4 @@
+'use client'
 import { useSelector } from "@xstate/react"
 import { useDockview } from "./useDockview"
 
@@ -9,11 +10,6 @@ export function useDockviewApi() {
   const dockviewApiContext = dockviewApiState.context
   const sendToDockviewApi = dockviewApiRef.send
 
-  console.log('---dockviewApiRef----', {
-    dockviewApiRef,
-    dockviewApiContext,
-    dockviewApiState
-  })
 
   return {
     dockviewApiRef,

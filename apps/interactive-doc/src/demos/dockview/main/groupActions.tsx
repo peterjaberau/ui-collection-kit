@@ -2,30 +2,33 @@
 import { DockviewApi, DockviewGroupLocation, DockviewGroupPanel } from "#dockview"
 import * as React from "react"
 import { Button, HStack, Stack } from "@chakra-ui/react"
-
+import { useDockviewApi } from "./hooks/useDockviewApi"
 import { IconButtonRender } from "./common/component.mapping"
 
-const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewApi; activeGroup?: string }) => {
+const GroupAction = (props: { groupId: string }) => {
+  const { sendToDockviewApi, dockviewApiContext } = useDockviewApi()
+  const { api, activeGroup } = dockviewApiContext
+
   const onClick = () => {
-    props.api?.getGroup(props.groupId)?.focus()
+    api?.getGroup(props.groupId)?.focus()
   }
 
-  const isActive = props.activeGroup === props.groupId
+  const isActive = activeGroup === props.groupId
 
   const [group, setGroup] = React.useState<DockviewGroupPanel | undefined>(undefined)
 
   React.useEffect(() => {
-    const disposable = props.api.onDidLayoutFromJSON(() => {
+    const disposable = api.onDidLayoutFromJSON(() => {
       // @ts-ignore
-      setGroup(props.api.getGroup(props.groupId))
+      setGroup(api.getGroup(props.groupId))
     })
     // @ts-ignore
-    setGroup(props.api.getGroup(props.groupId))
+    setGroup(api.getGroup(props.groupId))
 
     return () => {
       disposable.dispose()
     }
-  }, [props.api, props.groupId])
+  }, [api, props.groupId])
 
   const [location, setLocation]: any = React.useState<any>(null)
   const [isMaximized, setIsMaximized]: any = React.useState<boolean>(false)
@@ -41,7 +44,7 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
       setLocation(event.location)
     })
 
-    const disposable2 = props.api.onDidMaximizedGroupChange(() => {
+    const disposable2 = api.onDidMaximizedGroupChange(() => {
       setIsMaximized(group.api.isMaximized())
     })
 
@@ -63,7 +66,7 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
   return (
     <Stack
       css={{
-        background: props?.api.getGroup(props.groupId)?.api.isActive ? "bg.error" : "bg.panel",
+        background: api.getGroup(props.groupId)?.api.isActive ? "bg.error" : "bg.panel",
         shadow: "sm",
         borderRadius: "sm",
         p: 1,
@@ -78,7 +81,7 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
           name="group"
           onClick={() => {
             if (group) {
-              props.api.addFloatingGroup(group, {
+              api.addFloatingGroup(group, {
                 width: 400,
                 height: 300,
                 x: 50,
@@ -97,7 +100,7 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
           variant="outline"
           onClick={() => {
             if (group) {
-              props.api.addPopoutGroup(group)
+              api.addPopoutGroup(group)
             }
           }}
         />
@@ -135,7 +138,7 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
           name={"close"}
           variant="outline"
           onClick={() => {
-            const panel = props.api?.getGroup(props.groupId)
+            const panel = api?.getGroup(props.groupId)
             panel?.api.close()
           }}
         />
@@ -144,11 +147,14 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
   )
 }
 
-export const GroupActions = (props: { groups: string[]; api: DockviewApi; activeGroup?: string }) => {
+export const GroupActions = () => {
+  const { sendToDockviewApi, dockviewApiContext } = useDockviewApi()
+  const { groups } = dockviewApiContext
+
   return (
     <HStack>
-      {props.groups.map((groupId) => {
-        return <GroupAction key={groupId} {...props} groupId={groupId} />
+      {groups.map((groupId: any) => {
+        return <GroupAction key={groupId} groupId={groupId} />
       })}
     </HStack>
   )

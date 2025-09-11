@@ -1,4 +1,4 @@
-import { createMachine, assign, setup, fromCallback, enqueueActions, raise } from "xstate"
+import { createMachine, assign, setup, fromCallback } from "xstate"
 import { DockviewApi } from "#dockview"
 import defaultConfig from "./dockview.store"
 
@@ -18,6 +18,41 @@ const applyDefaultLayout = (api: DockviewApi, defaultConfig: { panels: any[] }) 
   }
 }
 
+const dockviewApiEvents = fromCallback(({ sendBack, input }) => {
+  const { api, defaultConfig } = input as { api: DockviewApi; defaultConfig: { panels: any[] } }
+
+  const disposables = [
+    api.onDidAddPanel((event) => sendBack({ type: "onDidAddPanel", payload: event })),
+    api.onDidRemovePanel((event) => sendBack({ type: "onDidRemovePanel", payload: event })),
+    api.onDidActivePanelChange((event) => sendBack({ type: "onDidActivePanelChange", payload: event })),
+    api.onDidMovePanel((event) => sendBack({ type: "onDidMovePanel", payload: event })),
+
+    api.onDidAddGroup((event) => sendBack({ type: "onDidAddGroup", payload: event })),
+    api.onDidRemoveGroup((event) => sendBack({ type: "onDidRemoveGroup", payload: event })),
+    api.onDidActiveGroupChange((event) => sendBack({ type: "onDidActiveGroupChange", payload: event })),
+    api.onDidMaximizedGroupChange((event) => sendBack({ type: "onDidMaximizedGroupChange", payload: event })),
+  ]
+
+  const loadLayout = () => {
+    const state = localStorage.getItem("dv-demo-state")
+    if (state) {
+      try {
+        api.fromJSON(JSON.parse(state))
+        return
+      } catch {
+        localStorage.removeItem("dv-demo-state")
+      }
+      return
+    }
+    applyDefaultLayout(api, defaultConfig)
+  }
+
+  loadLayout()
+
+  return () => {
+    disposables.forEach((disposable) => disposable.dispose())
+  }
+})
 
 export const dockviewApiMachine = setup({
   types: {
@@ -25,111 +60,56 @@ export const dockviewApiMachine = setup({
     events: {} as any,
   } as any,
   actions: {
-    connectToApi: assign(({ context, event }: any) => {
-      console.log("--connectToApi----", event)
-      context.api = event.api
-    }),
-    mappingWithApi: assign(({ context, event }: any) => {
-      console.log("--mappingWithApi----", event)
-      context.api.onDidAddPanel(({ event }: any) => raise({ type: "onDidAddPanel", payload: event } as any))
-      context.api.onDidRemovePanel(({ event }: any) => raise({ type: "onDidRemovePanel", payload: event } as any))
-      context.api.onDidActivePanelChange(({ event }: any) =>
-        raise({ type: "onDidActivePanelChange", payload: event } as any),
-      )
-      // context.api.onDidMovePanel(({event}: any) => raise({ type: "onDidMovePanel", payload: event } as any))
-
-      context.api.onDidAddGroup(({ event }: any) => raise({ type: "onDidAddGroup", payload: event } as any))
-      context.api.onDidRemoveGroup(({ event }: any) => raise({ type: "onDidRemoveGroup", payload: event } as any))
-      context.api.onDidActiveGroupChange(({ event }: any) =>
-        raise({ type: "onDidActiveGroupChange", payload: event } as any),
-      )
-      // context.api.onDidMaximizedGroupChange(({event}: any) => raise({ type: "onDidMaximizedGroupChange", payload: event } as any))
-    }),
-    configurePanels: assign(({ context, event }: any) => {
-      // load from local storage
-      const state = localStorage.getItem("dv-demo-state")
-      if (state) {
-        try {
-          context.api.fromJSON(JSON.parse(state))
-          return
-        } catch {
-          localStorage.removeItem("dv-demo-state")
-        }
-        return
-      }
-      // not available in local storage, then load from default config
-      applyDefaultLayout(context.api, context.defaultConfig)
-
-    }),
-
-    //done
-    addPanelAction: assign(({ context, event }: any) => {
+    addPanel: ({ context, event }: any) => {
       context.api?.addPanel({
         id: `id_${Date.now().toString()}`,
         component: event.payload?.nested ? "nested" : "default",
         title: `Tab ${nextId()}`,
         renderer: "always",
+
       })
-    }),
-    removePanelAction: assign(({ context, event }: any) => {}),
-    activePanelChangeAction: assign(({ context, event }: any) => {}),
-    movePanelAction: assign(({ context, event }: any) => {}),
-
-    //done
-    addGroupAction: assign(({ context, event }: any) => {
+    },
+    addGroup: ({ context }) => {
       context.api?.addGroup()
-    }),
-    removeGroupAction: assign(({ context, event }: any) => {}),
-    activeGroupChangeAction: assign(({ context, event }: any) => {}),
-    maximizedGroupChangeAction: assign(({ context, event }: any) => {}),
+    },
 
-    //done
-    addPanelCompletion: assign(({ context, event }: any) => {
-      context.panels = [...context.panels, event.id]
-      context.logLines = [...context.logLines, { text: `Panel Added ${event.id}`, timestamp: new Date() }]
-    }),
-    //done
-    removePanelCompletion: assign(({ context, event }: any) => {
-      context.panels = () => {
-        const next = [...context.panels]
-        next.splice(
-          next.findIndex((x: any) => x === event.id),
-          1,
-        )
-        return next
-      }
-      context.logLines = [...context.logLines, { text: `Panel Removed ${event.id}`, timestamp: new Date() }]
-    }),
-    //done
-    activePanelChangeCompletion: assign(({ context, event }: any) => {
-      context.activePanel = event?.id
-      context.logLines = [...context.logLines, { text: `Panel Activated ${event.id}`, timestamp: new Date() }]
-    }),
-    movePanelCompletion: assign(({ context, event }: any) => {}),
-
-    //done
-    addGroupCompletion: assign(({ context, event }: any) => {
-      context.groups = [...context.groups, event.id]
-      context.logLines = [...context.logLines, { text: `Group Added ${event.id}`, timestamp: new Date() }]
-    }),
-    //done
-    removeGroupCompletion: assign(({ context, event }: any) => {
-      context.groups = () => {
-        const next = [...context.groups]
-        next.splice(
-          next.findIndex((x: any) => x === event.id),
-          1,
-        )
-        return next
-      }
-      context.logLines = [...context.logLines, { text: `Group Removed ${event.id}`, timestamp: new Date() }]
-    }),
-    //done
-    activeGroupChangeCompletion: assign(({ context, event }: any) => {
-      context.activeGroup = event?.id
-      context.logLines = [...context.logLines, { text: `Group Activated ${event.id}`, timestamp: new Date() }]
-    }),
-    maximizedGroupChangeCompletion: assign(({ context, event }: any) => {}),
+    // completion
+    addPanelCompletion: assign(({ context, event }: any) => ({
+      panels: [...context.panels, event.payload.id],
+      logLines: [...context.logLines, { text: `Panel Added ${event.payload.id}`, timestamp: new Date() }],
+    })),
+    removePanelCompletion: assign(({ context, event }: any) => ({
+      panels: context.panels.filter((p: string) => p !== event.payload.id),
+      logLines: [...context.logLines, { text: `Panel Removed ${event.payload.id}`, timestamp: new Date() }],
+    })),
+    activePanelChangeCompletion: assign(({ context, event }: any) => ({
+      activePanel: event.payload?.id,
+      logLines: [...context.logLines, { text: `Panel Activated ${event.payload?.id}`, timestamp: new Date() }],
+    })),
+    movePanelCompletion: assign(({ context, event }: any) => ({
+      logLines: [...context.logLines, { text: `Panel Moved ${event.payload.panel.id}`, timestamp: new Date() }],
+    })),
+    addGroupCompletion: assign(({ context, event }: any) => ({
+      groups: [...context.groups, event.payload.id],
+      logLines: [...context.logLines, { text: `Group Added ${event.payload.id}`, timestamp: new Date() }],
+    })),
+    removeGroupCompletion: assign(({ context, event }: any) => ({
+      groups: context.groups.filter((g: string) => g !== event.payload.id),
+      logLines: [...context.logLines, { text: `Group Removed ${event.payload.id}`, timestamp: new Date() }],
+    })),
+    activeGroupChangeCompletion: assign(({ context, event }: any) => ({
+      activeGroup: event.payload?.id,
+      logLines: [...context.logLines, { text: `Group Activated ${event.payload?.id}`, timestamp: new Date() }],
+    })),
+    maximizedGroupChangeCompletion: assign(({ context, event }: any) => ({
+      logLines: [
+        ...context.logLines,
+        {
+          text: `Group Maximized Changed ${event.payload.group.api.id} [${event.payload.isMaximized}]`,
+          timestamp: new Date(),
+        },
+      ],
+    })),
 
     resetLayout: ({ context }) => {
       const { api, defaultConfig } = context
@@ -164,8 +144,10 @@ export const dockviewApiMachine = setup({
         }
       }
     },
+
   },
   actors: {
+    dockviewApiEvents,
   },
   guards: {
     // gapCheck: ({ context, event }) => {},
@@ -178,8 +160,8 @@ export const dockviewApiMachine = setup({
       panels: [],
       groups: [],
       api: null,
-      activePanel: null,
-      activeGroup: null,
+      activePanel: "",
+      activeGroup: "",
       showLogs: false,
       debug: false,
       pending: {
@@ -193,91 +175,39 @@ export const dockviewApiMachine = setup({
   states: {
     waitingForApi: {
       on: {
-        onReady: {
-          target: "idle",
-          actions: enqueueActions(({ enqueue, context, event }) => {
-            enqueue("connectToApi")
-            enqueue("configurePanels")
-            enqueue("mappingWithApi")
+        "onReady": {
+          target: "ready",
+          actions: assign({
+            api: ({ event }) => event.api,
           }),
         },
       },
     },
-
-    idle: {
-      on: {
-        onAddPanel: {
-          target: "busy",
-          actions: ["addPanelAction"],
-        },
-        onRemovePanel: {
-          target: "busy",
-          actions: ["removePanelAction"],
-        },
-        onActivePanelChange: {
-          target: "busy",
-          actions: ["activePanelChangeAction"],
-        },
-        onMovePanel: {
-          actions: ["movePanelAction"],
-        },
-
-        onAddGroup: {
-          target: "busy",
-          actions: ["addGroupAction"],
-        },
-        onRemoveGroup: {
-          target: "busy",
-          actions: ["removeGroupAction"],
-        },
-        onActiveGroupChange: {
-          actions: ["activeGroupChangeAction"],
-        },
-        onMaximizedGroupChange: {
-          actions: ["maximizedGroupChangeAction"],
-        },
-
-        RESET: { actions: { type: "resetLayout" } },
-        CLEAR_LAYOUT: { actions: { type: "clearLayout" } },
-        SAVE_LAYOUT: { actions: { type: "saveLayout" } },
-        LOAD_LAYOUT: { actions: { type: "loadLayout" } },
+    ready: {
+      invoke: {
+        id: "dockviewApiEvents",
+        src: "dockviewApiEvents",
+        input: ({ context }) => ({ api: context.api, defaultConfig: context.defaultConfig }),
       },
-    },
-    busy: {
       on: {
-        onDidAddPanel: {
-          target: "idle",
-          actions: ["addPanelCompletion"],
-        },
-        onDidRemovePanel: {
-          target: "idle",
-          actions: ["removePanelCompletion"],
-        },
-        onDidActivePanelChange: {
-          target: "idle",
-          actions: ["activePanelChangeCompletion"],
-        },
-        onDidMovePanel: {
-          target: "idle",
-          actions: ["movePanelCompletion"],
-        },
+        onAddPanel: { actions: { type: "addPanel" } },
+        onAddGroup: { actions: { type: "addGroup" } },
 
-        onDidAddGroup: {
-          target: "idle",
-          actions: ["addGroupCompletion"],
-        },
-        onDidRemoveGroup: {
-          target: "idle",
-          actions: ["removeGroupCompletion"],
-        },
-        onDidActiveGroupChange: {
-          target: "idle",
-          actions: ["activeGroupChangeCompletion"],
-        },
-        onDidMaximizedGroupChange: {
-          target: "idle",
-          actions: ["maximizedGroupChangeCompletion"],
-        },
+        // completion events
+        "onDidAddPanel": { actions: { type: "addPanelCompletion" } },
+        "onDidRemovePanel": { actions: { type: "removePanelCompletion" } },
+        "onDidActivePanelChange": { actions: { type: "activePanelChangeCompletion" } },
+        "onDidMovePanel": { actions: { type: "movePanelCompletion" } },
+        "onDidAddGroup": { actions: { type: "addGroupCompletion" } },
+        "onDidRemoveGroup": { actions: { type: "removeGroupCompletion" } },
+        "onDidActiveGroupChange": { actions: { type: "activeGroupChangeCompletion" } },
+        "onDidMaximizedGroupChange": { actions: { type: "maximizedGroupChangeCompletion" } },
+
+
+        onResetLayout: { actions: { type: "resetLayout" } },
+        onClearLayout: { actions: { type: "clearLayout" } },
+        onSaveLayout: { actions: { type: "saveLayout" } },
+        onLoadLayout: { actions: { type: "loadLayout" } },
       },
     },
   },
