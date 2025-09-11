@@ -1,4 +1,4 @@
-import DockViewMain from "#demos/dockview/main"
+import { DockViewMain } from "#demos/dockview/main"
 export default function Page() {
   return <DockViewMain />;
 }

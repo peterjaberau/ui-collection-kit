@@ -1,27 +1,14 @@
 "use client"
 import { IDockviewHeaderActionsProps } from "#dockview"
 import * as React from "react"
-import { nextId } from "./defaultLayout"
-import { IconButton } from "@chakra-ui/react"
-import { LuDownload, LuStar } from "react-icons/lu"
-import { LuPlus, LuMenu } from "react-icons/lu"
-import { IconRender } from "./common/component.mapping"
+import { nextId } from "./utils"
+import { IconButtonRender } from "./common/component.mapping"
 
-const Icon = (props: { icon: string; title?: string; onClick?: (event: React.MouseEvent) => void }) => {
-  return (
-    <IconButton variant="ghost" size="sm" onClick={props.onClick}>
-      {props.icon}
-    </IconButton>
-  )
-}
+
 
 const groupControlsComponents: Record<string, React.FC> = {
   panel_1: () => {
-    return (
-      <IconButton variant="plain" size="sm">
-        <LuDownload />
-      </IconButton>
-    )
+    return <IconButtonRender variant='plain' name='download' />
   },
 }
 
@@ -80,22 +67,11 @@ export const RightControls = (props: IDockviewHeaderActionsProps) => {
         color: "var(--dv-activegroup-hiddenpanel-tab-color)",
       }}
     >
-      {props.isGroupActive && (
-        <IconButton variant="plain" size="sm">
-          <IconRender name="star" />
-        </IconButton>
-      )}
+      {props.isGroupActive && <IconButtonRender name='star' variant='plain' />}
       {Component && <Component />}
 
-      <IconButton variant="ghost" size="sm" onClick={onClick2}>
-        {isPopout ? <IconRender name="exit-fullscreen" /> : <IconRender name="open-new-window" />}
-      </IconButton>
-
-      {!isPopout && (
-        <IconButton variant="ghost" size="sm" onClick={onClick}>
-          {isMaximized ? <IconRender name="collapse" /> : <IconRender name="expand" />}
-        </IconButton>
-      )}
+      <IconButtonRender onClick={onClick2} name={isPopout ? 'exit-fullscreen': 'open-new-window'} />
+      {!isPopout && <IconButtonRender onClick={onClick} name={isMaximized ? 'collapse': 'expand'} />}
     </div>
   )
 }
@@ -123,9 +99,7 @@ export const LeftControls = (props: IDockviewHeaderActionsProps) => {
         color: "var(--dv-activegroup-visiblepanel-tab-color)",
       }}
     >
-      <IconButton variant="ghost" size="sm" onClick={onClick}>
-        <IconRender name="add" />'
-      </IconButton>
+      <IconButtonRender onClick={onClick} name='add' />
     </div>
   )
 }
@@ -142,9 +116,7 @@ export const PrefixHeaderControls = (props: IDockviewHeaderActionsProps) => {
         color: "var(--dv-activegroup-visiblepanel-tab-color)",
       }}
     >
-      <IconButton variant="plain" size="sm">
-        <IconRender name="menu" />
-      </IconButton>
+      <IconButtonRender name='menu' variant='plain' />
     </div>
   )
 }

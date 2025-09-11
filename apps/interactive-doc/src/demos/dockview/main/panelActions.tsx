@@ -1,11 +1,8 @@
-'use client'
+"use client"
 import { DockviewApi, IDockviewPanel } from "#dockview"
 import * as React from "react"
-import { Button, IconButton, Group, HStack, Stack } from "@chakra-ui/react"
-import { FaLayerGroup as IconGroup } from "react-icons/fa6"
-import { RxOpenInNewWindow as IconNewWindow } from "react-icons/rx"
-import { MdClose as IconClose } from "react-icons/md"
-import { FaRegEye as IconVisible, FaRegEyeSlash as IconHidden } from "react-icons/fa"
+import { Button, HStack, Stack } from "@chakra-ui/react"
+import { IconButtonRender } from "./common/component.mapping"
 
 const PanelAction = (props: { panels: string[]; api: DockviewApi; activePanel?: string; panelId: string }) => {
   const onClick = () => {
@@ -56,58 +53,50 @@ const PanelAction = (props: { panels: string[]; api: DockviewApi; activePanel?: 
   return (
     <Stack
       css={{
-      background: props.activePanel === props.panelId ? "bg.error" :  "bg.panel",
-      shadow: 'sm',
-      borderRadius: 'sm',
-      p: 1
-    }}
+        background: props.activePanel === props.panelId ? "bg.error" : "bg.panel",
+        shadow: "sm",
+        borderRadius: "sm",
+        p: 1,
+      }}
     >
       <Button size="sm" variant={"outline"} onClick={onClick}>
         {props.panelId}
       </Button>
       <HStack>
-        <IconButton
-          size="xs"
-          variant='ghost'
+        <IconButtonRender
+          name="group"
           onClick={() => {
             const panel = props.api.getPanel(props.panelId)
             if (panel) {
               props.api.addFloatingGroup(panel)
             }
           }}
-        >
-          <IconGroup />
-        </IconButton>
-        <IconButton
-          size="xs"
-          variant='ghost'
+        />
+
+        <IconButtonRender
+          name="open-new-window"
           onClick={() => {
             const panel = props.api.getPanel(props.panelId)
             if (panel) {
               props.api.addPopoutGroup(panel)
             }
           }}
-        >
-          <IconNewWindow />
-        </IconButton>
-        <IconButton
-          size="xs"
-          variant='ghost'
+        />
+
+        <IconButtonRender
+          name="close"
           onClick={() => {
             const panel = props.api.getPanel(props.panelId)
             panel?.api.close()
           }}
-        >
-          <IconClose />
-        </IconButton>
-        <IconButton
-          size="xs"
-          variant='ghost'
-          title="Panel visiblity cannot be edited manually."
-          disabled={true}
-        >
-          {visible ? <IconVisible /> : <IconHidden />}
-        </IconButton>
+        />
+        <IconButtonRender
+          name={visible ? "visible" : "hidden"}
+          onClick={() => {
+            const panel = props.api.getPanel(props.panelId)
+            panel?.api.close()
+          }}
+        />
       </HStack>
     </Stack>
   )

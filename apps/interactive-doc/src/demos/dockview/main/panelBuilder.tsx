@@ -1,7 +1,7 @@
 "use client"
 import { DockviewApi } from "#dockview"
 import * as React from "react"
-import { nextId } from "./defaultLayout"
+import { nextId } from "./utils"
 
 export const PanelBuilder = (props: { api: DockviewApi | any; done: () => void }) => {
   const [parameters, setParameters] = React.useState<{

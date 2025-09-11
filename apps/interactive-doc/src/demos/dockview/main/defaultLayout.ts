@@ -1,10 +1,5 @@
 import { DockviewApi } from '#dockview';
 
-export const nextId = (() => {
-  let counter = 0;
-
-  return () => counter++;
-})();
 
 export function defaultConfig(api: DockviewApi) {
   const panel1 = api.addPanel({

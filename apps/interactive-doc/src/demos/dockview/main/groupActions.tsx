@@ -1,14 +1,9 @@
-'use client'
+"use client"
 import { DockviewApi, DockviewGroupLocation, DockviewGroupPanel } from "#dockview"
 import * as React from "react"
-import { Button, IconButton, Group, HStack, Stack } from "@chakra-ui/react"
-import { FaLayerGroup as IconGroup } from "react-icons/fa6"
-import { RxOpenInNewWindow as IconNewWindow } from "react-icons/rx"
-import { MdClose as IconClose } from "react-icons/md"
-import { FaRegEye as IconVisible, FaRegEyeSlash as IconHidden } from "react-icons/fa"
-import { FiMaximize } from "react-icons/fi";
-import { FiMinimize } from "react-icons/fi";
+import { Button, HStack, Stack } from "@chakra-ui/react"
 
+import { IconButtonRender } from "./common/component.mapping"
 
 const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewApi; activeGroup?: string }) => {
   const onClick = () => {
@@ -32,9 +27,9 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
     }
   }, [props.api, props.groupId])
 
-  const [location, setLocation] = React.useState<DockviewGroupLocation | null>(null)
-  const [isMaximized, setIsMaximized] = React.useState<boolean>(false)
-  const [isVisible, setIsVisible] = React.useState<boolean>(true)
+  const [location, setLocation]: any = React.useState<any>(null)
+  const [isMaximized, setIsMaximized]: any = React.useState<boolean>(false)
+  const [isVisible, setIsVisible]: any = React.useState<boolean>(true)
 
   React.useEffect(() => {
     if (!group) {
@@ -78,10 +73,9 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
         Group {props.groupId}
       </Button>
       <HStack>
-        <IconButton
-          size="sm"
-          variant={"outline"}
-          // className={location?.type === "floating" ? "demo-icon-button selected" : "demo-icon-button"}
+        <IconButtonRender
+          variant="outline"
+          name="group"
           onClick={() => {
             if (group) {
               props.api.addFloatingGroup(group, {
@@ -96,24 +90,21 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
               })
             }
           }}
-        >
-          <IconGroup />
-        </IconButton>
-        <IconButton
-          size="sm"
-          variant={"outline"}
-          // className={location?.type === "popout" ? "demo-icon-button selected" : "demo-icon-button"}
+        />
+
+        <IconButtonRender
+          name="open-new-window"
+          variant="outline"
           onClick={() => {
             if (group) {
               props.api.addPopoutGroup(group)
             }
           }}
-        >
-          <IconNewWindow />
-        </IconButton>
-        <IconButton
-          size="sm"
-          variant={"outline"}
+        />
+
+        <IconButtonRender
+          name={isMaximized ? "maximize" : "minimize"}
+          variant="outline"
           onClick={() => {
             if (group) {
               if (group.api.isMaximized()) {
@@ -123,13 +114,11 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
               }
             }
           }}
-        >
-          {isMaximized ? <FiMaximize /> : <FiMinimize />}
+        />
 
-        </IconButton>
-        <IconButton
-          size="sm"
-          variant={"outline"}
+        <IconButtonRender
+          name={isVisible ? "visible" : "hidden"}
+          variant="outline"
           onClick={() => {
             console.log(group)
             if (group) {
@@ -140,20 +129,16 @@ const GroupAction = (props: { groupId: string; groups: string[]; api: DockviewAp
               }
             }
           }}
-        >
-          {isVisible ? <IconVisible /> : <IconHidden />}
-        </IconButton>
-        <IconButton
-          size="sm"
-          variant={"outline"}
-          // className="demo-icon-button"
+        />
+
+        <IconButtonRender
+          name={"close"}
+          variant="outline"
           onClick={() => {
             const panel = props.api?.getGroup(props.groupId)
             panel?.api.close()
           }}
-        >
-          <IconClose />
-        </IconButton>
+        />
       </HStack>
     </Stack>
   )
