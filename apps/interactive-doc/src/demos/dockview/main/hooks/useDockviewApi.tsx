@@ -5,9 +5,15 @@ export function useDockviewApi() {
   const { dockviewRef } = useDockview()
 
   const dockviewApiRef = dockviewRef.system.get("dockview-api")
-  const dockviewApiState = useSelector(dockviewApiRef, (state) => state)
+  const dockviewApiState: any = useSelector(dockviewApiRef, (state) => state)
   const dockviewApiContext = dockviewApiState.context
   const sendToDockviewApi = dockviewApiRef.send
+
+  console.log('---dockviewApiRef----', {
+    dockviewApiRef,
+    dockviewApiContext,
+    dockviewApiState
+  })
 
   return {
     dockviewApiRef,

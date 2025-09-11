@@ -1,64 +1,19 @@
 "use client"
 import * as React from "react"
-import { nextId } from "./utils"
 import { Button, HStack, Popover, Portal } from "@chakra-ui/react"
 import { PanelBuilder } from "./panelBuilder"
 import { IconButtonRender } from "./common/component.mapping"
 import { useState } from "react"
 import { useDockviewApi } from "./hooks/useDockviewApi"
 
-export const GridActions = (props: {
-  hasCustomWatermark: boolean
-  toggleCustomWatermark: () => void
-}) => {
+export const GridActions = (props: { hasCustomWatermark: boolean; toggleCustomWatermark: () => void }) => {
   const [isPanelBuilderOpen, setIsPanelBuilderOpen] = useState(false)
   const { dockviewApiContext, sendToDockviewApi } = useDockviewApi()
   const { api } = dockviewApiContext
 
-  const onClear = () => {
-    api?.clear()
-  }
-
-  const onLoad = () => {
-    const state = localStorage.getItem("dv-demo-state")
-    if (state) {
-      try {
-        api?.fromJSON(JSON.parse(state))
-      } catch (err) {
-        console.error("failed to load state", err)
-        localStorage.removeItem("dv-demo-state")
-      }
-    }
-  }
-
-  const onSave = () => {
-    if (api) {
-      const state = api.toJSON()
-      console.log(state)
-      localStorage.setItem("dv-demo-state", JSON.stringify(state))
-    }
-  }
-
-  const onReset = () => {
-    sendToDockviewApi({ type: "RESET" })
-  }
-
-  const onAddPanel = (options?: { nested?: boolean }) => {
-    api?.addPanel({
-      id: `id_${Date.now().toString()}`,
-      component: options?.nested ? "nested" : "default",
-      title: `Tab ${nextId()}`,
-      renderer: "always",
-    })
-  }
-
-  const onAddGroup = () => {
-    api?.addGroup()
-  }
-
   return (
     <HStack>
-      <Button onClick={() => onAddPanel()}>Add Panel</Button>
+      <Button onClick={() => sendToDockviewApi({ type: "ADD_PANEL" })}>Add Panel</Button>
       <Popover.Root open={isPanelBuilderOpen} onOpenChange={(e) => setIsPanelBuilderOpen(e.open)}>
         <Popover.Trigger asChild>
           <IconButtonRender variant="outline" name="preferences" />
@@ -74,24 +29,28 @@ export const GridActions = (props: {
           </Popover.Positioner>
         </Portal>
       </Popover.Root>
-      <Button variant="outline" size="sm" onClick={() => onAddPanel({ nested: true })}>
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => sendToDockviewApi({ type: "ADD_PANEL", payload: { nested: true } })}
+      >
         Add Nested Panel
       </Button>
 
-      <Button variant="outline" size="sm" onClick={onAddGroup}>
+      <Button variant="outline" size="sm" onClick={() => sendToDockviewApi({ type: "ADD_GROUP" })}>
         Add Group
       </Button>
 
-      <Button variant="outline" size="sm" onClick={onClear}>
+      <Button variant="outline" size="sm" onClick={() => sendToDockviewApi({ type: "CLEAR_LAYOUT" })}>
         Clear
       </Button>
-      <Button variant="outline" size="sm" onClick={onLoad}>
+      <Button variant="outline" size="sm" onClick={() => sendToDockviewApi({ type: "LOAD_LAYOUT" })}>
         Load
       </Button>
-      <Button variant="outline" size="sm" onClick={onSave}>
+      <Button variant="outline" size="sm" onClick={() => sendToDockviewApi({ type: "SAVE_LAYOUT" })}>
         Save
       </Button>
-      <Button variant="outline" size="sm" onClick={onReset}>
+      <Button variant="outline" size="sm" onClick={() => sendToDockviewApi({ type: "RESET" })}>
         Reset
       </Button>
     </HStack>

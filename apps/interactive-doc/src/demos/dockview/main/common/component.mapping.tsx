@@ -7,7 +7,7 @@ import { FaLayerGroup } from "react-icons/fa6"
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa"
 import { FiMaximize, FiMinimize } from "react-icons/fi"
 
-import { IconButton } from '@chakra-ui/react'
+import { IconButton } from "@chakra-ui/react"
 import * as React from "react"
 
 export const iconMapping: any = {
@@ -28,14 +28,22 @@ export const iconMapping: any = {
   star: LuStar,
 }
 
-export const IconRender = ({ name }: { name: keyof typeof iconMapping } | any ) => {
+export const IconRender = ({ name }: { name: keyof typeof iconMapping } | any) => {
   const Icon = iconMapping[name]
   return Icon ? <Icon /> : null
 }
 
-export const IconButtonRender = (props: { name, onClick, variant, size } | any) => {
+export type IconButtonRenderProps = {
+  name: string
+  onClick?: () => void
+  variant?: string | any
+  size?: string | any
+  [key: string]: any
+}
+
+export const IconButtonRender = (props: IconButtonRenderProps) => {
   return (
-    <IconButton size={props.size || 'sm'} variant={props.variant || 'ghost'} {...props}>
+    <IconButton size={props.size || "sm"} variant={props.variant || "ghost"} {...props}>
       <IconRender name={props.name} />
     </IconButton>
   )

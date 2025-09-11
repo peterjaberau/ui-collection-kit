@@ -97,16 +97,11 @@ const DockViewApp = (props: { theme?: string }) => {
 
   const { sendToDockviewApi, dockviewApiContext } = useDockviewApi()
 
-  // const [state, send] = useMachine(dockviewApiMachine, {
-  //   input: {
-  //     defaultConfig,
-  //   },
-  // })
 
   const { api, panels, groups, activePanel, activeGroup, logLines } = dockviewApiContext
 
   const onReady = (event: DockviewReadyEvent) => {
-    sendToDockviewApi({ type: "api.ready", api: event.api })
+    sendToDockviewApi({ type: "onReady", api: event.api })
   }
 
   const [watermark, setWatermark] = React.useState<boolean>(false)
