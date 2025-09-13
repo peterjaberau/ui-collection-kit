@@ -12,11 +12,6 @@ export const useJsonataRoot = () => {
 
   const stateValue = jsonataState?.value
 
-  console.log("----jsonataRoot---", {
-    jsonataContext,
-    jsonataState,
-    stateValue,
-  })
 
   return {
     jsonataRootRef,

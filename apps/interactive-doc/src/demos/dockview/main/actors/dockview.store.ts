@@ -88,5 +88,42 @@ export const domainDrivenDock = {
       renderer: "always",
       position: { referencePanel: "panel_domain_structure", direction: "right" },
     },
+    {
+      id: "panel_node_script_editor",
+      component: "NodeScriptEditorPanel",
+      title: "Script Editor",
+      renderer: "always",
+      position: { referencePanel: "panel_domain_structure", direction: "right" },
+    },
+  //   NodeScriptEditorPanel
   ],
+}
+
+
+export const data = {
+  domains: [
+    "jsonata"
+  ],
+  domainsStructure: {
+    jsonata: [
+      {
+        id: "demos",
+        name: "Demos",
+        children: [
+          {
+            id: "transformer",
+            name: "Transformer",
+          }
+        ]
+      },
+      {
+        id: "api-specs",
+        name: "API Specs",
+        children: [
+          { id: "operators", name: "Operators"},
+          { id: "functions", name: "Functions" }
+        ]
+      }
+    ]
+  }
 }

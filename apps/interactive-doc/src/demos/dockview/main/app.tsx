@@ -17,8 +17,14 @@ import { Button, IconButton, HStack, Icon, Stack, Box, Flex, Center, Container, 
 import { LuBug as IconEngineer } from "react-icons/lu"
 import { RiTerminalBoxFill as IconConsole } from "react-icons/ri"
 import { BiUndo as IconUndo } from "react-icons/bi"
+import { DomainStructurePanel } from './components/DomainStructurePanel'
+import { NodeScriptEditorPanel } from './components/NodeScriptEditorPanel'
+// NodeScriptEditorPanel
 import { DockViewThemeprovider } from "./DockViewThemeprovider"
 import { useDockApi } from "#demos/dockview/main/hooks/useDockApi"
+import TransformStep from "#demos/jsonata/components/TransformStep"
+import useEditorState from "#demos/jsonata/hooks/useEditorState"
+import { inputExample } from "#demos/jsonata/data/examples"
 const DebugContext = React.createContext<boolean>(false)
 
 const components = {
@@ -91,7 +97,7 @@ const components = {
     return <>DomainSelectorPanel</>
   },
   DomainStructurePanel: (props: any) => {
-    return <>DomainStructurePanel</>
+    return <DomainStructurePanel />
   },
   NodeSelectedPanel: (props: any) => {
     return <>NodeSelectedPanel</>
@@ -115,7 +121,28 @@ const components = {
     return <>NodeVisualEditorPanel</>
   },
   NodeScriptEditorPanel: (props: any) => {
-    return <>NodeScriptEditorPanel</>
+    const [inputJson, setInputJson]: any = React.useState({ test: 'example'})
+
+    return (
+      <NodeScriptEditorPanel
+        id="input"
+        color="blue"
+        title={<>Input JSON &rarr;</>}
+        subtitle="Your source JSON you want to transform."
+        value={inputJson}
+        onCopy={(value) => console.log("Input JSON", JSON.stringify(value, null, 4))}
+        onChange={(value: any) => {
+          try {
+            const input = value ? JSON.parse(value) : null
+            setInputJson(input)
+            // if (input) {
+            //   validateTransformersEditor({ input }).catch(() => {})
+            // }
+          } catch (error) {}
+        }}
+        renderEditorWhenEmpty
+      />
+    )
   },
   NodeFlowEditorPanel: (props: any) => {
     return <>NodeFlowEditorPanel</>
