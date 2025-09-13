@@ -69,6 +69,24 @@ const components = {
       </div>
     )
   },
+
+  nested: (props: any) => {
+    return (
+        <DockviewReact
+          components={components}
+          defaultTabComponent={headerComponents.default}
+          onReady={(event: DockviewReadyEvent) => {
+            event.api.addPanel({ id: 'panel_1', component: 'default' });
+            event.api.addPanel({ id: 'panel_2', component: 'default' });
+            event.api.addPanel({
+              id: 'panel_3',
+              component: 'default',
+            });
+          }}
+          theme={themeReplit}
+        />
+    );
+  },
 }
 
 const headerComponents = {
