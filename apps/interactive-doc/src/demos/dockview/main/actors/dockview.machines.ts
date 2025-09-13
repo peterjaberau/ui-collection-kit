@@ -1,18 +1,12 @@
 import { createMachine, assign, setup, fromCallback } from "xstate"
 import { DockviewApi } from "#dockview"
-import defaultConfig from "./dockview.store"
+import { configDemo, domainDrivenDock} from "./dockview.store"
 import { defineDockDisposables, applyDefaultLayout, loadLayoutFromLocalStorage, cleanupDockDisposables } from "./utils"
 
-
-// const applyDefaultLayout = ({api, defaultConfig}: any ) => {
-//   if (defaultConfig && defaultConfig.panels) {
-//     const firstPanel = api.addPanel(defaultConfig.panels[0])
-//     defaultConfig.panels.slice(1).forEach((panel: any) => {
-//       api.addPanel(panel)
-//     })
-//     firstPanel.api.setActive()
-//   }
-// }
+const defaultConfig = {
+  demo: configDemo,
+  domainDrivenDock: domainDrivenDock
+}
 
 const dockviewApiEvents = fromCallback(({ sendBack, input }) => {
   const { api, defaultConfig }: any = input
@@ -159,7 +153,7 @@ export const dockviewApiMachine = setup({
       api: null,
       activePanel: "",
       activeGroup: "",
-      defaultConfig: defaultConfig,
+      defaultConfig: defaultConfig.domainDrivenDock,
 
       //extras
       idCounter: 0,

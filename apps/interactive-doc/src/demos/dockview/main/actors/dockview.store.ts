@@ -1,4 +1,4 @@
-export default {
+export const configDemo = {
   panels: [
     {
       id: "panel_1",
@@ -47,6 +47,46 @@ export default {
       component: "default",
       title: "Panel 8",
       position: { referencePanel: "panel_7", direction: "below" },
+    },
+  ],
+}
+
+export const domainDrivenDock = {
+  panels: [
+    {
+      id: "panel_domain_selector",
+      component: "DomainSelectorPanel",
+      renderer: "always",
+      title: "Domain Selector",
+    },
+    {
+      id: "panel_domain_structure",
+      component: "DomainStructurePanel",
+      title: "Domain Structure",
+      renderer: "always",
+      position: { referencePanel: "panel_domain_selector", direction: "below" },
+    },
+
+    {
+      id: "panel_node_selected",
+      component: "NodeSelectedPanel",
+      title: "Node Selected",
+      renderer: "always",
+      position: { referencePanel: "panel_domain_selector", direction: "right" },
+    },
+    {
+      id: "panel_node_specifications",
+      component: "NodeSpecificationsPanel",
+      title: "Node Specs",
+      renderer: "always",
+      position: { referencePanel: "panel_domain_selector", direction: "right" },
+    },
+    {
+      id: "panel_node_simulator",
+      component: "NodeSimlulatorPanel",
+      title: "Node Simulator",
+      renderer: "always",
+      position: { referencePanel: "panel_domain_structure", direction: "right" },
     },
   ],
 }

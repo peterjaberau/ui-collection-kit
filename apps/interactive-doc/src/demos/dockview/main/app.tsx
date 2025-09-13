@@ -69,23 +69,59 @@ const components = {
       </div>
     )
   },
-
   nested: (props: any) => {
     return (
-        <DockviewReact
-          components={components}
-          defaultTabComponent={headerComponents.default}
-          onReady={(event: DockviewReadyEvent) => {
-            event.api.addPanel({ id: 'panel_1', component: 'default' });
-            event.api.addPanel({ id: 'panel_2', component: 'default' });
-            event.api.addPanel({
-              id: 'panel_3',
-              component: 'default',
-            });
-          }}
-          theme={themeReplit}
-        />
-    );
+      <DockviewReact
+        components={components}
+        defaultTabComponent={headerComponents.default}
+        onReady={(event: DockviewReadyEvent) => {
+          event.api.addPanel({ id: "panel_1", component: "default" })
+          event.api.addPanel({ id: "panel_2", component: "default" })
+          event.api.addPanel({
+            id: "panel_3",
+            component: "default",
+          })
+        }}
+        theme={themeReplit}
+      />
+    )
+  },
+
+  DomainSelectorPanel: (props: any) => {
+    return <>DomainSelectorPanel</>
+  },
+  DomainStructurePanel: (props: any) => {
+    return <>DomainStructurePanel</>
+  },
+  NodeSelectedPanel: (props: any) => {
+    return <>NodeSelectedPanel</>
+  },
+  NodeSpecificationsPanel: (props: any) => {
+    return <>NodeSpecificationsPanel</>
+  },
+  NodeInputPanel: (props: any) => {
+    return <>NodeInputPanel</>
+  },
+  NodeTransformPanel: (props: any) => {
+    return <>NodeTransformPanel</>
+  },
+  NodeOutputPanel: (props: any) => {
+    return <>NodeOutputPanel</>
+  },
+  NodeActionsPanel: (props: any) => {
+    return <>NodeActionsPanel</>
+  },
+  NodeVisualEditorPanel: (props: any) => {
+    return <>NodeVisualEditorPanel</>
+  },
+  NodeScriptEditorPanel: (props: any) => {
+    return <>NodeScriptEditorPanel</>
+  },
+  NodeFlowEditorPanel: (props: any) => {
+    return <>NodeFlowEditorPanel</>
+  },
+  NodeSimlulatorPanel: (props: any) => {
+    return <>NodeSimlulatorPanel</>
   },
 }
 
@@ -153,7 +189,6 @@ const DockViewApp = (props: { theme?: string }) => {
           "--dv-groupview-active-group-border-color": "#80808059",
           "--dv-groupview-inactive-group-border": "1px solid",
           "--dv-groupview-inactive-group-border-color": "#0000",
-
 
           height: "100vh",
           position: "relative",
