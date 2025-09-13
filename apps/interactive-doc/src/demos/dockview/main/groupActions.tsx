@@ -1,78 +1,39 @@
 "use client"
-import { DockviewApi, DockviewGroupLocation, DockviewGroupPanel } from "#dockview"
 import * as React from "react"
-import { Button, HStack, Stack } from "@chakra-ui/react"
-import { useDockviewApi } from "./hooks/useDockviewApi"
+import { Badge, Button, HStack, Stack } from "@chakra-ui/react"
 import { IconButtonRender } from "./common/component.mapping"
+import { useDockMeta } from "#demos/dockview/main/hooks/useDockMeta"
+import { useDockGroup } from "#demos/dockview/main/hooks/useDockGroup"
+import { useDockApi } from "#demos/dockview/main/hooks/useDockApi"
 
 const GroupAction = (props: { groupId: string }) => {
-  const { sendToDockviewApi, dockviewApiContext } = useDockviewApi()
-  const { api, activeGroup } = dockviewApiContext
+  const {
+    group,
+    isActive,
+    close,
+    isVisible,
+    setVisible,
+    isMaximized,
+    exitMaximized,
+    focus,
+    maximize,
+  } = useDockGroup({ groupId: props.groupId })
+  const { api } = useDockApi()
 
-  const onClick = () => {
-    api?.getGroup(props.groupId)?.focus()
-  }
 
-  const isActive = activeGroup === props.groupId
 
-  const [group, setGroup] = React.useState<DockviewGroupPanel | undefined>(undefined)
 
-  React.useEffect(() => {
-    const disposable = api.onDidLayoutFromJSON(() => {
-      // @ts-ignore
-      setGroup(api.getGroup(props.groupId))
-    })
-    // @ts-ignore
-    setGroup(api.getGroup(props.groupId))
-
-    return () => {
-      disposable.dispose()
-    }
-  }, [api, props.groupId])
-
-  const [location, setLocation]: any = React.useState<any>(null)
-  const [isMaximized, setIsMaximized]: any = React.useState<boolean>(false)
-  const [isVisible, setIsVisible]: any = React.useState<boolean>(true)
-
-  React.useEffect(() => {
-    if (!group) {
-      setLocation(null)
-      return
-    }
-
-    const disposable = group.api.onDidLocationChange((event) => {
-      setLocation(event.location)
-    })
-
-    const disposable2 = api.onDidMaximizedGroupChange(() => {
-      setIsMaximized(group.api.isMaximized())
-    })
-
-    const disposable3 = group.api.onDidVisibilityChange(() => {
-      setIsVisible(group.api.isVisible)
-    })
-
-    setLocation(group.api.location)
-    setIsMaximized(group.api.isMaximized())
-    setIsVisible(group.api.isVisible)
-
-    return () => {
-      disposable.dispose()
-      disposable2.dispose()
-      disposable3.dispose()
-    }
-  }, [group])
 
   return (
     <Stack
       css={{
-        background: api.getGroup(props.groupId)?.api.isActive ? "bg.error" : "bg.panel",
+        background: isActive ? "bg.error" : "bg.panel",
         shadow: "sm",
         borderRadius: "sm",
         p: 1,
       }}
     >
-      <Button size="sm" variant={"outline"} onClick={onClick}>
+      <Button size="sm" variant={"outline"} onClick={() => focus()}>
         Group {props.groupId}
       </Button>
       <HStack>
@@ -80,7 +41,7 @@ const GroupAction = (props: { groupId: string }) => {
           variant="outline"
           name="group"
           onClick={() => {
-            if (group) {
+            if (group)
               api.addFloatingGroup(group, {
                 width: 400,
                 height: 300,
@@ -91,7 +52,6 @@ const GroupAction = (props: { groupId: string }) => {
                   right: 50,
                 },
               })
-            }
           }}
         />
 
@@ -99,21 +59,19 @@ const GroupAction = (props: { groupId: string }) => {
           name="open-new-window"
           variant="outline"
           onClick={() => {
-            if (group) {
-              api.addPopoutGroup(group)
-            }
+            if (group) api.addPopoutGroup(group)
           }}
         />
 
         <IconButtonRender
-          name={isMaximized ? "maximize" : "minimize"}
+          name={isMaximized() ? "maximize" : "minimize"}
           variant="outline"
           onClick={() => {
             if (group) {
-              if (group.api.isMaximized()) {
-                group.api.exitMaximized()
+              if (isMaximized()) {
+                exitMaximized()
               } else {
-                group.api.maximize()
+                maximize()
               }
             }
           }}
@@ -125,36 +83,29 @@ const GroupAction = (props: { groupId: string }) => {
           onClick={() => {
             console.log(group)
             if (group) {
-              if (group.api.isVisible) {
-                group.api.setVisible(false)
+              if (isVisible) {
+                setVisible(false)
               } else {
-                group.api.setVisible(true)
+                setVisible(true)
               }
             }
           }}
         />
 
-        <IconButtonRender
-          name={"close"}
-          variant="outline"
-          onClick={() => {
-            const panel = api?.getGroup(props.groupId)
-            panel?.api.close()
-          }}
-        />
+        <IconButtonRender name={"close"} variant="outline" onClick={() => close()} />
       </HStack>
     </Stack>
   )
 }
 
 export const GroupActions = () => {
-  const { sendToDockviewApi, dockviewApiContext } = useDockviewApi()
-  const { groups } = dockviewApiContext
+  const { groupsMeta } = useDockMeta()
 
   return (
     <HStack>
-      {groups.map((groupId: any) => {
-        return <GroupAction key={groupId} groupId={groupId} />
+      <Badge>groupActions</Badge>
+      {groupsMeta.map((id: any) => {
+        return <GroupAction key={id} groupId={id} />
       })}
     </HStack>
   )

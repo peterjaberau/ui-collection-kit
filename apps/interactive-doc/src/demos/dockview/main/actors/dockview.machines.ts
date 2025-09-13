@@ -1,57 +1,29 @@
 import { createMachine, assign, setup, fromCallback } from "xstate"
 import { DockviewApi } from "#dockview"
 import defaultConfig from "./dockview.store"
+import { defineDockDisposables, applyDefaultLayout, loadLayoutFromLocalStorage, cleanupDockDisposables } from "./utils"
 
-let idCounter = 0
-const nextId = () => {
-  idCounter += 1
-  return idCounter
-}
 
-const applyDefaultLayout = (api: DockviewApi, defaultConfig: { panels: any[] }) => {
-  if (defaultConfig && defaultConfig.panels) {
-    const firstPanel = api.addPanel(defaultConfig.panels[0])
-    defaultConfig.panels.slice(1).forEach((panel) => {
-      api.addPanel(panel)
-    })
-    firstPanel.api.setActive()
-  }
-}
+// const applyDefaultLayout = ({api, defaultConfig}: any ) => {
+//   if (defaultConfig && defaultConfig.panels) {
+//     const firstPanel = api.addPanel(defaultConfig.panels[0])
+//     defaultConfig.panels.slice(1).forEach((panel: any) => {
+//       api.addPanel(panel)
+//     })
+//     firstPanel.api.setActive()
+//   }
+// }
 
 const dockviewApiEvents = fromCallback(({ sendBack, input }) => {
-  const { api, defaultConfig } = input as { api: DockviewApi; defaultConfig: { panels: any[] } }
+  const { api, defaultConfig }: any = input
 
-  const disposables = [
-    api.onDidAddPanel((event) => sendBack({ type: "onDidAddPanel", payload: event })),
-    api.onDidRemovePanel((event) => sendBack({ type: "onDidRemovePanel", payload: event })),
-    api.onDidActivePanelChange((event) => sendBack({ type: "onDidActivePanelChange", payload: event })),
-    api.onDidMovePanel((event) => sendBack({ type: "onDidMovePanel", payload: event })),
+  const disposables = defineDockDisposables({ api, sendBack})
 
-    api.onDidAddGroup((event) => sendBack({ type: "onDidAddGroup", payload: event })),
-    api.onDidRemoveGroup((event) => sendBack({ type: "onDidRemoveGroup", payload: event })),
-    api.onDidActiveGroupChange((event) => sendBack({ type: "onDidActiveGroupChange", payload: event })),
-    api.onDidMaximizedGroupChange((event) => sendBack({ type: "onDidMaximizedGroupChange", payload: event })),
-  ]
+  loadLayoutFromLocalStorage({ api, key: 'dv-demo-state'});
+  applyDefaultLayout({ api, defaultConfig})
 
-  const loadLayout = () => {
-    const state = localStorage.getItem("dv-demo-state")
-    if (state) {
-      try {
-        api.fromJSON(JSON.parse(state))
-        return
-      } catch {
-        localStorage.removeItem("dv-demo-state")
-      }
-      return
-    }
-    applyDefaultLayout(api, defaultConfig)
-  }
+  return cleanupDockDisposables({ disposables })
 
-  loadLayout()
-
-  return () => {
-    disposables.forEach((disposable) => disposable.dispose())
-  }
 })
 
 export const dockviewApiMachine = setup({
@@ -61,13 +33,34 @@ export const dockviewApiMachine = setup({
   } as any,
   actions: {
     addPanel: ({ context, event }: any) => {
-      context.api?.addPanel({
-        id: `id_${Date.now().toString()}`,
-        component: event.payload?.nested ? "nested" : "default",
-        title: `Tab ${nextId()}`,
-        renderer: "always",
 
+      const idCounter = context.idCounter + 1;
+      context.idCounter = idCounter;
+
+
+      const id = event.playload?.id || `id_${Date.now().toString()}`
+      const component = event.payload?.nested ? "nested" : "default"
+      const title = event.payload?.title || `Tab ${idCounter}`
+      const renderer = event.payload?.renderer || 'always'
+      const position = event.payload?.position || undefined
+
+      // context.api?.addPanel({
+      //   id: `id_${Date.now().toString()}`,
+      //   component: event.payload?.nested ? "nested" : "default",
+      //   title: `Tab ${idCounter}`,
+      //   renderer: "always",
+      //
+      // })
+
+      context.api?.addPanel({
+        id: id,
+        component: component,
+        title: title,
+        renderer: renderer,
+        ...(position && { position: position })
       })
+
+
     },
     addGroup: ({ context }) => {
       context.api?.addGroup()
@@ -116,7 +109,7 @@ export const dockviewApiMachine = setup({
       if (api) {
         try {
           api.clear()
-          applyDefaultLayout(api, defaultConfig)
+          applyDefaultLayout({ api, defaultConfig})
         } catch (err) {
           console.error("failed to reset layout", err)
         } finally {
@@ -145,6 +138,9 @@ export const dockviewApiMachine = setup({
       }
     },
 
+
+
+
   },
   actors: {
     dockviewApiEvents,
@@ -156,19 +152,25 @@ export const dockviewApiMachine = setup({
   initial: "waitingForApi",
   context: ({ input }: any) => {
     return {
-      logLines: [],
+
       panels: [],
       groups: [],
+
       api: null,
       activePanel: "",
       activeGroup: "",
-      showLogs: false,
+      defaultConfig: defaultConfig,
+
+      //extras
+      idCounter: 0,
       debug: false,
+      logLines: [],
+      showLogs: false,
       pending: {
         text: null,
         timestamp: null,
       },
-      defaultConfig: defaultConfig,
+
       ...input,
     }
   },

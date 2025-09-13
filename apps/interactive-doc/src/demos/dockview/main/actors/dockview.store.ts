@@ -49,5 +49,4 @@ export default {
       position: { referencePanel: "panel_7", direction: "below" },
     },
   ],
-
 }

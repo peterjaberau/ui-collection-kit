@@ -5,36 +5,21 @@ import {
   DockviewReact,
   DockviewReadyEvent,
   IDockviewPanelHeaderProps,
-  IDockviewPanelProps,
-  DockviewApi,
-  DockviewTheme,
-  themeDark,
   themeReplit,
 } from "#dockview"
-import { useDockviewApi } from "./hooks/useDockviewApi"
-import React, { useMemo } from "react"
-import "./app.css"
+import React from "react"
 import { GridActions } from "./gridActions"
 import { PanelActions } from "./panelActions"
 import { GroupActions } from "./groupActions"
-import { LeftControls, PrefixHeaderControls, RightControls } from "./controls"
+import { DockLeftControls, DockPrefixHeaderControls, DockRightControls } from "./dock.controls"
 import { Table, usePanelApiMetadata } from "./debugPanel"
-import { useTheme } from "next-themes"
-import { Button, IconButton, HStack, Icon, Stack, Box, Flex } from "@chakra-ui/react"
+import { Button, IconButton, HStack, Icon, Stack, Box, Flex, Center, Container, Badge } from "@chakra-ui/react"
 import { LuBug as IconEngineer } from "react-icons/lu"
 import { RiTerminalBoxFill as IconConsole } from "react-icons/ri"
 import { BiUndo as IconUndo } from "react-icons/bi"
 import { DockViewThemeprovider } from "./DockViewThemeprovider"
-
+import { useDockApi } from "#demos/dockview/main/hooks/useDockApi"
 const DebugContext = React.createContext<boolean>(false)
-const Option = (props: { title: string; onClick: () => void; value: string }) => {
-  return (
-    <div>
-      <span>{`${props.title}: `}</span>
-      <button onClick={props.onClick}>{props.value}</button>
-    </div>
-  )
-}
 
 const components = {
   default: (props: any) => {
@@ -66,15 +51,20 @@ const components = {
         </span>
 
         {isDebug && (
-          <div style={{ fontSize: "0.8em" }}>
-            <Option
-              title="Panel Rendering Mode"
-              value={metadata.renderer.value}
-              onClick={() => props.api.setRenderer(props.api.renderer === "always" ? "onlyWhenVisible" : "always")}
-            />
+          <Stack>
+            <HStack>
+              <Badge>Panel Rendering Mode</Badge>
+              <Button
+                variant="outline"
+                size="xs"
+                onClick={() => props.api.setRenderer(props.api.renderer === "always" ? "onlyWhenVisible" : "always")}
+              >
+                {metadata.renderer.value}
+              </Button>
+            </HStack>
 
-            <Table data={metadata} />
-          </div>
+            <Table data={metadata} id={props.api.id} />
+          </Stack>
         )}
       </div>
     )
@@ -92,16 +82,13 @@ const headerComponents = {
 }
 
 const DockViewApp = (props: { theme?: string }) => {
-
-  const { sendToDockviewApi, dockviewApiContext } = useDockviewApi()
-  const { api, panels, groups, activePanel, activeGroup, logLines } = dockviewApiContext
-
-  const onReady = (event: DockviewReadyEvent) => {
-    sendToDockviewApi({ type: "onReady", api: event.api })
-  }
-
+  const { sendToDockApi, api, extras } = useDockApi()
   const [showLogs, setShowLogs] = React.useState<boolean>(false)
   const [debug, setDebug] = React.useState<boolean>(false)
+
+  const onReady = (event: DockviewReadyEvent) => {
+    sendToDockApi({ type: "onReady", api: event.api })
+  }
 
   return (
     <DockViewThemeprovider>
@@ -109,7 +96,7 @@ const DockViewApp = (props: { theme?: string }) => {
         css={{
           "--dv-paneview-active-outline-color": "dodgerblue",
           "--dv-tabs-and-actions-container-font-size": "13px",
-          "--dv-tabs-and-actions-container-height": "35px",
+          "--dv-tabs-and-actions-container-height": "38px",
           "--dv-drag-over-background-color": "#53595d80",
           "--dv-drag-over-border-color": "transparent",
           "--dv-tabs-container-scrollbar-color": "#888",
@@ -117,8 +104,8 @@ const DockViewApp = (props: { theme?: string }) => {
           "--dv-floating-box-shadow": "8px 8px 8px 0px #53595d80",
           "--dv-overlay-z-index": 999,
           "--dv-tab-font-size": "inherit",
-          "--dv-border-radius": "0px",
-          "--dv-tab-margin": 0,
+          // "--dv-border-radius": "0px",
+          // "--dv-tab-margin": 0,
           "--dv-sash-color": "#cfd1d3",
           "--dv-active-sash-color": "#babbbb",
           "--dv-active-sash-transition-duration": ".1s",
@@ -142,15 +129,6 @@ const DockViewApp = (props: { theme?: string }) => {
           "--dv-inactivegroup-visiblepanel-tab-color": "#333",
           "--dv-inactivegroup-hiddenpanel-tab-color": "#333",
 
-          "--dv-resize-container-groupview-border-radius": "8px",
-          "--dv-resize-container-border-radius": "10px",
-          "--dv-groupview-border-radius": "10px",
-          "--dv-groupview-tabs-and-actions-container-border-bottom": "1px solid",
-          "--dv-groupview-tabs-and-actions-container-border-bottom-color": "#80808059",
-          "--dv-groupview-tabs-and-actions-container-tab-margin": "4px",
-          "--dv-groupview-tabs-and-actions-container-tab-border-radius": "8px",
-          "--dv-groupview-tabs-and-actions-container-tab-svg-height": "8px",
-          "--dv-groupview-tabs-and-actions-container-tab-svg-width": "8px",
           "--dv-groupview-tabs-and-actions-container-tab-hover-background-color": "#e4e5e6",
           "--dv-groupview-content-container-background-color": "#fcfcfc",
           "--dv-groupview-active-group-border": "1px solid",
@@ -158,25 +136,6 @@ const DockViewApp = (props: { theme?: string }) => {
           "--dv-groupview-inactive-group-border": "1px solid",
           "--dv-groupview-inactive-group-border-color": "#0000",
 
-          "--dv-vertical-sash-container-sash-background-color": "#0000",
-          "--dv-vertical-sash-container-sash-nd-after-height": "4px",
-          "--dv-vertical-sash-container-sash-nd-after-width": "40px",
-          "--dv-vertical-sash-container-sash-nd-after-border-radius": "2px",
-          "--dv-vertical-sash-container-sash-nd-after-top": "50%",
-          "--dv-vertical-sash-container-sash-nd-after-left": "50%",
-          "--dv-vertical-sash-container-sash-nd-after-transform": "translate(-50%, -50%)",
-          "--dv-vertical-sash-container-sash-nd-hover-after-background-color": "#0000",
-          "--dv-vertical-sash-container-sash-nd-active-background-color": "#0000",
-
-          "--dv-horizontal-sash-container-sash-background-color": "#0000",
-          "--dv-horizontal-sash-container-sash-nd-after-height": "40px",
-          "--dv-horizontal-sash-container-sash-nd-after-width": "4px",
-          "--dv-horizontal-sash-container-sash-nd-after-border-radius": "2px",
-          "--dv-horizontal-sash-container-sash-nd-after-top": "50%",
-          "--dv-horizontal-sash-container-sash-nd-after-left": "50%",
-          "--dv-horizontal-sash-container-sash-nd-after-transform": "translate(-50%, -50%)",
-          "--dv-horizontal-sash-container-sash-nd-hover-after-background-color": "#0000",
-          "--dv-horizontal-sash-container-sash-nd-active-background-color": "#0000",
 
           height: "100vh",
           position: "relative",
@@ -192,9 +151,9 @@ const DockViewApp = (props: { theme?: string }) => {
             borderRadius: "sm",
           }}
         >
-          <GridActions/>
-          {api && <PanelActions api={api} panels={panels} activePanel={activePanel} />}
-          {api && <GroupActions api={api} groups={groups} activeGroup={activeGroup} />}
+          <GridActions />
+          {api && <PanelActions />}
+          {api && <GroupActions />}
           <HStack w="full" justifyContent="flex-end">
             <IconButton
               size="sm"
@@ -242,9 +201,9 @@ const DockViewApp = (props: { theme?: string }) => {
               <DockviewReact
                 components={components}
                 defaultTabComponent={headerComponents.default}
-                rightHeaderActionsComponent={RightControls}
-                leftHeaderActionsComponent={LeftControls}
-                prefixHeaderActionsComponent={PrefixHeaderControls}
+                rightHeaderActionsComponent={DockRightControls}
+                leftHeaderActionsComponent={DockLeftControls}
+                prefixHeaderActionsComponent={DockPrefixHeaderControls}
                 onReady={onReady}
                 theme={themeReplit}
               />
@@ -266,7 +225,7 @@ const DockViewApp = (props: { theme?: string }) => {
               }}
             >
               <Box style={{ flexGrow: 1, overflow: "auto" }}>
-                {logLines.map((line: any, i: number) => {
+                {extras.logLines.map((line: any, i: number) => {
                   return (
                     <Box
                       style={{
@@ -295,7 +254,7 @@ const DockViewApp = (props: { theme?: string }) => {
                           height: "100%",
                         }}
                       >
-                        {logLines.length - i}
+                        {extras.logLines.length - i}
                       </span>
                       <span>
                         {line.timestamp && (

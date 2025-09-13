@@ -32,6 +32,7 @@ export interface IDockviewPanel extends IDisposable, IPanel {
   setTitle(title: string): void;
   update(event: PanelUpdateEvent): void;
   runEvents(): void;
+  [key: string]: any
 }
 
 export class DockviewPanel

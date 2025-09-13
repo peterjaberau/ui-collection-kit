@@ -1,4 +1,5 @@
 import { Provider as ChakraProvider } from "./provider"
+import '#demos/dockview/main/dock-view-light.css'
 import { Suspense } from "react"
 
 export default function RootLayout({

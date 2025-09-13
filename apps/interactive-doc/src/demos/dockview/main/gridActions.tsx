@@ -1,19 +1,19 @@
 "use client"
 import * as React from "react"
-import { HStack, Popover, Portal } from "@chakra-ui/react"
+import { Badge, HStack, Popover, Portal } from "@chakra-ui/react"
 import { PanelBuilder } from "./panelBuilder"
 import { IconButtonRender, ActionButtonRender } from "./common/component.mapping"
 import { useState } from "react"
-import { useDockviewApi } from "./hooks/useDockviewApi"
+import { useDockApi } from './hooks/useDockApi'
 
 export const GridActions = () => {
   const [isPanelBuilderOpen, setIsPanelBuilderOpen] = useState(false)
-  const { dockviewApiContext, sendToDockviewApi } = useDockviewApi()
-  const { api } = dockviewApiContext
+  const { sendToDockApi, api } = useDockApi()
 
   return (
     <HStack>
-      <ActionButtonRender text="Add Panel" onClick={() => sendToDockviewApi({ type: "onAddPanel" })} />
+      <Badge>gridActions</Badge>
+      <ActionButtonRender text="Add Panel" onClick={() => sendToDockApi({ type: "onAddPanel" })} />
       <Popover.Root open={isPanelBuilderOpen} onOpenChange={(e) => setIsPanelBuilderOpen(e.open)}>
         <Popover.Trigger asChild>
           <IconButtonRender variant="outline" name="preferences" />
@@ -32,18 +32,18 @@ export const GridActions = () => {
 
       <ActionButtonRender
         text="Add Nested Panel"
-        onClick={() => sendToDockviewApi({ type: "onAddPanel", payload: { nested: true } })}
+        onClick={() => sendToDockApi({ type: "onAddPanel", payload: { nested: true } })}
       />
 
-      <ActionButtonRender text="Add Group" onClick={() => sendToDockviewApi({ type: "onAddGroup" })} />
+      <ActionButtonRender text="Add Group" onClick={() => sendToDockApi({ type: "onAddGroup" })} />
 
-      <ActionButtonRender text="Clear" onClick={() => sendToDockviewApi({ type: "onClearLayout" })} />
+      <ActionButtonRender text="Clear" onClick={() => sendToDockApi({ type: "onClearLayout" })} />
 
-      <ActionButtonRender text="Load" onClick={() => sendToDockviewApi({ type: "onLoadLayout" })} />
+      <ActionButtonRender text="Load" onClick={() => sendToDockApi({ type: "onLoadLayout" })} />
 
-      <ActionButtonRender text="Save" onClick={() => sendToDockviewApi({ type: "onSaveLayout" })} />
+      <ActionButtonRender text="Save" onClick={() => sendToDockApi({ type: "onSaveLayout" })} />
 
-      <ActionButtonRender text="Reset" onClick={() => sendToDockviewApi({ type: "onResetLayout" })} />
+      <ActionButtonRender text="Reset" onClick={() => sendToDockApi({ type: "onResetLayout" })} />
     </HStack>
   )
 }

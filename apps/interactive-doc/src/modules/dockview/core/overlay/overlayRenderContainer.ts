@@ -1,127 +1,122 @@
-import { DragAndDropObserver } from '../dnd/dnd';
-import { Droptarget } from '../dnd/droptarget';
-import { getDomNodePagePosition, toggleClass } from '../dom';
-import {
-  CompositeDisposable,
-  Disposable,
-  IDisposable,
-  MutableDisposable,
-} from '../lifecycle';
-import { IDockviewPanel } from '../dockview/dockviewPanel';
-import { DockviewComponent } from '../dockview/dockviewComponent';
+import { DragAndDropObserver } from "../dnd/dnd"
+import { Droptarget } from "../dnd/droptarget"
+import { getDomNodePagePosition, toggleClass } from "../dom"
+import { CompositeDisposable, Disposable, IDisposable, MutableDisposable } from "../lifecycle"
+import { IDockviewPanel } from "../dockview/dockviewPanel"
+import { DockviewComponent } from "../dockview/dockviewComponent"
 
 class PositionCache {
-  private cache = new Map<Element, { rect: { left: number; top: number; width: number; height: number }; frameId: number }>();
-  private currentFrameId = 0;
-  private rafId: number | null = null;
+  private cache = new Map<
+    Element,
+    { rect: { left: number; top: number; width: number; height: number }; frameId: number }
+  >()
+  private currentFrameId = 0
+  private rafId: number | null = null
 
   getPosition(element: Element): { left: number; top: number; width: number; height: number } {
-    const cached = this.cache.get(element);
+    const cached = this.cache.get(element)
     if (cached && cached.frameId === this.currentFrameId) {
-      return cached.rect;
+      return cached.rect
     }
 
-    this.scheduleFrameUpdate();
-    const rect = getDomNodePagePosition(element);
-    this.cache.set(element, { rect, frameId: this.currentFrameId });
-    return rect;
+    this.scheduleFrameUpdate()
+    const rect = getDomNodePagePosition(element)
+    this.cache.set(element, { rect, frameId: this.currentFrameId })
+    return rect
   }
 
   invalidate(): void {
-    this.currentFrameId++;
+    this.currentFrameId++
   }
 
   private scheduleFrameUpdate() {
-    if (this.rafId) return;
+    if (this.rafId) return
     this.rafId = requestAnimationFrame(() => {
-      this.currentFrameId++;
-      this.rafId = null;
-    });
+      this.currentFrameId++
+      this.rafId = null
+    })
   }
 }
 
-export type DockviewPanelRenderer = 'onlyWhenVisible' | 'always';
+export type DockviewPanelRenderer = "onlyWhenVisible" | "always"
 
 export interface IRenderable {
-  readonly element: HTMLElement;
-  readonly dropTarget: Droptarget;
+  readonly element: HTMLElement
+  readonly dropTarget: Droptarget
 }
 
 function createFocusableElement(): HTMLDivElement {
-  const element = document.createElement('div');
-  element.tabIndex = -1;
-  return element;
+  const element = document.createElement("div")
+  element.tabIndex = -1
+  return element
 }
 
 export class OverlayRenderContainer extends CompositeDisposable {
   private readonly map: Record<
     string,
     {
-      panel: IDockviewPanel;
-      disposable: IDisposable;
-      destroy: IDisposable;
-      element: HTMLElement;
-      resize?: () => void;
+      panel: IDockviewPanel
+      disposable: IDisposable
+      destroy: IDisposable
+      element: HTMLElement
+      resize?: () => void
     }
-  > = {};
+  > = {}
 
-  private _disposed = false;
-  private readonly positionCache = new PositionCache();
-  private readonly pendingUpdates = new Set<string>();
+  private _disposed = false
+  private readonly positionCache = new PositionCache()
+  private readonly pendingUpdates = new Set<string>()
 
   constructor(
     readonly element: HTMLElement,
-    readonly accessor: DockviewComponent
+    readonly accessor: DockviewComponent,
   ) {
-    super();
+    super()
 
     this.addDisposables(
       Disposable.from(() => {
         for (const value of Object.values(this.map)) {
-          value.disposable.dispose();
-          value.destroy.dispose();
+          value.disposable.dispose()
+          value.destroy.dispose()
         }
-        this._disposed = true;
-      })
-    );
+        this._disposed = true
+      }),
+    )
   }
 
   updateAllPositions(): void {
     if (this._disposed) {
-      return;
+      return
     }
 
     // Invalidate position cache to force recalculation
-    this.positionCache.invalidate();
+    this.positionCache.invalidate()
 
     // Call resize function directly for all visible panels
     for (const entry of Object.values(this.map)) {
       if (entry.panel.api.isVisible && entry.resize) {
-        entry.resize();
+        entry.resize()
       }
     }
   }
 
-  detatch(panel: IDockviewPanel): boolean {
+  detatch(panel: IDockviewPanel | any): boolean {
     if (this.map[panel.api.id]) {
-      const { disposable, destroy } = this.map[panel.api.id];
-      disposable.dispose();
-      destroy.dispose();
-      delete this.map[panel.api.id];
-      return true;
+      const { disposable, destroy }: any = this.map[panel.api.id] as any
+      disposable.dispose()
+      destroy.dispose()
+      delete this.map[panel.api.id]
+      return true
     }
-    return false;
+    return false
   }
 
-  attach(options: {
-    panel: IDockviewPanel;
-    referenceContainer: IRenderable;
-  }): HTMLElement {
-    const { panel, referenceContainer } = options;
+  attach(options: { panel: IDockviewPanel | any; referenceContainer: IRenderable | any }): HTMLElement {
+    const { panel, referenceContainer }: any = options
 
     if (!this.map[panel.api.id]) {
-      const element = createFocusableElement();
-      element.className = 'dv-render-overlay';
+      const element = createFocusableElement()
+      element.className = "dv-render-overlay"
 
       this.map[panel.api.id] = {
         panel,
@@ -129,109 +124,100 @@ export class OverlayRenderContainer extends CompositeDisposable {
         destroy: Disposable.NONE,
 
         element,
-      };
+      }
     }
 
-    const focusContainer = this.map[panel.api.id].element;
+    // @ts-ignore
+    const focusContainer: any = this.map[panel.api.id].element
 
     if (panel.view.content.element.parentElement !== focusContainer) {
-      focusContainer.appendChild(panel.view.content.element);
+      focusContainer.appendChild(panel.view.content.element)
     }
 
     if (focusContainer.parentElement !== this.element) {
-      this.element.appendChild(focusContainer);
+      this.element.appendChild(focusContainer)
     }
 
     const resize = () => {
-      const panelId = panel.api.id;
+      const panelId = panel.api.id
 
       if (this.pendingUpdates.has(panelId)) {
-        return; // Update already scheduled
+        return // Update already scheduled
       }
 
-      this.pendingUpdates.add(panelId);
+      this.pendingUpdates.add(panelId)
 
       requestAnimationFrame(() => {
-        this.pendingUpdates.delete(panelId);
+        this.pendingUpdates.delete(panelId)
 
         if (this.isDisposed || !this.map[panelId]) {
-          return;
+          return
         }
 
-        const box = this.positionCache.getPosition(referenceContainer.element);
-        const box2 = this.positionCache.getPosition(this.element);
+        const box = this.positionCache.getPosition(referenceContainer.element)
+        const box2 = this.positionCache.getPosition(this.element)
+
+
 
         // Use traditional positioning for overlay containers
-        const left = box.left - box2.left;
-        const top = box.top - box2.top;
-        const width = box.width;
-        const height = box.height;
+        const left = box.left - box2.left
+        const top = box.top - box2.top
+        const width = box.width
+        const height = box.height
 
-        focusContainer.style.left = `${left}px`;
-        focusContainer.style.top = `${top}px`;
-        focusContainer.style.width = `${width}px`;
-        focusContainer.style.height = `${height}px`;
+        focusContainer.style.left = `${left}px`
+        focusContainer.style.top = `${top}px`
+        focusContainer.style.width = `${width}px`
+        focusContainer.style.height = `${height}px`
 
-        toggleClass(
-          focusContainer,
-          'dv-render-overlay-float',
-          panel.group.api.location.type === 'floating'
-        );
-      });
-    };
+        toggleClass(focusContainer, "dv-render-overlay-float", panel.group.api.location.type === "floating")
+      })
+    }
 
     const visibilityChanged = () => {
       if (panel.api.isVisible) {
-        this.positionCache.invalidate();
-        resize();
+        this.positionCache.invalidate()
+        resize()
       }
 
-      focusContainer.style.display = panel.api.isVisible ? '' : 'none';
-    };
+      focusContainer.style.display = panel.api.isVisible ? "" : "none"
+    }
 
-    const observerDisposable = new MutableDisposable();
+    const observerDisposable = new MutableDisposable()
 
     const correctLayerPosition = () => {
-      if (panel.api.location.type === 'floating') {
+      if (panel.api.location.type === "floating") {
         queueMicrotask(() => {
-          const floatingGroup = this.accessor.floatingGroups.find(
-            (group) => group.group === panel.api.group
-          );
+          const floatingGroup = this.accessor.floatingGroups.find((group) => group.group === panel.api.group)
 
           if (!floatingGroup) {
-            return;
+            return
           }
 
-          const element = floatingGroup.overlay.element;
+          const element = floatingGroup.overlay.element
 
           const update = () => {
-            const level = Number(
-              element.getAttribute('aria-level')
-            );
-            focusContainer.style.zIndex = `calc(var(--dv-overlay-z-index, 999) + ${
-              level * 2 + 1
-            })`;
-          };
+            const level = Number(element.getAttribute("aria-level"))
+            focusContainer.style.zIndex = `calc(var(--dv-overlay-z-index, 999) + ${level * 2 + 1})`
+          }
 
           const observer = new MutationObserver(() => {
-            update();
-          });
+            update()
+          })
 
-          observerDisposable.value = Disposable.from(() =>
-            observer.disconnect()
-          );
+          observerDisposable.value = Disposable.from(() => observer.disconnect())
 
           observer.observe(element, {
-            attributeFilter: ['aria-level'],
+            attributeFilter: ["aria-level"],
             attributes: true,
-          });
+          })
 
-          update();
-        });
+          update()
+        })
       } else {
-        focusContainer.style.zIndex = ''; // reset the z-index, perhaps CSS will take over here
+        focusContainer.style.zIndex = "" // reset the z-index, perhaps CSS will take over here
       }
-    };
+    }
 
     const disposable = new CompositeDisposable(
       observerDisposable,
@@ -244,19 +230,19 @@ export class OverlayRenderContainer extends CompositeDisposable {
        */
       new DragAndDropObserver(focusContainer, {
         onDragEnd: (e) => {
-          referenceContainer.dropTarget.dnd.onDragEnd(e);
+          referenceContainer.dropTarget.dnd.onDragEnd(e)
         },
         onDragEnter: (e) => {
-          referenceContainer.dropTarget.dnd.onDragEnter(e);
+          referenceContainer.dropTarget.dnd.onDragEnter(e)
         },
         onDragLeave: (e) => {
-          referenceContainer.dropTarget.dnd.onDragLeave(e);
+          referenceContainer.dropTarget.dnd.onDragLeave(e)
         },
         onDrop: (e) => {
-          referenceContainer.dropTarget.dnd.onDrop(e);
+          referenceContainer.dropTarget.dnd.onDrop(e)
         },
         onDragOver: (e) => {
-          referenceContainer.dropTarget.dnd.onDragOver(e);
+          referenceContainer.dropTarget.dnd.onDragOver(e)
         },
       }),
 
@@ -266,33 +252,32 @@ export class OverlayRenderContainer extends CompositeDisposable {
          * the content is still maintained within the DOM hence DOM specific attributes
          * such as scroll position are maintained when next made visible.
          */
-        visibilityChanged();
+        visibilityChanged()
       }),
       panel.api.onDidDimensionsChange(() => {
         if (!panel.api.isVisible) {
-          return;
+          return
         }
 
-        resize();
+        resize()
       }),
-      panel.api.onDidLocationChange(() => {
-        correctLayerPosition();
-      })
-    );
+      panel.api.onDidLocationChange(() => correctLayerPosition()),
+    )
 
+    //@ts-ignore
     this.map[panel.api.id].destroy = Disposable.from(() => {
       if (panel.view.content.element.parentElement === focusContainer) {
-        focusContainer.removeChild(panel.view.content.element);
+        focusContainer.removeChild(panel.view.content.element)
       }
 
-      focusContainer.parentElement?.removeChild(focusContainer);
-    });
+      focusContainer.parentElement?.removeChild(focusContainer)
+    })
 
-    correctLayerPosition();
+    correctLayerPosition()
 
     queueMicrotask(() => {
       if (this.isDisposed) {
-        return;
+        return
       }
 
       /**
@@ -300,16 +285,19 @@ export class OverlayRenderContainer extends CompositeDisposable {
        * calling the first resize as other size-altering events may still occur before
        * the end of the stack-frame.
        */
-      visibilityChanged();
-    });
+      visibilityChanged()
+    })
 
     // dispose of logic asoccciated with previous reference-container
-    this.map[panel.api.id].disposable.dispose();
+    //@ts-ignore
+    this.map[panel.api.id].disposable.dispose()
     // and reset the disposable to the active reference-container
-    this.map[panel.api.id].disposable = disposable;
+    //@ts-ignore
+    this.map[panel.api.id].disposable = disposable
     // store the resize function for direct access
-    this.map[panel.api.id].resize = resize;
+    //@ts-ignore
+    this.map[panel.api.id].resize = resize
 
-    return focusContainer;
+    return focusContainer
   }
 }
