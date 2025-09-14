@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+/** @type {import('postcss-load-config').Config} */
 
 const nextConfig = {
   /* config options here */

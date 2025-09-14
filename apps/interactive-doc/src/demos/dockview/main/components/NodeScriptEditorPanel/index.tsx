@@ -1,5 +1,4 @@
 'use client'
-import { HiClipboardCopy as ClipboardCopyIcon } from "react-icons/hi";
 import React from "react";
 import { Editor } from "./components/Editor"
 import { chakra, IconButton } from '@chakra-ui/react'
@@ -7,7 +6,7 @@ import { chakra, IconButton } from '@chakra-ui/react'
 import { Monaco } from "@monaco-editor/react";
 import * as monacoType from "monaco-editor/esm/vs/editor/editor.api";
 
-interface TransformStepProps {
+interface NodeScriptEditorPanelProps {
   id: string;
   title: string | any;
   subtitle: string;
@@ -20,10 +19,10 @@ interface TransformStepProps {
   readOnly?: boolean;
   onInit?: (editor: monacoType.editor.IStandaloneCodeEditor, monaco: Monaco) => void;
   onChange?: (value: string) => void;
-  onCopy: (value: string) => void;
 }
 
-export const NodeScriptEditorPanel = (props: TransformStepProps) => {
+export const NodeScriptEditorPanel = (props: NodeScriptEditorPanelProps) => {
+
   const {
     title,
     subtitle,
@@ -31,7 +30,6 @@ export const NodeScriptEditorPanel = (props: TransformStepProps) => {
     errors = [],
     value,
     onChange = () => {},
-    onCopy,
     color,
     onInit,
     errorOverLayMessage,
@@ -44,35 +42,14 @@ export const NodeScriptEditorPanel = (props: TransformStepProps) => {
   return (
     <chakra.div
       css={{
-        border: '2px solid',
-        borderColor: 'border',
-        borderOpacity: 0.5,
-        boxShadow: 'lg',
-        borderRadius: 'md'
+        // border: '2px solid',
+        // borderColor: 'border',
+        // borderOpacity: 0.5,
+        // boxShadow: 'lg',
+        // borderRadius: 'md',
+        height: '100%'
       }}
     >
-      <chakra.div
-        css={{
-          fontSize: 'sm',
-          color: 'gray.200',
-          px: 6,
-          py: 1,
-          backgroundColor: 'green.200',
-          backgroundOpacity: 0.5,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          borderRadius: 'sm',
-        }}
-      >
-        <chakra.div css={{ fontWeight: 'bold'}}>
-          {title}
-          <chakra.span css={{ display: 'block', fontWeight: 'light', fontSize: 'xs'}} >{subtitle}</chakra.span>
-        </chakra.div>
-        <IconButton size='xs' onClick={() => onCopy(value)}>
-          <ClipboardCopyIcon className="w-4 h-4" />
-        </IconButton>
-      </chakra.div>
       {!value && emptyMessage && (
         <chakra.div
           css={{
@@ -93,7 +70,7 @@ export const NodeScriptEditorPanel = (props: TransformStepProps) => {
       {renderEditor && (
         <Editor
           id={id}
-          height={"500px"}
+          // height={"500px"}
           errors={errors}
           errorOverLayMessage={errorOverLayMessage}
           value={value ? JSON.stringify(value, null, 4) : ""}

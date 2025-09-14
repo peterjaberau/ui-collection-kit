@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@remixicon/react": "^4.6.0",
     "@ui-kit/components": "workspace:*",
     "@emotion/react": "^11.14.0",
     "react-lorem-ipsum": "^1.4.10",

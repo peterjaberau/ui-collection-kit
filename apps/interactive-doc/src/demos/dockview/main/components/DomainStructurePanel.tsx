@@ -1,6 +1,6 @@
 import { TreeView, createTreeCollection } from "@chakra-ui/react"
 import { LuFile, LuFolder } from "react-icons/lu"
-import { data } from '../actors/dockview.store'
+import { domainStore } from '../actors/dockview.store'
 
 
 const collection = createTreeCollection<any>({
@@ -9,7 +9,7 @@ const collection = createTreeCollection<any>({
   rootNode: {
     id: "ROOT",
     name: "",
-    children: data.domainsStructure.jsonata
+    children: domainStore.domainsStructure.jsonata
   }
 })
 

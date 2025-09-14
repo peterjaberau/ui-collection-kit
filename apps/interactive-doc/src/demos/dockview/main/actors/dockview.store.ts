@@ -100,10 +100,61 @@ export const domainDrivenDock = {
 }
 
 
-export const data = {
+export const domainStore = {
   domains: [
     "jsonata"
   ],
+  domainConfig: {
+    jsonata: {
+      dock: {
+        panels: [
+          {
+            id: "panel_domain_structure",
+            component: "DomainStructurePanel",
+            title: "Domain Structure",
+            renderer: "always",
+          },
+          {
+            id: "panel_node_script_editor_source",
+            component: "NodeScriptEditorPanel",
+            title: "Source",
+            renderer: "always",
+            params: {
+              scope: 'source',
+            },
+            position: { referencePanel: "panel_domain_structure", direction: "right" },
+          },
+          {
+            id: "panel_node_script_editor_transformer",
+            component: "NodeScriptEditorPanel",
+            title: "Transformer",
+            renderer: "always",
+            params: {
+              scope: 'transformer',
+            },
+            position: { referencePanel: "panel_node_script_editor_source", direction: "right" },
+          },
+          {
+            id: "panel_node_script_editor_results",
+            component: "NodeScriptEditorPanel",
+            title: "Results",
+            renderer: "always",
+            params: {
+              scope: 'result',
+            },
+            position: { referencePanel: "panel_node_script_editor_transformer", direction: "right" },
+          },
+          {
+            id: "panel_node_actions",
+            component: "NodeActionsPanel",
+            title: "Actions",
+            renderer: "always",
+            position: { referencePanel: "panel_domain_structure", direction: "below" },
+          },
+        ]
+      }
+    }
+  },
   domainsStructure: {
     jsonata: [
       {
@@ -125,5 +176,14 @@ export const data = {
         ]
       }
     ]
+  },
+
+  nodeScriptDemos: {
+    jsonata: {
+      source: {},
+      transformer: {},
+    }
   }
 }
+
+

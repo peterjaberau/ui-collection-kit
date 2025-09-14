@@ -12,6 +12,10 @@ export const useJsonataRoot = () => {
 
   const stateValue = jsonataState?.value
 
+  const source = jsonataContext.source
+  const transformer = jsonataContext.transformer
+  const result = jsonataContext.result
+
 
   return {
     jsonataRootRef,

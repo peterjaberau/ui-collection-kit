@@ -7,7 +7,7 @@ import {
   IDockviewPanelHeaderProps,
   themeReplit,
 } from "#dockview"
-import React from "react"
+import React, { useEffect } from "react"
 import { GridActions } from "./gridActions"
 import { PanelActions } from "./panelActions"
 import { GroupActions } from "./groupActions"
@@ -17,14 +17,15 @@ import { Button, IconButton, HStack, Icon, Stack, Box, Flex, Center, Container, 
 import { LuBug as IconEngineer } from "react-icons/lu"
 import { RiTerminalBoxFill as IconConsole } from "react-icons/ri"
 import { BiUndo as IconUndo } from "react-icons/bi"
-import { DomainStructurePanel } from './components/DomainStructurePanel'
-import { NodeScriptEditorPanel } from './components/NodeScriptEditorPanel'
-// NodeScriptEditorPanel
-import { DockViewThemeprovider } from "./DockViewThemeprovider"
+import { DomainStructurePanel } from "./components/DomainStructurePanel"
+import { NodeScriptEditorPanel } from "./components/NodeScriptEditorPanel"
+import { useScriptEditorState } from "./components/NodeScriptEditorPanel/hooks/useScriptEditorState"
+import { useJsonataRoot } from "#demos/jsonata/actors/hooks/useJsonataRoot"
+
+import { NodeActionsPanel } from "./components/NodeActionsPanel"
 import { useDockApi } from "#demos/dockview/main/hooks/useDockApi"
-import TransformStep from "#demos/jsonata/components/TransformStep"
-import useEditorState from "#demos/jsonata/hooks/useEditorState"
-import { inputExample } from "#demos/jsonata/data/examples"
+import { useDockPanel } from "#demos/dockview/main/hooks/useDockPanel"
+
 const DebugContext = React.createContext<boolean>(false)
 
 const components = {
@@ -105,23 +106,33 @@ const components = {
   NodeSpecificationsPanel: (props: any) => {
     return <>NodeSpecificationsPanel</>
   },
-  NodeInputPanel: (props: any) => {
-    return <>NodeInputPanel</>
-  },
-  NodeTransformPanel: (props: any) => {
-    return <>NodeTransformPanel</>
-  },
+
   NodeOutputPanel: (props: any) => {
     return <>NodeOutputPanel</>
   },
   NodeActionsPanel: (props: any) => {
-    return <>NodeActionsPanel</>
+    const { sendToJsonataRoot } = useJsonataRoot()
+
+    return (
+    <>
+      <Button onClick={() => sendToJsonataRoot({ type: "execute" })}>Execute</Button>
+      <NodeActionsPanel />
+    </>
+    )
   },
   NodeVisualEditorPanel: (props: any) => {
     return <>NodeVisualEditorPanel</>
   },
   NodeScriptEditorPanel: (props: any) => {
-    const [inputJson, setInputJson]: any = React.useState({ test: 'example'})
+    //{ test: 'example'}
+    const { jsonataContext } = useJsonataRoot()
+    const { params } = useDockPanel({ panelId: props.api.id })
+    const [inputJson, setInputJson]: any = React.useState(jsonataContext[params?.scope])
+
+    useEffect(() => {
+      setInputJson(jsonataContext[params?.scope])
+    }, [jsonataContext])
+
 
     return (
       <NodeScriptEditorPanel
@@ -130,7 +141,6 @@ const components = {
         title={<>Input JSON &rarr;</>}
         subtitle="Your source JSON you want to transform."
         value={inputJson}
-        onCopy={(value) => console.log("Input JSON", JSON.stringify(value, null, 4))}
         onChange={(value: any) => {
           try {
             const input = value ? JSON.parse(value) : null
@@ -172,7 +182,6 @@ const DockViewApp = (props: { theme?: string }) => {
   }
 
   return (
-    <DockViewThemeprovider>
       <Stack
         css={{
           "--dv-paneview-active-outline-color": "dodgerblue",
@@ -366,7 +375,6 @@ const DockViewApp = (props: { theme?: string }) => {
           )}
         </Flex>
       </Stack>
-    </DockViewThemeprovider>
   )
 }
 

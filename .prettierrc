@@ -1,5 +1,8 @@
 {
-  "plugins": [],
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindFunctions": ["tv"],
   "overrides": [],
   "bracketSpacing": true,
   "jsxSingleQuote": false,

@@ -1,11 +1,12 @@
 import { createMachine, assign, setup, fromCallback } from "xstate"
 import { DockviewApi } from "#dockview"
-import { configDemo, domainDrivenDock} from "./dockview.store"
+import { configDemo, domainDrivenDock, domainStore} from "./dockview.store"
 import { defineDockDisposables, applyDefaultLayout, loadLayoutFromLocalStorage, cleanupDockDisposables } from "./utils"
 
 const defaultConfig = {
   demo: configDemo,
-  domainDrivenDock: domainDrivenDock
+  domainDrivenDock: domainDrivenDock,
+  domain: domainStore
 }
 
 const dockviewApiEvents = fromCallback(({ sendBack, input }) => {
@@ -153,7 +154,8 @@ export const dockviewApiMachine = setup({
       api: null,
       activePanel: "",
       activeGroup: "",
-      defaultConfig: defaultConfig.domainDrivenDock,
+      // defaultConfig: defaultConfig.domainDrivenDock,
+      defaultConfig: defaultConfig.domain.domainConfig.jsonata.dock,
 
       //extras
       idCounter: 0,

@@ -263,7 +263,7 @@ const DockviewApi = {
           _isDisposed: false,
           _disposables: Array(43),
           _disableResizing: false,
-          _element: div.dockview - theme - replit,
+          _element: 'div.dockview - theme - replit',
           _id: "1",
         },
         component: "default",

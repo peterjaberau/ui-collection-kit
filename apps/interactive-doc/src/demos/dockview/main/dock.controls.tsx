@@ -1,7 +1,6 @@
 "use client"
 import { IDockviewHeaderActionsProps } from "#dockview"
 import * as React from "react"
-import { nextId } from "./utils"
 import { IconButtonRender } from "./common/component.mapping"
 import { HStack } from "@chakra-ui/react"
 import { useDockPanel } from "./hooks/useDockPanel"

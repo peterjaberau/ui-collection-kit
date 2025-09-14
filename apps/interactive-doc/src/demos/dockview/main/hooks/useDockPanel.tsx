@@ -51,6 +51,7 @@ export const useDockPanel = ({ panelId }: any) => {
     title: panel?.title,
     width: panel?.width,
     renderer: panel?.renderer,
+    params,
 
     close: () => panel?.api.close(),
     exitMaximized: () => panel?.api.exitMaximized(),
