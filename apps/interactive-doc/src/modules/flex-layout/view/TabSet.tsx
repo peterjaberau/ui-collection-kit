@@ -12,7 +12,7 @@ import { CLASSES } from "../Types";
 import { isAuxMouseEvent } from "./Utils";
 import { createPortal } from "react-dom";
 import { splitterDragging } from "./Splitter";
-import { Button, Box, chakra } from '@chakra-ui/react'
+import { Button, Box, chakra, IconButton, Icon, HStack, Container } from '@chakra-ui/react'
 
 /** @internal */
 export interface ITabSetProps {
@@ -266,59 +266,65 @@ export const TabSet = (props: ITabSetProps) => {
         const minTitle = layout.i18nName(I18nLabel.Restore);
         const maxTitle = layout.i18nName(I18nLabel.Maximize);
         buttons.push(
-            <button
+            <IconButton
+              size='xs'
+              variant='ghost'
                 key="max"
                 data-layout-path={path + "/button/max"}
                 title={node.isMaximized() ? minTitle : maxTitle}
-                className={cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR_BUTTON) + " " + cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR_BUTTON_ + (node.isMaximized() ? "max" : "min"))}
+                // className={cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR_BUTTON) + " " + cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR_BUTTON_ + (node.isMaximized() ? "max" : "min"))}
                 onClick={onMaximizeToggle}
                 onPointerDown={onInterceptPointerDown}
             >
                 {node.isMaximized() ?
                     (typeof icons.restore === "function") ? icons.restore(node) : icons.restore :
                     (typeof icons.maximize === "function") ? icons.maximize(node) : icons.maximize}
-            </button>
+            </IconButton>
         );
     }
 
     if (!node.isMaximized() && showClose) {
         const title = isTabStretch ? layout.i18nName(I18nLabel.Close_Tab) : layout.i18nName(I18nLabel.Close_Tabset);
         buttons.push(
-            <button
+            <IconButton
+              size='xs'
+              variant='ghost'
                 key="close"
                 data-layout-path={path + "/button/close"}
                 title={title}
-                className={cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR_BUTTON) + " " + cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR_BUTTON_CLOSE)}
+                // className={cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR_BUTTON) + " " + cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR_BUTTON_CLOSE)}
                 onClick={isTabStretch ? onCloseTab : onClose}
                 onPointerDown={onInterceptPointerDown}
             >
                 {(typeof icons.closeTabset === "function") ? icons.closeTabset(node) : icons.closeTabset}
-            </button>
+            </IconButton>
         );
     }
 
     if (node.isActive() && node.isEnableActiveIcon()) {
         const title = layout.i18nName(I18nLabel.Active_Tabset);
         buttons.push(
-            <div
+            <Icon
+              size='sm'
+              color='colorPalette.solid'
                 key="active"
                 data-layout-path={path + "/button/active"}
-                title={title}
+                // title={title}
                 className={cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR_ICON)}
             >
                 {(typeof icons.activeTabset === "function") ? icons.activeTabset(node) : icons.activeTabset}
-            </div>
+            </Icon>
         );
     }
 
     const buttonbar = (
-        <div key="buttonbar" ref={buttonBarRef}
-            className={cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR)}
+        <HStack key="buttonbar" ref={buttonBarRef}
+            // className={cm(CLASSES.FLEXLAYOUT__TAB_TOOLBAR)}
             onPointerDown={onInterceptPointerDown}
             onDragStart={(e) => { e.preventDefault() }}
         >
             {buttons}
-        </div>
+        </HStack>
     );
 
     let tabStrip;
@@ -410,7 +416,10 @@ export const TabSet = (props: ITabSetProps) => {
                             onScroll={onScroll}
                         >
                             <Box
-                                css={{ width: (isTabStretch ? "100%" : "none") }}
+                                css={{
+                                  px: 2,
+                                  width: (isTabStretch ? "100%" : "none")
+                            }}
                                 className={cm(CLASSES.FLEXLAYOUT__TABSET_TABBAR_INNER_TAB_CONTAINER) + " " + cm(CLASSES.FLEXLAYOUT__TABSET_TABBAR_INNER_TAB_CONTAINER_ + node.getTabLocation())}
                             >
                                 {tabs}

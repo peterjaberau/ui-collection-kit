@@ -192,7 +192,7 @@ export const BorderButton = (props: IBorderButtonProps) => {
             draggable={true}
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
-            shadow={selected ? 'sm' : undefined}
+            // shadow={selected ? 'sm' : undefined}
             rounded={'md'}
         >
           <Button
