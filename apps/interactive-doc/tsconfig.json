@@ -36,6 +36,9 @@
       "#components/*": ["./src/components/*"],
       "#components": ["./src/components"],
 
+      "#nodedemo": ["./src/demos/node"],
+      "#nodedemo/*": ["./src/demos/node/*"],
+
 
       "@/hooks/*": ["./src/hooks/*"],
       "@/hooks": ["./src/hooks"],
