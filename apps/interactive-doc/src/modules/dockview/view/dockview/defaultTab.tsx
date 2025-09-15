@@ -41,7 +41,7 @@ export const DockviewDefaultTab: React.FunctionComponent<IDockviewDefaultTabProp
 
   const isMiddleMouseButton = React.useRef<boolean>(false)
 
-  const onClose = React.useCallback(
+  const onClose: any = React.useCallback(
     (event: React.MouseEvent<HTMLSpanElement>) => {
       event.preventDefault()
 
@@ -58,7 +58,7 @@ export const DockviewDefaultTab: React.FunctionComponent<IDockviewDefaultTabProp
     event.preventDefault()
   }, [])
 
-  const _onPointerDown = React.useCallback(
+  const _onPointerDown: any = React.useCallback(
     (event: React.PointerEvent<HTMLDivElement>) => {
       isMiddleMouseButton.current = event.button === 1
       onPointerDown?.(event)
@@ -66,7 +66,7 @@ export const DockviewDefaultTab: React.FunctionComponent<IDockviewDefaultTabProp
     [onPointerDown],
   )
 
-  const _onPointerUp = React.useCallback(
+  const _onPointerUp: any = React.useCallback(
     (event: React.PointerEvent<HTMLDivElement>) => {
       if (isMiddleMouseButton && event.button === 1 && !hideClose) {
         isMiddleMouseButton.current = false
@@ -78,7 +78,7 @@ export const DockviewDefaultTab: React.FunctionComponent<IDockviewDefaultTabProp
     [onPointerUp, onClose, hideClose],
   )
 
-  const _onPointerLeave = React.useCallback(
+  const _onPointerLeave: any = React.useCallback(
     (event: React.PointerEvent<HTMLDivElement>) => {
       isMiddleMouseButton.current = false
       onPointerLeave?.(event)
@@ -90,7 +90,7 @@ export const DockviewDefaultTab: React.FunctionComponent<IDockviewDefaultTabProp
     <Button
       variant="ghost"
       size="sm"
-      {...rest}
+      {...rest as any}
       onPointerDown={_onPointerDown}
       onPointerUp={_onPointerUp}
       onPointerLeave={_onPointerLeave}

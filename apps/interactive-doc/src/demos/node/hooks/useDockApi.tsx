@@ -9,11 +9,6 @@ export function useDockApi() {
 
   const dockApiRef = dockRef.system.get("dock")
 
-  console.log('---dockApiRef----', {
-    dockRef,
-    dockApiRef
-  })
-
   const dockApiState: any = useSelector(dockApiRef, (state) => state)
   const dockApiContext = dockApiState.context
   const sendToDockApi = dockApiRef.send
