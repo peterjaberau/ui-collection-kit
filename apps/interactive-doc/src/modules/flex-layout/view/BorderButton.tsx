@@ -6,7 +6,7 @@ import { IIcons, LayoutInternal } from "./Layout";
 import { ICloseType } from "../model/ICloseType";
 import { CLASSES } from "../Types";
 import { getRenderStateEx, isAuxMouseEvent } from "./Utils";
-
+import { chakra, Button } from '@chakra-ui/react'
 /** @internal */
 export interface IBorderButtonProps {
     layout: LayoutInternal;
@@ -40,7 +40,7 @@ export const BorderButton = (props: IBorderButtonProps) => {
     const onAuxMouseClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (isAuxMouseEvent(event)) {
             layout.auxMouseClick(node, event);
-        } 
+        }
     };
 
     const onContextMenu = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -181,7 +181,7 @@ export const BorderButton = (props: IBorderButtonProps) => {
     }
 
     return (
-        <div
+        <chakra.div
             ref={selfRef}
             data-layout-path={path}
             className={classNames}
@@ -192,10 +192,17 @@ export const BorderButton = (props: IBorderButtonProps) => {
             draggable={true}
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
+            shadow={selected ? 'sm' : undefined}
+            rounded={'md'}
         >
+          <Button
+            variant={selected ? 'outline' : 'ghost'}
+            size={'sm'}
+          >
             {leading}
             {content}
             {renderState.buttons}
-        </div>
+          </Button>
+        </chakra.div>
     );
 };

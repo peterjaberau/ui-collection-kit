@@ -12,6 +12,7 @@ import { CLASSES } from "../Types";
 import { isAuxMouseEvent } from "./Utils";
 import { createPortal } from "react-dom";
 import { splitterDragging } from "./Splitter";
+import { Button, Box, chakra } from '@chakra-ui/react'
 
 /** @internal */
 export interface ITabSetProps {
@@ -355,23 +356,26 @@ export const TabSet = (props: ITabSetProps) => {
     if (node.isEnableTabWrap()) {
         if (node.isEnableTabStrip()) {
             tabStrip = (
-                <div className={tabStripClasses}
-                    style={{ flexWrap: "wrap", gap: "1px", marginTop: "2px" }}
-                    ref={tabStripRef}
-                    data-layout-path={path + "/tabstrip"}
-                    onPointerDown={onPointerDown}
-                    onDoubleClick={onDoubleClick}
-                    onContextMenu={onContextMenu}
-                    onClick={onAuxMouseClick}
-                    onAuxClick={onAuxMouseClick}
-                    draggable={true}
-                    onDragStart={onDragStart}
-                >
-                    {leadingContainer}
-                    {tabs}
-                    <div style={{ flexGrow: 1 }} />
-                    {buttonbar}
-                </div>
+
+              <chakra.div className={tabStripClasses}
+                   css={{ flexWrap: "wrap", gap: "1px",}}
+                   ref={tabStripRef}
+                   data-layout-path={path + "/tabstrip"}
+                   onPointerdown={onPointerDown}
+                   onDoubleClick={onDoubleClick}
+                   onContextmenu={onContextMenu}
+                   onClick={onAuxMouseClick}
+                   onAuxclick={onAuxMouseClick}
+                   draggable={true}
+                   onDragstart={onDragStart}
+              >
+                  {leadingContainer}
+                  {tabs}
+                  <div style={{ flexGrow: 1 }} />
+                  {buttonbar}
+              </chakra.div>
+
+
             );
         }
     } else {
@@ -405,12 +409,12 @@ export const TabSet = (props: ITabSetProps) => {
                             style={{ overflowX: 'auto', overflowY: "hidden" }}
                             onScroll={onScroll}
                         >
-                            <div
-                                style={{ width: (isTabStretch ? "100%" : "none") }}
+                            <Box
+                                css={{ width: (isTabStretch ? "100%" : "none") }}
                                 className={cm(CLASSES.FLEXLAYOUT__TABSET_TABBAR_INNER_TAB_CONTAINER) + " " + cm(CLASSES.FLEXLAYOUT__TABSET_TABBAR_INNER_TAB_CONTAINER_ + node.getTabLocation())}
                             >
                                 {tabs}
-                            </div>
+                            </Box>
                         </div>
                         {miniScrollbar}
                     </div>
@@ -452,8 +456,10 @@ export const TabSet = (props: ITabSetProps) => {
 
     // note: tabset container is needed to allow flexbox to size without border/padding/margin
     // then inner tabset can have border/padding/margin for styling
-    const tabset = (
-        <div ref={selfRef}
+
+  const tabset = (
+        <chakra.div ref={selfRef}
+                    // backgroundColor={node.getSelectedNode()  ? 'red': 'transparent'}
             className={cm(CLASSES.FLEXLAYOUT__TABSET_CONTAINER)}
             style={style}
         >
@@ -462,7 +468,7 @@ export const TabSet = (props: ITabSetProps) => {
             >
                 {content}
             </div>
-        </div>
+        </chakra.div>
     );
 
     if (node.isMaximized()) {

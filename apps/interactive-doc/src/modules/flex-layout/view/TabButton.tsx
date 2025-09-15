@@ -7,6 +7,7 @@ import { LayoutInternal } from "./Layout";
 import { ICloseType } from "../model/ICloseType";
 import { CLASSES } from "../Types";
 import { getRenderStateEx, isAuxMouseEvent } from "./Utils";
+import { chakra, Button } from '@chakra-ui/react'
 
 /** @internal */
 export interface ITabButtonProps {
@@ -46,7 +47,7 @@ export const TabButton = (props: ITabButtonProps) => {
     const onAuxMouseClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
         if (isAuxMouseEvent(event)) {
             layout.auxMouseClick(node, event);
-        } 
+        }
     };
 
     const onContextMenu = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -179,7 +180,7 @@ export const TabButton = (props: ITabButtonProps) => {
     }
 
     return (
-        <div
+        <chakra.div
             ref={selfRef}
             data-layout-path={path}
             className={classNames}
@@ -191,10 +192,17 @@ export const TabButton = (props: ITabButtonProps) => {
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
             onDoubleClick={onDoubleClick}
+            shadow={selected ? 'sm' : undefined}
+            rounded={'md'}
         >
-            {leading}
-            {content}
-            {renderState.buttons}
-        </div>
+           <Button
+            variant={selected ? 'outline' : 'ghost'}
+            size='sm'
+           >
+             {leading}
+             {content}
+             {renderState.buttons}
+           </Button>
+        </chakra.div>
     );
 };

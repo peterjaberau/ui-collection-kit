@@ -677,7 +677,7 @@ export class LayoutInternal extends React.Component<ILayoutInternalProps, ILayou
 
     updateLayoutMetrics = () => {
         if (this.findBorderBarSizeRef.current) {
-            const borderBarSize = this.findBorderBarSizeRef.current.getBoundingClientRect().height;
+            const borderBarSize = this.findBorderBarSizeRef.current.getBoundingClientRect().height + 6;
             if (borderBarSize !== this.state.calculatedBorderBarSize) {
                 this.setState({ calculatedBorderBarSize: borderBarSize });
             }
