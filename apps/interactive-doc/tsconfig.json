@@ -23,6 +23,10 @@
       }
     ],
     "paths": {
+
+      "#registry/*": ["./src/modules/registry/*"],
+      "#registry": ["./src/modules/registry"],
+
       "#modules/*": ["./src/modules/*"],
       "#modules": ["./src/modules"],
 

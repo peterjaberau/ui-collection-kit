@@ -10,7 +10,6 @@ import { Provider as TooltipProvider } from '#components/tw-ui/tooltip'
 import { NotificationProvider } from '#components/tw-ui/notification-provider'
 
 
-
 const themeConfig: any = defineConfig({
   ...defaultConfig,
   cssVarsPrefix: 'ck',

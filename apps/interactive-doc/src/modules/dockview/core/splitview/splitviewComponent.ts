@@ -248,7 +248,7 @@ export class SplitviewComponent
     const removedView = this.splitview.removeView(index, sizing);
     removedView.dispose();
 
-    const panels = this.panels;
+    const panels: any = this.panels;
     if (panels.length > 0) {
       this.setActive(panels[panels.length - 1]);
     }

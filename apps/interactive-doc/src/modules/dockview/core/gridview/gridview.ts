@@ -17,8 +17,8 @@ import { Emitter, Event } from '../events';
 import { IDisposable, MutableDisposable } from '../lifecycle';
 import { Position } from '../dnd/droptarget';
 
-function findLeaf(candiateNode: Node, last: boolean): LeafNode {
-  if (candiateNode instanceof LeafNode) {
+function findLeaf(candiateNode: Node | any, last: boolean): LeafNode {
+  if (candiateNode instanceof LeafNode as any) {
     return candiateNode;
   }
   if (candiateNode instanceof BranchNode) {
@@ -47,7 +47,7 @@ function cloneNode<T extends Node>(
     );
 
     for (let i = node.children.length - 1; i >= 0; i--) {
-      const child = node.children[i];
+      const child: any = node.children[i];
 
       result.addChild(
         cloneNode(child, child.size, child.orthogonalSize),
@@ -82,7 +82,7 @@ function flipNode<T extends Node>(
     let totalSize = 0;
 
     for (let i = node.children.length - 1; i >= 0; i--) {
-      const child = node.children[i];
+      const child: any = node.children[i];
       const childSize =
         child instanceof BranchNode ? child.orthogonalSize : child.size;
 
@@ -318,7 +318,7 @@ export interface MaximizedViewChanged {
 export class Gridview implements IDisposable {
   readonly element: HTMLElement;
 
-  private _root: BranchNode | undefined;
+  private _root: BranchNode | undefined | any;
   private _locked = false;
   private _margin = 0;
   private _maximizedNode:
@@ -445,7 +445,7 @@ export class Gridview implements IDisposable {
 
     function hideAllViewsBut(parent: BranchNode, exclude: LeafNode): void {
       for (let i = 0; i < parent.children.length; i++) {
-        const child = parent.children[i];
+        const child: any = parent.children[i];
         if (child instanceof LeafNode) {
           if (child !== exclude) {
             if (parent.isChildVisible(i)) {
@@ -477,7 +477,7 @@ export class Gridview implements IDisposable {
 
     function showViewsInReverseOrder(parent: BranchNode): void {
       for (let index = parent.children.length - 1; index >= 0; index--) {
-        const child = parent.children[index];
+        const child: any = parent.children[index];
         if (child instanceof LeafNode) {
           if (!hiddenOnMaximize.includes(child)) {
             parent.setChildVisible(index, true);
@@ -665,7 +665,7 @@ export class Gridview implements IDisposable {
     return this._root!;
   }
 
-  private set root(root: BranchNode) {
+  private set root(root: BranchNode | any) {
     const oldRoot = this._root;
 
     if (oldRoot) {
@@ -676,7 +676,7 @@ export class Gridview implements IDisposable {
 
     this._root = root;
     this.element.appendChild(this._root.element);
-    this.disposable.value = this._root.onDidChange((e) => {
+    this.disposable.value = this._root.onDidChange((e: any) => {
       this._onDidChange.fire(e);
     });
   }
@@ -693,7 +693,7 @@ export class Gridview implements IDisposable {
     const oldRoot = this.root;
 
     // can remove one level of redundant branching if there is only a single child
-    const childReference = oldRoot.children[0];
+    const childReference: any = oldRoot.children[0];
 
     if (childReference instanceof LeafNode) {
       return;
@@ -713,7 +713,7 @@ export class Gridview implements IDisposable {
 
     this.element.appendChild(this._root.element);
 
-    this.disposable.value = this._root.onDidChange((e) => {
+    this.disposable.value = this._root.onDidChange((e: any) => {
       this._onDidChange.fire(e);
     });
   }
@@ -744,7 +744,7 @@ export class Gridview implements IDisposable {
       // no data so no need to add anything back in
     } else if (oldRoot.children.length === 1) {
       // can remove one level of redundant branching if there is only a single child
-      const childReference = oldRoot.children[0];
+      const childReference: any = oldRoot.children[0];
       const child = oldRoot.removeChild(0); // remove to prevent disposal when disposing of unwanted root
       child.dispose();
       oldRoot.dispose();
@@ -770,7 +770,7 @@ export class Gridview implements IDisposable {
 
     this.element.appendChild(this._root.element);
 
-    this.disposable.value = this._root.onDidChange((e) => {
+    this.disposable.value = this._root.onDidChange((e: any) => {
       this._onDidChange.fire(e);
     });
   }
@@ -804,7 +804,7 @@ export class Gridview implements IDisposable {
     const children: GridNode<IGridView>[] = [];
 
     for (let i = 0; i < node.children.length; i++) {
-      const child = node.children[i];
+      const child: any = node.children[i];
       const nodeCachedVisibleSize = node.getChildCachedVisibleSize(i);
 
       children.push(
@@ -827,7 +827,7 @@ export class Gridview implements IDisposable {
     }
 
     for (let i = path.length - 1; i > -1; i--) {
-      const n = path[i];
+      const n: any = path[i];
       const l = location[i] || 0;
       const canProgressInCurrentLevel = reverse
         ? l - 1 > -1
@@ -927,7 +927,7 @@ export class Gridview implements IDisposable {
       );
       parent.addChild(node, size, index);
     } else {
-      const [grandParent, ..._] = [...pathToParent].reverse();
+      const [grandParent, ..._] : any= [...pathToParent].reverse();
       const [parentIndex, ...__] = [...rest].reverse();
 
       let newSiblingSize: number | Sizing = 0;
@@ -1008,7 +1008,7 @@ export class Gridview implements IDisposable {
     // is a BranchNode too we should spread it's children into the grandparent.
 
     // refer to the remaining child as the sibling
-    const sibling = parent.children[0];
+    const sibling: any = parent.children[0];
 
     if (pathToParent.length === 0) {
       // if the parent is root
@@ -1032,8 +1032,8 @@ export class Gridview implements IDisposable {
 
     // otherwise the parent is apart of a large sub-tree
 
-    const [grandParent, ..._] = [...pathToParent].reverse();
-    const [parentIndex, ...__] = [...rest].reverse();
+    const [grandParent, ..._] : any= [...pathToParent].reverse();
+    const [parentIndex, ...__]: any = [...rest].reverse();
 
     const isSiblingVisible = parent.isChildVisible(0);
 
@@ -1041,7 +1041,7 @@ export class Gridview implements IDisposable {
     parent.removeChild(0, sizing);
 
     // note the sizes of all of the grandparents children
-    const sizes = grandParent.children.map((_size, i) =>
+    const sizes = grandParent.children.map((_size: any, i: any) =>
       grandParent.getChildSize(i)
     );
 
@@ -1059,7 +1059,7 @@ export class Gridview implements IDisposable {
 
       // and add those siblings to the grandparent
       for (let i = 0; i < sibling.children.length; i++) {
-        const child = sibling.children[i];
+        const child: any = sibling.children[i];
         grandParent.addChild(child, child.size, parentIndex + i);
       }
 
@@ -1118,7 +1118,7 @@ export class Gridview implements IDisposable {
       throw new Error('Invalid location');
     }
 
-    const [index, ...rest] = location;
+    const [index, ...rest]: any = location;
 
     if (index < 0 || index >= node.children.length) {
       throw new Error('Invalid location');

@@ -1,6 +1,7 @@
-import { WidgetRenderer } from "#demos/flexlayout/components/widgets"
+import { WidgetRenderer } from "#modules/registry/widgets-registry"
+// import { WidgetRenderer } from "../../widgets"
 
 export const FactoryRenderer = (node: any) => {
   const componentName = node.getComponent()
-  return <WidgetRenderer componentName={componentName} node={node} />
+  return <WidgetRenderer name={componentName}  />
 }

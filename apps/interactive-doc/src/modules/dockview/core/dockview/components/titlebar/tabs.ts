@@ -20,10 +20,10 @@ import { TabDragEvent, TabDropIndexEvent } from './tabsContainer';
 
 export class Tabs extends CompositeDisposable {
     private readonly _element: HTMLElement;
-    private readonly _tabsList: HTMLElement;
+    private readonly _tabsList: HTMLElement | any;
     private readonly _observerDisposable = new MutableDisposable();
 
-    private _tabs: IValueDisposable<Tab>[] = [];
+    private _tabs: IValueDisposable<Tab>[] | any = [];
     private selectedIndex = -1;
     private _showTabsOverflowControl = false;
 
@@ -76,7 +76,7 @@ export class Tabs extends CompositeDisposable {
     }
 
     get panels(): string[] {
-        return this._tabs.map((_) => _.value.panel.id);
+        return this._tabs.map((_: any) => _.value.panel.id);
     }
 
     get size(): number {
@@ -84,7 +84,7 @@ export class Tabs extends CompositeDisposable {
     }
 
     get tabs(): Tab[] {
-        return this._tabs.map((_) => _.value);
+        return this._tabs.map((_: any) => _.value);
     }
 
     constructor(
@@ -138,7 +138,7 @@ export class Tabs extends CompositeDisposable {
     }
 
     indexOf(id: string): number {
-        return this._tabs.findIndex((tab) => tab.value.panel.id === id);
+        return this._tabs.findIndex((tab: any) => tab.value.panel.id === id);
     }
 
     isActive(tab: Tab): boolean {
@@ -173,7 +173,7 @@ export class Tabs extends CompositeDisposable {
     }
 
     openPanel(panel: IDockviewPanel, index: number = this._tabs.length): void {
-        if (this._tabs.find((tab) => tab.value.panel.id === panel.id)) {
+        if (this._tabs.find((tab: any) => tab.value.panel.id === panel.id)) {
             return;
         }
         const tab = new Tab(panel, this.accessor, this.group);
@@ -227,7 +227,7 @@ export class Tabs extends CompositeDisposable {
             tab.onDrop((event) => {
                 this._onDrop.fire({
                     event: event.nativeEvent,
-                    index: this._tabs.findIndex((x) => x.value === tab),
+                    index: this._tabs.findIndex((x: any) => x.value === tab),
                 });
             }),
             tab.onWillShowOverlay((event) => {
@@ -288,13 +288,13 @@ export class Tabs extends CompositeDisposable {
             ? []
             : this._tabs
                   .filter(
-                      (tab) =>
+                      (tab: any) =>
                           !isChildEntirelyVisibleWithinParent(
                               tab.value.element,
                               this._tabsList
                           )
                   )
-                  .map((x) => x.value.panel.id);
+                  .map((x: any) => x.value.panel.id);
 
         this._onOverflowTabsChange.fire({ tabs, reset: options.reset });
     }

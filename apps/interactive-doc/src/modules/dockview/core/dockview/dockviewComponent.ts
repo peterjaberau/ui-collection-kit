@@ -1441,7 +1441,7 @@ export class DockviewComponent
       throw new Error('serialized layout must be a non-null object');
     }
 
-    const { grid, panels, activeGroup } = data;
+    const { grid, panels, activeGroup }: any = data;
 
     if (grid.root.type !== 'branch' || !Array.isArray(grid.root.data)) {
       throw new Error('root must be of type branch');
@@ -1461,7 +1461,7 @@ export class DockviewComponent
           throw new Error('group id must be of type string');
         }
 
-        const group = this.createGroup({
+        const group: any = this.createGroup({
           id,
           locked: !!locked,
           hideHeader: !!hideHeader,
@@ -1484,7 +1484,7 @@ export class DockviewComponent
         }
 
         for (let i = 0; i < views.length; i++) {
-          const panel = createdPanels[i];
+          const panel: any = createdPanels[i];
 
           const isActive =
             typeof activeView === 'string' &&
@@ -2054,7 +2054,7 @@ export class DockviewComponent
         floatingGroup.dispose();
 
         if (!options?.skipActive && this._activeGroup === group) {
-          const groups = Array.from(this._groups.values());
+          const groups: any = Array.from(this._groups.values());
 
           this.doSetGroupAndPanelActive(
             groups.length > 0 ? groups[0].value : undefined
@@ -2099,7 +2099,7 @@ export class DockviewComponent
         }
 
         if (!options?.skipActive && this._activeGroup === group) {
-          const groups = Array.from(this._groups.values());
+          const groups: any = Array.from(this._groups.values());
 
           this.doSetGroupAndPanelActive(
             groups.length > 0 ? groups[0].value : undefined
@@ -2262,11 +2262,11 @@ export class DockviewComponent
            * 3. create a new group at the requested location and add that panel
            */
 
-          const popoutGroup = this._popoutGroups.find(
+          const popoutGroup: any = this._popoutGroups.find(
             (group) => group.popoutGroup === sourceGroup
           )!;
 
-          const removedPanel: IDockviewPanel | undefined =
+          const removedPanel: IDockviewPanel | undefined | any =
             this.movingLock(() =>
               popoutGroup.popoutGroup.model.removePanel(
                 popoutGroup.popoutGroup.panels[0],

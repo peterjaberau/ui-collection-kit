@@ -32,6 +32,7 @@ const createButton = (
 export function FlexLayoutApp() {
   const { layoutModel, canLayoutRender, sendToFlexLayoutInstance, doAction } = useFlexLayoutInstance()
 
+
   useEffect(() => {
     sendToFlexLayoutInstance({ type: "onLoad", payload: { name: "default" } })
   }, [])

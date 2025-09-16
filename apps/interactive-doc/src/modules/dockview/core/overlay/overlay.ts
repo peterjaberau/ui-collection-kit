@@ -13,11 +13,11 @@ import { clamp } from '../math';
 import { AnchoredBox } from '../types';
 
 class AriaLevelTracker {
-  private _orderedList: HTMLElement[] = [];
+  private _orderedList: HTMLElement[] | any = [];
 
   push(element: HTMLElement): void {
     this._orderedList = [
-      ...this._orderedList.filter((item) => item !== element),
+      ...this._orderedList.filter((item: any) => item !== element),
       element,
     ];
 
@@ -26,7 +26,7 @@ class AriaLevelTracker {
 
   destroy(element: HTMLElement): void {
     this._orderedList = this._orderedList.filter(
-      (item) => item !== element
+      (item: any) => item !== element
     );
     this.update();
   }

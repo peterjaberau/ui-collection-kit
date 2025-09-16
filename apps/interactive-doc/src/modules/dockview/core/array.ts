@@ -1,4 +1,4 @@
-export function tail<T>(arr: T[]): [T[], T] {
+export function tail<T>(arr: T[] | any): [T[], T] {
   if (arr.length === 0) {
     throw new Error('Invalid tail call');
   }
@@ -52,7 +52,7 @@ export function firstIndex<T>(
   fn: (item: T) => boolean
 ): number {
   for (let i = 0; i < array.length; i++) {
-    const element = array[i];
+    const element: any = array[i];
 
     if (fn(element)) {
       return i;

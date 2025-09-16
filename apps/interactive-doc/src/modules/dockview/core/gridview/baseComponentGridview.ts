@@ -301,7 +301,7 @@ export abstract class BaseGrid<T extends IGridPanelView>
     }
 
     if (!options?.skipActive && this._activeGroup === group) {
-      const groups = Array.from(this._groups.values());
+      const groups: any = Array.from(this._groups.values());
 
       this.doSetGroupActive(
         groups.length > 0 ? groups[0].value : undefined

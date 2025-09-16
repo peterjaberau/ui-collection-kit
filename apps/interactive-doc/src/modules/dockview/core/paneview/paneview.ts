@@ -150,7 +150,7 @@ export class Paneview extends CompositeDisposable implements IDisposable {
     index: number,
     options: { skipDispose: boolean } = { skipDispose: false }
   ): PaneItem {
-    const paneItem = this.paneItems.splice(index, 1)[0];
+    const paneItem: any = this.paneItems.splice(index, 1)[0];
     this.splitview.removeView(index);
 
     if (!options.skipDispose) {

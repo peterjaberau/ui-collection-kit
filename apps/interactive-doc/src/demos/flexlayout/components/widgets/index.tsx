@@ -116,6 +116,11 @@ export const WidgetPlaceholder = (props: any) => {
 
 export const WidgetsMap = (componentName: string) => {
   const map: any = {
+    'widget-ag-grid': WidgetJsonView,
+    'widget-code-mirror': WidgetJsonView,
+    'widget-json-view': WidgetJsonView,
+    'widget-monaco-editor': WidgetJsonView,
+    'widget-placeholder': WidgetJsonView,
     json: WidgetJsonView,
     simpleform: WidgetSimpleForm,
     mui: WidgetMUIComponent,
@@ -135,7 +140,7 @@ export const WidgetsMap = (componentName: string) => {
 }
 
 export const WidgetRenderer = (props: any) => {
-  const InternalWidgetRenderer = WidgetsMap(props.componentName)
+  const InternalWidgetRenderer = WidgetsMap(props.name)
 
   return (
     <InternalWidgetRenderer node={props.node} {...props} />

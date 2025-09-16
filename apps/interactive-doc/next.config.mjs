@@ -20,11 +20,12 @@ const nextConfig = {
   //   }),
   // },
 
-  webpack: (config, { dev, isServer }) => {
-    config.plugins.push(codeInspectorPlugin({ bundler: 'webpack',  showSwitch: true,
-      editor: 'idea' }));
-    return config;
-  },
+  // webpack: (config, { dev, isServer }) => {
+  //   config.plugins.push(codeInspectorPlugin({
+  //     bundler: "webpack", showSwitch: true, editor: "idea", enforcePre: false
+  //   }))
+  //   return config
+  // },
 }
 
 export default nextConfig

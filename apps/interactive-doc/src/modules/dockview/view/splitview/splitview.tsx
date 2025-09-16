@@ -39,7 +39,7 @@ function extractCoreOptions(props: ISplitviewReactProps): SplitviewOptions {
 }
 
 export const SplitviewReact = React.forwardRef(
-  (props: ISplitviewReactProps, ref: React.ForwardedRef<HTMLDivElement>) => {
+  (props: ISplitviewReactProps | any, ref: React.ForwardedRef<HTMLDivElement>) => {
     const domRef = React.useRef<HTMLDivElement>(null);
     const splitviewRef: any = React.useRef<SplitviewApi>(null);
     const [portals, addPortal] = usePortalsLifecycle();

@@ -46,7 +46,7 @@ function extractCoreOptions(props: IPaneviewReactProps): PaneviewOptions {
 }
 
 export const PaneviewReact = React.forwardRef(
-  (props: IPaneviewReactProps, ref: React.ForwardedRef<HTMLDivElement>) => {
+  (props: IPaneviewReactProps | any, ref: React.ForwardedRef<HTMLDivElement>) => {
     const domRef = React.useRef<HTMLDivElement>(null);
     const paneviewRef: any = React.useRef<PaneviewApi>(null);
     const [portals, addPortal] = usePortalsLifecycle();
@@ -86,7 +86,7 @@ export const PaneviewReact = React.forwardRef(
         };
       }
 
-      const headerComponents = props.headerComponents ?? {};
+      const headerComponents: any = props.headerComponents ?? {};
 
       const frameworkOptions: PaneviewFrameworkOptions = {
         createComponent: (options) => {

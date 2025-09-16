@@ -46,7 +46,7 @@ export function watchElementResize(
      * See https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded/58701523#58701523
      */
     requestAnimationFrame(() => {
-      const firstEntry = entires[0];
+      const firstEntry: any = entires[0];
       cb(firstEntry);
     });
   });

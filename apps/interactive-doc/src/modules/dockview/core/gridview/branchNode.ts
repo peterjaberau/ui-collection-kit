@@ -336,7 +336,7 @@ export class BranchNode extends CompositeDisposable implements IView {
     }
 
     private _removeChild(index: number): Node {
-        const [child] = this.children.splice(index, 1);
+        const [child]: any = this.children.splice(index, 1);
         this.setupChildrenEvents();
 
         return child;

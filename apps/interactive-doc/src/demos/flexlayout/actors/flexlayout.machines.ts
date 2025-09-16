@@ -26,7 +26,7 @@ export const flexLayoutInstanceMachine = setup({
       context.layout.model?.doAction(
         Actions.addNode(
           {
-            component: "placeholder",
+            component: "widget-placeholder",
             name: "New Tab " + (Math.floor(Math.random() * 99) + 1),
           },
           node.getId(),
