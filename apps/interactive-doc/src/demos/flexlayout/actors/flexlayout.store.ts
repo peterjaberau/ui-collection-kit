@@ -73,9 +73,18 @@ export const layoutOptions: any = {
               type: "tab",
               id: "source-json",
               name: "Source JSON",
-              component: "widget-json-view",
+              // component: "widget-json-view",
+              component: "widget-monaco-editor",
               // component: "widget-code-mirror",
-              // component: "widget-monaco-editor",
+
+              config: {
+                params: {
+                  scope: "source"
+                },
+                data: {},
+                props: {}
+              }
+
             },
           ],
           active: true,
@@ -87,8 +96,15 @@ export const layoutOptions: any = {
               type: "tab",
               id: "transformer-json",
               name: "Transformer (Jsonata Expr)",
-              component: "widget-json-view",
+              component: "widget-monaco-editor",
               icon: "article",
+              config: {
+                params: {
+                  scope: "transformer"
+                },
+                data: {},
+                props: {}
+              }
             },
           ],
         },
@@ -99,8 +115,15 @@ export const layoutOptions: any = {
               type: "tab",
               id: "result-json",
               name: "Result",
-              component: "widget-json-view",
+              component: "widget-monaco-editor",
               icon: "article",
+              config: {
+                params: {
+                  scope: "result"
+                },
+                data: {},
+                props: {}
+              }
             },
           ],
         },
