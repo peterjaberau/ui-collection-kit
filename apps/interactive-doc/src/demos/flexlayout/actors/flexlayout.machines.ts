@@ -45,11 +45,11 @@ export const flexLayoutInstanceMachine = setup({
     return {
       layout: {
         config: {
-          name: "simple",
+          name: "default",
           props: {
-            global: layoutOptions.simple.global,
-            borders: layoutOptions.simple.borders,
-            layout: layoutOptions.simple.layout,
+            global: layoutOptions.default.global,
+            borders: layoutOptions.default.borders,
+            layout: layoutOptions.default.layout,
           },
         },
         model: null,
@@ -78,10 +78,10 @@ export const flexLayoutInstanceMachine = setup({
       on: {
         onRenderTab: {
           entry: enqueueActions(({ enqueue, event }) => {
-            console.log("---onRenderTab----", {
-              enqueue,
-              event,
-            })
+            // console.log("---onRenderTab----", {
+            //   enqueue,
+            //   event,
+            // })
           }),
         },
 

@@ -8,7 +8,106 @@
  */
 
 export const layoutOptions: any = {
-  simple: {
+  default: {
+    global: {
+      borderAutoSelectTabWhenClosed: true,
+      borderAutoSelectTabWhenOpen: true,
+      borderClassName: null,
+      borderEnableAutoHide: false,
+      borderEnableDrop: true,
+      borderEnableTabScrollbar: true,
+      borderMaxSize: 9999,
+      borderMinSize: 100,
+      borderSize: 200,
+      enableEdgeDock: true,
+      enableRotateBorderIcons: true,
+      rootOrientationVertical: false,
+      splitterEnableHandle: true,
+      splitterExtra: 0,
+      splitterSize: 8,
+      tabBorderHeight: -1,
+      tabBorderWidth: -1,
+      tabClassName: null,
+      tabCloseType: 1, //1- visible | 2- always | 3- selected
+      tabContentClassName: null,
+      tabDragSpeed: 0.3,
+      tabEnableClose: true,
+      tabEnableDrag: true,
+      tabEnablePopout: true,
+      tabEnablePopoutIcon: true,
+      tabEnablePopoutOverlay: false,
+      tabEnableRename: true,
+      tabEnableRenderOnDemand: true,
+      tabIcon: null,
+      tabMaxHeight: 9999,
+      tabMaxWidth: 9999,
+      tabMinHeight: 0,
+      tabMinWidth: 0,
+      tabSetAutoSelectTab: true,
+      tabSetClassNameTabStrip: null,
+      tabSetEnableActiveIcon: true,
+      tabSetEnableClose: false,
+      tabSetEnableDeleteWhenEmpty: true,
+      tabSetEnableDivide: true,
+      tabSetEnableDrag: true,
+      tabSetEnableDrop: true,
+      tabSetEnableMaximize: true,
+      tabSetEnableSingleTabStretch: false,
+      tabSetEnableTabScrollbar: true,
+      tabSetEnableTabStrip: true,
+      tabSetEnableTabWrap: false,
+      tabSetMaxHeight: 9999,
+      tabSetMaxWidth: 9999,
+      tabSetMinHeight: 100,
+      tabSetMinWidth: 130,
+      tabSetTabLocation: "top", //top | bottom
+    },
+    borders: [],
+    layout: {
+      type: "row",
+      children: [
+        {
+          type: "tabset",
+          children: [
+            {
+              type: "tab",
+              id: "source-json",
+              name: "Source JSON",
+              component: "widget-json-view",
+              // component: "widget-code-mirror",
+              // component: "widget-monaco-editor",
+            },
+          ],
+          active: true,
+        },
+        {
+          type: "tabset",
+          children: [
+            {
+              type: "tab",
+              id: "transformer-json",
+              name: "Transformer (Jsonata Expr)",
+              component: "widget-json-view",
+              icon: "article",
+            },
+          ],
+        },
+        {
+          type: "tabset",
+          children: [
+            {
+              type: "tab",
+              id: "result-json",
+              name: "Result",
+              component: "widget-json-view",
+              icon: "article",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  oldDefault: {
     global: {
       borderAutoSelectTabWhenClosed: true,
       borderAutoSelectTabWhenOpen: true,
@@ -98,7 +197,7 @@ export const layoutOptions: any = {
       ],
     },
   },
-  default: {
+  simple: {
     global: {
       borderAutoSelectTabWhenClosed: true,
       borderAutoSelectTabWhenOpen: true,
