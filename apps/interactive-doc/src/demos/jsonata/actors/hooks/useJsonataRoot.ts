@@ -22,5 +22,9 @@ export const useJsonataRoot = () => {
     jsonataState,
     jsonataContext,
     sendToJsonataRoot,
+
+    source,
+    transformer,
+    result,
   }
 }

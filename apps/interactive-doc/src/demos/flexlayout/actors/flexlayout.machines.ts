@@ -9,7 +9,7 @@ export const flexLayoutInstanceMachine = setup({
   } as any,
   actions: {
     setLayoutConfig: assign(({ context, event }: any) => {
-      const name = event?.payload?.name || "simple"
+      const name = event?.payload?.name || "default"
       const props = layoutOptions[name]
       context.layout.config = {
         name: name,
@@ -54,6 +54,12 @@ export const flexLayoutInstanceMachine = setup({
         },
         model: null,
       },
+      components: {
+        'source-json': {},
+        'transformer-json': {},
+        'result-json': {},
+        'execute-action': {},
+      },
       ...input,
     }
   },
@@ -92,3 +98,4 @@ export const flexLayoutInstanceMachine = setup({
     },
   },
 })
+

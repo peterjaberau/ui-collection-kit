@@ -57,29 +57,8 @@ export const Editor = (props: EditorCustomProps) => {
   const { options, errorOverLayMessage, errors = [], ...otherProps } = props
   const hasErrors = errors.length > 0
 
-  const heights = showErrorPanel
-    ? { editor: "calc(100% - 150px) !important", errors: "150px" }
-    : { editor: "100% !important", errors: "0px" }
-
-  if (errorOverLayMessage) {
-    return (
-      <>
-        <EmptyState.Root>
-          <EmptyState.Content>
-            <EmptyState.Indicator>
-              <ExclamationCircleIcon />
-            </EmptyState.Indicator>
-            <VStack textAlign="center">
-              <EmptyState.Description color="fg.error">{errorOverLayMessage}</EmptyState.Description>
-            </VStack>
-          </EmptyState.Content>
-        </EmptyState.Root>
-      </>
-    )
-  }
-
   return (
-    <Stack css={{ height: heights.editor }} flex={1}>
+    <Stack css={{ height: "100% !important" }} flex={1}>
       <MonacoEditor
         theme="github-light"
         options={{
@@ -91,47 +70,9 @@ export const Editor = (props: EditorCustomProps) => {
         }}
         defaultLanguage="json"
         {...otherProps}
-        // height={heights.editor}
         onMount={onMount}
         onChange={onChangeHandler}
       ></MonacoEditor>
-      <Alert.Root
-        borderRadius="none"
-        onClick={() => setShowErrorPanel(!showErrorPanel)}
-        status={hasErrors ? "error" : "success"}
-      >
-        <Alert.Indicator />
-        <Alert.Title>{`Problems ${errors.length}`}</Alert.Title>
-      </Alert.Root>
-
-      {showErrorPanel && errors.length > 0 && (
-        <chakra.div
-          css={{
-            px: 4,
-            overflow: "auto",
-            height: heights.errors,
-          }}
-        >
-          <Table.Root size="sm">
-            <Table.Header>
-              <Table.Row>
-                <Table.ColumnHeader>Line</Table.ColumnHeader>
-                <Table.ColumnHeader textAlign="end">Details</Table.ColumnHeader>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {errors.map((error) => (
-                <Table.Row key={error.message}>
-                  <Table.Cell>
-                    {error.startLineNumber}:{error.endColumn}
-                  </Table.Cell>
-                  <Table.Cell textAlign="end">{error.message}</Table.Cell>
-                </Table.Row>
-              ))}
-            </Table.Body>
-          </Table.Root>
-        </chakra.div>
-      )}
     </Stack>
   )
 }

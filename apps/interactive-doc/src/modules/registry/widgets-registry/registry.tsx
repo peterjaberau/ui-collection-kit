@@ -1,9 +1,4 @@
 import dynamic from "next/dynamic"
-// import { WidgetAGGrid } from "./components/ag-grid"
-// import WidgetCodeMirror from "./components/code-mirror"
-// import WidgetJsonView from "./components/json-view"
-// import WidgetMonacoEditor from "./components/monaco-editor"
-// import WidgetPlaceholder from "./components/placeholder"
 
 
 /*
@@ -23,15 +18,10 @@ export const registryComponentsObj: any = {
   "widget-json-view": dynamic(() => import("#registry/widgets-registry/components/json-view"), { ssr: false }),
   "widget-monaco-editor": dynamic(() => import("#registry/widgets-registry/components/monaco-editor"), { ssr: false }),
   "widget-placeholder": dynamic(() => import("#registry/widgets-registry/components/placeholder"), { ssr: false }),
-}
+  "widget-action": dynamic(() => import("#registry/widgets-registry/components/action"), { ssr: false }),
 
-// export const registryComponentsObj: any = {
-//   "widget-ag-grid": WidgetAGGrid,
-//   "widget-code-mirror": WidgetCodeMirror,
-//   "widget-json-view": WidgetJsonView,
-//   "widget-monaco-editor": WidgetMonacoEditor,
-//   "widget-placeholder": WidgetPlaceholder,
-// }
+
+}
 
 //schema for each component configuration
 export const registrySchemasObj: any = {
@@ -294,6 +284,42 @@ export const registrySchemasObj: any = {
       },
     },
   },
+  "widget-action": {
+    type: "object",
+    properties: {
+      properties: {
+        type: "array",
+        props: {
+          hideCopy: true,
+          hideMove: true,
+        },
+        className: "parallel-wrap",
+        items: {
+          type: "object",
+          properties: {
+            name: {
+              title: "Name",
+              type: "string",
+              props: {
+                allowClear: true,
+              },
+              className: "child-title",
+              readOnlyWidget: "ReadOnlyPanel",
+            },
+            value: {
+              title: "value",
+              type: "string",
+              props: {
+                allowClear: true,
+              },
+              className: "child-title",
+              readOnlyWidget: "ReadOnlyPanel",
+            },
+          },
+        },
+      },
+    },
+  },
 }
 
 //default configuration value for each component schema
@@ -303,6 +329,7 @@ export const registryDefaultsObj: any = {
   "widget-json-view": {},
   "widget-monaco-editor": {},
   "widget-placeholder": {},
+  "widget-action": {}
 }
 
 //recipes of configuration value for each component schema
@@ -393,6 +420,17 @@ export const registryPresetsObj: any = {
       }
     }
   },
+  "widget-action": {
+    "basic": {
+      "title": "Basic Action",
+    },
+    "with-data": {
+      "title": "Action w/ Data",
+      "data": {
+        "text": "Execute Action"
+      }
+    }
+  }
 }
 
 //list of all registered component names with metadata
@@ -422,6 +460,11 @@ export const registryMetadataList: any[] = [
     type: "placeholder",
     title: "Placeholder",
   },
+  {
+    name: "widget-action",
+    type: "action",
+    title: "Action",
+  }
 ]
 
 

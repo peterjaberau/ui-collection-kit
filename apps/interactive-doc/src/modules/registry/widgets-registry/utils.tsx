@@ -57,8 +57,6 @@ export const getWidgetByName = (name: string) => {
   }
 }
 
-
-
 export const WidgetRendererWithDefaults = (props?: { name: string }) => {
   const WidgetComponentRenderer = getWidgetComponentByName(props?.name || "placeholder")
   const defaultProps = getWidgetDefaultByName(props?.name || "placeholder") || {}
@@ -73,14 +71,13 @@ export const WidgetRendererWithPreset = (props?: { name: string; presetName: str
   return <WidgetComponentRenderer key={props?.name} {...presetProps} />
 }
 
-export const WidgetRenderer = (props: { name: string; withCache?: boolean, [key: string]: any }) => {
-  const { name, withCache = true, ...rest } = props
+export const WidgetRenderer = (props: { name: string; withCache?: boolean; [key: string]: any }) => {
+  const { name, withCache = false, ...rest } = props
 
   const WidgetComponentRenderer = getWidgetComponentByName(name, withCache)
+
   return <WidgetComponentRenderer key={name} {...rest} />
 }
-
-
 
 export const getWidgetsMetadata = () => {
   return registryMetadataList

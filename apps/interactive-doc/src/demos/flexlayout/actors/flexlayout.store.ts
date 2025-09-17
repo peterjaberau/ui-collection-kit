@@ -68,21 +68,26 @@ export const layoutOptions: any = {
       children: [
         {
           type: "tabset",
+          weight: 25,
           children: [
             {
               type: "tab",
               id: "source-json",
               name: "Source JSON",
-              // component: "widget-json-view",
               component: "widget-monaco-editor",
-              // component: "widget-code-mirror",
 
               config: {
                 params: {
                   scope: "source"
                 },
                 data: {},
-                props: {}
+                props: {
+                  title: "Source JSON",
+                  subtitle: "Your source JSON you want to transform.",
+                  id: "input",
+                  color: "blue",
+                  value: "{}",
+                }
               }
 
             },
@@ -91,6 +96,7 @@ export const layoutOptions: any = {
         },
         {
           type: "tabset",
+          weight: 25,
           children: [
             {
               type: "tab",
@@ -110,6 +116,29 @@ export const layoutOptions: any = {
         },
         {
           type: "tabset",
+          weight: 25,
+          children: [
+            {
+              type: "tab",
+              id: "action-executer",
+              name: "Execute Action",
+              component: "widget-action",
+              icon: "article",
+              config: {
+                params: {
+                  // scope: "execute-action"
+                },
+                data: {},
+                props: {
+                  text: "Execute",
+                }
+              }
+            },
+          ],
+        },
+        {
+          type: "tabset",
+          weight: 25,
           children: [
             {
               type: "tab",
