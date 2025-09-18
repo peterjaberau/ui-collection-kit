@@ -25,6 +25,20 @@ const bindWidgetMonacoEditor = ({ nodeSelector, logicSelector, onValueChange }: 
   }
 }
 
+const bindWidgetCodeMirror = ({ nodeSelector, logicSelector, onValueChange }: any) => {
+  const { configParams, configProps, configData, nodeId } = nodeSelector
+  const { jsonataContext, sendToJsonataRoot } = logicSelector
+
+  return {
+    // value: "",
+    // onChange: (value: any) => {
+    //   console.log("CodeMirror onChange", value)
+    // },
+    // minHeight: '500px',
+    width: '100%',
+  }
+}
+
 const bindWidgetAction = ({ nodeSelector, logicSelector }: any) => {
   const { configParams, configProps, configData, nodeId } = nodeSelector
   const { jsonataContext, sendToJsonataRoot } = logicSelector
@@ -62,6 +76,12 @@ export const FactoryRenderer = (node: any) => {
         nodeSelector,
         logicSelector,
         onValueChange: handleValueChange,
+      })
+    } else if (nodeSelector.componentName === "widget-code-mirror") {
+      return bindWidgetCodeMirror({
+        nodeSelector,
+        logicSelector,
+        // onValueChange: handleValueChange,
       })
     } else if (nodeSelector.componentName === "widget-action") {
       return bindWidgetAction({ nodeSelector, logicSelector })

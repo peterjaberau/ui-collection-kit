@@ -1,16 +1,32 @@
 import { closeCompletion } from "@codemirror/autocomplete"
-import { Compartment, EditorState, Extension, StateEffect } from "@codemirror/state"
-import { EditorView, placeholder as placeholderExtension } from "@codemirror/view"
+import {
+  Compartment,
+  EditorState,
+  Extension,
+  StateEffect,
+} from "@codemirror/state"
+import {
+  EditorView,
+  placeholder as placeholderExtension,
+} from "@codemirror/view"
 import { FC, useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useBasicSetup } from "./extensions"
+import {
+  CODE_LANG,
+  CODE_TYPE,
+} from "./extensions/interface"
 import { RenderCodeMirrorProps } from "./interface"
 import { applyEditorWrapperStyle } from "./style"
 import { RenderCodeMirrorTheme } from "./theme"
+import { HintToolTip } from "../HintToolTip"
+import { VALIDATION_TYPES } from "#core-utils"
+import { chakra } from "@chakra-ui/react"
 
 // thk ReactCodeMirror:https://github.com/uiwjs/react-codemirror
 export const RenderCodeMirrorCore: FC<RenderCodeMirrorProps> = (props) => {
   const {
     className,
+    extensions = [],
     value,
     height = "",
     maxHeight = "",
@@ -21,11 +37,21 @@ export const RenderCodeMirrorCore: FC<RenderCodeMirrorProps> = (props) => {
     editable = true,
     readOnly = false,
     placeholder,
+    showLineNumbers = false,
+    lang = CODE_LANG.JAVASCRIPT,
+    codeType = CODE_TYPE.EXPRESSION,
     expressions = [],
-    completionOptions,
+    result = "",
+    hasError = false,
+    resultType = VALIDATION_TYPES.STRING,
+    canShowCompleteInfo = false,
+    sqlScheme = {},
+    singleLine,
     onChange,
     onBlur,
     onFocus,
+    tooltipContainer,
+    scopeOfAutoComplete,
   } = props
 
   const [isFocus, setIsFocus] = useState(false)
@@ -36,10 +62,23 @@ export const RenderCodeMirrorCore: FC<RenderCodeMirrorProps> = (props) => {
 
   const extensionOptions = useMemo(() => {
     return {
+      showLineNumbers,
+      lang,
+      codeType,
       expressions,
-      completionOptions,
+      canShowCompleteInfo,
+      sqlScheme,
+      scopeOfAutoComplete,
     }
-  }, [completionOptions, expressions])
+  }, [
+    canShowCompleteInfo,
+    codeType,
+    expressions,
+    lang,
+    showLineNumbers,
+    sqlScheme,
+    scopeOfAutoComplete,
+  ])
 
   const basicExtensions = useBasicSetup(extensionOptions)
 
@@ -88,13 +127,29 @@ export const RenderCodeMirrorCore: FC<RenderCodeMirrorProps> = (props) => {
     })
   }, [onChange])
 
-  const readOnlyStateChangeEffect: Extension = useMemo(() => EditorState.readOnly.of(readOnly), [readOnly])
+  const readOnlyStateChangeEffect: Extension = useMemo(
+    () => EditorState.readOnly.of(readOnly),
+    [readOnly],
+  )
 
-  const editableStateChangeEffect: Extension = useMemo(() => EditorView.editable.of(editable), [editable])
+  const editableStateChangeEffect: Extension = useMemo(
+    () => EditorView.editable.of(editable),
+    [editable],
+  )
 
   const placeholderExt: Extension = useMemo(() => {
-    return typeof placeholder === "string" ? placeholderExtension(placeholder) : []
+    return typeof placeholder === "string"
+      ? placeholderExtension(placeholder)
+      : []
   }, [placeholder])
+
+  const singleLineExt: Extension = useMemo(() => {
+    return singleLine
+      ? EditorState.transactionFilter.of((tr) => {
+        return tr.newDoc.lines > 1 ? [] : [tr]
+      })
+      : EditorView.lineWrapping
+  }, [singleLine])
 
   const allExtensions = useMemo(() => {
     return [
@@ -105,7 +160,8 @@ export const RenderCodeMirrorCore: FC<RenderCodeMirrorProps> = (props) => {
       readOnlyStateChangeEffect,
       editableStateChangeEffect,
       placeholderExt,
-      EditorView.lineWrapping,
+      singleLineExt,
+      extensions,
     ]
   }, [
     basicExtensions,
@@ -115,18 +171,29 @@ export const RenderCodeMirrorCore: FC<RenderCodeMirrorProps> = (props) => {
     readOnlyStateChangeEffect,
     editableStateChangeEffect,
     placeholderExt,
+    singleLineExt,
+    extensions,
   ])
 
   const extensionsWithCompartment = useMemo(() => {
-    for (let i = compartmentsRef.current.length; i < allExtensions.length; i++) {
+    for (
+      let i = compartmentsRef.current.length;
+      i < allExtensions.length;
+      i++
+    ) {
       const compartment = new Compartment()
       compartmentsRef.current.push(compartment)
     }
-    return allExtensions.map((ext, index) => compartmentsRef.current[index].of(ext))
+    return allExtensions.map((ext, index) =>
+      compartmentsRef.current[index].of(ext),
+    )
   }, [allExtensions])
 
   useEffect(() => {
-    if (!editorViewRef.current || (!isFocus && value !== editorViewRef.current.state.doc.toString())) {
+    if (
+      !editorViewRef.current ||
+      (!isFocus && value !== editorViewRef.current.state.doc.toString())
+    ) {
       const state = EditorState.create({
         doc: value,
         extensions: extensionsWithCompartment,
@@ -167,6 +234,42 @@ export const RenderCodeMirrorCore: FC<RenderCodeMirrorProps> = (props) => {
     }
   }, [reconfigure])
 
-  // @ts-ignore
-  return <div ref={editorWrapperRef} className={className} css={applyEditorWrapperStyle(editable)} />
+
+  // return (
+  //   <Popover.Root open={open} onOpenChange={(e: any) => setOpen(e.open)}>
+  //     <Popover.Trigger>
+  //       <div
+  //         ref={editorWrapperRef}
+  //         className={className}
+  //         css={applyEditorWrapperStyle(hasError, isFocus, editable, readOnly)}
+  //       />
+  //     </Popover.Trigger>
+  //     <Portal>
+  //       <Popover.Positioner>
+  //         <Popover.Content>
+  //           <Popover.Arrow />
+  //           <Popover.Body>
+  //             This is a popover with the same width as the trigger button
+  //           </Popover.Body>
+  //         </Popover.Content>
+  //       </Popover.Positioner>
+  //     </Portal>
+  //   </Popover.Root>
+  // )
+
+  return (
+    <HintToolTip
+      isEditorFocused={isFocus}
+      result={!result ? '""' : result}
+      hasError={hasError}
+      resultType={resultType}
+      toolTipContainer={tooltipContainer}
+    >
+      <chakra.div
+        ref={editorWrapperRef}
+        className={className}
+        css={applyEditorWrapperStyle(hasError, isFocus, editable, readOnly)}
+      />
+    </HintToolTip>
+  )
 }

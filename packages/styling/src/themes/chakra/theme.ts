@@ -27,7 +27,6 @@ import {
   zIndices,
 } from "./tokens"
 
-import { recipes, slotRecipes } from "./recipes"
 import { semanticColors, semanticRadii, semanticShadows } from "./semantic-tokens"
 
 import { utilities } from "../../utils"
@@ -65,8 +64,6 @@ export const defaultThemeConfig = defineConfig({
       radii: semanticRadii,
       shadows: semanticShadows,
     },
-    recipes: recipes,
-    slotRecipes: slotRecipes,
     textStyles: textStyles,
     layerStyles: layerStyles,
     animationStyles: animationStyles,

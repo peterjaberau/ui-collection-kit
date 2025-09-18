@@ -1,6 +1,12 @@
+import { Extension } from "@codemirror/state"
 import { ICodeMirrorOptions } from "./extensions/interface"
+import { RefObject } from "react"
+import { HintTooltipProps } from "../HintToolTip/interface"
 
-export interface RenderCodeMirrorProps extends ICodeMirrorOptions {
+
+export interface RenderCodeMirrorProps extends ICodeMirrorOptions,
+  Omit<HintTooltipProps, "isEditorFocused" | "children"> {
+  extensions?: Extension[]
   value?: string
   onChange?: (value: string) => void
   onFocus?: () => void
@@ -15,4 +21,5 @@ export interface RenderCodeMirrorProps extends ICodeMirrorOptions {
   readOnly?: boolean
   placeholder?: string
   className?: string
+  tooltipContainer?: RefObject<HTMLElement>
 }

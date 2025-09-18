@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic"
 
 
+
 /*
   *** export const Named ***
   component: dynamic(() => import("#registry/widgets-registry/components/ag-grid").then((mod) => mod.WidgetAGGrid)),
@@ -14,7 +15,7 @@ import dynamic from "next/dynamic"
 //mapping of component name to actual react component
 export const registryComponentsObj: any = {
   "widget-ag-grid": dynamic(() => import("#registry/widgets-registry/components/ag-grid").then((mod) => mod.WidgetAGGrid), { ssr: false }),
-  "widget-code-mirror": dynamic(() => import("#registry/widgets-registry/components/code-mirror"), { ssr: false }),
+  "widget-code-mirror": dynamic(() => import("#registry/widgets-registry/components/codemirror"), { ssr: false }),
   "widget-json-view": dynamic(() => import("#registry/widgets-registry/components/json-view"), { ssr: false }),
   "widget-monaco-editor": dynamic(() => import("#registry/widgets-registry/components/monaco-editor"), { ssr: false }),
   "widget-placeholder": dynamic(() => import("#registry/widgets-registry/components/placeholder"), { ssr: false }),

@@ -3,7 +3,7 @@ import { IconsMap } from '../../icons'
 import * as React from "react"
 
 
-export const InternalIconRenderer = ({ name }: { name: keyof typeof iconMapping } | any) => {
+export const InternalIconRenderer = ({ name }: { name: keyof typeof IconsMap } | any) => {
   const Icon = IconsMap(name)
   return Icon ? <Icon /> : null
 }

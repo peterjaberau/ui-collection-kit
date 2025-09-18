@@ -1,4 +1,4 @@
-const ILLAEditorRuntimePropsCollector = {
+const EditorRuntimePropsCollector = {
   constructor: {
     "_runtimeProps": {
       "_": {

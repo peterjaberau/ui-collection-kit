@@ -68,7 +68,6 @@ export const layoutOptions: any = {
       children: [
         {
           type: "tabset",
-          weight: 25,
           children: [
             {
               type: "tab",
@@ -96,7 +95,6 @@ export const layoutOptions: any = {
         },
         {
           type: "tabset",
-          weight: 25,
           children: [
             {
               type: "tab",
@@ -116,7 +114,6 @@ export const layoutOptions: any = {
         },
         {
           type: "tabset",
-          weight: 25,
           children: [
             {
               type: "tab",
@@ -138,7 +135,6 @@ export const layoutOptions: any = {
         },
         {
           type: "tabset",
-          weight: 25,
           children: [
             {
               type: "tab",
@@ -149,6 +145,25 @@ export const layoutOptions: any = {
               config: {
                 params: {
                   scope: "result"
+                },
+                data: {},
+                props: {}
+              }
+            },
+          ],
+        },
+        {
+          type: "tabset",
+          children: [
+            {
+              type: "tab",
+              id: "code-mirror-result",
+              name: "Code Mirror",
+              component: "widget-code-mirror",
+              icon: "article",
+              config: {
+                params: {
+                  // scope: "result"
                 },
                 data: {},
                 props: {}
@@ -1379,46 +1394,6 @@ export const layoutOptions: any = {
       ],
     },
     popouts: {},
-  },
-  simple: {
-    global: {
-      tabSetEnableSingleTabStretch: true,
-    },
-    borders: [],
-    layout: {
-      type: "row",
-      id: "1",
-      children: [
-        {
-          type: "tabset",
-          id: "2",
-          weight: 0.2,
-          children: [
-            {
-              type: "tab",
-              id: "3",
-              name: "Layout JSON",
-              component: "widget-json-view",
-            },
-          ],
-          active: true,
-        },
-        {
-          type: "tabset",
-          id: "4",
-          weight: 0.2,
-          children: [
-            {
-              type: "tab",
-              id: "5",
-              name: "Grid 1",
-              component: "widget-placeholder",
-              icon: "article",
-            },
-          ],
-        },
-      ],
-    },
   },
   subLayout: {
     global: {

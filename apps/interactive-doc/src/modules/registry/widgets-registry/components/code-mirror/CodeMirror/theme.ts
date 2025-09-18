@@ -1,5 +1,6 @@
 import { css } from "@emotion/react"
 import { defaultHighlightClassName, errorHighlightClassName } from "./extensions/heighLightJSExpression"
+import { githubLightInit } from "@uiw/codemirror-theme-github"
 
 export const RenderCodeMirrorTheme = {
   "&.cm-editor": {
@@ -178,3 +179,12 @@ export const renderCodeMirrorTooltipStyle = css`
     }
   }
 `
+
+
+export const githubLightScheme = githubLightInit({
+  settings: {
+    background: "#ffffff",
+    foreground: "#24292e",
+    gutterBackground: "#1e293b", // grayBlue-09
+  },
+})

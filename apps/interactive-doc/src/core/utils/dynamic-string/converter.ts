@@ -67,7 +67,6 @@ export const getDynamicValue = (dynamicString: string, dataTree: Record<string, 
   const calcContext = {
     ...cloneDeepDataTree,
     ...thirdPartyPackges,
-    // ...ILLAEditorRuntimePropsCollectorInstance.getThirdPartyPackages(),
   }
   if (stringSnippets.length) {
     let context: Record<string, unknown> = {}
@@ -107,3 +106,4 @@ export const convertPathToString = (attrPath: (string | number)[]) => {
   })
   return string
 }
+

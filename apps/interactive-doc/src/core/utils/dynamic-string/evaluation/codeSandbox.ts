@@ -14,7 +14,12 @@ const blacklistSet = new Set([
   "MutationObserver",
 ])
 
-const globalVarNames = new Set<PropertyKey>(["window", "globalThis", "self", "global"])
+const globalVarNames = new Set<PropertyKey>([
+  "window",
+  "globalThis",
+  "self",
+  "global",
+])
 
 function runUsersCode(code: string) {
   const finalCode = `with(this){

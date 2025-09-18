@@ -133,7 +133,6 @@ export const wrapFunctionCode = (code: string) => {
 }
 
 
-
 export function sanitizeScript(js: string) {
   // We remove any line breaks from the beginning of the script because that
   // makes the final function invalid. We also unescape any escaped characters

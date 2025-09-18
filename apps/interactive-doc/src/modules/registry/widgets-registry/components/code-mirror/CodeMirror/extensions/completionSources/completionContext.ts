@@ -3,39 +3,68 @@ import {
   CompletionContext,
   CompletionResult,
 } from "@codemirror/autocomplete"
-import { getStringSnippets } from "#core-utils/dynamic-string"
+import { capitalize } from "lodash"
+import {
+  AutocompleteDataType,
+  checkCursorInDynamicFlag,
+} from "./TernServer"
+import { CODE_TYPE } from "../interface"
+import {
+  removeIgnoredKeys,
+  removeWidgetOrActionMethods,
+} from "#core-utils"
+import { isFunction, isObject } from "#core-utils"
+import { ContextDesc } from "./ContextDesc"
 
-const isObject = (value: unknown): value is Record<string, unknown> => {
-  return typeof value === "object" && value !== null && !Array.isArray(value)
+const formatUtils = (data: unknown) => {
+  if (isObject(data)) {
+    return "#Object#"
+  } else if (Array.isArray(data)) {
+    return "#Array#"
+  } else if (typeof data === "string") {
+    return `"${data.length > 50 ? data.slice(0, 50) + "..." : data}"`
+  } else if (typeof data === "number" || typeof data === "boolean") {
+    return data
+  } else if (typeof data === "function") {
+    return "#Function#"
+  } else if (data === null) {
+    return "null"
+  } else if (data === undefined) {
+    return "undefined"
+  } else {
+    return "#Unknown#"
+  }
 }
 
-export function checkCursorInDynamicFlag(context: CompletionContext): boolean {
-  const { state, pos } = context
-  const doc = state.sliceDoc(0, pos)
-  const stringSnippets = getStringSnippets(doc)
-  let nextDynamicStringStartIndex = 0
-  for (let i = 0; i < stringSnippets.length; i++) {
-    const snippet: any = stringSnippets[i]
-    const start = nextDynamicStringStartIndex
-    const dynamicStringStartIndex = snippet.indexOf("{{")
-    const stringStartIndex = dynamicStringStartIndex + start + 2
-    const dynamicStringEndIndex = snippet.indexOf("}}")
-    const stringEndIndex = dynamicStringEndIndex + start
-    if (
-      dynamicStringStartIndex > -1 &&
-      stringStartIndex <= pos &&
-      (dynamicStringEndIndex <= -1 || pos <= stringEndIndex)
-    ) {
-      return true
+const formatEvaluate = (data: any) => {
+  let format = ""
+  if (Array.isArray(data)) {
+    if (data.length > 0) {
+      format = "[<br/>"
+      data.forEach((item) => {
+        const showStr = formatUtils(item)
+        format += `  ${showStr},<br/>`
+      })
+    } else {
+      format = "["
     }
-    nextDynamicStringStartIndex += snippet.length
+    format += "]"
   }
-  return false
+  if (isObject(data)) {
+    format = "Object {<br/>"
+    Object.keys(data).forEach((key) => {
+      const showStr = formatUtils(data[key])
+      format += `  ${key}: ${showStr},<br/>`
+    })
+    format += "}"
+  }
+  return format
 }
 
 export function getDataInfo(data: Record<string, unknown>, path: string) {
   let currentData: Record<string, unknown> = data
   let offset: number = 0
+  let descInfos: Record<string, any> = {}
   for (let i = 0; i < path.length; i++) {
     switch (path[i]) {
       case ".":
@@ -47,6 +76,7 @@ export function getDataInfo(data: Record<string, unknown>, path: string) {
           if (!currentData || !isObject(currentData)) {
             return null
           }
+          descInfos = ContextDesc[currentPath] as Record<string, unknown>
         }
         offset = i + 1
         if (path[i] === "." && Array.isArray(currentData)) {
@@ -60,18 +90,32 @@ export function getDataInfo(data: Record<string, unknown>, path: string) {
   }
   return {
     currentData,
+    descInfos,
     offset,
     prefix: path.slice(offset),
   }
 }
 
 export const buildContextCompletionSource = (
-  completeOptions: { key: string; value: any }[],
+  canShowCompleteInfo: boolean,
+  codeType: CODE_TYPE,
+  executionResult: Record<string, unknown>,
 ): ((
   context: CompletionContext,
 ) => CompletionResult | Promise<CompletionResult | null> | null) => {
+  const isFunction =
+    codeType === CODE_TYPE.FUNCTION || codeType === CODE_TYPE.NO_METHOD_FUNCTION
+
+  if (codeType === CODE_TYPE.FUNCTION) {
+    executionResult = removeIgnoredKeys(executionResult)
+  } else {
+    executionResult = removeIgnoredKeys(
+      removeWidgetOrActionMethods(executionResult),
+    )
+  }
+
   return (context: CompletionContext) => {
-    const isCursorInDynamicFlag = checkCursorInDynamicFlag(context)
+    const isCursorInDynamicFlag = checkCursorInDynamicFlag(context, isFunction)
     if (!isCursorInDynamicFlag) {
       return null
     }
@@ -81,36 +125,43 @@ export const buildContextCompletionSource = (
     }
     if (
       validString.text.length === 0 &&
-      context.matchBefore(/\{\{\s*/) === null
+      (isFunction || context.matchBefore(/\{\{\s*/) === null)
     ) {
       return null
     }
 
-    const completeOptionsObject = completeOptions.reduce(
-      (result, value) => {
-        const { key, value: valueValue } = value
-        result[key] = valueValue
-        return result
-      },
-      {} as Record<string, unknown>,
-    )
-
-    const dataInfo = getDataInfo(completeOptionsObject, validString.text)
+    const dataInfo = getDataInfo(executionResult, validString.text)
     if (!dataInfo) {
       return null
     }
 
-    const { currentData, offset, prefix } = dataInfo
+    const { currentData, offset, prefix, descInfos } = dataInfo
     const keys = Object.keys(currentData).filter((key) =>
       key.startsWith(prefix),
     )
 
     const options = keys.map((key) => {
+      const dataType = getDataType(currentData[key])
+      const currentKeyDesc = descInfos?.[key]
       const result: Completion = {
-        type: "",
+        type: dataType,
         label: key,
-        detail: (currentData[key] as string) ?? "",
+        detail: capitalize(dataType),
         boost: 1,
+      }
+      if (canShowCompleteInfo) {
+        result.info = () => {
+          let dom = document.createElement("span")
+          dom.innerHTML = `<div class="completionInfoCardTitle">
+        <span class="cardTitle">${key}</span>
+      </div>
+      <p class="completionInfoType">${
+            currentKeyDesc ? currentKeyDesc.usage : dataType
+          }</p>
+      <p class="completionInfoEvaluatesTitle">Evaluates to</p>
+${getDataEvaluatesToDom(currentData[key], dataType)}`
+          return dom
+        }
       }
       return result
     })
@@ -121,4 +172,39 @@ export const buildContextCompletionSource = (
       options: options,
     }
   }
+}
+
+function getDataType(data: unknown): AutocompleteDataType {
+  const type = typeof data
+  if (type === "number") return AutocompleteDataType.NUMBER
+  else if (type === "string") return AutocompleteDataType.STRING
+  else if (type === "boolean") return AutocompleteDataType.BOOLEAN
+  else if (Array.isArray(data)) return AutocompleteDataType.ARRAY
+  else if (isFunction(data)) return AutocompleteDataType.FUNCTION
+  else if (type === "undefined") return AutocompleteDataType.UNKNOWN
+  return AutocompleteDataType.OBJECT
+}
+
+function getDataEvaluatesToDom(data: unknown, dataType: AutocompleteDataType) {
+  switch (dataType) {
+    case AutocompleteDataType.STRING:
+      return `<span class="evaluatesResult">"${data}"</span>`
+    case AutocompleteDataType.NUMBER:
+    case AutocompleteDataType.BOOLEAN:
+      return `<span class="evaluatesResult">${data}</span>`
+    case AutocompleteDataType.ARRAY:
+      return `<span class="evaluatesResult">[ ... ]${getEvaluatesTooltipDOM(
+        data as unknown[],
+      )}</span>`
+    case AutocompleteDataType.OBJECT:
+      return `<span class="evaluatesResult">{ ... } ${getEvaluatesTooltipDOM(
+        data as Object,
+      )}</span>`
+    default:
+      return `<span class="evaluatesResult">null</span>`
+  }
+}
+
+const getEvaluatesTooltipDOM = (data: Object | unknown[]) => {
+  return `<div class="evaluatesTooltips">${formatEvaluate(data)}</div>`
 }
