@@ -1,9 +1,11 @@
-
-
 import { Alert, Card } from 'antd';
 import { CopyTextButton } from './copyTextButton';
 import { CSSProperties, ReactNode, useState } from 'react';
 import styled from 'styled-components';
+import { MdError as ErrorIcon } from "react-icons/md";
+import { MdCheckCircle as SuccessIcon } from "react-icons/md";
+
+
 // import { ErrorWarningLine as ErrorIcon, IconSuccess as SuccessIcon } from '../../../../../design/icons';
 
 const StyledCard = styled(Card)<{ $backcolor: string }>`
@@ -119,8 +121,6 @@ export function PopupCard(props: PopupCardProps) {
   const [isPopupHovered, setPopupHovered] = useState(false);
   // const isTrue = true;
 
-  console.log('----popup----', props);
-
   //       {/*{(props.editorFocus || isPopupHovered) && (*/}
   return (
     <>
@@ -134,7 +134,7 @@ export function PopupCard(props: PopupCardProps) {
                 message={props.title}
                 type={props.hasError ? 'error' : 'success'}
                 showIcon
-                // icon={props.hasError ? <ErrorIcon /> : <SuccessIcon />}
+                icon={props.hasError ? <ErrorIcon /> : <SuccessIcon />}
               />
             }
             extra={<CopyTextButton text={props.content ?? ''} />}

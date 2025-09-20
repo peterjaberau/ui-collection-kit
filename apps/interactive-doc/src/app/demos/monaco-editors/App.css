@@ -1,0 +1,88 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    padding: 0 16px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #3a3a3a;
+    flex-shrink: 0;
+    background-color: #1e1e1e;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.main-content {
+    display: grid;
+    flex-grow: 1;
+    overflow: hidden;
+    background-color: #181818; /* 修复“全隐藏”时的白色背景 */
+}
+
+.pane {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
+.pane:not(:last-child) {
+    border-right: 1px solid #3a3a3a;
+}
+
+.view-toggler {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 统一所有按钮的基础样式 */
+.header-button,
+.toggle-button {
+    background-color: #3c3c3c;
+    border: 1px solid #555;
+    color: #ccc;
+    padding: 5px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+    min-width: 80px; /* 统一按钮宽度 */
+    text-align: center;
+}
+
+.header-button:hover,
+.toggle-button:hover {
+    border-color: #777;
+    color: #fff;
+    background-color: #4a4a4a;
+}
+
+/* 仅为激活的切换按钮提供特殊样式 */
+.toggle-button.active {
+    color: #fff;
+    background-color: #4f4f4f; /* 使用更柔和的激活背景色 */
+    border-color: #777; /* 边框颜色与 hover 状态统一 */
+}

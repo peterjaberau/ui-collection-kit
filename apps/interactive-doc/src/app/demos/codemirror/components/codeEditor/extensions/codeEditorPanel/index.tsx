@@ -1,6 +1,6 @@
 "use client"
 import styled from "styled-components"
-import React, { ReactNode, useContext, useMemo, useRef, useState, createContext } from "react"
+import React, { ReactNode, useContext, useMemo, useRef, useState, createContext, useCallback } from "react"
 import { Layers } from "../../constants"
 import {
   ArrowsAltOutlined as CodeEditorOpenIcon,
@@ -16,6 +16,7 @@ import Draggable from "react-draggable"
 import { getPanelStyle, savePanelStyle } from "./utils"
 import { isEmpty } from "lodash"
 import { Tag } from "antd"
+import { useUnmount } from "react-use";
 
 const Wrapper = styled.div`
   max-width: 60vw;
@@ -142,6 +143,7 @@ export const CodeEditorPanel = (props: {
   const draggableRef = useRef<HTMLDivElement>(null)
   const [unDraggable, setUnDraggable] = useState(true)
   const [pinned, setPinned] = useState(false)
+  const mountedRef = useRef(true)
 
   const [bounds, setBounds] = useState({
     left: 0,
@@ -160,6 +162,68 @@ export const CodeEditorPanel = (props: {
 
   const compName = useContext(CompNameContext)
 
+  const handleMouseOver = useCallback(() => {
+    if (mountedRef.current) {
+      setUnDraggable(false)
+    }
+  }, [])
+
+  const handleMouseOut = useCallback(() => {
+    if (mountedRef.current) {
+      setUnDraggable(true)
+    }
+  }, [])
+
+  const handleDragStart = useCallback((event: any, uiData: any) => {
+    if (!mountedRef.current) return
+
+    const { clientWidth, clientHeight } = window.document.documentElement
+    const targetRect = draggableRef.current?.getBoundingClientRect()
+    if (!targetRect) {
+      return
+    }
+
+    setBounds({
+      left: -targetRect.left + uiData.x,
+      right: clientWidth - (targetRect.right - uiData.x),
+      top: -targetRect.top + uiData.y,
+      bottom: clientHeight - (targetRect.bottom - uiData.y),
+    })
+  }, [])
+
+  const handleResize = useCallback((event: any, { size }: { size: { width: number; height: number } }) => {
+    if (mountedRef.current) {
+      setSize({ w: size.width, h: size.height })
+    }
+  }, [])
+
+  const handleResizeStop = useCallback(() => {
+    if (mountedRef.current) {
+      savePanelStyle({ ...panelStyle, codeEditor: { w: size.w, h: size.h } })
+    }
+  }, [panelStyle, size.w, size.h])
+
+  const handleVisibleChange = useCallback((visible: boolean) => {
+    if (mountedRef.current) {
+      setVisible(visible)
+    }
+  }, [])
+
+  const handleAfterVisibleChange = useCallback(
+    (visible: boolean) => {
+      if (mountedRef.current) {
+        props.onVisibleChange(visible)
+      }
+    },
+    [props.onVisibleChange],
+  )
+
+  useUnmount(() => {
+    mountedRef.current = false
+    setVisible(false)
+    props.onVisibleChange(false)
+  })
+
   return (
     <Trigger
       popupVisible={visible}
@@ -168,8 +232,8 @@ export const CodeEditorPanel = (props: {
       popupStyle={{ opacity: 1, display: visible ? "block" : "none" }}
       maskClosable={!pinned}
       mask={true}
-      onPopupVisibleChange={(visible: any) => setVisible(visible)}
-      afterPopupVisibleChange={(visible) => props.onVisibleChange(visible)}
+      onPopupVisibleChange={handleVisibleChange}
+      afterPopupVisibleChange={handleAfterVisibleChange}
       getPopupContainer={(node: any) => node.parentNode.parentNode}
       popup={() => (
         <Draggable
@@ -177,33 +241,23 @@ export const CodeEditorPanel = (props: {
           positionOffset={{ x: "-50%", y: "-50%" }}
           disabled={unDraggable}
           bounds={bounds}
-          onStart={(event, uiData) => {
-            const { clientWidth, clientHeight } = window.document.documentElement
-            const targetRect = draggableRef.current?.getBoundingClientRect()
-            if (!targetRect) {
-              return
-            }
-            setBounds({
-              left: -targetRect.left + uiData.x,
-              right: clientWidth - (targetRect.right - uiData.x),
-              top: -targetRect.top + uiData.y,
-              bottom: clientHeight - (targetRect.bottom - uiData.y),
-            })
-          }}
+          onStart={handleDragStart}
         >
           <Resizable
             width={size.w}
             height={size.h}
-            onResize={(event: any, { size }: any) => setSize({ w: size.width, h: size.height })}
-            onResizeStop={() => savePanelStyle({ ...panelStyle, codeEditor: { w: size.w, h: size.h } })}
+            onResize={handleResize}
+            onResizeStop={handleResizeStop}
             handle={Handle}
             resizeHandles={["s", "n", "w", "e", "sw", "nw", "se", "ne"]}
             minConstraints={[480, 360]}
           >
             <Wrapper ref={draggableRef} style={{ width: size.w + "px", height: size.h + "px" }}>
-              <HeaderWrapper onMouseOver={() => setUnDraggable(false)} onMouseOut={() => setUnDraggable(true)}>
+              <HeaderWrapper
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+              >
                 <TitleWrapper>
-                  <Tag color="blue-inverse">codeEditorPanel</Tag>
                   <StyledDragIcon />
                   {[compName, ...(props.breadcrumb ?? [])].filter((t) => !isEmpty(t)).join(" / ")}
                 </TitleWrapper>

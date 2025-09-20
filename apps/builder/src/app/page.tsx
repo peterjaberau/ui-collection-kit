@@ -1,7 +1,25 @@
 "use client"
 import JsonView from "react18-json-view"
 import { useRootActor } from "#illa/hooks/useRootActor"
-import { Stack, Container, HStack, Box, Card, Button, SimpleGrid, Wrap, GridItem, Text } from "@chakra-ui/react"
+import {
+  Stack,
+  Container,
+  HStack,
+  Box,
+  Card,
+  Button,
+  Grid,
+  SimpleGrid,
+  Wrap,
+  GridItem,
+  Flex,
+  Center,
+  SegmentGroup,
+  CodeBlock,
+  ClientOnly,
+  ScrollArea,
+  createShikiAdapter,
+} from "@chakra-ui/react"
 import { currentAppSelector } from "#illa/actors/currentApp/currentApp.selector"
 import { aiAgentSelector } from "#illa/actors/aiAgent/aiAgent.selector"
 import { builderInfoSelector } from "#illa/actors/builderInfo/builderInfo.selector"
@@ -11,8 +29,12 @@ import { guideSelector } from "#illa/actors/guide/guide.selector"
 import { resourceSelector } from "#illa/actors/resource/resource.selector"
 import { currentUserSelector } from "#illa/actors/userInfo/currentUser/currentUser.selector"
 import { teamSelector } from "#illa/actors/userInfo/team/team.selector"
-import { setExecutionResultReducer, handleStartExecution, startExecutionHandler } from "#illa/orchestrator"
+// import { setExecutionResultReducer, handleStartExecution, startExecutionHandler } from "#illa/orchestrator"
+// import { setExecutionResultReduce } from "#illa/orchestrator"
+import { startExecutionHandler, setExecutionResultReducer, handleStartExecution } from "#illa/orchestrator"
 import { useState } from "react"
+import { RiCodeLine, RiEye2Line } from "react-icons/ri"
+import { HighlighterGeneric } from "shiki"
 
 const renderWidgetIds = [
   { widgetId: "bvqcrxkaum", type: "BUTTON_WIDGET", widgetName: "btn_left_left" },
@@ -50,113 +72,199 @@ export default function Page() {
   return (
     <>
       <Container fluid>
-        <SimpleGrid columns={6} gap={4}>
-          <GridItem colSpan={1}>
-            <Card.Root>
-              <Card.Header>
-                <Card.Title>Actors</Card.Title>
-              </Card.Header>
-              <Card.Body minH={"500px"} maxH={"calc(100vh - 100px"} overflowY={"auto"}>
-                <SimpleGrid columns={3} gap={2}>
-                  <Button size="xs" onClick={() => setExecutionResultReducer()}>
-                    setExecResult
-                  </Button>
-                  <Button size="xs" onClick={() => handleStartExecution()}>
-                    handleExec
-                  </Button>
-                  <Button
-                    size="xs"
-                    onClick={() =>
-                      setOrchestrationState({
-                        ...orchestrationState,
-                        ...startExecutionHandler(),
-                      })
-                    }
-                  >
-                    startTreeFactory
-                  </Button>
-                </SimpleGrid>
-                <JsonView
-                  src={{
-                    rootActorRef: rootActorRef,
-                    aiAgent: getAiAgentContext,
-                    builderInfo: getBuilderInfoContext,
-                    config: getConfigContext,
-                    currentApp: currentAppContext,
-                    currentAppHistory: getCurrentAppHistoryContext,
-                    guide: getGuideContext,
-                    resource: getResourceContext,
-                    team: getTeamContext,
-                    currentUser: getCurrentUserContext,
-                    ___orchestrationState: orchestrationState,
-                  }}
-                  collapsed={1}
-                  theme="github"
-                  displaySize
-                  displayArrayIndex
-                  style={{ fontSize: 13, fontWeight: "bold" }}
-                />
-              </Card.Body>
-            </Card.Root>
-          </GridItem>
+        <Grid
+          templateColumns={"repeat(auto-fill,minmax(360px,1fr))"}
+          width={"full"}
+          alignItems={"start"}
+          justifyContent={"center"}
+          gap={6}
+          overflowY={"hidden"}
+        >
+          <GridItemRenderer title={"Actors"} rowSpan={3}>
+            <Stack h={'full'} >
+              <SimpleGrid columns={3} gap={2}>
+                <Button size="xs" onClick={() => startExecutionHandler()}>Start</Button>
+                <Button size="xs" onClick={() => handleStartExecution()}>Handler</Button>
+                <Button size="xs" onClick={() => setExecutionResultReducer()}>Reducer</Button>
+                <Button size="xs" onClick={() => setOrchestrationState({...orchestrationState, ...startExecutionHandler()})}>Tree</Button>
+              </SimpleGrid>
+              <ScrollArea.Root maxW="full" height={600}  >
+                <ScrollArea.Viewport>
+                  <ScrollArea.Content spaceY="4" textStyle="sm" >
+                    <JsonView
+                      src={{
+                        rootActorRef: rootActorRef,
+                        aiAgent: getAiAgentContext,
+                        builderInfo: getBuilderInfoContext,
+                        config: getConfigContext,
+                        currentApp: currentAppContext,
+                        currentAppHistory: getCurrentAppHistoryContext,
+                        guide: getGuideContext,
+                        resource: getResourceContext,
+                        team: getTeamContext,
+                        currentUser: getCurrentUserContext,
+                      }}
+                      collapsed={1}
+                      theme="github"
+                      displaySize
+                      displayArrayIndex
+                      style={{ fontSize: 13, fontWeight: "bold" }}
+                    />
+                  </ScrollArea.Content>
+                </ScrollArea.Viewport>
+                <ScrollArea.Scrollbar>
+                  <ScrollArea.Thumb />
+                </ScrollArea.Scrollbar>
+                <ScrollArea.Corner />
+              </ScrollArea.Root>
+            </Stack>
+          </GridItemRenderer>
 
-          <GridItem colSpan={4}>
-            <SimpleGrid columns={2} gap={4} height={"100%"}>
-              <RenderCurrentAppCanvas title={"Canvas - currentApp.Components"}>
-                <Button>{currentAppContext.components["btn_1"]?.props.text}</Button>
-              </RenderCurrentAppCanvas>
-              <RenderCurrentAppCanvas title={"Canvas - currentApp.execution.result"}>
-                <Button>{currentAppContext.execution.result["btn_1"]?.text}</Button>
-              </RenderCurrentAppCanvas>
-            </SimpleGrid>
-          </GridItem>
+          <GridItemRenderer
+            title={"Canvas - currentApp.Components"}
+            colSpan={2}
+            rowSpan={2}
+            preview={{ enabled: true, code: JSON.stringify(currentAppContext.components, null, 2), language: "json" }}
+          >
+            <Button>{currentAppContext.components["btn_1"]?.props.text}</Button>
+          </GridItemRenderer>
+          <GridItemRenderer title={"Actors"}>
+            <JsonView
+              src={{
+                ___orchestrationState: orchestrationState,
+                getWidgets: {},
+                getWidget_tl8xbeqhua: {},
+                getWidget_od1swmzxxq: {},
+                devTools: {
+                  context: {},
+                  state: {},
+                },
+              }}
+              collapsed={1}
+              theme="github"
+              displaySize
+              displayArrayIndex
+              style={{ fontSize: 13, fontWeight: "bold" }}
+            />
+          </GridItemRenderer>
 
-          <GridItem colSpan={1}>
-            <Card.Root>
-              <Card.Header>
-                <Card.Title>Actors</Card.Title>
-              </Card.Header>
-              <Card.Body minH={"500px"} maxH={"calc(100vh - 100px)"} overflowY={"auto"}>
-                <JsonView
-                  src={{
-                    getWidgets: {},
-                    getWidget_tl8xbeqhua: {},
-                    getWidget_od1swmzxxq: {},
-                    devTools: {
-                      context: {},
-                      state: {},
-                    },
-                  }}
-                  collapsed={1}
-                  theme="github"
-                  displaySize
-                  displayArrayIndex
-                  style={{ fontSize: 13, fontWeight: "bold" }}
-                />
-              </Card.Body>
-            </Card.Root>
-          </GridItem>
-        </SimpleGrid>
+          <GridItemRenderer title={"Canvas - currentApp.execution.result"}
+                            colSpan={2} rowSpan={2}
+                            preview={{
+                              enabled: true, code:
+                                `
+  # Evaluation Tree  
+  const actions = getActionList()
+  const widgets = getAllComponentDisplayNameMapProps()
+  const currentUserInfo = getCurrentUser()
+  const builderInfo = getBuilderInfo()
+  const globalData = getOriginalGlobalData()
+  
+  
+  # Evaluation Tree  >>> more logic details
+  1. from currentApp get target:
+      a. actions from state.currentApp.action
+      b. widgets from state.currentApp.components
+      c. currentUserInfo from state.currentUser
+      d. builderInfo from state.builderInfo
+      e. globalData from state.currentApp.globalData.originalData
+  2. pass these target to execution engine to get the result:
+      a. { rawTree: executionTreeFactory(actions, widgets, currentUserInfo, builderInfo, globalData))
+  
+                                `, language: "javascript" }}
+          >
+            <Button>{currentAppContext.execution.result["btn_1"]?.text}</Button>
+          </GridItemRenderer>
+        </Grid>
       </Container>
     </>
   )
 }
 // @ts-ignore
-export const RenderCurrentAppCanvas: any = ({ children, title }: any) => {
+export const GridItemRenderer: any = ({
+  children,
+  title,
+  colSpan = 1,
+  rowSpan = 1,
+  colStart = 0,
+  preview = { enabled: false, code: null, language: "json" },
+}: any) => {
+  const [value, setValue] = useState<string | null>("preview")
+
   return (
-    <GridItem>
-      <Card.Root height={"100%"}>
+    <GridItem height={`${300 * rowSpan}px`} colSpan={colSpan} rowSpan={rowSpan} colStart={colStart}>
+      <Card.Root>
         <Card.Header>
-          <HStack justifyContent={"space-between"} width={"full"}>
-            <Card.Title flex={1}>{title}</Card.Title>
+          <HStack justifyContent={"space-between"}>
+            <Card.Title>{title}</Card.Title>
           </HStack>
         </Card.Header>
-        <Card.Body maxH={"2000px"} overflowY={"auto"}>
-          <Box w="full" h="full">
-            {children}
-          </Box>
+        <Card.Body gap={2}>
+          <Center py={6}>{children}</Center>
+
+          {preview.enabled && (
+            <SegmentGroup.Root defaultValue="preview" value={value} onValueChange={(e) => setValue(e.value)}>
+              <SegmentGroup.Indicator />
+              <SegmentGroup.Items
+                items={[
+                  {
+                    value: "preview",
+                    label: (
+                      <HStack>
+                        <RiEye2Line /> Preview
+                      </HStack>
+                    ),
+                  },
+                  {
+                    value: "code",
+                    label: (
+                      <HStack>
+                        <RiCodeLine /> Code
+                      </HStack>
+                    ),
+                  },
+                ]}
+              />
+            </SegmentGroup.Root>
+          )}
+
+          {preview.enabled && value === "code" && (
+            <CodeBlock.AdapterProvider value={shikiAdapter}>
+              <CodeBlock.Root code={preview.code || `{}`} language={preview.language || "json"} colorPalette={"yellow"}>
+                <ScrollArea.Root maxW="full" height={`${300 * rowSpan - 250}px`}>
+                  <ScrollArea.Viewport>
+                    <ScrollArea.Content spaceY="4" textStyle="sm">
+                      <CodeBlock.Content>
+                        <CodeBlock.Code>
+                          <CodeBlock.CodeText />
+                        </CodeBlock.Code>
+                      </CodeBlock.Content>
+                    </ScrollArea.Content>
+                  </ScrollArea.Viewport>
+                  <ScrollArea.Scrollbar>
+                    <ScrollArea.Thumb />
+                  </ScrollArea.Scrollbar>
+                  <ScrollArea.Corner />
+                </ScrollArea.Root>
+              </CodeBlock.Root>
+            </CodeBlock.AdapterProvider>
+          )}
         </Card.Body>
       </Card.Root>
     </GridItem>
   )
 }
+
+const shikiAdapter = createShikiAdapter<HighlighterGeneric<any, any>>({
+  async load() {
+    const { createHighlighter } = await import("shiki")
+    return createHighlighter({
+      langs: ["tsx", "scss", "html", "bash", "json"],
+      themes: ["github-dark"],
+    })
+  },
+  theme: {
+    dark: "github-dark",
+    // dark:  "github-light",
+  },
+})

@@ -1,12 +1,13 @@
 "use client"
 import { EditorState, Facet, Prec, RangeSetBuilder } from '@codemirror/state';
 import { Decoration, DecorationSet, EditorView, ViewPlugin, ViewUpdate } from '@codemirror/view';
+import { getDynamicStringSegments, isDynamicSegment } from '../../../utils/eval/utils/segmentUtils';
 import { defaultHighlightStyle, HighlightStyle, syntaxTree } from '@codemirror/language';
 import { highlightTree } from '@lezer/highlight';
 import { Tree } from '@lezer/common';
-import { getDynamicStringSegments, isDynamicSegment } from '../../../utils/eval/utils/segmentUtils';
-import { Language } from '../codeEditorTypes';
 import { CodeType } from '../types';
+import { Language } from '../codeEditorTypes';
+
 
 const highlighterFacet = Facet.define();
 

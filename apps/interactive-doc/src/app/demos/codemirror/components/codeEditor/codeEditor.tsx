@@ -217,6 +217,7 @@ function useCodeMirror(props: CodeEditorProps, container: RefObject<HTMLDivEleme
       window.clearTimeout(isTypingRef.current);
       isTypingRef.current = window.setTimeout(() => (isTypingRef.current = 0), 100);
       onChange?.(state);
+
     }, 1000),
     [onChange],
   );
@@ -235,6 +236,8 @@ function useCodeMirror(props: CodeEditorProps, container: RefObject<HTMLDivEleme
      * 1. switch to the same type of comp
      * 2. change the current comp's value by dispatchChangeValueAction
      */
+
+
     if (!view || (!isTypingRef.current && value !== view.state.doc.toString())) {
       const state = EditorState.create({ doc: value, extensions });
       if (view) {
@@ -365,7 +368,7 @@ function CodeEditorCommon(
 
 // for the standalone code editor, eliminating some styles
 function CodeEditorForPanel(props: CodeEditorProps) {
-  const editor: any = useRef<HTMLDivElement>(null);
+  const editor: any = useRef<HTMLDivElement | any>(null);
   return (
     <CodeEditorCommon {...props} editor={editor} cardStyle={{ borderRadius: '8px' }}>
       <CodeEditorPanelContainer
@@ -380,8 +383,8 @@ function CodeEditorForPanel(props: CodeEditorProps) {
 /**
  * encapsulate CodeMirror: https://codemirror.net/6/
  */
-export function CodeEditor(props: CodeEditorProps) {
-  const editor: any = useRef<HTMLDivElement>(null);
+export function CodeEditor(props: CodeEditorProps | any) {
+  const editor: any = useRef<HTMLDivElement | any>(null);
   const { expandable = true, ...editorProps } = props;
 
   const [disabled, setDisabled] = useState(false);

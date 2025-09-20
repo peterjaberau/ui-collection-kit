@@ -23,6 +23,10 @@
       }
     ],
     "paths": {
+      "#alignui": ["./src/modules/alignui"],
+      "#alignui/*": ["./src/modules/alignui/*"],
+
+
       "#illa": ["./src/illa"],
       "#illa/*": ["./src/illa/*"],
 

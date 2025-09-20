@@ -32,10 +32,12 @@ const IconContainer = styled.div`
 
 export const iconWidgetClass = 'cm-icon-widget-cls';
 
-// function IconElement(props: { value: string }) {
-//   const icon = useIcon(props.value);
-//   return <IconContainer className={iconWidgetClass}>{icon?.getView()}</IconContainer>;
-// }
+function IconElement(props: { value: string }) {
+  // const icon = useIcon(props.value);
+  // return <IconContainer className={iconWidgetClass}>{icon?.getView()}</IconContainer>;
+  console.log('IconElement value----', props.value);
+  return <IconContainer className={iconWidgetClass}>{props.value}</IconContainer>;
+}
 
 class IconWidget extends WidgetType {
   constructor(readonly value: string) {
@@ -49,7 +51,7 @@ class IconWidget extends WidgetType {
   toDOM() {
     const wrap = document.createElement('span');
     const root = createRoot(wrap);
-    // root.render(<IconElement value={this.value} />);
+    root.render(<IconElement value={this.value} />);
     return wrap;
   }
 

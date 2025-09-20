@@ -4,12 +4,25 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 4089",
+    "dev:tiny": "tinylicious --port 7070 & next dev -p 4089",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@codemirror/theme-one-dark": "^6.1.3",
+    "react-window": "^1.8.11",
+    "immer": "^10.1.3",
+    "ajv-formats": "^3.0.1",
+    "jsonc-parser": "^3.3.1",
+    "ajv": "^8.17.1",
+    "@fluidframework/tinylicious-client": "^2.60.0",
+    "@fluidframework/tree": "^2.60.0",
+    "fluid-framework": "^2.60.0",
+    "mobx": "^6.13.7",
+    "mobx-react-lite": "^4.1.0",
+    "livecodes": "^0.11.1",
     "antd": "^5.27.4",
-
+    "use-stick-to-bottom": "^1.1.1",
     "@ant-design/nextjs-registry": "^1.1.0",
     "@codemirror/lang-css": "^6.3.1",
     "@floating-ui/react": "^0.27.16",
@@ -32,7 +45,6 @@
     "monaco-themes": "^0.4.7",
     "code-inspector-plugin": "^1.2.10",
     "qs": "^6.14.0",
-
     "@remixicon/react": "^4.5.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -50,7 +62,6 @@
     "shiki": "^3.9.1",
     "@monaco-editor/react": "^4.7.0",
     "copy-text-to-clipboard": "^3.0.1",
-
     "@chakra-ui/react": "^3.24.0",
     "@ark-ui/react": "^5.20.0",
     "@ui-kit/components": "workspace:*",
@@ -63,7 +74,6 @@
     "@hookform/resolvers": "^5.1.1",
     "@tanstack/react-virtual": "3.13.12",
     "react18-json-view": "^0.2.9",
-
     "es-toolkit": "1.39.5",
     "react-spinners": "0.17.0",
     "next-themes": "^0.4.6",
@@ -90,8 +100,6 @@
     "@tanstack/react-query": "^5.81.2",
     "@tanstack/react-query-devtools": "^5.81.2",
     "@tanstack/react-table": "^8.21.3",
-
-
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.3",
@@ -137,7 +145,6 @@
     "@codemirror/search": "^6.5.11",
     "@types/codemirror": "^5.60.16",
     "@uiw/react-codemirror": "^4.25.1",
-
     "react-aria-components": "^1.12.2",
     "react-day-picker": "^9.9.0",
     "react-otp-input": "^3.1.1",
@@ -154,11 +161,15 @@
     "rc-trigger": "^5.3.4",
     "react-resizable": "^3.0.5",
     "react-draggable": "^4.5.0",
-    "@lobehub/ui": "^2.13.1"
+    "@lobehub/ui": "^2.13.1",
+    "@zag-js/react": "^1.24.1",
+    "@types/babel__parser": "^7.1.5",
+    "@babel/parser": "^7.28.4"
   },
   "devDependencies": {
+    "tinylicious": "^7.0.0",
     "@types/react-resizable": "^3.0.8",
-
+    "@types/react-window": "^1.8.8",
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@types/tern": "^0.23.5",
     "@types/mdx": "^2.0.13",

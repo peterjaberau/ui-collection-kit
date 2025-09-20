@@ -27,7 +27,7 @@ import { highlightSelectionMatches, searchKeymap } from "@codemirror/search"
 import { Diagnostic, linter, lintKeymap } from "@codemirror/lint"
 import { type EditorState, Prec } from "@codemirror/state"
 import { TernServer } from "./completion/ternServer"
-import { MutableRefObject, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
+import { RefObject, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
 import { type CodeEditorProps, type Language, MetaDataContext } from "./codeEditorTypes"
 import {
   Compartment,
@@ -419,7 +419,7 @@ const esLintSource = async (view: EditorView) => {
   return esLint(eSLinter, config)(view)
 }
 
-function getLintExtension(codeType: CodeType | undefined, exposingDataRef: MutableRefObject<Record<string, unknown>>) {
+function getLintExtension(codeType: CodeType | undefined, exposingDataRef: RefObject<Record<string, unknown>>) {
   if (codeType === "PureJSON") {
     return [linter(jsonParseLinter())]
   }
@@ -506,6 +506,7 @@ export function useExtensions(props: CodeEditorProps) {
   // reconfiguration as a baseline, actually extensions remains unchanged.
   const reconfigure = useCallback(
     (view?: EditorView) => {
+
       if (view) {
         const effects: StateEffect<unknown>[] = []
         rawExtensions.forEach((e, i) => {
