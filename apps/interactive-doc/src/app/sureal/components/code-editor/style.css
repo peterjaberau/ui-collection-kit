@@ -1,0 +1,319 @@
+/* General root styles for the editor container */
+.root {
+  min-height: 0;
+  flex: 1;
+
+  --surrealist-editor-icon-variable: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTcuMjc2LDMuMDUzIEw3LjcyNCwzLjk0NyBDNi41MDUsNC41NTcgNS45NzYsNC44MjUgNS41NjMsNS4xODEgQzQuODYyLDUuNzg1IDQuMzY0LDYuNTkgNC4xMzcsNy40ODcgQzQuMDA0LDguMDE2IDQsOC42MDkgNCw5Ljk3MiBMNCwxMy4wMjggQzQsMTQuMzkxIDQuMDA0LDE0Ljk4NCA0LjEzNywxNS41MTIgQzQuMzY0LDE2LjQxIDQuODYyLDE3LjIxNSA1LjU2MywxNy44MTkgQzUuOTc2LDE4LjE3NSA2LjUwNSwxOC40NDMgNy43MjQsMTkuMDUzIEw3LjI3NiwxOS45NDcgTDcuMjA1LDE5LjkxMSBDNi4wNzgsMTkuMzQ4IDUuNDI5LDE5LjAyMyA0LjkxLDE4LjU3NiBDNC4wNTMsMTcuODM4IDMuNDQ1LDE2Ljg1NCAzLjE2OCwxNS43NTcgQzMsMTUuMDk0IDMsMTQuMzY4IDMsMTMuMTA4IEwzLDkuOTcyIEwzLDkuODkyIEMzLDguNjMyIDMsNy45MDYgMy4xNjgsNy4yNDIgQzMuNDQ1LDYuMTQ2IDQuMDUzLDUuMTYyIDQuOTEsNC40MjMgQzUuNDI5LDMuOTc2IDYuMDc4LDMuNjUyIDcuMjA1LDMuMDg5IFogTTE2LjcyNCwzLjA1MyBMMTYuNzk1LDMuMDg5IEMxNy45MjIsMy42NTIgMTguNTcxLDMuOTc2IDE5LjA5LDQuNDIzIEMxOS45NDcsNS4xNjIgMjAuNTU1LDYuMTQ2IDIwLjgzMiw3LjI0MiBDMjEsNy45MDYgMjEsOC42MzIgMjEsOS44OTIgTDIxLDEzLjEwOCBDMjEsMTQuMzY4IDIxLDE1LjA5NCAyMC44MzIsMTUuNzU3IEMyMC41NTUsMTYuODU0IDE5Ljk0NywxNy44MzggMTkuMDksMTguNTc2IEMxOC41NzEsMTkuMDIzIDE3LjkyMiwxOS4zNDggMTYuNzk1LDE5LjkxMSBMMTYuNzI0LDE5Ljk0NyBMMTYuMjc2LDE5LjA1MyBDMTcuNDk1LDE4LjQ0MyAxOC4wMjQsMTguMTc1IDE4LjQzNywxNy44MTkgQzE5LjEzOCwxNy4yMTUgMTkuNjM2LDE2LjQxIDE5Ljg2MywxNS41MTIgQzE5Ljk5NiwxNC45ODQgMjAsMTQuMzkxIDIwLDEzLjAyOCBMMjAsOS45NzIgQzIwLDguNjA5IDE5Ljk5Niw4LjAxNiAxOS44NjMsNy40ODcgQzE5LjYzNiw2LjU5IDE5LjEzOCw1Ljc4NSAxOC40MzcsNS4xODEgQzE4LjAyNCw0LjgyNSAxNy40OTUsNC41NTcgMTYuMjc2LDMuOTQ3IFogTTExLjM3NSwxMS41IEw4LjYsNy44IEw5LjQsNy4yIEwxMiwxMC42NjcgTDE0LjYsNy4yIEwxNS40LDcuOCBMMTIuNjI1LDExLjUgTDE1LjQsMTUuMiBMMTQuNiwxNS44IEwxMiwxMi4zMzMgTDkuNCwxNS44IEw4LjYsMTUuMiBaIiBmaWxsPSIjZmZkZTAwIiBzdHJva2U9IiNmZmRlMDAiIHN0cm9rZS13aWR0aD0iMC43NSI+PC9wYXRoPjwvc3ZnPg==");
+  --surrealist-editor-icon-function: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE3LDMuNSBMMTYuOCwzLjUgQzE1Ljk1MiwzLjUgMTUuMzQ1LDMuNSAxNC44NywzLjUzOSBDMTQuNDAxLDMuNTc3IDE0LjEwNCwzLjY1MSAxMy44NjUsMy43NzIgQzEzLjM5NSw0LjAxMiAxMy4wMTIsNC4zOTUgMTIuNzczLDQuODY1IEMxMi42NTEsNS4xMDQgMTIuNTc3LDUuNDAxIDEyLjUzOSw1Ljg3IEMxMi41LDYuMzQ1IDEyLjUsNi45NTIgMTIuNSw3LjggTDEyLjUsOS41IEwxNSw5LjUgTDE1LDEwLjUgTDEyLjUsMTAuNSBMMTIuNSwxNi4yMjMgQzEyLjUsMTcuMDQ0IDEyLjUsMTcuNjkgMTIuNDU3LDE4LjIxMSBDMTIuNDE0LDE4Ljc0MiAxMi4zMjQsMTkuMTg2IDEyLjExOCwxOS41ODkgQzExLjc4MywyMC4yNDcgMTEuMjQ3LDIwLjc4MyAxMC41ODksMjEuMTE4IEMxMC4xODYsMjEuMzI0IDkuNzQyLDIxLjQxNCA5LjIxMSwyMS40NTcgQzguNjksMjEuNSA4LjA0NCwyMS41IDcuMjIzLDIxLjUgTDcsMjEuNSBMNywyMC41IEw3LjIsMjAuNSBDOC4wNDgsMjAuNSA4LjY1NSwyMC41IDkuMTMsMjAuNDYxIEM5LjU5OSwyMC40MjMgOS44OTYsMjAuMzQ5IDEwLjEzNSwyMC4yMjcgQzEwLjYwNSwxOS45ODggMTAuOTg4LDE5LjYwNSAxMS4yMjcsMTkuMTM1IEMxMS4zNDksMTguODk2IDExLjQyMywxOC41OTkgMTEuNDYxLDE4LjEzIEMxMS41LDE3LjY1NSAxMS41LDE3LjA0OCAxMS41LDE2LjIgTDExLjUsMTAuNSBMOSwxMC41IEw5LDkuNSBMMTEuNSw5LjUgTDExLjUsNy43NzcgQzExLjUsNi45NTYgMTEuNSw2LjMxIDExLjU0Myw1Ljc4OSBDMTEuNTg2LDUuMjU4IDExLjY3Niw0LjgxNCAxMS44ODIsNC40MTEgQzEyLjIxNywzLjc1MyAxMi43NTMsMy4yMTcgMTMuNDExLDIuODgyIEMxMy44MTQsMi42NzYgMTQuMjU4LDIuNTg2IDE0Ljc4OSwyLjU0MyBDMTUuMzEsMi41IDE1Ljk1NiwyLjUgMTYuNzc3LDIuNSBMMTcsMi41IEwxNywzLjUgWiIgZmlsbD0iI2ZmOWI2NyIgc3Ryb2tlPSIjZmY5YjY3IiBzdHJva2Utd2lkdGg9IjAuNzUiPjwvcGF0aD48L3N2Zz4=");
+  --surrealist-editor-icon-class: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTIuMzI3LDMuNjM4IEMyLjYxNSwzLjA3NCAzLjA3NCwyLjYxNSAzLjYzOCwyLjMyNyBDNC4yOCwyIDUuMTIsMiA2LjgsMiBMMTcuMiwyIEMxOC44OCwyIDE5LjcyLDIgMjAuMzYyLDIuMzI3IEMyMC45MjcsMi42MTUgMjEuMzg1LDMuMDc0IDIxLjY3MywzLjYzOCBDMjIsNC4yOCAyMiw1LjEyIDIyLDYuOCBMMjIsMTcuMiBDMjIsMTguODggMjIsMTkuNzIgMjEuNjczLDIwLjM2MiBDMjEuMzg1LDIwLjkyNyAyMC45MjcsMjEuMzg1IDIwLjM2MiwyMS42NzMgQzE5LjcyLDIyIDE4Ljg4LDIyIDE3LjIsMjIgTDYuOCwyMiBDNS4xMiwyMiA0LjI4LDIyIDMuNjM4LDIxLjY3MyBDMy4wNzQsMjEuMzg1IDIuNjE1LDIwLjkyNyAyLjMyNywyMC4zNjIgQzIsMTkuNzIgMiwxOC44OCAyLDE3LjIgTDIsNi44IEMyLDUuMTIgMiw0LjI4IDIuMzI3LDMuNjM4IFogTTYuOCwzIEM1Ljk0MywzIDUuMzYxLDMuMDAxIDQuOTExLDMuMDM4IEM0LjQ3MywzLjA3MyA0LjI0OCwzLjEzOCA0LjA5MiwzLjIxOCBDMy43MTYsMy40MSAzLjQxLDMuNzE2IDMuMjE4LDQuMDkyIEMzLjEzOCw0LjI0OCAzLjA3Myw0LjQ3MyAzLjAzOCw0LjkxMSBDMy4wMDEsNS4zNjEgMyw1Ljk0MyAzLDYuOCBMMywxNy4yIEMzLDE4LjA1NyAzLjAwMSwxOC42MzkgMy4wMzgsMTkuMDg5IEMzLjA3MywxOS41MjcgMy4xMzgsMTkuNzUyIDMuMjE4LDE5LjkwOCBDMy40MSwyMC4yODQgMy43MTYsMjAuNTkgNC4wOTIsMjAuNzgyIEM0LjI0OCwyMC44NjIgNC40NzMsMjAuOTI3IDQuOTExLDIwLjk2MiBDNS4zNjEsMjAuOTk5IDUuOTQzLDIxIDYuOCwyMSBMMTIuMDQ0LDIxIEwxMi4wNDQsMyBaIE0yMSw5Ljk1NiBMMTIuOTU2LDkuOTU2IEwxMi45NTYsMjEgTDE3LjIsMjEgQzE4LjA1NywyMSAxOC42MzksMjAuOTk5IDE5LjA4OSwyMC45NjIgQzE5LjUyNywyMC45MjcgMTkuNzUyLDIwLjg2MiAxOS45MDgsMjAuNzgyIEMyMC4yODQsMjAuNTkgMjAuNTksMjAuMjg0IDIwLjc4MiwxOS45MDggQzIwLjg2MiwxOS43NTIgMjAuOTI3LDE5LjUyNyAyMC45NjIsMTkuMDg5IEMyMC45OTksMTguNjM5IDIxLDE4LjA1NyAyMSwxNy4yIFogTTE3LjIsMyBMMTIuOTU2LDMgTDEyLjk1Niw5LjA0NCBMMjEsOS4wNDQgTDIxLDYuOCBDMjEsNS45NDMgMjAuOTk5LDUuMzYxIDIwLjk2Miw0LjkxMSBDMjAuOTI3LDQuNDczIDIwLjg2Miw0LjI0OCAyMC43ODIsNC4wOTIgQzIwLjU5LDMuNzE2IDIwLjI4NCwzLjQxIDE5LjkwOCwzLjIxOCBDMTkuNzUyLDMuMTM4IDE5LjUyNywzLjA3MyAxOS4wODksMy4wMzggQzE4LjYzOSwzLjAwMSAxOC4wNTcsMyAxNy4yLDMgWiIgZmlsbD0iI0ZGMDBBMCIgc3Ryb2tlPSIjRkYwMEEwIiBzdHJva2Utd2lkdGg9IjAuNzUiPjwvcGF0aD48L3N2Zz4=");
+  --surrealist-editor-icon-constant: var(--surrealist-editor-icon-variable);
+  --surrealist-editor-icon-enum: var(--surrealist-editor-icon-variable);
+  --surrealist-editor-icon-interface: var(--surrealist-editor-icon-variable);
+  --surrealist-editor-icon-keyword: var(--surrealist-editor-icon-variable);
+  --surrealist-editor-icon-method: var(--surrealist-editor-icon-variable);
+  --surrealist-editor-icon-namespace: var(--surrealist-editor-icon-variable);
+  --surrealist-editor-icon-property: var(--surrealist-editor-icon-variable);
+  --surrealist-editor-icon-text: var(--surrealist-editor-icon-variable);
+  --surrealist-editor-icon-type: var(--surrealist-editor-icon-variable);
+
+  --spacing-xs: calc(0.375rem * 1);
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --radii-xs: 7x;
+  --radii-sm: 9px;
+  --color-body-bg: #fff;
+  --color-primary-700: #e4008e;
+  --color-primary-filled: #ff00a0;
+  --surrealist-kind-color: #8d6bff;
+  --fonts-mono: JetBrains Mono, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.root .cm-editor {
+  outline: none;
+  height: 100%;
+}
+
+.root .cm-scroller {
+  font-family: var(--default-mono-font-family);
+}
+
+.root .cm-gutters {
+  border-right: none;
+}
+
+.root .cm-gutters,
+.root .cm-gutterElement {
+  background-color: unset;
+}
+
+/* Line numbers and active line styles */
+.root .cm-lineNumbers {
+  color: var(--color-slate-500);
+}
+
+.light .root .cm-lineNumbers {
+  color: var(--color-slate-300);
+}
+
+.root .cm-activeLineGutter {
+  color: var(--color-slate-200);
+}
+
+.light .root .cm-activeLineGutter {
+  color: var(--color-slate-900);
+}
+
+/* Cursor and selection styles */
+.root .cm-cursor,
+.root .cm-dropCursor {
+  border-color: var(--color-slate-100);
+  border-width: 2px;
+}
+
+.light .root .cm-cursor,
+.light .root .cm-dropCursor {
+  border-color: var(--color-slate-900);
+}
+
+.root .cm-selectionBackground {
+  background-color: rgba(71, 154, 255, 0.4) !important;
+}
+
+.root .cm-selectionMatch {
+  background-color: transparent !important;
+}
+
+/* Search and code folding styles */
+.root .cm-searchMatch {
+  background-color: var(--color-neutral-600) !important;
+  border-radius: 6px;
+}
+
+.root .cm-searchMatch * {
+  color: white;
+}
+
+.root .cm-foldPlaceholder {
+  background-color: var(--color-slate-600);
+  border: none;
+}
+
+.light .root .cm-foldPlaceholder {
+  background-color: var(--color-slate-100);
+}
+
+/* Tooltip styles */
+.root .cm-tooltip {
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-sm);
+  border-color: var(--color-slate-700);
+  background-color: color-mix(in srgb, var(--normal-bg) 75%, transparent);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.light .root .cm-tooltip {
+  border-color: var(--color-slate-200);
+}
+
+.root .cm-tooltip-autocomplete {
+  padding: var(--spacing-xs);
+}
+
+.root .cm-tooltip-autocomplete ul {
+  font-family: var(--font-mono), serif !important;
+}
+
+.root .cm-tooltip-autocomplete ul li {
+  border-radius: var(--radii-sm);
+  color: var(--color-slate-100);
+}
+
+.light .root .cm-tooltip-autocomplete ul li {
+  color: var(--color-slate-600);
+}
+
+.root .cm-tooltip-autocomplete ul li[aria-selected] {
+  background-color: var(--color-slate-600);
+  color: var(--color-white) !important;
+}
+
+.light .root .cm-tooltip-autocomplete ul li[aria-selected] {
+  background-color: var(--color-slate-100);
+}
+
+.root .cm-completionMatchedText {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Panel (search, etc.) styles */
+.root .cm-panels {
+  z-index: 1;
+  background-color: var(--color-body-bg);
+  border-color: var(--color-slate-700);
+}
+
+.light .root .cm-panels {
+  border-color: var(--color-slate-200);
+}
+
+.root .cm-panels label {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.root .cm-panels button {
+  color: var(--color-white);
+  background-image: unset !important;
+  background-color: var(--color-body-bg);
+  border-radius: var(--radii-xs);
+  border-color: var(--color-slate-600);
+}
+
+.light .root .cm-panels button {
+  border-color: var(--color-slate-200);
+}
+
+.root .cm-panels button:active {
+  background-color: var(--color-slate-600) !important;
+}
+
+.light .root .cm-panels button:active {
+  background-color: var(--color-slate-200) !important;
+}
+
+.root .cm-panels input {
+  background-color: var(--color-slate-600);
+  border-radius: var(--radii-xs);
+  color: var(--color-white);
+  border: none;
+  outline: none;
+}
+
+.light .root .cm-panels input {
+  background-color: var(--color-slate-100);
+}
+
+.root .cm-panels input[type="checkbox"] {
+  accent-color: var(--color-primary-700);
+}
+
+.root .cm-panels button:focus-visible,
+.root .cm-panels input:focus-visible {
+  outline: 2px solid var(--color-primary-filled);
+  outline-offset: 0.125rem;
+  border-radius: var(--radii-xs);
+}
+
+.root .cm-panels button[name="close"] {
+  width: 24px;
+  height: 24px;
+  transform: translateY(4px);
+}
+
+.root .cm-gotoLine input {
+  margin-left: var(--spacing-xs);
+}
+
+/* Autocomplete icon styles (expanded from @each loop) */
+.root .cm-completionIcon-class::after {
+  content: var(--surrealist-editor-icon-class);
+}
+.root .cm-completionIcon-constant::after {
+  content: var(--surrealist-editor-icon-constant);
+}
+.root .cm-completionIcon-enum::after {
+  content: var(--surrealist-editor-icon-enum);
+}
+.root .cm-completionIcon-function::after {
+  content: var(--surrealist-editor-icon-function);
+}
+.root .cm-completionIcon-interface::after {
+  content: var(--surrealist-editor-icon-interface);
+}
+.root .cm-completionIcon-keyword::after {
+  content: var(--surrealist-editor-icon-keyword);
+}
+.root .cm-completionIcon-method::after {
+  content: var(--surrealist-editor-icon-method);
+}
+.root .cm-completionIcon-namespace::after {
+  content: var(--surrealist-editor-icon-namespace);
+}
+.root .cm-completionIcon-property::after {
+  content: var(--surrealist-editor-icon-property);
+}
+.root .cm-completionIcon-text::after {
+  content: var(--surrealist-editor-icon-text);
+}
+.root .cm-completionIcon-type::after {
+  content: var(--surrealist-editor-icon-type);
+}
+.root .cm-completionIcon-variable::after {
+  content: var(--surrealist-editor-icon-variable);
+}
+
+.root .cm-completionIcon {
+  padding-left: 4px;
+  opacity: 1;
+}
+
+.root .cm-completionDetail {
+  color: var(--surrealist-kind-color);
+}
+
+.root .cm-tooltip-autocomplete ul li[aria-selected] .cm-completionIcon::after {
+  filter: brightness(0) saturate(100%) invert(1);
+}
+
+.light .root .cm-tooltip-autocomplete ul li[aria-selected] .cm-completionIcon::after {
+  filter: brightness(0) saturate(100%);
+}
+
+/* Diagnostic and linting styles */
+.root .cm-diagnosticText {
+  font-family: var(--fonts-mono), serif;
+}
+
+.root .cm-diagnostic {
+  max-width: 600px;
+}
+
+.root .cm-lintRange {
+  background-image: none;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+.root .cm-lintRange-error {
+  text-decoration-color: var(--color-red-600);
+}
+
+.root .cm-lintRange-warning {
+  text-decoration-color: var(--color-yellow-600);
+}
+
+.root .cm-lintRange-info {
+  text-decoration-color: var(--color-blue-600);
+}
+
+.root .cm-lintRange-hint {
+  text-decoration-color: var(--color-slate-500);
+}
+
+.root .cm-diagnostic-error {
+  border-color: var(--color-red-600);
+}
+
+.root .cm-diagnostic-warning {
+  border-color: var(--color-yellow-600);
+}
+
+.root .cm-diagnostic-info {
+  border-color: var(--color-blue-600);
+}
+
+.root .cm-diagnostic-hint {
+  border-color: var(--color-slate-500);
+}
