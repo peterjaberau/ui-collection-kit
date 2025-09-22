@@ -24,6 +24,9 @@
     ],
     "paths": {
 
+      "#app/*": ["./src/app/*"],
+      "#app": ["./src/app"],
+
       "#registry/*": ["./src/modules/registry/*"],
       "#registry": ["./src/modules/registry"],
 
@@ -64,7 +67,7 @@
       "@/components": ["./components"],
       "#actors/*": ["./src/actors/*"],
       "#actor-hooks/*": ["./actors/hooks*"],
-      "#app/*": ["./app/*"],
+
       "#blocks/*": ["./blocks/*"],
       "#utils/*": ["./utils/*"],
     }

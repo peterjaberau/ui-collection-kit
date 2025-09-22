@@ -16,6 +16,7 @@ import {
   WidgetActions,
   WidgetDomainStructure,
   WidgetMonacoEditor,
+  WidgetCodeMirror
 } from "#nodedemo/components/widgets"
 import { useJsonataRoot } from "#demos/jsonata/actors/hooks/useJsonataRoot"
 
@@ -91,6 +92,34 @@ const components = {
           } catch (error) {}
         }}
         renderEditorWhenEmpty
+      />
+    )
+  },
+  CodeMirrorPanel: (props: any) => {
+    //{ test: 'example'}
+    const { jsonataContext, sendToJsonataRoot } = useJsonataRoot()
+    const { params } = useDockPanel({ panelId: props.api.id })
+    const [inputJson, setInputJson]: any = React.useState(jsonataContext[params?.scope])
+
+    useEffect(() => {
+      setInputJson(jsonataContext[params?.scope])
+    }, [jsonataContext])
+
+    return (
+      <WidgetCodeMirror
+        id="input-mirror"
+        code={inputJson}
+        setCode={(code: any) => {
+          try {
+            const input = code ? JSON.parse(code) : null
+            setInputJson(input)
+            console.log('WidgetCodeMirror-----', { scope: params?.scope, input})
+            // sendToJsonataRoot({ scope: params?.scope, value: input})
+            // if (input) {
+            //   validateTransformersEditor({ input }).catch(() => {})
+            // }
+          } catch (error) {}
+        }}
       />
     )
   },

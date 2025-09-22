@@ -35,6 +35,7 @@
     "lint": "eslint packages"
   },
   "dependencies": {
+    "react-reverse-portal": "^2.3.0",
     "framer-motion": "^12.23.12",
     "@ark-ui/react": "^5.18.3",
     "@chakra-ui/charts": "^3.22.0",

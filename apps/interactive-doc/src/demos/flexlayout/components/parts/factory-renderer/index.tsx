@@ -8,6 +8,8 @@ const bindWidgetMonacoEditor = ({ nodeSelector, logicSelector, onValueChange }: 
   const { configParams, configProps, configData, nodeId } = nodeSelector
   const { jsonataContext, sendToJsonataRoot } = logicSelector
 
+
+
   return {
     id: nodeId,
     title: configProps?.title || configParams?.scope,
@@ -18,7 +20,7 @@ const bindWidgetMonacoEditor = ({ nodeSelector, logicSelector, onValueChange }: 
     onChange: (value: any) => {
       // const input = value ? JSON.parse(value) : null
 
-      const parsed = val ? JSON.parse(val) : null
+      const parsed = value ? JSON.parse(value) : null
       onValueChange?.(configParams?.scope, parsed)
     },
     readOnly: false,
@@ -29,11 +31,16 @@ const bindWidgetCodeMirror = ({ nodeSelector, logicSelector, onValueChange }: an
   const { configParams, configProps, configData, nodeId } = nodeSelector
   const { jsonataContext, sendToJsonataRoot } = logicSelector
 
+
   return {
-    // value: "",
-    // onChange: (value: any) => {
-    //   console.log("CodeMirror onChange", value)
-    // },
+    id: nodeId,
+    code: jsonataContext[configParams?.scope],
+    setCode: (code: any) => {
+     console.log('----from json mirror----', code)
+      const parsed = code ? JSON.parse(code) : null
+      onValueChange?.(configParams?.scope, parsed)
+    },
+
     // minHeight: '500px',
     width: '100%',
   }
@@ -65,6 +72,9 @@ export const FactoryRenderer = (node: any) => {
 
   // No need for a value state here
   const handleValueChange = (scope: string, newValue: any) => {
+    console.log('---handleValueChange----', {
+      scope, newValue
+    })
     logicSelector.sendToJsonataRoot({ type: "update", scope, value: newValue })
   }
 
@@ -81,7 +91,7 @@ export const FactoryRenderer = (node: any) => {
       return bindWidgetCodeMirror({
         nodeSelector,
         logicSelector,
-        // onValueChange: handleValueChange,
+        onValueChange: handleValueChange,
       })
     } else if (nodeSelector.componentName === "widget-action") {
       return bindWidgetAction({ nodeSelector, logicSelector })

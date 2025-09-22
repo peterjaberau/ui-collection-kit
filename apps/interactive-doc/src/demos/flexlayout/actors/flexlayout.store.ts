@@ -73,11 +73,11 @@ export const layoutOptions: any = {
               type: "tab",
               id: "source-json",
               name: "Source JSON",
-              component: "widget-monaco-editor",
+              component: "widget-code-mirror",
 
               config: {
                 params: {
-                  scope: "source"
+                  scope: "source",
                 },
                 data: {},
                 props: {
@@ -86,9 +86,8 @@ export const layoutOptions: any = {
                   id: "input",
                   color: "blue",
                   value: "{}",
-                }
-              }
-
+                },
+              },
             },
           ],
           active: true,
@@ -100,15 +99,15 @@ export const layoutOptions: any = {
               type: "tab",
               id: "transformer-json",
               name: "Transformer (Jsonata Expr)",
-              component: "widget-monaco-editor",
+              component: "widget-code-mirror",
               icon: "article",
               config: {
                 params: {
-                  scope: "transformer"
+                  scope: "transformer",
                 },
                 data: {},
-                props: {}
-              }
+                props: {},
+              },
             },
           ],
         },
@@ -128,30 +127,30 @@ export const layoutOptions: any = {
                 data: {},
                 props: {
                   text: "Execute",
-                }
-              }
-            },
-          ],
-        },
-        {
-          type: "tabset",
-          children: [
-            {
-              type: "tab",
-              id: "result-json",
-              name: "Result",
-              component: "widget-monaco-editor",
-              icon: "article",
-              config: {
-                params: {
-                  scope: "result"
                 },
-                data: {},
-                props: {}
-              }
+              },
             },
           ],
         },
+        // {
+        //   type: "tabset",
+        //   children: [
+        //     {
+        //       type: "tab",
+        //       id: "result-json",
+        //       name: "Result",
+        //       component: "widget-monaco-editor",
+        //       icon: "article",
+        //       config: {
+        //         params: {
+        //           scope: "result"
+        //         },
+        //         data: {},
+        //         props: {}
+        //       }
+        //     },
+        //   ],
+        // },
         {
           type: "tabset",
           children: [
@@ -163,11 +162,11 @@ export const layoutOptions: any = {
               icon: "article",
               config: {
                 params: {
-                  // scope: "result"
+                  scope: "result",
                 },
                 data: {},
-                props: {}
-              }
+                props: {},
+              },
             },
           ],
         },

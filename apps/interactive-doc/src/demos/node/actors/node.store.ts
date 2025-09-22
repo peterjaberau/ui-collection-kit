@@ -115,8 +115,10 @@ export const domainStore = {
             renderer: "always",
           },
           {
-            id: "monaco-editor-panel-source",
-            component: "MonacoEditorPanel",
+            // id: "monaco-editor-panel-source",
+            // component: "MonacoEditorPanel",
+            id: "code-mirror-panel-source",
+            component: "CodeMirrorPanel",
             title: "Source",
             renderer: "always",
             params: {
@@ -125,24 +127,24 @@ export const domainStore = {
             position: { referencePanel: "domain-structure-panel", direction: "right" },
           },
           {
-            id: "monaco-editor-panel-transformer",
-            component: "MonacoEditorPanel",
+            id: "code-mirror-panel-transformer",
+            component: "CodeMirrorPanel",
             title: "Transformer",
             renderer: "always",
             params: {
               scope: 'transformer',
             },
-            position: { referencePanel: "monaco-editor-panel-source", direction: "right" },
+            position: { referencePanel: "code-mirror-panel-source", direction: "right" },
           },
           {
-            id: "monaco-editor-panel-result",
-            component: "MonacoEditorPanel",
+            id: "code-mirror-panel-result",
+            component: "CodeMirrorPanel",
             title: "Results",
             renderer: "always",
             params: {
               scope: 'result',
             },
-            position: { referencePanel: "monaco-editor-panel-transformer", direction: "right" },
+            position: { referencePanel: "code-mirror-panel-transformer", direction: "right" },
           },
           {
             id: "panel_node_actions",

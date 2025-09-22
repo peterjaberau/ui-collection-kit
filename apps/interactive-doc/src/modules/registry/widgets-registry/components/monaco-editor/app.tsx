@@ -20,7 +20,7 @@ interface WidgetMonacoEditorProps {
   onChange?: (value: string) => void;
 }
 
-const WidgetMonacoEditorApp = (props: WidgetMonacoEditorProps) => {
+const WidgetMonacoEditorApp = (props: WidgetMonacoEditorProps | any) => {
 
   const {
     title,

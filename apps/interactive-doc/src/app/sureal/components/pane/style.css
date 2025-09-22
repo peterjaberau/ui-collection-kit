@@ -1,0 +1,24 @@
+.root {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.header,
+.divider {
+	flex-shrink: 0;
+}
+
+.content {
+	flex: 1;
+	flex-basis: 0;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.dragger {
+	flex: 0 0 0.75rem;
+}

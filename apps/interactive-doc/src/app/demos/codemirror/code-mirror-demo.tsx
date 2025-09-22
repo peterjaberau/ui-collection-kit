@@ -3,6 +3,7 @@ import { createContext, Suspense, useContext, useMemo, useState } from "react"
 import { StoryBook, useControls, useCreateStore } from '@lobehub/ui/storybook';
 import { data } from './data/code-editor';
 import { CodeEditor } from './components/codeEditor';
+import { Stack } from '@chakra-ui/react'
 
 const ExposedContext = createContext(undefined as any);
 
@@ -18,6 +19,7 @@ const demoList = [
 
 
 export const CodeMirrorDemo = (props: any) => {
+  const [eventValue, setEventValue] = useState(null)
   const {
     value,
     demoId,
@@ -48,27 +50,33 @@ export const CodeMirrorDemo = (props: any) => {
     //   event: state,
     //   content: state.doc.toString(),
     // });
+    setEventValue(state.doc.toString())
     return state.doc.toString();
   }
 
   return (
-    <CodeEditor
-      disabled={disabled}
-      value={value}
-      bordered={bordered || true}
-      codeType={codeType || 'JSON'}
-      language={language || 'json'}
-      // cardTitle={cardTitle || 'untitled'}
-      // cardContent={cardContent}
-      // placement={placeholder}
-      styleName={styleName}
-      // segments={[]}
-      // label={label}
-      enableClickCompName={enableClickCompName}
-      exposingData={exposedAutoCompletionData}
-      // placeholder={placeholder || '{\n  rating : {$gte : 9}\n}'}
-      onChange={handleChange}
-    />
+   <Stack>
+     <div>
+       {eventValue}
+     </div>
+     <CodeEditor
+       disabled={disabled}
+       value={value}
+       bordered={bordered || true}
+       codeType={codeType || 'JSON'}
+       language={language || 'json'}
+       // cardTitle={cardTitle || 'untitled'}
+       // cardContent={cardContent}
+       // placement={placeholder}
+       styleName={styleName}
+       // segments={[]}
+       // label={label}
+       enableClickCompName={enableClickCompName}
+       exposingData={exposedAutoCompletionData}
+       // placeholder={placeholder || '{\n  rating : {$gte : 9}\n}'}
+       onChange={handleChange}
+     />
+   </Stack>
   );
 };
 /*

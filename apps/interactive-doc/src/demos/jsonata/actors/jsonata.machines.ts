@@ -13,15 +13,24 @@ export const jsonataRootMachine = setup({
   } as any,
   actions: {
     updateErrors: assign(({ context, event }: any) => {
-      console.log('--updateErrors----', event)
       context.errors = event.output
 
     }),
     updateResult: assign(({ context, event }: any) => {
-      console.log('--result----', event)
       context.result = event.output
 
     }),
+    updateSourceOrTransformer: assign(({ context, event }: any) => {
+
+      if (event.value && event.scope === 'source') {
+        context.source = event.value
+      } else if (event.value && event.scope === 'transformer') {
+        context.transformer = event.value
+      }
+    }),
+
+
+
     actionAssigner: assign(({ context, event }: any) => {
 
     }),
@@ -67,6 +76,8 @@ export const jsonataRootMachine = setup({
   initial: "idle",
   context: ({ input }: any) => {
     return {
+      draftSource: null,
+      draftTransformer: null,
       source: sourceExample,
       transformer: transformerExample,
       result: {},
@@ -81,6 +92,9 @@ export const jsonataRootMachine = setup({
         "execute": {
           target: "validatingTransformer",
         },
+        "update": {
+          actions: ['updateSourceOrTransformer']
+        }
       },
     },
     validatingTransformer: {
