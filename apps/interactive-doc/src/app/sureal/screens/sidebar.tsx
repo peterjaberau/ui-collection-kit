@@ -1,15 +1,15 @@
 "use client"
 import { useMemo, useState, Fragment } from "react"
 import { ScrollArea, Stack, Button, chakra, HStack, Box } from "@chakra-ui/react"
-import { useCurrentViewStore } from "#app/sureal/store/current-view"
 
 import { VIEW_NAVIGATION, VIEW_PAGES } from "./constants"
+import { useSessionStore } from "#app/sureal/store/session"
 export interface SidebarProps {
   [key: string]: any
 }
 
 export function Sidebar({ ...rest }: SidebarProps) {
-  const [viewId, store] = useCurrentViewStore((s: any) => s.context.viewId)
+  const [ sessionContext, sessionRef ]: any = useSessionStore()
 
   const views: any = useMemo(() => {
     return { ...VIEW_PAGES } as const
@@ -22,8 +22,7 @@ export function Sidebar({ ...rest }: SidebarProps) {
         return {
           id: info.id,
           name: info.name,
-          // navigate: () => setViewId(info.id),
-          navigate: () => store.trigger.setViewId({ viewId: info.id }),
+          navigate: () => sessionRef.trigger.setCurrentView({ view: info.id }),
         }
       })
 
@@ -42,7 +41,7 @@ export function Sidebar({ ...rest }: SidebarProps) {
                   <Fragment key={i}>
                     {items.map((info) => (
                       <Button
-                        variant={viewId === info.id ? "solid" : "ghost"}
+                        variant={sessionContext.current?.view === info.id ? "solid" : "ghost"}
                         key={info.name}
                         onClick={() => info.navigate()}
                       >

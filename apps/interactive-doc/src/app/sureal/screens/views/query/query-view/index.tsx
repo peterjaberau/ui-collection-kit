@@ -1,5 +1,7 @@
 "use client"
 import type { SelectionRange } from "@codemirror/state"
+import { SetQueryEvent } from "#app/sureal/utils/global-events"
+import { useEventSubscription } from "#app/sureal/hooks/event";
 import { EditorView } from "@codemirror/view"
 import { memo, useState } from "react"
 import { Panel, PanelGroup } from "react-resizable-panels"
@@ -10,21 +12,35 @@ import { VariablesPane } from "../variables-pane"
 import { ResultPane } from "../result-pane"
 import { TabsPane } from "../tabs-pane"
 import { usePanelMinSize } from "#app/sureal/hooks/panels"
-import { useCurrentViewStore } from "#app/sureal/store/current-view"
 import { setEditorText } from "#app/sureal/editor/helpers"
 import { executeEditorQuery } from "#app/sureal/editor/query"
 import { useStable } from "#app/sureal/hooks/stable"
+import { useSetting } from "#app/sureal/hooks/config"
+import { useActiveQuery, useConnection } from "#app/sureal/hooks/connection"
+import { useConfigStore } from '#app/sureal/store/config'
 
 const QueryPaneLazy = memo(QueryPane)
 const VariablesPaneLazy = memo(VariablesPane)
 const ResultPaneLazy = memo(ResultPane)
 
 export function QueryView() {
-  const [queryOrientation, variablesOrientation, store] = useCurrentViewStore((s: any) => s.context.queryOrientation)
+  const [configContext, configStoreRef] = useConfigStore()
+
+  const connection = useConnection({
+    state: { config: configContext.context }
+  })
+  // const activeQuery = useActiveQuery({
+  //   state: { connection }
+  // })
+
+  const [showVariables, setShowVariables]: any = useState(true);
+
+
+  const [orientation] = useSetting(configContext.context, { category: "appearance", key: "queryOrientation" });
   const [editor, setEditor] = useState(new EditorView())
   const [variablesValid, setVariablesValid] = useState(true);
 
-  const [showVariables, setShowVariables] = useState(true);
+  const variablesOrientation = orientation === "horizontal" ? "vertical" : "horizontal";
 
   const closeVariables = useStable(() => {
     setShowVariables(false);
@@ -36,9 +52,18 @@ export function QueryView() {
   const [minSidebarSize, rootRef] = usePanelMinSize(350)
   const [minResultHeight, wrapperRef] = usePanelMinSize(48, "height")
 
+
+  useEventSubscription(SetQueryEvent, (query) => {
+    if (editor) {
+      setEditorText(editor, query);
+    }
+  });
+
+
+
   const queryEditor = (
     <Box flex={1} h="100%" ref={wrapperRef}>
-      <PanelGroup direction={queryOrientation}>
+      <PanelGroup direction={orientation}>
         <Panel minSize={15}>
           <PanelGroup direction={variablesOrientation}>
             <Panel id="query" order={0} minSize={35}>
@@ -60,7 +85,7 @@ export function QueryView() {
           </PanelGroup>
         </Panel>
         <PanelDragger />
-        <Panel minSize={queryOrientation === "horizontal" ? 35 : minResultHeight} defaultSize={50}>
+        <Panel minSize={orientation === "horizontal" ? 35 : minResultHeight} defaultSize={50}>
           <ResultPaneLazy />
         </Panel>
       </PanelGroup>

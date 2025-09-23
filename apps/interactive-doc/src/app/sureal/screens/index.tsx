@@ -14,9 +14,9 @@ import MonitorView from "./views/monitor/monitor-view"
 import ParametersView from "./views/parameters/parameters-view"
 import QueryView from "./views/query/query-view"
 import { VIEW_PAGES } from "#app/sureal/screens/constants"
-import { useCurrentViewStore } from "#app/sureal/store/current-view"
 import { useDatabaseStore } from "#app/sureal/store/database"
-
+import { useSessionStore } from "#app/sureal/store/session"
+// useSessionStore
 const SidebarLazy = memo(Sidebar)
 
 const PORTAL_OPTIONS = {
@@ -39,7 +39,7 @@ const VIEW_COMPONENTS: Record<any, FC> = {
 }
 
 export function Screen() {
-  const [viewId] = useCurrentViewStore((s: any) => s.context.viewId)
+  const [ sessionContext, sessionRef ]: any = useSessionStore()
 
 
   const views: any = useMemo(() => {
@@ -73,7 +73,7 @@ export function Screen() {
                 if (!viewPortals || Object.keys(viewPortals).length === 0) {
                   return <div>...loading</div>
                 }
-                const _view = viewId as any
+                const _view = sessionContext.context.current.view as any
                 const portal = views[_view] ? viewPortals[_view] : undefined
 
                 return (
