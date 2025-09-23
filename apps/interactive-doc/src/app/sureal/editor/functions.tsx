@@ -1,0 +1,37 @@
+import { type CompletionSource, snippetCompletion } from "@codemirror/autocomplete"
+import type { Extension } from "@codemirror/state"
+import { surrealqlLanguage } from "@surrealdb/codemirror"
+import { useDatabaseStore } from "#app/sureal/store/database"
+
+const CUSTOM_FUNCTION_SOURCE: CompletionSource = (context) => {
+  const [snapshot, store] = useDatabaseStore()
+
+
+  const match = context.matchBefore(/fn::\w*/i)
+  const functions = snapshot?.context.connectionSchema.database.functions
+  const names = functions.map((fn: any) => `fn::${fn.name}`)
+
+  if (!context.explicit && !match) {
+    return null
+  }
+
+  return {
+    from: match ? match.from : context.pos,
+    validFor: /[\w:]+$/,
+    options: names.map((label: any) =>
+      snippetCompletion(`${label}(#{1})`, {
+        label,
+        type: "function",
+      }),
+    ),
+  }
+}
+
+/**
+ * An extension used to autocomplete table names
+ */
+export const surqlCustomFunctionCompletion = (): Extension => {
+  return surrealqlLanguage.data.of({
+    autocomplete: CUSTOM_FUNCTION_SOURCE,
+  })
+}

@@ -15,6 +15,7 @@ import ParametersView from "./views/parameters/parameters-view"
 import QueryView from "./views/query/query-view"
 import { VIEW_PAGES } from "#app/sureal/screens/constants"
 import { useCurrentViewStore } from "#app/sureal/store/current-view"
+import { useDatabaseStore } from "#app/sureal/store/database"
 
 const SidebarLazy = memo(Sidebar)
 
@@ -39,6 +40,7 @@ const VIEW_COMPONENTS: Record<any, FC> = {
 
 export function Screen() {
   const [viewId] = useCurrentViewStore((s: any) => s.context.viewId)
+
 
   const views: any = useMemo(() => {
     return { ...VIEW_PAGES } as const

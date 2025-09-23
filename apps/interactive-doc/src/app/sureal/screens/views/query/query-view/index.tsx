@@ -11,8 +11,9 @@ import { ResultPane } from "../result-pane"
 import { TabsPane } from "../tabs-pane"
 import { usePanelMinSize } from "#app/sureal/hooks/panels"
 import { useCurrentViewStore } from "#app/sureal/store/current-view"
-import { setEditorText } from "#components/ui/code-mirror/editor/helpers"
-import { executeEditorQuery } from "#components/ui/code-mirror/editor/query"
+import { setEditorText } from "#app/sureal/editor/helpers"
+import { executeEditorQuery } from "#app/sureal/editor/query"
+import { useStable } from "#app/sureal/hooks/stable"
 
 const QueryPaneLazy = memo(QueryPane)
 const VariablesPaneLazy = memo(VariablesPane)
@@ -21,6 +22,16 @@ const ResultPaneLazy = memo(ResultPane)
 export function QueryView() {
   const [queryOrientation, variablesOrientation, store] = useCurrentViewStore((s: any) => s.context.queryOrientation)
   const [editor, setEditor] = useState(new EditorView())
+  const [variablesValid, setVariablesValid] = useState(true);
+
+  const [showVariables, setShowVariables] = useState(true);
+
+  const closeVariables = useStable(() => {
+    setShowVariables(false);
+  });
+
+
+
 
   const [minSidebarSize, rootRef] = usePanelMinSize(350)
   const [minResultHeight, wrapperRef] = usePanelMinSize(48, "height")
@@ -37,7 +48,13 @@ export function QueryView() {
             <>
               <PanelDragger />
               <Panel id="variables" order={1} defaultSize={40} minSize={35}>
-                <VariablesPaneLazy editor={editor} />
+                <VariablesPaneLazy
+                  editor={editor}
+                  isValid={variablesValid}
+                  setIsValid={setVariablesValid}
+                  closeVariables={closeVariables}
+                  lineNumbers={true}
+                />
               </Panel>
             </>
           </PanelGroup>

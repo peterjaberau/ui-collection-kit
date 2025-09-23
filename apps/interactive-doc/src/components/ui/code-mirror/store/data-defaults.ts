@@ -33,8 +33,6 @@ export const databaseStoreDefaults = {
   graphqlResponse: {},
 }
 
-
-
 export const baseSettingsDefaults = {
   behavior: {
     updateChecker: true,

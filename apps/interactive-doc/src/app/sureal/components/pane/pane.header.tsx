@@ -29,7 +29,7 @@ export const PaneHeader = ({ title, icon, leftSection, infoSection, rightSection
             <Card.Title>{title}</Card.Title>
             {infoSection}
           </HStack>
-          <HStack>{rightSection}</HStack>
+          <HStack justifyContent={'flex-end'} alignItems={'center'}>{rightSection}</HStack>
         </HStack>
       </Card.Header>
     )

@@ -1,3 +1,4 @@
+'use client'
 import { history } from "@codemirror/commands"
 import { forceLinting } from "@codemirror/lint"
 import { Compartment, EditorState, type Extension } from "@codemirror/state"
@@ -6,11 +7,11 @@ import { Box, type BoxProps } from "@chakra-ui/react"
 import clsx from "clsx"
 import equal from "fast-deep-equal"
 import { useEffect, useMemo, useRef } from "react"
-import { applyAutoFolding, editorBase, editorTheme } from "#components/ui/code-mirror/editor"
-import { useSetting } from "#components/ui/code-mirror/hooks/config"
-import { useStable } from "#components/ui/code-mirror/hooks/stable"
+import { applyAutoFolding, editorBase, editorTheme } from "#app/sureal/editor"
+import { useSetting } from "#app/sureal/hooks/config"
+import { useStable } from "#app/sureal/hooks/stable"
 // import { useTheme } from "~/hooks/theme";
-import { useConfigStore } from "#components/ui/code-mirror/store/use"
+import { useConfigStore } from "#app/sureal/store/config"
 import "./style.css"
 
 export type StateSnapshot = {
@@ -50,13 +51,15 @@ export function CodeEditor(props: CodeEditorProps) {
 
   // const colorScheme = useTheme();
 
-  const syntaxTheme = useConfigStore().context.settings.appearance.syntaxTheme
+  const [snapshot] = useConfigStore()
+
+  const syntaxTheme = snapshot?.context.settings.appearance.syntaxTheme
   const elementRef = useRef<HTMLDivElement | null>(null)
   const editorRef = useRef<EditorView>(null)
   const initializedRef = useRef(false)
   const preventChangeNotificationsRef = useRef(true)
-  const [editorScale] = useSetting("appearance", "editorScale")
-  const [defaultAutoCollapseDepth] = useSetting("appearance", "autoCollapseDepth")
+  const [editorScale] = useSetting(snapshot, { category: "appearance", key: "editorScale"})
+  const [defaultAutoCollapseDepth] = useSetting(snapshot, { category: "appearance", key: "autoCollapseDepth"})
   const effectiveAutoCollapseDepth = autoCollapseDepth ?? defaultAutoCollapseDepth
   const textSize = Math.floor(15 * (editorScale / 100))
 

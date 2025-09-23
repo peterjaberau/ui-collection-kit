@@ -7,7 +7,6 @@ export const useCurrentViewStore: any = createStoreHook({
     sidebarMode: 'wide',
     queryOrientation: "horizontal", //horizontal | "vertical"
     variablesOrientation: "vertical", //horizontal | "vertical"
-
   },
   on: {
     setViewId: (context, event: { viewId: any }) => ({
