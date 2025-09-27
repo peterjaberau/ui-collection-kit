@@ -1,0 +1,63 @@
+@top Program { expression* }
+
+expression {
+  value |
+  Variable |
+  Identifier |
+  Application { "(" expression* ")" } |
+  Object { "{" expression* "}" } |
+  Array { "[" expression* "]" } |
+  Function |
+  Operator |
+  ArithmeticOperator
+}
+
+Function { functionStart list<expression>? ")" }
+
+//The basic values, the same as JSON
+value { True | False | Null | Number | String }
+
+String { string }
+
+Identifier { identifierNoEscaping | identifierEscaped}
+
+@tokens {
+  @precedence { True, False, Null, Number, Operator, ArithmeticOperator, functionStart, Variable, identifierNoEscaping }
+
+  //Identifiers
+  identifierNoEscaping { $[a-zA-Z_\-0-9\$]+ }
+  identifierEscaped { "`" ![`]+ "`" }
+
+  True  { "true" }
+  False { "false" }
+  Null  { "null" }
+
+  //Number
+  Number { '-'? int frac? exp?  }
+  int  { '0' | $[1-9] std.digit* }
+  frac { '.' std.digit+ }
+  exp  { $[eE] $[+\-]? std.digit+ }
+
+  //String
+  string { '"' char* '"' }
+  char { $[\u{20}\u{21}\u{23}-\u{5b}\u{5d}-\u{10ffff}] | "\\" esc }
+  esc  { $["\\\/bfnrt] | "u" hex hex hex hex }
+  hex  { $[0-9a-fA-F] }
+
+  Variable { "$" $[a-zA-Z0-9\$_]* }
+
+  Operator { "." | "," | "@" | "#" | ";" | ":" | "?" | "|" | "=" | "<" | ">" | "**" | ".." | ":=" | "!=" | "<=" | ">=" | "~>" | "and" | "or" | "in" | "&" | "!" | '~' }
+
+  ArithmeticOperator { "+" | "-" | "*" | "/" | "%" | "^" }
+
+  functionStart { "$" $[a-zA-Z0-9\$_]* "(" }
+
+  //Other
+  whitespace { $[ \n\r\t] }
+}
+
+list<item> { item ("," item)* }
+
+@skip { whitespace }
+
+@detectDelim

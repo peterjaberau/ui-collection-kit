@@ -85,24 +85,24 @@ export default function Page() {
               is getting from a different file.
             </GridItem>
             <GridItem>
-              <CodeMirrorDemo
-                value={value}
-                demoId={demoId}
-                disabled={disabled}
-                bordered={bordered}
-                codeType={codeType}
-                language={language}
-                cardTitle={cardTitle}
-                cardContent={cardContent}
-                placement={placement}
-                styleName={styleName}
-                label={label}
-                enableClickCompName={enableClickCompName}
-                enableExposingDataAutoCompletion={enableExposingDataAutoCompletion}
-                placeholder={placeholder}
+              {/*<CodeMirrorDemo*/}
+              {/*  value={value}*/}
+              {/*  demoId={demoId}*/}
+              {/*  disabled={disabled}*/}
+              {/*  bordered={bordered}*/}
+              {/*  codeType={codeType}*/}
+              {/*  language={language}*/}
+              {/*  cardTitle={cardTitle}*/}
+              {/*  cardContent={cardContent}*/}
+              {/*  placement={placement}*/}
+              {/*  styleName={styleName}*/}
+              {/*  label={label}*/}
+              {/*  enableClickCompName={enableClickCompName}*/}
+              {/*  enableExposingDataAutoCompletion={enableExposingDataAutoCompletion}*/}
+              {/*  placeholder={placeholder}*/}
 
-                // onChange={handleChange}
-              />
+              {/*  // onChange={handleChange}*/}
+              {/*/>*/}
             </GridItem>
             <GridItem></GridItem>
           </SimpleGrid>

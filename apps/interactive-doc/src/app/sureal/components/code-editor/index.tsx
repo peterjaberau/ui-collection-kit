@@ -13,6 +13,7 @@ import { useStable } from "#app/sureal/hooks/stable"
 // import { useTheme } from "~/hooks/theme";
 import { useConfigStore } from "#app/sureal/store/config"
 import "./style.css"
+// import "./ce.css"
 
 export type StateSnapshot = {
   doc: string
@@ -241,5 +242,5 @@ export function CodeEditor(props: CodeEditorProps) {
     })
   }, [onMount])
 
-  return <Box ref={elementRef} className={clsx("root", className)} css={textSize} {...rest} />
+  return <Box ref={elementRef} className={clsx("grl-ce", className)} css={textSize} {...rest} />
 }

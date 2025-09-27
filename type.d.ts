@@ -19,3 +19,7 @@ declare module '@remixicon/react' {
 
     // Add more if needed
 }
+
+declare module "livecodes/react"
+declare module "@gorules/lezer-zen"
+declare module "@gorules/lezer-zen-template"

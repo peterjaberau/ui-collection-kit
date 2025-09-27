@@ -2,13 +2,18 @@ import type { Preview } from "@storybook/react-vite"
 import { MINIMAL_VIEWPORTS } from "storybook/viewport"
 import { WithTheme } from "./decorators/withTheme"
 import { GlobalProvider } from "./actors/provider"
+import { JdmConfigProvider } from "../apps/interactive-doc/src/app/demos/jdm/theme"
+
+import * as ZenEngineWasm from "./zen-engine-wasm/dist/zen_engine_wasm"
+await ZenEngineWasm.default()
+;(window as any).VariableType = ZenEngineWasm.VariableType
+;(window as any).Variable = ZenEngineWasm.Variable
 
 const preview: Preview = {
   parameters: {
     docs: {
       codePanel: true,
       toc: true,
-
     },
     actions: { argTypesRegex: "^on.*" },
     jsx: { showFunctions: true },
@@ -58,11 +63,17 @@ const preview: Preview = {
   },
   tags: ["autodocs"],
   decorators: [
-
     (Story: any, context: any) => {
       return (
         <GlobalProvider>
-          <WithTheme story={<Story />} context={context}/>
+          <WithTheme
+            story={
+              <JdmConfigProvider theme={{ mode: "light" }}>
+                <Story />
+              </JdmConfigProvider>
+            }
+            context={context}
+          />
         </GlobalProvider>
       )
     },

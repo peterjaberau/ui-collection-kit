@@ -27,5 +27,7 @@ export const surqlVariableCompletion = (resolver: Resolver): Extension => {
 		};
 	};
 
+
+
 	return surrealqlLanguage.data.of({ autocomplete });
 };

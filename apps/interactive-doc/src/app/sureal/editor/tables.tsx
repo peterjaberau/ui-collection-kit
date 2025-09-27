@@ -2,6 +2,14 @@ import type { CompletionSource } from "@codemirror/autocomplete"
 import type { Extension } from "@codemirror/state"
 import { surrealqlLanguage } from "@surrealdb/codemirror"
 
+/*
+    called whenever autocomplete is triggered
+        - Looks at the text around the cursor (matchBefore). it activates after some keywords or keypress
+        - take the snapshot and transform it to options the will appear in the auto complete dropdown
+            - from: where completions should start replacing text
+            - validFor: regex for how long the completion remains valid while typing
+            - options: actual suggestions (the list of transformed snapshots).
+ */
 const createTableSource =
   (snapshot: any): CompletionSource =>
   (context) => {

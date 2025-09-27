@@ -9,3 +9,5 @@ declare module "react" {
   }
 }
 declare module "livecodes/react"
+declare module "@gorules/lezer-zen"
+declare module "@gorules/lezer-zen-template"
