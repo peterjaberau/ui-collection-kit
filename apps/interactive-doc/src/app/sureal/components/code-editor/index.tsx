@@ -242,5 +242,5 @@ export function CodeEditor(props: CodeEditorProps) {
     })
   }, [onMount])
 
-  return <Box ref={elementRef} className={clsx("grl-ce", className)} css={textSize} {...rest} />
+  return <Box ref={elementRef} className={clsx("root", className)} fontSize={textSize} {...rest} />
 }

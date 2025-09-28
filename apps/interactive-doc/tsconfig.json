@@ -23,6 +23,9 @@
       }
     ],
     "paths": {
+      "#codemirror-illa/*": ["./src/app/demos/codemirror-illa/*"],
+      "#codemirror-illa": ["./src/app/demos/codemirror-illa/"],
+
 
       "#app/*": ["./src/app/*"],
       "#app": ["./src/app"],

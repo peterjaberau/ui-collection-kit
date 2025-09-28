@@ -44,6 +44,7 @@ export function VariablesPane({
   const configStoreRef: any = useConfigStore()
 
   const [databaseContext, databaseRef]: any = useDatabaseStore((s: any) => s)
+  const [builderContext, builderRef]: any = useBuilderStore((s: any) => s)
 
   const [variableEditor, setVariableEditor] = useState<EditorView | null>(null)
   const surqlVersion = useDatabaseVersionLinter(variableEditor)
@@ -77,7 +78,7 @@ export function VariablesPane({
   //     setQueryEditor(variableEditor, editor);
   //   }
   // }, [variableEditor, editor])
-
+  //
   // const extensions = useMemo(
   //   () => [surrealql(), surqlLinting(), queryEditorField, Prec.high(keymap.of(runQueryKeymap))],
   //   [],
@@ -86,10 +87,10 @@ export function VariablesPane({
   const extensions = useMemo(
     () => [
       surrealql(),
-      surqlVersion,
+      // surqlVersion,
       surqlLinting(null as any, configStoreRef?.snapshot as any),
-      // surqlTableCompletion(databaseContext as any),
-      autoCompleteExtension(databaseContext as any),
+      surqlTableCompletion({...databaseContext} as any),
+      autoCompleteExtension({...databaseContext} as any),
       // jsonata(),
 
       queryEditorField,

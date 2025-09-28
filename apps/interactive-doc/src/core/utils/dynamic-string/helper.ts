@@ -63,16 +63,6 @@ export const evaluateDynamicString = (
     evalResult = dynamicString
   }
 
-  console.log(
-    "public.dynamicStringUtils.index.evaluateDynamicString() -------->",
-    {
-      input: { keyInDataTree, dynamicString, dataTree },
-      logic: {
-        requiresEval,
-      },
-      output: { evalResult },
-    },
-  )
   return evalResult
 }
 

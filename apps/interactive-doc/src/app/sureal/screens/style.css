@@ -1,0 +1,108 @@
+:root {
+    /* Sizing Variables */
+    --sidebar-thin: 74px;
+    --sidebar-wide: 215px;
+    --sidebar-offset: var(--sidebar-wide);
+    --titlebar-offset: 32px;
+
+    /* Spacing Variables */
+    --mantine-spacing-lg: 24px;
+
+    /* Color Variables */
+    --mantine-color-bright: #FFFFFF;
+    --mantine-color-slate-7: #334155;
+    --mantine-color-slate-1: #f1f5f9;
+}
+
+.root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    gap: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+/* Converted from '@include md-and-up' */
+@media (min-width: 768px) {
+    .wrapper {
+        margin-left: var(--sidebar-offset) !important;
+    }
+}
+
+.titlebar {
+    user-select: none;
+    cursor: default;
+    color: var(--mantine-color-bright);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    z-index: 10000;
+}
+
+/* Converted from '@include md-and-up' */
+@media (min-width: 768px) {
+    .titlebar {
+        padding-left: var(--sidebar-offset) !important;
+    }
+}
+
+.toolbar {
+    z-index: 1;
+    padding: var(--mantine-spacing-lg);
+    padding-top: calc(var(--mantine-spacing-lg) + var(--titlebar-offset));
+}
+
+/* Converted from '@include md-and-up' */
+@media (min-width: 768px) {
+    .toolbar {
+        padding-left: 0;
+    }
+}
+
+.sidebar {
+    z-index: 10;
+    transition: all .15s ease-out;
+    border-right: 1px solid transparent;
+    width: var(--sidebar-wide);
+}
+
+.sidebar-fill {
+    width: 100%;
+}
+
+.sidebar-collapsed {
+    width: var(--sidebar-thin);
+}
+
+.sidebar-hoverable:hover {
+    width: 230px;
+    border-color: var(--mantine-color-slate-7);
+}
+
+/* Converted from '@include light' - assumes a .light class on a parent element */
+.light .sidebar-hoverable:hover {
+    border-color: var(--mantine-color-slate-1);
+}
+
+/* Note: ':global' is not a standard CSS feature and has been removed. */
+.sidebar .mantine-ScrollArea-viewport > div {
+    display: unset !important;
+}
+
+.sidebar-inner {
+    padding-top: calc(22px + var(--titlebar-offset));
+    height: 100%;
+}
+
+.page-content {
+    padding-top: calc(68px + var(--titlebar-offset));
+}
+

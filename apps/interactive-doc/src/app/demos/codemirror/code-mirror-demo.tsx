@@ -3,22 +3,44 @@ import { createContext, Suspense, useContext, useMemo, useState } from "react"
 import { StoryBook, useControls, useCreateStore } from '@lobehub/ui/storybook';
 import { data } from './data/code-editor';
 import { CodeEditor } from './components/codeEditor';
+import { CodeEditorProps } from './components/codeEditor/codeEditorTypes'
 import { Stack } from '@chakra-ui/react'
+import { debounce } from "lodash";
 
+//exposingTypes
+import { mapValues } from "lodash"
+export function exposingDataForAutoComplete(info?: any, includeMethods?: boolean) {
+  return mapValues(info, (v) => {
+    if (!includeMethods || Object.keys(v.methods).length === 0) {
+      return v.propertyValue;
+    }
+    // merge objects and methods
+    const ret: Record<string, unknown> = {};
+    Object.entries(v.methods).forEach(([k, v]) => {
+      ret[k] = v.func;
+    });
+    if (typeof v.propertyValue === "object") {
+      Object.assign(ret, v.propertyValue);
+    }
+    return ret;
+  });
+}
+
+//context and mocking
 const ExposedContext = createContext(undefined as any);
 
-const demoList = [
-  'pageStateDemo',
-  'gloablStateDemo',
-  'calcContext',
-  'compStateDemo',
-  'tmpCalcContext',
-  'compPropsDemo',
-  'compExposingDemo',
-];
+//component render - codeTextControl.tsx
+interface CodeTextEditorProps extends Omit<CodeEditorProps, "onChange"> {
+  enableExposingDataAutoCompletion?: boolean;
+  codeText: string;
+  onChange: (code: string) => void;
+}
+
+const emptyExposingData = {};
+
+export const CodeTextEditor = (props: CodeTextEditorProps | any) => {
 
 
-export const CodeMirrorDemo = (props: any) => {
   const [eventValue, setEventValue] = useState(null)
   const {
     value,
@@ -33,10 +55,20 @@ export const CodeMirrorDemo = (props: any) => {
     styleName,
     label,
     enableClickCompName,
-    enableExposingDataAutoCompletion,
+    enableExposingDataAutoCompletion = false,
     placeholder,
     ...rest
   }: any = props;
+
+  const expsoingData = useMemo(() => {
+
+    if (enableExposingDataAutoCompletion) {
+      return enableExposingDataAutoCompletion ? data[demoId] : {};
+    }
+    return emptyExposingData;
+
+  }, [demoId, enableExposingDataAutoCompletion]);
+
 
 
 
@@ -72,13 +104,18 @@ export const CodeMirrorDemo = (props: any) => {
        // segments={[]}
        // label={label}
        enableClickCompName={enableClickCompName}
-       exposingData={exposedAutoCompletionData}
+       exposingData={expsoingData}
        // placeholder={placeholder || '{\n  rating : {$gte : 9}\n}'}
        onChange={handleChange}
      />
    </Stack>
   );
 };
+
+
+
+
+
 /*
 <InputBasicComp>
   setPropertyViewFn

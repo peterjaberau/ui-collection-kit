@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { EditorState, EditorView } from './codeMirror';
 import { useExtensions } from './extensions';
 import { PopupCard } from './extensions/popupCardExtension';
-import { CodeEditorPanel } from './extensions/codeEditorPanel';
+// import { CodeEditorPanel } from './extensions/codeEditorPanel';
 import type { CodeEditorProps, StyleName } from './codeEditorTypes';
 import { useClickCompNameEffect } from './clickCompName';
 import { Layers } from './constants';
@@ -366,19 +366,7 @@ function CodeEditorCommon(
   );
 }
 
-// for the standalone code editor, eliminating some styles
-function CodeEditorForPanel(props: CodeEditorProps) {
-  const editor: any = useRef<HTMLDivElement | any>(null);
-  return (
-    <CodeEditorCommon {...props} editor={editor} cardStyle={{ borderRadius: '8px' }}>
-      <CodeEditorPanelContainer
-        $styleName={props.styleName}
-        ref={editor as RefObject<HTMLDivElement>}
-        $enableClickCompName={props.enableClickCompName}
-      />
-    </CodeEditorCommon>
-  );
-}
+
 
 /**
  * encapsulate CodeMirror: https://codemirror.net/6/
@@ -398,15 +386,8 @@ export function CodeEditor(props: CodeEditorProps | any) {
           $error={props.hasError}
           ref={editor as RefObject<HTMLDivElement>}
           $enableClickCompName={props.enableClickCompName}
-        >
-          {expandable && (
-            <CodeEditorPanel
-              breadcrumb={[props.label ?? '']}
-              editor={<CodeEditorForPanel {...props} styleName="window" showLineNum />}
-              onVisibleChange={(visible) => setDisabled(visible)}
-            />
-          )}
-        </Container>
+        />
+
       </CodeEditorCommon>
     </CodeEditorTooltipContainer>
   );

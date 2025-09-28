@@ -2,9 +2,13 @@
 import * as React from "react"
 import { StoryBook, useControls, useCreateStore } from "@lobehub/ui/storybook"
 import { Container, SimpleGrid, GridItem } from "@chakra-ui/react"
-import { CodeMirrorDemo } from "./code-mirror-demo"
+import { CodeTextEditor } from "./code-mirror-demo"
 import { useDataScope } from "./data/DataProvider"
 import { useCallback } from "react"
+
+
+
+
 
 export default function Page() {
   const globalData = useDataScope("editor", "withTempState")
@@ -74,6 +78,9 @@ export default function Page() {
     },
   )
 
+
+
+
   return (
     <>
       <Container>
@@ -85,24 +92,26 @@ export default function Page() {
               is getting from a different file.
             </GridItem>
             <GridItem>
-              {/*<CodeMirrorDemo*/}
-              {/*  value={value}*/}
-              {/*  demoId={demoId}*/}
-              {/*  disabled={disabled}*/}
-              {/*  bordered={bordered}*/}
-              {/*  codeType={codeType}*/}
-              {/*  language={language}*/}
-              {/*  cardTitle={cardTitle}*/}
-              {/*  cardContent={cardContent}*/}
-              {/*  placement={placement}*/}
-              {/*  styleName={styleName}*/}
-              {/*  label={label}*/}
-              {/*  enableClickCompName={enableClickCompName}*/}
-              {/*  enableExposingDataAutoCompletion={enableExposingDataAutoCompletion}*/}
-              {/*  placeholder={placeholder}*/}
+              <CodeTextEditor
+                value={value}
+                demoId={demoId}
+                disabled={disabled}
+                bordered={bordered}
+                codeType={codeType}
+                language={language}
+                cardTitle={cardTitle}
+                cardContent={cardContent}
+                placement={placement}
+                styleName={styleName}
+                label={label}
+                // exposingData={expsoingData}
+                // boostExposingData={compExposingData}
+                enableClickCompName={enableClickCompName}
+                enableExposingDataAutoCompletion={enableExposingDataAutoCompletion}
+                placeholder={placeholder}
+                onChange={handleChange}
+              />
 
-              {/*  // onChange={handleChange}*/}
-              {/*/>*/}
             </GridItem>
             <GridItem></GridItem>
           </SimpleGrid>
@@ -111,6 +120,8 @@ export default function Page() {
     </>
   )
 }
+
+
 
 /*
 

@@ -3,6 +3,7 @@ import { Box, Drawer, Flex, Group, Stack, Container, Skeleton, ClientOnly, chakr
 import { type FC, Fragment, memo, Suspense, useLayoutEffect, useMemo, useState, useEffect } from "react"
 import { createHtmlPortalNode, HtmlPortalNode, InPortal, OutPortal } from "react-reverse-portal"
 import { Sidebar } from "./sidebar"
+import './style.css'
 import AuthenticationView from "./views/authentication/authentication-view"
 import DashboardView from "./views/dashboard/dashboard-view"
 import DesignerView from "./views/designer/designer-view"
@@ -61,7 +62,7 @@ export function Screen() {
   }, [])
 
   return (
-    <Container fluid css={{ height: "100%", bg: "bg.emphasized" }}>
+    <Container fluid css={{ height: "100%", bg: "bg.emphasized" }} className='root'>
       <Stack flex={1} position={"relative"} h={'full'}>
         <SidebarLazy />
 

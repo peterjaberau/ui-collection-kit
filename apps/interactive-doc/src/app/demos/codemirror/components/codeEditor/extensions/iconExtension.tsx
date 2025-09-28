@@ -35,7 +35,7 @@ export const iconWidgetClass = 'cm-icon-widget-cls';
 function IconElement(props: { value: string }) {
   // const icon = useIcon(props.value);
   // return <IconContainer className={iconWidgetClass}>{icon?.getView()}</IconContainer>;
-  console.log('IconElement value----', props.value);
+  // console.log('IconElement value----', props.value);
   return <IconContainer className={iconWidgetClass}>{props.value}</IconContainer>;
 }
 

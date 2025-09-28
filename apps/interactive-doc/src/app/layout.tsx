@@ -30,6 +30,7 @@ export default async function RootLayout({
 
             <ChakraProvider>
               <div style={{ width: '100%' }}>{children}</div>
+
             </ChakraProvider>
 
         </Suspense>
