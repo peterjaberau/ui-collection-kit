@@ -2,7 +2,7 @@ import { Extension } from "@codemirror/state"
 import { RefObject } from "react"
 import { ICodeMirrorOptions } from "./extensions/interface"
 
-export interface ILLACodeMirrorProps
+export interface CodeMirrorProps
   extends ICodeMirrorOptions {
   extensions?: Extension[]
   value?: string

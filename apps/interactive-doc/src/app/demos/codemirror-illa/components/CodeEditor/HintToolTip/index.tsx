@@ -1,22 +1,11 @@
-'use client'
+"use client"
 import copy from "copy-to-clipboard"
-import { FC, useCallback, useRef, useState } from "react"
-import { Trigger, TriggerRefHandler } from "#codemirror-illa/ui/trigger"
-import { CopyIcon, ErrorIcon } from "#codemirror-illa/ui/icon"
-
-import { applyEditorWrapperStyle } from "../CodeMirror/style"
-import {
-  HintTooltipContentProps,
-  HintTooltipProps,
-} from "./interface"
-import {
-  applyHintTooltipContentMainWrapperStyle,
-  applyHintTooltipContentWrapperStyle,
-  copyIconStyle,
-  hintTooltipContentTitleStyle,
-  hintTooltipContentTitleWrapperStyle,
-  hintTooltipResultStyle,
-} from "./style"
+import { FC, useCallback, useState } from "react"
+import { LuCopy as CopyIcon } from "react-icons/lu"
+import * as React from "react"
+import { Alert, IconButton } from "@chakra-ui/react"
+import { Tooltip } from "#codemirror-illa/ui/ToolTip"
+import { HintTooltipContentProps, HintTooltipProps } from "./interface"
 
 export const HintTooltipContent: FC<HintTooltipContentProps> = (props) => {
   const { hasError = false, resultType, result, setIsHovered } = props
@@ -28,59 +17,43 @@ export const HintTooltipContent: FC<HintTooltipContentProps> = (props) => {
   }, [result])
 
   return (
-    <div
-      css={applyHintTooltipContentWrapperStyle(hasError)}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div css={applyHintTooltipContentMainWrapperStyle(hasError)}>
-        <div css={hintTooltipContentTitleWrapperStyle}>
-          {hasError && <ErrorIcon size="12px" />}
-          <span css={hintTooltipContentTitleStyle}>
-            {hasError ? "Error" : resultType}
-          </span>
-        </div>
-        <span css={hintTooltipResultStyle}>{result}</span>
-      </div>
-      <CopyIcon css={copyIconStyle} onClick={handleClickCopy} />
-    </div>
+    <>
+      <Alert.Root
+        width={"100%"}
+        status={hasError ? "error" : "success"}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <Alert.Indicator />
+        <Alert.Content>
+          <Alert.Title>{hasError ? "Error" : resultType}</Alert.Title>
+          <Alert.Description>{result}</Alert.Description>
+        </Alert.Content>
+        <IconButton pos="relative" size={"sm"} onClick={handleClickCopy}>
+          <CopyIcon />
+        </IconButton>
+      </Alert.Root>
+    </>
   )
 }
 
 export const HintToolTip: FC<HintTooltipProps> = (props) => {
-  const {
-    isEditorFocused,
-    result,
-    hasError,
-    resultType,
-    children,
-    toolTipContainer,
-  } = props
+  const { isEditorFocused, result, hasError, resultType, children, toolTipContainer } = props
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <>
-      <Trigger
-        withoutPadding
-        withoutOffset
-        withoutShadow
-        autoAlignPopupWidth
-        showArrow={false}
-        popupVisible={isEditorFocused || isHovered}
-        position="bottom-start"
-        colorScheme="white"
-        popupContainer={toolTipContainer}
-        content={
-          <HintTooltipContent
-            hasError={hasError}
-            resultType={resultType}
-            result={result}
-            setIsHovered={setIsHovered}
-          />
-        }
-      >
-        {children}
-      </Trigger>
-    </>
+    <Tooltip
+      open={isEditorFocused || isHovered}
+      positioning={{ placement: "bottom-start" }}
+      unstyled={true}
+      css={{
+        width: "100%",
+      }}
+      content={
+        <HintTooltipContent hasError={hasError} resultType={resultType} result={result} setIsHovered={setIsHovered} />
+      }
+    >
+      {children}
+    </Tooltip>
   )
 }

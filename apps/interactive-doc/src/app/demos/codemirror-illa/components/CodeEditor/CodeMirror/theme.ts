@@ -17,7 +17,7 @@ import {
   errorHighlightClassName,
 } from "./extensions/heighLightJSExpression"
 
-export const ILLACodeMirrorTheme = {
+export const CodeMirrorTheme = {
   "&.cm-editor": {
     borderRadius: "8px",
     border: `1px solid ${getColor("grayBlue", "03")}`,
@@ -58,7 +58,7 @@ export const ILLACodeMirrorTheme = {
   },
 }
 
-export const illaCodeMirrorTooltipStyle = css`
+export const codeMirrorTooltipStyle = css`
   > div {
     height: unset;
     min-height: unset;

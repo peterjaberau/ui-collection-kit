@@ -1,10 +1,10 @@
 import { SerializedStyles } from "@emotion/react"
-import { ILLACodeMirrorProps } from "./CodeMirror/interface"
+import { CodeMirrorProps } from "./CodeMirror/interface"
 import { VALIDATION_TYPES } from "#codemirror-illa/utils"
 
 export interface CodeEditorProps
   extends Omit<
-    ILLACodeMirrorProps,
+    CodeMirrorProps,
     "hasError" | "resultType" | "result" | "executionResult" | "expressions" | "canShowResultRealtime"
   > {
   expectValueType?: VALIDATION_TYPES
@@ -12,6 +12,6 @@ export interface CodeEditorProps
   canExpand?: boolean
   modalTitle?: string
   modalDescription?: string
-  wrapperCss?: SerializedStyles
+  wrapperCss?: any
   [key: string]: any
 }

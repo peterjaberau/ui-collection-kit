@@ -6,7 +6,7 @@ export function useTooltipExtension() {
 
   useEffect(() => {
     const wrapper =
-      document.querySelector<HTMLElement>(".illaCodeMirrorWrapper") ||
+      document.querySelector<HTMLElement>(".codeMirrorWrapper") ||
       document.body
 
     setExtension([

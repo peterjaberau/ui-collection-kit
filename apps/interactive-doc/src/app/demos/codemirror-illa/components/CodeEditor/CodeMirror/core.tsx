@@ -1,34 +1,17 @@
-'use client'
-import { Popover } from '@chakra-ui/react'
-import { Button, HStack, chakra } from "@chakra-ui/react"
-import { HintTooltipContent } from '../HintToolTip'
-import { Tooltip } from '../ToolTip'
+"use client"
 import { closeCompletion } from "@codemirror/autocomplete"
-import {
-  Compartment,
-  EditorState,
-  Extension,
-  StateEffect,
-} from "@codemirror/state"
-import {
-  EditorView,
-  placeholder as placeholderExtension,
-} from "@codemirror/view"
-import { FC, useCallback, useEffect, useId, useMemo, useRef, useState } from "react"
+import { Compartment, EditorState, Extension, StateEffect } from "@codemirror/state"
+import { EditorView, placeholder as placeholderExtension } from "@codemirror/view"
+import { FC, useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useBasicSetup } from "./extensions"
-import {
-  CODE_LANG,
-  CODE_TYPE,
-} from "./extensions/interface"
-import { ILLACodeMirrorProps } from "./interface"
-import { applyEditorWrapperStyle } from "./style"
-import { ILLACodeMirrorTheme } from "./theme"
+import { CODE_LANG, CODE_TYPE } from "./extensions/interface"
+import { CodeMirrorProps } from "./interface"
+import { CodeMirrorTheme } from "./theme"
 import { HintToolTip } from "../HintToolTip"
+import { Box } from "@chakra-ui/react"
 import { VALIDATION_TYPES } from "#codemirror-illa/utils"
-import { TriggerRefHandler } from "#components/ui/trigger"
 
-// thk ReactCodeMirror:https://github.com/uiwjs/react-codemirror
-export const ILLACodeMirrorCore: FC<ILLACodeMirrorProps> = (props) => {
+export const CodeMirrorCore: FC<CodeMirrorProps> = (props) => {
   const {
     className,
     extensions = [],
@@ -63,7 +46,6 @@ export const ILLACodeMirrorCore: FC<ILLACodeMirrorProps> = (props) => {
 
   const editorViewRef = useRef<EditorView>(null)
   const editorWrapperRef = useRef<HTMLDivElement | null>(null)
-  const triggerHandlerRef = useRef<TriggerRefHandler | undefined>(undefined)
 
   const compartmentsRef: any = useRef<Compartment[]>([])
 
@@ -77,15 +59,7 @@ export const ILLACodeMirrorCore: FC<ILLACodeMirrorProps> = (props) => {
       sqlScheme,
       scopeOfAutoComplete,
     }
-  }, [
-    canShowCompleteInfo,
-    codeType,
-    expressions,
-    lang,
-    showLineNumbers,
-    sqlScheme,
-    scopeOfAutoComplete,
-  ])
+  }, [canShowCompleteInfo, codeType, expressions, lang, showLineNumbers, sqlScheme, scopeOfAutoComplete])
 
   const basicExtensions = useBasicSetup(extensionOptions)
 
@@ -100,7 +74,7 @@ export const ILLACodeMirrorCore: FC<ILLACodeMirrorProps> = (props) => {
           maxWidth,
           minWidth,
         },
-        ...ILLACodeMirrorTheme,
+        ...CodeMirrorTheme,
       }),
     [height, maxHeight, maxWidth, minHeight, minWidth, width],
   )
@@ -134,27 +108,19 @@ export const ILLACodeMirrorCore: FC<ILLACodeMirrorProps> = (props) => {
     })
   }, [onChange])
 
-  const readOnlyStateChangeEffect: Extension = useMemo(
-    () => EditorState.readOnly.of(readOnly),
-    [readOnly],
-  )
+  const readOnlyStateChangeEffect: Extension = useMemo(() => EditorState.readOnly.of(readOnly), [readOnly])
 
-  const editableStateChangeEffect: Extension = useMemo(
-    () => EditorView.editable.of(editable),
-    [editable],
-  )
+  const editableStateChangeEffect: Extension = useMemo(() => EditorView.editable.of(editable), [editable])
 
   const placeholderExt: Extension = useMemo(() => {
-    return typeof placeholder === "string"
-      ? placeholderExtension(placeholder)
-      : []
+    return typeof placeholder === "string" ? placeholderExtension(placeholder) : []
   }, [placeholder])
 
   const singleLineExt: Extension = useMemo(() => {
     return singleLine
       ? EditorState.transactionFilter.of((tr) => {
-        return tr.newDoc.lines > 1 ? [] : [tr]
-      })
+          return tr.newDoc.lines > 1 ? [] : [tr]
+        })
       : EditorView.lineWrapping
   }, [singleLine])
 
@@ -183,24 +149,15 @@ export const ILLACodeMirrorCore: FC<ILLACodeMirrorProps> = (props) => {
   ])
 
   const extensionsWithCompartment = useMemo(() => {
-    for (
-      let i = compartmentsRef.current.length;
-      i < allExtensions.length;
-      i++
-    ) {
+    for (let i = compartmentsRef.current.length; i < allExtensions.length; i++) {
       const compartment = new Compartment()
       compartmentsRef.current.push(compartment)
     }
-    return allExtensions.map((ext, index) =>
-      compartmentsRef.current[index].of(ext),
-    )
+    return allExtensions.map((ext, index) => compartmentsRef.current[index].of(ext))
   }, [allExtensions])
 
   useEffect(() => {
-    if (
-      !editorViewRef.current ||
-      (!isFocus && value !== editorViewRef.current.state.doc.toString())
-    ) {
+    if (!editorViewRef.current || (!isFocus && value !== editorViewRef.current.state.doc.toString())) {
       const state = EditorState.create({
         doc: value,
         extensions: extensionsWithCompartment,
@@ -242,102 +199,18 @@ export const ILLACodeMirrorCore: FC<ILLACodeMirrorProps> = (props) => {
   }, [reconfigure])
 
 
-
-  const [isHovered, setIsHovered] = useState(false)
-
-
   return (
-    <Tooltip
-      open={isFocus}
-      // interactive={true}
-      // closeOnClick={false}
-      // closeOnPointerDown={false}
-      // closeOnEscape={false}
-      content={
-        <HintTooltipContent
-          hasError={hasError}
-          resultType={resultType}
-          result={!result ? '""' : result}
-          setIsHovered={setIsHovered}
-        />
-      }
-      positioning={{ placement: "bottom" }}
+    <HintToolTip
+      isEditorFocused={isFocus}
+      result={!result ? '""' : result}
+      hasError={hasError}
+      resultType={resultType}
+      toolTipContainer={tooltipContainer}
     >
-      <div
+      <Box
         ref={editorWrapperRef}
-        className={className}
-        css={applyEditorWrapperStyle(hasError, isFocus, editable, readOnly)}
       />
-    </Tooltip>
-
-    // <Tooltip.Root value={tooltip}>
-    //   <Tooltip.Trigger asChild>
-    //
-    //   </Tooltip.Trigger>
-    //   <Tooltip.Positioner>
-    //     <Tooltip.Content>
-    //       {!result ? '""' : result}
-    //     </Tooltip.Content>
-    //   </Tooltip.Positioner>
-    // </Tooltip.Root>
+    </HintToolTip>
   )
 
-
-
-  // return (
-  //   <HintToolTip
-  //     isEditorFocused={isFocus}
-  //     result={!result ? '""' : result}
-  //     hasError={hasError}
-  //     resultType={resultType}
-  //     toolTipContainer={tooltipContainer}
-  //   >
-  //     <div
-  //       ref={editorWrapperRef}
-  //       className={className}
-  //       css={applyEditorWrapperStyle(hasError, isFocus, editable, readOnly)}
-  //     />
-  //   </HintToolTip>
-  // )
-
-
-
-  // return (
-  //   <HintToolTip
-  //     isEditorFocused={isFocus}
-  //     result={!result ? '""' : result}
-  //     hasError={hasError}
-  //     resultType={resultType}
-  //     toolTipContainer={tooltipContainer}
-  //     triggerRef={triggerHandlerRef as any}
-  //   >
-  //     <div
-  //       ref={editorWrapperRef}
-  //       className={className}
-  //       css={applyEditorWrapperStyle(hasError, isFocus, editable, readOnly)}
-  //     />
-  //   </HintToolTip>
-  // )
 }
-
-// return (
-//   <Popover.Root open={open} onOpenChange={(e: any) => setOpen(e.open)}>
-//     <Popover.Trigger>
-//       <div
-//         ref={editorWrapperRef}
-//         className={className}
-//         css={applyEditorWrapperStyle(hasError, isFocus, editable, readOnly)}
-//       />
-//     </Popover.Trigger>
-//     <Portal>
-//       <Popover.Positioner>
-//         <Popover.Content>
-//           <Popover.Arrow />
-//           <Popover.Body>
-//             This is a popover with the same width as the trigger button
-//           </Popover.Body>
-//         </Popover.Content>
-//       </Popover.Positioner>
-//     </Portal>
-//   </Popover.Root>
-// )

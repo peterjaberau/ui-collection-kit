@@ -1,17 +1,13 @@
-'use client'
+"use client"
 import { getStringSnippets, isDynamicStringSnippet } from "#codemirror-illa/utils/dynamic-string"
 import { debounce } from "lodash"
 import { FC, useCallback, useMemo, useRef, useState } from "react"
-import { chakra } from "@chakra-ui/react"
-import { ILLACodeMirrorCore } from "./CodeMirror/core"
+import { Box } from "@chakra-ui/react"
+import { CodeMirrorCore } from "./CodeMirror/core"
 import { CODE_TYPE, IExpressionShape } from "./CodeMirror/extensions/interface"
 import { githubLightScheme } from "./CodeMirror/theme"
 import { CodeEditorProps } from "./interface"
-import { ILLACodeMirrorWrapperStyle, openWindowIconHotspotStyle } from "./style"
-// import {
-//   getExecutionResultToCurrentPageCodeMirror,
-//   getExecutionResultToGlobalCodeMirror,
-// } from "#codemirror-illa/state"
+
 
 import { appDynamicStringTriggersExample } from "#codemirror-illa/state"
 import { LIMIT_MEMORY, estimateMemoryUsage } from "#codemirror-illa/utils/utils.memory"
@@ -115,16 +111,6 @@ export const CodeEditor: FC<CodeEditorProps> = (props: any) => {
       : appDynamicStringTriggersExample.getExecutionResultToCurrentPageCodeMirror(),
   )
 
-  // const tmpCalcContext = useSelector<any>(
-  //   (rootState: any) => {
-  //
-  //
-  //     return scopeOfAutoComplete === "global"
-  //       ? getExecutionResultToGlobalCodeMirror(rootState)
-  //       : getExecutionResultToCurrentPageCodeMirror(rootState)
-  //   },
-  // )
-
   const calcContext = useMemo(() => {
     if (codeType === CODE_TYPE.FUNCTION) {
       return removeIgnoredKeys(tmpCalcContext)
@@ -226,8 +212,16 @@ export const CodeEditor: FC<CodeEditorProps> = (props: any) => {
   }, [])
 
   return (
-    <div css={[ILLACodeMirrorWrapperStyle, wrapperCss]} ref={popupContainerRef}>
-      <ILLACodeMirrorCore
+    <Box
+      css={{
+        width: "100%",
+        height: "100%",
+        position: "relative",
+        ...wrapperCss,
+      }}
+      ref={popupContainerRef}
+    >
+      <CodeMirrorCore
         className={className}
         showLineNumbers={showLineNumbers}
         placeholder={placeholder}
@@ -256,6 +250,6 @@ export const CodeEditor: FC<CodeEditorProps> = (props: any) => {
         onBlur={onBlur}
         onFocus={onFocus}
       />
-    </div>
+    </Box>
   )
 }

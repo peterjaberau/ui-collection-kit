@@ -36,14 +36,13 @@ import { Extension, Prec } from "@codemirror/state"
 import { dropCursor, keymap, lineNumbers, tooltips } from "@codemirror/view"
 import { useMemo } from "react"
 import { ternSeverCompletionSource } from "./completionSources/TernServer"
-import { buildIllaContextCompletionSource } from "./completionSources/illaContext"
+import { buildContextCompletionSource } from "./completionSources/Context"
 import { getHighlightExpressionExtension } from "./heighLightJSExpression"
 import {
   CODE_LANG,
   CODE_TYPE,
   ICodeMirrorOptions,
 } from "./interface"
-// import { ILLAEditorRuntimePropsCollectorInstance } from "@/utils/executionTreeHelper/runtimePropsCollector"
 import { appDynamicStringTriggersExample } from "#codemirror-illa/state"
 import { isObject } from "#codemirror-illa/utils"
 import { useTooltipExtension } from './tooltipExtension'
@@ -122,12 +121,12 @@ const buildCompletionSources = (
   executedResult: Record<string, unknown>,
 ) => {
   const ternSource = ternSeverCompletionSource(canShowCompleteInfo, codeType)
-  const illaSources = buildIllaContextCompletionSource(
+  const systemSources = buildContextCompletionSource(
     canShowCompleteInfo,
     codeType,
     executedResult,
   )
-  const completionSources = [ternSource, illaSources]
+  const completionSources = [ternSource, systemSources]
 
   switch (lang) {
     case CODE_LANG.HTML: {

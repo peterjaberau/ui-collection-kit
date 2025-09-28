@@ -1,5 +1,5 @@
 'use client';
-import { illaCodeMirrorTooltipStyle } from "#codemirror-illa/components/CodeEditor/CodeMirror/theme"
+import { codeMirrorTooltipStyle } from "#codemirror-illa/components/CodeEditor/CodeMirror/theme"
 import {
   ChakraProvider,
   defineConfig,
@@ -28,10 +28,10 @@ export const Provider = (props: { children: React.ReactNode }) => {
           <TooltipProvider>
           {props.children}
           </TooltipProvider>
-          <div
-            className="illaCodeMirrorWrapper"
-            css={illaCodeMirrorTooltipStyle}
-          />
+          {/*<div*/}
+          {/*  className="codeMirrorWrapper"*/}
+          {/*  css={codeMirrorTooltipStyle}*/}
+          {/*/>*/}
         </ThemeProvider>
         <NotificationProvider/>
       </ChakraProvider>

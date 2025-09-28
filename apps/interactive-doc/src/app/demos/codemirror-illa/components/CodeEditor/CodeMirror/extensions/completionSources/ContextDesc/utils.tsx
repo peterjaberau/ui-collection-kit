@@ -1,9 +1,9 @@
-interface IILLAUtilsDesc {
+interface UtilsDesc {
   desc?: string
   usage: string
 }
 
-export const ILLA_UTILS_DESC: Record<string, IILLAUtilsDesc> = {
+export const UTILS_DESC: Record<string, UtilsDesc> = {
   goToURL: {
     desc: "",
     usage: "utils.goToURL({url:string,newTab?:boolean = false})",
@@ -24,13 +24,13 @@ export const ILLA_UTILS_DESC: Record<string, IILLAUtilsDesc> = {
     desc: "",
     usage: `utils.downloadFile({fileType?:string = "auto";fileName?:string = "Untitled File",data:any})`,
   },
-  downloadFromILLADrive: {
+  downloadFromDrive: {
     desc: "",
-    usage: `utils.downloadFromILLADrive({downloadInfo:{tinyURL:string,fileID:string}[],asZip?:boolean})`,
+    usage: `utils.downloadFromDrive({downloadInfo:{tinyURL:string,fileID:string}[],asZip?:boolean})`,
   },
-  saveToILLADrive: {
+  saveToDrive: {
     desc: "",
-    usage: `utils.saveToILLADrive({fileName:string,fileData:string,fileType?:string="auto",folder?:string="",allowAnonymous?:boolean = false,replace?:boolean = false})`,
+    usage: `utils.saveToDrive({fileName:string,fileData:string,fileType?:string="auto",folder?:string="",allowAnonymous?:boolean = false,replace?:boolean = false})`,
   },
   setGlobalDataIn: {
     desc: "",

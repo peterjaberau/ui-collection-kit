@@ -14,7 +14,7 @@ import {
   removeWidgetOrActionMethods,
 } from "#codemirror-illa/utils"
 import { isFunction, isObject } from "#codemirror-illa/utils"
-import { ILLAContextDesc } from "./ILLAContextDesc"
+import { ContextDesc } from "./ContextDesc"
 
 const formatUtils = (data: unknown) => {
   if (isObject(data)) {
@@ -76,7 +76,7 @@ export function getDataInfo(data: Record<string, unknown>, path: string) {
           if (!currentData || !isObject(currentData)) {
             return null
           }
-          descInfos = ILLAContextDesc[currentPath] as Record<string, unknown>
+          descInfos = ContextDesc[currentPath] as Record<string, unknown>
         }
         offset = i + 1
         if (path[i] === "." && Array.isArray(currentData)) {
@@ -96,7 +96,7 @@ export function getDataInfo(data: Record<string, unknown>, path: string) {
   }
 }
 
-export const buildIllaContextCompletionSource = (
+export const buildContextCompletionSource = (
   canShowCompleteInfo: boolean,
   codeType: CODE_TYPE,
   executionResult: Record<string, unknown>,
