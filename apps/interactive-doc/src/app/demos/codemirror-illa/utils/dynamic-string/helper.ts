@@ -1,5 +1,7 @@
 import { DYNAMIC_STRING_REG } from "./constants"
 import { getStringSnippets } from "./converter"
+import { isRunScriptAttr } from ".."
+import { isWrapperCode, realInputValueWithScript, getDynamicValue } from '.'
 
 export const isDynamicStringSnippet = (value: unknown): boolean =>
   typeof value === "string" && value.endsWith("}}") && value.startsWith("{{")
@@ -63,16 +65,7 @@ export const evaluateDynamicString = (
     evalResult = dynamicString
   }
 
-  console.log(
-    "public.dynamicStringUtils.index.evaluateDynamicString() -------->",
-    {
-      input: { keyInDataTree, dynamicString, dataTree },
-      logic: {
-        requiresEval,
-      },
-      output: { evalResult },
-    },
-  )
+
   return evalResult
 }
 

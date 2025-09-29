@@ -7,6 +7,7 @@ import { CodeMirrorCore } from "./CodeMirror/core"
 import { CODE_TYPE, IExpressionShape } from "./CodeMirror/extensions/interface"
 import { githubLightScheme } from "./CodeMirror/theme"
 import { CodeEditorProps } from "./interface"
+import { useRootStore } from "#codemirror-illa/store"
 
 
 import { appDynamicStringTriggersExample } from "#codemirror-illa/state"
@@ -98,6 +99,10 @@ export const CodeEditor: FC<CodeEditorProps> = (props: any) => {
     onFocus = () => {},
     className,
   } = props
+
+  const [rootContext, rootStore]: any = useRootStore((s: any) => s.context)
+
+
   const [result, setResult] = useState<string>("")
   const [error, setError] = useState<boolean>(false)
   const [resultType, setResultType] = useState(VALIDATION_TYPES.STRING)
@@ -107,8 +112,8 @@ export const CodeEditor: FC<CodeEditorProps> = (props: any) => {
 
   const [tmpCalcContext, setTmpCalcContext] = useState(
     scopeOfAutoComplete === "global"
-      ? appDynamicStringTriggersExample.getExecutionResultToGlobalCodeMirror()
-      : appDynamicStringTriggersExample.getExecutionResultToCurrentPageCodeMirror(),
+      ? rootContext.currentApp.execution.result
+      : rootContext.currentApp.execution.result,
   )
 
   const calcContext = useMemo(() => {
@@ -119,10 +124,16 @@ export const CodeEditor: FC<CodeEditorProps> = (props: any) => {
     }
   }, [codeType, tmpCalcContext])
 
+
+
   const stringSnippets = useMemo(() => {
     const result: IExpressionShape[] = []
     const realInput = wrappedCodeFunc ? wrappedCodeFunc(value) : value
+
+
     const dynamicStrings = getStringSnippets(realInput)
+
+
     const errors: string[] | any = []
     const calcResultArray: unknown[] = []
     const calcResultMap: Map<string, number[]> = new Map()
@@ -210,6 +221,7 @@ export const CodeEditor: FC<CodeEditorProps> = (props: any) => {
   const handleCloseExpandModal = useCallback(() => {
     setIsExpanded(false)
   }, [])
+  console.log('----CodeEditor---result--', { result })
 
   return (
     <Box

@@ -1,4 +1,5 @@
 export * from "./constants"
+export * from "./function.execution"
 export * from "./function.actions"
 export * from "./function.getters"
 export * from "./utils"
