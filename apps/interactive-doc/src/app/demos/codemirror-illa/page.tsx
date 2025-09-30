@@ -146,7 +146,7 @@ export default function Page() {
                     onlyHasSetter={false}
                     attrName={scope.attribute}
                     expectedType={"String" as any}
-                    value={selectedWidget.props[scope.attribute]}
+                    value={selectedComponent.props[scope.attribute]}
                     widgetDisplayName={selectedComponent.displayName}
                     widgetType={selectedComponent.type}
                     // handleUpdateDsl={handleUpdateDsl}
