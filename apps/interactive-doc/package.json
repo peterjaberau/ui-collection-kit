@@ -9,6 +9,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "react-rnd": "^10.5.2",
+    "react-use-measure": "^2.1.7",
+
     "color": "^4.2.3",
     "chroma-js": "^2.4.2",
 
@@ -95,6 +98,7 @@
     "next-themes": "^0.4.6",
     "recharts": "2.15.3",
     "react-use": "17.6.0",
+    "react-dnd-touch-backend": "^16.0.1",
     "react-frame-component": "5.2.7",
     "react-hook-form": "7.58.1",
     "react-markdown": "10.1.0",

@@ -1,11 +1,14 @@
 import { Inter as FontSans } from 'next/font/google';
-
+import { RootActorProvider } from '#state-actors/rootActor.provider'
 import { Provider as ChakraProvider } from "./provider"
 import '#demos/dockview/main/dock-view-light.css'
 import { cn } from '../utils/cn';
 import { Suspense } from "react"
 import { ThemeProvider } from 'next-themes';
 import './globals.css'
+import 'react18-json-view/src/style.css'
+
+import { DebuggerTrigger } from "#app/common/debugger/debugger-trigger"
 const inter = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
@@ -27,12 +30,14 @@ export default async function RootLayout({
       <body suppressHydrationWarning
             style={{ display: 'flex', minHeight: '100dvh', position: 'relative'}}>
         <Suspense>
+          <RootActorProvider>
 
             <ChakraProvider>
               <div style={{ width: '100%' }}>{children}</div>
 
+              <DebuggerTrigger />
             </ChakraProvider>
-
+          </RootActorProvider>
         </Suspense>
       </body>
     </html>

@@ -1,4 +1,4 @@
-@import 'tailwindcss' prefix(tw);
+@import 'tailwindcss' ;
 
 @theme {
     /* AlignUI Raw Colors */
