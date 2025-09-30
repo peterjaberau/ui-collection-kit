@@ -1,8 +1,113 @@
-import { createStoreHook } from "@xstate/store/react"
-import { updateComponentPropsReducer } from "#codemirror-illa/store/reducers"
 
-export const useRootStore: any = createStoreHook({
-  context: {
+export const defaultMock: any = () => {
+  return {
+    aiAgent: {
+      list: [],
+    },
+    builderInfo: {
+      version: '1.0.0',
+      language: "English"
+    },
+    config: {
+      openLeftPanel: true,
+      mode: "edit",
+      openBottomPanel: true,
+      openRightPanel: true,
+      openDebugger: false,
+      scale: 100,
+      selectedComponents: [],
+      selectedAction: null,
+      cachedAction: null,
+      showDot: false,
+      expandedKeys: [],
+      canvasHeight: 1080,
+      canvasWidth: 1920,
+      isOnline: true,
+      hoveredComponents: [],
+      expandedWidgets: {},
+      wsStatus: {
+        DASHBOARD: "INIT",
+        APP: "INIT",
+        APP_BINARY: "INIT",
+        AI_AGENT: "INIT",
+      },
+      draggingComponentIDs: [],
+      resizingComponentIDs: [],
+    },
+    currentApp: {
+      action: [],
+      appInfo: {
+        updatedAt: "",
+        updatedBy: "",
+        appId: "",
+        appName: "",
+        deployed: false,
+        config: {
+          public: false,
+          waterMark: false,
+          publishedToMarketplace: false,
+          publishWithAIAgent: false,
+          appType: "PC",
+        },
+        appActivity: {
+          modifier: "",
+          modifiedAt: "",
+        },
+      },
+      collaborators: {
+        inRoomUsers: [],
+        components: {},
+      },
+      components: {},
+      cursor: {},
+      dragShadow: {},
+      execution: {
+        dependencies: {},
+        result: {},
+        error: {},
+        independencies: {},
+      },
+      layoutInfo: {
+        widgetsLayoutInfo: {},
+      },
+    },
+    currentAppHistory: {
+      snapshotList: [],
+      totalPages: 0,
+      currentPage: 0,
+      hasMore: false,
+    },
+    guide: {
+      currentStep: 0,
+      isOpen: false,
+    },
+    resource: [],
+    currentUser: {
+      userID: "",
+      uid: "",
+      nickname: "",
+      language: "",
+      email: "",
+      avatar: "",
+      isTutorialViewed: false,
+      isPasswordSet: false,
+      ssoVerified: {
+        github: false,
+        google: false,
+      },
+      isNewUser: false,
+      haveAppSumoSubscription: false,
+      doesAppSumoSubscriptionAppliedToTeam: false,
+      createdAt: "",
+      updatedAt: "",
+    }
+    ,
+    team: [],
+  }
+}
+
+export const appDynamicStringTriggersMock: any = () => {
+  return {
     config: {
       openLeftPanel: true,
       mode: 'edit',
@@ -2856,49 +2961,999 @@ export const useRootStore: any = createStoreHook({
     },
     aiAgent: {
       list: []
-    },
-
-
-    instances: {
-      executionTree: null
     }
-  },
-  on: {
-    updateComponentPropsReducer(context: any, event: any) {
-      updateComponentPropsReducer({
-        context: context.currentApp.components,
-        event
-      })
-      return context
+  }
+}
+
+export const appDynamicStringBindingMock: any = () => {
+  return {
+    config: {
+      openLeftPanel: true,
+      mode: 'edit',
+      openBottomPanel: true,
+      openRightPanel: true,
+      openDebugger: false,
+      scale: 100,
+      selectedComponents: [
+        'button1'
+      ],
+      selectedAction: {
+        actionID: 'ILAfx4p1C7dT',
+        uid: '2d4fabdd-fe65-44a5-ab5c-f078dd4ec64e',
+        teamID: 'ILAfx4p1C7d0',
+        resourceID: 'ILAfx4p1C7d0',
+        displayName: 'transformer1',
+        actionType: 'transformer',
+        isVirtualResource: true,
+        content: {
+          transformerString: '{{(function (){// Tip: assign your external references to variables instead of chaining off the curly brackets.\nreturn 5})()}}'
+        },
+        transformer: {
+          enable: false,
+          rawData: ''
+        },
+        triggerMode: 'manually',
+        config: {
+          'public': false,
+          isVirtualResource: false,
+          advancedConfig: {
+            runtime: 'none',
+            pages: [],
+            delayWhenLoaded: '',
+            displayLoadingPage: false,
+            isPeriodically: false,
+            periodInterval: '',
+            mock: ''
+          },
+          mockConfig: {
+            enabled: false,
+            mockData: '',
+            enableForReleasedApp: false
+          },
+          tutorialLink: ''
+        },
+        createdAt: '2025-09-09T02:53:04.833401Z',
+        createdBy: 'ILAfx4p1C7dZ',
+        updatedAt: '2025-09-09T02:53:04.833401Z',
+        updatedBy: 'ILAfx4p1C7dZ'
+      },
+      cachedAction: {
+        actionID: 'ILAfx4p1C7dT',
+        uid: '2d4fabdd-fe65-44a5-ab5c-f078dd4ec64e',
+        teamID: 'ILAfx4p1C7d0',
+        resourceID: 'ILAfx4p1C7d0',
+        displayName: 'transformer1',
+        actionType: 'transformer',
+        isVirtualResource: true,
+        content: {
+          transformerString: '{{(function (){// Tip: assign your external references to variables instead of chaining off the curly brackets.\nreturn 5})()}}'
+        },
+        transformer: {
+          enable: false,
+          rawData: ''
+        },
+        triggerMode: 'manually',
+        config: {
+          'public': false,
+          isVirtualResource: false,
+          advancedConfig: {
+            runtime: 'none',
+            pages: [],
+            delayWhenLoaded: '',
+            displayLoadingPage: false,
+            isPeriodically: false,
+            periodInterval: '',
+            mock: ''
+          },
+          mockConfig: {
+            enabled: false,
+            mockData: '',
+            enableForReleasedApp: false
+          },
+          tutorialLink: ''
+        },
+        createdAt: '2025-09-09T02:53:04.833401Z',
+        createdBy: 'ILAfx4p1C7dZ',
+        updatedAt: '2025-09-09T02:53:04.833401Z',
+        updatedBy: 'ILAfx4p1C7dZ'
+      },
+      showDot: false,
+      expandedKeys: [],
+      canvasHeight: 829,
+      canvasWidth: 1195,
+      isOnline: true,
+      hoveredComponents: [],
+      expandedWidgets: {
+        'bodySection1-bodySectionContainer1': true,
+        bodySection1: true,
+        page1: true,
+        root: true
+      },
+      wsStatus: {
+        DASHBOARD: 'INIT',
+        APP: 'CONNECTED',
+        APP_BINARY: 'CONNECTED',
+        AI_AGENT: 'INIT'
+      },
+      draggingComponentIDs: [],
+      resizingComponentIDs: []
     },
-
-
-    updateWidgetKeyValue: (context: any, event: { displayName: any, value: any }) => ({
-      ...context,
-      currentApp: {
-        ...context.currentApp,
+    currentApp: {
+      components: {
+        root: {
+          version: 0,
+          displayName: 'root',
+          parentNode: '',
+          showName: 'root',
+          childrenNode: [
+            'page1'
+          ],
+          type: 'DOT_PANEL',
+          containerType: 'EDITOR_DOT_PANEL',
+          h: 0,
+          w: 0,
+          minH: 0,
+          minW: 0,
+          x: -1,
+          y: -1,
+          z: 0,
+          props: {
+            $dynamicAttrPaths: [],
+            currentPageIndex: 0,
+            globalData: {
+              state1: ''
+            },
+            homepageDisplayName: 'page1',
+            pageSortedKey: [
+              'page1'
+            ]
+          }
+        },
+        page1: {
+          version: 0,
+          displayName: 'page1',
+          parentNode: 'root',
+          showName: 'page',
+          childrenNode: [
+            'bodySection1',
+            'modalSection1'
+          ],
+          type: 'PAGE_NODE',
+          containerType: 'EDITOR_PAGE_SQUARE',
+          h: 0,
+          w: 0,
+          minH: 0,
+          minW: 0,
+          x: -1,
+          y: -1,
+          z: 0,
+          props: {
+            bodyColumns: 32,
+            bottomHeight: 0,
+            canvasSize: 'auto',
+            canvasWidth: 100,
+            footerColumns: 32,
+            hasFooter: false,
+            hasHeader: false,
+            hasLeft: false,
+            hasRight: false,
+            headerColumns: 32,
+            isFooterFixed: true,
+            isHeaderFixed: true,
+            isLeftFixed: true,
+            isRightFixed: true,
+            layout: 'default',
+            leftColumns: 8,
+            leftPosition: 'NONE',
+            leftWidth: 0,
+            rightColumns: 8,
+            rightPosition: 'NONE',
+            rightWidth: 0,
+            showLeftFoldIcon: false,
+            showRightFoldIcon: false,
+            topHeight: 0
+          }
+        },
+        bodySection1: {
+          version: 0,
+          displayName: 'bodySection1',
+          parentNode: 'page1',
+          showName: 'bodySection',
+          childrenNode: [
+            'bodySection1-bodySectionContainer1'
+          ],
+          type: 'SECTION_NODE',
+          containerType: 'EDITOR_LAYOUT_SQUARE',
+          h: 0,
+          w: 0,
+          minH: 0,
+          minW: 0,
+          x: -1,
+          y: -1,
+          z: 0,
+          props: {
+            currentViewIndex: 0,
+            defaultViewKey: 'sub-page1',
+            sectionViewConfigs: [
+              {
+                id: 'f5ac5fd4-7742-4a5f-9fcc-4f23a1aa4cf1',
+                key: 'sub-page1',
+                path: 'sub-page1',
+                viewDisplayName: 'bodySection1-bodySectionContainer1'
+              }
+            ],
+            style: {
+              padding: {
+                mode: 'all',
+                size: '24'
+              }
+            },
+            viewSortedKey: [
+              'bodySection1-bodySectionContainer1'
+            ]
+          }
+        },
+        'bodySection1-bodySectionContainer1': {
+          version: 0,
+          displayName: 'bodySection1-bodySectionContainer1',
+          parentNode: 'bodySection1',
+          showName: 'bodySection1-bodySectionContainer1',
+          childrenNode: [
+            'button1',
+            'input1',
+            'button2'
+          ],
+          type: 'CONTAINER_NODE',
+          containerType: 'EDITOR_DOT_PANEL',
+          h: 0,
+          w: 0,
+          minH: 0,
+          minW: 0,
+          x: -1,
+          y: -1,
+          z: 0,
+          props: {}
+        },
+        button1: {
+          version: 0,
+          displayName: 'button1',
+          parentNode: 'bodySection1-bodySectionContainer1',
+          showName: 'button',
+          childrenNode: [],
+          type: 'BUTTON_WIDGET',
+          containerType: 'EDITOR_SCALE_SQUARE',
+          h: 5,
+          w: 6,
+          minH: 3,
+          minW: 1,
+          x: 9,
+          y: 12,
+          z: 0,
+          props: {
+            $dynamicAttrPaths: [
+              'text'
+            ],
+            colorScheme: 'blue',
+            events: [],
+            hidden: false,
+            text: '{{builderInfo.version}}',
+            variant: 'fill'
+          }
+        },
+        input1: {
+          version: 0,
+          displayName: 'input1',
+          parentNode: 'bodySection1-bodySectionContainer1',
+          showName: 'input',
+          childrenNode: [],
+          type: 'INPUT_WIDGET',
+          containerType: 'EDITOR_SCALE_SQUARE',
+          h: 5,
+          w: 6,
+          minH: 3,
+          minW: 1,
+          x: 17,
+          y: 31,
+          z: 0,
+          props: {
+            $dynamicAttrPaths: [
+              'labelWidth',
+              'formDataKey',
+              'showVisibleButton'
+            ],
+            colorScheme: 'blue',
+            defaultValue: '',
+            formDataKey: '{{input1.displayName}}',
+            hidden: false,
+            label: 'Label',
+            labelAlign: 'left',
+            labelPosition: 'left',
+            labelWidth: '{{33}}',
+            placeholder: 'input sth',
+            showVisibleButton: '{{true}}',
+            type: 'input'
+          }
+        },
+        button2: {
+          version: 0,
+          displayName: 'button2',
+          parentNode: 'bodySection1-bodySectionContainer1',
+          showName: 'button',
+          childrenNode: [],
+          type: 'BUTTON_WIDGET',
+          containerType: 'EDITOR_SCALE_SQUARE',
+          h: 5,
+          w: 6,
+          minH: 3,
+          minW: 1,
+          x: 19,
+          y: 11,
+          z: 0,
+          props: {
+            $dynamicAttrPaths: [
+              'text'
+            ],
+            colorScheme: 'blue',
+            hidden: false,
+            text: '{{builderInfo.language}}',
+            variant: 'fill'
+          }
+        },
+        modalSection1: {
+          version: 0,
+          displayName: 'modalSection1',
+          parentNode: 'page1',
+          showName: 'modalSection',
+          childrenNode: [],
+          type: 'MODAL_SECTION_NODE',
+          containerType: 'EDITOR_LAYOUT_SQUARE',
+          h: 0,
+          w: 0,
+          minH: 0,
+          minW: 0,
+          x: -1,
+          y: -1,
+          z: 0,
+          props: {}
+        }
+      },
+      action: [
+        {
+          actionID: 'ILAfx4p1C7dT',
+          uid: '2d4fabdd-fe65-44a5-ab5c-f078dd4ec64e',
+          teamID: 'ILAfx4p1C7d0',
+          resourceID: 'ILAfx4p1C7d0',
+          displayName: 'transformer1',
+          actionType: 'transformer',
+          isVirtualResource: true,
+          content: {
+            transformerString: '{{(function (){// Tip: assign your external references to variables instead of chaining off the curly brackets.\nreturn 5})()}}'
+          },
+          transformer: {
+            enable: false,
+            rawData: ''
+          },
+          triggerMode: 'manually',
+          config: {
+            'public': false,
+            isVirtualResource: false,
+            advancedConfig: {
+              runtime: 'none',
+              pages: [],
+              delayWhenLoaded: '',
+              displayLoadingPage: false,
+              isPeriodically: false,
+              periodInterval: '',
+              mock: ''
+            },
+            mockConfig: {
+              enabled: false,
+              mockData: '',
+              enableForReleasedApp: false
+            },
+            tutorialLink: ''
+          },
+          createdAt: '2025-09-09T02:53:04.833401Z',
+          createdBy: 'ILAfx4p1C7dZ',
+          updatedAt: '2025-09-09T02:53:04.833401Z',
+          updatedBy: 'ILAfx4p1C7dZ'
+        }
+      ],
+      appInfo: {
+        appId: 'ILAfx4p1C7dU',
+        uid: '0f78b772-c36d-4c3f-b516-4ebe580abb37',
+        teamID: 'ILAfx4p1C7d0',
+        appName: 'app-dynamic-binding',
+        releaseVersion: 0,
+        mainlineVersion: 0,
+        deployed: false,
+        config: {
+          'public': false,
+          waterMark: true,
+          description: '',
+          publishedToMarketplace: false,
+          publishWithAIAgent: false,
+          cover: '',
+          appType: 'pc',
+          components: [
+            'INPUT_WIDGET',
+            'BUTTON_WIDGET'
+          ],
+          actions: [
+            {
+              actionID: 'ILAfx4p1C7dT',
+              uid: '2d4fabdd-fe65-44a5-ab5c-f078dd4ec64e',
+              teamID: 'ILAfx4p1C7d0',
+              version: 0,
+              resourceID: 'ILAfx4p1C7d0',
+              name: 'transformer1',
+              icon: '',
+              type: 'transformer',
+              isVirtualResource: true,
+              createdAt: '2025-09-09T02:53:04.833401Z',
+              createdBy: 'ILAfx4p1C7dZ',
+              updatedAt: '2025-09-09T02:53:04.833401Z',
+              updatedBy: 'ILAfx4p1C7dZ'
+            }
+          ]
+        },
+        updatedBy: 'ILAfx4p1C7dZ',
+        updatedAt: '2025-09-27T17:11:14.412776Z',
+        appActivity: {
+          modifier: 'root',
+          modifiedAt: '2025-09-27T17:11:14.412776Z'
+        },
+        editedBy: [
+          {
+            userID: 'ILAfx4p1C7dZ',
+            nickname: 'root',
+            email: 'root',
+            avatar: '',
+            editedAt: '2025-09-27T17:11:14.412777004Z'
+          }
+        ]
+      },
+      collaborators: {
+        inRoomUsers: [
+          {
+            id: 'ILAfx4p1C7dZ',
+            nickname: 'root',
+            avatar: ''
+          }
+        ],
         components: {
-          ...context.components,
-          [event.displayName]: {
-            ...context.components[event.displayName],
-            value: event.value
+          button1: [
+            {
+              id: 'ILAfx4p1C7dZ',
+              nickname: 'root',
+              avatar: ''
+            }
+          ]
+        }
+      },
+      execution: {
+        dependencies: {
+          'transformer1.value': [],
+          'button1.text': [
+            'builderInfo.version'
+          ],
+          'input1.labelWidth': [],
+          'input1.formDataKey': [
+            'input1.displayName'
+          ],
+          'input1.showVisibleButton': [],
+          'button2.text': [
+            'builderInfo.language'
+          ],
+          'currentPageInfo.pagePath': [
+            'root.pageSortedKey',
+            'root.currentPageIndex'
+          ],
+          'currentPageInfo.subPagePath': [
+            'root.currentSubPagePath'
+          ]
+        },
+        result: {
+          transformer1: {
+            $actionID: 'ILAfx4p1C7dT',
+            $resourceID: 'ILAfx4p1C7d0',
+            displayName: 'transformer1',
+            actionType: 'transformer',
+            $type: 'ACTION',
+            $dynamicAttrPaths: [
+              'value'
+            ],
+            value: 5,
+            $context: {
+              '(function (){// Tip: assign your external references to variables instead of chaining off the curly brackets.\nreturn 5})()': 5
+            }
+          },
+          root: {
+            $dynamicAttrPaths: [],
+            currentPageIndex: 0,
+            globalData: {
+              state1: ''
+            },
+            homepageDisplayName: 'page1',
+            pageSortedKey: [
+              'page1'
+            ],
+            displayName: 'root',
+            $parentNode: '',
+            $type: 'WIDGET',
+            $widgetType: 'DOT_PANEL',
+            $childrenNode: [
+              'page1'
+            ]
+          },
+          page1: {
+            bodyColumns: 32,
+            bottomHeight: 0,
+            canvasSize: 'auto',
+            canvasWidth: 100,
+            footerColumns: 32,
+            hasFooter: false,
+            hasHeader: false,
+            hasLeft: false,
+            hasRight: false,
+            headerColumns: 32,
+            isFooterFixed: true,
+            isHeaderFixed: true,
+            isLeftFixed: true,
+            isRightFixed: true,
+            layout: 'default',
+            leftColumns: 8,
+            leftPosition: 'NONE',
+            leftWidth: 0,
+            rightColumns: 8,
+            rightPosition: 'NONE',
+            rightWidth: 0,
+            showLeftFoldIcon: false,
+            showRightFoldIcon: false,
+            topHeight: 0,
+            displayName: 'page1',
+            $parentNode: 'root',
+            $type: 'WIDGET',
+            $widgetType: 'PAGE_NODE',
+            $childrenNode: [
+              'bodySection1',
+              'modalSection1'
+            ],
+            $parentPageName: 'page1'
+          },
+          bodySection1: {
+            currentViewIndex: 0,
+            defaultViewKey: 'sub-page1',
+            sectionViewConfigs: [
+              {
+                id: 'f5ac5fd4-7742-4a5f-9fcc-4f23a1aa4cf1',
+                key: 'sub-page1',
+                path: 'sub-page1',
+                viewDisplayName: 'bodySection1-bodySectionContainer1'
+              }
+            ],
+            style: {
+              padding: {
+                mode: 'all',
+                size: '24'
+              }
+            },
+            viewSortedKey: [
+              'bodySection1-bodySectionContainer1'
+            ],
+            displayName: 'bodySection1',
+            $parentNode: 'page1',
+            $type: 'WIDGET',
+            $widgetType: 'SECTION_NODE',
+            $childrenNode: [
+              'bodySection1-bodySectionContainer1'
+            ],
+            $parentPageName: 'page1'
+          },
+          button1: {
+            $dynamicAttrPaths: [
+              'text'
+            ],
+            colorScheme: 'blue',
+            events: [],
+            hidden: false,
+            text: '4.8.3',
+            variant: 'fill',
+            displayName: 'button1',
+            $parentNode: 'bodySection1-bodySectionContainer1',
+            $type: 'WIDGET',
+            $widgetType: 'BUTTON_WIDGET',
+            $childrenNode: [],
+            $parentPageName: 'page1',
+            $validationPaths: {
+              text: 'String',
+              loading: 'Boolean',
+              disabled: 'Boolean',
+              tooltipText: 'String',
+              hidden: 'Boolean'
+            }
+          },
+          input1: {
+            $dynamicAttrPaths: [
+              'labelWidth',
+              'formDataKey',
+              'showVisibleButton'
+            ],
+            colorScheme: 'blue',
+            defaultValue: '',
+            formDataKey: 'input1',
+            hidden: false,
+            label: 'Label',
+            labelAlign: 'left',
+            labelPosition: 'left',
+            labelWidth: 33,
+            placeholder: 'input sth',
+            showVisibleButton: true,
+            type: 'input',
+            value: '',
+            displayName: 'input1',
+            $parentNode: 'bodySection1-bodySectionContainer1',
+            $type: 'WIDGET',
+            $widgetType: 'INPUT_WIDGET',
+            $childrenNode: [],
+            $parentPageName: 'page1',
+            $validationPaths: {
+              type: 'String',
+              defaultValue: 'String',
+              placeholder: 'String',
+              label: 'String',
+              labelCaption: 'String',
+              labelWidth: 'Number',
+              disabled: 'Boolean',
+              readOnly: 'Boolean',
+              showVisibleButton: 'Boolean',
+              allowClear: 'Boolean',
+              showCharacterCount: 'Boolean',
+              prefixText: 'String',
+              suffixText: 'String',
+              tooltipText: 'String',
+              required: 'Boolean',
+              regex: 'String',
+              maxLength: 'Number',
+              minLength: 'Number',
+              customRule: 'String',
+              hideValidationMessage: 'Boolean',
+              formDataKey: 'String',
+              hidden: 'Boolean'
+            }
+          },
+          button2: {
+            $dynamicAttrPaths: [
+              'text'
+            ],
+            colorScheme: 'blue',
+            hidden: false,
+            text: 'English',
+            variant: 'fill',
+            displayName: 'button2',
+            $parentNode: 'bodySection1-bodySectionContainer1',
+            $type: 'WIDGET',
+            $widgetType: 'BUTTON_WIDGET',
+            $childrenNode: [],
+            $parentPageName: 'page1',
+            $validationPaths: {
+              text: 'String',
+              loading: 'Boolean',
+              disabled: 'Boolean',
+              tooltipText: 'String',
+              hidden: 'Boolean'
+            }
+          },
+          modalSection1: {
+            displayName: 'modalSection1',
+            $parentNode: 'page1',
+            $type: 'WIDGET',
+            $widgetType: 'MODAL_SECTION_NODE',
+            $childrenNode: [],
+            $parentPageName: 'page1'
+          },
+          builderInfo: {
+            version: '4.8.3',
+            language: 'English'
+          },
+          currentUserInfo: {
+            userID: 'ILAfx4p1C7dZ',
+            nickname: 'root',
+            email: 'root',
+            language: 'en-US',
+            createdAt: '2025-08-20T00:20:06.088056Z',
+            updatedAt: '2025-08-20T00:29:59.556997Z'
+          },
+          globalData: {
+            state1: '',
+            $dynamicAttrPaths: []
+          },
+          urlParams: {
+            query: {},
+            url: 'http://localhost:3000/0/app/ILAfx4p1C7dU',
+            appURL: 'http://localhost:3000/0/app/ILAfx4p1C7dU'
+          },
+          localStorage: {},
+          currentPageInfo: {
+            pagePath: 'page1',
+            $dynamicAttrPaths: [
+              'pagePath',
+              'subPagePath'
+            ]
+          },
+          pageInfos: [
+            {
+              pagePath: '/page1',
+              subPagePath: '/page1/sub-page1',
+              pageName: 'page1',
+              subPageName: 'sub-page1',
+              isHomePage: true,
+              subPageGroup: ''
+            }
+          ]
+        },
+        error: {},
+        independencies: {
+          'root.currentSubPagePath': [
+            'currentPageInfo.subPagePath'
+          ],
+          'root.pageSortedKey': [
+            'currentPageInfo.pagePath'
+          ],
+          'root.currentPageIndex': [
+            'currentPageInfo.pagePath'
+          ],
+          'builderInfo.language': [
+            'button2.text'
+          ],
+          'input1.displayName': [
+            'input1.formDataKey'
+          ],
+          'builderInfo.version': [
+            'button1.text'
+          ]
+        }
+      },
+      cursor: {},
+      dragShadow: {},
+      layoutInfo: {
+        widgetsLayoutInfo: {
+          root: {
+            displayName: 'root',
+            parentNode: '',
+            widgetType: 'DOT_PANEL',
+            childrenNode: [
+              'page1'
+            ],
+            containerType: 'EDITOR_DOT_PANEL',
+            layoutInfo: {
+              x: -1,
+              y: -1,
+              z: 0,
+              w: 0,
+              h: 0,
+              minW: 1,
+              minH: 0
+            }
+          },
+          page1: {
+            displayName: 'page1',
+            parentNode: 'root',
+            widgetType: 'PAGE_NODE',
+            childrenNode: [
+              'bodySection1',
+              'modalSection1'
+            ],
+            containerType: 'EDITOR_PAGE_SQUARE',
+            layoutInfo: {
+              x: -1,
+              y: -1,
+              z: 0,
+              w: 0,
+              h: 0,
+              minW: 1,
+              minH: 0
+            }
+          },
+          bodySection1: {
+            displayName: 'bodySection1',
+            parentNode: 'page1',
+            widgetType: 'SECTION_NODE',
+            childrenNode: [
+              'bodySection1-bodySectionContainer1'
+            ],
+            containerType: 'EDITOR_LAYOUT_SQUARE',
+            layoutInfo: {
+              x: -1,
+              y: -1,
+              z: 0,
+              w: 0,
+              h: 0,
+              minW: 1,
+              minH: 0
+            }
+          },
+          'bodySection1-bodySectionContainer1': {
+            displayName: 'bodySection1-bodySectionContainer1',
+            parentNode: 'bodySection1',
+            widgetType: 'CONTAINER_NODE',
+            childrenNode: [
+              'button1',
+              'input1',
+              'button2'
+            ],
+            containerType: 'EDITOR_DOT_PANEL',
+            layoutInfo: {
+              x: -1,
+              y: -1,
+              z: 0,
+              w: 0,
+              h: 0,
+              minW: 1,
+              minH: 0
+            }
+          },
+          button1: {
+            displayName: 'button1',
+            parentNode: 'bodySection1-bodySectionContainer1',
+            widgetType: 'BUTTON_WIDGET',
+            childrenNode: [],
+            containerType: 'EDITOR_SCALE_SQUARE',
+            layoutInfo: {
+              x: 9,
+              y: 12,
+              z: 0,
+              w: 6,
+              h: 5,
+              minW: 1,
+              minH: 3
+            }
+          },
+          input1: {
+            displayName: 'input1',
+            parentNode: 'bodySection1-bodySectionContainer1',
+            widgetType: 'INPUT_WIDGET',
+            childrenNode: [],
+            containerType: 'EDITOR_SCALE_SQUARE',
+            layoutInfo: {
+              x: 17,
+              y: 31,
+              z: 0,
+              w: 6,
+              h: 5,
+              minW: 1,
+              minH: 3
+            }
+          },
+          button2: {
+            displayName: 'button2',
+            parentNode: 'bodySection1-bodySectionContainer1',
+            widgetType: 'BUTTON_WIDGET',
+            childrenNode: [],
+            containerType: 'EDITOR_SCALE_SQUARE',
+            layoutInfo: {
+              x: 19,
+              y: 11,
+              z: 0,
+              w: 6,
+              h: 5,
+              minW: 1,
+              minH: 3
+            }
+          },
+          modalSection1: {
+            displayName: 'modalSection1',
+            parentNode: 'page1',
+            widgetType: 'MODAL_SECTION_NODE',
+            childrenNode: [],
+            containerType: 'EDITOR_LAYOUT_SQUARE',
+            layoutInfo: {
+              x: -1,
+              y: -1,
+              z: 0,
+              w: 0,
+              h: 0,
+              minW: 1,
+              minH: 0
+            }
           }
         }
       }
-
-
-    }),
-
-    setVariables: (context, event: { value: any }) => ({
-      ...context,
-      variables: event.value,
-    }),
-    setVariablesValid: (context, event: boolean ) => (
+    },
+    currentAppHistory: {
+      snapshotList: [],
+      totalPages: 0,
+      currentPage: 0,
+      hasMore: false
+    },
+    builderInfo: {
+      version: '4.8.3',
+      language: 'English'
+    },
+    resource: [
       {
-        ...context,
-        isVariablesValid: event,
+        resourceID: 'ILAfx4p1C7dZ',
+        uid: '1363c8fc-955a-4235-9d8a-558f872b83b7',
+        teamID: 'ILAfx4p1C7d0',
+        resourceName: 'test rest api',
+        resourceType: 'restapi',
+        content: {
+          authContent: {
+            password: '123',
+            username: 'user1'
+          },
+          authentication: 'basic',
+          baseUrl: 'http://localhost:3000',
+          certs: {
+            caCert: '',
+            clientCert: '',
+            clientKey: '',
+            mode: 'verify-full'
+          },
+          password: '123',
+          username: 'user1'
+        },
+        createdAt: '2025-09-09T09:49:32.421005Z',
+        createdBy: 'ILAfx4p1C7dZ',
+        updatedAt: '2025-09-09T09:49:32.421005Z',
+        updatedBy: 'ILAfx4p1C7dZ'
       }
-    )
+    ],
+    guide: {
+      currentStep: 0,
+      isOpen: false
+    },
+    currentUser: {
+      userID: 'ILAfx4p1C7dZ',
+      uid: '158504d6-a47d-43a0-879e-79a57981cecc',
+      nickname: 'root',
+      email: 'root',
+      avatar: '',
+      language: 'en-US',
+      isTutorialViewed: true,
+      createdAt: '2025-08-20T00:20:06.088056Z',
+      updatedAt: '2025-08-20T00:29:59.556997Z'
+    },
+    team: {
+      currentId: 'ILAfx4p1C7d0',
+      items: [
+        {
+          id: 'ILAfx4p1C7d0',
+          uid: '83cfb484-0a3f-4bfd-aab3-70432d021cab',
+          name: 'my-team',
+          identifier: '0',
+          icon: 'https://cdn.illacloud.com/email-template/people.png',
+          myRole: 1,
+          teamMemberID: 'ILAfx4p1C7dZ',
+          teamMemberPermission: {
+            config: 0
+          },
+          permission: {
+            allowEditorInvite: true,
+            allowViewerInvite: true,
+            allowEditorManageTeamMember: true,
+            allowViewerManageTeamMember: true,
+            inviteLinkEnabled: true,
+            blockRegister: false
+          }
+        }
+      ]
+    },
+    aiAgent: {
+      list: []
+    }
   }
-})
+}
 
+const mockMap: any = {
+  empty: () => defaultMock(),
+  default: () => appDynamicStringTriggersMock(),
+  trigger: () => appDynamicStringTriggersMock(),
+  bind: () => appDynamicStringBindingMock()
+}
+
+export const getFromMock = (mockId: string = 'default') => {
+
+  return mockMap[mockId]()
+
+}

@@ -1,5 +1,12 @@
 export const IMMEDIATE_PARENT_REGEX = /^(.*)(\..*|\[.*\])$/
 
+export enum ExecutionErrorType {
+  EVALUATED = "EVALUATED",
+  LINT = "LINT",
+  VALIDATION = "VALIDATION",
+}
+
+
 export const CURRENT_USER_INFO_ACCESS_LIST_KEY = [
   "userID",
   "nickname",

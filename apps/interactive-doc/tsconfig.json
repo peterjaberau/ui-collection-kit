@@ -27,6 +27,13 @@
       "#codemirror-illa": ["./src/app/demos/codemirror-illa/"],
 
 
+      "#state-actors/*": ["./src/app/common/state-actors/*"],
+      "#state-actors": ["./src/app/common/state-actors/"],
+
+
+      //      state-actors
+
+
       "#app/*": ["./src/app/*"],
       "#app": ["./src/app"],
 

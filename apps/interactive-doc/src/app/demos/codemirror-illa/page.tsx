@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import BaseInputEditor from "./BaseInputEditor"
+import { getFromMock } from "#app/common/state-actors/mock"
 
 import { VALIDATION_TYPES } from "./utils"
 import { useRootStore } from "./store"
@@ -16,6 +17,9 @@ export default function Page() {
   const selectedComponents = rootContext.config.selectedComponents
   const selectedWidget = rootContext.currentApp.components[scope.component]
   const selectedWidgetResult = rootContext.currentApp.execution.result[scope.component]
+
+
+  console.log('---getFromMock----', getFromMock('default'))
 
   const [value, setValue] = useState(selectedWidget.props[scope.attribute])
 
