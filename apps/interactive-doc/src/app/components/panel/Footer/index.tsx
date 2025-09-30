@@ -10,6 +10,7 @@ const ModalFooter = (props: ModalFooterProps, ref: ForwardedRef<HTMLDivElement>)
 
   return (
     <chakra.div
+      id='movable-footer'
       css={{
         width: "100%",
         display: "flex",
@@ -17,7 +18,8 @@ const ModalFooter = (props: ModalFooterProps, ref: ForwardedRef<HTMLDivElement>)
         position: "relative",
         cursor: "auto",
         padding: "0 16px",
-        height: hasFooterChildren ? "auto" : "16px",
+        // height: hasFooterChildren ? "auto" : "16px",
+        // backgroundColor: hasFooterChildren ? "bg.subtle" : "bg.panel",
         flex: "none",
       }}
       onMouseDown={stopDragAndDrop}

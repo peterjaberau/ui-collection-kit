@@ -18,7 +18,9 @@ export const ModalPanel: FC<ModalProps> = (props) => {
   const [ref, rect] = useMeasure()
 
   return (
-    <Stack css={{
+    <Stack
+      gap={0}
+      css={{
       width: w != undefined ? `${w}px` : "100%",
       height: h != undefined ? `${h}px` : "100%",
       backgroundColor: "white",

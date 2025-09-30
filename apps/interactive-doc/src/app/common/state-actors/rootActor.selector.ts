@@ -14,22 +14,34 @@ export const rootActorSelector = () => {
   const rootState = rootRef?.getSnapshot()
   const rootContext = rootState?.context
 
+  const { aiAgentContext } = aiAgentSelector()
+  const { builderInfoContext } = builderInfoSelector()
+  const { configContext } = configSelector()
+
+  const { currentApp } = currentAppSelector()
+  const { currentAppHistoryContext } = currentAppHistorySelector()
+  const { guideContext } = guideSelector()
+  const { resourceContext } = resourceSelector()
+  const { currentUserContext } = currentUserSelector()
+  const { teamContext } = teamSelector()
+
+
+
   return {
     rootRef,
     rootState,
     rootContext,
 
     root: {
-      aiAgent: aiAgentSelector(),
-      builderInfo: builderInfoSelector(),
-      config: configSelector(),
-
-      currentApp: currentAppSelector(),
-      currentAppHistory: currentAppHistorySelector(),
-      guide: guideSelector(),
-      resource: resourceSelector(),
-      currentUser: currentUserSelector(),
-      team: teamSelector(),
+      aiAgent: aiAgentContext,
+      builderInfo: builderInfoContext,
+      config: configContext,
+      currentApp: currentApp,
+      currentAppHistory: currentAppHistoryContext,
+      guide: guideContext,
+      resource: rootContext,
+      currentUser: currentUserContext,
+      team: teamContext,
     },
   }
 }
