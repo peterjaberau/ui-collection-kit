@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../../utils"
+import { useActors } from "../../hooks/useActors"
 
-export const teamSelector = (actorRef: any) => {
-
-  const getTeamActor = getSpawnedActor(SYSTEM_ACTOR_ID.TEAM, actorRef)
-  const getTeamState = getTeamActor?.getSnapshot()
-  const getTeamContext = getTeamState?.context
+export const teamSelector = () => {
+  const { teamActorRef: teamRef } = useActors()
+  const teamState = teamRef?.getSnapshot()
+  const teamContext = teamState?.context
 
   return {
-    getTeamActor,
-    getTeamState,
-    getTeamContext,
+    teamRef,
+    teamState,
+    teamContext,
   }
-
 }

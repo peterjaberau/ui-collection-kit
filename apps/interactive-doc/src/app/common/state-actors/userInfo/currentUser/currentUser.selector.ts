@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../../utils"
+import { useActors } from "../../hooks/useActors"
 
-export const currentUserSelector = (actorRef: any) => {
-
-  const getCurrentUserActor = getSpawnedActor(SYSTEM_ACTOR_ID.CURRENT_USER, actorRef)
-  const getCurrentUserState = getCurrentUserActor?.getSnapshot()
-  const getCurrentUserContext = getCurrentUserState?.context
+export const currentUserSelector = () => {
+  const { currentUserActorRef: currentUserRef } = useActors()
+  const currentUserState = currentUserRef?.getSnapshot()
+  const currentUserContext = currentUserState?.context
 
   return {
-    getCurrentUserActor,
-    getCurrentUserState,
-    getCurrentUserContext,
+    currentUserRef,
+    currentUserState,
+    currentUserContext,
   }
-
 }

@@ -1,4 +1,3 @@
-
 export const currentUserInitialState = {
   userID: "",
   uid: "",

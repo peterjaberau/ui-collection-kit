@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../../utils"
+import { useActors } from "../../hooks/useActors"
 
-export const collaboratorsSelector = (actorRef: any) => {
-
-  const getCollaboratorsActor = getSpawnedActor(SYSTEM_ACTOR_ID.CURRENT_APP_COLLABORATORS, actorRef)
-  const getCollaboratorsState = getCollaboratorsActor?.getSnapshot()
-  const getCollaboratorsContext = getCollaboratorsState?.context
+export const collaboratorsSelector = () => {
+  const { currentAppCollaboratorsActorRef: collaboratorsRef } = useActors()
+  const collaboratorsState = collaboratorsRef?.getSnapshot()
+  const collaboratorsContext = collaboratorsState?.context
 
   return {
-    getCollaboratorsActor,
-    getCollaboratorsState,
-    getCollaboratorsContext,
+    collaboratorsRef,
+    collaboratorsState,
+    collaboratorsContext,
   }
-
 }

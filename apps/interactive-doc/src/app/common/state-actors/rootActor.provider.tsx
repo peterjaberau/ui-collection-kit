@@ -15,19 +15,19 @@ import { teamMachine } from "./userInfo/team/team.machine"
 import { currentAppMachine } from "./currentApp/currentApp.machine"
 
 export const rootActorMachine = createMachine({
-  entry:  assign({
+  entry: assign({
     aiAgent: ({ spawn }) => spawn(aiAgentMachine, { systemId: SYSTEM_ACTOR_ID.AI_AGENT }),
     builderInfo: ({ spawn }) => spawn(builderInfoMachine, { systemId: SYSTEM_ACTOR_ID.BUILDER_INFO }),
     config: ({ spawn }) => spawn(configMachine, { systemId: SYSTEM_ACTOR_ID.CONFIG }),
     currentApp: ({ spawn }) => spawn(currentAppMachine, { systemId: SYSTEM_ACTOR_ID.CURRENT_APP }),
-    currentAppHistory: ({ spawn }) => spawn(currentAppHistoryMachine, { systemId: SYSTEM_ACTOR_ID.CURRENT_APP_HISTORY }),
+    currentAppHistory: ({ spawn }) =>
+      spawn(currentAppHistoryMachine, { systemId: SYSTEM_ACTOR_ID.CURRENT_APP_HISTORY }),
     currentUser: ({ spawn }) => spawn(currentUserMachine, { systemId: SYSTEM_ACTOR_ID.CURRENT_USER }),
     guide: ({ spawn }) => spawn(guideMachine, { systemId: SYSTEM_ACTOR_ID.GUIDE }),
     resource: ({ spawn }) => spawn(resourceMachine, { systemId: SYSTEM_ACTOR_ID.RESOURCE }),
     team: ({ spawn }) => spawn(teamMachine, { systemId: SYSTEM_ACTOR_ID.TEAM }),
   }),
 })
-
 
 export const RootActorContext = createActorContext(rootActorMachine)
 

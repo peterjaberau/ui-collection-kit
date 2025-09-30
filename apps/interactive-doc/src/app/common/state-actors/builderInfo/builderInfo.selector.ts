@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#illa/actors/constants"
-import { getSpawnedActor } from "../utils"
+import { useActors } from "../hooks/useActors"
 
-export const builderInfoSelector = (actorRef: any) => {
-
-  const getBuilderInfoActor = getSpawnedActor(SYSTEM_ACTOR_ID.BUILDER_INFO, actorRef)
-  const getBuilderInfoState = getBuilderInfoActor?.getSnapshot()
-  const getBuilderInfoContext = getBuilderInfoState?.context
+export const builderInfoSelector = () => {
+  const { builderInfoActorRef: builderInfoRef } = useActors()
+  const builderInfoState = builderInfoRef?.getSnapshot()
+  const builderInfoContext = builderInfoState?.context
 
   return {
-    getBuilderInfoActor,
-    getBuilderInfoState,
-    getBuilderInfoContext,
+    builderInfoRef,
+    builderInfoState,
+    builderInfoContext,
   }
-
 }

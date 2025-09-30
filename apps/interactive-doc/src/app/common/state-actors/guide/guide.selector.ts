@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../utils"
+import { useActors } from "../hooks/useActors"
 
-export const guideSelector = (actorRef: any) => {
-
-  const getGuideActor = getSpawnedActor(SYSTEM_ACTOR_ID.GUIDE, actorRef)
-  const getGuideState = getGuideActor?.getSnapshot()
-  const getGuideContext = getGuideState?.context
+export const guideSelector = () => {
+  const { guideActorRef: guideRef } = useActors()
+  const guideState = guideRef?.getSnapshot()
+  const guideContext = guideState?.context
 
   return {
-    getGuideActor,
-    getGuideState,
-    getGuideContext,
+    guideRef,
+    guideState,
+    guideContext,
   }
-
 }

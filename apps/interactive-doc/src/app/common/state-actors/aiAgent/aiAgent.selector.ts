@@ -1,17 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../utils"
+import { useActors } from "../hooks/useActors"
 
-export const aiAgentSelector = (actorRef: any) => {
-
-  const getAiAgentActor = getSpawnedActor(SYSTEM_ACTOR_ID.AI_AGENT, actorRef)
-
-  const getAiAgentState = getAiAgentActor?.getSnapshot()
-  const getAiAgentContext = getAiAgentState?.context
+export const aiAgentSelector = () => {
+  const { aiAgentActorRef: aiAgentRef } = useActors()
+  const aiAgentState = aiAgentRef?.getSnapshot()
+  const aiAgentContext = aiAgentState?.context
 
   return {
-    getAiAgentActor,
-    getAiAgentState,
-    getAiAgentContext,
+    aiAgentRef,
+    aiAgentState,
+    aiAgentContext,
   }
-
 }

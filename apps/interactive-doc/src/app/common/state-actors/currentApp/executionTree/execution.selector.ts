@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../../utils"
+import { useActors } from "../../hooks/useActors"
 
-export const executionSelector = (actorRef: any) => {
-
-  const getExecutionActor = getSpawnedActor(SYSTEM_ACTOR_ID.CURRENT_APP_EXECUTION, actorRef)
-  const getExecutionState = getExecutionActor?.getSnapshot()
-  const getExecutionContext = getExecutionState?.context
+export const executionSelector = () => {
+  const { currentAppExecutionActorRef: executionRef } = useActors()
+  const executionState = executionRef?.getSnapshot()
+  const executionContext = executionState?.context
 
   return {
-    getExecutionActor,
-    getExecutionState,
-    getExecutionContext,
+    executionRef,
+    executionState,
+    executionContext,
   }
-
 }

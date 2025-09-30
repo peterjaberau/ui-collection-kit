@@ -1,24 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../../utils"
+import { useActors } from "../../hooks/useActors"
 
-export const componentsSelector = (actorRef: any) => {
-
-  const getComponentsActor = getSpawnedActor(SYSTEM_ACTOR_ID.CURRENT_APP_COMPONENTS, actorRef)
-  const getComponentsState = getComponentsActor?.getSnapshot()
-  const getComponentsContext = getComponentsState?.context
+export const componentsSelector = () => {
+  const { currentAppComponentsActorRef: componentsRef } = useActors()
+  const componentsState = componentsRef?.getSnapshot()
+  const componentsContext = componentsState?.context
 
   return {
-    getComponentsActor,
-    getComponentsState,
-    getComponentsContext,
+    componentsRef,
+    componentsState,
+    componentsContext,
   }
-
 }
-
-//
-// export function searchComponentFromMap(components, findDisplayName: any) {
-//   if (components == null || findDisplayName == null) {
-//     return null
-//   }
-//   return components[findDisplayName]
-// }

@@ -14,7 +14,6 @@ export enum ILLA_WEBSOCKET_CONTEXT {
   AI_AGENT = "AI_AGENT",
 }
 
-
 export const configInitialState = {
   openLeftPanel: true,
   mode: "edit",

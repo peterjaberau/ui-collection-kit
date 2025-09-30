@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../../utils"
+import { useActors } from "../../hooks/useActors"
 
-export const appInfoSelector = (actorRef: any) => {
-
-  const getAppInfoActor = getSpawnedActor(SYSTEM_ACTOR_ID.CURRENT_APP_APP_INFO, actorRef)
-  const getAppInfoState = getAppInfoActor?.getSnapshot()
-  const getAppInfoContext = getAppInfoState?.context
+export const appInfoSelector = () => {
+  const { currentAppAppInfoActorRef: appInfoRef } = useActors()
+  const appInfoState = appInfoRef?.getSnapshot()
+  const appInfoContext = appInfoState?.context
 
   return {
-    getAppInfoActor,
-    getAppInfoState,
-    getAppInfoContext,
+    appInfoRef,
+    appInfoState,
+    appInfoContext,
   }
-
 }

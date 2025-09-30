@@ -30,14 +30,12 @@ export const orchestrationMachine = setup({
       on: {
         EXECUTION_STARTED: {
           // actions: ["handleStartExecution"],
-          target: "executing"
+          target: "executing",
         },
       },
     },
     executing: {
-      entry: enqueueActions(({ context, enqueue, check}) => {
-
-      })
-    }
+      entry: enqueueActions(({ context, enqueue, check }) => {}),
+    },
   },
 })

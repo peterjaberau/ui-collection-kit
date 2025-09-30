@@ -2,7 +2,6 @@ import { assign, setup } from "xstate"
 import { currentAppHistoryInitialState } from "./currentAppHistory.defaults"
 import { getFromMock } from "#state-actors/mock"
 
-
 export const currentAppHistoryMachine = setup({
   types: {} as any,
   actions: {

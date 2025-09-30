@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../../utils"
+import { useActors } from "../../hooks/useActors"
 
-export const dragShadowSelector = (actorRef: any) => {
-
-  const getDragShadowActor = getSpawnedActor(SYSTEM_ACTOR_ID.CURRENT_APP_DRAG_SHADOW, actorRef)
-  const getDragShadowState = getDragShadowActor?.getSnapshot()
-  const getDragShadowContext = getDragShadowState?.context
+export const dragShadowSelector = () => {
+  const { currentAppDragShadowActorRef: dragShadowRef } = useActors()
+  const dragShadowState = dragShadowRef?.getSnapshot()
+  const dragShadowContext = dragShadowState?.context
 
   return {
-    getDragShadowActor,
-    getDragShadowState,
-    getDragShadowContext,
+    dragShadowRef,
+    dragShadowState,
+    dragShadowContext,
   }
-
 }

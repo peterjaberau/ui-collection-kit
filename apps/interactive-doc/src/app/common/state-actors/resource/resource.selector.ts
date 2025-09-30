@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../utils"
+import { useActors } from "../hooks/useActors"
 
-export const resourceSelector = (actorRef: any) => {
-
-  const getResourceActor = getSpawnedActor(SYSTEM_ACTOR_ID.RESOURCE, actorRef)
-  const getResourceState = getResourceActor?.getSnapshot()
-  const getResourceContext = getResourceState?.context
+export const resourceSelector = () => {
+  const { resourceActorRef: resourceRef } = useActors()
+  const resourceState = resourceRef?.getSnapshot()
+  const resourceContext = resourceState?.context
 
   return {
-    getResourceActor,
-    getResourceState,
-    getResourceContext,
+    resourceRef,
+    resourceState,
+    resourceContext,
   }
-
 }

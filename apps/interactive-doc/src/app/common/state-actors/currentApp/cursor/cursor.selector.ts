@@ -1,16 +1,13 @@
-import { SYSTEM_ACTOR_ID } from "#state-actors/constants"
-import { getSpawnedActor } from "../../utils"
+import { useActors } from "../../hooks/useActors"
 
-export const cursorSelector = (actorRef: any) => {
-
-  const getCursorActor = getSpawnedActor(SYSTEM_ACTOR_ID.CURRENT_APP_CURSOR, actorRef)
-  const getCursorState = getCursorActor?.getSnapshot()
-  const getCursorContext = getCursorState?.context
+export const cursorSelector = () => {
+  const { currentAppCursorActorRef: cursorRef } = useActors()
+  const cursorState = cursorRef?.getSnapshot()
+  const cursorContext = cursorState?.context
 
   return {
-    getCursorActor,
-    getCursorState,
-    getCursorContext,
+    cursorRef,
+    cursorState,
+    cursorContext,
   }
-
 }

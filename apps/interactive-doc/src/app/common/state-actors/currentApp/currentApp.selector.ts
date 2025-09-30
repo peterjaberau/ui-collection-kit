@@ -1,3 +1,4 @@
+import { useActors } from "../hooks/useActors"
 import { actionSelector } from "./action/action.selector"
 import { appInfoSelector } from "./appInfo/appInfo.selector"
 import { collaboratorsSelector } from "./collaborators/collaborators.selector"
@@ -8,26 +9,33 @@ import { executionSelector } from "./executionTree/execution.selector"
 import { layoutInfoSelector } from "./layoutInfo/layoutInfo.selector"
 
 //pass the rootActorRef
-export const currentAppSelector = (actorRef: any) => {
+export const currentAppSelector = () => {
+  const { currentAppActorRef: currentAppRef } = useActors()
+  const currentAppState = currentAppRef?.getSnapshot()
+  const currentAppContext = currentAppState?.context
 
-  const { getActionContext } = actionSelector(actorRef)
-  const { getAppInfoContext } = appInfoSelector(actorRef)
-  const { getCollaboratorsContext } = collaboratorsSelector(actorRef)
-  const { getComponentsContext } = componentsSelector(actorRef)
-  const { getCursorContext } = cursorSelector(actorRef)
-  const { getDragShadowContext } = dragShadowSelector(actorRef)
-  const { getExecutionContext } = executionSelector(actorRef)
-  const { getLayoutInfoContext } = layoutInfoSelector(actorRef)
+  const { actionContext } = actionSelector()
+  const { appInfoContext } = appInfoSelector()
+  const { collaboratorsContext } = collaboratorsSelector()
+  const { componentsContext } = componentsSelector()
+  const { cursorContext } = cursorSelector()
+  const { dragShadowContext } = dragShadowSelector()
+  const { executionContext } = executionSelector()
+  const { layoutInfoContext } = layoutInfoSelector()
 
   return {
-    action: getActionContext,
-    appInfo: getAppInfoContext,
-    collaborators: getCollaboratorsContext,
-    components: getComponentsContext,
-    cursor: getCursorContext,
-    dragShadow: getDragShadowContext,
-    execution: getExecutionContext,
-    layoutInfo: getLayoutInfoContext,
+    currentAppRef,
+    currentAppState,
+    currentAppContext,
+    currentApp: {
+      action: actionContext,
+      appInfo: appInfoContext,
+      collaborators: collaboratorsContext,
+      components: componentsContext,
+      cursor: cursorContext,
+      dragShadow: dragShadowContext,
+      execution: executionContext,
+      layoutInfo: executionContext,
+    },
   }
-
 }

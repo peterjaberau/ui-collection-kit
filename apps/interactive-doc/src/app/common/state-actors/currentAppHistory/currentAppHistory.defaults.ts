@@ -3,7 +3,6 @@ export enum SnapshotTriggerMode {
   MANUAL = 2,
 }
 
-
 export const currentAppHistoryInitialState = {
   snapshotList: [],
   totalPages: 0,
