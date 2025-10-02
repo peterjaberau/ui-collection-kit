@@ -26,6 +26,12 @@
       "#codemirror-illa/*": ["./src/app/demos/codemirror-illa/*"],
       "#codemirror-illa": ["./src/app/demos/codemirror-illa/"],
 
+      "#actor-model-patterns/*": ["./src/app/actor-model-patterns/*"],
+      "#actor-model-patterns": ["./src/app/actor-model-patterns/"],
+
+      "#actor-portable-text/*": ["./src/app/actor-model-patterns/portable-text/*"],
+      "#actor-portable-text": ["./src/app/actor-model-patterns/portable-text/"],
+
 
       "#state-actors/*": ["./src/app/common/state-actors/*"],
       "#state-actors": ["./src/app/common/state-actors/"],

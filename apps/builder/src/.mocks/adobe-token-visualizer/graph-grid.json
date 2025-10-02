@@ -1,0 +1,13 @@
+{
+  "lineColorR": 40,
+  "lineColorG": 40,
+  "lineColorB": 40,
+  "backgroundColor": "#000000",
+  "cellFadeOutThresh": 50,
+  "posx": 380,
+  "posy": 130,
+  "scale": 0.7,
+  "size": 7,
+  "maximumRepeatingTileSize": 200,
+  "lineWidth": 1
+}

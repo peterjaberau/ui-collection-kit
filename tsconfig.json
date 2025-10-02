@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-//    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.js",  "**/*.js", "**/*.jsx", ".next/types/**/*.js"],
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "downlevelIteration": true,
@@ -12,7 +11,6 @@
     "noEmit": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "target": "ES2020",
-//    "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitReturns": false,

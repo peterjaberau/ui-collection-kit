@@ -1,6 +1,7 @@
-import { setup, assign, raise, log } from "xstate";
-
-export const workspaceMachine = setup({
+import { setup, assign, raise, log, enqueueActions, createMachine } from "xstate"
+import { logUnhandledEvent, createAppConfig } from './lib'
+import invariant from "tiny-invariant";
+export const workspaceMachine: any = setup({
   types: {
     context: {} as {},
     events: {} as
@@ -26,19 +27,15 @@ export const workspaceMachine = setup({
   guards: {},
 }).createMachine({
   context: ({ input, self, spawn }: any) => {
-    const workspaceConfig: WorkspaceConfig = {
+    const workspaceConfig: any = {
       captureEvent: input.captureEvent,
       captureException: input.captureException,
       getAIProviders: input.getAIProviders,
       previewCacheTimeMs: input.previewCacheTimeMs,
-      previewsDir: AbsolutePathSchema.parse(
-        path.join(input.rootDir, PREVIEWS_FOLDER),
-      ),
-      projectsDir: AbsolutePathSchema.parse(
-        path.join(input.rootDir, PROJECTS_FOLDER),
-      ),
-      registryDir: AbsolutePathSchema.parse(input.registryDir),
-      rootDir: WorkspaceDirSchema.parse(input.rootDir),
+      previewsDir: "",
+      projectsDir: "",
+      registryDir: "",
+      rootDir: "",
       runShellCommand: input.runShellCommand,
       trashItem: input.trashItem,
     };
@@ -54,11 +51,11 @@ export const workspaceMachine = setup({
         input: {
           aiGatewayApp: input.aiGatewayApp,
           parentRef: self,
-          serve,
+          // serve,
           shimClientDir:
             input.shimClientDir === "dev-server"
               ? "dev-server"
-              : AbsolutePathSchema.parse(input.shimClientDir),
+              : "",
           workspaceConfig,
         },
       }),
@@ -68,7 +65,7 @@ export const workspaceMachine = setup({
   initial: "Running",
   on: {
     "*": {
-      actions: ({ context, event, self }) => {
+      actions: ({ context, event, self }: any) => {
         logUnhandledEvent({
           captureException: context.config.captureException,
           event,
@@ -79,18 +76,18 @@ export const workspaceMachine = setup({
     addAppBeingTrashed: {
       actions: [
         assign({
-          appsBeingTrashed: ({ context, event }) => [
+          appsBeingTrashed: ({ context, event }: any) => [
             ...context.appsBeingTrashed,
             event.value.subdomain,
           ],
         }),
-        raise(({ event }) => {
+        raise(({ event }: any) => {
           return {
             type: "stopRuntime",
             value: { includeChildren: true, subdomain: event.value.subdomain },
           };
         }),
-        raise(({ event }) => {
+        raise(({ event }: any) => {
           return {
             type: "stopSessions",
             value: { subdomain: event.value.subdomain },
@@ -100,7 +97,7 @@ export const workspaceMachine = setup({
     },
     addMessage: [
       {
-        actions: ({ context, event }) => {
+        actions: ({ context, event }: any) => {
           const subdomain = event.value.subdomain;
           const sessionRefs = context.sessionRefsBySubdomain.get(subdomain);
           // Send to existing session
@@ -113,17 +110,17 @@ export const workspaceMachine = setup({
             }
           }
         },
-        guard: ({ context, event }) => {
+        guard: ({ context, event }: any) => {
           const subdomain = event.value.subdomain;
           const sessionRefs = context.sessionRefsBySubdomain.get(subdomain);
           const hasActiveSession = sessionRefs?.some(
-            (ref) => ref.getSnapshot().status === "active",
+            (ref: any) => ref.getSnapshot().status === "active",
           );
           return Boolean(hasActiveSession);
         },
       },
       {
-        actions: ({ context, event }) => {
+        actions: ({ context, event }: any) => {
           const subdomain = event.value.subdomain;
           const sessionRefs = context.sessionRefsBySubdomain.get(subdomain);
           // Send to existing session
@@ -139,7 +136,7 @@ export const workspaceMachine = setup({
       },
     ],
     "checkoutVersion.done": {
-      actions: assign(({ context, event }) => {
+      actions: assign(({ context, event }: any) => {
         const subdomain = event.value.appConfig.subdomain;
         const checkoutVersionRefs = new Map(context.checkoutVersionRefs);
         checkoutVersionRefs.delete(subdomain);
@@ -149,7 +146,7 @@ export const workspaceMachine = setup({
       }),
     },
     "createPreview.done": {
-      actions: assign(({ context, event }) => {
+      actions: assign(({ context, event }: any) => {
         const subdomain = event.value.appConfig.subdomain;
         const createPreviewRefs = new Map(context.createPreviewRefs);
         createPreviewRefs.delete(subdomain);
@@ -157,7 +154,7 @@ export const workspaceMachine = setup({
       }),
     },
     createSession: {
-      actions: raise(({ context, event }) => {
+      actions: raise(({ context, event }: any) => {
         const appConfig = createAppConfig({
           subdomain: event.value.subdomain,
           workspaceConfig: context.config,
@@ -175,7 +172,7 @@ export const workspaceMachine = setup({
     },
     "internal.spawnSession": {
       actions: [
-        raise(({ event }) => {
+        raise(({ event }: any) => {
           const { appConfig } = event.value;
           return {
             type: "updateHeartbeat",
@@ -185,11 +182,11 @@ export const workspaceMachine = setup({
             },
           };
         }),
-        assign(({ context, event, self, spawn }) => {
+        assign(({ context, event, self, spawn }: any) => {
           const { appConfig, message, model, sessionId } = event.value;
           const sessionMachineRef = spawn("sessionMachine", {
             input: {
-              agent: AGENTS.code,
+              agent: 'codeAgentTool',
               appConfig,
               model,
               parentRef: self,
@@ -201,7 +198,7 @@ export const workspaceMachine = setup({
             context.sessionRefsBySubdomain.get(appConfig.subdomain) ?? [];
           // Garbage collect done sessions
           const activeSessionActorRefs = existingSessionActorRefs.filter(
-            (ref) => ref.getSnapshot().status !== "done",
+            (ref: any) => ref.getSnapshot().status !== "done",
           );
           const newsessionRefsBySubdomain = new Map(
             context.sessionRefsBySubdomain,
@@ -215,10 +212,10 @@ export const workspaceMachine = setup({
           };
         }),
       ],
-      guard: ({ context, event }) => {
+      guard: ({ context, event }: any) => {
         const { subdomain } = event.value.appConfig;
         return !context.appsBeingTrashed.some(
-          (trashingSubdomain) =>
+          (trashingSubdomain: any) =>
             subdomain === trashingSubdomain ||
             // Includes sandboxes for projects being trashed
             subdomain.endsWith(trashingSubdomain),
@@ -226,16 +223,16 @@ export const workspaceMachine = setup({
       },
     },
     removeAppBeingTrashed: {
-      actions: assign(({ context, event }) => {
+      actions: assign(({ context, event }: any) => {
         return {
           appsBeingTrashed: context.appsBeingTrashed.filter(
-            (subdomain) => subdomain !== event.value.subdomain,
+            (subdomain: any) => subdomain !== event.value.subdomain,
           ),
         };
       }),
     },
     restartAllRuntimes: {
-      actions: ({ context }) => {
+      actions: ({ context }: any) => {
         for (const runtimeRef of context.runtimeRefs.values()) {
           runtimeRef.send({ type: "restart" });
         }
@@ -243,23 +240,23 @@ export const workspaceMachine = setup({
     },
     restartRuntime: [
       {
-        actions: ({ context, event }) => {
+        actions: ({ context, event }: any) => {
           const { subdomain } = event.value;
           const runtimeRef = context.runtimeRefs.get(subdomain);
           runtimeRef?.send({ type: "restart" });
         },
-        guard: ({ context, event }) => {
+        guard: ({ context, event }: any) => {
           const { subdomain } = event.value;
           return context.runtimeRefs.has(subdomain);
         },
       },
       {
-        actions: ({ context, event }) => {
+        actions: ({ context, event }: any) => {
           const { subdomain } = event.value;
           const runtimeRef = context.runtimeRefs.get(subdomain);
           runtimeRef?.send({ type: "restart" });
         },
-        guard: ({ context, event }) => {
+        guard: ({ context, event }: any) => {
           const { subdomain } = event.value;
           return context.runtimeRefs.has(subdomain);
         },
@@ -267,18 +264,18 @@ export const workspaceMachine = setup({
     ],
     "session.done": [
       {
-        actions: raise(({ event }) => {
+        actions: raise(({ event }: any) => {
           return {
             type: "restartRuntime",
             value: { subdomain: event.value.appConfig.subdomain },
           };
         }),
-        guard: ({ event }) => event.value.usedNonReadOnlyTools,
+        guard: ({ event }: any) => event.value.usedNonReadOnlyTools,
       },
       {},
     ],
     spawnRuntime: {
-      actions: assign(({ context, event, spawn }) => {
+      actions: assign(({ context, event, spawn }: any) => {
         return {
           runtimeRefs: new Map(context.runtimeRefs).set(
             event.value.appConfig.subdomain,
@@ -291,10 +288,10 @@ export const workspaceMachine = setup({
           ),
         };
       }),
-      guard: ({ context, event }) => {
+      guard: ({ context, event }: any) => {
         const subdomain = event.value.appConfig.subdomain;
         return !context.appsBeingTrashed.some(
-          (trashingSubdomain) =>
+          (trashingSubdomain: any) =>
             subdomain === trashingSubdomain ||
             // Includes sandboxes for projects being trashed
             subdomain.endsWith(trashingSubdomain),
@@ -309,7 +306,7 @@ export const workspaceMachine = setup({
            event: {
              value: { includeChildren, subdomain },
            },
-         }) => {
+         }: any) => {
           enqueue({
             params: { subdomain },
             type: "stopRuntime",
@@ -328,7 +325,7 @@ export const workspaceMachine = setup({
       ),
     },
     stopSessions: {
-      actions: ({ context, event }) => {
+      actions: ({ context, event }: any) => {
         const sessionActorRefs = context.sessionRefsBySubdomain.get(
           event.value.subdomain,
         );
@@ -340,7 +337,7 @@ export const workspaceMachine = setup({
       },
     },
     updateHeartbeat: {
-      actions: ({ context, event }) => {
+      actions: ({ context, event }: any) => {
         const runtimeRef = context.runtimeRefs.get(event.value.subdomain);
         if (runtimeRef) {
           runtimeRef.send({
@@ -352,7 +349,7 @@ export const workspaceMachine = setup({
     },
     updateInteractiveToolCall: [
       {
-        actions: ({ context, event }) => {
+        actions: ({ context, event }: any) => {
           const subdomain = event.value.subdomain;
           const sessionRefs = context.sessionRefsBySubdomain.get(subdomain);
           if (!sessionRefs) {
@@ -366,14 +363,14 @@ export const workspaceMachine = setup({
             });
           }
         },
-        guard: ({ context, event }) => {
+        guard: ({ context, event }: any) => {
           const subdomain = event.value.subdomain;
           const sessionRefs = context.sessionRefsBySubdomain.get(subdomain);
           return !!sessionRefs && sessionRefs.length > 0;
         },
       },
       {
-        actions: ({ context, event }) => {
+        actions: ({ context, event }: any) => {
           const subdomain = event.value.subdomain;
           const sessionRefs = context.sessionRefsBySubdomain.get(subdomain);
           if (!sessionRefs) {
@@ -390,14 +387,14 @@ export const workspaceMachine = setup({
       },
     ],
     "workspaceServer.error": {
-      actions: log(({ event }) => {
+      actions: log(({ event }: any) => {
         return `Workspace server error: ${event.value.error.message}`;
       }),
     },
     "workspaceServer.heartbeat": [
       {
         actions: assign({
-          createPreviewRefs: ({ context, event, self, spawn }) => {
+          createPreviewRefs: ({ context, event, self, spawn }: any) => {
             invariant(
               event.value.appConfig.type === "preview",
               "Expected preview app config",
@@ -419,12 +416,12 @@ export const workspaceMachine = setup({
             );
           },
         }),
-        guard: ({ event }) =>
+        guard: ({ event }: any) =>
           event.value.shouldCreate && event.value.appConfig.type === "preview",
       },
       {
         actions: assign({
-          createPreviewRefs: ({ context, event, self, spawn }) => {
+          createPreviewRefs: ({ context, event, self, spawn }: any) => {
             invariant(
               event.value.appConfig.type === "preview",
               "Expected preview app config",
@@ -446,12 +443,12 @@ export const workspaceMachine = setup({
             );
           },
         }),
-        guard: ({ event }) =>
+        guard: ({ event }: any) =>
           event.value.shouldCreate && event.value.appConfig.type === "preview",
       },
       {
         actions: assign({
-          createPreviewRefs: ({ context, event, self, spawn }) => {
+          createPreviewRefs: ({ context, event, self, spawn }: any) => {
             invariant(
               event.value.appConfig.type === "preview",
               "Expected preview app config",
@@ -476,7 +473,7 @@ export const workspaceMachine = setup({
       },
     ],
     "workspaceServer.started": {
-      actions: log(({ event }) => {
+      actions: log(({ event }: any) => {
         return `Workspace server started on port ${event.value.port}`;
       }),
     },
@@ -525,13 +522,13 @@ export const sessionMachine = setup({
     }),
   },
   guards: {
-    isAgentRefActive: function ({ context, event }) {
+    isAgentRefActive: function ({ context, event }: any) {
       // Add your guard condition here
       return true;
     },
   },
 }).createMachine({
-  context: ({ input }) => {
+  context: ({ input }: any) => {
     return {
       agent: input.agent,
       appConfig: input.appConfig,
@@ -548,7 +545,7 @@ export const sessionMachine = setup({
   initial: "UpdatingSession",
   on: {
     "*": {
-      actions: ({ context, event, self }) => {
+      actions: ({ context, event, self }: any) => {
         logUnhandledEvent({
           captureException: context.appConfig.workspaceConfig.captureException,
           event,
@@ -558,7 +555,7 @@ export const sessionMachine = setup({
     },
     addMessage: {
       actions: assign({
-        queuedMessages: ({ context, event }) => [
+        queuedMessages: ({ context, event }: any) => [
           ...context.queuedMessages,
           event.value,
         ],
@@ -569,7 +566,7 @@ export const sessionMachine = setup({
     },
     updateInteractiveToolCall: [
       {
-        actions: ({ context, event }) => {
+        actions: ({ context, event }: any) => {
           invariant(
             context.agentRef,
             "Agent ref does not exist when finishing tool call",
@@ -579,10 +576,10 @@ export const sessionMachine = setup({
             value: event.value,
           });
         },
-        guard: ({ context }) => !!context.agentRef,
+        guard: ({ context }: any) => !!context.agentRef,
       },
       {
-        actions: ({ context, event }) => {
+        actions: ({ context, event }: any) => {
           invariant(
             context.agentRef,
             "Agent ref does not exist when finishing tool call",
@@ -608,7 +605,7 @@ export const sessionMachine = setup({
           target: "Done",
           actions: {
             type: "assignEventError",
-          },
+          } as any,
         },
         src: "updateSession",
       },
@@ -617,7 +614,7 @@ export const sessionMachine = setup({
       always: [
         {
           target: "SavingMessageAndSpawningAgent",
-          guard: ({ context }) => {
+          guard: ({ context }: any) => {
             return context.queuedMessages.length > 0;
           },
         },
@@ -629,7 +626,7 @@ export const sessionMachine = setup({
     },
     Done: {
       type: "final",
-      entry: ({ context, self }) => {
+      entry: ({ context, self }: any) => {
         context.parentRef.send({
           type: "session.done",
           value: {
@@ -650,7 +647,7 @@ export const sessionMachine = setup({
         onDone: {
           target: "Agent",
           actions: assign({
-            agentRef: ({ context, event, self, spawn }) =>
+            agentRef: ({ context, event, self, spawn }: any) =>
               spawn("agentMachine", {
                 id: "agent",
                 input: {
@@ -664,7 +661,7 @@ export const sessionMachine = setup({
                   sessionId: context.sessionId,
                 },
               }),
-            queuedMessages: ({ context }) => {
+            queuedMessages: ({ context }: any) => {
               const [_, ...rest] = context.queuedMessages;
               return rest;
             },
@@ -674,7 +671,7 @@ export const sessionMachine = setup({
           target: "Done",
           actions: {
             type: "assignEventError",
-          },
+          } as any,
         },
         src: "saveQueuedMessage",
       },
@@ -684,7 +681,7 @@ export const sessionMachine = setup({
       on: {
         "agent.done": {
           target: "#session.Agent.AgentDone",
-          actions: ({ context, event }) => {
+          actions: ({ context, event }: any) => {
             if (event.value.error) {
               context.appConfig.workspaceConfig.captureException(
                 event.value.error,
@@ -698,7 +695,7 @@ export const sessionMachine = setup({
             target: "#session.Agent.Stopping",
             actions: {
               type: "stopAgent",
-            },
+            } as any,
             guard: {
               type: "isAgentRefActive",
             },
@@ -731,8 +728,8 @@ export const sessionMachine = setup({
                   target: "#session.Agent.UsingNonReadOnlyTools.Running",
                   actions: {
                     type: "markUsedNonReadOnlyTools",
-                  },
-                  guard: ({ event }) => !event.value.readOnly,
+                  } as any,
+                  guard: ({ event }: any) => !event.value.readOnly,
                 },
               },
               tags: "agent.running",
@@ -743,8 +740,8 @@ export const sessionMachine = setup({
                   target: "#session.Agent.UsingNonReadOnlyTools.Paused",
                   actions: {
                     type: "markUsedNonReadOnlyTools",
-                  },
-                  guard: ({ event }) => !event.value.readOnly,
+                  } as any,
+                  guard: ({ event }: any) => !event.value.readOnly,
                 },
               },
               tags: "agent.paused",
@@ -760,7 +757,7 @@ export const sessionMachine = setup({
               target: "AgentDone",
               actions: {
                 type: "clearAgentRef",
-              },
+              } as any,
             },
           },
           after: {
@@ -805,8 +802,6 @@ export const sessionMachine = setup({
   },
 });
 
-
-
 export const executeToolCallMachine = setup({
   types: {
     context: {} as {},
@@ -821,7 +816,7 @@ export const executeToolCallMachine = setup({
     }),
   },
 }).createMachine({
-  context: ({ input }) => ({
+  context: ({ input }: any) => ({
     appConfig: input.appConfig,
     cancellationReason: "unknown",
     part: input.part,
@@ -840,8 +835,8 @@ export const executeToolCallMachine = setup({
         toolCallTimeout: {
           target: "Cancelling",
           actions: assign({ cancellationReason: "timeout" }),
-        },
-      },
+        } as any,
+      } as any,
       invoke: {
         id: "executeToolCall.Executing:invocation[0]",
         input: {},
@@ -875,10 +870,7 @@ export const executeToolCallMachine = setup({
   },
 });
 
-
-export const agentMachine = import { setup, assign, raise } from "xstate";
-
-export const machine = setup({
+export const agentMachine: any = setup({
   types: {
     context: {} as {},
     events: {} as
@@ -916,7 +908,7 @@ export const machine = setup({
   },
   guards: {},
 }).createMachine({
-  context: ({ input }) => ({
+  context: ({ input }: any) => ({
     agent: input.agent,
     appConfig: input.appConfig,
     llmRequestTimeoutMs: input.llmRequestTimeoutMs,
@@ -937,7 +929,7 @@ export const machine = setup({
   initial: "Starting",
   on: {
     "*": {
-      actions: ({ context, event, self }) => {
+      actions: ({ context, event, self }: any) => {
         logUnhandledEvent({
           captureException: context.appConfig.workspaceConfig.captureException,
           event,
@@ -950,7 +942,7 @@ export const machine = setup({
     },
     stop: {
       target: "#agent.Finishing",
-      actions: ({ context }) => {
+      actions: ({ context }: any) => {
         if (context.toolCallExecuteRef) {
           context.toolCallExecuteRef.send({ type: "stop" });
         }
@@ -958,38 +950,17 @@ export const machine = setup({
     },
     updateInteractiveToolCall: {
       actions: assign({
-        pendingToolCalls: ({ context, event: { value } }) => {
+        pendingToolCalls: ({ context, event: { value } }: any) => {
           // TODO Only allow one match and use our ids
           const pendingToolCalls = context.pendingToolCalls.filter(
-            ({ context: call }) => call.toolCallId === value.toolCallId,
+            ({ context: call }: any) => call.toolCallId === value.toolCallId,
           );
           for (const pendingToolCall of pendingToolCalls) {
             // TODO Save these promises and handle them async in the state machine
-            void Store.savePart(
-              value.type === "success"
-                ? {
-                  ...pendingToolCall,
-                  metadata: {
-                    ...pendingToolCall.metadata,
-                    endedAt: new Date(),
-                  },
-                  output: value.value.output as never,
-                  state: "output-available",
-                }
-                : {
-                  ...pendingToolCall,
-                  errorText: value.errorText,
-                  metadata: {
-                    ...pendingToolCall.metadata,
-                    endedAt: new Date(),
-                  },
-                  state: "output-error",
-                },
-              context.appConfig,
-            );
+
           }
           return context.pendingToolCalls.filter(
-            ({ context: call }) => call.toolCallId !== value.toolCallId,
+            ({ context: call }: any) => call.toolCallId !== value.toolCallId,
           );
         },
       }),
@@ -1007,7 +978,7 @@ export const machine = setup({
           target: "Finishing",
           actions: {
             type: "assignEventError",
-          },
+          } as any,
         },
         src: "onStart",
       },
@@ -1016,7 +987,7 @@ export const machine = setup({
       always: [
         {
           target: "LLMStreaming",
-          guard: ({ context }) => {
+          guard: ({ context }: any) => {
             return context.stepCount < context.maxStepCount;
           },
         },
@@ -1036,7 +1007,7 @@ export const machine = setup({
           target: "Done",
           actions: {
             type: "assignEventError",
-          },
+          } as any,
         },
         src: "onFinish",
       },
@@ -1050,7 +1021,7 @@ export const machine = setup({
         retry: [
           {
             target: "RetryingWithDelay",
-            guard: ({ context }) => {
+            guard: ({ context }: any) => {
               return context.retryCount < context.maxRetryCount;
             },
           },
@@ -1062,15 +1033,15 @@ export const machine = setup({
       after: {
         llmRequestTimeoutMs: {
           actions: raise({ type: "retry" }),
-        },
-      },
-      entry: assign({ stepCount: ({ context }) => context.stepCount + 1 }),
+        } as any,
+      } as any,
+      entry: assign({ stepCount: ({ context }: any) => context.stepCount + 1 }),
       invoke: {
         id: "agent.LLMStreaming:invocation[0]",
         input: {},
         onDone: {
           actions: [
-            raise(({ event: { output } }) => {
+            raise(({ event: { output } }: any) => {
               const { message } = output;
               if (message.metadata.error?.kind === "aborted") {
                 return { type: "stop" };
@@ -1090,7 +1061,7 @@ export const machine = setup({
               }
               return { type: "executeToolCalls" };
             }),
-            assign(({ event: { output } }) => {
+            assign(({ event: { output } }: any) => {
               const { message, parts } = output;
               const hasRetryableError =
                 message.metadata.error?.kind === "api-call" ||
@@ -1099,22 +1070,22 @@ export const machine = setup({
               if (hasRetryableError) {
                 return {};
               }
-              const pendingToolCalls: SessionMessagePart.ToolPartInputAvailable[] =
+              const pendingToolCalls: any[] =
                 [];
-              const toolCallQueue: SessionMessagePart.ToolPartInputAvailable[] =
+              const toolCallQueue: any[] =
                 [];
               for (const part of parts) {
-                if (!SessionMessagePart.isToolPart(part)) {
-                  continue;
-                }
+                // if (!SessionMessagePart.isToolPart(part)) {
+                //   continue;
+                // }
                 if (part.state !== "input-available") {
                   continue;
                 }
-                const tool = getToolByType(part.type);
-                if (isInteractiveTool(tool.name)) {
-                  pendingToolCalls.push(part);
-                  continue;
-                }
+                // const tool = getToolByType(part.type);
+                // if (isInteractiveTool(tool.name)) {
+                //   pendingToolCalls.push(part);
+                //   continue;
+                // }
                 // Add to queue for sequential execution
                 toolCallQueue.push(part);
               }
@@ -1126,7 +1097,7 @@ export const machine = setup({
           target: "Finishing",
           actions: {
             type: "assignEventError",
-          },
+          } as any,
         },
         src: "llmRequestLogic",
       },
@@ -1142,13 +1113,13 @@ export const machine = setup({
           target: "Finishing",
           actions: {
             type: "assignEventError",
-          },
+          } as any,
         },
         src: "saveMaxStepsMessage",
       },
     },
     Done: {
-      entry: ({ context }) => {
+      entry: ({ context }: any) => {
         context.parentRef.send({
           type: "agent.done",
           value: { error: context.error },
@@ -1159,11 +1130,11 @@ export const machine = setup({
       always: [
         {
           target: "ExecutingToolCall",
-          guard: ({ context }) => context.toolCallQueue.length > 0,
+          guard: ({ context }: any) => context.toolCallQueue.length > 0,
         },
         {
           target: "MaybeWaitingForPendingToolCalls",
-          guard: ({ context }) => context.toolCallQueue.length > 0,
+          guard: ({ context }: any) => context.toolCallQueue.length > 0,
         },
       ],
     },
@@ -1172,10 +1143,10 @@ export const machine = setup({
         retryBackoff: {
           target: "LLMStreaming",
           actions: assign({
-            retryCount: ({ context }) => context.retryCount + 1,
+            retryCount: ({ context }: any) => context.retryCount + 1,
           }),
-        },
-      },
+        } as any,
+      } as any,
     },
     ExecutingToolCall: {
       invoke: {
@@ -1184,7 +1155,7 @@ export const machine = setup({
         onDone: {
           target: "MaybeExecutingToolCalls",
           actions: assign({
-            toolCallQueue: ({ context }) => {
+            toolCallQueue: ({ context }: any) => {
               const [_, ...remainingQueue] = context.toolCallQueue;
               return remainingQueue;
             },
@@ -1196,7 +1167,7 @@ export const machine = setup({
           actions: [
             {
               type: "assignEventError",
-            },
+            } as any,
             assign({ toolCallExecuteRef: () => null }),
           ],
         },
@@ -1207,7 +1178,7 @@ export const machine = setup({
       always: [
         {
           target: "WaitingForPendingToolCalls",
-          guard: ({ context }) => {
+          guard: ({ context }: any) => {
             return context.pendingToolCalls.length > 0;
           },
         },
@@ -1219,14 +1190,14 @@ export const machine = setup({
     WaitingForPendingToolCalls: {
       always: {
         target: "MaybeContinuing",
-        guard: ({ context }) => {
+        guard: ({ context }: any) => {
           return context.pendingToolCalls.length === 0;
         },
       },
-      entry: ({ context }) => {
+      entry: ({ context }: any) => {
         context.parentRef.send({ type: "agent.paused" });
       },
-      exit: ({ context }) => {
+      exit: ({ context }: any) => {
         context.parentRef.send({ type: "agent.resumed" });
       },
     },
@@ -1237,7 +1208,7 @@ export const machine = setup({
         onDone: [
           {
             target: "MaybeStartingLLMRequest",
-            guard: ({ event: { output } }) => {
+            guard: ({ event: { output } }: any) => {
               return output;
             },
           },
@@ -1249,10 +1220,14 @@ export const machine = setup({
           target: "Finishing",
           actions: {
             type: "assignEventError",
-          },
+          } as any,
         },
         src: "shouldContinue",
       },
     },
   },
 });
+
+// workspaceMaine --> spawn sessionMachine
+
+// agentMachine --> spawn executeToolCallMachine
