@@ -1,0 +1,258 @@
+name: Capability Showcase
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: "Run deploy job?"
+        type: boolean
+        default: false
+      target:
+        description: "Target environment"
+        type: choice
+        options: [dev, staging, production]
+        default: dev
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 0 * * 1"
+
+permissions:
+  contents: read
+  checks: write
+
+concurrency:
+  group: showcase-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GLOBAL_ENV: "visible-to-all-jobs"
+
+jobs:
+  setup:
+    name: Setup / outputs / artifacts
+    runs-on: ubuntu-latest
+    outputs:
+      build_id: ${{ steps.meta.outputs.build_id }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Simple run step
+        run: echo "Hello from GitHub Actions"
+
+      - name: Multi-line shell script
+        shell: bash
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "Branch/ref: ${{ github.ref }}"
+          echo "Global env: $GLOBAL_ENV"
+
+      - name: Step env variables
+        env:
+          STEP_ENV: "visible-only-in-this-step"
+        run: echo "$STEP_ENV"
+
+      - name: Create step output
+        id: meta
+        run: echo "build_id=build-${{ github.run_number }}" >> "$GITHUB_OUTPUT"
+
+      - name: Use step output
+        run: echo "Build id is ${{ steps.meta.outputs.build_id }}"
+
+      - name: Shell loop inside a step
+        run: |
+          for app in api web worker; do
+            echo "Building $app"
+          done
+
+      - name: Create files
+        run: |
+          mkdir -p output
+          echo "artifact from setup job" > output/result.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: setup-output
+          path: output/
+
+      - name: Add workflow summary
+        run: |
+          echo "## Capability Showcase" >> "$GITHUB_STEP_SUMMARY"
+          echo "- run steps" >> "$GITHUB_STEP_SUMMARY"
+          echo "- uses steps" >> "$GITHUB_STEP_SUMMARY"
+          echo "- outputs" >> "$GITHUB_STEP_SUMMARY"
+          echo "- artifacts" >> "$GITHUB_STEP_SUMMARY"
+          echo "- conditions" >> "$GITHUB_STEP_SUMMARY"
+          echo "- matrix iteration" >> "$GITHUB_STEP_SUMMARY"
+
+  matrix-tests:
+    name: Matrix test / Node ${{ matrix.node }} / ${{ matrix.package }}
+    needs: setup
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+        package: [api, web, worker]
+        include:
+          - node: 22
+            package: experimental
+            experimental: true
+    continue-on-error: ${{ matrix.experimental == true }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node from matrix
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Cache example
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-${{ matrix.node }}-
+
+      - name: Use job output from setup
+        run: echo "Build id from setup is ${{ needs.setup.outputs.build_id }}"
+
+      - name: Conditional matrix step
+        if: matrix.node == 22
+        run: echo "Only runs for Node 22"
+
+      - name: Experimental conditional step
+        if: matrix.experimental == true
+        run: echo "This is the experimental matrix leg"
+
+      - name: Simulated test
+        run: echo "Testing ${{ matrix.package }} on Node ${{ matrix.node }}"
+
+  service-container:
+    name: Service container / PostgreSQL
+    needs: setup
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: showcase
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - name: Confirm service container
+        run: echo "PostgreSQL is available on localhost:5432"
+
+  docker-container-job:
+    name: Job running inside container
+    needs: setup
+    runs-on: ubuntu-latest
+    container:
+      image: node:22-alpine
+    steps:
+      - name: Run inside container
+        run: |
+          node --version
+          echo "This whole job runs inside a container"
+
+  docker-action-step:
+    name: Docker action step
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Docker image as action
+        uses: docker://alpine:3.20
+        with:
+          args: echo "Hello from a Docker action step"
+
+  conditional-flow:
+    name: Conditions / failure handling
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Runs only on pull requests
+        if: github.event_name == 'pull_request'
+        run: echo "Pull request flow"
+
+      - name: Runs only on main branch
+        if: github.ref == 'refs/heads/main'
+        run: echo "Main branch flow"
+
+      - name: Intentional failure but allowed
+        continue-on-error: true
+        run: exit 1
+
+      - name: Always runs
+        if: always()
+        run: echo "Cleanup or reporting step"
+
+      - name: Timeout example
+        timeout-minutes: 1
+        run: echo "This step has a timeout"
+
+  consume-artifact:
+    name: Download artifact / downstream job
+    needs: [setup, matrix-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download setup artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: setup-output
+          path: downloaded
+
+      - name: Show downloaded artifact
+        run: cat downloaded/result.txt
+
+  deploy:
+    name: Deploy / environment gate
+    needs:
+      - matrix-tests
+      - service-container
+      - docker-container-job
+      - docker-action-step
+      - conditional-flow
+      - consume-artifact
+    if: github.event_name == 'workflow_dispatch' && inputs.deploy == true
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.target }}
+      url: https://example.com
+    steps:
+      - name: Deploy conditionally
+        run: |
+          echo "Deploying to ${{ inputs.target }}"
+          echo "This job appears only when deploy=true"
+
+  final-report:
+    name: Final report
+    needs:
+      - setup
+      - matrix-tests
+      - service-container
+      - docker-container-job
+      - docker-action-step
+      - conditional-flow
+      - consume-artifact
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print dependency results
+        run: |
+          echo "setup: ${{ needs.setup.result }}"
+          echo "matrix-tests: ${{ needs.matrix-tests.result }}"
+          echo "service-container: ${{ needs.service-container.result }}"
+          echo "docker-container-job: ${{ needs.docker-container-job.result }}"
+          echo "docker-action-step: ${{ needs.docker-action-step.result }}"
+          echo "conditional-flow: ${{ needs.conditional-flow.result }}"
+          echo "consume-artifact: ${{ needs.consume-artifact.result }}"
